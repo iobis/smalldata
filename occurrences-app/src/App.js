@@ -1,15 +1,15 @@
-import './App.css';
+import './App.css'
 import dwca from '@smalldata/dwca-lib'
-import logo from './logo.svg';
-import React, {Component} from 'react';
+import logo from './logo.svg'
+import React, { Component } from 'react'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <dwca.Button/>
+        <dwca.Button />
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo"/>
+          <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
@@ -17,14 +17,13 @@ class App extends Component {
             className="App-link"
             href="https://reactjs.org"
             target="_blank"
-            rel="noopener noreferrer"
-          >
+            rel="noopener noreferrer">
             Learn React
           </a>
         </header>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
