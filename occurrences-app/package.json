@@ -8,6 +8,12 @@
     "start": "react-app-rewired start",
     "test": "cross-env CI=true react-app-rewired test --env=jsdom"
   },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -17,12 +23,6 @@
     "react-dom": "^16.7.0",
     "react-scripts": "2.1.3"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
   "devDependencies": {
     "cross-env": "5.2.0",
     "react-app-rewire-yarn-workspaces": "^1.0.3",
