@@ -15,7 +15,7 @@
     "sort-package-json": "sort-package-json package.json admin-app/package.json dwca-lib/package.json occurencies-app/package.json"
   },
   "devDependencies": {
-    "prettier": "1.14.3",
-    "sort-package-json": "1.16.0"
+    "prettier": "1.16.4",
+    "sort-package-json": "1.19.0"
   }
 }
