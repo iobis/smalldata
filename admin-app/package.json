@@ -2,5 +2,8 @@
   "name": "@smalldata/admin-app",
   "version": "1.0.0",
   "private": true,
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "test": "echo Nothig to test yet"
+  }
 }

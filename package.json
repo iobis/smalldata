@@ -11,6 +11,7 @@
     "occurrences-app"
   ],
   "scripts": {
+    "test": "yarn workspaces run test",
     "prettier": "prettier --print-width 100 --jsx-bracket-same-line --single-quote --no-semi --write **/*.{scss,css,json,js,jsx}",
     "sort-package-json": "sort-package-json package.json admin-app/package.json dwca-lib/package.json occurencies-app/package.json"
   },

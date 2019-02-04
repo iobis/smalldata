@@ -6,7 +6,7 @@
     "build": "react-app-rewired build",
     "eject": "react-app-rewired eject",
     "start": "react-app-rewired start",
-    "test": "react-app-rewired test"
+    "test": "cross-env CI=true react-app-rewired test --env=jsdom"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -24,6 +24,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "cross-env": "5.2.0",
     "react-app-rewire-yarn-workspaces": "^1.0.3",
     "react-app-rewired": "^2.0.3"
   }
