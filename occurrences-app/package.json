@@ -1,0 +1,30 @@
+{
+  "name": "@smalldata/occurrences-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "react-app-rewired build",
+    "eject": "react-app-rewired eject",
+    "start": "react-app-rewired start",
+    "test": "react-app-rewired test"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "dependencies": {
+    "@smalldata/dwca-lib": "1.0.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-scripts": "2.1.3"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "react-app-rewire-yarn-workspaces": "^1.0.3",
+    "react-app-rewired": "^2.0.3"
+  }
+}

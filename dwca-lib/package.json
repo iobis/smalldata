@@ -1,0 +1,9 @@
+{
+  "name": "@smalldata/dwca-lib",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.js",
+  "dependencies": {
+    "react": "^16.7.0"
+  }
+}

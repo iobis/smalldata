@@ -1,0 +1,19 @@
+{
+  "name": "smalldata",
+  "version": "1.0.0",
+  "private": true,
+  "repository": "https://github.com/iobis/smalldata",
+  "license": "MIT",
+  "main": "index.js",
+  "workspaces": [
+    "admin-app",
+    "dwca-lib",
+    "occurrences-app"
+  ],
+  "scripts": {
+    "sort-package-json": "sort-package-json package.json admin-app/package.json dwca-lib/package.json occurencies-app/package.json"
+  },
+  "devDependencies": {
+    "sort-package-json": "1.16.0"
+  }
+}
