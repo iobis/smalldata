@@ -1,38 +1,25 @@
-buildscript {
-  repositories {
-    jcenter()
-  }
-  dependencies {
-    classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.4'
-    classpath "org.javamodularity:moduleplugin:1.4.0"
-  }
-}
-
 plugins {
   id 'java'
   id 'application'
   id 'org.beryx.jlink' version '2.5.0'
+  id 'org.javamodularity.moduleplugin' version '1.4.0'
 }
 
+repositories {
+  mavenLocal()
+  jcenter()
+}
 ext {
   vertxVersion = '3.6.3'
   junitJupiterEngineVersion = '5.2.0'
   moduleName = 'obis.smalldata'
 }
 
-mainClassName = "$moduleName/org.obis.smalldata.Starter"
-apply plugin: 'com.github.johnrengelman.shadow'
-apply plugin: "org.javamodularity.moduleplugin"
-
-repositories {
-  mavenLocal()
-  jcenter()
-}
+sourceCompatibility = 11
 
 group = 'org.obis'
 version = '1.0.0-SNAPSHOT'
-
-sourceCompatibility = '11'
+mainClassName = "$moduleName/org.obis.smalldata.Starter"
 
 dependencies {
   implementation("io.vertx:vertx-core:$vertxVersion")
@@ -43,24 +30,6 @@ dependencies {
 
   testImplementation "io.vertx:vertx-junit5:$vertxVersion"
   testRuntime("org.junit.jupiter:junit-jupiter-engine:$junitJupiterEngineVersion")
-}
-
-def jdk = System.getProperty("java.home")
-// def moduleName = "obis.smalldata"
-// def mainClassName = "io.vertx.core.Launcher"
-
-// def mainVerticleName = 'org.obis.smalldata.Starter'
-// def watchForChange = 'src/**/*'
-// def doOnChange = './gradlew classes'
-
-shadowJar {
-  classifier = 'fat'
-  manifest {
-//    attributes 'Main-Verticle': mainVerticleName
-  }
-  mergeServiceFiles {
-    include 'META-INF/services/io.vertx.core.spi.VerticleFactory'
-  }
 }
 
 test {
