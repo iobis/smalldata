@@ -12,8 +12,7 @@ To jlink the application:
 ./gradlew jlink
 ```
 
-
-----
+'''
 
 = Smalldata
 
