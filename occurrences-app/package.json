@@ -12,7 +12,6 @@
     "extends": "react-app"
   },
   "dependencies": {
-    "@smalldata/dwca-lib": "1.0.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-scripts": "2.1.3"
