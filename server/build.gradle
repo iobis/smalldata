@@ -1,0 +1,88 @@
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.4'
+    classpath "org.javamodularity:moduleplugin:1.4.0"
+  }
+}
+
+plugins {
+  id 'java'
+  id 'application'
+  id 'org.beryx.jlink' version '2.5.0'
+}
+
+ext {
+  vertxVersion = '3.6.3'
+  junitJupiterEngineVersion = '5.2.0'
+  moduleName = 'obis.smalldata'
+}
+
+mainClassName = "$moduleName/org.obis.smalldata.Starter"
+apply plugin: 'com.github.johnrengelman.shadow'
+apply plugin: "org.javamodularity.moduleplugin"
+
+repositories {
+  mavenLocal()
+  jcenter()
+}
+
+group = 'org.obis'
+version = '1.0.0-SNAPSHOT'
+
+sourceCompatibility = '11'
+
+dependencies {
+  implementation("io.vertx:vertx-core:$vertxVersion")
+  implementation "io.vertx:vertx-jdbc-client:$vertxVersion"
+  implementation "io.vertx:vertx-junit5:$vertxVersion"
+  implementation "io.vertx:vertx-web:$vertxVersion"
+  implementation "io.vertx:vertx-config:$vertxVersion"
+
+  testImplementation "io.vertx:vertx-junit5:$vertxVersion"
+  testRuntime("org.junit.jupiter:junit-jupiter-engine:$junitJupiterEngineVersion")
+}
+
+def jdk = System.getProperty("java.home")
+// def moduleName = "obis.smalldata"
+// def mainClassName = "io.vertx.core.Launcher"
+
+// def mainVerticleName = 'org.obis.smalldata.Starter'
+// def watchForChange = 'src/**/*'
+// def doOnChange = './gradlew classes'
+
+shadowJar {
+  classifier = 'fat'
+  manifest {
+//    attributes 'Main-Verticle': mainVerticleName
+  }
+  mergeServiceFiles {
+    include 'META-INF/services/io.vertx.core.spi.VerticleFactory'
+  }
+}
+
+test {
+  useJUnitPlatform()
+  testLogging {
+    events 'PASSED', 'FAILED', 'SKIPPED'
+  }
+}
+
+jlink {
+  options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
+  mergedModule {
+    additive = true
+    uses 'io.vertx.core.spi.VertxFactory'
+    uses 'io.vertx.core.spi.VerticleFactory'
+    uses 'io.vertx.core.spi.FutureFactory'
+    uses 'io.vertx.core.spi.BufferFactory'
+    uses 'io.vertx.config.spi.ConfigProcessor'
+  }
+  launcher{
+    name = 'smalldata'
+    //       jvmArgs = ['-Dlog4j.configurationFile=./log4j2.xml']
+    jvmArgs = ['-Djava.net.preferIPv4Stack=true']
+  }
+}
