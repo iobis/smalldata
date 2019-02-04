@@ -1,9 +1,11 @@
-function sum(a, b) {
-  return a + b
-}
+import Button from './Button'
+import renderer from 'react-test-renderer'
+import React from 'react'
 
 describe('Button', () => {
-  it('adds 1 + 2 to equal 3', () => {
-    expect(sum(1, 2)).toBe(3)
+  it('renders correctrly', () => {
+    const component = renderer.create(<Button />)
+    let tree = component.toJSON()
+    expect(tree).toMatchSnapshot()
   })
 })
