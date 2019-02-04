@@ -1,3 +1,20 @@
+= Smalldata Server
+
+== Building
+
+To run the application:
+```
+./gradlew run
+```
+
+To jlink the application:
+```
+./gradlew jlink
+```
+
+
+----
+
 = Smalldata
 
 image:https://img.shields.io/badge/vert.x-3.6.3-purple.svg[link="https://vertx.io"]
