@@ -1,4 +1,5 @@
 import './App.css';
+import dwca from '@smalldata/dwca-lib'
 import logo from './logo.svg';
 import React, {Component} from 'react';
 
