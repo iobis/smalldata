@@ -6,7 +6,10 @@ import io.vertx.core.Future;
 import io.vertx.core.Vertx;
 import io.vertx.core.VertxOptions;
 import io.vertx.core.DeploymentOptions;
+import io.vertx.core.http.HttpServer;
 import io.vertx.core.json.JsonObject;
+import io.vertx.ext.web.Router;
+import io.vertx.ext.web.handler.StaticHandler;
 
 public class Starter extends AbstractVerticle {
 
@@ -15,11 +18,16 @@ public class Starter extends AbstractVerticle {
     System.out.println("config() -> " + config().getInteger("http.port", 8080));
     System.out.println("getenv() -> " + System.getenv("HTTP_PORT"));
     int port = config().getInteger("http.port", 8080);
-    vertx.createHttpServer().requestHandler(req -> {
+
+    HttpServer server = vertx.createHttpServer();
+    Router router = Router.router(vertx);
+    router.route().handler(StaticHandler.create());
+    server.requestHandler(req ->
       req.response()
         .putHeader("content-type", "text/plain")
-        .end("Hello from Vert.x!");
-    }).listen(port, http -> {
+        .end("Hello from Vert.x!")
+    );
+    server.listen(port, http -> {
       if (http.succeeded()) {
         startFuture.complete();
         System.out.println("HTTP server started on http://localhost:" + port);
