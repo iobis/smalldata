@@ -4,12 +4,12 @@
 
 To run the application:
 ```
-./gradlew run
+./gradlew runShadow
 ```
 
-To jlink the application:
+To build the application:
 ```
-./gradlew jlink
+./gradlew shadowJar
 ```
 
 '''
