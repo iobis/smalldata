@@ -18,9 +18,9 @@ jobs:
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
-            - ./node_modules
-            - ./dwca-lub/node_modules
-            - ./occurrences-app/node_modules
+            - node_modules
+            - dwca-lub/node_modules
+            - occurrences-app/node_modules
       - run:
           name: Run Front End Unit Tests
           command: yarn test
