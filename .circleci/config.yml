@@ -19,5 +19,5 @@ jobs:
           paths:
             - ~/.cache/yarn
       - run:
-          name: Run Unit Tests
+          name: Run Front End Unit Tests
           command: yarn test
