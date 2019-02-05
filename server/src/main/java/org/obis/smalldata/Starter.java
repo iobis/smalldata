@@ -22,7 +22,7 @@ public class Starter extends AbstractVerticle {
     server.listen(port, http -> {
       if (http.succeeded()) {
         startFuture.complete();
-        System.out.println("HTTP server started on http://localhost:" + port);
+        Logger.info("HTTP server started on http://localhost:" + port);
       } else {
         startFuture.fail(http.cause());
       }
