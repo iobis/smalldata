@@ -1,7 +1,7 @@
 plugins {
   id 'java'
   id 'application'
-  id 'org.beryx.jlink' version '2.5.0'
+  id 'com.github.johnrengelman.shadow' version "4.0.4"
   id 'org.javamodularity.moduleplugin' version '1.4.0'
 }
 
@@ -9,6 +9,7 @@ repositories {
   mavenLocal()
   jcenter()
 }
+
 ext {
   vertxVersion = '3.6.3'
   junitJupiterEngineVersion = '5.2.0'
@@ -19,10 +20,15 @@ sourceCompatibility = 11
 
 group = 'org.obis'
 version = '1.0.0-SNAPSHOT'
-mainClassName = "$moduleName/org.obis.smalldata.Starter"
+
+mainClassName = 'io.vertx.core.Launcher'
+
+def mainVerticleName = "org.obis.smalldata.Starter"
+def watchForChange = 'src/**/*'
+def doOnChange = './gradlew classes'
 
 dependencies {
-  implementation("io.vertx:vertx-core:$vertxVersion")
+  implementation "io.vertx:vertx-core:$vertxVersion"
   implementation "io.vertx:vertx-jdbc-client:$vertxVersion"
   implementation "io.vertx:vertx-junit5:$vertxVersion"
   implementation "io.vertx:vertx-web:$vertxVersion"
@@ -39,19 +45,11 @@ test {
   }
 }
 
-jlink {
-  options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
-  mergedModule {
-    additive = true
-    uses 'io.vertx.core.spi.VertxFactory'
-    uses 'io.vertx.core.spi.VerticleFactory'
-    uses 'io.vertx.core.spi.FutureFactory'
-    uses 'io.vertx.core.spi.BufferFactory'
-    uses 'io.vertx.config.spi.ConfigProcessor'
+shadowJar {
+  manifest {
+    attributes 'Main-Verticle': mainVerticleName
   }
-  launcher{
-    name = 'smalldata'
-    //       jvmArgs = ['-Dlog4j.configurationFile=./log4j2.xml']
-    jvmArgs = ['-Djava.net.preferIPv4Stack=true']
+  mergeServiceFiles {
+    include 'META-INF/services/io.vertx.core.spi.VerticleFactory'
   }
 }
