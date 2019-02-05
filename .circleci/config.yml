@@ -28,7 +28,6 @@ jobs:
       - checkout
     - restore_cache:
         keys:
-          # when lock file changes, use increasingly general patterns to restore cache
           - gradle-repo-v1-{{ .Branch }}-{{ checksum "dependencies.lockfile" }}
           - gradle-repo-v1-{{ .Branch }}-
           - gradle-repo-v1-
