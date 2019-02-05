@@ -4,7 +4,7 @@
 
 To run the application:
 ```
-./gradlew runShadow
+./gradlew run
 ```
 
 To build the application:
