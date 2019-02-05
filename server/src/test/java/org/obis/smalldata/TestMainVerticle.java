@@ -3,6 +3,9 @@ package org.obis.smalldata;
 import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonObject;
+import io.vertx.ext.web.client.HttpResponse;
+import io.vertx.ext.web.client.WebClient;
+import io.vertx.ext.web.codec.BodyCodec;
 import io.vertx.junit5.Timeout;
 import io.vertx.junit5.VertxExtension;
 import io.vertx.junit5.VertxTestContext;
@@ -31,13 +34,20 @@ public class TestMainVerticle {
   @DisplayName("Should start a Web Server on port 8080")
   @Timeout(value = 10, timeUnit = TimeUnit.SECONDS)
   void start_http_server(Vertx vertx, VertxTestContext testContext) throws Throwable {
-    vertx.createHttpClient().getNow(8080, "localhost", "/", response -> testContext.verify(() -> {
-      assertTrue(response.statusCode() == 200);
-      response.handler(body -> {
-        assertTrue(((JsonObject)body.toJsonObject()).containsKey("title"));
-        assertTrue(((JsonObject)body.toJsonObject()).getString("title").contains("Small Data"));
-        testContext.completeNow();
-      });
-    }));
+    WebClient.create(vertx).get(8080, "localhost", "/")
+      .as(BodyCodec.jsonObject())
+      .send(ar -> testContext.verify(() -> {
+        if (ar.succeeded()) {
+          HttpResponse<JsonObject> response = ar.result();
+          JsonObject body = response.body();
+          assertTrue(response.statusCode() == 200);
+          assertTrue(body.containsKey("title"));
+          assertTrue(body.getString("title").contains("Small Data"));
+          testContext.completeNow();
+        } else {
+          testContext.failed();
+          testContext.completeNow();
+        }
+      }));
   }
 }
