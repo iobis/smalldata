@@ -22,7 +22,6 @@ jobs:
           name: Run Front End Unit Tests
           command: yarn test
   test-backend:
-    working_directory: ~/server
     docker:
       - image: circleci/node:10.15.1
     steps:
