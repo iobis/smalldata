@@ -28,10 +28,10 @@ jobs:
       - checkout
       - run: cd server
       - restore_cache:
-        keys:
-          - gradle-repo-v1-{{ .Branch }}-{{ checksum "dependencies.lockfile" }}
-          - gradle-repo-v1-{{ .Branch }}-
-          - gradle-repo-v1-
+          keys:
+            - gradle-repo-v1-{{ .Branch }}-{{ checksum "dependencies.lockfile" }}
+            - gradle-repo-v1-{{ .Branch }}-
+            - gradle-repo-v1-
       - run: gradle test
       - save_cache:
           key: gradle-repo-v1-{{ .Branch }}-{{ checksum "dependencies.lockfile" }}
