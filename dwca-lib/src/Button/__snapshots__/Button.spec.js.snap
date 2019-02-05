@@ -4,6 +4,6 @@ exports[`Button renders correctrly 1`] = `
 <button
   onClick={[Function]}
 >
-  click me !!!!
+  click me
 </button>
 `;
