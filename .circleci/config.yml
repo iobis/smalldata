@@ -1,7 +1,7 @@
-version: 2.1
+version: 2
 
 jobs:
-  build:
+  test-front-end:
     docker:
       - image: circleci/node:10.15.1
     steps:
@@ -21,3 +21,28 @@ jobs:
       - run:
           name: Run Front End Unit Tests
           command: yarn test
+  test-backend:
+    working_directory: ~/server
+    docker:
+      - image: circleci/node:10.15.1
+    steps:
+      - checkout
+    - restore_cache:
+        keys:
+          # when lock file changes, use increasingly general patterns to restore cache
+          - gradle-repo-v1-{{ .Branch }}-{{ checksum "dependencies.lockfile" }}
+          - gradle-repo-v1-{{ .Branch }}-
+          - gradle-repo-v1-
+    - save_cache:
+        paths:
+          - ~/.gradle
+        key: gradle-repo-v1-{{ .Branch }}-{{ checksum "dependencies.lockfile" }}
+    - run: cd server
+    - run: gradle test
+
+workflows:
+  version: 2
+  workflow:
+    jobs:
+      - test-front-end
+      - test-backend
