@@ -49,7 +49,7 @@ jlink {
     uses 'io.vertx.core.spi.BufferFactory'
     uses 'io.vertx.config.spi.ConfigProcessor'
   }
-  launcher{
+  launcher {
     name = 'smalldata'
     //       jvmArgs = ['-Dlog4j.configurationFile=./log4j2.xml']
     jvmArgs = ['-Djava.net.preferIPv4Stack=true']

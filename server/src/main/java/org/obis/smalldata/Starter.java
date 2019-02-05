@@ -29,7 +29,7 @@ public class Starter extends AbstractVerticle {
     });
   }
 
-  public static void main (String... args) {
+  public static void main(String... args) {
     Vertx vertx = Vertx.vertx();
     ConfigRetriever retriever = ConfigRetriever.create(vertx);
 
