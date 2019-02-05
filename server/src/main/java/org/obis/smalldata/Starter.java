@@ -3,6 +3,7 @@ package org.obis.smalldata;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Future;
 import io.vertx.core.http.HttpServer;
+import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.handler.StaticHandler;
 import org.pmw.tinylog.Logger;
@@ -17,7 +18,9 @@ public class Starter extends AbstractVerticle {
 
     Router router = Router.router(vertx);
     router.get("/smalldata/*").handler(StaticHandler.create());
-
+    router.get("/").handler(req -> req.response()
+      .putHeader("content-type", "application/json")
+      .end(new JsonObject().put("title", "Small Data Status").encode()));
     HttpServer server = vertx.createHttpServer().requestHandler(router);
     server.listen(port, http -> {
       if (http.succeeded()) {

@@ -1,6 +1,8 @@
 package org.obis.smalldata;
 
+import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Vertx;
+import io.vertx.core.json.JsonObject;
 import io.vertx.junit5.Timeout;
 import io.vertx.junit5.VertxExtension;
 import io.vertx.junit5.VertxTestContext;
@@ -8,6 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.pmw.tinylog.Logger;
 
 import java.util.concurrent.TimeUnit;
 
@@ -18,7 +21,10 @@ public class TestMainVerticle {
 
   @BeforeEach
   void deploy_verticle(Vertx vertx, VertxTestContext testContext) {
-    vertx.deployVerticle(new Starter(), testContext.succeeding(id -> testContext.completeNow()));
+    vertx.deployVerticle(new Starter(),
+      new DeploymentOptions().setConfig(new JsonObject()
+        .put("http.port", 8080)),
+      testContext.succeeding(id -> testContext.completeNow()));
   }
 
   @Test
@@ -28,10 +34,10 @@ public class TestMainVerticle {
     vertx.createHttpClient().getNow(8080, "localhost", "/", response -> testContext.verify(() -> {
       assertTrue(response.statusCode() == 200);
       response.handler(body -> {
-        assertTrue(body.toString().contains("Hello from Vert.x!"));
+        assertTrue(((JsonObject)body.toJsonObject()).containsKey("title"));
+        assertTrue(((JsonObject)body.toJsonObject()).getString("title").contains("Small Data"));
         testContext.completeNow();
       });
     }));
   }
-
 }
