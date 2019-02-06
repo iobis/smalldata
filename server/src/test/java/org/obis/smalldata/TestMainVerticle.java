@@ -13,6 +13,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.concurrent.TimeUnit;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(VertxExtension.class)
@@ -20,9 +21,10 @@ public class TestMainVerticle {
 
   @BeforeEach
   void deploy_verticle(Vertx vertx, VertxTestContext testContext) {
-    vertx.deployVerticle(new Starter(),
-      new DeploymentOptions().setConfig(new JsonObject()
-        .put("http.port", 8080)),
+    vertx.deployVerticle(
+      new Starter(),
+      new DeploymentOptions()
+        .setConfig(new JsonObject().put("http.port", 8080)),
       testContext.succeeding(id -> testContext.completeNow()));
   }
 
@@ -31,7 +33,7 @@ public class TestMainVerticle {
   @Timeout(value = 10, timeUnit = TimeUnit.SECONDS)
   void start_http_server(Vertx vertx, VertxTestContext testContext) {
     vertx.createHttpClient().getNow(8080, "localhost", "/", response -> testContext.verify(() -> {
-      assertTrue(response.statusCode() == 200);
+      assertEquals(200, response.statusCode());
       response.handler(body -> {
         assertTrue(body.toJsonObject().containsKey("title"));
         assertTrue(body.toJsonObject().getString("title").contains("Small Data"));
