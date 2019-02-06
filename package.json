@@ -11,7 +11,9 @@
     "occurrences-app"
   ],
   "scripts": {
-    "build": "run-s occurrences-app:build occurrences-app:copy-to-server",
+    "build:zip": "run-s build:front-end build:back-end",
+    "build:back-end": "cd server && gradlew runtimeZip",
+    "build:front-end": "run-s occurrences-app:build occurrences-app:copy-to-server",
     "clean": "shx rm -rf ./occurrences-app/build ./server/src/main/resources/webroot/*",
     "occurrences-app:build": "yarn workspace @smalldata/occurrences-app build",
     "occurrences-app:copy-to-server": "shx mkdir -p ./server/src/main/resources/webroot/ && shx cp -rf ./occurrences-app/build/* ./server/src/main/resources/webroot/",
