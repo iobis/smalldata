@@ -14,7 +14,7 @@
     "prettier": "prettier --print-width 100 --jsx-bracket-same-line --single-quote --no-semi --write **/*.{scss,css,json,js,jsx}",
     "sort-package-json": "sort-package-json package.json admin-app/package.json dwca-lib/package.json occurrences-app/package.json",
     "test:front-end": "yarn workspaces run test",
-    "test:server:ci": "cd server && ./gradle test --no-daemon",
+    "test:server:ci": "cd server && gradle test --no-daemon",
     "test:ci": "yarn test:front-end && yarn test:server:ci"
   },
   "devDependencies": {
