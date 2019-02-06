@@ -26,12 +26,12 @@ jobs:
       - image: circleci/openjdk:11-jdk-node
     steps:
       - checkout
-      - run: cd server
       - restore_cache:
           keys:
             - gradle-repo-v1-{{ .Branch }}-{{ checksum "dependencies.lockfile" }}
             - gradle-repo-v1-{{ .Branch }}-
             - gradle-repo-v1-
+      - run: cd server
       - run: gradle test
       - save_cache:
           key: gradle-repo-v1-{{ .Branch }}-{{ checksum "dependencies.lockfile" }}
