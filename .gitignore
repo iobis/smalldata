@@ -26,3 +26,6 @@ yarn-error.log*
 
 # idea
 .idea
+
+# project files
+server/src/main/resources/webroot
