@@ -11,17 +11,21 @@ jobs:
           keys:
             - yarn-packages-{{ checksum "yarn.lock" }}
       - run:
-          name: Install Dependencies
+          name: Install Front End Deps
           command: yarn install --frozen-lockfile
       - run:
-          name: Run Front End Unit Tests
-          command: yarn test
+          name: Install Backend Deps
+          command: cd server && ./gradlew dependencies
       - save_cache:
           name: Save Yarn Package Cache
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
             - server/.gradle
+            - server/gradle
+      - run:
+          name: Run Unit Tests
+          command: yarn test
 
 workflows:
   version: 2
