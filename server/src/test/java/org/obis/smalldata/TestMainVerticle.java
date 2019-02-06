@@ -10,7 +10,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.pmw.tinylog.Logger;
 
 import java.util.concurrent.TimeUnit;
 
@@ -30,12 +29,12 @@ public class TestMainVerticle {
   @Test
   @DisplayName("Should start a Web Server on port 8080")
   @Timeout(value = 10, timeUnit = TimeUnit.SECONDS)
-  void start_http_server(Vertx vertx, VertxTestContext testContext) throws Throwable {
+  void start_http_server(Vertx vertx, VertxTestContext testContext) {
     vertx.createHttpClient().getNow(8080, "localhost", "/", response -> testContext.verify(() -> {
       assertTrue(response.statusCode() == 200);
       response.handler(body -> {
-        assertTrue(((JsonObject)body.toJsonObject()).containsKey("title"));
-        assertTrue(((JsonObject)body.toJsonObject()).getString("title").contains("Small Data"));
+        assertTrue(body.toJsonObject().containsKey("title"));
+        assertTrue(body.toJsonObject().getString("title").contains("Small Data"));
         testContext.completeNow();
       });
     }));
