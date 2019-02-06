@@ -3,9 +3,6 @@ package org.obis.smalldata;
 import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonObject;
-import io.vertx.ext.web.client.HttpResponse;
-import io.vertx.ext.web.client.WebClient;
-import io.vertx.ext.web.codec.BodyCodec;
 import io.vertx.junit5.Timeout;
 import io.vertx.junit5.VertxExtension;
 import io.vertx.junit5.VertxTestContext;
@@ -13,17 +10,22 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+<<<<<<< HEAD:server/src/test/java/org/obis/smalldata/TestWebApiVerticle.java
 import org.obis.smalldata.webapi.WebApi;
 import org.pmw.tinylog.Logger;
+=======
+>>>>>>> 90d81b58fe788f05acda6dcf0abd685298af0f34:server/src/test/java/org/obis/smalldata/TestMainVerticle.java
 
 import java.util.concurrent.TimeUnit;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(VertxExtension.class)
 public class TestWebApiVerticle {
 
   @BeforeEach
+<<<<<<< HEAD:server/src/test/java/org/obis/smalldata/TestWebApiVerticle.java
   void deployVerticle(Vertx vertx, VertxTestContext testContext) {
     vertx.deployVerticle(new WebApi(),
       new DeploymentOptions().setConfig(new JsonObject()
@@ -31,26 +33,27 @@ public class TestWebApiVerticle {
       testContext.succeeding(id -> {
         testContext.completeNow();
       }));
+=======
+  void deploy_verticle(Vertx vertx, VertxTestContext testContext) {
+    vertx.deployVerticle(
+      new Starter(),
+      new DeploymentOptions()
+        .setConfig(new JsonObject().put("http.port", 8080)),
+      testContext.succeeding(id -> testContext.completeNow()));
+>>>>>>> 90d81b58fe788f05acda6dcf0abd685298af0f34:server/src/test/java/org/obis/smalldata/TestMainVerticle.java
   }
 
   @Test
   @DisplayName("Should start a Web Server on port 8080")
   @Timeout(value = 10, timeUnit = TimeUnit.SECONDS)
-  void startHttpServer(Vertx vertx, VertxTestContext testContext) throws Throwable {
-    WebClient.create(vertx).get(8080, "localhost", "/")
-      .as(BodyCodec.jsonObject())
-      .send(ar -> testContext.verify(() -> {
-        if (ar.succeeded()) {
-          HttpResponse<JsonObject> response = ar.result();
-          JsonObject body = response.body();
-          assertTrue(response.statusCode() == 200);
-          assertTrue(body.containsKey("title"));
-          assertTrue(body.getString("title").contains("Small Data"));
-          testContext.completeNow();
-        } else {
-          testContext.failed();
-          testContext.completeNow();
-        }
-      }));
+  void start_http_server(Vertx vertx, VertxTestContext testContext) {
+    vertx.createHttpClient().getNow(8080, "localhost", "/api/status", response -> testContext.verify(() -> {
+      assertEquals(200, response.statusCode());
+      response.handler(body -> {
+        assertTrue(body.toJsonObject().containsKey("title"));
+        assertTrue(body.toJsonObject().getString("title").contains("Small Data"));
+        testContext.completeNow();
+      });
+    }));
   }
 }
