@@ -13,6 +13,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.obis.smalldata.webapi.WebApi;
 import org.pmw.tinylog.Logger;
 
 import java.util.concurrent.TimeUnit;
@@ -20,11 +21,11 @@ import java.util.concurrent.TimeUnit;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(VertxExtension.class)
-public class TestMainVerticle {
+public class TestWebApiVerticle {
 
   @BeforeEach
   void deployVerticle(Vertx vertx, VertxTestContext testContext) {
-    vertx.deployVerticle(new Starter(),
+    vertx.deployVerticle(new WebApi(),
       new DeploymentOptions().setConfig(new JsonObject()
         .put("http.port", 8080)),
       testContext.succeeding(id -> {
