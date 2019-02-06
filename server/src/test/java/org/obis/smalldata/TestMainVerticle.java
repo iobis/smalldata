@@ -23,17 +23,19 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class TestMainVerticle {
 
   @BeforeEach
-  void deploy_verticle(Vertx vertx, VertxTestContext testContext) {
+  void deployVerticle(Vertx vertx, VertxTestContext testContext) {
     vertx.deployVerticle(new Starter(),
       new DeploymentOptions().setConfig(new JsonObject()
         .put("http.port", 8080)),
-      testContext.succeeding(id -> testContext.completeNow()));
+      testContext.succeeding(id -> {
+        testContext.completeNow();
+      }));
   }
 
   @Test
   @DisplayName("Should start a Web Server on port 8080")
   @Timeout(value = 10, timeUnit = TimeUnit.SECONDS)
-  void start_http_server(Vertx vertx, VertxTestContext testContext) throws Throwable {
+  void startHttpServer(Vertx vertx, VertxTestContext testContext) throws Throwable {
     WebClient.create(vertx).get(8080, "localhost", "/")
       .as(BodyCodec.jsonObject())
       .send(ar -> testContext.verify(() -> {
