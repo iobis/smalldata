@@ -31,7 +31,7 @@ public class TestMainVerticle {
   @Timeout(value = 10, timeUnit = TimeUnit.SECONDS)
   void start_http_server(Vertx vertx, VertxTestContext testContext) {
     vertx.createHttpClient().getNow(8080, "localhost", "/", response -> testContext.verify(() -> {
-      assertTrue(response.statusCode() == 200);
+      assertTrue(response.statusCode() == 100);
       response.handler(body -> {
         assertTrue(body.toJsonObject().containsKey("title"));
         assertTrue(body.toJsonObject().getString("title").contains("Small Data"));
