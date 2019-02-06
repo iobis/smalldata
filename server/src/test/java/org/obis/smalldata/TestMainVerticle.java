@@ -32,7 +32,7 @@ public class TestMainVerticle {
   @DisplayName("Should start a Web Server on port 8080")
   @Timeout(value = 10, timeUnit = TimeUnit.SECONDS)
   void start_http_server(Vertx vertx, VertxTestContext testContext) {
-    vertx.createHttpClient().getNow(8080, "localhost", "/", response -> testContext.verify(() -> {
+    vertx.createHttpClient().getNow(8080, "localhost", "/api/status", response -> testContext.verify(() -> {
       assertEquals(200, response.statusCode());
       response.handler(body -> {
         assertTrue(body.toJsonObject().containsKey("title"));
