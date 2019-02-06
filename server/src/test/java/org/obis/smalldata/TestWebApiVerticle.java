@@ -10,11 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-<<<<<<< HEAD:server/src/test/java/org/obis/smalldata/TestWebApiVerticle.java
 import org.obis.smalldata.webapi.WebApi;
-import org.pmw.tinylog.Logger;
-=======
->>>>>>> 90d81b58fe788f05acda6dcf0abd685298af0f34:server/src/test/java/org/obis/smalldata/TestMainVerticle.java
 
 import java.util.concurrent.TimeUnit;
 
@@ -25,7 +21,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class TestWebApiVerticle {
 
   @BeforeEach
-<<<<<<< HEAD:server/src/test/java/org/obis/smalldata/TestWebApiVerticle.java
   void deployVerticle(Vertx vertx, VertxTestContext testContext) {
     vertx.deployVerticle(new WebApi(),
       new DeploymentOptions().setConfig(new JsonObject()
@@ -33,15 +28,7 @@ public class TestWebApiVerticle {
       testContext.succeeding(id -> {
         testContext.completeNow();
       }));
-=======
-  void deploy_verticle(Vertx vertx, VertxTestContext testContext) {
-    vertx.deployVerticle(
-      new Starter(),
-      new DeploymentOptions()
-        .setConfig(new JsonObject().put("http.port", 8080)),
-      testContext.succeeding(id -> testContext.completeNow()));
->>>>>>> 90d81b58fe788f05acda6dcf0abd685298af0f34:server/src/test/java/org/obis/smalldata/TestMainVerticle.java
-  }
+ }
 
   @Test
   @DisplayName("Should start a Web Server on port 8080")

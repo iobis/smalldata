@@ -17,8 +17,8 @@ public class WebApi extends AbstractVerticle {
     int port = config().getInteger("http.port", 8008);
 
     Router router = Router.router(vertx);
-    router.get("/smalldata/*").handler(StaticHandler.create());
-    router.get("/").handler(req -> req.response()
+    router.get("/*").handler(StaticHandler.create());
+     router.get("/api/status").handler(req -> req.response()
       .putHeader("content-type", "application/json")
       .end(new JsonObject().put("title", "Small Data Status").encode()));
     HttpServer server = vertx.createHttpServer().requestHandler(router);
