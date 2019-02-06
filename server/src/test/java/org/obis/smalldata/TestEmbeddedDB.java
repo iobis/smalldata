@@ -27,8 +27,8 @@ import java.util.concurrent.TimeUnit;
 public class TestEmbeddedDB {
   private static final MongodStarter starter = MongodStarter.getDefaultInstance();
 
-  private MongodExecutable mongodExe;
-  private MongodProcess mongod;
+  private MongodExecutable executable;
+  private MongodProcess process;
   private MongoClient client;
 
   @BeforeEach
@@ -40,11 +40,11 @@ public class TestEmbeddedDB {
           Logger.info("started dummy");
           String bindIp = "localhost";
           int port = 12345;
-          mongodExe = starter.prepare(new MongodConfigBuilder()
+          executable = starter.prepare(new MongodConfigBuilder()
             .version(Version.Main.PRODUCTION)
             .net(new Net(bindIp, port, Network.localhostIsIPv6()))
             .build());
-          mongod = mongodExe.start();
+          process = executable.start();
           client = MongoClient.createNonShared(vertx,
             new JsonObject()
               .put("host", bindIp)
@@ -61,9 +61,9 @@ public class TestEmbeddedDB {
   @AfterEach
   public void afterEach() {
     Logger.info("afterEach...");
-    if (this.mongod != null) {
-      this.mongod.stop();
-      this.mongodExe.stop();
+    if (this.process != null) {
+      this.process.stop();
+      this.executable.stop();
     }
   }
 
