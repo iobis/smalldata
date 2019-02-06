@@ -31,12 +31,11 @@ jobs:
             - gradle-repo-v1-{{ .Branch }}-{{ checksum "dependencies.lockfile" }}
             - gradle-repo-v1-{{ .Branch }}-
             - gradle-repo-v1-
-      - run: cd server
-      - run: gradle test
+      - run: server/gradlew test
       - save_cache:
           key: gradle-repo-v1-{{ .Branch }}-{{ checksum "dependencies.lockfile" }}
           paths:
-            - ~/.gradle
+            - ~/server/.gradle
 
 workflows:
   version: 2
