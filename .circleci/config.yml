@@ -15,7 +15,7 @@ jobs:
           command: yarn install --frozen-lockfile
       - run:
           name: Install Backend Deps
-          command: cd server && ./gradlew dependencies
+          command: cd server && ./gradlew dependencies --no-daemon
       - save_cache:
           name: Save Yarn Package Cache
           key: yarn-packages-{{ checksum "yarn.lock" }}
