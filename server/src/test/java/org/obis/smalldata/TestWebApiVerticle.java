@@ -25,15 +25,13 @@ public class TestWebApiVerticle {
     vertx.deployVerticle(new WebApi(),
       new DeploymentOptions().setConfig(new JsonObject()
         .put("http.port", 8080)),
-      testContext.succeeding(id -> {
-        testContext.completeNow();
-      }));
+      testContext.succeeding(id -> testContext.completeNow()));
  }
 
   @Test
   @DisplayName("Should start a Web Server on port 8080")
   @Timeout(value = 10, timeUnit = TimeUnit.SECONDS)
-  void start_http_server(Vertx vertx, VertxTestContext testContext) {
+  void startHttpServer(Vertx vertx, VertxTestContext testContext) {
     vertx.createHttpClient().getNow(8080, "localhost", "/api/status", response -> testContext.verify(() -> {
       assertEquals(200, response.statusCode());
       response.handler(body -> {
