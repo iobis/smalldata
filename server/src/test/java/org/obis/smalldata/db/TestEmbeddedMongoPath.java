@@ -72,7 +72,9 @@ public class TestEmbeddedMongoPath {
 
   @AfterAll
   static public void afterAll() throws IOException {
-    FileUtils.deleteDirectory(tmpDir);
+    if (tmpDir.exists()) {
+      FileUtils.deleteDirectory(tmpDir);
+    }
   }
 
   @Test
