@@ -26,13 +26,12 @@ public class EmbeddedDbWithPathTest {
   private static final int PORT = 12345;
 
   private static MongoClient client;
-  private static File tmpDir;
+  private static File dbPath;
 
   @BeforeAll
   public static void beforeAll() {
-    tmpDir = new File(System.getProperty("java.io.tmpdir") + File.separator + "obis-test");
-    tmpDir = new File(tmpDir.getAbsolutePath() + File.separator
-      + "db-" + Generators.timeBasedGenerator().generate());
+    File tmpDir = new File(System.getProperty("java.io.tmpdir") + File.separator + "obis-test");
+    dbPath = new File(tmpDir.getAbsolutePath() + File.separator + "db-" + Generators.timeBasedGenerator().generate());
   }
 
   @BeforeEach
@@ -41,7 +40,7 @@ public class EmbeddedDbWithPathTest {
         .setConfig(new JsonObject()
           .put("bindIp", BIND_IP)
           .put("port", PORT)
-          .put("path", tmpDir.getAbsolutePath())),
+          .put("path", dbPath.getAbsolutePath())),
       deployId -> {
         Logger.info("Deployed DB {}", deployId);
         client = MongoClient.createNonShared(vertx,
@@ -71,8 +70,8 @@ public class EmbeddedDbWithPathTest {
 
   @AfterAll
   static public void afterAll() throws IOException {
-    if (tmpDir.exists()) {
-      FileUtils.deleteDirectory(tmpDir);
+    if (dbPath.exists()) {
+      FileUtils.deleteDirectory(dbPath);
     }
   }
 
