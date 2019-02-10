@@ -23,9 +23,9 @@ public class WebApiTest {
 
   @BeforeEach
   void deployVerticle(Vertx vertx, VertxTestContext testContext) {
-    vertx.deployVerticle(new WebApi(),
-      new DeploymentOptions().setConfig(new JsonObject()
-        .put("http.port", 8080)),
+    vertx.deployVerticle(
+      new WebApi(),
+      new DeploymentOptions().setConfig(new JsonObject().put("http.port", 8080)),
       testContext.succeeding(id -> testContext.completeNow()));
   }
 
@@ -36,15 +36,15 @@ public class WebApiTest {
     WebClient client = WebClient.create(vertx);
     client.get(8080, "localhost", "/api/status")
       .as(BodyCodec.jsonObject())
-      .send(ar -> {
-        if (ar.succeeded()) {
-          assertEquals(200, ar.result().statusCode());
-          JsonObject body = ar.result().body();
+      .send(result -> {
+        if (result.succeeded()) {
+          assertEquals(200, result.result().statusCode());
+          JsonObject body = result.result().body();
           assertTrue(body.containsKey("title"));
           assertTrue(body.getString("title").contains("Small Data"));
           testContext.completeNow();
         } else {
-          testContext.failNow(ar.cause());
+          testContext.failNow(result.cause());
         }
       });
   }

@@ -59,12 +59,12 @@ public class EmbeddedDbTest {
   public void getAllDocs(VertxTestContext testContext) {
     client.find(COLLECTION_NAME,
       new JsonObject(),
-      res -> {
-        if (res.succeeded()) {
-          Logger.info("result: {}", res.result());
-          assertTrue(res.result().size() > 0);
+      result -> {
+        if (result.succeeded()) {
+          Logger.info("result: {}", result.result());
+          assertTrue(result.result().size() > 0);
         } else {
-          Logger.info("failed: {}", res.cause());
+          Logger.info("failed: {}", result.cause());
         }
         testContext.completeNow();
       });
@@ -76,12 +76,12 @@ public class EmbeddedDbTest {
   public void findDoc(VertxTestContext testContext) {
     client.find(COLLECTION_NAME,
       new JsonObject().put("measurementID", 42),
-      res -> {
-        if (res.succeeded()) {
-          Logger.info("result: {}", res.result());
-          assertTrue(res.result().size() > 0);
+      result -> {
+        if (result.succeeded()) {
+          Logger.info("result: {}", result.result());
+          assertTrue(result.result().size() > 0);
         } else {
-          Logger.info("failes: {}", res.cause());
+          Logger.info("failed: {}", result.cause());
         }
         testContext.completeNow();
       });

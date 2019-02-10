@@ -49,7 +49,7 @@ public class EmbeddedDbWithPathTest {
         Logger.info("Running client {}", client);
         client.createCollection(
           COLLECTION_NAME,
-          res -> {
+          result -> {
             client.insert(COLLECTION_NAME,
               new JsonObject()
                 .put("measurementID", 42)
@@ -81,12 +81,12 @@ public class EmbeddedDbWithPathTest {
   public void testCustomPath(VertxTestContext testContext) {
     client.find(COLLECTION_NAME,
       new JsonObject(),
-      res -> {
-        if (res.succeeded()) {
-          Logger.info("result: {}", res.result());
-          assertTrue(res.result().size() > 0);
+      result -> {
+        if (result.succeeded()) {
+          Logger.info("result: {}", result.result());
+          assertTrue(result.result().size() > 0);
         } else {
-          Logger.info("failed: {}", res.cause());
+          Logger.info("failed: {}", result.cause());
         }
         testContext.completeNow();
       });
@@ -97,11 +97,11 @@ public class EmbeddedDbWithPathTest {
   @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
   public void step01Insert(VertxTestContext testContext) {
     client.insert(COLLECTION_NAME, new JsonObject().put("persistent", true),
-      ar -> {
-        if (ar.succeeded()) {
-          Logger.info("result: {}", ar.result());
+      result -> {
+        if (result.succeeded()) {
+          Logger.info("result: {}", result.result());
         } else {
-          Logger.info("failed: {}", ar.cause());
+          Logger.info("failed: {}", result.cause());
         }
         testContext.completeNow();
       });
