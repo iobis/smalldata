@@ -27,7 +27,7 @@ public class WebApiTest {
       new DeploymentOptions().setConfig(new JsonObject()
         .put("http.port", 8080)),
       testContext.succeeding(id -> testContext.completeNow()));
- }
+  }
 
   @Test
   @DisplayName("Should start a Web Server on port 8080")
