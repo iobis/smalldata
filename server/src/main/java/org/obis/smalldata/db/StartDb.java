@@ -15,25 +15,30 @@ import java.io.IOException;
 
 public class StartDb extends AbstractVerticle {
   private static final MongodStarter starter = MongodStarter.getDefaultInstance();
+  private static final String BIND_IP_DEFAULT = "localhost";
+  private static final int PORT_DEFAULT = 27017;
+
   private MongodExecutable executable;
   private MongodProcess process;
 
   @Override
   public void start() throws IOException {
-    Logger.info("Starting mongoDB with config {}", config());
-    executable = starter.prepare(new MongodConfigBuilder()
+    Logger.info("starting mongo db with config {}", config());
+    var bindIp = config().getString("bindIp", BIND_IP_DEFAULT);
+    var port = config().getInteger("port", PORT_DEFAULT);
+    var path = config().getString("path", null);
+    var mongoConfig = new MongodConfigBuilder()
+      .net(new Net(bindIp, port, Network.localhostIsIPv6()))
+      .replication(new Storage(path, null, 0))
       .version(Version.Main.PRODUCTION)
-      .net(new Net(config().getString("bindIp", "localhost"),
-        config().getInteger("port", 27017),
-        Network.localhostIsIPv6()))
-      .replication(new Storage(config().getString("path",null), null, 0))
-      .build());
+      .build();
+    executable = starter.prepare(mongoConfig);
     process = executable.start();
   }
 
   @Override
   public void stop() {
-    Logger.info("shutdown database");
+    Logger.info("shutdown mongo db");
     if (this.process != null) {
       this.process.stop();
       this.executable.stop();
