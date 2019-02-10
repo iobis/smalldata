@@ -11,7 +11,7 @@ import org.pmw.tinylog.Logger;
 public class WebApi extends AbstractVerticle {
 
   @Override
-  public void start(Future<Void> startFuture) throws Exception {
+  public void start(Future<Void> startFuture) {
     Logger.info("config() -> " + config().getInteger("http.port", 8000));
     Logger.info("getenv() -> " + System.getenv("HTTP_PORT"));
     int port = config().getInteger("http.port", 8008);
