@@ -78,7 +78,7 @@ public class EmbeddedDbWithPathTest {
   @Test
   @DisplayName("Check custom path")
   @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
-  public void testCustomPath(Vertx vertx, VertxTestContext testContext) {
+  public void testCustomPath(VertxTestContext testContext) {
     client.find(COLLECTION_NAME,
       new JsonObject(),
       res -> {
@@ -95,7 +95,7 @@ public class EmbeddedDbWithPathTest {
   @Test
   @DisplayName("Insert data")
   @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
-  public void step01Insert(Vertx vertx, VertxTestContext testContext) {
+  public void step01Insert(VertxTestContext testContext) {
     client.insert(COLLECTION_NAME, new JsonObject().put("persistent", true),
       ar -> {
         if (ar.succeeded()) {
