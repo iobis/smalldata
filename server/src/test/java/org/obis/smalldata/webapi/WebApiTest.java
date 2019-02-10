@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(VertxExtension.class)
-public class TestWebApiVerticle {
+public class WebApiTest {
 
   @BeforeEach
   void deployVerticle(Vertx vertx, VertxTestContext testContext) {
