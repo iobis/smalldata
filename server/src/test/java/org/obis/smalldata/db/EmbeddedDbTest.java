@@ -53,13 +53,8 @@ public class EmbeddedDbTest {
       });
   }
 
-  @AfterEach
-  public void afterEach() {
-
-  }
-
   @Test
-  @DisplayName("Should return at least one result")
+  @DisplayName("returns at least one result")
   @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
   public void getAllDocs(Vertx vertx, VertxTestContext testContext) {
     client.find(collection,
@@ -76,7 +71,7 @@ public class EmbeddedDbTest {
   }
 
   @Test
-  @DisplayName("Must find document matching the query")
+  @DisplayName("finds document matching the query")
   @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
   public void findDoc(Vertx vertx, VertxTestContext testContext) {
     client.find(collection,
