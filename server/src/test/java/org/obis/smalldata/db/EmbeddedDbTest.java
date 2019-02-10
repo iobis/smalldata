@@ -19,28 +19,29 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(VertxExtension.class)
 public class EmbeddedDbTest {
-  private final String collection = "someCollection";
+  private static final String COLLECTION_NAME = "someCollection";
+  private static final String BIND_IP = "localhost";
+  private static final int PORT = 12345;
+
   private MongoClient client;
 
   @BeforeEach
   public void beforeEach(Vertx vertx, VertxTestContext testContext) {
-    final String bindIp = "localhost";
-    final int port = 12345;
     vertx.deployVerticle(new EmbeddedDb(), new DeploymentOptions()
         .setConfig(new JsonObject()
-          .put("bindIp", bindIp)
-          .put("port", port)),
+          .put("bindIp", BIND_IP)
+          .put("port", PORT)),
       deployId -> {
         Logger.info("Deployed DB {}", deployId);
         client = MongoClient.createNonShared(vertx,
           new JsonObject()
-            .put("host", bindIp)
-            .put("port", port));
+            .put("host", BIND_IP)
+            .put("port", PORT));
         Logger.info("Running client {}", client);
         client.createCollection(
-          collection,
+          COLLECTION_NAME,
           res -> {
-            client.insert(collection,
+            client.insert(COLLECTION_NAME,
               new JsonObject()
                 .put("measurementID", 42)
                 .put("measurementUnit", "m2"),
@@ -56,7 +57,7 @@ public class EmbeddedDbTest {
   @DisplayName("returns at least one result")
   @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
   public void getAllDocs(Vertx vertx, VertxTestContext testContext) {
-    client.find(collection,
+    client.find(COLLECTION_NAME,
       new JsonObject(),
       res -> {
         if (res.succeeded()) {
@@ -73,7 +74,7 @@ public class EmbeddedDbTest {
   @DisplayName("finds document matching the query")
   @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
   public void findDoc(Vertx vertx, VertxTestContext testContext) {
-    client.find(collection,
+    client.find(COLLECTION_NAME,
       new JsonObject().put("measurementID", 42),
       res -> {
         if (res.succeeded()) {

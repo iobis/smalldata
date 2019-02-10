@@ -21,16 +21,15 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(VertxExtension.class)
 public class EmbeddedDbWithPathTest {
-  private static final String collection = "someCollection";
+  private static final String COLLECTION_NAME = "someCollection";
+  private static final String BIND_IP = "localhost";
+  private static final int PORT = 12345;
+
   private static MongoClient client;
-  private static String bindIp;
-  private static int port;
   private static File tmpDir;
 
   @BeforeAll
-  static public void beforeAll() {
-    bindIp = "localhost";
-    port = 12345;
+  public static void beforeAll() {
     tmpDir = new File(System.getProperty("java.io.tmpdir") + File.separator + "obis-test");
     tmpDir = new File(tmpDir.getAbsolutePath() + File.separator
       + "db-" + Generators.timeBasedGenerator().generate());
@@ -40,20 +39,20 @@ public class EmbeddedDbWithPathTest {
   public void beforeEach(Vertx vertx, VertxTestContext testContext) {
     vertx.deployVerticle(new EmbeddedDb(), new DeploymentOptions()
         .setConfig(new JsonObject()
-          .put("bindIp", bindIp)
-          .put("port", port)
+          .put("bindIp", BIND_IP)
+          .put("port", PORT)
           .put("path", tmpDir.getAbsolutePath())),
       deployId -> {
         Logger.info("Deployed DB {}", deployId);
         client = MongoClient.createNonShared(vertx,
           new JsonObject()
-            .put("host", bindIp)
-            .put("port", port));
+            .put("host", BIND_IP)
+            .put("port", PORT));
         Logger.info("Running client {}", client);
         client.createCollection(
-          collection,
+          COLLECTION_NAME,
           res -> {
-            client.insert(collection,
+            client.insert(COLLECTION_NAME,
               new JsonObject()
                 .put("measurementID", 42)
                 .put("measurementUnit", "m2"),
@@ -81,7 +80,7 @@ public class EmbeddedDbWithPathTest {
   @DisplayName("Check custom path")
   @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
   public void testCustomPath(Vertx vertx, VertxTestContext testContext) {
-    client.find(collection,
+    client.find(COLLECTION_NAME,
       new JsonObject(),
       res -> {
         if (res.succeeded()) {
@@ -98,7 +97,7 @@ public class EmbeddedDbWithPathTest {
   @DisplayName("Insert data")
   @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
   public void step01Insert(Vertx vertx, VertxTestContext testContext) {
-    client.insert(collection, new JsonObject().put("persistent", true),
+    client.insert(COLLECTION_NAME, new JsonObject().put("persistent", true),
       ar -> {
         if (ar.succeeded()) {
           Logger.info("result: {}", ar.result());
