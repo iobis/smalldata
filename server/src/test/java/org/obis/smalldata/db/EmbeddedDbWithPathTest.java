@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(VertxExtension.class)
-public class EmbeddedMongoPathTest {
+public class EmbeddedDbWithPathTest {
   private static final String collection = "someCollection";
   private static MongoClient client;
   private static String bindIp;
@@ -38,7 +38,7 @@ public class EmbeddedMongoPathTest {
 
   @BeforeEach
   public void beforeEach(Vertx vertx, VertxTestContext testContext) {
-    vertx.deployVerticle(new StartDb(), new DeploymentOptions()
+    vertx.deployVerticle(new EmbeddedDb(), new DeploymentOptions()
         .setConfig(new JsonObject()
           .put("bindIp", bindIp)
           .put("port", port)

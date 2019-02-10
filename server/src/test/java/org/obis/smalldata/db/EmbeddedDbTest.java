@@ -7,7 +7,6 @@ import io.vertx.ext.mongo.MongoClient;
 import io.vertx.junit5.Timeout;
 import io.vertx.junit5.VertxExtension;
 import io.vertx.junit5.VertxTestContext;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -27,7 +26,7 @@ public class EmbeddedDbTest {
   public void beforeEach(Vertx vertx, VertxTestContext testContext) {
     final String bindIp = "localhost";
     final int port = 12345;
-    vertx.deployVerticle(new StartDb(), new DeploymentOptions()
+    vertx.deployVerticle(new EmbeddedDb(), new DeploymentOptions()
         .setConfig(new JsonObject()
           .put("bindIp", bindIp)
           .put("port", port)),

@@ -13,7 +13,7 @@ import org.pmw.tinylog.Logger;
 
 import java.io.IOException;
 
-public class StartDb extends AbstractVerticle {
+public class EmbeddedDb extends AbstractVerticle {
   private static final MongodStarter starter = MongodStarter.getDefaultInstance();
   private static final String BIND_IP_DEFAULT = "localhost";
   private static final int PORT_DEFAULT = 27017;
