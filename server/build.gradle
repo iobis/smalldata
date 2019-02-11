@@ -29,7 +29,7 @@ def watchForChange = 'src/**/*'
 def doOnChange = './gradlew classes'
 
 runtime {
-    options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
+  options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
 }
 
 dependencies {
