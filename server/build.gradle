@@ -4,6 +4,7 @@ plugins {
   id 'com.github.johnrengelman.shadow' version '4.0.4'
   id 'org.javamodularity.moduleplugin' version '1.4.0'
   id 'org.beryx.runtime' version '1.1.5'
+  id 'checkstyle'
 }
 
 repositories {
@@ -67,4 +68,11 @@ shadowJar {
   mergeServiceFiles {
     include 'META-INF/services/io.vertx.core.spi.VerticleFactory'
   }
+}
+
+checkstyle {
+  ignoreFailures false
+  maxErrors 0
+  maxWarnings 0
+  toolVersion "8.17"
 }
