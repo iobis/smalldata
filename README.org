@@ -1,5 +1,5 @@
 * smalldata
 ** links
 
-   [[https://github.com/iobis/smalldata/projects/1][github board]]
-   [[https://zube.io/iobis/smalldata/w/main-workspace/kanban][zube kanban board]]
+   - [[https://github.com/iobis/smalldata/projects/1][github board]]
+   - [[https://zube.io/iobis/smalldata/w/main-workspace/kanban][zube kanban board]]
