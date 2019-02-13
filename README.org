@@ -1,1 +1,4 @@
 * smalldata
+** links
+
+   [[https://zube.io/iobis/smalldata/w/main-workspace/kanban][kanban board]]
