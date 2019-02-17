@@ -30,14 +30,15 @@ public class WebApi extends AbstractVerticle {
   Consumer<Router> startServer(final Future<Void> startFuture, final int port) {
     return router -> {
       final HttpServer server = vertx.createHttpServer().requestHandler(router);
-      server.listen(port,  http -> {if (http.succeeded()) {
+      server.listen(port,  http -> {
+        if (http.succeeded()) {
           startFuture.complete();
           Logger.info("HTTP server started on http://localhost: {}", port);
         } else {
           Logger.info("Failed to start the server http://localhost:{}", port);
           startFuture.fail(http.cause());
-        }}
-      );
+        }
+      });
     };
   }
 }
