@@ -18,7 +18,7 @@ ext {
   moduleName = 'obis.smalldata'
 }
 
-sourceCompatibility = 11
+sourceCompatibility = 10
 
 group = 'org.obis'
 version = '1.0.0-SNAPSHOT'
