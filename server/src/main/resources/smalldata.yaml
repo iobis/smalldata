@@ -1,0 +1,43 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Small Data Swagger
+  license:
+    name: MIT
+servers:
+- url: http://localhost/v1
+paths:
+  /api/status:
+    get:
+      summary: get status of the server
+      operationId: getStatus
+      tags:
+        - info
+      responses:
+        200:
+          description: application running
+          content:
+            application/json:
+              schema: {
+                type: "object"
+              }
+
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+components:
+  schemas:
+    Error:
+      type: object
+      required:
+      - code
+      - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
