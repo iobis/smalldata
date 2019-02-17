@@ -12,16 +12,14 @@ paths:
       summary: get status of the server
       operationId: getStatus
       tags:
-        - info
+      - info
       responses:
         200:
           description: application running
           content:
             application/json:
-              schema: {
-                type: "object"
-              }
-
+              schema:
+                $ref: '#/components/schemas/Status'
         default:
           description: unexpected error
           content:
@@ -30,11 +28,21 @@ paths:
                 $ref: "#/components/schemas/Error"
 components:
   schemas:
+    Status:
+      type: object
+      properties:
+        title:
+          type: String
+          example: 'swaggered application'
+        status:
+          type: String
+          enum: ['OK', 'error']
+          example: 'OK'
     Error:
       type: object
       required:
-      - code
-      - message
+        - code
+        - message
       properties:
         code:
           type: integer
