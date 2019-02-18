@@ -17,7 +17,7 @@ public class WebApi extends AbstractVerticle {
     Logger.info("getenv() -> {}", System.getenv("HTTP_PORT"));
     final int port = config().getInteger("http.port", 8008);
 
-    OpenAPI3RouterFactory.create(vertx, "src/main/resources/smalldata.yaml", ar -> {
+    OpenAPI3RouterFactory.create(vertx, "src/main/resources/webroot/openapi/smalldata.yaml", ar -> {
       if (ar.succeeded()) {
         Logger.info("started OpenAPI: {}", ar.succeeded());
         new RouterConfig(startServer(startFuture, port)).invoke(ar.result());
