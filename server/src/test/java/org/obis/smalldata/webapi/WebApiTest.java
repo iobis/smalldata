@@ -20,12 +20,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(VertxExtension.class)
 public class WebApiTest {
+  private static final int HTTP_PORT = 8080;
+  private static final JsonObject CONFIG = new JsonObject().put("http.port", HTTP_PORT);
 
   @BeforeEach
   void deployVerticle(Vertx vertx, VertxTestContext testContext) {
     vertx.deployVerticle(
       new WebApi(),
-      new DeploymentOptions().setConfig(new JsonObject().put("http.port", 8080)),
+      new DeploymentOptions().setConfig(CONFIG),
       testContext.succeeding(id -> testContext.completeNow()));
   }
 
@@ -34,7 +36,7 @@ public class WebApiTest {
   @Timeout(value = 10, timeUnit = TimeUnit.SECONDS)
   void startHttpServer(Vertx vertx, VertxTestContext testContext) {
     WebClient client = WebClient.create(vertx);
-    client.get(8080, "localhost", "/api/status")
+    client.get(HTTP_PORT, "localhost", "/api/status")
       .as(BodyCodec.jsonObject())
       .send(result -> {
         if (result.succeeded()) {
