@@ -25,6 +25,7 @@ class RouterConfig {
     handlers.forEach(routerFactory::addHandlerByOperationId);
 
     Router router = routerFactory.getRouter();
+    router.get("/swagger/*").handler(StaticHandler.create("swaggerroot"));
     router.get("/*").handler(StaticHandler.create());
     completionHandler.accept(router);
   }
