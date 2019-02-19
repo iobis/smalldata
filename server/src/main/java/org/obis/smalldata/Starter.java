@@ -12,4 +12,5 @@ public class Starter extends AbstractVerticle {
     vertx.deployVerticle(WebApi.class.getName());
     vertx.deployVerticle(Rss.class.getName());
   }
+
 }
