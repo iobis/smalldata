@@ -6,11 +6,13 @@ import React, {useState} from 'react'
 export default function App() {
   const [count, setCount] = useState(0)
   const incrementCount = () => setCount(count + 1)
+  const decrementCount = () => setCount(count - 1)
 
   return (
     <div className="App">
       <div>{count}</div>
-      <dwca.Button onClick={incrementCount}/>
+      <dwca.Button onClick={decrementCount}>-</dwca.Button>
+      <dwca.Button onClick={incrementCount}>+</dwca.Button>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo"/>
         <p>
