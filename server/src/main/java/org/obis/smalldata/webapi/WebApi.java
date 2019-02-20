@@ -2,7 +2,6 @@ package org.obis.smalldata.webapi;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Future;
-import io.vertx.core.http.HttpServer;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.api.contract.openapi3.OpenAPI3RouterFactory;
 import org.pmw.tinylog.Logger;
@@ -29,7 +28,7 @@ public class WebApi extends AbstractVerticle {
 
   Consumer<Router> startServer(Future<Void> startFuture, int port) {
     return router -> {
-      HttpServer server = vertx.createHttpServer().requestHandler(router);
+      var server = vertx.createHttpServer().requestHandler(router);
       server.listen(port, http -> {
         if (http.succeeded()) {
           startFuture.complete();

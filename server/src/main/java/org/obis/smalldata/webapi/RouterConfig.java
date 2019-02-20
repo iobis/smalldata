@@ -21,7 +21,7 @@ class RouterConfig {
     this.completionHandler = completionHandler;
   }
 
-  void invoke(final OpenAPI3RouterFactory routerFactory) {
+  void invoke(OpenAPI3RouterFactory routerFactory) {
     handlers.forEach(routerFactory::addHandlerByOperationId);
 
     var router = routerFactory.getRouter();
