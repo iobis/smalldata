@@ -1,12 +1,16 @@
 import './App.css'
 import dwca from '@smalldata/dwca-lib'
 import logo from './logo.svg'
-import React from 'react'
+import React, {useState} from 'react'
 
 export default function App() {
+  const [count, setCount] = useState(0)
+  const incrementCount = () => setCount(count + 1)
+
   return (
     <div className="App">
-      <dwca.Button/>
+      <div>{count}</div>
+      <dwca.Button onClick={incrementCount}/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo"/>
         <p>
