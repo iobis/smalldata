@@ -2,7 +2,7 @@ import Button from './Button'
 import renderer from 'react-test-renderer'
 import React from 'react'
 
-const noop = ()=>{}
+const noop = () => {}
 
 describe('Button', () => {
   it('renders correctly', () => {
