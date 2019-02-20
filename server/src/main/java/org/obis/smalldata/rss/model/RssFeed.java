@@ -24,11 +24,14 @@ public class RssFeed {
 
   @JacksonXmlProperty
   private Channel channel = Channel.builder()
-    .withTitle("title")
-    .withLink(new URL("http://localhost"))
-    .withAtomLink(new Channel.AtomLink())
-    .withDescription("some description")
-    .withItemList(List.of(new RssItem(), new RssItem()))
+    .title("title")
+    .link(new URL("http://localhost"))
+    .atomLink(Channel.AtomLink.builder().build())
+    .description("some description")
+    .itemList(List.of(
+      RssItem.builder().build(),
+      RssItem.builder().build()))
+    .language("nl-BE")
     .build();
 
   public RssFeed() throws MalformedURLException {
