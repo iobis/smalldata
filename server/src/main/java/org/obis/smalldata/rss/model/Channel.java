@@ -2,6 +2,7 @@ package org.obis.smalldata.rss.model;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import lombok.Builder;
+import lombok.NonNull;
 import lombok.Value;
 
 import java.net.URL;
@@ -43,6 +44,7 @@ public class Channel {
     @Builder.Default
     private String type = "application/rss+xml";
     @JacksonXmlProperty(isAttribute = true)
-    private String href = "http://ipt.iobis.org/training/rss.do";
+    @NonNull
+    private URL href;
   }
 }

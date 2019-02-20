@@ -4,9 +4,9 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlText;
 import lombok.Builder;
+import lombok.NonNull;
 import lombok.Value;
 
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Instant;
 
@@ -27,9 +27,11 @@ public class RssItem {
   @JacksonXmlProperty(localName = "ipt:eml")
   private URL eml;
   @JacksonXmlProperty
+  @Builder.Default
   private Instant pubDate = Instant.now();
   @JacksonXmlProperty
-  private Guid guid = Guid.builder().build();
+  @NonNull
+  private Guid guid;
 
   @Builder
   static class Guid {
@@ -37,14 +39,7 @@ public class RssItem {
     @Builder.Default
     private boolean isPermaLink = false;
     @JacksonXmlText
+    @NonNull
     private URL url;
-
-    {
-      try {
-        url = new URL("http://ipt.iobis.org/training/resource?id=test-kurt2/v1.0");
-      } catch (MalformedURLException e) {
-        e.printStackTrace();
-      }
-    }
   }
 }

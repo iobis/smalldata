@@ -6,6 +6,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @JacksonXmlRootElement(localName = "rss")
 public class RssFeed {
@@ -26,11 +27,26 @@ public class RssFeed {
   private Channel channel = Channel.builder()
     .title("title")
     .link(new URL("http://localhost"))
-    .atomLink(Channel.AtomLink.builder().build())
+    .atomLink(Channel.AtomLink.builder()
+      .href(new URL("http://ipt.iobis.org/training/rss.do"))
+      .build())
     .description("some description")
     .itemList(List.of(
-      RssItem.builder().build(),
-      RssItem.builder().build()))
+      "http://ipt.iobis.org/training/resource/daily",
+      "http://ipt.iobis.org/training/resource?id=test-kurt2/v1.0")
+      .stream()
+      .map(url -> {
+        try {
+          return RssItem.builder()
+            .guid(RssItem.Guid.builder()
+              .url(new URL(url))
+              .build()).build();
+        } catch (MalformedURLException e) {
+          e.printStackTrace();
+          return null;
+        }
+      })
+      .collect(Collectors.toList()))
     .language("nl-BE")
     .build();
 
