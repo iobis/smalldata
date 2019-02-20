@@ -34,7 +34,7 @@ public class RssItem {
   private Guid guid;
 
   @Builder
-  static class Guid {
+  public static class Guid {
     @JacksonXmlProperty(isAttribute = true)
     @Builder.Default
     private boolean isPermaLink = false;

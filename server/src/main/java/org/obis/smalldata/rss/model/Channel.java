@@ -36,7 +36,7 @@ public class Channel {
 
   @Value
   @Builder
-  static class AtomLink {
+  public static class AtomLink {
     @JacksonXmlProperty(isAttribute = true)
     @Builder.Default
     private String rel = "self";
