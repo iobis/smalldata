@@ -7,6 +7,9 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.ser.ToXmlGenerator;
 import org.obis.smalldata.rss.model.RssFeed;
 
+import java.io.File;
+import java.io.IOException;
+
 public class RssGenerator {
 
   private XmlMapper xmlMapper;
@@ -33,5 +36,16 @@ public class RssGenerator {
       e.printStackTrace();
     }
     return xml;
+  }
+
+  public File writeRssAsFile(RssFeed rssFeed) {
+    var xmlFile = (File) null;
+    try {
+      xmlFile = File.createTempFile("smalldata", "xml");
+      xmlMapper.writerWithDefaultPrettyPrinter().writeValue(xmlFile, rssFeed);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    return xmlFile;
   }
 }
