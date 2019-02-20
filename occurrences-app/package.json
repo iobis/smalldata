@@ -19,14 +19,14 @@
   },
   "dependencies": {
     "@smalldata/dwca-lib": "1.0.0",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
+    "react": "16.7.0",
+    "react-dom": "16.7.0",
     "react-scripts": "2.1.3"
   },
   "devDependencies": {
     "cross-env": "5.2.0",
     "jest": "23.6.0",
-    "react-app-rewire-yarn-workspaces": "^1.0.3",
-    "react-app-rewired": "^2.0.3"
+    "react-app-rewire-yarn-workspaces": "1.0.3",
+    "react-app-rewired": "2.0.3"
   }
 }
