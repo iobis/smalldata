@@ -1,9 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button renders correctly 1`] = `
+exports[`Button renders correctly 1`] = `<button />`;
+
+exports[`Button renders correctly 2`] = `
 <button
   onClick={[Function]}
->
+/>
+`;
+
+exports[`Button renders correctly 3`] = `
+<button>
   click me
 </button>
 `;
