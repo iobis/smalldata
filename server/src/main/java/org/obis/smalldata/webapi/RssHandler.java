@@ -6,12 +6,15 @@ import io.vertx.core.eventbus.Message;
 import io.vertx.core.http.HttpHeaders;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
+import org.pmw.tinylog.Logger;
 
 public class RssHandler {
 
   static void fetch(RoutingContext context) {
-    context.request().getParam("term");
-    context.vertx().eventBus().send("", new JsonObject(),
+    var periodicity = context.request().getParam("periodicity");
+    Logger.info("periodicity: {}", periodicity);
+
+    context.vertx().eventBus().send("internal.rss", new JsonObject(),
       (Handler<AsyncResult<Message<String>>>) m -> {
         if (m.failed()) {
           context.fail(m.cause());
@@ -23,9 +26,6 @@ public class RssHandler {
             .putHeader(HttpHeaders.TRANSFER_ENCODING, "chunked")
             .sendFile(filename);
         }
-        context.response()
-          .putHeader("content-type", "application/json")
-          .end(new JsonObject().put("title", "Small Data Status").encode());
       });
   }
 }

@@ -14,11 +14,17 @@ import static java.util.Map.entry;
 
 class RouterConfig {
 
+  private final Consumer<Router> completionHandler;
   private final Map<String, OperationHandlers> handlers = Map.ofEntries(
-    entry("getStatus", new OperationHandlers(StatusHandler::status))
+    entry("getStatus", new OperationHandlers(StatusHandler::status)),
+    entry("getRss", new OperationHandlers(RssHandler::fetch))
+
   );
   //entry("fetchRss", new OperationHandlers(RssHandler::fetch, FailureHandler::fallback))
-  private final Consumer<Router> completionHandler;
+
+  RouterConfig(Consumer<Router> completionHandler) {
+    this.completionHandler = completionHandler;
+  }
 
   void invoke(OpenAPI3RouterFactory routerFactory) {
     handlers.forEach((operationId, opHandlers) -> {
@@ -30,10 +36,6 @@ class RouterConfig {
     router.get("/swagger/*").handler(StaticHandler.create("swaggerroot"));
     router.get("/*").handler(StaticHandler.create());
     completionHandler.accept(router);
-  }
-
-  RouterConfig(Consumer<Router> completionHandler) {
-    this.completionHandler = completionHandler;
   }
 
   @Value
