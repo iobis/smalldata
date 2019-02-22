@@ -12,7 +12,7 @@ public class RssHandler {
 
   static void fetch(RoutingContext context) {
     var periodicity = context.request().getParam("periodicity");
-    Logger.info("periodicity: {}", periodicity);
+    Logger.info("Getting RSS for periodicity: {}", periodicity);
 
     context.vertx().eventBus().send("internal.rss", new JsonObject(),
       (Handler<AsyncResult<Message<String>>>) m -> {

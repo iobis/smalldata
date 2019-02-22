@@ -15,18 +15,14 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.pmw.tinylog.Logger;
+import util.IoFile;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(VertxExtension.class)
-public class WebRssApiTest {
+public class WebRssComponentApiTest {
 
   private static final int HTTP_PORT = 8080;
   private static final JsonObject CONFIG = new JsonObject().put("http.port", HTTP_PORT);
@@ -37,7 +33,7 @@ public class WebRssApiTest {
       new WebApi(),
       new DeploymentOptions().setConfig(CONFIG),
       testContext.succeeding(id -> testContext.completeNow()));
-    vertx.deployVerticle(new MockRssHandler());
+    vertx.deployVerticle(new MockRssComponent());
   }
 
   @Test
@@ -50,28 +46,18 @@ public class WebRssApiTest {
       .send(result -> {
         if (result.succeeded()) {
           assertEquals(200, result.result().statusCode());
-          try {
-            var path = Paths.get(getClass().getClassLoader().getResource("rss/sample.xml").toURI());
-            var lines = Files.lines(path);
-            var xmlString = lines.collect(Collectors.joining("\n"));
-            lines.close();
-            var resultString = result.result().body();
-            assertEquals(resultString.replaceAll("\\n", ""),
-              xmlString.replaceAll("\\n", ""));
-          } catch (URISyntaxException e) {
-            e.printStackTrace();
-          } catch (IOException e) {
-            e.printStackTrace();
-          } finally {
-            testContext.completeNow();
-          }
-        } else {
-          testContext.failNow(result.cause());
+          var resultString = result.result().body();
+          IoFile.doWithFileContent("rss/sample.xml",
+            xmlString -> {
+              assertEquals(resultString.replaceAll("\\n", ""),
+                xmlString.replaceAll("\\n", ""));
+              testContext.completeNow();
+            });
         }
       });
   }
 
-  class MockRssHandler extends AbstractVerticle {
+  class MockRssComponent extends AbstractVerticle {
     @Override
     public void start(Future<Void> startFuture) throws Exception {
       vertx.eventBus().consumer("internal.rss", message -> {
