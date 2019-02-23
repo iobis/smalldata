@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss version="2.0" xmlns:ipt="http://ipt.gbif.org/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#">
+  <channel>
+    <title>title</title>
+    <link>http://localhost</link>
+    <description>some description</description>
+    <language>nl-BE</language>
+    <lastBuildDate>2019-02-22T17:18:56.127701Z</lastBuildDate>
+    <generator>SmallData r...</generator>
+    <atom:link rel="self" type="application/rss+xml" href="http://ipt.iobis.org/training/rss.do"/>
+    <item>
+      <pubDate>2019-02-22T17:18:56.127535Z</pubDate>
+      <guid isPermaLink="false">http://ipt.iobis.org/training/resource/daily</guid>
+    </item>
+    <item>
+      <pubDate>2019-02-22T17:18:56.127666Z</pubDate>
+      <guid isPermaLink="false">http://ipt.iobis.org/training/resource?id=test-kurt2/v1.0</guid>
+    </item>
+  </channel>
+</rss>
+

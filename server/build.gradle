@@ -1,6 +1,7 @@
 plugins {
   id 'java'
   id 'application'
+  id "io.franzbecker.gradle-lombok" version "2.1"
   id 'com.github.johnrengelman.shadow' version '4.0.4'
   id 'org.javamodularity.moduleplugin' version '1.4.0'
   id 'org.beryx.runtime' version '1.1.5'
@@ -14,6 +15,7 @@ repositories {
 
 ext {
   vertxVersion = '3.6.3'
+  jacksonVersion = '2.9.8'
   junitJupiterEngineVersion = '5.2.0'
   moduleName = 'obis.smalldata'
 }
@@ -40,9 +42,14 @@ dependencies {
   implementation "io.vertx:vertx-mongo-client:$vertxVersion"
   implementation "io.vertx:vertx-web-api-contract:$vertxVersion"
 
+  implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:$jacksonVersion"
+  implementation "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:$jacksonVersion"
+
   implementation "de.flapdoodle.embed:de.flapdoodle.embed.mongo:2.2.0"
   implementation "org.tinylog:tinylog:1.3.5"
   implementation "org.tinylog:slf4j-binding:1.3.5"
+
+  compileOnly "org.projectlombok:lombok:1.18.6"
 
   testImplementation "io.vertx:vertx-junit5:$vertxVersion"
   testImplementation "io.vertx:vertx-junit5:$vertxVersion"

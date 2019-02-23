@@ -33,7 +33,7 @@ public class EmbeddedDbWithPathTest {
 
   @BeforeAll
   public static void beforeAll(Vertx vertx, VertxTestContext testContext) {
-    File tmpDir = new File(System.getProperty("java.io.tmpdir") + File.separator + "obis-test");
+    var tmpDir = new File(System.getProperty("java.io.tmpdir") + File.separator + "obis-test");
     dbPath = new File(tmpDir.getAbsolutePath() + File.separator + "db-" + Generators.timeBasedGenerator().generate());
     vertx.deployVerticle(new EmbeddedDb(), new DeploymentOptions()
         .setConfig(new JsonObject()
