@@ -1,7 +1,7 @@
 import './App.css'
 import dwca from '@smalldata/dwca-lib'
 import logo from './logo.svg'
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 
 export default function App() {
   const [count, setCount] = useState(0)
