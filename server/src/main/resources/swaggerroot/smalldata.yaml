@@ -27,6 +27,25 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Error"
+  /api/rss/{periodicity}:
+    get:
+      summary: rss feed
+      operationId: getRss
+      parameters:
+        - name: periodicity
+          in: path
+          description: periodicity of the rss feed
+          required: false
+          schema:
+            type: string
+      tags:
+        - rss
+      responses:
+        200:
+          description: received rss
+          content:
+            application/xml+rss: {}
+
 components:
   schemas:
     Status:

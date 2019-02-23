@@ -3,7 +3,7 @@ package org.obis.smalldata.rss;
 import io.vertx.core.AbstractVerticle;
 import org.pmw.tinylog.Logger;
 
-public class Rss extends AbstractVerticle {
+public class RssComponent extends AbstractVerticle {
 
   @Override
   public void start() {
