@@ -10,6 +10,28 @@ export default function App() {
 
   return (
     <div className="App">
+      <nav className="navbar is-info" role="navigation" aria-label="main navigation">
+        <div className="navbar-brand">
+          <a className="navbar-item">
+            <p style={{ 'width': 112, 'font-size': 26, 'font-weight': 'bold' }}>OBIS</p>
+          </a>
+        </div>
+        <div className="navbar-menu">
+          <div className="navbar-start">
+            <a className="navbar-item">
+              INPUT DATA
+            </a>
+            <a className="navbar-item">
+              HELP
+            </a>
+          </div>
+          <div className="navbar-end">
+            <a className="navbar-item">
+              logout
+            </a>
+          </div>
+        </div>
+      </nav>
       <div>{count}</div>
       <dwca.Button onClick={decrementCount}>-</dwca.Button>
       <dwca.Button onClick={incrementCount}>+</dwca.Button>
