@@ -18,7 +18,7 @@ export default function App() {
       <nav className="navbar is-info" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
           <a className="navbar-item">
-            <p style={{ 'width': 112, 'font-size': 26, 'font-weight': 'bold' }}>OBIS</p>
+            <p style={{ 'width': 112, 'fontSize': 26, 'fontWeight': 'bold' }}>OBIS</p>
           </a>
         </div>
         <div className="navbar-menu">
