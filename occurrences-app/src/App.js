@@ -1,4 +1,5 @@
 import './App.css'
+import classNames from 'classnames'
 import React, { useState } from 'react'
 
 const INPUT_DATA_PAGE = 'InputDataPage'
@@ -22,12 +23,12 @@ export default function App() {
         </div>
         <div className="navbar-menu">
           <div className="navbar-start">
-            <a className="navbar-item" onClick={() => setPage(INPUT_DATA_PAGE)}>
+            <NavbarItem active={page === INPUT_DATA_PAGE} onClick={() => setPage(INPUT_DATA_PAGE)}>
               INPUT DATA
-            </a>
-            <a className="navbar-item" onClick={() => setPage(HELP_PAGE)}>
+            </NavbarItem>
+            <NavbarItem active={page === HELP_PAGE} onClick={() => setPage(HELP_PAGE)}>
               HELP
-            </a>
+            </NavbarItem>
           </div>
           <div className="navbar-end">
             <a className="navbar-item" onClick={() => console.log('TBD: logout clicked')}>
@@ -38,6 +39,15 @@ export default function App() {
       </nav>
       {pageComponent}
     </div>
+  )
+}
+
+function NavbarItem({ active, children, onClick }) {
+  const className = classNames('navbar-item', { 'is-active': active })
+  return (
+    <a className={className} onClick={onClick}>
+      {children}
+    </a>
   )
 }
 
