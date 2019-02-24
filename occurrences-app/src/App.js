@@ -1,5 +1,7 @@
 import './App.css'
 import classNames from 'classnames'
+import HelpPage from './pages/HelpPage'
+import InputDataPage from './pages/InputDataPage'
 import React, { useRef, useState } from 'react'
 import { useOnClickOutside } from './hooks/hooks'
 
@@ -68,12 +70,4 @@ function NavbarItem({ active, children, onClick }) {
       {children}
     </a>
   )
-}
-
-function InputDataPage() {
-  return <div><h3 className="title is-3">Input Data Page</h3></div>
-}
-
-function HelpPage() {
-  return <div><h3 className="title is-3">Help Page</h3></div>
 }
