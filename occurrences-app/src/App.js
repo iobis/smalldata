@@ -53,9 +53,9 @@ function NavbarItem({ active, children, onClick }) {
 }
 
 function InputDataPage() {
-  return <div>Input Data Page</div>
+  return <div><h3 className="title is-3">Input Data Page</h3></div>
 }
 
 function HelpPage() {
-  return <div>Help Page</div>
+  return <div><h3 className="title is-3">Help Page</h3></div>
 }
