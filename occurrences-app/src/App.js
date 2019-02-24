@@ -1,32 +1,49 @@
 import './App.css'
 import classNames from 'classnames'
-import React, { useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 
 const INPUT_DATA_PAGE = 'InputDataPage'
 const HELP_PAGE = 'HelpPage'
 
 export default function App() {
   const [page, setPage] = useState(INPUT_DATA_PAGE)
+  const [navbarMenuActive, setNavbarMenuActive] = useState(false)
+  const menuRef = useRef()
+
+  useOnClickOutside(menuRef, () => setNavbarMenuActive(false))
 
   let pageComponent
   if (page === INPUT_DATA_PAGE) pageComponent = <InputDataPage/>
   else if (page === HELP_PAGE) pageComponent = <HelpPage/>
   else pageComponent = <InputDataPage/>
 
+  const onPageChange = (page) => {
+    setNavbarMenuActive(false)
+    setPage(page)
+  }
+
   return (
     <div className="App">
-      <nav className="navbar is-info" role="navigation" aria-label="main navigation">
+      <nav className="navbar is-info" role="navigation" ref={menuRef} aria-label="main navigation">
         <div className="navbar-brand">
           <a className="navbar-item">
             <p style={{ 'width': 112, 'fontSize': 26, 'fontWeight': 'bold' }}>OBIS</p>
           </a>
+          <a
+            role="button"
+            className="navbar-burger"
+            onClick={() => setNavbarMenuActive(!navbarMenuActive)}>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
         </div>
-        <div className="navbar-menu">
+        <div className={classNames('navbar-menu', { 'is-active': navbarMenuActive })}>
           <div className="navbar-start">
-            <NavbarItem active={page === INPUT_DATA_PAGE} onClick={() => setPage(INPUT_DATA_PAGE)}>
+            <NavbarItem active={page === INPUT_DATA_PAGE} onClick={() => onPageChange(INPUT_DATA_PAGE)}>
               INPUT DATA
             </NavbarItem>
-            <NavbarItem active={page === HELP_PAGE} onClick={() => setPage(HELP_PAGE)}>
+            <NavbarItem active={page === HELP_PAGE} onClick={() => onPageChange(HELP_PAGE)}>
               HELP
             </NavbarItem>
           </div>
@@ -58,4 +75,19 @@ function InputDataPage() {
 
 function HelpPage() {
   return <div><h3 className="title is-3">Help Page</h3></div>
+}
+
+function useOnClickOutside(ref, handler) {
+  useEffect(() => {
+    const listener = event => {
+      if (!ref.current || ref.current.contains(event.target)) return
+      handler(event)
+    }
+    document.addEventListener('mousedown', listener)
+    document.addEventListener('touchstart', listener)
+    return () => {
+      document.removeEventListener('mousedown', listener)
+      document.removeEventListener('touchstart', listener)
+    }
+  }, [])
 }
