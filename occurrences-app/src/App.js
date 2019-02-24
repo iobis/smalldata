@@ -32,7 +32,7 @@ export default function App() {
           </div>
           <div className="navbar-end">
             <a className="navbar-item" onClick={() => console.log('TBD: logout clicked')}>
-              logout
+              <span className="icon"><i className="fas fa-user"></i></span>&nbsp;logout
             </a>
           </div>
         </div>
