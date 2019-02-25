@@ -32,7 +32,7 @@ class RouterConfig {
     });
 
     var router = routerFactory.getRouter();
-    router.get("/swagger/*").handler(StaticHandler.create("swaggerroot"));
+    router.get("/openapi/*").handler(StaticHandler.create("swaggerroot"));
     router.get("/*").handler(StaticHandler.create());
     completionHandler.accept(router);
   }
