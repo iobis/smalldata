@@ -52,6 +52,6 @@ public class RssComponentGeneratorTest {
 
     var actualRssXml = rssGenerator.writeRssAsString(rssFeed).replaceAll("\r\n", "\n");
 
-    IoFile.doWithFileContent("rss/rss.xml", expectedRssXml -> assertEquals("fail" + expectedRssXml, actualRssXml));
+    IoFile.doWithFileContent("rss/rss.xml", expectedRssXml -> assertEquals(expectedRssXml, actualRssXml));
   }
 }
