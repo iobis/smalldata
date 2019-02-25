@@ -20,10 +20,6 @@ public class RssComponentGeneratorTest {
 
   private RssGenerator rssGenerator = new RssGenerator(true);
 
-  @BeforeEach
-  public void beforeEach() {
-  }
-
   @Test
   @DisplayName("Basic rss: expect same content")
   public void generateRss() throws MalformedURLException {
