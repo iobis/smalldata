@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar renders correctly 1`] = `
+<nav
+  aria-label="main navigation"
+  className="navbar is-info"
+  role="navigation"
+>
+  <div
+    className="navbar-brand"
+  >
+    <a
+      className="navbar-item"
+    >
+      <p
+        style={
+          Object {
+            "fontSize": 26,
+            "fontWeight": "bold",
+            "width": 112,
+          }
+        }
+      >
+        OBIS
+      </p>
+    </a>
+    <a
+      className="navbar-burger"
+      onClick={[Function]}
+      role="button"
+    >
+      <span
+        aria-hidden="true"
+      />
+      <span
+        aria-hidden="true"
+      />
+      <span
+        aria-hidden="true"
+      />
+    </a>
+  </div>
+  <div
+    className="navbar-menu"
+  >
+    <div
+      className="navbar-start"
+    >
+      <a
+        className="navbar-item is-active"
+        onClick={[Function]}
+      >
+        INPUT DATA
+      </a>
+      <a
+        className="navbar-item"
+        onClick={[Function]}
+      >
+        HELP
+      </a>
+    </div>
+    <div
+      className="navbar-end"
+    >
+      <a
+        className="navbar-item"
+        onClick={[Function]}
+      >
+        <span
+          className="icon"
+          style={
+            Object {
+              "marginRight": 6,
+            }
+          }
+        >
+          <i
+            className="fas fa-lg fa-user"
+          />
+        </span>
+        logout
+      </a>
+    </div>
+  </div>
+</nav>
+`;
+
+exports[`Navbar renders correctly 2`] = `
+<nav
+  aria-label="main navigation"
+  className="navbar is-info"
+  role="navigation"
+>
+  <div
+    className="navbar-brand"
+  >
+    <a
+      className="navbar-item"
+    >
+      <p
+        style={
+          Object {
+            "fontSize": 26,
+            "fontWeight": "bold",
+            "width": 112,
+          }
+        }
+      >
+        OBIS
+      </p>
+    </a>
+    <a
+      className="navbar-burger"
+      onClick={[Function]}
+      role="button"
+    >
+      <span
+        aria-hidden="true"
+      />
+      <span
+        aria-hidden="true"
+      />
+      <span
+        aria-hidden="true"
+      />
+    </a>
+  </div>
+  <div
+    className="navbar-menu"
+  >
+    <div
+      className="navbar-start"
+    >
+      <a
+        className="navbar-item"
+        onClick={[Function]}
+      >
+        INPUT DATA
+      </a>
+      <a
+        className="navbar-item is-active"
+        onClick={[Function]}
+      >
+        HELP
+      </a>
+    </div>
+    <div
+      className="navbar-end"
+    >
+      <a
+        className="navbar-item"
+        onClick={[Function]}
+      >
+        <span
+          className="icon"
+          style={
+            Object {
+              "marginRight": 6,
+            }
+          }
+        >
+          <i
+            className="fas fa-lg fa-user"
+          />
+        </span>
+        logout
+      </a>
+    </div>
+  </div>
+</nav>
+`;

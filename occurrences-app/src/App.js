@@ -1,31 +1,21 @@
 import './App.css'
-import dwca from '@smalldata/dwca-lib'
-import logo from './logo.svg'
-import React, {useState} from 'react'
+import HelpPage from './pages/HelpPage'
+import InputDataPage from './pages/InputDataPage'
+import Navbar from './layout/Navbar'
+import React, { useState } from 'react'
+import { INPUT_DATA_PAGE, HELP_PAGE } from './pages'
 
 export default function App() {
-  const [count, setCount] = useState(0)
-  const incrementCount = () => setCount(count + 1)
-  const decrementCount = () => setCount(count - 1)
+  const [activePage, setActivePage] = useState(INPUT_DATA_PAGE)
+
+  const activePageComponent = activePage === HELP_PAGE
+    ? <HelpPage/>
+    : <InputDataPage/>
 
   return (
     <div className="App">
-      <div>{count}</div>
-      <dwca.Button onClick={decrementCount}>-</dwca.Button>
-      <dwca.Button onClick={incrementCount}>+</dwca.Button>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo"/>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
+      <Navbar activePage={activePage} onPageChange={setActivePage}/>
+      {activePageComponent}
     </div>
   )
 }
