@@ -45,6 +45,28 @@ paths:
           description: received rss
           content:
             application/xml+rss: {}
+  /api/occurences:
+    get:
+      summary: post new data to small data occurences
+      operationId: postOccurences
+      requestBody:
+        description: array of occurences data
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: String
+                  example: "whatever"
+      tags:
+        - occurences
+      responses:
+        200:
+          description: new occurences data created and stored
+          content:
+            application/json: {}
 
 components:
   schemas:
