@@ -45,21 +45,16 @@ paths:
           description: received rss
           content:
             application/xml+rss: {}
-  /api/occurences:
-    get:
+  /api/occurence:
+    post:
       summary: post new data to small data occurences
-      operationId: postOccurences
+      operationId: postOccurence
       requestBody:
-        description: array of occurences data
         required: true
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                title:
-                  type: String
-                  example: "whatever"
+              $ref: "#/components/schemas/Occurence"
       tags:
         - occurences
       responses:
@@ -67,6 +62,8 @@ paths:
           description: new occurences data created and stored
           content:
             application/json: {}
+        405:
+          description: invalid input
 
 components:
   schemas:
@@ -80,6 +77,51 @@ components:
           type: String
           enum: ['OK', 'error']
           example: 'OK'
+    GeoData:
+      type: object
+      required:
+        - decimalLongitude
+        - decimalLatitude
+      properties:
+        decimalLongitude:
+          type: number
+          format: double
+          minimum: -180
+          maximum: 180
+        decimalLatitude:
+          type: number
+          format: double
+          minimum: -90
+          maximum: 90
+    Occurence:
+      type: object
+      required:
+        - geodata
+        - occurenceID
+        - eventDate
+        - scientificName
+        - scientificNameID
+        - occurenceStatus
+        - basisOfRecord
+      properties:
+        geodata:
+          $ref: "#/components/schemas/GeoData"
+        occurenceID:
+          type: string
+        eventDate:
+          type: string
+          format: date-time
+        scientificName:
+          type: string
+        scientificNameID:
+          type: string
+        occurenceStatus:
+          type: string
+          enum: ['absent', 'present']
+        basisOfRecord:
+          type: string
+          enum: ['PreservedSpecimen', 'FossilSpecimen', 'LivingSpecimen', 'HumanObservation', 'MachineObservation']
+      additionalProperties: false
     Error:
       type: object
       required:

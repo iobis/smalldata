@@ -9,7 +9,7 @@ import org.pmw.tinylog.Logger;
 public class OccurenceHandler {
 
   static void post(RoutingContext context) {
-    Logger.info(context.response());
+    Logger.info("context: {}", context.request());
     context.response()
       .putHeader(HttpHeaders.CONTENT_TYPE, "application/json")
       //.putHeader(HttpHeaders.TRANSFER_ENCODING, "chunked")
