@@ -16,9 +16,7 @@ public class IoFile {
       var xmlExpected = lines.collect(Collectors.joining("\n"));
       lines.close();
       stringConsumer.accept(xmlExpected);
-    } catch (IOException e) {
-      e.printStackTrace();
-    } catch (URISyntaxException e) {
+    } catch (IOException | URISyntaxException e) {
       e.printStackTrace();
     }
   }
