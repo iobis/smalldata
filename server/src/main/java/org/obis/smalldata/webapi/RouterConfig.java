@@ -10,17 +10,13 @@ import lombok.Value;
 import java.util.Map;
 import java.util.function.Consumer;
 
-import static java.util.Map.entry;
-
 class RouterConfig {
 
   private final Consumer<Router> completionHandler;
-  private final Map<String, OperationHandlers> handlers = Map.ofEntries(
-    entry("getStatus", new OperationHandlers(StatusHandler::status)),
-    entry("getRss", new OperationHandlers(RssHandler::fetch))
-
+  private final Map<String, OperationHandlers> handlers = Map.of(
+    "getStatus", new OperationHandlers(StatusHandler::status),
+    "getRss", new OperationHandlers(RssHandler::fetch)
   );
-  //entry("fetchRss", new OperationHandlers(RssHandler::fetch, FailureHandler::fallback))
 
   RouterConfig(Consumer<Router> completionHandler) {
     this.completionHandler = completionHandler;
