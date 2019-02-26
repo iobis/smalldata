@@ -85,6 +85,19 @@ components:
         eventDate:
           type: string
           format: date-time
+        verbatimEventDate:
+          type: string
+        fieldNumber:
+          type: string
+    DWC.Identification:
+      type: object
+      properties:
+        identificationQualifier:
+          type: string
+        identificationRemarks:
+          type: string
+        identifiedBy:
+          type: string
     DWC.Location:
       type: object
       required:
@@ -101,6 +114,51 @@ components:
           format: double
           minimum: -90
           maximum: 90
+        verbatimCoordinates:
+          type: string
+        coordinateUncertaintyInMeters:
+          type: number
+          format: double
+          minimum: 0
+          exclusiveMinimum: true
+        footprintWKT:
+          type: string
+        locality:
+          type: string
+        minimumDepthInMeters:
+          type: number
+          format: float
+          minimum: 0
+        maximumDepthInMeters:
+          type: number
+          format: float
+          minimum: 0
+        verbatimDepth:
+          type: string
+    EMOF.MeasurementOrFact:
+      type: object
+      required:
+        - measurementType
+        - measurementValue
+      properties:
+        measurementType:
+          type: string
+        measurementTypeID:
+          type: string
+        measurementValue:
+          type: string
+        measurementValueID:
+          type: string
+        measurementAccuracy:
+          type: string
+        measurementUnit:
+          type: string
+        measurementUnitID:
+          type: string
+        measurementMethod:
+          type: string
+        measurementRemarks:
+          type: string
     DWC.Occurence:
       type: object
       required:
@@ -111,6 +169,12 @@ components:
         occurenceStatus:
           type: string
           enum: ['absent', 'present']
+        occurenceRemarks:
+          type: string
+        catalogNumber:
+          type: string
+        recordedBy:
+          type: string
     DWC.Record:
       type: object
       required:
@@ -124,6 +188,10 @@ components:
           items:
             type: string
             format: uri
+        institutionCode:
+          type: string
+        collectionCode:
+          type: string
     DWC.Taxon:
       type: object
       required:
@@ -152,6 +220,22 @@ components:
           $ref: "#/components/schemas/DWC.Event"
         record:
           $ref: "#/components/schemas/DWC.Record"
+        identification:
+          $ref: "#/components/schemas/DWC.Identification"
+        measurementOrFact:
+          $ref: "#/components/schemas/EMOF.MeasurementOrFact"
+        custom:
+          type: array
+          items:
+            type: object
+            required:
+              - term
+              - value
+            properties:
+              term:
+                type: string
+              value:
+                type: string
       additionalProperties: false
     Error:
       type: object
