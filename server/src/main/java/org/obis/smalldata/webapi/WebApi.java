@@ -16,39 +16,21 @@ import java.util.function.Consumer;
 
 public class WebApi extends AbstractVerticle {
 
-  private Optional<String> openApiFile() {
-    try {
-      URL source = WebApi.class.getResource("/swaggerroot/smalldata.yaml");
-      File dest = Files.createTempFile("smalldata", ".yaml").toFile();
-      FileUtils.copyURLToFile(source, dest);
-      return Optional.of(dest.getAbsolutePath());
-    } catch (IOException e) {
-      e.printStackTrace();
-      return Optional.empty();
-    }
-  }
-
   @Override
   public void start(Future<Void> startFuture) {
     Logger.info("config() -> {}", config().getInteger("http.port", 8000));
     Logger.info("getenv() -> {}", System.getenv("HTTP_PORT"));
     var port = config().getInteger("http.port", 8008);
 
-    if (openApiFile().isPresent()) {
-      OpenAPI3RouterFactory.create(vertx, openApiFile().get(),
-        ar -> {
-          if (ar.succeeded()) {
-            Logger.info("started OpenAPI: {}", ar.succeeded());
-            new RouterConfig(startServer(startFuture, port)).invoke(ar.result());
-            vertx.fileSystem().delete(openApiFile().get(),
-              h -> Logger.info("deleted temp file? {}", h.succeeded()));
-          } else {
-            Logger.info("failed to start api: {}", ar.cause());
-          }
-        });
-    } else {
-      Logger.error("No API description... sorry, no use for me to run!");
-    }
+    OpenAPI3RouterFactory.create(vertx, "swaggerroot/smalldata.yaml", //openApiFile().get(),
+      ar -> {
+        if (ar.succeeded()) {
+          Logger.info("started OpenAPI: {}", ar.succeeded());
+          new RouterConfig(startServer(startFuture, port)).invoke(ar.result());
+        } else {
+          Logger.info("failed to start api: {}", ar.cause());
+        }
+      });
   }
 
   Consumer<Router> startServer(Future<Void> startFuture, int port) {

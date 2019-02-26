@@ -119,6 +119,11 @@ components:
         basisOfRecord:
           type: string
           enum: ['PreservedSpecimen', 'FossilSpecimen', 'LivingSpecimen', 'HumanObservation', 'MachineObservation']
+        references:
+          type: array
+          items:
+            type: string
+            format: uri
     DWC.Taxon:
       type: object
       required:
