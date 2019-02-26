@@ -1,25 +1,22 @@
 import classNames from 'classnames'
 import React, { useRef, useState } from 'react'
 import { useOnClickOutside } from '../hooks/hooks'
-import { INPUT_DATA_PAGE, HELP_PAGE } from '../pages'
+import { Link, NavLink } from 'react-router-dom'
 
-export default function Navbar({ activePage, onPageChange }) {
+export default function Navbar() {
   const [navbarMenuActive, setNavbarMenuActive] = useState(false)
   const menuRef = useRef()
 
-  const onPageItemClick = (page) => {
-    setNavbarMenuActive(false)
-    onPageChange(page)
-  }
+  const onNavbarItemClick = () => setNavbarMenuActive(false)
 
   useOnClickOutside(menuRef, () => setNavbarMenuActive(false))
 
   return (
     <nav className="navbar is-info" role="navigation" ref={menuRef} aria-label="main navigation">
       <div className="navbar-brand">
-        <a className="navbar-item">
+        <Link to="/input-data" className="navbar-item">
           <p style={{ 'width': 112, 'fontSize': 26, 'fontWeight': 'bold' }}>OBIS</p>
-        </a>
+        </Link>
         <a
           role="button"
           className="navbar-burger"
@@ -31,10 +28,10 @@ export default function Navbar({ activePage, onPageChange }) {
       </div>
       <div className={classNames('navbar-menu', { 'is-active': navbarMenuActive })}>
         <div className="navbar-start">
-          <NavbarItem active={activePage === INPUT_DATA_PAGE} onClick={() => onPageItemClick(INPUT_DATA_PAGE)}>
+          <NavbarItem onClick={onNavbarItemClick} to="/input-data">
             INPUT DATA
           </NavbarItem>
-          <NavbarItem active={activePage === HELP_PAGE} onClick={() => onPageItemClick(HELP_PAGE)}>
+          <NavbarItem onClick={onNavbarItemClick} to="/help">
             HELP
           </NavbarItem>
         </div>
@@ -49,11 +46,8 @@ export default function Navbar({ activePage, onPageChange }) {
   )
 }
 
-function NavbarItem({ active, children, onClick }) {
-  const className = classNames('navbar-item', { 'is-active': active })
-  return (
-    <a className={className} onClick={onClick}>
-      {children}
-    </a>
-  )
-}
+const NavbarItem = ({ children, onClick, to }) => (
+  <NavLink activeClassName="is-active" className="navbar-item" to={to} onClick={onClick}>
+    {children}
+  </NavLink>
+)
