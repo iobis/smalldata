@@ -4,6 +4,6 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "test": "echo Nothig to test yet"
+    "test:ci": "echo Nothig to test yet"
   }
 }
