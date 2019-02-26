@@ -6,6 +6,9 @@ import io.vertx.ext.web.Router;
 import io.vertx.ext.web.api.contract.openapi3.OpenAPI3RouterFactory;
 import org.pmw.tinylog.Logger;
 
+import java.io.File;
+import java.net.URISyntaxException;
+import java.nio.file.Paths;
 import java.util.function.Consumer;
 
 public class WebApi extends AbstractVerticle {
@@ -16,14 +19,16 @@ public class WebApi extends AbstractVerticle {
     Logger.info("getenv() -> {}", System.getenv("HTTP_PORT"));
     var port = config().getInteger("http.port", 8008);
 
-    OpenAPI3RouterFactory.create(vertx, "src/main/resources/swaggerroot/smalldata.yaml", ar -> {
-      if (ar.succeeded()) {
-        Logger.info("started OpenAPI: {}", ar.succeeded());
-        new RouterConfig(startServer(startFuture, port)).invoke(ar.result());
-      } else {
-        Logger.info("failed to start api: {}", ar.cause());
-      }
-    });
+    OpenAPI3RouterFactory.create(vertx,
+      new File(getClass().getResource("/swaggerroot/smalldata.yaml").getPath()).getAbsolutePath(),
+      ar -> {
+        if (ar.succeeded()) {
+          Logger.info("started OpenAPI: {}", ar.succeeded());
+          new RouterConfig(startServer(startFuture, port)).invoke(ar.result());
+        } else {
+          Logger.info("failed to start api: {}", ar.cause());
+        }
+      });
   }
 
   Consumer<Router> startServer(Future<Void> startFuture, int port) {

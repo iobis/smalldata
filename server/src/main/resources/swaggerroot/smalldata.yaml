@@ -77,7 +77,15 @@ components:
           type: String
           enum: ['OK', 'error']
           example: 'OK'
-    GeoData:
+    DWC.Event:
+      type: object
+      required:
+        - eventDate
+      properties:
+        eventDate:
+          type: string
+          format: date-time
+    DWC.Location:
       type: object
       required:
         - decimalLongitude
@@ -93,34 +101,52 @@ components:
           format: double
           minimum: -90
           maximum: 90
-    Occurence:
+    DWC.Occurence:
       type: object
       required:
-        - geodata
         - occurenceID
-        - eventDate
-        - scientificName
-        - scientificNameID
-        - occurenceStatus
-        - basisOfRecord
       properties:
-        geodata:
-          $ref: "#/components/schemas/GeoData"
         occurenceID:
-          type: string
-        eventDate:
-          type: string
-          format: date-time
-        scientificName:
-          type: string
-        scientificNameID:
           type: string
         occurenceStatus:
           type: string
           enum: ['absent', 'present']
+    DWC.Record:
+      type: object
+      required:
+        - basisOfRecord
+      properties:
         basisOfRecord:
           type: string
           enum: ['PreservedSpecimen', 'FossilSpecimen', 'LivingSpecimen', 'HumanObservation', 'MachineObservation']
+    DWC.Taxon:
+      type: object
+      required:
+        - scientificNameID
+      properties:
+        scientificNameID:
+          type: string
+        scientificName:
+          type: string
+    Occurence:
+      type: object
+      required:
+        - location
+        - taxon
+        - occurence
+        - event
+        - record
+      properties:
+        location:
+          $ref: "#/components/schemas/DWC.Location"
+        taxon:
+          $ref: "#/components/schemas/DWC.Taxon"
+        occurence:
+          $ref: "#/components/schemas/DWC.Occurence"
+        event:
+          $ref: "#/components/schemas/DWC.Event"
+        record:
+          $ref: "#/components/schemas/DWC.Record"
       additionalProperties: false
     Error:
       type: object
