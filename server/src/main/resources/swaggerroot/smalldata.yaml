@@ -35,9 +35,11 @@ paths:
         - name: periodicity
           in: path
           description: periodicity of the rss feed
-          required: false
+          required: true
           schema:
             type: string
+            enum: ['hourly', 'daily', 'weekly', 'monthly', 'yearly', 'all']
+            example: 'weekly'
       tags:
         - rss
       responses:
@@ -71,10 +73,10 @@ components:
       type: object
       properties:
         title:
-          type: String
+          type: string
           example: 'swaggered application'
         status:
-          type: String
+          type: string
           enum: ['OK', 'error']
           example: 'OK'
     DWC.Event:
@@ -264,7 +266,9 @@ components:
         identification:
           $ref: "#/components/schemas/DWC.Identification"
         measurementOrFact:
-          $ref: "#/components/schemas/EMOF.MeasurementOrFact"
+          type: array
+          items:
+            $ref: "#/components/schemas/EMOF.MeasurementOrFact"
         custom:
           type: array
           items:
