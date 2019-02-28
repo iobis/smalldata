@@ -3,15 +3,15 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "run-s build:css build:js",
-    "build:css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
-    "build:js": "react-app-rewired build",
+    "build": "run-s css:build js:build",
+    "css:build": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
+    "css:watch": "npm run css:build && node-sass-chokidar --include-path ./src --include-path ../node_modules src/ -o src/ --watch --recursive"
     "eject": "react-app-rewired eject",
-    "start": "run-p watch:css start:js",
-    "start:js": "react-app-rewired start",
+    "js:build": "react-app-rewired build",
+    "js:start": "react-app-rewired start",
+    "start": "run-p css:watch js:start",
     "test": "react-app-rewired test --env=jsdom",
     "test:ci": "cross-env CI=true react-app-rewired test --env=jsdom",
-    "watch:css": "npm run build:css && node-sass-chokidar --include-path ./src --include-path ../node_modules src/ -o src/ --watch --recursive"
   },
   "browserslist": [
     ">0.2%",
