@@ -52,3 +52,6 @@ yarn-error.log*
 
 # project files
 server/src/main/resources/webroot
+
+# auto-generated files
+occurrences-app/src/index.css
