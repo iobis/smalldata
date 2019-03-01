@@ -3,8 +3,10 @@ import React, { useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link, NavLink } from 'react-router-dom'
 import { useOnClickOutside } from '../hooks/hooks'
+import { useTranslation } from 'react-i18next'
 
 export default function Navbar() {
+  const { t } = useTranslation()
   const [navbarMenuActive, setNavbarMenuActive] = useState(false)
   const menuRef = useRef()
 
@@ -30,16 +32,16 @@ export default function Navbar() {
       <div className={classNames('navbar-menu', { 'is-active': navbarMenuActive })}>
         <div className="navbar-start">
           <NavbarItem onClick={onNavbarItemClick} to="/input-data">
-            INPUT DATA
+            {t('navbar.inputData')}
           </NavbarItem>
           <NavbarItem onClick={onNavbarItemClick} to="/help">
-            HELP
+            {t('navbar.help')}
           </NavbarItem>
         </div>
         <div className="navbar-end">
           <a className="navbar-item" onClick={() => console.log('TBD: logout clicked')}>
             <span className="icon" style={{ 'marginRight': 6 }}><FontAwesomeIcon icon="user"/></span>
-            logout
+            {t('navbar.logout')}
           </a>
         </div>
       </div>
