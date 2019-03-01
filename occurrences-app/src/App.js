@@ -1,4 +1,3 @@
-import './App.css'
 import HelpPage from './pages/HelpPage'
 import InputDataPage from './pages/InputDataPage'
 import Navbar from './layout/Navbar'
