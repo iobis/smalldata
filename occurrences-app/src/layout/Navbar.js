@@ -1,7 +1,8 @@
 import classNames from 'classnames'
 import React, { useRef, useState } from 'react'
-import { useOnClickOutside } from '../hooks/hooks'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link, NavLink } from 'react-router-dom'
+import { useOnClickOutside } from '../hooks/hooks'
 
 export default function Navbar() {
   const [navbarMenuActive, setNavbarMenuActive] = useState(false)
@@ -37,7 +38,7 @@ export default function Navbar() {
         </div>
         <div className="navbar-end">
           <a className="navbar-item" onClick={() => console.log('TBD: logout clicked')}>
-            <span className="icon" style={{ 'marginRight': 6 }}><i className="fas fa-lg fa-user"></i></span>
+            <span className="icon" style={{ 'marginRight': 6 }}><FontAwesomeIcon icon="user"/></span>
             logout
           </a>
         </div>

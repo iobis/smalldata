@@ -23,6 +23,9 @@
     "extends": "react-app"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "1.2.15",
+    "@fortawesome/free-solid-svg-icons": "5.7.2",
+    "@fortawesome/react-fontawesome": "0.1.4",
     "@smalldata/dwca-lib": "1.0.0",
     "bulma": "0.7.4",
     "classnames": "2.2.6",

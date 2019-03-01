@@ -3,6 +3,10 @@ import InputDataPage from './pages/InputDataPage'
 import Navbar from './layout/Navbar'
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
+
+library.add(faUser)
 
 export default function App() {
   return (

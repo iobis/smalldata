@@ -81,7 +81,8 @@ exports[`Navbar renders correctly for route / 1`] = `
           }
         >
           <i
-            className="fas fa-lg fa-user"
+            className="fa"
+            icon="user"
           />
         </span>
         logout
@@ -173,7 +174,8 @@ exports[`Navbar renders correctly for route /help 1`] = `
           }
         >
           <i
-            className="fas fa-lg fa-user"
+            className="fa"
+            icon="user"
           />
         </span>
         logout
@@ -265,7 +267,8 @@ exports[`Navbar renders correctly for route /input-data 1`] = `
           }
         >
           <i
-            className="fas fa-lg fa-user"
+            className="fa"
+            icon="user"
           />
         </span>
         logout
