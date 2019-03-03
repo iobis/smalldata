@@ -9,15 +9,13 @@ export default function Navbar() {
   const { t } = useTranslation()
   const [navbarMenuActive, setNavbarMenuActive] = useState(false)
   const menuRef = useRef()
-
-  const onNavbarItemClick = () => setNavbarMenuActive(false)
-
-  useOnClickOutside(menuRef, () => setNavbarMenuActive(false))
+  const hideNavbarMenu = () => setNavbarMenuActive(false)
+  useOnClickOutside(menuRef, hideNavbarMenu)
 
   return (
     <nav className="navbar is-info" role="navigation" ref={menuRef} aria-label="main navigation">
       <div className="navbar-brand">
-        <Link to="/input-data" className="navbar-item">
+        <Link onClick={hideNavbarMenu} to="/input-data" className="navbar-item">
           <p style={{ 'width': 112, 'fontSize': 26, 'fontWeight': 'bold' }}>OBIS</p>
         </Link>
         <a
@@ -31,10 +29,10 @@ export default function Navbar() {
       </div>
       <div className={classNames('navbar-menu', { 'is-active': navbarMenuActive })}>
         <div className="navbar-start">
-          <NavbarItem onClick={onNavbarItemClick} to="/input-data">
+          <NavbarItem onClick={hideNavbarMenu} to="/input-data">
             {t('navbar.inputData')}
           </NavbarItem>
-          <NavbarItem onClick={onNavbarItemClick} to="/help">
+          <NavbarItem onClick={hideNavbarMenu} to="/help">
             {t('navbar.help')}
           </NavbarItem>
         </div>
