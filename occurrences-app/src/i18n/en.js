@@ -1,16 +1,24 @@
 export default {
   translation: {
-    'common.copy':                    'Copy',
-    'common.edit':                    'Edit',
-    'inputData.copyPreviousHeader':   'copy from previous entries',
-    'inputData.inputNew':             'INPUT NEW OCCURRENCE',
-    'inputData.or':                   'OR',
-    'inputData.table.dataset':        'Dataset',
-    'inputData.table.dateAdded':      'Date Added',
-    'inputData.table.occurrenceDate': 'Occurrence Date',
-    'inputData.table.scientificName': 'Scientific Name',
-    'navbar.help':                    'HELP',
-    'navbar.inputData':               'INPUT DATA',
-    'navbar.logout':                  'logout'
+    common:        {
+      copy: 'Copy',
+      edit: 'Edit'
+    },
+    inputDataPage: {
+      inputNewOccurrence: 'INPUT NEW OCCURRENCE',
+      or:                 'OR',
+      copyPreviousHeader: 'copy from previous entries',
+      table:              {
+        dataset:        'Dataset',
+        dateAdded:      'Date Added',
+        occurrenceDate: 'Occurrence Date',
+        scientificName: 'Scientific Name'
+      }
+    },
+    navbar:        {
+      help:      'HELP',
+      inputData: 'INPUT DATA',
+      logout:    'logout'
+    }
   }
 }

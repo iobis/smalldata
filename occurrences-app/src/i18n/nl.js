@@ -1,7 +1,9 @@
 export default {
   translation: {
-    'navbar.inputData': 'INVOERGEGEVENS',
-    'navbar.help':      'HELPEN',
-    'navbar.logout':    'Uitloggen'
+    navbar: {
+      help:      'HELPEN',
+      inputData: 'INVOERGEGEVENS',
+      logout:    'Uitloggen'
+    }
   }
 }

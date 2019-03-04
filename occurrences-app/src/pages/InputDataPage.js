@@ -11,21 +11,21 @@ export default function InputDataPage() {
     <>
       <section className="section">
         <div className="container is-fluid has-text-centered">
-          <a className="button is-info">{t('inputData.inputNew')}</a>
+          <a className="button is-info">{t('inputDataPage.inputNewOccurrence')}</a>
         </div>
       </section>
-      <Divider>{t('inputData.or')}</Divider>
+      <Divider>{t('inputDataPage.or')}</Divider>
       <section className="section">
         <div className="container is-fluid has-text-centered">
-          <h4 className="title is-4">{t('inputData.copyPreviousHeader')}</h4>
+          <h4 className="title is-4">{t('inputDataPage.copyPreviousHeader')}</h4>
           <table className="table is-striped is-hoverable is-fullwidth">
             <thead>
             <tr>
               <th/>
-              <th>{t('inputData.table.dateAdded')}</th>
-              <th>{t('inputData.table.scientificName')}</th>
-              <th>{t('inputData.table.dataset')}</th>
-              <th>{t('inputData.table.occurrenceDate')}</th>
+              <th>{t('inputDataPage.table.dateAdded')}</th>
+              <th>{t('inputDataPage.table.scientificName')}</th>
+              <th>{t('inputDataPage.table.dataset')}</th>
+              <th>{t('inputDataPage.table.occurrenceDate')}</th>
               <th/>
             </tr>
             </thead>
