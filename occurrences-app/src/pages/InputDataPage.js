@@ -17,7 +17,7 @@ export default function InputDataPage() {
       <Divider>{t('inputData.or')}</Divider>
       <section className="section">
         <div className="container is-fluid has-text-centered">
-          <h3>{t('inputData.copyPreviousHeader')}</h3>
+          <h4 className="title is-4">{t('inputData.copyPreviousHeader')}</h4>
           <table className="table is-striped is-hoverable is-fullwidth">
             <thead>
             <tr>
