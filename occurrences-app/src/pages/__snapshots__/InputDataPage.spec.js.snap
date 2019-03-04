@@ -11,7 +11,7 @@ Array [
       <a
         className="button is-info"
       >
-        inputData.inputNew
+        inputDataPage.inputNewOccurrence
       </a>
     </div>
   </section>,
@@ -19,7 +19,7 @@ Array [
     className="divider"
   >
     <span>
-      inputData.or
+      inputDataPage.or
     </span>
   </div>,
   <section
@@ -31,7 +31,7 @@ Array [
       <h4
         className="title is-4"
       >
-        inputData.copyPreviousHeader
+        inputDataPage.copyPreviousHeader
       </h4>
       <table
         className="table is-striped is-hoverable is-fullwidth"
@@ -40,16 +40,16 @@ Array [
           <tr>
             <th />
             <th>
-              inputData.table.dateAdded
+              inputDataPage.table.dateAdded
             </th>
             <th>
-              inputData.table.scientificName
+              inputDataPage.table.scientificName
             </th>
             <th>
-              inputData.table.dataset
+              inputDataPage.table.dataset
             </th>
             <th>
-              inputData.table.occurrenceDate
+              inputDataPage.table.occurrenceDate
             </th>
             <th />
           </tr>
