@@ -5,7 +5,7 @@
   "scripts": {
     "build": "run-s css:build js:build",
     "css:build": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
-    "css:watch": "npm run css:build && node-sass-chokidar --include-path ./src --include-path ../node_modules src/ -o src/ --watch --recursive",
+    "css:watch": "npm run css:build && node-sass-chokidar src/ -o src/ --watch --recursive",
     "eject": "react-app-rewired eject",
     "js:build": "react-app-rewired build",
     "js:start": "react-app-rewired start",
