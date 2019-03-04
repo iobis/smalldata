@@ -1,9 +1,11 @@
 import React from 'react'
+import { getOccurrenceMock } from '../clients/server'
 import Divider from '../atom/Divider'
 import { useTranslation } from 'react-i18next'
 
 export default function InputDataPage() {
   const { t } = useTranslation()
+  const occurrences = getOccurrenceMock()
 
   return (
     <>
@@ -19,35 +21,39 @@ export default function InputDataPage() {
           <table className="table is-striped is-hoverable is-fullwidth">
             <thead>
             <tr>
-              <th></th>
+              <th/>
               <th>{t('inputData.table.dateAdded')}</th>
               <th>{t('inputData.table.scientificName')}</th>
               <th>{t('inputData.table.dataset')}</th>
               <th>{t('inputData.table.occurrenceDate')}</th>
-              <th></th>
+              <th/>
             </tr>
             </thead>
             <tbody>
-            <tr>
-              <td><a className="button is-info">{t('common.edit')}</a></td>
-              <td>01/12/2011</td>
-              <td>Abra Alba</td>
-              <td>NPPSD Short-tailed Albatross Sightings</td>
-              <td>09/12/2001</td>
-              <td><a className="button is-info">{t('common.copy')}</a></td>
-            </tr>
-            <tr>
-              <td><a className="button is-info">{t('common.edit')}</a></td>
-              <td>01/12/2011</td>
-              <td>Abra Alba</td>
-              <td>NPPSD Short-tailed Albatross Sightings</td>
-              <td>09/12/2001</td>
-              <td><a className="button is-info">{t('common.copy')}</a></td>
-            </tr>
+            {occurrences.map(occurrence => <OccurrenceRow key={occurrence.id} {...occurrence}/>)}
             </tbody>
           </table>
         </div>
       </section>
     </>
+  )
+}
+
+function OccurrenceRow({ id, addedDate, scientificName, dataset, occurrenceDate }) {
+  const { t } = useTranslation()
+
+  return (
+    <tr>
+      <td>
+        <div className="button is-info">{t('common.edit')}</div>
+      </td>
+      <td>{addedDate}</td>
+      <td>{scientificName}</td>
+      <td>{dataset}</td>
+      <td>{occurrenceDate}</td>
+      <td>
+        <div className="button is-info">{t('common.copy')}</div>
+      </td>
+    </tr>
   )
 }
