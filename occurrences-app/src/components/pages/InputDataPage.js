@@ -1,6 +1,6 @@
 import React from 'react'
-import { getOccurrenceMock } from '../clients/server'
-import Divider from '../atom/Divider'
+import { getOccurrenceMock } from '../../clients/server'
+import Divider from '../layout/Divider'
 import { useTranslation } from 'react-i18next'
 
 export default function InputDataPage() {

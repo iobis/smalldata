@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import React, { useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link, NavLink } from 'react-router-dom'
-import { useOnClickOutside } from '../hooks/hooks'
+import { useOnClickOutside } from '../../hooks/hooks'
 import { useTranslation } from 'react-i18next'
 
 export default function Navbar() {
