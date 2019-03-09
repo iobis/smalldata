@@ -47,8 +47,7 @@ public class WebRssComponentApiTest {
       .send(result -> {
         assertTrue(result.succeeded());
         assertEquals(200, result.result().statusCode());
-        var resultString = result.result().body();
-        assertEquals(IoFile.loadFromResources("rss/sample.xml").replaceAll("\\n", ""), resultString.replaceAll("\\n", ""));
+        assertEquals(IoFile.loadFromResources("rss/sample.xml"), result.result().body());
         testContext.completeNow();
       });
   }
