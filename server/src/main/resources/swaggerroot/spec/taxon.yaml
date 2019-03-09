@@ -5,13 +5,16 @@ Taxon:
       type: object
       properties:
         scientificNameID:
-          type: string
+          example: -- urn:lsid:ipni.org:names:37829-1:1.3 --
           description: 'Exclusively used to reference an external and resolvable identifier
             that returns nomenclatural (not taxonomic) details of a name. Use taxonID
             to refer to taxa. *-- examples: urn:lsid:ipni.org:names:37829-1:1.3*'
-          example: -- urn:lsid:ipni.org:names:37829-1:1.3 --
-        scientificName:
           type: string
+        scientificName:
+          example: -- "Coleoptera" (order), "Vespertilionidae" (family), "Manis" (genus),
+            "Ctenomys sociabilis" (genus + specificEpithet), "Ambystoma tigrinum diaboli"
+            (genus + specificEpithet + infraspecificEpithet), "Quercus agrifolia var.
+            oxyadenia (Torr.)" --
           description: 'The taxon name (with date and authorship information if applicable).
             When forming part of an Identification, this should be the name in lowest
             level taxonomic rank that can be determined. This term should not contain
@@ -20,30 +23,28 @@ Taxon:
             (family), "Manis" (genus), "Ctenomys sociabilis" (genus + specificEpithet),
             "Ambystoma tigrinum diaboli" (genus + specificEpithet + infraspecificEpithet),
             "Quercus agrifolia var. oxyadenia (Torr.)"*'
-          example: -- "Coleoptera" (order), "Vespertilionidae" (family), "Manis" (genus),
-            "Ctenomys sociabilis" (genus + specificEpithet), "Ambystoma tigrinum diaboli"
-            (genus + specificEpithet + infraspecificEpithet), "Quercus agrifolia var.
-            oxyadenia (Torr.)" --
-        scientificNameAuthorship:
           type: string
+        scientificNameAuthorship:
+          example: -- "(Torr.) J.T. Howell", "(Martinovský) Tzvelev", "(Linnaeus 1768)"
+            --
           description: 'The authorship information for the scientificName formatted
             according to the conventions of the applicable nomenclaturalCode. *--
             examples: "(Torr.) J.T. Howell", "(Martinovský) Tzvelev", "(Linnaeus 1768)"*'
-          example: -- "(Torr.) J.T. Howell", "(Martinovský) Tzvelev", "(Linnaeus 1768)"
-            --
+          type: string
         namePublishedInYear:
-          type: integer
+          example: -- 1915 --
           description: 'The four-digit year in which the scientificName was published.
             *-- examples: 1915*'
-          example: -- 1915 --
+          type: integer
         taxonRank:
-          type: string
+          example: -- "subspecies", "varietas", "forma", "species", "genus" --
           description: 'The taxonomic rank of the most specific name in the scientificName.
             Recommended vocabulary: http://rs.gbif.org/vocabulary/gbif/rank.xml *--
             examples: "subspecies", "varietas", "forma", "species", "genus"*'
-          example: -- "subspecies", "varietas", "forma", "species", "genus" --
-        taxonID:
           type: string
+        taxonID:
+          example: -- 8fa58e08-08de-4ac1-b69c-1235340b7001;  32567;  http://species.gbif.org/abies_alba_1753;  urn:lsid:gbif.org:usages:32567
+            --
           description: 'A unique identifier for the set of nomenclatural and taxonomic
             information (data associated with the Taxon class). A taxonID refers to
             a name being used somewhere, therefore not precluding whether it is a
@@ -54,50 +55,53 @@ Taxon:
             rows to refer to the same scientificName if they refer to different taxon
             concept circumscriptions referenced in nameAccordingTo. *-- examples:
             8fa58e08-08de-4ac1-b69c-1235340b7001;  32567;  http://species.gbif.org/abies_alba_1753;  urn:lsid:gbif.org:usages:32567*'
-          example: -- 8fa58e08-08de-4ac1-b69c-1235340b7001;  32567;  http://species.gbif.org/abies_alba_1753;  urn:lsid:gbif.org:usages:32567
-            --
-        taxonRemarks:
           type: string
+        taxonRemarks:
+          example: -- "Type consists of a skull and skeletal fragments.", "This name
+            is a misspelling in common use." --
           description: 'Comments or notes about the taxon or name. *-- examples: "Type
             consists of a skull and skeletal fragments.", "This name is a misspelling
             in common use."*'
-          example: -- "Type consists of a skull and skeletal fragments.", "This name
-            is a misspelling in common use." --
-        vernacularName:
           type: string
-          description: 'A common or vernacular name. *-- examples: "Andean Condor",
-            "Condor Andino", "American Eagle", "Gänsegeier"*'
+        vernacularName:
           example: -- "Andean Condor", "Condor Andino", "American Eagle", "Gänsegeier"
             --
-        taxonConceptID:
+          description: 'A common or vernacular name. *-- examples: "Andean Condor",
+            "Condor Andino", "American Eagle", "Gänsegeier"*'
           type: string
+        taxonConceptID:
+          example: -- 8fa58e08-08de-4ac1-b69c-1235340b7001 --
           description: 'An identifier for the taxonomic concept to which the record
             refers - not for the nomenclatural details of a taxon. *-- examples: 8fa58e08-08de-4ac1-b69c-1235340b7001*'
-          example: -- 8fa58e08-08de-4ac1-b69c-1235340b7001 --
-        namePublishedIn:
           type: string
+        namePublishedIn:
+          example: -- Forel, Auguste, Diagnosies provisoires de quelques espèces nouvelles
+            de fourmis de Madagascar, récoltées par M. Grandidier., Annales de la
+            Societe Entomologique de de Belgique, Comptes-rendus des Seances 30, 1886
+            --
           description: 'Reference to a publication representing the original publication
             of the name. *-- examples: Forel, Auguste, Diagnosies provisoires de quelques
             espèces nouvelles de fourmis de Madagascar, récoltées par M. Grandidier.,
             Annales de la Societe Entomologique de de Belgique, Comptes-rendus des
             Seances 30, 1886*'
-          example: -- Forel, Auguste, Diagnosies provisoires de quelques espèces nouvelles
-            de fourmis de Madagascar, récoltées par M. Grandidier., Annales de la
-            Societe Entomologique de de Belgique, Comptes-rendus des Seances 30, 1886
-            --
-        nameAccordingToID:
           type: string
+        nameAccordingToID:
+          example: -- doi:10.1016/S0269-915X(97)80026-2 --
           description: 'A unique identifier that returns the details of a nameAccordingTo
             reference. *-- examples: doi:10.1016/S0269-915X(97)80026-2*'
-          example: -- doi:10.1016/S0269-915X(97)80026-2 --
-        subgenus:
           type: string
+        subgenus:
+          example: -- Puma (Puma); Loligo (Amerigo); Hieracium subgen. Pilosella --
           description: 'The full scientific name of the subgenus in which the taxon
             is classified. Values should include the genus to avoid homonym confusion.
             *-- examples: Puma (Puma); Loligo (Amerigo); Hieracium subgen. Pilosella*'
-          example: -- Puma (Puma); Loligo (Amerigo); Hieracium subgen. Pilosella --
-        nameAccordingTo:
           type: string
+        nameAccordingTo:
+          example: '-- "Werner Greuter 2008;   Lilljeborg 1861, Upsala Univ. Arsskrift,
+            Math. Naturvet., pp. 4, 5", "McCranie, J. R., D. B. Wake, and L. D. Wilson.
+            1996. The taxonomic status of Bolitoglossa schmidti, with comments on
+            the biology of the Mesoamerican salamander Bolitoglossa dofleini (Caudata:
+            Plethodontidae). Carib. J. Sci. 32:395-398." --'
           description: 'To use a name precisely an indication of which concept of
             that name one refers to is needed. Traditionally the Latin sensu or sec.
             (for secundum – according to) have been used. For taxa that result from
@@ -110,73 +114,69 @@ Taxon:
             1996. The taxonomic status of Bolitoglossa schmidti, with comments on
             the biology of the Mesoamerican salamander Bolitoglossa dofleini (Caudata:
             Plethodontidae). Carib. J. Sci. 32:395-398."*'
-          example: '-- "Werner Greuter 2008;   Lilljeborg 1861, Upsala Univ. Arsskrift,
-            Math. Naturvet., pp. 4, 5", "McCranie, J. R., D. B. Wake, and L. D. Wilson.
-            1996. The taxonomic status of Bolitoglossa schmidti, with comments on
-            the biology of the Mesoamerican salamander Bolitoglossa dofleini (Caudata:
-            Plethodontidae). Carib. J. Sci. 32:395-398." --'
-        namePublishedInID:
           type: string
+        namePublishedInID:
+          example: -- http://hdl.handle.net/10199/7 --
           description: 'A preferably resolvable, globally unique identifier that refers
             to namePublishedIn. *-- examples: http://hdl.handle.net/10199/7*'
-          example: -- http://hdl.handle.net/10199/7 --
-        class:
           type: string
+        class:
+          example: -- "Mammalia", "Hepaticopsida" --
           description: 'The full scientific name of the class in which the taxon is
             classified. *-- examples: "Mammalia", "Hepaticopsida"*'
-          example: -- "Mammalia", "Hepaticopsida" --
-        order:
           type: string
+        order:
+          example: -- "Carnivora", "Monocleales" --
           description: 'The full scientific name of the order in which the taxon is
             classified. *-- examples: "Carnivora", "Monocleales"*'
-          example: -- "Carnivora", "Monocleales" --
-        infraspecificEpithet:
           type: string
+        infraspecificEpithet:
+          example: -- "concolor", "oxyadenia", "sayi" --
           description: 'The name of the lowest or terminal infraspecific epithet of
             the scientificName, excluding any rank marker. *-- examples: "concolor",
             "oxyadenia", "sayi"*'
-          example: -- "concolor", "oxyadenia", "sayi" --
-        nomenclaturalStatus:
           type: string
+        nomenclaturalStatus:
+          example: -- "nom. ambig.", "nom. illeg.", "nom. subnud." --
           description: 'The status related to the original publication of the name
             and its conformance to the relevant rules of nomenclature. It is based
             essentially on an algorithm according to the business rules of the code.  It
             requires no taxonomic opinion. Recommended vocabulary: http://rs.gbif.org/vocabulary/gbif/nomenclatural_status.xml
             *-- examples: "nom. ambig.", "nom. illeg.", "nom. subnud."*'
-          example: -- "nom. ambig.", "nom. illeg.", "nom. subnud." --
-        acceptedNameUsage:
           type: string
+        acceptedNameUsage:
+          example: -- "Tamias minimus" valid name for "Eutamias minimus" --
           description: 'The scientificName of the taxon considered to be the valid
             (zoological) or accepted (botanical) name for this nameUsage. *-- examples:
             "Tamias minimus" valid name for "Eutamias minimus"*'
-          example: -- "Tamias minimus" valid name for "Eutamias minimus" --
-        informationWithheld:
           type: string
+        informationWithheld:
+          example: -- hybrid parents information available --
           description: 'Additional information that exists, but that has not been
             shared in the given record. *-- examples: hybrid parents information available*'
-          example: -- hybrid parents information available --
-        nomenclaturalCode:
           type: string
+        nomenclaturalCode:
+          example: -- "ICBN", "ICZN", "BC", "ICNCP", "BioCode", "ICZN; ICBN" --
           description: 'The nomenclatural code under which the scientificName is constructed.
             *-- examples: "ICBN", "ICZN", "BC", "ICNCP", "BioCode", "ICZN; ICBN"*'
-          example: -- "ICBN", "ICZN", "BC", "ICNCP", "BioCode", "ICZN; ICBN" --
-        originalNameUsageID:
           type: string
+        originalNameUsageID:
+          example: -- http://species.gbif.org/abies_alba_1753 --
           description: 'A unique identifier for the nameUsage instance in which the
             name was originally established, under the rules of the associated nomenclaturalCode  (i.e.,
             within the namePublishedIn reference). The basionym (botany) or basonym
             (bacteriology) of the scientificName or the senior/earlier homonym for
             replaced names. If provided the nameAccordingTo value returned should
             match the namePublishedIn value for this record. *-- examples: http://species.gbif.org/abies_alba_1753*'
-          example: -- http://species.gbif.org/abies_alba_1753 --
-        datasetName:
           type: string
+        datasetName:
+          example: -- "Grinnell Resurvey Mammals", "Lacey Ctenomys Recaptures" --
           description: 'The title of the (sub) dataset optionally also referenced
             via datasetID  *-- examples: "Grinnell Resurvey Mammals", "Lacey Ctenomys
             Recaptures"*'
-          example: -- "Grinnell Resurvey Mammals", "Lacey Ctenomys Recaptures" --
-        taxonomicStatus:
           type: string
+        taxonomicStatus:
+          example: -- "invalid", "misapplied", "homotypic synonym", "accepted" --
           description: 'The status of the use of the scientificName as a label for
             a taxon. Requires taxonomic opinion to define the scope of a taxon. Rules
             of priority then are used to define the taxonomic status of the nomenclature
@@ -184,62 +184,64 @@ Taxon:
             linked to a specific taxonomic reference that defines the concept. Recommended
             vocabulary: http://rs.gbif.org/vocabulary/gbif/taxonomic_status.xml *--
             examples: "invalid", "misapplied", "homotypic synonym", "accepted"*'
-          example: -- "invalid", "misapplied", "homotypic synonym", "accepted" --
-        parentNameUsageID:
           type: string
+        parentNameUsageID:
+          example: -- 8fa58e08-08de-4ac1-b69c-1235340b7001 --
           description: 'The taxonID of the direct, most proximate higher-rank parent
             taxon (in a classification). If parentNameUsage is given, the scientificName
             of the nameUsage with taxonID=parentNameUsageID needs to be the same as
             higherNameUsage. *-- examples: 8fa58e08-08de-4ac1-b69c-1235340b7001*'
-          example: -- 8fa58e08-08de-4ac1-b69c-1235340b7001 --
-        kingdom:
           type: string
+        kingdom:
+          example: -- "Animalia", "Plantae" --
           description: 'The full scientific name of the kingdom in which the taxon
             is classified. *-- examples: "Animalia", "Plantae"*'
-          example: -- "Animalia", "Plantae" --
-        specificEpithet:
           type: string
+        specificEpithet:
+          example: -- "concolor", "gottschei" --
           description: 'The name of the species epithet of the scientificName. *--
             examples: "concolor", "gottschei"*'
-          example: -- "concolor", "gottschei" --
-        phylum:
           type: string
+        phylum:
+          example: -- "Chordata" (phylum), "Bryophyta" (division) --
           description: 'The full scientific name of the phylum in which the taxon
             is classified. *-- examples: "Chordata" (phylum), "Bryophyta" (division)*'
-          example: -- "Chordata" (phylum), "Bryophyta" (division) --
-        genus:
           type: string
+        genus:
+          example: -- "Puma", "Monoclea" --
           description: 'The full scientific name of the genus in which the taxon is
             classified. *-- examples: "Puma", "Monoclea"*'
-          example: -- "Puma", "Monoclea" --
-        acceptedNameUsageID:
           type: string
+        acceptedNameUsageID:
+          example: -- 8fa58e08-08de-4ac1-b69c-1235340b7001 --
           description: 'The taxonID of the taxon considered to be the valid (zoological)
             or accepted (botanical) name for this nameUsage. If acceptedNameUsage
             is given, the scientificName of the nameUsage with taxonID=acceptedNameUsageID
             needs to be the same as acceptedNameUsage. *-- examples: 8fa58e08-08de-4ac1-b69c-1235340b7001*'
-          example: -- 8fa58e08-08de-4ac1-b69c-1235340b7001 --
-        originalNameUsage:
           type: string
+        originalNameUsage:
+          example: -- "Pinus abies", "Gasterosteus saltatrix Linnaeus 1768" --
           description: 'The equivalent of the scientificName as it originally appeared
             when the name was first established  under the rules of the associated
             nomenclaturalCode (i.e., within the namePublishedIn reference). The basionym
             (botany) or basonym (bacteriology) of the scientificName or the senior/earlier
             homonym for replaced names.  *-- examples: "Pinus abies", "Gasterosteus
             saltatrix Linnaeus 1768"*'
-          example: -- "Pinus abies", "Gasterosteus saltatrix Linnaeus 1768" --
-        datasetID:
           type: string
+        datasetID:
+          example: -- 13 --
           description: 'An identifier for a (sub) dataset. Ideally globally unique,
             but any id allowed *-- examples: 13*'
-          example: -- 13 --
-        family:
           type: string
+        family:
+          example: -- "Felidae", "Monocleaceae" --
           description: 'The full scientific name of the family in which the taxon
             is classified. *-- examples: "Felidae", "Monocleaceae"*'
-          example: -- "Felidae", "Monocleaceae" --
-        higherClassification:
           type: string
+        higherClassification:
+          example: -- Animalia | Chordata | Vertebrata | Mammalia | Theria | Eutheria
+            | Rodentia | Hystricognatha | Hystricognathi | Ctenomyidae | Ctenomyini
+            | Ctenomys --
           description: 'A list (concatenated and separated) of taxa names terminating
             at the rank immediately superior to the taxon referenced in the taxon
             record. Recommended best practice is to order the list starting with the
@@ -247,38 +249,36 @@ Taxon:
             ('' | ''). *-- examples: Animalia | Chordata | Vertebrata | Mammalia |
             Theria | Eutheria | Rodentia | Hystricognatha | Hystricognathi | Ctenomyidae
             | Ctenomyini | Ctenomys*'
-          example: -- Animalia | Chordata | Vertebrata | Mammalia | Theria | Eutheria
-            | Rodentia | Hystricognatha | Hystricognathi | Ctenomyidae | Ctenomyini
-            | Ctenomys --
-        verbatimTaxonRank:
           type: string
+        verbatimTaxonRank:
+          example: -- "Agamospecies", "sub-lesus", "prole", "apomict", "nothogrex",
+            "sp.", "subsp.", "var." --
           description: 'The taxonomic rank of the most specific name in the scientificName
             as it appears in the original record or the rank designator within the
             verbatim original name itself. *-- examples: "Agamospecies", "sub-lesus",
             "prole", "apomict", "nothogrex", "sp.", "subsp.", "var."*'
-          example: -- "Agamospecies", "sub-lesus", "prole", "apomict", "nothogrex",
-            "sp.", "subsp.", "var." --
-        parentNameUsage:
           type: string
+        parentNameUsage:
+          example: -- "Rubiaceae", "Gruiformes", "Testudinae" --
           description: 'The scientificName representing the direct, most proximate
             higher-rank parent taxon (in a taxonomic classification) of this taxons
             scientificName. *-- examples: "Rubiaceae", "Gruiformes", "Testudinae"*'
-          example: -- "Rubiaceae", "Gruiformes", "Testudinae" --
+          type: string
     purl:
       type: object
       properties:
         rightsHolder:
-          type: string
+          example: -- The Regents of the University of California. --
           description: 'A person or organization owning or managing rights over the
             resource. *-- examples: The Regents of the University of California.*'
-          example: -- The Regents of the University of California. --
-        license:
           type: string
+        license:
+          example: -- "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
+            "http://creativecommons.org/licenses/by/4.0/legalcode" --
           description: 'A legal document giving official permission to do something
             with the resource. *-- examples: "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
             "http://creativecommons.org/licenses/by/4.0/legalcode"*'
-          example: -- "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
-            "http://creativecommons.org/licenses/by/4.0/legalcode" --
+          type: string
         references:
           format: uri
           description: 'A URL to a related resource that is referenced, cited, or
@@ -293,20 +293,24 @@ Taxon:
           type: string
           example: -- 2009-08-21 --
         language:
-          type: string
+          example: -- "en" for English, "es" for Spanish. --
           description: 'A language of the resource. Recommended best practice is to
             use a controlled vocabulary such as RFC 4646 [RFC4646]. *-- examples:
             "en" for English, "es" for Spanish.*'
-          example: -- "en" for English, "es" for Spanish. --
-        accessRights:
           type: string
+        accessRights:
+          example: -- not-for-profit use only --
           description: 'Information about who can access the resource or an indication
             of its security status. Access Rights may include information regarding
             access or restrictions based on privacy, security, or other policies.
             *-- examples: not-for-profit use only*'
-          example: -- not-for-profit use only --
-        bibliographicCitation:
           type: string
+        bibliographicCitation:
+          example: '-- van Soest, R. (2009). Leucandra fistulosa (Johnston, 1842).
+            In: Van Soest, R.W.M, Boury-Esnault, N., Hooper, J.N.A., Rützler, K, de
+            Voogd, N.J., Alvarez, B., Hajdu, E., Pisera, A.B., Vacelet, J. Manconi,
+            R., Schoenberg, C., Janussen, D., Tabachnick, K.R., Klautau, M. (Eds)
+            (2009). World Porifera database --'
           description: 'Citation information specified by the data publisher.  Citation
             information is inherited downward by all child taxa if no other citation
             is included.   Citation information is NOT accumulated upward.   For example,  one
@@ -317,8 +321,4 @@ Taxon:
             N., Hooper, J.N.A., Rützler, K, de Voogd, N.J., Alvarez, B., Hajdu, E.,
             Pisera, A.B., Vacelet, J. Manconi, R., Schoenberg, C., Janussen, D., Tabachnick,
             K.R., Klautau, M. (Eds) (2009). World Porifera database*'
-          example: '-- van Soest, R. (2009). Leucandra fistulosa (Johnston, 1842).
-            In: Van Soest, R.W.M, Boury-Esnault, N., Hooper, J.N.A., Rützler, K, de
-            Voogd, N.J., Alvarez, B., Hajdu, E., Pisera, A.B., Vacelet, J. Manconi,
-            R., Schoenberg, C., Janussen, D., Tabachnick, K.R., Klautau, M. (Eds)
-            (2009). World Porifera database --'
+          type: string

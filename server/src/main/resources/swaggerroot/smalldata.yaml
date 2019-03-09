@@ -85,7 +85,7 @@ components:
       properties:
         core:
           type: string
-          enum: ['occurence', 'taxon', 'event', 'emof']
+          enum: ['occurrence', 'taxon', 'event', 'emof']
           example: 'occurrence'
         occurence:
           $ref: "./spec/occurrence.yaml#/Occurrence"

@@ -39,7 +39,7 @@ public class WebApi extends AbstractVerticle {
       server.listen(port, http -> {
         if (http.succeeded()) {
           startFuture.complete();
-          Logger.info("HTTP server started on http://localhost: {}", port);
+          Logger.info("HTTP server started on http://localhost:{}", port);
         } else {
           Logger.info("Failed to start the server http://localhost:{}", port);
           startFuture.fail(http.cause());

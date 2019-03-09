@@ -28,7 +28,7 @@ public class OpenApiModelConstructor {
     propertyMap.put((String)prop.get("name"),
       Map.ofEntries(
         entry("type", type),
-        entry("description",  prop.get("description") + " *-- examples: " + examples + "*"),
+        entry("description",prop.get("description") + " *-- examples: " + examples + "*"),
         entry("example", "-- " + examples + " --")));
   }
 

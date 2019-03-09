@@ -1,8 +1,8 @@
 package org.obis.util;
 
 import com.mashape.unirest.http.exceptions.UnirestException;
-import org.obis.util.ApiCustomizers.CustomFieldMerger;
-import org.obis.util.ApiCustomizers.TypeMapper;
+import org.obis.util.apicustomizers.CustomFieldMerger;
+import org.obis.util.apicustomizers.TypeMapper;
 import org.obis.util.model.DarwinCoreExtension;
 import org.pmw.tinylog.Logger;
 
@@ -37,10 +37,9 @@ public class GenerateOpenApi {
   }
 
   private void processXml(Map.Entry<String, String> processEntry) {
-    var path = processEntry.getKey();
-    var extensionName = processEntry.getValue();
     DarwinCoreExtension xml = null;
     try {
+      var path = processEntry.getKey();
       xml = xmlReader.readExtensionFile(path);
     } catch (UnirestException e) {
       e.printStackTrace();
@@ -50,7 +49,7 @@ public class GenerateOpenApi {
     var apiMap = apiConstructor.constructApiModel(xml);
     customizers.stream().reduce(Function::andThen).orElse(Function.identity()).apply(apiMap);
     Logger.info(apiMap);
-
+    var extensionName = processEntry.getValue();
     apiWriter.writeAsFile(apiMap, extensionName, targetPath);
   }
 

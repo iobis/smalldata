@@ -1,4 +1,4 @@
-package org.obis.util.ApiCustomizers;
+package org.obis.util.apicustomizers;
 
 import lombok.Value;
 import org.pmw.tinylog.Logger;
@@ -26,7 +26,9 @@ public class CustomFieldMerger implements Function<Map<String, Map<String, Objec
 
   @Value
   static class FieldMerger {
+
     private final Map<String, Map<String, Object>> api;
+
     private void mergeCustomFields(QualTerm qt, Map<String, Object> customFields) {
       try {
         Map<String, Object> apiFields = new HashMap(

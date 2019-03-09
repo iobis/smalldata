@@ -18,7 +18,7 @@ class RouterConfig {
   private final Map<String, OperationHandlers> handlers = Map.ofEntries(
     entry("getStatus", new OperationHandlers(StatusHandler::status)),
     entry("getRss", new OperationHandlers(RssHandler::fetch)),
-    entry("postDWCA", new OperationHandlers(OccurenceHandler::post))
+    entry("postDWCA", new OperationHandlers(OccurrenceHandler::post))
   );
 
   RouterConfig(Consumer<Router> completionHandler) {

@@ -8,6 +8,7 @@ import io.vertx.ext.web.codec.BodyCodec;
 import io.vertx.junit5.Timeout;
 import io.vertx.junit5.VertxExtension;
 import io.vertx.junit5.VertxTestContext;
+import org.json.HTTP;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -24,24 +25,26 @@ public class WebOccurenceApiTest {
 
   @BeforeEach
   void deployVerticle(Vertx vertx, VertxTestContext testContext) {
+    Logger.info("starting with config: {}", CONFIG);
     vertx.deployVerticle(
-      new WebApi(),
+      WebApi.class.getName(),
       new DeploymentOptions().setConfig(CONFIG),
       testContext.succeeding(id -> testContext.completeNow()));
   }
 
   @Test
-  @DisplayName("Test rss handling")
-  @Timeout(value = 1, timeUnit = TimeUnit.SECONDS)
+  @DisplayName("Test dwca")
+  @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
   void replyRssFile(Vertx vertx, VertxTestContext testContext) {
     WebClient client = WebClient.create(vertx);
-    client.post(HTTP_PORT, "localhost", "/api/occurences")
+    client.post(HTTP_PORT, "localhost", "/api/dwca")
       .as(BodyCodec.jsonObject())
-      .send(result -> {
-        Logger.info(result);
-        Logger.info(result.result().body());
-        testContext.completeNow();
-      });
+      .sendJson(new JsonObject(),
+        result -> {
+          Logger.info(result);
+          Logger.info(result.result().body());
+          testContext.completeNow();
+        });
   }
 
 }
