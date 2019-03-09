@@ -45,18 +45,19 @@ paths:
           description: received rss
           content:
             application/xml+rss: {}
-  /api/occurence:
+  /api/dwca:
     post:
       summary: post new data to small data occurences
-      operationId: postOccurence
+      operationId: postDWCA
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Occurence"
+              $ref: "#/components/schemas/DWCA"
+
       tags:
-        - occurences
+        - dwca
       responses:
         200:
           description: new occurences data created and stored
@@ -71,12 +72,30 @@ components:
       type: object
       properties:
         title:
-          type: String
+          type: string
           example: 'swaggered application'
         status:
-          type: String
+          type: string
           enum: ['OK', 'error']
           example: 'OK'
+
+    DWCA:
+      type: object
+      description: post dwca record
+      properties:
+        core:
+          type: string
+          enum: ['occurence', 'taxon', 'event', 'emof']
+          example: 'occurrence'
+        occurence:
+          $ref: "./spec/occurrence.yaml#/Occurrence"
+        taxon:
+          $ref: "./spec/taxon.yaml#/Taxon"
+        event:
+          $ref: "./spec/event.yaml#/Event"
+        emof:
+          $ref: "./spec/emof.yaml#/Emof"
+
     DWC.Event:
       type: object
       description: An action that occurs at some location during some time.

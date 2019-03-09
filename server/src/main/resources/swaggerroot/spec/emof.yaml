@@ -1,0 +1,8 @@
+---
+Emof:
+  properties:
+    dwcg:
+      type: object
+      properties:
+        prop:
+          type: string

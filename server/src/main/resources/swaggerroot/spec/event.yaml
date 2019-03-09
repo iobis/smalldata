@@ -1,0 +1,789 @@
+---
+Event:
+  properties:
+    dwcg:
+      type: object
+      properties:
+        bed:
+          type: string
+          description: 'The full name of the lithostratigraphic bed from which the
+            cataloged item was collected. *-- examples: *'
+          example: --  --
+        country:
+          type: string
+          description: 'The name of the country or major administrative unit in which
+            the Location occurs. Recommended best practice is to use a controlled
+            vocabulary such as the Getty Thesaurus of Geographic Names. *-- examples:
+            "Denmark", "Colombia", "España"*'
+          example: -- "Denmark", "Colombia", "España" --
+        habitat:
+          description: 'A category or description of the habitat in which the Event
+            occurred. *-- examples: "oak savanna", "pre-cordilleran steppe"*'
+          type: string
+          example: oak savanna
+        institutionID:
+          type: string
+          description: 'An identifier for the institution having custody of the object(s)
+            or information referred to in the record. *-- examples: *'
+          example: --  --
+        year:
+          type: integer
+          description: 'The four-digit year in which the Event occurred, according
+            to the Common Era Calendar. *-- examples: "2008"*'
+          example: -- "2008" --
+        dynamicProperties:
+          type: string
+          description: 'A list (concatenated and separated) of additional measurements,
+            facts, characteristics, or assertions about the record. Meant to provide
+            a mechanism for structured content such as key-value pairs. The recommended
+            best practice is to use a key:value encoding schema such as JSON. *--
+            examples: "{"heightInMeters":1.5}", "{"tragusLengthInMeters":0.014, "weightInGrams":120}",
+            "{"natureOfID":"expert identification", "identificationEvidence":"cytochrome
+            B sequence"}", "{"relativeHumidity":28, "airTemperatureInCelcius":22,
+            "sampleSizeInKilograms":10}", "{"aspectHeading":277, "slopeInDegrees":6}",
+            "{"iucnStatus":"vulnerable", "taxonDistribution":"Neuquén, Argentina"}"*'
+          example: -- "{"heightInMeters":1.5}", "{"tragusLengthInMeters":0.014, "weightInGrams":120}",
+            "{"natureOfID":"expert identification", "identificationEvidence":"cytochrome
+            B sequence"}", "{"relativeHumidity":28, "airTemperatureInCelcius":22,
+            "sampleSizeInKilograms":10}", "{"aspectHeading":277, "slopeInDegrees":6}",
+            "{"iucnStatus":"vulnerable", "taxonDistribution":"Neuquén, Argentina"}"
+            --
+        county:
+          type: string
+          description: 'The full, unabbreviated name of the next smaller administrative
+            region than stateProvince (county, shire, department, etc.) in which the
+            Location occurs. *-- examples: "Missoula", "Los Lagos", "Mataró"*'
+          example: -- "Missoula", "Los Lagos", "Mataró" --
+        municipality:
+          type: string
+          description: 'The full, unabbreviated name of the next smaller administrative
+            region than county (city, municipality, etc.) in which the Location occurs.
+            Do not use this term for a nearby named place that does not contain the
+            actual location. *-- examples: "Holzminden"*'
+          example: -- "Holzminden" --
+        fieldNumber:
+          type: string
+          description: 'An identifier given to the event in the field. Often serves
+            as a link between field notes and the Event. *-- examples: "RV Sol 87-03-08"*'
+          example: -- "RV Sol 87-03-08" --
+        decimalLatitude:
+          format: float
+          description: 'The geographic latitude (in decimal degrees, using the spatial
+            reference system given in geodeticDatum) of the geographic center of a
+            Location. Positive values are north of the Equator, negative values are
+            south of it. Legal values lie between -90 and 90, inclusive. *-- examples:
+            "-41.0983423"*'
+          type: number
+          example: -- "-41.0983423" --
+        locationAccordingTo:
+          type: string
+          description: 'Information about the source of this Location information.
+            Could be a publication (gazetteer), institution, or team of individuals.
+            *-- examples: "Getty Thesaurus of Geographic Names", "GADM"*'
+          example: -- "Getty Thesaurus of Geographic Names", "GADM" --
+        lowestBiostratigraphicZone:
+          type: string
+          description: 'The full name of the lowest possible geological biostratigraphic
+            zone of the stratigraphic horizon from which the cataloged item was collected.
+            *-- examples: *'
+          example: --  --
+        fieldNotes:
+          type: string
+          description: 'One of a) an indicator of the existence of, b) a reference
+            to (publication, URI), or c) the text of notes taken in the field about
+            the Event. *-- examples: "notes available in Grinnell-Miller Library"*'
+          example: -- "notes available in Grinnell-Miller Library" --
+        maximumDepthInMeters:
+          format: float
+          description: 'The greater depth of a range of depth below the local surface,
+            in meters. *-- examples: "200"*'
+          type: number
+          example: -- "200" --
+        latestEpochOrHighestSeries:
+          type: string
+          description: 'The full name of the latest possible geochronologic epoch
+            or highest chronostratigraphic series attributable to the stratigraphic
+            horizon from which the cataloged item was collected. *-- examples: "Holocene",
+            "Pleistocene", "Ibexian Series"*'
+          example: -- "Holocene", "Pleistocene", "Ibexian Series" --
+        verbatimElevation:
+          type: string
+          description: 'The original description of the elevation (altitude, usually
+            above sea level) of the Location. *-- examples: "100-200 m"*'
+          example: -- "100-200 m" --
+        day:
+          type: integer
+          description: 'The integer day of the month on which the Event occurred.
+            *-- examples: "9", "28"*'
+          example: -- "9", "28" --
+        group:
+          type: string
+          description: 'The full name of the lithostratigraphic group from which the
+            cataloged item was collected. *-- examples: *'
+          example: --  --
+        geologicalContextID:
+          type: string
+          description: 'An identifier for the set of information associated with a
+            GeologicalContext (the location within a geological context, such as stratigraphy).
+            May be a global unique identifier or an identifier specific to the data
+            set. *-- examples: *'
+          example: --  --
+        georeferencedDate:
+          type: string
+          description: 'The date on which the Location was georeferenced. Recommended
+            best practice is to use an encoding scheme, such as ISO 8601:2004(E).
+            *-- examples: "1963-03-08"*'
+          example: -- "1963-03-08" --
+        verbatimEventDate:
+          type: string
+          description: 'The verbatim original representation of the date and time
+            information for an Event. *-- examples: "spring 1910", "Marzo 2002", "1999-03-XX",
+            "17IV1934"*'
+          example: -- "spring 1910", "Marzo 2002", "1999-03-XX", "17IV1934" --
+        higherGeography:
+          type: string
+          description: 'A list (concatenated and separated) of geographic names less
+            specific than the information captured in the locality term. The recommended
+            best practice is to separate the values with a vertical bar ('' | '').
+            *-- examples: "South America | Argentina | Patagonia | Parque Nacional
+            Nahuel Huapi | Neuquén | Los Lagos" with accompanying values "South America"
+            in Continent, "Argentina" in Country, "Neuquén" in StateProvince, and
+            Los Lagos in County.*'
+          example: -- "South America | Argentina | Patagonia | Parque Nacional Nahuel
+            Huapi | Neuquén | Los Lagos" with accompanying values "South America"
+            in Continent, "Argentina" in Country, "Neuquén" in StateProvince, and
+            Los Lagos in County. --
+        sampleSizeUnit:
+          type: string
+          description: 'The unit of measurement of the size (time duration, length,
+            area, or volume) of a sample in a sampling event. *-- examples: A sampleSizeUnit
+            must have a corresponding sampleSizeValue, e.g., "5" for sampleSizeValue
+            with "metre" for sampleSizeUnit. Examples: "minute", "hour", "day", "metre",
+            "square metre", "cubic metre". Recommended best practice is to use a controlled
+            vocabulary such as the Ontology of Units of Measure http://www.wurvoc.org/vocabularies/om-1.8/
+            of SI units, derived units, or other non-SI units accepted for use within
+            the SI (e.g., minute, hour, day, litre).*'
+          example: '-- A sampleSizeUnit must have a corresponding sampleSizeValue,
+            e.g., "5" for sampleSizeValue with "metre" for sampleSizeUnit. Examples:
+            "minute", "hour", "day", "metre", "square metre", "cubic metre". Recommended
+            best practice is to use a controlled vocabulary such as the Ontology of
+            Units of Measure http://www.wurvoc.org/vocabularies/om-1.8/ of SI units,
+            derived units, or other non-SI units accepted for use within the SI (e.g.,
+            minute, hour, day, litre). --'
+        maximumDistanceAboveSurfaceInMeters:
+          format: float
+          description: 'The greater distance in a range of distance from a reference
+            surface in the vertical direction, in meters. Use positive values for
+            locations above the surface, negative values for locations below. If depth
+            measures are given, the reference surface is the location given by the
+            depth, otherwise the reference surface is the location given by the elevation.
+            *-- examples: 1.5 meter sediment core from the bottom of a lake (at depth
+            20m) at 300m elevation; VerbatimElevation: "300m" MinimumElevationInMeters:
+            "300", MaximumElevationInMeters: "300", VerbatimDepth: "20m", MinimumDepthInMeters:
+            "20", MaximumDepthInMeters: "20", minimumDistanceAboveSurfaceInMeters:
+            "0", maximumDistanceAboveSurfaceInMeters: "-1.5"*'
+          type: number
+          example: '-- 1.5 meter sediment core from the bottom of a lake (at depth
+            20m) at 300m elevation; VerbatimElevation: "300m" MinimumElevationInMeters:
+            "300", MaximumElevationInMeters: "300", VerbatimDepth: "20m", MinimumDepthInMeters:
+            "20", MaximumDepthInMeters: "20", minimumDistanceAboveSurfaceInMeters:
+            "0", maximumDistanceAboveSurfaceInMeters: "-1.5" --'
+        georeferencedBy:
+          type: string
+          description: 'A list (concatenated and separated) of names of people, groups,
+            or organizations who determined the georeference (spatial representation)
+            the Location. The recommended best practice is to separate the values
+            with a vertical bar ('' | ''). *-- examples: "Kristina Yamamoto (MVZ)
+            | Janet Fang (MVZ)", "Brad Millen (ROM)"*'
+          example: -- "Kristina Yamamoto (MVZ) | Janet Fang (MVZ)", "Brad Millen (ROM)"
+            --
+        island:
+          type: string
+          description: 'The name of the island on or near which the Location occurs.
+            Recommended best practice is to use a controlled vocabulary such as the
+            Getty Thesaurus of Geographic Names. *-- examples: "Isla Victoria"*'
+          example: -- "Isla Victoria" --
+        endDayOfYear:
+          type: integer
+          description: 'The latest ordinal day of the year on which the Event occurred
+            (1 for January 1, 365 for December 31, except in a leap year, in which
+            case it is 366). *-- examples: "1" (=1 Jan), "366" (=31 Dec), "365" (=30
+            Dec in a leap year, 31 Dec in a non-leap year)*'
+          example: -- "1" (=1 Jan), "366" (=31 Dec), "365" (=30 Dec in a leap year,
+            31 Dec in a non-leap year) --
+        locality:
+          type: string
+          description: 'The specific description of the place. Less specific geographic
+            information can be provided in other geographic terms (higherGeography,
+            continent, country, stateProvince, county, municipality, waterBody, island,
+            islandGroup). This term may contain information modified from the original
+            to correct perceived errors or standardize the description. *-- examples:
+            "Bariloche, 25 km NNE via Ruta Nacional 40 (=Ruta 237)"*'
+          example: -- "Bariloche, 25 km NNE via Ruta Nacional 40 (=Ruta 237)" --
+        minimumElevationInMeters:
+          format: float
+          description: 'The lower limit of the range of elevation (altitude, usually
+            above sea level), in meters. *-- examples: "100"*'
+          type: number
+          example: -- "100" --
+        georeferenceRemarks:
+          type: string
+          description: 'Notes or comments about the spatial description determination,
+            explaining assumptions made in addition or opposition to the those formalized
+            in the method referred to in georeferenceProtocol. *-- examples: "assumed
+            distance by road (Hwy. 101)"*'
+          example: -- "assumed distance by road (Hwy. 101)" --
+        stateProvince:
+          type: string
+          description: 'The name of the next smaller administrative region than country
+            (state, province, canton, department, region, etc.) in which the Location
+            occurs. *-- examples: "Montana", "Minas Gerais", "Córdoba"*'
+          example: -- "Montana", "Minas Gerais", "Córdoba" --
+        decimalLongitude:
+          format: float
+          description: 'The geographic longitude (in decimal degrees, using the spatial
+            reference system given in geodeticDatum) of the geographic center of a
+            Location. Positive values are east of the Greenwich Meridian, negative
+            values are west of it. Legal values lie between -180 and 180, inclusive.
+            *-- examples: "-121.1761111"*'
+          type: number
+          example: -- "-121.1761111" --
+        verbatimLocality:
+          type: string
+          description: 'The original textual description of the place. *-- examples:
+            "25 km NNE Bariloche por R. Nac. 237"*'
+          example: -- "25 km NNE Bariloche por R. Nac. 237" --
+        pointRadiusSpatialFit:
+          type: string
+          description: 'The ratio of the area of the point-radius (decimalLatitude,
+            decimalLongitude, coordinateUncertaintyInMeters) to the area of the true
+            (original, or most specific) spatial representation of the Location. Legal
+            values are 0, greater than or equal to 1, or undefined. A value of 1 is
+            an exact match or 100% overlap. A value of 0 should be used if the given
+            point-radius does not completely contain the original representation.
+            The pointRadiusSpatialFit is undefined (and should be left blank) if the
+            original representation is a point without uncertainty and the given georeference
+            is not that same point (without uncertainty). If both the original and
+            the given georeference are the same point, the pointRadiusSpatialFit is
+            1. *-- examples: Detailed explanations with graphical examples can be
+            found in the "Guide to Best Practices for Georeferencing", Chapman and
+            Wieczorek, eds. 2006 (http://www.gbif.org/prog/digit/Georeferencing).*'
+          example: -- Detailed explanations with graphical examples can be found in
+            the "Guide to Best Practices for Georeferencing", Chapman and Wieczorek,
+            eds. 2006 (http://www.gbif.org/prog/digit/Georeferencing). --
+        earliestEpochOrLowestSeries:
+          type: string
+          description: 'The full name of the earliest possible geochronologic epoch
+            or lowest chronostratigraphic series attributable to the stratigraphic
+            horizon from which the cataloged item was collected. *-- examples: "Holocene",
+            "Pleistocene", "Ibexian Series"*'
+          example: -- "Holocene", "Pleistocene", "Ibexian Series" --
+        maximumElevationInMeters:
+          format: float
+          description: 'The upper limit of the range of elevation (altitude, usually
+            above sea level), in meters. *-- examples: "200"*'
+          type: number
+          example: -- "200" --
+        verbatimLatitude:
+          type: string
+          description: 'The verbatim original latitude of the Location. The coordinate
+            ellipsoid, geodeticDatum, or full Spatial Reference System (SRS) for these
+            coordinates should be stored in verbatimSRS and the coordinate system
+            should be stored in verbatimCoordinateSystem. *-- examples: "41 05 54.03S"*'
+          example: -- "41 05 54.03S" --
+        footprintSRS:
+          type: string
+          description: 'A Well-Known Text (WKT) representation of the Spatial Reference
+            System (SRS) for the footprintWKT of the Location. Do not use this term
+            to describe the SRS of the decimalLatitude and decimalLongitude, even
+            if it is the same as for the footprintWKT - use the geodeticDatum instead.
+            *-- examples: The WKT for the standard WGS84 SRS (EPSG:4326) is "GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137,298.257223563]],PRIMEM["Greenwich",0],UNIT["Degree",0.0174532925199433]]"
+            without the enclosing quotes.*'
+          example: -- The WKT for the standard WGS84 SRS (EPSG:4326) is "GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137,298.257223563]],PRIMEM["Greenwich",0],UNIT["Degree",0.0174532925199433]]"
+            without the enclosing quotes. --
+        month:
+          type: integer
+          description: 'The ordinal month in which the Event occurred. *-- examples:
+            "1" (=January), "10" (=October)*'
+          example: -- "1" (=January), "10" (=October) --
+        ownerInstitutionCode:
+          type: string
+          description: 'The name (or acronym) in use by the institution having ownership
+            of the object(s) or information referred to in the record. *-- examples:
+            "NPS", "APN", "InBio"*'
+          example: -- "NPS", "APN", "InBio" --
+        footprintSpatialFit:
+          type: string
+          description: 'The ratio of the area of the footprint (footprintWKT) to the
+            area of the true (original, or most specific) spatial representation of
+            the Location. Legal values are 0, greater than or equal to 1, or undefined.
+            A value of 1 is an exact match or 100% overlap. A value of 0 should be
+            used if the given footprint does not completely contain the original representation.
+            The footprintSpatialFit is undefined (and should be left blank) if the
+            original representation is a point and the given georeference is not that
+            same point. If both the original and the given georeference are the same
+            point, the footprintSpatialFit is 1. *-- examples: Detailed explanations
+            with graphical examples can be found in the "Guide to Best Practices for
+            Georeferencing", Chapman and Wieczorek, eds. 2006 (http://www.gbif.org/prog/digit/Georeferencing).*'
+          example: -- Detailed explanations with graphical examples can be found in
+            the "Guide to Best Practices for Georeferencing", Chapman and Wieczorek,
+            eds. 2006 (http://www.gbif.org/prog/digit/Georeferencing). --
+        earliestPeriodOrLowestSystem:
+          type: string
+          description: 'The full name of the earliest possible geochronologic period
+            or lowest chronostratigraphic system attributable to the stratigraphic
+            horizon from which the cataloged item was collected. *-- examples: "Neogene",
+            "Tertiary", "Quaternary"*'
+          example: -- "Neogene", "Tertiary", "Quaternary" --
+        samplingProtocol:
+          type: string
+          description: 'The name of, reference to, or description of the method or
+            protocol used during an Event. *-- examples: "UV light trap", "mist net",
+            "bottom trawl", "ad hoc observation", "point count", "Penguins from space:
+            faecal stains reveal the location of emperor penguin colonies, http://dx.doi.org/10.1111/j.1466-8238.2009.00467.x",
+            "Takats et al. 2001. Guidelines for Nocturnal Owl Monitoring in North
+            America. Beaverhill Bird Observatory and Bird Studies Canada, Edmonton,
+            Alberta. 32 pp.", "http://www.bsc-eoc.org/download/Owl.pdf"*'
+          example: '-- "UV light trap", "mist net", "bottom trawl", "ad hoc observation",
+            "point count", "Penguins from space: faecal stains reveal the location
+            of emperor penguin colonies, http://dx.doi.org/10.1111/j.1466-8238.2009.00467.x",
+            "Takats et al. 2001. Guidelines for Nocturnal Owl Monitoring in North
+            America. Beaverhill Bird Observatory and Bird Studies Canada, Edmonton,
+            Alberta. 32 pp.", "http://www.bsc-eoc.org/download/Owl.pdf" --'
+        parentEventID:
+          type: string
+          description: 'An event identifier for the super event which is composed
+            of one or more sub-sampling events. The value must refer to an existing
+            eventID. If the identifier is local it must exist within the given dataset.
+            May be a globally unique identifier or an identifier specific to the data
+            set. *-- examples: "A1" as parentEventID to identify the main Whittaker
+            Plot in nested samples, each with its own eventID (e.g., "A1:1", "A1:2").*'
+          example: -- "A1" as parentEventID to identify the main Whittaker Plot in
+            nested samples, each with its own eventID (e.g., "A1:1", "A1:2"). --
+        eventDate:
+          format: iso8601
+          description: 'The date-time or interval during which an Event occurred.
+            For occurrences, this is the date-time when the event was recorded. Not
+            suitable for a time in a geological context. Recommended best practice
+            is to use an encoding scheme, such as ISO 8601:2004(E). *-- examples:
+            "1963-03-08T14:07-0600" is 8 Mar 1963 2:07pm in the time zone six hours
+            earlier than UTC, "2009-02-20T08:40Z" is 20 Feb 2009 8:40am UTC, "1809-02-12"
+            is 12 Feb 1809, "1906-06" is Jun 1906, "1971" is just that year, "2007-03-01T13:00:00Z/2008-05-11T15:30:00Z"
+            is the interval between 1 Mar 2007 1pm UTC and 11 May 2008 3:30pm UTC,
+            "2007-11-13/15" is the interval between 13 Nov 2007 and 15 Nov 2007.*'
+          type: string
+          example: -- "1963-03-08T14:07-0600" is 8 Mar 1963 2:07pm in the time zone
+            six hours earlier than UTC, "2009-02-20T08:40Z" is 20 Feb 2009 8:40am
+            UTC, "1809-02-12" is 12 Feb 1809, "1906-06" is Jun 1906, "1971" is just
+            that year, "2007-03-01T13:00:00Z/2008-05-11T15:30:00Z" is the interval
+            between 1 Mar 2007 1pm UTC and 11 May 2008 3:30pm UTC, "2007-11-13/15"
+            is the interval between 13 Nov 2007 and 15 Nov 2007. --
+        continent:
+          type: string
+          description: 'The name of the continent in which the Location occurs. Recommended
+            best practice is to use a controlled vocabulary such as the Getty Thesaurus
+            of Geographic Names or the ISO 3166 Continent code. *-- examples: "Antarctica"*'
+          example: -- "Antarctica" --
+        minimumDistanceAboveSurfaceInMeters:
+          format: float
+          description: 'The lesser distance in a range of distance from a reference
+            surface in the vertical direction, in meters. Use positive values for
+            locations above the surface, negative values for locations below. If depth
+            measures are given, the reference surface is the location given by the
+            depth, otherwise the reference surface is the location given by the elevation.
+            *-- examples: 1.5 meter sediment core from the bottom of a lake (at depth
+            20m) at 300m elevation; VerbatimElevation: "300m" MinimumElevationInMeters:
+            "300", MaximumElevationInMeters: "300", VerbatimDepth: "20m", MinimumDepthInMeters:
+            "20", MaximumDepthInMeters: "20", minimumDistanceAboveSurfaceInMeters:
+            "0", maximumDistanceAboveSurfaceInMeters: "-1.5"*'
+          type: number
+          example: '-- 1.5 meter sediment core from the bottom of a lake (at depth
+            20m) at 300m elevation; VerbatimElevation: "300m" MinimumElevationInMeters:
+            "300", MaximumElevationInMeters: "300", VerbatimDepth: "20m", MinimumDepthInMeters:
+            "20", MaximumDepthInMeters: "20", minimumDistanceAboveSurfaceInMeters:
+            "0", maximumDistanceAboveSurfaceInMeters: "-1.5" --'
+        latestEraOrHighestErathem:
+          type: string
+          description: 'The full name of the latest possible geochronologic era or
+            highest chronostratigraphic erathem attributable to the stratigraphic
+            horizon from which the cataloged item was collected. *-- examples: "Cenozoic",
+            "Mesozoic"*'
+          example: -- "Cenozoic", "Mesozoic" --
+        eventID:
+          type: string
+          description: 'An identifier for the set of information associated with an
+            Event (something that occurs at a place and time). May be a global unique
+            identifier or an identifier specific to the data set. *-- examples: *'
+          example: --  --
+        earliestAgeOrLowestStage:
+          type: string
+          description: 'The full name of the earliest possible geochronologic age
+            or lowest chronostratigraphic stage attributable to the stratigraphic
+            horizon from which the cataloged item was collected. *-- examples: "Atlantic",
+            "Boreal", "Skullrockian"*'
+          example: -- "Atlantic", "Boreal", "Skullrockian" --
+        islandGroup:
+          type: string
+          description: 'The name of the island group in which the Location occurs.
+            Recommended best practice is to use a controlled vocabulary such as the
+            Getty Thesaurus of Geographic Names. *-- examples: "Alexander Archipelago"*'
+          example: -- "Alexander Archipelago" --
+        coordinateUncertaintyInMeters:
+          format: float
+          description: 'The horizontal distance (in meters) from the given decimalLatitude
+            and decimalLongitude describing the smallest circle containing the whole
+            of the Location. Leave the value empty if the uncertainty is unknown,
+            cannot be estimated, or is not applicable (because there are no coordinates).
+            Zero is not a valid value for this term. *-- examples: "30" (reasonable
+            lower limit of a GPS reading under good conditions if the actual precision
+            was not recorded at the time), "71" (uncertainty for a UTM coordinate
+            having 100 meter precision and a known spatial reference system).*'
+          type: number
+          example: -- "30" (reasonable lower limit of a GPS reading under good conditions
+            if the actual precision was not recorded at the time), "71" (uncertainty
+            for a UTM coordinate having 100 meter precision and a known spatial reference
+            system). --
+        samplingEffort:
+          type: string
+          description: 'The amount of effort expended during an Event. *-- examples:
+            "40 trap-nights", "10 observer-hours; 10 km by foot; 30 km by car"*'
+          example: -- "40 trap-nights", "10 observer-hours; 10 km by foot; 30 km by
+            car" --
+        eventRemarks:
+          type: string
+          description: 'Comments or notes about the Event. *-- examples: "after the
+            recent rains the river is nearly at flood stage"*'
+          example: -- "after the recent rains the river is nearly at flood stage"
+            --
+        formation:
+          type: string
+          description: 'The full name of the lithostratigraphic formation from which
+            the cataloged item was collected. *-- examples: "Notch Peak Fromation",
+            "House Limestone", "Fillmore Formation"*'
+          example: -- "Notch Peak Fromation", "House Limestone", "Fillmore Formation"
+            --
+        minimumDepthInMeters:
+          format: float
+          description: 'The lesser depth of a range of depth below the local surface,
+            in meters. *-- examples: "100"*'
+          type: number
+          example: -- "100" --
+        higherGeographyID:
+          type: string
+          description: 'An identifier for the geographic region within which the Location
+            occurred. Recommended best practice is to use an persistent identifier
+            from a controlled vocabulary such as the Getty Thesaurus of Geographic
+            Names. *-- examples: "TGN: 1002002" for Prov. Tierra del Fuego, Argentina*'
+          example: '-- "TGN: 1002002" for Prov. Tierra del Fuego, Argentina --'
+        locationRemarks:
+          type: string
+          description: 'Comments or notes about the Location. *-- examples: "under
+            water since 2005"*'
+          example: -- "under water since 2005" --
+        institutionCode:
+          type: string
+          description: 'The name (or acronym) in use by the institution having custody
+            of the object(s) or information referred to in the record. *-- examples:
+            "MVZ", "FMNH", "AKN-CLO", "University of California Museum of Paleontology
+            (UCMP)"*'
+          example: -- "MVZ", "FMNH", "AKN-CLO", "University of California Museum of
+            Paleontology (UCMP)" --
+        countryCode:
+          type: string
+          description: 'The standard code for the country in which the Location occurs.
+            Recommended best practice is to use ISO 3166-1-alpha-2 country codes.
+            *-- examples: "AR" for Argentina, "SV" for El Salvador*'
+          example: -- "AR" for Argentina, "SV" for El Salvador --
+        verbatimLongitude:
+          type: string
+          description: 'The verbatim original longitude of the Location. The coordinate
+            ellipsoid, geodeticDatum, or full Spatial Reference System (SRS) for these
+            coordinates should be stored in verbatimSRS and the coordinate system
+            should be stored in verbatimCoordinateSystem. *-- examples: "121d 10''
+            34" W"*'
+          example: -- "121d 10' 34" W" --
+        eventTime:
+          type: string
+          description: 'The time or interval during which an Event occurred. Recommended
+            best practice is to use an encoding scheme, such as ISO 8601:2004(E).
+            *-- examples: "14:07-0600" is 2:07pm in the time zone six hours earlier
+            than UTC, "08:40:21Z" is 8:40:21am UTC, "13:00:00Z/15:30:00Z" is the interval
+            between 1pm UTC and 3:30pm UTC.*'
+          example: -- "14:07-0600" is 2:07pm in the time zone six hours earlier than
+            UTC, "08:40:21Z" is 8:40:21am UTC, "13:00:00Z/15:30:00Z" is the interval
+            between 1pm UTC and 3:30pm UTC. --
+        member:
+          type: string
+          description: 'The full name of the lithostratigraphic member from which
+            the cataloged item was collected. *-- examples: "Lava Dam Member", "Hellnmaria
+            Member"*'
+          example: -- "Lava Dam Member", "Hellnmaria Member" --
+        highestBiostratigraphicZone:
+          type: string
+          description: 'The full name of the highest possible geological biostratigraphic
+            zone of the stratigraphic horizon from which the cataloged item was collected.
+            *-- examples: *'
+          example: --  --
+        latestEonOrHighestEonothem:
+          type: string
+          description: 'The full name of the latest possible geochronologic eon or
+            highest chrono-stratigraphic eonothem or the informal name ("Precambrian")
+            attributable to the stratigraphic horizon from which the cataloged item
+            was collected. *-- examples: "Phanerozoic", "Proterozoic"*'
+          example: -- "Phanerozoic", "Proterozoic" --
+        informationWithheld:
+          type: string
+          description: 'Additional information that exists, but that has not been
+            shared in the given record. *-- examples: "location information not given
+            for endangered species", "collector identities withheld", "ask about tissue
+            samples"*'
+          example: -- "location information not given for endangered species", "collector
+            identities withheld", "ask about tissue samples" --
+        dataGeneralizations:
+          type: string
+          description: 'Actions taken to make the shared data less specific or complete
+            than in its original form. Suggests that alternative data of higher quality
+            may be available on request. *-- examples: "Coordinates generalized from
+            original GPS coordinates to the nearest half degree grid cell"*'
+          example: -- "Coordinates generalized from original GPS coordinates to the
+            nearest half degree grid cell" --
+        georeferenceProtocol:
+          type: string
+          description: 'A description or reference to the methods used to determine
+            the spatial footprint, coordinates, and uncertainties. *-- examples: "Guide
+            to Best Practices for Georeferencing" (Chapman and Wieczorek, eds. 2006),
+            "MaNIS/HerpNet/ORNIS Georeferencing Guidelines", "BioGeomancer"*'
+          example: -- "Guide to Best Practices for Georeferencing" (Chapman and Wieczorek,
+            eds. 2006), "MaNIS/HerpNet/ORNIS Georeferencing Guidelines", "BioGeomancer"
+            --
+        verbatimSRS:
+          type: string
+          description: 'The ellipsoid, geodetic datum, or spatial reference system
+            (SRS) upon which coordinates given in verbatimLatitude and verbatimLongitude,
+            or verbatimCoordinates are based. Recommended best practice is use the
+            EPSG code as a controlled vocabulary to provide an SRS, if known. Otherwise
+            use a controlled vocabulary for the name or code of the geodetic datum,
+            if known. Otherwise use a controlled vocabulary for the name or code of
+            the ellipsoid, if known. If none of these is known, use the value "unknown".
+            *-- examples: "EPSG:4326", "WGS84", "NAD27", "Campo Inchauspe", "European
+            1950", "Clarke 1866"*'
+          example: -- "EPSG:4326", "WGS84", "NAD27", "Campo Inchauspe", "European
+            1950", "Clarke 1866" --
+        footprintWKT:
+          type: string
+          description: 'A Well-Known Text (WKT) representation of the shape (footprint,
+            geometry) that defines the Location. A Location may have both a point-radius
+            representation (see decimalLatitude) and a footprint representation, and
+            they may differ from each other. *-- examples: the one-degree bounding
+            box with opposite corners at (longitude=10, latitude=20) and (longitude=11,
+            latitude=21) would be expressed in well-known text as POLYGON ((10 20,
+            11 20, 11 21, 10 21, 10 20))*'
+          example: -- the one-degree bounding box with opposite corners at (longitude=10,
+            latitude=20) and (longitude=11, latitude=21) would be expressed in well-known
+            text as POLYGON ((10 20, 11 20, 11 21, 10 21, 10 20)) --
+        georeferenceVerificationStatus:
+          type: string
+          description: 'A categorical description of the extent to which the georeference
+            has been verified to represent the best possible spatial description.
+            Recommended best practice is to use a controlled vocabulary. *-- examples:
+            "requires verification", "verified by collector", "verified by curator".*'
+          example: -- "requires verification", "verified by collector", "verified
+            by curator". --
+        earliestEonOrLowestEonothem:
+          type: string
+          description: 'The full name of the earliest possible geochronologic eon
+            or lowest chrono-stratigraphic eonothem or the informal name ("Precambrian")
+            attributable to the stratigraphic horizon from which the cataloged item
+            was collected. *-- examples: "Phanerozoic", "Proterozoic"*'
+          example: -- "Phanerozoic", "Proterozoic" --
+        latestPeriodOrHighestSystem:
+          type: string
+          description: 'The full name of the latest possible geochronologic period
+            or highest chronostratigraphic system attributable to the stratigraphic
+            horizon from which the cataloged item was collected. *-- examples: "Neogene",
+            "Tertiary", "Quaternary"*'
+          example: -- "Neogene", "Tertiary", "Quaternary" --
+        datasetName:
+          type: string
+          description: 'The name identifying the data set from which the record was
+            derived. *-- examples: "Grinnell Resurvey Mammals", "Lacey Ctenomys Recaptures"*'
+          example: -- "Grinnell Resurvey Mammals", "Lacey Ctenomys Recaptures" --
+        verbatimCoordinateSystem:
+          type: string
+          description: 'The spatial coordinate system for the verbatimLatitude and
+            verbatimLongitude or the verbatimCoordinates of the Location. Recommended
+            best practice is to use a controlled vocabulary. *-- examples: "decimal
+            degrees", "degrees decimal minutes", "degrees minutes seconds", "UTM"*'
+          example: -- "decimal degrees", "degrees decimal minutes", "degrees minutes
+            seconds", "UTM" --
+        geodeticDatum:
+          type: string
+          description: 'The ellipsoid, geodetic datum, or spatial reference system
+            (SRS) upon which the geographic coordinates given in decimalLatitude and
+            decimalLongitude as based. Recommended best practice is use the EPSG code
+            as a controlled vocabulary to provide an SRS, if known. Otherwise use
+            a controlled vocabulary for the name or code of the geodetic datum, if
+            known. Otherwise use a controlled vocabulary for the name or code of the
+            ellipsoid, if known. If none of these is known, use the value "unknown".
+            *-- examples: "EPSG:4326", "WGS84", "NAD27", "Campo Inchauspe", "European
+            1950", "Clarke 1866"*'
+          example: -- "EPSG:4326", "WGS84", "NAD27", "Campo Inchauspe", "European
+            1950", "Clarke 1866" --
+        lithostratigraphicTerms:
+          type: string
+          description: 'The combination of all litho-stratigraphic names for the rock
+            from which the cataloged item was collected. *-- examples: *'
+          example: --  --
+        waterBody:
+          type: string
+          description: 'The name of the water body in which the Location occurs. Recommended
+            best practice is to use a controlled vocabulary such as the Getty Thesaurus
+            of Geographic Names. *-- examples: "Indian Ocean", "Baltic Sea"*'
+          example: -- "Indian Ocean", "Baltic Sea" --
+        earliestEraOrLowestErathem:
+          type: string
+          description: 'The full name of the earliest possible geochronologic era
+            or lowest chronostratigraphic erathem attributable to the stratigraphic
+            horizon from which the cataloged item was collected. *-- examples: "Cenozoic",
+            "Mesozoic"*'
+          example: -- "Cenozoic", "Mesozoic" --
+        verbatimDepth:
+          type: string
+          description: 'The original description of the depth below the local surface.
+            *-- examples: "100-200 m"*'
+          example: -- "100-200 m" --
+        locationID:
+          type: string
+          description: 'An identifier for the set of location information (data associated
+            with dcterms:Location). May be a global unique identifier or an identifier
+            specific to the data set. *-- examples: *'
+          example: --  --
+        verbatimCoordinates:
+          type: string
+          description: 'The verbatim original spatial coordinates of the Location.
+            The coordinate ellipsoid, geodeticDatum, or full Spatial Reference System
+            (SRS) for these coordinates should be stored in verbatimSRS and the coordinate
+            system should be stored in verbatimCoordinateSystem. *-- examples: "41
+            05 54S 121 05 34W", "17T 630000 4833400"*'
+          example: -- "41 05 54S 121 05 34W", "17T 630000 4833400" --
+        coordinatePrecision:
+          type: string
+          description: 'A decimal representation of the precision of the coordinates
+            given in the decimalLatitude and decimalLongitude. *-- examples: "0.00001"
+            (normal GPS limit for decimal degrees), "0.000278" (nearest second), "0.01667"
+            (nearest minute), "1.0" (nearest degree)*'
+          example: -- "0.00001" (normal GPS limit for decimal degrees), "0.000278"
+            (nearest second), "0.01667" (nearest minute), "1.0" (nearest degree) --
+        startDayOfYear:
+          type: integer
+          description: 'The earliest ordinal day of the year on which the Event occurred
+            (1 for January 1, 365 for December 31, except in a leap year, in which
+            case it is 366). *-- examples: "1" (=1 Jan), "366" (=31 Dec), "365" (=30
+            Dec in a leap year, 31 Dec in a non-leap year)*'
+          example: -- "1" (=1 Jan), "366" (=31 Dec), "365" (=30 Dec in a leap year,
+            31 Dec in a non-leap year) --
+        datasetID:
+          type: string
+          description: 'An identifier for the set of data. May be a global unique
+            identifier or an identifier specific to a collection or institution. *--
+            examples: *'
+          example: --  --
+        latestAgeOrHighestStage:
+          type: string
+          description: 'The full name of the latest possible geochronologic age or
+            highest chronostratigraphic stage attributable to the stratigraphic horizon
+            from which the cataloged item was collected. *-- examples: "Atlantic",
+            "Boreal", "Skullrockian"*'
+          example: -- "Atlantic", "Boreal", "Skullrockian" --
+        sampleSizeValue:
+          type: string
+          description: 'A numeric value for a measurement of the size (time duration,
+            length, area, or volume) of a sample in a sampling event. *-- examples:
+            A sampleSizeValue must have a corresponding sampleSizeUnit. Example: "5"
+            for sampleSizeValue with "metre" for sampleSizeUnit.*'
+          example: '-- A sampleSizeValue must have a corresponding sampleSizeUnit.
+            Example: "5" for sampleSizeValue with "metre" for sampleSizeUnit. --'
+        georeferenceSources:
+          type: string
+          description: 'A list (concatenated and separated) of maps, gazetteers, or
+            other resources used to georeference the Location, described specifically
+            enough to allow anyone in the future to use the same resources. The recommended
+            best practice is to separate the values with a vertical bar ('' | '').
+            *-- examples: "USGS 1:24000 Florence Montana Quad | Terrametrics 2008
+            on Google Earth"*'
+          example: -- "USGS 1:24000 Florence Montana Quad | Terrametrics 2008 on Google
+            Earth" --
+    purl:
+      type: object
+      properties:
+        rightsHolder:
+          type: string
+          description: 'A person or organization owning or managing rights over the
+            resource *-- examples: "The Regents of the University of California."*'
+          example: -- "The Regents of the University of California." --
+        license:
+          type: string
+          description: 'A legal document giving official permission to do something
+            with the resource. *-- examples: "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
+            "http://creativecommons.org/licenses/by/4.0/legalcode"*'
+          example: -- "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
+            "http://creativecommons.org/licenses/by/4.0/legalcode" --
+        references:
+          format: uri
+          description: 'A URL to a related resource that is referenced, cited, or
+            otherwise pointed to by the described resource. Often another webpage
+            showing the same, but richer resource *-- examples: http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=552479*'
+          type: string
+          example: -- http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=552479
+            --
+        modified:
+          format: iso8601
+          description: 'The most recent date-time on which the resource was changed.
+            For Darwin Core, recommended best practice is to use an encoding scheme,
+            such as ISO 8601:2004(E) *-- examples: "1963-03-08T14:07-0600" is 8 Mar
+            1963 2:07pm in the time zone six hours earlier than UTC, "2009-02-20T08:40Z"
+            is 20 Feb 2009 8:40am UTC, "1809-02-12" is 12 Feb 1809, "1906-06" is Jun
+            1906, "1971" is just that year, "2007-03-01T13:00:00Z/2008-05-11T15:30:00Z"
+            is the interval between 1 Mar 2007 1pm UTC and 11 May 2008 3:30pm UTC,
+            "2007-11-13/15" is the interval between 13 Nov 2007 and 15 Nov 2007*'
+          type: string
+          example: -- "1963-03-08T14:07-0600" is 8 Mar 1963 2:07pm in the time zone
+            six hours earlier than UTC, "2009-02-20T08:40Z" is 20 Feb 2009 8:40am
+            UTC, "1809-02-12" is 12 Feb 1809, "1906-06" is Jun 1906, "1971" is just
+            that year, "2007-03-01T13:00:00Z/2008-05-11T15:30:00Z" is the interval
+            between 1 Mar 2007 1pm UTC and 11 May 2008 3:30pm UTC, "2007-11-13/15"
+            is the interval between 13 Nov 2007 and 15 Nov 2007 --
+        language:
+          type: string
+          description: 'A language of the resource. Recommended best practice is to
+            use a controlled vocabulary such as RFC 4646 [RFC4646] *-- examples: "en"
+            for English, "es" for Spanish*'
+          example: -- "en" for English, "es" for Spanish --
+        accessRights:
+          type: string
+          description: 'Information about who can access the resource or an indication
+            of its security status. Access Rights may include information regarding
+            access or restrictions based on privacy, security, or other policies *--
+            examples: "not-for-profit use only"*'
+          example: -- "not-for-profit use only" --
+        bibliographicCitation:
+          type: string
+          description: 'A bibliographic reference for the resource as a statement
+            indicating how this record should be cited (attributed) when used. Recommended
+            practice is to include sufficient bibliographic detail to identify the
+            resource as unambiguously as possible *-- examples: "Ctenomys sociabilis
+            (MVZ 165861)" for a specimen, "Oliver P. Pearson. 1985. Los tuco-tucos
+            (genera Ctenomys) de los Parques Nacionales Lanin y Nahuel Huapi, Argentina
+            Historia Natural, 5(37):337-343." for a Taxon*'
+          example: -- "Ctenomys sociabilis (MVZ 165861)" for a specimen, "Oliver P.
+            Pearson. 1985. Los tuco-tucos (genera Ctenomys) de los Parques Nacionales
+            Lanin y Nahuel Huapi, Argentina Historia Natural, 5(37):337-343." for
+            a Taxon --
+        type:
+          type: string
+          description: 'The nature or genre of the resource. For Darwin Core, recommended
+            best practice is to use the name of the class that defines the root of
+            the record. *-- examples: "StillImage", "MovingImage", "Sound", "PhysicalObject",
+            "Event"*'
+          example: -- "StillImage", "MovingImage", "Sound", "PhysicalObject", "Event"
+            --

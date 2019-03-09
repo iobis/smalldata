@@ -13,6 +13,6 @@ public class OccurenceHandler {
     context.response()
       .putHeader(HttpHeaders.CONTENT_TYPE, "application/json")
       //.putHeader(HttpHeaders.TRANSFER_ENCODING, "chunked")
-      .end(new JsonArray().add(new JsonObject().put("occurenceID", "some ID")).encode())  ;
+      .end(new JsonArray().add(new JsonObject().put("occurenceID", "some ID")).encode());
   }
 }
