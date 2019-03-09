@@ -1,7 +1,6 @@
 package org.obis.smalldata.webapi;
 
 import io.vertx.core.http.HttpHeaders;
-import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 import org.pmw.tinylog.Logger;

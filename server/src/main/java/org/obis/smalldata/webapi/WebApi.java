@@ -4,14 +4,8 @@ import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Future;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.api.contract.openapi3.OpenAPI3RouterFactory;
-import org.apache.commons.io.FileUtils;
 import org.pmw.tinylog.Logger;
 
-import java.io.File;
-import java.io.IOException;
-import java.net.URL;
-import java.nio.file.Files;
-import java.util.Optional;
 import java.util.function.Consumer;
 
 public class WebApi extends AbstractVerticle {
