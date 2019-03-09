@@ -96,7 +96,7 @@ components:
         event:
           $ref: "./spec/event.yaml#/Event"
         emof:
-          $ref: "./spec/emof.yaml#/Emof"
+          $ref: "./spec/emof.yaml#/EMOF"
 
     DWC.Event:
       type: object

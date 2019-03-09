@@ -26,7 +26,8 @@ public class GenerateOpenApi {
   private final Map<String, String> filesToProcess = Map.ofEntries(
     entry("http://rs.gbif.org/core/dwc_occurrence_2015-07-02.xml", "Occurrence"),
     entry("http://rs.gbif.org/core/dwc_taxon_2015-04-24.xml", "Taxon"),
-    entry("http://rs.gbif.org/core/dwc_event_2016_06_21.xml", "Event")
+    entry("http://rs.gbif.org/core/dwc_event_2016_06_21.xml", "Event"),
+    entry("http://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml", "EMOF")
   );
 
   GenerateOpenApi(String targetPath) {
