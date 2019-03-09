@@ -20,6 +20,7 @@ import util.IoFile;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(VertxExtension.class)
 public class WebRssComponentApiTest {
@@ -38,28 +39,22 @@ public class WebRssComponentApiTest {
 
   @Test
   @DisplayName("Test rss handling")
-  @Timeout(value = 1, timeUnit = TimeUnit.SECONDS)
+  @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
   void replyRssFile(Vertx vertx, VertxTestContext testContext) {
     WebClient client = WebClient.create(vertx);
     client.get(HTTP_PORT, "localhost", "/api/rss/weekly")
       .as(BodyCodec.string())
       .send(result -> {
-        if (result.succeeded()) {
-          assertEquals(200, result.result().statusCode());
-          var resultString = result.result().body();
-          IoFile.doWithFileContent("rss/sample.xml",
-            xmlString -> {
-              assertEquals(resultString.replaceAll("\\n", ""),
-                xmlString.replaceAll("\\n", ""));
-              testContext.completeNow();
-            });
-        }
+        assertTrue(result.succeeded());
+        assertEquals(200, result.result().statusCode());
+        assertEquals(IoFile.loadFromResources("rss/sample.xml"), result.result().body());
+        testContext.completeNow();
       });
   }
 
   class MockRssComponent extends AbstractVerticle {
     @Override
-    public void start(Future<Void> startFuture) throws Exception {
+    public void start(Future<Void> startFuture) {
       vertx.eventBus().consumer("internal.rss", message -> {
         Logger.info("Got message: {}", message.body());
         message.reply("rss/sample.xml");

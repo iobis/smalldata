@@ -14,7 +14,7 @@ import org.pmw.tinylog.Logger;
 import java.io.IOException;
 
 public class EmbeddedDb extends AbstractVerticle {
-  private static final MongodStarter starter = MongodStarter.getDefaultInstance();
+  private static final MongodStarter MONGOD_STARTER = MongodStarter.getDefaultInstance();
   private static final String BIND_IP_DEFAULT = "localhost";
   private static final int PORT_DEFAULT = 27017;
 
@@ -32,7 +32,7 @@ public class EmbeddedDb extends AbstractVerticle {
       .replication(new Storage(path, null, 0))
       .version(Version.Main.PRODUCTION)
       .build();
-    executable = starter.prepare(mongoConfig);
+    executable = MONGOD_STARTER.prepare(mongoConfig);
     process = executable.start();
   }
 

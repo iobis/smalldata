@@ -1,6 +1,5 @@
 package org.obis.smalldata.rss;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.obis.smalldata.rss.model.Channel;
@@ -16,19 +15,14 @@ import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
 public class RssComponentGeneratorTest {
 
   private RssGenerator rssGenerator = new RssGenerator(true);
 
-  @BeforeEach
-  public void beforeEach() {
-  }
-
   @Test
-  @DisplayName("Basic rss: expect same content")
-  public void generateRss() throws MalformedURLException {
-    var rssString = rssGenerator.writeRssAsString(new RssFeed(Channel.builder()
+  @DisplayName("basic rss: expect same content")
+  public void writeRssAsString() throws MalformedURLException {
+    var rssFeed = new RssFeed(Channel.builder()
       .title("title")
       .link(new URL("http://localhost"))
       .lastBuildDate(Instant.parse("2019-02-22T17:18:56.127701Z"))
@@ -46,15 +40,18 @@ public class RssComponentGeneratorTest {
               .pubDate(Instant.parse(item[1]))
               .guid(RssItem.Guid.builder()
                 .url(new URL(item[0]))
-                .build()).build();
+                .build())
+              .build();
           } catch (MalformedURLException e) {
-            e.printStackTrace();
-            return null;
+            throw new RuntimeException(e);
           }
         })
         .collect(Collectors.toList()))
       .language("nl-BE")
-      .build()));
-    IoFile.doWithFileContent("rss/rss.xml", xmlExpected -> assertEquals(xmlExpected, rssString));
+      .build());
+
+    var actualRssXml = rssGenerator.writeRssAsString(rssFeed).replaceAll("\r\n", "\n");
+
+    assertEquals(IoFile.loadFromResources("rss/rss.xml"), actualRssXml);
   }
 }
