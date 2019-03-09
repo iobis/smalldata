@@ -26,7 +26,7 @@ import static org.pmw.tinylog.Logger.info;
 public class WebRssComponentApiTest {
 
   private static final int HTTP_PORT = 8080;
-  private static final JsonObject CONFIG = new JsonObject().put("http.port", HTTP_PORT);
+  private static final JsonObject CONFIG = new JsonObject().put("port", HTTP_PORT);
 
   @BeforeEach
   void deployVerticle(Vertx vertx, VertxTestContext testContext) {
