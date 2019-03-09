@@ -12,6 +12,8 @@ import io.vertx.core.AbstractVerticle;
 import org.pmw.tinylog.Logger;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class EmbeddedDb extends AbstractVerticle {
   private static final MongodStarter starter = MongodStarter.getDefaultInstance();
@@ -20,6 +22,11 @@ public class EmbeddedDb extends AbstractVerticle {
 
   private MongodExecutable executable;
   private MongodProcess process;
+  private SecureRandomId randomId = SecureRandomId.INSTANCE;
+
+  private void createIfEmpty(String bindIp, Integer port) {
+
+  }
 
   @Override
   public void start() throws IOException {
@@ -27,13 +34,19 @@ public class EmbeddedDb extends AbstractVerticle {
     var bindIp = config().getString("bindIp", BIND_IP_DEFAULT);
     var port = config().getInteger("port", PORT_DEFAULT);
     var path = config().getString("path", null);
-    var mongoConfig = new MongodConfigBuilder()
+    var mongodConfig =new MongodConfigBuilder()
       .net(new Net(bindIp, port, Network.localhostIsIPv6()))
-      .replication(new Storage(path, null, 0))
-      .version(Version.Main.PRODUCTION)
-      .build();
-    executable = starter.prepare(mongoConfig);
+      .version(Version.Main.PRODUCTION);
+
+    if (path != null && !path.isEmpty() && Files.exists(Paths.get(path))) {
+      mongodConfig.replication(new Storage(path, null, 0));
+      Logger.info("Mongo started on path: {}", path);
+    } else {
+      Logger.warn("Mongo started without replication! Data is not stored between redeploys");
+    }
+    executable = starter.prepare(mongodConfig.build());
     process = executable.start();
+    createIfEmpty(bindIp, port);
   }
 
   @Override

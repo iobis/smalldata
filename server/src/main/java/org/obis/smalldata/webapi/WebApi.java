@@ -12,9 +12,9 @@ public class WebApi extends AbstractVerticle {
 
   @Override
   public void start(Future<Void> startFuture) {
-    Logger.info("config() -> {}", config().getInteger("http.port", 8000));
+    Logger.info("config() -> {}", config().getInteger("port", 8000));
     Logger.info("getenv() -> {}", System.getenv("HTTP_PORT"));
-    var port = config().getInteger("http.port", 8008);
+    var port = config().getInteger("port", 8008);
 
     OpenAPI3RouterFactory.create(vertx, "src/main/resources/swaggerroot/smalldata.yaml", ar -> {
       if (ar.succeeded()) {
