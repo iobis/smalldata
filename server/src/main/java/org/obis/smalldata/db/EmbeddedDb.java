@@ -32,7 +32,7 @@ public class EmbeddedDb extends AbstractVerticle {
     var bindIp = config().getString("bindIp", BIND_IP_DEFAULT);
     var port = config().getInteger("port", PORT_DEFAULT);
     var path = config().getString("path", null);
-    var mongodConfig =new MongodConfigBuilder()
+    var mongodConfig = new MongodConfigBuilder()
       .net(new Net(bindIp, port, Network.localhostIsIPv6()))
       .version(Version.Main.PRODUCTION);
 
@@ -53,6 +53,7 @@ public class EmbeddedDb extends AbstractVerticle {
       dbInitializer.mockData();
     }
   }
+
   @Override
   public void stop() {
     Logger.info("shutdown mongo db");

@@ -16,7 +16,7 @@ public class UniqueIdGenerator {
     this.client = client;
   }
 
-  public void consumeNewId (String collection, String idField, Consumer<String> idConsumer) {
+  public void consumeNewId(String collection, String idField, Consumer<String> idConsumer) {
     var newId = randomId.generate();
     client.find(collection, new JsonObject().put(idField, newId),
       arId -> {

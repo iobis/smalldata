@@ -40,8 +40,7 @@ public class DbInitializer {
       new String[]{Collections.DATASETS.dbName(), "datasetid"})
       .forEach(entry ->
         client.createIndex(entry[0], new JsonObject().put(entry[1], 1)
-            .put("collation", Const.INSTANCE.collation),
-          __ -> Logger.info("created index '{}'", entry[1])));
+            .put("collation", Const.INSTANCE.collation), x -> Logger.info("created index '{}'", entry[1])));
   }
 
   void mockData() {

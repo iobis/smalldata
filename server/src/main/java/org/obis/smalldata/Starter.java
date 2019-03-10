@@ -15,8 +15,6 @@ public class Starter extends AbstractVerticle {
       new DeploymentOptions().setConfig(config().getJsonObject("http")));
     vertx.deployVerticle(RssComponent.class.getName());
     vertx.deployVerticle(EmbeddedDb.class.getName(),
-      new DeploymentOptions().setConfig(config().getJsonObject("storage"))
-    );
-   }
-
+      new DeploymentOptions().setConfig(config().getJsonObject("storage")));
+  }
 }
