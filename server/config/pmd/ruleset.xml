@@ -23,11 +23,13 @@
   <rule ref="category/java/design.xml">
     <exclude name="LawOfDemeter"/>
     <exclude name="UseUtilityClass"/>
+    <exclude name="AvoidCatchingGenericException"/>
     <exclude name="AvoidThrowingRawExceptionTypes"/>
   </rule>
   <rule ref="category/java/errorprone.xml">
     <exclude name="BeanMembersShouldSerialize"/>
     <exclude name="DataflowAnomalyAnalysis"/>
+    <exclude name="AvoidCatchingNPE"/>
   </rule>
   <rule ref="category/java/multithreading.xml">
     <exclude name="UseConcurrentHashMap"/>
