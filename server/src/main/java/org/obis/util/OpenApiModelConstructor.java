@@ -17,7 +17,7 @@ public class OpenApiModelConstructor {
   private static final NamespaceMapper NS_MAPPER = NamespaceMapper.INSTANCE;
 
   private void addPropertyRequired(Map<String, Map<String, Object>> apiRaw, Map<String, Object> prop, String ns) {
-    if (prop.get(REQUIRED).equals("true")) {
+    if ("true".equals(prop.get(REQUIRED))) {
       if (!apiRaw.get(ns).containsKey(REQUIRED)) {
         apiRaw.get(ns).put(REQUIRED, new ArrayList<String>());
       }
