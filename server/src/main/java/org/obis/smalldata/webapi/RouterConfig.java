@@ -10,15 +10,13 @@ import lombok.Value;
 import java.util.Map;
 import java.util.function.Consumer;
 
-import static java.util.Map.entry;
-
 class RouterConfig {
 
   private final Consumer<Router> completionHandler;
-  private final Map<String, OperationHandlers> handlers = Map.ofEntries(
-    entry("getStatus", new OperationHandlers(StatusHandler::status)),
-    entry("getRss", new OperationHandlers(RssHandler::fetch)),
-    entry("postDWCA", new OperationHandlers(OccurrenceHandler::post))
+  private final Map<String, OperationHandlers> handlers = Map.of(
+    "getStatus", new OperationHandlers(StatusHandler::status),
+    "getRss", new OperationHandlers(RssHandler::fetch),
+    "postDWCA", new OperationHandlers(OccurrenceHandler::post)
   );
 
   RouterConfig(Consumer<Router> completionHandler) {
@@ -26,9 +24,9 @@ class RouterConfig {
   }
 
   void invoke(OpenAPI3RouterFactory routerFactory) {
-    handlers.forEach((operationId, opHandlers) -> {
-      routerFactory.addHandlerByOperationId(operationId, opHandlers.getHandler());
-      routerFactory.addFailureHandlerByOperationId(operationId, opHandlers.getFailureHandler());
+    handlers.forEach((operationId, handler) -> {
+      routerFactory.addHandlerByOperationId(operationId, handler.getHandler());
+      routerFactory.addFailureHandlerByOperationId(operationId, handler.getFailureHandler());
     });
 
     var router = routerFactory.getRouter();
