@@ -55,7 +55,6 @@ dependencies {
   compileOnly "org.projectlombok:lombok:1.18.6"
 
   testImplementation "io.vertx:vertx-junit5:$vertxVersion"
-  testImplementation "io.vertx:vertx-junit5:$vertxVersion"
   testImplementation "com.fasterxml.uuid:java-uuid-generator:3.1.5"
   testImplementation "commons-io:commons-io:2.6"
 
