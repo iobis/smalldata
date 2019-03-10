@@ -247,5 +247,6 @@
     <module name="CommentsIndentation"/>
     <module name="SingleSpaceSeparator"/>
     <module name="ConstantName"/>
+    <module name="WhitespaceAfter"/>
   </module>
 </module>

@@ -36,8 +36,8 @@ public class TypeMapper implements Function<Map<String, Map<String, Object>>, Ma
     );
 
     void mapTypes(Map.Entry<String, Object> termEntry) {
-      var fields = new HashMap<>((Map<String, Object>)termEntry.getValue());
-      var type = (String)fields.get("type");
+      var fields = new HashMap<>((Map<String, Object>) termEntry.getValue());
+      var type = (String) fields.get("type");
       if (typeMapper.containsKey(type)) {
         var typeFields = typeMapper.get(type);
         fields.putAll(typeFields);

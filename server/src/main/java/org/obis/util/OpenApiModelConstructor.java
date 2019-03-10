@@ -21,17 +21,17 @@ public class OpenApiModelConstructor {
       if (!apiRaw.get(ns).containsKey(REQUIRED)) {
         apiRaw.get(ns).put(REQUIRED, new ArrayList<String>());
       }
-      ((List<String>)apiRaw.get(ns).get(REQUIRED)).add((String)prop.get("name"));
+      ((List<String>) apiRaw.get(ns).get(REQUIRED)).add((String) prop.get("name"));
     }
   }
 
   private void addProperty(Map<String, Object> prop, Map<String, Object> propertyMap) {
     var examples = prop.containsKey("examples") ? prop.get("examples") : "--";
     var type = prop.containsKey(TYPE) ? prop.get(TYPE) : "string";
-    propertyMap.put((String)prop.get("name"),
+    propertyMap.put((String) prop.get("name"),
       Map.ofEntries(
         entry(TYPE, type),
-        entry("description",prop.get("description") + " *-- examples: " + examples + "*"),
+        entry("description", prop.get("description") + " *-- examples: " + examples + "*"),
         entry("example", "-- " + examples + " --")));
   }
 
@@ -53,7 +53,7 @@ public class OpenApiModelConstructor {
     Map<String, Map<String, Object>> apiRaw = new HashMap<>();
     xml.getProperties()
       .forEach(prop -> {
-        String ns = NS_MAPPER.getKey((String)prop.get("namespace"));
+        String ns = NS_MAPPER.getKey((String) prop.get("namespace"));
         Map<String, Object> propertyMap = extractPropertyMap(apiRaw, ns);
         addProperty(prop, propertyMap);
         addPropertyRequired(apiRaw, prop, ns);
