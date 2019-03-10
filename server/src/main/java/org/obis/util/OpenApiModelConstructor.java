@@ -26,8 +26,8 @@ public class OpenApiModelConstructor {
   }
 
   private void addProperty(Map<String, Object> prop, Map<String, Object> propertyMap) {
-    var examples = prop.containsKey("examples") ? prop.get("examples") : "--";
-    var type = prop.containsKey(TYPE) ? prop.get(TYPE) : "string";
+    var examples = prop.getOrDefault("examples", "--");
+    var type = prop.getOrDefault(TYPE, "string");
     propertyMap.put((String) prop.get("name"),
       Map.ofEntries(
         entry(TYPE, type),
