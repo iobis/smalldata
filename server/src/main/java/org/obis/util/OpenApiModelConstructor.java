@@ -16,7 +16,7 @@ public class OpenApiModelConstructor {
 
   private static final NamespaceMapper NS_MAPPER = NamespaceMapper.INSTANCE;
 
-  private void addPropertyRequired(Map<String, Map<String, Object>> apiRaw, Map<String, Object> prop, String ns) {
+  private static void addPropertyRequired(Map<String, Map<String, Object>> apiRaw, Map<String, Object> prop, String ns) {
     if ("true".equals(prop.get(REQUIRED))) {
       if (!apiRaw.get(ns).containsKey(REQUIRED)) {
         apiRaw.get(ns).put(REQUIRED, new ArrayList<String>());
@@ -25,7 +25,7 @@ public class OpenApiModelConstructor {
     }
   }
 
-  private void addProperty(Map<String, Object> prop, Map<String, Object> propertyMap) {
+  private static void addProperty(Map<String, Object> prop, Map<String, Object> propertyMap) {
     var examples = prop.getOrDefault("examples", "--");
     var type = prop.getOrDefault(TYPE, "string");
     propertyMap.put((String) prop.get("name"),
@@ -35,7 +35,7 @@ public class OpenApiModelConstructor {
         entry("example", "-- " + examples + " --")));
   }
 
-  private Map<String, Object> extractPropertyMap(Map<String, Map<String, Object>> apiRaw, String ns) {
+  private static Map<String, Object> extractPropertyMap(Map<String, Map<String, Object>> apiRaw, String ns) {
     Map<String, Object> propertyMap;
     if (apiRaw.containsKey(ns)) {
       propertyMap = (Map<String, Object>) apiRaw.get(ns).get("properties");
@@ -49,7 +49,7 @@ public class OpenApiModelConstructor {
     return propertyMap;
   }
 
-  Map<String, Map<String, Object>> constructApiModel(DarwinCoreExtension xml) {
+  public static Map<String, Map<String, Object>> constructApiModel(DarwinCoreExtension xml) {
     Map<String, Map<String, Object>> apiRaw = new HashMap<>();
     xml.getProperties()
       .forEach(prop -> {

@@ -12,22 +12,20 @@ class OpenApiModelConstructorTest {
 
   @Test
   void constructApiModelIfEmpty() {
-    var openApiModelConstructor = new OpenApiModelConstructor();
     var darwinCoreExtension = new DarwinCoreExtension();
     darwinCoreExtension.setProperties(List.of());
 
-    var actual = openApiModelConstructor.constructApiModel(darwinCoreExtension);
+    var actual = OpenApiModelConstructor.constructApiModel(darwinCoreExtension);
 
     assertThat(actual).isEmpty();
   }
 
   @Test
   void constructApiModelIfNotEmpty() {
-    var openApiModelConstructor = new OpenApiModelConstructor();
     var darwinCoreExtension = new DarwinCoreExtension();
     darwinCoreExtension.setProperties(List.of(Map.of("namespace", "namespace-value")));
 
-    var actual = openApiModelConstructor.constructApiModel(darwinCoreExtension);
+    var actual = OpenApiModelConstructor.constructApiModel(darwinCoreExtension);
 
     assertThat(actual.entrySet())
       .isNotEmpty()

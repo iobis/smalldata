@@ -23,7 +23,6 @@ public class GenerateOpenApi {
   );
 
   private final DarwinCoreExtensionReader xmlReader = new DarwinCoreExtensionReader();
-  private final OpenApiModelConstructor apiConstructor = new OpenApiModelConstructor();
   private final OpenApiWriter apiWriter = new OpenApiWriter();
   private final List<Function<Map<String, Map<String, Object>>, Map<String, Map<String, Object>>>> customizers =
     List.of(new TypeMapper(), new CustomFieldMerger());
@@ -44,7 +43,7 @@ public class GenerateOpenApi {
     } catch (UnirestException | IOException e) {
       error(e);
     }
-    var apiMap = apiConstructor.constructApiModel(xml);
+    var apiMap = OpenApiModelConstructor.constructApiModel(xml);
     customizers.stream().reduce(Function::andThen).orElse(Function.identity()).apply(apiMap);
     Logger.info(apiMap);
     var extensionName = processEntry.getValue();
