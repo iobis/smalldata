@@ -6,10 +6,11 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.ser.ToXmlGenerator;
 import org.obis.smalldata.rss.model.RssFeed;
-import org.pmw.tinylog.Logger;
 
 import java.io.File;
 import java.io.IOException;
+
+import static org.pmw.tinylog.Logger.error;
 
 public class RssGenerator {
 
@@ -28,7 +29,7 @@ public class RssGenerator {
     try {
       xml = xmlMapper.writerWithDefaultPrettyPrinter().writeValueAsString(rssFeed);
     } catch (JsonProcessingException e) {
-      Logger.error(e);
+      error(e);
     }
     return xml;
   }
@@ -39,7 +40,7 @@ public class RssGenerator {
       xmlFile = File.createTempFile("smalldata", "xml");
       xmlMapper.writerWithDefaultPrettyPrinter().writeValue(xmlFile, rssFeed);
     } catch (IOException e) {
-      Logger.error(e);
+      error(e);
     }
     return xmlFile;
   }
