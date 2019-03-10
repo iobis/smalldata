@@ -17,14 +17,15 @@ public class WebApi extends AbstractVerticle {
     info("getenv() -> {}", System.getenv("HTTP_PORT"));
     var port = config().getInteger("http.port", 8008);
 
-    OpenAPI3RouterFactory.create(vertx, "src/main/resources/swaggerroot/smalldata.yaml", ar -> {
-      if (ar.succeeded()) {
-        info("started OpenAPI: {}", ar.succeeded());
-        new RouterConfig(startServer(startFuture, port)).invoke(ar.result());
-      } else {
-        info("failed to start api: {}", ar.cause());
-      }
-    });
+    OpenAPI3RouterFactory.create(vertx, "swaggerroot/smalldata.yaml",
+      ar -> {
+        if (ar.succeeded()) {
+          info("started OpenAPI: {}", ar.succeeded());
+          new RouterConfig(startServer(startFuture, port)).invoke(ar.result());
+        } else {
+          info("failed to start api: {}", ar.cause());
+        }
+      });
   }
 
   private Consumer<Router> startServer(Future<Void> startFuture, int port) {
@@ -35,7 +36,7 @@ public class WebApi extends AbstractVerticle {
           startFuture.complete();
           info("HTTP server started on http://localhost: {}", port);
         } else {
-          info("Failed to start the server http://localhost:{}", port);
+          info("Failed to start the server http://localhost: {}", port);
           startFuture.fail(http.cause());
         }
       });
