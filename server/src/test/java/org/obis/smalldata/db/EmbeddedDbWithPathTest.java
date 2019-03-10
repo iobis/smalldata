@@ -69,7 +69,7 @@ public class EmbeddedDbWithPathTest {
         try {
           FileUtils.deleteDirectory(dbPath);
         } catch (IOException e) {
-          e.printStackTrace();
+          Logger.error(e);
         }
       }
     });
@@ -79,15 +79,13 @@ public class EmbeddedDbWithPathTest {
   @DisplayName("Check custom path")
   @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
   public void testCustomPath(VertxTestContext testContext) {
-    client.find(COLLECTION_NAME,
+    client.find(
+      COLLECTION_NAME,
       new JsonObject(),
       result -> {
-        if (result.succeeded()) {
-          Logger.info("result: {}", result.result());
-          assertTrue(result.result().size() > 0);
-        } else {
-          Logger.info("failed: {}", result.cause());
-        }
+        Logger.info("result: {}", result.result());
+        assertTrue(result.succeeded());
+        assertTrue(result.result().size() > 0);
         testContext.completeNow();
       });
   }
@@ -96,13 +94,12 @@ public class EmbeddedDbWithPathTest {
   @DisplayName("Insert data")
   @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
   public void step01Insert(VertxTestContext testContext) {
-    client.insert(COLLECTION_NAME, new JsonObject().put("persistent", true),
+    client.insert(
+      COLLECTION_NAME,
+      new JsonObject().put("persistent", true),
       result -> {
-        if (result.succeeded()) {
-          Logger.info("result: {}", result.result());
-        } else {
-          Logger.info("failed: {}", result.cause());
-        }
+        Logger.info("result: {}", result.result());
+        assertTrue(result.succeeded());
         testContext.completeNow();
       });
   }

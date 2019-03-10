@@ -61,12 +61,9 @@ public class EmbeddedDbTest {
       COLLECTION_NAME,
       new JsonObject(),
       result -> {
-        if (result.succeeded()) {
-          Logger.info("result: {}", result.result());
-          assertTrue(result.result().size() > 0);
-        } else {
-          Logger.info("failed: {}", result.cause());
-        }
+        Logger.info("result: {}", result.result());
+        assertTrue(result.succeeded());
+        assertTrue(result.result().size() > 0);
         testContext.completeNow();
       });
   }
@@ -78,12 +75,9 @@ public class EmbeddedDbTest {
     client.find(COLLECTION_NAME,
       new JsonObject().put("measurementID", 42),
       result -> {
-        if (result.succeeded()) {
-          Logger.info("result: {}", result.result());
-          assertTrue(result.result().size() > 0);
-        } else {
-          Logger.info("failed: {}", result.cause());
-        }
+        Logger.info("result: {}", result.result());
+        assertTrue(result.succeeded());
+        assertTrue(result.result().size() > 0);
         testContext.completeNow();
       });
   }
