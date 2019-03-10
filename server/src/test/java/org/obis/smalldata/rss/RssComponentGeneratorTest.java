@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RssComponentGeneratorTest {
 
-  private RssGenerator rssGenerator = new RssGenerator(true);
+  private static final RssGenerator RSS_GENERATOR = new RssGenerator();
 
   @Test
   @DisplayName("basic rss: expect same content")
@@ -39,6 +39,7 @@ public class RssComponentGeneratorTest {
             return RssItem.builder()
               .pubDate(Instant.parse(item[1]))
               .guid(RssItem.Guid.builder()
+                .isPermaLink(false)
                 .url(new URL(item[0]))
                 .build())
               .build();
@@ -50,7 +51,7 @@ public class RssComponentGeneratorTest {
       .language("nl-BE")
       .build());
 
-    var actualRssXml = rssGenerator.writeRssAsString(rssFeed).replaceAll("\r\n", "\n");
+    var actualRssXml = RSS_GENERATOR.writeRssAsString(rssFeed).replaceAll("\r\n", "\n");
 
     assertEquals(IoFile.loadFromResources("rss/rss.xml"), actualRssXml);
   }

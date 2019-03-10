@@ -56,8 +56,9 @@ public class EmbeddedDbTest {
   @Test
   @DisplayName("returns at least one result")
   @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
-  public void getAllDocs(VertxTestContext testContext) {
-    client.find(COLLECTION_NAME,
+  public void findReturnsAtLeastOneResult(VertxTestContext testContext) {
+    client.find(
+      COLLECTION_NAME,
       new JsonObject(),
       result -> {
         if (result.succeeded()) {

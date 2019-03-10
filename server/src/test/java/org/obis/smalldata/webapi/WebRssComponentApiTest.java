@@ -52,7 +52,7 @@ public class WebRssComponentApiTest {
       });
   }
 
-  class MockRssComponent extends AbstractVerticle {
+  static class MockRssComponent extends AbstractVerticle {
     @Override
     public void start(Future<Void> startFuture) {
       vertx.eventBus().consumer("internal.rss", message -> {

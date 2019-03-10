@@ -12,15 +12,9 @@ import java.io.IOException;
 
 public class RssGenerator {
 
-  private XmlMapper xmlMapper;
-  private boolean prettyPrint;
+  private final XmlMapper xmlMapper;
 
   public RssGenerator() {
-    this(false);
-  }
-
-  public RssGenerator(boolean prettyPrint) {
-    this.prettyPrint = prettyPrint;
     xmlMapper = new XmlMapper();
     xmlMapper.configure(ToXmlGenerator.Feature.WRITE_XML_DECLARATION, true);
     xmlMapper.findAndRegisterModules().configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
