@@ -22,6 +22,7 @@
   </rule>
   <rule ref="category/java/design.xml">
     <exclude name="LawOfDemeter"/>
+    <exclude name="ClassWithOnlyPrivateConstructorsShouldBeFinal"/>
     <exclude name="UseUtilityClass"/>
     <exclude name="AvoidCatchingGenericException"/>
     <exclude name="AvoidThrowingRawExceptionTypes"/>
