@@ -89,4 +89,6 @@ checkstyle {
 
 pmd {
   consoleOutput true
+  ruleSetConfig = resources.text.fromFile("config/pmd/ruleset.xml")
+  ruleSets = []
 }
