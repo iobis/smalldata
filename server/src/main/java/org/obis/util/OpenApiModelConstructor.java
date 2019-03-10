@@ -11,23 +11,26 @@ import static java.util.Map.entry;
 
 public class OpenApiModelConstructor {
 
-  private NamespaceMapper nsMapper = NamespaceMapper.INSTANCE;
+  private static final String REQUIRED = "required";
+  private static final String TYPE = "type";
+
+  private static final NamespaceMapper NS_MAPPER = NamespaceMapper.INSTANCE;
 
   private void addPropertyRequired(Map<String, Map<String, Object>> apiRaw, Map<String, Object> prop, String ns) {
-    if (prop.get("required").equals("true")) {
-      if (!apiRaw.get(ns).containsKey("required")) {
-        apiRaw.get(ns).put("required", new ArrayList<String>());
+    if (prop.get(REQUIRED).equals("true")) {
+      if (!apiRaw.get(ns).containsKey(REQUIRED)) {
+        apiRaw.get(ns).put(REQUIRED, new ArrayList<String>());
       }
-      ((List<String>)apiRaw.get(ns).get("required")).add((String)prop.get("name"));
+      ((List<String>)apiRaw.get(ns).get(REQUIRED)).add((String)prop.get("name"));
     }
   }
 
   private void addProperty(Map<String, Object> prop, Map<String, Object> propertyMap) {
     var examples = prop.containsKey("examples") ? prop.get("examples") : "--";
-    var type = prop.containsKey("type") ? prop.get("type") : "string";
+    var type = prop.containsKey(TYPE) ? prop.get(TYPE) : "string";
     propertyMap.put((String)prop.get("name"),
       Map.ofEntries(
-        entry("type", type),
+        entry(TYPE, type),
         entry("description",prop.get("description") + " *-- examples: " + examples + "*"),
         entry("example", "-- " + examples + " --")));
   }
@@ -39,7 +42,7 @@ public class OpenApiModelConstructor {
     } else {
       propertyMap = new HashMap<>();
       Map<String, Object> nsMap = new HashMap<>();
-      nsMap.put("type", "object");
+      nsMap.put(TYPE, "object");
       nsMap.put("properties", propertyMap);
       apiRaw.put(ns, nsMap);
     }
@@ -50,7 +53,7 @@ public class OpenApiModelConstructor {
     Map<String, Map<String, Object>> apiRaw = new HashMap<>();
     xml.getProperties()
       .forEach(prop -> {
-        String ns = nsMapper.getKey((String)prop.get("namespace"));
+        String ns = NS_MAPPER.getKey((String)prop.get("namespace"));
         Map<String, Object> propertyMap = extractPropertyMap(apiRaw, ns);
         addProperty(prop, propertyMap);
         addPropertyRequired(apiRaw, prop, ns);

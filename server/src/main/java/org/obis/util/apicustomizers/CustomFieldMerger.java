@@ -1,21 +1,19 @@
 package org.obis.util.apicustomizers;
 
 import lombok.Value;
-import org.pmw.tinylog.Logger;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
 import static java.util.Map.entry;
+import static org.pmw.tinylog.Logger.debug;
+import static org.pmw.tinylog.Logger.warn;
 
 public class CustomFieldMerger implements Function<Map<String, Map<String, Object>>, Map<String, Map<String, Object>>> {
 
   private Map<QualTerm, Map<String, Object>> fieldMap = Map.ofEntries(
-    entry(new QualTerm("dwcg", "habitat"),
-      Map.ofEntries(
-        entry("example", "oak savanna")
-      ))
+    entry(new QualTerm("dwcg", "habitat"), Map.of("example", "oak savanna"))
   );
 
   @Value
@@ -35,13 +33,14 @@ public class CustomFieldMerger implements Function<Map<String, Map<String, Objec
           (Map<String, Object>) ((Map<String, Object>) api.get(qt.getNs()).get("properties")).get(qt.getTerm()));
         apiFields.putAll(customFields);
         ((Map<String, Object>) api.get(qt.getNs()).get("properties")).put(qt.getTerm(), apiFields);
-        Logger.debug("merged fields for term '{}.{}': {}", qt.getNs(), qt.getTerm(), customFields);
+        debug("merged fields for term '{}.{}': {}", qt.getNs(), qt.getTerm(), customFields);
       } catch (NullPointerException npe) {
-        Logger.warn("Skipping field '{}.{}' - not present in model", qt.getNs(), qt.getTerm());
+        warn("Skipping field '{}.{}' - not present in model", qt.getNs(), qt.getTerm());
       }
     }
   }
 
+  @Override
   public Map<String, Map<String, Object>> apply(Map<String, Map<String, Object>> api) {
     fieldMap.forEach(new FieldMerger(api)::mergeCustomFields);
     return api;

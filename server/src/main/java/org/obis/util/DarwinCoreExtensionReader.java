@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class DarwinCoreExtensionReader {
 
-  private XmlMapper xmlMapper = new XmlMapper();
+  private final XmlMapper xmlMapper = new XmlMapper();
 
   DarwinCoreExtension readExtensionFile(String path) throws UnirestException, IOException {
     String xmlString = Unirest.get(path)

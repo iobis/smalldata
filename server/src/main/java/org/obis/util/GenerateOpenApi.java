@@ -11,30 +11,29 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 
-import static java.util.Map.entry;
+import static org.pmw.tinylog.Logger.error;
 
 public class GenerateOpenApi {
-  private DarwinCoreExtensionReader xmlReader = new DarwinCoreExtensionReader();
-  private OpenApiModelConstructor apiConstructor = new OpenApiModelConstructor();
-  private OpenApiWriter apiWriter = new OpenApiWriter();
-  private List<Function<Map<String, Map<String, Object>>, Map<String, Map<String, Object>>>> customizers =
-    List.of(new TypeMapper(),
-      new CustomFieldMerger());
+  private static final NamespaceMapper NS_MAPPER = NamespaceMapper.INSTANCE;
 
-  private NamespaceMapper nsMapper = NamespaceMapper.INSTANCE;
+  private final DarwinCoreExtensionReader xmlReader = new DarwinCoreExtensionReader();
+  private final OpenApiModelConstructor apiConstructor = new OpenApiModelConstructor();
+  private final OpenApiWriter apiWriter = new OpenApiWriter();
+  private final List<Function<Map<String, Map<String, Object>>, Map<String, Map<String, Object>>>> customizers =
+    List.of(new TypeMapper(), new CustomFieldMerger());
   private final String targetPath;
-  private final Map<String, String> filesToProcess = Map.ofEntries(
-    entry("http://rs.gbif.org/core/dwc_occurrence_2015-07-02.xml", "Occurrence"),
-    entry("http://rs.gbif.org/core/dwc_taxon_2015-04-24.xml", "Taxon"),
-    entry("http://rs.gbif.org/core/dwc_event_2016_06_21.xml", "Event"),
-    entry("http://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml", "EMOF")
+  private final Map<String, String> filesToProcess = Map.of(
+    "http://rs.gbif.org/core/dwc_occurrence_2015-07-02.xml", "Occurrence",
+    "http://rs.gbif.org/core/dwc_taxon_2015-04-24.xml", "Taxon",
+    "http://rs.gbif.org/core/dwc_event_2016_06_21.xml", "Event",
+    "http://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml", "EMOF"
   );
 
   GenerateOpenApi(String targetPath) {
     this.targetPath = targetPath;
-    nsMapper.put("purl", "http://purl.org/dc/terms/");
-    nsMapper.put("dwcg", "http://rs.tdwg.org/dwc/terms/");
-    nsMapper.put("obis", "http://rs.iobis.org/obis/terms/");
+    NS_MAPPER.put("purl", "http://purl.org/dc/terms/");
+    NS_MAPPER.put("dwcg", "http://rs.tdwg.org/dwc/terms/");
+    NS_MAPPER.put("obis", "http://rs.iobis.org/obis/terms/");
   }
 
   private void processXml(Map.Entry<String, String> processEntry) {
@@ -42,10 +41,8 @@ public class GenerateOpenApi {
     try {
       var path = processEntry.getKey();
       xml = xmlReader.readExtensionFile(path);
-    } catch (UnirestException e) {
-      e.printStackTrace();
-    } catch (IOException e) {
-      e.printStackTrace();
+    } catch (UnirestException | IOException e) {
+      error(e);
     }
     var apiMap = apiConstructor.constructApiModel(xml);
     customizers.stream().reduce(Function::andThen).orElse(Function.identity()).apply(apiMap);
