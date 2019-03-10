@@ -5,6 +5,7 @@
   "storage": {
     "bindIp": "localhost",
     "port": 27017,
-    "path": ""
+    "path": "",
+    "mock": true
   }
 }
