@@ -12,7 +12,7 @@ import java.io.IOException;
 
 public class RssGenerator {
 
-  private XmlMapper xmlMapper;
+  private final XmlMapper xmlMapper;
 
   public RssGenerator() {
     xmlMapper = new XmlMapper();
