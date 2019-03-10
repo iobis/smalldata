@@ -6,13 +6,14 @@ import io.vertx.core.eventbus.Message;
 import io.vertx.core.http.HttpHeaders;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
-import org.pmw.tinylog.Logger;
+
+import static org.pmw.tinylog.Logger.info;
 
 public class RssHandler {
 
   static void fetch(RoutingContext context) {
     var periodicity = context.request().getParam("periodicity");
-    Logger.info("Getting RSS for periodicity: {}", periodicity);
+    info("Getting RSS for periodicity: {}", periodicity);
 
     context.vertx().eventBus().send("internal.rss", new JsonObject(),
       (Handler<AsyncResult<Message<String>>>) m -> {

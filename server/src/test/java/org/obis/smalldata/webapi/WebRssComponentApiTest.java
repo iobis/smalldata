@@ -14,13 +14,13 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.pmw.tinylog.Logger;
 import util.IoFile;
 
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.pmw.tinylog.Logger.info;
 
 @ExtendWith(VertxExtension.class)
 public class WebRssComponentApiTest {
@@ -52,11 +52,11 @@ public class WebRssComponentApiTest {
       });
   }
 
-  class MockRssComponent extends AbstractVerticle {
+  static class MockRssComponent extends AbstractVerticle {
     @Override
     public void start(Future<Void> startFuture) {
       vertx.eventBus().consumer("internal.rss", message -> {
-        Logger.info("Got message: {}", message.body());
+        info("Got message: {}", message.body());
         message.reply("rss/sample.xml");
       });
     }

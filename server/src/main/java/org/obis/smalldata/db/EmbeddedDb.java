@@ -9,9 +9,10 @@ import de.flapdoodle.embed.mongo.config.Storage;
 import de.flapdoodle.embed.mongo.distribution.Version;
 import de.flapdoodle.embed.process.runtime.Network;
 import io.vertx.core.AbstractVerticle;
-import org.pmw.tinylog.Logger;
 
 import java.io.IOException;
+
+import static org.pmw.tinylog.Logger.info;
 
 public class EmbeddedDb extends AbstractVerticle {
   private static final MongodStarter MONGOD_STARTER = MongodStarter.getDefaultInstance();
@@ -23,7 +24,7 @@ public class EmbeddedDb extends AbstractVerticle {
 
   @Override
   public void start() throws IOException {
-    Logger.info("starting mongo db with config {}", config());
+    info("starting mongo db with config {}", config());
     var bindIp = config().getString("bindIp", BIND_IP_DEFAULT);
     var port = config().getInteger("port", PORT_DEFAULT);
     var path = config().getString("path", null);
@@ -38,7 +39,7 @@ public class EmbeddedDb extends AbstractVerticle {
 
   @Override
   public void stop() {
-    Logger.info("shutdown mongo db");
+    info("shutdown mongo db");
     if (this.process != null) {
       this.process.stop();
       this.executable.stop();

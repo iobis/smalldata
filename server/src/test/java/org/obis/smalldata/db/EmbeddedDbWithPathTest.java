@@ -14,13 +14,14 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.pmw.tinylog.Logger;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.pmw.tinylog.Logger.error;
+import static org.pmw.tinylog.Logger.info;
 
 @ExtendWith(VertxExtension.class)
 public class EmbeddedDbWithPathTest {
@@ -41,12 +42,12 @@ public class EmbeddedDbWithPathTest {
           .put("port", PORT)
           .put("path", dbPath.getAbsolutePath())),
       deployId -> {
-        Logger.info("Deployed DB {}", deployId.result());
+        info("Deployed DB {}", deployId.result());
         client = MongoClient.createNonShared(vertx,
           new JsonObject()
             .put("host", BIND_IP)
             .put("port", PORT));
-        Logger.info("Running client {}", client);
+        info("Running client {}", client);
         client.createCollection(
           COLLECTION_NAME,
           result -> {
@@ -55,7 +56,7 @@ public class EmbeddedDbWithPathTest {
                 .put("measurementID", 42)
                 .put("measurementUnit", "m2"),
               testContext.succeeding(id -> {
-                Logger.info("succeeding {}", id);
+                info("succeeding {}", id);
                 testContext.completeNow();
               }));
           });
@@ -69,7 +70,7 @@ public class EmbeddedDbWithPathTest {
         try {
           FileUtils.deleteDirectory(dbPath);
         } catch (IOException e) {
-          e.printStackTrace();
+          error(e);
         }
       }
     });
@@ -79,15 +80,13 @@ public class EmbeddedDbWithPathTest {
   @DisplayName("Check custom path")
   @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
   public void testCustomPath(VertxTestContext testContext) {
-    client.find(COLLECTION_NAME,
+    client.find(
+      COLLECTION_NAME,
       new JsonObject(),
       result -> {
-        if (result.succeeded()) {
-          Logger.info("result: {}", result.result());
-          assertTrue(result.result().size() > 0);
-        } else {
-          Logger.info("failed: {}", result.cause());
-        }
+        info("result: {}", result.result());
+        assertTrue(result.succeeded());
+        assertTrue(result.result().size() > 0);
         testContext.completeNow();
       });
   }
@@ -96,13 +95,12 @@ public class EmbeddedDbWithPathTest {
   @DisplayName("Insert data")
   @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
   public void step01Insert(VertxTestContext testContext) {
-    client.insert(COLLECTION_NAME, new JsonObject().put("persistent", true),
+    client.insert(
+      COLLECTION_NAME,
+      new JsonObject().put("persistent", true),
       result -> {
-        if (result.succeeded()) {
-          Logger.info("result: {}", result.result());
-        } else {
-          Logger.info("failed: {}", result.cause());
-        }
+        info("result: {}", result.result());
+        assertTrue(result.succeeded());
         testContext.completeNow();
       });
   }

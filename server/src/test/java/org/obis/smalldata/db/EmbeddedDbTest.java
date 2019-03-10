@@ -11,11 +11,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.pmw.tinylog.Logger;
 
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.pmw.tinylog.Logger.info;
 
 @ExtendWith(VertxExtension.class)
 public class EmbeddedDbTest {
@@ -32,12 +32,12 @@ public class EmbeddedDbTest {
           .put("bindIp", BIND_IP)
           .put("port", PORT)),
       deployId -> {
-        Logger.info("Deployed DB {}", deployId);
+        info("Deployed DB {}", deployId);
         client = MongoClient.createNonShared(vertx,
           new JsonObject()
             .put("host", BIND_IP)
             .put("port", PORT));
-        Logger.info("Running client {}", client);
+        info("Running client {}", client);
         client.createCollection(
           COLLECTION_NAME,
           res -> {
@@ -46,7 +46,7 @@ public class EmbeddedDbTest {
                 .put("measurementID", 42)
                 .put("measurementUnit", "m2"),
               testContext.succeeding(id -> {
-                Logger.info("succeeding {}", id);
+                info("succeeding {}", id);
                 testContext.completeNow();
               }));
           });
@@ -56,16 +56,14 @@ public class EmbeddedDbTest {
   @Test
   @DisplayName("returns at least one result")
   @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
-  public void getAllDocs(VertxTestContext testContext) {
-    client.find(COLLECTION_NAME,
+  public void findReturnsAtLeastOneResult(VertxTestContext testContext) {
+    client.find(
+      COLLECTION_NAME,
       new JsonObject(),
       result -> {
-        if (result.succeeded()) {
-          Logger.info("result: {}", result.result());
-          assertTrue(result.result().size() > 0);
-        } else {
-          Logger.info("failed: {}", result.cause());
-        }
+        info("result: {}", result.result());
+        assertTrue(result.succeeded());
+        assertTrue(result.result().size() > 0);
         testContext.completeNow();
       });
   }
@@ -77,12 +75,9 @@ public class EmbeddedDbTest {
     client.find(COLLECTION_NAME,
       new JsonObject().put("measurementID", 42),
       result -> {
-        if (result.succeeded()) {
-          Logger.info("result: {}", result.result());
-          assertTrue(result.result().size() > 0);
-        } else {
-          Logger.info("failed: {}", result.cause());
-        }
+        info("result: {}", result.result());
+        assertTrue(result.succeeded());
+        assertTrue(result.result().size() > 0);
         testContext.completeNow();
       });
   }

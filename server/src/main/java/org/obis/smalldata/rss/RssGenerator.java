@@ -10,17 +10,13 @@ import org.obis.smalldata.rss.model.RssFeed;
 import java.io.File;
 import java.io.IOException;
 
+import static org.pmw.tinylog.Logger.error;
+
 public class RssGenerator {
 
-  private XmlMapper xmlMapper;
-  private boolean prettyPrint;
+  private final XmlMapper xmlMapper;
 
   public RssGenerator() {
-    this(false);
-  }
-
-  public RssGenerator(boolean prettyPrint) {
-    this.prettyPrint = prettyPrint;
     xmlMapper = new XmlMapper();
     xmlMapper.configure(ToXmlGenerator.Feature.WRITE_XML_DECLARATION, true);
     xmlMapper.findAndRegisterModules().configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
@@ -33,7 +29,7 @@ public class RssGenerator {
     try {
       xml = xmlMapper.writerWithDefaultPrettyPrinter().writeValueAsString(rssFeed);
     } catch (JsonProcessingException e) {
-      e.printStackTrace();
+      error(e);
     }
     return xml;
   }
@@ -44,7 +40,7 @@ public class RssGenerator {
       xmlFile = File.createTempFile("smalldata", "xml");
       xmlMapper.writerWithDefaultPrettyPrinter().writeValue(xmlFile, rssFeed);
     } catch (IOException e) {
-      e.printStackTrace();
+      error(e);
     }
     return xmlFile;
   }
