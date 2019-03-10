@@ -23,7 +23,7 @@ public class RssHandler {
           var filename = m.result().body();
           context.response()
             .putHeader(HttpHeaders.CONTENT_TYPE, "application/rss+xml")
-            .putHeader("Content-Disposition", "attachment; filename=\"" + filename + "\"")
+            .putHeader(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + filename + "\"")
             .putHeader(HttpHeaders.TRANSFER_ENCODING, "chunked")
             .sendFile(filename);
         }
