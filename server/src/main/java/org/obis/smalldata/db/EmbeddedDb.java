@@ -9,6 +9,8 @@ import de.flapdoodle.embed.mongo.config.Storage;
 import de.flapdoodle.embed.mongo.distribution.Version;
 import de.flapdoodle.embed.process.runtime.Network;
 import io.vertx.core.AbstractVerticle;
+import io.vertx.core.json.JsonObject;
+import io.vertx.ext.mongo.MongoClient;
 import org.pmw.tinylog.Logger;
 
 import java.io.IOException;
@@ -22,11 +24,7 @@ public class EmbeddedDb extends AbstractVerticle {
 
   private MongodExecutable executable;
   private MongodProcess process;
-  private SecureRandomId randomId = SecureRandomId.INSTANCE;
 
-  private void createIfEmpty(String bindIp, Integer port) {
-
-  }
 
   @Override
   public void start() throws IOException {
@@ -46,9 +44,15 @@ public class EmbeddedDb extends AbstractVerticle {
     }
     executable = starter.prepare(mongodConfig.build());
     process = executable.start();
-    createIfEmpty(bindIp, port);
+    var dbInitializer = new DbInitializer(MongoClient.createNonShared(vertx,
+          new JsonObject()
+            .put("host", bindIp)
+            .put("port", port)));
+    dbInitializer.createCollections();
+    if (config().getBoolean("mock", false)) {
+      dbInitializer.mockData();
+    }
   }
-
   @Override
   public void stop() {
     Logger.info("shutdown mongo db");
