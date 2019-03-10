@@ -17,7 +17,7 @@ public class WebApi extends AbstractVerticle {
     info("getenv() -> {}", System.getenv("HTTP_PORT"));
     var port = config().getInteger("http.port", 8008);
 
-    OpenAPI3RouterFactory.create(vertx, "swaggerroot/smalldata.yaml", //openApiFile().get(),
+    OpenAPI3RouterFactory.create(vertx, "swaggerroot/smalldata.yaml",
       ar -> {
         if (ar.succeeded()) {
           info("started OpenAPI: {}", ar.succeeded());
