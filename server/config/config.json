@@ -6,6 +6,6 @@
     "bindIp": "localhost",
     "port": 27017,
     "path": "",
-    "mock": true
-  }
+  },
+  "mode": "DEMO"
 }

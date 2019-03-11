@@ -46,11 +46,11 @@ public class EmbeddedDb extends AbstractVerticle {
     executable = MONGOD_STARTER.prepare(mongodConfig.build());
     process = executable.start();
     var dbInitializer = new DbInitializer(MongoClient.createNonShared(vertx,
-          new JsonObject()
-            .put("host", bindIp)
-            .put("port", port)));
-    dbInitializer.createCollections();
-    if (config().getBoolean("mock", false)) {
+      new JsonObject()
+        .put("host", bindIp)
+        .put("port", port)));
+    dbInitializer.setupCollections();
+    if ("DEMO".equals(vertx.sharedData().getLocalMap("settings").get("mode"))) {
       dbInitializer.mockData();
     }
   }

@@ -1,0 +1,8 @@
+[
+  {
+    "_id": 4, "char": "Dithras", "class": "barbarian", "lvl": 4
+  },
+  {
+    "_id" : 5, "char" : "Taeln", "class" : "fighter", "lvl" : 3
+  }
+]

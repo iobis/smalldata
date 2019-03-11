@@ -11,6 +11,7 @@ public class Starter extends AbstractVerticle {
 
   @Override
   public void start(Future<Void> startFuture) {
+    vertx.sharedData().getLocalMap("Settings").put("mode", config().getValue("mode", "DEV"));
     vertx.deployVerticle(WebApi.class.getName(),
       new DeploymentOptions().setConfig(config().getJsonObject("http")));
     vertx.deployVerticle(RssComponent.class.getName());
