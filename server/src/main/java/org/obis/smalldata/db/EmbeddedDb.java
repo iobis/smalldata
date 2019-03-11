@@ -17,18 +17,19 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import static org.pmw.tinylog.Logger.info;
+
 public class EmbeddedDb extends AbstractVerticle {
-  private static final MongodStarter starter = MongodStarter.getDefaultInstance();
+  private static final MongodStarter MONGOD_STARTER = MongodStarter.getDefaultInstance();
   private static final String BIND_IP_DEFAULT = "localhost";
   private static final int PORT_DEFAULT = 27017;
 
   private MongodExecutable executable;
   private MongodProcess process;
 
-
   @Override
   public void start() throws IOException {
-    Logger.info("starting mongo db with config {}", config());
+    info("starting mongo db with config {}", config());
     var bindIp = config().getString("bindIp", BIND_IP_DEFAULT);
     var port = config().getInteger("port", PORT_DEFAULT);
     var path = config().getString("path", null);
@@ -42,7 +43,7 @@ public class EmbeddedDb extends AbstractVerticle {
     } else {
       Logger.warn("Mongo started without replication! Data is not stored between redeploys");
     }
-    executable = starter.prepare(mongodConfig.build());
+    executable = MONGOD_STARTER.prepare(mongodConfig.build());
     process = executable.start();
     var dbInitializer = new DbInitializer(MongoClient.createNonShared(vertx,
           new JsonObject()
@@ -56,7 +57,7 @@ public class EmbeddedDb extends AbstractVerticle {
 
   @Override
   public void stop() {
-    Logger.info("shutdown mongo db");
+    info("shutdown mongo db");
     if (this.process != null) {
       this.process.stop();
       this.executable.stop();

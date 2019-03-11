@@ -6,6 +6,7 @@ plugins {
   id 'org.javamodularity.moduleplugin' version '1.4.0'
   id 'org.beryx.runtime' version '1.1.5'
   id 'checkstyle'
+  id 'pmd'
 }
 
 repositories {
@@ -49,14 +50,16 @@ dependencies {
   implementation "org.tinylog:tinylog:1.3.5"
   implementation "org.tinylog:slf4j-binding:1.3.5"
 
+  implementation "com.mashape.unirest:unirest-java:1.4.9"
+
   compileOnly "org.projectlombok:lombok:1.18.6"
 
-  testImplementation "io.vertx:vertx-junit5:$vertxVersion"
-  testImplementation "io.vertx:vertx-junit5:$vertxVersion"
   testImplementation "com.fasterxml.uuid:java-uuid-generator:3.1.5"
   testImplementation "commons-io:commons-io:2.6"
+  testImplementation "io.vertx:vertx-junit5:$vertxVersion"
+  testImplementation "org.assertj:assertj-core:3.11.1"
 
-  testRuntime("org.junit.jupiter:junit-jupiter-engine:$junitJupiterEngineVersion")
+  testRuntime "org.junit.jupiter:junit-jupiter-engine:$junitJupiterEngineVersion"
 }
 
 test {
@@ -88,4 +91,10 @@ checkstyle {
   maxErrors 0
   maxWarnings 0
   toolVersion "8.17"
+}
+
+pmd {
+  consoleOutput true
+  ruleSetConfig = resources.text.fromFile("config/pmd/ruleset.xml")
+  ruleSets = []
 }

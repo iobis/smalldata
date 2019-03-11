@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputDataPage renders correctly / 1`] = `
+Array [
+  <section
+    className="section"
+  >
+    <div
+      className="container is-fluid has-text-centered"
+    >
+      <a
+        className="button is-info"
+      >
+        inputDataPage.inputNewOccurrence
+      </a>
+    </div>
+  </section>,
+  <div
+    className="divider"
+  >
+    <span>
+      inputDataPage.or
+    </span>
+  </div>,
+  <section
+    className="section"
+  >
+    <div
+      className="container is-fluid has-text-centered"
+    >
+      <h4
+        className="title is-4"
+      >
+        inputDataPage.copyPreviousHeader
+      </h4>
+      <table
+        className="table is-striped is-hoverable is-fullwidth"
+      >
+        <thead>
+          <tr>
+            <th />
+            <th>
+              inputDataPage.table.dateAdded
+            </th>
+            <th>
+              inputDataPage.table.scientificName
+            </th>
+            <th>
+              inputDataPage.table.dataset
+            </th>
+            <th>
+              inputDataPage.table.occurrenceDate
+            </th>
+            <th />
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div
+                className="button is-info"
+              >
+                common.edit
+              </div>
+            </td>
+            <td>
+              2011-12-01
+            </td>
+            <td>
+              Abra Alba
+            </td>
+            <td>
+              NPPSD Short-tailed Albatross Sightings
+            </td>
+            <td>
+              2011-12-09
+            </td>
+            <td>
+              <div
+                className="button is-info"
+              >
+                common.copy
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div
+                className="button is-info"
+              >
+                common.edit
+              </div>
+            </td>
+            <td>
+              2011-12-01
+            </td>
+            <td>
+              Abra Alba
+            </td>
+            <td>
+              NPPSD Short-tailed Albatross Sightings
+            </td>
+            <td>
+              2011-12-09
+            </td>
+            <td>
+              <div
+                className="button is-info"
+              >
+                common.copy
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>,
+]
+`;

@@ -6,7 +6,7 @@ import io.vertx.ext.web.RoutingContext;
 
 public class FailureHandler {
   static void fallback(RoutingContext context) {
-    final JsonObject error = new JsonObject()
+    var error = new JsonObject()
       .put("timestamp", System.nanoTime())
       .put("exception", context.failure().getClass().getName())
       .put("exceptionMessage", context.failure().getMessage())

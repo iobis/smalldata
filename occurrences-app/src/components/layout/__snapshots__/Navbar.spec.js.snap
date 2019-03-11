@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Navbar renders correctly 1`] = `
+exports[`Navbar renders correctly for route / 1`] = `
 <nav
   aria-label="main navigation"
   className="navbar is-info"
@@ -11,6 +11,8 @@ exports[`Navbar renders correctly 1`] = `
   >
     <a
       className="navbar-item"
+      href="/input-data"
+      onClick={[Function]}
     >
       <p
         style={
@@ -47,16 +49,20 @@ exports[`Navbar renders correctly 1`] = `
       className="navbar-start"
     >
       <a
-        className="navbar-item is-active"
+        aria-current={null}
+        className="navbar-item"
+        href="/input-data"
         onClick={[Function]}
       >
-        INPUT DATA
+        navbar.inputData
       </a>
       <a
+        aria-current={null}
         className="navbar-item"
+        href="/help"
         onClick={[Function]}
       >
-        HELP
+        navbar.help
       </a>
     </div>
     <div
@@ -75,17 +81,18 @@ exports[`Navbar renders correctly 1`] = `
           }
         >
           <i
-            className="fas fa-lg fa-user"
+            className="fa"
+            icon="user"
           />
         </span>
-        logout
+        navbar.logout
       </a>
     </div>
   </div>
 </nav>
 `;
 
-exports[`Navbar renders correctly 2`] = `
+exports[`Navbar renders correctly for route /help 1`] = `
 <nav
   aria-label="main navigation"
   className="navbar is-info"
@@ -96,6 +103,8 @@ exports[`Navbar renders correctly 2`] = `
   >
     <a
       className="navbar-item"
+      href="/input-data"
+      onClick={[Function]}
     >
       <p
         style={
@@ -132,16 +141,21 @@ exports[`Navbar renders correctly 2`] = `
       className="navbar-start"
     >
       <a
+        aria-current={null}
         className="navbar-item"
+        href="/input-data"
         onClick={[Function]}
       >
-        INPUT DATA
+        navbar.inputData
       </a>
       <a
+        aria-current="page"
         className="navbar-item is-active"
+        href="/help"
         onClick={[Function]}
+        style={Object {}}
       >
-        HELP
+        navbar.help
       </a>
     </div>
     <div
@@ -160,10 +174,104 @@ exports[`Navbar renders correctly 2`] = `
           }
         >
           <i
-            className="fas fa-lg fa-user"
+            className="fa"
+            icon="user"
           />
         </span>
-        logout
+        navbar.logout
+      </a>
+    </div>
+  </div>
+</nav>
+`;
+
+exports[`Navbar renders correctly for route /input-data 1`] = `
+<nav
+  aria-label="main navigation"
+  className="navbar is-info"
+  role="navigation"
+>
+  <div
+    className="navbar-brand"
+  >
+    <a
+      className="navbar-item"
+      href="/input-data"
+      onClick={[Function]}
+    >
+      <p
+        style={
+          Object {
+            "fontSize": 26,
+            "fontWeight": "bold",
+            "width": 112,
+          }
+        }
+      >
+        OBIS
+      </p>
+    </a>
+    <a
+      className="navbar-burger"
+      onClick={[Function]}
+      role="button"
+    >
+      <span
+        aria-hidden="true"
+      />
+      <span
+        aria-hidden="true"
+      />
+      <span
+        aria-hidden="true"
+      />
+    </a>
+  </div>
+  <div
+    className="navbar-menu"
+  >
+    <div
+      className="navbar-start"
+    >
+      <a
+        aria-current="page"
+        className="navbar-item is-active"
+        href="/input-data"
+        onClick={[Function]}
+        style={Object {}}
+      >
+        navbar.inputData
+      </a>
+      <a
+        aria-current={null}
+        className="navbar-item"
+        href="/help"
+        onClick={[Function]}
+      >
+        navbar.help
+      </a>
+    </div>
+    <div
+      className="navbar-end"
+    >
+      <a
+        className="navbar-item"
+        onClick={[Function]}
+      >
+        <span
+          className="icon"
+          style={
+            Object {
+              "marginRight": 6,
+            }
+          }
+        >
+          <i
+            className="fa"
+            icon="user"
+          />
+        </span>
+        navbar.logout
       </a>
     </div>
   </div>
