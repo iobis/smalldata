@@ -6,9 +6,12 @@ import io.vertx.core.eventbus.Message;
 import io.vertx.core.http.HttpHeaders;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 import static org.pmw.tinylog.Logger.info;
 
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class RssHandler {
 
   static void fetch(RoutingContext context) {
