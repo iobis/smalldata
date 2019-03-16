@@ -1,14 +1,10 @@
 package util;
 
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
-
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class IoFile {
 
   public static String loadFromResources(String strPath) {
@@ -19,5 +15,8 @@ public class IoFile {
     } catch (IOException | URISyntaxException e) {
       throw new RuntimeException(e);
     }
+  }
+
+  private IoFile() {
   }
 }

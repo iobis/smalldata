@@ -1,7 +1,5 @@
 package org.obis.util;
 
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
 import org.obis.util.model.DarwinCoreExtension;
 
 import java.util.ArrayList;
@@ -11,7 +9,6 @@ import java.util.Map;
 
 import static java.util.Map.entry;
 
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class OpenApiModelConstructor {
 
   private static final String REQUIRED = "required";
@@ -64,4 +61,6 @@ public class OpenApiModelConstructor {
     return apiRaw;
   }
 
+  private OpenApiModelConstructor() {
+  }
 }
