@@ -1,37 +1,43 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export default function StepHeader() {
+export default function StepHeader({ dataDescription, selectedData, stepDescription, stepTitle }) {
   return (
     <div className="step-header container is-fluid">
       <div className="columns is-vcentered">
         <div className="column is-1">
-          <p className="is-size-4">
+          <p className="is-size-4 is-uppercase">
             <b>
-              Using Data
+              {dataDescription}
             </b>
           </p>
         </div>
         <div className="column is-7">
           <p className="is-size-5">
-            HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest
-            to El Salvador compiled
-            as part of a literature search project.
+            {selectedData}
           </p>
         </div>
         <div className="column">
-          <div className="short-description is-size-6 is-pulled-right">
-            Choose the dataset for adding observations
+          <div className="is-size-6 is-pulled-right">
+            {stepDescription}
           </div>
           <br/>
-          <div className="title is-size-4 is-pulled-right">
+          <div className="title is-size-4 is-uppercase is-pulled-right">
             <FontAwesomeIcon className="check-circle" icon="check-circle"/>
             <b>
-              1 - SELECT DATASET
+              {stepTitle}
             </b>
           </div>
         </div>
       </div>
     </div>
   )
+}
+
+StepHeader.propTypes = {
+  dataDescription: PropTypes.string.isRequired,
+  selectedData:    PropTypes.string.isRequired,
+  stepDescription: PropTypes.string.isRequired,
+  stepTitle:       PropTypes.string.isRequired
 }
