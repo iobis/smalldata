@@ -24,7 +24,7 @@ export default function StepHeader() {
             Choose the dataset for adding observations
           </div>
           <div className="is-size-4 is-pulled-right">
-            <FontAwesomeIcon className="icon has-text-info" icon="check-circle" style={{ marginRight: 6 }}/>
+            <FontAwesomeIcon className="check-circle" icon="check-circle"/>
             <b>
               1 - SELECT DATASET
             </b>
