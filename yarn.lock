@@ -9240,6 +9240,14 @@ react-cosmos-playground@^4.7.0:
   resolved "https://registry.yarnpkg.com/react-cosmos-playground/-/react-cosmos-playground-4.7.0.tgz#f8affd5dbc4b74943940cf8cbb51cc15054f8cc1"
   integrity sha512-13PQR0e+DbXOccGgjVPTiq8g/HopkmR5z/7Ihrpf4emXfEuHBEACBMMqavGAyuHEKNz7j6jKzbfk3sbfozEDdw==
 
+react-cosmos-router-proxy@4.6.1:
+  version "4.6.1"
+  resolved "https://registry.yarnpkg.com/react-cosmos-router-proxy/-/react-cosmos-router-proxy-4.6.1.tgz#40d0ea8d116ed5aa80ddc840fb681a0b62e760e7"
+  integrity sha1-QNDqjRFu1aqA3chA+2gaC2LnYOc=
+  dependencies:
+    react-cosmos-shared "^4.6.1"
+    url "^0.11.0"
+
 react-cosmos-shared2@^4.7.0:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/react-cosmos-shared2/-/react-cosmos-shared2-4.7.0.tgz#77bffc2f8883c41102ae300d64c67c63dcc82e54"
@@ -9249,6 +9257,16 @@ react-cosmos-shared2@^4.7.0:
     lodash "^4.17.11"
     react-element-to-jsx-string "^14.0.2"
     react-is "^16.7.0"
+
+react-cosmos-shared@^4.6.1:
+  version "4.6.1"
+  resolved "https://registry.yarnpkg.com/react-cosmos-shared/-/react-cosmos-shared-4.6.1.tgz#deacaaaa69b79b408a6c0931597badb17e36ec95"
+  integrity sha1-3qyqqmm3m0CKbAkxWXutsX427JU=
+  dependencies:
+    lodash.isplainobject "^4.0.6"
+    prop-types "^15.6.2"
+    resolve-from "^4.0.0"
+    slash "^2.0.0"
 
 react-cosmos-shared@^4.7.0-24:
   version "4.7.0-24"
