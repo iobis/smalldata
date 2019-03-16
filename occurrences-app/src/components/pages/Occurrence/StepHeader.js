@@ -7,7 +7,7 @@ export default function StepHeader({ dataDescription, selectedData, stepDescript
     <div className="step-header container is-fluid">
       <div className="columns is-vcentered">
         <div className="column is-1">
-          <p className="is-size-4 is-uppercase">
+          <p className="is-size-5 is-uppercase">
             <b>
               {dataDescription}
             </b>
@@ -23,9 +23,9 @@ export default function StepHeader({ dataDescription, selectedData, stepDescript
             {stepDescription}
           </div>
           <br/>
-          <div className="title is-size-4 is-uppercase is-pulled-right">
+          <div className="is-size-5 is-uppercase is-pulled-right">
             <FontAwesomeIcon className="check-circle" icon="check-circle"/>
-            <b>
+            <b className="step-title">
               {stepTitle}
             </b>
           </div>

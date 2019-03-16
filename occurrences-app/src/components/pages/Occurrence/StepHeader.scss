@@ -3,4 +3,9 @@
     color: lighten($info, 20%);
     margin-right: 6px;
   }
+
+  .step-title:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
 }
