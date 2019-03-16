@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export default function StepHeader() {
   return (
     <div className="step-header container is-fluid">
-      <div className="columns">
+      <div className="columns is-vcentered">
         <div className="column is-1">
           <p className="is-size-4">
             <b>
@@ -20,10 +20,11 @@ export default function StepHeader() {
           </p>
         </div>
         <div className="column">
-          <div className="is-size-6 is-pulled-right">
+          <div className="short-description is-size-6 is-pulled-right">
             Choose the dataset for adding observations
           </div>
-          <div className="is-size-4 is-pulled-right">
+          <br/>
+          <div className="title is-size-4 is-pulled-right">
             <FontAwesomeIcon className="check-circle" icon="check-circle"/>
             <b>
               1 - SELECT DATASET
