@@ -5,8 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function StepHeader({ className, dataDescription, selectedData, stepDescription, stepTitle, iconVisible }) {
   return (
-    <div className={classNames('step-header container is-fluid', className)}>
-      <div className="columns is-vcentered">
+    <div className="step-header container is-fluid">
+      <div className={classNames('columns is-vcentered', className)}>
         <div className="column is-1">
           <p className="is-size-5 is-uppercase">
             <b>
