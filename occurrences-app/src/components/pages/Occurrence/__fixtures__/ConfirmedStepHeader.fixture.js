@@ -1,12 +1,8 @@
-import StepHeader from './StepHeader'
+import ConfirmedStepHeader from '../ConfirmedStepHeader'
 import React from 'react'
-import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
-import { library } from '@fortawesome/fontawesome-svg-core'
-
-library.add(faCheckCircle)
 
 export default [{
-  component: StepHeader,
+  component: ConfirmedStepHeader,
   name:      'confirmed step',
   props:     {
     dataDescription: 'Using Data',

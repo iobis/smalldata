@@ -1,10 +1,11 @@
-import React from 'react'
+import classNames from 'classnames'
 import PropTypes from 'prop-types'
+import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export default function StepHeader({ dataDescription, selectedData, stepDescription, stepTitle }) {
+export default function StepHeader({ className, dataDescription, selectedData, stepDescription, stepTitle, iconVisible }) {
   return (
-    <div className="step-header container is-fluid">
+    <div className={classNames('step-header container is-fluid', className)}>
       <div className="columns is-vcentered">
         <div className="column is-1">
           <p className="is-size-5 is-uppercase">
@@ -24,7 +25,7 @@ export default function StepHeader({ dataDescription, selectedData, stepDescript
           </div>
           <br/>
           <div className="is-size-5 is-uppercase is-pulled-right">
-            <FontAwesomeIcon className="check-circle" icon="check-circle"/>
+            {iconVisible && <FontAwesomeIcon className="check-circle" icon="check-circle"/>}
             <b className="step-title">
               {stepTitle}
             </b>
@@ -36,7 +37,9 @@ export default function StepHeader({ dataDescription, selectedData, stepDescript
 }
 
 StepHeader.propTypes = {
+  className:       PropTypes.string,
   dataDescription: PropTypes.string.isRequired,
+  iconVisible:     PropTypes.bool.isRequired,
   selectedData:    PropTypes.string.isRequired,
   stepDescription: PropTypes.string.isRequired,
   stepTitle:       PropTypes.string.isRequired
