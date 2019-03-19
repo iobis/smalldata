@@ -16,6 +16,7 @@ export default function OccurrenceForm() {
         selectedData="Abra alba 2019-02-02"
         stepDescription="Mandatory observation information"
         stepTitle="2 - Basic Data"/>
+      <StubFormContent/>
       <NotConfirmedStepHeader
         dataDescription="Main Location"
         selectedData="North Sea"
@@ -31,6 +32,18 @@ export default function OccurrenceForm() {
         selectedData="You have submitted 7 extra fields"
         stepDescription="Enter further specifics"
         stepTitle="5 - Generic Data"/>
+    </div>
+  )
+}
+
+function StubFormContent() {
+  return (
+    <div className="step-header container is-fluid">
+      <div className="columns">
+        <div className="column">
+          Form Content To Be Added
+        </div>
+      </div>
     </div>
   )
 }
