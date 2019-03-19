@@ -18,16 +18,19 @@ export default function OccurrenceForm() {
         stepTitle="2 - Basic Data"/>
       <StubFormContent/>
       <NotConfirmedStepHeader
+        className="has-background-black"
         dataDescription="Main Location"
         selectedData="North Sea"
         stepDescription="Select the location for data collected"
         stepTitle="3 - Location Data"/>
       <NotConfirmedStepHeader
+        className="has-background-link"
         dataDescription="Main Info"
         selectedData="Institution: CA Identified by: Jane Doe, John Doe, Indiana Jones"
         stepDescription="Enter further specifics"
         stepTitle="4 - Observation Data"/>
       <NotConfirmedStepHeader
+        className="has-background-info"
         dataDescription="DWCA INFO"
         selectedData="You have submitted 7 extra fields"
         stepDescription="Enter further specifics"
