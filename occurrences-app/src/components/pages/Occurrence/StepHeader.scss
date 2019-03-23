@@ -1,4 +1,24 @@
 .step-header {
+  &.step-0 {
+    background-color: darken($info, 40%);
+  }
+
+  &.step-1 {
+    background-color: darken($info, 30%);
+  }
+
+  &.step-2 {
+    background-color: darken($info, 20%);
+  }
+
+  &.step-3 {
+    background-color: darken($info, 10%);
+  }
+
+  &.step-4 {
+    background-color: darken($info, 0%);
+  }
+
   .check-circle {
     color: lighten($info, 20%);
     margin-right: 6px;

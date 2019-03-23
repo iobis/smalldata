@@ -18,21 +18,18 @@ export default function OccurrenceForm() {
     stepTitle:       '2 - Basic Data',
     children:        <StubFormContent/>
   }, {
-    className:       'has-background-black',
     dataDescription: 'Main Location',
     selectedData:    'North Sea',
     stepDescription: 'Select the location for data collected',
     stepTitle:       '3 - Location Data',
     children:        <StubFormContent/>
   }, {
-    className:       'has-background-link',
     dataDescription: 'Main Info',
     selectedData:    'Institution: CA Identified by: Jane Doe, John Doe, Indiana Jones',
     stepDescription: 'Enter further specifics',
     stepTitle:       '4 - Observation Data',
     children:        <StubFormContent/>
   }, {
-    className:       'has-background-info',
     dataDescription: 'DWCA INFO',
     selectedData:    'You have submitted 7 extra fields',
     stepDescription: 'Enter further specifics',
@@ -43,12 +40,19 @@ export default function OccurrenceForm() {
   return (
     <div className="container">
       {steps.map((step, index) => {
+        const className = 'step-' + index
         const StepComponent = activeStepIndex === index
           ? ActiveStepHeader
           : activeStepIndex > index
             ? ConfirmedStepHeader
             : NotConfirmedStepHeader
-        return <StepComponent onStepTitleClick={() => setActiveStepIndex(index)} key={step.stepTitle} {...step}/>
+        return (
+          <StepComponent
+            className={className}
+            key={step.stepTitle}
+            onStepTitleClick={() => setActiveStepIndex(index)}
+            {...step}/>
+        )
       })}
     </div>
   )
