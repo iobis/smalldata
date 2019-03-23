@@ -32,7 +32,6 @@ export default function StepHeader({
           <div className="is-size-6">
             {stepDescription}
           </div>
-          <br/>
           <div className="is-size-5 is-uppercase">
             {iconVisible && <FontAwesomeIcon className="check-circle" icon="check-circle"/>}
             <b onClick={onStepTitleClick} className="step-title">
