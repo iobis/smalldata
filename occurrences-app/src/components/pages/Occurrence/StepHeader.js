@@ -15,31 +15,29 @@ export default function StepHeader({
 }) {
   return (
     <>
-      <div className="step-header container is-fluid">
-        <div className={classNames('columns is-vcentered', className)}>
-          <div className="column is-1">
-            <p className="is-size-5 is-uppercase">
-              <b>
-                {dataDescription}
-              </b>
-            </p>
+      <div className={classNames('step-header container columns is-vcentered', className)}>
+        <div className={classNames('column is-1', { 'is-hidden-mobile': !dataDescription })}>
+          <p className="is-size-5 is-uppercase">
+            <b>
+              {dataDescription}
+            </b>
+          </p>
+        </div>
+        <div className={classNames('column is-7', { 'is-hidden-mobile': !selectedData })}>
+          <p className="is-size-5">
+            {selectedData}
+          </p>
+        </div>
+        <div className="column" style={{ 'text-align': 'right' }}>
+          <div className="is-size-6">
+            {stepDescription}
           </div>
-          <div className="column is-7">
-            <p className="is-size-5">
-              {selectedData}
-            </p>
-          </div>
-          <div className="column">
-            <div className="is-size-6 is-pulled-right">
-              {stepDescription}
-            </div>
-            <br/>
-            <div className="is-size-5 is-uppercase is-pulled-right">
-              {iconVisible && <FontAwesomeIcon className="check-circle" icon="check-circle"/>}
-              <b onClick={onStepTitleClick} className="step-title">
-                {stepTitle}
-              </b>
-            </div>
+          <br/>
+          <div className="is-size-5 is-uppercase">
+            {iconVisible && <FontAwesomeIcon className="check-circle" icon="check-circle"/>}
+            <b onClick={onStepTitleClick} className="step-title">
+              {stepTitle}
+            </b>
           </div>
         </div>
       </div>

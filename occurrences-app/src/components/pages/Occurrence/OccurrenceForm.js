@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import NotConfirmedStepHeader from './NotConfirmedStepHeader'
 
 export default function OccurrenceForm() {
-  const [activeStepIndex, setActiveStepIndex] = useState(0)
+  const [activeStepIndex, setActiveStepIndex] = useState(2)
   const steps = [{
     dataDescription: 'Using Data',
     selectedData:    'HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.',
@@ -41,7 +41,7 @@ export default function OccurrenceForm() {
   }]
 
   return (
-    <>
+    <div className="container">
       {steps.map((step, index) => {
         const StepComponent = activeStepIndex === index
           ? ActiveStepHeader
@@ -50,13 +50,13 @@ export default function OccurrenceForm() {
             : NotConfirmedStepHeader
         return <StepComponent onStepTitleClick={() => setActiveStepIndex(index)} key={step.stepTitle} {...step}/>
       })}
-    </>
+    </div>
   )
 }
 
 function StubFormContent() {
   return (
-    <div className="step-header container is-fluid">
+    <div className="is-fluid">
       <div className="columns">
         <div className="column">
           Form Content To Be Added
