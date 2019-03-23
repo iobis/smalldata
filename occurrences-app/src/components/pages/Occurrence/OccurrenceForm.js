@@ -41,7 +41,7 @@ export default function OccurrenceForm() {
   }]
 
   return (
-    <div>
+    <>
       {steps.map((step, index) => {
         const StepComponent = activeStepIndex === index
           ? ActiveStepHeader
@@ -50,7 +50,7 @@ export default function OccurrenceForm() {
             : NotConfirmedStepHeader
         return <StepComponent onStepTitleClick={() => setActiveStepIndex(index)} key={step.stepTitle} {...step}/>
       })}
-    </div>
+    </>
   )
 }
 
