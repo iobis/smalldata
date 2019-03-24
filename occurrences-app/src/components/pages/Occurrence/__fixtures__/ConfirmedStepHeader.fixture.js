@@ -1,5 +1,4 @@
 import ConfirmedStepHeader from '../ConfirmedStepHeader'
-import React from 'react'
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 

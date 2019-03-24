@@ -1,5 +1,4 @@
 import ActiveStepHeader from '../ActiveStepHeader'
-import React from 'react'
 
 export default [{
   component: ActiveStepHeader,

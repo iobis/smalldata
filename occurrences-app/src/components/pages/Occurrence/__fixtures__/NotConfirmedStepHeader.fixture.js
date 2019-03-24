@@ -1,5 +1,4 @@
 import NotConfirmedStepHeader from '../NotConfirmedStepHeader'
-import React from 'react'
 
 export default [{
   component: NotConfirmedStepHeader,
