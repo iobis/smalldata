@@ -9,31 +9,31 @@ export default function OccurrenceForm() {
     dataDescription: 'Using Data',
     selectedData:    'HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.',
     stepDescription: 'Choose the dataset for adding observations',
-    stepTitle:       '1 - Basic Data',
+    stepTitle:       'Basic Data',
     children:        <StubFormContent/>
   }, {
     dataDescription: 'Given Values',
     selectedData:    'Abra alba 2019-02-02',
     stepDescription: 'Mandatory observation information',
-    stepTitle:       '2 - Basic Data',
+    stepTitle:       'Basic Data',
     children:        <StubFormContent/>
   }, {
     dataDescription: 'Main Location',
     selectedData:    'North Sea',
     stepDescription: 'Select the location for data collected',
-    stepTitle:       '3 - Location Data',
+    stepTitle:       'Location Data',
     children:        <StubFormContent/>
   }, {
     dataDescription: 'Main Info',
     selectedData:    'Institution: CA Identified by: Jane Doe, John Doe, Indiana Jones',
     stepDescription: 'Enter further specifics',
-    stepTitle:       '4 - Observation Data',
+    stepTitle:       'Observation Data',
     children:        <StubFormContent/>
   }, {
     dataDescription: 'DWCA INFO',
     selectedData:    'You have submitted 7 extra fields',
     stepDescription: 'Enter further specifics',
-    stepTitle:       '5 - Generic Data',
+    stepTitle:       'Generic Data',
     children:        <StubFormContent/>
   }]
 
@@ -48,10 +48,11 @@ export default function OccurrenceForm() {
             : NotConfirmedStepHeader
         return (
           <StepComponent
+            {...step}
             className={className}
             key={step.stepTitle}
             onStepTitleClick={() => setActiveStepIndex(index)}
-            {...step}/>
+            stepTitle={(index + 1) + ' - ' + step.stepTitle}/>
         )
       })}
     </div>
