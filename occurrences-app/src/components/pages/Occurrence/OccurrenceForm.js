@@ -4,12 +4,12 @@ import React, { useState } from 'react'
 import NotConfirmedStepHeader from './NotConfirmedStepHeader'
 
 export default function OccurrenceForm() {
-  const [activeStepIndex, setActiveStepIndex] = useState(2)
+  const [activeStepIndex, setActiveStepIndex] = useState(0)
   const steps = [{
     dataDescription: 'Using Data',
     selectedData:    'HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.',
     stepDescription: 'Choose the dataset for adding observations',
-    stepTitle:       'Basic Data',
+    stepTitle:       'Selected Dataset',
     children:        <StubFormContent/>
   }, {
     dataDescription: 'Given Values',
