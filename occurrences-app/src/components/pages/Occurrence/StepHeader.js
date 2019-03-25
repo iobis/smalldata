@@ -28,7 +28,7 @@ export default function StepHeader({
             {selectedData}
           </p>
         </div>
-        <div className="column" style={{ 'text-align': 'right' }}>
+        <div className="column details">
           <div className="is-size-6">
             {stepDescription}
           </div>

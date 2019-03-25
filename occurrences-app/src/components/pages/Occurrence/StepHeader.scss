@@ -19,13 +19,17 @@
     background-color: darken($info, 0%);
   }
 
-  .check-circle {
-    color: lighten($info, 20%);
-    margin-right: 6px;
-  }
+  .details {
+    text-align: right;
 
-  .step-title:hover {
-    cursor: pointer;
-    text-decoration: underline;
+    .check-circle {
+      color: lighten($info, 20%);
+      margin-right: 6px;
+    }
+
+    .step-title:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
   }
 }
