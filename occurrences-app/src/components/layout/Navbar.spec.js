@@ -20,6 +20,14 @@ describe('Navbar', () => {
     ).toJSON()).toMatchSnapshot()
   })
 
+  it('renders correctly for route /input-data/new', () => {
+    expect(renderer.create(
+      <MemoryRouter initialEntries={['/input-data/new']}>
+        <Navbar/>
+      </MemoryRouter>
+    ).toJSON()).toMatchSnapshot()
+  })
+
   it('renders correctly for route /help', () => {
     expect(renderer.create(
       <MemoryRouter initialEntries={['/help']}>
