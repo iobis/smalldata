@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ActiveStepHeader renders correctly 1`] = `
+<div
+  className="step-header container columns is-vcentered active has-background-grey has-text-white"
+>
+  <div
+    className="column is-1 is-hidden-mobile"
+  >
+    <p
+      className="is-size-5 is-uppercase"
+    >
+      <b>
+        
+      </b>
+    </p>
+  </div>
+  <div
+    className="column is-7 is-hidden-mobile"
+  >
+    <p
+      className="is-size-5"
+    >
+      
+    </p>
+  </div>
+  <div
+    className="column details"
+  >
+    <div
+      className="is-size-6"
+    >
+      step description
+    </div>
+    <div
+      className="is-size-5 is-uppercase"
+    >
+      <b
+        className="step-title"
+        onClick={[Function]}
+      >
+        step title
+      </b>
+    </div>
+  </div>
+</div>
+`;

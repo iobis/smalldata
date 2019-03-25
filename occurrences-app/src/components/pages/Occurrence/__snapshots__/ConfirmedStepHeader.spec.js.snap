@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ActiveStepHeader renders correctly 1`] = `
+<div
+  className="step-header container columns is-vcentered confirmed has-background-white has-text-black"
+>
+  <div
+    className="column is-1"
+  >
+    <p
+      className="is-size-5 is-uppercase"
+    >
+      <b>
+        data description
+      </b>
+    </p>
+  </div>
+  <div
+    className="column is-7"
+  >
+    <p
+      className="is-size-5"
+    >
+      selected data
+    </p>
+  </div>
+  <div
+    className="column details"
+  >
+    <div
+      className="is-size-6"
+    >
+      step description
+    </div>
+    <div
+      className="is-size-5 is-uppercase"
+    >
+      <i
+        className="check-circle"
+        icon="check-circle"
+      />
+      <b
+        className="step-title"
+        onClick={[Function]}
+      >
+        step title
+      </b>
+    </div>
+  </div>
+</div>
+`;
