@@ -3,11 +3,37 @@
 <FindBugsFilter>
   <Match>
     <Bug pattern="SS_SHOULD_BE_STATIC"/>
+    <Or>
+      <And>
+        <Class name="org.obis.smalldata.rss.model.RssFeed"/>
+        <Or>
+          <Field name="version"/>
+          <Field name="xmlnsAtom"/>
+          <Field name="xmlnsGeo"/>
+          <Field name="xmlnsIpt"/>
+        </Or>
+      </And>
+      <And>
+        <Class name="org.obis.smalldata.rss.model.Channel"/>
+        <Field name="generator"/>
+      </And>
+    </Or>
   </Match>
   <Match>
     <Bug pattern="RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE"/>
+    <Or>
+      <Method name="equals"/>
+      <Method name="hashCode"/>
+    </Or>
   </Match>
   <Match>
     <Bug pattern="URF_UNREAD_FIELD"/>
+    <And>
+      <Class name="org.obis.smalldata.rss.model.RssItem$Guid"/>
+      <Or>
+        <Field name="isPermaLink"/>
+        <Field name="url"/>
+      </Or>
+    </And>
   </Match>
 </FindBugsFilter>
