@@ -1,3 +1,5 @@
+import com.github.spotbugs.SpotBugsTask
+
 plugins {
   id 'java'
   id 'application'
@@ -7,6 +9,7 @@ plugins {
   id 'org.beryx.runtime' version '1.1.5'
   id 'checkstyle'
   id 'pmd'
+  id 'com.github.spotbugs' version '1.7.1'
 }
 
 repositories {
@@ -93,4 +96,17 @@ pmd {
   consoleOutput true
   ruleSetConfig = resources.text.fromFile("config/pmd/ruleset.xml")
   ruleSets = []
+}
+
+spotbugs {
+  ignoreFailures = true
+  toolVersion = "3.1.12"
+  effort = "max"
+}
+
+tasks.withType(SpotBugsTask) {
+  reports {
+    xml.enabled = false
+    html.enabled = true
+  }
 }
