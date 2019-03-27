@@ -2,6 +2,7 @@ import React from 'react'
 import { getOccurrenceMock } from '../../clients/server'
 import Divider from '../layout/Divider'
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 
 export default function InputDataPage() {
   const { t } = useTranslation()
@@ -11,7 +12,9 @@ export default function InputDataPage() {
     <>
       <section className="section">
         <div className="container is-fluid has-text-centered">
-          <a className="button is-info">{t('inputDataPage.inputNewOccurrence')}</a>
+          <Link to="/input-data/new" className="button is-info">
+            {t('inputDataPage.inputNewOccurrence')}
+          </Link>
         </div>
       </section>
       <Divider>{t('inputDataPage.or')}</Divider>

@@ -277,3 +277,96 @@ exports[`Navbar renders correctly for route /input-data 1`] = `
   </div>
 </nav>
 `;
+
+exports[`Navbar renders correctly for route /input-data/new 1`] = `
+<nav
+  aria-label="main navigation"
+  className="navbar is-info"
+  role="navigation"
+>
+  <div
+    className="navbar-brand"
+  >
+    <a
+      className="navbar-item"
+      href="/input-data"
+      onClick={[Function]}
+    >
+      <p
+        style={
+          Object {
+            "fontSize": 26,
+            "fontWeight": "bold",
+            "width": 112,
+          }
+        }
+      >
+        OBIS
+      </p>
+    </a>
+    <a
+      className="navbar-burger"
+      onClick={[Function]}
+      role="button"
+    >
+      <span
+        aria-hidden="true"
+      />
+      <span
+        aria-hidden="true"
+      />
+      <span
+        aria-hidden="true"
+      />
+    </a>
+  </div>
+  <div
+    className="navbar-menu"
+  >
+    <div
+      className="navbar-start"
+    >
+      <a
+        aria-current="page"
+        className="navbar-item is-active"
+        href="/input-data"
+        onClick={[Function]}
+        style={Object {}}
+      >
+        navbar.inputData
+      </a>
+      <a
+        aria-current={null}
+        className="navbar-item"
+        href="/help"
+        onClick={[Function]}
+      >
+        navbar.help
+      </a>
+    </div>
+    <div
+      className="navbar-end"
+    >
+      <a
+        className="navbar-item"
+        onClick={[Function]}
+      >
+        <span
+          className="icon"
+          style={
+            Object {
+              "marginRight": 6,
+            }
+          }
+        >
+          <i
+            className="fa"
+            icon="user"
+          />
+        </span>
+        navbar.logout
+      </a>
+    </div>
+  </div>
+</nav>
+`;
