@@ -18,7 +18,7 @@
     "occurrences-app:build": "yarn workspace @smalldata/occurrences-app build",
     "occurrences-app:copy-to-server": "shx mkdir -p ./server/src/main/resources/webroot/ && shx cp -rf ./occurrences-app/build/* ./server/src/main/resources/webroot/",
     "prettier": "prettier --print-width 100 --jsx-bracket-same-line --single-quote --no-semi --write **/*.{scss,css,json,js,jsx}",
-    "sort-package-jsons": "sort-package-json package.json admin-app/package.json dwca-lib/package.json occurrences-app/package.json",
+    "sort-package-json": "sort-package-json package.json admin-app/package.json dwca-lib/package.json occurrences-app/package.json",
     "test:ci": "yarn test:front-end:ci && yarn test:server:ci",
     "test:front-end:ci": "yarn workspaces run test:ci",
     "test:server:ci": "cd server && gradle check --no-daemon"
