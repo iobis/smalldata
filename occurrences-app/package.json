@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "build": "react-app-rewired build",
     "cosmos": "cosmos",
     "cosmos:export": "cosmos-export",
-    "build": "react-app-rewired build",
     "eject": "react-app-rewired eject",
     "start": "react-app-rewired start",
     "test": "react-app-rewired test --env=jsdom",
