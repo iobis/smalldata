@@ -6,25 +6,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
-import static java.util.Map.entry;
 import static org.pmw.tinylog.Logger.debug;
 import static org.pmw.tinylog.Logger.warn;
 
 public class CustomFieldMerger implements Function<Map<String, Map<String, Object>>, Map<String, Map<String, Object>>> {
 
-  private Map<QualTerm, Map<String, Object>> fieldMap = Map.ofEntries(
-    entry(new QualTerm("dwcg", "habitat"), Map.of("example", "oak savanna"))
+  private Map<QualTerm, Map<String, Object>> fieldMap = Map.of(
+    new QualTerm("dwcg", "habitat"), Map.of("example", "oak savanna")
   );
 
+  @Override
+  public Map<String, Map<String, Object>> apply(Map<String, Map<String, Object>> api) {
+    fieldMap.forEach(new FieldMerger(api)::mergeCustomFields);
+    return api;
+  }
+
   @Value
-  static class QualTerm {
+  private static class QualTerm {
     private final String ns;
     private final String term;
   }
 
   @Value
-  static class FieldMerger {
-
+  private static class FieldMerger {
     private final Map<String, Map<String, Object>> api;
 
     private void mergeCustomFields(QualTerm qt, Map<String, Object> customFields) {
@@ -38,11 +42,5 @@ public class CustomFieldMerger implements Function<Map<String, Map<String, Objec
         warn("Skipping field '{}.{}' - not present in model", qt.getNs(), qt.getTerm());
       }
     }
-  }
-
-  @Override
-  public Map<String, Map<String, Object>> apply(Map<String, Map<String, Object>> api) {
-    fieldMap.forEach(new FieldMerger(api)::mergeCustomFields);
-    return api;
   }
 }

@@ -8,11 +8,14 @@ import static org.pmw.tinylog.Logger.info;
 
 public class OccurrenceHandler {
 
-  static void post(RoutingContext context) {
+  public static void post(RoutingContext context) {
     info("context: {}", context.request());
     context
       .response()
       .putHeader(HttpHeaders.CONTENT_TYPE, "application/json")
       .end(new JsonObject().put("occurenceID", "some ID").encode());
+  }
+
+  private OccurrenceHandler() {
   }
 }

@@ -61,4 +61,6 @@ public class OpenApiModelConstructor {
     return apiRaw;
   }
 
+  private OpenApiModelConstructor() {
+  }
 }
