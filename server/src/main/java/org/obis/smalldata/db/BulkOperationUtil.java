@@ -17,6 +17,8 @@ public class BulkOperationUtil {
 
   private static final ObjectMapper MAPPER = new ObjectMapper();
 
+  private BulkOperationUtil() {}
+
   public static List<BulkOperation> createOperationsFromFile(String path) {
     return createOperationsFromJson(IoFile.loadFromResources(path));
   }

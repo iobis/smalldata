@@ -16,7 +16,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.concurrent.TimeUnit;
 
-import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.pmw.tinylog.Logger.info;
 
@@ -55,11 +55,11 @@ public class MockDataTest {
     client.bulkWrite("users", operations,
       arClient -> {
         client.find("users", new JsonObject(), ar -> {
-          assertSame(ar.result().size(), 2);
+          assertEquals(ar.result().size(), 2);
           checks.flag();
         });
         client.find("users", new JsonObject().put("lvl", 4), ar -> {
-          assertSame(ar.result().size(), 1);
+          assertEquals(ar.result().size(), 1);
           checks.flag();
         });
       });

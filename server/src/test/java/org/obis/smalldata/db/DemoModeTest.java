@@ -15,7 +15,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.concurrent.TimeUnit;
 
-import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.pmw.tinylog.Logger.info;
 
@@ -53,7 +53,7 @@ public class DemoModeTest {
     client.find(Collections.DATASETS.dbName(), new JsonObject().put("type", "event-based"),
       ar -> {
         info(ar.result());
-        assertSame(ar.result().size(), 1);
+        assertEquals(ar.result().size(), 1);
         testContext.completeNow();
       });
   }
