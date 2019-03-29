@@ -5,75 +5,74 @@ EMOF:
       type: object
       properties:
         measurementDeterminedBy:
-          type: string
           description: 'A list (concatenated and separated) of names of people, groups,
             or organizations who determined the value of the MeasurementOrFact. *--
             examples: "Javier de la Torre", "Julie Woodruff; Eileen Lacey"*'
+          type: string
           example: -- "Javier de la Torre", "Julie Woodruff; Eileen Lacey" --
         measurementAccuracy:
-          type: string
           description: 'The description of the potential error associated with the
             measurementValue. *-- examples: "0.01", "normal distribution with variation
             of 2 m"*'
+          type: string
           example: -- "0.01", "normal distribution with variation of 2 m" --
         measurementDeterminedDate:
-          type: string
           description: 'The date on which the MeasurementOrFact was made. Recommended
             best practice is to use an encoding scheme, such as ISO 8601:2004(E).
             *-- examples: "1963-03-08T14:07-0600", "2009-02-20T08:40Z", "1809-02-12",
             "1906-06", "1971", "2007-03-01T13:00:00Z/2008-05-11T15:30:00Z", "2007-11-13/15"*'
+          type: string
           example: -- "1963-03-08T14:07-0600", "2009-02-20T08:40Z", "1809-02-12",
             "1906-06", "1971", "2007-03-01T13:00:00Z/2008-05-11T15:30:00Z", "2007-11-13/15"
             --
         measurementValue:
-          type: string
           description: 'The value of the measurement, fact, characteristic, or assertion.
             *-- examples: "45", "20", "1", "14.5", "UV-light", "Van Veen grab"*'
+          type: string
           example: -- "45", "20", "1", "14.5", "UV-light", "Van Veen grab" --
         measurementRemarks:
-          type: string
           description: 'Comments or notes accompanying the MeasurementOrFact. *--
             examples: tip of tail missing*'
+          type: string
           example: -- tip of tail missing --
         measurementType:
-          type: string
           description: 'The nature of the measurement, fact, characteristic, or assertion.
             Recommended best practice is to use a controlled vocabulary. *-- examples:
             "tail length", "temperature", "trap line length", "survey area", "trap
             type", "Dry weight biomass", "Sampling instrument name"  *'
+          type: string
           example: -- "tail length", "temperature", "trap line length", "survey area",
             "trap type", "Dry weight biomass", "Sampling instrument name"   --
         occurrenceID:
-          type: string
           description: 'The identifier of the occurrence the measurement or fact refers
             to. If not applicable, it should be left empty. *-- examples: *'
+          type: string
           example: --  --
         measurementID:
-          type: string
           description: 'An identifier for the MeasurementOrFact (information pertaining
             to measurements, facts, characteristics, or assertions). May be a global
             unique identifier or an identifier specific to the data set. *-- examples:
             *'
+          type: string
           example: --  --
         measurementMethod:
-          type: string
           description: 'A description of or reference to (publication, URI) the method
             or protocol used to determine the measurement, fact, characteristic, or
             assertion. *-- examples: "minimum convex polygon around burrow entrances"
             for a home range area, "barometric altimeter" for an elevation*'
+          type: string
           example: -- "minimum convex polygon around burrow entrances" for a home
             range area, "barometric altimeter" for an elevation --
         measurementUnit:
-          type: string
           description: 'The units associated with the measurementValue. Recommended
             best practice is to use the International System of Units (SI). *-- examples:
             "mm", "C", "km", "ha"*'
+          type: string
           example: -- "mm", "C", "km", "ha" --
     obis:
       type: object
       properties:
         measurementValueID:
-          type: string
           description: 'An identifier for facts stored in the column measurementValue
             (global unique identifier, URI). This identifier can reference a controlled
             vocabulary (e.g. for sampling instrument names, methodologies, life stages)
@@ -81,20 +80,21 @@ EMOF:
             refers to a value and not to a fact, the measurementvalueID has no meaning
             and should remain empty. *-- examples: "http://vocab.nerc.ac.uk/collection/L22/current/TOOL0653/",
             "http://vocab.nerc.ac.uk/collection/B07/current/NDT023/", "http://vocab.nerc.ac.uk/collection/S11/current/S1116/"*'
+          type: string
           example: -- "http://vocab.nerc.ac.uk/collection/L22/current/TOOL0653/",
             "http://vocab.nerc.ac.uk/collection/B07/current/NDT023/", "http://vocab.nerc.ac.uk/collection/S11/current/S1116/"
             --
         measurementUnitID:
-          type: string
           description: 'An identifier for the measurementUnit (global unique identifier,
             URI). The identifier should reference the measurementUnit in a vocabulary.
             *-- examples: "http://vocab.nerc.ac.uk/collection/P06/current/UMSQ/",
             “http://vocab.nerc.ac.uk/collection/P06/current/UCPL/”, “http://vocab.nerc.ac.uk/collection/P06/current/CMCM/”*'
+          type: string
           example: -- "http://vocab.nerc.ac.uk/collection/P06/current/UMSQ/", “http://vocab.nerc.ac.uk/collection/P06/current/UCPL/”,
             “http://vocab.nerc.ac.uk/collection/P06/current/CMCM/” --
         measurementTypeID:
-          type: string
           description: 'An identifier for the measurementType (global unique identifier,
             URI). The identifier should reference the measurementType in a vocabulary.
             *-- examples: "http://vocab.nerc.ac.uk/collection/P01/current/ODRYBM01/"*'
+          type: string
           example: -- "http://vocab.nerc.ac.uk/collection/P01/current/ODRYBM01/" --
