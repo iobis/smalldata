@@ -1,35 +1,22 @@
 package org.obis.smalldata.db;
 
-import com.fasterxml.jackson.core.JsonFactory;
-import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import io.vertx.core.Handler;
-import io.vertx.core.json.Json;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.ext.mongo.BulkOperation;
 import io.vertx.ext.mongo.MongoClient;
 import org.obis.smalldata.util.IoFile;
-import org.pmw.tinylog.Logger;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import static org.pmw.tinylog.Logger.info;
 import static org.pmw.tinylog.Logger.warn;
 
 public class DbInitializer {
 
-  private final UniqueIdGenerator uniqueIdGenerator;
   private final MongoClient client;
 
   DbInitializer(MongoClient client) {
     this.client = client;
-    this.uniqueIdGenerator = new UniqueIdGenerator(client);
   }
 
   public void newUser(String userId) {
@@ -49,9 +36,10 @@ public class DbInitializer {
   }
 
   private void addIndices() {
-    //uniqueIdGenerator.consumeNewId(Collections.USERS.dbName(), "_ref", this::newUser);
-    List.of(new String[]{Collections.DWCADOCS.dbName(), "_ref"},
-      new String[]{Collections.DWCADOCS.dbName(), "dataset_ref"},
+    List.of(new String[]{Collections.DATASETRECORDS.dbName(), "_ref"},
+      new String[]{Collections.DATASETRECORDS.dbName(), "dataset_ref"},
+      new String[]{Collections.USERS.dbName(), "_ref"},
+      new String[]{Collections.USERS.dbName(), "dataset_refs"},
       new String[]{Collections.DATASETS.dbName(), "_ref"})
       .forEach(entry ->
         client.createIndex(entry[0], new JsonObject().put(entry[1], 1)
@@ -60,17 +48,27 @@ public class DbInitializer {
   }
 
   private void addMockData() {
-    var operations = BulkOperationUtil.createOperationsFromJson(IoFile.loadFromResources("mockdata/users.json"));
-    client.bulkWrite("users", operations,
-      arClient -> warn("write result: {}",arClient.result().toJson()));
+    Map.of("users", "mockdata/users.json",
+      "datasets", "mockdata/datasets.json",
+      "dwcarecords", "mockdata/dwcarecords.json")
+      .entrySet()
+      .stream()
+      .map(entry -> Map.entry(entry.getKey(),
+        IoFile.loadFromResources(entry.getValue())))
+      .map(entry -> Map.entry(entry.getKey(),
+        BulkOperationUtil.createOperationsFromJson(entry.getValue())))
+      .forEach(entry ->
+        client.bulkWrite(entry.getKey(), entry.getValue(),
+          arClient -> warn("write result: {}", arClient.result().toJson())));
   }
 
   void mockData() {
     warn("Adding mock data!");
     client.getCollections(arColls -> {
-      if (arColls.result() != null)
+      if (arColls.result() != null) {
         arColls.result().forEach(coll -> client.dropCollection(coll, ar ->
           info("Dropped collection {}", coll)));
+      }
     });
     addMockData();
   }
@@ -84,7 +82,7 @@ public class DbInitializer {
       } else if (colls.contains("users") && colls.contains("datasets")) {
         info("Found collections {} - OK", colls);
       } else {
-        Logger.warn("Found not all collections {} - No clue what to do now", colls);
+        warn("Found not all collections {} - No clue what to do now", colls);
       }
     });
   }

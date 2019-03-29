@@ -4,7 +4,7 @@ public enum Collections {
 
   USERS("users"),
   DATASETS("datasets"),
-  DWCADOCS("dwcadocs");
+  DATASETRECORDS("dwcarecords");
 
   private String dbName;
 
