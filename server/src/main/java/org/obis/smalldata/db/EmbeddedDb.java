@@ -11,13 +11,13 @@ import de.flapdoodle.embed.process.runtime.Network;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.mongo.MongoClient;
-import org.pmw.tinylog.Logger;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import static org.pmw.tinylog.Logger.info;
+import static org.pmw.tinylog.Logger.warn;
 
 public class EmbeddedDb extends AbstractVerticle {
   private static final MongodStarter MONGOD_STARTER = MongodStarter.getDefaultInstance();
@@ -39,9 +39,9 @@ public class EmbeddedDb extends AbstractVerticle {
 
     if (path != null && !path.isEmpty() && Files.exists(Paths.get(path))) {
       mongodConfig.replication(new Storage(path, null, 0));
-      Logger.info("Mongo started on path: {}", path);
+      info("Mongo started on path: {}", path);
     } else {
-      Logger.warn("Mongo started without replication! Data is not stored between redeploys");
+      warn("Mongo started without replication! Data is not stored between redeploys");
     }
     executable = MONGOD_STARTER.prepare(mongodConfig.build());
     process = executable.start();
@@ -50,7 +50,11 @@ public class EmbeddedDb extends AbstractVerticle {
         .put("host", bindIp)
         .put("port", port)));
     dbInitializer.setupCollections();
-    if ("DEMO".equals(vertx.sharedData().getLocalMap("settings").get("mode"))) {
+    info("Starting application in {} mode",
+      vertx.sharedData().getLocalMap("settings").get("mode"));
+    var demomode = "DEMO";
+    if (vertx.sharedData().getLocalMap("settings").get("mode") == null
+      || demomode.equals(vertx.sharedData().getLocalMap("settings").get("mode"))) {
       dbInitializer.mockData();
     }
   }
