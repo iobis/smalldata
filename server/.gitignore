@@ -1,3 +1,6 @@
+.idea/sonarlint-state.xml
+.idea/sonarlint/**/*
+
 # Created by https://www.gitignore.io/api/java,vertx,gradle,intellij
 # Edit at https://www.gitignore.io/?templates=java,vertx,gradle,intellij
 
