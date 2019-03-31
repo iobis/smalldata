@@ -47,7 +47,7 @@ public class DemoModeTest {
       Collections.DATASETS.dbName(),
       new JsonObject().put("type", "event-based"),
       ar -> {
-        assertEquals(ar.result().size(), 1);
+        assertEquals(1, ar.result().size());
         testContext.completeNow();
       });
   }
