@@ -248,5 +248,6 @@
     <module name="SingleSpaceSeparator"/>
     <module name="ConstantName"/>
     <module name="WhitespaceAfter"/>
+    <module name="InnerTypeLast"/>
   </module>
 </module>

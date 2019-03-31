@@ -15,7 +15,9 @@ import static org.pmw.tinylog.Logger.warn;
 
 public class BulkOperationUtil {
 
-  private final static ObjectMapper MAPPER = new ObjectMapper();
+  private static final ObjectMapper MAPPER = new ObjectMapper();
+
+  private BulkOperationUtil() {}
 
   public static List<BulkOperation> createOperationsFromFile(String path) {
     return createOperationsFromJson(IoFile.loadFromResources(path));
@@ -24,7 +26,7 @@ public class BulkOperationUtil {
   public static List<BulkOperation> createOperationsFromJson(String json) {
     try {
       List<Map<String, Object>> l = MAPPER.readValue(json, new TypeReference<List<Map<String, Object>>>() {});
-      return l.stream().map(jsonmap ->  BulkOperation.createInsert(new JsonObject(jsonmap)))
+      return l.stream().map(jsonmap -> BulkOperation.createInsert(new JsonObject(jsonmap)))
         .collect(Collectors. toList());
     } catch (IOException e) {
       warn("could not map to operations: {}", json);

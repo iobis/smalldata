@@ -1,0 +1,29 @@
+[
+  {
+    "_ref": "wEaBfmFyQhYCdsk",
+    "type": "event-based",
+    "title": "Caprellids polulation structure in Usujiri, Hokkaido, Japan",
+    "language": "en",
+    "abstract": "Population structure data of Caprella species used in the article \"Hosono T (2014) Temperature explains reproductive dynamics in caprellids at different latitudes. Marine Ecology Progress Series 511:129-141\"",
+    "license": {
+      "url": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+      "title": "Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License"
+    },
+    "creators": [{
+      "individualName": {
+        "givenName": "Takashi",
+        "surName": "Hosono"
+      }}],
+    "contacts": [{
+      "individualName": {
+        "givenName": "Takashi",
+        "surName": "Hosono"
+      }}],
+    "metadataProviders": [{
+      "individualName": {
+        "givenName": "Takashi",
+        "surName": "Hosono"
+      },
+      "electronicMailAddress": "hosonot@jamstec.go.jp"}]
+  }
+]

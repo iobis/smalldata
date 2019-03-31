@@ -11,7 +11,7 @@ import static org.pmw.tinylog.Logger.info;
 
 public class RssHandler {
 
-  static void fetch(RoutingContext context) {
+  public static void fetch(RoutingContext context) {
     var periodicity = context.request().getParam("periodicity");
     info("Getting RSS for periodicity: {}", periodicity);
 
@@ -28,5 +28,8 @@ public class RssHandler {
             .sendFile(filename);
         }
       });
+  }
+
+  private RssHandler() {
   }
 }
