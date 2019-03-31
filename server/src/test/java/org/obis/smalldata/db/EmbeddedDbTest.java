@@ -52,7 +52,7 @@ public class EmbeddedDbTest {
   @Test
   @DisplayName("returns at least one result")
   @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
-  public void findReturnsAtLeastOneResult(VertxTestContext testContext) throws InterruptedException {
+  public void findReturnsAtLeastOneResult(VertxTestContext testContext) {
     client.find(
       COLLECTION_NAME,
       new JsonObject(),
@@ -67,7 +67,7 @@ public class EmbeddedDbTest {
   @Test
   @DisplayName("finds document matching the query")
   @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
-  public void findDoc(VertxTestContext testContext) throws InterruptedException {
+  public void findDoc(VertxTestContext testContext) {
     client.find(
       COLLECTION_NAME,
       new JsonObject().put("measurementID", 42),
