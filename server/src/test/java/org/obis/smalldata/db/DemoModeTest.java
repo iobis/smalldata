@@ -49,7 +49,7 @@ public class DemoModeTest {
   @DisplayName("read default mock data")
   @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
   void queryDB(VertxTestContext testContext) throws InterruptedException {
-    TimeUnit.MILLISECONDS.sleep(100);
+    TimeUnit.MILLISECONDS.sleep(200);
     client.find(Collections.DATASETS.dbName(), new JsonObject().put("type", "event-based"),
       ar -> {
         info(ar.result());
