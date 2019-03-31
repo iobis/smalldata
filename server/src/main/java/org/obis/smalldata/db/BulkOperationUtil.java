@@ -26,8 +26,9 @@ public class BulkOperationUtil {
   public static List<BulkOperation> createOperationsFromJson(String json) {
     try {
       List<Map<String, Object>> l = MAPPER.readValue(json, new TypeReference<List<Map<String, Object>>>() {});
-      return l.stream().map(jsonmap -> BulkOperation.createInsert(new JsonObject(jsonmap)))
-        .collect(Collectors. toList());
+      return l.stream()
+        .map(jsonmap -> BulkOperation.createInsert(new JsonObject(jsonmap)))
+        .collect(Collectors.toList());
     } catch (IOException e) {
       warn("could not map to operations: {}", json);
       return List.of();
