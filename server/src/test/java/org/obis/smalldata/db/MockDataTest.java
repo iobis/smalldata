@@ -17,7 +17,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.pmw.tinylog.Logger.info;
 
 @ExtendWith(VertxExtension.class)
@@ -31,19 +30,21 @@ public class MockDataTest {
   @BeforeEach
   public void beforeEach(Vertx vertx, VertxTestContext testContext) {
     vertx.sharedData().getLocalMap("settings").put("mode", "TEST");
-    vertx.deployVerticle(new EmbeddedDb(), new DeploymentOptions()
-        .setConfig(new JsonObject()
-          .put("bindIp", BIND_IP)
-          .put("port", PORT)),
+    vertx.deployVerticle(
+      new EmbeddedDb(),
+      new DeploymentOptions().setConfig(MongoConfigs.ofServer(BIND_IP, PORT)),
       testContext.succeeding(deployId -> {
         info("Deployed DB {}", deployId);
-        client = MongoClient.createNonShared(vertx,
-          new JsonObject()
-            .put("host", BIND_IP)
-            .put("port", PORT));
+        client = MongoClient.createNonShared(vertx, MongoConfigs.ofClient(BIND_IP, PORT));
         info("Running client {}", client);
         testContext.completeNow();
       }));
+  }
+
+  @AfterEach
+  @DisplayName("Check that the verticle is still there")
+  void lastChecks(Vertx vertx) {
+    assertEquals(1, vertx.deploymentIDs().size());
   }
 
   @Test
@@ -63,12 +64,5 @@ public class MockDataTest {
           checks.flag();
         });
       });
-  }
-
-  @AfterEach
-  @DisplayName("Check that the verticle is still there")
-  void lastChecks(Vertx vertx) {
-    assertTrue(!vertx.deploymentIDs().isEmpty()
-      && vertx.deploymentIDs().size() == 1);
   }
 }

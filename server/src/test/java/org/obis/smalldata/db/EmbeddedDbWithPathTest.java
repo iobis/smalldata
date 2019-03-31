@@ -36,22 +36,18 @@ public class EmbeddedDbWithPathTest {
   public static void beforeAll(Vertx vertx, VertxTestContext testContext) {
     var tmpDir = new File(System.getProperty("java.io.tmpdir") + File.separator + "obis-test");
     dbPath = new File(tmpDir.getAbsolutePath() + File.separator + "db-" + Generators.timeBasedGenerator().generate());
-    vertx.deployVerticle(new EmbeddedDb(), new DeploymentOptions()
-        .setConfig(new JsonObject()
-          .put("bindIp", BIND_IP)
-          .put("port", PORT)
-          .put("path", dbPath.getAbsolutePath())),
+    vertx.deployVerticle(
+      new EmbeddedDb(),
+      new DeploymentOptions().setConfig(MongoConfigs.ofServer(BIND_IP, PORT, dbPath)),
       deployId -> {
         info("Deployed DB {}", deployId.result());
-        client = MongoClient.createNonShared(vertx,
-          new JsonObject()
-            .put("host", BIND_IP)
-            .put("port", PORT));
+        client = MongoClient.createNonShared(vertx, MongoConfigs.ofClient(BIND_IP, PORT));
         info("Running client {}", client);
         client.createCollection(
           COLLECTION_NAME,
           result -> {
-            client.insert(COLLECTION_NAME,
+            client.insert(
+              COLLECTION_NAME,
               new JsonObject()
                 .put("measurementID", 42)
                 .put("measurementUnit", "m2"),

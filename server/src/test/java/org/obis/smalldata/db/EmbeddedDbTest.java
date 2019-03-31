@@ -27,16 +27,12 @@ public class EmbeddedDbTest {
 
   @BeforeEach
   public void beforeEach(Vertx vertx, VertxTestContext testContext) {
-    vertx.deployVerticle(new EmbeddedDb(), new DeploymentOptions()
-        .setConfig(new JsonObject()
-          .put("bindIp", BIND_IP)
-          .put("port", PORT)),
+    vertx.deployVerticle(
+      new EmbeddedDb(),
+      new DeploymentOptions().setConfig(MongoConfigs.ofServer(BIND_IP, PORT)),
       deployId -> {
         info("Deployed DB {}", deployId);
-        client = MongoClient.createNonShared(vertx,
-          new JsonObject()
-            .put("host", BIND_IP)
-            .put("port", PORT));
+        client = MongoClient.createNonShared(vertx, MongoConfigs.ofClient(BIND_IP, PORT));
         info("Running client {}", client);
         client.createCollection(
           COLLECTION_NAME,
@@ -57,7 +53,6 @@ public class EmbeddedDbTest {
   @DisplayName("returns at least one result")
   @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
   public void findReturnsAtLeastOneResult(VertxTestContext testContext) throws InterruptedException {
-    TimeUnit.MILLISECONDS.sleep(500);
     client.find(
       COLLECTION_NAME,
       new JsonObject(),
@@ -73,8 +68,8 @@ public class EmbeddedDbTest {
   @DisplayName("finds document matching the query")
   @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
   public void findDoc(VertxTestContext testContext) throws InterruptedException {
-    TimeUnit.MILLISECONDS.sleep(500);
-    client.find(COLLECTION_NAME,
+    client.find(
+      COLLECTION_NAME,
       new JsonObject().put("measurementID", 42),
       result -> {
         info("result: {}", result.result());
