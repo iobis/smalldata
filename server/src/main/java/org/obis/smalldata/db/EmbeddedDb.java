@@ -9,7 +9,7 @@ import de.flapdoodle.embed.mongo.config.Storage;
 import de.flapdoodle.embed.mongo.distribution.Version;
 import de.flapdoodle.embed.process.runtime.Network;
 import io.vertx.core.AbstractVerticle;
-import io.vertx.core.json.JsonObject;
+import io.vertx.core.Vertx;
 import io.vertx.ext.mongo.MongoClient;
 
 import java.io.IOException;
@@ -23,6 +23,7 @@ public class EmbeddedDb extends AbstractVerticle {
   private static final MongodStarter MONGOD_STARTER = MongodStarter.getDefaultInstance();
   private static final String BIND_IP_DEFAULT = "localhost";
   private static final int PORT_DEFAULT = 27017;
+  private static final String DEMO_MODE = "DEMO";
 
   private MongodExecutable executable;
   private MongodProcess process;
@@ -32,12 +33,12 @@ public class EmbeddedDb extends AbstractVerticle {
     info("starting mongo db with config {}", config());
     var bindIp = config().getString("bindIp", BIND_IP_DEFAULT);
     var port = config().getInteger("port", PORT_DEFAULT);
-    var path = config().getString("path", null);
+    var path = config().getString("path", "");
     var mongodConfig = new MongodConfigBuilder()
       .net(new Net(bindIp, port, Network.localhostIsIPv6()))
       .version(Version.Main.PRODUCTION);
 
-    if (path != null && !path.isEmpty() && Files.exists(Paths.get(path))) {
+    if (!path.isEmpty() && Files.exists(Paths.get(path))) {
       mongodConfig.replication(new Storage(path, null, 0));
       info("Mongo started on path: {}", path);
     } else {
@@ -45,16 +46,11 @@ public class EmbeddedDb extends AbstractVerticle {
     }
     executable = MONGOD_STARTER.prepare(mongodConfig.build());
     process = executable.start();
-    var dbInitializer = new DbInitializer(MongoClient.createNonShared(vertx,
-      new JsonObject()
-        .put("host", bindIp)
-        .put("port", port)));
+    var dbInitializer = new DbInitializer(
+      MongoClient.createNonShared(vertx, MongoConfigs.ofClient(bindIp, port)));
     dbInitializer.setupCollections();
-    info("Starting application in {} mode",
-      vertx.sharedData().getLocalMap("settings").get("mode"));
-    var demomode = "DEMO";
-    if (vertx.sharedData().getLocalMap("settings").get("mode") == null
-      || demomode.equals(vertx.sharedData().getLocalMap("settings").get("mode"))) {
+
+    if (isDemoMode(vertx)) {
       dbInitializer.mockData();
     }
   }
@@ -66,5 +62,11 @@ public class EmbeddedDb extends AbstractVerticle {
       this.process.stop();
       this.executable.stop();
     }
+  }
+
+  private boolean isDemoMode(Vertx vertx) {
+    var mode = vertx.sharedData().getLocalMap("settings").get("mode");
+    info("Starting application in {} mode", mode);
+    return mode == null || DEMO_MODE.equals(mode);
   }
 }
