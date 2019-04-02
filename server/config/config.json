@@ -1,3 +1,11 @@
 {
-  "http.port": 8080
+  "http": {
+    "port": 8080
+  },
+  "storage": {
+    "bindIp": "localhost",
+    "port": 27017,
+    "path": ""
+  },
+  "mode": "DEMO"
 }

@@ -1,0 +1,111 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Small Data Swagger
+  license:
+    name: MIT
+servers:
+  - url: http://localhost:8008/
+  - url: http://localhost:8080/
+paths:
+  /api/status:
+    get:
+      summary: get status of the server
+      operationId: getStatus
+      tags:
+        - info
+      responses:
+        200:
+          description: application running
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /api/rss/{periodicity}:
+    get:
+      summary: rss feed
+      operationId: getRss
+      parameters:
+        - name: periodicity
+          in: path
+          description: periodicity of the rss feed
+          required: true
+          schema:
+            type: string
+            enum: ['hourly', 'daily', 'weekly', 'monthly', 'yearly', 'all']
+            example: 'weekly'
+      tags:
+        - rss
+      responses:
+        200:
+          description: received rss
+          content:
+            application/xml+rss: {}
+  /api/dwca:
+    post:
+      summary: post new data to small data occurences
+      operationId: postDWCA
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/DWCA"
+
+      tags:
+        - dwca
+      responses:
+        200:
+          description: new occurences data created and stored
+          content:
+            application/json: {}
+        405:
+          description: invalid input
+
+components:
+  schemas:
+    Status:
+      type: object
+      properties:
+        title:
+          type: string
+          example: 'swaggered application'
+        status:
+          type: string
+          enum: ['OK', 'error']
+          example: 'OK'
+
+    DWCA:
+      type: object
+      description: post dwca record
+      properties:
+        core:
+          type: string
+          enum: ['occurrence', 'taxon', 'event', 'emof']
+          example: 'occurrence'
+        occurrence:
+          # $ref: 'http://smalldata.obis.org/spec/occurrence.yaml#/Occurrence' # "./spec/occurrence.yaml#/Occurrence"
+          $ref: "occurrence.yaml#/Occurrence"
+        taxon:
+          $ref: "taxon.yaml#/Taxon"
+        event:
+          $ref: "event.yaml#/Event"
+        emof:
+          $ref: "emof.yaml#/EMOF"
+    Error:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string

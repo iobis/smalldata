@@ -14,7 +14,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import util.IoFile;
+import org.obis.smalldata.util.IoFile;
 
 import java.util.concurrent.TimeUnit;
 
