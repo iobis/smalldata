@@ -66,7 +66,7 @@ public class EmbeddedDbTest {
 
   @Test
   @DisplayName("finds document matching the query")
-  @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
+  @Timeout(value = 10, timeUnit = TimeUnit.SECONDS)
   public void findDoc(VertxTestContext testContext) {
     client.find(
       COLLECTION_NAME,
