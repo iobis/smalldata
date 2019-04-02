@@ -8,7 +8,6 @@ import io.vertx.junit5.Checkpoint;
 import io.vertx.junit5.Timeout;
 import io.vertx.junit5.VertxExtension;
 import io.vertx.junit5.VertxTestContext;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -39,12 +38,6 @@ public class MockDataTest {
         info("Running client {}", client);
         testContext.completeNow();
       }));
-  }
-
-  @AfterEach
-  @DisplayName("Check that the verticle is still there")
-  void lastChecks(Vertx vertx) {
-    assertEquals(1, vertx.deploymentIDs().size());
   }
 
   @Test
