@@ -15,7 +15,7 @@ export default function StepHeader({
 }) {
   return (
     <>
-      <div className={classNames('step-header container columns is-vcentered', className)}>
+      <div className={classNames('step-header columns is-vcentered', className)}>
         <div className={classNames('column is-1', { 'is-hidden-mobile': !dataDescription })}>
           <p className="is-size-5 is-uppercase">
             <b>

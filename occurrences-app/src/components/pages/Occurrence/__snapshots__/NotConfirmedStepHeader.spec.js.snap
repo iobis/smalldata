@@ -2,7 +2,7 @@
 
 exports[`NotConfirmedStepHeader renders correctly 1`] = `
 <div
-  className="step-header container columns is-vcentered not-confirmed has-text-white has-background-info"
+  className="step-header columns is-vcentered not-confirmed has-text-white has-background-info"
 >
   <div
     className="column is-1 is-hidden-mobile"

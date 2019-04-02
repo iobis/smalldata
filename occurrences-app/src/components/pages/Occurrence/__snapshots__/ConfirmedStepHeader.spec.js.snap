@@ -2,7 +2,7 @@
 
 exports[`ActiveStepHeader renders correctly 1`] = `
 <div
-  className="step-header container columns is-vcentered confirmed has-background-white has-text-black"
+  className="step-header columns is-vcentered confirmed has-background-white has-text-black"
 >
   <div
     className="column is-1"
