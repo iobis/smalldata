@@ -1,7 +1,8 @@
 import ActiveStepHeader from './ActiveStepHeader'
 import ConfirmedStepHeader from './ConfirmedStepHeader'
-import React, { useState } from 'react'
 import NotConfirmedStepHeader from './NotConfirmedStepHeader'
+import React, { useState } from 'react'
+import SelectedDataset from './SelectedDataset/SelectedDataset'
 
 export default function OccurrenceForm() {
   const [activeStepIndex, setActiveStepIndex] = useState(0)
@@ -10,7 +11,7 @@ export default function OccurrenceForm() {
     selectedData:    'HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.',
     stepDescription: 'Choose the dataset for adding observations',
     stepTitle:       'Selected Dataset',
-    children:        <StubFormContent/>
+    children:        <SelectedDataset/>
   }, {
     dataDescription: 'Given Values',
     selectedData:    'Abra alba 2019-02-02',
