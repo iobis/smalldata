@@ -21,7 +21,7 @@ export default function SelectedDataset() {
     id:          5,
     description: 'Waved Albatross Tracking (aggregated per 1-degree cell)'
   }]
-  const [selectedDatasetId, setSeletedDatasetId] = useState(datasetOptions[0].id)
+  const [selectedDatasetId, setSelectedDatasetId] = useState(datasetOptions[0].id)
 
   return (
     <div className="selected-dataset is-fluid">
@@ -32,7 +32,7 @@ export default function SelectedDataset() {
             {datasetOptions.map(props => (
               <DatasetOption
                 key={props.id}
-                onClick={() => setSeletedDatasetId(props.id)}
+                onClick={() => setSelectedDatasetId(props.id)}
                 checked={props.id === selectedDatasetId}
                 {...props}
               />))}
