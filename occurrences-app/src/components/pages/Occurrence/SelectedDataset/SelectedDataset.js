@@ -47,7 +47,7 @@ export default function SelectedDataset() {
 function DatasetOption({ checked, description, onClick }) {
   return (
     <tr>
-      <td><input checked={checked} type="radio" name="dataset" onClick={onClick}/></td>
+      <td><input checked={checked} type="radio" name="dataset" onChange={onClick}/></td>
       <td>{description}</td>
     </tr>
   )
