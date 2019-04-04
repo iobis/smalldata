@@ -1,10 +1,10 @@
 export default {
   translation: {
-    common:        {
+    common:         {
       copy: 'Copy',
       edit: 'Edit'
     },
-    inputDataPage: {
+    inputDataPage:  {
       inputNewOccurrence: 'INPUT NEW OCCURRENCE',
       or:                 'OR',
       copyPreviousHeader: 'copy from previous entries',
@@ -15,7 +15,14 @@ export default {
         scientificName: 'Scientific Name'
       }
     },
-    navbar:        {
+    occurrenceForm: {
+      selectedDataset: {
+        dataDescription: 'Using Data',
+        stepDescription: 'Choose the dataset for adding observations',
+        stepTitle:       'Selected Dataset'
+      }
+    },
+    navbar:         {
       help:      'HELP',
       inputData: 'INPUT DATA',
       logout:    'logout'

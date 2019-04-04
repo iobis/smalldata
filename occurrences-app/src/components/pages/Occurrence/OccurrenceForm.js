@@ -4,17 +4,19 @@ import NotConfirmedStepHeader from './NotConfirmedStepHeader'
 import React, { useState } from 'react'
 import SelectedDataset from './SelectedDataset/SelectedDataset'
 import { getDatasetMock } from '../../../clients/server'
+import { useTranslation } from 'react-i18next'
 
 export default function OccurrenceForm() {
   const datasets = getDatasetMock()
+  const { t } = useTranslation()
   const [selectedDataset, setSelectedDataset] = useState(datasets[0])
   const [activeStepIndex, setActiveStepIndex] = useState(0)
 
   const steps = [{
-    dataDescription: 'Using Data',
+    dataDescription: t('occurrenceForm.selectedDataset.dataDescription'),
     selectedData:    selectedDataset.description,
-    stepDescription: 'Choose the dataset for adding observations',
-    stepTitle:       'Selected Dataset',
+    stepDescription: t('occurrenceForm.selectedDataset.stepDescription'),
+    stepTitle:       t('occurrenceForm.selectedDataset.stepTitle'),
     children:        <SelectedDataset
                        datasets={datasets}
                        selectedDataset={selectedDataset}
