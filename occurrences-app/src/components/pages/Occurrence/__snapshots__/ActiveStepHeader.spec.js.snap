@@ -3,6 +3,7 @@
 exports[`ActiveStepHeader renders correctly 1`] = `
 <div
   className="step-header columns is-vcentered active has-background-grey has-text-white"
+  onClick={[Function]}
 >
   <div
     className="column is-1 is-hidden-mobile"
@@ -37,7 +38,6 @@ exports[`ActiveStepHeader renders correctly 1`] = `
     >
       <b
         className="step-title"
-        onClick={[Function]}
       >
         step title
       </b>

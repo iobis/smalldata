@@ -1,4 +1,6 @@
 .step-header {
+  cursor: pointer;
+
   &.step-0 {
     background-color: darken($info, 40%);
   }
@@ -28,7 +30,6 @@
     }
 
     .step-title:hover {
-      cursor: pointer;
       text-decoration: underline;
     }
   }
