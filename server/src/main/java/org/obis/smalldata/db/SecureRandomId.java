@@ -1,7 +1,11 @@
 package org.obis.smalldata.db;
 
+import org.pmw.tinylog.Logger;
+
 import java.security.SecureRandom;
 import java.util.Base64;
+
+import static org.pmw.tinylog.Logger.info;
 
 enum SecureRandomId {
 
@@ -13,6 +17,8 @@ enum SecureRandomId {
   public static String generate() {
     byte[] buffer = new byte[11];
     RANDOM.nextBytes(buffer);
-    return ENCODER.encodeToString(buffer);
+    var secureId = ENCODER.encodeToString(buffer);
+    info("Generated new id: {}", secureId);
+    return secureId;
   }
 }

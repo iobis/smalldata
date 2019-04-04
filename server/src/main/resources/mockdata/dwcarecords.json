@@ -3,29 +3,35 @@
     "_ref": "qq4QL25D99yA450",
     "dataset_ref": "wEaBfmFyQhYCdsk",
     "core": "event",
-    "event": [{
-      "id": "990722-01",
-      "purl": {
-        "modified": "2017-10-25T12:32"
-      },
-      "tdwg": {
-        "eventID": "990722-01",
-        "parentEventID": "",
-        "eventDate": "1999-07-22",
-        "habitat": "algae bet",
-        "minimumDepthInMeters": "1",
-        "maximumDepthInMeters": "3",
-        "decimalLatitude": 41.93730278,
-        "decimalLongigute": 140.9512021,
-        "coordinateUncertaintyInMeters": 100
-      }
-    },
+    "event":
+    [
       {
-        "id": "990722-02",
-        "purl": {
+        "id": "990722-01",
+        "purl":
+        {
           "modified": "2017-10-25T12:32"
         },
-        "tdwg": {
+        "tdwg":
+        {
+          "eventID": "990722-01",
+          "parentEventID": "",
+          "eventDate": "1999-07-22",
+          "habitat": "algae bet",
+          "minimumDepthInMeters": "1",
+          "maximumDepthInMeters": "3",
+          "decimalLatitude": 41.93730278,
+          "decimalLongigute": 140.9512021,
+          "coordinateUncertaintyInMeters": 100
+        }
+      },
+      {
+        "id": "990722-02",
+        "purl":
+        {
+          "modified": "2017-10-25T12:32"
+        },
+        "tdwg":
+        {
           "eventID": "990722-02",
           "parentEventID": "",
           "eventDate": "1999-07-22",
@@ -36,25 +42,32 @@
           "decimalLongitude": 140.9512021,
           "coordinateUncertaintyInMeters": 100
         }
-      }],
-    "emof": [{
-      "coreid": "990722-01",
-      "tdwg": {
-        "measurementID": "00001",
-        "occurrenceID": "urn::catalog:JAMSTEC:hosono:00001",
-        "measurementType": "wet weight",
-        "measurementValue": 160.272,
-        "measurementUnit": "g/m2",
-        "measurementRemarks": ""
+      }
+    ],
+    "emof":
+    [
+      {
+        "coreid": "990722-01",
+        "tdwg":
+        {
+          "measurementID": "00001",
+          "occurrenceID": "urn::catalog:JAMSTEC:hosono:00001",
+          "measurementType": "wet weight",
+          "measurementValue": 160.272,
+          "measurementUnit": "g/m2",
+          "measurementRemarks": ""
+        },
+        "iobis":
+        {
+          "measurementTypeID": "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL04",
+          "measurementValueID": "",
+          "measurementUnitID": "http://vocab.nerc.ac.uk/collection/P06/current/UGMS"
+        }
       },
-      "iobis": {
-        "measurementTypeID": "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL04",
-        "measurementValueID": "",
-        "measurementUnitID": "http://vocab.nerc.ac.uk/collection/P06/current/UGMS"
-      }},
       {
         "coreid": "990722-02",
-        "tdwg": {
+        "tdwg":
+        {
           "measurementID": "00002",
           "occurrenceID": "urn::catalog:JAMSTEC:hosono:00002",
           "measurementType": "wet weight",
@@ -62,35 +75,44 @@
           "measurementUnit": "g/m2",
           "measurementRemarks": ""
         },
-        "iobis": {
+        "iobis":
+        {
           "measurementTypeID": "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL04",
           "measurementValueID": "",
           "measurementUnitID": "http://vocab.nerc.ac.uk/collection/P06/current/UGMS"
         }
-      }],
-    "occurrence": [{
-      "coreid": "990722-01",
-      "purl": {
-        "modified": "2017-10-25T12:32"
-      },
-      "tdwg": {
-        "basisOfRecord": "HumanObservation",
-        "occurrenceID": "urn::catalog:JAMSTEC:hosono:00001",
-        "occurrenceStatus": "Present",
-        "eventID": "990722-01",
-        "identificationQualifier": "",
-        "scientificNameID": "urn:lsid:marinespecies.org:taxname:372119",
-        "scientificName": "Gelidium elegans",
-        "kingdom": "",
-        "taxonRank": "",
-        "scientificNameAuthorship": ""
-      }},
+      }
+    ],
+    "occurrence":
+    [
       {
-        "coreid": "990722-02",
-        "purl": {
+        "coreid": "990722-01",
+        "purl":
+        {
           "modified": "2017-10-25T12:32"
         },
-        "tdwg": {
+        "tdwg":
+        {
+          "basisOfRecord": "HumanObservation",
+          "occurrenceID": "urn::catalog:JAMSTEC:hosono:00001",
+          "occurrenceStatus": "Present",
+          "eventID": "990722-01",
+          "identificationQualifier": "",
+          "scientificNameID": "urn:lsid:marinespecies.org:taxname:372119",
+          "scientificName": "Gelidium elegans",
+          "kingdom": "",
+          "taxonRank": "",
+          "scientificNameAuthorship": ""
+        }
+      },
+      {
+        "coreid": "990722-02",
+        "purl":
+        {
+          "modified": "2017-10-25T12:32"
+        },
+        "tdwg":
+        {
           "basisOfRecord": "HumanObservation",
           "occurrenceID": "urn::catalog:JAMSTEC:hosono:00002",
           "occurrenceStatus": "Present",
@@ -102,6 +124,94 @@
           "taxonRank": "",
           "scientificNameAuthorship": ""
         }
-      }]
+      }
+    ]
+  },
+  {
+    "_ref": "70NRHqBFXoI_SHU",
+    "dataset_ref": "ntDOtUc7XsRrIus",
+    "core": "occurrence",
+    "occurrence":
+      [
+        {
+          "id": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1",
+          "purl":
+          {
+            "type": "",
+            "modified": "",
+            "bibliographicCitation": "",
+            "references": ""
+          },
+          "tdwg":
+          {
+            "datasetID": "",
+            "institutionCode": "",
+            "collectionCode": "",
+            "datasetName": "",
+            "basisOfRecord": "",
+            "dataGeneralizations": "",
+            "dynamicProperties": "",
+            "occurrenceID": "",
+            "catalogNumber": "",
+            "occurrenceRemarks": "",
+            "recordNumber": "",
+            "recordedBy": "",
+            "individualCount": "",
+            "sex": "",
+            "lifeStage": "",
+            "occurrenceStatus": "",
+            "preparations": "",
+            "otherCatalogNumbers": "",
+            "associatedOccurrences":"",
+            "eventID": "",
+            "parentEventID": "",
+            "samplingProtocol": "",
+            "samplingEffort": "",
+            "eventDate": "",
+            "eventTime": "",
+            "startDayOfYear": "",
+            "endDayOfYear":"",
+            "year": "",
+            "month": "",
+            "day": "",
+            "fieldNumber": "",
+            "locationID": "",
+            "continent": "",
+            "country": "",
+            "stateProvince": "",
+            "county": "",
+            "locality": "",
+            "minimumElevationInMeters": "",
+            "maximumElevationInMeters": "",
+            "verbatimDepth": "",
+            "minimumDepthInMeters": "",
+            "maximumDepthInMeters": "",
+            "decimalLatitude": "",
+            "decimalLongitude": "",
+            "geodeticDatum":"",
+            "coordinateUncertaintyInMeters": "",
+            "footprintWKT": "",
+            "georeferenceRemarks": "",
+            identifiedBy	dateIdentified	identificationQualifier	typeStatus	scientificNameID	scientificName	kingdom	phylum	class	order	family	genus	subgenus	specificEpithet	infraspecificEpithet	scientificNameAuthorship
+
+
+          },
+          "emof":
+          {
+
+          }
+
+
+
+        }
+      ],
+    "emof":
+      [
+        {
+          "core_id": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1"
+
+        }
+      ]
+
   }
 ]
