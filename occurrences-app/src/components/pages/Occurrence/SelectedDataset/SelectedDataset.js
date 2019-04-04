@@ -24,22 +24,18 @@ export default function SelectedDataset() {
   const [selectedDatasetId, setSelectedDatasetId] = useState(datasetOptions[0].id)
 
   return (
-    <div className="selected-dataset is-fluid">
-      <div className="columns">
-        <div className="column">
-          <table className="table is-striped is-fullwidth">
-            <tbody>
-            {datasetOptions.map(props => (
-              <DatasetOption
-                key={props.id}
-                onClick={() => setSelectedDatasetId(props.id)}
-                checked={props.id === selectedDatasetId}
-                {...props}
-              />))}
-            </tbody>
-          </table>
-        </div>
-      </div>
+    <div className="selected-dataset columns is-fluid">
+      <table className="table is-striped is-fullwidth">
+        <tbody>
+        {datasetOptions.map(props => (
+          <DatasetOption
+            key={props.id}
+            onClick={() => setSelectedDatasetId(props.id)}
+            checked={props.id === selectedDatasetId}
+            {...props}
+          />))}
+        </tbody>
+      </table>
     </div>
   )
 }
