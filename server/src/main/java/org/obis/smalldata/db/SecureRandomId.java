@@ -1,7 +1,5 @@
 package org.obis.smalldata.db;
 
-import org.pmw.tinylog.Logger;
-
 import java.security.SecureRandom;
 import java.util.Base64;
 
