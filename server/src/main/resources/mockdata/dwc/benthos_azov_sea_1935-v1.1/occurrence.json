@@ -1,0 +1,7981 @@
+[ {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1819"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_1216"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-10-12"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "10"
+  }, {
+    "day" : "12"
+  }, {
+    "fieldNumber" : "505"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "5"
+  }, {
+    "maximumDepthInMeters" : "5.2"
+  }, {
+    "decimalLatitude" : "46.67"
+  }, {
+    "decimalLongitude" : "36.78"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:106218"
+  }, {
+    "scientificName" : "Balanus improvisus"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "Darw."
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1819",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1605"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_733"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-06-16"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "6"
+  }, {
+    "day" : "16"
+  }, {
+    "fieldNumber" : "67c"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "3"
+  }, {
+    "maximumDepthInMeters" : "3"
+  }, {
+    "decimalLatitude" : "46.66"
+  }, {
+    "decimalLongitude" : "36.66"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:1078"
+  }, {
+    "scientificName" : "Ostracoda sp."
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : ""
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1605",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1562"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_666"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-08-05"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "8"
+  }, {
+    "day" : "5"
+  }, {
+    "fieldNumber" : "260/8"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "10"
+  }, {
+    "maximumDepthInMeters" : "10.7"
+  }, {
+    "decimalLatitude" : "46.54"
+  }, {
+    "decimalLongitude" : "36.75"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:742654"
+  }, {
+    "scientificName" : "Syndesmya ovata"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "(Philippi)"
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1562",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_801"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_1645"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-10-12"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "10"
+  }, {
+    "day" : "12"
+  }, {
+    "fieldNumber" : "508"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "112"
+  }, {
+    "maximumDepthInMeters" : "112"
+  }, {
+    "decimalLatitude" : "46.55"
+  }, {
+    "decimalLongitude" : "36.73"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:140127"
+  }, {
+    "scientificName" : "Hydrobia ventrosa"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "(Montagu)"
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_801",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1587"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_709"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-06-22"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "6"
+  }, {
+    "day" : "22"
+  }, {
+    "fieldNumber" : "123a"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "5"
+  }, {
+    "maximumDepthInMeters" : "5.6"
+  }, {
+    "decimalLatitude" : "46.41"
+  }, {
+    "decimalLongitude" : "36.2"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:102101"
+  }, {
+    "scientificName" : "Corophium volutator"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "(Pall.)"
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1587",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : "Temperature=21.8;"
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1590"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_717"
+  }, {
+    "occurrenceRemarks" : "Temperature was taken by grab during sampling"
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-06-23"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "6"
+  }, {
+    "day" : "23"
+  }, {
+    "fieldNumber" : "124a"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "7"
+  }, {
+    "maximumDepthInMeters" : "7.5"
+  }, {
+    "decimalLatitude" : "46.36"
+  }, {
+    "decimalLongitude" : "36.2"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:152921"
+  }, {
+    "scientificName" : "Cardium edule"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "L."
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1590",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : "Temperature=21.3;"
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1029"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_713"
+  }, {
+    "occurrenceRemarks" : "Temperature was taken by grab during sampling"
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-06-23"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "6"
+  }, {
+    "day" : "23"
+  }, {
+    "fieldNumber" : "124"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "8"
+  }, {
+    "maximumDepthInMeters" : "8.8"
+  }, {
+    "decimalLatitude" : "46.39"
+  }, {
+    "decimalLongitude" : "36.2"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:155187"
+  }, {
+    "scientificName" : "Nereis succinea"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "(Leuckart)"
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1029",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_809"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_1653"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-09-26"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "9"
+  }, {
+    "day" : "26"
+  }, {
+    "fieldNumber" : "411"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "10"
+  }, {
+    "maximumDepthInMeters" : "10"
+  }, {
+    "decimalLatitude" : "45.91"
+  }, {
+    "decimalLongitude" : "37.58"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:138227"
+  }, {
+    "scientificName" : "Mytilaster sp."
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : ""
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_809",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : "Temperature=15.5;"
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1404"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_901"
+  }, {
+    "occurrenceRemarks" : "Temperature was taken by grab during sampling"
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-10-13"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "10"
+  }, {
+    "day" : "13"
+  }, {
+    "fieldNumber" : "517"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "6"
+  }, {
+    "maximumDepthInMeters" : "6.8"
+  }, {
+    "decimalLatitude" : "46.75"
+  }, {
+    "decimalLongitude" : "37.35"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:106218"
+  }, {
+    "scientificName" : "Balanus improvisus"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "Darw."
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1404",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1414"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_914"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-10-13"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "10"
+  }, {
+    "day" : "13"
+  }, {
+    "fieldNumber" : "520a"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : ""
+  }, {
+    "maximumDepthInMeters" : ""
+  }, {
+    "decimalLatitude" : "46.7"
+  }, {
+    "decimalLongitude" : "37.66"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:742971"
+  }, {
+    "scientificName" : "Pontogammarus maeoticus"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "Sow."
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1414",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_481"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_304"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-10-01"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "10"
+  }, {
+    "day" : "1"
+  }, {
+    "fieldNumber" : "424"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "10"
+  }, {
+    "maximumDepthInMeters" : "10.9"
+  }, {
+    "decimalLatitude" : "46.06"
+  }, {
+    "decimalLongitude" : "37.26"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:152921"
+  }, {
+    "scientificName" : "Cardium edule"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "L."
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_481",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_483"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_306"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-10-01"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "10"
+  }, {
+    "day" : "1"
+  }, {
+    "fieldNumber" : "424"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "10"
+  }, {
+    "maximumDepthInMeters" : "10.9"
+  }, {
+    "decimalLatitude" : "46.06"
+  }, {
+    "decimalLongitude" : "37.26"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:140127"
+  }, {
+    "scientificName" : "Hydrobia ventrosa"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "(Montagu)"
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_483",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1225"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_1103"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-10-20"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "10"
+  }, {
+    "day" : "20"
+  }, {
+    "fieldNumber" : "575"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "6"
+  }, {
+    "maximumDepthInMeters" : "6"
+  }, {
+    "decimalLatitude" : "46.57"
+  }, {
+    "decimalLongitude" : "36.12"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:155187"
+  }, {
+    "scientificName" : "Nereis succinea"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "(Leuckart)"
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1225",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_703"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_1766"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-10-04"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "10"
+  }, {
+    "day" : "4"
+  }, {
+    "fieldNumber" : "456"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "9"
+  }, {
+    "maximumDepthInMeters" : "9.6"
+  }, {
+    "decimalLatitude" : "46.44"
+  }, {
+    "decimalLongitude" : "37.45"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:140476"
+  }, {
+    "scientificName" : "Mytilaster lineatus"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "Montagu"
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_703",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : "Temperature=15.2;"
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1516"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_829"
+  }, {
+    "occurrenceRemarks" : "Temperature was taken by grab during sampling"
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-10-10"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "10"
+  }, {
+    "day" : "10"
+  }, {
+    "fieldNumber" : "493"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "8"
+  }, {
+    "maximumDepthInMeters" : "8.4"
+  }, {
+    "decimalLatitude" : "46.82"
+  }, {
+    "decimalLongitude" : "37.23"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:155187"
+  }, {
+    "scientificName" : "Nereis succinea"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "(Leuckart)"
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1516",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_682"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_1745"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-10-13"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "10"
+  }, {
+    "day" : "13"
+  }, {
+    "fieldNumber" : "522"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "6"
+  }, {
+    "maximumDepthInMeters" : "6.4"
+  }, {
+    "decimalLatitude" : "46.67"
+  }, {
+    "decimalLongitude" : "37.54"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:106218"
+  }, {
+    "scientificName" : "Balanus improvisus"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "Darw."
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_682",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_19"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_1353"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-10-18"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "10"
+  }, {
+    "day" : "18"
+  }, {
+    "fieldNumber" : "560"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "5"
+  }, {
+    "maximumDepthInMeters" : "5.2"
+  }, {
+    "decimalLatitude" : "46.48"
+  }, {
+    "decimalLongitude" : "36.2"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:130769"
+  }, {
+    "scientificName" : "Harmothoe imbricata"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "L."
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_19",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : "Temperature=16.9;"
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_38"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_58"
+  }, {
+    "occurrenceRemarks" : "Temperature was taken by grab during sampling"
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-09-25"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "9"
+  }, {
+    "day" : "25"
+  }, {
+    "fieldNumber" : "390"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "8"
+  }, {
+    "maximumDepthInMeters" : "8.5"
+  }, {
+    "decimalLatitude" : "45.41"
+  }, {
+    "decimalLongitude" : "37.44"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:152921"
+  }, {
+    "scientificName" : "Cardium edule"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "L."
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_38",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : "Temperature=19.1;"
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1785"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_750"
+  }, {
+    "occurrenceRemarks" : "Temperature was taken by grab during sampling"
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-06-17"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "6"
+  }, {
+    "day" : "17"
+  }, {
+    "fieldNumber" : "79"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "9"
+  }, {
+    "maximumDepthInMeters" : "9.4"
+  }, {
+    "decimalLatitude" : "46.76"
+  }, {
+    "decimalLongitude" : "37.03"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:155187"
+  }, {
+    "scientificName" : "Nereis succinea"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "(Leuckart)"
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1785",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : "Temperature=18.8;"
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_718"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_1728"
+  }, {
+    "occurrenceRemarks" : "Temperature was taken by grab during sampling"
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-06-07"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "6"
+  }, {
+    "day" : "7"
+  }, {
+    "fieldNumber" : "20"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "8"
+  }, {
+    "maximumDepthInMeters" : "8.1"
+  }, {
+    "decimalLatitude" : "45.87"
+  }, {
+    "decimalLongitude" : "37.76"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:140127"
+  }, {
+    "scientificName" : "Hydrobia ventrosa"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "(Montagu)"
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_718",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1195"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_1268"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-10-02"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "10"
+  }, {
+    "day" : "2"
+  }, {
+    "fieldNumber" : "437'c'"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "3"
+  }, {
+    "maximumDepthInMeters" : "3"
+  }, {
+    "decimalLatitude" : "46.26"
+  }, {
+    "decimalLongitude" : "36.28"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:118454"
+  }, {
+    "scientificName" : "Idotea sp."
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : ""
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1195",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : "Temperature=18.4;"
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_229"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_134"
+  }, {
+    "occurrenceRemarks" : "Temperature was taken by grab during sampling"
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-06-08"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "6"
+  }, {
+    "day" : "8"
+  }, {
+    "fieldNumber" : "26"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "9"
+  }, {
+    "maximumDepthInMeters" : "9.2"
+  }, {
+    "decimalLatitude" : "45.71"
+  }, {
+    "decimalLongitude" : "37.58"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:130359"
+  }, {
+    "scientificName" : "Nephtys hombergii"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "M. Edw"
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_229",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : "Temperature=14.6;"
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1536"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_851"
+  }, {
+    "occurrenceRemarks" : "Temperature was taken by grab during sampling"
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-10-10"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "10"
+  }, {
+    "day" : "10"
+  }, {
+    "fieldNumber" : "496"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "5"
+  }, {
+    "maximumDepthInMeters" : "5"
+  }, {
+    "decimalLatitude" : "46.9"
+  }, {
+    "decimalLongitude" : "37.22"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:110594"
+  }, {
+    "scientificName" : "Pterocuma pectinatum"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "Sow."
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1536",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1130"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_1195"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-10-10"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "10"
+  }, {
+    "day" : "10"
+  }, {
+    "fieldNumber" : "502"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "8"
+  }, {
+    "maximumDepthInMeters" : "8"
+  }, {
+    "decimalLatitude" : "46.68"
+  }, {
+    "decimalLongitude" : "36.83"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:742654"
+  }, {
+    "scientificName" : "Syndesmya ovata"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "(Philippi)"
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1130",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : "Temperature=18.8;"
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_641"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_1629"
+  }, {
+    "occurrenceRemarks" : "Temperature was taken by grab during sampling"
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-06-13"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "6"
+  }, {
+    "day" : "13"
+  }, {
+    "fieldNumber" : "59"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "9"
+  }, {
+    "maximumDepthInMeters" : "9.3"
+  }, {
+    "decimalLatitude" : "46.45"
+  }, {
+    "decimalLongitude" : "37.43"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:152921"
+  }, {
+    "scientificName" : "Cardium edule"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "L."
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_641",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_604"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_371"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-08-10"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "8"
+  }, {
+    "day" : "10"
+  }, {
+    "fieldNumber" : "278/25"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "8"
+  }, {
+    "maximumDepthInMeters" : "8"
+  }, {
+    "decimalLatitude" : "46.06"
+  }, {
+    "decimalLongitude" : "35.16"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:102048"
+  }, {
+    "scientificName" : "Microdeutopus gryllotalpa"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "A. Costa"
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_604",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : "Temperature=20;"
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_628"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_395"
+  }, {
+    "occurrenceRemarks" : "Temperature was taken by grab during sampling"
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-06-11"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "6"
+  }, {
+    "day" : "11"
+  }, {
+    "fieldNumber" : "35"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "8"
+  }, {
+    "maximumDepthInMeters" : "8.8"
+  }, {
+    "decimalLatitude" : "46.14"
+  }, {
+    "decimalLongitude" : "37.45"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:152921"
+  }, {
+    "scientificName" : "Cardium edule"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "L."
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_628",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : "Temperature=19.9;"
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_584"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_360"
+  }, {
+    "occurrenceRemarks" : "Temperature was taken by grab during sampling"
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-06-24"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "6"
+  }, {
+    "day" : "24"
+  }, {
+    "fieldNumber" : "141"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "10"
+  }, {
+    "maximumDepthInMeters" : "10.6"
+  }, {
+    "decimalLatitude" : "46.16"
+  }, {
+    "decimalLongitude" : "35.67"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:155187"
+  }, {
+    "scientificName" : "Nereis succinea"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "(Leuckart)"
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_584",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_459"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_291"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-10-01"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "10"
+  }, {
+    "day" : "1"
+  }, {
+    "fieldNumber" : "423"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "10"
+  }, {
+    "maximumDepthInMeters" : "10"
+  }, {
+    "decimalLatitude" : "46.06"
+  }, {
+    "decimalLongitude" : "37.41"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:130769"
+  }, {
+    "scientificName" : "Harmothoe imbricata"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "L."
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_459",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : "Temperature=18.3;"
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_462"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_1554"
+  }, {
+    "occurrenceRemarks" : "Temperature was taken by grab during sampling"
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-09-25"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "9"
+  }, {
+    "day" : "25"
+  }, {
+    "fieldNumber" : "396"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "10"
+  }, {
+    "maximumDepthInMeters" : "10.7"
+  }, {
+    "decimalLatitude" : "45.53"
+  }, {
+    "decimalLongitude" : "37.44"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:452043"
+  }, {
+    "scientificName" : "Brachynotus lucasi"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "(M. Edw.)"
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_462",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_70"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_1367"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-10-01"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "10"
+  }, {
+    "day" : "1"
+  }, {
+    "fieldNumber" : "421"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "8"
+  }, {
+    "maximumDepthInMeters" : "8.5"
+  }, {
+    "decimalLatitude" : "46.05"
+  }, {
+    "decimalLongitude" : "37.69"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:120020"
+  }, {
+    "scientificName" : "Gastrosaccus spinifer"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "V. Ben."
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_70",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : "Temperature=24.5;"
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1758"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_33"
+  }, {
+    "occurrenceRemarks" : "Temperature was taken by grab during sampling"
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-08-03"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "8"
+  }, {
+    "day" : "3"
+  }, {
+    "fieldNumber" : "255/3"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "10"
+  }, {
+    "maximumDepthInMeters" : "10"
+  }, {
+    "decimalLatitude" : "45.64"
+  }, {
+    "decimalLongitude" : "36.7"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:742654"
+  }, {
+    "scientificName" : "Syndesmya ovata"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "(Philippi)"
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1758",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : "Temperature=16.5;"
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1760"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_563"
+  }, {
+    "occurrenceRemarks" : "Temperature was taken by grab during sampling"
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-10-12"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "10"
+  }, {
+    "day" : "12"
+  }, {
+    "fieldNumber" : "509"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "12"
+  }, {
+    "maximumDepthInMeters" : "12"
+  }, {
+    "decimalLatitude" : "46.47"
+  }, {
+    "decimalLongitude" : "36.78"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:140127"
+  }, {
+    "scientificName" : "Hydrobia ventrosa"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "(Montagu)"
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1760",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : "Temperature=20;"
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1778"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_634"
+  }, {
+    "occurrenceRemarks" : "Temperature was taken by grab during sampling"
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-06-24"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "6"
+  }, {
+    "day" : "24"
+  }, {
+    "fieldNumber" : "134"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "8"
+  }, {
+    "maximumDepthInMeters" : "8.6"
+  }, {
+    "decimalLatitude" : "46.45"
+  }, {
+    "decimalLongitude" : "35.83"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:140127"
+  }, {
+    "scientificName" : "Hydrobia ventrosa"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "(Montagu)"
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1778",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1724"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_673"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-08-08"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "8"
+  }, {
+    "day" : "8"
+  }, {
+    "fieldNumber" : "270/30"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "7"
+  }, {
+    "maximumDepthInMeters" : "7.4"
+  }, {
+    "decimalLatitude" : "46.5"
+  }, {
+    "decimalLongitude" : "37.51"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:452043"
+  }, {
+    "scientificName" : "Brachynotus lucasi"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "(M. Edw.)"
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1724",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1727"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_676"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-08-08"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "8"
+  }, {
+    "day" : "8"
+  }, {
+    "fieldNumber" : "270/30"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "7"
+  }, {
+    "maximumDepthInMeters" : "7.4"
+  }, {
+    "decimalLatitude" : "46.5"
+  }, {
+    "decimalLongitude" : "37.51"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:152921"
+  }, {
+    "scientificName" : "Cardium edule"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "L."
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1727",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1744"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_15"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-09-26"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "9"
+  }, {
+    "day" : "26"
+  }, {
+    "fieldNumber" : "409"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "8"
+  }, {
+    "maximumDepthInMeters" : "8.1"
+  }, {
+    "decimalLatitude" : "45.87"
+  }, {
+    "decimalLongitude" : "37.76"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:138227"
+  }, {
+    "scientificName" : "Mytilaster sp."
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : ""
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1744",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_868"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_1789"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-10-03"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "10"
+  }, {
+    "day" : "3"
+  }, {
+    "fieldNumber" : "444"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "8"
+  }, {
+    "maximumDepthInMeters" : "8.5"
+  }, {
+    "decimalLatitude" : "46.24"
+  }, {
+    "decimalLongitude" : "37.6"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:138227"
+  }, {
+    "scientificName" : "Mytilaster sp."
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : ""
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_868",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_762"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_496"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-10-18"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "10"
+  }, {
+    "day" : "18"
+  }, {
+    "fieldNumber" : "553"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "8"
+  }, {
+    "maximumDepthInMeters" : "8.9"
+  }, {
+    "decimalLatitude" : "46.53"
+  }, {
+    "decimalLongitude" : "36.4"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:106218"
+  }, {
+    "scientificName" : "Balanus improvisus"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "Darw."
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_762",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_379"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_272"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-10-18"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "10"
+  }, {
+    "day" : "18"
+  }, {
+    "fieldNumber" : "556"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "7"
+  }, {
+    "maximumDepthInMeters" : "7.2"
+  }, {
+    "decimalLatitude" : "46.58"
+  }, {
+    "decimalLongitude" : "36.42"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:106218"
+  }, {
+    "scientificName" : "Balanus improvisus"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "Darw."
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_379",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : "Temperature=17.7;"
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_210"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_123"
+  }, {
+    "occurrenceRemarks" : "Temperature was taken by grab during sampling"
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-06-08"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "6"
+  }, {
+    "day" : "8"
+  }, {
+    "fieldNumber" : "24"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "11"
+  }, {
+    "maximumDepthInMeters" : "11.8"
+  }, {
+    "decimalLatitude" : "45.71"
+  }, {
+    "decimalLongitude" : "37.35"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:106218"
+  }, {
+    "scientificName" : "Balanus improvisus"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "Darw."
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_210",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_794"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_528"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-10-18"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "10"
+  }, {
+    "day" : "18"
+  }, {
+    "fieldNumber" : "562"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "7"
+  }, {
+    "maximumDepthInMeters" : "7.2"
+  }, {
+    "decimalLatitude" : "46.45"
+  }, {
+    "decimalLongitude" : "36.2"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:106218"
+  }, {
+    "scientificName" : "Balanus improvisus"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "Darw."
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_794",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : "Temperature=19;"
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1266"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_1147"
+  }, {
+    "occurrenceRemarks" : "Temperature was taken by grab during sampling"
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-06-17"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "6"
+  }, {
+    "day" : "17"
+  }, {
+    "fieldNumber" : "74"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "6"
+  }, {
+    "maximumDepthInMeters" : "6.2"
+  }, {
+    "decimalLatitude" : "46.61"
+  }, {
+    "decimalLongitude" : "36.78"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:130394"
+  }, {
+    "scientificName" : "Nereis diversicolor"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "(O. Muller)"
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1266",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1111"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_1826"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-10-17"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "10"
+  }, {
+    "day" : "17"
+  }, {
+    "fieldNumber" : "540"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "6"
+  }, {
+    "maximumDepthInMeters" : "6"
+  }, {
+    "decimalLatitude" : "46.7"
+  }, {
+    "decimalLongitude" : "36.64"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:130394"
+  }, {
+    "scientificName" : "Nereis diversicolor"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "(O. Muller)"
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1111",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_975"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_1107"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-10-20"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "10"
+  }, {
+    "day" : "20"
+  }, {
+    "fieldNumber" : "575"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "6"
+  }, {
+    "maximumDepthInMeters" : "6"
+  }, {
+    "decimalLatitude" : "46.57"
+  }, {
+    "decimalLongitude" : "36.12"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:452043"
+  }, {
+    "scientificName" : "Brachynotus lucasi"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "(M. Edw.)"
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_975",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1190"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_1263"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-10-02"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "10"
+  }, {
+    "day" : "2"
+  }, {
+    "fieldNumber" : "437'b'"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "1"
+  }, {
+    "maximumDepthInMeters" : "1"
+  }, {
+    "decimalLatitude" : "46.26"
+  }, {
+    "decimalLongitude" : "36.28"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:155187"
+  }, {
+    "scientificName" : "Nereis succinea"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "(Leuckart)"
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1190",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : "Temperature=21;"
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_180"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_1510"
+  }, {
+    "occurrenceRemarks" : "Temperature was taken by grab during sampling"
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-06-10"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "6"
+  }, {
+    "day" : "10"
+  }, {
+    "fieldNumber" : "29"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "7"
+  }, {
+    "maximumDepthInMeters" : "7.8"
+  }, {
+    "decimalLatitude" : "46.05"
+  }, {
+    "decimalLongitude" : "37.7"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:138227"
+  }, {
+    "scientificName" : "Mytilaster sp."
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : ""
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_180",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_408"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_190"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-10-20"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "10"
+  }, {
+    "day" : "20"
+  }, {
+    "fieldNumber" : "584"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "12"
+  }, {
+    "maximumDepthInMeters" : "12"
+  }, {
+    "decimalLatitude" : "46.25"
+  }, {
+    "decimalLongitude" : "35.63"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:102048"
+  }, {
+    "scientificName" : "Microdeutopus gryllotalpa"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "A. Costa"
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_408",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : "Temperature=18.2;"
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_302"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_1550"
+  }, {
+    "occurrenceRemarks" : "Temperature was taken by grab during sampling"
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-09-25"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "9"
+  }, {
+    "day" : "25"
+  }, {
+    "fieldNumber" : "394"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "9"
+  }, {
+    "maximumDepthInMeters" : "9"
+  }, {
+    "decimalLatitude" : "45.47"
+  }, {
+    "decimalLongitude" : "37.52"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:155187"
+  }, {
+    "scientificName" : "Nereis succinea"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "(Leuckart)"
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_302",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : "Temperature=18.1;"
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_226"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_131"
+  }, {
+    "occurrenceRemarks" : "Temperature was taken by grab during sampling"
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-06-08"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "6"
+  }, {
+    "day" : "8"
+  }, {
+    "fieldNumber" : "25"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "11"
+  }, {
+    "maximumDepthInMeters" : "11.7"
+  }, {
+    "decimalLatitude" : "45.71"
+  }, {
+    "decimalLongitude" : "37.46"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:538967"
+  }, {
+    "scientificName" : "Corbulomya maeoticum"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "Mil."
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_226",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_273"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_156"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-10-02"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "10"
+  }, {
+    "day" : "2"
+  }, {
+    "fieldNumber" : "437"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "2"
+  }, {
+    "maximumDepthInMeters" : "2.9"
+  }, {
+    "decimalLatitude" : "46.26"
+  }, {
+    "decimalLongitude" : "38.22"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:101896"
+  }, {
+    "scientificName" : "Ampelisca diadema"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "(A. Costa)"
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_273",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_514"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_324"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-10-02"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "10"
+  }, {
+    "day" : "2"
+  }, {
+    "fieldNumber" : "431"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "6"
+  }, {
+    "maximumDepthInMeters" : "6.4"
+  }, {
+    "decimalLatitude" : "46.12"
+  }, {
+    "decimalLongitude" : "37.77"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:102135"
+  }, {
+    "scientificName" : "Dexamine spinosa"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "(Montagu)"
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_514",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1450"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_953"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-06-14"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "6"
+  }, {
+    "day" : "14"
+  }, {
+    "fieldNumber" : "63"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "4"
+  }, {
+    "maximumDepthInMeters" : "4.9"
+  }, {
+    "decimalLatitude" : "46.58"
+  }, {
+    "decimalLongitude" : "37.3"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:106218"
+  }, {
+    "scientificName" : "Balanus improvisus"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "Darw."
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1450",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1421"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_922"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : ""
+  }, {
+    "eventDate" : "1935-10-13"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "10"
+  }, {
+    "day" : "13"
+  }, {
+    "fieldNumber" : "520c"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "2"
+  }, {
+    "maximumDepthInMeters" : "2"
+  }, {
+    "decimalLatitude" : "46.71"
+  }, {
+    "decimalLongitude" : "37.67"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:152921"
+  }, {
+    "scientificName" : "Cardium edule"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "L."
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1421",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_318"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_230"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-08-10"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "8"
+  }, {
+    "day" : "10"
+  }, {
+    "fieldNumber" : "274/21"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "9"
+  }, {
+    "maximumDepthInMeters" : "9.5"
+  }, {
+    "decimalLatitude" : "46.06"
+  }, {
+    "decimalLongitude" : "37.23"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:106218"
+  }, {
+    "scientificName" : "Balanus improvisus"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "Darw."
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_318",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_315"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_227"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-08-10"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "8"
+  }, {
+    "day" : "10"
+  }, {
+    "fieldNumber" : "274/21"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "9"
+  }, {
+    "maximumDepthInMeters" : "9.5"
+  }, {
+    "decimalLatitude" : "46.06"
+  }, {
+    "decimalLongitude" : "37.23"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:155187"
+  }, {
+    "scientificName" : "Nereis succinea"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "(Leuckart)"
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_315",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+}, {
+  "tdwg" : [ {
+    "datasetID" : "IMIS:dasid:4376"
+  }, {
+    "institutionCode" : "IBSS"
+  }, {
+    "collectionCode" : "R/V N. Danilevskiy 1935 Azov Sea benthos data"
+  }, {
+    "datasetName" : ""
+  }, {
+    "basisOfRecord" : "HumanObservation"
+  }, {
+    "dataGeneralizations" : ""
+  }, {
+    "dynamicProperties" : ""
+  }, {
+    "occurrenceID" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_324"
+  }, {
+    "catalogNumber" : "IBSS_Benthos_1935_237"
+  }, {
+    "occurrenceRemarks" : ""
+  }, {
+    "recordNumber" : ""
+  }, {
+    "recordedBy" : ""
+  }, {
+    "individualCount" : ""
+  }, {
+    "sex" : ""
+  }, {
+    "lifeStage" : ""
+  }, {
+    "occurrenceStatus" : "present"
+  }, {
+    "preparations" : ""
+  }, {
+    "otherCatalogNumbers" : ""
+  }, {
+    "associatedOccurrences" : ""
+  }, {
+    "eventID" : ""
+  }, {
+    "parentEventID" : ""
+  }, {
+    "samplingProtocol" : ""
+  }, {
+    "samplingEffort" : "Ind/m²"
+  }, {
+    "eventDate" : "1935-08-10"
+  }, {
+    "eventTime" : ""
+  }, {
+    "startDayOfYear" : ""
+  }, {
+    "endDayOfYear" : ""
+  }, {
+    "year" : "1935"
+  }, {
+    "month" : "8"
+  }, {
+    "day" : "10"
+  }, {
+    "fieldNumber" : "275/22"
+  }, {
+    "locationID" : ""
+  }, {
+    "continent" : "Black Sea"
+  }, {
+    "country" : ""
+  }, {
+    "stateProvince" : ""
+  }, {
+    "county" : ""
+  }, {
+    "locality" : "Azov Sea"
+  }, {
+    "minimumElevationInMeters" : ""
+  }, {
+    "maximumElevationInMeters" : ""
+  }, {
+    "verbatimDepth" : ""
+  }, {
+    "minimumDepthInMeters" : "11"
+  }, {
+    "maximumDepthInMeters" : "11.5"
+  }, {
+    "decimalLatitude" : "46.05"
+  }, {
+    "decimalLongitude" : "36.71"
+  }, {
+    "geodeticDatum" : "EPSG:4326"
+  }, {
+    "coordinateUncertaintyInMeters" : ""
+  }, {
+    "footprintWKT" : ""
+  }, {
+    "georeferenceRemarks" : ""
+  }, {
+    "identifiedBy" : ""
+  }, {
+    "dateIdentified" : ""
+  }, {
+    "identificationQualifier" : ""
+  }, {
+    "typeStatus" : ""
+  }, {
+    "scientificNameID" : "urn:lsid:marinespecies.org:taxname:452043"
+  }, {
+    "scientificName" : "Brachynotus lucasi"
+  }, {
+    "kingdom" : ""
+  }, {
+    "phylum" : ""
+  }, {
+    "class" : ""
+  }, {
+    "order" : ""
+  }, {
+    "family" : ""
+  }, {
+    "genus" : ""
+  }, {
+    "subgenus" : ""
+  }, {
+    "specificEpithet" : ""
+  }, {
+    "infraspecificEpithet" : ""
+  }, {
+    "scientificNameAuthorship" : "(M. Edw.)"
+  } ],
+  "id" : "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_324",
+  "purl" : [ {
+    "type" : ""
+  }, {
+    "modified" : "2017-08-04 12:04:57"
+  }, {
+    "bibliographicCitation" : ""
+  }, {
+    "references" : ""
+  } ]
+} ]
