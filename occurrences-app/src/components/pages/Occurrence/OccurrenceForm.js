@@ -39,7 +39,7 @@ export default function OccurrenceForm() {
   }]
 
   return (
-    <div className="container">
+    <section className="section">
       {steps.map((step, index) => {
         const className = 'step-' + index
         const StepComponent = activeStepIndex === index
@@ -56,7 +56,7 @@ export default function OccurrenceForm() {
             stepTitle={(index + 1) + ' - ' + step.stepTitle}/>
         )
       })}
-    </div>
+    </section>
   )
 }
 
