@@ -5,8 +5,6 @@ import React, { useState } from 'react'
 import SelectedDataset from './SelectedDataset/SelectedDataset'
 
 export default function OccurrenceForm() {
-  const [activeStepIndex, setActiveStepIndex] = useState(0)
-
   const datasets = [{
     id:          0,
     description: 'HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.'
@@ -26,8 +24,8 @@ export default function OccurrenceForm() {
     id:          5,
     description: 'Waved Albatross Tracking (aggregated per 1-degree cell)'
   }]
-  const [selectedDatasetId, setSelectedDatasetId] = useState(datasets[0].id)
-  const selectedDataset = datasets.find(dataset => dataset.id === selectedDatasetId)
+  const [selectedDataset, setSelectedDataset] = useState(datasets[0])
+  const [activeStepIndex, setActiveStepIndex] = useState(0)
 
   const steps = [{
     dataDescription: 'Using Data',
@@ -36,8 +34,8 @@ export default function OccurrenceForm() {
     stepTitle:       'Selected Dataset',
     children:        <SelectedDataset
                        datasets={datasets}
-                       selectedDatasetId={selectedDatasetId}
-                       onChange={(id) => setSelectedDatasetId(id)}/>
+                       selectedDataset={selectedDataset}
+                       onChange={(dataset) => setSelectedDataset(dataset)}/>
   }, {
     dataDescription: 'Given Values',
     selectedData:    'Abra alba 2019-02-02',

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-export default function SelectedDataset({ datasets, selectedDatasetId, onChange }) {
+export default function SelectedDataset({ datasets, selectedDataset, onChange }) {
   return (
     <div className="selected-dataset columns is-fluid">
       <table className="table is-striped is-fullwidth">
@@ -9,8 +9,8 @@ export default function SelectedDataset({ datasets, selectedDatasetId, onChange 
         {datasets.map(dataset => (
           <DatasetOption
             key={dataset.id}
-            onClick={() => onChange(dataset.id)}
-            checked={dataset.id === selectedDatasetId}
+            onClick={() => onChange(dataset)}
+            checked={dataset.id === selectedDataset.id}
             {...dataset}
           />))}
         </tbody>
@@ -19,13 +19,15 @@ export default function SelectedDataset({ datasets, selectedDatasetId, onChange 
   )
 }
 
+const datasetShape = {
+  id:          PropTypes.number.isRequired,
+  description: PropTypes.string.isRequired
+}
+
 SelectedDataset.propTypes = {
-  datasets:          PropTypes.arrayOf(PropTypes.shape({
-    id:          PropTypes.number.isRequired,
-    description: PropTypes.string.isRequired
-  })).isRequired,
-  onChange:          PropTypes.func.isRequired,
-  selectedDatasetId: PropTypes.number.isRequired
+  datasets:        PropTypes.arrayOf(PropTypes.shape(datasetShape)).isRequired,
+  onChange:        PropTypes.func.isRequired,
+  selectedDataset: PropTypes.shape(datasetShape).isRequired
 }
 
 function DatasetOption({ checked, description, onClick }) {
