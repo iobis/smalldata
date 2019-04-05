@@ -93,20 +93,26 @@ public class DwcToJsonConverter {
   public static void main(String[] args) {
     SecureRandomId randomId = SecureRandomId.INSTANCE;
     var dwcaConfig = new JsonObject()
-      .put("_ref", randomId.generate())
-      .put("dataset_ref", "ntDOtUc7XsRrIus")
       .put("output", "./server/src/main/resources/mockdata/dwc/benthos_azov_sea_1935-v1.1/test.json")
-      .put("core", "occurence")
-      .put("tables", new JsonObject()
-        .put("occurrence", new JsonObject()
-          .put("resource", "mockdata/dwc/benthos_azov_sea_1935-v1.1/occurrence.txt"))
-        .put("emof", new JsonObject()
-          .put("resource", "mockdata/dwc/benthos_azov_sea_1935-v1.1/emof.txt")));
+      .put("datasets", new JsonArray()
+        .add(new JsonObject()
+          .put("_ref", randomId.generate())
+          .put("dataset_ref", "ntDOtUc7XsRrIus")
+          .put("core", "occurrence")
+          .put("tables", new JsonObject()
+            .put("occurrence", new JsonObject()
+              .put("resource", "mockdata/dwc/benthos_azov_sea_1935-v1.1/occurrence.txt"))
+            .put("emof", new JsonObject()
+              .put("resource", "mockdata/dwc/benthos_azov_sea_1935-v1.1/emof.txt")))));
     DwcToJsonConverter converter = new DwcToJsonConverter();
     File output = new File(dwcaConfig.getString("output"));
 
-    JsonArray jsonDatasets = new JsonArray()
-      .add(converter.convert(dwcaConfig));
+    JsonArray jsonDatasets = new JsonArray();
+    dwcaConfig.getJsonArray("datasets").stream()
+      .map(JsonObject.class::cast)
+      .map(converter::convert)
+      .forEach(jsonDatasets::add);
+
     try {
       FileUtils.writeStringToFile(output, jsonDatasets.encodePrettily(), StandardCharsets.UTF_8);
     } catch (IOException e) {
