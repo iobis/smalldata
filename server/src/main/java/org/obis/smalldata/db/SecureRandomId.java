@@ -5,7 +5,7 @@ import java.util.Base64;
 
 import static org.pmw.tinylog.Logger.info;
 
-enum SecureRandomId {
+public enum SecureRandomId {
 
   INSTANCE;
 
