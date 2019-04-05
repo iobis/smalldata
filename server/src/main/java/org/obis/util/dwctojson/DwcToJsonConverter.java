@@ -1,8 +1,5 @@
-package org.obis.util;
+package org.obis.util.dwctojson;
 
-import com.fasterxml.jackson.dataformat.csv.CsvMapper;
-import com.fasterxml.jackson.dataformat.csv.CsvSchema;
-import com.google.common.io.Resources;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import org.apache.commons.io.FileUtils;
@@ -13,11 +10,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.AbstractMap;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Map;
-import java.util.Random;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import static org.pmw.tinylog.Logger.error;
@@ -26,7 +19,6 @@ public class DwcToJsonConverter {
 
   public static final String DWC_OCCURRENCE = "occurrence";
   public static final String DWC_MOF = "emof";
-  private static CsvMapper csvMapper = new CsvMapper();
 
   private DwcToJsonConverter() { }
 
@@ -54,7 +46,7 @@ public class DwcToJsonConverter {
   public static void main(String[] args) {
     var randomId = SecureRandomId.INSTANCE;
     var dwcaConfig = new JsonObject()
-      .put("output", "./server/src/main/resources/mockdata/dwcarecords.json")
+      .put("outputDir", "./server/src/main/resources/mockdata/dwcarecords/")
       .put("datasets", new JsonArray()
         .add(JsonObject.mapFrom(
           new DataSet(randomId.generate(), "wEaBfmFyQhYCdsk", "event",
@@ -78,73 +70,22 @@ public class DwcToJsonConverter {
               Map.of(DWC_OCCURRENCE, "deepsea_antipatharia-v1.1/occurrence.txt")))))
       );
     DwcToJsonConverter converter = new DwcToJsonConverter();
-    File output = new File(dwcaConfig.getString("output"));
-
-    JsonArray jsonDatasets = new JsonArray();
     dwcaConfig.getJsonArray("datasets").stream()
       .map(JsonObject.class::cast)
       .map(converter::convert)
-      .forEach(jsonDatasets::add);
+      .forEach(dataset -> {
+        var ref = dataset.getString("dataset_ref");
+        writeToFile(dwcaConfig.getString("outputDir") + ref + ".json ", dataset);
+      });
+  }
 
+  static void writeToFile(String filename, JsonObject dataset) {
+    File outputFile = new File(filename);
     try {
-      FileUtils.writeStringToFile(output, jsonDatasets.encodePrettily(), StandardCharsets.UTF_8);
+      FileUtils.writeStringToFile(outputFile, dataset.encodePrettily(), StandardCharsets.UTF_8);
     } catch (IOException e) {
       error(e.getStackTrace());
     }
   }
 
-  static class DwcTableProcessor {
-
-    List<Object> mapCsv(List<Object> readAll) {
-      var expectedMaxCount = 2000.0;
-      var elementCount = readAll.size();
-      var elementChance = Math.min(expectedMaxCount / elementCount, 1.0);
-      var rand = new Random();
-
-      var colHeaderNamespaces = Map.of(
-        "purl", List.of("type", "modified", "bibliographicCitation", "references")
-      );
-
-      return readAll.stream()
-        .filter(o -> rand.nextDouble() < elementChance)
-        .map(Map.class::cast)
-        .map(record -> {
-          var specificNamespaceCols = colHeaderNamespaces.values().stream()
-            .flatMap(List::stream)
-            .collect(Collectors.toList());
-          specificNamespaceCols.add("id");
-          return Map.of(
-            "id", record.get("id"),
-            "purl", colHeaderNamespaces.get("purl").stream()
-              .filter(record::containsKey)
-              .filter(k -> !((String) record.get(k)).isBlank())
-              .collect(Collectors.<String, String, Object>toMap(Function.identity(), record::get)),
-            "tdwg", record.keySet().stream()
-              .filter(key -> !specificNamespaceCols.contains(key))
-              .filter(k -> !((String) record.get(k)).isBlank())
-              .collect(Collectors.<String, String, Object>toMap(Function.identity(), record::get)));
-        })
-        .collect(Collectors.toList());
-    }
-
-    List<Object> processDwcFile(final String dwcFile) {
-      var table = Resources.getResource(dwcFile);
-      var csvSchema = CsvSchema.builder()
-        .setUseHeader(true)
-        .setColumnSeparator('\t')
-        .build();
-      try {
-        List<Object> readAll = csvMapper.readerFor(Map.class)
-          .with(csvSchema)
-          .readValues(table)
-          .readAll();
-        return mapCsv(readAll);
-      } catch (IOException e) {
-        error(Arrays.stream(e.getStackTrace())
-          .map(StackTraceElement::toString)
-          .collect(Collectors.joining("\n\t")));
-        return null;
-      }
-    }
-  }
 }

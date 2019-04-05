@@ -1,0 +1,734 @@
+{
+  "_ref" : "MpYE-kPYovBsRAo",
+  "dataset_ref" : "PoJnGNMaxsupE4w",
+  "core" : "occurrence",
+  "occurrence" : [ {
+    "tdwg" : {
+      "scientificNameID" : "urn:lsid:marinespecies.org:taxname:283935",
+      "scientificName" : "Antipathes viminalis",
+      "scientificNameAuthorship" : "Roule, 1902",
+      "locality" : "“Hirondelle”, St. 1116",
+      "decimalLongitude" : -10.77,
+      "collectionCode" : "Deep-sea Fauna of European Seas: Antipatharia",
+      "decimalLatitude" : 31.72,
+      "geodeticDatum" : "EPSG:4326",
+      "occurrenceID" : "DeepSea_Antipatharia_6",
+      "minimumDepthInMeters" : 2165.0,
+      "catalogNumber" : "DeepSea_Antipatharia_6",
+      "occurrenceStatus" : "present",
+      "basisOfRecord" : "Occurrence",
+      "institutionCode" : "P.P. Shirshov Institute of Oceanology, Russian Academy of Sciences",
+      "datasetID" : "IMIS:dasid:5077",
+      "maximumDepthInMeters" : 2165.0,
+      "eventDate" : "1886/1915"
+    },
+    "id" : "DeepSea_Antipatharia_6",
+    "purl" : {
+      "modified" : "2015-08-26 11:50:12",
+      "bibliographicCitation" : "Molodtsova T.N. 2014. Deep-sea fauna of European seas: An annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe. Antipatharia // Invertebrate Zoology. Vol.11. No.1: 3–7"
+    }
+  }, {
+    "tdwg" : {
+      "scientificNameID" : "urn:lsid:marinespecies.org:taxname:103326",
+      "scientificName" : "Leiopathes glaberrima",
+      "scientificNameAuthorship" : "Esper, 1792",
+      "locality" : "“Princesse-Alice”, St. 2048",
+      "decimalLongitude" : -17.03,
+      "collectionCode" : "Deep-sea Fauna of European Seas: Antipatharia",
+      "decimalLatitude" : 32.54,
+      "geodeticDatum" : "EPSG:4326",
+      "occurrenceID" : "DeepSea_Antipatharia_7",
+      "minimumDepthInMeters" : 1968.0,
+      "catalogNumber" : "DeepSea_Antipatharia_7",
+      "occurrenceStatus" : "present",
+      "basisOfRecord" : "Occurrence",
+      "institutionCode" : "P.P. Shirshov Institute of Oceanology, Russian Academy of Sciences",
+      "datasetID" : "IMIS:dasid:5077",
+      "maximumDepthInMeters" : 1968.0,
+      "eventDate" : "1886/1915"
+    },
+    "id" : "DeepSea_Antipatharia_7",
+    "purl" : {
+      "modified" : "2015-08-26 11:50:12",
+      "bibliographicCitation" : "Molodtsova T.N. 2014. Deep-sea fauna of European seas: An annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe. Antipatharia // Invertebrate Zoology. Vol.11. No.1: 3–7"
+    }
+  }, {
+    "tdwg" : {
+      "scientificNameID" : "urn:lsid:marinespecies.org:taxname:103327",
+      "scientificName" : "Leiopathes grimaldii",
+      "scientificNameAuthorship" : "Roule, 1902",
+      "locality" : "“Hirondelle”, St. 1116",
+      "decimalLongitude" : -10.77,
+      "collectionCode" : "Deep-sea Fauna of European Seas: Antipatharia",
+      "decimalLatitude" : 31.72,
+      "geodeticDatum" : "EPSG:4326",
+      "occurrenceID" : "DeepSea_Antipatharia_9",
+      "minimumDepthInMeters" : 2165.0,
+      "catalogNumber" : "DeepSea_Antipatharia_9",
+      "occurrenceStatus" : "present",
+      "basisOfRecord" : "Occurrence",
+      "institutionCode" : "P.P. Shirshov Institute of Oceanology, Russian Academy of Sciences",
+      "datasetID" : "IMIS:dasid:5077",
+      "maximumDepthInMeters" : 2165.0,
+      "eventDate" : "1886/1915"
+    },
+    "id" : "DeepSea_Antipatharia_9",
+    "purl" : {
+      "modified" : "2015-08-26 11:50:12",
+      "bibliographicCitation" : "Molodtsova T.N. 2014. Deep-sea fauna of European seas: An annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe. Antipatharia // Invertebrate Zoology. Vol.11. No.1: 3–7"
+    }
+  }, {
+    "tdwg" : {
+      "scientificNameID" : "urn:lsid:marinespecies.org:taxname:283956",
+      "year" : 2004,
+      "scientificName" : "Schizopathes affinis",
+      "scientificNameAuthorship" : "Brook, 1889",
+      "footprintWKT" : "POLYGON ((-29.64 42.81, -29.64 42.78, -29.6 42.78, -29.6 42.81, -29.64 42.81))",
+      "locality" : "“G.O. Sars” MARECO, 42/368",
+      "decimalLongitude" : -29.62,
+      "collectionCode" : "Deep-sea Fauna of European Seas: Antipatharia",
+      "decimalLatitude" : 42.79,
+      "geodeticDatum" : "EPSG:4326",
+      "occurrenceID" : "DeepSea_Antipatharia_11",
+      "minimumDepthInMeters" : 2063.0,
+      "catalogNumber" : "DeepSea_Antipatharia_11",
+      "occurrenceStatus" : "present",
+      "basisOfRecord" : "Occurrence",
+      "institutionCode" : "P.P. Shirshov Institute of Oceanology, Russian Academy of Sciences",
+      "datasetID" : "IMIS:dasid:5077",
+      "maximumDepthInMeters" : 2107.0,
+      "eventDate" : "2004"
+    },
+    "id" : "DeepSea_Antipatharia_11",
+    "purl" : {
+      "modified" : "2015-08-26 11:50:12",
+      "bibliographicCitation" : "Molodtsova T.N. 2014. Deep-sea fauna of European seas: An annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe. Antipatharia // Invertebrate Zoology. Vol.11. No.1: 3–7"
+    }
+  }, {
+    "tdwg" : {
+      "scientificNameID" : "urn:lsid:marinespecies.org:taxname:283956",
+      "year" : 1971,
+      "scientificName" : "Schizopathes affinis",
+      "scientificNameAuthorship" : "Brook, 1889",
+      "locality" : "BIAÇORES, St 129 BL",
+      "decimalLongitude" : -33.43,
+      "collectionCode" : "Deep-sea Fauna of European Seas: Antipatharia",
+      "decimalLatitude" : 38.96,
+      "geodeticDatum" : "EPSG:4326",
+      "occurrenceID" : "DeepSea_Antipatharia_12",
+      "minimumDepthInMeters" : 3000.0,
+      "catalogNumber" : "DeepSea_Antipatharia_12",
+      "occurrenceStatus" : "present",
+      "basisOfRecord" : "HumanObservation",
+      "institutionCode" : "P.P. Shirshov Institute of Oceanology, Russian Academy of Sciences",
+      "datasetID" : "IMIS:dasid:5077",
+      "maximumDepthInMeters" : 3056.0,
+      "eventDate" : "1971"
+    },
+    "id" : "DeepSea_Antipatharia_12",
+    "purl" : {
+      "modified" : "2015-08-26 11:50:12",
+      "bibliographicCitation" : "Molodtsova T.N. 2014. Deep-sea fauna of European seas: An annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe. Antipatharia // Invertebrate Zoology. Vol.11. No.1: 3–7"
+    }
+  }, {
+    "tdwg" : {
+      "scientificNameID" : "urn:lsid:marinespecies.org:taxname:283956",
+      "year" : 1969,
+      "scientificName" : "Schizopathes affinis",
+      "scientificNameAuthorship" : "Brook, 1889",
+      "locality" : "NORATLANTE, P65 B010",
+      "decimalLongitude" : -26.33,
+      "collectionCode" : "Deep-sea Fauna of European Seas: Antipatharia",
+      "decimalLatitude" : 36.96,
+      "geodeticDatum" : "EPSG:4326",
+      "occurrenceID" : "DeepSea_Antipatharia_13",
+      "minimumDepthInMeters" : 2871.0,
+      "catalogNumber" : "DeepSea_Antipatharia_13",
+      "occurrenceStatus" : "present",
+      "basisOfRecord" : "HumanObservation",
+      "institutionCode" : "P.P. Shirshov Institute of Oceanology, Russian Academy of Sciences",
+      "datasetID" : "IMIS:dasid:5077",
+      "maximumDepthInMeters" : 2871.0,
+      "eventDate" : "1969"
+    },
+    "id" : "DeepSea_Antipatharia_13",
+    "purl" : {
+      "modified" : "2015-08-26 11:50:12",
+      "bibliographicCitation" : "Molodtsova T.N. 2014. Deep-sea fauna of European seas: An annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe. Antipatharia // Invertebrate Zoology. Vol.11. No.1: 3–7"
+    }
+  }, {
+    "tdwg" : {
+      "scientificNameID" : "urn:lsid:marinespecies.org:taxname:816001",
+      "year" : 1974,
+      "scientificName" : "Bathypathes robusta",
+      "scientificNameAuthorship" : "Gravier, 1918",
+      "locality" : "BIOGAS VI, CP 23, St. 6",
+      "decimalLongitude" : -4.35,
+      "collectionCode" : "Deep-sea Fauna of European Seas: Antipatharia",
+      "decimalLatitude" : 44.08,
+      "geodeticDatum" : "EPSG:4326",
+      "occurrenceID" : "DeepSea_Antipatharia_18",
+      "minimumDepthInMeters" : 1980.0,
+      "catalogNumber" : "DeepSea_Antipatharia_18",
+      "occurrenceStatus" : "present",
+      "basisOfRecord" : "HumanObservation",
+      "institutionCode" : "P.P. Shirshov Institute of Oceanology, Russian Academy of Sciences",
+      "datasetID" : "IMIS:dasid:5077",
+      "maximumDepthInMeters" : 1980.0,
+      "eventDate" : "1974"
+    },
+    "id" : "DeepSea_Antipatharia_18",
+    "purl" : {
+      "modified" : "2015-08-26 11:50:12",
+      "bibliographicCitation" : "Molodtsova T.N. 2014. Deep-sea fauna of European seas: An annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe. Antipatharia // Invertebrate Zoology. Vol.11. No.1: 3–7"
+    }
+  }, {
+    "tdwg" : {
+      "scientificNameID" : "urn:lsid:marinespecies.org:taxname:289303",
+      "scientificName" : "Abyssopathes lyra",
+      "scientificNameAuthorship" : "Brook, 1889",
+      "locality" : "ABYPLAINE, DS 04",
+      "decimalLongitude" : -21.43,
+      "collectionCode" : "Deep-sea Fauna of European Seas: Antipatharia",
+      "decimalLatitude" : 34.88,
+      "geodeticDatum" : "EPSG:4326",
+      "occurrenceID" : "DeepSea_Antipatharia_32",
+      "minimumDepthInMeters" : 5160.0,
+      "catalogNumber" : "DeepSea_Antipatharia_32",
+      "occurrenceStatus" : "present",
+      "basisOfRecord" : "HumanObservation",
+      "institutionCode" : "P.P. Shirshov Institute of Oceanology, Russian Academy of Sciences",
+      "datasetID" : "IMIS:dasid:5077",
+      "maximumDepthInMeters" : 5160.0
+    },
+    "id" : "DeepSea_Antipatharia_32",
+    "purl" : {
+      "modified" : "2015-08-26 11:50:12",
+      "bibliographicCitation" : "Molodtsova T.N. 2014. Deep-sea fauna of European seas: An annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe. Antipatharia // Invertebrate Zoology. Vol.11. No.1: 3–7"
+    }
+  }, {
+    "tdwg" : {
+      "scientificNameID" : "urn:lsid:marinespecies.org:taxname:289303",
+      "scientificName" : "Abyssopathes lyra",
+      "scientificNameAuthorship" : "Brook, 1889",
+      "locality" : "ABYPLAINE, CP 05",
+      "decimalLongitude" : -21.45,
+      "collectionCode" : "Deep-sea Fauna of European Seas: Antipatharia",
+      "decimalLatitude" : 34.9,
+      "geodeticDatum" : "EPSG:4326",
+      "occurrenceID" : "DeepSea_Antipatharia_33",
+      "minimumDepthInMeters" : 5120.0,
+      "catalogNumber" : "DeepSea_Antipatharia_33",
+      "occurrenceStatus" : "present",
+      "basisOfRecord" : "HumanObservation",
+      "institutionCode" : "P.P. Shirshov Institute of Oceanology, Russian Academy of Sciences",
+      "datasetID" : "IMIS:dasid:5077",
+      "maximumDepthInMeters" : 5120.0
+    },
+    "id" : "DeepSea_Antipatharia_33",
+    "purl" : {
+      "modified" : "2015-08-26 11:50:12",
+      "bibliographicCitation" : "Molodtsova T.N. 2014. Deep-sea fauna of European seas: An annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe. Antipatharia // Invertebrate Zoology. Vol.11. No.1: 3–7"
+    }
+  }, {
+    "tdwg" : {
+      "scientificNameID" : "urn:lsid:marinespecies.org:taxname:289303",
+      "scientificName" : "Abyssopathes lyra",
+      "scientificNameAuthorship" : "Brook, 1889",
+      "locality" : "ABYPLAINE, CP 08",
+      "decimalLongitude" : -21.98,
+      "collectionCode" : "Deep-sea Fauna of European Seas: Antipatharia",
+      "decimalLatitude" : 33.03,
+      "geodeticDatum" : "EPSG:4326",
+      "occurrenceID" : "DeepSea_Antipatharia_34",
+      "minimumDepthInMeters" : 5230.0,
+      "catalogNumber" : "DeepSea_Antipatharia_34",
+      "occurrenceStatus" : "present",
+      "basisOfRecord" : "HumanObservation",
+      "institutionCode" : "P.P. Shirshov Institute of Oceanology, Russian Academy of Sciences",
+      "datasetID" : "IMIS:dasid:5077",
+      "maximumDepthInMeters" : 5230.0
+    },
+    "id" : "DeepSea_Antipatharia_34",
+    "purl" : {
+      "modified" : "2015-08-26 11:50:12",
+      "bibliographicCitation" : "Molodtsova T.N. 2014. Deep-sea fauna of European seas: An annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe. Antipatharia // Invertebrate Zoology. Vol.11. No.1: 3–7"
+    }
+  }, {
+    "tdwg" : {
+      "scientificNameID" : "urn:lsid:marinespecies.org:taxname:289303",
+      "scientificName" : "Abyssopathes lyra",
+      "scientificNameAuthorship" : "Brook, 1889",
+      "locality" : "ABYPLAINE, CP 15",
+      "decimalLongitude" : -15.08,
+      "collectionCode" : "Deep-sea Fauna of European Seas: Antipatharia",
+      "decimalLatitude" : 40.0,
+      "geodeticDatum" : "EPSG:4326",
+      "occurrenceID" : "DeepSea_Antipatharia_35",
+      "minimumDepthInMeters" : 5330.0,
+      "catalogNumber" : "DeepSea_Antipatharia_35",
+      "occurrenceStatus" : "present",
+      "basisOfRecord" : "HumanObservation",
+      "institutionCode" : "P.P. Shirshov Institute of Oceanology, Russian Academy of Sciences",
+      "datasetID" : "IMIS:dasid:5077",
+      "maximumDepthInMeters" : 5330.0
+    },
+    "id" : "DeepSea_Antipatharia_35",
+    "purl" : {
+      "modified" : "2015-08-26 11:50:12",
+      "bibliographicCitation" : "Molodtsova T.N. 2014. Deep-sea fauna of European seas: An annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe. Antipatharia // Invertebrate Zoology. Vol.11. No.1: 3–7"
+    }
+  }, {
+    "tdwg" : {
+      "scientificNameID" : "urn:lsid:marinespecies.org:taxname:289303",
+      "scientificName" : "Abyssopathes lyra",
+      "scientificNameAuthorship" : "Brook, 1889",
+      "locality" : "ABYPLAINE, CP 18",
+      "decimalLongitude" : -15.88,
+      "collectionCode" : "Deep-sea Fauna of European Seas: Antipatharia",
+      "decimalLatitude" : 42.85,
+      "geodeticDatum" : "EPSG:4326",
+      "occurrenceID" : "DeepSea_Antipatharia_36",
+      "minimumDepthInMeters" : 4330.0,
+      "catalogNumber" : "DeepSea_Antipatharia_36",
+      "occurrenceStatus" : "present",
+      "basisOfRecord" : "HumanObservation",
+      "institutionCode" : "P.P. Shirshov Institute of Oceanology, Russian Academy of Sciences",
+      "datasetID" : "IMIS:dasid:5077",
+      "maximumDepthInMeters" : 4330.0
+    },
+    "id" : "DeepSea_Antipatharia_36",
+    "purl" : {
+      "modified" : "2015-08-26 11:50:12",
+      "bibliographicCitation" : "Molodtsova T.N. 2014. Deep-sea fauna of European seas: An annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe. Antipatharia // Invertebrate Zoology. Vol.11. No.1: 3–7"
+    }
+  }, {
+    "tdwg" : {
+      "scientificNameID" : "urn:lsid:marinespecies.org:taxname:289303",
+      "scientificName" : "Abyssopathes lyra",
+      "scientificNameAuthorship" : "Brook, 1889",
+      "locality" : "ABYPLAINE, CP 20",
+      "decimalLongitude" : -14.1,
+      "collectionCode" : "Deep-sea Fauna of European Seas: Antipatharia",
+      "decimalLatitude" : 42.98,
+      "geodeticDatum" : "EPSG:4326",
+      "occurrenceID" : "DeepSea_Antipatharia_37",
+      "minimumDepthInMeters" : 5260.0,
+      "catalogNumber" : "DeepSea_Antipatharia_37",
+      "occurrenceStatus" : "present",
+      "basisOfRecord" : "HumanObservation",
+      "institutionCode" : "P.P. Shirshov Institute of Oceanology, Russian Academy of Sciences",
+      "datasetID" : "IMIS:dasid:5077",
+      "maximumDepthInMeters" : 5260.0
+    },
+    "id" : "DeepSea_Antipatharia_37",
+    "purl" : {
+      "modified" : "2015-08-26 11:50:12",
+      "bibliographicCitation" : "Molodtsova T.N. 2014. Deep-sea fauna of European seas: An annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe. Antipatharia // Invertebrate Zoology. Vol.11. No.1: 3–7"
+    }
+  }, {
+    "tdwg" : {
+      "scientificNameID" : "urn:lsid:marinespecies.org:taxname:291112",
+      "year" : 1970,
+      "scientificName" : "Stauropathes punctata",
+      "scientificNameAuthorship" : "Roule, 1905",
+      "locality" : "“Thalassa”, W 425",
+      "decimalLongitude" : -7.77,
+      "collectionCode" : "Deep-sea Fauna of European Seas: Antipatharia",
+      "decimalLatitude" : 44.16,
+      "geodeticDatum" : "EPSG:4326",
+      "occurrenceID" : "DeepSea_Antipatharia_38",
+      "minimumDepthInMeters" : 2100.0,
+      "catalogNumber" : "DeepSea_Antipatharia_38",
+      "occurrenceStatus" : "present",
+      "basisOfRecord" : "Occurrence",
+      "institutionCode" : "P.P. Shirshov Institute of Oceanology, Russian Academy of Sciences",
+      "datasetID" : "IMIS:dasid:5077",
+      "maximumDepthInMeters" : 2100.0,
+      "eventDate" : "1970"
+    },
+    "id" : "DeepSea_Antipatharia_38",
+    "purl" : {
+      "modified" : "2015-08-26 11:50:12",
+      "bibliographicCitation" : "Molodtsova T.N. 2014. Deep-sea fauna of European seas: An annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe. Antipatharia // Invertebrate Zoology. Vol.11. No.1: 3–7"
+    }
+  }, {
+    "tdwg" : {
+      "scientificNameID" : "urn:lsid:marinespecies.org:taxname:103304",
+      "year" : 1972,
+      "scientificName" : "Bathypathes sp.",
+      "locality" : "POLYGAS CV 10,St. 1",
+      "decimalLongitude" : -8.26,
+      "collectionCode" : "Deep-sea Fauna of European Seas: Antipatharia",
+      "decimalLatitude" : 47.48,
+      "geodeticDatum" : "EPSG:4326",
+      "occurrenceID" : "DeepSea_Antipatharia_24",
+      "minimumDepthInMeters" : 2103.0,
+      "catalogNumber" : "DeepSea_Antipatharia_24",
+      "occurrenceStatus" : "present",
+      "basisOfRecord" : "HumanObservation",
+      "institutionCode" : "P.P. Shirshov Institute of Oceanology, Russian Academy of Sciences",
+      "datasetID" : "IMIS:dasid:5077",
+      "maximumDepthInMeters" : 2141.0,
+      "eventDate" : "1972"
+    },
+    "id" : "DeepSea_Antipatharia_24",
+    "purl" : {
+      "modified" : "2015-08-26 11:50:12",
+      "bibliographicCitation" : "Molodtsova T.N. 2014. Deep-sea fauna of European seas: An annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe. Antipatharia // Invertebrate Zoology. Vol.11. No.1: 3–7"
+    }
+  }, {
+    "tdwg" : {
+      "scientificNameID" : "urn:lsid:marinespecies.org:taxname:103304",
+      "year" : 1974,
+      "scientificName" : "Bathypathes sp.",
+      "locality" : "BIOGAS IV, CP 02, St. 1",
+      "decimalLongitude" : -8.68,
+      "collectionCode" : "Deep-sea Fauna of European Seas: Antipatharia",
+      "decimalLatitude" : 47.55,
+      "geodeticDatum" : "EPSG:4326",
+      "occurrenceID" : "DeepSea_Antipatharia_25",
+      "minimumDepthInMeters" : 2177.0,
+      "catalogNumber" : "DeepSea_Antipatharia_25",
+      "occurrenceStatus" : "present",
+      "basisOfRecord" : "HumanObservation",
+      "institutionCode" : "P.P. Shirshov Institute of Oceanology, Russian Academy of Sciences",
+      "datasetID" : "IMIS:dasid:5077",
+      "maximumDepthInMeters" : 2177.0,
+      "eventDate" : "1974"
+    },
+    "id" : "DeepSea_Antipatharia_25",
+    "purl" : {
+      "modified" : "2015-08-26 11:50:12",
+      "bibliographicCitation" : "Molodtsova T.N. 2014. Deep-sea fauna of European seas: An annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe. Antipatharia // Invertebrate Zoology. Vol.11. No.1: 3–7"
+    }
+  }, {
+    "tdwg" : {
+      "scientificNameID" : "urn:lsid:marinespecies.org:taxname:103304",
+      "year" : 1974,
+      "scientificName" : "Bathypathes sp.",
+      "locality" : "BIOGAS V, CP 07,St. 6",
+      "decimalLongitude" : -4.26,
+      "collectionCode" : "Deep-sea Fauna of European Seas: Antipatharia",
+      "decimalLatitude" : 44.16,
+      "geodeticDatum" : "EPSG:4326",
+      "occurrenceID" : "DeepSea_Antipatharia_26",
+      "minimumDepthInMeters" : 2170.0,
+      "catalogNumber" : "DeepSea_Antipatharia_26",
+      "occurrenceStatus" : "present",
+      "basisOfRecord" : "HumanObservation",
+      "institutionCode" : "P.P. Shirshov Institute of Oceanology, Russian Academy of Sciences",
+      "datasetID" : "IMIS:dasid:5077",
+      "maximumDepthInMeters" : 2170.0,
+      "eventDate" : "1974"
+    },
+    "id" : "DeepSea_Antipatharia_26",
+    "purl" : {
+      "modified" : "2015-08-26 11:50:12",
+      "bibliographicCitation" : "Molodtsova T.N. 2014. Deep-sea fauna of European seas: An annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe. Antipatharia // Invertebrate Zoology. Vol.11. No.1: 3–7"
+    }
+  }, {
+    "tdwg" : {
+      "scientificNameID" : "urn:lsid:marinespecies.org:taxname:289303",
+      "scientificName" : "Abyssopathes lyra",
+      "scientificNameAuthorship" : "Brook, 1889",
+      "locality" : "“Hirondelle”, St. 821",
+      "decimalLongitude" : -25.33,
+      "collectionCode" : "Deep-sea Fauna of European Seas: Antipatharia",
+      "decimalLatitude" : 30.75,
+      "geodeticDatum" : "EPSG:4326",
+      "occurrenceID" : "DeepSea_Antipatharia_28",
+      "minimumDepthInMeters" : 5440.0,
+      "catalogNumber" : "DeepSea_Antipatharia_28",
+      "occurrenceStatus" : "present",
+      "basisOfRecord" : "Occurrence",
+      "institutionCode" : "P.P. Shirshov Institute of Oceanology, Russian Academy of Sciences",
+      "datasetID" : "IMIS:dasid:5077",
+      "maximumDepthInMeters" : 5440.0,
+      "eventDate" : "1886/1915"
+    },
+    "id" : "DeepSea_Antipatharia_28",
+    "purl" : {
+      "modified" : "2015-08-26 11:50:12",
+      "bibliographicCitation" : "Molodtsova T.N. 2014. Deep-sea fauna of European seas: An annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe. Antipatharia // Invertebrate Zoology. Vol.11. No.1: 3–7"
+    }
+  }, {
+    "tdwg" : {
+      "scientificNameID" : "urn:lsid:marinespecies.org:taxname:289303",
+      "scientificName" : "Abyssopathes lyra",
+      "scientificNameAuthorship" : "Brook, 1889",
+      "locality" : "“Princesse-Alice”, St. 3223",
+      "decimalLongitude" : -25.71,
+      "collectionCode" : "Deep-sea Fauna of European Seas: Antipatharia",
+      "decimalLatitude" : 30.83,
+      "geodeticDatum" : "EPSG:4326",
+      "occurrenceID" : "DeepSea_Antipatharia_29",
+      "minimumDepthInMeters" : 5300.0,
+      "catalogNumber" : "DeepSea_Antipatharia_29",
+      "occurrenceStatus" : "present",
+      "basisOfRecord" : "Occurrence",
+      "institutionCode" : "P.P. Shirshov Institute of Oceanology, Russian Academy of Sciences",
+      "datasetID" : "IMIS:dasid:5077",
+      "maximumDepthInMeters" : 5300.0,
+      "eventDate" : "1886/1915"
+    },
+    "id" : "DeepSea_Antipatharia_29",
+    "purl" : {
+      "modified" : "2015-08-26 11:50:12",
+      "bibliographicCitation" : "Molodtsova T.N. 2014. Deep-sea fauna of European seas: An annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe. Antipatharia // Invertebrate Zoology. Vol.11. No.1: 3–7"
+    }
+  }, {
+    "tdwg" : {
+      "scientificNameID" : "urn:lsid:marinespecies.org:taxname:289303",
+      "year" : 1974,
+      "scientificName" : "Abyssopathes lyra",
+      "scientificNameAuthorship" : "Brook, 1889",
+      "locality" : "BIOGAS V, CP 05, St. 4",
+      "decimalLongitude" : -10.33,
+      "collectionCode" : "Deep-sea Fauna of European Seas: Antipatharia",
+      "decimalLatitude" : 46.48,
+      "geodeticDatum" : "EPSG:4326",
+      "occurrenceID" : "DeepSea_Antipatharia_30",
+      "minimumDepthInMeters" : 3850.0,
+      "catalogNumber" : "DeepSea_Antipatharia_30",
+      "occurrenceStatus" : "present",
+      "basisOfRecord" : "Occurrence",
+      "institutionCode" : "P.P. Shirshov Institute of Oceanology, Russian Academy of Sciences",
+      "datasetID" : "IMIS:dasid:5077",
+      "maximumDepthInMeters" : 3850.0,
+      "eventDate" : "1974"
+    },
+    "id" : "DeepSea_Antipatharia_30",
+    "purl" : {
+      "modified" : "2015-08-26 11:50:12",
+      "bibliographicCitation" : "Molodtsova T.N. 2014. Deep-sea fauna of European seas: An annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe. Antipatharia // Invertebrate Zoology. Vol.11. No.1: 3–7"
+    }
+  }, {
+    "tdwg" : {
+      "scientificNameID" : "urn:lsid:marinespecies.org:taxname:289303",
+      "scientificName" : "Abyssopathes lyra",
+      "scientificNameAuthorship" : "Brook, 1889",
+      "locality" : "ABYPLAINE, CP 02",
+      "decimalLongitude" : -15.63,
+      "collectionCode" : "Deep-sea Fauna of European Seas: Antipatharia",
+      "decimalLatitude" : 37.33,
+      "geodeticDatum" : "EPSG:4326",
+      "occurrenceID" : "DeepSea_Antipatharia_31",
+      "minimumDepthInMeters" : 4490.0,
+      "catalogNumber" : "DeepSea_Antipatharia_31",
+      "occurrenceStatus" : "present",
+      "basisOfRecord" : "HumanObservation",
+      "institutionCode" : "P.P. Shirshov Institute of Oceanology, Russian Academy of Sciences",
+      "datasetID" : "IMIS:dasid:5077",
+      "maximumDepthInMeters" : 4490.0
+    },
+    "id" : "DeepSea_Antipatharia_31",
+    "purl" : {
+      "modified" : "2015-08-26 11:50:12",
+      "bibliographicCitation" : "Molodtsova T.N. 2014. Deep-sea fauna of European seas: An annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe. Antipatharia // Invertebrate Zoology. Vol.11. No.1: 3–7"
+    }
+  }, {
+    "tdwg" : {
+      "scientificNameID" : "urn:lsid:marinespecies.org:taxname:103333",
+      "scientificName" : "Stichopathes flagellum",
+      "scientificNameAuthorship" : "Roule, 1902",
+      "locality" : "“Hirondelle”, St. 1116",
+      "decimalLongitude" : -10.77,
+      "collectionCode" : "Deep-sea Fauna of European Seas: Antipatharia",
+      "decimalLatitude" : 31.72,
+      "geodeticDatum" : "EPSG:4326",
+      "occurrenceID" : "DeepSea_Antipatharia_1",
+      "minimumDepthInMeters" : 2165.0,
+      "catalogNumber" : "DeepSea_Antipatharia_1",
+      "occurrenceStatus" : "present",
+      "basisOfRecord" : "Occurrence",
+      "institutionCode" : "P.P. Shirshov Institute of Oceanology, Russian Academy of Sciences",
+      "datasetID" : "IMIS:dasid:5077",
+      "maximumDepthInMeters" : 2165.0,
+      "eventDate" : "1886/1915"
+    },
+    "id" : "DeepSea_Antipatharia_1",
+    "purl" : {
+      "modified" : "2015-08-26 11:50:12",
+      "bibliographicCitation" : "Molodtsova T.N. 2014. Deep-sea fauna of European seas: An annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe. Antipatharia // Invertebrate Zoology. Vol.11. No.1: 3–7"
+    }
+  }, {
+    "tdwg" : {
+      "scientificNameID" : "urn:lsid:marinespecies.org:taxname:103330",
+      "scientificName" : "Stichopathes abyssicola",
+      "scientificNameAuthorship" : "Roule, 1902",
+      "locality" : "“Hirondelle”, St. 1116",
+      "decimalLongitude" : -10.77,
+      "collectionCode" : "Deep-sea Fauna of European Seas: Antipatharia",
+      "decimalLatitude" : 31.72,
+      "geodeticDatum" : "EPSG:4326",
+      "occurrenceID" : "DeepSea_Antipatharia_2",
+      "minimumDepthInMeters" : 2165.0,
+      "catalogNumber" : "DeepSea_Antipatharia_2",
+      "occurrenceStatus" : "present",
+      "basisOfRecord" : "Occurrence",
+      "institutionCode" : "P.P. Shirshov Institute of Oceanology, Russian Academy of Sciences",
+      "datasetID" : "IMIS:dasid:5077",
+      "maximumDepthInMeters" : 2165.0,
+      "eventDate" : "1886/1915"
+    },
+    "id" : "DeepSea_Antipatharia_2",
+    "purl" : {
+      "modified" : "2015-08-26 11:50:12",
+      "bibliographicCitation" : "Molodtsova T.N. 2014. Deep-sea fauna of European seas: An annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe. Antipatharia // Invertebrate Zoology. Vol.11. No.1: 3–7"
+    }
+  }, {
+    "tdwg" : {
+      "scientificNameID" : "urn:lsid:marinespecies.org:taxname:103331",
+      "scientificName" : "Stichopathes dissimilis",
+      "scientificNameAuthorship" : "Roule, 1902",
+      "locality" : "“Princesse-Alice”, St. 2048",
+      "decimalLongitude" : -17.03,
+      "collectionCode" : "Deep-sea Fauna of European Seas: Antipatharia",
+      "decimalLatitude" : 32.54,
+      "geodeticDatum" : "EPSG:4326",
+      "occurrenceID" : "DeepSea_Antipatharia_4",
+      "minimumDepthInMeters" : 1968.0,
+      "catalogNumber" : "DeepSea_Antipatharia_4",
+      "occurrenceStatus" : "present",
+      "basisOfRecord" : "HumanObservation",
+      "institutionCode" : "P.P. Shirshov Institute of Oceanology, Russian Academy of Sciences",
+      "datasetID" : "IMIS:dasid:5077",
+      "maximumDepthInMeters" : 1968.0,
+      "eventDate" : "1886/1915"
+    },
+    "id" : "DeepSea_Antipatharia_4",
+    "purl" : {
+      "modified" : "2015-08-26 11:50:12",
+      "bibliographicCitation" : "Molodtsova T.N. 2014. Deep-sea fauna of European seas: An annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe. Antipatharia // Invertebrate Zoology. Vol.11. No.1: 3–7"
+    }
+  }, {
+    "tdwg" : {
+      "scientificNameID" : "urn:lsid:marinespecies.org:taxname:103312",
+      "scientificName" : "Antipathes furcata",
+      "scientificNameAuthorship" : "Gray, 1857",
+      "locality" : "“Valdivia”, St. 33",
+      "decimalLongitude" : -17.07,
+      "collectionCode" : "Deep-sea Fauna of European Seas: Antipatharia",
+      "decimalLatitude" : 24.58,
+      "geodeticDatum" : "EPSG:4326",
+      "occurrenceID" : "DeepSea_Antipatharia_5",
+      "minimumDepthInMeters" : 2500.0,
+      "catalogNumber" : "DeepSea_Antipatharia_5",
+      "occurrenceStatus" : "present",
+      "basisOfRecord" : "Occurrence",
+      "institutionCode" : "P.P. Shirshov Institute of Oceanology, Russian Academy of Sciences",
+      "datasetID" : "IMIS:dasid:5077",
+      "maximumDepthInMeters" : 2500.0,
+      "eventDate" : "1898/1899"
+    },
+    "id" : "DeepSea_Antipatharia_5",
+    "purl" : {
+      "modified" : "2015-08-26 11:50:12",
+      "bibliographicCitation" : "Molodtsova T.N. 2014. Deep-sea fauna of European seas: An annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe. Antipatharia // Invertebrate Zoology. Vol.11. No.1: 3–7"
+    }
+  }, {
+    "tdwg" : {
+      "scientificNameID" : "urn:lsid:marinespecies.org:taxname:291112",
+      "year" : 1987,
+      "scientificName" : "Stauropathes punctata",
+      "scientificNameAuthorship" : "Roule, 1905",
+      "locality" : "Seamount 1, CP102",
+      "decimalLongitude" : -13.11,
+      "collectionCode" : "Deep-sea Fauna of European Seas: Antipatharia",
+      "decimalLatitude" : 35.08,
+      "geodeticDatum" : "EPSG:4326",
+      "occurrenceID" : "DeepSea_Antipatharia_40",
+      "minimumDepthInMeters" : 2010.0,
+      "catalogNumber" : "DeepSea_Antipatharia_40",
+      "occurrenceStatus" : "present",
+      "basisOfRecord" : "HumanObservation",
+      "institutionCode" : "P.P. Shirshov Institute of Oceanology, Russian Academy of Sciences",
+      "datasetID" : "IMIS:dasid:5077",
+      "maximumDepthInMeters" : 2100.0,
+      "eventDate" : "1987"
+    },
+    "id" : "DeepSea_Antipatharia_40",
+    "purl" : {
+      "modified" : "2015-08-26 11:50:12",
+      "bibliographicCitation" : "Molodtsova T.N. 2014. Deep-sea fauna of European seas: An annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe. Antipatharia // Invertebrate Zoology. Vol.11. No.1: 3–7"
+    }
+  }, {
+    "tdwg" : {
+      "scientificNameID" : "urn:lsid:marinespecies.org:taxname:816001",
+      "year" : 1987,
+      "scientificName" : "Bathypathes robusta",
+      "scientificNameAuthorship" : "Gravier, 1918",
+      "locality" : "SEAMOUNT 1, CP 102",
+      "decimalLongitude" : -13.11,
+      "collectionCode" : "Deep-sea Fauna of European Seas: Antipatharia",
+      "decimalLatitude" : 35.08,
+      "geodeticDatum" : "EPSG:4326",
+      "occurrenceID" : "DeepSea_Antipatharia_19",
+      "minimumDepthInMeters" : 2010.0,
+      "catalogNumber" : "DeepSea_Antipatharia_19",
+      "occurrenceStatus" : "present",
+      "basisOfRecord" : "HumanObservation",
+      "institutionCode" : "P.P. Shirshov Institute of Oceanology, Russian Academy of Sciences",
+      "datasetID" : "IMIS:dasid:5077",
+      "maximumDepthInMeters" : 2100.0,
+      "eventDate" : "1987"
+    },
+    "id" : "DeepSea_Antipatharia_19",
+    "purl" : {
+      "modified" : "2015-08-26 11:50:12",
+      "bibliographicCitation" : "Molodtsova T.N. 2014. Deep-sea fauna of European seas: An annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe. Antipatharia // Invertebrate Zoology. Vol.11. No.1: 3–7"
+    }
+  }, {
+    "tdwg" : {
+      "scientificNameID" : "urn:lsid:marinespecies.org:taxname:103330",
+      "year" : 1987,
+      "scientificName" : "Stichopathes abyssicola",
+      "scientificNameAuthorship" : "Roule, 1902",
+      "locality" : "SEAMOUNT1, CP 30",
+      "decimalLongitude" : -11.38,
+      "collectionCode" : "Deep-sea Fauna of European Seas: Antipatharia",
+      "decimalLatitude" : 36.73,
+      "geodeticDatum" : "EPSG:4326",
+      "occurrenceID" : "DeepSea_Antipatharia_3",
+      "minimumDepthInMeters" : 1940.0,
+      "catalogNumber" : "DeepSea_Antipatharia_3",
+      "occurrenceStatus" : "present",
+      "basisOfRecord" : "HumanObservation",
+      "institutionCode" : "P.P. Shirshov Institute of Oceanology, Russian Academy of Sciences",
+      "datasetID" : "IMIS:dasid:5077",
+      "maximumDepthInMeters" : 2075.0,
+      "eventDate" : "1987"
+    },
+    "id" : "DeepSea_Antipatharia_3",
+    "purl" : {
+      "modified" : "2015-08-26 11:50:12",
+      "bibliographicCitation" : "Molodtsova T.N. 2014. Deep-sea fauna of European seas: An annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe. Antipatharia // Invertebrate Zoology. Vol.11. No.1: 3–7"
+    }
+  }, {
+    "tdwg" : {
+      "scientificNameID" : "urn:lsid:marinespecies.org:taxname:103304",
+      "scientificName" : "Bathypathes sp.",
+      "locality" : "“Hirondelle”, St. 1116",
+      "decimalLongitude" : -10.77,
+      "collectionCode" : "Deep-sea Fauna of European Seas: Antipatharia",
+      "decimalLatitude" : 31.72,
+      "geodeticDatum" : "EPSG:4326",
+      "occurrenceID" : "DeepSea_Antipatharia_20",
+      "minimumDepthInMeters" : 2165.0,
+      "catalogNumber" : "DeepSea_Antipatharia_20",
+      "occurrenceStatus" : "present",
+      "basisOfRecord" : "Occurrence",
+      "institutionCode" : "P.P. Shirshov Institute of Oceanology, Russian Academy of Sciences",
+      "datasetID" : "IMIS:dasid:5077",
+      "maximumDepthInMeters" : 2165.0,
+      "occurrenceRemarks" : "Specimens reported as Bathypathes patula in the Northern Atlantic belong to 2–3 undescribed species",
+      "eventDate" : "1886/1915"
+    },
+    "id" : "DeepSea_Antipatharia_20",
+    "purl" : {
+      "modified" : "2015-08-26 11:50:12",
+      "bibliographicCitation" : "Molodtsova T.N. 2014. Deep-sea fauna of European seas: An annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe. Antipatharia // Invertebrate Zoology. Vol.11. No.1: 3–7"
+    }
+  } ]
+}
