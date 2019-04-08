@@ -3,6 +3,7 @@ package org.obis.smalldata;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Future;
+import org.obis.smalldata.auth.Auth;
 import org.obis.smalldata.db.EmbeddedDb;
 import org.obis.smalldata.rss.RssComponent;
 import org.obis.smalldata.webapi.WebApi;
@@ -21,5 +22,7 @@ public class Starter extends AbstractVerticle {
     vertx.deployVerticle(RssComponent.class.getName());
     vertx.deployVerticle(EmbeddedDb.class.getName(),
       new DeploymentOptions().setConfig(config().getJsonObject("storage")));
+    vertx.deployVerticle(Auth.class.getName(),
+      new DeploymentOptions().setConfig(config().getJsonObject("auth")));
   }
 }

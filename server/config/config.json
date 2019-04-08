@@ -1,10 +1,10 @@
 {
   "http": {
-    "port": 8080,
-    "auth": {
-      "type": "JWT",
-      "provider": "local",
-    }
+    "port": 8080
+  },
+  "auth": {
+    "type": "JWT",
+    "provider": "local"
   },
   "storage": {
     "bindIp": "localhost",

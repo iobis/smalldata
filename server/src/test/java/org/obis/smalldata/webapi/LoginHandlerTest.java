@@ -42,6 +42,9 @@ public class LoginHandlerTest {
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
   void startHttpServer(Vertx vertx, VertxTestContext testContext) {
     WebClient client = WebClient.create(vertx);
+    vertx.eventBus().localConsumer("auth.login",
+      message -> message.reply(new JsonObject()
+        .put("token", "qwertyuiop")));
     client.post(HTTP_PORT, "localhost", "/api/login")
       .as(BodyCodec.jsonObject())
       .sendJson(
@@ -50,23 +53,8 @@ public class LoginHandlerTest {
           if (result.succeeded()) {
             assertEquals(200, result.result().statusCode());
             JsonObject body = result.result().body();
-            info(body);
-            JWTAuth provider = JWTAuth.create(vertx, new JWTAuthOptions()
-              .addPubSecKey(new PubSecKeyOptions()
-                  .setAlgorithm("ES256")
-                  .setPublicKey(
-                    "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEraVJ8CpkrwTPRCPluUDdwC6b8+m4\n" +
-                      "dEjwl8s+Sn0GULko+H95fsTREQ1A2soCFHS4wV3/23Nebq9omY3KuK9DKw==\n")));
-            provider.authenticate(new JsonObject().put("jwt", body.getString("token")),
-              auth -> {
-                var jwtClaims = (auth.result().principal());
-                var now = Instant.now().toEpochMilli()/1000;
-                assertEquals(jwtClaims.getString("sub"), "paulo");
-                assertEquals(jwtClaims.getString("aud"), "occurrences-OBIS");
-                assertTrue(jwtClaims.getInteger("iat") - now <= 0);
-                assertTrue(jwtClaims.getInteger("iat") - now > -5);
-                testContext.completeNow();
-              });
+            assertEquals(body.getString("token"), "qwertyuiop");
+            testContext.completeNow();
           } else {
             testContext.failNow(result.cause());
           }
