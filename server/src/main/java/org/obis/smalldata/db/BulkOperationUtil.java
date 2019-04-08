@@ -20,6 +20,7 @@ public class BulkOperationUtil {
   private BulkOperationUtil() {}
 
   public static List<BulkOperation> createOperationsFromFile(String path) {
+    warn("reading file for db import {}", path);
     return createOperationsFromJson(IoFile.loadFromResources(path));
   }
 

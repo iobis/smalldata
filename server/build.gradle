@@ -18,7 +18,7 @@ repositories {
 }
 
 ext {
-  vertxVersion = "3.6.3"
+  vertxVersion = "3.7.0"
   jacksonVersion = "2.9.8"
   junitJupiterEngineVersion = "5.2.0"
   moduleName = "obis.smalldata"
@@ -40,6 +40,7 @@ runtime {
 }
 
 dependencies {
+  implementation "io.vertx:vertx-auth-jwt:$vertxVersion"
   implementation "io.vertx:vertx-core:$vertxVersion"
   implementation "io.vertx:vertx-web:$vertxVersion"
   implementation "io.vertx:vertx-web-client:$vertxVersion"
@@ -74,7 +75,7 @@ test {
 
 run {
   args = ["run", mainVerticleName,
-          "-conf", "config/config.json",
+          "-conf", "./config/config.json",
           "--redeploy=$watchForChange",
           "--launcher-class=$mainClassName",
           "--on-redeploy=$doOnChange"]

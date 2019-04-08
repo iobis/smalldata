@@ -7,10 +7,14 @@ import org.obis.smalldata.db.EmbeddedDb;
 import org.obis.smalldata.rss.RssComponent;
 import org.obis.smalldata.webapi.WebApi;
 
+import static org.pmw.tinylog.Logger.debug;
+import static org.pmw.tinylog.Logger.info;
+
 public class Starter extends AbstractVerticle {
 
   @Override
   public void start(Future<Void> startFuture) {
+    debug("starting the application with config: {}", config().encodePrettily());
     vertx.sharedData().getLocalMap("settings").put("mode", config().getValue("mode", "DEV"));
     vertx.deployVerticle(WebApi.class.getName(),
       new DeploymentOptions().setConfig(config().getJsonObject("http")));

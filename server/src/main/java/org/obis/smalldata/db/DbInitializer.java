@@ -61,14 +61,13 @@ public class DbInitializer {
       "users", "mockdata/users.json",
       "datasets", "mockdata/datasets.json",
       "dwcarecords", "mockdata/dwcarecords.json")
-      .entrySet()
-      .stream()
+      .entrySet().stream()
       .map(entry -> Map.entry(entry.getKey(), IoFile.loadFromResources(entry.getValue())))
       .map(entry -> Map.entry(entry.getKey(), BulkOperationUtil.createOperationsFromJson(entry.getValue())))
       .forEach(entry -> client.bulkWrite(
         entry.getKey(),
         entry.getValue(),
-        arClient -> warn("write result: {}", arClient.result().toJson())));
+        arClient -> warn("write result: {} from file {}", arClient.result().toJson(), entry.getKey())));
   }
 
   void mockData() {
