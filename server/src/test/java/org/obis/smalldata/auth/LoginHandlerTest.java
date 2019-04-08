@@ -23,11 +23,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class LoginHandlerTest {
 
   private static final String AUTH_ALG = "ES256";
-  private static final String AUTH_PUBKEY = "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEraVJ8CpkrwTPRCPluUDdwC6b8+m4\n" +
-      "dEjwl8s+Sn0GULko+H95fsTREQ1A2soCFHS4wV3/23Nebq9omY3KuK9DKw==\n";
-  private static final String AUTH_SECKEY =  "MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgeRyEfU1NSHPTCuC9\n" +
-      "rwLZMukaWCH2Fk6q5w+XBYrKtLihRANCAAStpUnwKmSvBM9EI+W5QN3ALpvz6bh0\n" +
-      "SPCXyz5KfQZQuSj4f3l+xNERDUDaygIUdLjBXf/bc15ur2iZjcq4r0Mr";
+  private static final String AUTH_PUBKEY = "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEraVJ8CpkrwTPRCPluUDdwC6b8+m4\n"
+    + "dEjwl8s+Sn0GULko+H95fsTREQ1A2soCFHS4wV3/23Nebq9omY3KuK9DKw==\n";
+  private static final String AUTH_SECKEY = "MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgeRyEfU1NSHPTCuC9\n"
+    + "rwLZMukaWCH2Fk6q5w+XBYrKtLihRANCAAStpUnwKmSvBM9EI+W5QN3ALpvz6bh0\n"
+    + "SPCXyz5KfQZQuSj4f3l+xNERDUDaygIUdLjBXf/bc15ur2iZjcq4r0Mr";
   private static final JsonObject AUTH_CONFIG = new JsonObject()
     .put("alg", AUTH_ALG)
     .put("pubKey", AUTH_PUBKEY)
@@ -50,7 +50,7 @@ public class LoginHandlerTest {
   @Test
   @DisplayName("check if a proper jwt is returned")
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
-  void getJWTToken(Vertx vertx, VertxTestContext testContext) {
+  void testJwtTokenClaims(Vertx vertx, VertxTestContext testContext) {
     vertx.eventBus().<JsonObject>send("auth.login",
       new JsonObject()
         .put("username", "paulo")
@@ -65,7 +65,7 @@ public class LoginHandlerTest {
               long now = Instant.now().getEpochSecond();
               assertEquals(claims.getString("sub"), "paulo");
               assertEquals(claims.getString("aud"), "occurrences-OBIS");
-              assertEquals(claims.getLong("iat")/1.0, now/1.0, 0.5);
+              assertEquals(claims.getLong("iat") / 1.0, now / 1.0, 0.5);
               testContext.completeNow();
             });
         } else {

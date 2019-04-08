@@ -8,24 +8,25 @@ import io.vertx.ext.jwt.JWTOptions;
 
 import static org.pmw.tinylog.Logger.info;
 
-
 class LoginHandler {
 
   private final JWTAuth authProvider;
 
-  LoginHandler(AuthProvider authProvider) throws Exception {
-    if (authProvider instanceof  JWTAuth) {
+  LoginHandler(AuthProvider authProvider) {
+    if (authProvider instanceof JWTAuth) {
       this.authProvider = (JWTAuth) authProvider;
       info("Started 'Auth LoginHandler'");
     } else {
-      throw new Exception("Invalid Auth Provider");
+      throw new ExceptionInInitializerError("Invalid Auth Provider");
     }
   }
 
   void login(Message<JsonObject> message) {
-    JsonObject body = message.body();
-    if ("paulo".equals(body.getString("username"))
-      && "secret".equals(body.getString("password"))) {
+    var body = message.body();
+    var username = "paulo";
+    var password = "secret";
+    if (username.equals(body.getString("username"))
+      && password.equals(body.getString("password"))) {
       var token = authProvider.generateToken(new JsonObject()
           .put("aud", "occurrences-OBIS")
           .put("sub", "paulo"),
