@@ -41,9 +41,8 @@ public class DbInitializer {
 
   private void addIndices() {
     List.of(
-      new String[]{Collections.DATASETRECORDS.dbName(), "_ref"},
+      new String[]{Collections.DATASETRECORDS.dbName(), "dwcRecord.id"},
       new String[]{Collections.DATASETRECORDS.dbName(), "dataset_ref"},
-      new String[]{Collections.USERS.dbName(), "_ref"},
       new String[]{Collections.USERS.dbName(), "dataset_refs"},
       new String[]{Collections.DATASETS.dbName(), "_ref"})
       .forEach(entry ->

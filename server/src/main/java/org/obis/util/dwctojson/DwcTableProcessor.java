@@ -3,6 +3,7 @@ package org.obis.util.dwctojson;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 import com.google.common.io.Resources;
+import io.vertx.core.json.JsonObject;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -18,7 +19,7 @@ class DwcTableProcessor {
   private static CsvMapper csvMapper = new CsvMapper();
   private static KeyCollections keyCollections = KeyCollections.INSTANCE;
 
-  List<Object> mapCsv(List<Object> readAll) {
+  List<JsonObject> mapCsv(List<Object> readAll) {
     var expectedMaxCount = 2000.0;
     var elementCount = readAll.size();
     var elementChance = Math.min(expectedMaxCount / elementCount, 1.0);
@@ -37,11 +38,12 @@ class DwcTableProcessor {
           "tdwg", tableNamespaceMapper.mapTableNamespace("tdwg",
             record.keySet()));
       })
+      .map(JsonObject::new)
       .collect(Collectors.toList());
   }
 
-  List<Object> processDwcFile(final String dwcFile) {
-    var table = Resources.getResource(dwcFile);
+  List<JsonObject> processDwcFile(final Map<String, Object> dwcConfig) {
+    var table = Resources.getResource((String) dwcConfig.get("resource"));
     var csvSchema = CsvSchema.builder()
       .setUseHeader(true)
       .setColumnSeparator('\t')
