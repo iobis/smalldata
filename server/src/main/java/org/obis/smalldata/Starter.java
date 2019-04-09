@@ -27,14 +27,14 @@ public class Starter extends AbstractVerticle {
   private JsonObject validateAuthConfig(JsonObject authConfig)
     throws NoSuchAlgorithmException, InvalidAlgorithmParameterException {
     if ("local".equals(authConfig.getString("provider", "local"))
-      && authConfig.getString("pubKey").isBlank() || authConfig.getString("secKey").isBlank()) {
+      && authConfig.getString("publicKey").isBlank() || authConfig.getString("securityKey").isBlank()) {
       KeyPairGenerator g = KeyPairGenerator.getInstance("EC");
       ECGenParameterSpec spec = new ECGenParameterSpec("secp256r1");
       g.initialize(spec);
       KeyPair keyPair = g.generateKeyPair();
-      authConfig.put("pubKey", new String(Base64.getEncoder().encode(keyPair.getPublic().getEncoded()),
+      authConfig.put("publicKey", new String(Base64.getEncoder().encode(keyPair.getPublic().getEncoded()),
         StandardCharsets.UTF_8));
-      authConfig.put("secKey", new String(Base64.getEncoder().encode(keyPair.getPrivate().getEncoded()),
+      authConfig.put("securityKey", new String(Base64.getEncoder().encode(keyPair.getPrivate().getEncoded()),
         StandardCharsets.UTF_8));
     }
     return authConfig;

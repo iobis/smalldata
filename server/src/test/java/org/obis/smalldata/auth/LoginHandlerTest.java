@@ -23,15 +23,15 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class LoginHandlerTest {
 
   private static final String AUTH_ALG = "ES256";
-  private static final String AUTH_PUBKEY = "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEraVJ8CpkrwTPRCPluUDdwC6b8+m4\n"
+  private static final String AUTH_PUBLICKEY = "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEraVJ8CpkrwTPRCPluUDdwC6b8+m4\n"
     + "dEjwl8s+Sn0GULko+H95fsTREQ1A2soCFHS4wV3/23Nebq9omY3KuK9DKw==\n";
-  private static final String AUTH_SECKEY = "MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgeRyEfU1NSHPTCuC9\n"
+  private static final String AUTH_SECURITYKEY = "MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgeRyEfU1NSHPTCuC9\n"
     + "rwLZMukaWCH2Fk6q5w+XBYrKtLihRANCAAStpUnwKmSvBM9EI+W5QN3ALpvz6bh0\n"
     + "SPCXyz5KfQZQuSj4f3l+xNERDUDaygIUdLjBXf/bc15ur2iZjcq4r0Mr";
   private static final JsonObject AUTH_CONFIG = new JsonObject()
     .put("alg", AUTH_ALG)
-    .put("pubKey", AUTH_PUBKEY)
-    .put("secKey", AUTH_SECKEY);
+    .put("publicKey", AUTH_PUBLICKEY)
+    .put("securityKey", AUTH_SECURITYKEY);
   private JWTAuth authProvider;
 
   @BeforeEach
@@ -39,8 +39,8 @@ public class LoginHandlerTest {
     authProvider = JWTAuth.create(vertx, new JWTAuthOptions()
       .addPubSecKey(new PubSecKeyOptions()
         .setAlgorithm(AUTH_ALG)
-        .setPublicKey(AUTH_PUBKEY)
-        .setSecretKey(AUTH_SECKEY)));
+        .setPublicKey(AUTH_PUBLICKEY)
+        .setSecretKey(AUTH_SECURITYKEY)));
     vertx.deployVerticle(
       Auth.class.getName(),
       new DeploymentOptions().setConfig(AUTH_CONFIG),

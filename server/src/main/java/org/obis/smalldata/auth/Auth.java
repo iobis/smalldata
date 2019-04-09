@@ -13,8 +13,8 @@ import static org.pmw.tinylog.Logger.info;
 
 public class Auth extends AbstractVerticle {
 
-  public static final String AUTH_PUB_KEY = "pubKey";
-  public static final String AUTH_SEC_KEY = "secKey";
+  public static final String AUTH_PUB_KEY = "publicKey";
+  public static final String AUTH_SEC_KEY = "securityKey";
   public static final String AUTH_ALG = "alg";
   public static final String AUTH_ES256 = "ES256";
 
