@@ -3,6 +3,7 @@ $section-padding: 0.5rem;
 @import '../../node_modules/bulma/bulma';
 @import 'components/layout/Divider';
 @import 'components/pages/Occurrence/StepHeader';
+@import 'components/pages/Occurrence/SelectedDataset/SelectedDataset';
 
 body {
   margin: 0;
