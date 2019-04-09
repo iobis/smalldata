@@ -1,4 +1,5 @@
 import ActiveStepHeader from './ActiveStepHeader'
+import BasicData from './BasicData/BasicData'
 import ConfirmedStepHeader from './ConfirmedStepHeader'
 import NotConfirmedStepHeader from './NotConfirmedStepHeader'
 import React, { useState } from 'react'
@@ -26,7 +27,7 @@ export default function OccurrenceForm() {
     selectedData:    'Abra alba 2019-02-02',
     stepDescription: 'Mandatory observation information',
     stepTitle:       'Basic Data',
-    children:        <StubFormContent/>
+    children:        <BasicData/>
   }, {
     dataDescription: 'Main Location',
     selectedData:    'North Sea',
