@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SelectedDataset renders correctly 1`] = `
+exports[`SelectDataset renders correctly 1`] = `
 <div
-  className="selected-dataset columns is-fluid"
+  className="select-dataset columns is-fluid"
 >
   <table
     className="table is-striped is-fullwidth"

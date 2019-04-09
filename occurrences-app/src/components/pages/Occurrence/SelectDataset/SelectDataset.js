@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-export default function SelectedDataset({ datasets, selectedDataset, onChange }) {
+export default function SelectDataset({ datasets, selectedDataset, onChange }) {
   return (
-    <div className="selected-dataset columns is-fluid">
+    <div className="select-dataset columns is-fluid">
       <table className="table is-striped is-fullwidth">
         <tbody>
         {datasets.map(dataset => (
@@ -24,7 +24,7 @@ const datasetShape = {
   description: PropTypes.string.isRequired
 }
 
-SelectedDataset.propTypes = {
+SelectDataset.propTypes = {
   datasets:        PropTypes.arrayOf(PropTypes.shape(datasetShape)).isRequired,
   onChange:        PropTypes.func.isRequired,
   selectedDataset: PropTypes.shape(datasetShape).isRequired

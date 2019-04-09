@@ -16,7 +16,7 @@ export default {
       }
     },
     occurrenceForm: {
-      selectedDataset: {
+      selectDataset: {
         dataDescription: 'Using Data',
         stepDescription: 'Choose the dataset for adding observations',
         stepTitle:       'Selected Dataset'

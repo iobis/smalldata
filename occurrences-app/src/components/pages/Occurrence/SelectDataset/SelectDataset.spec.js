@@ -1,13 +1,13 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import SelectedDataset from './SelectedDataset'
+import SelectDataset from './SelectDataset'
 import { getDatasetMock } from '../../../../clients/server'
 import { mount } from 'enzyme'
 
-describe('SelectedDataset', () => {
+describe('SelectDataset', () => {
   it('renders correctly', () => {
     expect(renderer.create(
-      <SelectedDataset
+      <SelectDataset
         datasets={getDatasetMock()}
         onChange={() => {}}
         selectedDataset={getDatasetMock()[0]}/>
@@ -17,7 +17,7 @@ describe('SelectedDataset', () => {
   it('returns selected dataset when clicking on it', () => {
     const onChange = jest.fn()
     const wrapper = mount(
-      <SelectedDataset
+      <SelectDataset
         datasets={getDatasetMock()}
         onChange={onChange}
         selectedDataset={getDatasetMock()[0]}/>)
