@@ -8,7 +8,9 @@ exports[`SelectedDataset renders correctly 1`] = `
     className="table is-striped is-fullwidth"
   >
     <tbody>
-      <tr>
+      <tr
+        className="dataset-option"
+      >
         <td>
           <input
             checked={true}
@@ -21,7 +23,9 @@ exports[`SelectedDataset renders correctly 1`] = `
           HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.
         </td>
       </tr>
-      <tr>
+      <tr
+        className="dataset-option"
+      >
         <td>
           <input
             checked={false}
@@ -34,7 +38,9 @@ exports[`SelectedDataset renders correctly 1`] = `
           NPPSD Short-tailed Albatross Sightings
         </td>
       </tr>
-      <tr>
+      <tr
+        className="dataset-option"
+      >
         <td>
           <input
             checked={false}
@@ -47,7 +53,9 @@ exports[`SelectedDataset renders correctly 1`] = `
           PANGAEA - Data from Christian-Albrechts-University Kiel
         </td>
       </tr>
-      <tr>
+      <tr
+        className="dataset-option"
+      >
         <td>
           <input
             checked={false}
@@ -60,7 +68,9 @@ exports[`SelectedDataset renders correctly 1`] = `
           NSIS: List of marine benthic algae from Magdalen Islands, Quebec as recorded in 1979
         </td>
       </tr>
-      <tr>
+      <tr
+        className="dataset-option"
+      >
         <td>
           <input
             checked={false}
@@ -73,7 +83,9 @@ exports[`SelectedDataset renders correctly 1`] = `
           Seguimiento de 10 crías de tortuga boba nacidas en 2016 en el litoral valenciano, en el marco del Proyecto LIFE 15 IPE ES 012 (aggregated per 1-degree cell)
         </td>
       </tr>
-      <tr>
+      <tr
+        className="dataset-option"
+      >
         <td>
           <input
             checked={false}
