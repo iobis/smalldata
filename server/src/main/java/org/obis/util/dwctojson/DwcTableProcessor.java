@@ -19,30 +19,7 @@ class DwcTableProcessor {
   private static CsvMapper csvMapper = new CsvMapper();
   private static KeyCollections keyCollections = KeyCollections.INSTANCE;
 
-  List<JsonObject> mapCsv(List<Object> readAll) {
-    var expectedMaxCount = 2000.0;
-    var elementCount = readAll.size();
-    var elementChance = Math.min(expectedMaxCount / elementCount, 1.0);
-    var rand = new Random();
-
-    return readAll.stream()
-      .filter(o -> rand.nextDouble() < elementChance)
-      .map(Map.class::cast)
-      .map(record -> {
-        var tableNamespaceMapper = new TableNamespaceMapper(record);
-        return Map.of(
-          "id", record.get("id"),
-          "purl", tableNamespaceMapper.mapTableNamespace("purl",
-            keyCollections.colHeaderNamespaces.get("purl"),
-            record::containsKey),
-          "tdwg", tableNamespaceMapper.mapTableNamespace("tdwg",
-            record.keySet()));
-      })
-      .map(JsonObject::new)
-      .collect(Collectors.toList());
-  }
-
-  List<JsonObject> processDwcFile(final Map<String, Object> dwcConfig) {
+  List<JsonObject> processDwcFile(Map<String, Object> dwcConfig) {
     var table = Resources.getResource((String) dwcConfig.get("resource"));
     var csvSchema = CsvSchema.builder()
       .setUseHeader(true)
@@ -55,10 +32,35 @@ class DwcTableProcessor {
         .readAll();
       return mapCsv(readAll);
     } catch (IOException e) {
-      error(Arrays.stream(e.getStackTrace())
+      var errorMsg = Arrays.stream(e.getStackTrace())
         .map(StackTraceElement::toString)
-        .collect(Collectors.joining("\n\t")));
+        .collect(Collectors.joining("\n\t"));
+      error(errorMsg);
       return null;
     }
+  }
+
+  private List<JsonObject> mapCsv(List<Object> readAll) {
+    var expectedMaxCount = 2000.0;
+    var elementCount = readAll.size();
+    var elementChance = Math.min(expectedMaxCount / elementCount, 1.0);
+    var rand = new Random();
+
+    return readAll.stream()
+      .filter(o -> rand.nextDouble() < elementChance)
+      .map(Map.class::cast)
+      .map(record -> {
+        var tableNamespaceMapper = new TableNamespaceMapper(record);
+        var id = record.get("id");
+        var purl = tableNamespaceMapper.mapTableNamespace(
+          "purl",
+          keyCollections.colHeaderNamespaces.get("purl"),
+          record::containsKey);
+        var tdwg = tableNamespaceMapper.mapTableNamespace("tdwg", record.keySet());
+
+        return Map.of("id", id, "purl", purl, "tdwg", tdwg);
+      })
+      .map(JsonObject::new)
+      .collect(Collectors.toList());
   }
 }
