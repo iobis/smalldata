@@ -4,7 +4,6 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import lombok.Value;
 import org.apache.commons.io.FileUtils;
-import org.obis.smalldata.db.SecureRandomId;
 import org.obis.smalldata.db.model.DataSetConfig;
 
 import java.io.File;
@@ -18,6 +17,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.stream.Collectors;
 
+import static org.obis.smalldata.db.SecureRandomId.generateId;
 import static org.pmw.tinylog.Logger.error;
 
 public class DwcToJsonConverter {
@@ -25,8 +25,6 @@ public class DwcToJsonConverter {
   public static final String DWC_OCCURRENCE = "occurrence";
   public static final String DWC_EMOF = "emof";
   public static final String DWC_EVENT = "event";
-
-  private static final SecureRandomId RANDOM_ID = SecureRandomId.INSTANCE;
 
   private DwcToJsonConverter() { }
 
@@ -50,7 +48,7 @@ public class DwcToJsonConverter {
               }
               return new JsonObject()
                 .mergeIn(dwcDataset)
-                .put("_ref", RANDOM_ID.generate())
+                .put("_ref", generateId())
                 .put("user_ref", userRecords.get(dwcaId))
                 .put("core", table.getValue().get("isCore"))
                 .put("dwcTable", table.getKey())
@@ -72,20 +70,20 @@ public class DwcToJsonConverter {
   public static void main(String[] args) {
     var dwcaConfig = new DwcaConfig("./server/src/main/resources/mockdata/dwcarecords.json",
       List.of(
-        new DataSetConfig(RANDOM_ID.generate(), "wEaBfmFyQhYCdsk", "event",
+        new DataSetConfig(generateId(), "wEaBfmFyQhYCdsk", "event",
           DwcToJsonConverter.tableConfigGenerator(
             Map.of(DWC_EVENT, new DwcTableConfig("ware_hosono-v1.5/event.txt", true),
               DWC_OCCURRENCE, new DwcTableConfig("ware_hosono-v1.5/occurrence.txt", false),
               DWC_EMOF, new DwcTableConfig("ware_hosono-v1.5/emof.txt", false)))),
-        new DataSetConfig(RANDOM_ID.generate(), "ntDOtUc7XsRrIus", DWC_OCCURRENCE,
+        new DataSetConfig(generateId(), "ntDOtUc7XsRrIus", DWC_OCCURRENCE,
           DwcToJsonConverter.tableConfigGenerator(
             Map.of(DWC_OCCURRENCE, new DwcTableConfig("benthos_azov_sea_1935-v1.1/occurrence.txt", true),
               DWC_EMOF, new DwcTableConfig("benthos_azov_sea_1935-v1.1/emof.txt", false)))),
-        new DataSetConfig(RANDOM_ID.generate(), "NnqVLwIyPn-nRkc", DWC_OCCURRENCE,
+        new DataSetConfig(generateId(), "NnqVLwIyPn-nRkc", DWC_OCCURRENCE,
           DwcToJsonConverter.tableConfigGenerator(
             Map.of(DWC_OCCURRENCE, new DwcTableConfig("benthic_data_sevastopol-v1.1/occurrence.txt", true),
               DWC_EMOF, new DwcTableConfig("benthic_data_sevastopol-v1.1/emof.txt", false)))),
-        new DataSetConfig(RANDOM_ID.generate(), "PoJnGNMaxsupE4w", DWC_OCCURRENCE,
+        new DataSetConfig(generateId(), "PoJnGNMaxsupE4w", DWC_OCCURRENCE,
           DwcToJsonConverter.tableConfigGenerator(
             Map.of(DWC_OCCURRENCE, new DwcTableConfig("deepsea_antipatharia-v1.1/occurrence.txt", true))))
       ));
@@ -100,7 +98,7 @@ public class DwcToJsonConverter {
   }
 
   static void writeToFile(String filename, JsonArray dataset) {
-    File outputFile = new File(filename);
+    var outputFile = new File(filename);
     try {
       FileUtils.writeStringToFile(outputFile, dataset.encodePrettily(), StandardCharsets.UTF_8);
     } catch (IOException e) {

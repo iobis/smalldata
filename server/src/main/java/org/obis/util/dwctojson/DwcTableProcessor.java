@@ -17,7 +17,6 @@ import static org.pmw.tinylog.Logger.error;
 class DwcTableProcessor {
 
   private static CsvMapper csvMapper = new CsvMapper();
-  private static KeyCollections keyCollections = KeyCollections.INSTANCE;
 
   List<JsonObject> mapCsv(List<Object> readAll) {
     var expectedMaxCount = 2000.0;
@@ -33,7 +32,7 @@ class DwcTableProcessor {
         return Map.of(
           "id", record.get("id"),
           "purl", tableNamespaceMapper.mapTableNamespace("purl",
-            keyCollections.colHeaderNamespaces.get("purl"),
+            KeyCollections.COL_HEADER_NAMESPACES.get("purl"),
             record::containsKey),
           "tdwg", tableNamespaceMapper.mapTableNamespace("tdwg",
             record.keySet()));

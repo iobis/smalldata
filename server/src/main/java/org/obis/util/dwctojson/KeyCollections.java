@@ -5,16 +5,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 
-public enum KeyCollections {
+class KeyCollections {
 
-  INSTANCE;
-
-  public final Map<String, List<String>> colHeaderNamespaces = Map.of(
+  static final Map<String, List<String>> COL_HEADER_NAMESPACES = Map.of(
     "purl", List.of("type", "modified", "bibliographicCitation", "references"),
     "tdwg", Collections.emptyList(),
     "*", List.of("id"));
 
-  public final Map<String, Map<String, Function<String, Object>>> typeColumns = Map.of(
+  static final Map<String, Map<String, Function<String, Object>>> TYPE_COLUMNS = Map.of(
     "purl", Collections.emptyMap(),
     "tdwg", Map.of("decimalLongitude", Double::parseDouble,
       "decimalLatitude", Double::parseDouble,
@@ -23,5 +21,4 @@ public enum KeyCollections {
       "day", Integer::parseInt,
       "month", Integer::parseInt,
       "year", Integer::parseInt));
-
 }

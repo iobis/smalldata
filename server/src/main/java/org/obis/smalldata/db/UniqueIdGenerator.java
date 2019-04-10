@@ -6,18 +6,19 @@ import lombok.Value;
 
 import java.util.function.Consumer;
 
+import static org.obis.smalldata.db.SecureRandomId.generateId;
+
 @Value
 public class UniqueIdGenerator {
 
   private MongoClient client;
-  private SecureRandomId randomId = SecureRandomId.INSTANCE;
 
   UniqueIdGenerator(MongoClient client) {
     this.client = client;
   }
 
   public void consumeNewId(String collection, String idField, Consumer<String> idConsumer) {
-    var newId = randomId.generate();
+    var newId = generateId();
     client.find(collection, new JsonObject().put(idField, newId),
       arId -> {
         var result = arId.result();

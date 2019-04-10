@@ -9,14 +9,12 @@ import java.util.stream.Collectors;
 
 public class TableNamespaceMapper {
 
-  private static KeyCollections keyCollections = KeyCollections.INSTANCE;
-
-  private final Map<String, Object> record;
-  private final List<String> specificNamespaceCols = KeyCollections.INSTANCE.colHeaderNamespaces.values().stream()
+  private final Map<String, String> record;
+  private final List<String> specificNamespaceCols = KeyCollections.COL_HEADER_NAMESPACES.values().stream()
     .flatMap(List::stream)
     .collect(Collectors.toList());
 
-  public TableNamespaceMapper(Map<String, Object> record) {
+  public TableNamespaceMapper(Map<String, String> record) {
     this.record = record;
   }
 
@@ -25,7 +23,7 @@ public class TableNamespaceMapper {
   }
 
   Map<String, Object> mapTableNamespace(String namespace, Collection<String> keyCollection, Predicate<String> keyFilter) {
-    var converters = keyCollections.typeColumns.get(namespace);
+    var converters = KeyCollections.TYPE_COLUMNS.get(namespace);
     return keyCollection.stream()
       .filter(keyFilter)
       .filter(k -> !((String) record.get(k)).isBlank())
