@@ -16,10 +16,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(VertxExtension.class)
-public class WebApiTest {
+public class LoginHandlerTest {
 
   private static final int HTTP_PORT = 8080;
   private static final JsonObject CONFIG = new JsonObject().put("port", HTTP_PORT);
@@ -33,22 +32,26 @@ public class WebApiTest {
   }
 
   @Test
-  @DisplayName("starts a http server on port 8080")
-  @Timeout(value = 10, timeUnit = TimeUnit.SECONDS)
+  @DisplayName("check if a proper jwt is returned")
+  @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
   void startHttpServer(Vertx vertx, VertxTestContext testContext) {
     WebClient client = WebClient.create(vertx);
-    client.get(HTTP_PORT, "localhost", "/api/status")
+    vertx.eventBus().localConsumer("auth.login",
+      message -> message.reply(new JsonObject()
+        .put("token", "qwertyuiop")));
+    client.post(HTTP_PORT, "localhost", "/api/login")
       .as(BodyCodec.jsonObject())
-      .send(result -> {
-        if (result.succeeded()) {
-          assertEquals(200, result.result().statusCode());
-          JsonObject body = result.result().body();
-          assertTrue(body.containsKey("title"));
-          assertTrue(body.getString("title").contains("Small Data"));
-          testContext.completeNow();
-        } else {
-          testContext.failNow(result.cause());
-        }
-      });
+      .sendJson(
+        new JsonObject().put("username", "paulo").put("password", "secret"),
+        result -> {
+          if (result.succeeded()) {
+            assertEquals(200, result.result().statusCode());
+            JsonObject body = result.result().body();
+            assertEquals(body.getString("token"), "qwertyuiop");
+            testContext.completeNow();
+          } else {
+            testContext.failNow(result.cause());
+          }
+        });
   }
 }
