@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectDataset renders correctly 1`] = `
+<div
+  className="select-dataset columns is-fluid"
+>
+  <table
+    className="table is-striped is-fullwidth"
+  >
+    <tbody>
+      <tr
+        className="dataset-option"
+      >
+        <td>
+          <input
+            checked={true}
+            name="dataset"
+            onChange={[Function]}
+            type="radio"
+          />
+        </td>
+        <td>
+          HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.
+        </td>
+      </tr>
+      <tr
+        className="dataset-option"
+      >
+        <td>
+          <input
+            checked={false}
+            name="dataset"
+            onChange={[Function]}
+            type="radio"
+          />
+        </td>
+        <td>
+          NPPSD Short-tailed Albatross Sightings
+        </td>
+      </tr>
+      <tr
+        className="dataset-option"
+      >
+        <td>
+          <input
+            checked={false}
+            name="dataset"
+            onChange={[Function]}
+            type="radio"
+          />
+        </td>
+        <td>
+          PANGAEA - Data from Christian-Albrechts-University Kiel
+        </td>
+      </tr>
+      <tr
+        className="dataset-option"
+      >
+        <td>
+          <input
+            checked={false}
+            name="dataset"
+            onChange={[Function]}
+            type="radio"
+          />
+        </td>
+        <td>
+          NSIS: List of marine benthic algae from Magdalen Islands, Quebec as recorded in 1979
+        </td>
+      </tr>
+      <tr
+        className="dataset-option"
+      >
+        <td>
+          <input
+            checked={false}
+            name="dataset"
+            onChange={[Function]}
+            type="radio"
+          />
+        </td>
+        <td>
+          Seguimiento de 10 crías de tortuga boba nacidas en 2016 en el litoral valenciano, en el marco del Proyecto LIFE 15 IPE ES 012 (aggregated per 1-degree cell)
+        </td>
+      </tr>
+      <tr
+        className="dataset-option"
+      >
+        <td>
+          <input
+            checked={false}
+            name="dataset"
+            onChange={[Function]}
+            type="radio"
+          />
+        </td>
+        <td>
+          Waved Albatross Tracking (aggregated per 1-degree cell)
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

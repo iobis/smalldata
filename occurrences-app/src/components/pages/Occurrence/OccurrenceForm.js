@@ -1,16 +1,26 @@
 import ActiveStepHeader from './ActiveStepHeader'
 import ConfirmedStepHeader from './ConfirmedStepHeader'
-import React, { useState } from 'react'
 import NotConfirmedStepHeader from './NotConfirmedStepHeader'
+import React, { useState } from 'react'
+import SelectDataset from './SelectDataset/SelectDataset'
+import { getDatasetMock } from '../../../clients/server'
+import { useTranslation } from 'react-i18next'
 
 export default function OccurrenceForm() {
+  const datasets = getDatasetMock()
+  const { t } = useTranslation()
+  const [selectedDataset, setSelectedDataset] = useState(datasets[0])
   const [activeStepIndex, setActiveStepIndex] = useState(0)
+
   const steps = [{
-    dataDescription: 'Using Data',
-    selectedData:    'HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.',
-    stepDescription: 'Choose the dataset for adding observations',
-    stepTitle:       'Selected Dataset',
-    children:        <StubFormContent/>
+    dataDescription: t('occurrenceForm.selectDataset.dataDescription'),
+    selectedData:    selectedDataset.description,
+    stepDescription: t('occurrenceForm.selectDataset.stepDescription'),
+    stepTitle:       t('occurrenceForm.selectDataset.stepTitle'),
+    children:        <SelectDataset
+                       datasets={datasets}
+                       selectedDataset={selectedDataset}
+                       onChange={(dataset) => setSelectedDataset(dataset)}/>
   }, {
     dataDescription: 'Given Values',
     selectedData:    'Abra alba 2019-02-02',
@@ -38,7 +48,7 @@ export default function OccurrenceForm() {
   }]
 
   return (
-    <div className="container">
+    <section className="section">
       {steps.map((step, index) => {
         const className = 'step-' + index
         const StepComponent = activeStepIndex === index
@@ -55,7 +65,7 @@ export default function OccurrenceForm() {
             stepTitle={(index + 1) + ' - ' + step.stepTitle}/>
         )
       })}
-    </div>
+    </section>
   )
 }
 

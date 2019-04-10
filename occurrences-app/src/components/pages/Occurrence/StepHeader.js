@@ -15,7 +15,7 @@ export default function StepHeader({
 }) {
   return (
     <>
-      <div className={classNames('step-header container columns is-vcentered', className)}>
+      <div className={classNames('step-header columns is-vcentered', className)} onClick={onStepTitleClick}>
         <div className={classNames('column is-1', { 'is-hidden-mobile': !dataDescription })}>
           <p className="is-size-5 is-uppercase">
             <b>
@@ -34,7 +34,7 @@ export default function StepHeader({
           </div>
           <div className="is-size-5 is-uppercase">
             {iconVisible && <FontAwesomeIcon className="check-circle" icon="check-circle"/>}
-            <b onClick={onStepTitleClick} className="step-title">
+            <b className="step-title">
               {stepTitle}
             </b>
           </div>
