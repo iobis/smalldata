@@ -24,40 +24,49 @@ import static org.pmw.tinylog.Logger.error;
 
 public class Starter extends AbstractVerticle {
 
-  private JsonObject validateAuthConfig(JsonObject authConfig)
-    throws NoSuchAlgorithmException, InvalidAlgorithmParameterException {
-    if ("local".equals(authConfig.getString("provider", "local"))
-      && authConfig.getString("publicKey").isBlank() || authConfig.getString("securityKey").isBlank()) {
-      KeyPairGenerator g = KeyPairGenerator.getInstance("EC");
-      ECGenParameterSpec spec = new ECGenParameterSpec("secp256r1");
-      g.initialize(spec);
-      KeyPair keyPair = g.generateKeyPair();
-      authConfig.put("publicKey", new String(Base64.getEncoder().encode(keyPair.getPublic().getEncoded()),
-        StandardCharsets.UTF_8));
-      authConfig.put("securityKey", new String(Base64.getEncoder().encode(keyPair.getPrivate().getEncoded()),
-        StandardCharsets.UTF_8));
-    }
-    return authConfig;
-  }
-
   @Override
   public void start(Future<Void> startFuture) {
     debug("starting the application with config: {}", config().encodePrettily());
     vertx.sharedData().getLocalMap("settings").put("mode", config().getValue("mode", "DEV"));
-    vertx.deployVerticle(WebApi.class.getName(),
+    vertx.deployVerticle(
+      WebApi.class.getName(),
       new DeploymentOptions().setConfig(config().getJsonObject("http")));
     vertx.deployVerticle(RssComponent.class.getName());
-    vertx.deployVerticle(EmbeddedDb.class.getName(),
+    vertx.deployVerticle(
+      EmbeddedDb.class.getName(),
       new DeploymentOptions().setConfig(config().getJsonObject("storage")));
 
     try {
-      vertx.deployVerticle(Auth.class.getName(),
-        new DeploymentOptions().setConfig(validateAuthConfig(config().getJsonObject("auth"))));
+      vertx.deployVerticle(
+        Auth.class.getName(),
+        new DeploymentOptions().setConfig(updateAuthConfig(config().getJsonObject("auth"))));
     } catch (NoSuchAlgorithmException | InvalidAlgorithmParameterException e) {
       error(Arrays.stream(e.getStackTrace())
         .map(Object::toString)
         .collect(Collectors.joining("\n\t")));
       vertx.undeploy(this.deploymentID());
     }
+  }
+
+  private static JsonObject updateAuthConfig(JsonObject authConfig)
+    throws NoSuchAlgorithmException, InvalidAlgorithmParameterException {
+    if ("local".equals(authConfig.getString("provider", "local"))
+      && authConfig.getString("publicKey").isBlank() || authConfig.getString("securityKey").isBlank()) {
+      KeyPairGenerator generator = KeyPairGenerator.getInstance("EC");
+      ECGenParameterSpec spec = new ECGenParameterSpec("secp256r1");
+      generator.initialize(spec);
+      KeyPair keyPair = generator.generateKeyPair();
+      authConfig.put("publicKey", createPublicKey(keyPair));
+      authConfig.put("securityKey", createSecretKey(keyPair));
+    }
+    return authConfig;
+  }
+
+  private static String createPublicKey(KeyPair keyPair) {
+    return new String(Base64.getEncoder().encode(keyPair.getPublic().getEncoded()), StandardCharsets.UTF_8);
+  }
+
+  private static String createSecretKey(KeyPair keyPair) {
+    return new String(Base64.getEncoder().encode(keyPair.getPrivate().getEncoded()), StandardCharsets.UTF_8);
   }
 }
