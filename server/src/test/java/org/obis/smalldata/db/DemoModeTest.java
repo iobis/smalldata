@@ -40,9 +40,9 @@ public class DemoModeTest {
 
   @Test
   @DisplayName("read default mock data")
-  @Timeout(value = 8, timeUnit = TimeUnit.SECONDS)
+  @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
   void findData(VertxTestContext testContext) throws InterruptedException {
-    TimeUnit.MILLISECONDS.sleep(500);
+    TimeUnit.MILLISECONDS.sleep(1000);
     client.find(
       Collections.DATASETS.dbName(),
       new JsonObject().put("type", "event-based"),
