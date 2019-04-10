@@ -25,9 +25,9 @@ class LoginHandler {
     var body = message.body();
     var username = "paulo";
     var password = "secret";
-    if (username.equals(body.getString("username"))
-      && password.equals(body.getString("password"))) {
-      var token = authProvider.generateToken(new JsonObject()
+    if (username.equals(body.getString("username")) && password.equals(body.getString("password"))) {
+      var token = authProvider.generateToken(
+        new JsonObject()
           .put("aud", "occurrences-OBIS")
           .put("sub", "paulo"),
         new JWTOptions().setAlgorithm("ES256"));
