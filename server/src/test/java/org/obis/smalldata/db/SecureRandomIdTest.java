@@ -10,7 +10,7 @@ public class SecureRandomIdTest {
 
   @Test
   public void testRandomId() {
-    Stream.generate(SecureRandomId::generate)
+    Stream.generate(SecureRandomId::generateId)
       .limit(10)
       .forEach(id -> assertEquals(id.length(), 15));
   }
