@@ -71,7 +71,7 @@ public class DwcToJsonConverter {
     var rand = new Random();
     var userRefs = List.of("ovZTtaOJZ98xDDY", "FsfEMwhUTO_8I68");
     var userRecords = new HashMap<String, String>();
-    dwcTables.entrySet().stream()
+    dwcTables.entrySet()
       .forEach(table ->
         records.addAll(
           dwcTableProcessor.processDwcFile(table.getValue()).stream()
