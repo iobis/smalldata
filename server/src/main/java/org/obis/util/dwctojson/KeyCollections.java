@@ -14,7 +14,8 @@ class KeyCollections {
 
   static final Map<String, Map<String, Function<String, Object>>> TYPE_COLUMNS = Map.of(
     "purl", Collections.emptyMap(),
-    "tdwg", Map.of("decimalLongitude", Double::parseDouble,
+    "tdwg", Map.of(
+      "decimalLongitude", Double::parseDouble,
       "decimalLatitude", Double::parseDouble,
       "maximumDepthInMeters", Double::parseDouble,
       "minimumDepthInMeters", Double::parseDouble,
