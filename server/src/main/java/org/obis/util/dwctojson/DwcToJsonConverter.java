@@ -22,13 +22,47 @@ import static org.pmw.tinylog.Logger.error;
 
 public class DwcToJsonConverter {
 
-  public static final String DWC_OCCURRENCE = "occurrence";
-  public static final String DWC_EMOF = "emof";
-  public static final String DWC_EVENT = "event";
+  private static final String DWC_OCCURRENCE = "occurrence";
+  private static final String DWC_EMOF = "emof";
+  private static final String DWC_EVENT = "event";
 
-  private DwcToJsonConverter() { }
+  private DwcToJsonConverter() {
+  }
 
-  JsonArray convert(DataSetConfig config) {
+  public static void main(String[] args) {
+    var dwcaConfig = new DwcaConfig("./server/src/main/resources/mockdata/dwcarecords.json",
+      List.of(
+        new DataSetConfig(generateId(), "wEaBfmFyQhYCdsk", "event",
+          DwcToJsonConverter.tableConfigGenerator(
+            Map.of(
+              DWC_EVENT, new DwcTableConfig("ware_hosono-v1.5/event.txt", true),
+              DWC_OCCURRENCE, new DwcTableConfig("ware_hosono-v1.5/occurrence.txt", false),
+              DWC_EMOF, new DwcTableConfig("ware_hosono-v1.5/emof.txt", false)))),
+        new DataSetConfig(generateId(), "ntDOtUc7XsRrIus", DWC_OCCURRENCE,
+          DwcToJsonConverter.tableConfigGenerator(
+            Map.of(
+              DWC_OCCURRENCE, new DwcTableConfig("benthos_azov_sea_1935-v1.1/occurrence.txt", true),
+              DWC_EMOF, new DwcTableConfig("benthos_azov_sea_1935-v1.1/emof.txt", false)))),
+        new DataSetConfig(generateId(), "NnqVLwIyPn-nRkc", DWC_OCCURRENCE,
+          DwcToJsonConverter.tableConfigGenerator(
+            Map.of(
+              DWC_OCCURRENCE, new DwcTableConfig("benthic_data_sevastopol-v1.1/occurrence.txt", true),
+              DWC_EMOF, new DwcTableConfig("benthic_data_sevastopol-v1.1/emof.txt", false)))),
+        new DataSetConfig(generateId(), "PoJnGNMaxsupE4w", DWC_OCCURRENCE,
+          DwcToJsonConverter.tableConfigGenerator(
+            Map.of(DWC_OCCURRENCE, new DwcTableConfig("deepsea_antipatharia-v1.1/occurrence.txt", true))))
+      ));
+
+    var datasets = new JsonArray();
+    var converter = new DwcToJsonConverter();
+    var outputFile = dwcaConfig.getOutputFile();
+    dwcaConfig.getDatasets().stream()
+      .map(converter::convert)
+      .forEach(datasets::addAll);
+    writeToFile(outputFile, datasets);
+  }
+
+  private JsonArray convert(DataSetConfig config) {
     var dwcDataset = new JsonObject()
       .put("dataset_ref", config.getDatasetRef());
     var records = new ArrayList<JsonObject>();
@@ -59,7 +93,7 @@ public class DwcToJsonConverter {
     return new JsonArray(records);
   }
 
-  static Map<String, Map<String, Object>> tableConfigGenerator(Map<String, DwcTableConfig> tables) {
+  private static Map<String, Map<String, Object>> tableConfigGenerator(Map<String, DwcTableConfig> tables) {
     return tables.entrySet().stream()
       .map(entry -> new AbstractMap.SimpleEntry<String, Map<String, Object>>(
         entry.getKey(), Map.of("resource", "mockdata/dwc/" + entry.getValue().getResource(),
@@ -67,37 +101,7 @@ public class DwcToJsonConverter {
       .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
   }
 
-  public static void main(String[] args) {
-    var dwcaConfig = new DwcaConfig("./server/src/main/resources/mockdata/dwcarecords.json",
-      List.of(
-        new DataSetConfig(generateId(), "wEaBfmFyQhYCdsk", "event",
-          DwcToJsonConverter.tableConfigGenerator(
-            Map.of(DWC_EVENT, new DwcTableConfig("ware_hosono-v1.5/event.txt", true),
-              DWC_OCCURRENCE, new DwcTableConfig("ware_hosono-v1.5/occurrence.txt", false),
-              DWC_EMOF, new DwcTableConfig("ware_hosono-v1.5/emof.txt", false)))),
-        new DataSetConfig(generateId(), "ntDOtUc7XsRrIus", DWC_OCCURRENCE,
-          DwcToJsonConverter.tableConfigGenerator(
-            Map.of(DWC_OCCURRENCE, new DwcTableConfig("benthos_azov_sea_1935-v1.1/occurrence.txt", true),
-              DWC_EMOF, new DwcTableConfig("benthos_azov_sea_1935-v1.1/emof.txt", false)))),
-        new DataSetConfig(generateId(), "NnqVLwIyPn-nRkc", DWC_OCCURRENCE,
-          DwcToJsonConverter.tableConfigGenerator(
-            Map.of(DWC_OCCURRENCE, new DwcTableConfig("benthic_data_sevastopol-v1.1/occurrence.txt", true),
-              DWC_EMOF, new DwcTableConfig("benthic_data_sevastopol-v1.1/emof.txt", false)))),
-        new DataSetConfig(generateId(), "PoJnGNMaxsupE4w", DWC_OCCURRENCE,
-          DwcToJsonConverter.tableConfigGenerator(
-            Map.of(DWC_OCCURRENCE, new DwcTableConfig("deepsea_antipatharia-v1.1/occurrence.txt", true))))
-      ));
-
-    var datasets = new JsonArray();
-    var converter = new DwcToJsonConverter();
-    var outputFile = dwcaConfig.getOutputFile();
-    dwcaConfig.getDatasets().stream()
-      .map(converter::convert)
-      .forEach(datasets::addAll);
-    writeToFile(outputFile, datasets);
-  }
-
-  static void writeToFile(String filename, JsonArray dataset) {
+  private static void writeToFile(String filename, JsonArray dataset) {
     var outputFile = new File(filename);
     try {
       FileUtils.writeStringToFile(outputFile, dataset.encodePrettily(), StandardCharsets.UTF_8);
@@ -107,13 +111,13 @@ public class DwcToJsonConverter {
   }
 
   @Value
-  static class DwcaConfig {
+  private static class DwcaConfig {
     private final String outputFile;
     private final List<DataSetConfig> datasets;
   }
 
   @Value
-  static class DwcTableConfig {
+  private static class DwcTableConfig {
     private final String resource;
     private final boolean isCore;
   }
