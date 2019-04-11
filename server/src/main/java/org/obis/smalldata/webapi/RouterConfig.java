@@ -12,6 +12,7 @@ import java.util.function.Consumer;
 class RouterConfig {
 
   private static final Map<String, OperationHandlers> HANDLERS = Map.of(
+    "login", new OperationHandlers(LoginHandler::login),
     "getStatus", new OperationHandlers(StatusHandler::status),
     "getRss", new OperationHandlers(RssHandler::fetch),
     "postDWCA", new OperationHandlers(OccurrenceHandler::post)
@@ -31,6 +32,7 @@ class RouterConfig {
     var router = routerFactory.getRouter();
     router.get("/openapi/*").handler(StaticHandler.create("swaggerroot"));
     router.get("/*").handler(StaticHandler.create());
+
     completionHandler.accept(router);
   }
 

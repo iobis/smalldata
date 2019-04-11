@@ -17,15 +17,18 @@ public class BulkOperationUtil {
 
   private static final ObjectMapper MAPPER = new ObjectMapper();
 
-  private BulkOperationUtil() {}
+  private BulkOperationUtil() {
+  }
 
   public static List<BulkOperation> createOperationsFromFile(String path) {
+    warn("reading file for db import {}", path);
     return createOperationsFromJson(IoFile.loadFromResources(path));
   }
 
   public static List<BulkOperation> createOperationsFromJson(String json) {
     try {
-      List<Map<String, Object>> l = MAPPER.readValue(json, new TypeReference<List<Map<String, Object>>>() {});
+      List<Map<String, Object>> l = MAPPER.readValue(json, new TypeReference<List<Map<String, Object>>>() {
+      });
       return l.stream()
         .map(jsonmap -> BulkOperation.createInsert(new JsonObject(jsonmap)))
         .collect(Collectors.toList());

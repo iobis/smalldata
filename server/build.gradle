@@ -18,13 +18,13 @@ repositories {
 }
 
 ext {
-  vertxVersion = "3.6.3"
+  vertxVersion = "3.7.0"
   jacksonVersion = "2.9.8"
   junitJupiterEngineVersion = "5.2.0"
   moduleName = "obis.smalldata"
 }
 
-sourceCompatibility = 10
+sourceCompatibility = 11
 
 group = "org.obis"
 version = "1.0.0-SNAPSHOT"
@@ -40,6 +40,7 @@ runtime {
 }
 
 dependencies {
+  implementation "io.vertx:vertx-auth-jwt:$vertxVersion"
   implementation "io.vertx:vertx-core:$vertxVersion"
   implementation "io.vertx:vertx-web:$vertxVersion"
   implementation "io.vertx:vertx-web-client:$vertxVersion"
@@ -47,6 +48,7 @@ dependencies {
   implementation "io.vertx:vertx-web-api-contract:$vertxVersion"
 
   implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:$jacksonVersion"
+  implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-csv:$jacksonVersion"
   implementation "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:$jacksonVersion"
 
   implementation "de.flapdoodle.embed:de.flapdoodle.embed.mongo:2.2.0"
@@ -58,7 +60,6 @@ dependencies {
   compileOnly "org.projectlombok:lombok:1.18.6"
 
   testImplementation "com.fasterxml.uuid:java-uuid-generator:3.1.5"
-  testImplementation "commons-io:commons-io:2.6"
   testImplementation "io.vertx:vertx-junit5:$vertxVersion"
   testImplementation "org.assertj:assertj-core:3.11.1"
 
@@ -74,7 +75,7 @@ test {
 
 run {
   args = ["run", mainVerticleName,
-          "-conf", "config/config.json",
+          "-conf", "./config/config.json",
           "--redeploy=$watchForChange",
           "--launcher-class=$mainClassName",
           "--on-redeploy=$doOnChange"]

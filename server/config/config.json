@@ -2,6 +2,10 @@
   "http": {
     "port": 8080
   },
+  "auth": {
+    "type": "JWT",
+    "provider": "local"
+  },
   "storage": {
     "bindIp": "localhost",
     "port": 27017,

@@ -41,9 +41,8 @@ public class DbInitializer {
 
   private void addIndices() {
     List.of(
-      new String[]{Collections.DATASETRECORDS.dbName(), "_ref"},
+      new String[]{Collections.DATASETRECORDS.dbName(), "dwcRecord.id"},
       new String[]{Collections.DATASETRECORDS.dbName(), "dataset_ref"},
-      new String[]{Collections.USERS.dbName(), "_ref"},
       new String[]{Collections.USERS.dbName(), "dataset_refs"},
       new String[]{Collections.DATASETS.dbName(), "_ref"})
       .forEach(entry ->
@@ -61,14 +60,13 @@ public class DbInitializer {
       "users", "mockdata/users.json",
       "datasets", "mockdata/datasets.json",
       "dwcarecords", "mockdata/dwcarecords.json")
-      .entrySet()
-      .stream()
+      .entrySet().stream()
       .map(entry -> Map.entry(entry.getKey(), IoFile.loadFromResources(entry.getValue())))
       .map(entry -> Map.entry(entry.getKey(), BulkOperationUtil.createOperationsFromJson(entry.getValue())))
       .forEach(entry -> client.bulkWrite(
         entry.getKey(),
         entry.getValue(),
-        arClient -> warn("write result: {}", arClient.result().toJson())));
+        arClient -> warn("write result: {} from file {}", arClient.result().toJson(), entry.getKey())));
   }
 
   void mockData() {
