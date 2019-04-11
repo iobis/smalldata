@@ -26,11 +26,12 @@ public class TableNamespaceMapper {
     var converters = KeyCollections.TYPE_COLUMNS.get(namespace);
     return keyCollection.stream()
       .filter(keyFilter)
-      .filter(k -> !((String) record.get(k)).isBlank())
-      .collect(Collectors.toMap(Function.identity(),
+      .filter(k -> !record.get(k).isBlank())
+      .collect(Collectors.toMap(
+        Function.identity(),
         k -> {
           if (converters.keySet().contains(k)) {
-            return converters.get(k).apply((String) record.get(k));
+            return converters.get(k).apply(record.get(k));
           } else {
             return record.get(k);
           }
