@@ -35,18 +35,20 @@ class DwcCsvGenerator {
         record.stream()
           .filter(ns -> !"id".equals(ns.getKey()))
           .filter(ns -> !((JsonObject) ns.getValue()).isEmpty())
-          .map(entry -> {
-            var ns = entry.getKey();
-            return ((JsonObject) entry.getValue()).stream()
-              .map(header -> new JsonObject().put(ns + "/" + header.getKey(), header.getValue()))
-              .collect(JsonObject::new, JsonObject::mergeIn, JsonObject::mergeIn);
-          })
+          .map(this::mapNsFields)
           .map(entry -> new JsonObject().put("id", id).mergeIn(entry))
           .reduce(JsonObject::mergeIn)
           .ifPresent(jsonRecord -> dwcRecords.get(tableName).add(jsonRecord));
       });
     info("Added dwc records: {} ", dwcRecords);
     return dwcRecords;
+  }
+
+  private JsonObject mapNsFields(Map.Entry<String, Object> nsFields) {
+    var ns = nsFields.getKey();
+    return ((JsonObject) nsFields.getValue()).stream()
+      .map(header -> new JsonObject().put(ns + "/" + header.getKey(), header.getValue()))
+      .collect(JsonObject::new, JsonObject::mergeIn, JsonObject::mergeIn);
   }
 
   Set<String> extractHeaders(List<JsonObject> dwcRecords) {
