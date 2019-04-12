@@ -30,7 +30,7 @@ public class DwcToJsonConverter {
   }
 
   public static void main(String[] args) {
-    var dwcaConfig = new DwcaConfig("./server/src/main/resources/mockdata/dwcarecords.json",
+    var dwcaConfig = new DwcaConfig("./server/src/main/resources/demodata/dwcarecords.json",
       List.of(
         new DataSetConfig(generateId(), "wEaBfmFyQhYCdsk", "event",
           DwcToJsonConverter.tableConfigGenerator(
@@ -96,7 +96,7 @@ public class DwcToJsonConverter {
   private static Map<String, Map<String, Object>> tableConfigGenerator(Map<String, DwcTableConfig> tables) {
     return tables.entrySet().stream()
       .map(entry -> new AbstractMap.SimpleEntry<String, Map<String, Object>>(
-        entry.getKey(), Map.of("resource", "mockdata/dwc/" + entry.getValue().getResource(),
+        entry.getKey(), Map.of("resource", "demodata/dwc/" + entry.getValue().getResource(),
         "isCore", entry.getValue().isCore())))
       .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
   }

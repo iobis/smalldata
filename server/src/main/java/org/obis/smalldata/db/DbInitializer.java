@@ -57,9 +57,9 @@ public class DbInitializer {
 
   private void addMockData() {
     Map.of(
-      "users", "mockdata/users.json",
-      "datasets", "mockdata/datasets.json",
-      "dwcarecords", "mockdata/dwcarecords.json")
+      "users", "demodata/users.json",
+      "datasets", "demodata/datasets.json",
+      "dwcarecords", "demodata/dwcarecords.json")
       .entrySet().stream()
       .map(entry -> Map.entry(entry.getKey(), IoFile.loadFromResources(entry.getValue())))
       .map(entry -> Map.entry(entry.getKey(), BulkOperationUtil.createOperationsFromJson(entry.getValue())))
