@@ -4,19 +4,14 @@ import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.mongo.MongoClient;
-import org.pmw.tinylog.Logger;
 
-import java.security.cert.CollectionCertStoreParameters;
-import java.util.AbstractMap;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
-import static org.pmw.tinylog.Logger.debug;
 import static org.pmw.tinylog.Logger.info;
 
 class DwcCsvGenerator {
@@ -27,12 +22,15 @@ class DwcCsvGenerator {
     this.mongoClient = mongoClient;
   }
 
-  // TODO: per table! -> return type Map<String, List<JsonObject>>
-  List<JsonObject> extractDwcRecords(List<JsonObject> dataset) {
-    var dwcRecords = new ArrayList<JsonObject>();
+  Map<String, List<JsonObject>> extractDwcRecords(List<JsonObject> dataset) {
+    var dwcRecords = new HashMap<String, List<JsonObject>>();
     dataset.stream()
-      .map(record -> record.getJsonObject("dwcRecord"))
-      .forEach(record -> {
+      .forEach(dwcaRecord -> {
+        var tableName = dwcaRecord.getString("dwcTable");
+        if (!dwcRecords.containsKey(tableName)) {
+          dwcRecords.put(tableName, new ArrayList());
+        }
+        var record = dwcaRecord.getJsonObject("dwcRecord");
         var id = record.getString("id");
         record.stream()
           .filter(ns -> !"id".equals(ns.getKey()))
@@ -44,9 +42,10 @@ class DwcCsvGenerator {
               .collect(JsonObject::new, JsonObject::mergeIn, JsonObject::mergeIn);
           })
           .map(entry -> new JsonObject().put("id", id).mergeIn(entry))
-          .forEach(dwcRecords::add);
+          .reduce(JsonObject::mergeIn)
+          .ifPresent(jsonRecord -> dwcRecords.get(tableName).add(jsonRecord));
       });
-    debug("Added dwc records: {} ", dwcRecords);
+    info("Added dwc records: {} ", dwcRecords);
     return dwcRecords;
   }
 

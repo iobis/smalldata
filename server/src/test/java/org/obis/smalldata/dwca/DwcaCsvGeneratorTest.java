@@ -7,6 +7,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvParser;
 import com.fasterxml.jackson.dataformat.csv.CsvSchema;
+import com.google.common.base.Splitter;
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Sets;
+import com.google.common.io.Resources;
 import de.flapdoodle.embed.mongo.MongodExecutable;
 import de.flapdoodle.embed.mongo.MongodProcess;
 import de.flapdoodle.embed.mongo.MongodStarter;
@@ -22,9 +26,15 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.obis.smalldata.db.BulkOperationUtil;
+import org.obis.smalldata.util.IoFile;
 import org.pmw.tinylog.Logger;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -38,6 +48,7 @@ import java.util.concurrent.TimeoutException;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.pmw.tinylog.Logger.info;
 
@@ -86,34 +97,58 @@ public class DwcaCsvGeneratorTest {
   public void testCsvData() {
     var csvGenerator = new DwcCsvGenerator(this.mongoClient);
     var future = new CompletableFuture<List<JsonObject>>();
-    var csvSchema = CsvSchema.builder()
-      .setUseHeader(true)
-      .setColumnSeparator('\t')
-      .disableQuoteChar();
     var csvMapper = new CsvMapper()
       .enable(CsvParser.Feature.IGNORE_TRAILING_UNMAPPABLE)
       .enable(CsvParser.Feature.INSERT_NULLS_FOR_MISSING_COLUMNS)
       .configure(JsonGenerator.Feature.IGNORE_UNKNOWN, true)
       .writer();
-    csvGenerator.doWithDwcaRecords("wEaBfmFyQhYCdsk", res -> {
-      future.complete(res.result());
-    });
+    csvGenerator.doWithDwcaRecords("NnqVLwIyPn-nRkc", res -> future.complete(res.result()));
+    //wEaBfmFyQhYCdsk
     try {
       var records = future.get(500, TimeUnit.MILLISECONDS);
       var merged = csvGenerator.extractDwcRecords(records);
-      var headers = csvGenerator.extractHeaders(merged);
-      headers.stream().forEach(csvSchema::addColumn);
-      info(csvMapper.with(csvSchema.build())
-        .writeValueAsString(merged.stream()
-          .map(JsonObject::getMap)
-          .collect(Collectors.toList())));
-    } catch (ExecutionException | InterruptedException | TimeoutException | JsonProcessingException e) {
+      merged.entrySet().stream()
+        .forEach(dwcTable -> {
+            var csvSchema = CsvSchema.builder()
+              .setUseHeader(true)
+              .setColumnSeparator('\t')
+              .disableQuoteChar();
+            var headers = csvGenerator.extractHeaders(dwcTable.getValue());
+            var tableName = dwcTable.getKey();
+            headers.stream().forEach(csvSchema::addColumn);
+            try {
+              var file = File.createTempFile("obis-iode", tableName + ".txt");
+              csvMapper.with(csvSchema.build())
+                .writeValue(file, dwcTable.getValue().stream()
+                  .map(JsonObject::getMap)
+                  .collect(Collectors.toList()));
+              String resourcePath = "demodata/dwc/benthic_data_sevastopol-v1.1/" + tableName + ".txt";
+              URL resource = Resources.getResource(resourcePath);
+
+
+              var actualCount = Files.lines(file.toPath()).count();
+              var expectedCount = Files.lines(Paths.get(resource.getPath())).count();
+              assertEquals(expectedCount, actualCount);
+
+              var actualLines = Files.lines(file.toPath());
+              var expectedLines = Files.lines(Paths.get(resource.getPath()));
+               var splitter = Splitter.on('/').trimResults();
+              Set<String> actualHeaders = Sets.newHashSet(
+                actualLines.findFirst().get().split("\t")).stream()
+                .map(h -> Iterables.getLast(splitter.split(h)))
+                .collect(Collectors.toSet());
+              Set<String> expectedHeaders =Sets.newHashSet(
+                expectedLines.findFirst().get().split("\t"));
+              assertTrue(expectedHeaders.containsAll(actualHeaders));
+            } catch (IOException e) {
+              e.printStackTrace();
+            }
+          }
+        );
+    } catch (ExecutionException | InterruptedException | TimeoutException e) {
       e.printStackTrace();
     }
   }
-
-
-
 
   @AfterEach
   public void stop() {
