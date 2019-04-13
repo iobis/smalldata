@@ -1,17 +1,18 @@
 package org.obis.smalldata.dwca;
 
-import com.google.common.base.Splitter;
 import com.google.common.base.Throwables;
-import com.google.common.collect.Iterables;
-import com.google.common.collect.Sets;
 import com.google.common.io.Resources;
+import io.vertx.core.AsyncResult;
+import io.vertx.core.Handler;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.mongo.MongoClient;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.pmw.tinylog.Logger;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -21,12 +22,9 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.pmw.tinylog.Logger.error;
-import static org.pmw.tinylog.Logger.info;
 
 public class DwcaCsvGeneratorTest {
 
@@ -38,49 +36,53 @@ public class DwcaCsvGeneratorTest {
     mongoClient = testDb.init(Vertx.vertx());
   }
 
+  void doWithDwcaDataset(String datasetRef, Handler<AsyncResult<List<JsonObject>>> handler) {
+    mongoClient.find("dwcarecords",
+      new JsonObject().put("dataset_ref", datasetRef),
+      handler);
+  }
+
   @Test
   public void testCsvData() {
-    var csvGenerator = new DwcCsvGenerator(this.mongoClient);
     var future = new CompletableFuture<List<JsonObject>>();
-    csvGenerator.doWithDwcaRecords("NnqVLwIyPn-nRkc", res -> future.complete(res.result()));
-    //wEaBfmFyQhYCdsk
+    this.doWithDwcaDataset("NnqVLwIyPn-nRkc", res -> future.complete(res.result()));
     try {
-      var records = future.get(500, TimeUnit.MILLISECONDS);
-      var merged = csvGenerator.extractDwcRecords(records);
-      var dwcTableWriter = new DwcTableWriter(csvGenerator);
-      merged.entrySet().stream()
+      var dataset = future.get(200, TimeUnit.MILLISECONDS);
+      var dwcaMap = DwcaData.datasetToDwcaMap(dataset);
+      var dwcCsvWriter = new DwcCsvTable();
+      dwcaMap.entrySet().stream()
         .forEach(dwcTable -> {
-          var file = dwcTableWriter.writeTableToFile(dwcTable);
           String resourcePath = "demodata/dwc/benthic_data_sevastopol-v1.1/" + dwcTable.getKey() + ".txt";
           var resource = Resources.getResource(resourcePath);
           try {
-            var actualCount = Files.lines(file.toPath()).count();
+            File generatedFile = File.createTempFile("obis-iode", dwcTable.getKey() + ".txt");
+            dwcCsvWriter.writeTableToFile(dwcTable.getValue(), generatedFile);
+
+            var actualCount = Files.lines(generatedFile.toPath()).count();
             var expectedCount = Files.lines(Paths.get(resource.getPath())).count();
             assertEquals(expectedCount, actualCount);
 
-            var actualLines = Files.lines(file.toPath());
-            var expectedLines = Files.lines(Paths.get(resource.getPath()));
-            var splitter = Splitter.on('/').trimResults();
-            Set<String> actualHeaders = Sets.newHashSet(
-              actualLines.findFirst().get().split("\t")).stream()
-              .map(h -> Iterables.getLast(splitter.split(h)))
-              .collect(Collectors.toSet());
-            Set<String> expectedHeaders = Sets.newHashSet(
-              expectedLines.findFirst().get().split("\t"));
+            Set<String> actualHeaders = DwcCsvTable.headersFromFile(generatedFile);
+            Set<String> expectedHeaders = DwcCsvTable.headersFromFile(new File(resource.getPath()));
             assertTrue(expectedHeaders.containsAll(actualHeaders));
+
+            if (generatedFile.delete()) {
+              Logger.info("deleted {} successfully", generatedFile.getName());
+            } else {
+              Logger.warn("could not delete {}", generatedFile.getName());
+            }
           } catch (IOException e) {
-            error(Throwables.getStackTraceAsString(e));
+            Logger.error(Throwables.getStackTraceAsString(e));
           }
         });
     } catch (InterruptedException | ExecutionException | TimeoutException e) {
-      error(Throwables.getStackTraceAsString(e));
+      Logger.error(Throwables.getStackTraceAsString(e));
     }
   }
 
   @AfterEach
   public void stop() {
-    info("shutdown mongo db");
+    Logger.info("shutdown mongo db");
     testDb.shutDown();
-
   }
 }
