@@ -5,12 +5,12 @@ import io.vertx.core.Handler;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.mongo.MongoClient;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.AbstractMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import static org.pmw.tinylog.Logger.info;
 
@@ -23,25 +23,31 @@ class DwcCsvGenerator {
   }
 
   Map<String, List<JsonObject>> extractDwcRecords(List<JsonObject> dataset) {
-    var dwcRecords = new HashMap<String, List<JsonObject>>();
-    dataset.stream()
-      .forEach(dwcaRecord -> {
-        var tableName = dwcaRecord.getString("dwcTable");
-        if (!dwcRecords.containsKey(tableName)) {
-          dwcRecords.put(tableName, new ArrayList());
-        }
-        var record = dwcaRecord.getJsonObject("dwcRecord");
-        var id = record.getString("id");
-        record.stream()
-          .filter(ns -> !"id".equals(ns.getKey()))
-          .filter(ns -> !((JsonObject) ns.getValue()).isEmpty())
-          .map(this::mapNsFields)
-          .map(entry -> new JsonObject().put("id", id).mergeIn(entry))
-          .reduce(JsonObject::mergeIn)
-          .ifPresent(jsonRecord -> dwcRecords.get(tableName).add(jsonRecord));
-      });
+    var dwcRecords = dataset.stream()
+      .map(JsonObject.class::cast)
+      .collect(Collectors.groupingBy(in -> in.getString("dwcTable")))
+      .entrySet().stream()
+      .map(table -> new AbstractMap.SimpleEntry(
+        table.getKey(),
+        table.getValue().stream()
+          .map(dwcaRecord -> dwcaRecord.getJsonObject("dwcRecord"))
+          .map(this::flattenDwcFields)
+          .collect(Collectors.toList())))
+      .collect(Collectors.toMap(Map.Entry<String, List<JsonObject>>::getKey,
+        Map.Entry<String, List<JsonObject>>::getValue));
     info("Added dwc records: {} ", dwcRecords);
     return dwcRecords;
+  }
+
+  private JsonObject flattenDwcFields(JsonObject dwcRecord) {
+    var id = dwcRecord.getString("id");
+    return dwcRecord.stream()
+      .filter(ns -> !"id".equals(ns.getKey()))
+      .filter(ns -> !((JsonObject) ns.getValue()).isEmpty())
+      .map(this::mapNsFields)
+      .map(entry -> new JsonObject().put("id", id).mergeIn(entry))
+      .reduce(JsonObject::mergeIn)
+      .get();
   }
 
   private JsonObject mapNsFields(Map.Entry<String, Object> nsFields) {

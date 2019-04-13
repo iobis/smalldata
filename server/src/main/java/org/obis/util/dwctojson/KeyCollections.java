@@ -9,11 +9,13 @@ class KeyCollections {
 
   static final Map<String, List<String>> COL_HEADER_NAMESPACES = Map.of(
     "purl", List.of("type", "modified", "bibliographicCitation", "references"),
+    "iobis", List.of("measurementTypeID", "measurementValueID", "measurementUnitID"),
     "tdwg", Collections.emptyList(),
     "*", List.of("id"));
 
   static final Map<String, Map<String, Function<String, Object>>> TYPE_COLUMNS = Map.of(
     "purl", Collections.emptyMap(),
+    "iobis", Collections.emptyMap(),
     "tdwg", Map.of(
       "decimalLongitude", Double::parseDouble,
       "decimalLatitude", Double::parseDouble,
