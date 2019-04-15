@@ -28,6 +28,11 @@ public class DwcCsvTable {
     .enable(CsvParser.Feature.INSERT_NULLS_FOR_MISSING_COLUMNS)
     .configure(JsonGenerator.Feature.IGNORE_UNKNOWN, true)
     .writer();
+
+ private final CsvSchema.Builder csvSchema =  CsvSchema.builder()
+      .setUseHeader(true)
+      .setColumnSeparator('\t')
+      .disableQuoteChar();
   private final ObjectWriter objectWriter;
 
   DwcCsvTable() {
@@ -39,10 +44,6 @@ public class DwcCsvTable {
   }
 
   void writeTableToFile(List<JsonObject> dwcTable, File file) {
-    var csvSchema = CsvSchema.builder()
-      .setUseHeader(true)
-      .setColumnSeparator('\t')
-      .disableQuoteChar();
     var headers = DwcCsvTable.extractHeaders(dwcTable);
     headers.stream().forEach(csvSchema::addColumn);
     try {
