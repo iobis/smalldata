@@ -29,25 +29,25 @@ public class DwcCsvTable {
     .configure(JsonGenerator.Feature.IGNORE_UNKNOWN, true)
     .writer();
 
- private final CsvSchema.Builder csvSchema =  CsvSchema.builder()
-      .setUseHeader(true)
-      .setColumnSeparator('\t')
-      .disableQuoteChar();
   private final ObjectWriter objectWriter;
 
   DwcCsvTable() {
     this(DEFAULT_OBJECT_WRITER);
   }
 
-  DwcCsvTable(ObjectWriter csvMapper) {
-    this.objectWriter = csvMapper;
+  DwcCsvTable(ObjectWriter objectWriter) {
+    this.objectWriter = objectWriter;
   }
 
   void writeTableToFile(List<JsonObject> dwcTable, File file) {
+    var csvSchemaBuilder = CsvSchema.builder()
+      .setUseHeader(true)
+      .setColumnSeparator('\t')
+      .disableQuoteChar();
     var headers = DwcCsvTable.extractHeaders(dwcTable);
-    headers.stream().forEach(csvSchema::addColumn);
+    headers.stream().forEach(csvSchemaBuilder::addColumn);
     try {
-      objectWriter.with(csvSchema.build())
+      objectWriter.with(csvSchemaBuilder.build())
         .writeValue(file, dwcTable.stream()
           .map(JsonObject::getMap)
           .collect(Collectors.toList()));
