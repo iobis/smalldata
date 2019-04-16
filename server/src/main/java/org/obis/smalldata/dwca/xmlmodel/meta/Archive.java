@@ -1,4 +1,4 @@
-package org.obis.smalldata.dwca.model;
+package org.obis.smalldata.dwca.xmlmodel.meta;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;

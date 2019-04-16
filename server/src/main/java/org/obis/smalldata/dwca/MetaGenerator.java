@@ -4,10 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.ser.ToXmlGenerator;
-import org.obis.smalldata.dwca.model.Archive;
-import org.obis.smalldata.dwca.model.Core;
-import org.obis.smalldata.dwca.model.Extension;
-import org.obis.smalldata.dwca.model.Field;
+import org.obis.smalldata.dwca.xmlmodel.meta.Archive;
+import org.obis.smalldata.dwca.xmlmodel.meta.Core;
+import org.obis.smalldata.dwca.xmlmodel.meta.Extension;
+import org.obis.smalldata.dwca.xmlmodel.meta.Field;
 import org.obis.util.NamespaceMapper;
 import org.pmw.tinylog.Logger;
 

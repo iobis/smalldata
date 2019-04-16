@@ -1,4 +1,4 @@
-package org.obis.smalldata.rss.model;
+package org.obis.smalldata.rss.xmlmodel;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
