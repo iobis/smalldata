@@ -15,9 +15,23 @@ import static org.pmw.tinylog.Logger.info;
 
 public class MetaGeneratorTest {
 
+  @Test
+  public void testSuccessFullMetaFile() throws IOException, URISyntaxException {
+    var pathToUrl = new ResourcePathToUrl("mockdata/dwca/ware_hosono-v1.5-csv-namespaced/");
+
+    var core = pathToUrl.uri("event.txt");
+    var extensions = List.of("emof.txt", "occurrence.txt").stream()
+      .map(pathToUrl::uri)
+      .collect(Collectors.toList());
+
+    var generator = new MetaGenerator();
+    var xmlFile = generator.generateXml(core, extensions);
+    info(xmlFile.get());
+  }
+
   @Value
   @AllArgsConstructor
-  static class ResourcePathToURL {
+  static class ResourcePathToUrl {
 
     private final String baseDir;
 
@@ -28,22 +42,5 @@ public class MetaGeneratorTest {
         return null;
       }
     }
-
-  }
-
-  @Test
-  public void testSuccessFullMetaFile() throws IOException, URISyntaxException {
-    var pathToURL = new ResourcePathToURL("mockdata/dwca/ware_hosono-v1.5-csv-namespaced/");
-
-    var core =  pathToURL.uri("event.txt");
-    var extensions =  List.of("emof.txt", "occurrence.txt").stream()
-      .map(pathToURL::uri)
-      .collect(Collectors.toList());
-
-
-    var generator = new MetaGenerator();
-    var xmlFile = generator.generateXml(core, extensions);
-    info(xmlFile.get());
-
   }
 }
