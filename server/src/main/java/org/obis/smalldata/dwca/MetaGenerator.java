@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.ser.ToXmlGenerator;
+import lombok.AllArgsConstructor;
+import lombok.Value;
 import org.obis.smalldata.dwca.xmlmodel.meta.Archive;
 import org.obis.smalldata.dwca.xmlmodel.meta.Core;
 import org.obis.smalldata.dwca.xmlmodel.meta.Extension;
@@ -41,7 +43,7 @@ class MetaGenerator {
     xmlMapper.setDefaultUseWrapper(false);
   }
 
-  Optional<File> generateXml(URI core, List<URI> extensions) {
+  Optional<File> generateXml(MetaFileConfig core, List<MetaFileConfig> extensions) {
     try {
       var metaXml = File.createTempFile("obis-iode", "meta.xml");
       var coreTable = coreXml(core).get();
@@ -51,13 +53,12 @@ class MetaGenerator {
         .collect(Collectors.toList());
 
       var archive = Archive.builder()
+        .metadata("eml.xml")
         .core(coreTable)
         .extensionList(extTables)
         .build();
 
-      var out = xmlMapper.writerWithDefaultPrettyPrinter().writeValueAsString(archive);
-      Logger.info(out);
-
+      xmlMapper.writerWithDefaultPrettyPrinter().writeValue(metaXml, archive);
       return Optional.of(metaXml);
     } catch (IOException e) {
       Logger.error("Cannot create xml file");
@@ -76,21 +77,30 @@ class MetaGenerator {
     }
   }
 
-  private Optional<Core> coreXml(URI uri) throws IOException {
-    return dwcTableXml(uri,
-      (fields, idField) -> Core.builder().itemList(fields).id(new Core.Id(idField)).build());
+  private Optional<Core> coreXml(MetaFileConfig metaConfig) {
+    return dwcTableXml(metaConfig.getUri(),
+      (fields, index) -> Core.builder()
+        .rowType(metaConfig.getRowType())
+        .location(metaConfig.getFiles())
+        .fieldList(fields)
+        .id(new Core.Id(index)).build());
   }
 
-  private Optional<Extension> extensionXml(URI uri) {
-    return dwcTableXml(uri,
-      (fields, idField) -> Extension.builder().itemList(fields).coreId(new Extension.CoreId(idField)).build());
+  private Optional<Extension> extensionXml(MetaFileConfig metaConfig) {
+    return dwcTableXml(metaConfig.getUri(),
+      (fields, index) -> Extension.builder()
+        .rowType(metaConfig.getRowType())
+        .location(metaConfig.getFiles())
+        .fieldList(fields)
+        .coreId(new Extension.CoreId(index))
+        .build());
   }
 
-  private <T> Optional<T> dwcTableXml(URI uri, BiFunction<List, Integer, T> builder) {
+  private <T> Optional<T> dwcTableXml(URI uri, BiFunction<List<Field>, Integer, T> builder) {
     try {
       var headers = Files.lines(Path.of(uri)).findFirst().get().split("\t");
-      List<Field> fields = xmlFields(headers);
-      int idField = idField(headers);
+      var fields = xmlFields(headers);
+      var idField = idField(headers);
 
       return Optional.of(builder.apply(fields, idField));
     } catch (IOException e) {
@@ -114,5 +124,13 @@ class MetaGenerator {
         .term(mapHeader(headers[idx]))
         .build())
       .collect(Collectors.toList());
+  }
+
+  @Value
+  @AllArgsConstructor
+  static class DwcTableConfig {
+    private final String rowType;
+    private final Integer index;
+    private final List<Field> fieldList;
   }
 }

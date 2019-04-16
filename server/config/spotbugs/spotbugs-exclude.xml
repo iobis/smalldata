@@ -17,6 +17,19 @@
         <Class name="org.obis.smalldata.rss.xmlmodel.Channel"/>
         <Field name="generator"/>
       </And>
+      <And>
+        <Class name="org.obis.smalldata.dwca.xmlmodel.meta.Archive"/>
+        <Field name="xmlns"/>
+      </And>
+      <And>
+        <Class name="org.obis.smalldata.dwca.xmlmodel.meta.DwcTable"/>
+        <Or>
+          <Field name="encoding"/>
+          <Field name="fieldsEnclosedBy"/>
+          <Field name="fieldsTerminatedBy"/>
+          <Field name="linesTerminatedBy"/>
+        </Or>
+      </And>
     </Or>
   </Match>
   <Match>
