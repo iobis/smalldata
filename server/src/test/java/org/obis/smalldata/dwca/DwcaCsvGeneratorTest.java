@@ -25,6 +25,7 @@ import java.util.concurrent.TimeoutException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.pmw.tinylog.Logger.info;
 
 public class DwcaCsvGeneratorTest {
 
@@ -82,7 +83,7 @@ public class DwcaCsvGeneratorTest {
 
   @AfterEach
   public void stop() {
-    Logger.info("shutdown mongo db");
+    info("shutdown mongo db");
     testDb.shutDown();
   }
 }
