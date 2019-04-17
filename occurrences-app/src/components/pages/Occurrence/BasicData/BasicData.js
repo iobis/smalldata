@@ -17,48 +17,28 @@ export default function BasicData() {
       </div>
       <div className="field">
         <label className="label">
-          Event date end <small>(optional: only in case of date range)</small>
+          Event date end
         </label>
         <div className="control">
           <input className="input" type="text" placeholder="Text input"/>
         </div>
+        <p className="help">optional: only in case of date range</p>
       </div>
       <div className="field">
         <label className="label">Occurrence status</label>
         <div className="control">
-          <label className="radio">
-            <input type="radio" name="occurrence-status"/>
-            absent
-          </label>
-          <label className="radio">
-            <input type="radio" name="occurrence-status"/>
-            present
-          </label>
+          <InputRadio text="absent" name="occurrence-status"/>
+          <InputRadio text="present" name="occurrence-status"/>
         </div>
       </div>
       <div className="field">
         <label className="label">Basis of record</label>
         <div className="control">
-          <label className="radio">
-            <input type="radio" name="basis"/>
-            human observation
-          </label>
-          <label className="radio">
-            <input type="radio" name="basis"/>
-            fossil specimen
-          </label>
-          <label className="radio">
-            <input type="radio" name="basis"/>
-            living specimen
-          </label>
-          <label className="radio">
-            <input type="radio" name="basis"/>
-            machine specimen
-          </label>
-          <label className="radio">
-            <input type="radio" name="basis"/>
-            preserved specimen
-          </label>
+          <InputRadio text="human observation" name="basis"/>
+          <InputRadio text="fossil specimen" name="basis"/>
+          <InputRadio text="living specimen" name="basis"/>
+          <InputRadio text="machine specimen" name="basis"/>
+          <InputRadio text="preserved specimen" name="basis"/>
         </div>
       </div>
       <div className="field">
@@ -67,44 +47,31 @@ export default function BasicData() {
           <small>(optional)</small>
         </label>
         <div className="control">
-          <label className="radio">
-            <input type="radio" name="sex"/>
-            male
-          </label>
-          <label className="radio">
-            <input type="radio" name="sex"/>
-            female
-          </label>
-          <label className="radio">
-            <input type="radio" name="sex"/>
-            hermaphrodite
-          </label>
+          <InputRadio text="male" name="sex"/>
+          <InputRadio text="female" name="sex"/>
+          <InputRadio text="hermaphrodite" name="sex"/>
         </div>
       </div>
       <div className="field">
         <label className="label">
-          Lifestage
-          <small>(optional)</small>
+          Lifestage <small>(optional)</small>
         </label>
         <div className="control">
-          <label className="radio">
-            <input type="radio" name="lifestage"/>
-            egg
-          </label>
-          <label className="radio">
-            <input type="radio" name="lifestage"/>
-            eft
-          </label>
-          <label className="radio">
-            <input type="radio" name="lifestage"/>
-            juvenile
-          </label>
-          <label className="radio">
-            <input type="radio" name="lifestage"/>
-            adult
-          </label>
+          <InputRadio text="egg" name="lifestage"/>
+          <InputRadio text="eft" name="lifestage"/>
+          <InputRadio text="juvenile" name="lifestage"/>
+          <InputRadio text="adult" name="lifestage"/>
         </div>
       </div>
     </div>
+  )
+}
+
+function InputRadio({ text, name }) {
+  return (
+    <label className="radio">
+      <input type="radio" name={name}/>
+      {text}
+    </label>
   )
 }
