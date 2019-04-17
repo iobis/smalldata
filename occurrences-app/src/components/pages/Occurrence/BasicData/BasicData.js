@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
+import bulmaCalendar from 'bulma-calendar'
 
 export default function BasicData() {
+  const [beginDate, setBeginDate] = useState(new Date())
+  const [endDate, setEndDate] = useState(null)
+
   return (
     <div className="basic-dataset section is-fluid">
       <div className="field">
@@ -11,16 +15,14 @@ export default function BasicData() {
       </div>
       <div className="field">
         <label className="label">Event date begin</label>
-        <div className="control">
-          <input className="input" type="text" placeholder="Text input"/>
-        </div>
+        <DatePicker onChange={setBeginDate} value={beginDate}/>
       </div>
       <div className="field">
         <label className="label">
           Event date end
         </label>
         <div className="control">
-          <input className="input" type="text" placeholder="Text input"/>
+          <DatePicker onChange={setEndDate} value={endDate}/>
         </div>
         <p className="help">optional: only in case of date range</p>
       </div>
@@ -74,4 +76,19 @@ function InputRadio({ text, name }) {
       {text}
     </label>
   )
+}
+
+function DatePicker({ onChange, value }) {
+  const datePickerEl = useRef()
+
+  useEffect(() => {
+    const calendar = bulmaCalendar.attach(datePickerEl.current, {
+      type:        'date',
+      displayMode: 'default',
+      startDate:   value !== null ? new Date(value) : null
+    })
+    calendar[0].on('select', (e) => onChange(e.data))
+  }, [])
+
+  return <input className="input" ref={datePickerEl} type="date" placeholder="Text input"/>
 }

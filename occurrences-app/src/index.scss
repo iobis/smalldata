@@ -1,6 +1,8 @@
 $section-padding: 0.5rem;
 
 @import '../../node_modules/bulma/bulma';
+@import '../../node_modules/bulma-calendar/src/sass/index';
+@import '../../node_modules/bulma-calendar/src/sass/timepicker';
 @import 'components/layout/Divider';
 @import 'components/pages/Occurrence/StepHeader';
 @import 'components/pages/Occurrence/SelectDataset/SelectDataset';
