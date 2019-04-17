@@ -45,8 +45,7 @@ export default function BasicData() {
       </div>
       <div className="field">
         <label className="label">
-          Sex
-          <small>(optional)</small>
+          Sex <small>(optional)</small>
         </label>
         <div className="control">
           <InputRadio text="male" name="sex"/>
@@ -69,12 +68,12 @@ export default function BasicData() {
   )
 }
 
-function InputRadio({ text, name }) {
+function InputRadio({ checked, text, name }) {
   return (
-    <label className="radio">
-      <input type="radio" name={name}/>
-      {text}
-    </label>
+    <>
+      <input className="is-checkradio" id={text} type="radio" name={name} checked={checked}/>
+      <label htmlFor={text}>{text}</label>
+    </>
   )
 }
 

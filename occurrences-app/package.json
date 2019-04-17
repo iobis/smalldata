@@ -28,6 +28,7 @@
     "@smalldata/dwca-lib": "1.0.0",
     "bulma": "0.7.4",
     "bulma-calendar": "6.0.4",
+    "bulma-checkradio": "2.1.0",
     "classnames": "2.2.6",
     "i18next": "15.0.4",
     "react": "16.8.6",
