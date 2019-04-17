@@ -13,18 +13,24 @@ export default function BasicData() {
           <input className="input" type="text" placeholder="Text input"/>
         </div>
       </div>
-      <div className="field">
-        <label className="label">Event date begin</label>
-        <DatePicker onChange={setBeginDate} value={beginDate}/>
-      </div>
-      <div className="field">
-        <label className="label">
-          Event date end
-        </label>
-        <div className="control">
-          <DatePicker onChange={setEndDate} value={endDate}/>
+      <div className="columns">
+        <div className="column is-one-third">
+          <div className="field">
+            <label className="label">Event begin date</label>
+            <DatePicker onChange={setBeginDate} value={beginDate}/>
+          </div>
         </div>
-        <p className="help">optional: only in case of date range</p>
+        <div className="column is-one-third">
+          <div className="field">
+            <label className="label">
+              Event end date
+            </label>
+            <div className="control">
+              <DatePicker onChange={setEndDate} value={endDate}/>
+            </div>
+            <p className="help">optional: only in case of date range</p>
+          </div>
+        </div>
       </div>
       <div className="field">
         <label className="label">Occurrence status</label>
