@@ -1,4 +1,4 @@
-package org.obis.smalldata.db;
+package org.obis.smalldata.dbcontroller;
 
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.mongo.MongoClient;
@@ -6,7 +6,7 @@ import lombok.Value;
 
 import java.util.function.Consumer;
 
-import static org.obis.smalldata.db.SecureRandomId.generateId;
+import static org.obis.smalldata.dbcontroller.SecureRandomId.generateId;
 
 @Value
 public class UniqueIdGenerator {

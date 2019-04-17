@@ -1,4 +1,4 @@
-package org.obis.smalldata.db;
+package org.obis.smalldata.dbcontroller;
 
 import com.fasterxml.uuid.Generators;
 import io.vertx.core.DeploymentOptions;
@@ -35,7 +35,7 @@ public class EmbeddedDbWithPathTest {
   @BeforeAll
   public static void beforeAll(Vertx vertx, VertxTestContext testContext) {
     var tmpDir = new File(System.getProperty("java.io.tmpdir") + File.separator + "obis-test");
-    dbPath = new File(tmpDir.getAbsolutePath() + File.separator + "db-" + Generators.timeBasedGenerator().generate());
+    dbPath = new File(tmpDir.getAbsolutePath() + File.separator + "dbcontroller-" + Generators.timeBasedGenerator().generate());
     vertx.deployVerticle(
       new EmbeddedDb(),
       new DeploymentOptions().setConfig(MongoConfigs.ofServer(BIND_IP, PORT, dbPath)),

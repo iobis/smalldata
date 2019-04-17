@@ -1,10 +1,10 @@
-package org.obis.smalldata.db;
+package org.obis.smalldata.dbcontroller;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.mongo.BulkOperation;
-import org.obis.smalldata.util.IoFile;
+import org.obis.util.file.IoFile;
 
 import java.io.IOException;
 import java.util.List;
@@ -21,7 +21,7 @@ public class BulkOperationUtil {
   }
 
   public static List<BulkOperation> createOperationsFromFile(String path) {
-    warn("reading file for db import {}", path);
+    warn("reading file for dbcontroller import {}", path);
     return createOperationsFromJson(IoFile.loadFromResources(path));
   }
 

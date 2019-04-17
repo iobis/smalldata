@@ -1,4 +1,4 @@
-package org.obis.smalldata.util;
+package org.obis.util.file;
 
 import java.io.IOException;
 import java.net.URISyntaxException;

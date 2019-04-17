@@ -1,10 +1,9 @@
-package org.obis.smalldata.db;
+package org.obis.smalldata.dbcontroller;
 
 import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.mongo.MongoClient;
-import io.vertx.junit5.Checkpoint;
 import io.vertx.junit5.Timeout;
 import io.vertx.junit5.VertxExtension;
 import io.vertx.junit5.VertxTestContext;
@@ -19,8 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.pmw.tinylog.Logger.info;
 
 @ExtendWith(VertxExtension.class)
-public class MockDataTest {
-
+public class DemoModeTest {
   private static final String BIND_IP = "localhost";
   private static final int PORT = 12345;
 
@@ -28,7 +26,7 @@ public class MockDataTest {
 
   @BeforeEach
   public void beforeEach(Vertx vertx, VertxTestContext testContext) {
-    vertx.sharedData().getLocalMap("settings").put("mode", "TEST");
+    vertx.sharedData().getLocalMap("settings").put("mode", "DEMO");
     vertx.deployVerticle(
       new EmbeddedDb(),
       new DeploymentOptions().setConfig(MongoConfigs.ofServer(BIND_IP, PORT)),
@@ -41,21 +39,17 @@ public class MockDataTest {
   }
 
   @Test
-  @DisplayName("read mock data from json and add to db")
+  @DisplayName("read default mock data")
   @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
-  public void bulkWrite(VertxTestContext testContext) {
-    var operations = BulkOperationUtil.createOperationsFromFile("mockdata/testusers.json");
-    Checkpoint checks = testContext.checkpoint(2);
-    client.bulkWrite("users", operations,
-      arClient -> {
-        client.find("users", new JsonObject(), ar -> {
-          assertEquals(ar.result().size(), 2);
-          checks.flag();
-        });
-        client.find("users", new JsonObject().put("lvl", 4), ar -> {
-          assertEquals(ar.result().size(), 1);
-          checks.flag();
-        });
+  void findData(VertxTestContext testContext) throws InterruptedException {
+    TimeUnit.MILLISECONDS.sleep(1000);
+    client.find(
+      Collections.DATASETS.dbName(),
+      new JsonObject().put("type", "event"),
+      ar -> {
+        assertEquals(1, ar.result().size());
+        testContext.completeNow();
       });
   }
+
 }

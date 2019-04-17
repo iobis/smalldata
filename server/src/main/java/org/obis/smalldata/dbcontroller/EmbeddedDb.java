@@ -1,4 +1,4 @@
-package org.obis.smalldata.db;
+package org.obis.smalldata.dbcontroller;
 
 import de.flapdoodle.embed.mongo.MongodExecutable;
 import de.flapdoodle.embed.mongo.MongodProcess;
@@ -30,7 +30,7 @@ public class EmbeddedDb extends AbstractVerticle {
 
   @Override
   public void start() throws IOException {
-    info("starting mongo db with config {}", config());
+    info("starting mongo dbcontroller with config {}", config());
     var bindIp = config().getString("bindIp", BIND_IP_DEFAULT);
     var port = config().getInteger("port", PORT_DEFAULT);
     var path = config().getString("path", "");
@@ -57,7 +57,7 @@ public class EmbeddedDb extends AbstractVerticle {
 
   @Override
   public void stop() {
-    info("shutdown mongo db");
+    info("shutdown mongo dbcontroller");
     if (this.process != null) {
       this.process.stop();
       this.executable.stop();

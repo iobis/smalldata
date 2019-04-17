@@ -1,9 +1,9 @@
-package org.obis.smalldata.db;
+package org.obis.smalldata.dbcontroller;
 
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.mongo.MongoClient;
-import org.obis.smalldata.util.IoFile;
+import org.obis.util.file.IoFile;
 
 import java.util.List;
 import java.util.Map;

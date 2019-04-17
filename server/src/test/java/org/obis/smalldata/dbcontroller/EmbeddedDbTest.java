@@ -1,4 +1,4 @@
-package org.obis.smalldata.db;
+package org.obis.smalldata.dbcontroller;
 
 import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Vertx;

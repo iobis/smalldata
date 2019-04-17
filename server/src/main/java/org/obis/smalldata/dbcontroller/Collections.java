@@ -1,4 +1,4 @@
-package org.obis.smalldata.db;
+package org.obis.smalldata.dbcontroller;
 
 public enum Collections {
 

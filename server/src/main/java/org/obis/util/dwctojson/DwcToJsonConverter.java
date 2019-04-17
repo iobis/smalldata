@@ -4,7 +4,7 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import lombok.Value;
 import org.apache.commons.io.FileUtils;
-import org.obis.smalldata.db.model.DataSetConfig;
+import org.obis.smalldata.dbcontroller.model.DataSetConfig;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,7 +17,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.stream.Collectors;
 
-import static org.obis.smalldata.db.SecureRandomId.generateId;
+import static org.obis.smalldata.dbcontroller.SecureRandomId.generateId;
 import static org.pmw.tinylog.Logger.error;
 
 public class DwcToJsonConverter {

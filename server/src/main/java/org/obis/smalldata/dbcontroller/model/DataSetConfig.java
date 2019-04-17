@@ -1,4 +1,4 @@
-package org.obis.smalldata.db.model;
+package org.obis.smalldata.dbcontroller.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
