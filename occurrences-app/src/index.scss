@@ -5,8 +5,9 @@ $section-padding: 0.5rem;
 @import '../../node_modules/bulma-calendar/src/sass/timepicker';
 @import '../../node_modules/bulma-checkradio/src/sass/index';
 @import 'components/layout/Divider';
-@import 'components/pages/Occurrence/StepHeader';
+@import 'components/pages/Occurrence/BasicData/BasicData';
 @import 'components/pages/Occurrence/SelectDataset/SelectDataset';
+@import 'components/pages/Occurrence/StepHeader';
 
 body {
   margin: 0;
