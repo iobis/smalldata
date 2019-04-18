@@ -104,7 +104,7 @@ function DatePicker({ onChange, value }) {
       displayMode: 'default',
       startDate:   value !== null ? new Date(value) : null
     })
-    calendar[0].on('select', (e) => onChange(e.data))
+    calendar[0].on('select', (e) => onChange(new Date(e.data.value())))
   }, [])
 
   return <input className="input" ref={datePickerEl} type="date" placeholder="Text input"/>
