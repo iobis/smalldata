@@ -8,4 +8,9 @@
       }
     }
   }
+  .event-begin-date {
+    .datetimepicker-clear-button {
+      display: none;
+    }
+  }
 }

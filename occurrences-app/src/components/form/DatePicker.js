@@ -7,14 +7,17 @@ export default function DatePicker({ onChange, value }) {
 
   useEffect(() => {
     const calendar = bulmaCalendar.attach(datePickerEl.current, {
-      type:        'date',
-      displayMode: 'default',
-      startDate:   value !== null ? new Date(value) : null
+      displayMode:        'default',
+      showFooter:         false,
+      showHeader:         false,
+      startDate:          value !== null ? new Date(value) : null,
+      toggleOnInputClick: true,
+      type:               'date'
     })
     calendar[0].on('select', (e) => onChange(new Date(e.data.value())))
   }, [])
 
-  return <input className="input" ref={datePickerEl} type="date" placeholder="Text input"/>
+  return <input className="input" ref={datePickerEl} type="date"/>
 }
 
 DatePicker.propTypes = {

@@ -32,7 +32,7 @@ exports[`SelectDataset renders correctly 1`] = `
     className="columns"
   >
     <div
-      className="column field is-one-quarter"
+      className="event-begin-date column field is-one-quarter"
     >
       <label
         className="label"
@@ -41,12 +41,11 @@ exports[`SelectDataset renders correctly 1`] = `
       </label>
       <input
         className="input"
-        placeholder="Text input"
         type="date"
       />
     </div>
     <div
-      className="column field is-one-quarter"
+      className="event-end-date column field is-one-quarter"
     >
       <label
         className="label"
@@ -58,7 +57,6 @@ exports[`SelectDataset renders correctly 1`] = `
       >
         <input
           className="input"
-          placeholder="Text input"
           type="date"
         />
       </div>

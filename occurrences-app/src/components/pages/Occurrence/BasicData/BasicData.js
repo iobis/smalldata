@@ -30,13 +30,13 @@ export default function BasicData({ onChange, basicData }) {
         </div>
       </div>
       <div className="columns">
-        <div className="column field is-one-quarter">
+        <div className="event-begin-date column field is-one-quarter">
           <label className="label">
             {t('occurrenceForm.basicData.eventBeginDate')}
           </label>
           <DatePicker onChange={(value) => updateField('beginDate', value)} value={beginDate}/>
         </div>
-        <div className="column field is-one-quarter">
+        <div className="event-end-date column field is-one-quarter">
           <label className="label">
             {t('occurrenceForm.basicData.eventEndDate')}
           </label>
