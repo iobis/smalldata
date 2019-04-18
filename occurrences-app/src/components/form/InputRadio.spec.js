@@ -1,6 +1,5 @@
 import InputRadio from './InputRadio'
 import React from 'react'
-import renderer from 'react-test-renderer'
 import { mount } from 'enzyme/build'
 
 describe('InputRadio', () => {
