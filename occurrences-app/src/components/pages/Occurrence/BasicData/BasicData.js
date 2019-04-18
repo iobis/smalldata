@@ -17,7 +17,7 @@ export default function BasicData({ onChange, basicData }) {
   return (
     <div className="basic-dataset section is-fluid">
       <div className="columns">
-        <div className="field is-half column">
+        <div className="field is-four-fifths column">
           <label className="label">{t('occurrenceForm.basicData.scientificName')}</label>
           <div className="control">
             <input
@@ -30,13 +30,13 @@ export default function BasicData({ onChange, basicData }) {
         </div>
       </div>
       <div className="columns">
-        <div className="event-begin-date column field is-one-quarter">
+        <div className="event-begin-date column field is-two-fifths">
           <label className="label">
             {t('occurrenceForm.basicData.eventBeginDate')}
           </label>
           <DatePicker onChange={(value) => updateField('beginDate', value)} value={beginDate}/>
         </div>
-        <div className="event-end-date column field is-one-quarter">
+        <div className="event-end-date column field is-two-fifths">
           <label className="label">
             {t('occurrenceForm.basicData.eventEndDate')}
           </label>
