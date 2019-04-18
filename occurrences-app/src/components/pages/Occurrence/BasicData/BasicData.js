@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import bulmaCalendar from 'bulma-calendar'
+import { useTranslation } from 'react-i18next'
 
 export default function BasicData() {
   const [beginDate, setBeginDate] = useState(new Date())
@@ -36,113 +37,52 @@ export default function BasicData() {
           </div>
         </div>
       </div>
-      <div className="field">
-        <label className="label">Occurrence status</label>
-        <div className="control">
+      <InputRadioGroup
+        name="occurrenceStatus"
+        onChange={setBasisOfRecord}
+        options={['absent', 'present']}
+        selectedValue={occurrenceStatus}
+        title="Occurrence status"/>
+      <InputRadioGroup
+        name="basisOfRecord"
+        onChange={setBasisOfRecord}
+        options={['humanObservation', 'fossilSpecimen', 'livingSpecimen', 'machineSpecimen', 'preservedSpecimen']}
+        selectedValue={basisOfRecord}
+        title="Basis of record"/>
+      <InputRadioGroup
+        name="sex"
+        onChange={setSex}
+        options={['male', 'female', 'hermaphrodite']}
+        selectedValue={sex}
+        title="Sex"/>
+      <InputRadioGroup
+        name="lifestage"
+        onChange={setLifestage}
+        options={['egg', 'eft', 'juvenile', 'adult']}
+        selectedValue={lifestage}
+        title="Lifestage"/>
+    </div>
+  )
+}
+
+function InputRadioGroup({ title, onChange, selectedValue, name, options }) {
+  const { t } = useTranslation()
+
+  return (
+    <div className="field">
+      <label className="label">
+        {title}
+      </label>
+      <div className="control">
+        {options.map(option => (
           <InputRadio
-            checked={occurrenceStatus === 'absent'}
-            name="occurrence-status"
-            onChange={setOccurrenceStatus}
-            text="absent"
-            value="absent"/>
-          <InputRadio
-            checked={occurrenceStatus === 'present'}
-            name="occurrence-status"
-            onChange={setOccurrenceStatus}
-            text="present"
-            value="present"/>
-        </div>
-      </div>
-      <div className="field">
-        <label className="label">Basis of record</label>
-        <div className="control">
-          <InputRadio
-            checked={basisOfRecord === 'humanObservation'}
-            name="basis"
-            onChange={setBasisOfRecord}
-            text="human observation"
-            value="humanObservation"/>
-          <InputRadio
-            checked={basisOfRecord === 'fossilSpecimen'}
-            text="fossil specimen"
-            name="basis"
-            onChange={setBasisOfRecord}
-            value="fossilSpecimen"/>
-          <InputRadio
-            checked={basisOfRecord === 'livingSpecimen'}
-            text="living specimen"
-            name="basis"
-            onChange={setBasisOfRecord}
-            value="livingSpecimen"/>
-          <InputRadio
-            checked={basisOfRecord === 'machineSpecimen'}
-            text="machine specimen"
-            name="basis"
-            onChange={setBasisOfRecord}
-            value="machineSpecimen"/>
-          <InputRadio
-            checked={basisOfRecord === 'preservedSpecimen'}
-            text="preserved specimen"
-            name="basis"
-            onChange={setBasisOfRecord}
-            value="preservedSpecimen"/>
-        </div>
-      </div>
-      <div className="field">
-        <label className="label">
-          Sex <small>(optional)</small>
-        </label>
-        <div className="control">
-          <InputRadio
-            checked={sex === 'male'}
-            text="male"
-            name="sex"
-            onChange={setSex}
-            value="male"/>
-          <InputRadio
-            checked={sex === 'female'}
-            text="female"
-            name="sex"
-            onChange={setSex}
-            value="female"/>
-          <InputRadio
-            checked={sex === 'hermaphrodite'}
-            text="hermaphrodite"
-            name="sex"
-            onChange={setSex}
-            value="hermaphrodite"/>
-        </div>
-      </div>
-      <div className="field">
-        <label className="label">
-          Lifestage <small>(optional)</small>
-        </label>
-        <div className="control">
-          <InputRadio
-            checked={lifestage === 'egg'}
-            text="egg"
-            name="lifestage"
-            onChange={setLifestage}
-            value="egg"/>
-          <InputRadio
-            checked={lifestage === 'eft'}
-            text="eft"
-            name="lifestage"
-            onChange={setLifestage}
-            value="eft"/>
-          <InputRadio
-            checked={lifestage === 'juvenile'}
-            text="juvenile"
-            name="lifestage"
-            onChange={setLifestage}
-            value="juvenile"/>
-          <InputRadio
-            checked={lifestage === 'adult'}
-            text="adult"
-            name="lifestage"
-            onChange={setLifestage}
-            value="adult"/>
-        </div>
+            key={option}
+            checked={selectedValue === option}
+            text={t('occurrenceForm.basicData.' + name + '.' + option)}
+            name={name}
+            onChange={onChange}
+            value={option}/>
+        ))}
       </div>
     </div>
   )
