@@ -36,7 +36,7 @@ export default {
           humanObservation:  'human observation',
           fossilSpecimen:    'fossil specimen',
           livingSpecimen:    'living specimen',
-          machineSpecimen:   'machine Specimen',
+          machineSpecimen:   'machine specimen',
           preservedSpecimen: 'preserved specimen'
         },
         sex:              {
