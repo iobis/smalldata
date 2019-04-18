@@ -1,11 +1,12 @@
-import bulmaCalendar from 'bulma-calendar'
 import CopyPreviousData from '../CopyPreviousData'
-import InputRadio from '../../../layout/InputRadio'
+import DatePicker from '../../../form/DatePicker'
+import InputRadioGroup from '../../../form/InputRadioGroup'
 import PropTypes from 'prop-types'
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
 import { useTranslation } from 'react-i18next'
 
 export default function BasicData({ onChange, basicData }) {
+  const { t } = useTranslation()
   const { basisOfRecord, beginDate, endDate, lifestage, occurrenceStatus, scientificName, sex } = basicData
 
   const updateField = (name, value) => {
@@ -17,100 +18,60 @@ export default function BasicData({ onChange, basicData }) {
     <div className="basic-dataset section is-fluid">
       <div className="columns">
         <div className="field is-half column">
-          <label className="label">Scientific name</label>
+          <label className="label">{t('occurrenceForm.basicData.scientificName')}</label>
           <div className="control">
             <input
               className="input"
               onChange={(value) => updateField('scientificName', value.target.value)}
               type="text"
-              placeholder="Text input"
+              placeholder={t('occurrenceForm.basicData.scientificName')}
               value={scientificName}/>
           </div>
         </div>
       </div>
       <div className="columns">
         <div className="column field is-one-quarter">
-          <label className="label">Event begin date</label>
+          <label className="label">
+            {t('occurrenceForm.basicData.eventBeginDate')}
+          </label>
           <DatePicker onChange={(value) => updateField('beginDate', value)} value={beginDate}/>
         </div>
         <div className="column field is-one-quarter">
           <label className="label">
-            Event end date
+            {t('occurrenceForm.basicData.eventEndDate')}
           </label>
           <div className="control">
             <DatePicker onChange={(value) => updateField('endDate', value)} value={endDate}/>
           </div>
-          <p className="help">optional: only in case of date range</p>
+          <p className="help">{t('occurrenceForm.basicData.eventEndDateHelp')}</p>
         </div>
       </div>
       <InputRadioGroup
-        name="occurrenceStatus"
+        name="occurrenceForm.basicData.occurrenceStatus"
         onChange={(value) => updateField('occurrenceStatus', value)}
         options={['absent', 'present']}
-        selectedValue={occurrenceStatus}
-        title="Occurrence status"/>
+        selectedValue={occurrenceStatus}/>
       <InputRadioGroup
-        name="basisOfRecord"
+        name="occurrenceForm.basicData.basisOfRecord"
         onChange={(value) => updateField('basisOfRecord', value)}
         options={['humanObservation', 'fossilSpecimen', 'livingSpecimen', 'machineSpecimen', 'preservedSpecimen']}
-        selectedValue={basisOfRecord}
-        title="Basis of record"/>
+        selectedValue={basisOfRecord}/>
       <InputRadioGroup
-        name="sex"
+        name="occurrenceForm.basicData.sex"
         onChange={(value) => updateField('sex', value)}
         options={['male', 'female', 'hermaphrodite', 'unspecified']}
-        selectedValue={sex}
-        title="Sex"/>
+        selectedValue={sex}/>
       <InputRadioGroup
-        name="lifestage"
+        name="occurrenceForm.basicData.lifestage"
         onChange={(value) => updateField('lifestage', value)}
         options={['egg', 'eft', 'juvenile', 'adult', 'unspecified']}
-        selectedValue={lifestage}
-        title="Lifestage"/>
+        selectedValue={lifestage}/>
       <CopyPreviousData/>
     </div>
   )
 }
 
-function InputRadioGroup({ title, onChange, selectedValue, name, options }) {
-  const { t } = useTranslation()
-
-  return (
-    <div className="field">
-      <label className="label">
-        {title}
-      </label>
-      <div className="control">
-        {options.map(option => (
-          <InputRadio
-            key={option}
-            checked={selectedValue === option}
-            text={t('occurrenceForm.basicData.' + name + '.' + option)}
-            name={name}
-            onChange={onChange}
-            value={option}/>
-        ))}
-      </div>
-    </div>
-  )
-}
-
-function DatePicker({ onChange, value }) {
-  const datePickerEl = useRef()
-
-  useEffect(() => {
-    const calendar = bulmaCalendar.attach(datePickerEl.current, {
-      type:        'date',
-      displayMode: 'default',
-      startDate:   value !== null ? new Date(value) : null
-    })
-    calendar[0].on('select', (e) => onChange(new Date(e.data.value())))
-  }, [])
-
-  return <input className="input" ref={datePickerEl} type="date" placeholder="Text input"/>
-}
-
-DatePicker.propTypes = {
-  onChange: PropTypes.func.isRequired,
-  value:    PropTypes.instanceOf(Date)
+BasicData.propTypes = {
+  onChange:  PropTypes.func.isRequired,
+  basicData: PropTypes.object.isRequired
 }

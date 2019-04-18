@@ -1,4 +1,4 @@
-import InputRadio from '../../../layout/InputRadio'
+import InputRadio from '../../../form/InputRadio'
 import PropTypes from 'prop-types'
 import React from 'react'
 
