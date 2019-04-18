@@ -62,6 +62,7 @@ dependencies {
   testImplementation "com.fasterxml.uuid:java-uuid-generator:3.1.5"
   testImplementation "io.vertx:vertx-junit5:$vertxVersion"
   testImplementation "org.assertj:assertj-core:3.11.1"
+  testImplementation "org.xmlunit:xmlunit-core:2.6.2"
 
   testRuntime "org.junit.jupiter:junit-jupiter-engine:$junitJupiterEngineVersion"
 }

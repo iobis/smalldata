@@ -44,7 +44,7 @@ public class MockDataTest {
   @DisplayName("read mock data from json and add to db")
   @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
   public void bulkWrite(VertxTestContext testContext) {
-    var operations = BulkOperationUtil.createOperationsFromFile("mockdata/testusers.json");
+    var operations = BulkOperationUtil.createOperationsFromFile("testdata/testusers.json");
     Checkpoint checks = testContext.checkpoint(2);
     client.bulkWrite("users", operations,
       arClient -> {

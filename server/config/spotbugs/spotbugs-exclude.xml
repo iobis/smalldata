@@ -2,6 +2,16 @@
 
 <FindBugsFilter>
   <Match>
+    <Bug pattern="EI_EXPOSE_REP">
+      <Class name="org.obis.smalldata.dwca.xmlmodel.eml.Dataset" />
+    </Bug>
+  </Match>
+  <Match>
+    <Bug pattern="EI_EXPOSE_REP2">
+      <Class name="org.obis.smalldata.dwca.xmlmodel.eml.Dataset" />
+    </Bug>
+  </Match>
+  <Match>
     <Bug pattern="SS_SHOULD_BE_STATIC"/>
     <Or>
       <And>
@@ -16,6 +26,19 @@
       <And>
         <Class name="org.obis.smalldata.rss.model.Channel"/>
         <Field name="generator"/>
+      </And>
+      <And>
+        <Class name="Eml"/>
+        <Or>
+          <Field name="xmlnsEml"/>
+          <Field name="xmlnsDc"/>
+          <Field name="xmlnsXsi"/>
+          <Field name="xsiSchemaLocation"/>
+          <Field name="packageId"/>
+          <Field name="system"/>
+          <Field name="scope"/>
+          <Field name="lang"/>
+        </Or>
       </And>
     </Or>
   </Match>
