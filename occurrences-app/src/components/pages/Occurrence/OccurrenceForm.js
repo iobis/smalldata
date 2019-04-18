@@ -11,6 +11,15 @@ export default function OccurrenceForm() {
   const datasets = getDatasetMock()
   const { t } = useTranslation()
   const [selectedDataset, setSelectedDataset] = useState(datasets[0])
+  const [selectedBasicData, setSelectedBasicData] = useState({
+    basisOfRecord:    null,
+    beginDate:        new Date(),
+    endDate:          null,
+    lifestage:        null,
+    occurrenceStatus: null,
+    scientificName:   '',
+    sex:              null
+  })
   const [activeStepIndex, setActiveStepIndex] = useState(0)
 
   const steps = [{
@@ -24,10 +33,12 @@ export default function OccurrenceForm() {
                        onChange={(dataset) => setSelectedDataset(dataset)}/>
   }, {
     dataDescription: 'Given Values',
-    selectedData:    'Abra alba 2019-02-02',
+    selectedData:    selectedBasicData.scientificName + ' ' + selectedBasicData.beginDate,
     stepDescription: 'Mandatory observation information',
     stepTitle:       'Basic Data',
-    children:        <BasicData/>
+    children:        <BasicData
+                       onChange={(basicData) => setSelectedBasicData(basicData)}
+                       basicData={selectedBasicData}/>
   }, {
     dataDescription: 'Main Location',
     selectedData:    'North Sea',

@@ -1,15 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react'
+import PropTypes from 'prop-types'
 import bulmaCalendar from 'bulma-calendar'
 import { useTranslation } from 'react-i18next'
 import CopyPreviousData from '../CopyPreviousData'
 
-export default function BasicData() {
-  const [beginDate, setBeginDate] = useState(new Date())
-  const [endDate, setEndDate] = useState(null)
-  const [occurrenceStatus, setOccurrenceStatus] = useState(null)
-  const [basisOfRecord, setBasisOfRecord] = useState(null)
-  const [sex, setSex] = useState(null)
-  const [lifestage, setLifestage] = useState(null)
+export default function BasicData({ onChange, basicData }) {
+  const { basisOfRecord, beginDate, endDate, lifestage, occurrenceStatus, scientificName, sex } = basicData
+
+  const updateField = (name, value) => {
+    const newSelection = { ...basicData, [name]: value }
+    onChange(newSelection)
+  }
 
   return (
     <div className="basic-dataset section is-fluid">
@@ -17,46 +18,51 @@ export default function BasicData() {
         <div className="field is-half column">
           <label className="label">Scientific name</label>
           <div className="control">
-            <input className="input" type="text" placeholder="Text input"/>
+            <input
+              className="input"
+              onChange={(value) => updateField('scientificName', value.target.value)}
+              type="text"
+              placeholder="Text input"
+              value={scientificName}/>
           </div>
         </div>
       </div>
       <div className="columns">
         <div className="column field is-one-quarter">
           <label className="label">Event begin date</label>
-          <DatePicker onChange={setBeginDate} value={beginDate}/>
+          <DatePicker onChange={(value) => updateField('beginDate', value)} value={beginDate}/>
         </div>
         <div className="column field is-one-quarter">
           <label className="label">
             Event end date
           </label>
           <div className="control">
-            <DatePicker onChange={setEndDate} value={endDate}/>
+            <DatePicker onChange={(value) => updateField('endDate', value)} value={endDate}/>
           </div>
           <p className="help">optional: only in case of date range</p>
         </div>
       </div>
       <InputRadioGroup
         name="occurrenceStatus"
-        onChange={setOccurrenceStatus}
+        onChange={(value) => updateField('occurrenceStatus', value)}
         options={['absent', 'present']}
         selectedValue={occurrenceStatus}
         title="Occurrence status"/>
       <InputRadioGroup
         name="basisOfRecord"
-        onChange={setBasisOfRecord}
+        onChange={(value) => updateField('basisOfRecord', value)}
         options={['humanObservation', 'fossilSpecimen', 'livingSpecimen', 'machineSpecimen', 'preservedSpecimen']}
         selectedValue={basisOfRecord}
         title="Basis of record"/>
       <InputRadioGroup
         name="sex"
-        onChange={setSex}
+        onChange={(value) => updateField('sex', value)}
         options={['male', 'female', 'hermaphrodite', 'unspecified']}
         selectedValue={sex}
         title="Sex"/>
       <InputRadioGroup
         name="lifestage"
-        onChange={setLifestage}
+        onChange={(value) => updateField('lifestage', value)}
         options={['egg', 'eft', 'juvenile', 'adult', 'unspecified']}
         selectedValue={lifestage}
         title="Lifestage"/>
@@ -98,11 +104,19 @@ function InputRadio({ checked, text, name, onChange, value }) {
         type="radio"
         name={name}
         checked={checked}
-        onClick={(e) => onChange(e.target.value)}
+        onChange={(e) => onChange(e.target.value)}
         value={value}/>
       <label htmlFor={id}>{text}</label>
     </>
   )
+}
+
+InputRadio.propTypes = {
+  checked:  PropTypes.bool.isRequired,
+  name:     PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  text:     PropTypes.string.isRequired,
+  value:    PropTypes.string.isRequired
 }
 
 function DatePicker({ onChange, value }) {
@@ -118,4 +132,9 @@ function DatePicker({ onChange, value }) {
   }, [])
 
   return <input className="input" ref={datePickerEl} type="date" placeholder="Text input"/>
+}
+
+DatePicker.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  value:    PropTypes.instanceOf(Date)
 }
