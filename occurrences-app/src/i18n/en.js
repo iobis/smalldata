@@ -36,13 +36,15 @@ export default {
         sex:              {
           male:          'male',
           female:        'female',
-          hermaphrodite: 'hermaphrodite'
+          hermaphrodite: 'hermaphrodite',
+          unspecified:   'unspecified'
         },
         lifestage:        {
-          egg:      'egg',
-          eft:      'eft',
-          juvenile: 'juvenile',
-          adult:    'adult'
+          egg:         'egg',
+          eft:         'eft',
+          juvenile:    'juvenile',
+          adult:       'adult',
+          unspecified: 'unspecified'
         }
       }
     },

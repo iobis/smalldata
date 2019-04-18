@@ -52,13 +52,13 @@ export default function BasicData() {
       <InputRadioGroup
         name="sex"
         onChange={setSex}
-        options={['male', 'female', 'hermaphrodite']}
+        options={['male', 'female', 'hermaphrodite', 'unspecified']}
         selectedValue={sex}
         title="Sex"/>
       <InputRadioGroup
         name="lifestage"
         onChange={setLifestage}
-        options={['egg', 'eft', 'juvenile', 'adult']}
+        options={['egg', 'eft', 'juvenile', 'adult', 'unspecified']}
         selectedValue={lifestage}
         title="Lifestage"/>
     </div>
@@ -89,17 +89,18 @@ function InputRadioGroup({ title, onChange, selectedValue, name, options }) {
 }
 
 function InputRadio({ checked, text, name, onChange, value }) {
+  const id = name + '-' + value
   return (
     <>
       <input
         className="is-checkradio"
-        id={text}
+        id={id}
         type="radio"
         name={name}
         checked={checked}
         onClick={(e) => onChange(e.target.value)}
         value={value}/>
-      <label htmlFor={text}>{text}</label>
+      <label htmlFor={id}>{text}</label>
     </>
   )
 }
