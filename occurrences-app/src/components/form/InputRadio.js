@@ -6,7 +6,7 @@ export default function InputRadio({ checked, text = '', name, onChange, value }
   return (
     <>
       <input
-        className="is-checkradio"
+        className="input-radio is-checkradio"
         id={id}
         type="radio"
         name={name}
