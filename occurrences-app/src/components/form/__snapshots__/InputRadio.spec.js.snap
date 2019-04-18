@@ -10,7 +10,7 @@ exports[`InputRadio renders correctly 1`] = `
 >
   <input
     checked={false}
-    className="is-checkradio"
+    className="input-radio is-checkradio"
     id="name-value"
     name="name"
     onChange={[Function]}

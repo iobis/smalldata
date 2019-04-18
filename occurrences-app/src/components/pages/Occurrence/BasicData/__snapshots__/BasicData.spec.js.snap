@@ -8,7 +8,7 @@ exports[`SelectDataset renders correctly 1`] = `
     className="columns"
   >
     <div
-      className="field is-half column"
+      className="field is-four-fifths column"
     >
       <label
         className="label"
@@ -32,7 +32,7 @@ exports[`SelectDataset renders correctly 1`] = `
     className="columns"
   >
     <div
-      className="event-begin-date column field is-one-quarter"
+      className="event-begin-date column field is-two-fifths"
     >
       <label
         className="label"
@@ -45,7 +45,7 @@ exports[`SelectDataset renders correctly 1`] = `
       />
     </div>
     <div
-      className="event-end-date column field is-one-quarter"
+      className="event-end-date column field is-two-fifths"
     >
       <label
         className="label"

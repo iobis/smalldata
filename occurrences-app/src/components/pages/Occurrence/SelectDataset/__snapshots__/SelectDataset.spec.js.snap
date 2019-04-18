@@ -14,7 +14,7 @@ exports[`SelectDataset renders correctly 1`] = `
         <td>
           <input
             checked={true}
-            className="is-checkradio"
+            className="input-radio is-checkradio"
             id="dataset-0"
             name="dataset"
             onChange={[Function]}
@@ -37,7 +37,7 @@ exports[`SelectDataset renders correctly 1`] = `
         <td>
           <input
             checked={false}
-            className="is-checkradio"
+            className="input-radio is-checkradio"
             id="dataset-1"
             name="dataset"
             onChange={[Function]}
@@ -60,7 +60,7 @@ exports[`SelectDataset renders correctly 1`] = `
         <td>
           <input
             checked={false}
-            className="is-checkradio"
+            className="input-radio is-checkradio"
             id="dataset-2"
             name="dataset"
             onChange={[Function]}
@@ -83,7 +83,7 @@ exports[`SelectDataset renders correctly 1`] = `
         <td>
           <input
             checked={false}
-            className="is-checkradio"
+            className="input-radio is-checkradio"
             id="dataset-3"
             name="dataset"
             onChange={[Function]}
@@ -106,7 +106,7 @@ exports[`SelectDataset renders correctly 1`] = `
         <td>
           <input
             checked={false}
-            className="is-checkradio"
+            className="input-radio is-checkradio"
             id="dataset-4"
             name="dataset"
             onChange={[Function]}
@@ -129,7 +129,7 @@ exports[`SelectDataset renders correctly 1`] = `
         <td>
           <input
             checked={false}
-            className="is-checkradio"
+            className="input-radio is-checkradio"
             id="dataset-5"
             name="dataset"
             onChange={[Function]}
