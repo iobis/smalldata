@@ -8,37 +8,37 @@
 <dataset>
   <alternateIdentifier>http://ipt.vliz.be/eurobis/resource?r=benthic_data_sevastopol</alternateIdentifier>
   <title xml:lang="eng">Benthic data from Sevastopol (Black Sea)</title>
-      <creator>
+  <creator>
     <individualName>
-        <givenName>Christos</givenName>
+      <givenName>Christos</givenName>
       <surName>Arvanitidis</surName>
     </individualName>
     <organizationName>Hellenic Centre for Marine Research (HCMR)</organizationName>
     <address>
-        <country>GR</country>
+      <country>GR</country>
     </address>
     <electronicMailAddress>arvanitidis@her.hcmr.gr</electronicMailAddress>
-      </creator>
-      <creator>
+  </creator>
+  <creator>
     <organizationName>National Academy of Sciences of Ukraine Institute of Biology of the Southern Seas (NASU-IBSS)</organizationName>
     <address>
-        <country>UA</country>
+      <country>UA</country>
     </address>
-      </creator>
-      <creator>
+  </creator>
+  <creator>
     <individualName>
-        <givenName>Alexei</givenName>
+      <givenName>Alexei</givenName>
       <surName>Petrov</surName>
     </individualName>
     <organizationName>National Academy of Sciences of Ukraine Institute of Biology of the Southern Seas (NASU-IBSS)</organizationName>
     <address>
-        <country>UA</country>
+      <country>UA</country>
     </address>
     <electronicMailAddress>alexpet@ibss.iuf.net</electronicMailAddress>
-          <userId directory="http://www.researcherid.com/rid/">F-7084-2016</userId>
-          <userId directory="http://orcid.org/">0000-0002-0137-486X</userId>
-      </creator>
-      <metadataProvider>
+    <userId directory="http://www.researcherid.com/rid/">F-7084-2016</userId>
+    <userId directory="http://orcid.org/">0000-0002-0137-486X</userId>
+  </creator>
+  <metadataProvider>
     <individualName>
       <surName>EurOBIS Data Management Team</surName>
     </individualName>
