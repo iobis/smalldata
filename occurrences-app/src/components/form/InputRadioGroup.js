@@ -7,7 +7,7 @@ export default function InputRadioGroup({ onChange, selectedValue, name, options
   const { t } = useTranslation()
 
   return (
-    <div className="field">
+    <div className="input-radio-group field">
       <label className="label">
         {t(name + '.title')}
       </label>
