@@ -2,10 +2,9 @@ package org.obis.smalldata.dwca;
 
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import lombok.RequiredArgsConstructor;
-import lombok.Value;
 import org.obis.smalldata.util.IoFile;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -20,16 +19,21 @@ class DwcaZipGenerator {
   Optional<Path> generate(JsonArray dwcaRecords, JsonObject dataset) {
     try {
       var tempDirectory = Files.createTempDirectory("iobis-dwca");
-      var zipFile = Files.createTempFile(tempDirectory, "dwca", ".zip");
-			var fos = Files.newOutputStream(zipFile);
-			var zos = new ZipOutputStream(fos);
-      var fileAdder = new FileAdder(zos);
       var files = Set.of(Files.createTempFile(tempDirectory,"eml", ".xml"),
         Files.createTempFile(tempDirectory, "meta", ".xml"));
+
+      var zipFile = Files.createTempFile(tempDirectory, "dwca", ".zip");
+      var fileAdder = new FileAdder(zipFile);
+      files.stream().forEach(fileAdder::add);
+      fileAdder.close();
       files.stream()
-        .forEach(fileAdder::add);
-      zos.close();
-      fos.close();
+        .forEach(f -> {
+          try {
+            Files.delete(f);
+          } catch (IOException e) {
+            error(e.getMessage());
+          }
+        });
       return Optional.of(zipFile);
     } catch (IOException e) {
       error(e.getMessage());
@@ -37,17 +41,26 @@ class DwcaZipGenerator {
     }
   }
 
-  @Value
-  @RequiredArgsConstructor
   static class FileAdder {
-    private final ZipOutputStream fos;
+    private final ZipOutputStream zos;
+    private final FileOutputStream fos;
+
+    FileAdder(Path zipFile) throws IOException {
+      fos = (FileOutputStream) Files.newOutputStream(zipFile);
+      zos = new ZipOutputStream(fos);
+    }
 
     void add(Path fileName) {
       try {
-        IoFile.addToZipFile(fileName, fos);
+        IoFile.addToZipFile(fileName, zos);
       } catch (IOException e) {
         error(e.getMessage());
       }
+    }
+
+    void close() throws IOException {
+      zos.close();
+      fos.close();
     }
   }
 }
