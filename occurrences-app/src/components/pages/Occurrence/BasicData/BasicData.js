@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import bulmaCalendar from 'bulma-calendar'
 import { useTranslation } from 'react-i18next'
+import CopyPreviousData from '../CopyPreviousData'
 
 export default function BasicData() {
   const [beginDate, setBeginDate] = useState(new Date())
@@ -12,20 +13,22 @@ export default function BasicData() {
 
   return (
     <div className="basic-dataset section is-fluid">
-      <div className="field">
-        <label className="label">Scientific name</label>
-        <div className="control">
-          <input className="input" type="text" placeholder="Text input"/>
+      <div className="columns">
+        <div className="field is-half column">
+          <label className="label">Scientific name</label>
+          <div className="control">
+            <input className="input" type="text" placeholder="Text input"/>
+          </div>
         </div>
       </div>
       <div className="columns">
-        <div className="column is-one-third">
+        <div className="column is-one-quarter">
           <div className="field">
             <label className="label">Event begin date</label>
             <DatePicker onChange={setBeginDate} value={beginDate}/>
           </div>
         </div>
-        <div className="column is-one-third">
+        <div className="column is-one-quarter">
           <div className="field">
             <label className="label">
               Event end date
@@ -61,6 +64,7 @@ export default function BasicData() {
         options={['egg', 'eft', 'juvenile', 'adult', 'unspecified']}
         selectedValue={lifestage}
         title="Lifestage"/>
+      <CopyPreviousData/>
     </div>
   )
 }
