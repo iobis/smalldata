@@ -22,22 +22,18 @@ export default function BasicData() {
         </div>
       </div>
       <div className="columns">
-        <div className="column is-one-quarter">
-          <div className="field">
-            <label className="label">Event begin date</label>
-            <DatePicker onChange={setBeginDate} value={beginDate}/>
-          </div>
+        <div className="column field is-one-quarter">
+          <label className="label">Event begin date</label>
+          <DatePicker onChange={setBeginDate} value={beginDate}/>
         </div>
-        <div className="column is-one-quarter">
-          <div className="field">
-            <label className="label">
-              Event end date
-            </label>
-            <div className="control">
-              <DatePicker onChange={setEndDate} value={endDate}/>
-            </div>
-            <p className="help">optional: only in case of date range</p>
+        <div className="column field is-one-quarter">
+          <label className="label">
+            Event end date
+          </label>
+          <div className="control">
+            <DatePicker onChange={setEndDate} value={endDate}/>
           </div>
+          <p className="help">optional: only in case of date range</p>
         </div>
       </div>
       <InputRadioGroup
