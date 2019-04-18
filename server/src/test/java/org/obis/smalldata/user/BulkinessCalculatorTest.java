@@ -1,4 +1,4 @@
-package org.obis.smalldata.dataset;
+package org.obis.smalldata.user;
 
 import org.junit.jupiter.api.Test;
 

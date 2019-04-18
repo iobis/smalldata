@@ -1,4 +1,4 @@
-package org.obis.smalldata.dataset;
+package org.obis.smalldata.user;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Future;
@@ -6,7 +6,7 @@ import io.vertx.core.json.JsonObject;
 
 import java.time.Instant;
 
-public class Dataset extends AbstractVerticle {
+public class User extends AbstractVerticle {
 
   @Override
   public void start(Future<Void> startFuture) {
