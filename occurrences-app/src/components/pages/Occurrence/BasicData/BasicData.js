@@ -39,7 +39,7 @@ export default function BasicData() {
       </div>
       <InputRadioGroup
         name="occurrenceStatus"
-        onChange={setBasisOfRecord}
+        onChange={setOccurrenceStatus}
         options={['absent', 'present']}
         selectedValue={occurrenceStatus}
         title="Occurrence status"/>
