@@ -13,7 +13,7 @@ exports[`SelectDataset renders correctly 1`] = `
       <label
         className="label"
       >
-        Scientific name
+        occurrenceForm.basicData.scientificName
       </label>
       <div
         className="control"
@@ -21,7 +21,7 @@ exports[`SelectDataset renders correctly 1`] = `
         <input
           className="input"
           onChange={[Function]}
-          placeholder="Text input"
+          placeholder="occurrenceForm.basicData.scientificName"
           type="text"
           value="scientific name"
         />
@@ -37,7 +37,7 @@ exports[`SelectDataset renders correctly 1`] = `
       <label
         className="label"
       >
-        Event begin date
+        occurrenceForm.basicData.eventBeginDate
       </label>
       <input
         className="input"
@@ -51,7 +51,7 @@ exports[`SelectDataset renders correctly 1`] = `
       <label
         className="label"
       >
-        Event end date
+        occurrenceForm.basicData.eventEndDate
       </label>
       <div
         className="control"
@@ -65,7 +65,7 @@ exports[`SelectDataset renders correctly 1`] = `
       <p
         className="help"
       >
-        optional: only in case of date range
+        occurrenceForm.basicData.eventEndDateHelp
       </p>
     </div>
   </div>
@@ -75,7 +75,7 @@ exports[`SelectDataset renders correctly 1`] = `
     <label
       className="label"
     >
-      Occurrence status
+      occurrenceForm.basicData.occurrenceStatus.title
     </label>
     <div
       className="control"
@@ -116,7 +116,7 @@ exports[`SelectDataset renders correctly 1`] = `
     <label
       className="label"
     >
-      Basis of record
+      occurrenceForm.basicData.basisOfRecord.title
     </label>
     <div
       className="control"
@@ -199,7 +199,7 @@ exports[`SelectDataset renders correctly 1`] = `
     <label
       className="label"
     >
-      Sex
+      occurrenceForm.basicData.sex.title
     </label>
     <div
       className="control"
@@ -268,7 +268,7 @@ exports[`SelectDataset renders correctly 1`] = `
     <label
       className="label"
     >
-      Lifestage
+      occurrenceForm.basicData.lifestage.title
     </label>
     <div
       className="control"
