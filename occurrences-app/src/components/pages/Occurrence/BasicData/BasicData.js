@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react'
-import PropTypes from 'prop-types'
 import bulmaCalendar from 'bulma-calendar'
-import { useTranslation } from 'react-i18next'
 import CopyPreviousData from '../CopyPreviousData'
+import InputRadio from '../../../layout/InputRadio'
+import PropTypes from 'prop-types'
+import React, { useEffect, useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export default function BasicData({ onChange, basicData }) {
   const { basisOfRecord, beginDate, endDate, lifestage, occurrenceStatus, scientificName, sex } = basicData
@@ -92,31 +93,6 @@ function InputRadioGroup({ title, onChange, selectedValue, name, options }) {
       </div>
     </div>
   )
-}
-
-function InputRadio({ checked, text, name, onChange, value }) {
-  const id = name + '-' + value
-  return (
-    <>
-      <input
-        className="is-checkradio"
-        id={id}
-        type="radio"
-        name={name}
-        checked={checked}
-        onChange={(e) => onChange(e.target.value)}
-        value={value}/>
-      <label htmlFor={id}>{text}</label>
-    </>
-  )
-}
-
-InputRadio.propTypes = {
-  checked:  PropTypes.bool.isRequired,
-  name:     PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  text:     PropTypes.string.isRequired,
-  value:    PropTypes.string.isRequired
 }
 
 function DatePicker({ onChange, value }) {
