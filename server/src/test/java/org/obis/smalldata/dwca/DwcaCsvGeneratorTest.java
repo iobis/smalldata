@@ -25,6 +25,7 @@ import java.util.concurrent.TimeoutException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.pmw.tinylog.Logger.error;
 import static org.pmw.tinylog.Logger.info;
 import static org.pmw.tinylog.Logger.warn;
 
@@ -75,11 +76,11 @@ public class DwcaCsvGeneratorTest {
             warn("could not delete {}", generatedFile.getName());
           }
         } catch (IOException e) {
-          Logger.error(Throwables.getStackTraceAsString(e));
+          error(Throwables.getStackTraceAsString(e));
         }
       });
     } catch (InterruptedException | ExecutionException | TimeoutException e) {
-      Logger.error(Throwables.getStackTraceAsString(e));
+      error(Throwables.getStackTraceAsString(e));
     }
   }
 
