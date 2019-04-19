@@ -1,0 +1,22 @@
+.basic-dataset {
+  margin-bottom: 1.25rem;
+
+  .field {
+    .label {
+      small {
+        font-size: 0.75em;
+        font-style: italic;
+      }
+    }
+  }
+
+  .event-begin-date {
+    .datetimepicker-clear-button {
+      display: none;
+    }
+  }
+
+  .input-radio-group {
+    margin-right: 180px;
+  }
+}

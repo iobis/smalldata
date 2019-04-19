@@ -1,4 +1,8 @@
 .select-dataset {
   padding-right: 1rem;
   padding-left: 1rem;
+
+  .is-checkradio + label {
+    padding-left: 0;
+  }
 }

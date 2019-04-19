@@ -45,7 +45,7 @@ public class DemoModeTest {
     TimeUnit.MILLISECONDS.sleep(1000);
     client.find(
       Collections.DATASETS.dbName(),
-      new JsonObject().put("type", "event"),
+      new JsonObject().put("meta.type", "event"),
       ar -> {
         assertEquals(1, ar.result().size());
         testContext.completeNow();

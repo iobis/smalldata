@@ -1,8 +1,10 @@
 import ActiveStepHeader from './ActiveStepHeader'
+import BasicData from './BasicData/BasicData'
 import ConfirmedStepHeader from './ConfirmedStepHeader'
 import NotConfirmedStepHeader from './NotConfirmedStepHeader'
 import React, { useState } from 'react'
 import SelectDataset from './SelectDataset/SelectDataset'
+import { format } from 'date-fns'
 import { getDatasetMock } from '../../../clients/server'
 import { useTranslation } from 'react-i18next'
 
@@ -10,7 +12,22 @@ export default function OccurrenceForm() {
   const datasets = getDatasetMock()
   const { t } = useTranslation()
   const [selectedDataset, setSelectedDataset] = useState(datasets[0])
+  const [basicData, setBasicData] = useState({
+    basisOfRecord:    null,
+    beginDate:        new Date(),
+    endDate:          null,
+    lifestage:        null,
+    occurrenceStatus: null,
+    scientificName:   '',
+    sex:              null
+  })
   const [activeStepIndex, setActiveStepIndex] = useState(0)
+  const basicDataLabel =
+    [
+      basicData.scientificName,
+      format(basicData.beginDate, 'D MMMM YYYY'),
+      basicData.endDate ? ' - ' + format(basicData.endDate, 'D MMMM YYYY') : ''
+    ].join(' ')
 
   const steps = [{
     dataDescription: t('occurrenceForm.selectDataset.dataDescription'),
@@ -23,10 +40,12 @@ export default function OccurrenceForm() {
                        onChange={(dataset) => setSelectedDataset(dataset)}/>
   }, {
     dataDescription: 'Given Values',
-    selectedData:    'Abra alba 2019-02-02',
+    selectedData:    basicDataLabel,
     stepDescription: 'Mandatory observation information',
     stepTitle:       'Basic Data',
-    children:        <StubFormContent/>
+    children:        <BasicData
+                       onChange={(basicData) => setBasicData(basicData)}
+                       basicData={basicData}/>
   }, {
     dataDescription: 'Main Location',
     selectedData:    'North Sea',

@@ -24,10 +24,20 @@ import static org.pmw.tinylog.Logger.error;
 
 public class Starter extends AbstractVerticle {
 
+  public static final String PUBLIC_KEY = "publicKey";
+  public static final String SECURITY_KEY = "securityKey";
+
   @Override
   public void start(Future<Void> startFuture) {
     debug("starting the application with config: {}", config().encodePrettily());
-    vertx.sharedData().getLocalMap("settings").put("mode", config().getValue("mode", "DEV"));
+    vertx.sharedData().getLocalMap("settings")
+      .put("mode", config().getValue("mode", "DEV"));
+    vertx.sharedData().getLocalMap("settings")
+      .put("storage", config().getJsonObject("storage",
+        new JsonObject()
+          .put("bindIp", "localhost")
+          .put("port", 27017)
+          .put("path", "")));
     vertx.deployVerticle(
       WebApi.class.getName(),
       new DeploymentOptions().setConfig(config().getJsonObject("http")));
@@ -48,16 +58,20 @@ public class Starter extends AbstractVerticle {
     }
   }
 
+  private static boolean isNullOrBlank(String val) {
+    return val == null || val.isBlank();
+  }
+
   private static JsonObject updateAuthConfig(JsonObject authConfig)
     throws NoSuchAlgorithmException, InvalidAlgorithmParameterException {
     if ("local".equals(authConfig.getString("provider", "local"))
-      && authConfig.getString(Auth.PUBLIC_KEY).isBlank() || authConfig.getString(Auth.SECURITY_KEY).isBlank()) {
+      && isNullOrBlank(authConfig.getString(PUBLIC_KEY)) || isNullOrBlank(authConfig.getString(SECURITY_KEY))) {
       KeyPairGenerator generator = KeyPairGenerator.getInstance("EC");
       ECGenParameterSpec spec = new ECGenParameterSpec("secp256r1");
       generator.initialize(spec);
       KeyPair keyPair = generator.generateKeyPair();
-      authConfig.put(Auth.PUBLIC_KEY, createPublicKey(keyPair));
-      authConfig.put(Auth.SECURITY_KEY, createSecretKey(keyPair));
+      authConfig.put(PUBLIC_KEY, createPublicKey(keyPair));
+      authConfig.put(SECURITY_KEY, createSecretKey(keyPair));
     }
     return authConfig;
   }

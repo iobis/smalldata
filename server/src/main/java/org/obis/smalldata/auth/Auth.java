@@ -15,8 +15,8 @@ public class Auth extends AbstractVerticle {
 
   private static final String ALG_KEY = "alg";
   private static final String AUTH_ES256 = "ES256";
-  public static final String PUBLIC_KEY = "publicKey";
-  public static final String SECURITY_KEY = "securityKey";
+  private static final String PUBLIC_KEY = "publicKey";
+  private static final String SECURITY_KEY = "securityKey";
 
   private AuthProvider generateAuthProvider() throws InvalidKeyException {
     AuthProvider provider;
