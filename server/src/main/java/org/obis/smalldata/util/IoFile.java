@@ -1,19 +1,17 @@
 package org.obis.smalldata.util;
 
+import com.google.common.base.Charsets;
+import com.google.common.io.Resources;
+
 import java.io.IOException;
-import java.net.URISyntaxException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 public class IoFile {
 
   public static String loadFromResources(String strPath) {
+    var url = Resources.getResource(strPath);
     try {
-      var path = Paths.get(Thread.currentThread().getContextClassLoader().getResource(strPath).toURI());
-      var bytes = Files.readAllBytes(path);
-      return new String(bytes, StandardCharsets.UTF_8);
-    } catch (IOException | URISyntaxException e) {
+      return Resources.toString(url, Charsets.UTF_8);
+    } catch (IOException e) {
       throw new RuntimeException(e);
     }
   }
