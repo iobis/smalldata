@@ -1,3 +1,4 @@
+import InputRadio from '../../../form/InputRadio'
 import PropTypes from 'prop-types'
 import React from 'react'
 
@@ -30,10 +31,10 @@ SelectDataset.propTypes = {
   selectedDataset: PropTypes.shape(datasetShape).isRequired
 }
 
-function DatasetOption({ checked, description, onClick }) {
+function DatasetOption({ id, checked, description, onClick }) {
   return (
     <tr className="dataset-option">
-      <td><input checked={checked} type="radio" name="dataset" onChange={onClick}/></td>
+      <td><InputRadio checked={checked} name="dataset" onChange={onClick} value={id}/></td>
       <td>{description}</td>
     </tr>
   )

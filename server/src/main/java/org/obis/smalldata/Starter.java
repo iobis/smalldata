@@ -27,7 +27,14 @@ public class Starter extends AbstractVerticle {
   @Override
   public void start(Future<Void> startFuture) {
     debug("starting the application with config: {}", config().encodePrettily());
-    vertx.sharedData().getLocalMap("settings").put("mode", config().getValue("mode", "DEV"));
+    vertx.sharedData().getLocalMap("settings")
+      .put("mode", config().getValue("mode", "DEV"));
+    vertx.sharedData().getLocalMap("settings")
+      .put("storage", config().getJsonObject("storage",
+        new JsonObject()
+          .put("bindIp", "localhost")
+          .put("port", 27017)
+          .put("path", "")));
     vertx.deployVerticle(
       WebApi.class.getName(),
       new DeploymentOptions().setConfig(config().getJsonObject("http")));

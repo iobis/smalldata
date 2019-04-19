@@ -55,9 +55,16 @@ class DwcTableProcessor {
           "purl",
           KeyCollections.COL_HEADER_NAMESPACES.get("purl"),
           record::containsKey);
+        var iobis = tableNamespaceMapper.mapTableNamespace(
+          "iobis",
+          KeyCollections.COL_HEADER_NAMESPACES.get("iobis"),
+          record::containsKey);
         var tdwg = tableNamespaceMapper.mapTableNamespace("tdwg", record.keySet());
 
-        return Map.of("id", id, "purl", purl, "tdwg", tdwg);
+        return Map.of("id", id,
+          "purl", purl,
+          "tdwg", tdwg,
+          "iobis", iobis);
       })
       .map(JsonObject::new)
       .collect(Collectors.toList());

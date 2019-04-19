@@ -20,6 +20,40 @@ export default {
         dataDescription: 'Using Data',
         stepDescription: 'Choose the dataset for adding observations',
         stepTitle:       'Selected Dataset'
+      },
+      basicData:     {
+        scientificName:   'Scientific name',
+        eventBeginDate:   'Event begin date',
+        eventEndDate:     'Event end date',
+        eventEndDateHelp: 'optional: only in case of date range',
+        occurrenceStatus: {
+          title:   'Occurrence status',
+          absent:  'absent',
+          present: 'present'
+        },
+        basisOfRecord:    {
+          title:             'Basis of record',
+          humanObservation:  'human observation',
+          fossilSpecimen:    'fossil specimen',
+          livingSpecimen:    'living specimen',
+          machineSpecimen:   'machine specimen',
+          preservedSpecimen: 'preserved specimen'
+        },
+        sex:              {
+          title:         'Sex',
+          male:          'male',
+          female:        'female',
+          hermaphrodite: 'hermaphrodite',
+          unspecified:   'unspecified'
+        },
+        lifestage:        {
+          title:       'Lifestage',
+          egg:         'egg',
+          eft:         'eft',
+          juvenile:    'juvenile',
+          adult:       'adult',
+          unspecified: 'unspecified'
+        }
       }
     },
     navbar:         {
