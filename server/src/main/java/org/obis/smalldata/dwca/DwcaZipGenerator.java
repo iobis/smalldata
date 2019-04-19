@@ -19,7 +19,7 @@ class DwcaZipGenerator {
   Optional<Path> generate(JsonArray dwcaRecords, JsonObject dataset) {
     try {
       var tempDirectory = Files.createTempDirectory("iobis-dwca");
-      var files = Set.of(Files.createTempFile(tempDirectory,"eml", ".xml"),
+      var files = Set.of(Files.createTempFile(tempDirectory, "eml", ".xml"),
         Files.createTempFile(tempDirectory, "meta", ".xml"));
 
       var zipFile = Files.createTempFile(tempDirectory, "dwca", ".zip");
