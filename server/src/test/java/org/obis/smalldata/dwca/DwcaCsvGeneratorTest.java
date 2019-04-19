@@ -2,7 +2,6 @@ package org.obis.smalldata.dwca;
 
 import com.google.common.base.Charsets;
 import com.google.common.base.Throwables;
-import com.google.common.collect.Sets;
 import com.google.common.io.Resources;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
@@ -27,6 +26,7 @@ import java.util.concurrent.TimeoutException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.pmw.tinylog.Logger.info;
+import static org.pmw.tinylog.Logger.warn;
 
 public class DwcaCsvGeneratorTest {
 
@@ -70,9 +70,9 @@ public class DwcaCsvGeneratorTest {
           assertTrue(originalHeaders.containsAll(generatedHeaders));
 
           if (generatedFile.delete()) {
-            Logger.info("deleted {} successfully", generatedFile.getName());
+            info("deleted {} successfully", generatedFile.getName());
           } else {
-            Logger.warn("could not delete {}", generatedFile.getName());
+            warn("could not delete {}", generatedFile.getName());
           }
         } catch (IOException e) {
           Logger.error(Throwables.getStackTraceAsString(e));
