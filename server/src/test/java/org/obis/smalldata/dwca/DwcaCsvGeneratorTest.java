@@ -1,5 +1,6 @@
 package org.obis.smalldata.dwca;
 
+import com.google.common.base.Charsets;
 import com.google.common.base.Throwables;
 import com.google.common.io.Resources;
 import io.vertx.core.AsyncResult;
@@ -15,7 +16,6 @@ import org.pmw.tinylog.Logger;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
@@ -53,19 +53,21 @@ public class DwcaCsvGeneratorTest {
       var dwcCsvWriter = new DwcCsvTable();
       dwcaMap.entrySet().stream()
         .forEach(dwcTable -> {
-          String resourcePath = "demodata/dwc/benthic_data_sevastopol-v1.1/" + dwcTable.getKey() + ".txt";
-          var resource = Resources.getResource(resourcePath);
           try {
+            var cvsResourceName = "demodata/dwc/benthic_data_sevastopol-v1.1/" + dwcTable.getKey() + ".txt";
+            var cvsResource = Resources.getResource(cvsResourceName);
+            var cvsContent = Resources.toString(cvsResource, Charsets.UTF_8);
+
             File generatedFile = File.createTempFile("obis-iode", dwcTable.getKey() + ".txt");
             dwcCsvWriter.writeTableToFile(dwcTable.getValue(), generatedFile);
 
-            var actualCount = Files.lines(generatedFile.toPath()).count();
-            var expectedCount = Files.lines(Paths.get(resource.getPath())).count();
-            assertEquals(expectedCount, actualCount);
+            var nrOfLinesInOriginalCvs = cvsContent.lines().count();
+            var nrOfLinesInGeneratedCvs = Files.lines(generatedFile.toPath()).count();
+            assertEquals(nrOfLinesInOriginalCvs, nrOfLinesInGeneratedCvs);
 
-            Set<String> actualHeaders = DwcCsvTable.headersFromFile(generatedFile);
-            Set<String> expectedHeaders = DwcCsvTable.headersFromFile(new File(resource.getPath()));
-            assertTrue(expectedHeaders.containsAll(actualHeaders));
+            Set<String> originalHeaders = DwcCsvTable.headersFromFile(new File(cvsResource.getPath()));
+            Set<String> generatedHeaders = DwcCsvTable.headersFromFile(generatedFile);
+            assertTrue(originalHeaders.containsAll(generatedHeaders));
 
             if (generatedFile.delete()) {
               Logger.info("deleted {} successfully", generatedFile.getName());
