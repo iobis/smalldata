@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputRadio renders correctly 1`] = `
+<InputRadio
+  checked={false}
+  name="name"
+  onChange={[MockFunction]}
+  text="text"
+  value="value"
+>
+  <input
+    checked={false}
+    className="input-radio is-checkradio"
+    id="name-value"
+    name="name"
+    onChange={[Function]}
+    type="radio"
+    value="value"
+  />
+  <label
+    htmlFor="name-value"
+  >
+    text
+  </label>
+</InputRadio>
+`;
