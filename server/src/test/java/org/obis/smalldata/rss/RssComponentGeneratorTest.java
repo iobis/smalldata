@@ -2,9 +2,9 @@ package org.obis.smalldata.rss;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.obis.smalldata.rss.model.Channel;
-import org.obis.smalldata.rss.model.RssFeed;
-import org.obis.smalldata.rss.model.RssItem;
+import org.obis.smalldata.rss.xmlmodel.Channel;
+import org.obis.smalldata.rss.xmlmodel.RssFeed;
+import org.obis.smalldata.rss.xmlmodel.RssItem;
 import org.obis.smalldata.util.IoFile;
 
 import java.net.MalformedURLException;
