@@ -23,17 +23,9 @@ class DwcaZipGenerator {
         Files.createTempFile(tempDirectory, "meta", ".xml"));
 
       var zipFile = Files.createTempFile(tempDirectory, "dwca", ".zip");
-      var fileAdder = new FileAdder(zipFile);
-      files.stream().forEach(fileAdder::add);
-      fileAdder.close();
-      files.stream()
-        .forEach(f -> {
-          try {
-            Files.delete(f);
-          } catch (IOException e) {
-            error(e.getMessage());
-          }
-        });
+      var zipFileEntries = new ZipFileEntries(zipFile);
+      files.stream().forEach(zipFileEntries::add);
+      zipFileEntries.close();
       return Optional.of(zipFile);
     } catch (IOException e) {
       error(e.getMessage());
@@ -41,11 +33,11 @@ class DwcaZipGenerator {
     }
   }
 
-  static class FileAdder {
+  static class ZipFileEntries {
     private final ZipOutputStream zos;
     private final FileOutputStream fos;
 
-    FileAdder(Path zipFile) throws IOException {
+    ZipFileEntries(Path zipFile) throws IOException {
       fos = (FileOutputStream) Files.newOutputStream(zipFile);
       zos = new ZipOutputStream(fos);
     }
@@ -53,6 +45,7 @@ class DwcaZipGenerator {
     void add(Path fileName) {
       try {
         IoFile.addToZipFile(fileName, zos);
+        Files.delete(fileName);
       } catch (IOException e) {
         error(e.getMessage());
       }
