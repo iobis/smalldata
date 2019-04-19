@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import static org.pmw.tinylog.Logger.error;
 import static org.pmw.tinylog.Logger.info;
 import static org.pmw.tinylog.Logger.warn;
 
@@ -29,23 +30,28 @@ public class EmbeddedDb extends AbstractVerticle {
   private MongodProcess process;
 
   @Override
-  public void start() throws IOException {
+  public void start() {
     info("starting mongo db with config {}", config());
     var bindIp = config().getString("bindIp", BIND_IP_DEFAULT);
     var port = config().getInteger("port", PORT_DEFAULT);
     var path = config().getString("path", "");
-    var mongodConfig = new MongodConfigBuilder()
-      .net(new Net(bindIp, port, Network.localhostIsIPv6()))
-      .version(Version.Main.PRODUCTION);
+    try {
+      var mongodConfig = new MongodConfigBuilder()
+        .net(new Net(bindIp, port, Network.localhostIsIPv6()))
+        .version(Version.Main.PRODUCTION);
 
-    if (!path.isEmpty() && Files.exists(Paths.get(path))) {
-      mongodConfig.replication(new Storage(path, null, 0));
-      info("Mongo started on path: {}", path);
-    } else {
-      warn("Mongo started without replication! Data is not stored between redeploys");
+      if (!path.isEmpty() && Files.exists(Paths.get(path))) {
+        mongodConfig.replication(new Storage(path, null, 0));
+        info("Mongo started on path: {}", path);
+      } else {
+        warn("Mongo started without replication! Data is not stored between redeploys");
+      }
+      executable = MONGOD_STARTER.prepare(mongodConfig.build());
+      process = executable.start();
+    } catch (IOException e) {
+      error(e.getMessage());
+      System.exit(1);
     }
-    executable = MONGOD_STARTER.prepare(mongodConfig.build());
-    process = executable.start();
     var dbInitializer = new DbInitializer(
       MongoClient.createNonShared(vertx, MongoConfigs.ofClient(bindIp, port)));
     dbInitializer.setupCollections();
