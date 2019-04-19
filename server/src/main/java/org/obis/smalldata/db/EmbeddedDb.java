@@ -50,7 +50,10 @@ public class EmbeddedDb extends AbstractVerticle {
       process = executable.start();
     } catch (IOException e) {
       error(e.getMessage());
-      System.exit(1);
+      vertx.close(closeHandler -> {
+        error("could not start mongodb");
+        info(closeHandler.result());
+      });
     }
     var dbInitializer = new DbInitializer(
       MongoClient.createNonShared(vertx, MongoConfigs.ofClient(bindIp, port)));
