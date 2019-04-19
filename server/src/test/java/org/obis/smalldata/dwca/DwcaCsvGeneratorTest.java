@@ -47,8 +47,8 @@ public class DwcaCsvGeneratorTest {
 
   @Test
   public void writeTableToFile() {
-    var datasets = findDatasetsByDatasetRef("NnqVLwIyPn-nRkc");
-    var dwcaMap = DwcaData.datasetToDwcaMap(datasets);
+    var dataset = findDatasetByDatasetRef("NnqVLwIyPn-nRkc");
+    var dwcaMap = DwcaData.datasetToDwcaMap(dataset);
     var dwcCsvWriter = new DwcCsvTable();
     dwcaMap.forEach((key, value) -> {
       try {
@@ -78,7 +78,7 @@ public class DwcaCsvGeneratorTest {
     });
   }
 
-  private List<JsonObject> findDatasetsByDatasetRef(String datasetRef) {
+  private List<JsonObject> findDatasetByDatasetRef(String datasetRef) {
     try {
       var future = new CompletableFuture<List<JsonObject>>();
       mongoClient.find(
