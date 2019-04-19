@@ -12,7 +12,8 @@ public class Dwca extends AbstractVerticle {
     var dbConfig = (JsonObject) vertx.sharedData().getLocalMap("settings").get("storage");
     var mongoClient = MongoClient.createShared(vertx, dbConfig);
     // TODO: eventbus listeners and dispatch to handlers
-    mongoClient.find("dwcarecords",
+    mongoClient.find(
+      "dwcarecords",
       new JsonObject().put("dataset_ref", "NnqVLwIyPn-nRkc"),
       res -> DwcCsvTable.extractHeaders(res.result()));
     startFuture.complete();

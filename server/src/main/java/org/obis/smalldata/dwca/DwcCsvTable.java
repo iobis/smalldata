@@ -35,7 +35,7 @@ public class DwcCsvTable {
     this(DEFAULT_OBJECT_WRITER);
   }
 
-  DwcCsvTable(ObjectWriter objectWriter) {
+  private DwcCsvTable(ObjectWriter objectWriter) {
     this.objectWriter = objectWriter;
   }
 
@@ -45,7 +45,7 @@ public class DwcCsvTable {
       .setColumnSeparator('\t')
       .disableQuoteChar();
     var headers = DwcCsvTable.extractHeaders(dwcTable);
-    headers.stream().forEach(csvSchemaBuilder::addColumn);
+    headers.forEach(csvSchemaBuilder::addColumn);
     try {
       objectWriter.with(csvSchemaBuilder.build())
         .writeValue(file, dwcTable.stream()
