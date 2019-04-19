@@ -35,22 +35,16 @@ class TestDb {
       MongodConfigBuilder mongodConfig = new MongodConfigBuilder()
         .net(new Net(BIND_IP, PORT, Network.localhostIsIPv6()))
         .version(Version.Main.PRODUCTION);
-      this.executable = MongodStarter.getDefaultInstance().prepare(mongodConfig.build());
-      this.process = executable.start();
-
+      executable = MongodStarter.getDefaultInstance().prepare(mongodConfig.build());
+      process = executable.start();
       var future = new CompletableFuture<Long>();
       var mongoClient = MongoClient.createNonShared(vertx, dbClientConfig);
-      try {
-        mongoClient.bulkWrite("dwcarecords",
-          BulkOperationUtil.createOperationsFromFile("mockdata/dwca/dwcarecords.json"),
-          client -> future.complete(client.result().getInsertedCount()));
-        info("added {} records", future.get());
-        return mongoClient;
-      } catch (InterruptedException | ExecutionException e) {
-        error(Throwables.getStackTraceAsString(e));
-        return null;
-      }
-    } catch (IOException e) {
+      mongoClient.bulkWrite("dwcarecords",
+        BulkOperationUtil.createOperationsFromFile("mockdata/dwca/dwcarecords.json"),
+        client -> future.complete(client.result().getInsertedCount()));
+      info("added {} records", future.get());
+      return mongoClient;
+    } catch (InterruptedException | ExecutionException | IOException e) {
       error(Throwables.getStackTraceAsString(e));
       return null;
     }
@@ -58,8 +52,8 @@ class TestDb {
 
   public void shutDown() {
     if (this.process != null) {
-      this.process.stop();
-      this.executable.stop();
+      process.stop();
+      executable.stop();
     }
   }
 }
