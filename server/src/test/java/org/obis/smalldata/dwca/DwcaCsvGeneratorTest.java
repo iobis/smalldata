@@ -2,6 +2,7 @@ package org.obis.smalldata.dwca;
 
 import com.google.common.base.Charsets;
 import com.google.common.base.Throwables;
+import com.google.common.collect.Sets;
 import com.google.common.io.Resources;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
@@ -37,55 +38,54 @@ public class DwcaCsvGeneratorTest {
     mongoClient = testDb.init(Vertx.vertx());
   }
 
-  void doWithDwcaDataset(String datasetRef, Handler<AsyncResult<List<JsonObject>>> handler) {
-    mongoClient.find("dwcarecords",
-      new JsonObject().put("dataset_ref", datasetRef),
-      handler);
+  @AfterEach
+  public void stop() {
+    info("shutdown mongo db");
+    testDb.shutDown();
   }
 
   @Test
   public void testCsvData() {
     var future = new CompletableFuture<List<JsonObject>>();
-    this.doWithDwcaDataset("NnqVLwIyPn-nRkc", res -> future.complete(res.result()));
+    doWithDwcaDataset("NnqVLwIyPn-nRkc", res -> future.complete(res.result()));
     try {
       var dataset = future.get(200, TimeUnit.MILLISECONDS);
       var dwcaMap = DwcaData.datasetToDwcaMap(dataset);
       var dwcCsvWriter = new DwcCsvTable();
-      dwcaMap.entrySet().stream()
-        .forEach(dwcTable -> {
-          try {
-            var cvsResourceName = "demodata/dwc/benthic_data_sevastopol-v1.1/" + dwcTable.getKey() + ".txt";
-            var cvsResource = Resources.getResource(cvsResourceName);
-            var cvsContent = Resources.toString(cvsResource, Charsets.UTF_8);
+      dwcaMap.forEach((key, value) -> {
+        try {
+          var cvsResourceName = "demodata/dwc/benthic_data_sevastopol-v1.1/" + key + ".txt";
+          var cvsResource = Resources.getResource(cvsResourceName);
+          var cvsContent = Resources.toString(cvsResource, Charsets.UTF_8);
 
-            File generatedFile = File.createTempFile("obis-iode", dwcTable.getKey() + ".txt");
-            dwcCsvWriter.writeTableToFile(dwcTable.getValue(), generatedFile);
+          File generatedFile = File.createTempFile("obis-iode", key + ".txt");
+          dwcCsvWriter.writeTableToFile(value, generatedFile);
 
-            var nrOfLinesInOriginalCvs = cvsContent.lines().count();
-            var nrOfLinesInGeneratedCvs = Files.lines(generatedFile.toPath()).count();
-            assertEquals(nrOfLinesInOriginalCvs, nrOfLinesInGeneratedCvs);
+          var nrOfLinesInOriginalCvs = cvsContent.lines().count();
+          var nrOfLinesInGeneratedCvs = Files.lines(generatedFile.toPath()).count();
+          assertEquals(nrOfLinesInOriginalCvs, nrOfLinesInGeneratedCvs);
 
-            Set<String> originalHeaders = DwcCsvTable.headersFromFile(new File(cvsResource.getPath()));
-            Set<String> generatedHeaders = DwcCsvTable.headersFromFile(generatedFile);
-            assertTrue(originalHeaders.containsAll(generatedHeaders));
+          Set<String> originalHeaders = DwcCsvTable.headersFromFile(new File(cvsResource.getPath()));
+          Set<String> generatedHeaders = DwcCsvTable.headersFromFile(generatedFile);
+          assertTrue(originalHeaders.containsAll(generatedHeaders));
 
-            if (generatedFile.delete()) {
-              Logger.info("deleted {} successfully", generatedFile.getName());
-            } else {
-              Logger.warn("could not delete {}", generatedFile.getName());
-            }
-          } catch (IOException e) {
-            Logger.error(Throwables.getStackTraceAsString(e));
+          if (generatedFile.delete()) {
+            Logger.info("deleted {} successfully", generatedFile.getName());
+          } else {
+            Logger.warn("could not delete {}", generatedFile.getName());
           }
-        });
+        } catch (IOException e) {
+          Logger.error(Throwables.getStackTraceAsString(e));
+        }
+      });
     } catch (InterruptedException | ExecutionException | TimeoutException e) {
       Logger.error(Throwables.getStackTraceAsString(e));
     }
   }
 
-  @AfterEach
-  public void stop() {
-    info("shutdown mongo db");
-    testDb.shutDown();
+  private void doWithDwcaDataset(String datasetRef, Handler<AsyncResult<List<JsonObject>>> handler) {
+    mongoClient.find("dwcarecords",
+      new JsonObject().put("dataset_ref", datasetRef),
+      handler);
   }
 }
