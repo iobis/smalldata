@@ -5,146 +5,146 @@
          packageId="http://ipt.vliz.be/eurobis/resource?id=benthic_data_sevastopol/v1.1" system="http://gbif.org" scope="system"
          xml:lang="eng">
 
-  <dataset>
-    <alternateIdentifier>http://ipt.vliz.be/eurobis/resource?r=benthic_data_sevastopol</alternateIdentifier>
-    <title xml:lang="eng">Benthic data from Sevastopol (Black Sea)</title>
-    <creator>
-      <individualName>
+<dataset>
+  <alternateIdentifier>http://ipt.vliz.be/eurobis/resource?r=benthic_data_sevastopol</alternateIdentifier>
+  <title xml:lang="eng">Benthic data from Sevastopol (Black Sea)</title>
+      <creator>
+    <individualName>
         <givenName>Christos</givenName>
-        <surName>Arvanitidis</surName>
-      </individualName>
-      <organizationName>Hellenic Centre for Marine Research (HCMR)</organizationName>
-      <address>
+      <surName>Arvanitidis</surName>
+    </individualName>
+    <organizationName>Hellenic Centre for Marine Research (HCMR)</organizationName>
+    <address>
         <country>GR</country>
-      </address>
-      <electronicMailAddress>arvanitidis@her.hcmr.gr</electronicMailAddress>
-    </creator>
-    <creator>
-      <organizationName>National Academy of Sciences of Ukraine Institute of Biology of the Southern Seas (NASU-IBSS)</organizationName>
-      <address>
+    </address>
+    <electronicMailAddress>arvanitidis@her.hcmr.gr</electronicMailAddress>
+      </creator>
+      <creator>
+    <organizationName>National Academy of Sciences of Ukraine Institute of Biology of the Southern Seas (NASU-IBSS)</organizationName>
+    <address>
         <country>UA</country>
-      </address>
-    </creator>
-    <creator>
-      <individualName>
+    </address>
+      </creator>
+      <creator>
+    <individualName>
         <givenName>Alexei</givenName>
-        <surName>Petrov</surName>
-      </individualName>
-      <organizationName>National Academy of Sciences of Ukraine Institute of Biology of the Southern Seas (NASU-IBSS)</organizationName>
-      <address>
+      <surName>Petrov</surName>
+    </individualName>
+    <organizationName>National Academy of Sciences of Ukraine Institute of Biology of the Southern Seas (NASU-IBSS)</organizationName>
+    <address>
         <country>UA</country>
-      </address>
-      <electronicMailAddress>alexpet@ibss.iuf.net</electronicMailAddress>
-      <userId directory="http://www.researcherid.com/rid/">F-7084-2016</userId>
-      <userId directory="http://orcid.org/">0000-0002-0137-486X</userId>
-    </creator>
-    <metadataProvider>
-      <individualName>
-        <surName>EurOBIS Data Management Team</surName>
-      </individualName>
-      <organizationName>Flanders Marine Institute (VLIZ)</organizationName>
-      <address>
+    </address>
+    <electronicMailAddress>alexpet@ibss.iuf.net</electronicMailAddress>
+          <userId directory="http://www.researcherid.com/rid/">F-7084-2016</userId>
+          <userId directory="http://orcid.org/">0000-0002-0137-486X</userId>
+      </creator>
+      <metadataProvider>
+    <individualName>
+      <surName>EurOBIS Data Management Team</surName>
+    </individualName>
+    <organizationName>Flanders Marine Institute (VLIZ)</organizationName>
+    <address>
         <country>BE</country>
-      </address>
-      <electronicMailAddress>info@eurobis.org</electronicMailAddress>
-      <onlineUrl>http://www.eurobis.org</onlineUrl>
-    </metadataProvider>
-    <associatedParty>
-      <individualName>
-        <surName>Alyomov</surName>
-      </individualName>
-      <organizationName>National Academy of Sciences of Ukraine Institute of Biology of the Southern Seas (NASU-IBSS)</organizationName>
-      <address>
+    </address>
+    <electronicMailAddress>info@eurobis.org</electronicMailAddress>
+    <onlineUrl>http://www.eurobis.org</onlineUrl>
+      </metadataProvider>
+      <associatedParty>
+    <individualName>
+      <surName>Alyomov</surName>
+    </individualName>
+    <organizationName>National Academy of Sciences of Ukraine Institute of Biology of the Southern Seas (NASU-IBSS)</organizationName>
+    <address>
         <country>UA</country>
-      </address>
-      <electronicMailAddress>director@ibss.iuf.net</electronicMailAddress>
-      <role>processor</role>
-    </associatedParty>
-    <associatedParty>
-      <individualName>
+    </address>
+    <electronicMailAddress>director@ibss.iuf.net</electronicMailAddress>
+    <role>processor</role>
+      </associatedParty>
+      <associatedParty>
+    <individualName>
         <givenName>Volodymyr</givenName>
-        <surName>Grintsov</surName>
-      </individualName>
-      <organizationName>National Academy of Sciences of Ukraine Institute of Biology of the Southern Seas (NASU-IBSS)</organizationName>
-      <address>
+      <surName>Grintsov</surName>
+    </individualName>
+    <organizationName>National Academy of Sciences of Ukraine Institute of Biology of the Southern Seas (NASU-IBSS)</organizationName>
+    <address>
         <country>UA</country>
-      </address>
-      <electronicMailAddress>VGrintsov@gmail.com</electronicMailAddress>
-      <role>processor</role>
-    </associatedParty>
-    <associatedParty>
-      <individualName>
+    </address>
+    <electronicMailAddress>VGrintsov@gmail.com</electronicMailAddress>
+    <role>processor</role>
+      </associatedParty>
+      <associatedParty>
+    <individualName>
         <givenName>Alexei</givenName>
-        <surName>Petrov</surName>
-      </individualName>
-      <organizationName>National Academy of Sciences of Ukraine Institute of Biology of the Southern Seas (NASU-IBSS)</organizationName>
-      <address>
+      <surName>Petrov</surName>
+    </individualName>
+    <organizationName>National Academy of Sciences of Ukraine Institute of Biology of the Southern Seas (NASU-IBSS)</organizationName>
+    <address>
         <country>UA</country>
-      </address>
-      <electronicMailAddress>alexpet@ibss.iuf.net</electronicMailAddress>
-      <userId directory="http://www.researcherid.com/rid/">F-7084-2016</userId>
-      <userId directory="http://orcid.org/">0000-0002-0137-486X</userId>
-      <role>custodianSteward</role>
-    </associatedParty>
-    <associatedParty>
-      <individualName>
+    </address>
+    <electronicMailAddress>alexpet@ibss.iuf.net</electronicMailAddress>
+          <userId directory="http://www.researcherid.com/rid/">F-7084-2016</userId>
+          <userId directory="http://orcid.org/">0000-0002-0137-486X</userId>
+    <role>custodianSteward</role>
+      </associatedParty>
+      <associatedParty>
+    <individualName>
         <givenName>Alexei</givenName>
-        <surName>Petrov</surName>
-      </individualName>
-      <organizationName>National Academy of Sciences of Ukraine Institute of Biology of the Southern Seas (NASU-IBSS)</organizationName>
-      <address>
+      <surName>Petrov</surName>
+    </individualName>
+    <organizationName>National Academy of Sciences of Ukraine Institute of Biology of the Southern Seas (NASU-IBSS)</organizationName>
+    <address>
         <country>UA</country>
-      </address>
-      <electronicMailAddress>alexpet@ibss.iuf.net</electronicMailAddress>
-      <userId directory="http://www.researcherid.com/rid/">F-7084-2016</userId>
-      <userId directory="http://orcid.org/">0000-0002-0137-486X</userId>
-      <role>processor</role>
-    </associatedParty>
-    <associatedParty>
-      <individualName>
+    </address>
+    <electronicMailAddress>alexpet@ibss.iuf.net</electronicMailAddress>
+          <userId directory="http://www.researcherid.com/rid/">F-7084-2016</userId>
+          <userId directory="http://orcid.org/">0000-0002-0137-486X</userId>
+    <role>processor</role>
+      </associatedParty>
+      <associatedParty>
+    <individualName>
         <givenName>Nikolai</givenName>
-        <surName>Revkov</surName>
-      </individualName>
-      <organizationName>National Academy of Sciences of Ukraine Institute of Biology of the Southern Seas (NASU-IBSS)</organizationName>
-      <address>
+      <surName>Revkov</surName>
+    </individualName>
+    <organizationName>National Academy of Sciences of Ukraine Institute of Biology of the Southern Seas (NASU-IBSS)</organizationName>
+    <address>
         <country>UA</country>
-      </address>
-      <electronicMailAddress>nrevkov@yandex.ru</electronicMailAddress>
-      <role>processor</role>
-    </associatedParty>
-    <pubDate>
+    </address>
+    <electronicMailAddress>nrevkov@yandex.ru</electronicMailAddress>
+    <role>processor</role>
+      </associatedParty>
+  <pubDate>
       2019-04-02
-    </pubDate>
-    <language>eng</language>
-    <abstract>
-      <para>The dataset contains the abundance and biomass values of sediment organisms from the Sevastopol region (South-Western Crimea, The Black Sea, Ukraine) collected between 1982 and 1992.</para>
-      <para>Abundance and Biomass of benthic organisms and key abiotic variables (covering irregular sampling surveys within 1982-1992) from the Sevastopol Area (South-Western Crimea, The Black Sea, Ukraine) including estuaries and small sheltered and semi-closed bays within the area of &quot;big Sevastopol bay&quot;
-        Sevastopol Bay is located in south western part of the Crimean peninsula, Ukraine and comprehends the one of the biggest marine harbours of the Black Sea and has served as an industrialized naval base for decades. A consequence of this long-term industrial, military and municipal activity was the deterioration of the marine environment of the bay, depressed state of benthic assemblages and occurrence of expanded bottom areas that became contaminated with various sediment-associated pollutants including polycyclic aromatic hydrocarbons (PAHs), polychlorinated biphenyls (PCBs), pesticides, and metals. Benthic samples in Sevastopol bay heve been taken between 1982 and 1992.</para>
-    </abstract>
-    <keywordSet>
-      <keyword>Occurrence</keyword>
-      <keywordThesaurus>GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml</keywordThesaurus>
-    </keywordSet>
-    <keywordSet>
-      <keyword>Observation</keyword>
-      <keywordThesaurus>GBIF Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml</keywordThesaurus>
-    </keywordSet>
-    <keywordSet>
-      <keyword>Benthic biomass</keyword>
-      <keyword>Benthos</keyword>
-      <keyword>Data</keyword>
-      <keyword>Marine Genomics</keyword>
-      <keywordThesaurus>ASFA</keywordThesaurus>
-    </keywordSet>
-    <additionalInfo>
-      <para>marine, harvested by iOBIS</para>
-    </additionalInfo>
-    <intellectualRights>
-      <para>This work is licensed under a <ulink url="http://creativecommons.org/licenses/by-nc/4.0/legalcode"><citetitle>Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License</citetitle></ulink>.</para>
-    </intellectualRights>
-    <coverage>
+  </pubDate>
+  <language>eng</language>
+  <abstract>
+    <para>The dataset contains the abundance and biomass values of sediment organisms from the Sevastopol region (South-Western Crimea, The Black Sea, Ukraine) collected between 1982 and 1992.</para>
+    <para>Abundance and Biomass of benthic organisms and key abiotic variables (covering irregular sampling surveys within 1982-1992) from the Sevastopol Area (South-Western Crimea, The Black Sea, Ukraine) including estuaries and small sheltered and semi-closed bays within the area of &quot;big Sevastopol bay&quot;
+Sevastopol Bay is located in south western part of the Crimean peninsula, Ukraine and comprehends the one of the biggest marine harbours of the Black Sea and has served as an industrialized naval base for decades. A consequence of this long-term industrial, military and municipal activity was the deterioration of the marine environment of the bay, depressed state of benthic assemblages and occurrence of expanded bottom areas that became contaminated with various sediment-associated pollutants including polycyclic aromatic hydrocarbons (PAHs), polychlorinated biphenyls (PCBs), pesticides, and metals. Benthic samples in Sevastopol bay heve been taken between 1982 and 1992.</para>
+  </abstract>
+      <keywordSet>
+            <keyword>Occurrence</keyword>
+        <keywordThesaurus>GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml</keywordThesaurus>
+      </keywordSet>
+      <keywordSet>
+            <keyword>Observation</keyword>
+        <keywordThesaurus>GBIF Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml</keywordThesaurus>
+      </keywordSet>
+      <keywordSet>
+            <keyword>Benthic biomass</keyword>
+            <keyword>Benthos</keyword>
+            <keyword>Data</keyword>
+            <keyword>Marine Genomics</keyword>
+        <keywordThesaurus>ASFA</keywordThesaurus>
+      </keywordSet>
+  <additionalInfo>
+    <para>marine, harvested by iOBIS</para>
+  </additionalInfo>
+  <intellectualRights>
+    <para>This work is licensed under a <ulink url="http://creativecommons.org/licenses/by-nc/4.0/legalcode"><citetitle>Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License</citetitle></ulink>.</para>
+  </intellectualRights>
+  <coverage>
       <geographicCoverage>
-        <geographicDescription>Station: Sevastopol bay area</geographicDescription>
+          <geographicDescription>Station: Sevastopol bay area</geographicDescription>
         <boundingCoordinates>
           <westBoundingCoordinate>33.383</westBoundingCoordinate>
           <eastBoundingCoordinate>33.6</eastBoundingCoordinate>
@@ -152,155 +152,155 @@
           <southBoundingCoordinate>44.5</southBoundingCoordinate>
         </boundingCoordinates>
       </geographicCoverage>
-      <temporalCoverage>
-        <rangeOfDates>
-          <beginDate>
-            <calendarDate>1982-07-01</calendarDate>
-          </beginDate>
-          <endDate>
-            <calendarDate>1992-07-01</calendarDate>
-          </endDate>
-        </rangeOfDates>
-      </temporalCoverage>
-      <taxonomicCoverage>
-        <generalTaxonomicCoverage>urn:lsid:marinespecies.org:taxname:1292</generalTaxonomicCoverage>
-        <taxonomicClassification>
-          <taxonRankName>class</taxonRankName>
-          <taxonRankValue>Anthozoa</taxonRankValue>
-        </taxonomicClassification>
-      </taxonomicCoverage>
-      <taxonomicCoverage>
-        <generalTaxonomicCoverage>urn:lsid:marinespecies.org:taxname:1065</generalTaxonomicCoverage>
-        <taxonomicClassification>
-          <taxonRankName>phylum</taxonRankName>
-          <taxonRankValue>Arthropoda</taxonRankValue>
-        </taxonomicClassification>
-      </taxonomicCoverage>
-      <taxonomicCoverage>
-        <generalTaxonomicCoverage>urn:lsid:marinespecies.org:taxname:105</generalTaxonomicCoverage>
-        <taxonomicClassification>
-          <taxonRankName>class</taxonRankName>
-          <taxonRankValue>Bivalvia</taxonRankValue>
-        </taxonomicClassification>
-      </taxonomicCoverage>
-      <taxonomicCoverage>
-        <generalTaxonomicCoverage>urn:lsid:marinespecies.org:taxname:1806</generalTaxonomicCoverage>
-        <taxonomicClassification>
-          <taxonRankName>phylum</taxonRankName>
-          <taxonRankValue>Echinodermata</taxonRankValue>
-        </taxonomicClassification>
-      </taxonomicCoverage>
-      <taxonomicCoverage>
-        <generalTaxonomicCoverage>urn:lsid:marinespecies.org:taxname:101</generalTaxonomicCoverage>
-        <taxonomicClassification>
-          <taxonRankName>class</taxonRankName>
-          <taxonRankValue>Gastropoda</taxonRankValue>
-        </taxonomicClassification>
-      </taxonomicCoverage>
-      <taxonomicCoverage>
-        <generalTaxonomicCoverage>urn:lsid:marinespecies.org:taxname:883</generalTaxonomicCoverage>
-        <taxonomicClassification>
-          <taxonRankName>class</taxonRankName>
-          <taxonRankValue>Polychaeta</taxonRankValue>
-        </taxonomicClassification>
-      </taxonomicCoverage>
-    </coverage>
-    <maintenance>
-      <description>
-        <para></para>
-      </description>
-      <maintenanceUpdateFrequency>unkown</maintenanceUpdateFrequency>
-    </maintenance>
+          <temporalCoverage>
+              <rangeOfDates>
+                  <beginDate>
+                    <calendarDate>1982-07-01</calendarDate>
+                  </beginDate>
+                <endDate>
+                  <calendarDate>1992-07-01</calendarDate>
+                </endDate>
+              </rangeOfDates>
+          </temporalCoverage>
+          <taxonomicCoverage>
+              <generalTaxonomicCoverage>urn:lsid:marinespecies.org:taxname:1292</generalTaxonomicCoverage>
+              <taxonomicClassification>
+                  <taxonRankName>class</taxonRankName>
+                <taxonRankValue>Anthozoa</taxonRankValue>
+              </taxonomicClassification>
+          </taxonomicCoverage>
+          <taxonomicCoverage>
+              <generalTaxonomicCoverage>urn:lsid:marinespecies.org:taxname:1065</generalTaxonomicCoverage>
+              <taxonomicClassification>
+                  <taxonRankName>phylum</taxonRankName>
+                <taxonRankValue>Arthropoda</taxonRankValue>
+              </taxonomicClassification>
+          </taxonomicCoverage>
+          <taxonomicCoverage>
+              <generalTaxonomicCoverage>urn:lsid:marinespecies.org:taxname:105</generalTaxonomicCoverage>
+              <taxonomicClassification>
+                  <taxonRankName>class</taxonRankName>
+                <taxonRankValue>Bivalvia</taxonRankValue>
+              </taxonomicClassification>
+          </taxonomicCoverage>
+          <taxonomicCoverage>
+              <generalTaxonomicCoverage>urn:lsid:marinespecies.org:taxname:1806</generalTaxonomicCoverage>
+              <taxonomicClassification>
+                  <taxonRankName>phylum</taxonRankName>
+                <taxonRankValue>Echinodermata</taxonRankValue>
+              </taxonomicClassification>
+          </taxonomicCoverage>
+          <taxonomicCoverage>
+              <generalTaxonomicCoverage>urn:lsid:marinespecies.org:taxname:101</generalTaxonomicCoverage>
+              <taxonomicClassification>
+                  <taxonRankName>class</taxonRankName>
+                <taxonRankValue>Gastropoda</taxonRankValue>
+              </taxonomicClassification>
+          </taxonomicCoverage>
+          <taxonomicCoverage>
+              <generalTaxonomicCoverage>urn:lsid:marinespecies.org:taxname:883</generalTaxonomicCoverage>
+              <taxonomicClassification>
+                  <taxonRankName>class</taxonRankName>
+                <taxonRankValue>Polychaeta</taxonRankValue>
+              </taxonomicClassification>
+          </taxonomicCoverage>
+  </coverage>
+  <maintenance>
+    <description>
+      <para></para>
+    </description>
+    <maintenanceUpdateFrequency>unkown</maintenanceUpdateFrequency>
+  </maintenance>
 
-    <contact>
-      <individualName>
+      <contact>
+    <individualName>
         <givenName>Christos</givenName>
-        <surName>Arvanitidis</surName>
-      </individualName>
-      <organizationName>Hellenic Centre for Marine Research (HCMR)</organizationName>
-      <address>
+      <surName>Arvanitidis</surName>
+    </individualName>
+    <organizationName>Hellenic Centre for Marine Research (HCMR)</organizationName>
+    <address>
         <country>GR</country>
-      </address>
-      <electronicMailAddress>arvanitidis@her.hcmr.gr</electronicMailAddress>
-    </contact>
-  </dataset>
+    </address>
+    <electronicMailAddress>arvanitidis@her.hcmr.gr</electronicMailAddress>
+      </contact>
+</dataset>
   <additionalMetadata>
     <metadata>
       <gbif>
-        <dateStamp>2019-04-02T05:53:41.000+02:00</dateStamp>
-        <hierarchyLevel>dataset</hierarchyLevel>
-        <citation>Petrov, A; Milovidova, N. , Alyomov S., Shadrina L. Initial data set (1982-1992) on abundance and biomass of soft-bottom macrozoobenthos , key abiotic variables in near-bottom layers of Sevastopol bay, SW Crimea, Ukraine. Institute of Biology of Southern Seas, Ukraine.</citation>
-        <physical>
-          <objectName>Online dataset</objectName>
-          <characterEncoding>UTF-8</characterEncoding>
-          <dataFormat>
-            <externallyDefinedFormat>
-              <formatName>HTML</formatName>
-            </externallyDefinedFormat>
-          </dataFormat>
-          <distribution>
-            <online>
-              <url function="download">http://www.emodnet-biology.eu/portal/index.php?dasid=2886</url>
-            </online>
-          </distribution>
-        </physical>
-        <physical>
-          <objectName>Online dataset</objectName>
-          <characterEncoding>UTF-8</characterEncoding>
-          <dataFormat>
-            <externallyDefinedFormat>
-              <formatName>HTML</formatName>
-            </externallyDefinedFormat>
-          </dataFormat>
-          <distribution>
-            <online>
-              <url function="download">http://www.emodnet-biology.eu/toolbox/en/toolbox/occurrence/dataset/2886</url>
-            </online>
-          </distribution>
-        </physical>
-        <physical>
-          <objectName>Archived file</objectName>
-          <characterEncoding>UTF-8</characterEncoding>
-          <dataFormat>
-            <externallyDefinedFormat>
-              <formatName>HTML</formatName>
-            </externallyDefinedFormat>
-          </dataFormat>
-          <distribution>
-            <online>
-              <url function="download">http://mda.vliz.be/mda/directlink.php?fid=VLIZ_00000105_1323428682</url>
-            </online>
-          </distribution>
-        </physical>
-        <physical>
-          <objectName>Online dataset</objectName>
-          <characterEncoding>UTF-8</characterEncoding>
-          <dataFormat>
-            <externallyDefinedFormat>
-              <formatName>HTML</formatName>
-            </externallyDefinedFormat>
-          </dataFormat>
-          <distribution>
-            <online>
-              <url function="download">https://obis.org/dataset/500c9a4a-30c7-4b85-82f8-ce89b8c27512</url>
-            </online>
-          </distribution>
-        </physical>
-        <physical>
-          <objectName>Metadata</objectName>
-          <characterEncoding>UTF-8</characterEncoding>
-          <dataFormat>
-            <externallyDefinedFormat>
-              <formatName>HTML</formatName>
-            </externallyDefinedFormat>
-          </dataFormat>
-          <distribution>
-            <online>
-              <url function="download">http://www.eurobis.org/imis?module=dataset&amp;dasid=2886</url>
-            </online>
-          </distribution>
-        </physical>
-        <dc:replaces>http://ipt.vliz.be/eurobis/resource?id=benthic_data_sevastopol/v1.1.xml</dc:replaces>
+          <dateStamp>2019-04-02T05:53:41.000+02:00</dateStamp>
+          <hierarchyLevel>dataset</hierarchyLevel>
+            <citation>Petrov, A; Milovidova, N. , Alyomov S., Shadrina L. Initial data set (1982-1992) on abundance and biomass of soft-bottom macrozoobenthos , key abiotic variables in near-bottom layers of Sevastopol bay, SW Crimea, Ukraine. Institute of Biology of Southern Seas, Ukraine.</citation>
+            <physical>
+              <objectName>Online dataset</objectName>
+              <characterEncoding>UTF-8</characterEncoding>
+              <dataFormat>
+                <externallyDefinedFormat>
+                  <formatName>HTML</formatName>
+                </externallyDefinedFormat>
+              </dataFormat>
+              <distribution>
+                <online>
+                  <url function="download">http://www.emodnet-biology.eu/portal/index.php?dasid=2886</url>
+                </online>
+              </distribution>
+            </physical>
+            <physical>
+              <objectName>Online dataset</objectName>
+              <characterEncoding>UTF-8</characterEncoding>
+              <dataFormat>
+                <externallyDefinedFormat>
+                  <formatName>HTML</formatName>
+                </externallyDefinedFormat>
+              </dataFormat>
+              <distribution>
+                <online>
+                  <url function="download">http://www.emodnet-biology.eu/toolbox/en/toolbox/occurrence/dataset/2886</url>
+                </online>
+              </distribution>
+            </physical>
+            <physical>
+              <objectName>Archived file</objectName>
+              <characterEncoding>UTF-8</characterEncoding>
+              <dataFormat>
+                <externallyDefinedFormat>
+                  <formatName>HTML</formatName>
+                </externallyDefinedFormat>
+              </dataFormat>
+              <distribution>
+                <online>
+                  <url function="download">http://mda.vliz.be/mda/directlink.php?fid=VLIZ_00000105_1323428682</url>
+                </online>
+              </distribution>
+            </physical>
+            <physical>
+              <objectName>Online dataset</objectName>
+              <characterEncoding>UTF-8</characterEncoding>
+              <dataFormat>
+                <externallyDefinedFormat>
+                  <formatName>HTML</formatName>
+                </externallyDefinedFormat>
+              </dataFormat>
+              <distribution>
+                <online>
+                  <url function="download">https://obis.org/dataset/500c9a4a-30c7-4b85-82f8-ce89b8c27512</url>
+                </online>
+              </distribution>
+            </physical>
+            <physical>
+              <objectName>Metadata</objectName>
+              <characterEncoding>UTF-8</characterEncoding>
+              <dataFormat>
+                <externallyDefinedFormat>
+                  <formatName>HTML</formatName>
+                </externallyDefinedFormat>
+              </dataFormat>
+              <distribution>
+                <online>
+                  <url function="download">http://www.eurobis.org/imis?module=dataset&amp;dasid=2886</url>
+                </online>
+              </distribution>
+            </physical>
+          <dc:replaces>http://ipt.vliz.be/eurobis/resource?id=benthic_data_sevastopol/v1.1.xml</dc:replaces>
       </gbif>
     </metadata>
   </additionalMetadata>
