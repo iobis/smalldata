@@ -11,22 +11,27 @@ import static org.pmw.tinylog.Logger.debug;
 
 class DwcaData {
 
-  private DwcaData() {}
+  private DwcaData() {
+  }
 
   static Map<String, List<JsonObject>> datasetToDwcaMap(List<JsonObject> dataset) {
     var dwcaMap = dataset.stream()
       .map(JsonObject.class::cast)
       .collect(Collectors.groupingBy(dwcaEntry -> dwcaEntry.getString("dwcTable")))
       .entrySet().stream()
-      .map(table -> new AbstractMap.SimpleEntry(
-        table.getKey(),
-        table.getValue().stream()
-          .map(dwcEntry -> dwcEntry.getJsonObject("dwcRecord"))
-          .map(DwcaData::flattenDwcFields)
-          .collect(Collectors.toList())))
-      .collect(Collectors.toMap(Map.Entry<String, List<JsonObject>>::getKey, Map.Entry<String, List<JsonObject>>::getValue));
+      .map(DwcaData::newDwcRecord)
+      .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
     debug("generated dwc tables: {} ", dwcaMap);
     return dwcaMap;
+  }
+
+  private static Map.Entry<String, List<JsonObject>> newDwcRecord(Map.Entry<String, List<JsonObject>> table) {
+    var key = table.getKey();
+    var value = table.getValue().stream()
+      .map(dwcEntry -> dwcEntry.getJsonObject("dwcRecord"))
+      .map(DwcaData::flattenDwcFields)
+      .collect(Collectors.toList());
+    return Map.entry(key, value);
   }
 
   private static JsonObject flattenDwcFields(JsonObject dwcRecord) {
