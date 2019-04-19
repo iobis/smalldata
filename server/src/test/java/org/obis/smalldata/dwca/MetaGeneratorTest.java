@@ -43,7 +43,7 @@ public class MetaGeneratorTest {
   @Value
   @AllArgsConstructor
   private static class ResourcePathProcessor {
-    private final static Map<String, String> ROW_TYPE_MAP =
+    private static final Map<String, String> ROW_TYPE_MAP =
       Map.of(
         "event15584133909797684527.txt", "http://rs.tdwg.org/dwc/terms/Event",
         "emof15584133909797684527.txt", "http://rs.iobis.org/obis/terms/ExtendedMeasurementOrFact",
