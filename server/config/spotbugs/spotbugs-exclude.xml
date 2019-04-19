@@ -15,7 +15,7 @@
     <Bug pattern="SS_SHOULD_BE_STATIC"/>
     <Or>
       <And>
-        <Class name="org.obis.smalldata.rss.model.RssFeed"/>
+        <Class name="org.obis.smalldata.rss.xmlmodel.RssFeed"/>
         <Or>
           <Field name="version"/>
           <Field name="xmlnsAtom"/>
@@ -24,11 +24,11 @@
         </Or>
       </And>
       <And>
-        <Class name="org.obis.smalldata.rss.model.Channel"/>
+        <Class name="org.obis.smalldata.rss.xmlmodel.Channel"/>
         <Field name="generator"/>
       </And>
       <And>
-        <Class name="Eml"/>
+        <Class name="org.obis.smalldata.dwca.xmlmodel.eml.Eml"/>
         <Or>
           <Field name="xmlnsEml"/>
           <Field name="xmlnsDc"/>
@@ -38,6 +38,18 @@
           <Field name="system"/>
           <Field name="scope"/>
           <Field name="lang"/>
+        </Or>
+      <And>
+        <Class name="org.obis.smalldata.dwca.xmlmodel.meta.Archive"/>
+        <Field name="xmlns"/>
+      </And>
+      <And>
+        <Class name="org.obis.smalldata.dwca.xmlmodel.meta.DwcTable"/>
+        <Or>
+          <Field name="encoding"/>
+          <Field name="fieldsEnclosedBy"/>
+          <Field name="fieldsTerminatedBy"/>
+          <Field name="linesTerminatedBy"/>
         </Or>
       </And>
     </Or>
@@ -52,7 +64,7 @@
   <Match>
     <Bug pattern="URF_UNREAD_FIELD"/>
     <And>
-      <Class name="org.obis.smalldata.rss.model.RssItem$Guid"/>
+      <Class name="org.obis.smalldata.rss.xmlmodel.RssItem$Guid"/>
       <Or>
         <Field name="isPermaLink"/>
         <Field name="url"/>
