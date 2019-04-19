@@ -39,6 +39,7 @@
           <Field name="scope"/>
           <Field name="lang"/>
         </Or>
+      </And>
       <And>
         <Class name="org.obis.smalldata.dwca.xmlmodel.meta.Archive"/>
         <Field name="xmlns"/>
