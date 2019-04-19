@@ -46,18 +46,17 @@ class MetaGenerator {
   Optional<File> generateXml(MetaFileConfig core, List<MetaFileConfig> extensions) {
     try {
       var metaXml = File.createTempFile("obis-iode", "meta.xml");
-      var coreTable = coreXml(core).get();
       var extTables = extensions.stream()
         .map(this::extensionXml)
         .map(Optional::get)
         .collect(Collectors.toList());
-
-      var archive = Archive.builder()
-        .metadata("eml.xml")
-        .core(coreTable)
-        .extensionList(extTables)
-        .build();
-
+      var archive = coreXml(core)
+        .map(coreTable -> Archive.builder()
+          .metadata("eml.xml")
+          .core(coreTable)
+          .extensionList(extTables)
+          .build())
+        .get();
       xmlMapper.writerWithDefaultPrettyPrinter().writeValue(metaXml, archive);
       return Optional.of(metaXml);
     } catch (IOException e) {
@@ -66,19 +65,9 @@ class MetaGenerator {
     }
   }
 
-  private String mapHeader(String header) {
-    var headerParts = header.split("/");
-    switch (headerParts.length) {
-      case 2: return NS_MAPPER.getNs(headerParts[0]) + headerParts[1];
-      case 1: return header;
-      case 0:
-      default:
-        return "";
-    }
-  }
-
   private Optional<Core> coreXml(MetaFileConfig metaConfig) {
-    return dwcTableXml(metaConfig.getUri(),
+    return dwcTableXml(
+      metaConfig.getUri(),
       (fields, index) -> Core.builder()
         .rowType(metaConfig.getRowType())
         .location(metaConfig.getFiles())
@@ -87,7 +76,8 @@ class MetaGenerator {
   }
 
   private Optional<Extension> extensionXml(MetaFileConfig metaConfig) {
-    return dwcTableXml(metaConfig.getUri(),
+    return dwcTableXml(
+      metaConfig.getUri(),
       (fields, index) -> Extension.builder()
         .rowType(metaConfig.getRowType())
         .location(metaConfig.getFiles())
@@ -100,7 +90,7 @@ class MetaGenerator {
     try {
       var headers = Files.lines(Path.of(uri)).findFirst().get().split("\t");
       var fields = xmlFields(headers);
-      var idField = idField(headers);
+      var idField = findId(headers);
 
       return Optional.of(builder.apply(fields, idField));
     } catch (IOException e) {
@@ -109,14 +99,14 @@ class MetaGenerator {
     }
   }
 
-  private int idField(String... headers) {
+  private static int findId(String... headers) {
     return IntStream.range(0, headers.length)
       .filter(idx -> "id".equals(headers[idx]))
       .findFirst()
       .getAsInt();
   }
 
-  private List<Field> xmlFields(String... headers) {
+  private static List<Field> xmlFields(String... headers) {
     return IntStream.range(0, headers.length)
       .filter(idx -> headers[idx].split("/").length == 2)
       .mapToObj(idx -> Field.builder()
@@ -124,6 +114,19 @@ class MetaGenerator {
         .term(mapHeader(headers[idx]))
         .build())
       .collect(Collectors.toList());
+  }
+
+  private static String mapHeader(String header) {
+    var headerParts = header.split("/");
+    switch (headerParts.length) {
+      case 2:
+        return NS_MAPPER.getNs(headerParts[0]) + headerParts[1];
+      case 1:
+        return header;
+      case 0:
+      default:
+        return "";
+    }
   }
 
   @Value
