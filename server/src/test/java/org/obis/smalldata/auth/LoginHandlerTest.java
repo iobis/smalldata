@@ -68,7 +68,7 @@ public class LoginHandlerTest {
               long now = Instant.now().getEpochSecond();
               assertEquals(claims.getString("sub"), "paulo");
               assertEquals(claims.getString("aud"), "occurrences-OBIS");
-              assertEquals(claims.getLong("iat") / 1.0, now / 1.0, 0.5);
+              assertEquals(claims.getLong("iat") / 1.0, now / 1.0, 1.0);
               testContext.completeNow();
             });
         } else {

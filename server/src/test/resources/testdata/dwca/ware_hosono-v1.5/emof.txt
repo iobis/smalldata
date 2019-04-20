@@ -1,0 +1,535 @@
+id	measurementID	occurrenceID	measurementType	measurementTypeID	measurementValue	measurementValueID	measurementAccuracy	measurementUnit	measurementUnitID	measurementRemarks
+990722-01	00001	urn::catalog:JAMSTEC:hosono:00001	wet weight	http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL04	160.272			g/m?	http://vocab.nerc.ac.uk/collection/P06/current/UGMS	
+990722-02	00002	urn::catalog:JAMSTEC:hosono:00002	wet weight	http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL04	106.212			g/m?	http://vocab.nerc.ac.uk/collection/P06/current/UGMS	
+990722-03	00003	urn::catalog:JAMSTEC:hosono:00003	wet weight	http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL04	178.557			g/m?	http://vocab.nerc.ac.uk/collection/P06/current/UGMS	
+990722-04	00004	urn::catalog:JAMSTEC:hosono:00004	wet weight	http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL04	106.212			g/m?	http://vocab.nerc.ac.uk/collection/P06/current/UGMS	
+990722-01	00005		Temperature	http://vocab.nerc.ac.uk/collection/P01/current/CTMPZZ01/	20.7			Degrees Celsius	http://vocab.nerc.ac.uk/collection/P06/current/UPAA/	
+990722-02	00006		Temperature	http://vocab.nerc.ac.uk/collection/P01/current/CTMPZZ01/	20.7			Degrees Celsius	http://vocab.nerc.ac.uk/collection/P06/current/UPAA/	
+990722-03	00007		Temperature	http://vocab.nerc.ac.uk/collection/P01/current/CTMPZZ01/	20.7			Degrees Celsius	http://vocab.nerc.ac.uk/collection/P06/current/UPAA/	
+990722-04	00008		Temperature	http://vocab.nerc.ac.uk/collection/P01/current/CTMPZZ01/	20.7			Degrees Celsius	http://vocab.nerc.ac.uk/collection/P06/current/UPAA/	
+990722-01	00009	urn::catalog:JAMSTEC:hosono:00005	sex		female					
+990722-01	00010	urn::catalog:JAMSTEC:hosono:00006	sex		female					
+990722-01	00011	urn::catalog:JAMSTEC:hosono:00007	sex		male					
+990722-01	00012	urn::catalog:JAMSTEC:hosono:00008	sex		male					
+990722-01	00013	urn::catalog:JAMSTEC:hosono:00009	sex		female					
+990722-01	00014	urn::catalog:JAMSTEC:hosono:00010	sex		female					
+990722-01	00015	urn::catalog:JAMSTEC:hosono:00011	sex		female					
+990722-01	00016	urn::catalog:JAMSTEC:hosono:00012	sex		male					
+990722-01	00017	urn::catalog:JAMSTEC:hosono:00013	sex		male					
+990722-01	00018	urn::catalog:JAMSTEC:hosono:00014	sex		male					
+990722-01	00019	urn::catalog:JAMSTEC:hosono:00015	sex		female					
+990722-01	00020	urn::catalog:JAMSTEC:hosono:00016	sex		male					
+990722-01	00021	urn::catalog:JAMSTEC:hosono:00017	sex		male					
+990722-01	00022	urn::catalog:JAMSTEC:hosono:00018	sex		female					
+990722-01	00023	urn::catalog:JAMSTEC:hosono:00019	sex		male					
+990722-01	00024	urn::catalog:JAMSTEC:hosono:00020	sex		male					
+990722-01	00025	urn::catalog:JAMSTEC:hosono:00021	sex		male					
+990722-01	00026	urn::catalog:JAMSTEC:hosono:00022	sex		male					
+990722-01	00027	urn::catalog:JAMSTEC:hosono:00023	sex		male					
+990722-01	00028	urn::catalog:JAMSTEC:hosono:00024	sex		male					
+990722-01	00029	urn::catalog:JAMSTEC:hosono:00025	sex		male					
+990722-01	00030	urn::catalog:JAMSTEC:hosono:00026	sex		female					
+990722-01	00031	urn::catalog:JAMSTEC:hosono:00027	sex		male					
+990722-01	00032	urn::catalog:JAMSTEC:hosono:00028	sex		undetermined					
+990722-01	00033	urn::catalog:JAMSTEC:hosono:00029	sex		male					
+990722-01	00034	urn::catalog:JAMSTEC:hosono:00030	sex		male					
+990722-01	00035	urn::catalog:JAMSTEC:hosono:00031	sex		male					
+990722-01	00036	urn::catalog:JAMSTEC:hosono:00032	sex		male					
+990722-01	00037	urn::catalog:JAMSTEC:hosono:00033	sex		female					
+990722-01	00038	urn::catalog:JAMSTEC:hosono:00034	sex		female					
+990722-01	00039	urn::catalog:JAMSTEC:hosono:00035	sex		undetermined					
+990722-01	00040	urn::catalog:JAMSTEC:hosono:00036	sex		male					
+990722-01	00041	urn::catalog:JAMSTEC:hosono:00037	sex		undetermined					
+990722-01	00042	urn::catalog:JAMSTEC:hosono:00038	sex		female					
+990722-01	00043	urn::catalog:JAMSTEC:hosono:00039	sex		female					
+990722-01	00044	urn::catalog:JAMSTEC:hosono:00040	sex		undetermined					
+990722-01	00045	urn::catalog:JAMSTEC:hosono:00041	sex		undetermined					
+990722-01	00046	urn::catalog:JAMSTEC:hosono:00042	sex		female					
+990722-01	00047	urn::catalog:JAMSTEC:hosono:00043	sex		undetermined					
+990722-01	00048	urn::catalog:JAMSTEC:hosono:00044	sex		undetermined					
+990722-01	00049	urn::catalog:JAMSTEC:hosono:00045	sex		undetermined					
+990722-01	00050	urn::catalog:JAMSTEC:hosono:00046	sex		male					
+990722-01	00051	urn::catalog:JAMSTEC:hosono:00047	sex		male					
+990722-01	00052	urn::catalog:JAMSTEC:hosono:00048	sex		undetermined					
+990722-01	00053	urn::catalog:JAMSTEC:hosono:00049	sex		male					
+990722-01	00054	urn::catalog:JAMSTEC:hosono:00050	sex		male					
+990722-01	00055	urn::catalog:JAMSTEC:hosono:00051	sex		female					
+990722-01	00056	urn::catalog:JAMSTEC:hosono:00052	sex		male					
+990722-01	00057	urn::catalog:JAMSTEC:hosono:00053	sex		male					
+990722-01	00058	urn::catalog:JAMSTEC:hosono:00054	sex		male					
+990722-01	00059	urn::catalog:JAMSTEC:hosono:00055	sex		male					
+990722-01	00060	urn::catalog:JAMSTEC:hosono:00056	sex		male					
+990722-01	00061	urn::catalog:JAMSTEC:hosono:00057	sex		female					
+990722-01	00062	urn::catalog:JAMSTEC:hosono:00058	sex		male					
+990722-01	00063	urn::catalog:JAMSTEC:hosono:00059	sex		male					
+990722-01	00064	urn::catalog:JAMSTEC:hosono:00060	sex		male					
+990722-01	00065	urn::catalog:JAMSTEC:hosono:00061	sex		female					
+990722-01	00066	urn::catalog:JAMSTEC:hosono:00062	sex		female					
+990722-01	00067	urn::catalog:JAMSTEC:hosono:00063	sex		male					
+990722-01	00068	urn::catalog:JAMSTEC:hosono:00064	sex		undetermined					
+990722-01	00069	urn::catalog:JAMSTEC:hosono:00065	sex		undetermined					
+990722-01	00070	urn::catalog:JAMSTEC:hosono:00066	sex		undetermined					
+990722-01	00071	urn::catalog:JAMSTEC:hosono:00067	sex		undetermined					
+990722-01	00072	urn::catalog:JAMSTEC:hosono:00068	sex		undetermined					
+990722-01	00073	urn::catalog:JAMSTEC:hosono:00069	sex		female					
+990722-01	00074	urn::catalog:JAMSTEC:hosono:00070	sex		undetermined					
+990722-01	00075	urn::catalog:JAMSTEC:hosono:00071	sex		undetermined					
+990722-01	00076	urn::catalog:JAMSTEC:hosono:00072	sex		undetermined					
+990722-01	00077	urn::catalog:JAMSTEC:hosono:00073	sex		undetermined					
+990722-01	00078	urn::catalog:JAMSTEC:hosono:00074	sex		undetermined					
+990722-01	00079	urn::catalog:JAMSTEC:hosono:00075	sex		undetermined					
+990722-01	00080	urn::catalog:JAMSTEC:hosono:00076	sex		undetermined					
+990722-01	00081	urn::catalog:JAMSTEC:hosono:00077	sex		undetermined					
+990722-01	00082	urn::catalog:JAMSTEC:hosono:00078	sex		undetermined					
+990722-01	00083	urn::catalog:JAMSTEC:hosono:00079	sex		undetermined					
+990722-01	00084	urn::catalog:JAMSTEC:hosono:00080	sex		male					
+990722-01	00085	urn::catalog:JAMSTEC:hosono:00081	sex		undetermined					
+990722-01	00086	urn::catalog:JAMSTEC:hosono:00082	sex		female					
+990722-01	00087	urn::catalog:JAMSTEC:hosono:00083	sex		female					
+990722-01	00088	urn::catalog:JAMSTEC:hosono:00084	sex		undetermined					
+990722-01	00089	urn::catalog:JAMSTEC:hosono:00085	sex		undetermined					
+990722-01	00090	urn::catalog:JAMSTEC:hosono:00086	sex		undetermined					
+990722-01	00091	urn::catalog:JAMSTEC:hosono:00087	sex		undetermined					
+990722-01	00092	urn::catalog:JAMSTEC:hosono:00088	sex		undetermined					
+990722-01	00093	urn::catalog:JAMSTEC:hosono:00089	sex		undetermined					
+990722-01	00094	urn::catalog:JAMSTEC:hosono:00090	sex		undetermined					
+990722-01	00095	urn::catalog:JAMSTEC:hosono:00091	sex		male					
+990722-01	00096	urn::catalog:JAMSTEC:hosono:00092	sex		male					
+990722-01	00097	urn::catalog:JAMSTEC:hosono:00093	sex		undetermined					
+990722-01	00098	urn::catalog:JAMSTEC:hosono:00094	sex		male					
+990722-01	00099	urn::catalog:JAMSTEC:hosono:00095	sex		undetermined					
+990722-01	00100	urn::catalog:JAMSTEC:hosono:00096	sex		male					
+990722-01	00101	urn::catalog:JAMSTEC:hosono:00097	sex		undetermined					
+990722-01	00102	urn::catalog:JAMSTEC:hosono:00098	sex		undetermined					
+990722-01	00103	urn::catalog:JAMSTEC:hosono:00099	sex		undetermined					
+990722-01	00104	urn::catalog:JAMSTEC:hosono:00100	sex		undetermined					
+990722-01	00105	urn::catalog:JAMSTEC:hosono:00101	sex		undetermined					
+990722-01	00106	urn::catalog:JAMSTEC:hosono:00102	sex		male					
+990722-01	00107	urn::catalog:JAMSTEC:hosono:00103	sex		male					
+990722-01	00108	urn::catalog:JAMSTEC:hosono:00104	sex		male					
+990722-01	00109	urn::catalog:JAMSTEC:hosono:00105	sex		female					
+990722-01	00110	urn::catalog:JAMSTEC:hosono:00106	sex		male					
+990722-01	00111	urn::catalog:JAMSTEC:hosono:00107	sex		male					
+990722-01	00112	urn::catalog:JAMSTEC:hosono:00108	sex		male					
+990722-01	00113	urn::catalog:JAMSTEC:hosono:00109	sex		female					
+990722-01	00114	urn::catalog:JAMSTEC:hosono:00110	sex		undetermined					
+990722-01	00115	urn::catalog:JAMSTEC:hosono:00111	sex		male					
+990722-01	00116	urn::catalog:JAMSTEC:hosono:00112	sex		female					
+990722-01	00117	urn::catalog:JAMSTEC:hosono:00113	sex		male					
+990722-01	00118	urn::catalog:JAMSTEC:hosono:00114	sex		undetermined					
+990722-01	00119	urn::catalog:JAMSTEC:hosono:00115	sex		male					
+990722-01	00120	urn::catalog:JAMSTEC:hosono:00116	sex		undetermined					
+990722-01	00121	urn::catalog:JAMSTEC:hosono:00117	sex		undetermined					
+990722-01	00122	urn::catalog:JAMSTEC:hosono:00118	sex		female					
+990722-01	00123	urn::catalog:JAMSTEC:hosono:00119	sex		undetermined					
+990722-01	00124	urn::catalog:JAMSTEC:hosono:00120	sex		undetermined					
+990722-01	00125	urn::catalog:JAMSTEC:hosono:00121	sex		undetermined					
+990722-01	00126	urn::catalog:JAMSTEC:hosono:00122	sex		male					
+990722-01	00127	urn::catalog:JAMSTEC:hosono:00123	sex		female					
+990722-01	00128	urn::catalog:JAMSTEC:hosono:00124	sex		undetermined					
+990722-01	00129	urn::catalog:JAMSTEC:hosono:00125	sex		male					
+990722-01	00130	urn::catalog:JAMSTEC:hosono:00126	sex		male					
+990722-01	00131	urn::catalog:JAMSTEC:hosono:00127	sex		undetermined					
+990722-01	00132	urn::catalog:JAMSTEC:hosono:00128	sex		undetermined					
+990722-01	00133	urn::catalog:JAMSTEC:hosono:00129	sex		male					
+990722-01	00134	urn::catalog:JAMSTEC:hosono:00130	sex		undetermined					
+990722-01	00135	urn::catalog:JAMSTEC:hosono:00131	sex		undetermined					
+990722-01	00136	urn::catalog:JAMSTEC:hosono:00132	sex		male					
+990722-01	00137	urn::catalog:JAMSTEC:hosono:00133	sex		male					
+990722-01	00138	urn::catalog:JAMSTEC:hosono:00134	sex		male					
+990722-01	00139	urn::catalog:JAMSTEC:hosono:00135	sex		female					
+990722-01	00140	urn::catalog:JAMSTEC:hosono:00136	sex		undetermined					
+990722-01	00141	urn::catalog:JAMSTEC:hosono:00137	sex		undetermined					
+990722-01	00142	urn::catalog:JAMSTEC:hosono:00138	sex		undetermined					
+990722-01	00143	urn::catalog:JAMSTEC:hosono:00139	sex		undetermined					
+990722-01	00144	urn::catalog:JAMSTEC:hosono:00140	sex		undetermined					
+990722-01	00145	urn::catalog:JAMSTEC:hosono:00141	sex		undetermined					
+990722-01	00146	urn::catalog:JAMSTEC:hosono:00142	sex		male					
+990722-01	00147	urn::catalog:JAMSTEC:hosono:00143	sex		male					
+990722-01	00148	urn::catalog:JAMSTEC:hosono:00144	sex		undetermined					
+990722-01	00149	urn::catalog:JAMSTEC:hosono:00145	sex		male					
+990722-01	00150	urn::catalog:JAMSTEC:hosono:00146	sex		undetermined					
+990722-01	00151	urn::catalog:JAMSTEC:hosono:00147	sex		male					
+990722-01	00152	urn::catalog:JAMSTEC:hosono:00148	sex		undetermined					
+990722-01	00153	urn::catalog:JAMSTEC:hosono:00149	sex		undetermined					
+990722-01	00154	urn::catalog:JAMSTEC:hosono:00150	sex		male					
+990722-01	00155	urn::catalog:JAMSTEC:hosono:00151	sex		undetermined					
+990722-01	00156	urn::catalog:JAMSTEC:hosono:00152	sex		undetermined					
+990722-01	00157	urn::catalog:JAMSTEC:hosono:00153	sex		female					
+990722-01	00158	urn::catalog:JAMSTEC:hosono:00154	sex		female					
+990722-01	00159	urn::catalog:JAMSTEC:hosono:00155	sex		undetermined					
+990722-01	00160	urn::catalog:JAMSTEC:hosono:00156	sex		female					
+990722-01	00161	urn::catalog:JAMSTEC:hosono:00157	sex		undetermined					
+990722-01	00162	urn::catalog:JAMSTEC:hosono:00158	sex		male					
+990722-01	00163	urn::catalog:JAMSTEC:hosono:00159	sex		male					
+990722-01	00164	urn::catalog:JAMSTEC:hosono:00160	sex		male					
+990722-01	00165	urn::catalog:JAMSTEC:hosono:00161	sex		male					
+990722-01	00166	urn::catalog:JAMSTEC:hosono:00162	sex		female					
+990722-01	00167	urn::catalog:JAMSTEC:hosono:00163	sex		undetermined					
+990722-01	00168	urn::catalog:JAMSTEC:hosono:00164	sex		female					
+990722-01	00169	urn::catalog:JAMSTEC:hosono:00165	sex		undetermined					
+990722-01	00170	urn::catalog:JAMSTEC:hosono:00166	sex		undetermined					
+990722-01	00171	urn::catalog:JAMSTEC:hosono:00167	sex		male					
+990722-01	00172	urn::catalog:JAMSTEC:hosono:00168	sex		female					
+990722-01	00173	urn::catalog:JAMSTEC:hosono:00169	sex		undetermined					
+990722-01	00174	urn::catalog:JAMSTEC:hosono:00170	sex		male					
+990722-01	00175	urn::catalog:JAMSTEC:hosono:00171	sex		male					
+990722-01	00176	urn::catalog:JAMSTEC:hosono:00172	sex		undetermined					
+990722-01	00177	urn::catalog:JAMSTEC:hosono:00173	sex		undetermined					
+990722-01	00178	urn::catalog:JAMSTEC:hosono:00174	sex		undetermined					
+990722-01	00179	urn::catalog:JAMSTEC:hosono:00175	sex		female					
+990722-01	00180	urn::catalog:JAMSTEC:hosono:00176	sex		undetermined					
+990722-01	00181	urn::catalog:JAMSTEC:hosono:00177	sex		male					
+990722-01	00182	urn::catalog:JAMSTEC:hosono:00178	sex		female					
+990722-01	00183	urn::catalog:JAMSTEC:hosono:00179	sex		undetermined					
+990722-01	00184	urn::catalog:JAMSTEC:hosono:00180	sex		male					
+990722-01	00185	urn::catalog:JAMSTEC:hosono:00005	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	premature					
+990722-01	00186	urn::catalog:JAMSTEC:hosono:00006	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	mature					
+990722-01	00187	urn::catalog:JAMSTEC:hosono:00007	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	mature					
+990722-01	00188	urn::catalog:JAMSTEC:hosono:00008	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	mature					
+990722-01	00189	urn::catalog:JAMSTEC:hosono:00009	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	mature					
+990722-01	00190	urn::catalog:JAMSTEC:hosono:00010	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	mature					
+990722-01	00191	urn::catalog:JAMSTEC:hosono:00011	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	mature					
+990722-01	00192	urn::catalog:JAMSTEC:hosono:00012	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00193	urn::catalog:JAMSTEC:hosono:00013	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00194	urn::catalog:JAMSTEC:hosono:00014	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00195	urn::catalog:JAMSTEC:hosono:00015	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	mature					
+990722-01	00196	urn::catalog:JAMSTEC:hosono:00016	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00197	urn::catalog:JAMSTEC:hosono:00017	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00198	urn::catalog:JAMSTEC:hosono:00018	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	mature					
+990722-01	00199	urn::catalog:JAMSTEC:hosono:00019	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00200	urn::catalog:JAMSTEC:hosono:00020	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00201	urn::catalog:JAMSTEC:hosono:00021	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00202	urn::catalog:JAMSTEC:hosono:00022	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00203	urn::catalog:JAMSTEC:hosono:00023	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00204	urn::catalog:JAMSTEC:hosono:00024	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00205	urn::catalog:JAMSTEC:hosono:00025	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00206	urn::catalog:JAMSTEC:hosono:00026	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	mature					
+990722-01	00207	urn::catalog:JAMSTEC:hosono:00027	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00208	urn::catalog:JAMSTEC:hosono:00028	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00209	urn::catalog:JAMSTEC:hosono:00029	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00210	urn::catalog:JAMSTEC:hosono:00030	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00211	urn::catalog:JAMSTEC:hosono:00031	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00212	urn::catalog:JAMSTEC:hosono:00032	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00213	urn::catalog:JAMSTEC:hosono:00033	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	mature					
+990722-01	00214	urn::catalog:JAMSTEC:hosono:00034	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	premature					
+990722-01	00215	urn::catalog:JAMSTEC:hosono:00035	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00216	urn::catalog:JAMSTEC:hosono:00036	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00217	urn::catalog:JAMSTEC:hosono:00037	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00218	urn::catalog:JAMSTEC:hosono:00038	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	premature					
+990722-01	00219	urn::catalog:JAMSTEC:hosono:00039	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	premature					
+990722-01	00220	urn::catalog:JAMSTEC:hosono:00040	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00221	urn::catalog:JAMSTEC:hosono:00041	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00222	urn::catalog:JAMSTEC:hosono:00042	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00223	urn::catalog:JAMSTEC:hosono:00043	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00224	urn::catalog:JAMSTEC:hosono:00044	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00225	urn::catalog:JAMSTEC:hosono:00045	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00226	urn::catalog:JAMSTEC:hosono:00046	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00227	urn::catalog:JAMSTEC:hosono:00047	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00228	urn::catalog:JAMSTEC:hosono:00048	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00229	urn::catalog:JAMSTEC:hosono:00049	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00230	urn::catalog:JAMSTEC:hosono:00050	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00231	urn::catalog:JAMSTEC:hosono:00051	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	mature					
+990722-01	00232	urn::catalog:JAMSTEC:hosono:00052	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00233	urn::catalog:JAMSTEC:hosono:00053	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00234	urn::catalog:JAMSTEC:hosono:00054	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00235	urn::catalog:JAMSTEC:hosono:00055	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00236	urn::catalog:JAMSTEC:hosono:00056	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00237	urn::catalog:JAMSTEC:hosono:00057	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	mature					
+990722-01	00238	urn::catalog:JAMSTEC:hosono:00058	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00239	urn::catalog:JAMSTEC:hosono:00059	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00240	urn::catalog:JAMSTEC:hosono:00060	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00241	urn::catalog:JAMSTEC:hosono:00061	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	mature					
+990722-01	00242	urn::catalog:JAMSTEC:hosono:00062	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	mature					
+990722-01	00243	urn::catalog:JAMSTEC:hosono:00063	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00244	urn::catalog:JAMSTEC:hosono:00064	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00245	urn::catalog:JAMSTEC:hosono:00065	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00246	urn::catalog:JAMSTEC:hosono:00066	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00247	urn::catalog:JAMSTEC:hosono:00067	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00248	urn::catalog:JAMSTEC:hosono:00068	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00249	urn::catalog:JAMSTEC:hosono:00069	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	premature					
+990722-01	00250	urn::catalog:JAMSTEC:hosono:00070	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00251	urn::catalog:JAMSTEC:hosono:00071	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00252	urn::catalog:JAMSTEC:hosono:00072	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00253	urn::catalog:JAMSTEC:hosono:00073	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00254	urn::catalog:JAMSTEC:hosono:00074	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00255	urn::catalog:JAMSTEC:hosono:00075	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00256	urn::catalog:JAMSTEC:hosono:00076	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00257	urn::catalog:JAMSTEC:hosono:00077	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00258	urn::catalog:JAMSTEC:hosono:00078	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00259	urn::catalog:JAMSTEC:hosono:00079	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00260	urn::catalog:JAMSTEC:hosono:00080	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00261	urn::catalog:JAMSTEC:hosono:00081	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00262	urn::catalog:JAMSTEC:hosono:00082	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	mature					
+990722-01	00263	urn::catalog:JAMSTEC:hosono:00083	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	mature					
+990722-01	00264	urn::catalog:JAMSTEC:hosono:00084	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00265	urn::catalog:JAMSTEC:hosono:00085	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00266	urn::catalog:JAMSTEC:hosono:00086	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00267	urn::catalog:JAMSTEC:hosono:00087	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00268	urn::catalog:JAMSTEC:hosono:00088	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00269	urn::catalog:JAMSTEC:hosono:00089	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00270	urn::catalog:JAMSTEC:hosono:00090	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00271	urn::catalog:JAMSTEC:hosono:00091	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00272	urn::catalog:JAMSTEC:hosono:00092	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00273	urn::catalog:JAMSTEC:hosono:00093	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00274	urn::catalog:JAMSTEC:hosono:00094	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00275	urn::catalog:JAMSTEC:hosono:00095	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00276	urn::catalog:JAMSTEC:hosono:00096	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00277	urn::catalog:JAMSTEC:hosono:00097	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00278	urn::catalog:JAMSTEC:hosono:00098	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00279	urn::catalog:JAMSTEC:hosono:00099	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00280	urn::catalog:JAMSTEC:hosono:00100	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00281	urn::catalog:JAMSTEC:hosono:00101	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00282	urn::catalog:JAMSTEC:hosono:00102	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00283	urn::catalog:JAMSTEC:hosono:00103	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00284	urn::catalog:JAMSTEC:hosono:00104	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00285	urn::catalog:JAMSTEC:hosono:00105	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	premature					
+990722-01	00286	urn::catalog:JAMSTEC:hosono:00106	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00287	urn::catalog:JAMSTEC:hosono:00107	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00288	urn::catalog:JAMSTEC:hosono:00108	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00289	urn::catalog:JAMSTEC:hosono:00109	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	premature					
+990722-01	00290	urn::catalog:JAMSTEC:hosono:00110	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00291	urn::catalog:JAMSTEC:hosono:00111	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00292	urn::catalog:JAMSTEC:hosono:00112	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	premature					
+990722-01	00293	urn::catalog:JAMSTEC:hosono:00113	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00294	urn::catalog:JAMSTEC:hosono:00114	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00295	urn::catalog:JAMSTEC:hosono:00115	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00296	urn::catalog:JAMSTEC:hosono:00116	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00297	urn::catalog:JAMSTEC:hosono:00117	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00298	urn::catalog:JAMSTEC:hosono:00118	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00299	urn::catalog:JAMSTEC:hosono:00119	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00300	urn::catalog:JAMSTEC:hosono:00120	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00301	urn::catalog:JAMSTEC:hosono:00121	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00302	urn::catalog:JAMSTEC:hosono:00122	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00303	urn::catalog:JAMSTEC:hosono:00123	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	premature					
+990722-01	00304	urn::catalog:JAMSTEC:hosono:00124	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00305	urn::catalog:JAMSTEC:hosono:00125	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00306	urn::catalog:JAMSTEC:hosono:00126	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00307	urn::catalog:JAMSTEC:hosono:00127	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00308	urn::catalog:JAMSTEC:hosono:00128	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00309	urn::catalog:JAMSTEC:hosono:00129	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00310	urn::catalog:JAMSTEC:hosono:00130	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00311	urn::catalog:JAMSTEC:hosono:00131	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00312	urn::catalog:JAMSTEC:hosono:00132	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00313	urn::catalog:JAMSTEC:hosono:00133	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00314	urn::catalog:JAMSTEC:hosono:00134	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00315	urn::catalog:JAMSTEC:hosono:00135	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	premature					
+990722-01	00316	urn::catalog:JAMSTEC:hosono:00136	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00317	urn::catalog:JAMSTEC:hosono:00137	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00318	urn::catalog:JAMSTEC:hosono:00138	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00319	urn::catalog:JAMSTEC:hosono:00139	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00320	urn::catalog:JAMSTEC:hosono:00140	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00321	urn::catalog:JAMSTEC:hosono:00141	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00322	urn::catalog:JAMSTEC:hosono:00142	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00323	urn::catalog:JAMSTEC:hosono:00143	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00324	urn::catalog:JAMSTEC:hosono:00144	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00325	urn::catalog:JAMSTEC:hosono:00145	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00326	urn::catalog:JAMSTEC:hosono:00146	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00327	urn::catalog:JAMSTEC:hosono:00147	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00328	urn::catalog:JAMSTEC:hosono:00148	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00329	urn::catalog:JAMSTEC:hosono:00149	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00330	urn::catalog:JAMSTEC:hosono:00150	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00331	urn::catalog:JAMSTEC:hosono:00151	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00332	urn::catalog:JAMSTEC:hosono:00152	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00333	urn::catalog:JAMSTEC:hosono:00153	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	premature					
+990722-01	00334	urn::catalog:JAMSTEC:hosono:00154	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	premature					
+990722-01	00335	urn::catalog:JAMSTEC:hosono:00155	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00336	urn::catalog:JAMSTEC:hosono:00156	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	premature					
+990722-01	00337	urn::catalog:JAMSTEC:hosono:00157	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00338	urn::catalog:JAMSTEC:hosono:00158	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00339	urn::catalog:JAMSTEC:hosono:00159	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00340	urn::catalog:JAMSTEC:hosono:00160	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00341	urn::catalog:JAMSTEC:hosono:00161	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00342	urn::catalog:JAMSTEC:hosono:00162	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	premature					
+990722-01	00343	urn::catalog:JAMSTEC:hosono:00163	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00344	urn::catalog:JAMSTEC:hosono:00164	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	premature					
+990722-01	00345	urn::catalog:JAMSTEC:hosono:00165	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00346	urn::catalog:JAMSTEC:hosono:00166	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00347	urn::catalog:JAMSTEC:hosono:00167	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00348	urn::catalog:JAMSTEC:hosono:00168	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	mature					
+990722-01	00349	urn::catalog:JAMSTEC:hosono:00169	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00350	urn::catalog:JAMSTEC:hosono:00170	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00351	urn::catalog:JAMSTEC:hosono:00171	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00352	urn::catalog:JAMSTEC:hosono:00172	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00353	urn::catalog:JAMSTEC:hosono:00173	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00354	urn::catalog:JAMSTEC:hosono:00174	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00355	urn::catalog:JAMSTEC:hosono:00175	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	premature					
+990722-01	00356	urn::catalog:JAMSTEC:hosono:00176	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00357	urn::catalog:JAMSTEC:hosono:00177	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00358	urn::catalog:JAMSTEC:hosono:00178	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	premature					
+990722-01	00359	urn::catalog:JAMSTEC:hosono:00179	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00360	urn::catalog:JAMSTEC:hosono:00180	lifeStage	https://www.bodc.ac.uk/data/codes_and_formats/vocabulary_search/S11/	juvenile					
+990722-01	00361	urn::catalog:JAMSTEC:hosono:00005	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	4.63			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00362	urn::catalog:JAMSTEC:hosono:00006	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	5.76			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00363	urn::catalog:JAMSTEC:hosono:00007	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	9.22			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00364	urn::catalog:JAMSTEC:hosono:00008	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	5.08			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00365	urn::catalog:JAMSTEC:hosono:00009	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	5.79			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00366	urn::catalog:JAMSTEC:hosono:00010	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	5.49			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00367	urn::catalog:JAMSTEC:hosono:00011	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	5.28			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00368	urn::catalog:JAMSTEC:hosono:00012	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	9.98			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00369	urn::catalog:JAMSTEC:hosono:00013	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	7.21			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00370	urn::catalog:JAMSTEC:hosono:00014	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	7.35			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00371	urn::catalog:JAMSTEC:hosono:00015	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	5.37			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00372	urn::catalog:JAMSTEC:hosono:00016	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.52			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00373	urn::catalog:JAMSTEC:hosono:00017	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.55			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00374	urn::catalog:JAMSTEC:hosono:00018	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	4.65			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00375	urn::catalog:JAMSTEC:hosono:00019	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	3.83			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00376	urn::catalog:JAMSTEC:hosono:00020	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	3			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00377	urn::catalog:JAMSTEC:hosono:00021	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	6.05			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00378	urn::catalog:JAMSTEC:hosono:00022	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	6.16			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00379	urn::catalog:JAMSTEC:hosono:00023	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	6.57			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00380	urn::catalog:JAMSTEC:hosono:00024	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	3.5			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00381	urn::catalog:JAMSTEC:hosono:00025	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	4.58			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00382	urn::catalog:JAMSTEC:hosono:00026	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	4.68			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00383	urn::catalog:JAMSTEC:hosono:00027	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	3.06			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00384	urn::catalog:JAMSTEC:hosono:00028	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	3.07			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00385	urn::catalog:JAMSTEC:hosono:00029	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	8.16			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00386	urn::catalog:JAMSTEC:hosono:00030	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	8.69			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00387	urn::catalog:JAMSTEC:hosono:00031	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	4.51			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00388	urn::catalog:JAMSTEC:hosono:00032	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.43			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00389	urn::catalog:JAMSTEC:hosono:00033	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	4.31			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00390	urn::catalog:JAMSTEC:hosono:00034	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	4.41			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00391	urn::catalog:JAMSTEC:hosono:00035	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.63			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00392	urn::catalog:JAMSTEC:hosono:00036	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.52			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00393	urn::catalog:JAMSTEC:hosono:00037	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.05			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00394	urn::catalog:JAMSTEC:hosono:00038	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.83			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00395	urn::catalog:JAMSTEC:hosono:00039	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	3.38			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00396	urn::catalog:JAMSTEC:hosono:00040	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.59			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00397	urn::catalog:JAMSTEC:hosono:00041	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.77			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00398	urn::catalog:JAMSTEC:hosono:00042	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.43			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00399	urn::catalog:JAMSTEC:hosono:00043	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	3.27			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00400	urn::catalog:JAMSTEC:hosono:00044	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.65			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00401	urn::catalog:JAMSTEC:hosono:00045	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.92			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00402	urn::catalog:JAMSTEC:hosono:00046	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.92			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00403	urn::catalog:JAMSTEC:hosono:00047	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	3.27			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00404	urn::catalog:JAMSTEC:hosono:00048	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.57			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00405	urn::catalog:JAMSTEC:hosono:00049	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.26			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00406	urn::catalog:JAMSTEC:hosono:00050	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.49			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00407	urn::catalog:JAMSTEC:hosono:00051	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	7.62			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00408	urn::catalog:JAMSTEC:hosono:00052	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	5.53			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00409	urn::catalog:JAMSTEC:hosono:00053	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	4.97			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00410	urn::catalog:JAMSTEC:hosono:00054	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	3.95			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00411	urn::catalog:JAMSTEC:hosono:00055	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	3.3			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00412	urn::catalog:JAMSTEC:hosono:00056	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	7.15			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00413	urn::catalog:JAMSTEC:hosono:00057	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	4.97			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00414	urn::catalog:JAMSTEC:hosono:00058	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	4.5			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00415	urn::catalog:JAMSTEC:hosono:00059	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	5.79			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00416	urn::catalog:JAMSTEC:hosono:00060	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	3.09			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00417	urn::catalog:JAMSTEC:hosono:00061	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	5.31			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00418	urn::catalog:JAMSTEC:hosono:00062	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	4.07			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00419	urn::catalog:JAMSTEC:hosono:00063	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.49			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00420	urn::catalog:JAMSTEC:hosono:00064	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	3.27			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00421	urn::catalog:JAMSTEC:hosono:00065	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.61			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00422	urn::catalog:JAMSTEC:hosono:00066	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.69			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00423	urn::catalog:JAMSTEC:hosono:00067	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.82			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00424	urn::catalog:JAMSTEC:hosono:00068	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.41			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00425	urn::catalog:JAMSTEC:hosono:00069	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	3.56			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00426	urn::catalog:JAMSTEC:hosono:00070	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.23			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00427	urn::catalog:JAMSTEC:hosono:00071	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.72			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00428	urn::catalog:JAMSTEC:hosono:00072	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.75			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00429	urn::catalog:JAMSTEC:hosono:00073	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.82			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00430	urn::catalog:JAMSTEC:hosono:00074	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.53			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00431	urn::catalog:JAMSTEC:hosono:00075	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.82			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00432	urn::catalog:JAMSTEC:hosono:00076	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.19			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00433	urn::catalog:JAMSTEC:hosono:00077	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.74			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00434	urn::catalog:JAMSTEC:hosono:00078	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.75			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00435	urn::catalog:JAMSTEC:hosono:00079	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.81			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00436	urn::catalog:JAMSTEC:hosono:00080	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	4.92			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00438	urn::catalog:JAMSTEC:hosono:00082	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	4.41			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00439	urn::catalog:JAMSTEC:hosono:00083	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.21			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00440	urn::catalog:JAMSTEC:hosono:00084	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.21			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00441	urn::catalog:JAMSTEC:hosono:00085	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.6			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00442	urn::catalog:JAMSTEC:hosono:00086	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.72			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00443	urn::catalog:JAMSTEC:hosono:00087	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.92			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00444	urn::catalog:JAMSTEC:hosono:00088	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	4.32			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00445	urn::catalog:JAMSTEC:hosono:00089	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.69			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00446	urn::catalog:JAMSTEC:hosono:00090	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.53			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00447	urn::catalog:JAMSTEC:hosono:00091	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	3.07			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00448	urn::catalog:JAMSTEC:hosono:00092	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.25			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00449	urn::catalog:JAMSTEC:hosono:00093	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.64			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00450	urn::catalog:JAMSTEC:hosono:00094	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.84			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00451	urn::catalog:JAMSTEC:hosono:00095	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	4.65			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00452	urn::catalog:JAMSTEC:hosono:00096	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	6.49			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00453	urn::catalog:JAMSTEC:hosono:00097	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.9			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00454	urn::catalog:JAMSTEC:hosono:00098	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.85			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00455	urn::catalog:JAMSTEC:hosono:00099	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.71			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00456	urn::catalog:JAMSTEC:hosono:00100	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.8			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00457	urn::catalog:JAMSTEC:hosono:00101	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.64			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00458	urn::catalog:JAMSTEC:hosono:00102	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.12			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00459	urn::catalog:JAMSTEC:hosono:00103	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	4.15			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00460	urn::catalog:JAMSTEC:hosono:00104	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.32			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00461	urn::catalog:JAMSTEC:hosono:00105	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	4.25			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00462	urn::catalog:JAMSTEC:hosono:00106	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	3.08			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00463	urn::catalog:JAMSTEC:hosono:00107	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	3.29			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00464	urn::catalog:JAMSTEC:hosono:00108	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	8.95			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00465	urn::catalog:JAMSTEC:hosono:00109	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	4.48			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00466	urn::catalog:JAMSTEC:hosono:00110	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.17			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00467	urn::catalog:JAMSTEC:hosono:00111	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.54			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00468	urn::catalog:JAMSTEC:hosono:00112	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.99			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00469	urn::catalog:JAMSTEC:hosono:00113	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	7.77			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00470	urn::catalog:JAMSTEC:hosono:00114	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.87			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00471	urn::catalog:JAMSTEC:hosono:00115	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	7.37			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00472	urn::catalog:JAMSTEC:hosono:00116	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.38			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00473	urn::catalog:JAMSTEC:hosono:00117	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.08			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00474	urn::catalog:JAMSTEC:hosono:00118	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.61			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00475	urn::catalog:JAMSTEC:hosono:00119	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.55			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00476	urn::catalog:JAMSTEC:hosono:00120	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.78			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00477	urn::catalog:JAMSTEC:hosono:00121	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	3.25			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00478	urn::catalog:JAMSTEC:hosono:00122	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.93			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00479	urn::catalog:JAMSTEC:hosono:00123	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	3.39			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00480	urn::catalog:JAMSTEC:hosono:00124	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.36			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00481	urn::catalog:JAMSTEC:hosono:00125	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	8.17			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00482	urn::catalog:JAMSTEC:hosono:00126	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.76			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00483	urn::catalog:JAMSTEC:hosono:00127	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.12			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00484	urn::catalog:JAMSTEC:hosono:00128	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.42			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00485	urn::catalog:JAMSTEC:hosono:00129	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.53			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00486	urn::catalog:JAMSTEC:hosono:00130	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.37			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00487	urn::catalog:JAMSTEC:hosono:00131	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.18			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00488	urn::catalog:JAMSTEC:hosono:00132	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.64			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00489	urn::catalog:JAMSTEC:hosono:00133	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.3			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00490	urn::catalog:JAMSTEC:hosono:00134	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.11			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00491	urn::catalog:JAMSTEC:hosono:00135	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.35			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00492	urn::catalog:JAMSTEC:hosono:00136	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.3			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00493	urn::catalog:JAMSTEC:hosono:00137	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.74			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00494	urn::catalog:JAMSTEC:hosono:00138	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.44			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00495	urn::catalog:JAMSTEC:hosono:00139	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.65			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00496	urn::catalog:JAMSTEC:hosono:00140	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.42			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00497	urn::catalog:JAMSTEC:hosono:00141	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.71			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00498	urn::catalog:JAMSTEC:hosono:00142	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.12			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00499	urn::catalog:JAMSTEC:hosono:00143	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	3.02			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00500	urn::catalog:JAMSTEC:hosono:00144	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.81			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00501	urn::catalog:JAMSTEC:hosono:00145	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.3			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00502	urn::catalog:JAMSTEC:hosono:00146	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.31			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00503	urn::catalog:JAMSTEC:hosono:00147	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.92			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00504	urn::catalog:JAMSTEC:hosono:00148	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.26			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00505	urn::catalog:JAMSTEC:hosono:00149	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	3.03			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00506	urn::catalog:JAMSTEC:hosono:00150	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.71			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00507	urn::catalog:JAMSTEC:hosono:00151	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.7			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00508	urn::catalog:JAMSTEC:hosono:00152	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.73			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00509	urn::catalog:JAMSTEC:hosono:00153	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.47			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00510	urn::catalog:JAMSTEC:hosono:00154	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.78			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00511	urn::catalog:JAMSTEC:hosono:00155	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.57			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00512	urn::catalog:JAMSTEC:hosono:00156	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.84			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00513	urn::catalog:JAMSTEC:hosono:00157	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.58			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00514	urn::catalog:JAMSTEC:hosono:00158	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	3.11			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00515	urn::catalog:JAMSTEC:hosono:00159	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	3.47			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00516	urn::catalog:JAMSTEC:hosono:00160	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.43			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00517	urn::catalog:JAMSTEC:hosono:00161	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.59			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00519	urn::catalog:JAMSTEC:hosono:00163	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.25			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00520	urn::catalog:JAMSTEC:hosono:00164	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	4.13			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00521	urn::catalog:JAMSTEC:hosono:00165	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.06			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00522	urn::catalog:JAMSTEC:hosono:00166	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.23			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00523	urn::catalog:JAMSTEC:hosono:00167	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	8.06			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00524	urn::catalog:JAMSTEC:hosono:00168	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	4.65			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00525	urn::catalog:JAMSTEC:hosono:00169	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.4			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00526	urn::catalog:JAMSTEC:hosono:00170	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.64			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00527	urn::catalog:JAMSTEC:hosono:00171	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.34			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00528	urn::catalog:JAMSTEC:hosono:00172	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.35			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00529	urn::catalog:JAMSTEC:hosono:00173	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.78			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00530	urn::catalog:JAMSTEC:hosono:00174	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.75			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00531	urn::catalog:JAMSTEC:hosono:00175	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	3.56			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00532	urn::catalog:JAMSTEC:hosono:00176	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.62			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00533	urn::catalog:JAMSTEC:hosono:00177	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.65			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00534	urn::catalog:JAMSTEC:hosono:00178	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.72			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00535	urn::catalog:JAMSTEC:hosono:00179	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	1.95			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	
+990722-01	00536	urn::catalog:JAMSTEC:hosono:00180	Total Length	http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX	2.39			mm	http://vocab.nerc.ac.uk/collection/P06/current/UXMM/	

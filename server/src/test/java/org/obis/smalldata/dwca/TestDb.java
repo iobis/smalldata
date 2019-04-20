@@ -11,7 +11,7 @@ import de.flapdoodle.embed.process.runtime.Network;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.mongo.MongoClient;
-import org.obis.smalldata.db.BulkOperationUtil;
+import org.obis.smalldata.dbcontroller.BulkOperationUtil;
 
 import java.io.IOException;
 import java.util.concurrent.CompletableFuture;
@@ -40,7 +40,7 @@ class TestDb {
       var future = new CompletableFuture<Long>();
       var mongoClient = MongoClient.createNonShared(vertx, dbClientConfig);
       mongoClient.bulkWrite("dwcarecords",
-        BulkOperationUtil.createOperationsFromFile("mockdata/dwca/dwcarecords.json"),
+        BulkOperationUtil.createOperationsFromFile("testdata/dwca/dwcarecords.json"),
         client -> future.complete(client.result().getInsertedCount()));
       info("added {} records", future.get());
       return mongoClient;

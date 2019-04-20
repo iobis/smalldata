@@ -1,0 +1,62 @@
+<eml:eml xmlns:eml="eml://ecoinformatics.org/eml-2.1.1" xmlns:dc="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 http://rs.gbif.org/schema/eml-gbif-profile/1.1/eml.xsd" packageId="http://ipt.vliz.be/eurobis/resource?id=benthic_data_sevastopol/v1.1" system="http://gbif.org" scope="system" xml:lang="en">
+  <dataset id="NnqVLwIyPn-nRkc">
+    <title xml:lang="en">Benthic data from Sevastopol (Black Sea)</title>
+    <creator>
+      <individualName>
+        <givenName>Christos</givenName>
+        <surName>Arvanitidis</surName>
+      </individualName>
+      <organizationName>Hellenic Centre for Marine Research (HCMR)</organizationName>
+      <electronicMailAddress>arvanitidis@her.hcmr.gr</electronicMailAddress>
+    </creator>
+    <creator>
+      <organizationName>Hellenic Centre for Marine Research (HCMR)</organizationName>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Alexei</givenName>
+        <surName>Petrov</surName>
+      </individualName>
+      <organizationName>National Academy of Sciences of Ukraine Institute of Biology of the Southern Seas (NASU-IBSS</organizationName>
+      <electronicMailAddress>alexpet@ibss.iuf.net</electronicMailAddress>
+    </creator>
+    <metadataProvider>
+      <individualName>
+        <surName>EurOBIS Data Management Team</surName>
+      </individualName>
+      <organizationName>Flanders Marine Institute (VLIZ)</organizationName>
+      <electronicMailAddress>info@eurobis.org</electronicMailAddress>
+    </metadataProvider>
+    <pubDate>2019-04-02</pubDate>
+    <language>en</language>
+    <abstract>
+      <para>The dataset contains the abundance and biomass values of sediment organisms from the Sevastopol region (South-Western Crimea, The Black Sea, Ukraine) collected between 1982 and 1992.</para>
+      <para>Abundance and Biomass of benthic organisms and key abiotic variables (covering irregular sampling surveys within 1982-1992) from the Sevastopol Area (South-Western Crimea, The Black Sea, Ukraine) including estuaries and small sheltered and semi-closed bays within the area of &amp;quot;big Sevastopol bay&amp;quot;
+        Sevastopol Bay is located in south western part of the Crimean peninsula, Ukraine and comprehends the one of the biggest marine harbours of the Black Sea and has served as an industrialized naval base for decades. A consequence of this long-term industrial, military and municipal activity was the deterioration of the marine environment of the bay, depressed state of benthic assemblages and occurrence of expanded bottom areas that became contaminated with various sediment-associated pollutants including polycyclic aromatic hydrocarbons (PAHs), polychlorinated biphenyls (PCBs), pesticides, and metals. Benthic samples in Sevastopol bay heve been taken between 1982 and 1992.</para>
+    </abstract>
+    <keywordSet>
+      <keyword>Occurrence</keyword>
+      <keywordThesaurus>GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>Observation</keyword>
+      <keywordThesaurus>GBIF Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>Benthic biomass</keyword>
+      <keyword>Benthos</keyword>
+      <keyword>Data</keyword>
+      <keyword>Marine Genomics</keyword>
+      <keywordThesaurus>ASFA</keywordThesaurus>
+    </keywordSet>
+    <intellectualRights><para>This work is licensed under a <ulink url="http://creativecommons.org/licenses/by-nc/4.0/legalcode"><citetitle>Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License</citetitle></ulink>.</para></intellectualRights>
+    <contact>
+      <individualName>
+        <givenName>Christos</givenName>
+        <surName>Arvanitidis</surName>
+      </individualName>
+      <organizationName>Hellenic Centre for Marine Research (HCMR)</organizationName>
+      <electronicMailAddress>arvanitidis@her.hcmr.gr</electronicMailAddress>
+    </contact>
+  </dataset>
+</eml:eml>

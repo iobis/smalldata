@@ -14,14 +14,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class MetaGeneratorTest {
 
   @Test
   public void generateXmlSuccessFullMetaFile() throws IOException {
-    var processor = new ResourcePathProcessor("mockdata/dwca/ware_hosono-v1.5-csv-namespaced/");
+    var processor = new ResourcePathProcessor("testdata/dwca/ware_hosono-v1.5-csv-namespaced/");
     var core = processor.generateMetaConfig(processor.uri("event15584133909797684527.txt"));
     var extensions = List.of("emof15584133909797684527.txt", "occurrence15584133909797684527.txt").stream()
       .map(processor::uri)
@@ -31,13 +30,11 @@ public class MetaGeneratorTest {
 
     var generatedXmlFile = generator.generateXml(core, extensions);
 
-    assertTrue(generatedXmlFile.isPresent());
-    var originalXmlUrl = Resources.getResource("mockdata/dwca/ware_hosono-v1.5/meta.xml");
+    assertThat(generatedXmlFile).isPresent();
+    var originalXmlUrl = Resources.getResource("testdata/dwca/ware_hosono-v1.5/meta.xml");
     var expectedXml = Resources.toString(originalXmlUrl, Charsets.UTF_8);
     var actualXml = Files.lines(generatedXmlFile.get().toPath()).collect(Collectors.joining());
-    assertEquals(
-      expectedXml.replaceAll("\\s", ""),
-      actualXml.replaceAll("\\s", "").replaceAll("\\d+\\.txt", ".txt"));
+    assertThat(expectedXml).isEqualToIgnoringWhitespace(actualXml.replaceAll("\\d+\\.txt", ".txt"));
   }
 
   @Value

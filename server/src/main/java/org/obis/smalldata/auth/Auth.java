@@ -13,10 +13,22 @@ import static org.pmw.tinylog.Logger.info;
 
 public class Auth extends AbstractVerticle {
 
-  private static final String ALG_KEY = "alg";
-  private static final String AUTH_ES256 = "ES256";
   private static final String PUBLIC_KEY = "publicKey";
   private static final String SECURITY_KEY = "securityKey";
+  private static final String ALG_KEY = "alg";
+  private static final String AUTH_ES256 = "ES256";
+
+  @Override
+  public void start(Future<Void> startFuture) throws ExceptionInInitializerError {
+    info("starting module 'Auth'");
+    try {
+      var loginHandler = new LoginHandler(generateAuthProvider());
+      vertx.eventBus().localConsumer("auth.login", loginHandler::login);
+      startFuture.complete();
+    } catch (Exception e) {
+      startFuture.fail(new ExceptionInInitializerError("cannot deploy Auth module, invalid provider"));
+    }
+  }
 
   private AuthProvider generateAuthProvider() throws InvalidKeyException {
     AuthProvider provider;
@@ -43,17 +55,5 @@ public class Auth extends AbstractVerticle {
       }
     }
     return provider;
-  }
-
-  @Override
-  public void start(Future<Void> startFuture) throws ExceptionInInitializerError {
-    info("starting module 'Auth'");
-    try {
-      var loginHandler = new LoginHandler(generateAuthProvider());
-      vertx.eventBus().localConsumer("auth.login", loginHandler::login);
-      startFuture.complete();
-    } catch (Exception e) {
-      startFuture.fail(new ExceptionInInitializerError("cannot deploy Auth module, invalid provider"));
-    }
   }
 }
