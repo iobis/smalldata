@@ -11,7 +11,7 @@ import de.flapdoodle.embed.process.runtime.Network;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.mongo.MongoClient;
-import org.obis.smalldata.db.BulkOperationUtil;
+import org.obis.smalldata.dbcontroller.BulkOperationUtil;
 
 import java.io.IOException;
 import java.util.concurrent.CompletableFuture;

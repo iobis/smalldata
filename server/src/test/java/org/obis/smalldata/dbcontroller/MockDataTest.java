@@ -1,4 +1,4 @@
-package org.obis.smalldata.db;
+package org.obis.smalldata.dbcontroller;
 
 import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Vertx;
@@ -47,7 +47,7 @@ public class MockDataTest {
   }
 
   @Test
-  @DisplayName("read mock data from json and add to db")
+  @DisplayName("read mock data from json and add to dbcontroller")
   @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
   public void bulkWrite(VertxTestContext testContext) {
     var operations = BulkOperationUtil.createOperationsFromFile("testdata/testusers.json");

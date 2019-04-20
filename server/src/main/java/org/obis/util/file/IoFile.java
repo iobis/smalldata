@@ -1,4 +1,4 @@
-package org.obis.smalldata.util;
+package org.obis.util.file;
 
 import com.google.common.base.Charsets;
 import com.google.common.io.Resources;

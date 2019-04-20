@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import io.vertx.core.json.JsonObject;
 import org.junit.jupiter.api.Test;
 import org.obis.smalldata.dwca.EmlGenerator.DataSetEmlMap;
-import org.obis.smalldata.util.IoFile;
+import org.obis.util.file.IoFile;
 import org.xmlunit.builder.DiffBuilder;
 import org.xmlunit.diff.DefaultNodeMatcher;
 import org.xmlunit.diff.Diff;

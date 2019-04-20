@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.obis.smalldata.rss.xmlmodel.Channel;
 import org.obis.smalldata.rss.xmlmodel.RssFeed;
 import org.obis.smalldata.rss.xmlmodel.RssItem;
-import org.obis.smalldata.util.IoFile;
+import org.obis.util.file.IoFile;
 
 import java.net.MalformedURLException;
 import java.net.URL;

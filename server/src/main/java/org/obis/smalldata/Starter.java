@@ -5,7 +5,7 @@ import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import org.obis.smalldata.auth.Auth;
-import org.obis.smalldata.db.EmbeddedDb;
+import org.obis.smalldata.dbcontroller.EmbeddedDb;
 import org.obis.smalldata.rss.RssComponent;
 import org.obis.smalldata.webapi.WebApi;
 

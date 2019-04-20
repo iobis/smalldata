@@ -1,4 +1,4 @@
-package org.obis.smalldata.db;
+package org.obis.smalldata.dbcontroller;
 
 import de.flapdoodle.embed.mongo.MongodExecutable;
 import de.flapdoodle.embed.mongo.MongodProcess;
@@ -66,7 +66,7 @@ public class EmbeddedDb extends AbstractVerticle {
 
   @Override
   public void stop() {
-    info("shutdown mongo db");
+    info("shutdown mongo dbcontroller");
     if (this.process != null) {
       process.stop();
       executable.stop();
