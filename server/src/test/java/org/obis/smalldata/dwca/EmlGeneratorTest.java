@@ -14,33 +14,36 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class EmlGeneratorTest {
 
   private static ObjectMapper mapper = new ObjectMapper();
 
   @Test
-  void testSimpleEml() throws IOException {
-    var generator = new EmlGenerator();
+  void generate_generatesDataSetEmlMap() throws IOException {
+    var emlGenerator = new EmlGenerator();
     var datasets = IoFile.loadFromResources("testdata/dwca/datasets.json");
-    var json = (List<Map<String, Object>>) mapper.readValue(datasets,
+
+    var json = mapper.<List<Map<String, Object>>>readValue(
+      datasets,
       new TypeReference<List<Map<String, Object>>>() {
       });
+
+    assertThat(json).hasSize(4);
     json.stream()
       .map(JsonObject::new)
-      .map(generator::generate)
+      .map(emlGenerator::generate)
       .map(Optional::get)
-      .forEach(xml -> {
-        var diff = DiffBuilder.compare(xml.getEml())
-          .withTest(IoFile.loadFromResources("testdata/dwca/" + xml.getId() + ".xml"))
-          .withNodeMatcher(new DefaultNodeMatcher(ElementSelectors.byName))
-          .checkForSimilar()
-          .ignoreWhitespace()
-          .normalizeWhitespace()
-          .ignoreComments()
-          .build();
-        assertFalse(diff.hasDifferences());
-      });
+      .map(xml -> DiffBuilder
+        .compare(xml.getEml())
+        .withTest(IoFile.loadFromResources("testdata/dwca/" + xml.getId() + ".xml"))
+        .withNodeMatcher(new DefaultNodeMatcher(ElementSelectors.byName))
+        .checkForSimilar()
+        .ignoreWhitespace()
+        .normalizeWhitespace()
+        .ignoreComments()
+        .build())
+      .forEach(diff -> assertThat(diff.hasDifferences()).isFalse());
   }
 }

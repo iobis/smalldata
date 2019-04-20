@@ -31,7 +31,8 @@ class EmlGenerator {
 
   Optional<DataSetEmlMap> generate(Eml eml) {
     try {
-      return Optional.of(new DataSetEmlMap(eml.getDataset().getId(),
+      return Optional.of(new DataSetEmlMap(
+        eml.getDataset().getId(),
         xmlMapper.writerWithDefaultPrettyPrinter().writeValueAsString(eml)));
     } catch (JsonProcessingException e) {
       error(e.getMessage());
