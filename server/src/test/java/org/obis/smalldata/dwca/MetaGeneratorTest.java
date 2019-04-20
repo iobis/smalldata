@@ -20,7 +20,7 @@ public class MetaGeneratorTest {
 
   @Test
   public void generateXmlSuccessFullMetaFile() throws IOException {
-    var processor = new ResourcePathProcessor("mockdata/dwca/ware_hosono-v1.5-csv-namespaced/");
+    var processor = new ResourcePathProcessor("testdata/dwca/ware_hosono-v1.5-csv-namespaced/");
     var core = processor.generateMetaConfig(processor.uri("event15584133909797684527.txt"));
     var extensions = List.of("emof15584133909797684527.txt", "occurrence15584133909797684527.txt").stream()
       .map(processor::uri)
@@ -31,7 +31,7 @@ public class MetaGeneratorTest {
     var generatedXmlFile = generator.generateXml(core, extensions);
 
     assertThat(generatedXmlFile).isPresent();
-    var originalXmlUrl = Resources.getResource("mockdata/dwca/ware_hosono-v1.5/meta.xml");
+    var originalXmlUrl = Resources.getResource("testdata/dwca/ware_hosono-v1.5/meta.xml");
     var expectedXml = Resources.toString(originalXmlUrl, Charsets.UTF_8);
     var actualXml = Files.lines(generatedXmlFile.get().toPath()).collect(Collectors.joining());
     assertThat(expectedXml).isEqualToIgnoringWhitespace(actualXml.replaceAll("\\d+\\.txt", ".txt"));

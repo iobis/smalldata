@@ -40,7 +40,7 @@ class TestDb {
       var future = new CompletableFuture<Long>();
       var mongoClient = MongoClient.createNonShared(vertx, dbClientConfig);
       mongoClient.bulkWrite("dwcarecords",
-        BulkOperationUtil.createOperationsFromFile("mockdata/dwca/dwcarecords.json"),
+        BulkOperationUtil.createOperationsFromFile("testdata/dwca/dwcarecords.json"),
         client -> future.complete(client.result().getInsertedCount()));
       info("added {} records", future.get());
       return mongoClient;
