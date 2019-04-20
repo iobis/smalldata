@@ -14,8 +14,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class MetaGeneratorTest {
 
@@ -31,13 +30,11 @@ public class MetaGeneratorTest {
 
     var generatedXmlFile = generator.generateXml(core, extensions);
 
-    assertTrue(generatedXmlFile.isPresent());
+    assertThat(generatedXmlFile).isPresent();
     var originalXmlUrl = Resources.getResource("mockdata/dwca/ware_hosono-v1.5/meta.xml");
     var expectedXml = Resources.toString(originalXmlUrl, Charsets.UTF_8);
     var actualXml = Files.lines(generatedXmlFile.get().toPath()).collect(Collectors.joining());
-    assertEquals(
-      expectedXml.replaceAll("\\s", ""),
-      actualXml.replaceAll("\\s", "").replaceAll("\\d+\\.txt", ".txt"));
+    assertThat(expectedXml).isEqualToIgnoringWhitespace(actualXml.replaceAll("\\d+\\.txt", ".txt"));
   }
 
   @Value
