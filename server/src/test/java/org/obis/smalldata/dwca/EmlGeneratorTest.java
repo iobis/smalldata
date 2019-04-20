@@ -21,7 +21,7 @@ public class EmlGeneratorTest {
   private static ObjectMapper mapper = new ObjectMapper();
 
   @Test
-  void generate_generatesDataSetEmlMap() throws IOException {
+  void generateDataSetEmlMapsFromJson() throws IOException {
     var emlGenerator = new EmlGenerator();
     var datasets = IoFile.loadFromResources("testdata/dwca/datasets.json");
 
