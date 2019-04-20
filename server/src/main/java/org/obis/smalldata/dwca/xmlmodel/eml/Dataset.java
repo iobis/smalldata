@@ -112,7 +112,5 @@ public class Dataset {
     @JacksonXmlProperty(localName = "keyword")
     private final String[] keywords;
     private final String keywordThesaurus;
-
-
   }
 }
