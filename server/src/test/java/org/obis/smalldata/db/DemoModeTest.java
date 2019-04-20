@@ -15,7 +15,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.concurrent.TimeUnit;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(VertxExtension.class)
 public class DemoModeTest {
@@ -51,7 +51,7 @@ public class DemoModeTest {
       Collections.DATASETS.dbName(),
       new JsonObject().put("meta.type", "event"),
       ar -> {
-        assertEquals(1, ar.result().size());
+        assertThat(ar.result()).hasSize(1);
         testContext.completeNow();
       });
   }

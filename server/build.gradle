@@ -65,6 +65,7 @@ dependencies {
   testImplementation "org.assertj:assertj-core:3.11.1"
 
   testRuntime "org.junit.jupiter:junit-jupiter-engine:$junitJupiterEngineVersion"
+  testCompile "org.assertj:assertj-core:3.11.1"
 }
 
 test {
