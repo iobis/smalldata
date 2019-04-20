@@ -37,12 +37,17 @@ class TestDb {
         .version(Version.Main.PRODUCTION);
       executable = MongodStarter.getDefaultInstance().prepare(mongodConfig.build());
       process = executable.start();
-      var future = new CompletableFuture<Long>();
+      var dwcaFuture = new CompletableFuture<Long>();
       var mongoClient = MongoClient.createNonShared(vertx, dbClientConfig);
       mongoClient.bulkWrite("dwcarecords",
         BulkOperationUtil.createOperationsFromFile("testdata/dwca/dwcarecords.json"),
-        client -> future.complete(client.result().getInsertedCount()));
-      info("added {} records", future.get());
+        client -> dwcaFuture.complete(client.result().getInsertedCount()));
+      info("added {} dwca records", dwcaFuture.get());
+      var datasetFuture = new CompletableFuture<Long>();
+      mongoClient.bulkWrite("datasets",
+        BulkOperationUtil.createOperationsFromFile("testdata/dwca/datasets.json"),
+        client -> datasetFuture.complete(client.result().getInsertedCount()));
+      info("added {} datasets", datasetFuture.get());
       return mongoClient;
     } catch (InterruptedException | ExecutionException | IOException e) {
       error(Throwables.getStackTraceAsString(e));

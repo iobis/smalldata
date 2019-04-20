@@ -6,6 +6,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import org.obis.smalldata.auth.Auth;
 import org.obis.smalldata.dbcontroller.EmbeddedDb;
+import org.obis.smalldata.dwca.Dwca;
 import org.obis.smalldata.rss.RssComponent;
 import org.obis.smalldata.webapi.WebApi;
 
@@ -38,17 +39,15 @@ public class Starter extends AbstractVerticle {
           .put("bindIp", "localhost")
           .put("port", 27017)
           .put("path", "")));
-    vertx.deployVerticle(
-      WebApi.class.getName(),
+    vertx.deployVerticle(WebApi.class.getName(),
       new DeploymentOptions().setConfig(config().getJsonObject("http")));
     vertx.deployVerticle(RssComponent.class.getName());
-    vertx.deployVerticle(
-      EmbeddedDb.class.getName(),
+    vertx.deployVerticle(Dwca.class.getName());
+    vertx.deployVerticle(EmbeddedDb.class.getName(),
       new DeploymentOptions().setConfig(config().getJsonObject("storage")));
 
     try {
-      vertx.deployVerticle(
-        Auth.class.getName(),
+      vertx.deployVerticle(Auth.class.getName(),
         new DeploymentOptions().setConfig(updateAuthConfig(config().getJsonObject("auth"))));
     } catch (NoSuchAlgorithmException | InvalidAlgorithmParameterException e) {
       error(Arrays.stream(e.getStackTrace())
