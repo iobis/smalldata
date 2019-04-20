@@ -68,8 +68,8 @@ public class EmbeddedDb extends AbstractVerticle {
   public void stop() {
     info("shutdown mongo db");
     if (this.process != null) {
-      this.process.stop();
-      this.executable.stop();
+      process.stop();
+      executable.stop();
     }
   }
 
