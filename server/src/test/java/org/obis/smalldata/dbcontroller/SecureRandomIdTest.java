@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class SecureRandomIdTest {
 
@@ -12,6 +12,6 @@ public class SecureRandomIdTest {
   public void testRandomId() {
     Stream.generate(SecureRandomId::generateId)
       .limit(10)
-      .forEach(id -> assertEquals(id.length(), 15));
+      .forEach(id -> assertThat(id).hasSize(15));
   }
 }

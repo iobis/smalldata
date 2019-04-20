@@ -5,7 +5,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.ser.ToXmlGenerator;
-import org.obis.smalldata.rss.model.RssFeed;
+import org.obis.smalldata.rss.xmlmodel.RssFeed;
 
 import java.io.File;
 import java.io.IOException;

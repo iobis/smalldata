@@ -1,13 +1,8 @@
 [
   {
     "_ref": "wEaBfmFyQhYCdsk",
-    "meta": {
-      "type": "event",
-      "dwdTables": {
-        "core": "event",
-        "extensions": ["emof", "occurrence"]
-      }
-    },
+    "type": "event",
+    "pubDate": "2019-04-18T09:24:28.186587Z",
     "title": {
       "language": "en",
       "value": "Caprellids polulation structure in Usujiri, Hokkaido, Japan"
@@ -61,13 +56,8 @@
   },
   {
     "_ref": "ntDOtUc7XsRrIus",
-    "meta": {
-      "type": "occurrence",
-      "dwdTables": {
-        "core": "occurrence",
-        "extensions": ["emof"]
-      }
-    },
+    "type": "occurrence",
+    "pubDate": "2019-04-02",
     "title": {
       "language": "en",
       "value": "Benthos collected in the Azov Sea in 1935 on board the R/V \"N. Danilevskiy\""
@@ -140,13 +130,8 @@
   },
   {
     "_ref": "PoJnGNMaxsupE4w",
-    "meta": {
-      "type": "occurrence",
-      "dwdTables": {
-        "core": "occurrence",
-        "extensions": ["emof"]
-      }
-    },
+    "type": "occurrence",
+    "pubDate": "2019-04-18T09:24:28.947153Z",
     "title": {
       "language": "en",
       "value": "Antipatharia distribution data from: Deep-sea fauna of European seas - an annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe"
@@ -211,13 +196,8 @@
   },
   {
     "_ref": "NnqVLwIyPn-nRkc",
-    "meta": {
-      "type": "occurrence",
-      "dwdTables": {
-        "core": "occurrence",
-        "extensions": ["emof"]
-      }
-    },
+    "type": "occurrence",
+    "pubDate": "2019-04-02",
     "title": {
       "language": "en",
       "value": "Benthic data from Sevastopol (Black Sea)"

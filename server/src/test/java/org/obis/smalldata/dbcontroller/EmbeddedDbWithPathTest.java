@@ -19,7 +19,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.pmw.tinylog.Logger.error;
 import static org.pmw.tinylog.Logger.info;
 
@@ -29,11 +29,11 @@ public class EmbeddedDbWithPathTest {
   private static final String BIND_IP = "localhost";
   private static final int PORT = 12345;
 
-  private static MongoClient client;
+  private static MongoClient mongoClient;
   private static File dbPath;
 
   @BeforeAll
-  public static void beforeAll(Vertx vertx, VertxTestContext testContext) {
+  public static void setUp(Vertx vertx, VertxTestContext testContext) {
     var tmpDir = new File(System.getProperty("java.io.tmpdir") + File.separator + "obis-test");
     dbPath = new File(tmpDir.getAbsolutePath()
       + File.separator + "db" + Generators.timeBasedGenerator().generate());
@@ -42,12 +42,12 @@ public class EmbeddedDbWithPathTest {
       new DeploymentOptions().setConfig(MongoConfigs.ofServer(BIND_IP, PORT, dbPath)),
       deployId -> {
         info("Deployed DB {}", deployId.result());
-        client = MongoClient.createNonShared(vertx, MongoConfigs.ofClient(BIND_IP, PORT));
-        info("Running client {}", client);
-        client.createCollection(
+        mongoClient = MongoClient.createNonShared(vertx, MongoConfigs.ofClient(BIND_IP, PORT));
+        info("Running mongoClient {}", mongoClient);
+        mongoClient.createCollection(
           COLLECTION_NAME,
           result -> {
-            client.insert(
+            mongoClient.insert(
               COLLECTION_NAME,
               new JsonObject()
                 .put("measurementID", 42)
@@ -61,7 +61,8 @@ public class EmbeddedDbWithPathTest {
   }
 
   @AfterAll
-  public static void afterAll(Vertx vertx) {
+  public static void tearDown(Vertx vertx) {
+    mongoClient.close();
     vertx.close(result -> {
       if (dbPath.exists()) {
         try {
@@ -77,13 +78,13 @@ public class EmbeddedDbWithPathTest {
   @DisplayName("Check custom path")
   @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
   public void testCustomPath(VertxTestContext testContext) {
-    client.find(
+    mongoClient.find(
       COLLECTION_NAME,
       new JsonObject(),
       result -> {
         info("result: {}", result.result());
-        assertTrue(result.succeeded());
-        assertTrue(result.result().size() > 0);
+        assertThat(result.succeeded()).isTrue();
+        assertThat(result.result()).isNotEmpty();
         testContext.completeNow();
       });
   }
@@ -92,12 +93,12 @@ public class EmbeddedDbWithPathTest {
   @DisplayName("Insert data")
   @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
   public void step01Insert(VertxTestContext testContext) {
-    client.insert(
+    mongoClient.insert(
       COLLECTION_NAME,
       new JsonObject().put("persistent", true),
       result -> {
         info("result: {}", result.result());
-        assertTrue(result.succeeded());
+        assertThat(result.succeeded()).isTrue();
         testContext.completeNow();
       });
   }
