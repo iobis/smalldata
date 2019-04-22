@@ -1,10 +1,12 @@
 import CopyPreviousData from '../CopyPreviousData'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 export default function ObservationData({ onChange }) {
   const { t } = useTranslation()
+  const [identifiedByNames, setIdentifiedByNames] = useState(['name 1', 'name 2'])
+  const [recordedByNames, setRecordedByNames] = useState(['name 1', 'name 2', 'name 3'])
 
   return (
     <div className="observation-data section is-fluid">
@@ -70,9 +72,11 @@ export default function ObservationData({ onChange }) {
           <input
             className="input"
             onChange={onChange}
+            onKeyDown={(e) => {if (e.key === 'Enter') setIdentifiedByNames([...identifiedByNames, e.target.value])}}
             type="text"
             placeholder={t('occurrenceForm.observationData.identifiedBy.placeholder')}/>
           <p className="help">{t('occurrenceForm.observationData.identifiedBy.help')}</p>
+          <Names names={identifiedByNames} onDelete={(names) => setIdentifiedByNames(names)}/>
         </div>
         <div className="column field is-3">
           <label className="label">
@@ -82,8 +86,10 @@ export default function ObservationData({ onChange }) {
             className="input"
             onChange={onChange}
             type="text"
+            onKeyDown={(e) => {if (e.key === 'Enter') setRecordedByNames([...recordedByNames, e.target.value])}}
             placeholder={t('occurrenceForm.observationData.recordedBy.placeholder')}/>
           <p className="help">{t('occurrenceForm.observationData.recordedBy.help')}</p>
+          <Names names={recordedByNames} onDelete={(names) => setRecordedByNames(names)}/>
         </div>
       </div>
       <div className="columns">
@@ -105,7 +111,7 @@ export default function ObservationData({ onChange }) {
             {t('occurrenceForm.observationData.identificationRemarks.label')}
           </label>
           <textarea
-            class="textarea"
+            className="textarea"
             onChange={onChange}
             rows={5}
             placeholder={t('occurrenceForm.observationData.identificationRemarks.placeholder')}/>
@@ -132,4 +138,27 @@ export default function ObservationData({ onChange }) {
 
 ObservationData.propTypes = {
   onChange: PropTypes.func.isRequired
+}
+
+function Names({ names, onDelete }) {
+  return (
+    <div className="block">
+      {names.map((name, index) =>
+        <div key={index}>
+          <span className="tag">
+            {name}
+            <button className="delete is-small" onClick={() => onDelete(deleteNameByIndex(index))}/></span>
+        </div>
+      )}
+    </div>
+  )
+
+  function deleteNameByIndex(index) {
+    return [...names.slice(0, index), ...names.slice(index + 1)]
+  }
+}
+
+Names.propTypes = {
+  names:    PropTypes.arrayOf(PropTypes.string).isRequired,
+  onDelete: PropTypes.func.isRequired
 }
