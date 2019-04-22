@@ -104,10 +104,10 @@ export default function ObservationData({ onChange }) {
           <label className="label">
             {t('occurrenceForm.observationData.identificationRemarks.label')}
           </label>
-          <input
-            className="input"
+          <textarea
+            class="textarea"
             onChange={onChange}
-            type="text"
+            rows={5}
             placeholder={t('occurrenceForm.observationData.identificationRemarks.placeholder')}/>
           <p className="help">{t('occurrenceForm.observationData.identificationRemarks.help')}</p>
         </div>
