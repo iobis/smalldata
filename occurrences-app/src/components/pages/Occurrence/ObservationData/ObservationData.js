@@ -9,7 +9,7 @@ export default function ObservationData({ onChange }) {
   return (
     <div className="observation-data section is-fluid">
       <div className="columns">
-        <div className="column field is-two-fifths">
+        <div className="column field is-3">
           <label className="label">
             {t('occurrenceForm.observationData.institutionCode.label')}
           </label>
@@ -19,7 +19,7 @@ export default function ObservationData({ onChange }) {
             type="text"
             placeholder={t('occurrenceForm.observationData.institutionCode.placeholder')}/>
         </div>
-        <div className="column field is-two-fifths">
+        <div className="column field is-3">
           <label className="label">
             {t('occurrenceForm.observationData.collectionCode.label')}
           </label>
@@ -31,7 +31,7 @@ export default function ObservationData({ onChange }) {
         </div>
       </div>
       <div className="columns">
-        <div className="column field is-two-fifths">
+        <div className="column field is-3">
           <label className="label">
             {t('occurrenceForm.observationData.fieldNumber.label')}
           </label>
@@ -41,7 +41,7 @@ export default function ObservationData({ onChange }) {
             type="text"
             placeholder={t('occurrenceForm.observationData.fieldNumber.placeholder')}/>
         </div>
-        <div className="column field is-two-fifths">
+        <div className="column field is-3">
           <label className="label">
             {t('occurrenceForm.observationData.catalogNumber.label')}
           </label>
@@ -51,7 +51,7 @@ export default function ObservationData({ onChange }) {
             type="text"
             placeholder={t('occurrenceForm.observationData.catalogNumber.placeholder')}/>
         </div>
-        <div className="column field is-two-fifths">
+        <div className="column field is-3">
           <label className="label">
             {t('occurrenceForm.observationData.recordNumber.label')}
           </label>
@@ -63,7 +63,7 @@ export default function ObservationData({ onChange }) {
         </div>
       </div>
       <div className="columns">
-        <div className="column field is-two-fifths">
+        <div className="column field is-3">
           <label className="label">
             {t('occurrenceForm.observationData.identifiedBy.label')}
           </label>
@@ -74,7 +74,7 @@ export default function ObservationData({ onChange }) {
             placeholder={t('occurrenceForm.observationData.identifiedBy.placeholder')}/>
           <p className="help">{t('occurrenceForm.observationData.identifiedBy.help')}</p>
         </div>
-        <div className="column field is-two-fifths">
+        <div className="column field is-3">
           <label className="label">
             {t('occurrenceForm.observationData.recordedBy.label')}
           </label>
@@ -87,7 +87,7 @@ export default function ObservationData({ onChange }) {
         </div>
       </div>
       <div className="columns">
-        <div className="column field is-two-fifths">
+        <div className="column field is-9">
           <label className="label">
             {t('occurrenceForm.observationData.identificationQualifier.label')}
           </label>
@@ -100,7 +100,7 @@ export default function ObservationData({ onChange }) {
         </div>
       </div>
       <div className="columns">
-        <div className="column field is-two-fifths">
+        <div className="column field is-9">
           <label className="label">
             {t('occurrenceForm.observationData.identificationRemarks.label')}
           </label>
@@ -113,7 +113,7 @@ export default function ObservationData({ onChange }) {
         </div>
       </div>
       <div className="columns">
-        <div className="column field is-two-fifths">
+        <div className="column field is-9">
           <label className="label">
             {t('occurrenceForm.observationData.references.label')}
           </label>
