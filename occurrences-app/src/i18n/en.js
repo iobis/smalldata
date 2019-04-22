@@ -56,26 +56,51 @@ export default {
         }
       },
       observationData: {
-        institutionCode: {
+        institutionCode:         {
           label:       'institution code',
           placeholder: 'institution code'
         },
-        collectionCode: {
+        collectionCode:          {
           label:       'collection code',
           placeholder: 'collection code'
         },
-        fieldNumber: {
+        fieldNumber:             {
           label:       'field number',
           placeholder: 'field number'
         },
-        catalogNumber: {
+        catalogNumber:           {
           label:       'catalog number',
           placeholder: 'catalog number'
         },
-        recordNumber: {
+        recordNumber:            {
           label:       'record number',
           placeholder: 'record number'
         },
+        identifiedBy:            {
+          label:       'identified by',
+          placeholder: '',
+          help:        'hit enter to add person to list'
+        },
+        recordedBy:              {
+          label:       'recorded by',
+          placeholder: '',
+          help:        'hit enter to add person to list'
+        },
+        identificationQualifier: {
+          label:       'identification qualifier',
+          placeholder: '',
+          help:        'aff. agrifolia var. oxyadenia (for Quercus aff. agrifolia var. oxyadenia with accompanying values Quercus in genus, agrifolia in specificEpithet, oxyadenia in infraspecificEpithet, and var. in taxonRank. cf. var. oxyadenia for Quercus agrifolia cf. var. oxyadenia with accompanying values Quercus in genus, agrifolia in specificEpithet, oxyadenia in infraspecificEpithet, and var. in taxonRank.'
+        },
+        identificationRemarks:   {
+          label:       'identification remarks',
+          placeholder: '',
+          help:        'Example: “Distinguished between Anthus correndera and Anthus hellmayri based on the comparative lengths of the uñas.”'
+        },
+        references:              {
+          label:       'references',
+          placeholder: '',
+          help:        'hit enter to add a reference to list'
+        }
       }
     },
     navbar:         {
