@@ -2,7 +2,7 @@
 
 exports[`SelectDataset renders correctly 1`] = `
 <div
-  className="basic-dataset section is-fluid"
+  className="basic-data section is-fluid"
 >
   <div
     className="columns"

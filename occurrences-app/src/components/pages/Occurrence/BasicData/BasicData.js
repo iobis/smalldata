@@ -15,7 +15,7 @@ export default function BasicData({ onChange, basicData }) {
   }
 
   return (
-    <div className="basic-dataset section is-fluid">
+    <div className="basic-data section is-fluid">
       <div className="columns">
         <div className="field is-four-fifths column">
           <label className="label">{t('occurrenceForm.basicData.scientificName')}</label>
