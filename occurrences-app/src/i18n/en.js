@@ -16,12 +16,12 @@ export default {
       }
     },
     occurrenceForm: {
-      selectDataset: {
+      selectDataset:   {
         dataDescription: 'Using Data',
         stepDescription: 'Choose the dataset for adding observations',
         stepTitle:       'Selected Dataset'
       },
-      basicData:     {
+      basicData:       {
         scientificName:   'Scientific name',
         eventBeginDate:   'Event begin date',
         eventEndDate:     'Event end date',
@@ -54,6 +54,28 @@ export default {
           adult:       'adult',
           unspecified: 'unspecified'
         }
+      },
+      observationData: {
+        institutionCode: {
+          label:       'institution code',
+          placeholder: 'institution code'
+        },
+        collectionCode: {
+          label:       'collection code',
+          placeholder: 'collection code'
+        },
+        fieldNumber: {
+          label:       'field number',
+          placeholder: 'field number'
+        },
+        catalogNumber: {
+          label:       'catalog number',
+          placeholder: 'catalog number'
+        },
+        recordNumber: {
+          label:       'record number',
+          placeholder: 'record number'
+        },
       }
     },
     navbar:         {
