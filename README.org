@@ -1,5 +1,20 @@
 * smalldata
-** links
+** occurrences-app
+*** how to start for development
+
+#+BEGIN_SRC shell
+  yarn start
+#+END_SRC
+
+*** how to start cosmos
+
+#+BEGIN_SRC shell
+  yarn cosmos
+#+END_SRC
+
+  - [[http://localhost:8989]]
+
+* links
 
    - [[https://github.com/iobis/smalldata/projects/1][github board]]
    - [[https://zube.io/iobis/smalldata/w/main-workspace/kanban][zube kanban board]]
