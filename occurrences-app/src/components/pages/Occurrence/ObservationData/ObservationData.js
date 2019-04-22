@@ -9,6 +9,8 @@ export default function ObservationData({ onChange }) {
   const [identifiedByBy, setIdentifiedBy] = useState('')
   const [recordedByNames, setRecordedByNames] = useState(['name 1', 'name 2', 'name 3'])
   const [recordedBy, setRecordedBy] = useState('')
+  const [references, setReferences] = useState(['https://google.com', 'https://gmail.com'])
+  const [reference, setReference] = useState('')
 
   return (
     <div className="observation-data section is-fluid">
@@ -138,11 +140,19 @@ export default function ObservationData({ onChange }) {
             {t('occurrenceForm.observationData.references.label')}
           </label>
           <input
+            value={reference}
             className="input"
-            onChange={onChange}
+            onChange={(e) => setReference(e.target.value)}
             type="text"
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                setReferences([...references, e.target.value])
+                setReference('')
+              }
+            }}
             placeholder={t('occurrenceForm.observationData.references.placeholder')}/>
           <p className="help">{t('occurrenceForm.observationData.references.help')}</p>
+          <Names names={references} onDelete={(names) => setReferences(names)}/>
         </div>
       </div>
       <CopyPreviousData/>
