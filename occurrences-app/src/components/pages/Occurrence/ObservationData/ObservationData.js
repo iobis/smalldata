@@ -86,7 +86,7 @@ export default function ObservationData({ onChange }) {
             type="text"
             placeholder={t('occurrenceForm.observationData.identifiedBy.placeholder')}/>
           <p className="help">{t('occurrenceForm.observationData.identifiedBy.help')}</p>
-          <Names names={identifiedByNames} onDelete={(names) => setIdentifiedByNames(names)}/>
+          <StringTags strings={identifiedByNames} onDelete={(names) => setIdentifiedByNames(names)}/>
         </div>
         <div className="column field is-3">
           <label className="label">
@@ -105,7 +105,7 @@ export default function ObservationData({ onChange }) {
             }}
             placeholder={t('occurrenceForm.observationData.recordedBy.placeholder')}/>
           <p className="help">{t('occurrenceForm.observationData.recordedBy.help')}</p>
-          <Names names={recordedByNames} onDelete={(names) => setRecordedByNames(names)}/>
+          <StringTags strings={recordedByNames} onDelete={(names) => setRecordedByNames(names)}/>
         </div>
       </div>
       <div className="columns">
@@ -152,7 +152,7 @@ export default function ObservationData({ onChange }) {
             }}
             placeholder={t('occurrenceForm.observationData.references.placeholder')}/>
           <p className="help">{t('occurrenceForm.observationData.references.help')}</p>
-          <Names names={references} onDelete={(names) => setReferences(names)}/>
+          <LinkTags links={references} onDelete={(names) => setReferences(names)}/>
         </div>
       </div>
       <CopyPreviousData/>
@@ -164,25 +164,48 @@ ObservationData.propTypes = {
   onChange: PropTypes.func.isRequired
 }
 
-function Names({ names, onDelete }) {
+function LinkTags({ links, onDelete }) {
   return (
     <div className="block">
-      {names.map((name, index) =>
+      {links.map((link, index) =>
         <div key={index}>
           <span className="tag">
-            {name}
-            <button className="delete is-small" onClick={() => onDelete(deleteNameByIndex(index))}/></span>
+            <a href={link}>{link}</a>
+            <button className="delete is-small" onClick={() => onDelete(deleteByIndex(index))}/></span>
         </div>
       )}
     </div>
   )
 
-  function deleteNameByIndex(index) {
-    return [...names.slice(0, index), ...names.slice(index + 1)]
+  function deleteByIndex(index) {
+    return [...links.slice(0, index), ...links.slice(index + 1)]
   }
 }
 
-Names.propTypes = {
-  names:    PropTypes.arrayOf(PropTypes.string).isRequired,
+LinkTags.propTypes = {
+  links:    PropTypes.arrayOf(PropTypes.string).isRequired,
+  onDelete: PropTypes.func.isRequired
+}
+
+function StringTags({ strings, onDelete }) {
+  return (
+    <div className="block">
+      {strings.map((string, index) =>
+        <div key={index}>
+          <span className="tag">
+            {string}
+            <button className="delete is-small" onClick={() => onDelete(deleteByIndex(index))}/></span>
+        </div>
+      )}
+    </div>
+  )
+
+  function deleteByIndex(index) {
+    return [...strings.slice(0, index), ...strings.slice(index + 1)]
+  }
+}
+
+StringTags.propTypes = {
+  strings:  PropTypes.arrayOf(PropTypes.string).isRequired,
   onDelete: PropTypes.func.isRequired
 }
