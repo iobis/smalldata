@@ -6,7 +6,9 @@ import { useTranslation } from 'react-i18next'
 export default function ObservationData({ onChange }) {
   const { t } = useTranslation()
   const [identifiedByNames, setIdentifiedByNames] = useState(['name 1', 'name 2'])
+  const [identifiedByBy, setIdentifiedBy] = useState('')
   const [recordedByNames, setRecordedByNames] = useState(['name 1', 'name 2', 'name 3'])
+  const [recordedBy, setRecordedBy] = useState('')
 
   return (
     <div className="observation-data section is-fluid">
@@ -70,9 +72,15 @@ export default function ObservationData({ onChange }) {
             {t('occurrenceForm.observationData.identifiedBy.label')}
           </label>
           <input
+            value={identifiedByBy}
             className="input"
-            onChange={onChange}
-            onKeyDown={(e) => {if (e.key === 'Enter') setIdentifiedByNames([...identifiedByNames, e.target.value])}}
+            onChange={(e) => setIdentifiedBy(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                setIdentifiedByNames([...identifiedByNames, e.target.value])
+                setIdentifiedBy('')
+              }
+            }}
             type="text"
             placeholder={t('occurrenceForm.observationData.identifiedBy.placeholder')}/>
           <p className="help">{t('occurrenceForm.observationData.identifiedBy.help')}</p>
@@ -83,10 +91,16 @@ export default function ObservationData({ onChange }) {
             {t('occurrenceForm.observationData.recordedBy.label')}
           </label>
           <input
+            value={recordedBy}
             className="input"
-            onChange={onChange}
+            onChange={(e) => setRecordedBy(e.target.value)}
             type="text"
-            onKeyDown={(e) => {if (e.key === 'Enter') setRecordedByNames([...recordedByNames, e.target.value])}}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                setRecordedByNames([...recordedByNames, e.target.value])
+                setRecordedBy('')
+              }
+            }}
             placeholder={t('occurrenceForm.observationData.recordedBy.placeholder')}/>
           <p className="help">{t('occurrenceForm.observationData.recordedBy.help')}</p>
           <Names names={recordedByNames} onDelete={(names) => setRecordedByNames(names)}/>
