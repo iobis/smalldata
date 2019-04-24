@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import CopyPreviousData from '../CopyPreviousData'
 import InputText from '../../../form/InputText'
 import Textarea from '../../../form/Textarea'
@@ -6,10 +7,6 @@ import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 export default function ObservationData({ onChange }) {
-  const { t } = useTranslation()
-  const [references, setReferences] = useState(['https://google.com', 'https://gmail.com'])
-  const [reference, setReference] = useState('')
-
   return (
     <div className="observation-data section is-fluid">
       <div className="columns">
@@ -22,8 +19,14 @@ export default function ObservationData({ onChange }) {
         <InputText className="is-3" name="occurrenceForm.observationData.recordNumber" onChange={onChange}/>
       </div>
       <div className="columns">
-        <InputMultipleText name="occurrenceForm.observationData.identifiedBy" values={['name 1', 'name 2']}/>
-        <InputMultipleText name="occurrenceForm.observationData.recordedBy" values={['name 1', 'name 2', 'name 3']}/>
+        <InputMultipleText
+          className="is-3"
+          name="occurrenceForm.observationData.identifiedBy"
+          values={['name 1', 'name 2']}/>
+        <InputMultipleText
+          className="is-3"
+          name="occurrenceForm.observationData.recordedBy"
+          values={['name 1', 'name 2', 'name 3']}/>
       </div>
       <div className="columns">
         <InputText
@@ -38,25 +41,12 @@ export default function ObservationData({ onChange }) {
           onChange={onChange}/>
       </div>
       <div className="columns">
-        <div className="column field is-9">
-          <label className="label">
-            {t('occurrenceForm.observationData.references.label')}
-          </label>
-          <input
-            value={reference}
-            className="input"
-            onChange={(e) => setReference(e.target.value)}
-            type="text"
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                setReferences([...references, e.target.value])
-                setReference('')
-              }
-            }}
-            placeholder={t('occurrenceForm.observationData.references.placeholder')}/>
-          <p className="help">{t('occurrenceForm.observationData.references.help')}</p>
-          <LinkTags links={references} onDelete={(names) => setReferences(names)}/>
-        </div>
+        <InputMultipleText
+          className="is-9"
+          name="occurrenceForm.observationData.references"
+          onChange={onChange}
+          labelComponent={(link) => <a href={link}>{link}</a>}
+          values={['https://google.com', 'https://gmail.com']}/>
       </div>
       <CopyPreviousData/>
     </div>
@@ -67,13 +57,13 @@ ObservationData.propTypes = {
   onChange: PropTypes.func.isRequired
 }
 
-function InputMultipleText({ name, values }) {
+function InputMultipleText({ className, name, values, onChange, labelComponent }) {
   const { t } = useTranslation()
   const [newValues, setNewValues] = useState(values)
   const [inputFieldValue, setInputFieldValue] = useState('')
 
   return (
-    <div className="column field is-3">
+    <div className={classNames('column field', className)}>
       <label className="label">
         {t(name + '.label')}
       </label>
@@ -84,47 +74,25 @@ function InputMultipleText({ name, values }) {
         onKeyDown={(e) => {
           if (e.key === 'Enter') {
             setNewValues([...newValues, e.target.value])
+            onChange([...newValues, e.target.value])
             setInputFieldValue('')
           }
         }}
         type="text"
         placeholder={t(name + '.placeholder')}/>
       <p className="help">{t(name + '.help')}</p>
-      <StringTags strings={newValues} onDelete={(names) => setNewValues(names)}/>
+      <Tags labelComponent={labelComponent} strings={newValues} onDelete={(names) => setNewValues(names)}/>
     </div>
   )
 }
 
-function LinkTags({ links, onDelete }) {
-  return (
-    <div className="block">
-      {links.map((link, index) =>
-        <div key={index}>
-          <span className="tag">
-            <a href={link}>{link}</a>
-            <button className="delete is-small" onClick={() => onDelete(deleteByIndex(index))}/></span>
-        </div>
-      )}
-    </div>
-  )
-
-  function deleteByIndex(index) {
-    return [...links.slice(0, index), ...links.slice(index + 1)]
-  }
-}
-
-LinkTags.propTypes = {
-  links:    PropTypes.arrayOf(PropTypes.string).isRequired,
-  onDelete: PropTypes.func.isRequired
-}
-
-function StringTags({ strings, onDelete }) {
+function Tags({ strings, onDelete, labelComponent }) {
   return (
     <div className="block">
       {strings.map((string, index) =>
         <div key={index}>
           <span className="tag">
-            {string}
+            {labelComponent ? labelComponent(string) : string}
             <button className="delete is-small" onClick={() => onDelete(deleteByIndex(index))}/></span>
         </div>
       )}
@@ -136,7 +104,8 @@ function StringTags({ strings, onDelete }) {
   }
 }
 
-StringTags.propTypes = {
-  strings:  PropTypes.arrayOf(PropTypes.string).isRequired,
-  onDelete: PropTypes.func.isRequired
+Tags.propTypes = {
+  labelComponent: PropTypes.func,
+  onDelete:       PropTypes.func.isRequired,
+  strings:        PropTypes.arrayOf(PropTypes.string).isRequired
 }
