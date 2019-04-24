@@ -1,5 +1,6 @@
 import classNames from 'classnames'
 import i18next from 'i18next'
+import PropTypes from 'prop-types'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -24,3 +25,8 @@ export default function InputText({ className, name, onChange }) {
   )
 }
 
+InputText.propTypes = {
+  className: PropTypes.string,
+  name:      PropTypes.string.isRequired,
+  onChange:  PropTypes.func.isRequired
+}
