@@ -7,10 +7,6 @@ import { useTranslation } from 'react-i18next'
 
 export default function ObservationData({ onChange }) {
   const { t } = useTranslation()
-  const [identifiedByNames, setIdentifiedByNames] = useState(['name 1', 'name 2'])
-  const [identifiedByBy, setIdentifiedBy] = useState('')
-  const [recordedByNames, setRecordedByNames] = useState(['name 1', 'name 2', 'name 3'])
-  const [recordedBy, setRecordedBy] = useState('')
   const [references, setReferences] = useState(['https://google.com', 'https://gmail.com'])
   const [reference, setReference] = useState('')
 
@@ -26,44 +22,8 @@ export default function ObservationData({ onChange }) {
         <InputText className="is-3" name="occurrenceForm.observationData.recordNumber" onChange={onChange}/>
       </div>
       <div className="columns">
-        <div className="column field is-3">
-          <label className="label">
-            {t('occurrenceForm.observationData.identifiedBy.label')}
-          </label>
-          <input
-            value={identifiedByBy}
-            className="input"
-            onChange={(e) => setIdentifiedBy(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                setIdentifiedByNames([...identifiedByNames, e.target.value])
-                setIdentifiedBy('')
-              }
-            }}
-            type="text"
-            placeholder={t('occurrenceForm.observationData.identifiedBy.placeholder')}/>
-          <p className="help">{t('occurrenceForm.observationData.identifiedBy.help')}</p>
-          <StringTags strings={identifiedByNames} onDelete={(names) => setIdentifiedByNames(names)}/>
-        </div>
-        <div className="column field is-3">
-          <label className="label">
-            {t('occurrenceForm.observationData.recordedBy.label')}
-          </label>
-          <input
-            value={recordedBy}
-            className="input"
-            onChange={(e) => setRecordedBy(e.target.value)}
-            type="text"
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                setRecordedByNames([...recordedByNames, e.target.value])
-                setRecordedBy('')
-              }
-            }}
-            placeholder={t('occurrenceForm.observationData.recordedBy.placeholder')}/>
-          <p className="help">{t('occurrenceForm.observationData.recordedBy.help')}</p>
-          <StringTags strings={recordedByNames} onDelete={(names) => setRecordedByNames(names)}/>
-        </div>
+        <InputMultipleText name="occurrenceForm.observationData.identifiedBy" values={['name 1', 'name 2']}/>
+        <InputMultipleText name="occurrenceForm.observationData.recordedBy" values={['name 1', 'name 2', 'name 3']}/>
       </div>
       <div className="columns">
         <InputText
@@ -105,6 +65,34 @@ export default function ObservationData({ onChange }) {
 
 ObservationData.propTypes = {
   onChange: PropTypes.func.isRequired
+}
+
+function InputMultipleText({ name, values }) {
+  const { t } = useTranslation()
+  const [newValues, setNewValues] = useState(values)
+  const [inputFieldValue, setInputFieldValue] = useState('')
+
+  return (
+    <div className="column field is-3">
+      <label className="label">
+        {t(name + '.label')}
+      </label>
+      <input
+        value={inputFieldValue}
+        className="input"
+        onChange={(e) => setInputFieldValue(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            setNewValues([...newValues, e.target.value])
+            setInputFieldValue('')
+          }
+        }}
+        type="text"
+        placeholder={t(name + '.placeholder')}/>
+      <p className="help">{t(name + '.help')}</p>
+      <StringTags strings={newValues} onDelete={(names) => setNewValues(names)}/>
+    </div>
+  )
 }
 
 function LinkTags({ links, onDelete }) {
