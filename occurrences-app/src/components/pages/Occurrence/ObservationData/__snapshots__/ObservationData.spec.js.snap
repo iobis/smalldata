@@ -18,7 +18,6 @@ exports[`ObservationData renders correctly 1`] = `
       <input
         className="input"
         onChange={[MockFunction]}
-        placeholder={null}
         type="text"
       />
     </div>
@@ -33,7 +32,6 @@ exports[`ObservationData renders correctly 1`] = `
       <input
         className="input"
         onChange={[MockFunction]}
-        placeholder={null}
         type="text"
       />
     </div>
@@ -52,7 +50,6 @@ exports[`ObservationData renders correctly 1`] = `
       <input
         className="input"
         onChange={[MockFunction]}
-        placeholder={null}
         type="text"
       />
     </div>
@@ -67,7 +64,6 @@ exports[`ObservationData renders correctly 1`] = `
       <input
         className="input"
         onChange={[MockFunction]}
-        placeholder={null}
         type="text"
       />
     </div>
@@ -82,7 +78,6 @@ exports[`ObservationData renders correctly 1`] = `
       <input
         className="input"
         onChange={[MockFunction]}
-        placeholder={null}
         type="text"
       />
     </div>
@@ -212,7 +207,6 @@ exports[`ObservationData renders correctly 1`] = `
       <input
         className="input"
         onChange={[MockFunction]}
-        placeholder={null}
         type="text"
       />
     </div>
@@ -231,14 +225,8 @@ exports[`ObservationData renders correctly 1`] = `
       <textarea
         className="textarea"
         onChange={[MockFunction]}
-        placeholder="occurrenceForm.observationData.identificationRemarks.placeholder"
         rows={5}
       />
-      <p
-        className="help"
-      >
-        occurrenceForm.observationData.identificationRemarks.help
-      </p>
     </div>
   </div>
   <div

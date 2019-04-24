@@ -1,9 +1,9 @@
-import classNames from 'classnames'
 import CopyPreviousData from '../CopyPreviousData'
+import InputText from '../../../form/InputText'
+import Textarea from '../../../form/Textarea'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import i18next from 'i18next'
 
 export default function ObservationData({ onChange }) {
   const { t } = useTranslation()
@@ -66,20 +66,16 @@ export default function ObservationData({ onChange }) {
         </div>
       </div>
       <div className="columns">
-        <InputText className="is-9" name="occurrenceForm.observationData.identificationQualifier" onChange={onChange}/>
+        <InputText
+          className="is-9"
+          name="occurrenceForm.observationData.identificationQualifier"
+          onChange={onChange}/>
       </div>
       <div className="columns">
-        <div className="column field is-9">
-          <label className="label">
-            {t('occurrenceForm.observationData.identificationRemarks.label')}
-          </label>
-          <textarea
-            className="textarea"
-            onChange={onChange}
-            rows={5}
-            placeholder={t('occurrenceForm.observationData.identificationRemarks.placeholder')}/>
-          <p className="help">{t('occurrenceForm.observationData.identificationRemarks.help')}</p>
-        </div>
+        <Textarea
+          className="is-9"
+          name="occurrenceForm.observationData.identificationRemarks"
+          onChange={onChange}/>
       </div>
       <div className="columns">
         <div className="column field is-9">
@@ -109,26 +105,6 @@ export default function ObservationData({ onChange }) {
 
 ObservationData.propTypes = {
   onChange: PropTypes.func.isRequired
-}
-
-function InputText({ className, name, onChange }) {
-  const { t } = useTranslation()
-  const label = t(name + '.label')
-  const placeholderKey = name + '.placeholder'
-  const helpKey = name + '.help'
-  return (
-    <div className={classNames('column field', className)}>
-      <label className="label">
-        {label}
-      </label>
-      <input
-        className="input"
-        onChange={onChange}
-        type="text"
-        placeholder={i18next.exists(placeholderKey) ? t(placeholderKey) : null}/>
-      {i18next.exists(helpKey) ? <p className="help">{t(helpKey)}</p> : null}
-    </div>
-  )
 }
 
 function LinkTags({ links, onDelete }) {
