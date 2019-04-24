@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-export default function InputText({ className, name, onChange }) {
+export default function InputText({ className, name, onChange, value }) {
   const { t } = useTranslation()
   const label = t(name + '.label')
   const placeholderKey = name + '.placeholder'
@@ -17,9 +17,10 @@ export default function InputText({ className, name, onChange }) {
       </label>
       <input
         className="input"
-        onChange={onChange}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder={i18next.exists(placeholderKey) ? t(placeholderKey) : undefined}
         type="text"
-        placeholder={i18next.exists(placeholderKey) ? t(placeholderKey) : undefined}/>
+        value={value}/>
       {i18next.exists(helpKey) ? <p className="help">{t(helpKey)}</p> : null}
     </div>
   )
@@ -28,5 +29,6 @@ export default function InputText({ className, name, onChange }) {
 InputText.propTypes = {
   className: PropTypes.string,
   name:      PropTypes.string.isRequired,
-  onChange:  PropTypes.func.isRequired
+  onChange:  PropTypes.func.isRequired,
+  value:     PropTypes.string
 }
