@@ -8,14 +8,19 @@ export default function InputMultipleText({ className, name, values, onChange, l
   const [newValues, setNewValues] = useState(values)
   const [inputFieldValue, setInputFieldValue] = useState('')
 
+  const updateNewValues = (newValues) => {
+    onChange(newValues)
+    setNewValues(newValues)
+  }
+
   return (
     <div className={classNames('column field', className)}>
       <label className="label">
         {t(name + '.label')}
       </label>
       <input
-        value={inputFieldValue}
         className="input"
+        placeholder={t(name + '.placeholder')}
         onChange={(e) => setInputFieldValue(e.target.value)}
         onKeyDown={(e) => {
           if (e.key === 'Enter') {
@@ -25,11 +30,19 @@ export default function InputMultipleText({ className, name, values, onChange, l
           }
         }}
         type="text"
-        placeholder={t(name + '.placeholder')}/>
+        value={inputFieldValue}/>
       <p className="help">{t(name + '.help')}</p>
-      <Tags labelComponent={labelComponent} strings={newValues} onDelete={(names) => setNewValues(names)}/>
+      <Tags labelComponent={labelComponent} strings={newValues} onDelete={updateNewValues}/>
     </div>
   )
+}
+
+InputMultipleText.props = {
+  className:      PropTypes.string,
+  labelComponent: PropTypes.func,
+  name:           PropTypes.string.isRequired,
+  onChange:       PropTypes.func.isRequired,
+  values:         PropTypes.arrayOf(PropTypes.string).isRequired
 }
 
 function Tags({ strings, onDelete, labelComponent }) {
