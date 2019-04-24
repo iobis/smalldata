@@ -15,58 +15,13 @@ export default function ObservationData({ onChange }) {
   return (
     <div className="observation-data section is-fluid">
       <div className="columns">
-        <div className="column field is-3">
-          <label className="label">
-            {t('occurrenceForm.observationData.institutionCode.label')}
-          </label>
-          <input
-            className="input"
-            onChange={onChange}
-            type="text"
-            placeholder={t('occurrenceForm.observationData.institutionCode.placeholder')}/>
-        </div>
-        <div className="column field is-3">
-          <label className="label">
-            {t('occurrenceForm.observationData.collectionCode.label')}
-          </label>
-          <input
-            className="input"
-            onChange={onChange}
-            type="text"
-            placeholder={t('occurrenceForm.observationData.collectionCode.placeholder')}/>
-        </div>
+        <InputText name="occurrenceForm.observationData.institutionCode" onChange={onChange}/>
+        <InputText name="occurrenceForm.observationData.collectionCode" onChange={onChange}/>
       </div>
       <div className="columns">
-        <div className="column field is-3">
-          <label className="label">
-            {t('occurrenceForm.observationData.fieldNumber.label')}
-          </label>
-          <input
-            className="input"
-            onChange={onChange}
-            type="text"
-            placeholder={t('occurrenceForm.observationData.fieldNumber.placeholder')}/>
-        </div>
-        <div className="column field is-3">
-          <label className="label">
-            {t('occurrenceForm.observationData.catalogNumber.label')}
-          </label>
-          <input
-            className="input"
-            onChange={onChange}
-            type="text"
-            placeholder={t('occurrenceForm.observationData.catalogNumber.placeholder')}/>
-        </div>
-        <div className="column field is-3">
-          <label className="label">
-            {t('occurrenceForm.observationData.recordNumber.label')}
-          </label>
-          <input
-            className="input"
-            onChange={onChange}
-            type="text"
-            placeholder={t('occurrenceForm.observationData.recordNumber.placeholder')}/>
-        </div>
+        <InputText name="occurrenceForm.observationData.fieldNumber" onChange={onChange}/>
+        <InputText name="occurrenceForm.observationData.catalogNumber" onChange={onChange}/>
+        <InputText name="occurrenceForm.observationData.recordNumber" onChange={onChange}/>
       </div>
       <div className="columns">
         <div className="column field is-3">
@@ -162,6 +117,24 @@ export default function ObservationData({ onChange }) {
 
 ObservationData.propTypes = {
   onChange: PropTypes.func.isRequired
+}
+
+function InputText({ name, onChange }) {
+  const { t } = useTranslation()
+  const label = t(name + '.label')
+  const placeholder = t(name + '.placeholder')
+  return (
+    <div className="column field is-3">
+      <label className="label">
+        {label}
+      </label>
+      <input
+        className="input"
+        onChange={onChange}
+        type="text"
+        placeholder={placeholder}/>
+    </div>
+  )
 }
 
 function LinkTags({ links, onDelete }) {
