@@ -2,6 +2,7 @@ import ActiveStepHeader from './ActiveStepHeader'
 import BasicData from './BasicData/BasicData'
 import ConfirmedStepHeader from './ConfirmedStepHeader'
 import NotConfirmedStepHeader from './NotConfirmedStepHeader'
+import ObservationData from './ObservationData/ObservationData'
 import React, { useState } from 'react'
 import SelectDataset from './SelectDataset/SelectDataset'
 import { format } from 'date-fns'
@@ -21,13 +22,24 @@ export default function OccurrenceForm() {
     scientificName:   '',
     sex:              null
   })
+  const [observationData, setObservationData] = useState({
+    institutionCode:         '',
+    collectionCode:          '',
+    fieldNumber:             '',
+    catalogNumber:           '',
+    recordNumber:            '',
+    identifiedBy:            [],
+    recordedBy:              [],
+    identificationQualifier: '',
+    identificationRemarks:   '',
+    references:              []
+  })
   const [activeStepIndex, setActiveStepIndex] = useState(0)
-  const basicDataLabel =
-    [
-      basicData.scientificName,
-      format(basicData.beginDate, 'D MMMM YYYY'),
-      basicData.endDate ? ' - ' + format(basicData.endDate, 'D MMMM YYYY') : ''
-    ].join(' ')
+  const basicDataLabel = [
+    basicData.scientificName,
+    format(basicData.beginDate, 'D MMMM YYYY'),
+    basicData.endDate ? ' - ' + format(basicData.endDate, 'D MMMM YYYY') : ''
+  ].join(' ')
 
   const steps = [{
     dataDescription: t('occurrenceForm.selectDataset.dataDescription'),
@@ -57,7 +69,9 @@ export default function OccurrenceForm() {
     selectedData:    'Institution: CA Identified by: Jane Doe, John Doe, Indiana Jones',
     stepDescription: 'Enter further specifics',
     stepTitle:       'Observation Data',
-    children:        <StubFormContent/>
+    children:        <ObservationData
+                       observationData={observationData}
+                       onChange={data => setObservationData(data)}/>
   }, {
     dataDescription: 'DWCA INFO',
     selectedData:    'You have submitted 7 extra fields',

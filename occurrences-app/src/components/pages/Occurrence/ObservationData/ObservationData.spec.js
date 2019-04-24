@@ -9,7 +9,19 @@ describe('ObservationData', () => {
 })
 
 function createComponent() {
+  const observationData = {
+    institutionCode:         '',
+    collectionCode:          '',
+    fieldNumber:             '',
+    catalogNumber:           '',
+    recordNumber:            '',
+    identifiedBy:            ['name 1', 'name 2'],
+    recordedBy:              ['name 1', 'name 2', 'name 3'],
+    identificationQualifier: '',
+    identificationRemarks:   '',
+    references:              ['https://google.com', 'https://gmail.com']
+  }
   return (
-    <ObservationData onChange={jest.fn()}/>
+    <ObservationData observationData={observationData} onChange={jest.fn()}/>
   )
 }

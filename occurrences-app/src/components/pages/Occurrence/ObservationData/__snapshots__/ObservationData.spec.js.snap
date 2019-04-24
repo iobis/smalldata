@@ -17,8 +17,9 @@ exports[`ObservationData renders correctly 1`] = `
       </label>
       <input
         className="input"
-        onChange={[MockFunction]}
+        onChange={[Function]}
         type="text"
+        value=""
       />
     </div>
     <div
@@ -31,8 +32,9 @@ exports[`ObservationData renders correctly 1`] = `
       </label>
       <input
         className="input"
-        onChange={[MockFunction]}
+        onChange={[Function]}
         type="text"
+        value=""
       />
     </div>
   </div>
@@ -49,8 +51,9 @@ exports[`ObservationData renders correctly 1`] = `
       </label>
       <input
         className="input"
-        onChange={[MockFunction]}
+        onChange={[Function]}
         type="text"
+        value=""
       />
     </div>
     <div
@@ -63,8 +66,9 @@ exports[`ObservationData renders correctly 1`] = `
       </label>
       <input
         className="input"
-        onChange={[MockFunction]}
+        onChange={[Function]}
         type="text"
+        value=""
       />
     </div>
     <div
@@ -77,8 +81,9 @@ exports[`ObservationData renders correctly 1`] = `
       </label>
       <input
         className="input"
-        onChange={[MockFunction]}
+        onChange={[Function]}
         type="text"
+        value=""
       />
     </div>
   </div>
@@ -206,8 +211,9 @@ exports[`ObservationData renders correctly 1`] = `
       </label>
       <input
         className="input"
-        onChange={[MockFunction]}
+        onChange={[Function]}
         type="text"
+        value=""
       />
     </div>
   </div>
@@ -224,8 +230,9 @@ exports[`ObservationData renders correctly 1`] = `
       </label>
       <textarea
         className="textarea"
-        onChange={[MockFunction]}
+        onChange={[Function]}
         rows={5}
+        value=""
       />
     </div>
   </div>

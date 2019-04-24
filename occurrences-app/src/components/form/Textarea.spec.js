@@ -11,7 +11,7 @@ describe('Textarea', () => {
     const onChange = jest.fn()
     const wrapper = mount(createComponent({ onChange }))
 
-    wrapper.find('.textarea').simulate('change', {target: {value: 'new text value'}});
+    wrapper.find('.textarea').simulate('change', { target: { value: 'new text value' } })
 
     expect(onChange).toBeCalledWith('new text value')
   })
