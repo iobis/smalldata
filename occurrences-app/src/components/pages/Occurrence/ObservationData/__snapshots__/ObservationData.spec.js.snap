@@ -18,7 +18,7 @@ exports[`ObservationData renders correctly 1`] = `
       <input
         className="input"
         onChange={[MockFunction]}
-        placeholder="occurrenceForm.observationData.institutionCode.placeholder"
+        placeholder={null}
         type="text"
       />
     </div>
@@ -33,7 +33,7 @@ exports[`ObservationData renders correctly 1`] = `
       <input
         className="input"
         onChange={[MockFunction]}
-        placeholder="occurrenceForm.observationData.collectionCode.placeholder"
+        placeholder={null}
         type="text"
       />
     </div>
@@ -52,7 +52,7 @@ exports[`ObservationData renders correctly 1`] = `
       <input
         className="input"
         onChange={[MockFunction]}
-        placeholder="occurrenceForm.observationData.fieldNumber.placeholder"
+        placeholder={null}
         type="text"
       />
     </div>
@@ -67,7 +67,7 @@ exports[`ObservationData renders correctly 1`] = `
       <input
         className="input"
         onChange={[MockFunction]}
-        placeholder="occurrenceForm.observationData.catalogNumber.placeholder"
+        placeholder={null}
         type="text"
       />
     </div>
@@ -82,7 +82,7 @@ exports[`ObservationData renders correctly 1`] = `
       <input
         className="input"
         onChange={[MockFunction]}
-        placeholder="occurrenceForm.observationData.recordNumber.placeholder"
+        placeholder={null}
         type="text"
       />
     </div>
@@ -212,14 +212,9 @@ exports[`ObservationData renders correctly 1`] = `
       <input
         className="input"
         onChange={[MockFunction]}
-        placeholder="occurrenceForm.observationData.identificationQualifier.placeholder"
+        placeholder={null}
         type="text"
       />
-      <p
-        className="help"
-      >
-        occurrenceForm.observationData.identificationQualifier.help
-      </p>
     </div>
   </div>
   <div

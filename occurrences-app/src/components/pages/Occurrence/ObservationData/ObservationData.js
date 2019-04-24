@@ -1,7 +1,9 @@
+import classNames from 'classnames'
 import CopyPreviousData from '../CopyPreviousData'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import i18next from 'i18next'
 
 export default function ObservationData({ onChange }) {
   const { t } = useTranslation()
@@ -15,13 +17,13 @@ export default function ObservationData({ onChange }) {
   return (
     <div className="observation-data section is-fluid">
       <div className="columns">
-        <InputText name="occurrenceForm.observationData.institutionCode" onChange={onChange}/>
-        <InputText name="occurrenceForm.observationData.collectionCode" onChange={onChange}/>
+        <InputText className="is-3" name="occurrenceForm.observationData.institutionCode" onChange={onChange}/>
+        <InputText className="is-3" name="occurrenceForm.observationData.collectionCode" onChange={onChange}/>
       </div>
       <div className="columns">
-        <InputText name="occurrenceForm.observationData.fieldNumber" onChange={onChange}/>
-        <InputText name="occurrenceForm.observationData.catalogNumber" onChange={onChange}/>
-        <InputText name="occurrenceForm.observationData.recordNumber" onChange={onChange}/>
+        <InputText className="is-3" name="occurrenceForm.observationData.fieldNumber" onChange={onChange}/>
+        <InputText className="is-3" name="occurrenceForm.observationData.catalogNumber" onChange={onChange}/>
+        <InputText className="is-3" name="occurrenceForm.observationData.recordNumber" onChange={onChange}/>
       </div>
       <div className="columns">
         <div className="column field is-3">
@@ -64,17 +66,7 @@ export default function ObservationData({ onChange }) {
         </div>
       </div>
       <div className="columns">
-        <div className="column field is-9">
-          <label className="label">
-            {t('occurrenceForm.observationData.identificationQualifier.label')}
-          </label>
-          <input
-            className="input"
-            onChange={onChange}
-            type="text"
-            placeholder={t('occurrenceForm.observationData.identificationQualifier.placeholder')}/>
-          <p className="help">{t('occurrenceForm.observationData.identificationQualifier.help')}</p>
-        </div>
+        <InputText className="is-9" name="occurrenceForm.observationData.identificationQualifier" onChange={onChange}/>
       </div>
       <div className="columns">
         <div className="column field is-9">
@@ -119,12 +111,13 @@ ObservationData.propTypes = {
   onChange: PropTypes.func.isRequired
 }
 
-function InputText({ name, onChange }) {
+function InputText({ className, name, onChange }) {
   const { t } = useTranslation()
   const label = t(name + '.label')
-  const placeholder = t(name + '.placeholder')
+  const placeholderKey = name + '.placeholder'
+  const helpKey = name + '.help'
   return (
-    <div className="column field is-3">
+    <div className={classNames('column field', className)}>
       <label className="label">
         {label}
       </label>
@@ -132,7 +125,8 @@ function InputText({ name, onChange }) {
         className="input"
         onChange={onChange}
         type="text"
-        placeholder={placeholder}/>
+        placeholder={i18next.exists(placeholderKey) ? t(placeholderKey) : null}/>
+      {i18next.exists(helpKey) ? <p className="help">{t(helpKey)}</p> : null}
     </div>
   )
 }
