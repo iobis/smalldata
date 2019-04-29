@@ -1,0 +1,569 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OccurrenceForm renders correctly 1`] = `
+<OccurrenceForm>
+  <section
+    className="section"
+  >
+    <ActiveStepHeader
+      className="step-0"
+      dataDescription="occurrenceForm.selectDataset.dataDescription"
+      key="occurrenceForm.selectDataset.stepTitle"
+      onStepTitleClick={[Function]}
+      selectedData="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
+      stepDescription="occurrenceForm.selectDataset.stepDescription"
+      stepTitle="1 - occurrenceForm.selectDataset.stepTitle"
+    >
+      <StepHeader
+        className="active has-background-grey has-text-white"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="occurrenceForm.selectDataset.stepDescription"
+        stepTitle="1 - occurrenceForm.selectDataset.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered active has-background-grey has-text-white"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="column is-7 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5"
+            />
+          </div>
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              occurrenceForm.selectDataset.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                1 - occurrenceForm.selectDataset.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+        <SelectDataset
+          datasets={
+            Array [
+              Object {
+                "description": "HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.",
+                "id": 0,
+              },
+              Object {
+                "description": "NPPSD Short-tailed Albatross Sightings",
+                "id": 1,
+              },
+              Object {
+                "description": "PANGAEA - Data from Christian-Albrechts-University Kiel",
+                "id": 2,
+              },
+              Object {
+                "description": "NSIS: List of marine benthic algae from Magdalen Islands, Quebec as recorded in 1979",
+                "id": 3,
+              },
+              Object {
+                "description": "Seguimiento de 10 crías de tortuga boba nacidas en 2016 en el litoral valenciano, en el marco del Proyecto LIFE 15 IPE ES 012 (aggregated per 1-degree cell)",
+                "id": 4,
+              },
+              Object {
+                "description": "Waved Albatross Tracking (aggregated per 1-degree cell)",
+                "id": 5,
+              },
+            ]
+          }
+          onChange={[Function]}
+          selectedDataset={
+            Object {
+              "description": "HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.",
+              "id": 0,
+            }
+          }
+        >
+          <div
+            className="select-dataset columns is-fluid"
+          >
+            <table
+              className="table is-striped is-fullwidth"
+            >
+              <tbody>
+                <DatasetOption
+                  checked={true}
+                  description="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
+                  id={0}
+                  key="0"
+                  onClick={[Function]}
+                >
+                  <tr
+                    className="dataset-option"
+                  >
+                    <td>
+                      <InputRadio
+                        checked={true}
+                        name="dataset"
+                        onChange={[Function]}
+                        value={0}
+                      >
+                        <input
+                          checked={true}
+                          className="input-radio is-checkradio"
+                          id="dataset-0"
+                          name="dataset"
+                          onChange={[Function]}
+                          type="radio"
+                          value={0}
+                        />
+                        <label
+                          htmlFor="dataset-0"
+                        />
+                      </InputRadio>
+                    </td>
+                    <td>
+                      HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.
+                    </td>
+                  </tr>
+                </DatasetOption>
+                <DatasetOption
+                  checked={false}
+                  description="NPPSD Short-tailed Albatross Sightings"
+                  id={1}
+                  key="1"
+                  onClick={[Function]}
+                >
+                  <tr
+                    className="dataset-option"
+                  >
+                    <td>
+                      <InputRadio
+                        checked={false}
+                        name="dataset"
+                        onChange={[Function]}
+                        value={1}
+                      >
+                        <input
+                          checked={false}
+                          className="input-radio is-checkradio"
+                          id="dataset-1"
+                          name="dataset"
+                          onChange={[Function]}
+                          type="radio"
+                          value={1}
+                        />
+                        <label
+                          htmlFor="dataset-1"
+                        />
+                      </InputRadio>
+                    </td>
+                    <td>
+                      NPPSD Short-tailed Albatross Sightings
+                    </td>
+                  </tr>
+                </DatasetOption>
+                <DatasetOption
+                  checked={false}
+                  description="PANGAEA - Data from Christian-Albrechts-University Kiel"
+                  id={2}
+                  key="2"
+                  onClick={[Function]}
+                >
+                  <tr
+                    className="dataset-option"
+                  >
+                    <td>
+                      <InputRadio
+                        checked={false}
+                        name="dataset"
+                        onChange={[Function]}
+                        value={2}
+                      >
+                        <input
+                          checked={false}
+                          className="input-radio is-checkradio"
+                          id="dataset-2"
+                          name="dataset"
+                          onChange={[Function]}
+                          type="radio"
+                          value={2}
+                        />
+                        <label
+                          htmlFor="dataset-2"
+                        />
+                      </InputRadio>
+                    </td>
+                    <td>
+                      PANGAEA - Data from Christian-Albrechts-University Kiel
+                    </td>
+                  </tr>
+                </DatasetOption>
+                <DatasetOption
+                  checked={false}
+                  description="NSIS: List of marine benthic algae from Magdalen Islands, Quebec as recorded in 1979"
+                  id={3}
+                  key="3"
+                  onClick={[Function]}
+                >
+                  <tr
+                    className="dataset-option"
+                  >
+                    <td>
+                      <InputRadio
+                        checked={false}
+                        name="dataset"
+                        onChange={[Function]}
+                        value={3}
+                      >
+                        <input
+                          checked={false}
+                          className="input-radio is-checkradio"
+                          id="dataset-3"
+                          name="dataset"
+                          onChange={[Function]}
+                          type="radio"
+                          value={3}
+                        />
+                        <label
+                          htmlFor="dataset-3"
+                        />
+                      </InputRadio>
+                    </td>
+                    <td>
+                      NSIS: List of marine benthic algae from Magdalen Islands, Quebec as recorded in 1979
+                    </td>
+                  </tr>
+                </DatasetOption>
+                <DatasetOption
+                  checked={false}
+                  description="Seguimiento de 10 crías de tortuga boba nacidas en 2016 en el litoral valenciano, en el marco del Proyecto LIFE 15 IPE ES 012 (aggregated per 1-degree cell)"
+                  id={4}
+                  key="4"
+                  onClick={[Function]}
+                >
+                  <tr
+                    className="dataset-option"
+                  >
+                    <td>
+                      <InputRadio
+                        checked={false}
+                        name="dataset"
+                        onChange={[Function]}
+                        value={4}
+                      >
+                        <input
+                          checked={false}
+                          className="input-radio is-checkradio"
+                          id="dataset-4"
+                          name="dataset"
+                          onChange={[Function]}
+                          type="radio"
+                          value={4}
+                        />
+                        <label
+                          htmlFor="dataset-4"
+                        />
+                      </InputRadio>
+                    </td>
+                    <td>
+                      Seguimiento de 10 crías de tortuga boba nacidas en 2016 en el litoral valenciano, en el marco del Proyecto LIFE 15 IPE ES 012 (aggregated per 1-degree cell)
+                    </td>
+                  </tr>
+                </DatasetOption>
+                <DatasetOption
+                  checked={false}
+                  description="Waved Albatross Tracking (aggregated per 1-degree cell)"
+                  id={5}
+                  key="5"
+                  onClick={[Function]}
+                >
+                  <tr
+                    className="dataset-option"
+                  >
+                    <td>
+                      <InputRadio
+                        checked={false}
+                        name="dataset"
+                        onChange={[Function]}
+                        value={5}
+                      >
+                        <input
+                          checked={false}
+                          className="input-radio is-checkradio"
+                          id="dataset-5"
+                          name="dataset"
+                          onChange={[Function]}
+                          type="radio"
+                          value={5}
+                        />
+                        <label
+                          htmlFor="dataset-5"
+                        />
+                      </InputRadio>
+                    </td>
+                    <td>
+                      Waved Albatross Tracking (aggregated per 1-degree cell)
+                    </td>
+                  </tr>
+                </DatasetOption>
+              </tbody>
+            </table>
+          </div>
+        </SelectDataset>
+      </StepHeader>
+    </ActiveStepHeader>
+    <NotConfirmedStepHeader
+      className="step-1"
+      dataDescription="Given Values"
+      key="Basic Data"
+      onStepTitleClick={[Function]}
+      selectedData=" 29 April 2019 "
+      stepDescription="Mandatory observation information"
+      stepTitle="2 - Basic Data"
+    >
+      <StepHeader
+        className="not-confirmed has-text-white step-1"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="Mandatory observation information"
+        stepTitle="2 - Basic Data"
+      >
+        <div
+          className="step-header columns is-vcentered not-confirmed has-text-white step-1"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="column is-7 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5"
+            />
+          </div>
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              Mandatory observation information
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                2 - Basic Data
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </NotConfirmedStepHeader>
+    <NotConfirmedStepHeader
+      className="step-2"
+      dataDescription="Main Location"
+      key="Location Data"
+      onStepTitleClick={[Function]}
+      selectedData="North Sea"
+      stepDescription="Select the location for data collected"
+      stepTitle="3 - Location Data"
+    >
+      <StepHeader
+        className="not-confirmed has-text-white step-2"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="Select the location for data collected"
+        stepTitle="3 - Location Data"
+      >
+        <div
+          className="step-header columns is-vcentered not-confirmed has-text-white step-2"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="column is-7 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5"
+            />
+          </div>
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              Select the location for data collected
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                3 - Location Data
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </NotConfirmedStepHeader>
+    <NotConfirmedStepHeader
+      className="step-3"
+      dataDescription="Main Info"
+      key="Observation Data"
+      onStepTitleClick={[Function]}
+      selectedData=""
+      stepDescription="Enter further specifics"
+      stepTitle="4 - Observation Data"
+    >
+      <StepHeader
+        className="not-confirmed has-text-white step-3"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="Enter further specifics"
+        stepTitle="4 - Observation Data"
+      >
+        <div
+          className="step-header columns is-vcentered not-confirmed has-text-white step-3"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="column is-7 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5"
+            />
+          </div>
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              Enter further specifics
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                4 - Observation Data
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </NotConfirmedStepHeader>
+    <NotConfirmedStepHeader
+      className="step-4"
+      dataDescription="DWCA INFO"
+      key="Generic Data"
+      onStepTitleClick={[Function]}
+      selectedData="You have submitted 7 extra fields"
+      stepDescription="Enter further specifics"
+      stepTitle="5 - Generic Data"
+    >
+      <StepHeader
+        className="not-confirmed has-text-white step-4"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="Enter further specifics"
+        stepTitle="5 - Generic Data"
+      >
+        <div
+          className="step-header columns is-vcentered not-confirmed has-text-white step-4"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="column is-7 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5"
+            />
+          </div>
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              Enter further specifics
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                5 - Generic Data
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </NotConfirmedStepHeader>
+  </section>
+</OccurrenceForm>
+`;
