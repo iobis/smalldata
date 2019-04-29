@@ -66,7 +66,7 @@ export default function OccurrenceForm() {
     children:        <StubFormContent/>
   }, {
     dataDescription: 'Main Info',
-    selectedData:    'Institution: CA Identified by: Jane Doe, John Doe, Indiana Jones',
+    selectedData:    renderIdentifiedByLabel(observationData),
     stepDescription: 'Enter further specifics',
     stepTitle:       'Observation Data',
     children:        <ObservationData
@@ -100,6 +100,12 @@ export default function OccurrenceForm() {
       })}
     </section>
   )
+}
+
+function renderIdentifiedByLabel({ identifiedBy, institutionCode }) {
+  const institutionCodeLabel = institutionCode ? `Institution: ${institutionCode}` : ''
+  const identifiedByLabel = identifiedBy.length > 0 ? 'Identified by' + identifiedBy.join(',') : ''
+  return [institutionCodeLabel, identifiedByLabel].filter(label => !!label).join(',')
 }
 
 function StubFormContent() {
