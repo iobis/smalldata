@@ -81,6 +81,20 @@ export default function ObservationData({ onChange, observationData }) {
   )
 }
 
+const observationDataShape = {
+  institutionCode:         PropTypes.string.isRequired,
+  collectionCode:          PropTypes.string.isRequired,
+  fieldNumber:             PropTypes.string.isRequired,
+  catalogNumber:           PropTypes.string.isRequired,
+  recordNumber:            PropTypes.string.isRequired,
+  identifiedBy:            PropTypes.arrayOf(PropTypes.string).isRequired,
+  recordedBy:              PropTypes.arrayOf(PropTypes.string).isRequired,
+  identificationQualifier: PropTypes.string.isRequired,
+  identificationRemarks:   PropTypes.string.isRequired,
+  references:              PropTypes.arrayOf(PropTypes.string).isRequired
+}
+
 ObservationData.propTypes = {
-  onChange: PropTypes.func.isRequired
+  observationData: PropTypes.shape(observationDataShape).isRequired,
+  onChange:        PropTypes.func.isRequired
 }
