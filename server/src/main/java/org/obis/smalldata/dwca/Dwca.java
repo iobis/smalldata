@@ -30,7 +30,7 @@ public class Dwca extends AbstractVerticle {
         .setHandler(zip -> message.reply(zip.result()));
     } else {
       message.fail(ReplyFailure.RECIPIENT_FAILURE.toInt(), "Action " + action
-        + "not found on address" + message.address());
+        + " not found on address " + message.address());
     }
   }
 
