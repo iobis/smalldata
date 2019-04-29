@@ -43,7 +43,7 @@ public class Dwca extends AbstractVerticle {
       var dataset = (JsonObject) res.result().list().get(0);
       var dwcaRecords = (List<JsonObject>) res.result().list().get(1);
       var path = zipGenerator.generate(dwcaRecords, dataset);
-      result.complete(new JsonObject().put("file", path.get()));
+      result.complete(new JsonObject().put("file", path.get().toAbsolutePath().toString()));
     });
     return result;
   }
