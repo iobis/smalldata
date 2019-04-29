@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputMultipleText renders correctly 1`] = `
+<InputMultipleText
+  className="custom-class-name"
+  name="field-name"
+  onChange={[MockFunction]}
+  values={
+    Array [
+      "value-1",
+      "value-2",
+    ]
+  }
+>
+  <div
+    className="column field custom-class-name"
+  >
+    <label
+      className="label"
+    >
+      field-name.label
+    </label>
+    <input
+      className="input"
+      onChange={[Function]}
+      onKeyDown={[Function]}
+      placeholder="field-name.placeholder"
+      type="text"
+      value=""
+    />
+    <p
+      className="help"
+    >
+      field-name.help
+    </p>
+    <Tags
+      onDelete={[Function]}
+      strings={
+        Array [
+          "value-1",
+          "value-2",
+        ]
+      }
+    >
+      <div
+        className="block"
+      >
+        <div
+          key="0"
+        >
+          <span
+            className="tag"
+          >
+            value-1
+            <button
+              className="delete is-small"
+              onClick={[Function]}
+            />
+          </span>
+        </div>
+        <div
+          key="1"
+        >
+          <span
+            className="tag"
+          >
+            value-2
+            <button
+              className="delete is-small"
+              onClick={[Function]}
+            />
+          </span>
+        </div>
+      </div>
+    </Tags>
+  </div>
+</InputMultipleText>
+`;
+
+exports[`InputMultipleText renders correctly when providing custom labelComponent 1`] = `
+<InputMultipleText
+  className="custom-class-name"
+  labelComponent={[Function]}
+  name="field-name"
+  onChange={[MockFunction]}
+  values={
+    Array [
+      "value-1",
+      "value-2",
+    ]
+  }
+>
+  <div
+    className="column field custom-class-name"
+  >
+    <label
+      className="label"
+    >
+      field-name.label
+    </label>
+    <input
+      className="input"
+      onChange={[Function]}
+      onKeyDown={[Function]}
+      placeholder="field-name.placeholder"
+      type="text"
+      value=""
+    />
+    <p
+      className="help"
+    >
+      field-name.help
+    </p>
+    <Tags
+      labelComponent={[Function]}
+      onDelete={[Function]}
+      strings={
+        Array [
+          "value-1",
+          "value-2",
+        ]
+      }
+    >
+      <div
+        className="block"
+      >
+        <div
+          key="0"
+        >
+          <span
+            className="tag"
+          >
+            <a
+              href="value-1"
+            >
+              item
+            </a>
+            <button
+              className="delete is-small"
+              onClick={[Function]}
+            />
+          </span>
+        </div>
+        <div
+          key="1"
+        >
+          <span
+            className="tag"
+          >
+            <a
+              href="value-2"
+            >
+              item
+            </a>
+            <button
+              className="delete is-small"
+              onClick={[Function]}
+            />
+          </span>
+        </div>
+      </div>
+    </Tags>
+  </div>
+</InputMultipleText>
+`;

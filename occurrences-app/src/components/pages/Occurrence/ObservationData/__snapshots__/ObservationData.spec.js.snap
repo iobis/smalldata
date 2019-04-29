@@ -1,0 +1,309 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ObservationData renders correctly 1`] = `
+<div
+  className="observation-data section is-fluid"
+>
+  <div
+    className="columns"
+  >
+    <div
+      className="column field institution-code is-3"
+    >
+      <label
+        className="label"
+      >
+        occurrenceForm.observationData.institutionCode.label
+      </label>
+      <input
+        className="input"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="column field collection-code is-3"
+    >
+      <label
+        className="label"
+      >
+        occurrenceForm.observationData.collectionCode.label
+      </label>
+      <input
+        className="input"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    className="columns"
+  >
+    <div
+      className="column field field-number is-3"
+    >
+      <label
+        className="label"
+      >
+        occurrenceForm.observationData.fieldNumber.label
+      </label>
+      <input
+        className="input"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="column field catalog-number is-3"
+    >
+      <label
+        className="label"
+      >
+        occurrenceForm.observationData.catalogNumber.label
+      </label>
+      <input
+        className="input"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="column field record-number is-3"
+    >
+      <label
+        className="label"
+      >
+        occurrenceForm.observationData.recordNumber.label
+      </label>
+      <input
+        className="input"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    className="columns"
+  >
+    <div
+      className="column field identified-by is-3"
+    >
+      <label
+        className="label"
+      >
+        occurrenceForm.observationData.identifiedBy.label
+      </label>
+      <input
+        className="input"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        placeholder="occurrenceForm.observationData.identifiedBy.placeholder"
+        type="text"
+        value=""
+      />
+      <p
+        className="help"
+      >
+        occurrenceForm.observationData.identifiedBy.help
+      </p>
+      <div
+        className="block"
+      >
+        <div>
+          <span
+            className="tag"
+          >
+            name 1
+            <button
+              className="delete is-small"
+              onClick={[Function]}
+            />
+          </span>
+        </div>
+        <div>
+          <span
+            className="tag"
+          >
+            name 2
+            <button
+              className="delete is-small"
+              onClick={[Function]}
+            />
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      className="column field recorded-by is-3"
+    >
+      <label
+        className="label"
+      >
+        occurrenceForm.observationData.recordedBy.label
+      </label>
+      <input
+        className="input"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        placeholder="occurrenceForm.observationData.recordedBy.placeholder"
+        type="text"
+        value=""
+      />
+      <p
+        className="help"
+      >
+        occurrenceForm.observationData.recordedBy.help
+      </p>
+      <div
+        className="block"
+      >
+        <div>
+          <span
+            className="tag"
+          >
+            name 1
+            <button
+              className="delete is-small"
+              onClick={[Function]}
+            />
+          </span>
+        </div>
+        <div>
+          <span
+            className="tag"
+          >
+            name 2
+            <button
+              className="delete is-small"
+              onClick={[Function]}
+            />
+          </span>
+        </div>
+        <div>
+          <span
+            className="tag"
+          >
+            name 3
+            <button
+              className="delete is-small"
+              onClick={[Function]}
+            />
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="columns"
+  >
+    <div
+      className="column field identification-qualifier is-9"
+    >
+      <label
+        className="label"
+      >
+        occurrenceForm.observationData.identificationQualifier.label
+      </label>
+      <input
+        className="input"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    className="columns"
+  >
+    <div
+      className="column field identification-remarks is-9"
+    >
+      <label
+        className="label"
+      >
+        occurrenceForm.observationData.identificationRemarks.label
+      </label>
+      <textarea
+        className="textarea"
+        onChange={[Function]}
+        rows={5}
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    className="columns"
+  >
+    <div
+      className="column field references is-9"
+    >
+      <label
+        className="label"
+      >
+        occurrenceForm.observationData.references.label
+      </label>
+      <input
+        className="input"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        placeholder="occurrenceForm.observationData.references.placeholder"
+        type="text"
+        value=""
+      />
+      <p
+        className="help"
+      >
+        occurrenceForm.observationData.references.help
+      </p>
+      <div
+        className="block"
+      >
+        <div>
+          <span
+            className="tag"
+          >
+            <a
+              href="https://google.com"
+            >
+              https://google.com
+            </a>
+            <button
+              className="delete is-small"
+              onClick={[Function]}
+            />
+          </span>
+        </div>
+        <div>
+          <span
+            className="tag"
+          >
+            <a
+              href="https://gmail.com"
+            >
+              https://gmail.com
+            </a>
+            <button
+              className="delete is-small"
+              onClick={[Function]}
+            />
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="columns"
+  >
+    <div
+      className="copy-previous-data column is-narrow"
+    >
+      copy data from previous entry
+    </div>
+  </div>
+</div>
+`;

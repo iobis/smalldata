@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Textarea renders correctly 1`] = `
+<Textarea
+  className="custom-class-name"
+  name="field-name"
+  onChange={[MockFunction]}
+  value="value"
+>
+  <div
+    className="column field custom-class-name"
+  >
+    <label
+      className="label"
+    >
+      field-name.label
+    </label>
+    <textarea
+      className="textarea"
+      onChange={[Function]}
+      rows={5}
+      value="value"
+    />
+  </div>
+</Textarea>
+`;
