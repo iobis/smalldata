@@ -104,8 +104,8 @@ export default function OccurrenceForm() {
 
 function renderIdentifiedByLabel({ identifiedBy, institutionCode }) {
   const institutionCodeLabel = institutionCode ? `Institution: ${institutionCode}` : ''
-  const identifiedByLabel = identifiedBy.length > 0 ? 'Identified by: ' + identifiedBy.join(',') : ''
-  return [institutionCodeLabel, identifiedByLabel].filter(label => !!label).join(',')
+  const identifiedByLabel = identifiedBy.length > 0 ? 'Identified by: ' + identifiedBy.join(', ') : ''
+  return [institutionCodeLabel, identifiedByLabel].filter(label => !!label).join('; ')
 }
 
 function StubFormContent() {

@@ -1461,7 +1461,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
       dataDescription="Main Info"
       key="Observation Data"
       onStepTitleClick={[Function]}
-      selectedData="Institution: institution code"
+      selectedData="Institution: institution code; Identified by: Indiana Jones"
       stepDescription="Enter further specifics"
       stepTitle="4 - Observation Data"
     >
@@ -1470,7 +1470,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
         dataDescription="Main Info"
         iconVisible={true}
         onStepTitleClick={[Function]}
-        selectedData="Institution: institution code"
+        selectedData="Institution: institution code; Identified by: Indiana Jones"
         stepDescription="Enter further specifics"
         stepTitle="4 - Observation Data"
       >
@@ -1495,7 +1495,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
             <p
               className="is-size-5"
             >
-              Institution: institution code
+              Institution: institution code; Identified by: Indiana Jones
             </p>
           </div>
           <div
