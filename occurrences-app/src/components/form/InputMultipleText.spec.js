@@ -38,7 +38,6 @@ describe('InputMultipleText', () => {
     expect(onChange).toHaveBeenCalledTimes(1)
     expect(onChange).toBeCalledWith(['value-2'])
   })
-
 })
 
 function createComponent(props) {

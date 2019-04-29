@@ -8,7 +8,7 @@ exports[`ObservationData renders correctly 1`] = `
     className="columns"
   >
     <div
-      className="column field is-3"
+      className="column field institution-code is-3"
     >
       <label
         className="label"
@@ -23,7 +23,7 @@ exports[`ObservationData renders correctly 1`] = `
       />
     </div>
     <div
-      className="column field is-3"
+      className="column field collection-code is-3"
     >
       <label
         className="label"
@@ -42,7 +42,7 @@ exports[`ObservationData renders correctly 1`] = `
     className="columns"
   >
     <div
-      className="column field is-3"
+      className="column field field-number is-3"
     >
       <label
         className="label"
@@ -57,7 +57,7 @@ exports[`ObservationData renders correctly 1`] = `
       />
     </div>
     <div
-      className="column field is-3"
+      className="column field catalog-number is-3"
     >
       <label
         className="label"
@@ -72,7 +72,7 @@ exports[`ObservationData renders correctly 1`] = `
       />
     </div>
     <div
-      className="column field is-3"
+      className="column field record-number is-3"
     >
       <label
         className="label"
@@ -91,7 +91,7 @@ exports[`ObservationData renders correctly 1`] = `
     className="columns"
   >
     <div
-      className="column field is-3"
+      className="column field identified-by is-3"
     >
       <label
         className="label"
@@ -139,7 +139,7 @@ exports[`ObservationData renders correctly 1`] = `
       </div>
     </div>
     <div
-      className="column field is-3"
+      className="column field recorded-by is-3"
     >
       <label
         className="label"
@@ -202,7 +202,7 @@ exports[`ObservationData renders correctly 1`] = `
     className="columns"
   >
     <div
-      className="column field is-9"
+      className="column field identification-qualifier is-9"
     >
       <label
         className="label"
@@ -221,7 +221,7 @@ exports[`ObservationData renders correctly 1`] = `
     className="columns"
   >
     <div
-      className="column field is-9"
+      className="column field identification-remarks is-9"
     >
       <label
         className="label"
@@ -240,7 +240,7 @@ exports[`ObservationData renders correctly 1`] = `
     className="columns"
   >
     <div
-      className="column field is-9"
+      className="column field references is-9"
     >
       <label
         className="label"

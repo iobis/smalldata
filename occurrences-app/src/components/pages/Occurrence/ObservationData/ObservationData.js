@@ -15,62 +15,62 @@ export default function ObservationData({ onChange, observationData }) {
     <div className="observation-data section is-fluid">
       <div className="columns">
         <InputText
-          className="is-3"
+          className="institution-code is-3"
           name="occurrenceForm.observationData.institutionCode"
           onChange={(value) => updateField('institutionCode', value)}
           value={observationData.institutionCode}/>
         <InputText
-          className="is-3"
+          className="collection-code is-3"
           name="occurrenceForm.observationData.collectionCode"
           onChange={(value) => updateField('collectionCode', value)}
           value={observationData.collectionCode}/>
       </div>
       <div className="columns">
         <InputText
-          className="is-3"
+          className="field-number is-3"
           name="occurrenceForm.observationData.fieldNumber"
           onChange={(value) => updateField('fieldNumber', value)}
           value={observationData.fieldNumber}/>
         <InputText
-          className="is-3"
+          className="catalog-number is-3"
           name="occurrenceForm.observationData.catalogNumber"
           onChange={(value) => updateField('catalogNumber', value)}
           value={observationData.catalogNumber}/>
         <InputText
-          className="is-3"
+          className="record-number is-3"
           name="occurrenceForm.observationData.recordNumber"
           onChange={(value) => updateField('recordNumber', value)}
           value={observationData.recordNumber}/>
       </div>
       <div className="columns">
         <InputMultipleText
-          className="is-3"
+          className="identified-by is-3"
           name="occurrenceForm.observationData.identifiedBy"
           onChange={(value) => updateField('identifiedBy', value)}
           values={observationData.identifiedBy}/>
         <InputMultipleText
-          className="is-3"
+          className="recorded-by is-3"
           name="occurrenceForm.observationData.recordedBy"
           onChange={(value) => updateField('recordedBy', value)}
           values={observationData.recordedBy}/>
       </div>
       <div className="columns">
         <InputText
-          className="is-9"
+          className="identification-qualifier is-9"
           name="occurrenceForm.observationData.identificationQualifier"
           onChange={(value) => updateField('identificationQualifier', value)}
           value={observationData.identificationQualifier}/>
       </div>
       <div className="columns">
         <Textarea
-          className="is-9"
+          className="identification-remarks is-9"
           name="occurrenceForm.observationData.identificationRemarks"
           onChange={(value) => updateField('identificationRemarks', value)}
           value={observationData.identificationRemarks}/>
       </div>
       <div className="columns">
         <InputMultipleText
-          className="is-9"
+          className="references is-9"
           name="occurrenceForm.observationData.references"
           onChange={(value) => updateField('references', value)}
           labelComponent={(link) => <a href={link}>{link}</a>}
