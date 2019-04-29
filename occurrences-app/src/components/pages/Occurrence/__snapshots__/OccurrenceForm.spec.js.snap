@@ -567,3 +567,1041 @@ exports[`OccurrenceForm renders correctly 1`] = `
   </section>
 </OccurrenceForm>
 `;
+
+exports[`OccurrenceForm renders correctly 2`] = `
+<OccurrenceForm>
+  <section
+    className="section"
+  >
+    <ConfirmedStepHeader
+      className="step-0"
+      dataDescription="occurrenceForm.selectDataset.dataDescription"
+      key="occurrenceForm.selectDataset.stepTitle"
+      onStepTitleClick={[Function]}
+      selectedData="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
+      stepDescription="occurrenceForm.selectDataset.stepDescription"
+      stepTitle="1 - occurrenceForm.selectDataset.stepTitle"
+    >
+      <StepHeader
+        className="confirmed has-background-white has-text-black"
+        dataDescription="occurrenceForm.selectDataset.dataDescription"
+        iconVisible={true}
+        onStepTitleClick={[Function]}
+        selectedData="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
+        stepDescription="occurrenceForm.selectDataset.stepDescription"
+        stepTitle="1 - occurrenceForm.selectDataset.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered confirmed has-background-white has-text-black"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b>
+                occurrenceForm.selectDataset.dataDescription
+              </b>
+            </p>
+          </div>
+          <div
+            className="column is-7"
+          >
+            <p
+              className="is-size-5"
+            >
+              HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.
+            </p>
+          </div>
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              occurrenceForm.selectDataset.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <FontAwesomeIcon
+                className="check-circle"
+                icon="check-circle"
+              >
+                <i
+                  className="check-circle"
+                  icon="check-circle"
+                />
+              </FontAwesomeIcon>
+              <b
+                className="step-title"
+              >
+                1 - occurrenceForm.selectDataset.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </ConfirmedStepHeader>
+    <ConfirmedStepHeader
+      className="step-1"
+      dataDescription="Given Values"
+      key="Basic Data"
+      onStepTitleClick={[Function]}
+      selectedData=" 29 April 2019 "
+      stepDescription="Mandatory observation information"
+      stepTitle="2 - Basic Data"
+    >
+      <StepHeader
+        className="confirmed has-background-white has-text-black"
+        dataDescription="Given Values"
+        iconVisible={true}
+        onStepTitleClick={[Function]}
+        selectedData=" 29 April 2019 "
+        stepDescription="Mandatory observation information"
+        stepTitle="2 - Basic Data"
+      >
+        <div
+          className="step-header columns is-vcentered confirmed has-background-white has-text-black"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b>
+                Given Values
+              </b>
+            </p>
+          </div>
+          <div
+            className="column is-7"
+          >
+            <p
+              className="is-size-5"
+            >
+               29 April 2019 
+            </p>
+          </div>
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              Mandatory observation information
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <FontAwesomeIcon
+                className="check-circle"
+                icon="check-circle"
+              >
+                <i
+                  className="check-circle"
+                  icon="check-circle"
+                />
+              </FontAwesomeIcon>
+              <b
+                className="step-title"
+              >
+                2 - Basic Data
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </ConfirmedStepHeader>
+    <ConfirmedStepHeader
+      className="step-2"
+      dataDescription="Main Location"
+      key="Location Data"
+      onStepTitleClick={[Function]}
+      selectedData="North Sea"
+      stepDescription="Select the location for data collected"
+      stepTitle="3 - Location Data"
+    >
+      <StepHeader
+        className="confirmed has-background-white has-text-black"
+        dataDescription="Main Location"
+        iconVisible={true}
+        onStepTitleClick={[Function]}
+        selectedData="North Sea"
+        stepDescription="Select the location for data collected"
+        stepTitle="3 - Location Data"
+      >
+        <div
+          className="step-header columns is-vcentered confirmed has-background-white has-text-black"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b>
+                Main Location
+              </b>
+            </p>
+          </div>
+          <div
+            className="column is-7"
+          >
+            <p
+              className="is-size-5"
+            >
+              North Sea
+            </p>
+          </div>
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              Select the location for data collected
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <FontAwesomeIcon
+                className="check-circle"
+                icon="check-circle"
+              >
+                <i
+                  className="check-circle"
+                  icon="check-circle"
+                />
+              </FontAwesomeIcon>
+              <b
+                className="step-title"
+              >
+                3 - Location Data
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </ConfirmedStepHeader>
+    <ActiveStepHeader
+      className="step-3"
+      dataDescription="Main Info"
+      key="Observation Data"
+      onStepTitleClick={[Function]}
+      selectedData=""
+      stepDescription="Enter further specifics"
+      stepTitle="4 - Observation Data"
+    >
+      <StepHeader
+        className="active has-background-grey has-text-white"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="Enter further specifics"
+        stepTitle="4 - Observation Data"
+      >
+        <div
+          className="step-header columns is-vcentered active has-background-grey has-text-white"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="column is-7 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5"
+            />
+          </div>
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              Enter further specifics
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                4 - Observation Data
+              </b>
+            </div>
+          </div>
+        </div>
+        <ObservationData
+          observationData={
+            Object {
+              "catalogNumber": "",
+              "collectionCode": "",
+              "fieldNumber": "",
+              "identificationQualifier": "",
+              "identificationRemarks": "",
+              "identifiedBy": Array [],
+              "institutionCode": "",
+              "recordNumber": "",
+              "recordedBy": Array [],
+              "references": Array [],
+            }
+          }
+          onChange={[Function]}
+        >
+          <div
+            className="observation-data section is-fluid"
+          >
+            <div
+              className="columns"
+            >
+              <InputText
+                className="institution-code is-3"
+                name="occurrenceForm.observationData.institutionCode"
+                onChange={[Function]}
+                value=""
+              >
+                <div
+                  className="column field institution-code is-3"
+                >
+                  <label
+                    className="label"
+                  >
+                    occurrenceForm.observationData.institutionCode.label
+                  </label>
+                  <input
+                    className="input"
+                    onChange={[Function]}
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </InputText>
+              <InputText
+                className="collection-code is-3"
+                name="occurrenceForm.observationData.collectionCode"
+                onChange={[Function]}
+                value=""
+              >
+                <div
+                  className="column field collection-code is-3"
+                >
+                  <label
+                    className="label"
+                  >
+                    occurrenceForm.observationData.collectionCode.label
+                  </label>
+                  <input
+                    className="input"
+                    onChange={[Function]}
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </InputText>
+            </div>
+            <div
+              className="columns"
+            >
+              <InputText
+                className="field-number is-3"
+                name="occurrenceForm.observationData.fieldNumber"
+                onChange={[Function]}
+                value=""
+              >
+                <div
+                  className="column field field-number is-3"
+                >
+                  <label
+                    className="label"
+                  >
+                    occurrenceForm.observationData.fieldNumber.label
+                  </label>
+                  <input
+                    className="input"
+                    onChange={[Function]}
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </InputText>
+              <InputText
+                className="catalog-number is-3"
+                name="occurrenceForm.observationData.catalogNumber"
+                onChange={[Function]}
+                value=""
+              >
+                <div
+                  className="column field catalog-number is-3"
+                >
+                  <label
+                    className="label"
+                  >
+                    occurrenceForm.observationData.catalogNumber.label
+                  </label>
+                  <input
+                    className="input"
+                    onChange={[Function]}
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </InputText>
+              <InputText
+                className="record-number is-3"
+                name="occurrenceForm.observationData.recordNumber"
+                onChange={[Function]}
+                value=""
+              >
+                <div
+                  className="column field record-number is-3"
+                >
+                  <label
+                    className="label"
+                  >
+                    occurrenceForm.observationData.recordNumber.label
+                  </label>
+                  <input
+                    className="input"
+                    onChange={[Function]}
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </InputText>
+            </div>
+            <div
+              className="columns"
+            >
+              <InputMultipleText
+                className="identified-by is-3"
+                name="occurrenceForm.observationData.identifiedBy"
+                onChange={[Function]}
+                values={Array []}
+              >
+                <div
+                  className="column field identified-by is-3"
+                >
+                  <label
+                    className="label"
+                  >
+                    occurrenceForm.observationData.identifiedBy.label
+                  </label>
+                  <input
+                    className="input"
+                    onChange={[Function]}
+                    onKeyDown={[Function]}
+                    placeholder="occurrenceForm.observationData.identifiedBy.placeholder"
+                    type="text"
+                    value=""
+                  />
+                  <p
+                    className="help"
+                  >
+                    occurrenceForm.observationData.identifiedBy.help
+                  </p>
+                  <Tags
+                    onDelete={[Function]}
+                    strings={Array []}
+                  >
+                    <div
+                      className="block"
+                    />
+                  </Tags>
+                </div>
+              </InputMultipleText>
+              <InputMultipleText
+                className="recorded-by is-3"
+                name="occurrenceForm.observationData.recordedBy"
+                onChange={[Function]}
+                values={Array []}
+              >
+                <div
+                  className="column field recorded-by is-3"
+                >
+                  <label
+                    className="label"
+                  >
+                    occurrenceForm.observationData.recordedBy.label
+                  </label>
+                  <input
+                    className="input"
+                    onChange={[Function]}
+                    onKeyDown={[Function]}
+                    placeholder="occurrenceForm.observationData.recordedBy.placeholder"
+                    type="text"
+                    value=""
+                  />
+                  <p
+                    className="help"
+                  >
+                    occurrenceForm.observationData.recordedBy.help
+                  </p>
+                  <Tags
+                    onDelete={[Function]}
+                    strings={Array []}
+                  >
+                    <div
+                      className="block"
+                    />
+                  </Tags>
+                </div>
+              </InputMultipleText>
+            </div>
+            <div
+              className="columns"
+            >
+              <InputText
+                className="identification-qualifier is-9"
+                name="occurrenceForm.observationData.identificationQualifier"
+                onChange={[Function]}
+                value=""
+              >
+                <div
+                  className="column field identification-qualifier is-9"
+                >
+                  <label
+                    className="label"
+                  >
+                    occurrenceForm.observationData.identificationQualifier.label
+                  </label>
+                  <input
+                    className="input"
+                    onChange={[Function]}
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </InputText>
+            </div>
+            <div
+              className="columns"
+            >
+              <Textarea
+                className="identification-remarks is-9"
+                name="occurrenceForm.observationData.identificationRemarks"
+                onChange={[Function]}
+                value=""
+              >
+                <div
+                  className="column field identification-remarks is-9"
+                >
+                  <label
+                    className="label"
+                  >
+                    occurrenceForm.observationData.identificationRemarks.label
+                  </label>
+                  <textarea
+                    className="textarea"
+                    onChange={[Function]}
+                    rows={5}
+                    value=""
+                  />
+                </div>
+              </Textarea>
+            </div>
+            <div
+              className="columns"
+            >
+              <InputMultipleText
+                className="references is-9"
+                labelComponent={[Function]}
+                name="occurrenceForm.observationData.references"
+                onChange={[Function]}
+                values={Array []}
+              >
+                <div
+                  className="column field references is-9"
+                >
+                  <label
+                    className="label"
+                  >
+                    occurrenceForm.observationData.references.label
+                  </label>
+                  <input
+                    className="input"
+                    onChange={[Function]}
+                    onKeyDown={[Function]}
+                    placeholder="occurrenceForm.observationData.references.placeholder"
+                    type="text"
+                    value=""
+                  />
+                  <p
+                    className="help"
+                  >
+                    occurrenceForm.observationData.references.help
+                  </p>
+                  <Tags
+                    labelComponent={[Function]}
+                    onDelete={[Function]}
+                    strings={Array []}
+                  >
+                    <div
+                      className="block"
+                    />
+                  </Tags>
+                </div>
+              </InputMultipleText>
+            </div>
+            <CopyPreviousData>
+              <div
+                className="columns"
+              >
+                <div
+                  className="copy-previous-data column is-narrow"
+                >
+                  copy data from previous entry
+                </div>
+              </div>
+            </CopyPreviousData>
+          </div>
+        </ObservationData>
+      </StepHeader>
+    </ActiveStepHeader>
+    <NotConfirmedStepHeader
+      className="step-4"
+      dataDescription="DWCA INFO"
+      key="Generic Data"
+      onStepTitleClick={[Function]}
+      selectedData="You have submitted 7 extra fields"
+      stepDescription="Enter further specifics"
+      stepTitle="5 - Generic Data"
+    >
+      <StepHeader
+        className="not-confirmed has-text-white step-4"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="Enter further specifics"
+        stepTitle="5 - Generic Data"
+      >
+        <div
+          className="step-header columns is-vcentered not-confirmed has-text-white step-4"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="column is-7 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5"
+            />
+          </div>
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              Enter further specifics
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                5 - Generic Data
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </NotConfirmedStepHeader>
+  </section>
+</OccurrenceForm>
+`;
+
+exports[`OccurrenceForm renders correctly 3`] = `
+<OccurrenceForm>
+  <section
+    className="section"
+  >
+    <ConfirmedStepHeader
+      className="step-0"
+      dataDescription="occurrenceForm.selectDataset.dataDescription"
+      key="occurrenceForm.selectDataset.stepTitle"
+      onStepTitleClick={[Function]}
+      selectedData="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
+      stepDescription="occurrenceForm.selectDataset.stepDescription"
+      stepTitle="1 - occurrenceForm.selectDataset.stepTitle"
+    >
+      <StepHeader
+        className="confirmed has-background-white has-text-black"
+        dataDescription="occurrenceForm.selectDataset.dataDescription"
+        iconVisible={true}
+        onStepTitleClick={[Function]}
+        selectedData="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
+        stepDescription="occurrenceForm.selectDataset.stepDescription"
+        stepTitle="1 - occurrenceForm.selectDataset.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered confirmed has-background-white has-text-black"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b>
+                occurrenceForm.selectDataset.dataDescription
+              </b>
+            </p>
+          </div>
+          <div
+            className="column is-7"
+          >
+            <p
+              className="is-size-5"
+            >
+              HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.
+            </p>
+          </div>
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              occurrenceForm.selectDataset.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <FontAwesomeIcon
+                className="check-circle"
+                icon="check-circle"
+              >
+                <i
+                  className="check-circle"
+                  icon="check-circle"
+                />
+              </FontAwesomeIcon>
+              <b
+                className="step-title"
+              >
+                1 - occurrenceForm.selectDataset.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </ConfirmedStepHeader>
+    <ConfirmedStepHeader
+      className="step-1"
+      dataDescription="Given Values"
+      key="Basic Data"
+      onStepTitleClick={[Function]}
+      selectedData=" 29 April 2019 "
+      stepDescription="Mandatory observation information"
+      stepTitle="2 - Basic Data"
+    >
+      <StepHeader
+        className="confirmed has-background-white has-text-black"
+        dataDescription="Given Values"
+        iconVisible={true}
+        onStepTitleClick={[Function]}
+        selectedData=" 29 April 2019 "
+        stepDescription="Mandatory observation information"
+        stepTitle="2 - Basic Data"
+      >
+        <div
+          className="step-header columns is-vcentered confirmed has-background-white has-text-black"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b>
+                Given Values
+              </b>
+            </p>
+          </div>
+          <div
+            className="column is-7"
+          >
+            <p
+              className="is-size-5"
+            >
+               29 April 2019 
+            </p>
+          </div>
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              Mandatory observation information
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <FontAwesomeIcon
+                className="check-circle"
+                icon="check-circle"
+              >
+                <i
+                  className="check-circle"
+                  icon="check-circle"
+                />
+              </FontAwesomeIcon>
+              <b
+                className="step-title"
+              >
+                2 - Basic Data
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </ConfirmedStepHeader>
+    <ConfirmedStepHeader
+      className="step-2"
+      dataDescription="Main Location"
+      key="Location Data"
+      onStepTitleClick={[Function]}
+      selectedData="North Sea"
+      stepDescription="Select the location for data collected"
+      stepTitle="3 - Location Data"
+    >
+      <StepHeader
+        className="confirmed has-background-white has-text-black"
+        dataDescription="Main Location"
+        iconVisible={true}
+        onStepTitleClick={[Function]}
+        selectedData="North Sea"
+        stepDescription="Select the location for data collected"
+        stepTitle="3 - Location Data"
+      >
+        <div
+          className="step-header columns is-vcentered confirmed has-background-white has-text-black"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b>
+                Main Location
+              </b>
+            </p>
+          </div>
+          <div
+            className="column is-7"
+          >
+            <p
+              className="is-size-5"
+            >
+              North Sea
+            </p>
+          </div>
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              Select the location for data collected
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <FontAwesomeIcon
+                className="check-circle"
+                icon="check-circle"
+              >
+                <i
+                  className="check-circle"
+                  icon="check-circle"
+                />
+              </FontAwesomeIcon>
+              <b
+                className="step-title"
+              >
+                3 - Location Data
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </ConfirmedStepHeader>
+    <ConfirmedStepHeader
+      className="step-3"
+      dataDescription="Main Info"
+      key="Observation Data"
+      onStepTitleClick={[Function]}
+      selectedData="Institution: institution code"
+      stepDescription="Enter further specifics"
+      stepTitle="4 - Observation Data"
+    >
+      <StepHeader
+        className="confirmed has-background-white has-text-black"
+        dataDescription="Main Info"
+        iconVisible={true}
+        onStepTitleClick={[Function]}
+        selectedData="Institution: institution code"
+        stepDescription="Enter further specifics"
+        stepTitle="4 - Observation Data"
+      >
+        <div
+          className="step-header columns is-vcentered confirmed has-background-white has-text-black"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b>
+                Main Info
+              </b>
+            </p>
+          </div>
+          <div
+            className="column is-7"
+          >
+            <p
+              className="is-size-5"
+            >
+              Institution: institution code
+            </p>
+          </div>
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              Enter further specifics
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <FontAwesomeIcon
+                className="check-circle"
+                icon="check-circle"
+              >
+                <i
+                  className="check-circle"
+                  icon="check-circle"
+                />
+              </FontAwesomeIcon>
+              <b
+                className="step-title"
+              >
+                4 - Observation Data
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </ConfirmedStepHeader>
+    <ActiveStepHeader
+      className="step-4"
+      dataDescription="DWCA INFO"
+      key="Generic Data"
+      onStepTitleClick={[Function]}
+      selectedData="You have submitted 7 extra fields"
+      stepDescription="Enter further specifics"
+      stepTitle="5 - Generic Data"
+    >
+      <StepHeader
+        className="active has-background-grey has-text-white"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="Enter further specifics"
+        stepTitle="5 - Generic Data"
+      >
+        <div
+          className="step-header columns is-vcentered active has-background-grey has-text-white"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="column is-7 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5"
+            />
+          </div>
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              Enter further specifics
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                5 - Generic Data
+              </b>
+            </div>
+          </div>
+        </div>
+        <StubFormContent>
+          <div
+            className="is-fluid"
+          >
+            <div
+              className="columns"
+            >
+              <div
+                className="column"
+              >
+                Form Content To Be Added
+              </div>
+            </div>
+          </div>
+        </StubFormContent>
+      </StepHeader>
+    </ActiveStepHeader>
+  </section>
+</OccurrenceForm>
+`;
