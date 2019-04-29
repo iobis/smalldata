@@ -56,7 +56,7 @@ public class DwcaCsvGeneratorTest {
         var cvsResource = Resources.getResource(cvsResourceName);
         var cvsContent = Resources.toString(cvsResource, Charsets.UTF_8);
 
-        File generatedFile = File.createTempFile("obis-iode", key + ".txt");
+        File generatedFile = File.createTempFile(key, ".txt");
         dwcCsvWriter.writeTableToFile(value, generatedFile);
 
         var nrOfLinesInOriginalCvs = cvsContent.lines().count();

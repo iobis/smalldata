@@ -8,7 +8,7 @@ import io.vertx.core.eventbus.ReplyFailure;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.mongo.MongoClient;
 
-import static org.pmw.tinylog.Logger.info;
+import java.util.List;
 
 public class Dwca extends AbstractVerticle {
 
@@ -35,15 +35,15 @@ public class Dwca extends AbstractVerticle {
   }
 
   private Future<JsonObject> generateZipFile(String datasetRef) {
+    var zipGenerator = new DwcaZipGenerator();
     var dwcaRecordsFuture = dbQuery.dwcaRecords(datasetRef);
     var datasetFuture = dbQuery.dataset(datasetRef);
     var result = Future.<JsonObject>future();
     CompositeFuture.all(datasetFuture, dwcaRecordsFuture).setHandler(res -> {
-      var dataset = res.result().list().get(0);
-      var dwcaRecords = res.result().list().get(1);
-      info(dataset);
-      info(dwcaRecords);
-      result.complete(new JsonObject().put("file", "some path"));
+      var dataset = (JsonObject) res.result().list().get(0);
+      var dwcaRecords = (List<JsonObject>) res.result().list().get(1);
+      var path = zipGenerator.generate(dwcaRecords, dataset);
+      result.complete(new JsonObject().put("file", path.get()));
     });
     return result;
   }

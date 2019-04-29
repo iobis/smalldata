@@ -31,7 +31,7 @@ class MetaGenerator {
   static {
     NS_MAPPER.put("purl", "http://purl.org/dc/terms/");
     NS_MAPPER.put("tdwg", "http://rs.tdwg.org/dwc/terms/");
-    NS_MAPPER.put("obis", "http://rs.iobis.org/obis/terms/");
+    NS_MAPPER.put("iobis", "http://rs.iobis.org/obis/terms/");
   }
 
   private final XmlMapper xmlMapper = new XmlMapper();
@@ -45,7 +45,7 @@ class MetaGenerator {
 
   Optional<File> generateXml(MetaFileConfig core, List<MetaFileConfig> extensions) {
     try {
-      var metaXml = File.createTempFile("obis-iode", "meta.xml");
+      var metaXml = File.createTempFile("meta_obis-iode", ".xml");
       var extTables = extensions.stream()
         .map(this::extensionXml)
         .map(Optional::get)
