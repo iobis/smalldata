@@ -21,12 +21,12 @@ class EmlGenerator {
     xmlMapper.setSerializationInclusion(JsonInclude.Include.NON_EMPTY);
   }
 
-  Optional<DataSetEmlMap> generate(JsonObject json) {
-    return this.generate(json.mapTo(Dataset.class));
+  Optional<DataSetEmlMap> generate(JsonObject json, String packageId) {
+    return this.generate(json.mapTo(Dataset.class), packageId);
   }
 
-  Optional<DataSetEmlMap> generate(Dataset dataset) {
-    return this.generate(Eml.builder().dataset(dataset).build());
+  Optional<DataSetEmlMap> generate(Dataset dataset, String packageId) {
+    return this.generate(Eml.builder().dataset(dataset).packageId(packageId).build());
   }
 
   Optional<DataSetEmlMap> generate(Eml eml) {
@@ -46,4 +46,3 @@ class EmlGenerator {
     private final String eml;
   }
 }
-

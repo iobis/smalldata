@@ -35,7 +35,6 @@ paths:
                     type: string
         401:
           description: cannot login
-
   /api/status:
     get:
       summary: get status of the server
