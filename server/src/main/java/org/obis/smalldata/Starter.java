@@ -45,8 +45,11 @@ public class Starter extends AbstractVerticle {
       URI uri = url.toURI();
       info("running base url {}", uri);
       return true;
-    }
-    catch (Exception e) {
+    } catch (RuntimeException e) {
+      error("runtime exception");
+
+      throw e;
+    } catch (Exception e) {
       return false;
     }
   }
@@ -62,8 +65,8 @@ public class Starter extends AbstractVerticle {
       error(message);
       startFuture.fail(message);
     }
-    if (!Set.of("DEV", "DEMO").contains(mode) &&
-      (baseUrl.contains("//localhost") || baseUrl.contains("//127.0.0."))) {
+    if (!Set.of("DEV", "DEMO").contains(mode)
+      && (baseUrl.contains("//localhost") || baseUrl.contains("//127.0.0."))) {
       var message = "You can set the base url to localhost (127.0.0.x) only when running in 'DEV' or 'DEMO' mode";
       error(message);
       startFuture.fail(message);
@@ -74,7 +77,7 @@ public class Starter extends AbstractVerticle {
       .putAll(Map.of(
         "baseUrl", baseUrl,
         "mode", mode,
-        "storage", config().getJsonObject("storage", CONFIG_DEFAULT_STORAGE)));;
+        "storage", config().getJsonObject("storage", CONFIG_DEFAULT_STORAGE)));
 
     vertx.deployVerticle(EmbeddedDb.class.getName(),
       new DeploymentOptions().setConfig(config().getJsonObject("storage")),

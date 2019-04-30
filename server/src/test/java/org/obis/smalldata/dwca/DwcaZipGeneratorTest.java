@@ -1,10 +1,12 @@
 package org.obis.smalldata.dwca;
 
+import com.google.common.io.Resources;
 import io.vertx.core.CompositeFuture;
 import io.vertx.core.Future;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.mongo.MongoClient;
+import org.assertj.core.data.Offset;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -45,7 +47,7 @@ public class DwcaZipGeneratorTest {
     var datasetRef = "NnqVLwIyPn-nRkc";
     info(mongoClient);
     var dbQuery = new DbQuery(mongoClient);
-    var zipGenerator = new DwcaZipGenerator();
+    var zipGenerator = new DwcaZipGenerator("http://localhost:3000/");
     var dwcaRecordsFuture = dbQuery.dwcaRecords(datasetRef);
     var datasetFuture = dbQuery.dataset(datasetRef);
     var result = Future.<JsonObject>future();
@@ -59,10 +61,13 @@ public class DwcaZipGeneratorTest {
     });
     result.setHandler(zip -> {
       var fileName = zip.result().getString("file");
+      var expectedZip = Resources.getResource("testdata/dwca/generated-dwca.zip");
       try (InputStream is = Files.newInputStream(Path.of(fileName));
+           InputStream expected = expectedZip.openStream();
            ZipFile zipFile = new ZipFile(fileName)) {
+        var expectedSize = expected.readAllBytes().length;
         assertThat(zipFile.size()).isEqualTo(4);
-        assertThat(is.readAllBytes().length).isBetween(15853, 15862);
+        assertThat(is.readAllBytes().length).isCloseTo(expectedSize, Offset.offset(20));
       } catch (IOException e) {
         error(e.getMessage());
       }

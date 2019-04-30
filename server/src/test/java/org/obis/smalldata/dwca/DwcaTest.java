@@ -11,6 +11,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import static org.pmw.tinylog.Logger.info;
@@ -26,10 +27,11 @@ public class DwcaTest {
     testDb.init(vertx);
 
     vertx.sharedData().getLocalMap("settings")
-      .put("storage", new JsonObject()
+      .putAll(Map.of("storage", new JsonObject()
         .put("host", "localhost")
-        .put("port", 12345)
-        .put("path", ""));
+          .put("port", 12345)
+          .put("path", ""),
+        "baseUrl", "https://my.domain.org/"));
     vertx.deployVerticle(
       Dwca.class.getName(),
       testContext.succeeding(id -> testContext.completeNow()));

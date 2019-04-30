@@ -46,12 +46,12 @@ class EmlGenerator {
     }
   }
 
-  boolean writeXml(JsonObject json, File emlFile) {
-    return this.writeXml(json.mapTo(Dataset.class), emlFile);
+  boolean writeXml(JsonObject json, String packageId, File emlFile) {
+    return this.writeXml(json.mapTo(Dataset.class), packageId, emlFile);
   }
 
-  boolean writeXml(Dataset dataset, File emlFile) {
-    return this.writeXml(Eml.builder().dataset(dataset).build(), emlFile);
+  boolean writeXml(Dataset dataset, String packageId, File emlFile) {
+    return this.writeXml(Eml.builder().dataset(dataset).packageId(packageId).build(), emlFile);
   }
 
   boolean writeXml(Eml eml, File emlFile) {

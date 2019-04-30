@@ -35,7 +35,8 @@ public class Dwca extends AbstractVerticle {
   }
 
   private Future<JsonObject> generateZipFile(String datasetRef) {
-    var zipGenerator = new DwcaZipGenerator();
+    var baseUrl = (String) vertx.sharedData().getLocalMap("settings").get("baseUrl");
+    var zipGenerator = new DwcaZipGenerator(baseUrl);
     var dwcaRecordsFuture = dbQuery.dwcaRecords(datasetRef);
     var datasetFuture = dbQuery.dataset(datasetRef);
     var result = Future.<JsonObject>future();

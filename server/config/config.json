@@ -3,9 +3,8 @@
     "port": 8080
   },
   "auth": {
-    "typ": "JWT",
-    "alg": "...",
-    "verifyKey": ""
+    "provider": "local",
+    "type": "JWT"
   },
   "storage": {
     "bindIp": "localhost",
