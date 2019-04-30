@@ -25,7 +25,7 @@ call ocean expert social login from the web client:
 
 #+BEGIN_SRC shell
   https://oceanexpert.net/socialsignin/?callback=<callback-url>
-#+BEGIN_SRC shell
+#+END_SRC
 
 callback-url will be called with a jwt query parameter, containing the token, e.g., if the callback-url is http://localhost:3000 (e.g. for testing/developing), after login, ocean expert will call http://localhost:3000?jwt=eyJ0eXAiOiJKV1Q...
 
