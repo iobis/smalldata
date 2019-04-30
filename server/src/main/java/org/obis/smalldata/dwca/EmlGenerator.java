@@ -28,11 +28,11 @@ class EmlGenerator {
   }
 
   Optional<DataSetEmlMap> generate(JsonObject json) {
-    return this.generate(json.mapTo(Dataset.class));
+    return generate(json.mapTo(Dataset.class));
   }
 
   Optional<DataSetEmlMap> generate(Dataset dataset) {
-    return this.generate(Eml.builder().dataset(dataset).build());
+    return generate(Eml.builder().dataset(dataset).build());
   }
 
   Optional<DataSetEmlMap> generate(Eml eml) {
@@ -47,11 +47,11 @@ class EmlGenerator {
   }
 
   boolean writeXml(JsonObject json, File emlFile) {
-    return this.writeXml(json.mapTo(Dataset.class), emlFile);
+    return writeXml(json.mapTo(Dataset.class), emlFile);
   }
 
   boolean writeXml(Dataset dataset, File emlFile) {
-    return this.writeXml(Eml.builder().dataset(dataset).build(), emlFile);
+    return writeXml(Eml.builder().dataset(dataset).build(), emlFile);
   }
 
   boolean writeXml(Eml eml, File emlFile) {

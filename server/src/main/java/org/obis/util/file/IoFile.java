@@ -22,7 +22,6 @@ public class IoFile {
 
   public static void addToZipFile(Path path, ZipOutputStream zos) throws IOException {
     var file = path.toFile();
-
     var fileInputStream = Files.newInputStream(path);
     var zipEntry = new ZipEntry(file.getName());
     zos.putNextEntry(zipEntry);

@@ -18,7 +18,7 @@ public class Dwca extends AbstractVerticle {
   public void start(Future<Void> startFuture) {
     var dbConfig = (JsonObject) vertx.sharedData().getLocalMap("settings").get("storage");
     var mongoClient = MongoClient.createShared(vertx, dbConfig);
-    this.dbQuery = new DbQuery(mongoClient);
+    dbQuery = new DbQuery(mongoClient);
     vertx.eventBus().localConsumer("dwca", this::handleDwcaEvents);
     startFuture.complete();
   }
@@ -26,7 +26,7 @@ public class Dwca extends AbstractVerticle {
   private void handleDwcaEvents(Message<JsonObject> message) {
     var action = message.body().getString("action");
     if ("generate".equals(action)) {
-      this.generateZipFile(message.body().getString("dataset"))
+      generateZipFile(message.body().getString("dataset"))
         .setHandler(zip -> message.reply(zip.result()));
     } else {
       message.fail(ReplyFailure.RECIPIENT_FAILURE.toInt(), "Action " + action
