@@ -18,3 +18,17 @@
 
    - [[https://github.com/iobis/smalldata/projects/1][github board]]
    - [[https://zube.io/iobis/smalldata/w/main-workspace/kanban][zube kanban board]]
+   
+*** JWT
+
+call ocean expert social login from the web client:
+
+#+BEGIN_SRC shell
+  https://oceanexpert.net/socialsignin/?callback=<callback-url>
+#+BEGIN_SRC shell
+
+callback-url will be called with a jwt query parameter, containing the token, e.g., if the callback-url is http://localhost:3000 (e.g. for testing/developing), after login, ocean expert will call http://localhost:3000?jwt=eyJ0eXAiOiJKV1Q...
+
+The validity and claims of the JWT can be parsed using http://jwt.io (contains username, email, profile picture, ...)
+
+test-account: kurt.sys@moment-4 / 0ceanexpert
