@@ -9,6 +9,9 @@ exports[`SelectDataset renders correctly 1`] = `
       "decimalLongitude": "",
       "maximumDepth": "",
       "minimumDepth": "",
+      "verbatimCoordinates": "",
+      "verbatimDepth": "",
+      "verbatimEventDate": "",
     }
   }
   onChange={[Function]}
@@ -20,13 +23,13 @@ exports[`SelectDataset renders correctly 1`] = `
       className="columns"
     >
       <InputText
-        className="decimal-longitude is-2"
+        className="decimal-longitude is-3"
         name="occurrenceForm.locationData.decimalLongitude"
         onChange={[Function]}
         value=""
       >
         <div
-          className="column field decimal-longitude is-2"
+          className="column field decimal-longitude is-3"
         >
           <label
             className="label"
@@ -42,13 +45,13 @@ exports[`SelectDataset renders correctly 1`] = `
         </div>
       </InputText>
       <InputText
-        className="decimal-latitude is-2"
+        className="decimal-latitude is-3"
         name="occurrenceForm.locationData.decimalLatitude"
         onChange={[Function]}
         value=""
       >
         <div
-          className="column field decimal-latitude is-2"
+          className="column field decimal-latitude is-3"
         >
           <label
             className="label"
@@ -64,12 +67,12 @@ exports[`SelectDataset renders correctly 1`] = `
         </div>
       </InputText>
       <InputText
-        className="coordinate-uncertainty is-2"
+        className="coordinate-uncertainty is-3"
         name="occurrenceForm.locationData.coordinateUncertainty"
         onChange={[Function]}
       >
         <div
-          className="column field coordinate-uncertainty is-2"
+          className="column field coordinate-uncertainty is-3"
         >
           <label
             className="label"
@@ -88,13 +91,13 @@ exports[`SelectDataset renders correctly 1`] = `
       className="columns"
     >
       <InputText
-        className="minimum-depth is-2"
+        className="minimum-depth is-3"
         name="occurrenceForm.locationData.minimumDepth"
         onChange={[Function]}
         value=""
       >
         <div
-          className="column field minimum-depth is-2"
+          className="column field minimum-depth is-3"
         >
           <label
             className="label"
@@ -110,18 +113,92 @@ exports[`SelectDataset renders correctly 1`] = `
         </div>
       </InputText>
       <InputText
-        className="maximum-depth is-2"
+        className="maximum-depth is-3"
         name="occurrenceForm.locationData.maximumDepth"
         onChange={[Function]}
         value=""
       >
         <div
-          className="column field maximum-depth is-2"
+          className="column field maximum-depth is-3"
         >
           <label
             className="label"
           >
             occurrenceForm.locationData.maximumDepth.label
+          </label>
+          <input
+            className="input"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+        </div>
+      </InputText>
+    </div>
+    <div
+      className="columns"
+    >
+      <InputText
+        className="verbatim-coordinates is-5"
+        name="occurrenceForm.locationData.verbatimCoordinates"
+        onChange={[Function]}
+        value=""
+      >
+        <div
+          className="column field verbatim-coordinates is-5"
+        >
+          <label
+            className="label"
+          >
+            occurrenceForm.locationData.verbatimCoordinates.label
+          </label>
+          <input
+            className="input"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+        </div>
+      </InputText>
+      <InputText
+        className="verbatim-event-date is-5"
+        name="occurrenceForm.locationData.verbatimEventDate"
+        onChange={[Function]}
+        value=""
+      >
+        <div
+          className="column field verbatim-event-date is-5"
+        >
+          <label
+            className="label"
+          >
+            occurrenceForm.locationData.verbatimEventDate.label
+          </label>
+          <input
+            className="input"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+        </div>
+      </InputText>
+    </div>
+    <div
+      className="columns"
+    >
+      <InputText
+        className="verbatim-depth is-5"
+        name="occurrenceForm.locationData.verbatimDepth"
+        onChange={[Function]}
+        value=""
+      >
+        <div
+          className="column field verbatim-depth is-5"
+        >
+          <label
+            className="label"
+          >
+            occurrenceForm.locationData.verbatimDepth.label
           </label>
           <input
             className="input"

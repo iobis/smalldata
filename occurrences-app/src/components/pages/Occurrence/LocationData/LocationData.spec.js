@@ -1,5 +1,6 @@
-import React from 'react'
 import LocationData from './LocationData'
+import React from 'react'
+import { getEmptyData } from './LocationData.fixture'
 import { mount } from 'enzyme'
 
 describe('SelectDataset', () => {
@@ -9,13 +10,6 @@ describe('SelectDataset', () => {
 })
 
 function createComponent() {
-  const data = {
-    decimalLongitude:      '',
-    decimalLatitude:       '',
-    coordinateUncertainty: '',
-    minimumDepth:          '',
-    maximumDepth:          ''
-  }
-  const defaultProps = { data, onChange: () => {} }
+  const defaultProps = { data: getEmptyData(), onChange: () => {} }
   return <LocationData {...defaultProps}/>
 }

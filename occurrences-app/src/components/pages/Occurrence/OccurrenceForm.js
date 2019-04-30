@@ -46,7 +46,10 @@ export default function OccurrenceForm() {
     decimalLatitude:       '',
     coordinateUncertainty: '',
     minimumDepth:          '',
-    maximumDepth:          ''
+    maximumDepth:          '',
+    verbatimCoordinates:   '',
+    verbatimEventDate:     '',
+    verbatimDepth:         ''
   }
 
   const steps = [{
