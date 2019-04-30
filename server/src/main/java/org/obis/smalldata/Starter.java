@@ -17,9 +17,7 @@ import java.security.KeyPair;
 import java.security.KeyPairGenerator;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.ECGenParameterSpec;
-import java.util.Arrays;
 import java.util.Base64;
-import java.util.stream.Collectors;
 
 import static org.pmw.tinylog.Logger.debug;
 import static org.pmw.tinylog.Logger.error;
