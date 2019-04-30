@@ -6,6 +6,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import org.obis.smalldata.auth.Auth;
 import org.obis.smalldata.dbcontroller.EmbeddedDb;
+import org.obis.smalldata.dwca.Dwca;
 import org.obis.smalldata.rss.RssComponent;
 import org.obis.smalldata.webapi.WebApi;
 
@@ -21,6 +22,7 @@ import java.util.stream.Collectors;
 
 import static org.pmw.tinylog.Logger.debug;
 import static org.pmw.tinylog.Logger.error;
+import static org.pmw.tinylog.Logger.info;
 
 public class Starter extends AbstractVerticle {
 
@@ -38,24 +40,24 @@ public class Starter extends AbstractVerticle {
           .put("bindIp", "localhost")
           .put("port", 27017)
           .put("path", "")));
-    vertx.deployVerticle(
-      WebApi.class.getName(),
-      new DeploymentOptions().setConfig(config().getJsonObject("http")));
-    vertx.deployVerticle(RssComponent.class.getName());
-    vertx.deployVerticle(
-      EmbeddedDb.class.getName(),
-      new DeploymentOptions().setConfig(config().getJsonObject("storage")));
-
-    try {
-      vertx.deployVerticle(
-        Auth.class.getName(),
-        new DeploymentOptions().setConfig(updateAuthConfig(config().getJsonObject("auth"))));
-    } catch (NoSuchAlgorithmException | InvalidAlgorithmParameterException e) {
-      error(Arrays.stream(e.getStackTrace())
-        .map(Object::toString)
-        .collect(Collectors.joining("\n\t")));
-      vertx.undeploy(this.deploymentID());
-    }
+    vertx.deployVerticle(EmbeddedDb.class.getName(),
+      new DeploymentOptions().setConfig(config().getJsonObject("storage")),
+      deployHandler -> {
+        info("Deployed Embedded DB verticle {}", deployHandler.result());
+        vertx.deployVerticle(Dwca.class.getName());
+        vertx.deployVerticle(RssComponent.class.getName());
+        vertx.deployVerticle(WebApi.class.getName(),
+          new DeploymentOptions().setConfig(config().getJsonObject("http")));
+        try {
+          vertx.deployVerticle(Auth.class.getName(),
+            new DeploymentOptions().setConfig(updateAuthConfig(config().getJsonObject("auth"))));
+        } catch (NoSuchAlgorithmException | InvalidAlgorithmParameterException e) {
+          error(Arrays.stream(e.getStackTrace())
+            .map(Object::toString)
+            .collect(Collectors.joining("\n\t")));
+          vertx.undeploy(this.deploymentID());
+        }
+      });
   }
 
   private static boolean isNullOrBlank(String val) {

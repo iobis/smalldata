@@ -7,8 +7,8 @@ import com.google.common.io.Resources;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.mongo.MongoClient;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -29,17 +29,17 @@ import static org.pmw.tinylog.Logger.warn;
 
 public class DwcaCsvGeneratorTest {
 
-  private static TestDb testDb;
-  private static MongoClient mongoClient;
+  private TestDb testDb;
+  private MongoClient mongoClient;
 
-  @BeforeAll
-  public static void start() {
+  @BeforeEach
+  public void start() {
     testDb = new TestDb();
     mongoClient = testDb.init(Vertx.vertx());
   }
 
-  @AfterAll
-  public static void stop() {
+  @AfterEach
+  public void stop() {
     info("shutdown mongo db");
     mongoClient.close();
     testDb.shutDown();
@@ -56,7 +56,7 @@ public class DwcaCsvGeneratorTest {
         var cvsResource = Resources.getResource(cvsResourceName);
         var cvsContent = Resources.toString(cvsResource, Charsets.UTF_8);
 
-        File generatedFile = File.createTempFile("obis-iode", key + ".txt");
+        File generatedFile = File.createTempFile(key, ".txt");
         dwcCsvWriter.writeTableToFile(value, generatedFile);
 
         var nrOfLinesInOriginalCvs = cvsContent.lines().count();

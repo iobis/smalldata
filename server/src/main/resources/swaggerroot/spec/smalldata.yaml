@@ -75,7 +75,25 @@ paths:
           description: received rss
           content:
             application/xml+rss: {}
-  /api/dwca:
+  /api/dwca/{dataset}:
+    get:
+      summary: get dwca zip
+      operationId: getDWCA
+      parameters:
+        - name: dataset
+          in: path
+          description: ref of the dataset
+          required: true
+          schema:
+            type: string
+      tags:
+        - dwca
+      responses:
+        200:
+          description: got dwca file
+          content:
+            application/zip: {}
+  /api/dwca/:
     post:
       summary: post new data to small data occurences
       operationId: postDWCA
