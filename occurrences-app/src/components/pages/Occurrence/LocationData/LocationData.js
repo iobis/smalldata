@@ -10,6 +10,8 @@ export default function LocationData({ data, onChange }) {
 
   return (
     <div className="location-data section is-fluid">
+      <h1 className="title">Enter coordinates</h1>
+      <h2 className="subtitle">bold fields are mandatory</h2>
       <div className="columns">
         <InputText
           className="decimal-longitude is-3"
@@ -25,7 +27,7 @@ export default function LocationData({ data, onChange }) {
           className="coordinate-uncertainty is-3"
           name="occurrenceForm.locationData.coordinateUncertainty"
           onChange={(value) => updateField('coordinateUncertainty', value)}
-          value={data.collectionCode}/>
+          value={data.coordinateUncertainty}/>
       </div>
       <div className="columns">
         <InputText
@@ -39,24 +41,28 @@ export default function LocationData({ data, onChange }) {
           onChange={(value) => updateField('maximumDepth', value)}
           value={data.maximumDepth}/>
       </div>
-      <div className="columns">
-        <InputText
-          className="verbatim-coordinates is-5"
-          name="occurrenceForm.locationData.verbatimCoordinates"
-          onChange={(value) => updateField('verbatimCoordinates', value)}
-          value={data.verbatimCoordinates}/>
-        <InputText
-          className="verbatim-event-date is-5"
-          name="occurrenceForm.locationData.verbatimEventDate"
-          onChange={(value) => updateField('verbatimEventDate', value)}
-          value={data.verbatimEventDate}/>
-      </div>
-      <div className="columns">
-        <InputText
-          className="verbatim-depth is-5"
-          name="occurrenceForm.locationData.verbatimDepth"
-          onChange={(value) => updateField('verbatimDepth', value)}
-          value={data.verbatimDepth}/>
+      <div className="verbatim-data">
+        <h1 className="title">Verbatim Data</h1>
+        <h2 className="subtitle">optionally supply verbatim data as it appeared originally in the notes</h2>
+        <div className="columns">
+          <InputText
+            className="verbatim-coordinates is-3"
+            name="occurrenceForm.locationData.verbatimCoordinates"
+            onChange={(value) => updateField('verbatimCoordinates', value)}
+            value={data.verbatimCoordinates}/>
+          <InputText
+            className="verbatim-event-date is-3"
+            name="occurrenceForm.locationData.verbatimEventDate"
+            onChange={(value) => updateField('verbatimEventDate', value)}
+            value={data.verbatimEventDate}/>
+        </div>
+        <div className="columns">
+          <InputText
+            className="verbatim-depth is-3"
+            name="occurrenceForm.locationData.verbatimDepth"
+            onChange={(value) => updateField('verbatimDepth', value)}
+            value={data.verbatimDepth}/>
+        </div>
       </div>
     </div>
   )
