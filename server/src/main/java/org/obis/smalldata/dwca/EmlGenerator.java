@@ -46,22 +46,21 @@ class EmlGenerator {
     }
   }
 
-  Optional<File> generateXml(JsonObject json) {
-    return this.generateXml(json.mapTo(Dataset.class));
+  boolean writeXml(JsonObject json, File emlFile) {
+    return this.writeXml(json.mapTo(Dataset.class), emlFile);
   }
 
-  Optional<File> generateXml(Dataset dataset) {
-    return this.generateXml(Eml.builder().dataset(dataset).build());
+  boolean writeXml(Dataset dataset, File emlFile) {
+    return this.writeXml(Eml.builder().dataset(dataset).build(), emlFile);
   }
 
-  Optional<File> generateXml(Eml eml) {
+  boolean writeXml(Eml eml, File emlFile) {
     try {
-      var emlXml = File.createTempFile("eml_obis-iode", ".xml");
-      xmlMapper.writerWithDefaultPrettyPrinter().writeValue(emlXml, eml);
-      return Optional.of(emlXml);
+      xmlMapper.writerWithDefaultPrettyPrinter().writeValue(emlFile, eml);
+      return true;
     } catch (IOException e) {
       error(e.getMessage());
-      return Optional.empty();
+      return false;
     }
   }
 

@@ -1,4 +1,4 @@
-id	purl/modified	tdwg/basisOfRecord	tdwg/occurrenceID	tdwg/occurrenceStatus	tdwg/eventID	tdwg/identificationQualifier	tdwg/scientificNameID	tdwg/scientificName	tdwg/kingdom	tdwg/taxonRank	tdwg/scientificNameAuthorship
+id	purl.modified	tdwg.basisOfRecord	tdwg.occurrenceID	tdwg.occurrenceStatus	tdwg.eventID	tdwg.identificationQualifier	tdwg.scientificNameID	tdwg.scientificName	tdwg.kingdom	tdwg.taxonRank	tdwg.scientificNameAuthorship
 990722-01	2017-10-25T12:32	HumanObservation	urn::catalog:JAMSTEC:hosono:00001	Present	990722-01		urn:lsid:marinespecies.org:taxname:372119	Gelidium elegans			
 990722-02	2017-10-25T12:32	HumanObservation	urn::catalog:JAMSTEC:hosono:00002	Present	990722-02		urn:lsid:marinespecies.org:taxname:372119	Gelidium elegans			
 990722-03	2017-10-25T12:32	HumanObservation	urn::catalog:JAMSTEC:hosono:00003	Present	990722-03		urn:lsid:marinespecies.org:taxname:372119	Gelidium elegans			

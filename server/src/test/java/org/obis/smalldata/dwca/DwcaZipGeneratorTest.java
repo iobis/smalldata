@@ -41,7 +41,7 @@ public class DwcaZipGeneratorTest {
   }
 
   @Test
-  public void writeZipFile() throws InterruptedException, IOException {
+  public void writeZipFile() throws InterruptedException {
     var datasetRef = "NnqVLwIyPn-nRkc";
     var dbQuery = new DbQuery(mongoClient);
     var zipGenerator = new DwcaZipGenerator();
@@ -57,10 +57,11 @@ public class DwcaZipGeneratorTest {
       result.complete(new JsonObject().put("file", path.get().toAbsolutePath().toString()));
     });
     result.setHandler(zip -> {
-      try (InputStream is = Files.newInputStream(Path.of(zip.result().getString("file")));
-           ZipFile zipFile = new ZipFile(zip.result().getString("file"))) {
-        assertThat(is.available()).isEqualTo(15958);
+      var fileName = zip.result().getString("file");
+      try (InputStream is = Files.newInputStream(Path.of(fileName));
+           ZipFile zipFile = new ZipFile(fileName)) {
         assertThat(zipFile.size()).isEqualTo(4);
+        assertThat(is.readAllBytes().length).isBetween(15853, 15862);
       } catch (IOException e) {
         error(e.getMessage());
       }

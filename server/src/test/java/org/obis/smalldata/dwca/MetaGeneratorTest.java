@@ -28,7 +28,8 @@ public class MetaGeneratorTest {
       .collect(Collectors.toList());
     var generator = new MetaGenerator();
 
-    var generatedXmlFile = generator.generateXml(core, extensions);
+    var generatedXmlFile = generator.generateXml(core, extensions,
+      Files.createTempDirectory("iobis-dwca-meta"));
 
     assertThat(generatedXmlFile).isPresent();
     var originalXmlUrl = Resources.getResource("testdata/dwca/ware_hosono-v1.5/meta.xml");
