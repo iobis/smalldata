@@ -1,7 +1,13 @@
 [
   {
     "_ref": "wEaBfmFyQhYCdsk",
-    "type": "event",
+    "meta": {
+      "type": "event",
+      "dwcTables": {
+        "core": "event",
+        "extensions": ["emof", "occurrence"]
+      }
+    },
     "pubDate": "2019-04-18T09:24:28.186587Z",
     "title": {
       "language": "en",
@@ -56,7 +62,13 @@
   },
   {
     "_ref": "ntDOtUc7XsRrIus",
-    "type": "occurrence",
+    "meta": {
+      "type": "occurrence",
+      "dwcTables": {
+        "core": "occurrence",
+        "extensions": ["emof"]
+      }
+    },
     "pubDate": "2019-04-02",
     "title": {
       "language": "en",
@@ -130,7 +142,13 @@
   },
   {
     "_ref": "PoJnGNMaxsupE4w",
-    "type": "occurrence",
+    "meta": {
+      "type": "occurrence",
+      "dwcTables": {
+        "core": "occurrence",
+        "extensions": ["emof"]
+      }
+    },
     "pubDate": "2019-04-18T09:24:28.947153Z",
     "title": {
       "language": "en",
@@ -196,7 +214,13 @@
   },
   {
     "_ref": "NnqVLwIyPn-nRkc",
-    "type": "occurrence",
+    "meta": {
+      "type": "occurrence",
+      "dwcTables": {
+        "core": "occurrence",
+        "extensions": ["emof"]
+      }
+    },
     "pubDate": "2019-04-02",
     "title": {
       "language": "en",
