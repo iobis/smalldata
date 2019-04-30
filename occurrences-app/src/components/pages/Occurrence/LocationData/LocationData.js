@@ -27,6 +27,7 @@ export default function LocationData({ data, onChange }) {
           className="coordinate-uncertainty is-3"
           name="occurrenceForm.locationData.coordinateUncertainty"
           onChange={(value) => updateField('coordinateUncertainty', value)}
+          optional
           value={data.coordinateUncertainty}/>
       </div>
       <div className="columns">
@@ -34,11 +35,13 @@ export default function LocationData({ data, onChange }) {
           className="minimum-depth is-3"
           name="occurrenceForm.locationData.minimumDepth"
           onChange={(value) => updateField('minimumDepth', value)}
+          optional
           value={data.minimumDepth}/>
         <InputText
           className="maximum-depth is-3"
           name="occurrenceForm.locationData.maximumDepth"
           onChange={(value) => updateField('maximumDepth', value)}
+          optional
           value={data.maximumDepth}/>
       </div>
       <div className="verbatim-data">
@@ -49,11 +52,13 @@ export default function LocationData({ data, onChange }) {
             className="verbatim-coordinates is-3"
             name="occurrenceForm.locationData.verbatimCoordinates"
             onChange={(value) => updateField('verbatimCoordinates', value)}
+            optional
             value={data.verbatimCoordinates}/>
           <InputText
             className="verbatim-event-date is-3"
             name="occurrenceForm.locationData.verbatimEventDate"
             onChange={(value) => updateField('verbatimEventDate', value)}
+            optional
             value={data.verbatimEventDate}/>
         </div>
         <div className="columns">
@@ -61,6 +66,7 @@ export default function LocationData({ data, onChange }) {
             className="verbatim-depth is-3"
             name="occurrenceForm.locationData.verbatimDepth"
             onChange={(value) => updateField('verbatimDepth', value)}
+            optional
             value={data.verbatimDepth}/>
         </div>
       </div>

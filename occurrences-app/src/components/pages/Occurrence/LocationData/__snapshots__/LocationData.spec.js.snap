@@ -80,13 +80,14 @@ exports[`SelectDataset renders correctly 1`] = `
         className="coordinate-uncertainty is-3"
         name="occurrenceForm.locationData.coordinateUncertainty"
         onChange={[Function]}
+        optional={true}
         value=""
       >
         <div
           className="column field coordinate-uncertainty is-3"
         >
           <label
-            className="label"
+            className="label has-text-weight-normal"
           >
             occurrenceForm.locationData.coordinateUncertainty.label
           </label>
@@ -106,13 +107,14 @@ exports[`SelectDataset renders correctly 1`] = `
         className="minimum-depth is-3"
         name="occurrenceForm.locationData.minimumDepth"
         onChange={[Function]}
+        optional={true}
         value=""
       >
         <div
           className="column field minimum-depth is-3"
         >
           <label
-            className="label"
+            className="label has-text-weight-normal"
           >
             occurrenceForm.locationData.minimumDepth.label
           </label>
@@ -128,13 +130,14 @@ exports[`SelectDataset renders correctly 1`] = `
         className="maximum-depth is-3"
         name="occurrenceForm.locationData.maximumDepth"
         onChange={[Function]}
+        optional={true}
         value=""
       >
         <div
           className="column field maximum-depth is-3"
         >
           <label
-            className="label"
+            className="label has-text-weight-normal"
           >
             occurrenceForm.locationData.maximumDepth.label
           </label>
@@ -167,13 +170,14 @@ exports[`SelectDataset renders correctly 1`] = `
           className="verbatim-coordinates is-3"
           name="occurrenceForm.locationData.verbatimCoordinates"
           onChange={[Function]}
+          optional={true}
           value=""
         >
           <div
             className="column field verbatim-coordinates is-3"
           >
             <label
-              className="label"
+              className="label has-text-weight-normal"
             >
               occurrenceForm.locationData.verbatimCoordinates.label
             </label>
@@ -189,13 +193,14 @@ exports[`SelectDataset renders correctly 1`] = `
           className="verbatim-event-date is-3"
           name="occurrenceForm.locationData.verbatimEventDate"
           onChange={[Function]}
+          optional={true}
           value=""
         >
           <div
             className="column field verbatim-event-date is-3"
           >
             <label
-              className="label"
+              className="label has-text-weight-normal"
             >
               occurrenceForm.locationData.verbatimEventDate.label
             </label>
@@ -215,13 +220,14 @@ exports[`SelectDataset renders correctly 1`] = `
           className="verbatim-depth is-3"
           name="occurrenceForm.locationData.verbatimDepth"
           onChange={[Function]}
+          optional={true}
           value=""
         >
           <div
             className="column field verbatim-depth is-3"
           >
             <label
-              className="label"
+              className="label has-text-weight-normal"
             >
               occurrenceForm.locationData.verbatimDepth.label
             </label>
