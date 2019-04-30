@@ -78,12 +78,18 @@ export default function OccurrenceForm() {
     stepDescription: 'Enter further specifics',
     stepTitle:       'Generic Data',
     children:        <StubFormContent/>
+  }, {
+    dataDescription: '',
+    selectedData:    '',
+    stepDescription: 'Supply specific Darwin core fields',
+    stepTitle:       'Darwin Core Fields',
+    children:        <StubFormContent/>
   }]
 
   return (
     <section className="section">
       {steps.map((step, index) => {
-        const className = 'step-' + index
+        const className = 'step-' + index + ' background-color-' + Math.floor(30 / steps.length * index)
         const StepComponent = activeStepIndex === index
           ? ActiveStepHeader
           : activeStepIndex > index
