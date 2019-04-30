@@ -1,7 +1,6 @@
 package org.obis.smalldata.dwca;
 
 import com.google.common.base.Throwables;
-import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import org.obis.util.file.IoFile;
 
@@ -37,16 +36,17 @@ class DwcaZipGenerator {
   private Set<Path> generateCsvFiles(List<JsonObject> dwcaRecords, Path directory) {
     var dwcaMap = DwcaData.datasetToDwcaMap(dwcaRecords);
     var dwcCsvWriter = new DwcCsvTable();
-    return dwcaMap.entrySet().stream().map(dataEntry -> {
-      try {
-        File generatedFile = File.createTempFile(dataEntry.getKey(), ".txt", directory.toFile());
-        dwcCsvWriter.writeTableToFile(dataEntry.getValue(), generatedFile);
-        return Path.of(generatedFile.toURI());
-      } catch (IOException e) {
-        error(Throwables.getStackTraceAsString(e));
-        return null;
-      }
-    }).collect(Collectors.toSet());
+    return dwcaMap.entrySet().stream()
+      .map(dataEntry -> {
+        try {
+          File generatedFile = File.createTempFile(dataEntry.getKey(), ".txt", directory.toFile());
+          dwcCsvWriter.writeTableToFile(dataEntry.getValue(), generatedFile);
+          return Path.of(generatedFile.toURI());
+        } catch (IOException e) {
+          error(Throwables.getStackTraceAsString(e));
+          return null;
+        }
+      }).collect(Collectors.toSet());
   }
 
   private MetaFileConfig generateMetaConfig(Path path) {
@@ -64,10 +64,8 @@ class DwcaZipGenerator {
     var coreTable = tableConfig.getString("core");
     var groupedPaths = paths.stream()
       .collect(Collectors.groupingBy(path -> path.toFile().getName().startsWith(coreTable)));
-
     var corePath = groupedPaths.get(true).get(0);
     var coreMeta = this.generateMetaConfig(corePath);
-
     var extensionPaths = groupedPaths.get(false).stream()
       .map(this::generateMetaConfig)
       .collect(Collectors.toList());
@@ -88,21 +86,17 @@ class DwcaZipGenerator {
       var csvFiles = generateCsvFiles(dwcaRecords, tempDirectory);
       var metaXml = generateMetaFile(dataset, csvFiles, tempDirectory);
       var files = Stream.of(csvFiles, Set.of(metaXml, emlXml.toPath()))
-        .flatMap(Set::stream).collect(Collectors.toSet());
-
+        .flatMap(Set::stream)
+        .collect(Collectors.toSet());
       var zipFile = Files.createTempFile(tempDirectory, "dwca", ".zip");
       var zipFileEntries = new ZipFileEntries(zipFile);
-      files.stream().forEach(zipFileEntries::add);
+      files.forEach(zipFileEntries::add);
       zipFileEntries.close();
       return Optional.of(zipFile);
     } catch (IOException e) {
       error(e.getMessage());
       return Optional.empty();
     }
-  }
-
-  Optional<Path> generate(JsonArray dwcaRecords, JsonObject dataset) {
-    return generate(dwcaRecords.getList(), dataset);
   }
 
   static class ZipFileEntries {
