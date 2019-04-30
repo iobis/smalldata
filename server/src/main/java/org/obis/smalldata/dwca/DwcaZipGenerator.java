@@ -1,7 +1,6 @@
 package org.obis.smalldata.dwca;
 
 import com.google.common.base.Throwables;
-import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import org.obis.util.file.IoFile;
 
