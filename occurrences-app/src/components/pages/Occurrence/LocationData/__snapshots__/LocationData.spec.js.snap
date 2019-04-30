@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectDataset renders correctly 1`] = `
+<LocationData
+  data={
+    Object {
+      "coordinateUncertainty": "",
+      "decimalLatitude": "",
+      "decimalLongitude": "",
+      "maximumDepth": "",
+      "minimumDepth": "",
+    }
+  }
+  onChange={[Function]}
+>
+  <div
+    className="location-data section is-fluid"
+  >
+    <div
+      className="columns"
+    >
+      <InputText
+        className="decimal-longitude is-2"
+        name="occurrenceForm.locationData.decimalLongitude"
+        onChange={[Function]}
+        value=""
+      >
+        <div
+          className="column field decimal-longitude is-2"
+        >
+          <label
+            className="label"
+          >
+            occurrenceForm.locationData.decimalLongitude.label
+          </label>
+          <input
+            className="input"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+        </div>
+      </InputText>
+      <InputText
+        className="decimal-latitude is-2"
+        name="occurrenceForm.locationData.decimalLatitude"
+        onChange={[Function]}
+        value=""
+      >
+        <div
+          className="column field decimal-latitude is-2"
+        >
+          <label
+            className="label"
+          >
+            occurrenceForm.locationData.decimalLatitude.label
+          </label>
+          <input
+            className="input"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+        </div>
+      </InputText>
+      <InputText
+        className="coordinate-uncertainty is-2"
+        name="occurrenceForm.locationData.coordinateUncertainty"
+        onChange={[Function]}
+      >
+        <div
+          className="column field coordinate-uncertainty is-2"
+        >
+          <label
+            className="label"
+          >
+            occurrenceForm.locationData.coordinateUncertainty.label
+          </label>
+          <input
+            className="input"
+            onChange={[Function]}
+            type="text"
+          />
+        </div>
+      </InputText>
+    </div>
+    <div
+      className="columns"
+    >
+      <InputText
+        className="minimum-depth is-2"
+        name="occurrenceForm.locationData.minimumDepth"
+        onChange={[Function]}
+        value=""
+      >
+        <div
+          className="column field minimum-depth is-2"
+        >
+          <label
+            className="label"
+          >
+            occurrenceForm.locationData.minimumDepth.label
+          </label>
+          <input
+            className="input"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+        </div>
+      </InputText>
+      <InputText
+        className="maximum-depth is-2"
+        name="occurrenceForm.locationData.maximumDepth"
+        onChange={[Function]}
+        value=""
+      >
+        <div
+          className="column field maximum-depth is-2"
+        >
+          <label
+            className="label"
+          >
+            occurrenceForm.locationData.maximumDepth.label
+          </label>
+          <input
+            className="input"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+        </div>
+      </InputText>
+    </div>
+  </div>
+</LocationData>
+`;

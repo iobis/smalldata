@@ -55,6 +55,31 @@ export default {
           unspecified: 'unspecified'
         }
       },
+      locationData:    {
+        decimalLongitude:      {
+          label:       'decimal longitude',
+          placeholder: '5.12334'
+        },
+        decimalLatitude:       {
+          label:       'decimal latitude',
+          placeholder: '53.2345'
+        },
+        coordinateUncertainty: {
+          label:       'coordinate uncertainty',
+          placeholder: '',
+          help:        'meters'
+        },
+        minimumDepth: {
+          label:       'minimum depth',
+          placeholder: '',
+          help:        'meters'
+        },
+        maximumDepth: {
+          label:       'maximum depth',
+          placeholder: '',
+          help:        'meters'
+        }
+      },
       observationData: {
         institutionCode:         {
           label:       'institution code',

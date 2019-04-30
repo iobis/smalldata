@@ -1,6 +1,7 @@
 import ActiveStepHeader from './ActiveStepHeader'
 import BasicData from './BasicData/BasicData'
 import ConfirmedStepHeader from './ConfirmedStepHeader'
+import LocationData from './LocationData/LocationData'
 import NotConfirmedStepHeader from './NotConfirmedStepHeader'
 import ObservationData from './ObservationData/ObservationData'
 import React, { useState } from 'react'
@@ -40,6 +41,13 @@ export default function OccurrenceForm() {
     format(basicData.beginDate, 'D MMMM YYYY'),
     basicData.endDate ? ' - ' + format(basicData.endDate, 'D MMMM YYYY') : ''
   ].join(' ')
+  const locationData = {
+    decimalLongitude:      '',
+    decimalLatitude:       '',
+    coordinateUncertainty: '',
+    minimumDepth:          '',
+    maximumDepth:          ''
+  }
 
   const steps = [{
     dataDescription: t('occurrenceForm.selectDataset.dataDescription'),
@@ -63,7 +71,9 @@ export default function OccurrenceForm() {
     selectedData:    'North Sea',
     stepDescription: 'Select the location for data collected',
     stepTitle:       'Location Data',
-    children:        <StubFormContent/>
+    children:        <LocationData
+                       data={locationData}
+                       onChange={() => {}}/>
   }, {
     dataDescription: 'Main Info',
     selectedData:    renderIdentifiedByLabel(observationData),
