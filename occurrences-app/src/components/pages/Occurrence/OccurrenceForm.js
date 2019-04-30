@@ -89,7 +89,7 @@ export default function OccurrenceForm() {
   return (
     <section className="section">
       {steps.map((step, index) => {
-        const className = 'step-' + index
+        const className = 'step-' + index + ' background-color-' + Math.floor(30 / steps.length * index)
         const StepComponent = activeStepIndex === index
           ? ActiveStepHeader
           : activeStepIndex > index

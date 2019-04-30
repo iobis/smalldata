@@ -1,24 +1,10 @@
 .step-header {
   cursor: pointer;
 
-  &.step-0 {
-    background-color: darken($info, 40%);
-  }
-
-  &.step-1 {
-    background-color: darken($info, 30%);
-  }
-
-  &.step-2 {
-    background-color: darken($info, 20%);
-  }
-
-  &.step-3 {
-    background-color: darken($info, 10%);
-  }
-
-  &.step-4 {
-    background-color: darken($info, 0%);
+  @for $i from 0 through 100 {
+    &.background-color-#{$i} {
+      background-color: darken($info,  $i * 1%);
+    }
   }
 
   .details {
