@@ -22,7 +22,6 @@ import java.security.spec.ECGenParameterSpec;
 import java.util.Base64;
 import java.util.Map;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 import static org.pmw.tinylog.Logger.debug;
 import static org.pmw.tinylog.Logger.error;
