@@ -5,8 +5,8 @@ import io.vertx.core.Future;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.mongo.MongoClient;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -24,17 +24,17 @@ import static org.pmw.tinylog.Logger.info;
 
 public class DwcaZipGeneratorTest {
 
-  private static TestDb testDb;
-  private static MongoClient mongoClient;
+  private TestDb testDb;
+  private MongoClient mongoClient;
 
-  @BeforeAll
-  public static void start() {
+  @BeforeEach
+  public void start() {
     testDb = new TestDb();
     mongoClient = testDb.init(Vertx.vertx());
   }
 
-  @AfterAll
-  public static void stop() {
+  @AfterEach
+  public void stop() {
     info("shutdown mongo db");
     mongoClient.close();
     testDb.shutDown();
@@ -43,6 +43,7 @@ public class DwcaZipGeneratorTest {
   @Test
   public void writeZipFile() throws InterruptedException {
     var datasetRef = "NnqVLwIyPn-nRkc";
+    info(mongoClient);
     var dbQuery = new DbQuery(mongoClient);
     var zipGenerator = new DwcaZipGenerator();
     var dwcaRecordsFuture = dbQuery.dwcaRecords(datasetRef);

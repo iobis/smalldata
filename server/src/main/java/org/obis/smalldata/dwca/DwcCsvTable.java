@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 
 import static org.pmw.tinylog.Logger.error;
 
-public class DwcCsvTable {
+class DwcCsvTable {
 
   private static final ObjectWriter DEFAULT_OBJECT_WRITER = new CsvMapper()
     .enable(CsvParser.Feature.IGNORE_TRAILING_UNMAPPABLE)

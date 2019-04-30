@@ -8,14 +8,16 @@ import de.flapdoodle.embed.mongo.config.MongodConfigBuilder;
 import de.flapdoodle.embed.mongo.config.Net;
 import de.flapdoodle.embed.mongo.distribution.Version;
 import de.flapdoodle.embed.process.runtime.Network;
+import io.vertx.core.CompositeFuture;
+import io.vertx.core.Future;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.mongo.MongoClient;
 import org.obis.smalldata.dbcontroller.BulkOperationUtil;
 
 import java.io.IOException;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
 import static org.pmw.tinylog.Logger.error;
 import static org.pmw.tinylog.Logger.info;
@@ -37,19 +39,31 @@ class TestDb {
         .version(Version.Main.PRODUCTION);
       executable = MongodStarter.getDefaultInstance().prepare(mongodConfig.build());
       process = executable.start();
-      var dwcaFuture = new CompletableFuture<Long>();
+
+      var dwcaFuture = Future.<Long>future();
       var mongoClient = MongoClient.createNonShared(vertx, dbClientConfig);
       mongoClient.bulkWrite("dwcarecords",
         BulkOperationUtil.createOperationsFromFile("testdata/dwca/dwcarecords.json"),
         client -> dwcaFuture.complete(client.result().getInsertedCount()));
-      info("added {} dwca records", dwcaFuture.get());
-      var datasetFuture = new CompletableFuture<Long>();
+      dwcaFuture.setHandler(res -> info("added {} dwca records", res));
+      var datasetFuture = Future.<Long>future();
       mongoClient.bulkWrite("datasets",
         BulkOperationUtil.createOperationsFromFile("testdata/dwca/datasets.json"),
         client -> datasetFuture.complete(client.result().getInsertedCount()));
-      info("added {} datasets", datasetFuture.get());
+      datasetFuture.setHandler(res -> info("added {} dwca records", res));
+
+      var countDownLatch = new CountDownLatch(1);
+      CompositeFuture.all(datasetFuture, dwcaFuture).setHandler(res -> {
+        countDownLatch.countDown();
+      });
+      if (!countDownLatch.await(2000, TimeUnit.MILLISECONDS)) {
+        error("Cannot write data to database to setup tests");
+        throw new InterruptedException("Cannot write data to database to setup tests");
+      }
+      info("MongoClient ready!");
+
       return mongoClient;
-    } catch (InterruptedException | ExecutionException | IOException e) {
+    } catch (InterruptedException | IOException e) {
       error(Throwables.getStackTraceAsString(e));
       return null;
     }

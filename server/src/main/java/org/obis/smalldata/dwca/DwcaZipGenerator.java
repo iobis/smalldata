@@ -20,7 +20,6 @@ import java.util.stream.Stream;
 import java.util.zip.ZipOutputStream;
 
 import static org.pmw.tinylog.Logger.error;
-import static org.pmw.tinylog.Logger.info;
 
 class DwcaZipGenerator {
 
@@ -74,15 +73,14 @@ class DwcaZipGenerator {
   Optional<Path> generate(List<JsonObject> dwcaRecords, JsonObject dataset) {
     try {
       var tempDirectory = Files.createTempDirectory("iobis-dwca");
-      var csvFiles = generateCsvFiles(dwcaRecords, tempDirectory);
-
       var emlXml = new File(tempDirectory + "/eml.xml");
-      new EmlGenerator().writeXml(dataset, emlXml);
-
-      info(csvFiles);
-      var files = Stream.of(csvFiles,
-        Set.of(generateMetaFile(dataset, csvFiles, tempDirectory),
-          emlXml.toPath()))
+      if (!new EmlGenerator().writeXml(dataset, emlXml)) {
+        error("Cannot create eml file {}", emlXml);
+        throw new IOException("Failed to create:  " + emlXml);
+      }
+      var csvFiles = generateCsvFiles(dwcaRecords, tempDirectory);
+      var metaXml = generateMetaFile(dataset, csvFiles, tempDirectory);
+      var files = Stream.of(csvFiles, Set.of(metaXml, emlXml.toPath()))
         .flatMap(Set::stream).collect(Collectors.toSet());
 
       var zipFile = Files.createTempFile(tempDirectory, "dwca", ".zip");

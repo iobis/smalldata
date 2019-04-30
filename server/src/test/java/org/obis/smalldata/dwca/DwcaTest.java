@@ -24,6 +24,7 @@ public class DwcaTest {
   void deployVerticle(Vertx vertx, VertxTestContext testContext) {
     testDb = new TestDb();
     testDb.init(vertx);
+
     vertx.sharedData().getLocalMap("settings")
       .put("storage", new JsonObject()
         .put("host", "localhost")
