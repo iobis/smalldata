@@ -31,7 +31,7 @@ class DwcaZipGenerator {
   private final String baseUrl;
 
   DwcaZipGenerator(String baseUrl) {
-    this.baseUrl= baseUrl;
+    this.baseUrl = baseUrl;
   }
 
   private Set<Path> generateCsvFiles(List<JsonObject> dwcaRecords, Path directory) {

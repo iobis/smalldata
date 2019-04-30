@@ -63,8 +63,8 @@ public class DwcaZipGeneratorTest {
       var fileName = zip.result().getString("file");
       var expectedZip = Resources.getResource("testdata/dwca/generated-dwca.zip");
       try (InputStream is = Files.newInputStream(Path.of(fileName));
-           InputStream expected = expectedZip.openStream();
            ZipFile zipFile = new ZipFile(fileName)) {
+        var expected = expectedZip.openStream();
         var expectedSize = expected.readAllBytes().length;
         assertThat(zipFile.size()).isEqualTo(4);
         assertThat(is.readAllBytes().length).isCloseTo(expectedSize, Offset.offset(20));
