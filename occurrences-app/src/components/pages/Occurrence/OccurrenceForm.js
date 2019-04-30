@@ -15,7 +15,7 @@ export default function OccurrenceForm() {
   const [selectedDataset, setSelectedDataset] = useState(datasets[0])
   const [basicData, setBasicData] = useState({
     basisOfRecord:    null,
-    beginDate:        new Date(),
+    beginDate:        Date.now(),
     endDate:          null,
     lifestage:        null,
     occurrenceStatus: null,
