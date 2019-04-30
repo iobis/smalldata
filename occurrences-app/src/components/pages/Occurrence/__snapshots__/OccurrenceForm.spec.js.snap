@@ -566,7 +566,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
     </NotConfirmedStepHeader>
     <NotConfirmedStepHeader
       className="step-5 background-color-25"
-      dataDescription="DWCA INFO"
+      dataDescription=""
       key="Darwin Core Fields"
       onStepTitleClick={[Function]}
       selectedData=""
@@ -1292,7 +1292,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
     </NotConfirmedStepHeader>
     <NotConfirmedStepHeader
       className="step-5 background-color-25"
-      dataDescription="DWCA INFO"
+      dataDescription=""
       key="Darwin Core Fields"
       onStepTitleClick={[Function]}
       selectedData=""
@@ -1722,7 +1722,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
     </ActiveStepHeader>
     <NotConfirmedStepHeader
       className="step-5 background-color-25"
-      dataDescription="DWCA INFO"
+      dataDescription=""
       key="Darwin Core Fields"
       onStepTitleClick={[Function]}
       selectedData=""

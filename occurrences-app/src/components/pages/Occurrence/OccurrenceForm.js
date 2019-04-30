@@ -79,7 +79,7 @@ export default function OccurrenceForm() {
     stepTitle:       'Generic Data',
     children:        <StubFormContent/>
   }, {
-    dataDescription: 'DWCA INFO',
+    dataDescription: '',
     selectedData:    '',
     stepDescription: 'Supply specific Darwin core fields',
     stepTitle:       'Darwin Core Fields',
