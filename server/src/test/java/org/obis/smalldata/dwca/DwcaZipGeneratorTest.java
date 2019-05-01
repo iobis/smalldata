@@ -19,8 +19,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.zip.ZipFile;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.pmw.tinylog.Logger.error;
-import static org.pmw.tinylog.Logger.info;
+import static org.pmw.tinylog.Logger.debug;
 
 public class DwcaZipGeneratorTest {
 
@@ -35,15 +34,14 @@ public class DwcaZipGeneratorTest {
 
   @AfterEach
   public void stop() {
-    info("shutdown mongo db");
+    debug("shutdown mongo db");
     mongoClient.close();
     testDb.shutDown();
   }
 
   @Test
-  public void writeZipFile() throws InterruptedException {
+  public void writeZipFile() throws InterruptedException, IOException {
     var datasetRef = "NnqVLwIyPn-nRkc";
-    info(mongoClient);
     var dbQuery = new DbQuery(mongoClient);
     var zipGenerator = new DwcaZipGenerator();
     var dwcaRecordsFuture = dbQuery.dwcaRecords(datasetRef);
@@ -56,18 +54,14 @@ public class DwcaZipGeneratorTest {
       var dwcaRecords = (List<JsonObject>) res.result().list().get(1);
       var path = zipGenerator.generate(dwcaRecords, dataset);
       result.complete(new JsonObject().put("file", path.get().toAbsolutePath().toString()));
-    });
-    result.setHandler(zip -> {
-      var fileName = zip.result().getString("file");
-      try (InputStream is = Files.newInputStream(Path.of(fileName));
-           ZipFile zipFile = new ZipFile(fileName)) {
-        assertThat(zipFile.size()).isEqualTo(4);
-        assertThat(is.readAllBytes().length).isBetween(15853, 15862);
-      } catch (IOException e) {
-        error(e.getMessage());
-      }
       countDownLatch.countDown();
     });
-    info(countDownLatch.await(2000, TimeUnit.MILLISECONDS));
+    countDownLatch.await(2000, TimeUnit.MILLISECONDS);
+
+    var fileName = result.result().getString("file");
+    InputStream is = Files.newInputStream(Path.of(fileName));
+    ZipFile zipFile = new ZipFile(fileName);
+    assertThat(zipFile.size()).isEqualTo(4);
+    assertThat(is.readAllBytes().length).isBetween(15853, 15862);
   }
 }
