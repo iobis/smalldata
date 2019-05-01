@@ -28,6 +28,30 @@ class DwcaZipGenerator {
       Pattern.compile("emof\\d+\\.txt"), "http://rs.iobis.org/obis/terms/ExtendedMeasurementOrFact",
       Pattern.compile("occurrence\\d+\\.txt"), "http://rs.tdwg.org/dwc/terms/Occurrence");
 
+  Optional<Path> generate(List<JsonObject> dwcaRecords, JsonObject dataset) {
+    try {
+      var tempDirectory = Files.createTempDirectory("iobis-dwca");
+      var emlXml = new File(tempDirectory + "/eml.xml");
+      if (!new EmlGenerator().writeXml(dataset, emlXml)) {
+        error("Cannot create eml file {}", emlXml);
+        throw new IOException("Failed to create:  " + emlXml);
+      }
+      var csvFiles = generateCsvFiles(dwcaRecords, tempDirectory);
+      var metaXml = generateMetaFile(dataset, csvFiles, tempDirectory);
+      var files = Stream.of(csvFiles, Set.of(metaXml, emlXml.toPath()))
+        .flatMap(Set::stream)
+        .collect(Collectors.toSet());
+      var zipFile = Files.createTempFile(tempDirectory, "dwca", ".zip");
+      var zipFileEntries = new ZipFileEntries(zipFile);
+      files.forEach(zipFileEntries::add);
+      zipFileEntries.close();
+      return Optional.of(zipFile);
+    } catch (IOException e) {
+      error(e.getMessage());
+      return Optional.empty();
+    }
+  }
+
   private Set<Path> generateCsvFiles(List<JsonObject> dwcaRecords, Path directory) {
     var dwcaMap = DwcaData.datasetToDwcaMap(dwcaRecords);
     var dwcCsvWriter = new DwcCsvTable();
@@ -68,31 +92,7 @@ class DwcaZipGenerator {
     return generator.generateXml(coreMeta, extensionPaths, directory).get().toPath();
   }
 
-  Optional<Path> generate(List<JsonObject> dwcaRecords, JsonObject dataset) {
-    try {
-      var tempDirectory = Files.createTempDirectory("iobis-dwca");
-      var emlXml = new File(tempDirectory + "/eml.xml");
-      if (!new EmlGenerator().writeXml(dataset, emlXml)) {
-        error("Cannot create eml file {}", emlXml);
-        throw new IOException("Failed to create:  " + emlXml);
-      }
-      var csvFiles = generateCsvFiles(dwcaRecords, tempDirectory);
-      var metaXml = generateMetaFile(dataset, csvFiles, tempDirectory);
-      var files = Stream.of(csvFiles, Set.of(metaXml, emlXml.toPath()))
-        .flatMap(Set::stream)
-        .collect(Collectors.toSet());
-      var zipFile = Files.createTempFile(tempDirectory, "dwca", ".zip");
-      var zipFileEntries = new ZipFileEntries(zipFile);
-      files.forEach(zipFileEntries::add);
-      zipFileEntries.close();
-      return Optional.of(zipFile);
-    } catch (IOException e) {
-      error(e.getMessage());
-      return Optional.empty();
-    }
-  }
-
-  static class ZipFileEntries {
+  private static class ZipFileEntries {
     private final ZipOutputStream zos;
     private final OutputStream fos;
 
