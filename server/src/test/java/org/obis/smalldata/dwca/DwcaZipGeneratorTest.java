@@ -10,10 +10,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.zip.ZipFile;
@@ -46,24 +46,27 @@ public class DwcaZipGeneratorTest {
     var zipGenerator = new DwcaZipGenerator();
     var dwcaRecordsFuture = dbQuery.dwcaRecords(datasetRef);
     var datasetFuture = dbQuery.dataset(datasetRef);
-    var result = Future.<JsonObject>future();
+    var result = Future.<Optional<Path>>future();
     var countDownLatch = new CountDownLatch(1);
 
-    CompositeFuture.all(datasetFuture, dwcaRecordsFuture).setHandler(res -> {
-      var dataset = (JsonObject) res.result().list().get(0);
-      var dwcaRecords = (List<JsonObject>) res.result().list().get(1);
-      var path = zipGenerator.generate(dwcaRecords, dataset);
-      result.complete(new JsonObject().put("file", path.get().toAbsolutePath().toString()));
+    CompositeFuture.all(datasetFuture, dwcaRecordsFuture).setHandler(ar -> {
+      var dataset = (JsonObject) ar.result().list().get(0);
+      var dwcaRecords = (List<JsonObject>) ar.result().list().get(1);
+      result.complete(zipGenerator.generate(dwcaRecords, dataset));
       countDownLatch.countDown();
     });
 
     assertThat(countDownLatch.await(2000, TimeUnit.MILLISECONDS)).isTrue();
-    var fileName = result.result().getString("file");
-    InputStream is = Files.newInputStream(Path.of(fileName));
-    ZipFile zipFile = new ZipFile(fileName);
+    assertThat(result.isComplete()).isTrue();
+    assertThat(result.result()).isPresent();
+    var path = result.result().orElseThrow();
+    assertThat(path)
+      .exists()
+      .isRegularFile();
+    ZipFile zipFile = new ZipFile(path.toFile());
     assertThat(zipFile.size()).isEqualTo(4);
-    assertThat(is.readAllBytes().length).isBetween(15853, 15862);
-    is.close();
     zipFile.close();
+    Files.delete(path);
+    Files.delete(path.getParent());
   }
 }
