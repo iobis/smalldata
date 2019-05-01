@@ -67,6 +67,5 @@ public class DwcaZipGeneratorTest {
     assertThat(zipFile.size()).isEqualTo(4);
     zipFile.close();
     Files.delete(path);
-    Files.delete(path.getParent());
   }
 }

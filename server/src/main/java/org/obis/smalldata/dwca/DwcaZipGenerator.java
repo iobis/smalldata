@@ -65,7 +65,8 @@ class DwcaZipGenerator {
           error(Throwables.getStackTraceAsString(e));
           return null;
         }
-      }).collect(Collectors.toSet());
+      })
+      .collect(Collectors.toSet());
   }
 
   private MetaFileConfig generateMetaConfig(Path path) {
