@@ -56,12 +56,14 @@ public class DwcaZipGeneratorTest {
       result.complete(new JsonObject().put("file", path.get().toAbsolutePath().toString()));
       countDownLatch.countDown();
     });
-    countDownLatch.await(2000, TimeUnit.MILLISECONDS);
 
+    assertThat(countDownLatch.await(2000, TimeUnit.MILLISECONDS)).isTrue();
     var fileName = result.result().getString("file");
     InputStream is = Files.newInputStream(Path.of(fileName));
     ZipFile zipFile = new ZipFile(fileName);
     assertThat(zipFile.size()).isEqualTo(4);
     assertThat(is.readAllBytes().length).isBetween(15853, 15862);
+    is.close();
+    zipFile.close();
   }
 }
