@@ -14,7 +14,7 @@ exports[`DarwinCoreFields renders correctly 1`] = `
       This form enables you to add any aditional fields you may need to specify, that were ot previously included in this form. Please be advised to use the Darwin Core Archive names
     </p>
     <div
-      className="columns"
+      className="columns is-grouped"
     >
       <InputText
         className="field-name"
@@ -67,7 +67,9 @@ exports[`DarwinCoreFields renders correctly 1`] = `
         </a>
       </div>
     </div>
-    <table>
+    <table
+      className="table"
+    >
       <thead>
         <tr>
           <th>
@@ -76,6 +78,7 @@ exports[`DarwinCoreFields renders correctly 1`] = `
           <th>
             value
           </th>
+          <th />
         </tr>
       </thead>
       <tbody>
@@ -89,6 +92,14 @@ exports[`DarwinCoreFields renders correctly 1`] = `
           <td>
             dummy value
           </td>
+          <td>
+            <a
+              className="button is-small remove"
+              onClick={[Function]}
+            >
+              remove
+            </a>
+          </td>
         </tr>
         <tr
           className="fieldrow"
@@ -99,6 +110,14 @@ exports[`DarwinCoreFields renders correctly 1`] = `
           </td>
           <td>
             dummy value
+          </td>
+          <td>
+            <a
+              className="button is-small remove"
+              onClick={[Function]}
+            >
+              remove
+            </a>
           </td>
         </tr>
         <tr
@@ -111,6 +130,14 @@ exports[`DarwinCoreFields renders correctly 1`] = `
           <td>
             dummy value
           </td>
+          <td>
+            <a
+              className="button is-small remove"
+              onClick={[Function]}
+            >
+              remove
+            </a>
+          </td>
         </tr>
         <tr
           className="fieldrow"
@@ -121,6 +148,14 @@ exports[`DarwinCoreFields renders correctly 1`] = `
           </td>
           <td>
             dummy value
+          </td>
+          <td>
+            <a
+              className="button is-small remove"
+              onClick={[Function]}
+            >
+              remove
+            </a>
           </td>
         </tr>
       </tbody>

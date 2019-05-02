@@ -21,9 +21,8 @@ export default function DarwinCoreFields({ onChange }) {
     setFields([...fields,{name,value}])
   }
 
-  function deleteRowItem(index){
+  function removeRowItem(index){
     const values = [...fields]
-    console.log("showing spread operator fields",values)
     values.splice(index,1)
     setFields(values)
   }
@@ -55,8 +54,8 @@ export default function DarwinCoreFields({ onChange }) {
           <tr className="fieldrow" key={field.name + field.value}>
             <td>{field.name}</td>
             <td>{field.value}</td>
-            <td><a className="button is-small" onClick={() => deleteRowItem(i)}>delete</a></td>
-            
+            <td><a className="button is-small remove" onClick={() => removeRowItem(i)}>remove</a></td>
+
           </tr>
         )}
         </tbody>
