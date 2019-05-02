@@ -8,6 +8,19 @@ servers:
   - url: http://localhost:8008/
   - url: http://localhost:8080/
 paths:
+  /api/datasets:
+    get:
+      summary: get all datasets
+      operationId: getDatasets
+      responses:
+        200:
+          description: array with datasets
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "dataset.yaml#/Dataset"
   /api/login:
     post:
       summary: get jwt token
@@ -126,7 +139,6 @@ components:
           type: string
           enum: ['OK', 'error']
           example: 'OK'
-
     DWCA:
       type: object
       description: post dwca record
