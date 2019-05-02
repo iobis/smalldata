@@ -4,6 +4,8 @@ import InputText from '../../../form/InputText'
 
 export default function DarwinCoreFields({ onChange }) {
 
+  // Reference example for Jill https://codesandbox.io/s/q555kp8jj?fontsize=14
+
   const [fields,setFields] = useState([
     { name: 'dummy field', value: 'dummy value' },
     { name:  'dummy2 field', value: 'dummy value' },
@@ -17,6 +19,13 @@ export default function DarwinCoreFields({ onChange }) {
 
   function makeDarwinCoreObject(){
     setFields([...fields,{name,value}])
+  }
+
+  function deleteRowItem(index){
+    const values = [...fields]
+    console.log("showing spread operator fields",values)
+    values.splice(index,1)
+    setFields(values)
   }
 
   return (
@@ -41,10 +50,11 @@ export default function DarwinCoreFields({ onChange }) {
         </tr>
         </thead>
         <tbody>
-        {fields.map(field =>
+        {fields.map((field,i) =>
           <tr className="fieldrow" key={field.name + field.value}>
             <td>{field.name}</td>
             <td>{field.value}</td>
+            <td><a className="button" onClick={() => deleteRowItem(i)}>delete</a></td>
             
           </tr>
         )}
