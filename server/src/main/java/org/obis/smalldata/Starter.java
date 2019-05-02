@@ -5,6 +5,7 @@ import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import org.obis.smalldata.auth.Auth;
+import org.obis.smalldata.dataset.DatasetComponent;
 import org.obis.smalldata.dbcontroller.EmbeddedDb;
 import org.obis.smalldata.dwca.Dwca;
 import org.obis.smalldata.rss.RssComponent;
@@ -41,6 +42,7 @@ public class Starter extends AbstractVerticle {
         deploy(RssComponent.class, "rss");
         deploy(WebApi.class, "http");
         deploy(Auth.class, "auth");
+        deploy(DatasetComponent.class, "dataset");
       });
   }
 }

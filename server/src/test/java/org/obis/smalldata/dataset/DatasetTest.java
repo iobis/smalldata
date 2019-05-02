@@ -1,6 +1,7 @@
-package org.obis.smalldata.dwca;
+package org.obis.smalldata.dataset;
 
 import io.vertx.core.Vertx;
+import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.junit5.Timeout;
 import io.vertx.junit5.VertxExtension;
@@ -12,12 +13,15 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.obis.smalldata.testutil.TestDb;
 
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.pmw.tinylog.Logger.info;
 
 @ExtendWith(VertxExtension.class)
-public class DwcaTest {
+public class DatasetTest {
 
   private TestDb testDb;
 
@@ -32,7 +36,7 @@ public class DwcaTest {
         .put("port", 12345)
         .put("path", ""));
     vertx.deployVerticle(
-      Dwca.class.getName(),
+      DatasetComponent.class.getName(),
       testContext.succeeding(id -> testContext.completeNow()));
   }
 
@@ -43,23 +47,23 @@ public class DwcaTest {
   }
 
   @Test
-  @DisplayName("check if a valid dwca zip file is generated")
+  @DisplayName("get all datasets")
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
-  void testGenerateZipFile(Vertx vertx, VertxTestContext testContext) {
-    vertx.eventBus().<JsonObject>send(
-      "dwca",
-      new JsonObject()
-        .put("action", "generate")
-        .put("dataset", "NnqVLwIyPn-nRkc"),
-      result -> {
-        if (result.succeeded()) {
-          JsonObject body = result.result().body();
-          info("success {}", body);
-          testContext.completeNow();
-        } else {
-          info("error {}", result.cause());
-          testContext.failNow(result.cause());
-        }
+  void getAllDatasets(Vertx vertx, VertxTestContext testContext) {
+    vertx.eventBus().<JsonArray>send("dataset", new JsonObject(),
+      m -> {
+        var datasets = m.result().body();
+        info(datasets);
+        assertThat(4)
+          .isEqualTo(datasets.size());
+
+        var refs = datasets.stream()
+          .map(JsonObject.class::cast)
+          .map(ds -> ds.getString("_ref"))
+          .collect(Collectors.toSet());
+        assertThat(Set.of("NnqVLwIyPn-nRkc", "wEaBfmFyQhYCdsk", "ntDOtUc7XsRrIus", "PoJnGNMaxsupE4w"))
+          .isEqualTo(refs);
+        testContext.completeNow();
       });
   }
 }
