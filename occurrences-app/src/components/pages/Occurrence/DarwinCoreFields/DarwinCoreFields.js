@@ -8,7 +8,7 @@ export default function DarwinCoreFields({ onChange }) {
 
   const [fields,setFields] = useState([
     { name: 'dummy field', value: 'dummy value' },
-    { name:  'dummy2 field', value: 'dummy value' },
+    { name: 'dummy2 field', value: 'dummy value' },
     { name: 'dummy3 field', value: 'dummy value' },
     { name: 'dummy4 field', value: 'dummy value' }
   ])
