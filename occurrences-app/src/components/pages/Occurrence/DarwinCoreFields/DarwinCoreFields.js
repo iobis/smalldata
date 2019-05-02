@@ -36,17 +36,18 @@ export default function DarwinCoreFields({ onChange }) {
         this form.
         Please be advised to use the Darwin Core Archive names</p>
 
-      <div className="columns">
+      <div className="columns is-grouped">
         <InputText className="field-name" name="occurrenceForm.darwinCoreFields.fieldName" onChange={setName}/>
         <InputText className="value" name="occurrenceForm.darwinCoreFields.value" onChange={setValue}/>
         <div className="column add"><a className="button" onClick={makeDarwinCoreObject}>add</a></div>
       </div>
 
-      <table>
+      <table className="table">
         <thead>
         <tr>
           <th>name</th>
           <th>value</th>
+          <th></th>
         </tr>
         </thead>
         <tbody>
@@ -54,7 +55,7 @@ export default function DarwinCoreFields({ onChange }) {
           <tr className="fieldrow" key={field.name + field.value}>
             <td>{field.name}</td>
             <td>{field.value}</td>
-            <td><a className="button" onClick={() => deleteRowItem(i)}>delete</a></td>
+            <td><a className="button is-small" onClick={() => deleteRowItem(i)}>delete</a></td>
             
           </tr>
         )}
