@@ -21,7 +21,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.pmw.tinylog.Logger.info;
 
 @ExtendWith(VertxExtension.class)
-public class DatasetTest {
+public class DatasetComponentTest {
 
   private TestDb testDb;
 
@@ -49,21 +49,38 @@ public class DatasetTest {
   @Test
   @DisplayName("get all datasets")
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
-  void getAllDatasets(Vertx vertx, VertxTestContext testContext) {
-    vertx.eventBus().<JsonArray>send("dataset", new JsonObject(),
+  void allDatasets(Vertx vertx, VertxTestContext testContext) {
+    vertx.eventBus().<JsonArray>send("datasets.query", new JsonObject(),
       m -> {
         var datasets = m.result().body();
-        info(datasets);
         assertThat(4)
           .isEqualTo(datasets.size());
-
         var refs = datasets.stream()
           .map(JsonObject.class::cast)
-          .map(ds -> ds.getString("_ref"))
+          .map(ds -> ds.getString("ref"))
           .collect(Collectors.toSet());
         assertThat(Set.of("NnqVLwIyPn-nRkc", "wEaBfmFyQhYCdsk", "ntDOtUc7XsRrIus", "PoJnGNMaxsupE4w"))
           .isEqualTo(refs);
         testContext.completeNow();
       });
   }
+
+  @Test
+  @DisplayName("get one dataset")
+  @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
+  void oneDataset(Vertx vertx, VertxTestContext testContext) {
+    var ref = "ntDOtUc7XsRrIus";
+    vertx.eventBus().<JsonArray>send("datasets.query",
+      new JsonObject().put("ref", ref),
+      m -> {
+        var datasets = m.result().body();
+        info(datasets);
+        assertThat(1)
+          .isEqualTo(datasets.size());
+        assertThat(datasets.getJsonObject(0).getString("ref"))
+          .isEqualTo(ref);
+        testContext.completeNow();
+      });
+  }
+
 }

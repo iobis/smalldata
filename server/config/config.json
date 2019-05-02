@@ -14,5 +14,6 @@
   "user": {
     "halfTimeInDays": 7
   },
+  "dataset": {},
   "mode": "DEMO"
 }

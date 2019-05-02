@@ -1,5 +1,10 @@
 ---
 Dataset:
+  type: object
+  required:
+    - ref
+  description: dataset information
+  additionalProperties: false
   properties:
     ref:
       type: string
