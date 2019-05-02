@@ -101,7 +101,20 @@ export default {
           placeholder: '',
           help:        'hit enter to add a reference to list'
         }
+      },
+      darwinCoreFields: {
+        fieldName:  {
+          label:       'Darwin core fieldname',
+          placeholder: '',
+          help:        ''
+        },
+        value:  {
+          label:       'value',
+          placeholder: '',
+          help:        ''
+        }
       }
+
     },
     navbar:         {
       help:      'HELP',

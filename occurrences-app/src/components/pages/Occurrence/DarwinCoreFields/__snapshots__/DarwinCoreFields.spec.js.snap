@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DarwinCoreFields renders correctly 1`] = `
+<DarwinCoreFields
+  onChange={[MockFunction]}
+>
+  <div
+    className="darwin-core-fields section is-fluid"
+  >
+    <h2>
+      DARWIN CORE CUSTOM SELECTION
+    </h2>
+    <p>
+      This form enables you to add any aditional fields you may need to specify, that were ot previously included in this form. Please be advised to use the Darwin Core Archive names
+    </p>
+    <div
+      className="columns is-grouped"
+    >
+      <InputText
+        className="field-name"
+        name="occurrenceForm.darwinCoreFields.fieldName"
+        onChange={[Function]}
+      >
+        <div
+          className="column field field-name"
+        >
+          <label
+            className="label"
+          >
+            occurrenceForm.darwinCoreFields.fieldName.label
+          </label>
+          <input
+            className="input"
+            onChange={[Function]}
+            type="text"
+          />
+        </div>
+      </InputText>
+      <InputText
+        className="value"
+        name="occurrenceForm.darwinCoreFields.value"
+        onChange={[Function]}
+      >
+        <div
+          className="column field value"
+        >
+          <label
+            className="label"
+          >
+            occurrenceForm.darwinCoreFields.value.label
+          </label>
+          <input
+            className="input"
+            onChange={[Function]}
+            type="text"
+          />
+        </div>
+      </InputText>
+      <div
+        className="column add"
+      >
+        <a
+          className="button"
+          onClick={[Function]}
+        >
+          add
+        </a>
+      </div>
+    </div>
+    <table
+      className="table"
+    >
+      <thead>
+        <tr>
+          <th>
+            name
+          </th>
+          <th>
+            value
+          </th>
+          <th />
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          className="fieldrow"
+          key="dummy fielddummy value"
+        >
+          <td>
+            dummy field
+          </td>
+          <td>
+            dummy value
+          </td>
+          <td>
+            <a
+              className="button is-small remove"
+              onClick={[Function]}
+            >
+              remove
+            </a>
+          </td>
+        </tr>
+        <tr
+          className="fieldrow"
+          key="dummy2 fielddummy value"
+        >
+          <td>
+            dummy2 field
+          </td>
+          <td>
+            dummy value
+          </td>
+          <td>
+            <a
+              className="button is-small remove"
+              onClick={[Function]}
+            >
+              remove
+            </a>
+          </td>
+        </tr>
+        <tr
+          className="fieldrow"
+          key="dummy3 fielddummy value"
+        >
+          <td>
+            dummy3 field
+          </td>
+          <td>
+            dummy value
+          </td>
+          <td>
+            <a
+              className="button is-small remove"
+              onClick={[Function]}
+            >
+              remove
+            </a>
+          </td>
+        </tr>
+        <tr
+          className="fieldrow"
+          key="dummy4 fielddummy value"
+        >
+          <td>
+            dummy4 field
+          </td>
+          <td>
+            dummy value
+          </td>
+          <td>
+            <a
+              className="button is-small remove"
+              onClick={[Function]}
+            >
+              remove
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</DarwinCoreFields>
+`;
