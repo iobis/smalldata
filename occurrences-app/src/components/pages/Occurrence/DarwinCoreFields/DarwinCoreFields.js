@@ -8,7 +8,7 @@ export default function DarwinCoreFields({ onChange }) {
 
   const [fields,setFields] = useState([
     { name: 'dummy field', value: 'dummy value' },
-    { name:  'dummy2 field', value: 'dummy value' },
+    { name: 'dummy2 field', value: 'dummy value' },
     { name: 'dummy3 field', value: 'dummy value' },
     { name: 'dummy4 field', value: 'dummy value' }
   ])
@@ -38,10 +38,10 @@ export default function DarwinCoreFields({ onChange }) {
       <div className="columns is-grouped">
         <InputText className="field-name" name="occurrenceForm.darwinCoreFields.fieldName" onChange={setName}/>
         <InputText className="value" name="occurrenceForm.darwinCoreFields.value" onChange={setValue}/>
-        <div className="column add"><a className="button" onClick={makeDarwinCoreObject}>add</a></div>
+        <div className="column add"><span className="label">&nbsp;</span><a className="button" onClick={makeDarwinCoreObject}>add</a></div>
       </div>
 
-      <table className="table">
+      <table className="table is-fullwidth">
         <thead>
         <tr>
           <th>name</th>
