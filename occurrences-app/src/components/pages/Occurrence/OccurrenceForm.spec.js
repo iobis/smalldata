@@ -3,6 +3,14 @@ import React from 'react'
 import { mount } from 'enzyme/build'
 
 describe('OccurrenceForm', () => {
+  beforeAll(() => {
+    jest.spyOn(Date, 'now').mockImplementation(() => new Date(Date.UTC(2019, 3, 29)).valueOf())
+  })
+
+  afterAll(() => {
+    jest.spyOn(Date, 'now').mockRestore()
+  })
+
   it('renders correctly', () => {
     const wrapper = mount(<OccurrenceForm/>)
     expect(wrapper).toMatchSnapshot()

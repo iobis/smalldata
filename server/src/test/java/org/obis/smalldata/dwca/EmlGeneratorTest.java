@@ -26,8 +26,7 @@ public class EmlGeneratorTest {
   void generateDataSetEmlMapsFromJsonObject() throws IOException {
     var emlGenerator = new EmlGenerator();
     var datasets = IoFile.loadFromResources("testdata/dwca/datasets.json");
-    var json = mapper.<List<Map<String, Object>>>readValue(datasets, new TypeReference<List<Map<String, Object>>>() {
-    });
+    var json = mapper.<List<Map<String, Object>>>readValue(datasets, new TypeReference<List<Map<String, Object>>>() {});
 
     var dataSetEmlMaps = json.stream()
       .map(JsonObject::new)

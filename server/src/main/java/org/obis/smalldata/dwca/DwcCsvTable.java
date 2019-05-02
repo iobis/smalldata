@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 
 import static org.pmw.tinylog.Logger.error;
 
-public class DwcCsvTable {
+class DwcCsvTable {
 
   private static final ObjectWriter DEFAULT_OBJECT_WRITER = new CsvMapper()
     .enable(CsvParser.Feature.IGNORE_TRAILING_UNMAPPABLE)
@@ -63,7 +63,7 @@ public class DwcCsvTable {
 
   static Set<String> headersFromFile(File file) throws IOException {
     var actualLines = Files.lines(file.toPath());
-    var splitter = Splitter.on('/').trimResults();
+    var splitter = Splitter.on('.').trimResults();
     return Sets.newHashSet(
       actualLines.findFirst().get().split("\t")).stream()
       .map(h -> Iterables.getLast(splitter.split(h)))

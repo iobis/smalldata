@@ -31,7 +31,7 @@ class MetaGenerator {
   static {
     NS_MAPPER.put("purl", "http://purl.org/dc/terms/");
     NS_MAPPER.put("tdwg", "http://rs.tdwg.org/dwc/terms/");
-    NS_MAPPER.put("obis", "http://rs.iobis.org/obis/terms/");
+    NS_MAPPER.put("iobis", "http://rs.iobis.org/obis/terms/");
   }
 
   private final XmlMapper xmlMapper = new XmlMapper();
@@ -43,9 +43,9 @@ class MetaGenerator {
     xmlMapper.setDefaultUseWrapper(false);
   }
 
-  Optional<File> generateXml(MetaFileConfig core, List<MetaFileConfig> extensions) {
+  Optional<File> generateXml(MetaFileConfig core, List<MetaFileConfig> extensions, Path directory) {
     try {
-      var metaXml = File.createTempFile("obis-iode", "meta.xml");
+      var metaXml = new File(directory.toFile() + "/meta.xml");
       var extTables = extensions.stream()
         .map(this::extensionXml)
         .map(Optional::get)
@@ -108,7 +108,7 @@ class MetaGenerator {
 
   private static List<Field> xmlFields(String... headers) {
     return IntStream.range(0, headers.length)
-      .filter(idx -> headers[idx].split("/").length == 2)
+      .filter(idx -> headers[idx].split("\\.").length == 2)
       .mapToObj(idx -> Field.builder()
         .index(idx)
         .term(mapHeader(headers[idx]))
@@ -117,7 +117,7 @@ class MetaGenerator {
   }
 
   private static String mapHeader(String header) {
-    var headerParts = header.split("/");
+    var headerParts = header.split("\\.");
     switch (headerParts.length) {
       case 2:
         return NS_MAPPER.getNs(headerParts[0]) + headerParts[1];

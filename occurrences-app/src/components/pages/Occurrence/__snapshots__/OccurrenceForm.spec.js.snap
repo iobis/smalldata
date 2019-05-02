@@ -6,7 +6,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
     className="section"
   >
     <ActiveStepHeader
-      className="step-0"
+      className="step-0 background-color-0"
       dataDescription="occurrenceForm.selectDataset.dataDescription"
       key="occurrenceForm.selectDataset.stepTitle"
       onStepTitleClick={[Function]}
@@ -329,7 +329,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
       </StepHeader>
     </ActiveStepHeader>
     <NotConfirmedStepHeader
-      className="step-1"
+      className="step-1 background-color-5"
       dataDescription="Given Values"
       key="Basic Data"
       onStepTitleClick={[Function]}
@@ -338,7 +338,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
       stepTitle="2 - Basic Data"
     >
       <StepHeader
-        className="not-confirmed has-text-white step-1"
+        className="not-confirmed has-text-white step-1 background-color-5"
         dataDescription=""
         iconVisible={false}
         onStepTitleClick={[Function]}
@@ -347,7 +347,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
         stepTitle="2 - Basic Data"
       >
         <div
-          className="step-header columns is-vcentered not-confirmed has-text-white step-1"
+          className="step-header columns is-vcentered not-confirmed has-text-white step-1 background-color-5"
           onClick={[Function]}
         >
           <div
@@ -388,7 +388,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
       </StepHeader>
     </NotConfirmedStepHeader>
     <NotConfirmedStepHeader
-      className="step-2"
+      className="step-2 background-color-10"
       dataDescription="Main Location"
       key="Location Data"
       onStepTitleClick={[Function]}
@@ -397,7 +397,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
       stepTitle="3 - Location Data"
     >
       <StepHeader
-        className="not-confirmed has-text-white step-2"
+        className="not-confirmed has-text-white step-2 background-color-10"
         dataDescription=""
         iconVisible={false}
         onStepTitleClick={[Function]}
@@ -406,7 +406,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
         stepTitle="3 - Location Data"
       >
         <div
-          className="step-header columns is-vcentered not-confirmed has-text-white step-2"
+          className="step-header columns is-vcentered not-confirmed has-text-white step-2 background-color-10"
           onClick={[Function]}
         >
           <div
@@ -447,7 +447,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
       </StepHeader>
     </NotConfirmedStepHeader>
     <NotConfirmedStepHeader
-      className="step-3"
+      className="step-3 background-color-15"
       dataDescription="Main Info"
       key="Observation Data"
       onStepTitleClick={[Function]}
@@ -456,7 +456,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
       stepTitle="4 - Observation Data"
     >
       <StepHeader
-        className="not-confirmed has-text-white step-3"
+        className="not-confirmed has-text-white step-3 background-color-15"
         dataDescription=""
         iconVisible={false}
         onStepTitleClick={[Function]}
@@ -465,7 +465,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
         stepTitle="4 - Observation Data"
       >
         <div
-          className="step-header columns is-vcentered not-confirmed has-text-white step-3"
+          className="step-header columns is-vcentered not-confirmed has-text-white step-3 background-color-15"
           onClick={[Function]}
         >
           <div
@@ -506,7 +506,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
       </StepHeader>
     </NotConfirmedStepHeader>
     <NotConfirmedStepHeader
-      className="step-4"
+      className="step-4 background-color-20"
       dataDescription="DWCA INFO"
       key="Generic Data"
       onStepTitleClick={[Function]}
@@ -515,7 +515,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
       stepTitle="5 - Generic Data"
     >
       <StepHeader
-        className="not-confirmed has-text-white step-4"
+        className="not-confirmed has-text-white step-4 background-color-20"
         dataDescription=""
         iconVisible={false}
         onStepTitleClick={[Function]}
@@ -524,7 +524,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
         stepTitle="5 - Generic Data"
       >
         <div
-          className="step-header columns is-vcentered not-confirmed has-text-white step-4"
+          className="step-header columns is-vcentered not-confirmed has-text-white step-4 background-color-20"
           onClick={[Function]}
         >
           <div
@@ -564,6 +564,65 @@ exports[`OccurrenceForm renders correctly 1`] = `
         </div>
       </StepHeader>
     </NotConfirmedStepHeader>
+    <NotConfirmedStepHeader
+      className="step-5 background-color-25"
+      dataDescription=""
+      key="Darwin Core Fields"
+      onStepTitleClick={[Function]}
+      selectedData=""
+      stepDescription="Supply specific Darwin core fields"
+      stepTitle="6 - Darwin Core Fields"
+    >
+      <StepHeader
+        className="not-confirmed has-text-white step-5 background-color-25"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="Supply specific Darwin core fields"
+        stepTitle="6 - Darwin Core Fields"
+      >
+        <div
+          className="step-header columns is-vcentered not-confirmed has-text-white step-5 background-color-25"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="column is-7 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5"
+            />
+          </div>
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              Supply specific Darwin core fields
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                6 - Darwin Core Fields
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </NotConfirmedStepHeader>
   </section>
 </OccurrenceForm>
 `;
@@ -574,7 +633,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
     className="section"
   >
     <ConfirmedStepHeader
-      className="step-0"
+      className="step-0 background-color-0"
       dataDescription="occurrenceForm.selectDataset.dataDescription"
       key="occurrenceForm.selectDataset.stepTitle"
       onStepTitleClick={[Function]}
@@ -646,7 +705,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
       </StepHeader>
     </ConfirmedStepHeader>
     <ConfirmedStepHeader
-      className="step-1"
+      className="step-1 background-color-5"
       dataDescription="Given Values"
       key="Basic Data"
       onStepTitleClick={[Function]}
@@ -718,7 +777,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
       </StepHeader>
     </ConfirmedStepHeader>
     <ConfirmedStepHeader
-      className="step-2"
+      className="step-2 background-color-10"
       dataDescription="Main Location"
       key="Location Data"
       onStepTitleClick={[Function]}
@@ -790,7 +849,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
       </StepHeader>
     </ConfirmedStepHeader>
     <ActiveStepHeader
-      className="step-3"
+      className="step-3 background-color-15"
       dataDescription="Main Info"
       key="Observation Data"
       onStepTitleClick={[Function]}
@@ -1173,7 +1232,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
       </StepHeader>
     </ActiveStepHeader>
     <NotConfirmedStepHeader
-      className="step-4"
+      className="step-4 background-color-20"
       dataDescription="DWCA INFO"
       key="Generic Data"
       onStepTitleClick={[Function]}
@@ -1182,7 +1241,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
       stepTitle="5 - Generic Data"
     >
       <StepHeader
-        className="not-confirmed has-text-white step-4"
+        className="not-confirmed has-text-white step-4 background-color-20"
         dataDescription=""
         iconVisible={false}
         onStepTitleClick={[Function]}
@@ -1191,7 +1250,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
         stepTitle="5 - Generic Data"
       >
         <div
-          className="step-header columns is-vcentered not-confirmed has-text-white step-4"
+          className="step-header columns is-vcentered not-confirmed has-text-white step-4 background-color-20"
           onClick={[Function]}
         >
           <div
@@ -1231,6 +1290,65 @@ exports[`OccurrenceForm renders correctly 2`] = `
         </div>
       </StepHeader>
     </NotConfirmedStepHeader>
+    <NotConfirmedStepHeader
+      className="step-5 background-color-25"
+      dataDescription=""
+      key="Darwin Core Fields"
+      onStepTitleClick={[Function]}
+      selectedData=""
+      stepDescription="Supply specific Darwin core fields"
+      stepTitle="6 - Darwin Core Fields"
+    >
+      <StepHeader
+        className="not-confirmed has-text-white step-5 background-color-25"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="Supply specific Darwin core fields"
+        stepTitle="6 - Darwin Core Fields"
+      >
+        <div
+          className="step-header columns is-vcentered not-confirmed has-text-white step-5 background-color-25"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="column is-7 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5"
+            />
+          </div>
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              Supply specific Darwin core fields
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                6 - Darwin Core Fields
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </NotConfirmedStepHeader>
   </section>
 </OccurrenceForm>
 `;
@@ -1241,7 +1359,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
     className="section"
   >
     <ConfirmedStepHeader
-      className="step-0"
+      className="step-0 background-color-0"
       dataDescription="occurrenceForm.selectDataset.dataDescription"
       key="occurrenceForm.selectDataset.stepTitle"
       onStepTitleClick={[Function]}
@@ -1313,7 +1431,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
       </StepHeader>
     </ConfirmedStepHeader>
     <ConfirmedStepHeader
-      className="step-1"
+      className="step-1 background-color-5"
       dataDescription="Given Values"
       key="Basic Data"
       onStepTitleClick={[Function]}
@@ -1385,7 +1503,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
       </StepHeader>
     </ConfirmedStepHeader>
     <ConfirmedStepHeader
-      className="step-2"
+      className="step-2 background-color-10"
       dataDescription="Main Location"
       key="Location Data"
       onStepTitleClick={[Function]}
@@ -1457,7 +1575,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
       </StepHeader>
     </ConfirmedStepHeader>
     <ConfirmedStepHeader
-      className="step-3"
+      className="step-3 background-color-15"
       dataDescription="Main Info"
       key="Observation Data"
       onStepTitleClick={[Function]}
@@ -1529,7 +1647,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
       </StepHeader>
     </ConfirmedStepHeader>
     <ActiveStepHeader
-      className="step-4"
+      className="step-4 background-color-20"
       dataDescription="DWCA INFO"
       key="Generic Data"
       onStepTitleClick={[Function]}
@@ -1602,6 +1720,65 @@ exports[`OccurrenceForm renders correctly 3`] = `
         </StubFormContent>
       </StepHeader>
     </ActiveStepHeader>
+    <NotConfirmedStepHeader
+      className="step-5 background-color-25"
+      dataDescription=""
+      key="Darwin Core Fields"
+      onStepTitleClick={[Function]}
+      selectedData=""
+      stepDescription="Supply specific Darwin core fields"
+      stepTitle="6 - Darwin Core Fields"
+    >
+      <StepHeader
+        className="not-confirmed has-text-white step-5 background-color-25"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="Supply specific Darwin core fields"
+        stepTitle="6 - Darwin Core Fields"
+      >
+        <div
+          className="step-header columns is-vcentered not-confirmed has-text-white step-5 background-color-25"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="column is-7 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5"
+            />
+          </div>
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              Supply specific Darwin core fields
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                6 - Darwin Core Fields
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </NotConfirmedStepHeader>
   </section>
 </OccurrenceForm>
 `;
