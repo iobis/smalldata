@@ -16,6 +16,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -65,6 +67,14 @@ public class DwcaZipGeneratorTest {
       .isRegularFile();
     ZipFile zipFile = new ZipFile(path.toFile());
     assertThat(zipFile.size()).isEqualTo(4);
+    var fileNamesInZip = zipFile.stream()
+      .map(ZipEntry::getName)
+      .sorted()
+      .collect(Collectors.toList());
+    assertThat(fileNamesInZip.get(0)).isEqualTo("eml.xml");
+    assertThat(fileNamesInZip.get(1)).matches("emof[0-9]+.txt");
+    assertThat(fileNamesInZip.get(2)).isEqualTo("meta.xml");
+    assertThat(fileNamesInZip.get(3)).matches("occurrence[0-9]+.txt");
     zipFile.close();
     Files.delete(path);
   }
