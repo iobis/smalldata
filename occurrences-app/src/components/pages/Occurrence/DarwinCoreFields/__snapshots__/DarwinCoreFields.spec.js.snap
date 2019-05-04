@@ -59,6 +59,11 @@ exports[`DarwinCoreFields renders correctly 1`] = `
       <div
         className="column add"
       >
+        <span
+          className="label"
+        >
+           
+        </span>
         <a
           className="button"
           onClick={[Function]}
@@ -68,7 +73,7 @@ exports[`DarwinCoreFields renders correctly 1`] = `
       </div>
     </div>
     <table
-      className="table"
+      className="table is-fullwidth"
     >
       <thead>
         <tr>
