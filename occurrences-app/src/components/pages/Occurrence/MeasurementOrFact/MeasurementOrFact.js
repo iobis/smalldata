@@ -16,13 +16,13 @@ export default function MeasurementOrFact({ data, onChange }) {
     <div className="measurement-or-fact section is-fluid">
       <h1 className="title">{t('occurrenceForm.measurementOrFact.general.title')}</h1>
       <h2 className="subtitle">{t('occurrenceForm.measurementOrFact.general.subtitle')}</h2>
-      <table className="table is-fullwidth">
+      <table className="table is-fullwidth is-striped is-hoverable">
         <thead>
         <tr>
-          <th>type</th>
-          <th>unit</th>
-          <th>value</th>
-          <th/>
+          <th style={{width: '60%'}}>type</th>
+          <th style={{width: '20%'}}>unit</th>
+          <th style={{width: '10%'}}>value</th>
+          <th style={{width: '10%'}}/>
         </tr>
         </thead>
         <tbody>
@@ -49,13 +49,13 @@ export default function MeasurementOrFact({ data, onChange }) {
       </table>
       <h1 className="title">{t('occurrenceForm.measurementOrFact.specific.title')}</h1>
       <h2 className='subtitle'>{t('occurrenceForm.measurementOrFact.specific.subtitle')}</h2>
-      <table className="table is-fullwidth">
+      <table className="table is-fullwidth is-striped is-hoverable">
         <thead>
         <tr>
-          <th>type</th>
-          <th>unit</th>
-          <th>value</th>
-          <th/>
+          <th style={{width: '60%'}}>type</th>
+          <th style={{width: '20%'}}>unit</th>
+          <th style={{width: '10%'}}>value</th>
+          <th style={{width: '10%'}}/>
         </tr>
         </thead>
         <tbody>

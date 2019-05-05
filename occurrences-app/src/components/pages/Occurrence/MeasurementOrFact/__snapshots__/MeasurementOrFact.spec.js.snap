@@ -19,20 +19,44 @@ exports[`MeasurementOrFact renders correctly 1`] = `
       occurrenceForm.measurementOrFact.general.subtitle
     </h2>
     <table
-      className="table is-fullwidth"
+      className="table is-fullwidth is-striped is-hoverable"
     >
       <thead>
         <tr>
-          <th>
+          <th
+            style={
+              Object {
+                "width": "60%",
+              }
+            }
+          >
             type
           </th>
-          <th>
+          <th
+            style={
+              Object {
+                "width": "20%",
+              }
+            }
+          >
             unit
           </th>
-          <th>
+          <th
+            style={
+              Object {
+                "width": "10%",
+              }
+            }
+          >
             value
           </th>
-          <th />
+          <th
+            style={
+              Object {
+                "width": "10%",
+              }
+            }
+          />
         </tr>
       </thead>
       <tbody>
@@ -304,20 +328,44 @@ exports[`MeasurementOrFact renders correctly 1`] = `
       occurrenceForm.measurementOrFact.specific.subtitle
     </h2>
     <table
-      className="table is-fullwidth"
+      className="table is-fullwidth is-striped is-hoverable"
     >
       <thead>
         <tr>
-          <th>
+          <th
+            style={
+              Object {
+                "width": "60%",
+              }
+            }
+          >
             type
           </th>
-          <th>
+          <th
+            style={
+              Object {
+                "width": "20%",
+              }
+            }
+          >
             unit
           </th>
-          <th>
+          <th
+            style={
+              Object {
+                "width": "10%",
+              }
+            }
+          >
             value
           </th>
-          <th />
+          <th
+            style={
+              Object {
+                "width": "10%",
+              }
+            }
+          />
         </tr>
       </thead>
       <tbody>
