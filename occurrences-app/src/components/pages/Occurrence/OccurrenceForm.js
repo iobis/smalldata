@@ -63,14 +63,14 @@ export default function OccurrenceForm() {
     children:        <SelectDataset
                        datasets={datasets}
                        selectedDataset={selectedDataset}
-                       onChange={(dataset) => setSelectedDataset(dataset)}/>
+                       onChange={setSelectedDataset}/>
   }, {
     dataDescription: 'Given Values',
     selectedData:    basicDataLabel,
     stepDescription: 'Mandatory observation information',
     stepTitle:       'Basic Data',
     children:        <BasicData
-                       onChange={(basicData) => setBasicData(basicData)}
+                       onChange={setBasicData}
                        basicData={basicData}/>
   }, {
     dataDescription: t('occurrenceForm.locationData.step.dataDescription'),
@@ -87,7 +87,7 @@ export default function OccurrenceForm() {
     stepTitle:       'Observation Data',
     children:        <ObservationData
                        observationData={observationData}
-                       onChange={data => setObservationData(data)}/>
+                       onChange={setObservationData}/>
   }, {
     dataDescription: 'Given values',
     selectedData:    'You have submitted 7 extra fields',
@@ -99,7 +99,9 @@ export default function OccurrenceForm() {
     selectedData:    '',
     stepDescription: 'Supply specific Darwin core fields',
     stepTitle:       'Darwin Core Fields',
-    children:        <DarwinCoreFields darwinCoreFieldsData={darwinCoreFieldsData} onChange={data => setDarwinCoreFieldsData(data)} />
+    children:        <DarwinCoreFields
+                       darwinCoreFieldsData={darwinCoreFieldsData}
+                       onChange={setDarwinCoreFieldsData}/>
   }]
 
   return (
