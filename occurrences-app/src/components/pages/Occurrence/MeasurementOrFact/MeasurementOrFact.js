@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+import { getGeneralMeasurements, getSpecificMeasurements } from '../../../../clients/measurments'
 import CopyPreviousData from '../CopyPreviousData'
 import PropTypes from 'prop-types'
 import React, { useRef, useState } from 'react'
@@ -8,20 +9,8 @@ import { useOnClickOutside } from '../../../../hooks/hooks'
 
 export default function MeasurementOrFact({ data, onChange }) {
   const { t } = useTranslation()
-  const generalMeasurements = [{
-    type:  'temperature',
-    units: ['celsius', 'kelvin']
-  }, {
-    type:  'acidity',
-    units: ['celsius', 'kelvin']
-  }]
-  const specificMeasurements = [{
-    type:  'abundance per volume',
-    units: ['celsius', 'kelvin']
-  }, {
-    type:  'abundance per area',
-    units: ['celsius', 'kelvin']
-  }]
+  const generalMeasurements = getGeneralMeasurements()
+  const specificMeasurements = getSpecificMeasurements()
 
   return (
     <div className="measurement-or-fact section is-fluid">
@@ -43,8 +32,8 @@ export default function MeasurementOrFact({ data, onChange }) {
             <td>
               <Dropdown
                 onChange={(value) => console.log(value)}
-                options={generalMeasurement.units}
-                value={generalMeasurement.units[0]}/>
+                options={generalMeasurement.units.map(unit => unit.name)}
+                value={generalMeasurement.units[0].name}/>
             </td>
             <td>
               <input
@@ -76,8 +65,8 @@ export default function MeasurementOrFact({ data, onChange }) {
             <td>
               <Dropdown
                 onChange={(value) => console.log(value)}
-                options={specificMeasurement.units}
-                value={specificMeasurement.units[0]}/>
+                options={specificMeasurement.units.map(unit => unit.name)}
+                value={specificMeasurement.units[0].name}/>
             </td>
             <td>
               <input
