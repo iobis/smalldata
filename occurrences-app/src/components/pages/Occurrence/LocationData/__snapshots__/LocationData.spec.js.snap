@@ -14,7 +14,7 @@ exports[`LocationData renders correctly 1`] = `
       "verbatimEventDate": "",
     }
   }
-  onChange={[Function]}
+  onChange={[MockFunction]}
 >
   <div
     className="location-data section is-fluid"
