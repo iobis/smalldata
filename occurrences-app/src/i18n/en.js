@@ -16,12 +16,12 @@ export default {
       }
     },
     occurrenceForm: {
-      selectDataset:   {
+      selectDataset:    {
         dataDescription: 'Using Data',
         stepDescription: 'Choose the dataset for adding observations',
         stepTitle:       'Selected Dataset'
       },
-      basicData:       {
+      basicData:        {
         scientificName:   'Scientific name',
         eventBeginDate:   'Event begin date',
         eventEndDate:     'Event end date',
@@ -55,7 +55,64 @@ export default {
           unspecified: 'unspecified'
         }
       },
-      observationData: {
+      locationData:     {
+        enterCoordinates:      {
+          title:    'Enter coordinates',
+          subtitle: 'bold fields are mandatory'
+        },
+        verbatimData:          {
+          title:    'Verbatim Data',
+          subtitle: 'optionally supply verbatim data as it appeared originally in the notes'
+        },
+        decimalLongitude:      {
+          label:       'decimal longitude',
+          placeholder: '5.12334'
+        },
+        decimalLatitude:       {
+          label:       'decimal latitude',
+          placeholder: '53.2345'
+        },
+        coordinateUncertainty: {
+          label:       'coordinate uncertainty',
+          placeholder: '',
+          help:        'meters'
+        },
+        minimumDepth:          {
+          label:       'minimum depth',
+          placeholder: '',
+          help:        'meters'
+        },
+        maximumDepth:          {
+          label:       'maximum depth',
+          placeholder: '',
+          help:        'meters'
+        },
+        verbatimCoordinates:   {
+          label:       'verbatim coordinates',
+          placeholder: '',
+          help:        'Example: "41 05 54S 121 05 34W", "17T 630000 4833400"'
+        },
+        verbatimEventDate:     {
+          label:       'verbatim event date',
+          placeholder: '',
+          help:        'Examples: "spring 1910", "Marzo 2002", "1999-03-XX", "17IV1934"'
+        },
+        verbatimDepth:         {
+          label:       'verbatim depth',
+          placeholder: '',
+          help:        'Examples: "100-200 m"'
+        },
+        step:                  {
+          stepDescription: 'Select the location for data collected',
+          stepTitle:       'Location Data',
+          dataDescription: 'Main Location',
+          selectedData:    {
+            latitude:  'Latitude',
+            longitude: 'Longitude'
+          }
+        }
+      },
+      observationData:  {
         institutionCode:         {
           label:       'institution code',
           placeholder: 'institution code'
@@ -103,12 +160,12 @@ export default {
         }
       },
       darwinCoreFields: {
-        fieldName:  {
+        fieldName: {
           label:       'Darwin core fieldname',
           placeholder: '',
           help:        ''
         },
-        value:  {
+        value:     {
           label:       'value',
           placeholder: '',
           help:        ''

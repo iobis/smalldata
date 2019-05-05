@@ -14,16 +14,16 @@ describe('ObservationData', () => {
     wrapper.find('.institution-code input').simulate('change', { target: { value: 'institution code' } })
     expect(onChange).toHaveBeenCalledTimes(1)
     expect(onChange).toBeCalledWith({
-      'catalogNumber':           '',
-      'collectionCode':          '',
-      'fieldNumber':             '',
-      'identificationQualifier': '',
-      'identificationRemarks':   '',
-      'identifiedBy':            ['name 1', 'name 2'],
-      'institutionCode':         'institution code',
-      'recordNumber':            '',
-      'recordedBy':              ['name 1', 'name 2', 'name 3'],
-      'references':              ['https://google.com', 'https://gmail.com']
+      catalogNumber:           '',
+      collectionCode:          '',
+      fieldNumber:             '',
+      identificationQualifier: '',
+      identificationRemarks:   '',
+      identifiedBy:            ['name 1', 'name 2'],
+      institutionCode:         'institution code',
+      recordNumber:            '',
+      recordedBy:              ['name 1', 'name 2', 'name 3'],
+      references:              ['https://google.com', 'https://gmail.com']
     })
   })
 
@@ -34,16 +34,16 @@ describe('ObservationData', () => {
     wrapper.find('.identified-by input').simulate('keydown', { key: 'Enter' })
     expect(onChange).toHaveBeenCalledTimes(1)
     expect(onChange).toBeCalledWith({
-      'catalogNumber':           '',
-      'collectionCode':          '',
-      'fieldNumber':             '',
-      'identificationQualifier': '',
-      'identificationRemarks':   '',
-      'identifiedBy':            ['name 1', 'name 2', 'new name'],
-      'institutionCode':         '',
-      'recordNumber':            '',
-      'recordedBy':              ['name 1', 'name 2', 'name 3'],
-      'references':              ['https://google.com', 'https://gmail.com']
+      catalogNumber:           '',
+      collectionCode:          '',
+      fieldNumber:             '',
+      identificationQualifier: '',
+      identificationRemarks:   '',
+      identifiedBy:            ['name 1', 'name 2', 'new name'],
+      institutionCode:         '',
+      recordNumber:            '',
+      recordedBy:              ['name 1', 'name 2', 'name 3'],
+      references:              ['https://google.com', 'https://gmail.com']
     })
   })
 })
@@ -65,7 +65,5 @@ function createComponent(props) {
     observationData,
     onChange: jest.fn()
   }
-  return (
-    <ObservationData {...defaultProps} {...props}/>
-  )
+  return <ObservationData {...defaultProps} {...props}/>
 }

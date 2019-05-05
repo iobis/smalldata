@@ -17,13 +17,9 @@ exports[`NotConfirmedStepHeader renders correctly 1`] = `
     </p>
   </div>
   <div
-    className="column is-7 is-hidden-mobile"
+    className="column is-7 is-size-5 is-hidden-mobile"
   >
-    <p
-      className="is-size-5"
-    >
-      
-    </p>
+    
   </div>
   <div
     className="column details"

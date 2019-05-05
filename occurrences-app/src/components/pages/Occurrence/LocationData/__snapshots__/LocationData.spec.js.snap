@@ -1,0 +1,267 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LocationData renders correctly 1`] = `
+<LocationData
+  data={
+    Object {
+      "coordinateUncertainty": null,
+      "decimalLatitude": null,
+      "decimalLongitude": null,
+      "maximumDepth": null,
+      "minimumDepth": null,
+      "verbatimCoordinates": "",
+      "verbatimDepth": "",
+      "verbatimEventDate": "",
+    }
+  }
+  onChange={[MockFunction]}
+>
+  <div
+    className="location-data section is-fluid"
+  >
+    <h1
+      className="title"
+    >
+      occurrenceForm.locationData.enterCoordinates.title
+    </h1>
+    <h2
+      className="subtitle"
+    >
+      occurrenceForm.locationData.enterCoordinates.subtitle
+    </h2>
+    <div
+      className="columns"
+    >
+      <InputNumber
+        className="decimal-longitude is-3"
+        name="occurrenceForm.locationData.decimalLongitude"
+        onChange={[Function]}
+        step={0.0001}
+        value={null}
+      >
+        <div
+          className="column field decimal-longitude is-3"
+        >
+          <label
+            className="label"
+          >
+            occurrenceForm.locationData.decimalLongitude.label
+          </label>
+          <input
+            className="input"
+            onChange={[Function]}
+            step={0.0001}
+            type="number"
+            value=""
+          />
+        </div>
+      </InputNumber>
+      <InputNumber
+        className="decimal-latitude is-3"
+        name="occurrenceForm.locationData.decimalLatitude"
+        onChange={[Function]}
+        step={0.0001}
+        value={null}
+      >
+        <div
+          className="column field decimal-latitude is-3"
+        >
+          <label
+            className="label"
+          >
+            occurrenceForm.locationData.decimalLatitude.label
+          </label>
+          <input
+            className="input"
+            onChange={[Function]}
+            step={0.0001}
+            type="number"
+            value=""
+          />
+        </div>
+      </InputNumber>
+      <InputNumber
+        className="coordinate-uncertainty is-3"
+        name="occurrenceForm.locationData.coordinateUncertainty"
+        onChange={[Function]}
+        optional={true}
+        step={0.01}
+        value={null}
+      >
+        <div
+          className="column field coordinate-uncertainty is-3"
+        >
+          <label
+            className="label has-text-weight-normal"
+          >
+            occurrenceForm.locationData.coordinateUncertainty.label
+          </label>
+          <input
+            className="input"
+            onChange={[Function]}
+            step={0.01}
+            type="number"
+            value=""
+          />
+        </div>
+      </InputNumber>
+    </div>
+    <div
+      className="columns"
+    >
+      <InputNumber
+        className="minimum-depth is-3"
+        name="occurrenceForm.locationData.minimumDepth"
+        onChange={[Function]}
+        optional={true}
+        step={0.01}
+        value={null}
+      >
+        <div
+          className="column field minimum-depth is-3"
+        >
+          <label
+            className="label has-text-weight-normal"
+          >
+            occurrenceForm.locationData.minimumDepth.label
+          </label>
+          <input
+            className="input"
+            onChange={[Function]}
+            step={0.01}
+            type="number"
+            value=""
+          />
+        </div>
+      </InputNumber>
+      <InputNumber
+        className="maximum-depth is-3"
+        name="occurrenceForm.locationData.maximumDepth"
+        onChange={[Function]}
+        optional={true}
+        step={0.01}
+        value={null}
+      >
+        <div
+          className="column field maximum-depth is-3"
+        >
+          <label
+            className="label has-text-weight-normal"
+          >
+            occurrenceForm.locationData.maximumDepth.label
+          </label>
+          <input
+            className="input"
+            onChange={[Function]}
+            step={0.01}
+            type="number"
+            value=""
+          />
+        </div>
+      </InputNumber>
+    </div>
+    <div
+      className="verbatim-data"
+    >
+      <h1
+        className="title"
+      >
+        occurrenceForm.locationData.verbatimData.title
+      </h1>
+      <h2
+        className="subtitle"
+      >
+        occurrenceForm.locationData.verbatimData.subtitle
+      </h2>
+      <div
+        className="columns"
+      >
+        <InputText
+          className="verbatim-coordinates is-3"
+          name="occurrenceForm.locationData.verbatimCoordinates"
+          onChange={[Function]}
+          optional={true}
+          value=""
+        >
+          <div
+            className="column field verbatim-coordinates is-3"
+          >
+            <label
+              className="label has-text-weight-normal"
+            >
+              occurrenceForm.locationData.verbatimCoordinates.label
+            </label>
+            <input
+              className="input"
+              onChange={[Function]}
+              type="text"
+              value=""
+            />
+          </div>
+        </InputText>
+        <InputText
+          className="verbatim-event-date is-3"
+          name="occurrenceForm.locationData.verbatimEventDate"
+          onChange={[Function]}
+          optional={true}
+          value=""
+        >
+          <div
+            className="column field verbatim-event-date is-3"
+          >
+            <label
+              className="label has-text-weight-normal"
+            >
+              occurrenceForm.locationData.verbatimEventDate.label
+            </label>
+            <input
+              className="input"
+              onChange={[Function]}
+              type="text"
+              value=""
+            />
+          </div>
+        </InputText>
+      </div>
+      <div
+        className="columns"
+      >
+        <InputText
+          className="verbatim-depth is-3"
+          name="occurrenceForm.locationData.verbatimDepth"
+          onChange={[Function]}
+          optional={true}
+          value=""
+        >
+          <div
+            className="column field verbatim-depth is-3"
+          >
+            <label
+              className="label has-text-weight-normal"
+            >
+              occurrenceForm.locationData.verbatimDepth.label
+            </label>
+            <input
+              className="input"
+              onChange={[Function]}
+              type="text"
+              value=""
+            />
+          </div>
+        </InputText>
+      </div>
+    </div>
+    <CopyPreviousData>
+      <div
+        className="columns"
+      >
+        <div
+          className="copy-previous-data column is-narrow"
+        >
+          copy data from previous entry
+        </div>
+      </div>
+    </CopyPreviousData>
+  </div>
+</LocationData>
+`;
