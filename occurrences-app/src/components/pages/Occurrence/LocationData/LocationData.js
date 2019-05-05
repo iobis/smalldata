@@ -3,6 +3,7 @@ import InputText from '../../../form/InputText'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import CopyPreviousData from '../CopyPreviousData'
 
 export default function LocationData({ data, onChange }) {
   const { t } = useTranslation()
@@ -78,6 +79,7 @@ export default function LocationData({ data, onChange }) {
             value={data.verbatimDepth}/>
         </div>
       </div>
+      <CopyPreviousData/>
     </div>
   )
 }
