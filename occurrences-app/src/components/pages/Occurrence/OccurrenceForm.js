@@ -122,7 +122,12 @@ export default function OccurrenceForm() {
 }
 
 function renderSelectedLocation({ decimalLatitude, decimalLongitude }) {
-  return `Latitude: ${decimalLatitude}; Longitude: ${decimalLongitude}`
+  return (
+    <>
+      <div>Latitude: {decimalLatitude}</div>
+      <div>Longitude: {decimalLongitude}</div>
+    </>
+  )
 }
 
 function renderIdentifiedByLabel({ identifiedBy, institutionCode }) {

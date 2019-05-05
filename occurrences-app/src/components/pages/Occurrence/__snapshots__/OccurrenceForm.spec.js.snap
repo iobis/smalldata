@@ -37,12 +37,8 @@ exports[`OccurrenceForm renders correctly 1`] = `
             </p>
           </div>
           <div
-            className="column is-7 is-hidden-mobile"
-          >
-            <p
-              className="is-size-5"
-            />
-          </div>
+            className="column is-7 is-size-5 is-hidden-mobile"
+          />
           <div
             className="column details"
           >
@@ -360,12 +356,8 @@ exports[`OccurrenceForm renders correctly 1`] = `
             </p>
           </div>
           <div
-            className="column is-7 is-hidden-mobile"
-          >
-            <p
-              className="is-size-5"
-            />
-          </div>
+            className="column is-7 is-size-5 is-hidden-mobile"
+          />
           <div
             className="column details"
           >
@@ -392,7 +384,16 @@ exports[`OccurrenceForm renders correctly 1`] = `
       dataDescription="Main Location"
       key="Location Data"
       onStepTitleClick={[Function]}
-      selectedData="Latitude: null; Longitude: null"
+      selectedData={
+        <React.Fragment>
+          <div>
+            Latitude: 
+          </div>
+          <div>
+            Longitude: 
+          </div>
+        </React.Fragment>
+      }
       stepDescription="Select the location for data collected"
       stepTitle="3 - Location Data"
     >
@@ -419,12 +420,8 @@ exports[`OccurrenceForm renders correctly 1`] = `
             </p>
           </div>
           <div
-            className="column is-7 is-hidden-mobile"
-          >
-            <p
-              className="is-size-5"
-            />
-          </div>
+            className="column is-7 is-size-5 is-hidden-mobile"
+          />
           <div
             className="column details"
           >
@@ -478,12 +475,8 @@ exports[`OccurrenceForm renders correctly 1`] = `
             </p>
           </div>
           <div
-            className="column is-7 is-hidden-mobile"
-          >
-            <p
-              className="is-size-5"
-            />
-          </div>
+            className="column is-7 is-size-5 is-hidden-mobile"
+          />
           <div
             className="column details"
           >
@@ -537,12 +530,8 @@ exports[`OccurrenceForm renders correctly 1`] = `
             </p>
           </div>
           <div
-            className="column is-7 is-hidden-mobile"
-          >
-            <p
-              className="is-size-5"
-            />
-          </div>
+            className="column is-7 is-size-5 is-hidden-mobile"
+          />
           <div
             className="column details"
           >
@@ -596,12 +585,8 @@ exports[`OccurrenceForm renders correctly 1`] = `
             </p>
           </div>
           <div
-            className="column is-7 is-hidden-mobile"
-          >
-            <p
-              className="is-size-5"
-            />
-          </div>
+            className="column is-7 is-size-5 is-hidden-mobile"
+          />
           <div
             className="column details"
           >
@@ -666,13 +651,9 @@ exports[`OccurrenceForm renders correctly 2`] = `
             </p>
           </div>
           <div
-            className="column is-7"
+            className="column is-7 is-size-5"
           >
-            <p
-              className="is-size-5"
-            >
-              HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.
-            </p>
+            HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.
           </div>
           <div
             className="column details"
@@ -738,13 +719,9 @@ exports[`OccurrenceForm renders correctly 2`] = `
             </p>
           </div>
           <div
-            className="column is-7"
+            className="column is-7 is-size-5"
           >
-            <p
-              className="is-size-5"
-            >
-               29 April 2019 
-            </p>
+             29 April 2019 
           </div>
           <div
             className="column details"
@@ -781,7 +758,18 @@ exports[`OccurrenceForm renders correctly 2`] = `
       dataDescription="Main Location"
       key="Location Data"
       onStepTitleClick={[Function]}
-      selectedData="Latitude: 0.12345; Longitude: -0.54321"
+      selectedData={
+        <React.Fragment>
+          <div>
+            Latitude: 
+            0.12345
+          </div>
+          <div>
+            Longitude: 
+            -0.54321
+          </div>
+        </React.Fragment>
+      }
       stepDescription="Select the location for data collected"
       stepTitle="3 - Location Data"
     >
@@ -790,7 +778,18 @@ exports[`OccurrenceForm renders correctly 2`] = `
         dataDescription="Main Location"
         iconVisible={true}
         onStepTitleClick={[Function]}
-        selectedData="Latitude: 0.12345; Longitude: -0.54321"
+        selectedData={
+          <React.Fragment>
+            <div>
+              Latitude: 
+              0.12345
+            </div>
+            <div>
+              Longitude: 
+              -0.54321
+            </div>
+          </React.Fragment>
+        }
         stepDescription="Select the location for data collected"
         stepTitle="3 - Location Data"
       >
@@ -810,13 +809,16 @@ exports[`OccurrenceForm renders correctly 2`] = `
             </p>
           </div>
           <div
-            className="column is-7"
+            className="column is-7 is-size-5"
           >
-            <p
-              className="is-size-5"
-            >
-              Latitude: 0.12345; Longitude: -0.54321
-            </p>
+            <div>
+              Latitude: 
+              0.12345
+            </div>
+            <div>
+              Longitude: 
+              -0.54321
+            </div>
           </div>
           <div
             className="column details"
@@ -880,12 +882,8 @@ exports[`OccurrenceForm renders correctly 2`] = `
             </p>
           </div>
           <div
-            className="column is-7 is-hidden-mobile"
-          >
-            <p
-              className="is-size-5"
-            />
-          </div>
+            className="column is-7 is-size-5 is-hidden-mobile"
+          />
           <div
             className="column details"
           >
@@ -1263,12 +1261,8 @@ exports[`OccurrenceForm renders correctly 2`] = `
             </p>
           </div>
           <div
-            className="column is-7 is-hidden-mobile"
-          >
-            <p
-              className="is-size-5"
-            />
-          </div>
+            className="column is-7 is-size-5 is-hidden-mobile"
+          />
           <div
             className="column details"
           >
@@ -1322,12 +1316,8 @@ exports[`OccurrenceForm renders correctly 2`] = `
             </p>
           </div>
           <div
-            className="column is-7 is-hidden-mobile"
-          >
-            <p
-              className="is-size-5"
-            />
-          </div>
+            className="column is-7 is-size-5 is-hidden-mobile"
+          />
           <div
             className="column details"
           >
@@ -1392,13 +1382,9 @@ exports[`OccurrenceForm renders correctly 3`] = `
             </p>
           </div>
           <div
-            className="column is-7"
+            className="column is-7 is-size-5"
           >
-            <p
-              className="is-size-5"
-            >
-              HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.
-            </p>
+            HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.
           </div>
           <div
             className="column details"
@@ -1464,13 +1450,9 @@ exports[`OccurrenceForm renders correctly 3`] = `
             </p>
           </div>
           <div
-            className="column is-7"
+            className="column is-7 is-size-5"
           >
-            <p
-              className="is-size-5"
-            >
-               29 April 2019 
-            </p>
+             29 April 2019 
           </div>
           <div
             className="column details"
@@ -1507,7 +1489,18 @@ exports[`OccurrenceForm renders correctly 3`] = `
       dataDescription="Main Location"
       key="Location Data"
       onStepTitleClick={[Function]}
-      selectedData="Latitude: 0.12345; Longitude: -0.54321"
+      selectedData={
+        <React.Fragment>
+          <div>
+            Latitude: 
+            0.12345
+          </div>
+          <div>
+            Longitude: 
+            -0.54321
+          </div>
+        </React.Fragment>
+      }
       stepDescription="Select the location for data collected"
       stepTitle="3 - Location Data"
     >
@@ -1516,7 +1509,18 @@ exports[`OccurrenceForm renders correctly 3`] = `
         dataDescription="Main Location"
         iconVisible={true}
         onStepTitleClick={[Function]}
-        selectedData="Latitude: 0.12345; Longitude: -0.54321"
+        selectedData={
+          <React.Fragment>
+            <div>
+              Latitude: 
+              0.12345
+            </div>
+            <div>
+              Longitude: 
+              -0.54321
+            </div>
+          </React.Fragment>
+        }
         stepDescription="Select the location for data collected"
         stepTitle="3 - Location Data"
       >
@@ -1536,13 +1540,16 @@ exports[`OccurrenceForm renders correctly 3`] = `
             </p>
           </div>
           <div
-            className="column is-7"
+            className="column is-7 is-size-5"
           >
-            <p
-              className="is-size-5"
-            >
-              Latitude: 0.12345; Longitude: -0.54321
-            </p>
+            <div>
+              Latitude: 
+              0.12345
+            </div>
+            <div>
+              Longitude: 
+              -0.54321
+            </div>
           </div>
           <div
             className="column details"
@@ -1608,13 +1615,9 @@ exports[`OccurrenceForm renders correctly 3`] = `
             </p>
           </div>
           <div
-            className="column is-7"
+            className="column is-7 is-size-5"
           >
-            <p
-              className="is-size-5"
-            >
-              Institution: institution code; Identified by: Indiana Jones
-            </p>
+            Institution: institution code; Identified by: Indiana Jones
           </div>
           <div
             className="column details"
@@ -1678,12 +1681,8 @@ exports[`OccurrenceForm renders correctly 3`] = `
             </p>
           </div>
           <div
-            className="column is-7 is-hidden-mobile"
-          >
-            <p
-              className="is-size-5"
-            />
-          </div>
+            className="column is-7 is-size-5 is-hidden-mobile"
+          />
           <div
             className="column details"
           >
@@ -1752,12 +1751,8 @@ exports[`OccurrenceForm renders correctly 3`] = `
             </p>
           </div>
           <div
-            className="column is-7 is-hidden-mobile"
-          >
-            <p
-              className="is-size-5"
-            />
-          </div>
+            className="column is-7 is-size-5 is-hidden-mobile"
+          />
           <div
             className="column details"
           >
