@@ -381,21 +381,23 @@ exports[`OccurrenceForm renders correctly 1`] = `
     </NotConfirmedStepHeader>
     <NotConfirmedStepHeader
       className="step-2 background-color-10"
-      dataDescription="Main Location"
-      key="Location Data"
+      dataDescription="occurrenceForm.locationData.step.dataDescription"
+      key="occurrenceForm.locationData.step.stepTitle"
       onStepTitleClick={[Function]}
       selectedData={
         <React.Fragment>
           <div>
-            Latitude: 
+            occurrenceForm.locationData.step.selectedData.latitude
+            : 
           </div>
           <div>
-            Longitude: 
+            occurrenceForm.locationData.step.selectedData.longitude
+            : 
           </div>
         </React.Fragment>
       }
-      stepDescription="Select the location for data collected"
-      stepTitle="3 - Location Data"
+      stepDescription="occurrenceForm.locationData.step.stepDescription"
+      stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
     >
       <StepHeader
         className="not-confirmed has-text-white step-2 background-color-10"
@@ -403,8 +405,8 @@ exports[`OccurrenceForm renders correctly 1`] = `
         iconVisible={false}
         onStepTitleClick={[Function]}
         selectedData=""
-        stepDescription="Select the location for data collected"
-        stepTitle="3 - Location Data"
+        stepDescription="occurrenceForm.locationData.step.stepDescription"
+        stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
       >
         <div
           className="step-header columns is-vcentered not-confirmed has-text-white step-2 background-color-10"
@@ -428,7 +430,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
             <div
               className="is-size-6"
             >
-              Select the location for data collected
+              occurrenceForm.locationData.step.stepDescription
             </div>
             <div
               className="is-size-5 is-uppercase"
@@ -436,7 +438,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
               <b
                 className="step-title"
               >
-                3 - Location Data
+                3 - occurrenceForm.locationData.step.stepTitle
               </b>
             </div>
           </div>
@@ -755,43 +757,47 @@ exports[`OccurrenceForm renders correctly 2`] = `
     </ConfirmedStepHeader>
     <ConfirmedStepHeader
       className="step-2 background-color-10"
-      dataDescription="Main Location"
-      key="Location Data"
+      dataDescription="occurrenceForm.locationData.step.dataDescription"
+      key="occurrenceForm.locationData.step.stepTitle"
       onStepTitleClick={[Function]}
       selectedData={
         <React.Fragment>
           <div>
-            Latitude: 
+            occurrenceForm.locationData.step.selectedData.latitude
+            : 
             0.12345
           </div>
           <div>
-            Longitude: 
+            occurrenceForm.locationData.step.selectedData.longitude
+            : 
             -0.54321
           </div>
         </React.Fragment>
       }
-      stepDescription="Select the location for data collected"
-      stepTitle="3 - Location Data"
+      stepDescription="occurrenceForm.locationData.step.stepDescription"
+      stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
     >
       <StepHeader
         className="confirmed has-background-white has-text-black"
-        dataDescription="Main Location"
+        dataDescription="occurrenceForm.locationData.step.dataDescription"
         iconVisible={true}
         onStepTitleClick={[Function]}
         selectedData={
           <React.Fragment>
             <div>
-              Latitude: 
+              occurrenceForm.locationData.step.selectedData.latitude
+              : 
               0.12345
             </div>
             <div>
-              Longitude: 
+              occurrenceForm.locationData.step.selectedData.longitude
+              : 
               -0.54321
             </div>
           </React.Fragment>
         }
-        stepDescription="Select the location for data collected"
-        stepTitle="3 - Location Data"
+        stepDescription="occurrenceForm.locationData.step.stepDescription"
+        stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
       >
         <div
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
@@ -804,7 +810,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
               className="is-size-5 is-uppercase"
             >
               <b>
-                Main Location
+                occurrenceForm.locationData.step.dataDescription
               </b>
             </p>
           </div>
@@ -812,11 +818,13 @@ exports[`OccurrenceForm renders correctly 2`] = `
             className="column is-7 is-size-5"
           >
             <div>
-              Latitude: 
+              occurrenceForm.locationData.step.selectedData.latitude
+              : 
               0.12345
             </div>
             <div>
-              Longitude: 
+              occurrenceForm.locationData.step.selectedData.longitude
+              : 
               -0.54321
             </div>
           </div>
@@ -826,7 +834,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
             <div
               className="is-size-6"
             >
-              Select the location for data collected
+              occurrenceForm.locationData.step.stepDescription
             </div>
             <div
               className="is-size-5 is-uppercase"
@@ -843,7 +851,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
               <b
                 className="step-title"
               >
-                3 - Location Data
+                3 - occurrenceForm.locationData.step.stepTitle
               </b>
             </div>
           </div>
@@ -1486,43 +1494,47 @@ exports[`OccurrenceForm renders correctly 3`] = `
     </ConfirmedStepHeader>
     <ConfirmedStepHeader
       className="step-2 background-color-10"
-      dataDescription="Main Location"
-      key="Location Data"
+      dataDescription="occurrenceForm.locationData.step.dataDescription"
+      key="occurrenceForm.locationData.step.stepTitle"
       onStepTitleClick={[Function]}
       selectedData={
         <React.Fragment>
           <div>
-            Latitude: 
+            occurrenceForm.locationData.step.selectedData.latitude
+            : 
             0.12345
           </div>
           <div>
-            Longitude: 
+            occurrenceForm.locationData.step.selectedData.longitude
+            : 
             -0.54321
           </div>
         </React.Fragment>
       }
-      stepDescription="Select the location for data collected"
-      stepTitle="3 - Location Data"
+      stepDescription="occurrenceForm.locationData.step.stepDescription"
+      stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
     >
       <StepHeader
         className="confirmed has-background-white has-text-black"
-        dataDescription="Main Location"
+        dataDescription="occurrenceForm.locationData.step.dataDescription"
         iconVisible={true}
         onStepTitleClick={[Function]}
         selectedData={
           <React.Fragment>
             <div>
-              Latitude: 
+              occurrenceForm.locationData.step.selectedData.latitude
+              : 
               0.12345
             </div>
             <div>
-              Longitude: 
+              occurrenceForm.locationData.step.selectedData.longitude
+              : 
               -0.54321
             </div>
           </React.Fragment>
         }
-        stepDescription="Select the location for data collected"
-        stepTitle="3 - Location Data"
+        stepDescription="occurrenceForm.locationData.step.stepDescription"
+        stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
       >
         <div
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
@@ -1535,7 +1547,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
               className="is-size-5 is-uppercase"
             >
               <b>
-                Main Location
+                occurrenceForm.locationData.step.dataDescription
               </b>
             </p>
           </div>
@@ -1543,11 +1555,13 @@ exports[`OccurrenceForm renders correctly 3`] = `
             className="column is-7 is-size-5"
           >
             <div>
-              Latitude: 
+              occurrenceForm.locationData.step.selectedData.latitude
+              : 
               0.12345
             </div>
             <div>
-              Longitude: 
+              occurrenceForm.locationData.step.selectedData.longitude
+              : 
               -0.54321
             </div>
           </div>
@@ -1557,7 +1571,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
             <div
               className="is-size-6"
             >
-              Select the location for data collected
+              occurrenceForm.locationData.step.stepDescription
             </div>
             <div
               className="is-size-5 is-uppercase"
@@ -1574,7 +1588,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
               <b
                 className="step-title"
               >
-                3 - Location Data
+                3 - occurrenceForm.locationData.step.stepTitle
               </b>
             </div>
           </div>

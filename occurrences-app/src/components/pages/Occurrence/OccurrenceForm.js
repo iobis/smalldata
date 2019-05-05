@@ -73,10 +73,10 @@ export default function OccurrenceForm() {
                        onChange={(basicData) => setBasicData(basicData)}
                        basicData={basicData}/>
   }, {
-    dataDescription: 'Main Location',
+    dataDescription: t('occurrenceForm.locationData.step.dataDescription'),
     selectedData:    renderSelectedLocation(locationData),
-    stepDescription: 'Select the location for data collected',
-    stepTitle:       'Location Data',
+    stepDescription: t('occurrenceForm.locationData.step.stepDescription'),
+    stepTitle:       t('occurrenceForm.locationData.step.stepTitle'),
     children:        <LocationData
                        data={locationData}
                        onChange={setLocationData}/>
@@ -125,10 +125,12 @@ export default function OccurrenceForm() {
 }
 
 function renderSelectedLocation({ decimalLatitude, decimalLongitude }) {
+  const { t } = useTranslation()
+
   return (
     <>
-      <div>Latitude: {decimalLatitude}</div>
-      <div>Longitude: {decimalLongitude}</div>
+      <div>{t('occurrenceForm.locationData.step.selectedData.latitude')}: {decimalLatitude}</div>
+      <div>{t('occurrenceForm.locationData.step.selectedData.longitude')}: {decimalLongitude}</div>
     </>
   )
 }

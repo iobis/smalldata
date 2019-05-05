@@ -16,12 +16,12 @@ export default {
       }
     },
     occurrenceForm: {
-      selectDataset:   {
+      selectDataset:    {
         dataDescription: 'Using Data',
         stepDescription: 'Choose the dataset for adding observations',
         stepTitle:       'Selected Dataset'
       },
-      basicData:       {
+      basicData:        {
         scientificName:   'Scientific name',
         eventBeginDate:   'Event begin date',
         eventEndDate:     'Event end date',
@@ -55,7 +55,7 @@ export default {
           unspecified: 'unspecified'
         }
       },
-      locationData:    {
+      locationData:     {
         enterCoordinates:      {
           title:    'Enter coordinates',
           subtitle: 'bold fields are mandatory'
@@ -101,9 +101,18 @@ export default {
           label:       'verbatim depth',
           placeholder: '',
           help:        'Examples: "100-200 m"'
+        },
+        step:                  {
+          stepDescription: 'Select the location for data collected',
+          stepTitle:       'Location Data',
+          dataDescription: 'Main Location',
+          selectedData:    {
+            latitude:  'Latitude',
+            longitude: 'Longitude'
+          }
         }
       },
-      observationData: {
+      observationData:  {
         institutionCode:         {
           label:       'institution code',
           placeholder: 'institution code'
@@ -151,12 +160,12 @@ export default {
         }
       },
       darwinCoreFields: {
-        fieldName:  {
+        fieldName: {
           label:       'Darwin core fieldname',
           placeholder: '',
           help:        ''
         },
-        value:  {
+        value:     {
           label:       'value',
           placeholder: '',
           help:        ''
