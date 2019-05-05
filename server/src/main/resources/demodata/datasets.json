@@ -3,7 +3,7 @@
     "_ref": "wEaBfmFyQhYCdsk",
     "meta": {
       "type": "event",
-      "dwdTables": {
+      "dwcTables": {
         "core": "event",
         "extensions": ["emof", "occurrence"]
       }
@@ -142,7 +142,7 @@
     "_ref": "PoJnGNMaxsupE4w",
     "meta": {
       "type": "occurrence",
-      "dwdTables": {
+      "dwcTables": {
         "core": "occurrence",
         "extensions": ["emof"]
       }

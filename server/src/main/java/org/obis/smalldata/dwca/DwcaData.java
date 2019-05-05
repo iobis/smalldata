@@ -47,7 +47,7 @@ class DwcaData {
   private static JsonObject mapNsFields(Map.Entry<String, Object> nsFields) {
     var ns = nsFields.getKey();
     return ((JsonObject) nsFields.getValue()).stream()
-      .map(header -> new JsonObject().put(ns + "/" + header.getKey(), header.getValue()))
+      .map(header -> new JsonObject().put(ns + "." + header.getKey(), header.getValue()))
       .collect(JsonObject::new, JsonObject::mergeIn, JsonObject::mergeIn);
   }
 }

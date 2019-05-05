@@ -15,6 +15,7 @@ class RouterConfig {
     "login", new OperationHandlers(LoginHandler::login),
     "getStatus", new OperationHandlers(StatusHandler::status),
     "getRss", new OperationHandlers(RssHandler::fetch),
+    "getDWCA", new OperationHandlers(DwcaHandler::get),
     "postDWCA", new OperationHandlers(OccurrenceHandler::post)
   );
 

@@ -1,4 +1,4 @@
-id	tdwg/measurementID	tdwg/occurrenceID	tdwg/measurementType	obis/measurementTypeID	tdwg/measurementValue	obis/measurementValueID	tdwg/measurementAccuracy	tdwg/measurementUnit	obis/measurementUnitID	tdwg/measurementRemarks
+id	tdwg.measurementID	tdwg.occurrenceID	tdwg.measurementType	iobis.measurementTypeID	tdwg.measurementValue	iobis.measurementValueID	tdwg.measurementAccuracy	tdwg.measurementUnit	iobis.measurementUnitID	tdwg.measurementRemarks
 990722-01	00001	urn::catalog:JAMSTEC:hosono:00001	wet weight	http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL04	160.272			g/m?	http://vocab.nerc.ac.uk/collection/P06/current/UGMS	
 990722-02	00002	urn::catalog:JAMSTEC:hosono:00002	wet weight	http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL04	106.212			g/m?	http://vocab.nerc.ac.uk/collection/P06/current/UGMS	
 990722-03	00003	urn::catalog:JAMSTEC:hosono:00003	wet weight	http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL04	178.557			g/m?	http://vocab.nerc.ac.uk/collection/P06/current/UGMS	
