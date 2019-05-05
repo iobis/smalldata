@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputText renders correctly 1`] = `
+<InputNumber
+  className="custom-class-name"
+  name="field-name"
+  onChange={[MockFunction]}
+  value="value"
+>
+  <div
+    className="column field custom-class-name"
+  >
+    <label
+      className="label"
+    >
+      field-name.label
+    </label>
+    <input
+      className="input"
+      onChange={[Function]}
+      type="number"
+      value="value"
+    />
+  </div>
+</InputNumber>
+`;
+
+exports[`InputText renders correctly if optional 1`] = `
+<InputNumber
+  className="custom-class-name"
+  name="field-name"
+  onChange={[MockFunction]}
+  optional={true}
+  value="value"
+>
+  <div
+    className="column field custom-class-name"
+  >
+    <label
+      className="label has-text-weight-normal"
+    >
+      field-name.label
+    </label>
+    <input
+      className="input"
+      onChange={[Function]}
+      type="number"
+      value="value"
+    />
+  </div>
+</InputNumber>
+`;
