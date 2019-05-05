@@ -1,6 +1,7 @@
+import classNames from 'classnames'
 import CopyPreviousData from '../CopyPreviousData'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -20,6 +21,7 @@ export default function MeasurementOrFact({ data, onChange }) {
     type:  'abundance per area',
     units: ['celsius', 'kelvin']
   }]
+  const [activeDropdown, setActiveDropdown] = useState(null)
 
   return (
     <div className="measurement-or-fact section is-fluid">
@@ -39,7 +41,11 @@ export default function MeasurementOrFact({ data, onChange }) {
           <tr className="fieldrow" key={generalMeasurement.type}>
             <td>{generalMeasurement.type}</td>
             <td>
-              <Dropdown items={generalMeasurement.units} value={generalMeasurement.units[0]}/>
+              <Dropdown
+                active={activeDropdown === generalMeasurement.type}
+                items={generalMeasurement.units}
+                onClick={() => setActiveDropdown(generalMeasurement.type)}
+                value={generalMeasurement.units[0]}/>
             </td>
             <td>
               <input
@@ -48,7 +54,7 @@ export default function MeasurementOrFact({ data, onChange }) {
                 type="text"
                 value=""/>
             </td>
-            <td><a className="button is-small remove" onClick={() => {}}>add</a></td>
+            <td><a className="button" onClick={() => {}}>add</a></td>
           </tr>
         )}
         </tbody>
@@ -68,7 +74,13 @@ export default function MeasurementOrFact({ data, onChange }) {
         {specificMeasurements.map(specificMeasurement =>
           <tr className="fieldrow" key={specificMeasurement.type}>
             <td>{specificMeasurement.type}</td>
-            <td><Dropdown items={specificMeasurement.units} value={specificMeasurement.units[0]}/></td>
+            <td>
+              <Dropdown
+                active={activeDropdown === specificMeasurement.type}
+                items={specificMeasurement.units}
+                onClick={() => setActiveDropdown(specificMeasurement.type)}
+                value={specificMeasurement.units[0]}/>
+            </td>
             <td>
               <input
                 className="input"
@@ -76,7 +88,7 @@ export default function MeasurementOrFact({ data, onChange }) {
                 type="text"
                 value=""/>
             </td>
-            <td><a className="button is-small remove" onClick={() => {}}>add</a></td>
+            <td><a className="button" onClick={() => {}}>add</a></td>
           </tr>
         )}
         </tbody>
@@ -90,9 +102,10 @@ MeasurementOrFact.propTypes = {
   onChange: PropTypes.func.isRequired
 }
 
-function Dropdown({ value, items }) {
+function Dropdown({ active, value, items, onClick }) {
+
   return (
-    <div className="dropdown">
+    <div className={classNames('dropdown', { 'is-active': active })} onClick={onClick}>
       <div className="dropdown-trigger">
         <button className="button" aria-haspopup="true" aria-controls="dropdown-menu">
           <span>{value}</span>
@@ -104,7 +117,7 @@ function Dropdown({ value, items }) {
       <div className="dropdown-menu" id="dropdown-menu" role="menu">
         <div className="dropdown-content">
           {items.map(item => (
-            <a href="#" className="dropdown-item">
+            <a className="dropdown-item" key={item} href="#">
               {item}
             </a>
           ))}
