@@ -1,9 +1,10 @@
 import classNames from 'classnames'
 import CopyPreviousData from '../CopyPreviousData'
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useOnClickOutside } from '../../../../hooks/hooks'
 
 export default function MeasurementOrFact({ data, onChange }) {
   const { t } = useTranslation()
@@ -21,7 +22,6 @@ export default function MeasurementOrFact({ data, onChange }) {
     type:  'abundance per area',
     units: ['celsius', 'kelvin']
   }]
-  const [activeDropdown, setActiveDropdown] = useState(null)
 
   return (
     <div className="measurement-or-fact section is-fluid">
@@ -42,9 +42,8 @@ export default function MeasurementOrFact({ data, onChange }) {
             <td>{generalMeasurement.type}</td>
             <td>
               <Dropdown
-                active={activeDropdown === generalMeasurement.type}
-                items={generalMeasurement.units}
-                onClick={() => setActiveDropdown(generalMeasurement.type)}
+                onChange={(value) => console.log(value)}
+                options={generalMeasurement.units}
                 value={generalMeasurement.units[0]}/>
             </td>
             <td>
@@ -76,9 +75,8 @@ export default function MeasurementOrFact({ data, onChange }) {
             <td>{specificMeasurement.type}</td>
             <td>
               <Dropdown
-                active={activeDropdown === specificMeasurement.type}
-                items={specificMeasurement.units}
-                onClick={() => setActiveDropdown(specificMeasurement.type)}
+                onChange={(value) => console.log(value)}
+                options={specificMeasurement.units}
                 value={specificMeasurement.units[0]}/>
             </td>
             <td>
@@ -102,13 +100,25 @@ MeasurementOrFact.propTypes = {
   onChange: PropTypes.func.isRequired
 }
 
-function Dropdown({ active, value, items, onClick }) {
+function Dropdown({ value, options, onChange }) {
+  const ref = useRef()
+  const [active, setActive] = useState(false)
+  const [selectedValue, setSelectedValue] = useState(value)
+  const hideOptions = () => setActive(false)
+  const showOptions = () => {if (active === false) setActive(true)}
+  const handleChange = (item) => {
+    onChange(item)
+    setSelectedValue(item)
+    setActive(false)
+  }
+
+  useOnClickOutside(ref, hideOptions)
 
   return (
-    <div className={classNames('dropdown', { 'is-active': active })} onClick={onClick}>
+    <div className={classNames('dropdown', { 'is-active': active })} onClick={showOptions} ref={ref}>
       <div className="dropdown-trigger">
         <button className="button" aria-haspopup="true" aria-controls="dropdown-menu">
-          <span>{value}</span>
+          <span>{selectedValue}</span>
           <span className="icon is-small">
             <FontAwesomeIcon className="angle-down" icon="angle-down"/>
           </span>
@@ -116,9 +126,13 @@ function Dropdown({ active, value, items, onClick }) {
       </div>
       <div className="dropdown-menu" id="dropdown-menu" role="menu">
         <div className="dropdown-content">
-          {items.map(item => (
-            <a className="dropdown-item" key={item} href="#">
-              {item}
+          {options.map(option => (
+            <a
+              className={classNames('dropdown-item', { 'is-active': option === selectedValue })}
+              key={option}
+              href="#"
+              onClick={() => handleChange(option)}>
+              {option}
             </a>
           ))}
         </div>

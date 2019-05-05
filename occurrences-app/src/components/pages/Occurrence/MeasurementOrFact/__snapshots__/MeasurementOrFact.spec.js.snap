@@ -45,14 +45,13 @@ exports[`MeasurementOrFact renders correctly 1`] = `
           </td>
           <td>
             <Dropdown
-              active={false}
-              items={
+              onChange={[Function]}
+              options={
                 Array [
                   "celsius",
                   "kelvin",
                 ]
               }
-              onClick={[Function]}
               value="celsius"
             >
               <div
@@ -94,9 +93,10 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                     className="dropdown-content"
                   >
                     <a
-                      className="dropdown-item"
+                      className="dropdown-item is-active"
                       href="#"
                       key="celsius"
+                      onClick={[Function]}
                     >
                       celsius
                     </a>
@@ -104,6 +104,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                       className="dropdown-item"
                       href="#"
                       key="kelvin"
+                      onClick={[Function]}
                     >
                       kelvin
                     </a>
@@ -138,14 +139,13 @@ exports[`MeasurementOrFact renders correctly 1`] = `
           </td>
           <td>
             <Dropdown
-              active={false}
-              items={
+              onChange={[Function]}
+              options={
                 Array [
                   "celsius",
                   "kelvin",
                 ]
               }
-              onClick={[Function]}
               value="celsius"
             >
               <div
@@ -187,9 +187,10 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                     className="dropdown-content"
                   >
                     <a
-                      className="dropdown-item"
+                      className="dropdown-item is-active"
                       href="#"
                       key="celsius"
+                      onClick={[Function]}
                     >
                       celsius
                     </a>
@@ -197,6 +198,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                       className="dropdown-item"
                       href="#"
                       key="kelvin"
+                      onClick={[Function]}
                     >
                       kelvin
                     </a>
@@ -261,14 +263,13 @@ exports[`MeasurementOrFact renders correctly 1`] = `
           </td>
           <td>
             <Dropdown
-              active={false}
-              items={
+              onChange={[Function]}
+              options={
                 Array [
                   "celsius",
                   "kelvin",
                 ]
               }
-              onClick={[Function]}
               value="celsius"
             >
               <div
@@ -310,9 +311,10 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                     className="dropdown-content"
                   >
                     <a
-                      className="dropdown-item"
+                      className="dropdown-item is-active"
                       href="#"
                       key="celsius"
+                      onClick={[Function]}
                     >
                       celsius
                     </a>
@@ -320,6 +322,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                       className="dropdown-item"
                       href="#"
                       key="kelvin"
+                      onClick={[Function]}
                     >
                       kelvin
                     </a>
@@ -354,14 +357,13 @@ exports[`MeasurementOrFact renders correctly 1`] = `
           </td>
           <td>
             <Dropdown
-              active={false}
-              items={
+              onChange={[Function]}
+              options={
                 Array [
                   "celsius",
                   "kelvin",
                 ]
               }
-              onClick={[Function]}
               value="celsius"
             >
               <div
@@ -403,9 +405,10 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                     className="dropdown-content"
                   >
                     <a
-                      className="dropdown-item"
+                      className="dropdown-item is-active"
                       href="#"
                       key="celsius"
+                      onClick={[Function]}
                     >
                       celsius
                     </a>
@@ -413,6 +416,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                       className="dropdown-item"
                       href="#"
                       key="kelvin"
+                      onClick={[Function]}
                     >
                       kelvin
                     </a>
