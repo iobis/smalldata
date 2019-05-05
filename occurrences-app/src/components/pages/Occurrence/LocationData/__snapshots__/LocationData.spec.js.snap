@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SelectDataset renders correctly 1`] = `
+exports[`LocationData renders correctly 1`] = `
 <LocationData
   data={
     Object {
