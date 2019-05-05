@@ -41,17 +41,17 @@ export default function OccurrenceForm() {
     format(basicData.beginDate, 'D MMMM YYYY'),
     basicData.endDate ? ' - ' + format(basicData.endDate, 'D MMMM YYYY') : ''
   ].join(' ')
-  const locationData = {
-    decimalLongitude:      '',
-    decimalLatitude:       '',
-    coordinateUncertainty: '',
-    minimumDepth:          '',
-    maximumDepth:          '',
-    verbatimCoordinates:   '',
-    verbatimEventDate:     '',
-    verbatimDepth:         ''
-  }
-
+  const [locationData, setLocationData] = useState({
+      decimalLongitude:      '',
+      decimalLatitude:       '',
+      coordinateUncertainty: '',
+      minimumDepth:          '',
+      maximumDepth:          '',
+      verbatimCoordinates:   '',
+      verbatimEventDate:     '',
+      verbatimDepth:         ''
+    }
+  )
   const steps = [{
     dataDescription: t('occurrenceForm.selectDataset.dataDescription'),
     selectedData:    selectedDataset.description,
@@ -76,7 +76,7 @@ export default function OccurrenceForm() {
     stepTitle:       'Location Data',
     children:        <LocationData
                        data={locationData}
-                       onChange={() => {}}/>
+                       onChange={setLocationData}/>
   }, {
     dataDescription: 'Main Info',
     selectedData:    renderIdentifiedByLabel(observationData),
