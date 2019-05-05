@@ -165,7 +165,7 @@ export default {
           subtitle: 'Supply any information you may have on the sample, setting, environment, ...'
         },
         specific: {
-          title:    'STEP 2: specific measurements or facts',
+          title:    'STEP 2: Specific measurements or facts',
           subtitle: 'Enter the exact measurements or facts consecutively'
         }
       },
