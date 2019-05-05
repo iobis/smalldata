@@ -11,11 +11,11 @@ export default [{
 
 export function getEmptyData() {
   return {
-    decimalLongitude:      '',
-    decimalLatitude:       '',
-    coordinateUncertainty: '',
-    minimumDepth:          '',
-    maximumDepth:          '',
+    decimalLongitude:      null,
+    decimalLatitude:       null,
+    coordinateUncertainty: null,
+    minimumDepth:          null,
+    maximumDepth:          null,
     verbatimCoordinates:   '',
     verbatimEventDate:     '',
     verbatimDepth:         ''

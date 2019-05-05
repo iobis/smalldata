@@ -4,11 +4,11 @@ exports[`SelectDataset renders correctly 1`] = `
 <LocationData
   data={
     Object {
-      "coordinateUncertainty": "",
-      "decimalLatitude": "",
-      "decimalLongitude": "",
-      "maximumDepth": "",
-      "minimumDepth": "",
+      "coordinateUncertainty": null,
+      "decimalLatitude": null,
+      "decimalLongitude": null,
+      "maximumDepth": null,
+      "minimumDepth": null,
       "verbatimCoordinates": "",
       "verbatimDepth": "",
       "verbatimEventDate": "",
@@ -37,7 +37,7 @@ exports[`SelectDataset renders correctly 1`] = `
         name="occurrenceForm.locationData.decimalLongitude"
         onChange={[Function]}
         step={0.0001}
-        value=""
+        value={null}
       >
         <div
           className="column field decimal-longitude is-3"
@@ -61,7 +61,7 @@ exports[`SelectDataset renders correctly 1`] = `
         name="occurrenceForm.locationData.decimalLatitude"
         onChange={[Function]}
         step={0.0001}
-        value=""
+        value={null}
       >
         <div
           className="column field decimal-latitude is-3"
@@ -86,7 +86,7 @@ exports[`SelectDataset renders correctly 1`] = `
         onChange={[Function]}
         optional={true}
         step={0.01}
-        value=""
+        value={null}
       >
         <div
           className="column field coordinate-uncertainty is-3"
@@ -115,7 +115,7 @@ exports[`SelectDataset renders correctly 1`] = `
         onChange={[Function]}
         optional={true}
         step={0.01}
-        value=""
+        value={null}
       >
         <div
           className="column field minimum-depth is-3"
@@ -140,7 +140,7 @@ exports[`SelectDataset renders correctly 1`] = `
         onChange={[Function]}
         optional={true}
         step={0.01}
-        value=""
+        value={null}
       >
         <div
           className="column field maximum-depth is-3"

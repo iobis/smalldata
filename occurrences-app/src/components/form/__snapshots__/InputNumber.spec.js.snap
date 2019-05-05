@@ -5,7 +5,7 @@ exports[`InputText renders correctly 1`] = `
   className="custom-class-name"
   name="field-name"
   onChange={[MockFunction]}
-  value="value"
+  value={null}
 >
   <div
     className="column field custom-class-name"
@@ -19,7 +19,7 @@ exports[`InputText renders correctly 1`] = `
       className="input"
       onChange={[Function]}
       type="number"
-      value="value"
+      value=""
     />
   </div>
 </InputNumber>
@@ -31,7 +31,7 @@ exports[`InputText renders correctly if optional 1`] = `
   name="field-name"
   onChange={[MockFunction]}
   optional={true}
-  value="value"
+  value={null}
 >
   <div
     className="column field custom-class-name"
@@ -45,7 +45,7 @@ exports[`InputText renders correctly if optional 1`] = `
       className="input"
       onChange={[Function]}
       type="number"
-      value="value"
+      value=""
     />
   </div>
 </InputNumber>

@@ -35,7 +35,7 @@ function createComponent(props) {
     className: 'custom-class-name',
     name:      'field-name',
     onChange:  jest.fn(),
-    value:     'value'
+    value:     null
   }
   return <InputNumber {...defaultProps} {...props}/>
 }
