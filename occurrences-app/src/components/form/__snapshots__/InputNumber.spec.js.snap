@@ -50,3 +50,28 @@ exports[`InputText renders correctly if optional 1`] = `
   </div>
 </InputNumber>
 `;
+
+exports[`InputText renders correctly if value provided 1`] = `
+<InputNumber
+  className="custom-class-name"
+  name="field-name"
+  onChange={[MockFunction]}
+  value={123456}
+>
+  <div
+    className="column field custom-class-name"
+  >
+    <label
+      className="label"
+    >
+      field-name.label
+    </label>
+    <input
+      className="input"
+      onChange={[Function]}
+      type="number"
+      value={123456}
+    />
+  </div>
+</InputNumber>
+`;

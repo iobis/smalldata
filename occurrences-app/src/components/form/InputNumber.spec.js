@@ -11,6 +11,10 @@ describe('InputText', () => {
     expect(mount(createComponent({ optional: true }))).toMatchSnapshot()
   })
 
+  it('renders correctly if value provided', () => {
+    expect(mount(createComponent({ value: 123456 }))).toMatchSnapshot()
+  })
+
   it('returns integer number when changing value to integer', () => {
     const onChange = jest.fn()
     const wrapper = mount(createComponent({ onChange }))
