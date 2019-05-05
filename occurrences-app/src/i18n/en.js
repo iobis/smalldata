@@ -167,6 +167,9 @@ export default {
         specific: {
           title:    'STEP 2: Specific measurements or facts',
           subtitle: 'Enter the exact measurements or facts consecutively'
+        },
+        supplied: {
+          title: 'Supplied measurements or facts'
         }
       },
       darwinCoreFields:  {

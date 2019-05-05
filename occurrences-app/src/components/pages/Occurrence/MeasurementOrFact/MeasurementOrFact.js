@@ -11,75 +11,120 @@ export default function MeasurementOrFact({ data, onChange }) {
   const { t } = useTranslation()
   const generalMeasurements = getGeneralMeasurements()
   const specificMeasurements = getSpecificMeasurements()
+  const suppliedMeasurements = [{
+    type:   'Temperature',
+    typeId: 'http://vocab.nerc.ac.uk/collection/P01/current/TEMPCU01/',
+    units:  [{ name: 'Degrees Celsius', id: 'http://vocab.nerc.ac.uk/collection/P06/current/UPAA' }],
+    value:  '10'
+  }]
 
   return (
     <div className="measurement-or-fact section is-fluid">
-      <h1 className="title">{t('occurrenceForm.measurementOrFact.general.title')}</h1>
-      <h2 className="subtitle">{t('occurrenceForm.measurementOrFact.general.subtitle')}</h2>
-      <table className="table is-fullwidth is-striped is-hoverable">
-        <thead>
-        <tr>
-          <th style={{width: '60%'}}>type</th>
-          <th style={{width: '20%'}}>unit</th>
-          <th style={{width: '10%'}}>value</th>
-          <th style={{width: '10%'}}/>
-        </tr>
-        </thead>
-        <tbody>
-        {generalMeasurements.map(generalMeasurement =>
-          <tr className="fieldrow" key={generalMeasurement.type}>
-            <td>{generalMeasurement.type}</td>
-            <td>
-              <Dropdown
-                onChange={(value) => console.log(value)}
-                options={generalMeasurement.units.map(unit => unit.name)}
-                value={generalMeasurement.units[0].name}/>
-            </td>
-            <td>
-              <input
-                className="input"
-                onChange={(e) => onChange(e.target.value)}
-                type="text"
-                value=""/>
-            </td>
-            <td><a className="button" onClick={() => {}}>add</a></td>
-          </tr>
-        )}
-        </tbody>
-      </table>
-      <h1 className="title">{t('occurrenceForm.measurementOrFact.specific.title')}</h1>
-      <h2 className='subtitle'>{t('occurrenceForm.measurementOrFact.specific.subtitle')}</h2>
-      <table className="table is-fullwidth is-striped is-hoverable">
-        <thead>
-        <tr>
-          <th style={{width: '60%'}}>type</th>
-          <th style={{width: '20%'}}>unit</th>
-          <th style={{width: '10%'}}>value</th>
-          <th style={{width: '10%'}}/>
-        </tr>
-        </thead>
-        <tbody>
-        {specificMeasurements.map(specificMeasurement =>
-          <tr className="fieldrow" key={specificMeasurement.type}>
-            <td>{specificMeasurement.type}</td>
-            <td>
-              <Dropdown
-                onChange={(value) => console.log(value)}
-                options={specificMeasurement.units.map(unit => unit.name)}
-                value={specificMeasurement.units[0].name}/>
-            </td>
-            <td>
-              <input
-                className="input"
-                onChange={(e) => onChange(e.target.value)}
-                type="text"
-                value=""/>
-            </td>
-            <td><a className="button" onClick={() => {}}>add</a></td>
-          </tr>
-        )}
-        </tbody>
-      </table>
+      <div className="columns">
+        <div className="column is-half">
+          <h1 className="title">{t('occurrenceForm.measurementOrFact.general.title')}</h1>
+          <h2 className="subtitle">{t('occurrenceForm.measurementOrFact.general.subtitle')}</h2>
+          <table className="table is-fullwidth is-striped is-hoverable">
+            <thead>
+            <tr>
+              <th style={{ width: '60%' }}>type</th>
+              <th style={{ width: '20%' }}>unit</th>
+              <th style={{ width: '10%' }}>value</th>
+              <th style={{ width: '10%' }}/>
+            </tr>
+            </thead>
+            <tbody>
+            {generalMeasurements.map(generalMeasurement =>
+              <tr className="fieldrow" key={generalMeasurement.type}>
+                <td>{generalMeasurement.type}</td>
+                <td>
+                  <Dropdown
+                    onChange={(value) => console.log(value)}
+                    options={generalMeasurement.units.map(unit => unit.name)}
+                    value={generalMeasurement.units[0].name}/>
+                </td>
+                <td>
+                  <input
+                    className="input"
+                    onChange={(e) => onChange(e.target.value)}
+                    type="text"
+                    value=""/>
+                </td>
+                <td><a className="button" onClick={() => {}}>add</a></td>
+              </tr>
+            )}
+            </tbody>
+          </table>
+          <h1 className="title">{t('occurrenceForm.measurementOrFact.specific.title')}</h1>
+          <h2 className='subtitle'>{t('occurrenceForm.measurementOrFact.specific.subtitle')}</h2>
+          <table className="table is-fullwidth is-striped is-hoverable">
+            <thead>
+            <tr>
+              <th style={{ width: '60%' }}>type</th>
+              <th style={{ width: '20%' }}>unit</th>
+              <th style={{ width: '10%' }}>value</th>
+              <th style={{ width: '10%' }}/>
+            </tr>
+            </thead>
+            <tbody>
+            {specificMeasurements.map(specificMeasurement =>
+              <tr className="fieldrow" key={specificMeasurement.type}>
+                <td>{specificMeasurement.type}</td>
+                <td>
+                  <Dropdown
+                    onChange={(value) => console.log(value)}
+                    options={specificMeasurement.units.map(unit => unit.name)}
+                    value={specificMeasurement.units[0].name}/>
+                </td>
+                <td>
+                  <input
+                    className="input"
+                    onChange={(e) => onChange(e.target.value)}
+                    type="text"
+                    value=""/>
+                </td>
+                <td><a className="button" onClick={() => {}}>add</a></td>
+              </tr>
+            )}
+            </tbody>
+          </table>
+        </div>
+        <div className="column is-half supplied">
+          <h1 className="title">{t('occurrenceForm.measurementOrFact.supplied.title')}</h1>
+          <h2 className="subtitle">&nbsp;</h2>
+          <table className="table is-fullwidth is-striped is-hoverable">
+            <thead>
+            <tr>
+              <th style={{ width: '60%' }}>type</th>
+              <th style={{ width: '20%' }}>unit</th>
+              <th style={{ width: '10%' }}>value</th>
+              <th style={{ width: '10%' }}/>
+            </tr>
+            </thead>
+            <tbody>
+            {suppliedMeasurements.map(suppliedMeasurements =>
+              <tr className="fieldrow" key={suppliedMeasurements.type}>
+                <td>{suppliedMeasurements.type}</td>
+                <td>
+                  <Dropdown
+                    onChange={(value) => console.log(value)}
+                    options={suppliedMeasurements.units.map(unit => unit.name)}
+                    value={suppliedMeasurements.units[0].name}/>
+                </td>
+                <td>
+                  <input
+                    className="input"
+                    onChange={(e) => onChange(e.target.value)}
+                    type="text"
+                    value={suppliedMeasurements.value}/>
+                </td>
+                <td><a className="button" onClick={() => {}}>remove</a></td>
+              </tr>
+            )}
+            </tbody>
+          </table>
+        </div>
+      </div>
       <CopyPreviousData/>
     </div>
   )

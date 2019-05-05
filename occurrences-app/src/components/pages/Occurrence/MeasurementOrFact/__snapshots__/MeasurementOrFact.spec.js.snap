@@ -8,1219 +8,1370 @@ exports[`MeasurementOrFact renders correctly 1`] = `
   <div
     className="measurement-or-fact section is-fluid"
   >
-    <h1
-      className="title"
+    <div
+      className="columns"
     >
-      occurrenceForm.measurementOrFact.general.title
-    </h1>
-    <h2
-      className="subtitle"
-    >
-      occurrenceForm.measurementOrFact.general.subtitle
-    </h2>
-    <table
-      className="table is-fullwidth is-striped is-hoverable"
-    >
-      <thead>
-        <tr>
-          <th
-            style={
-              Object {
-                "width": "60%",
-              }
-            }
-          >
-            type
-          </th>
-          <th
-            style={
-              Object {
-                "width": "20%",
-              }
-            }
-          >
-            unit
-          </th>
-          <th
-            style={
-              Object {
-                "width": "10%",
-              }
-            }
-          >
-            value
-          </th>
-          <th
-            style={
-              Object {
-                "width": "10%",
-              }
-            }
-          />
-        </tr>
-      </thead>
-      <tbody>
-        <tr
-          className="fieldrow"
-          key="Pressure"
+      <div
+        className="column is-half"
+      >
+        <h1
+          className="title"
         >
-          <td>
-            Pressure
-          </td>
-          <td>
-            <Dropdown
-              onChange={[Function]}
-              options={
-                Array [
-                  "Kilogram",
-                ]
-              }
-              value="Kilogram"
-            >
-              <div
-                className="dropdown"
-                onClick={[Function]}
+          occurrenceForm.measurementOrFact.general.title
+        </h1>
+        <h2
+          className="subtitle"
+        >
+          occurrenceForm.measurementOrFact.general.subtitle
+        </h2>
+        <table
+          className="table is-fullwidth is-striped is-hoverable"
+        >
+          <thead>
+            <tr>
+              <th
+                style={
+                  Object {
+                    "width": "60%",
+                  }
+                }
               >
-                <div
-                  className="dropdown-trigger"
-                >
-                  <button
-                    aria-controls="dropdown-menu"
-                    aria-haspopup="true"
-                    className="button"
-                  >
-                    <span>
-                      Kilogram
-                    </span>
-                    <span
-                      className="icon is-small"
-                    >
-                      <FontAwesomeIcon
-                        className="angle-down"
-                        icon="angle-down"
-                      >
-                        <i
-                          className="angle-down"
-                          icon="angle-down"
-                        />
-                      </FontAwesomeIcon>
-                    </span>
-                  </button>
-                </div>
-                <div
-                  className="dropdown-menu"
-                  id="dropdown-menu"
-                  role="menu"
+                type
+              </th>
+              <th
+                style={
+                  Object {
+                    "width": "20%",
+                  }
+                }
+              >
+                unit
+              </th>
+              <th
+                style={
+                  Object {
+                    "width": "10%",
+                  }
+                }
+              >
+                value
+              </th>
+              <th
+                style={
+                  Object {
+                    "width": "10%",
+                  }
+                }
+              />
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              className="fieldrow"
+              key="Pressure"
+            >
+              <td>
+                Pressure
+              </td>
+              <td>
+                <Dropdown
+                  onChange={[Function]}
+                  options={
+                    Array [
+                      "Kilogram",
+                    ]
+                  }
+                  value="Kilogram"
                 >
                   <div
-                    className="dropdown-content"
+                    className="dropdown"
+                    onClick={[Function]}
                   >
-                    <a
-                      className="dropdown-item is-active"
-                      href="#"
-                      key="Kilogram"
-                      onClick={[Function]}
+                    <div
+                      className="dropdown-trigger"
                     >
-                      Kilogram
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </Dropdown>
-          </td>
-          <td>
-            <input
-              className="input"
-              onChange={[Function]}
-              type="text"
-              value=""
-            />
-          </td>
-          <td>
-            <a
-              className="button"
-              onClick={[Function]}
-            >
-              add
-            </a>
-          </td>
-        </tr>
-        <tr
-          className="fieldrow"
-          key="Temperature"
-        >
-          <td>
-            Temperature
-          </td>
-          <td>
-            <Dropdown
-              onChange={[Function]}
-              options={
-                Array [
-                  "Degrees Celsius",
-                ]
-              }
-              value="Degrees Celsius"
-            >
-              <div
-                className="dropdown"
-                onClick={[Function]}
-              >
-                <div
-                  className="dropdown-trigger"
-                >
-                  <button
-                    aria-controls="dropdown-menu"
-                    aria-haspopup="true"
-                    className="button"
-                  >
-                    <span>
-                      Degrees Celsius
-                    </span>
-                    <span
-                      className="icon is-small"
-                    >
-                      <FontAwesomeIcon
-                        className="angle-down"
-                        icon="angle-down"
+                      <button
+                        aria-controls="dropdown-menu"
+                        aria-haspopup="true"
+                        className="button"
                       >
-                        <i
-                          className="angle-down"
-                          icon="angle-down"
-                        />
-                      </FontAwesomeIcon>
-                    </span>
-                  </button>
-                </div>
-                <div
-                  className="dropdown-menu"
-                  id="dropdown-menu"
-                  role="menu"
+                        <span>
+                          Kilogram
+                        </span>
+                        <span
+                          className="icon is-small"
+                        >
+                          <FontAwesomeIcon
+                            className="angle-down"
+                            icon="angle-down"
+                          >
+                            <i
+                              className="angle-down"
+                              icon="angle-down"
+                            />
+                          </FontAwesomeIcon>
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      className="dropdown-menu"
+                      id="dropdown-menu"
+                      role="menu"
+                    >
+                      <div
+                        className="dropdown-content"
+                      >
+                        <a
+                          className="dropdown-item is-active"
+                          href="#"
+                          key="Kilogram"
+                          onClick={[Function]}
+                        >
+                          Kilogram
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </Dropdown>
+              </td>
+              <td>
+                <input
+                  className="input"
+                  onChange={[Function]}
+                  type="text"
+                  value=""
+                />
+              </td>
+              <td>
+                <a
+                  className="button"
+                  onClick={[Function]}
+                >
+                  add
+                </a>
+              </td>
+            </tr>
+            <tr
+              className="fieldrow"
+              key="Temperature"
+            >
+              <td>
+                Temperature
+              </td>
+              <td>
+                <Dropdown
+                  onChange={[Function]}
+                  options={
+                    Array [
+                      "Degrees Celsius",
+                    ]
+                  }
+                  value="Degrees Celsius"
                 >
                   <div
-                    className="dropdown-content"
+                    className="dropdown"
+                    onClick={[Function]}
                   >
-                    <a
-                      className="dropdown-item is-active"
-                      href="#"
-                      key="Degrees Celsius"
-                      onClick={[Function]}
+                    <div
+                      className="dropdown-trigger"
                     >
-                      Degrees Celsius
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </Dropdown>
-          </td>
-          <td>
-            <input
-              className="input"
-              onChange={[Function]}
-              type="text"
-              value=""
-            />
-          </td>
-          <td>
-            <a
-              className="button"
-              onClick={[Function]}
-            >
-              add
-            </a>
-          </td>
-        </tr>
-        <tr
-          className="fieldrow"
-          key="Salinity"
-        >
-          <td>
-            Salinity
-          </td>
-          <td>
-            <Dropdown
-              onChange={[Function]}
-              options={
-                Array [
-                  "Degrees Celsius",
-                ]
-              }
-              value="Degrees Celsius"
-            >
-              <div
-                className="dropdown"
-                onClick={[Function]}
-              >
-                <div
-                  className="dropdown-trigger"
-                >
-                  <button
-                    aria-controls="dropdown-menu"
-                    aria-haspopup="true"
-                    className="button"
-                  >
-                    <span>
-                      Degrees Celsius
-                    </span>
-                    <span
-                      className="icon is-small"
-                    >
-                      <FontAwesomeIcon
-                        className="angle-down"
-                        icon="angle-down"
+                      <button
+                        aria-controls="dropdown-menu"
+                        aria-haspopup="true"
+                        className="button"
                       >
-                        <i
-                          className="angle-down"
-                          icon="angle-down"
-                        />
-                      </FontAwesomeIcon>
-                    </span>
-                  </button>
-                </div>
-                <div
-                  className="dropdown-menu"
-                  id="dropdown-menu"
-                  role="menu"
+                        <span>
+                          Degrees Celsius
+                        </span>
+                        <span
+                          className="icon is-small"
+                        >
+                          <FontAwesomeIcon
+                            className="angle-down"
+                            icon="angle-down"
+                          >
+                            <i
+                              className="angle-down"
+                              icon="angle-down"
+                            />
+                          </FontAwesomeIcon>
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      className="dropdown-menu"
+                      id="dropdown-menu"
+                      role="menu"
+                    >
+                      <div
+                        className="dropdown-content"
+                      >
+                        <a
+                          className="dropdown-item is-active"
+                          href="#"
+                          key="Degrees Celsius"
+                          onClick={[Function]}
+                        >
+                          Degrees Celsius
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </Dropdown>
+              </td>
+              <td>
+                <input
+                  className="input"
+                  onChange={[Function]}
+                  type="text"
+                  value=""
+                />
+              </td>
+              <td>
+                <a
+                  className="button"
+                  onClick={[Function]}
+                >
+                  add
+                </a>
+              </td>
+            </tr>
+            <tr
+              className="fieldrow"
+              key="Salinity"
+            >
+              <td>
+                Salinity
+              </td>
+              <td>
+                <Dropdown
+                  onChange={[Function]}
+                  options={
+                    Array [
+                      "Degrees Celsius",
+                    ]
+                  }
+                  value="Degrees Celsius"
                 >
                   <div
-                    className="dropdown-content"
+                    className="dropdown"
+                    onClick={[Function]}
                   >
-                    <a
-                      className="dropdown-item is-active"
-                      href="#"
-                      key="Degrees Celsius"
-                      onClick={[Function]}
+                    <div
+                      className="dropdown-trigger"
                     >
-                      Degrees Celsius
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </Dropdown>
-          </td>
-          <td>
-            <input
-              className="input"
-              onChange={[Function]}
-              type="text"
-              value=""
-            />
-          </td>
-          <td>
-            <a
-              className="button"
-              onClick={[Function]}
-            >
-              add
-            </a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <h1
-      className="title"
-    >
-      occurrenceForm.measurementOrFact.specific.title
-    </h1>
-    <h2
-      className="subtitle"
-    >
-      occurrenceForm.measurementOrFact.specific.subtitle
-    </h2>
-    <table
-      className="table is-fullwidth is-striped is-hoverable"
-    >
-      <thead>
-        <tr>
-          <th
-            style={
-              Object {
-                "width": "60%",
-              }
-            }
-          >
-            type
-          </th>
-          <th
-            style={
-              Object {
-                "width": "20%",
-              }
-            }
-          >
-            unit
-          </th>
-          <th
-            style={
-              Object {
-                "width": "10%",
-              }
-            }
-          >
-            value
-          </th>
-          <th
-            style={
-              Object {
-                "width": "10%",
-              }
-            }
-          />
-        </tr>
-      </thead>
-      <tbody>
-        <tr
-          className="fieldrow"
-          key="ObservedIndividualCount"
-        >
-          <td>
-            ObservedIndividualCount
-          </td>
-          <td>
-            <Dropdown
-              onChange={[Function]}
-              options={
-                Array [
-                  "Kilogram",
-                ]
-              }
-              value="Kilogram"
-            >
-              <div
-                className="dropdown"
-                onClick={[Function]}
-              >
-                <div
-                  className="dropdown-trigger"
-                >
-                  <button
-                    aria-controls="dropdown-menu"
-                    aria-haspopup="true"
-                    className="button"
-                  >
-                    <span>
-                      Kilogram
-                    </span>
-                    <span
-                      className="icon is-small"
-                    >
-                      <FontAwesomeIcon
-                        className="angle-down"
-                        icon="angle-down"
+                      <button
+                        aria-controls="dropdown-menu"
+                        aria-haspopup="true"
+                        className="button"
                       >
-                        <i
-                          className="angle-down"
-                          icon="angle-down"
-                        />
-                      </FontAwesomeIcon>
-                    </span>
-                  </button>
-                </div>
-                <div
-                  className="dropdown-menu"
-                  id="dropdown-menu"
-                  role="menu"
+                        <span>
+                          Degrees Celsius
+                        </span>
+                        <span
+                          className="icon is-small"
+                        >
+                          <FontAwesomeIcon
+                            className="angle-down"
+                            icon="angle-down"
+                          >
+                            <i
+                              className="angle-down"
+                              icon="angle-down"
+                            />
+                          </FontAwesomeIcon>
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      className="dropdown-menu"
+                      id="dropdown-menu"
+                      role="menu"
+                    >
+                      <div
+                        className="dropdown-content"
+                      >
+                        <a
+                          className="dropdown-item is-active"
+                          href="#"
+                          key="Degrees Celsius"
+                          onClick={[Function]}
+                        >
+                          Degrees Celsius
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </Dropdown>
+              </td>
+              <td>
+                <input
+                  className="input"
+                  onChange={[Function]}
+                  type="text"
+                  value=""
+                />
+              </td>
+              <td>
+                <a
+                  className="button"
+                  onClick={[Function]}
+                >
+                  add
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h1
+          className="title"
+        >
+          occurrenceForm.measurementOrFact.specific.title
+        </h1>
+        <h2
+          className="subtitle"
+        >
+          occurrenceForm.measurementOrFact.specific.subtitle
+        </h2>
+        <table
+          className="table is-fullwidth is-striped is-hoverable"
+        >
+          <thead>
+            <tr>
+              <th
+                style={
+                  Object {
+                    "width": "60%",
+                  }
+                }
+              >
+                type
+              </th>
+              <th
+                style={
+                  Object {
+                    "width": "20%",
+                  }
+                }
+              >
+                unit
+              </th>
+              <th
+                style={
+                  Object {
+                    "width": "10%",
+                  }
+                }
+              >
+                value
+              </th>
+              <th
+                style={
+                  Object {
+                    "width": "10%",
+                  }
+                }
+              />
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              className="fieldrow"
+              key="ObservedIndividualCount"
+            >
+              <td>
+                ObservedIndividualCount
+              </td>
+              <td>
+                <Dropdown
+                  onChange={[Function]}
+                  options={
+                    Array [
+                      "Kilogram",
+                    ]
+                  }
+                  value="Kilogram"
                 >
                   <div
-                    className="dropdown-content"
+                    className="dropdown"
+                    onClick={[Function]}
                   >
-                    <a
-                      className="dropdown-item is-active"
-                      href="#"
-                      key="Kilogram"
-                      onClick={[Function]}
+                    <div
+                      className="dropdown-trigger"
                     >
-                      Kilogram
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </Dropdown>
-          </td>
-          <td>
-            <input
-              className="input"
-              onChange={[Function]}
-              type="text"
-              value=""
-            />
-          </td>
-          <td>
-            <a
-              className="button"
-              onClick={[Function]}
-            >
-              add
-            </a>
-          </td>
-        </tr>
-        <tr
-          className="fieldrow"
-          key="Abundance category of biological entity specified elsewhere"
-        >
-          <td>
-            Abundance category of biological entity specified elsewhere
-          </td>
-          <td>
-            <Dropdown
-              onChange={[Function]}
-              options={
-                Array [
-                  "Millimeter",
-                ]
-              }
-              value="Millimeter"
-            >
-              <div
-                className="dropdown"
-                onClick={[Function]}
-              >
-                <div
-                  className="dropdown-trigger"
-                >
-                  <button
-                    aria-controls="dropdown-menu"
-                    aria-haspopup="true"
-                    className="button"
-                  >
-                    <span>
-                      Millimeter
-                    </span>
-                    <span
-                      className="icon is-small"
-                    >
-                      <FontAwesomeIcon
-                        className="angle-down"
-                        icon="angle-down"
+                      <button
+                        aria-controls="dropdown-menu"
+                        aria-haspopup="true"
+                        className="button"
                       >
-                        <i
-                          className="angle-down"
-                          icon="angle-down"
-                        />
-                      </FontAwesomeIcon>
-                    </span>
-                  </button>
-                </div>
-                <div
-                  className="dropdown-menu"
-                  id="dropdown-menu"
-                  role="menu"
+                        <span>
+                          Kilogram
+                        </span>
+                        <span
+                          className="icon is-small"
+                        >
+                          <FontAwesomeIcon
+                            className="angle-down"
+                            icon="angle-down"
+                          >
+                            <i
+                              className="angle-down"
+                              icon="angle-down"
+                            />
+                          </FontAwesomeIcon>
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      className="dropdown-menu"
+                      id="dropdown-menu"
+                      role="menu"
+                    >
+                      <div
+                        className="dropdown-content"
+                      >
+                        <a
+                          className="dropdown-item is-active"
+                          href="#"
+                          key="Kilogram"
+                          onClick={[Function]}
+                        >
+                          Kilogram
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </Dropdown>
+              </td>
+              <td>
+                <input
+                  className="input"
+                  onChange={[Function]}
+                  type="text"
+                  value=""
+                />
+              </td>
+              <td>
+                <a
+                  className="button"
+                  onClick={[Function]}
+                >
+                  add
+                </a>
+              </td>
+            </tr>
+            <tr
+              className="fieldrow"
+              key="Abundance category of biological entity specified elsewhere"
+            >
+              <td>
+                Abundance category of biological entity specified elsewhere
+              </td>
+              <td>
+                <Dropdown
+                  onChange={[Function]}
+                  options={
+                    Array [
+                      "Millimeter",
+                    ]
+                  }
+                  value="Millimeter"
                 >
                   <div
-                    className="dropdown-content"
+                    className="dropdown"
+                    onClick={[Function]}
                   >
-                    <a
-                      className="dropdown-item is-active"
-                      href="#"
-                      key="Millimeter"
-                      onClick={[Function]}
+                    <div
+                      className="dropdown-trigger"
                     >
-                      Millimeter
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </Dropdown>
-          </td>
-          <td>
-            <input
-              className="input"
-              onChange={[Function]}
-              type="text"
-              value=""
-            />
-          </td>
-          <td>
-            <a
-              className="button"
-              onClick={[Function]}
-            >
-              add
-            </a>
-          </td>
-        </tr>
-        <tr
-          className="fieldrow"
-          key="Abundance of biological entity specified elsewhere per unit area of the bed"
-        >
-          <td>
-            Abundance of biological entity specified elsewhere per unit area of the bed
-          </td>
-          <td>
-            <Dropdown
-              onChange={[Function]}
-              options={
-                Array [
-                  "Meter",
-                ]
-              }
-              value="Meter"
-            >
-              <div
-                className="dropdown"
-                onClick={[Function]}
-              >
-                <div
-                  className="dropdown-trigger"
-                >
-                  <button
-                    aria-controls="dropdown-menu"
-                    aria-haspopup="true"
-                    className="button"
-                  >
-                    <span>
-                      Meter
-                    </span>
-                    <span
-                      className="icon is-small"
-                    >
-                      <FontAwesomeIcon
-                        className="angle-down"
-                        icon="angle-down"
+                      <button
+                        aria-controls="dropdown-menu"
+                        aria-haspopup="true"
+                        className="button"
                       >
-                        <i
-                          className="angle-down"
-                          icon="angle-down"
-                        />
-                      </FontAwesomeIcon>
-                    </span>
-                  </button>
-                </div>
-                <div
-                  className="dropdown-menu"
-                  id="dropdown-menu"
-                  role="menu"
+                        <span>
+                          Millimeter
+                        </span>
+                        <span
+                          className="icon is-small"
+                        >
+                          <FontAwesomeIcon
+                            className="angle-down"
+                            icon="angle-down"
+                          >
+                            <i
+                              className="angle-down"
+                              icon="angle-down"
+                            />
+                          </FontAwesomeIcon>
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      className="dropdown-menu"
+                      id="dropdown-menu"
+                      role="menu"
+                    >
+                      <div
+                        className="dropdown-content"
+                      >
+                        <a
+                          className="dropdown-item is-active"
+                          href="#"
+                          key="Millimeter"
+                          onClick={[Function]}
+                        >
+                          Millimeter
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </Dropdown>
+              </td>
+              <td>
+                <input
+                  className="input"
+                  onChange={[Function]}
+                  type="text"
+                  value=""
+                />
+              </td>
+              <td>
+                <a
+                  className="button"
+                  onClick={[Function]}
+                >
+                  add
+                </a>
+              </td>
+            </tr>
+            <tr
+              className="fieldrow"
+              key="Abundance of biological entity specified elsewhere per unit area of the bed"
+            >
+              <td>
+                Abundance of biological entity specified elsewhere per unit area of the bed
+              </td>
+              <td>
+                <Dropdown
+                  onChange={[Function]}
+                  options={
+                    Array [
+                      "Meter",
+                    ]
+                  }
+                  value="Meter"
                 >
                   <div
-                    className="dropdown-content"
+                    className="dropdown"
+                    onClick={[Function]}
                   >
-                    <a
-                      className="dropdown-item is-active"
-                      href="#"
-                      key="Meter"
-                      onClick={[Function]}
+                    <div
+                      className="dropdown-trigger"
                     >
-                      Meter
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </Dropdown>
-          </td>
-          <td>
-            <input
-              className="input"
-              onChange={[Function]}
-              type="text"
-              value=""
-            />
-          </td>
-          <td>
-            <a
-              className="button"
-              onClick={[Function]}
-            >
-              add
-            </a>
-          </td>
-        </tr>
-        <tr
-          className="fieldrow"
-          key="Abundance of biological entity specified elsewhere per unit volume of the sediment"
-        >
-          <td>
-            Abundance of biological entity specified elsewhere per unit volume of the sediment
-          </td>
-          <td>
-            <Dropdown
-              onChange={[Function]}
-              options={
-                Array [
-                  "Grams",
-                ]
-              }
-              value="Grams"
-            >
-              <div
-                className="dropdown"
-                onClick={[Function]}
-              >
-                <div
-                  className="dropdown-trigger"
-                >
-                  <button
-                    aria-controls="dropdown-menu"
-                    aria-haspopup="true"
-                    className="button"
-                  >
-                    <span>
-                      Grams
-                    </span>
-                    <span
-                      className="icon is-small"
-                    >
-                      <FontAwesomeIcon
-                        className="angle-down"
-                        icon="angle-down"
+                      <button
+                        aria-controls="dropdown-menu"
+                        aria-haspopup="true"
+                        className="button"
                       >
-                        <i
-                          className="angle-down"
-                          icon="angle-down"
-                        />
-                      </FontAwesomeIcon>
-                    </span>
-                  </button>
-                </div>
-                <div
-                  className="dropdown-menu"
-                  id="dropdown-menu"
-                  role="menu"
+                        <span>
+                          Meter
+                        </span>
+                        <span
+                          className="icon is-small"
+                        >
+                          <FontAwesomeIcon
+                            className="angle-down"
+                            icon="angle-down"
+                          >
+                            <i
+                              className="angle-down"
+                              icon="angle-down"
+                            />
+                          </FontAwesomeIcon>
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      className="dropdown-menu"
+                      id="dropdown-menu"
+                      role="menu"
+                    >
+                      <div
+                        className="dropdown-content"
+                      >
+                        <a
+                          className="dropdown-item is-active"
+                          href="#"
+                          key="Meter"
+                          onClick={[Function]}
+                        >
+                          Meter
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </Dropdown>
+              </td>
+              <td>
+                <input
+                  className="input"
+                  onChange={[Function]}
+                  type="text"
+                  value=""
+                />
+              </td>
+              <td>
+                <a
+                  className="button"
+                  onClick={[Function]}
+                >
+                  add
+                </a>
+              </td>
+            </tr>
+            <tr
+              className="fieldrow"
+              key="Abundance of biological entity specified elsewhere per unit volume of the sediment"
+            >
+              <td>
+                Abundance of biological entity specified elsewhere per unit volume of the sediment
+              </td>
+              <td>
+                <Dropdown
+                  onChange={[Function]}
+                  options={
+                    Array [
+                      "Grams",
+                    ]
+                  }
+                  value="Grams"
                 >
                   <div
-                    className="dropdown-content"
+                    className="dropdown"
+                    onClick={[Function]}
                   >
-                    <a
-                      className="dropdown-item is-active"
-                      href="#"
-                      key="Grams"
-                      onClick={[Function]}
+                    <div
+                      className="dropdown-trigger"
                     >
-                      Grams
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </Dropdown>
-          </td>
-          <td>
-            <input
-              className="input"
-              onChange={[Function]}
-              type="text"
-              value=""
-            />
-          </td>
-          <td>
-            <a
-              className="button"
-              onClick={[Function]}
-            >
-              add
-            </a>
-          </td>
-        </tr>
-        <tr
-          className="fieldrow"
-          key="Abundance of biological entity specified elsewhere per unit volume of the water body"
-        >
-          <td>
-            Abundance of biological entity specified elsewhere per unit volume of the water body
-          </td>
-          <td>
-            <Dropdown
-              onChange={[Function]}
-              options={
-                Array [
-                  "Micrometer",
-                ]
-              }
-              value="Micrometer"
-            >
-              <div
-                className="dropdown"
-                onClick={[Function]}
-              >
-                <div
-                  className="dropdown-trigger"
-                >
-                  <button
-                    aria-controls="dropdown-menu"
-                    aria-haspopup="true"
-                    className="button"
-                  >
-                    <span>
-                      Micrometer
-                    </span>
-                    <span
-                      className="icon is-small"
-                    >
-                      <FontAwesomeIcon
-                        className="angle-down"
-                        icon="angle-down"
+                      <button
+                        aria-controls="dropdown-menu"
+                        aria-haspopup="true"
+                        className="button"
                       >
-                        <i
-                          className="angle-down"
-                          icon="angle-down"
-                        />
-                      </FontAwesomeIcon>
-                    </span>
-                  </button>
-                </div>
-                <div
-                  className="dropdown-menu"
-                  id="dropdown-menu"
-                  role="menu"
+                        <span>
+                          Grams
+                        </span>
+                        <span
+                          className="icon is-small"
+                        >
+                          <FontAwesomeIcon
+                            className="angle-down"
+                            icon="angle-down"
+                          >
+                            <i
+                              className="angle-down"
+                              icon="angle-down"
+                            />
+                          </FontAwesomeIcon>
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      className="dropdown-menu"
+                      id="dropdown-menu"
+                      role="menu"
+                    >
+                      <div
+                        className="dropdown-content"
+                      >
+                        <a
+                          className="dropdown-item is-active"
+                          href="#"
+                          key="Grams"
+                          onClick={[Function]}
+                        >
+                          Grams
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </Dropdown>
+              </td>
+              <td>
+                <input
+                  className="input"
+                  onChange={[Function]}
+                  type="text"
+                  value=""
+                />
+              </td>
+              <td>
+                <a
+                  className="button"
+                  onClick={[Function]}
+                >
+                  add
+                </a>
+              </td>
+            </tr>
+            <tr
+              className="fieldrow"
+              key="Abundance of biological entity specified elsewhere per unit volume of the water body"
+            >
+              <td>
+                Abundance of biological entity specified elsewhere per unit volume of the water body
+              </td>
+              <td>
+                <Dropdown
+                  onChange={[Function]}
+                  options={
+                    Array [
+                      "Micrometer",
+                    ]
+                  }
+                  value="Micrometer"
                 >
                   <div
-                    className="dropdown-content"
+                    className="dropdown"
+                    onClick={[Function]}
                   >
-                    <a
-                      className="dropdown-item is-active"
-                      href="#"
-                      key="Micrometer"
-                      onClick={[Function]}
+                    <div
+                      className="dropdown-trigger"
                     >
-                      Micrometer
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </Dropdown>
-          </td>
-          <td>
-            <input
-              className="input"
-              onChange={[Function]}
-              type="text"
-              value=""
-            />
-          </td>
-          <td>
-            <a
-              className="button"
-              onClick={[Function]}
-            >
-              add
-            </a>
-          </td>
-        </tr>
-        <tr
-          className="fieldrow"
-          key="Ash-free dry weight biomass (as carbon) of biological entity specified elsewhere per unit volume of the sediment"
-        >
-          <td>
-            Ash-free dry weight biomass (as carbon) of biological entity specified elsewhere per unit volume of the sediment
-          </td>
-          <td>
-            <Dropdown
-              onChange={[Function]}
-              options={
-                Array [
-                  "Grams per square meter",
-                ]
-              }
-              value="Grams per square meter"
-            >
-              <div
-                className="dropdown"
-                onClick={[Function]}
-              >
-                <div
-                  className="dropdown-trigger"
-                >
-                  <button
-                    aria-controls="dropdown-menu"
-                    aria-haspopup="true"
-                    className="button"
-                  >
-                    <span>
-                      Grams per square meter
-                    </span>
-                    <span
-                      className="icon is-small"
-                    >
-                      <FontAwesomeIcon
-                        className="angle-down"
-                        icon="angle-down"
+                      <button
+                        aria-controls="dropdown-menu"
+                        aria-haspopup="true"
+                        className="button"
                       >
-                        <i
-                          className="angle-down"
-                          icon="angle-down"
-                        />
-                      </FontAwesomeIcon>
-                    </span>
-                  </button>
-                </div>
-                <div
-                  className="dropdown-menu"
-                  id="dropdown-menu"
-                  role="menu"
+                        <span>
+                          Micrometer
+                        </span>
+                        <span
+                          className="icon is-small"
+                        >
+                          <FontAwesomeIcon
+                            className="angle-down"
+                            icon="angle-down"
+                          >
+                            <i
+                              className="angle-down"
+                              icon="angle-down"
+                            />
+                          </FontAwesomeIcon>
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      className="dropdown-menu"
+                      id="dropdown-menu"
+                      role="menu"
+                    >
+                      <div
+                        className="dropdown-content"
+                      >
+                        <a
+                          className="dropdown-item is-active"
+                          href="#"
+                          key="Micrometer"
+                          onClick={[Function]}
+                        >
+                          Micrometer
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </Dropdown>
+              </td>
+              <td>
+                <input
+                  className="input"
+                  onChange={[Function]}
+                  type="text"
+                  value=""
+                />
+              </td>
+              <td>
+                <a
+                  className="button"
+                  onClick={[Function]}
+                >
+                  add
+                </a>
+              </td>
+            </tr>
+            <tr
+              className="fieldrow"
+              key="Ash-free dry weight biomass (as carbon) of biological entity specified elsewhere per unit volume of the sediment"
+            >
+              <td>
+                Ash-free dry weight biomass (as carbon) of biological entity specified elsewhere per unit volume of the sediment
+              </td>
+              <td>
+                <Dropdown
+                  onChange={[Function]}
+                  options={
+                    Array [
+                      "Grams per square meter",
+                    ]
+                  }
+                  value="Grams per square meter"
                 >
                   <div
-                    className="dropdown-content"
+                    className="dropdown"
+                    onClick={[Function]}
                   >
-                    <a
-                      className="dropdown-item is-active"
-                      href="#"
-                      key="Grams per square meter"
-                      onClick={[Function]}
+                    <div
+                      className="dropdown-trigger"
                     >
-                      Grams per square meter
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </Dropdown>
-          </td>
-          <td>
-            <input
-              className="input"
-              onChange={[Function]}
-              type="text"
-              value=""
-            />
-          </td>
-          <td>
-            <a
-              className="button"
-              onClick={[Function]}
-            >
-              add
-            </a>
-          </td>
-        </tr>
-        <tr
-          className="fieldrow"
-          key="Ash-free dry weight biomass of biological entity specified elsewhere per unit area of the bed"
-        >
-          <td>
-            Ash-free dry weight biomass of biological entity specified elsewhere per unit area of the bed
-          </td>
-          <td>
-            <Dropdown
-              onChange={[Function]}
-              options={
-                Array [
-                  "Number per square meter",
-                ]
-              }
-              value="Number per square meter"
-            >
-              <div
-                className="dropdown"
-                onClick={[Function]}
-              >
-                <div
-                  className="dropdown-trigger"
-                >
-                  <button
-                    aria-controls="dropdown-menu"
-                    aria-haspopup="true"
-                    className="button"
-                  >
-                    <span>
-                      Number per square meter
-                    </span>
-                    <span
-                      className="icon is-small"
-                    >
-                      <FontAwesomeIcon
-                        className="angle-down"
-                        icon="angle-down"
+                      <button
+                        aria-controls="dropdown-menu"
+                        aria-haspopup="true"
+                        className="button"
                       >
-                        <i
-                          className="angle-down"
-                          icon="angle-down"
-                        />
-                      </FontAwesomeIcon>
-                    </span>
-                  </button>
-                </div>
-                <div
-                  className="dropdown-menu"
-                  id="dropdown-menu"
-                  role="menu"
+                        <span>
+                          Grams per square meter
+                        </span>
+                        <span
+                          className="icon is-small"
+                        >
+                          <FontAwesomeIcon
+                            className="angle-down"
+                            icon="angle-down"
+                          >
+                            <i
+                              className="angle-down"
+                              icon="angle-down"
+                            />
+                          </FontAwesomeIcon>
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      className="dropdown-menu"
+                      id="dropdown-menu"
+                      role="menu"
+                    >
+                      <div
+                        className="dropdown-content"
+                      >
+                        <a
+                          className="dropdown-item is-active"
+                          href="#"
+                          key="Grams per square meter"
+                          onClick={[Function]}
+                        >
+                          Grams per square meter
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </Dropdown>
+              </td>
+              <td>
+                <input
+                  className="input"
+                  onChange={[Function]}
+                  type="text"
+                  value=""
+                />
+              </td>
+              <td>
+                <a
+                  className="button"
+                  onClick={[Function]}
+                >
+                  add
+                </a>
+              </td>
+            </tr>
+            <tr
+              className="fieldrow"
+              key="Ash-free dry weight biomass of biological entity specified elsewhere per unit area of the bed"
+            >
+              <td>
+                Ash-free dry weight biomass of biological entity specified elsewhere per unit area of the bed
+              </td>
+              <td>
+                <Dropdown
+                  onChange={[Function]}
+                  options={
+                    Array [
+                      "Number per square meter",
+                    ]
+                  }
+                  value="Number per square meter"
                 >
                   <div
-                    className="dropdown-content"
+                    className="dropdown"
+                    onClick={[Function]}
                   >
-                    <a
-                      className="dropdown-item is-active"
-                      href="#"
-                      key="Number per square meter"
-                      onClick={[Function]}
+                    <div
+                      className="dropdown-trigger"
                     >
-                      Number per square meter
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </Dropdown>
-          </td>
-          <td>
-            <input
-              className="input"
-              onChange={[Function]}
-              type="text"
-              value=""
-            />
-          </td>
-          <td>
-            <a
-              className="button"
-              onClick={[Function]}
-            >
-              add
-            </a>
-          </td>
-        </tr>
-        <tr
-          className="fieldrow"
-          key="Ash-free dry weight biomass of biological entity specified elsewhere per unit volume of the water body"
-        >
-          <td>
-            Ash-free dry weight biomass of biological entity specified elsewhere per unit volume of the water body
-          </td>
-          <td>
-            <Dropdown
-              onChange={[Function]}
-              options={
-                Array [
-                  "Number per liter",
-                ]
-              }
-              value="Number per liter"
-            >
-              <div
-                className="dropdown"
-                onClick={[Function]}
-              >
-                <div
-                  className="dropdown-trigger"
-                >
-                  <button
-                    aria-controls="dropdown-menu"
-                    aria-haspopup="true"
-                    className="button"
-                  >
-                    <span>
-                      Number per liter
-                    </span>
-                    <span
-                      className="icon is-small"
-                    >
-                      <FontAwesomeIcon
-                        className="angle-down"
-                        icon="angle-down"
+                      <button
+                        aria-controls="dropdown-menu"
+                        aria-haspopup="true"
+                        className="button"
                       >
-                        <i
-                          className="angle-down"
-                          icon="angle-down"
-                        />
-                      </FontAwesomeIcon>
-                    </span>
-                  </button>
-                </div>
-                <div
-                  className="dropdown-menu"
-                  id="dropdown-menu"
-                  role="menu"
+                        <span>
+                          Number per square meter
+                        </span>
+                        <span
+                          className="icon is-small"
+                        >
+                          <FontAwesomeIcon
+                            className="angle-down"
+                            icon="angle-down"
+                          >
+                            <i
+                              className="angle-down"
+                              icon="angle-down"
+                            />
+                          </FontAwesomeIcon>
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      className="dropdown-menu"
+                      id="dropdown-menu"
+                      role="menu"
+                    >
+                      <div
+                        className="dropdown-content"
+                      >
+                        <a
+                          className="dropdown-item is-active"
+                          href="#"
+                          key="Number per square meter"
+                          onClick={[Function]}
+                        >
+                          Number per square meter
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </Dropdown>
+              </td>
+              <td>
+                <input
+                  className="input"
+                  onChange={[Function]}
+                  type="text"
+                  value=""
+                />
+              </td>
+              <td>
+                <a
+                  className="button"
+                  onClick={[Function]}
+                >
+                  add
+                </a>
+              </td>
+            </tr>
+            <tr
+              className="fieldrow"
+              key="Ash-free dry weight biomass of biological entity specified elsewhere per unit volume of the water body"
+            >
+              <td>
+                Ash-free dry weight biomass of biological entity specified elsewhere per unit volume of the water body
+              </td>
+              <td>
+                <Dropdown
+                  onChange={[Function]}
+                  options={
+                    Array [
+                      "Number per liter",
+                    ]
+                  }
+                  value="Number per liter"
                 >
                   <div
-                    className="dropdown-content"
+                    className="dropdown"
+                    onClick={[Function]}
                   >
-                    <a
-                      className="dropdown-item is-active"
-                      href="#"
-                      key="Number per liter"
-                      onClick={[Function]}
+                    <div
+                      className="dropdown-trigger"
                     >
-                      Number per liter
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </Dropdown>
-          </td>
-          <td>
-            <input
-              className="input"
-              onChange={[Function]}
-              type="text"
-              value=""
-            />
-          </td>
-          <td>
-            <a
-              className="button"
-              onClick={[Function]}
-            >
-              add
-            </a>
-          </td>
-        </tr>
-        <tr
-          className="fieldrow"
-          key="Length of biological entity specified elsewhere"
-        >
-          <td>
-            Length of biological entity specified elsewhere
-          </td>
-          <td>
-            <Dropdown
-              onChange={[Function]}
-              options={
-                Array [
-                  "Square meter",
-                ]
-              }
-              value="Square meter"
-            >
-              <div
-                className="dropdown"
-                onClick={[Function]}
-              >
-                <div
-                  className="dropdown-trigger"
-                >
-                  <button
-                    aria-controls="dropdown-menu"
-                    aria-haspopup="true"
-                    className="button"
-                  >
-                    <span>
-                      Square meter
-                    </span>
-                    <span
-                      className="icon is-small"
-                    >
-                      <FontAwesomeIcon
-                        className="angle-down"
-                        icon="angle-down"
+                      <button
+                        aria-controls="dropdown-menu"
+                        aria-haspopup="true"
+                        className="button"
                       >
-                        <i
-                          className="angle-down"
-                          icon="angle-down"
-                        />
-                      </FontAwesomeIcon>
-                    </span>
-                  </button>
-                </div>
-                <div
-                  className="dropdown-menu"
-                  id="dropdown-menu"
-                  role="menu"
+                        <span>
+                          Number per liter
+                        </span>
+                        <span
+                          className="icon is-small"
+                        >
+                          <FontAwesomeIcon
+                            className="angle-down"
+                            icon="angle-down"
+                          >
+                            <i
+                              className="angle-down"
+                              icon="angle-down"
+                            />
+                          </FontAwesomeIcon>
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      className="dropdown-menu"
+                      id="dropdown-menu"
+                      role="menu"
+                    >
+                      <div
+                        className="dropdown-content"
+                      >
+                        <a
+                          className="dropdown-item is-active"
+                          href="#"
+                          key="Number per liter"
+                          onClick={[Function]}
+                        >
+                          Number per liter
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </Dropdown>
+              </td>
+              <td>
+                <input
+                  className="input"
+                  onChange={[Function]}
+                  type="text"
+                  value=""
+                />
+              </td>
+              <td>
+                <a
+                  className="button"
+                  onClick={[Function]}
+                >
+                  add
+                </a>
+              </td>
+            </tr>
+            <tr
+              className="fieldrow"
+              key="Length of biological entity specified elsewhere"
+            >
+              <td>
+                Length of biological entity specified elsewhere
+              </td>
+              <td>
+                <Dropdown
+                  onChange={[Function]}
+                  options={
+                    Array [
+                      "Square meter",
+                    ]
+                  }
+                  value="Square meter"
                 >
                   <div
-                    className="dropdown-content"
+                    className="dropdown"
+                    onClick={[Function]}
                   >
-                    <a
-                      className="dropdown-item is-active"
-                      href="#"
-                      key="Square meter"
-                      onClick={[Function]}
+                    <div
+                      className="dropdown-trigger"
                     >
-                      Square meter
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </Dropdown>
-          </td>
-          <td>
-            <input
-              className="input"
-              onChange={[Function]}
-              type="text"
-              value=""
-            />
-          </td>
-          <td>
-            <a
-              className="button"
-              onClick={[Function]}
-            >
-              add
-            </a>
-          </td>
-        </tr>
-        <tr
-          className="fieldrow"
-          key="Specimen weight of biological entity specified elsewhere"
-        >
-          <td>
-            Specimen weight of biological entity specified elsewhere
-          </td>
-          <td>
-            <Dropdown
-              onChange={[Function]}
-              options={
-                Array [
-                  "Cubic metres",
-                ]
-              }
-              value="Cubic metres"
-            >
-              <div
-                className="dropdown"
-                onClick={[Function]}
-              >
-                <div
-                  className="dropdown-trigger"
-                >
-                  <button
-                    aria-controls="dropdown-menu"
-                    aria-haspopup="true"
-                    className="button"
-                  >
-                    <span>
-                      Cubic metres
-                    </span>
-                    <span
-                      className="icon is-small"
-                    >
-                      <FontAwesomeIcon
-                        className="angle-down"
-                        icon="angle-down"
+                      <button
+                        aria-controls="dropdown-menu"
+                        aria-haspopup="true"
+                        className="button"
                       >
-                        <i
-                          className="angle-down"
-                          icon="angle-down"
-                        />
-                      </FontAwesomeIcon>
-                    </span>
-                  </button>
-                </div>
-                <div
-                  className="dropdown-menu"
-                  id="dropdown-menu"
-                  role="menu"
+                        <span>
+                          Square meter
+                        </span>
+                        <span
+                          className="icon is-small"
+                        >
+                          <FontAwesomeIcon
+                            className="angle-down"
+                            icon="angle-down"
+                          >
+                            <i
+                              className="angle-down"
+                              icon="angle-down"
+                            />
+                          </FontAwesomeIcon>
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      className="dropdown-menu"
+                      id="dropdown-menu"
+                      role="menu"
+                    >
+                      <div
+                        className="dropdown-content"
+                      >
+                        <a
+                          className="dropdown-item is-active"
+                          href="#"
+                          key="Square meter"
+                          onClick={[Function]}
+                        >
+                          Square meter
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </Dropdown>
+              </td>
+              <td>
+                <input
+                  className="input"
+                  onChange={[Function]}
+                  type="text"
+                  value=""
+                />
+              </td>
+              <td>
+                <a
+                  className="button"
+                  onClick={[Function]}
+                >
+                  add
+                </a>
+              </td>
+            </tr>
+            <tr
+              className="fieldrow"
+              key="Specimen weight of biological entity specified elsewhere"
+            >
+              <td>
+                Specimen weight of biological entity specified elsewhere
+              </td>
+              <td>
+                <Dropdown
+                  onChange={[Function]}
+                  options={
+                    Array [
+                      "Cubic metres",
+                    ]
+                  }
+                  value="Cubic metres"
                 >
                   <div
-                    className="dropdown-content"
+                    className="dropdown"
+                    onClick={[Function]}
                   >
-                    <a
-                      className="dropdown-item is-active"
-                      href="#"
-                      key="Cubic metres"
-                      onClick={[Function]}
+                    <div
+                      className="dropdown-trigger"
                     >
-                      Cubic metres
-                    </a>
+                      <button
+                        aria-controls="dropdown-menu"
+                        aria-haspopup="true"
+                        className="button"
+                      >
+                        <span>
+                          Cubic metres
+                        </span>
+                        <span
+                          className="icon is-small"
+                        >
+                          <FontAwesomeIcon
+                            className="angle-down"
+                            icon="angle-down"
+                          >
+                            <i
+                              className="angle-down"
+                              icon="angle-down"
+                            />
+                          </FontAwesomeIcon>
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      className="dropdown-menu"
+                      id="dropdown-menu"
+                      role="menu"
+                    >
+                      <div
+                        className="dropdown-content"
+                      >
+                        <a
+                          className="dropdown-item is-active"
+                          href="#"
+                          key="Cubic metres"
+                          onClick={[Function]}
+                        >
+                          Cubic metres
+                        </a>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </Dropdown>
-          </td>
-          <td>
-            <input
-              className="input"
-              onChange={[Function]}
-              type="text"
-              value=""
-            />
-          </td>
-          <td>
-            <a
-              className="button"
-              onClick={[Function]}
+                </Dropdown>
+              </td>
+              <td>
+                <input
+                  className="input"
+                  onChange={[Function]}
+                  type="text"
+                  value=""
+                />
+              </td>
+              <td>
+                <a
+                  className="button"
+                  onClick={[Function]}
+                >
+                  add
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div
+        className="column is-half supplied"
+      >
+        <h1
+          className="title"
+        >
+          occurrenceForm.measurementOrFact.supplied.title
+        </h1>
+        <h2
+          className="subtitle"
+        >
+           
+        </h2>
+        <table
+          className="table is-fullwidth is-striped is-hoverable"
+        >
+          <thead>
+            <tr>
+              <th
+                style={
+                  Object {
+                    "width": "60%",
+                  }
+                }
+              >
+                type
+              </th>
+              <th
+                style={
+                  Object {
+                    "width": "20%",
+                  }
+                }
+              >
+                unit
+              </th>
+              <th
+                style={
+                  Object {
+                    "width": "10%",
+                  }
+                }
+              >
+                value
+              </th>
+              <th
+                style={
+                  Object {
+                    "width": "10%",
+                  }
+                }
+              />
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              className="fieldrow"
+              key="Temperature"
             >
-              add
-            </a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              <td>
+                Temperature
+              </td>
+              <td>
+                <Dropdown
+                  onChange={[Function]}
+                  options={
+                    Array [
+                      "Degrees Celsius",
+                    ]
+                  }
+                  value="Degrees Celsius"
+                >
+                  <div
+                    className="dropdown"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="dropdown-trigger"
+                    >
+                      <button
+                        aria-controls="dropdown-menu"
+                        aria-haspopup="true"
+                        className="button"
+                      >
+                        <span>
+                          Degrees Celsius
+                        </span>
+                        <span
+                          className="icon is-small"
+                        >
+                          <FontAwesomeIcon
+                            className="angle-down"
+                            icon="angle-down"
+                          >
+                            <i
+                              className="angle-down"
+                              icon="angle-down"
+                            />
+                          </FontAwesomeIcon>
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      className="dropdown-menu"
+                      id="dropdown-menu"
+                      role="menu"
+                    >
+                      <div
+                        className="dropdown-content"
+                      >
+                        <a
+                          className="dropdown-item is-active"
+                          href="#"
+                          key="Degrees Celsius"
+                          onClick={[Function]}
+                        >
+                          Degrees Celsius
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </Dropdown>
+              </td>
+              <td>
+                <input
+                  className="input"
+                  onChange={[Function]}
+                  type="text"
+                  value="10"
+                />
+              </td>
+              <td>
+                <a
+                  className="button"
+                  onClick={[Function]}
+                >
+                  remove
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
     <CopyPreviousData>
       <div
         className="columns"
