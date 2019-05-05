@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MeasurementOrFact renders correctly 1`] = `
+<MeasurementOrFact
+  data={Object {}}
+  onChange={[MockFunction]}
+>
+  <div
+    className="measurement-or-fact section is-fluid"
+  >
+    <h1
+      className="title"
+    >
+      occurrenceForm.measurementOrFact.general.title
+    </h1>
+    <h2
+      className="subtitle"
+    >
+      occurrenceForm.measurementOrFact.general.subtitle
+    </h2>
+    <h1
+      className="title"
+    >
+      occurrenceForm.measurementOrFact.specific.title
+    </h1>
+    <h2
+      className="subtitle"
+    >
+      occurrenceForm.measurementOrFact.specific.subtitle
+    </h2>
+    <CopyPreviousData>
+      <div
+        className="columns"
+      >
+        <div
+          className="copy-previous-data column is-narrow"
+        >
+          copy data from previous entry
+        </div>
+      </div>
+    </CopyPreviousData>
+  </div>
+</MeasurementOrFact>
+`;

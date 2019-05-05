@@ -16,12 +16,12 @@ export default {
       }
     },
     occurrenceForm: {
-      selectDataset:    {
+      selectDataset:     {
         dataDescription: 'Using Data',
         stepDescription: 'Choose the dataset for adding observations',
         stepTitle:       'Selected Dataset'
       },
-      basicData:        {
+      basicData:         {
         scientificName:   'Scientific name',
         eventBeginDate:   'Event begin date',
         eventEndDate:     'Event end date',
@@ -55,7 +55,7 @@ export default {
           unspecified: 'unspecified'
         }
       },
-      locationData:     {
+      locationData:      {
         enterCoordinates:      {
           title:    'Enter coordinates',
           subtitle: 'bold fields are mandatory'
@@ -112,7 +112,7 @@ export default {
           }
         }
       },
-      observationData:  {
+      observationData:   {
         institutionCode:         {
           label:       'institution code',
           placeholder: 'institution code'
@@ -159,7 +159,17 @@ export default {
           help:        'hit enter to add a reference to list'
         }
       },
-      darwinCoreFields: {
+      measurementOrFact: {
+        general:  {
+          title:    'STEP 1: General sample information',
+          subtitle: 'Supply any information you may have on the sample, setting, environment, ...'
+        },
+        specific: {
+          title:    'STEP 2: specific measurements or facts',
+          subtitle: 'Enter the exact measurements or facts consecutively'
+        }
+      },
+      darwinCoreFields:  {
         fieldName: {
           label:       'Darwin core fieldname',
           placeholder: '',
