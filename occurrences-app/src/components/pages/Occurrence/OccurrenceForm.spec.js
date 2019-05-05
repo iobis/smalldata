@@ -15,6 +15,9 @@ describe('OccurrenceForm', () => {
     const wrapper = mount(<OccurrenceForm/>)
     expect(wrapper).toMatchSnapshot()
 
+    wrapper.find('.step-2 .step-header').simulate('click')
+    wrapper.find('.decimal-latitude input').simulate('change', { target: { value: '0.12345' } })
+    wrapper.find('.decimal-longitude input').simulate('change', { target: { value: '-0.54321' } })
     wrapper.find('.step-3 .step-header').simulate('click')
     expect(wrapper).toMatchSnapshot()
 

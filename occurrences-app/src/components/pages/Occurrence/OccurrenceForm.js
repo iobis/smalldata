@@ -71,7 +71,7 @@ export default function OccurrenceForm() {
                        basicData={basicData}/>
   }, {
     dataDescription: 'Main Location',
-    selectedData:    'North Sea',
+    selectedData:    renderSelectedLocation(locationData),
     stepDescription: 'Select the location for data collected',
     stepTitle:       'Location Data',
     children:        <LocationData
@@ -119,6 +119,10 @@ export default function OccurrenceForm() {
       })}
     </section>
   )
+}
+
+function renderSelectedLocation({ decimalLatitude, decimalLongitude }) {
+  return `Latitude: ${decimalLatitude}; Longitude: ${decimalLongitude}`
 }
 
 function renderIdentifiedByLabel({ identifiedBy, institutionCode }) {
