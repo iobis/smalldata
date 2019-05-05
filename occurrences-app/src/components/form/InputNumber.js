@@ -21,7 +21,7 @@ export default function InputNumber({ className, name, onChange, optional, value
         placeholder={i18next.exists(placeholderKey) ? t(placeholderKey) : undefined}
         type="number"
         step={step}
-        value={value}/>
+        value={value || ''}/>
       {i18next.exists(helpKey) ? <p className="help">{t(helpKey)}</p> : null}
     </div>
   )
@@ -33,5 +33,5 @@ InputNumber.propTypes = {
   onChange:  PropTypes.func.isRequired,
   optional:  PropTypes.bool,
   step:      PropTypes.number,
-  value:     PropTypes.string
+  value:     PropTypes.number
 }

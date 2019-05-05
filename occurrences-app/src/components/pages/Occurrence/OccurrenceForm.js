@@ -42,11 +42,11 @@ export default function OccurrenceForm() {
     basicData.endDate ? ' - ' + format(basicData.endDate, 'D MMMM YYYY') : ''
   ].join(' ')
   const [locationData, setLocationData] = useState({
-      decimalLongitude:      '',
-      decimalLatitude:       '',
-      coordinateUncertainty: '',
-      minimumDepth:          '',
-      maximumDepth:          '',
+      decimalLongitude:      null,
+      decimalLatitude:       null,
+      coordinateUncertainty: null,
+      minimumDepth:          null,
+      maximumDepth:          null,
       verbatimCoordinates:   '',
       verbatimEventDate:     '',
       verbatimDepth:         ''

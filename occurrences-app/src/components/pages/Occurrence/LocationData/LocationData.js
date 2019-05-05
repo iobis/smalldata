@@ -82,11 +82,11 @@ export default function LocationData({ data, onChange }) {
 
 LocationData.propTypes = {
   data:     PropTypes.shape({
-    decimalLongitude:      PropTypes.string.isRequired,
-    decimalLatitude:       PropTypes.string.isRequired,
-    coordinateUncertainty: PropTypes.string.isRequired,
-    minimumDepth:          PropTypes.string.isRequired,
-    maximumDepth:          PropTypes.string.isRequired,
+    decimalLongitude:      PropTypes.number,
+    decimalLatitude:       PropTypes.number,
+    coordinateUncertainty: PropTypes.number,
+    minimumDepth:          PropTypes.number,
+    maximumDepth:          PropTypes.number,
     verbatimCoordinates:   PropTypes.string.isRequired,
     verbatimEventDate:     PropTypes.string.isRequired,
     verbatimDepth:         PropTypes.string.isRequired
