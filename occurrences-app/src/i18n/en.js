@@ -56,6 +56,14 @@ export default {
         }
       },
       locationData:    {
+        enterCoordinates:      {
+          title:    'Enter coordinates',
+          subtitle: 'bold fields are mandatory'
+        },
+        verbatimData:          {
+          title:    'Verbatim Data',
+          subtitle: 'optionally supply verbatim data as it appeared originally in the notes'
+        },
         decimalLongitude:      {
           label:       'decimal longitude',
           placeholder: '5.12334'
@@ -69,27 +77,27 @@ export default {
           placeholder: '',
           help:        'meters'
         },
-        minimumDepth: {
+        minimumDepth:          {
           label:       'minimum depth',
           placeholder: '',
           help:        'meters'
         },
-        maximumDepth: {
+        maximumDepth:          {
           label:       'maximum depth',
           placeholder: '',
           help:        'meters'
         },
-        verbatimCoordinates: {
+        verbatimCoordinates:   {
           label:       'verbatim coordinates',
           placeholder: '',
           help:        'Example: "41 05 54S 121 05 34W", "17T 630000 4833400"'
         },
-        verbatimEventDate: {
+        verbatimEventDate:     {
           label:       'verbatim event date',
           placeholder: '',
           help:        'Examples: "spring 1910", "Marzo 2002", "1999-03-XX", "17IV1934"'
         },
-        verbatimDepth: {
+        verbatimDepth:         {
           label:       'verbatim depth',
           placeholder: '',
           help:        'Examples: "100-200 m"'

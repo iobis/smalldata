@@ -2,8 +2,10 @@ import InputNumber from '../../../form/InputNumber'
 import InputText from '../../../form/InputText'
 import PropTypes from 'prop-types'
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 
 export default function LocationData({ data, onChange }) {
+  const { t } = useTranslation()
   const updateField = (name, value) => {
     const newSelection = { ...data, [name]: value }
     onChange(newSelection)
@@ -11,8 +13,8 @@ export default function LocationData({ data, onChange }) {
 
   return (
     <div className="location-data section is-fluid">
-      <h1 className="title">Enter coordinates</h1>
-      <h2 className="subtitle">bold fields are mandatory</h2>
+      <h1 className="title">{t('occurrenceForm.locationData.enterCoordinates.title')}</h1>
+      <h2 className="subtitle">{t('occurrenceForm.locationData.enterCoordinates.subtitle')}</h2>
       <div className="columns">
         <InputNumber
           className="decimal-longitude is-3"
@@ -51,8 +53,8 @@ export default function LocationData({ data, onChange }) {
           value={data.maximumDepth}/>
       </div>
       <div className="verbatim-data">
-        <h1 className="title">Verbatim Data</h1>
-        <h2 className="subtitle">optionally supply verbatim data as it appeared originally in the notes</h2>
+        <h1 className="title">{t('occurrenceForm.locationData.verbatimData.title')}</h1>
+        <h2 className="subtitle">{t('occurrenceForm.locationData.verbatimData.subtitle')}</h2>
         <div className="columns">
           <InputText
             className="verbatim-coordinates is-3"

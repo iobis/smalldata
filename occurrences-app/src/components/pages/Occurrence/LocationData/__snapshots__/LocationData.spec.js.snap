@@ -22,12 +22,12 @@ exports[`SelectDataset renders correctly 1`] = `
     <h1
       className="title"
     >
-      Enter coordinates
+      occurrenceForm.locationData.enterCoordinates.title
     </h1>
     <h2
       className="subtitle"
     >
-      bold fields are mandatory
+      occurrenceForm.locationData.enterCoordinates.subtitle
     </h2>
     <div
       className="columns"
@@ -166,12 +166,12 @@ exports[`SelectDataset renders correctly 1`] = `
       <h1
         className="title"
       >
-        Verbatim Data
+        occurrenceForm.locationData.verbatimData.title
       </h1>
       <h2
         className="subtitle"
       >
-        optionally supply verbatim data as it appeared originally in the notes
+        occurrenceForm.locationData.verbatimData.subtitle
       </h2>
       <div
         className="columns"
