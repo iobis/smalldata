@@ -65,6 +65,11 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/DWCA"
+                example:
+                  - core: occurrence
+                    occurrence:
+                      dwcg:
+                        habitat: Bruges
 
   /api/login:
     post:
