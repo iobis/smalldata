@@ -11,5 +11,9 @@
     "port": 27017,
     "path": ""
   },
+  "user": {
+    "halfTimeInDays": 7
+  },
+  "dataset": {},
   "mode": "DEMO"
 }

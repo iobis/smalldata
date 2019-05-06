@@ -1,58 +1,75 @@
 package org.obis.smalldata.dwca;
 
-import io.vertx.core.CompositeFuture;
-import io.vertx.core.Future;
 import io.vertx.core.Vertx;
 import io.vertx.ext.mongo.MongoClient;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import io.vertx.junit5.VertxExtension;
+import io.vertx.junit5.VertxTestContext;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.obis.smalldata.testutil.TestDb;
 
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.TimeUnit;
+import static org.assertj.core.api.Assertions.assertThat;
 
-import static org.pmw.tinylog.Logger.info;
-
+@ExtendWith(VertxExtension.class)
 class DbQueryTest {
-  private TestDb testDb;
-  private MongoClient mongoClient;
-  private DbQuery dbQuery;
-  private Future<Boolean> waitForResult;
+  private static TestDb testDb;
+  private static MongoClient mongoClient;
+  private static DbQuery dbQuery;
 
-  @BeforeEach
-  public void start() {
-    waitForResult = Future.future();
-    waitForResult.setHandler(done -> {
-      info("shutdown mongo db");
-      mongoClient.close();
-      testDb.shutDown();
-    });
+  @BeforeAll
+  public static void setUp() {
     testDb = new TestDb();
     mongoClient = testDb.init(Vertx.vertx());
-    info(mongoClient);
     dbQuery = new DbQuery(mongoClient);
   }
 
-  @AfterEach
-  public void stop() {
-    info("-- Test done.");
+  @AfterAll
+  public static void tearDown() {
+    mongoClient.close();
+    testDb.shutDown();
   }
 
   @Test
-  void testDatasetFuture() throws InterruptedException {
+  void findDwcaRecords(VertxTestContext testContext) {
     var datasetRef = "NnqVLwIyPn-nRkc";
-    var dwcaRecords = dbQuery.dwcaRecords(datasetRef);
-    var dataset = dbQuery.dataset(datasetRef);
-    var countDownLatch = new CountDownLatch(1);
-    CompositeFuture.all(dataset, dwcaRecords).setHandler(res -> {
-      info(res.result().list().get(0));
-      info(res.result().list().get(1));
-      waitForResult.complete();
-      countDownLatch.countDown();
+    var dwcaRecords = dbQuery.findDwcaRecords(datasetRef);
+    dwcaRecords.setHandler(ar -> {
+      var result = ar.result();
+      assertThat(result).hasSize(642);
+      testContext.completeNow();
     });
-    if (!countDownLatch.await(1000, TimeUnit.MILLISECONDS)) {
-      throw new InterruptedException("Couldn't write data to database");
-    }
   }
 
+  @Test
+  void findDwcaRecordsForUnknownRefReturnsEmptyList(VertxTestContext testContext) {
+    var dwcaRecords = dbQuery.findDwcaRecords("unknown");
+    dwcaRecords.setHandler(ar -> {
+      var result = ar.result();
+      assertThat(result).hasSize(0);
+      testContext.completeNow();
+    });
+  }
+
+  @Test
+  void findDataset(VertxTestContext testContext) {
+    var datasetRef = "NnqVLwIyPn-nRkc";
+    var dataset = dbQuery.findDataset(datasetRef);
+    dataset.setHandler(ar -> {
+      var result = ar.result();
+      assertThat(result).hasSize(12);
+      testContext.completeNow();
+    });
+  }
+
+  @Test
+  void findDatasetForUnknownRefReturnsNull(VertxTestContext testContext) {
+    var dataset = dbQuery.findDataset("unknown");
+    dataset.setHandler(ar -> {
+      var result = ar.result();
+      assertThat(result).isNull();
+      testContext.completeNow();
+    });
+  }
 }

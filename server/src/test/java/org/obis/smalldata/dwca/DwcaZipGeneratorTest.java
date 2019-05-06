@@ -8,6 +8,7 @@ import io.vertx.ext.mongo.MongoClient;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.obis.smalldata.testutil.TestDb;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -46,8 +47,8 @@ public class DwcaZipGeneratorTest {
     var datasetRef = "NnqVLwIyPn-nRkc";
     var dbQuery = new DbQuery(mongoClient);
     var zipGenerator = new DwcaZipGenerator();
-    var dwcaRecordsFuture = dbQuery.dwcaRecords(datasetRef);
-    var datasetFuture = dbQuery.dataset(datasetRef);
+    var dwcaRecordsFuture = dbQuery.findDwcaRecords(datasetRef);
+    var datasetFuture = dbQuery.findDataset(datasetRef);
     var result = Future.<Optional<Path>>future();
     var countDownLatch = new CountDownLatch(1);
 

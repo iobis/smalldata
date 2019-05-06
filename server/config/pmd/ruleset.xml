@@ -6,15 +6,16 @@
     <exclude name="JUnitTestsShouldIncludeAssert"/>
   </rule>
   <rule ref="category/java/codestyle.xml">
-    <exclude name="MethodArgumentCouldBeFinal"/>
-    <exclude name="LocalVariableCouldBeFinal"/>
-    <exclude name="LongVariable"/>
-    <exclude name="ShortVariable"/>
-    <exclude name="ShortClassName"/>
-    <exclude name="OnlyOneReturn"/>
     <exclude name="AtLeastOneConstructor"/>
     <exclude name="CommentDefaultAccessModifier"/>
     <exclude name="DefaultPackage"/>
+    <exclude name="LinguisticNaming"/>
+    <exclude name="LocalVariableCouldBeFinal"/>
+    <exclude name="LongVariable"/>
+    <exclude name="MethodArgumentCouldBeFinal"/>
+    <exclude name="OnlyOneReturn"/>
+    <exclude name="ShortClassName"/>
+    <exclude name="ShortVariable"/>
     <exclude name="TooManyStaticImports"/>
   </rule>
   <rule ref="category/java/codestyle.xml/ClassNamingConventions">
