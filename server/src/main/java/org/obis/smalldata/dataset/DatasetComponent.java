@@ -30,18 +30,23 @@ public class DatasetComponent extends AbstractVerticle {
         "datasets",
         mapQueryKeys(message.body()),
         new JsonObject(),
-        resultHandler -> {
-          var dataset = this.mapDatasetKeys(resultHandler.result());
-          message.reply(new JsonArray().add(dataset));
+        ar -> {
+          var result = ar.result();
+          if (result != null) {
+            message.reply(new JsonArray().add(mapDatasetKeys(result)));
+          } else {
+            message.reply(new JsonArray());
+          }
         });
     } else {
       mongoClient.find(
         "datasets",
         message.body(),
-        resultHandler -> {
-          var datasetJson = new JsonArray(resultHandler.result().stream()
+        ar -> {
+          var datasets = ar.result().stream()
             .map(this::mapDatasetKeys)
-            .collect(Collectors.toList()));
+            .collect(Collectors.toList());
+          var datasetJson = new JsonArray(datasets);
           message.reply(datasetJson);
         });
     }

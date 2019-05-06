@@ -77,4 +77,16 @@ public class DatasetComponentTest {
       });
   }
 
+  @Test
+  @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
+  void getNotAvailableDataset(Vertx vertx, VertxTestContext testContext) {
+    vertx.eventBus().<JsonArray>send(
+      "datasets.query",
+      new JsonObject().put("ref", "unknown"),
+      ar -> {
+        var datasets = ar.result().body();
+        assertThat(datasets).hasSize(0);
+        testContext.completeNow();
+      });
+  }
 }
