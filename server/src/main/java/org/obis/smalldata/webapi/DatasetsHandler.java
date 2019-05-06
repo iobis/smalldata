@@ -10,20 +10,21 @@ class DatasetsHandler {
 
   static void fetch(RoutingContext context) {
     var dataset = context.request().getParam("datasetRef");
-    if (null == dataset) {
+    if (dataset == null) {
       info("getting all datasets");
-      context.vertx().eventBus().<JsonArray>send("datasets.query",
+      context.vertx().eventBus().<JsonArray>send(
+        "datasets.query",
         new JsonObject(),
         m -> context.response().end(m.result().body().encode()));
     } else {
       info("getting dataset {}", dataset);
-      context.vertx().eventBus().<JsonArray>send("datasets.query",
+      context.vertx().eventBus().<JsonArray>send(
+        "datasets.query",
         new JsonObject().put("ref", dataset),
         m -> context.response().end(m.result().body().getJsonObject(0).encode()));
-
     }
-
   }
 
-  private DatasetsHandler() {}
+  private DatasetsHandler() {
+  }
 }

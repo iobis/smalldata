@@ -26,7 +26,8 @@ public class DatasetComponent extends AbstractVerticle {
 
   private void handleDatasetEvents(Message<JsonObject> message) {
     if (message.body().containsKey(QUERY_REF)) {
-      mongoClient.findOne("datasets",
+      mongoClient.findOne(
+        "datasets",
         mapQueryKeys(message.body()),
         new JsonObject(),
         resultHandler -> {
@@ -34,7 +35,8 @@ public class DatasetComponent extends AbstractVerticle {
           message.reply(new JsonArray().add(dataset));
         });
     } else {
-      mongoClient.find("datasets",
+      mongoClient.find(
+        "datasets",
         message.body(),
         resultHandler -> {
           var datasetJson = new JsonArray(resultHandler.result().stream()
