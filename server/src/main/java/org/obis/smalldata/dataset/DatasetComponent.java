@@ -11,8 +11,8 @@ import java.util.stream.Collectors;
 
 public class DatasetComponent extends AbstractVerticle {
 
-  private static final String QUERY_REF = "ref";
   private static final String KEY_REF = "_ref";
+  public static final String QUERY_REF = "ref";
 
   private MongoClient mongoClient;
 
@@ -32,10 +32,10 @@ public class DatasetComponent extends AbstractVerticle {
         new JsonObject(),
         ar -> {
           var result = ar.result();
-          if (result != null) {
-            message.reply(new JsonArray().add(mapDatasetKeys(result)));
-          } else {
+          if (result == null) {
             message.reply(new JsonArray());
+          } else {
+            message.reply(new JsonArray().add(mapDatasetKeys(result)));
           }
         });
     } else {

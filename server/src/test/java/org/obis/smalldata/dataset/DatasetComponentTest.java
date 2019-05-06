@@ -52,7 +52,7 @@ public class DatasetComponentTest {
         assertThat(datasets).hasSize(4);
         var refs = datasets.stream()
           .map(JsonObject.class::cast)
-          .map(jsonObject -> jsonObject.getString("ref"))
+          .map(jsonObject -> jsonObject.getString(DatasetComponent.QUERY_REF))
           .collect(Collectors.toSet());
         assertThat(refs).containsExactlyInAnyOrder("NnqVLwIyPn-nRkc", "wEaBfmFyQhYCdsk", "ntDOtUc7XsRrIus", "PoJnGNMaxsupE4w");
         testContext.completeNow();
@@ -64,11 +64,11 @@ public class DatasetComponentTest {
     var ref = "ntDOtUc7XsRrIus";
     vertx.eventBus().<JsonArray>send(
       "datasets.query",
-      new JsonObject().put("ref", ref),
+      new JsonObject().put(DatasetComponent.QUERY_REF, ref),
       ar -> {
         var datasets = ar.result().body();
         assertThat(datasets).hasSize(1);
-        assertThat(datasets.getJsonObject(0).getString("ref")).isEqualTo(ref);
+        assertThat(datasets.getJsonObject(0).getString(DatasetComponent.QUERY_REF)).isEqualTo(ref);
         testContext.completeNow();
       });
   }
@@ -77,7 +77,7 @@ public class DatasetComponentTest {
   void getNotAvailableDataset(Vertx vertx, VertxTestContext testContext) {
     vertx.eventBus().<JsonArray>send(
       "datasets.query",
-      new JsonObject().put("ref", "unknown"),
+      new JsonObject().put(DatasetComponent.QUERY_REF, "unknown"),
       ar -> {
         var datasets = ar.result().body();
         assertThat(datasets).hasSize(0);
