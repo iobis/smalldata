@@ -5,11 +5,12 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.junit5.Timeout;
 import io.vertx.junit5.VertxExtension;
 import io.vertx.junit5.VertxTestContext;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.obis.smalldata.testutil.TestDb;
 
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -19,13 +20,12 @@ import static org.pmw.tinylog.Logger.info;
 @ExtendWith(VertxExtension.class)
 public class DwcaTest {
 
-  private TestDb testDb;
+  private static TestDb testDb;
 
-  @BeforeEach
-  void deployVerticle(Vertx vertx, VertxTestContext testContext) {
+  @BeforeAll
+  public static void deployVerticle(Vertx vertx, VertxTestContext testContext) {
     testDb = new TestDb();
     testDb.init(vertx);
-
     vertx.sharedData().getLocalMap("settings")
       .putAll(Map.of("storage", new JsonObject()
         .put("host", "localhost")
@@ -37,29 +37,28 @@ public class DwcaTest {
       testContext.succeeding(id -> testContext.completeNow()));
   }
 
-  @AfterEach
-  public void stop() {
-    info("shutdown mongo db");
+  @AfterAll
+  public static void stop() {
     testDb.shutDown();
   }
 
   @Test
   @DisplayName("check if a valid dwca zip file is generated")
-  @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
+  @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
   void testGenerateZipFile(Vertx vertx, VertxTestContext testContext) {
     vertx.eventBus().<JsonObject>send(
       "dwca",
       new JsonObject()
         .put("action", "generate")
-        .put("dataset", "NnqVLwIyPn-nRkc"),
-      result -> {
-        if (result.succeeded()) {
-          JsonObject body = result.result().body();
+        .put("findDataset", "NnqVLwIyPn-nRkc"),
+      ar -> {
+        if (ar.succeeded()) {
+          JsonObject body = ar.result().body();
           info("success {}", body);
           testContext.completeNow();
         } else {
-          info("error {}", result.cause());
-          testContext.failNow(result.cause());
+          info("error {}", ar.cause());
+          testContext.failNow(ar.cause());
         }
       });
   }

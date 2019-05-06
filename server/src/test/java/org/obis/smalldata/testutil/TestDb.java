@@ -1,4 +1,4 @@
-package org.obis.smalldata.dwca;
+package org.obis.smalldata.testutil;
 
 import com.google.common.base.Throwables;
 import de.flapdoodle.embed.mongo.MongodExecutable;
@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit;
 import static org.pmw.tinylog.Logger.error;
 import static org.pmw.tinylog.Logger.info;
 
-class TestDb {
+public class TestDb {
   private static final String BIND_IP = "localhost";
   private static final int PORT = 12345;
 
@@ -32,7 +32,7 @@ class TestDb {
   private MongodExecutable executable;
   private MongodProcess process;
 
-  MongoClient init(Vertx vertx) {
+  public MongoClient init(Vertx vertx) {
     try {
       MongodConfigBuilder mongodConfig = new MongodConfigBuilder()
         .net(new Net(BIND_IP, PORT, Network.localhostIsIPv6()))

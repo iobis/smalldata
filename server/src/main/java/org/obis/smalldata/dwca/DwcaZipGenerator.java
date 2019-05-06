@@ -33,46 +33,6 @@ class DwcaZipGenerator {
     this.baseUrl = baseUrl;
   }
 
-  private Set<Path> generateCsvFiles(List<JsonObject> dwcaRecords, Path directory) {
-    var dwcaMap = DwcaData.datasetToDwcaMap(dwcaRecords);
-    var dwcCsvWriter = new DwcCsvTable();
-    return dwcaMap.entrySet().stream()
-      .map(dataEntry -> {
-        try {
-          File generatedFile = File.createTempFile(dataEntry.getKey(), ".txt", directory.toFile());
-          dwcCsvWriter.writeTableToFile(dataEntry.getValue(), generatedFile);
-          return Path.of(generatedFile.toURI());
-        } catch (IOException e) {
-          error(Throwables.getStackTraceAsString(e));
-          return null;
-        }
-      }).collect(Collectors.toSet());
-  }
-
-  private MetaFileConfig generateMetaConfig(Path path) {
-    var coreName = path.toFile().getName();
-    var coreRowType = ROW_TYPE_MAP.get(ROW_TYPE_MAP.keySet().stream()
-      .filter(rt -> rt.matcher(coreName).matches())
-      .findFirst()
-      .get());
-    return new MetaFileConfig(List.of(coreName), coreRowType, path.toUri());
-  }
-
-  private Path generateMetaFile(JsonObject dataset, Set<Path> paths, Path directory) {
-    var generator = new MetaGenerator();
-    var tableConfig = dataset.getJsonObject("meta").getJsonObject("dwcTables");
-    var coreTable = tableConfig.getString("core");
-    var groupedPaths = paths.stream()
-      .collect(Collectors.groupingBy(path -> path.toFile().getName().startsWith(coreTable)));
-    var corePath = groupedPaths.get(true).get(0);
-    var coreMeta = this.generateMetaConfig(corePath);
-    var extensionPaths = groupedPaths.get(false).stream()
-      .map(this::generateMetaConfig)
-      .collect(Collectors.toList());
-
-    return generator.generateXml(coreMeta, extensionPaths, directory).get().toPath();
-  }
-
   Optional<Path> generate(List<JsonObject> dwcaRecords, JsonObject dataset) {
     try {
       var tempDirectory = Files.createTempDirectory("iobis-dwca");
@@ -99,7 +59,48 @@ class DwcaZipGenerator {
     }
   }
 
-  static class ZipFileEntries {
+  private Set<Path> generateCsvFiles(List<JsonObject> dwcaRecords, Path directory) {
+    var dwcaMap = DwcaData.datasetToDwcaMap(dwcaRecords);
+    var dwcCsvWriter = new DwcCsvTable();
+    return dwcaMap.entrySet().stream()
+      .map(dataEntry -> {
+        try {
+          File generatedFile = File.createTempFile(dataEntry.getKey(), ".txt", directory.toFile());
+          dwcCsvWriter.writeTableToFile(dataEntry.getValue(), generatedFile);
+          return Path.of(generatedFile.toURI());
+        } catch (IOException e) {
+          error(Throwables.getStackTraceAsString(e));
+          return null;
+        }
+      })
+      .collect(Collectors.toSet());
+  }
+
+  private MetaFileConfig generateMetaConfig(Path path) {
+    var coreName = path.toFile().getName();
+    var coreRowType = ROW_TYPE_MAP.get(ROW_TYPE_MAP.keySet().stream()
+      .filter(rt -> rt.matcher(coreName).matches())
+      .findFirst()
+      .get());
+    return new MetaFileConfig(List.of(coreName), coreRowType, path.toUri());
+  }
+
+  private Path generateMetaFile(JsonObject dataset, Set<Path> paths, Path directory) {
+    var generator = new MetaGenerator();
+    var tableConfig = dataset.getJsonObject("meta").getJsonObject("dwcTables");
+    var coreTable = tableConfig.getString("core");
+    var groupedPaths = paths.stream()
+      .collect(Collectors.groupingBy(path -> path.toFile().getName().startsWith(coreTable)));
+    var corePath = groupedPaths.get(true).get(0);
+    var coreMeta = this.generateMetaConfig(corePath);
+    var extensionPaths = groupedPaths.get(false).stream()
+      .map(this::generateMetaConfig)
+      .collect(Collectors.toList());
+
+    return generator.generateXml(coreMeta, extensionPaths, directory).get().toPath();
+  }
+
+  private static class ZipFileEntries {
     private final ZipOutputStream zos;
     private final OutputStream fos;
 

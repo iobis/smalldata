@@ -14,7 +14,7 @@ class DbQuery {
     this.mongoClient = mongoClient;
   }
 
-  Future<List<JsonObject>> dwcaRecords(String datasetRef) {
+  Future<List<JsonObject>> findDwcaRecords(String datasetRef) {
     var dwcaRecords = Future.<List<JsonObject>>future();
     mongoClient.find(
       "dwcarecords",
@@ -23,7 +23,7 @@ class DbQuery {
     return dwcaRecords;
   }
 
-  Future<JsonObject> dataset(String datasetRef) {
+  Future<JsonObject> findDataset(String datasetRef) {
     var dataset = Future.<JsonObject>future();
     mongoClient.findOne(
       "datasets",

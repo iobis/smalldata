@@ -8,6 +8,7 @@ import SelectDataset from './SelectDataset/SelectDataset'
 import { format } from 'date-fns'
 import { getDatasetMock } from '../../../clients/server'
 import { useTranslation } from 'react-i18next'
+import DarwinCoreFields from './DarwinCoreFields/DarwinCoreFields'
 
 export default function OccurrenceForm() {
   const datasets = getDatasetMock()
@@ -34,6 +35,8 @@ export default function OccurrenceForm() {
     identificationRemarks:   '',
     references:              []
   })
+  const [darwinCoreFieldsData, setDarwinCoreFieldsData] = useState([])
+
   const [activeStepIndex, setActiveStepIndex] = useState(0)
   const basicDataLabel = [
     basicData.scientificName,
@@ -73,17 +76,17 @@ export default function OccurrenceForm() {
                        observationData={observationData}
                        onChange={data => setObservationData(data)}/>
   }, {
-    dataDescription: 'DWCA INFO',
+    dataDescription: 'Given values',
     selectedData:    'You have submitted 7 extra fields',
     stepDescription: 'Enter further specifics',
-    stepTitle:       'Generic Data',
+    stepTitle:       'Measurement or Fact',
     children:        <StubFormContent/>
   }, {
     dataDescription: '',
     selectedData:    '',
     stepDescription: 'Supply specific Darwin core fields',
     stepTitle:       'Darwin Core Fields',
-    children:        <StubFormContent/>
+    children:        <DarwinCoreFields darwinCoreFieldsData={darwinCoreFieldsData} onChange={data => setDarwinCoreFieldsData(data)} />
   }]
 
   return (

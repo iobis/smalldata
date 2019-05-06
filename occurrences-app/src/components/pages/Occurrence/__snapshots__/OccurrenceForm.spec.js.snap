@@ -507,12 +507,12 @@ exports[`OccurrenceForm renders correctly 1`] = `
     </NotConfirmedStepHeader>
     <NotConfirmedStepHeader
       className="step-4 background-color-20"
-      dataDescription="DWCA INFO"
-      key="Generic Data"
+      dataDescription="Given values"
+      key="Measurement or Fact"
       onStepTitleClick={[Function]}
       selectedData="You have submitted 7 extra fields"
       stepDescription="Enter further specifics"
-      stepTitle="5 - Generic Data"
+      stepTitle="5 - Measurement or Fact"
     >
       <StepHeader
         className="not-confirmed has-text-white step-4 background-color-20"
@@ -521,7 +521,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="Enter further specifics"
-        stepTitle="5 - Generic Data"
+        stepTitle="5 - Measurement or Fact"
       >
         <div
           className="step-header columns is-vcentered not-confirmed has-text-white step-4 background-color-20"
@@ -557,7 +557,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
               <b
                 className="step-title"
               >
-                5 - Generic Data
+                5 - Measurement or Fact
               </b>
             </div>
           </div>
@@ -1233,12 +1233,12 @@ exports[`OccurrenceForm renders correctly 2`] = `
     </ActiveStepHeader>
     <NotConfirmedStepHeader
       className="step-4 background-color-20"
-      dataDescription="DWCA INFO"
-      key="Generic Data"
+      dataDescription="Given values"
+      key="Measurement or Fact"
       onStepTitleClick={[Function]}
       selectedData="You have submitted 7 extra fields"
       stepDescription="Enter further specifics"
-      stepTitle="5 - Generic Data"
+      stepTitle="5 - Measurement or Fact"
     >
       <StepHeader
         className="not-confirmed has-text-white step-4 background-color-20"
@@ -1247,7 +1247,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="Enter further specifics"
-        stepTitle="5 - Generic Data"
+        stepTitle="5 - Measurement or Fact"
       >
         <div
           className="step-header columns is-vcentered not-confirmed has-text-white step-4 background-color-20"
@@ -1283,7 +1283,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
               <b
                 className="step-title"
               >
-                5 - Generic Data
+                5 - Measurement or Fact
               </b>
             </div>
           </div>
@@ -1648,12 +1648,12 @@ exports[`OccurrenceForm renders correctly 3`] = `
     </ConfirmedStepHeader>
     <ActiveStepHeader
       className="step-4 background-color-20"
-      dataDescription="DWCA INFO"
-      key="Generic Data"
+      dataDescription="Given values"
+      key="Measurement or Fact"
       onStepTitleClick={[Function]}
       selectedData="You have submitted 7 extra fields"
       stepDescription="Enter further specifics"
-      stepTitle="5 - Generic Data"
+      stepTitle="5 - Measurement or Fact"
     >
       <StepHeader
         className="active has-background-grey has-text-white"
@@ -1662,7 +1662,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="Enter further specifics"
-        stepTitle="5 - Generic Data"
+        stepTitle="5 - Measurement or Fact"
       >
         <div
           className="step-header columns is-vcentered active has-background-grey has-text-white"
@@ -1698,7 +1698,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
               <b
                 className="step-title"
               >
-                5 - Generic Data
+                5 - Measurement or Fact
               </b>
             </div>
           </div>

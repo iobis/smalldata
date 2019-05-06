@@ -10,19 +10,21 @@ import org.assertj.core.data.Offset;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.obis.smalldata.testutil.TestDb;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.pmw.tinylog.Logger.error;
-import static org.pmw.tinylog.Logger.info;
+import static org.pmw.tinylog.Logger.debug;
 
 public class DwcaZipGeneratorTest {
 
@@ -37,42 +39,46 @@ public class DwcaZipGeneratorTest {
 
   @AfterEach
   public void stop() {
-    info("shutdown mongo db");
+    debug("shutdown mongo db");
     mongoClient.close();
     testDb.shutDown();
   }
 
   @Test
-  public void writeZipFile() throws InterruptedException {
+  public void writeZipFile() throws InterruptedException, IOException {
     var datasetRef = "NnqVLwIyPn-nRkc";
-    info(mongoClient);
     var dbQuery = new DbQuery(mongoClient);
     var zipGenerator = new DwcaZipGenerator("http://localhost:3000/");
-    var dwcaRecordsFuture = dbQuery.dwcaRecords(datasetRef);
-    var datasetFuture = dbQuery.dataset(datasetRef);
-    var result = Future.<JsonObject>future();
+    var dwcaRecordsFuture = dbQuery.findDwcaRecords(datasetRef);
+    var datasetFuture = dbQuery.findDataset(datasetRef);
+    var result = Future.<Optional<Path>>future();
     var countDownLatch = new CountDownLatch(1);
 
-    CompositeFuture.all(datasetFuture, dwcaRecordsFuture).setHandler(res -> {
-      var dataset = (JsonObject) res.result().list().get(0);
-      var dwcaRecords = (List<JsonObject>) res.result().list().get(1);
-      var path = zipGenerator.generate(dwcaRecords, dataset);
-      result.complete(new JsonObject().put("file", path.get().toAbsolutePath().toString()));
-    });
-    result.setHandler(zip -> {
-      var fileName = zip.result().getString("file");
-      var expectedZip = Resources.getResource("testdata/dwca/generated-dwca.zip");
-      try (InputStream is = Files.newInputStream(Path.of(fileName));
-           ZipFile zipFile = new ZipFile(fileName)) {
-        var expected = expectedZip.openStream();
-        var expectedSize = expected.readAllBytes().length;
-        assertThat(zipFile.size()).isEqualTo(4);
-        assertThat(is.readAllBytes().length).isCloseTo(expectedSize, Offset.offset(20));
-      } catch (IOException e) {
-        error(e.getMessage());
-      }
+    CompositeFuture.all(datasetFuture, dwcaRecordsFuture).setHandler(ar -> {
+      var dataset = (JsonObject) ar.result().list().get(0);
+      var dwcaRecords = (List<JsonObject>) ar.result().list().get(1);
+      result.complete(zipGenerator.generate(dwcaRecords, dataset));
       countDownLatch.countDown();
     });
-    info(countDownLatch.await(2000, TimeUnit.MILLISECONDS));
+
+    assertThat(countDownLatch.await(2000, TimeUnit.MILLISECONDS)).isTrue();
+    assertThat(result.isComplete()).isTrue();
+    assertThat(result.result()).isPresent();
+    var path = result.result().orElseThrow();
+    assertThat(path)
+      .exists()
+      .isRegularFile();
+    ZipFile zipFile = new ZipFile(path.toFile());
+    assertThat(zipFile.size()).isEqualTo(4);
+    var fileNamesInZip = zipFile.stream()
+      .map(ZipEntry::getName)
+      .sorted()
+      .collect(Collectors.toList());
+    assertThat(fileNamesInZip.get(0)).isEqualTo("eml.xml");
+    assertThat(fileNamesInZip.get(1)).matches("emof[0-9]+.txt");
+    assertThat(fileNamesInZip.get(2)).isEqualTo("meta.xml");
+    assertThat(fileNamesInZip.get(3)).matches("occurrence[0-9]+.txt");
+    zipFile.close();
+    Files.delete(path);
   }
 }
