@@ -1,6 +1,5 @@
 package org.obis.smalldata;
 
-import com.google.common.base.Preconditions;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Future;
@@ -13,7 +12,6 @@ import org.obis.smalldata.rss.RssComponent;
 import org.obis.smalldata.user.User;
 import org.obis.smalldata.webapi.WebApi;
 
-import java.net.URI;
 import java.net.URL;
 import java.util.Map;
 import java.util.Set;
