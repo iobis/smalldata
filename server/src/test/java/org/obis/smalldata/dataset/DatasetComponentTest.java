@@ -3,7 +3,6 @@ package org.obis.smalldata.dataset;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.junit5.Timeout;
 import io.vertx.junit5.VertxExtension;
 import io.vertx.junit5.VertxTestContext;
 import org.junit.jupiter.api.AfterEach;
@@ -12,7 +11,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.obis.smalldata.testutil.TestDb;
 
-import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -45,7 +43,6 @@ public class DatasetComponentTest {
   }
 
   @Test
-  @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
   void getAllDataSets(Vertx vertx, VertxTestContext testContext) {
     vertx.eventBus().<JsonArray>send(
       "datasets.query",
@@ -63,7 +60,6 @@ public class DatasetComponentTest {
   }
 
   @Test
-  @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
   void getOneDataset(Vertx vertx, VertxTestContext testContext) {
     var ref = "ntDOtUc7XsRrIus";
     vertx.eventBus().<JsonArray>send(
@@ -78,7 +74,6 @@ public class DatasetComponentTest {
   }
 
   @Test
-  @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
   void getNotAvailableDataset(Vertx vertx, VertxTestContext testContext) {
     vertx.eventBus().<JsonArray>send(
       "datasets.query",
