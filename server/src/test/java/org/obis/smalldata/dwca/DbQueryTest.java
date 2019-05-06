@@ -43,12 +43,32 @@ class DbQueryTest {
   }
 
   @Test
+  void findDwcaRecordsForUnknownRefReturnsEmptyList(VertxTestContext testContext) {
+    var dwcaRecords = dbQuery.findDwcaRecords("unknown");
+    dwcaRecords.setHandler(ar -> {
+      var result = ar.result();
+      assertThat(result).hasSize(0);
+      testContext.completeNow();
+    });
+  }
+
+  @Test
   void findDataset(VertxTestContext testContext) {
     var datasetRef = "NnqVLwIyPn-nRkc";
     var dataset = dbQuery.findDataset(datasetRef);
     dataset.setHandler(ar -> {
       var result = ar.result();
       assertThat(result).hasSize(12);
+      testContext.completeNow();
+    });
+  }
+
+  @Test
+  void findDatasetForUnknownRefReturnsNull(VertxTestContext testContext) {
+    var dataset = dbQuery.findDataset("unknown");
+    dataset.setHandler(ar -> {
+      var result = ar.result();
+      assertThat(result).isNull();
       testContext.completeNow();
     });
   }
