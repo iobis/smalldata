@@ -5,8 +5,8 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.junit5.VertxExtension;
 import io.vertx.junit5.VertxTestContext;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.obis.smalldata.testutil.TestDb;
@@ -21,8 +21,8 @@ public class DatasetComponentTest {
 
   private static TestDb testDb;
 
-  @BeforeEach
-  void setUp(Vertx vertx, VertxTestContext testContext) {
+  @BeforeAll
+  public static void setUp(Vertx vertx, VertxTestContext testContext) {
     testDb = new TestDb();
     testDb.init(vertx);
     vertx.sharedData()
@@ -36,8 +36,8 @@ public class DatasetComponentTest {
       testContext.succeeding(id -> testContext.completeNow()));
   }
 
-  @AfterEach
-  public void tearDown() {
+  @AfterAll
+  public static void tearDown() {
     info("shutdown mongo db");
     testDb.shutDown();
   }
