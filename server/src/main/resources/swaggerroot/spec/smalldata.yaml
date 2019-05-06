@@ -43,6 +43,29 @@ paths:
             application/json:
               schema:
                 $ref: 'dataset.yaml#/Dataset'
+  /api/users/{userRef}/dwca:
+    get:
+      summary: get all dwca records for a user
+      operationId: getDwcaRecords
+      parameters:
+        - name: userRef
+          in: path
+          description: unique reference (id) of the user
+          required: true
+          schema:
+            type: string
+      tags:
+        - DWCA
+      responses:
+        200:
+          description: array with dwca records
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/DWCA"
+
   /api/login:
     post:
       summary: get jwt token
@@ -162,7 +185,7 @@ components:
           example: 'OK'
     DWCA:
       type: object
-      description: post dwca record
+      description: dwca record
       properties:
         core:
           type: string
