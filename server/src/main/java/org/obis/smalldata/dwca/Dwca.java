@@ -26,7 +26,7 @@ public class Dwca extends AbstractVerticle {
   private void handleDwcaEvents(Message<JsonObject> message) {
     var action = message.body().getString("action");
     if ("generate".equals(action)) {
-      generateZipFile(message.body().getString("dataset"))
+      generateZipFile(message.body().getString("findDataset"))
         .setHandler(zip -> message.reply(zip.result()));
     } else {
       message.fail(ReplyFailure.RECIPIENT_FAILURE.toInt(), "Action " + action
@@ -36,8 +36,8 @@ public class Dwca extends AbstractVerticle {
 
   private Future<JsonObject> generateZipFile(String datasetRef) {
     var zipGenerator = new DwcaZipGenerator();
-    var dwcaRecordsFuture = dbQuery.dwcaRecords(datasetRef);
-    var datasetFuture = dbQuery.dataset(datasetRef);
+    var dwcaRecordsFuture = dbQuery.findDwcaRecords(datasetRef);
+    var datasetFuture = dbQuery.findDataset(datasetRef);
     var result = Future.<JsonObject>future();
     CompositeFuture.all(datasetFuture, dwcaRecordsFuture).setHandler(res -> {
       var dataset = (JsonObject) res.result().list().get(0);

@@ -50,7 +50,7 @@ public class DwcaTest {
       "dwca",
       new JsonObject()
         .put("action", "generate")
-        .put("dataset", "NnqVLwIyPn-nRkc"),
+        .put("findDataset", "NnqVLwIyPn-nRkc"),
       result -> {
         if (result.succeeded()) {
           JsonObject body = result.result().body();
