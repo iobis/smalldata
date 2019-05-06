@@ -5,8 +5,8 @@ info:
   license:
     name: MIT
 servers:
-  - url: http://localhost:8008/
   - url: http://localhost:8080/
+  - url: http://localhost:8008/
 paths:
   /api/datasets:
     get:
