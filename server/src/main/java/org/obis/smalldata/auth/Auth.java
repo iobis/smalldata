@@ -27,18 +27,6 @@ public class Auth extends AbstractVerticle {
   private static final String ALG_KEY = "alg";
   private static final String AUTH_ES256 = "ES256";
 
-  private static String createPublicKey(KeyPair keyPair) {
-    return new String(Base64.getEncoder().encode(keyPair.getPublic().getEncoded()), StandardCharsets.UTF_8);
-  }
-
-  private static String createSecretKey(KeyPair keyPair) {
-    return new String(Base64.getEncoder().encode(keyPair.getPrivate().getEncoded()), StandardCharsets.UTF_8);
-  }
-
-  private static boolean isNullOrBlank(String val) {
-    return val == null || val.isBlank();
-  }
-
   @Override
   public void start(Future<Void> startFuture) {
     info("starting module 'Auth'");
@@ -58,8 +46,7 @@ public class Auth extends AbstractVerticle {
     InvalidAlgorithmParameterException, NoSuchAlgorithmException {
     AuthProvider provider;
     if ("local".equals(config().getString("provider", "local"))) {
-      if (isNullOrBlank(config().getString(PUBLIC_KEY))
-        || isNullOrBlank(config().getString(SECURITY_KEY))) {
+      if (isNullOrBlank(config().getString(PUBLIC_KEY)) || isNullOrBlank(config().getString(SECURITY_KEY))) {
         warn("generating a new keypair for local JWT generation");
         KeyPairGenerator generator = KeyPairGenerator.getInstance("EC");
         ECGenParameterSpec spec = new ECGenParameterSpec("secp256r1");
@@ -86,5 +73,17 @@ public class Auth extends AbstractVerticle {
       }
     }
     return provider;
+  }
+
+  private static String createPublicKey(KeyPair keyPair) {
+    return new String(Base64.getEncoder().encode(keyPair.getPublic().getEncoded()), StandardCharsets.UTF_8);
+  }
+
+  private static String createSecretKey(KeyPair keyPair) {
+    return new String(Base64.getEncoder().encode(keyPair.getPrivate().getEncoded()), StandardCharsets.UTF_8);
+  }
+
+  private static boolean isNullOrBlank(String val) {
+    return val == null || val.isBlank();
   }
 }
