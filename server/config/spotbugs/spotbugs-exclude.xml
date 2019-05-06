@@ -2,6 +2,9 @@
 
 <FindBugsFilter>
   <Match>
+    <Bug pattern="REC_CATCH_EXCEPTION"/>
+  </Match>
+  <Match>
     <Bug pattern="EI_EXPOSE_REP">
       <Class name="org.obis.smalldata.dwca.xmlmodel.eml.Dataset" />
     </Bug>

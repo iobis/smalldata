@@ -3,8 +3,8 @@
     "port": 8080
   },
   "auth": {
-    "type": "JWT",
-    "provider": "local"
+    "provider": "local",
+    "type": "JWT"
   },
   "storage": {
     "bindIp": "localhost",
@@ -15,5 +15,6 @@
     "halfTimeInDays": 7
   },
   "dataset": {},
-  "mode": "DEMO"
+  "mode": "DEMO",
+  "baseUrl": "https://localhost:3000/"
 }

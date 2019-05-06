@@ -28,12 +28,11 @@ public class Eml {
   private final String xsiSchemaLocation = "eml://ecoinformatics.org/eml-2.1.1 http://rs.gbif.org/schema/eml-gbif-profile/1.1/eml.xsd";
 
   @JacksonXmlProperty(localName = "packageId", isAttribute = true)
-  @Builder.Default
-  private final String packageId = "http://ipt.vliz.be/eurobis/resource?id=benthic_data_sevastopol/v1.1";
+  private final String packageId;
 
   @JacksonXmlProperty(localName = "system", isAttribute = true)
   @Builder.Default
-  private final String system = "http://gbif.org";
+  private final String system = "https://obis.org";
 
   @JacksonXmlProperty(localName = "scope", isAttribute = true)
   @Builder.Default

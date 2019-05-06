@@ -13,6 +13,7 @@ class LoginHandler {
   private final JWTAuth authProvider;
 
   LoginHandler(AuthProvider authProvider) {
+    info("authProvider {}", authProvider);
     if (authProvider instanceof JWTAuth) {
       this.authProvider = (JWTAuth) authProvider;
       info("Started 'Auth LoginHandler'");
