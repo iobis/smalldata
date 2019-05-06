@@ -1,5 +1,6 @@
 package org.obis.smalldata;
 
+import com.google.common.base.Preconditions;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Future;
@@ -17,14 +18,17 @@ import java.net.URL;
 import java.util.Map;
 import java.util.Set;
 
+import static com.google.common.base.Preconditions.checkArgument;
 import static org.pmw.tinylog.Logger.debug;
 import static org.pmw.tinylog.Logger.error;
 import static org.pmw.tinylog.Logger.info;
 
 public class Starter extends AbstractVerticle {
 
+  private static final Set<String> SUPPORTED_PROTOCOLS = Set.of("http", "https");
   private static final JsonObject CONFIG_DEFAULT_STORAGE = new JsonObject()
-    .put("bindIp", "localhost").put("port", 27017)
+    .put("bindIp", "localhost")
+    .put("port", 27017)
     .put("path", "");
 
   @Override
@@ -38,24 +42,24 @@ public class Starter extends AbstractVerticle {
       error(message);
       startFuture.fail(message);
     }
-    if (!Set.of("DEV", "DEMO").contains(mode) && (baseUrl.contains("//localhost") || baseUrl.contains("//127.0.0."))) {
+    if (!Set.of("DEV", "DEMO").contains(mode) && isLocalhost(baseUrl)) {
       var message = "You can set the base url to localhost (127.0.0.x) only when running in 'DEV' or 'DEMO' mode";
       error(message);
       startFuture.fail(message);
     }
-    baseUrl = baseUrl.endsWith("/") ? baseUrl : baseUrl + "/";
 
     vertx.sharedData()
       .getLocalMap("settings")
       .putAll(Map.of(
-        "baseUrl", baseUrl,
+        "baseUrl", normalizeUrl(baseUrl),
         "mode", mode,
         "storage", config().getJsonObject("storage", CONFIG_DEFAULT_STORAGE)));
 
-    vertx.deployVerticle(EmbeddedDb.class.getName(),
+    vertx.deployVerticle(
+      EmbeddedDb.class.getName(),
       new DeploymentOptions().setConfig(config().getJsonObject("storage")),
-      deployHandler -> {
-        info("Deployed Embedded DB verticle {}", deployHandler.result());
+      ar -> {
+        info("Deployed Embedded DB verticle {}", ar.result());
         deploy(User.class, "user");
         deploy(Dwca.class, "dwca");
         deploy(RssComponent.class, "rss");
@@ -66,24 +70,28 @@ public class Starter extends AbstractVerticle {
   }
 
   private void deploy(Class verticleClass, String configKey) {
-    vertx.deployVerticle(verticleClass.getName(),
-      new DeploymentOptions().setConfig(config().getJsonObject(configKey)));
+    vertx.deployVerticle(
+      verticleClass.getName(),
+      new DeploymentOptions()
+        .setConfig(config().getJsonObject(configKey)));
   }
 
   private static boolean isValidUrl(String urlString) {
     try {
       URL url = new URL(urlString);
-      if (!(url.getProtocol().equals("http") || url.getProtocol().equals("https"))) {
-        throw new IllegalArgumentException("protocol of the base url should be 'http' or 'https'");
-      }
-      URI uri = url.toURI();
-      info("running base url {}", uri);
+      checkArgument(SUPPORTED_PROTOCOLS.contains(url.getProtocol()), "protocol of the base url should be 'http' or 'https'");
+      url.toURI();
       return true;
-    } catch (RuntimeException e) {
-      error("runtime exception");
-      throw e;
     } catch (Exception e) {
       return false;
     }
+  }
+
+  private static boolean isLocalhost(String url) {
+    return url.contains("//localhost") || url.contains("//127.0.0.");
+  }
+
+  private static String normalizeUrl(String url) {
+    return url.endsWith("/") ? url : url + "/";
   }
 }
