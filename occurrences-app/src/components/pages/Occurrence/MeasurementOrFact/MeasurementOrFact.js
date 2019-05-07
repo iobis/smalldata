@@ -14,12 +14,14 @@ export default function MeasurementOrFact({ onChange }) {
   function addSuppliedMeasurements(measurment) {
     const updatedMeasurements = [...suppliedMeasurements, measurment]
       .sort((left, right) => left.type.toLowerCase().localeCompare(right.type.toLowerCase()))
+    onChange(updatedMeasurements)
     setSuppliedMeasurements(updatedMeasurements)
   }
 
   function removeSuppliedMeasurement(index) {
     const updatedMeasurements = suppliedMeasurements.filter((_, i) => i !== index)
       .sort((left, right) => left.type.toLowerCase().localeCompare(right.type.toLowerCase()))
+    onChange(updatedMeasurements)
     setSuppliedMeasurements(updatedMeasurements)
   }
 
