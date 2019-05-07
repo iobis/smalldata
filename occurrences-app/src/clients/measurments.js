@@ -2,7 +2,10 @@ export function getGeneralMeasurements() {
   return [{
     type:   'Pressure',
     typeId: 'http://vocab.nerc.ac.uk/collection/P01/current/PRESPS02/',
-    units:  [{ name: 'Kilogram', id: 'http://vocab.nerc.ac.uk/collection/P06/current/KGXX' }]
+    units:  [
+      { name: 'Kilogram', id: 'http://vocab.nerc.ac.uk/collection/P06/current/KGXX' },
+      { name: 'Gram' }
+    ]
   }, {
     type:   'Temperature',
     typeId: 'http://vocab.nerc.ac.uk/collection/P01/current/TEMPCU01/',
