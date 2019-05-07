@@ -59,6 +59,45 @@ describe('MeasurementOrFact', () => {
       })
     })
   })
+
+  describe('when adding multiple measurements', () => {
+    beforeAll(() => {
+      wrapper = mount(createComponent())
+      wrapper.find('.general .measurement-row .input').at(0).simulate('change', { target: { value: '10' } })
+      wrapper.find('.general .measurement-row .button.add').at(0).simulate('click')
+      wrapper.find('.general .measurement-row .input').at(0).simulate('change', { target: { value: '20' } })
+      wrapper.find('.general .measurement-row .button.add').at(0).simulate('click')
+      wrapper.find('.general .measurement-row .input').at(0).simulate('change', { target: { value: '30' } })
+      wrapper.find('.general .measurement-row .button.add').at(0).simulate('click')
+    })
+
+    it('renders 3 measurements', () => {
+      expect(wrapper.find('.supplied .fieldrow')).toHaveLength(3)
+      expect(wrapper.find('.supplied .fieldrow').map(el => el.find('td').at(2).text())).toEqual(['10', '20', '30'])
+    })
+
+    describe('and then removing first one', () => {
+      beforeAll(() => {
+        wrapper.find('.supplied .button.remove').first().simulate('click')
+      })
+
+      it('renders 2 measurements', () => {
+        expect(wrapper.find('.supplied .fieldrow')).toHaveLength(2)
+        expect(wrapper.find('.supplied .fieldrow').map(el => el.find('td').at(2).text())).toEqual(['20', '30'])
+      })
+
+      describe('and then removing last one', () => {
+        beforeAll(() => {
+          wrapper.find('.supplied .button.remove').last().simulate('click')
+        })
+
+        it('renders 1 measurements', () => {
+          expect(wrapper.find('.supplied .fieldrow')).toHaveLength(1)
+          expect(wrapper.find('.supplied .fieldrow').map(el => el.find('td').at(2).text())).toEqual(['20'])
+        })
+      })
+    })
+  })
 })
 
 function createComponent(props) {

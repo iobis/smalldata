@@ -17,6 +17,12 @@ export default function MeasurementOrFact({ onChange }) {
     setSuppliedMeasurements(updatedMeasurements)
   }
 
+  function removeSuppliedMeasurement(index) {
+    const updatedMeasurements = suppliedMeasurements.filter((_, i) => i !== index)
+      .sort((left, right) => left.type.toLowerCase().localeCompare(right.type.toLowerCase()))
+    setSuppliedMeasurements(updatedMeasurements)
+  }
+
   return (
     <div className="measurement-or-fact section is-fluid">
       <div className="columns">
@@ -83,7 +89,7 @@ export default function MeasurementOrFact({ onChange }) {
                 <td>{type}</td>
                 <td>{unit}</td>
                 <td>{value}</td>
-                <td><a className="button" onClick={() => {}}>remove</a></td>
+                <td><a className="remove button" onClick={() => removeSuppliedMeasurement(index)}>remove</a></td>
               </tr>
             ))}
             </tbody>
