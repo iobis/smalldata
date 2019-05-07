@@ -3,13 +3,18 @@
     "port": 8080
   },
   "auth": {
-    "type": "JWT",
-    "provider": "local"
+    "provider": "local",
+    "type": "JWT"
   },
   "storage": {
     "bindIp": "localhost",
     "port": 27017,
     "path": ""
   },
-  "mode": "DEMO"
+  "user": {
+    "halfTimeInDays": 7
+  },
+  "dataset": {},
+  "mode": "DEMO",
+  "baseUrl": "https://localhost:3000/"
 }

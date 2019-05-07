@@ -63,7 +63,7 @@
     "_ref": "ntDOtUc7XsRrIus",
     "meta": {
       "type": "occurrence",
-      "dwdTables": {
+      "dwcTables": {
         "core": "occurrence",
         "extensions": ["emof"]
       }
@@ -213,7 +213,7 @@
     "_ref": "NnqVLwIyPn-nRkc",
     "meta": {
       "type": "occurrence",
-      "dwdTables": {
+      "dwcTables": {
         "core": "occurrence",
         "extensions": ["emof"]
       }

@@ -27,12 +27,19 @@ class DwcaZipGenerator {
       Pattern.compile("event\\d+\\.txt"), "http://rs.tdwg.org/dwc/terms/Event",
       Pattern.compile("emof\\d+\\.txt"), "http://rs.iobis.org/obis/terms/ExtendedMeasurementOrFact",
       Pattern.compile("occurrence\\d+\\.txt"), "http://rs.tdwg.org/dwc/terms/Occurrence");
+  private final String baseUrl;
+
+  DwcaZipGenerator(String baseUrl) {
+    this.baseUrl = baseUrl;
+  }
 
   Optional<Path> generate(List<JsonObject> dwcaRecords, JsonObject dataset) {
     try {
       var tempDirectory = Files.createTempDirectory("iobis-dwca");
       var emlXml = new File(tempDirectory + "/eml.xml");
-      if (!new EmlGenerator().writeXml(dataset, emlXml)) {
+      if (!new EmlGenerator().writeXml(dataset,
+        baseUrl + dataset.getString("_ref"),
+        emlXml)) {
         error("Cannot create eml file {}", emlXml);
         throw new IOException("Failed to create:  " + emlXml);
       }

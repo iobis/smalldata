@@ -27,12 +27,12 @@ class EmlGenerator {
     xmlMapper.setDefaultUseWrapper(false);
   }
 
-  Optional<DataSetEmlMap> generate(JsonObject json) {
-    return generate(json.mapTo(Dataset.class));
+  Optional<DataSetEmlMap> generate(JsonObject json, String packageId) {
+    return this.generate(json.mapTo(Dataset.class), packageId);
   }
 
-  Optional<DataSetEmlMap> generate(Dataset dataset) {
-    return generate(Eml.builder().dataset(dataset).build());
+  Optional<DataSetEmlMap> generate(Dataset dataset, String packageId) {
+    return this.generate(Eml.builder().dataset(dataset).packageId(packageId).build());
   }
 
   Optional<DataSetEmlMap> generate(Eml eml) {
@@ -46,12 +46,12 @@ class EmlGenerator {
     }
   }
 
-  boolean writeXml(JsonObject json, File emlFile) {
-    return writeXml(json.mapTo(Dataset.class), emlFile);
+  boolean writeXml(JsonObject json, String packageId, File emlFile) {
+    return this.writeXml(json.mapTo(Dataset.class), packageId, emlFile);
   }
 
-  boolean writeXml(Dataset dataset, File emlFile) {
-    return writeXml(Eml.builder().dataset(dataset).build(), emlFile);
+  boolean writeXml(Dataset dataset, String packageId, File emlFile) {
+    return this.writeXml(Eml.builder().dataset(dataset).packageId(packageId).build(), emlFile);
   }
 
   boolean writeXml(Eml eml, File emlFile) {
@@ -70,4 +70,3 @@ class EmlGenerator {
     private final String eml;
   }
 }
-

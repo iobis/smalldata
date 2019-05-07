@@ -12,6 +12,8 @@ import java.util.function.Consumer;
 class RouterConfig {
 
   private static final Map<String, OperationHandlers> HANDLERS = Map.of(
+    "getDatasets", new OperationHandlers(DatasetsHandler::fetch),
+    "getOneDataset", new OperationHandlers(DatasetsHandler::fetch),
     "login", new OperationHandlers(LoginHandler::login),
     "getStatus", new OperationHandlers(StatusHandler::status),
     "getRss", new OperationHandlers(RssHandler::fetch),
