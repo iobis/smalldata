@@ -7,6 +7,8 @@
     "cosmos": "cosmos",
     "cosmos:export": "cosmos-export",
     "eject": "react-app-rewired eject",
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "eslint src/**/*.js --fix",
     "start": "react-app-rewired start",
     "test": "react-app-rewired test --env=jsdom",
     "test:ci": "cross-env CI=true react-app-rewired test --env=jsdom",
