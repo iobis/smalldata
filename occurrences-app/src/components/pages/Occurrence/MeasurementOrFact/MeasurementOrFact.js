@@ -23,7 +23,7 @@ export default function MeasurementOrFact({ onChange }) {
         <div className="column is-half">
           <h1 className="title">{t('occurrenceForm.measurementOrFact.general.title')}</h1>
           <h2 className="subtitle">{t('occurrenceForm.measurementOrFact.general.subtitle')}</h2>
-          <table className="table is-fullwidth is-striped is-hoverable">
+          <table className="general table is-fullwidth is-striped is-hoverable">
             <thead>
             <tr>
               <th style={{ width: '60%' }}>type</th>
@@ -44,7 +44,7 @@ export default function MeasurementOrFact({ onChange }) {
           </table>
           <h1 className="title">{t('occurrenceForm.measurementOrFact.specific.title')}</h1>
           <h2 className="subtitle">{t('occurrenceForm.measurementOrFact.specific.subtitle')}</h2>
-          <table className="table is-fullwidth is-striped is-hoverable">
+          <table className="specific table is-fullwidth is-striped is-hoverable">
             <thead>
             <tr>
               <th style={{ width: '60%' }}>type</th>
@@ -67,7 +67,7 @@ export default function MeasurementOrFact({ onChange }) {
         <div className="column is-half supplied">
           <h1 className="title">{t('occurrenceForm.measurementOrFact.supplied.title')}</h1>
           <h2 className="subtitle">&nbsp;</h2>
-          <table className="table is-fullwidth is-striped is-hoverable">
+          <table className="supplied table is-fullwidth is-striped is-hoverable">
             <thead>
             <tr>
               <th style={{ width: '60%' }}>type</th>
@@ -77,8 +77,9 @@ export default function MeasurementOrFact({ onChange }) {
             </tr>
             </thead>
             <tbody>
-            {suppliedMeasurements.map(({ type, unit, value }) => (
-              <tr className="fieldrow" key={type + unit + value}>
+            {suppliedMeasurements.map(({ type, unit, value }, index) => (
+              // eslint-disable-next-line react/no-array-index-key
+              <tr className="fieldrow" key={type + unit + value + index}>
                 <td>{type}</td>
                 <td>{unit}</td>
                 <td>{value}</td>
@@ -99,17 +100,17 @@ MeasurementOrFact.propTypes = {
 }
 
 function MeasurementRow({ onClickAdd, type, units }) {
-  const [selectedUnit, setSelectedUnit] = useState(units[0])
+  const [selectedUnit, setSelectedUnit] = useState(units[0].name)
   const [selectedValue, setSelectedValue] = useState('')
 
   return (
-    <tr className="fieldrow">
+    <tr className="measurement-row fieldrow">
       <td>{type}</td>
       <td>
         <Dropdown
           onChange={(value) => setSelectedUnit(value)}
           options={units.map(unit => unit.name)}
-          value={selectedUnit.name}/>
+          value={selectedUnit}/>
       </td>
       <td>
         <input
@@ -120,8 +121,8 @@ function MeasurementRow({ onClickAdd, type, units }) {
       </td>
       <td>
         <a
-          className="button"
-          onClick={() => onClickAdd({ unit: selectedUnit.name, type, value: selectedValue })}>
+          className="add button"
+          onClick={() => onClickAdd({ unit: selectedUnit, type, value: selectedValue })}>
           add
         </a>
       </td>

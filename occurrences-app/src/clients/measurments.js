@@ -4,7 +4,7 @@ export function getGeneralMeasurements() {
     typeId: 'http://vocab.nerc.ac.uk/collection/P01/current/PRESPS02/',
     units:  [
       { name: 'Kilogram', id: 'http://vocab.nerc.ac.uk/collection/P06/current/KGXX' },
-      { name: 'Gram' }
+      { name: 'Gram', id: 'http://vocab.nerc.ac.uk/collection/P06/current/UGRM/' }
     ]
   }, {
     type:   'Temperature',

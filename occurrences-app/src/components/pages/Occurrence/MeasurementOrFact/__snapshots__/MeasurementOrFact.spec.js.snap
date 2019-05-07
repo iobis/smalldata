@@ -25,7 +25,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
           occurrenceForm.measurementOrFact.general.subtitle
         </h2>
         <table
-          className="table is-fullwidth is-striped is-hoverable"
+          className="general table is-fullwidth is-striped is-hoverable"
         >
           <thead>
             <tr>
@@ -77,13 +77,14 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                     "name": "Kilogram",
                   },
                   Object {
+                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
                     "name": "Gram",
                   },
                 ]
               }
             >
               <tr
-                className="fieldrow"
+                className="measurement-row fieldrow"
               >
                 <td>
                   Pressure
@@ -170,7 +171,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                 </td>
                 <td>
                   <a
-                    className="button"
+                    className="add button"
                     onClick={[Function]}
                   >
                     add
@@ -192,7 +193,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
               }
             >
               <tr
-                className="fieldrow"
+                className="measurement-row fieldrow"
               >
                 <td>
                   Temperature
@@ -270,7 +271,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                 </td>
                 <td>
                   <a
-                    className="button"
+                    className="add button"
                     onClick={[Function]}
                   >
                     add
@@ -292,7 +293,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
               }
             >
               <tr
-                className="fieldrow"
+                className="measurement-row fieldrow"
               >
                 <td>
                   Salinity
@@ -370,7 +371,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                 </td>
                 <td>
                   <a
-                    className="button"
+                    className="add button"
                     onClick={[Function]}
                   >
                     add
@@ -391,7 +392,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
           occurrenceForm.measurementOrFact.specific.subtitle
         </h2>
         <table
-          className="table is-fullwidth is-striped is-hoverable"
+          className="specific table is-fullwidth is-striped is-hoverable"
         >
           <thead>
             <tr>
@@ -446,7 +447,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
               }
             >
               <tr
-                className="fieldrow"
+                className="measurement-row fieldrow"
               >
                 <td>
                   ObservedIndividualCount
@@ -524,7 +525,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                 </td>
                 <td>
                   <a
-                    className="button"
+                    className="add button"
                     onClick={[Function]}
                   >
                     add
@@ -546,7 +547,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
               }
             >
               <tr
-                className="fieldrow"
+                className="measurement-row fieldrow"
               >
                 <td>
                   Abundance category of biological entity specified elsewhere
@@ -624,7 +625,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                 </td>
                 <td>
                   <a
-                    className="button"
+                    className="add button"
                     onClick={[Function]}
                   >
                     add
@@ -646,7 +647,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
               }
             >
               <tr
-                className="fieldrow"
+                className="measurement-row fieldrow"
               >
                 <td>
                   Abundance of biological entity specified elsewhere per unit area of the bed
@@ -724,7 +725,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                 </td>
                 <td>
                   <a
-                    className="button"
+                    className="add button"
                     onClick={[Function]}
                   >
                     add
@@ -746,7 +747,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
               }
             >
               <tr
-                className="fieldrow"
+                className="measurement-row fieldrow"
               >
                 <td>
                   Abundance of biological entity specified elsewhere per unit volume of the sediment
@@ -824,7 +825,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                 </td>
                 <td>
                   <a
-                    className="button"
+                    className="add button"
                     onClick={[Function]}
                   >
                     add
@@ -846,7 +847,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
               }
             >
               <tr
-                className="fieldrow"
+                className="measurement-row fieldrow"
               >
                 <td>
                   Abundance of biological entity specified elsewhere per unit volume of the water body
@@ -924,7 +925,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                 </td>
                 <td>
                   <a
-                    className="button"
+                    className="add button"
                     onClick={[Function]}
                   >
                     add
@@ -946,7 +947,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
               }
             >
               <tr
-                className="fieldrow"
+                className="measurement-row fieldrow"
               >
                 <td>
                   Ash-free dry weight biomass (as carbon) of biological entity specified elsewhere per unit volume of the sediment
@@ -1024,7 +1025,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                 </td>
                 <td>
                   <a
-                    className="button"
+                    className="add button"
                     onClick={[Function]}
                   >
                     add
@@ -1046,7 +1047,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
               }
             >
               <tr
-                className="fieldrow"
+                className="measurement-row fieldrow"
               >
                 <td>
                   Ash-free dry weight biomass of biological entity specified elsewhere per unit area of the bed
@@ -1124,7 +1125,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                 </td>
                 <td>
                   <a
-                    className="button"
+                    className="add button"
                     onClick={[Function]}
                   >
                     add
@@ -1146,7 +1147,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
               }
             >
               <tr
-                className="fieldrow"
+                className="measurement-row fieldrow"
               >
                 <td>
                   Ash-free dry weight biomass of biological entity specified elsewhere per unit volume of the water body
@@ -1224,7 +1225,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                 </td>
                 <td>
                   <a
-                    className="button"
+                    className="add button"
                     onClick={[Function]}
                   >
                     add
@@ -1246,7 +1247,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
               }
             >
               <tr
-                className="fieldrow"
+                className="measurement-row fieldrow"
               >
                 <td>
                   Length of biological entity specified elsewhere
@@ -1324,7 +1325,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                 </td>
                 <td>
                   <a
-                    className="button"
+                    className="add button"
                     onClick={[Function]}
                   >
                     add
@@ -1346,7 +1347,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
               }
             >
               <tr
-                className="fieldrow"
+                className="measurement-row fieldrow"
               >
                 <td>
                   Specimen weight of biological entity specified elsewhere
@@ -1424,7 +1425,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                 </td>
                 <td>
                   <a
-                    className="button"
+                    className="add button"
                     onClick={[Function]}
                   >
                     add
@@ -1449,7 +1450,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
            
         </h2>
         <table
-          className="table is-fullwidth is-striped is-hoverable"
+          className="supplied table is-fullwidth is-striped is-hoverable"
         >
           <thead>
             <tr>
