@@ -22,7 +22,7 @@ export default function Dropdown({ onChange, options, value }) {
     <div className={classNames('dropdown', { 'is-active': active })} onClick={showOptions} ref={ref}>
       <div className="dropdown-trigger">
         <button aria-controls="dropdown-menu" aria-haspopup="true" className="button">
-          <span>{selectedValue}</span>
+          <span className="selected-value">{selectedValue}</span>
           <span className="icon is-small">
             <FontAwesomeIcon className="angle-down" icon="angle-down"/>
           </span>

@@ -111,7 +111,9 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                           aria-haspopup="true"
                           className="button"
                         >
-                          <span>
+                          <span
+                            className="selected-value"
+                          >
                             Kilogram
                           </span>
                           <span
@@ -217,7 +219,9 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                           aria-haspopup="true"
                           className="button"
                         >
-                          <span>
+                          <span
+                            className="selected-value"
+                          >
                             Degrees Celsius
                           </span>
                           <span
@@ -315,7 +319,9 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                           aria-haspopup="true"
                           className="button"
                         >
-                          <span>
+                          <span
+                            className="selected-value"
+                          >
                             Degrees Celsius
                           </span>
                           <span
@@ -467,7 +473,9 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                           aria-haspopup="true"
                           className="button"
                         >
-                          <span>
+                          <span
+                            className="selected-value"
+                          >
                             Kilogram
                           </span>
                           <span
@@ -565,7 +573,9 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                           aria-haspopup="true"
                           className="button"
                         >
-                          <span>
+                          <span
+                            className="selected-value"
+                          >
                             Millimeter
                           </span>
                           <span
@@ -663,7 +673,9 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                           aria-haspopup="true"
                           className="button"
                         >
-                          <span>
+                          <span
+                            className="selected-value"
+                          >
                             Meter
                           </span>
                           <span
@@ -761,7 +773,9 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                           aria-haspopup="true"
                           className="button"
                         >
-                          <span>
+                          <span
+                            className="selected-value"
+                          >
                             Grams
                           </span>
                           <span
@@ -859,7 +873,9 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                           aria-haspopup="true"
                           className="button"
                         >
-                          <span>
+                          <span
+                            className="selected-value"
+                          >
                             Micrometer
                           </span>
                           <span
@@ -957,7 +973,9 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                           aria-haspopup="true"
                           className="button"
                         >
-                          <span>
+                          <span
+                            className="selected-value"
+                          >
                             Grams per square meter
                           </span>
                           <span
@@ -1055,7 +1073,9 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                           aria-haspopup="true"
                           className="button"
                         >
-                          <span>
+                          <span
+                            className="selected-value"
+                          >
                             Number per square meter
                           </span>
                           <span
@@ -1153,7 +1173,9 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                           aria-haspopup="true"
                           className="button"
                         >
-                          <span>
+                          <span
+                            className="selected-value"
+                          >
                             Number per liter
                           </span>
                           <span
@@ -1251,7 +1273,9 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                           aria-haspopup="true"
                           className="button"
                         >
-                          <span>
+                          <span
+                            className="selected-value"
+                          >
                             Square meter
                           </span>
                           <span
@@ -1349,7 +1373,9 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                           aria-haspopup="true"
                           className="button"
                         >
-                          <span>
+                          <span
+                            className="selected-value"
+                          >
                             Cubic metres
                           </span>
                           <span
