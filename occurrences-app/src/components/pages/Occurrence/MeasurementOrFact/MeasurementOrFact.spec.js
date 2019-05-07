@@ -21,8 +21,7 @@ describe('MeasurementOrFact', () => {
 
     describe('and then changing unit and adding measurement', () => {
       beforeAll(() => {
-        wrapper.find('.general .measurement-row .input').at(0).simulate('change', { target: { value: '10' } })
-        wrapper.find('.general .measurement-row .button.add').at(0).simulate('click')
+        addGeneralMeasurement('10')
       })
 
       it('renders supplied value with default unit', () => {
@@ -47,8 +46,7 @@ describe('MeasurementOrFact', () => {
       beforeAll(() => {
         wrapper.find('.general .measurement-row .dropdown').at(0).simulate('click')
         wrapper.find('.general .measurement-row .dropdown-item').at(1).simulate('click')
-        wrapper.find('.general .measurement-row .input').at(0).simulate('change', { target: { value: '20' } })
-        wrapper.find('.general .measurement-row .button.add').at(0).simulate('click')
+        addGeneralMeasurement('20')
       })
 
       it('renders supplied value with selected unit', () => {
@@ -63,12 +61,9 @@ describe('MeasurementOrFact', () => {
   describe('when adding multiple measurements', () => {
     beforeAll(() => {
       wrapper = mount(createComponent())
-      wrapper.find('.general .measurement-row .input').at(0).simulate('change', { target: { value: '10' } })
-      wrapper.find('.general .measurement-row .button.add').at(0).simulate('click')
-      wrapper.find('.general .measurement-row .input').at(0).simulate('change', { target: { value: '20' } })
-      wrapper.find('.general .measurement-row .button.add').at(0).simulate('click')
-      wrapper.find('.general .measurement-row .input').at(0).simulate('change', { target: { value: '30' } })
-      wrapper.find('.general .measurement-row .button.add').at(0).simulate('click')
+      addGeneralMeasurement('10')
+      addGeneralMeasurement('20')
+      addGeneralMeasurement('30')
     })
 
     it('renders 3 measurements', () => {
@@ -98,6 +93,11 @@ describe('MeasurementOrFact', () => {
       })
     })
   })
+
+  function addGeneralMeasurement(value) {
+    wrapper.find('.general .measurement-row .input').at(0).simulate('change', { target: { value } })
+    wrapper.find('.general .measurement-row .button.add').at(0).simulate('click')
+  }
 })
 
 function createComponent(props) {
