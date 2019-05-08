@@ -90,7 +90,13 @@ export default function MeasurementOrFact({ onChange }) {
               <tr className="fieldrow" key={type + unit + value + index}>
                 <td>{type}</td>
                 <td>{unit}</td>
-                <td>{value}</td>
+                <td>
+                  <input
+                    className="input"
+                    onChange={console.log}
+                    type="text"
+                    value={value}/>
+                </td>
                 <td><a className="remove button" onClick={() => removeSuppliedMeasurement(index)}>remove</a></td>
               </tr>
             ))}

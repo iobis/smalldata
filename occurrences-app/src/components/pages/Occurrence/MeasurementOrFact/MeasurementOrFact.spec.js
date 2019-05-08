@@ -38,7 +38,7 @@ describe('MeasurementOrFact', () => {
         expect(wrapper.find('.supplied .fieldrow')).toHaveLength(1)
         expect(wrapper.find('.supplied .fieldrow td').at(0).text()).toBe('Pressure')
         expect(wrapper.find('.supplied .fieldrow td').at(1).text()).toBe('Kilogram')
-        expect(wrapper.find('.supplied .fieldrow td').at(2).text()).toBe('10')
+        expect(wrapper.find('.supplied .fieldrow td .input').instance().value).toBe('10')
       })
     })
   })
@@ -72,7 +72,7 @@ describe('MeasurementOrFact', () => {
         expect(wrapper.find('.supplied .fieldrow')).toHaveLength(1)
         expect(wrapper.find('.supplied .fieldrow td').at(0).text()).toBe('Pressure')
         expect(wrapper.find('.supplied .fieldrow td').at(1).text()).toBe('Gram')
-        expect(wrapper.find('.supplied .fieldrow td').at(2).text()).toBe('20')
+        expect(wrapper.find('.supplied .fieldrow td .input').instance().value).toBe('20')
       })
     })
   })
@@ -100,7 +100,7 @@ describe('MeasurementOrFact', () => {
 
     it('renders 3 measurements', () => {
       expect(wrapper.find('.supplied .fieldrow')).toHaveLength(3)
-      expect(wrapper.find('.supplied .fieldrow').map(el => el.find('td').at(2).text())).toEqual(['10', '20', '30'])
+      expect(wrapper.find('.supplied .fieldrow').map(suppliedMeasurementValue)).toEqual(['10', '20', '30'])
     })
 
     describe('and then removing first one', () => {
@@ -118,7 +118,7 @@ describe('MeasurementOrFact', () => {
 
       it('renders 2 measurements', () => {
         expect(wrapper.find('.supplied .fieldrow')).toHaveLength(2)
-        expect(wrapper.find('.supplied .fieldrow').map(el => el.find('td').at(2).text())).toEqual(['20', '30'])
+        expect(wrapper.find('.supplied .fieldrow').map(suppliedMeasurementValue)).toEqual(['20', '30'])
       })
 
       describe('and then removing last one', () => {
@@ -135,7 +135,7 @@ describe('MeasurementOrFact', () => {
 
         it('renders 1 measurements', () => {
           expect(wrapper.find('.supplied .fieldrow')).toHaveLength(1)
-          expect(wrapper.find('.supplied .fieldrow').map(el => el.find('td').at(2).text())).toEqual(['20'])
+          expect(wrapper.find('.supplied .fieldrow').map(suppliedMeasurementValue)).toEqual(['20'])
         })
       })
     })
@@ -146,6 +146,8 @@ describe('MeasurementOrFact', () => {
     wrapper.find('.general .measurement-row .button.add').at(0).simulate('click')
   }
 })
+
+const suppliedMeasurementValue = el => el.find('td .input').instance().value
 
 function createComponent(props) {
   const defaultProps = {
