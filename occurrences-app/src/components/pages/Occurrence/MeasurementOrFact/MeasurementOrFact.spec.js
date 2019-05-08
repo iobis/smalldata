@@ -79,6 +79,30 @@ describe('MeasurementOrFact', () => {
             expect(wrapper.find('.supplied .fieldrow .dropdown .selected-value').text()).toBe('Gram')
             expect(wrapper.find('.supplied .fieldrow .input').instance().value).toBe('125')
           })
+
+          describe('and then clicking copy', () => {
+            beforeAll(() => {
+              wrapper.find('.supplied .fieldrow .button.copy').at(0).simulate('click')
+            })
+
+            it('invokes onChange handler with copied measurement', () => {
+              expect(onChange).toHaveBeenCalledTimes(4)
+              expect(onChange).toHaveBeenNthCalledWith(4, [
+                { type: 'Pressure', unit: 'Gram', value: '125' },
+                { type: 'Pressure', unit: 'Gram', value: '125' }
+              ])
+            })
+
+            it('renders 2 identical supplied measurements', () => {
+              expect(wrapper.find('.supplied .fieldrow')).toHaveLength(2)
+              expect(wrapper.find('.supplied .fieldrow td').at(0).text()).toBe('Pressure')
+              expect(wrapper.find('.supplied .fieldrow .dropdown .selected-value').at(0).text()).toBe('Gram')
+              expect(wrapper.find('.supplied .fieldrow .input').at(0).instance().value).toBe('125')
+              expect(wrapper.find('.supplied .fieldrow td').at(1).text()).toBe('Pressure')
+              expect(wrapper.find('.supplied .fieldrow .dropdown .selected-value').at(1).text()).toBe('Gram')
+              expect(wrapper.find('.supplied .fieldrow .input').at(1).instance().value).toBe('125')
+            })
+          })
         })
       })
     })

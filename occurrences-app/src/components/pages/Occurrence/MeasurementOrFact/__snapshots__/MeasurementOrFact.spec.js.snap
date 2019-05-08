@@ -1484,7 +1484,14 @@ exports[`MeasurementOrFact renders correctly 1`] = `
               <th
                 style={
                   Object {
-                    "width": "10%",
+                    "width": "5%",
+                  }
+                }
+              />
+              <th
+                style={
+                  Object {
+                    "width": "5%",
                   }
                 }
               />

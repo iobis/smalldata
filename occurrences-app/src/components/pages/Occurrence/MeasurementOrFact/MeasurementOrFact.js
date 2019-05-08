@@ -92,7 +92,8 @@ export default function MeasurementOrFact({ onChange }) {
               <th style={{ width: '60%' }}>type</th>
               <th style={{ width: '20%' }}>unit</th>
               <th style={{ width: '10%' }}>value</th>
-              <th style={{ width: '10%' }}/>
+              <th style={{ width: '5%' }}/>
+              <th style={{ width: '5%' }}/>
             </tr>
             </thead>
             <tbody>
@@ -100,6 +101,7 @@ export default function MeasurementOrFact({ onChange }) {
               <SuppliedMeasurementRow
                 key={id}
                 onChange={(updatedMeasurement) => updateSuppliedMeasurement(index, { id, ...updatedMeasurement })}
+                onCopy={addSuppliedMeasurements}
                 onRemove={() => removeSuppliedMeasurement(index)}
                 type={type}
                 unit={unit}
@@ -158,7 +160,7 @@ MeasurementRow.propTypes = {
   })).isRequired
 }
 
-function SuppliedMeasurementRow({ type, unit, units = [], value, onRemove, onChange }) {
+function SuppliedMeasurementRow({ onChange, onCopy, onRemove, type, unit, units, value }) {
   const [selectedValue, setSelectedValue] = useState(value)
   const [selectedUnit, setSelectedUnit] = useState(unit)
 
@@ -188,13 +190,23 @@ function SuppliedMeasurementRow({ type, unit, units = [], value, onRemove, onCha
           type="text"
           value={selectedValue}/>
       </td>
-      <td><a className="remove button" onClick={onRemove}>remove</a></td>
+      <td>
+        <a className="copy button" onClick={() => onCopy({ id: uuid(), type, unit, units, value })}>
+          copy
+        </a>
+      </td>
+      <td>
+        <a className="remove button" onClick={onRemove}>
+          remove
+        </a>
+      </td>
     </tr>
   )
 }
 
 SuppliedMeasurementRow.propTypes = {
   onChange: PropTypes.func.isRequired,
+  onCopy:   PropTypes.func.isRequired,
   onRemove: PropTypes.func.isRequired,
   type:     PropTypes.string.isRequired,
   unit:     PropTypes.string.isRequired,
