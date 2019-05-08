@@ -36,7 +36,7 @@ describe('MeasurementOrFact', () => {
 
       it('renders supplied value with default unit', () => {
         expect(wrapper.find('.supplied .fieldrow')).toHaveLength(1)
-        expect(wrapper.find('.supplied .fieldrow td').at(0).text()).toBe('Pressure')
+        expect(wrapper.find('.supplied .fieldrow .type').text()).toBe('Pressure')
         expect(wrapper.find('.supplied .fieldrow .dropdown .selected-value').text()).toBe('Kilogram')
         expect(wrapper.find('.supplied .fieldrow .input').instance().value).toBe('10')
       })
@@ -55,7 +55,7 @@ describe('MeasurementOrFact', () => {
 
         it('renders supplied value with updated value', () => {
           expect(wrapper.find('.supplied .fieldrow')).toHaveLength(1)
-          expect(wrapper.find('.supplied .fieldrow td').at(0).text()).toBe('Pressure')
+          expect(wrapper.find('.supplied .fieldrow .type').text()).toBe('Pressure')
           expect(wrapper.find('.supplied .fieldrow .dropdown .selected-value').text()).toBe('Kilogram')
           expect(wrapper.find('.supplied .fieldrow .input').instance().value).toBe('125')
         })
@@ -75,7 +75,7 @@ describe('MeasurementOrFact', () => {
 
           it('renders supplied with updated unit', () => {
             expect(wrapper.find('.supplied .fieldrow')).toHaveLength(1)
-            expect(wrapper.find('.supplied .fieldrow td').at(0).text()).toBe('Pressure')
+            expect(wrapper.find('.supplied .fieldrow .type').text()).toBe('Pressure')
             expect(wrapper.find('.supplied .fieldrow .dropdown .selected-value').text()).toBe('Gram')
             expect(wrapper.find('.supplied .fieldrow .input').instance().value).toBe('125')
           })
@@ -95,10 +95,10 @@ describe('MeasurementOrFact', () => {
 
             it('renders 2 identical supplied measurements', () => {
               expect(wrapper.find('.supplied .fieldrow')).toHaveLength(2)
-              expect(wrapper.find('.supplied .fieldrow td').at(0).text()).toBe('Pressure')
+              expect(wrapper.find('.supplied .fieldrow .type').at(0).text()).toBe('Pressure')
               expect(wrapper.find('.supplied .fieldrow .dropdown .selected-value').at(0).text()).toBe('Gram')
               expect(wrapper.find('.supplied .fieldrow .input').at(0).instance().value).toBe('125')
-              expect(wrapper.find('.supplied .fieldrow td').at(1).text()).toBe('Pressure')
+              expect(wrapper.find('.supplied .fieldrow .type').at(1).text()).toBe('Pressure')
               expect(wrapper.find('.supplied .fieldrow .dropdown .selected-value').at(1).text()).toBe('Gram')
               expect(wrapper.find('.supplied .fieldrow .input').at(1).instance().value).toBe('125')
             })
@@ -135,7 +135,7 @@ describe('MeasurementOrFact', () => {
 
       it('renders supplied value with selected unit', () => {
         expect(wrapper.find('.supplied .fieldrow')).toHaveLength(1)
-        expect(wrapper.find('.supplied .fieldrow td').at(0).text()).toBe('Pressure')
+        expect(wrapper.find('.supplied .fieldrow .type').text()).toBe('Pressure')
         expect(wrapper.find('.supplied .fieldrow .dropdown .selected-value').text()).toBe('Gram')
         expect(wrapper.find('.supplied .fieldrow .input').instance().value).toBe('20')
       })

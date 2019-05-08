@@ -176,7 +176,7 @@ function SuppliedMeasurementRow({ onChange, onCopy, onRemove, type, unit, units,
 
   return (
     <tr className="fieldrow">
-      <td>{type}</td>
+      <td className="type">{type}</td>
       <td>
         <Dropdown
           onChange={handleUnitChange}
