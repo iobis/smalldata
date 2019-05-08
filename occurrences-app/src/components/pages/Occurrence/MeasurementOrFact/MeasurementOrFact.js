@@ -25,6 +25,16 @@ export default function MeasurementOrFact({ onChange }) {
     setSuppliedMeasurements(updatedMeasurements)
   }
 
+  function updateSuppliedMeasurement(index, updatedMeasurement) {
+    const updatedMeasurements = suppliedMeasurements.map((measurment, i) => {
+      return i === index
+        ? updatedMeasurement
+        : measurment
+    })
+    onChange(updatedMeasurements)
+    setSuppliedMeasurements(updatedMeasurements)
+  }
+
   return (
     <div className="measurement-or-fact section is-fluid">
       <div className="columns">
@@ -86,19 +96,14 @@ export default function MeasurementOrFact({ onChange }) {
             </thead>
             <tbody>
             {suppliedMeasurements.map(({ type, unit, value }, index) => (
-              // eslint-disable-next-line react/no-array-index-key
-              <tr className="fieldrow" key={type + unit + value + index}>
-                <td>{type}</td>
-                <td>{unit}</td>
-                <td>
-                  <input
-                    className="input"
-                    onChange={console.log}
-                    type="text"
-                    value={value}/>
-                </td>
-                <td><a className="remove button" onClick={() => removeSuppliedMeasurement(index)}>remove</a></td>
-              </tr>
+              <SuppliedMeasurementRow
+                // eslint-disable-next-line react/no-array-index-key
+                key={index}
+                onChange={(updatedMeasurement) => updateSuppliedMeasurement(index, updatedMeasurement)}
+                onRemove={() => removeSuppliedMeasurement(index)}
+                type={type}
+                unit={unit}
+                value={value}/>
             ))}
             </tbody>
           </table>
@@ -150,4 +155,36 @@ MeasurementRow.propTypes = {
   units:      PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired
   })).isRequired
+}
+
+function SuppliedMeasurementRow({ type, unit, value, onRemove, onChange }) {
+  const [selectedValue, setSelectedValue] = useState(value)
+
+  function handleValueChange(selectedValue) {
+    setSelectedValue(selectedValue)
+    onChange({ type, unit, value: selectedValue })
+  }
+
+  return (
+    <tr className="fieldrow">
+      <td>{type}</td>
+      <td>{unit}</td>
+      <td>
+        <input
+          className="input"
+          onChange={(e) => handleValueChange(e.target.value)}
+          type="text"
+          value={selectedValue}/>
+      </td>
+      <td><a className="remove button" onClick={onRemove}>remove</a></td>
+    </tr>
+  )
+}
+
+SuppliedMeasurementRow.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  onRemove: PropTypes.func.isRequired,
+  type:     PropTypes.string.isRequired,
+  unit:     PropTypes.string.isRequired,
+  value:    PropTypes.string.isRequired
 }

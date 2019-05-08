@@ -40,6 +40,26 @@ describe('MeasurementOrFact', () => {
         expect(wrapper.find('.supplied .fieldrow td').at(1).text()).toBe('Kilogram')
         expect(wrapper.find('.supplied .fieldrow td .input').instance().value).toBe('10')
       })
+
+      describe('and then updating value', () => {
+        beforeAll(() => {
+          wrapper.find('.supplied .fieldrow td .input').simulate('change', { target: { value: '125' } })
+        })
+
+        it('invokes onChange handler', () => {
+          expect(onChange).toHaveBeenCalledTimes(2)
+          expect(onChange).toHaveBeenNthCalledWith(2, [
+            { type: 'Pressure', unit: 'Kilogram', value: '125' }
+          ])
+        })
+
+        it('renders supplied value with default unit', () => {
+          expect(wrapper.find('.supplied .fieldrow')).toHaveLength(1)
+          expect(wrapper.find('.supplied .fieldrow td').at(0).text()).toBe('Pressure')
+          expect(wrapper.find('.supplied .fieldrow td').at(1).text()).toBe('Kilogram')
+          expect(wrapper.find('.supplied .fieldrow td .input').instance().value).toBe('125')
+        })
+      })
     })
   })
 
