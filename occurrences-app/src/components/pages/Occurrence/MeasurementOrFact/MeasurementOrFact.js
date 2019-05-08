@@ -2,6 +2,7 @@ import CopyPreviousData from '../CopyPreviousData'
 import Dropdown from '../../../form/Dropdown'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
+import uuid from 'uuid/v4'
 import { getGeneralMeasurements, getSpecificMeasurements } from '../../../../clients/measurments'
 import { useTranslation } from 'react-i18next'
 
@@ -11,17 +12,17 @@ export default function MeasurementOrFact({ onChange }) {
   const specificMeasurements = getSpecificMeasurements()
   const [suppliedMeasurements, setSuppliedMeasurements] = useState([])
 
-  function addSuppliedMeasurements(measurment) {
-    const updatedMeasurements = [...suppliedMeasurements, measurment]
+  function addSuppliedMeasurements(measurement) {
+    const updatedMeasurements = [...suppliedMeasurements, measurement]
       .sort((left, right) => left.type.toLowerCase().localeCompare(right.type.toLowerCase()))
-    onChange(updatedMeasurements)
+    onChange(updatedMeasurements.map(({ unit, type, value }) => ({ unit, type, value })))
     setSuppliedMeasurements(updatedMeasurements)
   }
 
   function removeSuppliedMeasurement(index) {
     const updatedMeasurements = suppliedMeasurements.filter((_, i) => i !== index)
       .sort((left, right) => left.type.toLowerCase().localeCompare(right.type.toLowerCase()))
-    onChange(updatedMeasurements)
+    onChange(updatedMeasurements.map(({ unit, type, value }) => ({ unit, type, value })))
     setSuppliedMeasurements(updatedMeasurements)
   }
 
@@ -31,7 +32,7 @@ export default function MeasurementOrFact({ onChange }) {
         ? updatedMeasurement
         : measurment
     })
-    onChange(updatedMeasurements)
+    onChange(updatedMeasurements.map(({ unit, type, value }) => ({ unit, type, value })))
     setSuppliedMeasurements(updatedMeasurements)
   }
 
@@ -95,14 +96,14 @@ export default function MeasurementOrFact({ onChange }) {
             </tr>
             </thead>
             <tbody>
-            {suppliedMeasurements.map(({ type, unit, value }, index) => (
+            {suppliedMeasurements.map(({ id, type, unit, units, value }, index) => (
               <SuppliedMeasurementRow
-                // eslint-disable-next-line react/no-array-index-key
-                key={index}
-                onChange={(updatedMeasurement) => updateSuppliedMeasurement(index, updatedMeasurement)}
+                key={id}
+                onChange={(updatedMeasurement) => updateSuppliedMeasurement(index, { id, ...updatedMeasurement })}
                 onRemove={() => removeSuppliedMeasurement(index)}
                 type={type}
                 unit={unit}
+                units={units}
                 value={value}/>
             ))}
             </tbody>
@@ -141,7 +142,7 @@ function MeasurementRow({ onClickAdd, type, units }) {
       <td>
         <a
           className="add button"
-          onClick={() => onClickAdd({ unit: selectedUnit, type, value: selectedValue })}>
+          onClick={() => onClickAdd({ id: uuid(), unit: selectedUnit, units, type, value: selectedValue })}>
           add
         </a>
       </td>
@@ -157,18 +158,29 @@ MeasurementRow.propTypes = {
   })).isRequired
 }
 
-function SuppliedMeasurementRow({ type, unit, value, onRemove, onChange }) {
+function SuppliedMeasurementRow({ type, unit, units = [], value, onRemove, onChange }) {
   const [selectedValue, setSelectedValue] = useState(value)
+  const [selectedUnit, setSelectedUnit] = useState(unit)
+
+  function handleUnitChange(selectedUnit) {
+    setSelectedUnit(selectedUnit)
+    onChange({ type, unit: selectedUnit, units, value: selectedValue })
+  }
 
   function handleValueChange(selectedValue) {
     setSelectedValue(selectedValue)
-    onChange({ type, unit, value: selectedValue })
+    onChange({ type, unit: selectedUnit, units, value: selectedValue })
   }
 
   return (
     <tr className="fieldrow">
       <td>{type}</td>
-      <td>{unit}</td>
+      <td>
+        <Dropdown
+          onChange={handleUnitChange}
+          options={units.map(unit => unit.name)}
+          value={selectedUnit}/>
+      </td>
       <td>
         <input
           className="input"
@@ -186,5 +198,8 @@ SuppliedMeasurementRow.propTypes = {
   onRemove: PropTypes.func.isRequired,
   type:     PropTypes.string.isRequired,
   unit:     PropTypes.string.isRequired,
+  units:    PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired
+  })).isRequired,
   value:    PropTypes.string.isRequired
 }
