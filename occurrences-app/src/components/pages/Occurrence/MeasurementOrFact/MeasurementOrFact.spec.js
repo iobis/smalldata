@@ -31,7 +31,9 @@ describe('MeasurementOrFact', () => {
 
       it('invokes onChange handler', () => {
         expect(onChange).toHaveBeenCalledTimes(1)
-        expect(onChange).toBeCalledWith([{ type: 'Pressure', unit: 'Kilogram', value: '10' }])
+        expect(onChange).toBeCalledWith([
+          { type: 'Pressure', unit: 'Kilogram', value: '10', units: getPressureUnits() }
+        ])
       })
 
       it('renders supplied value with default unit', () => {
@@ -49,7 +51,7 @@ describe('MeasurementOrFact', () => {
         it('invokes onChange with update value', () => {
           expect(onChange).toHaveBeenCalledTimes(2)
           expect(onChange).toHaveBeenNthCalledWith(2, [
-            { type: 'Pressure', unit: 'Kilogram', value: '125' }
+            { type: 'Pressure', unit: 'Kilogram', value: '125', units: getPressureUnits() }
           ])
         })
 
@@ -69,7 +71,7 @@ describe('MeasurementOrFact', () => {
           it('invokes onChange handler with updated unit', () => {
             expect(onChange).toHaveBeenCalledTimes(3)
             expect(onChange).toHaveBeenNthCalledWith(3, [
-              { type: 'Pressure', unit: 'Gram', value: '125' }
+              { type: 'Pressure', unit: 'Gram', value: '125', units: getPressureUnits() }
             ])
           })
 
@@ -88,8 +90,8 @@ describe('MeasurementOrFact', () => {
             it('invokes onChange handler with copied measurement', () => {
               expect(onChange).toHaveBeenCalledTimes(4)
               expect(onChange).toHaveBeenNthCalledWith(4, [
-                { type: 'Pressure', unit: 'Gram', value: '125' },
-                { type: 'Pressure', unit: 'Gram', value: '125' }
+                { type: 'Pressure', unit: 'Gram', value: '125', units: getPressureUnits() },
+                { type: 'Pressure', unit: 'Gram', value: '125', units: getPressureUnits() }
               ])
             })
 
@@ -130,7 +132,9 @@ describe('MeasurementOrFact', () => {
 
       it('invokes onChange handler', () => {
         expect(onChange).toHaveBeenCalledTimes(1)
-        expect(onChange).toBeCalledWith([{ type: 'Pressure', unit: 'Gram', value: '20' }])
+        expect(onChange).toBeCalledWith([
+          { type: 'Pressure', unit: 'Gram', value: '20', units: getPressureUnits() }
+        ])
       })
 
       it('renders supplied value with selected unit', () => {
@@ -157,9 +161,9 @@ describe('MeasurementOrFact', () => {
     it('invokes onChange handler', () => {
       expect(onChange).toHaveBeenCalledTimes(3)
       expect(onChange).toHaveBeenNthCalledWith(3, [
-        { type: 'Pressure', unit: 'Kilogram', value: '10' },
-        { type: 'Pressure', unit: 'Kilogram', value: '20' },
-        { type: 'Pressure', unit: 'Kilogram', value: '30' }
+        { type: 'Pressure', unit: 'Kilogram', value: '10', units: getPressureUnits() },
+        { type: 'Pressure', unit: 'Kilogram', value: '20', units: getPressureUnits() },
+        { type: 'Pressure', unit: 'Kilogram', value: '30', units: getPressureUnits() }
       ])
     })
 
@@ -176,8 +180,8 @@ describe('MeasurementOrFact', () => {
       it('invokes onChange handler', () => {
         expect(onChange).toHaveBeenCalledTimes(4)
         expect(onChange).toHaveBeenNthCalledWith(4, [
-          { type: 'Pressure', unit: 'Kilogram', value: '20' },
-          { type: 'Pressure', unit: 'Kilogram', value: '30' }
+          { type: 'Pressure', unit: 'Kilogram', value: '20', units: getPressureUnits() },
+          { type: 'Pressure', unit: 'Kilogram', value: '30', units: getPressureUnits() }
         ])
       })
 
@@ -194,7 +198,7 @@ describe('MeasurementOrFact', () => {
         it('invokes onChange handler', () => {
           expect(onChange).toHaveBeenCalledTimes(5)
           expect(onChange).toHaveBeenNthCalledWith(5, [
-            { type: 'Pressure', unit: 'Kilogram', value: '20' }
+            { type: 'Pressure', unit: 'Kilogram', value: '20', units: getPressureUnits() }
           ])
         })
 
@@ -209,6 +213,16 @@ describe('MeasurementOrFact', () => {
   function addGeneralMeasurement(value) {
     wrapper.find('.general .measurement-row .input').at(0).simulate('change', { target: { value } })
     wrapper.find('.general .measurement-row .button.add').at(0).simulate('click')
+  }
+
+  function getPressureUnits() {
+    return [{
+      id:   'http://vocab.nerc.ac.uk/collection/P06/current/KGXX',
+      name: 'Kilogram'
+    }, {
+      id:   'http://vocab.nerc.ac.uk/collection/P06/current/UGRM/',
+      name: 'Gram'
+    }]
   }
 })
 

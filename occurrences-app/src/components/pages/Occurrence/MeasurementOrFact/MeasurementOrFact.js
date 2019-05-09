@@ -6,23 +6,23 @@ import uuid from 'uuid/v4'
 import { getGeneralMeasurements, getSpecificMeasurements } from '../../../../clients/measurments'
 import { useTranslation } from 'react-i18next'
 
-export default function MeasurementOrFact({ onChange }) {
+export default function MeasurementOrFact({ data, onChange }) {
   const { t } = useTranslation()
   const generalMeasurements = getGeneralMeasurements()
   const specificMeasurements = getSpecificMeasurements()
-  const [suppliedMeasurements, setSuppliedMeasurements] = useState([])
+  const [suppliedMeasurements, setSuppliedMeasurements] = useState(data)
 
   function addSuppliedMeasurements(measurement) {
     const updatedMeasurements = [...suppliedMeasurements, measurement]
       .sort((left, right) => left.type.toLowerCase().localeCompare(right.type.toLowerCase()))
-    onChange(updatedMeasurements.map(({ unit, type, value }) => ({ unit, type, value })))
+    onChange(updatedMeasurements.map(({ unit, units, type, value }) => ({ unit, units, type, value })))
     setSuppliedMeasurements(updatedMeasurements)
   }
 
   function removeSuppliedMeasurement(index) {
     const updatedMeasurements = suppliedMeasurements.filter((_, i) => i !== index)
       .sort((left, right) => left.type.toLowerCase().localeCompare(right.type.toLowerCase()))
-    onChange(updatedMeasurements.map(({ unit, type, value }) => ({ unit, type, value })))
+    onChange(updatedMeasurements.map(({ unit, units, type, value }) => ({ unit, units, type, value })))
     setSuppliedMeasurements(updatedMeasurements)
   }
 
@@ -32,7 +32,7 @@ export default function MeasurementOrFact({ onChange }) {
         ? updatedMeasurement
         : measurment
     })
-    onChange(updatedMeasurements.map(({ unit, type, value }) => ({ unit, type, value })))
+    onChange(updatedMeasurements.map(({ unit, units, type, value }) => ({ unit, units, type, value })))
     setSuppliedMeasurements(updatedMeasurements)
   }
 
@@ -118,6 +118,7 @@ export default function MeasurementOrFact({ onChange }) {
 }
 
 MeasurementOrFact.propTypes = {
+  data:     PropTypes.array.isRequired,
   onChange: PropTypes.func.isRequired
 }
 

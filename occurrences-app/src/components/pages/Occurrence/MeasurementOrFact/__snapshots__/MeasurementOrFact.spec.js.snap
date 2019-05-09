@@ -2,7 +2,7 @@
 
 exports[`MeasurementOrFact renders correctly 1`] = `
 <MeasurementOrFact
-  data={Object {}}
+  data={Array []}
   onChange={[MockFunction]}
 >
   <div
