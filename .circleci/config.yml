@@ -23,8 +23,8 @@ jobs:
       - store_artifacts:
           path: ~/test-results/junit
   deploy:
-    machine:
-      enabled: true
+    docker:
+      - image: circleci/openjdk:11.0.3-jdk-stretch-node
     working_directory: ~/repo
     steps:
       - checkout
