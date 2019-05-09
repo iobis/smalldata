@@ -35,9 +35,10 @@ jobs:
       - run:
           name: Build and deploy image over ssh
           command: |
+            yarn build:zip
             cd server
-            ./gradlew runtimeZip
             scp -r ./build/image.zip "$SSH_USER@$SSH_HOST:/opt/smalldata"
+            ssh "$SSH_USER@$SSH_HOST" "cd /opt/smalldata && unzip image.zip && rm image.zip"
 
 workflows:
   version: 2
