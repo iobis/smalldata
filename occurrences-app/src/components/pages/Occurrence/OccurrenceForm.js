@@ -3,6 +3,7 @@ import BasicData from './BasicData/BasicData'
 import ConfirmedStepHeader from './ConfirmedStepHeader'
 import DarwinCoreFields from './DarwinCoreFields/DarwinCoreFields'
 import LocationData from './LocationData/LocationData'
+import MeasurementOrFact from './MeasurementOrFact/MeasurementOrFact'
 import NotConfirmedStepHeader from './NotConfirmedStepHeader'
 import ObservationData from './ObservationData/ObservationData'
 import PropTypes from 'prop-types'
@@ -56,6 +57,7 @@ export default function OccurrenceForm() {
       verbatimDepth:         ''
     }
   )
+  const [measurementOrFact, setMeasurementOrFact] = useState([])
   const steps = [{
     dataDescription: t('occurrenceForm.selectDataset.dataDescription'),
     selectedData:    selectedDataset.description,
@@ -94,7 +96,9 @@ export default function OccurrenceForm() {
     selectedData:    'You have submitted 7 extra fields',
     stepDescription: 'Enter further specifics',
     stepTitle:       'Measurement or Fact',
-    children:        <StubFormContent/>
+    children:        <MeasurementOrFact
+                       data={measurementOrFact}
+                       onChange={setMeasurementOrFact}/>
   }, {
     dataDescription: '',
     selectedData:    '',
