@@ -27,11 +27,20 @@ jobs:
       enabled: true
     working_directory: ~/repo
     steps:
-      - checkout  
+      - checkout
       - run:
-          name: Deploy Over SSH
+          name: Setup known hosts
           command: |
-            scp -r ./info "$SSH_USER@$SSH_HOST:~"
+            ssh-keyscan -H smalldata.obis.org >> ~/.ssh/known_hosts
+      - run:
+          name: build image
+          command: |
+            cd server
+            ./gradlew runtimeZip
+      - run:
+          name: Deploy zip-image over ssh
+          command: |
+            scp -r ./build/image.zip "$SSH_USER@$SSH_HOST:/opt/smalldata"
 
 workflows:
   version: 2
