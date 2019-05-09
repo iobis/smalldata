@@ -23,10 +23,8 @@ export default function StepHeader({
             </b>
           </p>
         </div>
-        <div className={classNames('column is-7', { 'is-hidden-mobile': !selectedData })}>
-          <p className="is-size-5">
-            {selectedData}
-          </p>
+        <div className={classNames('column is-7 is-size-5', { 'is-hidden-mobile': !selectedData })}>
+          {selectedData}
         </div>
         <div className="column details">
           <div className="is-size-6">
@@ -51,7 +49,7 @@ StepHeader.propTypes = {
   dataDescription:  PropTypes.string.isRequired,
   iconVisible:      PropTypes.bool.isRequired,
   onStepTitleClick: PropTypes.func.isRequired,
-  selectedData:     PropTypes.string.isRequired,
+  selectedData:     PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
   stepDescription:  PropTypes.string.isRequired,
   stepTitle:        PropTypes.string.isRequired
 }

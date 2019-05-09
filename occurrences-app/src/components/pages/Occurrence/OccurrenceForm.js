@@ -1,6 +1,7 @@
 import ActiveStepHeader from './ActiveStepHeader'
 import BasicData from './BasicData/BasicData'
 import ConfirmedStepHeader from './ConfirmedStepHeader'
+import LocationData from './LocationData/LocationData'
 import NotConfirmedStepHeader from './NotConfirmedStepHeader'
 import ObservationData from './ObservationData/ObservationData'
 import React, { useState } from 'react'
@@ -43,7 +44,17 @@ export default function OccurrenceForm() {
     format(basicData.beginDate, 'D MMMM YYYY'),
     basicData.endDate ? ' - ' + format(basicData.endDate, 'D MMMM YYYY') : ''
   ].join(' ')
-
+  const [locationData, setLocationData] = useState({
+      decimalLongitude:      null,
+      decimalLatitude:       null,
+      coordinateUncertainty: null,
+      minimumDepth:          null,
+      maximumDepth:          null,
+      verbatimCoordinates:   '',
+      verbatimEventDate:     '',
+      verbatimDepth:         ''
+    }
+  )
   const steps = [{
     dataDescription: t('occurrenceForm.selectDataset.dataDescription'),
     selectedData:    selectedDataset.description,
@@ -52,21 +63,23 @@ export default function OccurrenceForm() {
     children:        <SelectDataset
                        datasets={datasets}
                        selectedDataset={selectedDataset}
-                       onChange={(dataset) => setSelectedDataset(dataset)}/>
+                       onChange={setSelectedDataset}/>
   }, {
     dataDescription: 'Given Values',
     selectedData:    basicDataLabel,
     stepDescription: 'Mandatory observation information',
     stepTitle:       'Basic Data',
     children:        <BasicData
-                       onChange={(basicData) => setBasicData(basicData)}
+                       onChange={setBasicData}
                        basicData={basicData}/>
   }, {
-    dataDescription: 'Main Location',
-    selectedData:    'North Sea',
-    stepDescription: 'Select the location for data collected',
-    stepTitle:       'Location Data',
-    children:        <StubFormContent/>
+    dataDescription: t('occurrenceForm.locationData.step.dataDescription'),
+    selectedData:    renderSelectedLocation(locationData),
+    stepDescription: t('occurrenceForm.locationData.step.stepDescription'),
+    stepTitle:       t('occurrenceForm.locationData.step.stepTitle'),
+    children:        <LocationData
+                       data={locationData}
+                       onChange={setLocationData}/>
   }, {
     dataDescription: 'Main Info',
     selectedData:    renderIdentifiedByLabel(observationData),
@@ -74,7 +87,7 @@ export default function OccurrenceForm() {
     stepTitle:       'Observation Data',
     children:        <ObservationData
                        observationData={observationData}
-                       onChange={data => setObservationData(data)}/>
+                       onChange={setObservationData}/>
   }, {
     dataDescription: 'Given values',
     selectedData:    'You have submitted 7 extra fields',
@@ -86,7 +99,9 @@ export default function OccurrenceForm() {
     selectedData:    '',
     stepDescription: 'Supply specific Darwin core fields',
     stepTitle:       'Darwin Core Fields',
-    children:        <DarwinCoreFields darwinCoreFieldsData={darwinCoreFieldsData} onChange={data => setDarwinCoreFieldsData(data)} />
+    children:        <DarwinCoreFields
+                       darwinCoreFieldsData={darwinCoreFieldsData}
+                       onChange={setDarwinCoreFieldsData}/>
   }]
 
   return (
@@ -108,6 +123,17 @@ export default function OccurrenceForm() {
         )
       })}
     </section>
+  )
+}
+
+function renderSelectedLocation({ decimalLatitude, decimalLongitude }) {
+  const { t } = useTranslation()
+
+  return (
+    <>
+      <div>{t('occurrenceForm.locationData.step.selectedData.latitude')}: {decimalLatitude}</div>
+      <div>{t('occurrenceForm.locationData.step.selectedData.longitude')}: {decimalLongitude}</div>
+    </>
   )
 }
 

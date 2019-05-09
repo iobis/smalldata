@@ -18,7 +18,7 @@ export default function ConfirmedStepHeader({ dataDescription, onStepTitleClick,
 ConfirmedStepHeader.propTypes = {
   dataDescription:  PropTypes.string.isRequired,
   onStepTitleClick: PropTypes.func.isRequired,
-  selectedData:     PropTypes.string.isRequired,
+  selectedData:     PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
   stepDescription:  PropTypes.string.isRequired,
   stepTitle:        PropTypes.string.isRequired
 }
