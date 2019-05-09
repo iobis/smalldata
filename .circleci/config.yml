@@ -25,14 +25,17 @@ jobs:
   deploy:
     machine:
       enabled: true
+    working_directory: ~/repo
     steps:
       - checkout
+      - run:
+          command: pwd
       - run:
           command: ls -alh
       - run:
           name: Deploy Over SSH
           command: |
-            scp -r ~/info/ "$SSH_USER@$SSH_HOST:~"
+            scp -r ~/repo/info "$SSH_USER@$SSH_HOST:~"
 
 workflows:
   version: 2
