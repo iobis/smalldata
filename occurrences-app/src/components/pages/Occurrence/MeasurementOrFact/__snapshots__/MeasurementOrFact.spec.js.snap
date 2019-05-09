@@ -36,7 +36,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                   }
                 }
               >
-                type
+                common.type
               </th>
               <th
                 style={
@@ -45,7 +45,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                   }
                 }
               >
-                unit
+                common.unit
               </th>
               <th
                 style={
@@ -54,7 +54,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                   }
                 }
               >
-                value
+                common.value
               </th>
               <th
                 style={
@@ -174,7 +174,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                     className="add button"
                     onClick={[Function]}
                   >
-                    add
+                    common.add
                   </a>
                 </td>
               </tr>
@@ -274,7 +274,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                     className="add button"
                     onClick={[Function]}
                   >
-                    add
+                    common.add
                   </a>
                 </td>
               </tr>
@@ -374,7 +374,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                     className="add button"
                     onClick={[Function]}
                   >
-                    add
+                    common.add
                   </a>
                 </td>
               </tr>
@@ -403,7 +403,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                   }
                 }
               >
-                type
+                common.type
               </th>
               <th
                 style={
@@ -412,7 +412,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                   }
                 }
               >
-                unit
+                common.unit
               </th>
               <th
                 style={
@@ -421,7 +421,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                   }
                 }
               >
-                value
+                common.value
               </th>
               <th
                 style={
@@ -528,7 +528,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                     className="add button"
                     onClick={[Function]}
                   >
-                    add
+                    common.add
                   </a>
                 </td>
               </tr>
@@ -628,7 +628,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                     className="add button"
                     onClick={[Function]}
                   >
-                    add
+                    common.add
                   </a>
                 </td>
               </tr>
@@ -728,7 +728,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                     className="add button"
                     onClick={[Function]}
                   >
-                    add
+                    common.add
                   </a>
                 </td>
               </tr>
@@ -828,7 +828,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                     className="add button"
                     onClick={[Function]}
                   >
-                    add
+                    common.add
                   </a>
                 </td>
               </tr>
@@ -928,7 +928,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                     className="add button"
                     onClick={[Function]}
                   >
-                    add
+                    common.add
                   </a>
                 </td>
               </tr>
@@ -1028,7 +1028,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                     className="add button"
                     onClick={[Function]}
                   >
-                    add
+                    common.add
                   </a>
                 </td>
               </tr>
@@ -1128,7 +1128,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                     className="add button"
                     onClick={[Function]}
                   >
-                    add
+                    common.add
                   </a>
                 </td>
               </tr>
@@ -1228,7 +1228,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                     className="add button"
                     onClick={[Function]}
                   >
-                    add
+                    common.add
                   </a>
                 </td>
               </tr>
@@ -1328,7 +1328,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                     className="add button"
                     onClick={[Function]}
                   >
-                    add
+                    common.add
                   </a>
                 </td>
               </tr>
@@ -1428,7 +1428,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                     className="add button"
                     onClick={[Function]}
                   >
-                    add
+                    common.add
                   </a>
                 </td>
               </tr>
@@ -1461,7 +1461,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                   }
                 }
               >
-                type
+                common.type
               </th>
               <th
                 style={
@@ -1470,7 +1470,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                   }
                 }
               >
-                unit
+                common.unit
               </th>
               <th
                 style={
@@ -1479,7 +1479,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                   }
                 }
               >
-                value
+                common.value
               </th>
               <th
                 style={

@@ -1,8 +1,13 @@
 export default {
   translation: {
     common:         {
-      copy: 'Copy',
-      edit: 'Edit'
+      add:    'Add',
+      copy:   'Copy',
+      edit:   'Edit',
+      remove: 'Remove',
+      type:   'Type',
+      unit:   'Unit',
+      value:  'Value'
     },
     inputDataPage:  {
       inputNewOccurrence: 'INPUT NEW OCCURRENCE',

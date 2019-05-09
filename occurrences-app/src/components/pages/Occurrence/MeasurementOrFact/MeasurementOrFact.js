@@ -45,9 +45,9 @@ export default function MeasurementOrFact({ onChange }) {
           <table className="general table is-fullwidth is-striped is-hoverable">
             <thead>
             <tr>
-              <th style={{ width: '60%' }}>type</th>
-              <th style={{ width: '20%' }}>unit</th>
-              <th style={{ width: '10%' }}>value</th>
+              <th style={{ width: '60%' }}>{t('common.type')}</th>
+              <th style={{ width: '20%' }}>{t('common.unit')}</th>
+              <th style={{ width: '10%' }}>{t('common.value')}</th>
               <th style={{ width: '10%' }}/>
             </tr>
             </thead>
@@ -66,9 +66,9 @@ export default function MeasurementOrFact({ onChange }) {
           <table className="specific table is-fullwidth is-striped is-hoverable">
             <thead>
             <tr>
-              <th style={{ width: '60%' }}>type</th>
-              <th style={{ width: '20%' }}>unit</th>
-              <th style={{ width: '10%' }}>value</th>
+              <th style={{ width: '60%' }}>{t('common.type')}</th>
+              <th style={{ width: '20%' }}>{t('common.unit')}</th>
+              <th style={{ width: '10%' }}>{t('common.value')}</th>
               <th style={{ width: '10%' }}/>
             </tr>
             </thead>
@@ -89,9 +89,9 @@ export default function MeasurementOrFact({ onChange }) {
           <table className="supplied table is-fullwidth is-striped is-hoverable">
             <thead>
             <tr>
-              <th style={{ width: '60%' }}>type</th>
-              <th style={{ width: '20%' }}>unit</th>
-              <th style={{ width: '10%' }}>value</th>
+              <th style={{ width: '60%' }}>{t('common.type')}</th>
+              <th style={{ width: '20%' }}>{t('common.unit')}</th>
+              <th style={{ width: '10%' }}>{t('common.value')}</th>
               <th style={{ width: '5%' }}/>
               <th style={{ width: '5%' }}/>
             </tr>
@@ -122,6 +122,7 @@ MeasurementOrFact.propTypes = {
 }
 
 function MeasurementRow({ onClickAdd, type, units }) {
+  const { t } = useTranslation()
   const [selectedUnit, setSelectedUnit] = useState(units[0].name)
   const [selectedValue, setSelectedValue] = useState('')
 
@@ -145,7 +146,7 @@ function MeasurementRow({ onClickAdd, type, units }) {
         <a
           className="add button"
           onClick={() => onClickAdd({ id: uuid(), unit: selectedUnit, units, type, value: selectedValue })}>
-          add
+          {t('common.add')}
         </a>
       </td>
     </tr>
@@ -161,6 +162,7 @@ MeasurementRow.propTypes = {
 }
 
 function SuppliedMeasurementRow({ onChange, onCopy, onRemove, type, unit, units, value }) {
+  const { t } = useTranslation()
   const [selectedValue, setSelectedValue] = useState(value)
   const [selectedUnit, setSelectedUnit] = useState(unit)
 
@@ -192,12 +194,12 @@ function SuppliedMeasurementRow({ onChange, onCopy, onRemove, type, unit, units,
       </td>
       <td>
         <a className="copy button" onClick={() => onCopy({ id: uuid(), type, unit, units, value })}>
-          copy
+          {t('common.copy')}
         </a>
       </td>
       <td>
         <a className="remove button" onClick={onRemove}>
-          remove
+          {t('common.remove')}
         </a>
       </td>
     </tr>
