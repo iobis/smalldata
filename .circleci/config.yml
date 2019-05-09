@@ -38,8 +38,6 @@ workflows:
     jobs:
       - test
       - deploy:
-          requires:
-            - build
           filters:
             branches:
               only: master
