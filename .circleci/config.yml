@@ -33,13 +33,10 @@ jobs:
           command: |
             ssh-keyscan -H smalldata.obis.org >> ~/.ssh/known_hosts
       - run:
-          name: build image
+          name: Build and deploy image over ssh
           command: |
             cd server
             ./gradlew runtimeZip
-      - run:
-          name: Deploy zip-image over ssh
-          command: |
             scp -r ./build/image.zip "$SSH_USER@$SSH_HOST:/opt/smalldata"
 
 workflows:
