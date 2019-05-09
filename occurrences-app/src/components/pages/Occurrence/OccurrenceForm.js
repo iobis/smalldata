@@ -1,15 +1,16 @@
 import ActiveStepHeader from './ActiveStepHeader'
 import BasicData from './BasicData/BasicData'
 import ConfirmedStepHeader from './ConfirmedStepHeader'
+import DarwinCoreFields from './DarwinCoreFields/DarwinCoreFields'
 import LocationData from './LocationData/LocationData'
 import NotConfirmedStepHeader from './NotConfirmedStepHeader'
 import ObservationData from './ObservationData/ObservationData'
+import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import SelectDataset from './SelectDataset/SelectDataset'
 import { format } from 'date-fns'
 import { getDatasetMock } from '../../../clients/server'
 import { useTranslation } from 'react-i18next'
-import DarwinCoreFields from './DarwinCoreFields/DarwinCoreFields'
 
 export default function OccurrenceForm() {
   const datasets = getDatasetMock()
@@ -62,19 +63,19 @@ export default function OccurrenceForm() {
     stepTitle:       t('occurrenceForm.selectDataset.stepTitle'),
     children:        <SelectDataset
                        datasets={datasets}
-                       selectedDataset={selectedDataset}
-                       onChange={setSelectedDataset}/>
+                       onChange={setSelectedDataset}
+                       selectedDataset={selectedDataset}/>
   }, {
     dataDescription: 'Given Values',
     selectedData:    basicDataLabel,
     stepDescription: 'Mandatory observation information',
     stepTitle:       'Basic Data',
     children:        <BasicData
-                       onChange={setBasicData}
-                       basicData={basicData}/>
+                       basicData={basicData}
+                       onChange={setBasicData}/>
   }, {
     dataDescription: t('occurrenceForm.locationData.step.dataDescription'),
-    selectedData:    renderSelectedLocation(locationData),
+    selectedData:    <SelectedLocation {...locationData}/>,
     stepDescription: t('occurrenceForm.locationData.step.stepDescription'),
     stepTitle:       t('occurrenceForm.locationData.step.stepTitle'),
     children:        <LocationData
@@ -126,7 +127,7 @@ export default function OccurrenceForm() {
   )
 }
 
-function renderSelectedLocation({ decimalLatitude, decimalLongitude }) {
+function SelectedLocation({ decimalLatitude, decimalLongitude }) {
   const { t } = useTranslation()
 
   return (
@@ -135,6 +136,11 @@ function renderSelectedLocation({ decimalLatitude, decimalLongitude }) {
       <div>{t('occurrenceForm.locationData.step.selectedData.longitude')}: {decimalLongitude}</div>
     </>
   )
+}
+
+SelectedLocation.propTypes = {
+  decimalLatitude:  PropTypes.number,
+  decimalLongitude: PropTypes.number
 }
 
 function renderIdentifiedByLabel({ identifiedBy, institutionCode }) {
