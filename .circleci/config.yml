@@ -33,6 +33,10 @@ jobs:
           command: |
             ssh-keyscan -H smalldata.obis.org >> ~/.ssh/known_hosts
       - run:
+          name: Setup environment and software
+          command: |
+            yarn add npm-run-all --dev
+      - run:
           name: Build and deploy image over ssh
           command: |
             yarn build:zip
