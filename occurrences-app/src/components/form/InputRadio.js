@@ -6,12 +6,12 @@ export default function InputRadio({ checked, text = '', name, onChange, value }
   return (
     <>
       <input
+        checked={checked}
         className="input-radio is-checkradio"
         id={id}
-        type="radio"
         name={name}
-        checked={checked}
         onChange={(e) => onChange(e.target.value)}
+        type="radio"
         value={value}/>
       <label htmlFor={id}>{text}</label>
     </>

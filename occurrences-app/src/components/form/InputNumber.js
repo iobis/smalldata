@@ -19,8 +19,8 @@ export default function InputNumber({ className, name, onChange, optional, value
         className="input"
         onChange={(e) => onChange(parseFloat(e.target.value))}
         placeholder={i18next.exists(placeholderKey) ? t(placeholderKey) : undefined}
-        type="number"
         step={step}
+        type="number"
         value={value || ''}/>
       {i18next.exists(helpKey) ? <p className="help">{t(helpKey)}</p> : null}
     </div>

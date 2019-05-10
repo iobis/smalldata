@@ -23,8 +23,8 @@ export default function BasicData({ onChange, basicData }) {
             <input
               className="input"
               onChange={(value) => updateField('scientificName', value.target.value)}
-              type="text"
               placeholder={t('occurrenceForm.basicData.scientificName')}
+              type="text"
               value={scientificName}/>
           </div>
         </div>
@@ -72,6 +72,6 @@ export default function BasicData({ onChange, basicData }) {
 }
 
 BasicData.propTypes = {
-  onChange:  PropTypes.func.isRequired,
-  basicData: PropTypes.object.isRequired
+  basicData: PropTypes.object.isRequired,
+  onChange:  PropTypes.func.isRequired
 }

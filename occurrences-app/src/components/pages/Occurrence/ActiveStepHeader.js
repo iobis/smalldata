@@ -8,8 +8,8 @@ export default function ActiveStepHeader({ children, onStepTitleClick, stepDescr
       className="active has-background-grey has-text-white"
       dataDescription=""
       iconVisible={false}
-      selectedData=""
       onStepTitleClick={onStepTitleClick}
+      selectedData=""
       stepDescription={stepDescription}
       stepTitle={stepTitle}>
       {children}

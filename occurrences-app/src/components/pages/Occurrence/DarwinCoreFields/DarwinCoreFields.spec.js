@@ -31,7 +31,6 @@ describe('DarwinCoreFields', () => {
 function createComponent() {
   return (
     <DarwinCoreFields
-      onChange={jest.fn()}
-    />
+      onChange={jest.fn()}/>
   )
 }
