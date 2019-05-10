@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import CopyPreviousData from '../CopyPreviousData'
 import Dropdown from '../../../form/Dropdown'
 import PropTypes from 'prop-types'

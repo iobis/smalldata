@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import classNames from 'classnames'
 import React, { useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -13,15 +14,15 @@ export default function Navbar() {
   useOnClickOutside(menuRef, hideNavbarMenu)
 
   return (
-    <nav className="navbar is-info" role="navigation" ref={menuRef} aria-label="main navigation">
+    <nav aria-label="main navigation" className="navbar is-info" ref={menuRef} role="navigation">
       <div className="navbar-brand">
-        <Link onClick={hideNavbarMenu} to="/input-data" className="navbar-item">
+        <Link className="navbar-item" onClick={hideNavbarMenu} to="/input-data">
           <p style={{ 'width': 112, 'fontSize': 26, 'fontWeight': 'bold' }}>OBIS</p>
         </Link>
         <a
-          role="button"
           className="navbar-burger"
-          onClick={() => setNavbarMenuActive(!navbarMenuActive)}>
+          onClick={() => setNavbarMenuActive(!navbarMenuActive)}
+          role="button">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -48,7 +49,7 @@ export default function Navbar() {
 }
 
 const NavbarItem = ({ children, onClick, to }) => (
-  <NavLink activeClassName="is-active" className="navbar-item" to={to} onClick={onClick}>
+  <NavLink activeClassName="is-active" className="navbar-item" onClick={onClick} to={to}>
     {children}
   </NavLink>
 )

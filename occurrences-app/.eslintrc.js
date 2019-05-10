@@ -2,7 +2,6 @@ module.exports = {
   extends: 'react-app',
   plugins: ['react'],
   rules:   {
-    'jsx-a11y/anchor-is-valid':           0,
     'jsx-quotes':                         [2, 'prefer-double'],
     'react/jsx-closing-bracket-location': [2, {
       'nonEmpty':    'after-props',
