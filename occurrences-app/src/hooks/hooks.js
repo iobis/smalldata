@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 export function useOnClickOutside(ref, handler) {
   useEffect(() => {
@@ -13,4 +13,13 @@ export function useOnClickOutside(ref, handler) {
       document.removeEventListener('touchstart', listener)
     }
   }, [])
+}
+
+export function useDebounce(value, delay) {
+  const [debouncedValue, setDebouncedValue] = useState(value)
+  useEffect(() => {
+    const handler = setTimeout(() => setDebouncedValue(value), delay)
+    return () => clearTimeout(handler)
+  }, [value])
+  return debouncedValue
 }
