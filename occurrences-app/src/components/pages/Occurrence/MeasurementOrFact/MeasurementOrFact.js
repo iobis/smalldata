@@ -10,19 +10,19 @@ export default function MeasurementOrFact({ data, onChange }) {
   const { t } = useTranslation()
   const generalMeasurements = getGeneralMeasurements()
   const specificMeasurements = getSpecificMeasurements()
-  const [suppliedMeasurements, setSuppliedMeasurements] = useState(data.map(addUuidIfMissing))
+  const [suppliedMeasurements, setSuppliedMeasurements] = useState(data.map(addUuid))
 
   function addSuppliedMeasurements(measurement) {
-    const updatedMeasurements = [...suppliedMeasurements, addUuidIfMissing(measurement)]
+    const updatedMeasurements = [...suppliedMeasurements, addUuid(measurement)]
       .sort((left, right) => left.type.toLowerCase().localeCompare(right.type.toLowerCase()))
-    onChange(updatedMeasurements.map(({ unit, units, type, value }) => ({ unit, units, type, value })))
+    onChange(updatedMeasurements.map(removeUuid))
     setSuppliedMeasurements(updatedMeasurements)
   }
 
   function removeSuppliedMeasurement(index) {
     const updatedMeasurements = suppliedMeasurements.filter((_, i) => i !== index)
       .sort((left, right) => left.type.toLowerCase().localeCompare(right.type.toLowerCase()))
-    onChange(updatedMeasurements.map(({ unit, units, type, value }) => ({ unit, units, type, value })))
+    onChange(updatedMeasurements.map(removeUuid))
     setSuppliedMeasurements(updatedMeasurements)
   }
 
@@ -32,14 +32,19 @@ export default function MeasurementOrFact({ data, onChange }) {
         ? updatedMeasurement
         : measurment
     })
-    onChange(updatedMeasurements.map(({ unit, units, type, value }) => ({ unit, units, type, value })))
+    onChange(updatedMeasurements.map(removeUuid))
     setSuppliedMeasurements(updatedMeasurements)
   }
 
-  function addUuidIfMissing(measurment) {
+  function addUuid(measurment) {
     return !measurment.uuid
       ? { uuid: uuid(), ...measurment }
       : measurment
+  }
+
+  function removeUuid(original) {
+    const { uuid, ...measurement } = original
+    return measurement
   }
 
   return (
