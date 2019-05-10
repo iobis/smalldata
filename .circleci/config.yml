@@ -40,8 +40,8 @@ jobs:
           name: Build and deploy smalldata app and server image over ssh
           command: |
             yarn occurrences-app:build
-            ssh "$SSH_USER@$SSH_HOST" "mkdir -p /var/www/html/smalldata"
-            scp -r ./occurrences-app/build/* "$SSH_USER@$SSH_HOST:/var/www/html/smalldata/"
+            ssh "$SSH_USER@$SSH_HOST" "mkdir -p /var/www/html/occurrences"
+            scp -r ./occurrences-app/build/* "$SSH_USER@$SSH_HOST:/var/www/html/occurrences/"
             cd server
             ./gradlew runtimeZip
             scp -r ./build/image.zip "$SSH_USER@$SSH_HOST:/opt/smalldata"
