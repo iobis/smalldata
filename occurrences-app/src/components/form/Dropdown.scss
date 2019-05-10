@@ -1,0 +1,14 @@
+.dropdown {
+  .dropdown-item {
+    cursor: pointer;
+
+    &:hover {
+      background-color: $dropdown-item-hover-background-color;
+    }
+
+    &.is-active {
+      background-color: $dropdown-item-active-background-color;
+      color: $dropdown-item-active-color;
+    }
+  }
+}

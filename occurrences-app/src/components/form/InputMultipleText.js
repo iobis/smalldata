@@ -20,7 +20,6 @@ export default function InputMultipleText({ className, name, values, onChange, l
       </label>
       <input
         className="input"
-        placeholder={t(name + '.placeholder')}
         onChange={(e) => setInputFieldValue(e.target.value)}
         onKeyDown={(e) => {
           if (e.key === 'Enter') {
@@ -29,10 +28,11 @@ export default function InputMultipleText({ className, name, values, onChange, l
             setInputFieldValue('')
           }
         }}
+        placeholder={t(name + '.placeholder')}
         type="text"
         value={inputFieldValue}/>
       <p className="help">{t(name + '.help')}</p>
-      <Tags labelComponent={labelComponent} strings={newValues} onDelete={updateNewValues}/>
+      <Tags labelComponent={labelComponent} onDelete={updateNewValues} strings={newValues}/>
     </div>
   )
 }
@@ -49,11 +49,11 @@ function Tags({ strings, onDelete, labelComponent }) {
   return (
     <div className="block">
       {strings.map((string, index) =>
-        <div key={index}>
+        (<div key={index}>
           <span className="tag">
             {labelComponent ? labelComponent(string) : string}
             <button className="delete is-small" onClick={() => onDelete(deleteByIndex(index))}/></span>
-        </div>
+        </div>)
       )}
     </div>
   )

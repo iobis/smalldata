@@ -18,8 +18,8 @@ export default function Textarea({ className, name, onChange, value }) {
       <textarea
         className="textarea"
         onChange={(e) => onChange(e.target.value)}
-        rows={5}
         placeholder={i18next.exists(placeholderKey) ? t(placeholderKey) : undefined}
+        rows={5}
         value={value}/>
       {i18next.exists(helpKey) ? <p className="help">{t(helpKey)}</p> : null}
     </div>

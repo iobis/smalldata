@@ -14,11 +14,11 @@ export default function InputRadioGroup({ onChange, selectedValue, name, options
       <div className="control">
         {options.map(option => (
           <InputRadio
-            key={option}
             checked={selectedValue === option}
-            text={t(name + '.' + option)}
+            key={option}
             name={name}
             onChange={onChange}
+            text={t(name + '.' + option)}
             value={option}/>
         ))}
       </div>

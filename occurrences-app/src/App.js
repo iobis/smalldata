@@ -5,10 +5,10 @@ import Navbar from './components/layout/Navbar'
 import OccurrenceForm from './components/pages/Occurrence/OccurrenceForm'
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import { faCheckCircle, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faAngleDown, faCheckCircle, faUser } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 
-library.add(faUser, faCheckCircle)
+library.add(faAngleDown, faCheckCircle, faUser)
 
 export default function App() {
   return (

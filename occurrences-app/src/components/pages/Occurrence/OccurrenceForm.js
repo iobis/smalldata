@@ -1,15 +1,17 @@
 import ActiveStepHeader from './ActiveStepHeader'
 import BasicData from './BasicData/BasicData'
 import ConfirmedStepHeader from './ConfirmedStepHeader'
+import DarwinCoreFields from './DarwinCoreFields/DarwinCoreFields'
 import LocationData from './LocationData/LocationData'
+import MeasurementOrFact from './MeasurementOrFact/MeasurementOrFact'
 import NotConfirmedStepHeader from './NotConfirmedStepHeader'
 import ObservationData from './ObservationData/ObservationData'
+import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import SelectDataset from './SelectDataset/SelectDataset'
 import { format } from 'date-fns'
 import { getDatasetMock } from '../../../clients/server'
 import { useTranslation } from 'react-i18next'
-import DarwinCoreFields from './DarwinCoreFields/DarwinCoreFields'
 
 export default function OccurrenceForm() {
   const datasets = getDatasetMock()
@@ -55,6 +57,7 @@ export default function OccurrenceForm() {
       verbatimDepth:         ''
     }
   )
+  const [measurementOrFact, setMeasurementOrFact] = useState([])
   const steps = [{
     dataDescription: t('occurrenceForm.selectDataset.dataDescription'),
     selectedData:    selectedDataset.description,
@@ -62,19 +65,19 @@ export default function OccurrenceForm() {
     stepTitle:       t('occurrenceForm.selectDataset.stepTitle'),
     children:        <SelectDataset
                        datasets={datasets}
-                       selectedDataset={selectedDataset}
-                       onChange={setSelectedDataset}/>
+                       onChange={setSelectedDataset}
+                       selectedDataset={selectedDataset}/>
   }, {
     dataDescription: 'Given Values',
     selectedData:    basicDataLabel,
     stepDescription: 'Mandatory observation information',
     stepTitle:       'Basic Data',
     children:        <BasicData
-                       onChange={setBasicData}
-                       basicData={basicData}/>
+                       basicData={basicData}
+                       onChange={setBasicData}/>
   }, {
     dataDescription: t('occurrenceForm.locationData.step.dataDescription'),
-    selectedData:    renderSelectedLocation(locationData),
+    selectedData:    <SelectedLocation {...locationData}/>,
     stepDescription: t('occurrenceForm.locationData.step.stepDescription'),
     stepTitle:       t('occurrenceForm.locationData.step.stepTitle'),
     children:        <LocationData
@@ -90,10 +93,12 @@ export default function OccurrenceForm() {
                        onChange={setObservationData}/>
   }, {
     dataDescription: 'Given values',
-    selectedData:    'You have submitted 7 extra fields',
+    selectedData:    <MeasurementOrFactSummary data={measurementOrFact}/>,
     stepDescription: 'Enter further specifics',
     stepTitle:       'Measurement or Fact',
-    children:        <StubFormContent/>
+    children:        <MeasurementOrFact
+                       data={measurementOrFact}
+                       onChange={setMeasurementOrFact}/>
   }, {
     dataDescription: '',
     selectedData:    '',
@@ -107,7 +112,8 @@ export default function OccurrenceForm() {
   return (
     <section className="section">
       {steps.map((step, index) => {
-        const className = 'step-' + index + ' background-color-' + Math.floor(30 / steps.length * index)
+        const stepNumber = index + 1
+        const className = 'step-' + stepNumber + ' background-color-' + Math.floor(30 / steps.length * index)
         const StepComponent = activeStepIndex === index
           ? ActiveStepHeader
           : activeStepIndex > index
@@ -119,14 +125,14 @@ export default function OccurrenceForm() {
             className={className}
             key={step.stepTitle}
             onStepTitleClick={() => setActiveStepIndex(index)}
-            stepTitle={(index + 1) + ' - ' + step.stepTitle}/>
+            stepTitle={stepNumber + ' - ' + step.stepTitle}/>
         )
       })}
     </section>
   )
 }
 
-function renderSelectedLocation({ decimalLatitude, decimalLongitude }) {
+function SelectedLocation({ decimalLatitude, decimalLongitude }) {
   const { t } = useTranslation()
 
   return (
@@ -137,20 +143,23 @@ function renderSelectedLocation({ decimalLatitude, decimalLongitude }) {
   )
 }
 
+SelectedLocation.propTypes = {
+  decimalLatitude:  PropTypes.number,
+  decimalLongitude: PropTypes.number
+}
+
 function renderIdentifiedByLabel({ identifiedBy, institutionCode }) {
   const institutionCodeLabel = institutionCode ? `Institution: ${institutionCode}` : ''
   const identifiedByLabel = identifiedBy.length > 0 ? 'Identified by: ' + identifiedBy.join(', ') : ''
   return [institutionCodeLabel, identifiedByLabel].filter(label => !!label).join('; ')
 }
 
-function StubFormContent() {
-  return (
-    <div className="is-fluid">
-      <div className="columns">
-        <div className="column">
-          Form Content To Be Added
-        </div>
-      </div>
-    </div>
-  )
+function MeasurementOrFactSummary({ data }) {
+  const { t } = useTranslation()
+
+  return <div>{t('occurrenceForm.measurementOrFact.step.title', { number: data.length })}</div>
+}
+
+MeasurementOrFactSummary.propTypes = {
+  data: PropTypes.array.isRequired
 }

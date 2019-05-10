@@ -11,7 +11,6 @@ describe('SelectDataset', () => {
 function createComponent() {
   return (
     <BasicData
-      onChange={jest.fn()}
       basicData={{
         basisOfRecord:    'humanObservation',
         beginDate:        new Date('2019-01-02T12:30:40'),
@@ -20,6 +19,7 @@ function createComponent() {
         occurrenceStatus: 'absent',
         scientificName:   'scientific name',
         sex:              'male'
-      }}/>
+      }}
+      onChange={jest.fn()}/>
   )
 }

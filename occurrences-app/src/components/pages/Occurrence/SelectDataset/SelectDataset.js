@@ -9,11 +9,10 @@ export default function SelectDataset({ datasets, selectedDataset, onChange }) {
         <tbody>
         {datasets.map(dataset => (
           <DatasetOption
+            checked={dataset.id === selectedDataset.id}
             key={dataset.id}
             onClick={() => onChange(dataset)}
-            checked={dataset.id === selectedDataset.id}
-            {...dataset}
-          />))}
+            {...dataset}/>))}
         </tbody>
       </table>
     </div>

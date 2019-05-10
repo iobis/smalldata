@@ -1,12 +1,10 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import PropTypes from 'prop-types'
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import InputText from '../../../form/InputText'
 
 export default function DarwinCoreFields({ onChange }) {
-
-  // Reference example for Jill https://codesandbox.io/s/q555kp8jj?fontsize=14
-
-  const [fields,setFields] = useState([
+  const [fields, setFields] = useState([
     { name: 'dummy field', value: 'dummy value' },
     { name: 'dummy2 field', value: 'dummy value' },
     { name: 'dummy3 field', value: 'dummy value' },
@@ -16,14 +14,13 @@ export default function DarwinCoreFields({ onChange }) {
   const [name, setName] = useState('')
   const [value, setValue] = useState('')
 
-
-  function makeDarwinCoreObject(){
-    setFields([...fields,{name,value}])
+  function makeDarwinCoreObject() {
+    setFields([...fields, { name, value }])
   }
 
-  function removeRowItem(index){
+  function removeRowItem(index) {
     const values = [...fields]
-    values.splice(index,1)
+    values.splice(index, 1)
     setFields(values)
   }
 
@@ -38,7 +35,10 @@ export default function DarwinCoreFields({ onChange }) {
       <div className="columns is-grouped">
         <InputText className="field-name" name="occurrenceForm.darwinCoreFields.fieldName" onChange={setName}/>
         <InputText className="value" name="occurrenceForm.darwinCoreFields.value" onChange={setValue}/>
-        <div className="column add"><span className="label">&nbsp;</span><a className="button" onClick={makeDarwinCoreObject}>add</a></div>
+        <div className="column add">
+          <span className="label">&nbsp;</span>
+          <a className="button" onClick={makeDarwinCoreObject}>add</a>
+        </div>
       </div>
 
       <table className="table is-fullwidth">
@@ -50,14 +50,14 @@ export default function DarwinCoreFields({ onChange }) {
         </tr>
         </thead>
         <tbody>
-        {fields.map((field,i) =>
+        {fields.map((field, i) => (
           <tr className="fieldrow" key={field.name + field.value}>
             <td>{field.name}</td>
             <td>{field.value}</td>
             <td><a className="button is-small remove" onClick={() => removeRowItem(i)}>remove</a></td>
 
           </tr>
-        )}
+        ))}
         </tbody>
       </table>
 

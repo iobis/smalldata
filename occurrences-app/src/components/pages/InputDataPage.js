@@ -12,7 +12,7 @@ export default function InputDataPage() {
     <>
       <section className="section">
         <div className="container is-fluid has-text-centered">
-          <Link to="/input-data/new" className="button is-info">
+          <Link className="button is-info" to="/input-data/new">
             {t('inputDataPage.inputNewOccurrence')}
           </Link>
         </div>

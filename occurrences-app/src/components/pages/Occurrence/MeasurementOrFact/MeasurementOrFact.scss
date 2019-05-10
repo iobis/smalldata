@@ -1,0 +1,21 @@
+.measurement-or-fact {
+  margin-bottom: 1.25rem;
+
+  .supplied {
+    background-color: $background;
+  }
+
+  .dropdown {
+    .selected-value {
+      min-width: 8rem;
+    }
+
+    .button {
+      text-align: left;
+    }
+  }
+
+  td {
+    vertical-align: middle;
+  }
+}

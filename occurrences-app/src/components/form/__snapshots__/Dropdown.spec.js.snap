@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown renders correctly 1`] = `
+<Dropdown
+  onChange={[MockFunction]}
+  options={
+    Array [
+      "option-1",
+      "option-2",
+      "option-3",
+    ]
+  }
+  value="option-1"
+>
+  <div
+    className="dropdown"
+    onClick={[Function]}
+  >
+    <div
+      className="dropdown-trigger"
+    >
+      <button
+        aria-controls="dropdown-menu"
+        aria-haspopup="true"
+        className="button"
+      >
+        <span
+          className="selected-value"
+        >
+          option-1
+        </span>
+        <span
+          className="icon is-small"
+        >
+          <FontAwesomeIcon
+            className="angle-down"
+            icon="angle-down"
+          >
+            <i
+              className="angle-down"
+              icon="angle-down"
+            />
+          </FontAwesomeIcon>
+        </span>
+      </button>
+    </div>
+    <div
+      className="dropdown-menu"
+      id="dropdown-menu"
+      role="menu"
+    >
+      <div
+        className="dropdown-content"
+      >
+        <div
+          className="dropdown-item is-active"
+          key="option-1"
+          onClick={[Function]}
+        >
+          option-1
+        </div>
+        <div
+          className="dropdown-item"
+          key="option-2"
+          onClick={[Function]}
+        >
+          option-2
+        </div>
+        <div
+          className="dropdown-item"
+          key="option-3"
+          onClick={[Function]}
+        >
+          option-3
+        </div>
+      </div>
+    </div>
+  </div>
+</Dropdown>
+`;

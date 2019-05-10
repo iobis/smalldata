@@ -6,7 +6,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
     className="section"
   >
     <ActiveStepHeader
-      className="step-0 background-color-0"
+      className="step-1 background-color-0"
       dataDescription="occurrenceForm.selectDataset.dataDescription"
       key="occurrenceForm.selectDataset.stepTitle"
       onStepTitleClick={[Function]}
@@ -325,7 +325,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
       </StepHeader>
     </ActiveStepHeader>
     <NotConfirmedStepHeader
-      className="step-1 background-color-5"
+      className="step-2 background-color-5"
       dataDescription="Given Values"
       key="Basic Data"
       onStepTitleClick={[Function]}
@@ -334,7 +334,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
       stepTitle="2 - Basic Data"
     >
       <StepHeader
-        className="not-confirmed has-text-white step-1 background-color-5"
+        className="not-confirmed has-text-white step-2 background-color-5"
         dataDescription=""
         iconVisible={false}
         onStepTitleClick={[Function]}
@@ -343,7 +343,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
         stepTitle="2 - Basic Data"
       >
         <div
-          className="step-header columns is-vcentered not-confirmed has-text-white step-1 background-color-5"
+          className="step-header columns is-vcentered not-confirmed has-text-white step-2 background-color-5"
           onClick={[Function]}
         >
           <div
@@ -380,27 +380,27 @@ exports[`OccurrenceForm renders correctly 1`] = `
       </StepHeader>
     </NotConfirmedStepHeader>
     <NotConfirmedStepHeader
-      className="step-2 background-color-10"
+      className="step-3 background-color-10"
       dataDescription="occurrenceForm.locationData.step.dataDescription"
       key="occurrenceForm.locationData.step.stepTitle"
       onStepTitleClick={[Function]}
       selectedData={
-        <React.Fragment>
-          <div>
-            occurrenceForm.locationData.step.selectedData.latitude
-            : 
-          </div>
-          <div>
-            occurrenceForm.locationData.step.selectedData.longitude
-            : 
-          </div>
-        </React.Fragment>
+        <SelectedLocation
+          coordinateUncertainty={null}
+          decimalLatitude={null}
+          decimalLongitude={null}
+          maximumDepth={null}
+          minimumDepth={null}
+          verbatimCoordinates=""
+          verbatimDepth=""
+          verbatimEventDate=""
+        />
       }
       stepDescription="occurrenceForm.locationData.step.stepDescription"
       stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
     >
       <StepHeader
-        className="not-confirmed has-text-white step-2 background-color-10"
+        className="not-confirmed has-text-white step-3 background-color-10"
         dataDescription=""
         iconVisible={false}
         onStepTitleClick={[Function]}
@@ -409,7 +409,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
         stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
       >
         <div
-          className="step-header columns is-vcentered not-confirmed has-text-white step-2 background-color-10"
+          className="step-header columns is-vcentered not-confirmed has-text-white step-3 background-color-10"
           onClick={[Function]}
         >
           <div
@@ -446,7 +446,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
       </StepHeader>
     </NotConfirmedStepHeader>
     <NotConfirmedStepHeader
-      className="step-3 background-color-15"
+      className="step-4 background-color-15"
       dataDescription="Main Info"
       key="Observation Data"
       onStepTitleClick={[Function]}
@@ -455,7 +455,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
       stepTitle="4 - Observation Data"
     >
       <StepHeader
-        className="not-confirmed has-text-white step-3 background-color-15"
+        className="not-confirmed has-text-white step-4 background-color-15"
         dataDescription=""
         iconVisible={false}
         onStepTitleClick={[Function]}
@@ -464,7 +464,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
         stepTitle="4 - Observation Data"
       >
         <div
-          className="step-header columns is-vcentered not-confirmed has-text-white step-3 background-color-15"
+          className="step-header columns is-vcentered not-confirmed has-text-white step-4 background-color-15"
           onClick={[Function]}
         >
           <div
@@ -501,16 +501,20 @@ exports[`OccurrenceForm renders correctly 1`] = `
       </StepHeader>
     </NotConfirmedStepHeader>
     <NotConfirmedStepHeader
-      className="step-4 background-color-20"
+      className="step-5 background-color-20"
       dataDescription="Given values"
       key="Measurement or Fact"
       onStepTitleClick={[Function]}
-      selectedData="You have submitted 7 extra fields"
+      selectedData={
+        <MeasurementOrFactSummary
+          data={Array []}
+        />
+      }
       stepDescription="Enter further specifics"
       stepTitle="5 - Measurement or Fact"
     >
       <StepHeader
-        className="not-confirmed has-text-white step-4 background-color-20"
+        className="not-confirmed has-text-white step-5 background-color-20"
         dataDescription=""
         iconVisible={false}
         onStepTitleClick={[Function]}
@@ -519,7 +523,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
         stepTitle="5 - Measurement or Fact"
       >
         <div
-          className="step-header columns is-vcentered not-confirmed has-text-white step-4 background-color-20"
+          className="step-header columns is-vcentered not-confirmed has-text-white step-5 background-color-20"
           onClick={[Function]}
         >
           <div
@@ -556,7 +560,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
       </StepHeader>
     </NotConfirmedStepHeader>
     <NotConfirmedStepHeader
-      className="step-5 background-color-25"
+      className="step-6 background-color-25"
       dataDescription=""
       key="Darwin Core Fields"
       onStepTitleClick={[Function]}
@@ -565,7 +569,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
       stepTitle="6 - Darwin Core Fields"
     >
       <StepHeader
-        className="not-confirmed has-text-white step-5 background-color-25"
+        className="not-confirmed has-text-white step-6 background-color-25"
         dataDescription=""
         iconVisible={false}
         onStepTitleClick={[Function]}
@@ -574,7 +578,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
         stepTitle="6 - Darwin Core Fields"
       >
         <div
-          className="step-header columns is-vcentered not-confirmed has-text-white step-5 background-color-25"
+          className="step-header columns is-vcentered not-confirmed has-text-white step-6 background-color-25"
           onClick={[Function]}
         >
           <div
@@ -620,7 +624,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
     className="section"
   >
     <ConfirmedStepHeader
-      className="step-0 background-color-0"
+      className="step-1 background-color-0"
       dataDescription="occurrenceForm.selectDataset.dataDescription"
       key="occurrenceForm.selectDataset.stepTitle"
       onStepTitleClick={[Function]}
@@ -688,7 +692,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
       </StepHeader>
     </ConfirmedStepHeader>
     <ConfirmedStepHeader
-      className="step-1 background-color-5"
+      className="step-2 background-color-5"
       dataDescription="Given Values"
       key="Basic Data"
       onStepTitleClick={[Function]}
@@ -756,23 +760,21 @@ exports[`OccurrenceForm renders correctly 2`] = `
       </StepHeader>
     </ConfirmedStepHeader>
     <ConfirmedStepHeader
-      className="step-2 background-color-10"
+      className="step-3 background-color-10"
       dataDescription="occurrenceForm.locationData.step.dataDescription"
       key="occurrenceForm.locationData.step.stepTitle"
       onStepTitleClick={[Function]}
       selectedData={
-        <React.Fragment>
-          <div>
-            occurrenceForm.locationData.step.selectedData.latitude
-            : 
-            0.12345
-          </div>
-          <div>
-            occurrenceForm.locationData.step.selectedData.longitude
-            : 
-            -0.54321
-          </div>
-        </React.Fragment>
+        <SelectedLocation
+          coordinateUncertainty={null}
+          decimalLatitude={0.12345}
+          decimalLongitude={-0.54321}
+          maximumDepth={null}
+          minimumDepth={null}
+          verbatimCoordinates=""
+          verbatimDepth=""
+          verbatimEventDate=""
+        />
       }
       stepDescription="occurrenceForm.locationData.step.stepDescription"
       stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
@@ -783,18 +785,16 @@ exports[`OccurrenceForm renders correctly 2`] = `
         iconVisible={true}
         onStepTitleClick={[Function]}
         selectedData={
-          <React.Fragment>
-            <div>
-              occurrenceForm.locationData.step.selectedData.latitude
-              : 
-              0.12345
-            </div>
-            <div>
-              occurrenceForm.locationData.step.selectedData.longitude
-              : 
-              -0.54321
-            </div>
-          </React.Fragment>
+          <SelectedLocation
+            coordinateUncertainty={null}
+            decimalLatitude={0.12345}
+            decimalLongitude={-0.54321}
+            maximumDepth={null}
+            minimumDepth={null}
+            verbatimCoordinates=""
+            verbatimDepth=""
+            verbatimEventDate=""
+          />
         }
         stepDescription="occurrenceForm.locationData.step.stepDescription"
         stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
@@ -817,16 +817,27 @@ exports[`OccurrenceForm renders correctly 2`] = `
           <div
             className="column is-7 is-size-5"
           >
-            <div>
-              occurrenceForm.locationData.step.selectedData.latitude
-              : 
-              0.12345
-            </div>
-            <div>
-              occurrenceForm.locationData.step.selectedData.longitude
-              : 
-              -0.54321
-            </div>
+            <SelectedLocation
+              coordinateUncertainty={null}
+              decimalLatitude={0.12345}
+              decimalLongitude={-0.54321}
+              maximumDepth={null}
+              minimumDepth={null}
+              verbatimCoordinates=""
+              verbatimDepth=""
+              verbatimEventDate=""
+            >
+              <div>
+                occurrenceForm.locationData.step.selectedData.latitude
+                : 
+                0.12345
+              </div>
+              <div>
+                occurrenceForm.locationData.step.selectedData.longitude
+                : 
+                -0.54321
+              </div>
+            </SelectedLocation>
           </div>
           <div
             className="column details"
@@ -859,7 +870,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
       </StepHeader>
     </ConfirmedStepHeader>
     <ActiveStepHeader
-      className="step-3 background-color-15"
+      className="step-4 background-color-15"
       dataDescription="Main Info"
       key="Observation Data"
       onStepTitleClick={[Function]}
@@ -1238,16 +1249,20 @@ exports[`OccurrenceForm renders correctly 2`] = `
       </StepHeader>
     </ActiveStepHeader>
     <NotConfirmedStepHeader
-      className="step-4 background-color-20"
+      className="step-5 background-color-20"
       dataDescription="Given values"
       key="Measurement or Fact"
       onStepTitleClick={[Function]}
-      selectedData="You have submitted 7 extra fields"
+      selectedData={
+        <MeasurementOrFactSummary
+          data={Array []}
+        />
+      }
       stepDescription="Enter further specifics"
       stepTitle="5 - Measurement or Fact"
     >
       <StepHeader
-        className="not-confirmed has-text-white step-4 background-color-20"
+        className="not-confirmed has-text-white step-5 background-color-20"
         dataDescription=""
         iconVisible={false}
         onStepTitleClick={[Function]}
@@ -1256,7 +1271,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
         stepTitle="5 - Measurement or Fact"
       >
         <div
-          className="step-header columns is-vcentered not-confirmed has-text-white step-4 background-color-20"
+          className="step-header columns is-vcentered not-confirmed has-text-white step-5 background-color-20"
           onClick={[Function]}
         >
           <div
@@ -1293,7 +1308,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
       </StepHeader>
     </NotConfirmedStepHeader>
     <NotConfirmedStepHeader
-      className="step-5 background-color-25"
+      className="step-6 background-color-25"
       dataDescription=""
       key="Darwin Core Fields"
       onStepTitleClick={[Function]}
@@ -1302,7 +1317,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
       stepTitle="6 - Darwin Core Fields"
     >
       <StepHeader
-        className="not-confirmed has-text-white step-5 background-color-25"
+        className="not-confirmed has-text-white step-6 background-color-25"
         dataDescription=""
         iconVisible={false}
         onStepTitleClick={[Function]}
@@ -1311,7 +1326,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
         stepTitle="6 - Darwin Core Fields"
       >
         <div
-          className="step-header columns is-vcentered not-confirmed has-text-white step-5 background-color-25"
+          className="step-header columns is-vcentered not-confirmed has-text-white step-6 background-color-25"
           onClick={[Function]}
         >
           <div
@@ -1357,7 +1372,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
     className="section"
   >
     <ConfirmedStepHeader
-      className="step-0 background-color-0"
+      className="step-1 background-color-0"
       dataDescription="occurrenceForm.selectDataset.dataDescription"
       key="occurrenceForm.selectDataset.stepTitle"
       onStepTitleClick={[Function]}
@@ -1425,7 +1440,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
       </StepHeader>
     </ConfirmedStepHeader>
     <ConfirmedStepHeader
-      className="step-1 background-color-5"
+      className="step-2 background-color-5"
       dataDescription="Given Values"
       key="Basic Data"
       onStepTitleClick={[Function]}
@@ -1493,23 +1508,21 @@ exports[`OccurrenceForm renders correctly 3`] = `
       </StepHeader>
     </ConfirmedStepHeader>
     <ConfirmedStepHeader
-      className="step-2 background-color-10"
+      className="step-3 background-color-10"
       dataDescription="occurrenceForm.locationData.step.dataDescription"
       key="occurrenceForm.locationData.step.stepTitle"
       onStepTitleClick={[Function]}
       selectedData={
-        <React.Fragment>
-          <div>
-            occurrenceForm.locationData.step.selectedData.latitude
-            : 
-            0.12345
-          </div>
-          <div>
-            occurrenceForm.locationData.step.selectedData.longitude
-            : 
-            -0.54321
-          </div>
-        </React.Fragment>
+        <SelectedLocation
+          coordinateUncertainty={null}
+          decimalLatitude={0.12345}
+          decimalLongitude={-0.54321}
+          maximumDepth={null}
+          minimumDepth={null}
+          verbatimCoordinates=""
+          verbatimDepth=""
+          verbatimEventDate=""
+        />
       }
       stepDescription="occurrenceForm.locationData.step.stepDescription"
       stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
@@ -1520,18 +1533,16 @@ exports[`OccurrenceForm renders correctly 3`] = `
         iconVisible={true}
         onStepTitleClick={[Function]}
         selectedData={
-          <React.Fragment>
-            <div>
-              occurrenceForm.locationData.step.selectedData.latitude
-              : 
-              0.12345
-            </div>
-            <div>
-              occurrenceForm.locationData.step.selectedData.longitude
-              : 
-              -0.54321
-            </div>
-          </React.Fragment>
+          <SelectedLocation
+            coordinateUncertainty={null}
+            decimalLatitude={0.12345}
+            decimalLongitude={-0.54321}
+            maximumDepth={null}
+            minimumDepth={null}
+            verbatimCoordinates=""
+            verbatimDepth=""
+            verbatimEventDate=""
+          />
         }
         stepDescription="occurrenceForm.locationData.step.stepDescription"
         stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
@@ -1554,16 +1565,27 @@ exports[`OccurrenceForm renders correctly 3`] = `
           <div
             className="column is-7 is-size-5"
           >
-            <div>
-              occurrenceForm.locationData.step.selectedData.latitude
-              : 
-              0.12345
-            </div>
-            <div>
-              occurrenceForm.locationData.step.selectedData.longitude
-              : 
-              -0.54321
-            </div>
+            <SelectedLocation
+              coordinateUncertainty={null}
+              decimalLatitude={0.12345}
+              decimalLongitude={-0.54321}
+              maximumDepth={null}
+              minimumDepth={null}
+              verbatimCoordinates=""
+              verbatimDepth=""
+              verbatimEventDate=""
+            >
+              <div>
+                occurrenceForm.locationData.step.selectedData.latitude
+                : 
+                0.12345
+              </div>
+              <div>
+                occurrenceForm.locationData.step.selectedData.longitude
+                : 
+                -0.54321
+              </div>
+            </SelectedLocation>
           </div>
           <div
             className="column details"
@@ -1596,7 +1618,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
       </StepHeader>
     </ConfirmedStepHeader>
     <ConfirmedStepHeader
-      className="step-3 background-color-15"
+      className="step-4 background-color-15"
       dataDescription="Main Info"
       key="Observation Data"
       onStepTitleClick={[Function]}
@@ -1664,11 +1686,15 @@ exports[`OccurrenceForm renders correctly 3`] = `
       </StepHeader>
     </ConfirmedStepHeader>
     <ActiveStepHeader
-      className="step-4 background-color-20"
+      className="step-5 background-color-20"
       dataDescription="Given values"
       key="Measurement or Fact"
       onStepTitleClick={[Function]}
-      selectedData="You have submitted 7 extra fields"
+      selectedData={
+        <MeasurementOrFactSummary
+          data={Array []}
+        />
+      }
       stepDescription="Enter further specifics"
       stepTitle="5 - Measurement or Fact"
     >
@@ -1716,25 +1742,1509 @@ exports[`OccurrenceForm renders correctly 3`] = `
             </div>
           </div>
         </div>
-        <StubFormContent>
+        <MeasurementOrFact
+          data={Array []}
+          onChange={[Function]}
+        >
           <div
-            className="is-fluid"
+            className="measurement-or-fact section is-fluid"
           >
             <div
               className="columns"
             >
               <div
-                className="column"
+                className="column is-half"
               >
-                Form Content To Be Added
+                <h1
+                  className="title"
+                >
+                  occurrenceForm.measurementOrFact.general.title
+                </h1>
+                <h2
+                  className="subtitle"
+                >
+                  occurrenceForm.measurementOrFact.general.subtitle
+                </h2>
+                <table
+                  className="general table is-fullwidth is-striped is-hoverable"
+                >
+                  <thead>
+                    <tr>
+                      <th
+                        style={
+                          Object {
+                            "width": "60%",
+                          }
+                        }
+                      >
+                        common.type
+                      </th>
+                      <th
+                        style={
+                          Object {
+                            "width": "20%",
+                          }
+                        }
+                      >
+                        common.unit
+                      </th>
+                      <th
+                        style={
+                          Object {
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        common.value
+                      </th>
+                      <th
+                        style={
+                          Object {
+                            "width": "10%",
+                          }
+                        }
+                      />
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <MeasurementRow
+                      key="Pressure"
+                      onClickAdd={[Function]}
+                      type="Pressure"
+                      units={
+                        Array [
+                          Object {
+                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
+                            "name": "Kilogram",
+                          },
+                          Object {
+                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
+                            "name": "Gram",
+                          },
+                        ]
+                      }
+                    >
+                      <tr
+                        className="measurement-row fieldrow"
+                      >
+                        <td>
+                          Pressure
+                        </td>
+                        <td>
+                          <Dropdown
+                            onChange={[Function]}
+                            options={
+                              Array [
+                                "Kilogram",
+                                "Gram",
+                              ]
+                            }
+                            value="Kilogram"
+                          >
+                            <div
+                              className="dropdown"
+                              onClick={[Function]}
+                            >
+                              <div
+                                className="dropdown-trigger"
+                              >
+                                <button
+                                  aria-controls="dropdown-menu"
+                                  aria-haspopup="true"
+                                  className="button"
+                                >
+                                  <span
+                                    className="selected-value"
+                                  >
+                                    Kilogram
+                                  </span>
+                                  <span
+                                    className="icon is-small"
+                                  >
+                                    <FontAwesomeIcon
+                                      className="angle-down"
+                                      icon="angle-down"
+                                    >
+                                      <i
+                                        className="angle-down"
+                                        icon="angle-down"
+                                      />
+                                    </FontAwesomeIcon>
+                                  </span>
+                                </button>
+                              </div>
+                              <div
+                                className="dropdown-menu"
+                                id="dropdown-menu"
+                                role="menu"
+                              >
+                                <div
+                                  className="dropdown-content"
+                                >
+                                  <div
+                                    className="dropdown-item is-active"
+                                    key="Kilogram"
+                                    onClick={[Function]}
+                                  >
+                                    Kilogram
+                                  </div>
+                                  <div
+                                    className="dropdown-item"
+                                    key="Gram"
+                                    onClick={[Function]}
+                                  >
+                                    Gram
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </Dropdown>
+                        </td>
+                        <td>
+                          <input
+                            className="input"
+                            onChange={[Function]}
+                            type="text"
+                            value=""
+                          />
+                        </td>
+                        <td>
+                          <a
+                            className="add button"
+                            onClick={[Function]}
+                          >
+                            common.add
+                          </a>
+                        </td>
+                      </tr>
+                    </MeasurementRow>
+                    <MeasurementRow
+                      key="Temperature"
+                      onClickAdd={[Function]}
+                      type="Temperature"
+                      units={
+                        Array [
+                          Object {
+                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPAA",
+                            "name": "Degrees Celsius",
+                          },
+                        ]
+                      }
+                    >
+                      <tr
+                        className="measurement-row fieldrow"
+                      >
+                        <td>
+                          Temperature
+                        </td>
+                        <td>
+                          <Dropdown
+                            onChange={[Function]}
+                            options={
+                              Array [
+                                "Degrees Celsius",
+                              ]
+                            }
+                            value="Degrees Celsius"
+                          >
+                            <div
+                              className="dropdown"
+                              onClick={[Function]}
+                            >
+                              <div
+                                className="dropdown-trigger"
+                              >
+                                <button
+                                  aria-controls="dropdown-menu"
+                                  aria-haspopup="true"
+                                  className="button"
+                                >
+                                  <span
+                                    className="selected-value"
+                                  >
+                                    Degrees Celsius
+                                  </span>
+                                  <span
+                                    className="icon is-small"
+                                  >
+                                    <FontAwesomeIcon
+                                      className="angle-down"
+                                      icon="angle-down"
+                                    >
+                                      <i
+                                        className="angle-down"
+                                        icon="angle-down"
+                                      />
+                                    </FontAwesomeIcon>
+                                  </span>
+                                </button>
+                              </div>
+                              <div
+                                className="dropdown-menu"
+                                id="dropdown-menu"
+                                role="menu"
+                              >
+                                <div
+                                  className="dropdown-content"
+                                >
+                                  <div
+                                    className="dropdown-item is-active"
+                                    key="Degrees Celsius"
+                                    onClick={[Function]}
+                                  >
+                                    Degrees Celsius
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </Dropdown>
+                        </td>
+                        <td>
+                          <input
+                            className="input"
+                            onChange={[Function]}
+                            type="text"
+                            value=""
+                          />
+                        </td>
+                        <td>
+                          <a
+                            className="add button"
+                            onClick={[Function]}
+                          >
+                            common.add
+                          </a>
+                        </td>
+                      </tr>
+                    </MeasurementRow>
+                    <MeasurementRow
+                      key="Salinity"
+                      onClickAdd={[Function]}
+                      type="Salinity"
+                      units={
+                        Array [
+                          Object {
+                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPAA",
+                            "name": "Degrees Celsius",
+                          },
+                        ]
+                      }
+                    >
+                      <tr
+                        className="measurement-row fieldrow"
+                      >
+                        <td>
+                          Salinity
+                        </td>
+                        <td>
+                          <Dropdown
+                            onChange={[Function]}
+                            options={
+                              Array [
+                                "Degrees Celsius",
+                              ]
+                            }
+                            value="Degrees Celsius"
+                          >
+                            <div
+                              className="dropdown"
+                              onClick={[Function]}
+                            >
+                              <div
+                                className="dropdown-trigger"
+                              >
+                                <button
+                                  aria-controls="dropdown-menu"
+                                  aria-haspopup="true"
+                                  className="button"
+                                >
+                                  <span
+                                    className="selected-value"
+                                  >
+                                    Degrees Celsius
+                                  </span>
+                                  <span
+                                    className="icon is-small"
+                                  >
+                                    <FontAwesomeIcon
+                                      className="angle-down"
+                                      icon="angle-down"
+                                    >
+                                      <i
+                                        className="angle-down"
+                                        icon="angle-down"
+                                      />
+                                    </FontAwesomeIcon>
+                                  </span>
+                                </button>
+                              </div>
+                              <div
+                                className="dropdown-menu"
+                                id="dropdown-menu"
+                                role="menu"
+                              >
+                                <div
+                                  className="dropdown-content"
+                                >
+                                  <div
+                                    className="dropdown-item is-active"
+                                    key="Degrees Celsius"
+                                    onClick={[Function]}
+                                  >
+                                    Degrees Celsius
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </Dropdown>
+                        </td>
+                        <td>
+                          <input
+                            className="input"
+                            onChange={[Function]}
+                            type="text"
+                            value=""
+                          />
+                        </td>
+                        <td>
+                          <a
+                            className="add button"
+                            onClick={[Function]}
+                          >
+                            common.add
+                          </a>
+                        </td>
+                      </tr>
+                    </MeasurementRow>
+                  </tbody>
+                </table>
+                <h1
+                  className="title"
+                >
+                  occurrenceForm.measurementOrFact.specific.title
+                </h1>
+                <h2
+                  className="subtitle"
+                >
+                  occurrenceForm.measurementOrFact.specific.subtitle
+                </h2>
+                <table
+                  className="specific table is-fullwidth is-striped is-hoverable"
+                >
+                  <thead>
+                    <tr>
+                      <th
+                        style={
+                          Object {
+                            "width": "60%",
+                          }
+                        }
+                      >
+                        common.type
+                      </th>
+                      <th
+                        style={
+                          Object {
+                            "width": "20%",
+                          }
+                        }
+                      >
+                        common.unit
+                      </th>
+                      <th
+                        style={
+                          Object {
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        common.value
+                      </th>
+                      <th
+                        style={
+                          Object {
+                            "width": "10%",
+                          }
+                        }
+                      />
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <MeasurementRow
+                      key="ObservedIndividualCount"
+                      onClickAdd={[Function]}
+                      type="ObservedIndividualCount"
+                      units={
+                        Array [
+                          Object {
+                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
+                            "name": "Kilogram",
+                          },
+                        ]
+                      }
+                    >
+                      <tr
+                        className="measurement-row fieldrow"
+                      >
+                        <td>
+                          ObservedIndividualCount
+                        </td>
+                        <td>
+                          <Dropdown
+                            onChange={[Function]}
+                            options={
+                              Array [
+                                "Kilogram",
+                              ]
+                            }
+                            value="Kilogram"
+                          >
+                            <div
+                              className="dropdown"
+                              onClick={[Function]}
+                            >
+                              <div
+                                className="dropdown-trigger"
+                              >
+                                <button
+                                  aria-controls="dropdown-menu"
+                                  aria-haspopup="true"
+                                  className="button"
+                                >
+                                  <span
+                                    className="selected-value"
+                                  >
+                                    Kilogram
+                                  </span>
+                                  <span
+                                    className="icon is-small"
+                                  >
+                                    <FontAwesomeIcon
+                                      className="angle-down"
+                                      icon="angle-down"
+                                    >
+                                      <i
+                                        className="angle-down"
+                                        icon="angle-down"
+                                      />
+                                    </FontAwesomeIcon>
+                                  </span>
+                                </button>
+                              </div>
+                              <div
+                                className="dropdown-menu"
+                                id="dropdown-menu"
+                                role="menu"
+                              >
+                                <div
+                                  className="dropdown-content"
+                                >
+                                  <div
+                                    className="dropdown-item is-active"
+                                    key="Kilogram"
+                                    onClick={[Function]}
+                                  >
+                                    Kilogram
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </Dropdown>
+                        </td>
+                        <td>
+                          <input
+                            className="input"
+                            onChange={[Function]}
+                            type="text"
+                            value=""
+                          />
+                        </td>
+                        <td>
+                          <a
+                            className="add button"
+                            onClick={[Function]}
+                          >
+                            common.add
+                          </a>
+                        </td>
+                      </tr>
+                    </MeasurementRow>
+                    <MeasurementRow
+                      key="Abundance category of biological entity specified elsewhere"
+                      onClickAdd={[Function]}
+                      type="Abundance category of biological entity specified elsewhere"
+                      units={
+                        Array [
+                          Object {
+                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/UXMM",
+                            "name": "Millimeter",
+                          },
+                        ]
+                      }
+                    >
+                      <tr
+                        className="measurement-row fieldrow"
+                      >
+                        <td>
+                          Abundance category of biological entity specified elsewhere
+                        </td>
+                        <td>
+                          <Dropdown
+                            onChange={[Function]}
+                            options={
+                              Array [
+                                "Millimeter",
+                              ]
+                            }
+                            value="Millimeter"
+                          >
+                            <div
+                              className="dropdown"
+                              onClick={[Function]}
+                            >
+                              <div
+                                className="dropdown-trigger"
+                              >
+                                <button
+                                  aria-controls="dropdown-menu"
+                                  aria-haspopup="true"
+                                  className="button"
+                                >
+                                  <span
+                                    className="selected-value"
+                                  >
+                                    Millimeter
+                                  </span>
+                                  <span
+                                    className="icon is-small"
+                                  >
+                                    <FontAwesomeIcon
+                                      className="angle-down"
+                                      icon="angle-down"
+                                    >
+                                      <i
+                                        className="angle-down"
+                                        icon="angle-down"
+                                      />
+                                    </FontAwesomeIcon>
+                                  </span>
+                                </button>
+                              </div>
+                              <div
+                                className="dropdown-menu"
+                                id="dropdown-menu"
+                                role="menu"
+                              >
+                                <div
+                                  className="dropdown-content"
+                                >
+                                  <div
+                                    className="dropdown-item is-active"
+                                    key="Millimeter"
+                                    onClick={[Function]}
+                                  >
+                                    Millimeter
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </Dropdown>
+                        </td>
+                        <td>
+                          <input
+                            className="input"
+                            onChange={[Function]}
+                            type="text"
+                            value=""
+                          />
+                        </td>
+                        <td>
+                          <a
+                            className="add button"
+                            onClick={[Function]}
+                          >
+                            common.add
+                          </a>
+                        </td>
+                      </tr>
+                    </MeasurementRow>
+                    <MeasurementRow
+                      key="Abundance of biological entity specified elsewhere per unit area of the bed"
+                      onClickAdd={[Function]}
+                      type="Abundance of biological entity specified elsewhere per unit area of the bed"
+                      units={
+                        Array [
+                          Object {
+                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
+                            "name": "Meter",
+                          },
+                        ]
+                      }
+                    >
+                      <tr
+                        className="measurement-row fieldrow"
+                      >
+                        <td>
+                          Abundance of biological entity specified elsewhere per unit area of the bed
+                        </td>
+                        <td>
+                          <Dropdown
+                            onChange={[Function]}
+                            options={
+                              Array [
+                                "Meter",
+                              ]
+                            }
+                            value="Meter"
+                          >
+                            <div
+                              className="dropdown"
+                              onClick={[Function]}
+                            >
+                              <div
+                                className="dropdown-trigger"
+                              >
+                                <button
+                                  aria-controls="dropdown-menu"
+                                  aria-haspopup="true"
+                                  className="button"
+                                >
+                                  <span
+                                    className="selected-value"
+                                  >
+                                    Meter
+                                  </span>
+                                  <span
+                                    className="icon is-small"
+                                  >
+                                    <FontAwesomeIcon
+                                      className="angle-down"
+                                      icon="angle-down"
+                                    >
+                                      <i
+                                        className="angle-down"
+                                        icon="angle-down"
+                                      />
+                                    </FontAwesomeIcon>
+                                  </span>
+                                </button>
+                              </div>
+                              <div
+                                className="dropdown-menu"
+                                id="dropdown-menu"
+                                role="menu"
+                              >
+                                <div
+                                  className="dropdown-content"
+                                >
+                                  <div
+                                    className="dropdown-item is-active"
+                                    key="Meter"
+                                    onClick={[Function]}
+                                  >
+                                    Meter
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </Dropdown>
+                        </td>
+                        <td>
+                          <input
+                            className="input"
+                            onChange={[Function]}
+                            type="text"
+                            value=""
+                          />
+                        </td>
+                        <td>
+                          <a
+                            className="add button"
+                            onClick={[Function]}
+                          >
+                            common.add
+                          </a>
+                        </td>
+                      </tr>
+                    </MeasurementRow>
+                    <MeasurementRow
+                      key="Abundance of biological entity specified elsewhere per unit volume of the sediment"
+                      onClickAdd={[Function]}
+                      type="Abundance of biological entity specified elsewhere per unit volume of the sediment"
+                      units={
+                        Array [
+                          Object {
+                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM",
+                            "name": "Grams",
+                          },
+                        ]
+                      }
+                    >
+                      <tr
+                        className="measurement-row fieldrow"
+                      >
+                        <td>
+                          Abundance of biological entity specified elsewhere per unit volume of the sediment
+                        </td>
+                        <td>
+                          <Dropdown
+                            onChange={[Function]}
+                            options={
+                              Array [
+                                "Grams",
+                              ]
+                            }
+                            value="Grams"
+                          >
+                            <div
+                              className="dropdown"
+                              onClick={[Function]}
+                            >
+                              <div
+                                className="dropdown-trigger"
+                              >
+                                <button
+                                  aria-controls="dropdown-menu"
+                                  aria-haspopup="true"
+                                  className="button"
+                                >
+                                  <span
+                                    className="selected-value"
+                                  >
+                                    Grams
+                                  </span>
+                                  <span
+                                    className="icon is-small"
+                                  >
+                                    <FontAwesomeIcon
+                                      className="angle-down"
+                                      icon="angle-down"
+                                    >
+                                      <i
+                                        className="angle-down"
+                                        icon="angle-down"
+                                      />
+                                    </FontAwesomeIcon>
+                                  </span>
+                                </button>
+                              </div>
+                              <div
+                                className="dropdown-menu"
+                                id="dropdown-menu"
+                                role="menu"
+                              >
+                                <div
+                                  className="dropdown-content"
+                                >
+                                  <div
+                                    className="dropdown-item is-active"
+                                    key="Grams"
+                                    onClick={[Function]}
+                                  >
+                                    Grams
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </Dropdown>
+                        </td>
+                        <td>
+                          <input
+                            className="input"
+                            onChange={[Function]}
+                            type="text"
+                            value=""
+                          />
+                        </td>
+                        <td>
+                          <a
+                            className="add button"
+                            onClick={[Function]}
+                          >
+                            common.add
+                          </a>
+                        </td>
+                      </tr>
+                    </MeasurementRow>
+                    <MeasurementRow
+                      key="Abundance of biological entity specified elsewhere per unit volume of the water body"
+                      onClickAdd={[Function]}
+                      type="Abundance of biological entity specified elsewhere per unit volume of the water body"
+                      units={
+                        Array [
+                          Object {
+                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/UMIC",
+                            "name": "Micrometer",
+                          },
+                        ]
+                      }
+                    >
+                      <tr
+                        className="measurement-row fieldrow"
+                      >
+                        <td>
+                          Abundance of biological entity specified elsewhere per unit volume of the water body
+                        </td>
+                        <td>
+                          <Dropdown
+                            onChange={[Function]}
+                            options={
+                              Array [
+                                "Micrometer",
+                              ]
+                            }
+                            value="Micrometer"
+                          >
+                            <div
+                              className="dropdown"
+                              onClick={[Function]}
+                            >
+                              <div
+                                className="dropdown-trigger"
+                              >
+                                <button
+                                  aria-controls="dropdown-menu"
+                                  aria-haspopup="true"
+                                  className="button"
+                                >
+                                  <span
+                                    className="selected-value"
+                                  >
+                                    Micrometer
+                                  </span>
+                                  <span
+                                    className="icon is-small"
+                                  >
+                                    <FontAwesomeIcon
+                                      className="angle-down"
+                                      icon="angle-down"
+                                    >
+                                      <i
+                                        className="angle-down"
+                                        icon="angle-down"
+                                      />
+                                    </FontAwesomeIcon>
+                                  </span>
+                                </button>
+                              </div>
+                              <div
+                                className="dropdown-menu"
+                                id="dropdown-menu"
+                                role="menu"
+                              >
+                                <div
+                                  className="dropdown-content"
+                                >
+                                  <div
+                                    className="dropdown-item is-active"
+                                    key="Micrometer"
+                                    onClick={[Function]}
+                                  >
+                                    Micrometer
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </Dropdown>
+                        </td>
+                        <td>
+                          <input
+                            className="input"
+                            onChange={[Function]}
+                            type="text"
+                            value=""
+                          />
+                        </td>
+                        <td>
+                          <a
+                            className="add button"
+                            onClick={[Function]}
+                          >
+                            common.add
+                          </a>
+                        </td>
+                      </tr>
+                    </MeasurementRow>
+                    <MeasurementRow
+                      key="Ash-free dry weight biomass (as carbon) of biological entity specified elsewhere per unit volume of the sediment"
+                      onClickAdd={[Function]}
+                      type="Ash-free dry weight biomass (as carbon) of biological entity specified elsewhere per unit volume of the sediment"
+                      units={
+                        Array [
+                          Object {
+                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGMS",
+                            "name": "Grams per square meter",
+                          },
+                        ]
+                      }
+                    >
+                      <tr
+                        className="measurement-row fieldrow"
+                      >
+                        <td>
+                          Ash-free dry weight biomass (as carbon) of biological entity specified elsewhere per unit volume of the sediment
+                        </td>
+                        <td>
+                          <Dropdown
+                            onChange={[Function]}
+                            options={
+                              Array [
+                                "Grams per square meter",
+                              ]
+                            }
+                            value="Grams per square meter"
+                          >
+                            <div
+                              className="dropdown"
+                              onClick={[Function]}
+                            >
+                              <div
+                                className="dropdown-trigger"
+                              >
+                                <button
+                                  aria-controls="dropdown-menu"
+                                  aria-haspopup="true"
+                                  className="button"
+                                >
+                                  <span
+                                    className="selected-value"
+                                  >
+                                    Grams per square meter
+                                  </span>
+                                  <span
+                                    className="icon is-small"
+                                  >
+                                    <FontAwesomeIcon
+                                      className="angle-down"
+                                      icon="angle-down"
+                                    >
+                                      <i
+                                        className="angle-down"
+                                        icon="angle-down"
+                                      />
+                                    </FontAwesomeIcon>
+                                  </span>
+                                </button>
+                              </div>
+                              <div
+                                className="dropdown-menu"
+                                id="dropdown-menu"
+                                role="menu"
+                              >
+                                <div
+                                  className="dropdown-content"
+                                >
+                                  <div
+                                    className="dropdown-item is-active"
+                                    key="Grams per square meter"
+                                    onClick={[Function]}
+                                  >
+                                    Grams per square meter
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </Dropdown>
+                        </td>
+                        <td>
+                          <input
+                            className="input"
+                            onChange={[Function]}
+                            type="text"
+                            value=""
+                          />
+                        </td>
+                        <td>
+                          <a
+                            className="add button"
+                            onClick={[Function]}
+                          >
+                            common.add
+                          </a>
+                        </td>
+                      </tr>
+                    </MeasurementRow>
+                    <MeasurementRow
+                      key="Ash-free dry weight biomass of biological entity specified elsewhere per unit area of the bed"
+                      onClickAdd={[Function]}
+                      type="Ash-free dry weight biomass of biological entity specified elsewhere per unit area of the bed"
+                      units={
+                        Array [
+                          Object {
+                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPMS",
+                            "name": "Number per square meter",
+                          },
+                        ]
+                      }
+                    >
+                      <tr
+                        className="measurement-row fieldrow"
+                      >
+                        <td>
+                          Ash-free dry weight biomass of biological entity specified elsewhere per unit area of the bed
+                        </td>
+                        <td>
+                          <Dropdown
+                            onChange={[Function]}
+                            options={
+                              Array [
+                                "Number per square meter",
+                              ]
+                            }
+                            value="Number per square meter"
+                          >
+                            <div
+                              className="dropdown"
+                              onClick={[Function]}
+                            >
+                              <div
+                                className="dropdown-trigger"
+                              >
+                                <button
+                                  aria-controls="dropdown-menu"
+                                  aria-haspopup="true"
+                                  className="button"
+                                >
+                                  <span
+                                    className="selected-value"
+                                  >
+                                    Number per square meter
+                                  </span>
+                                  <span
+                                    className="icon is-small"
+                                  >
+                                    <FontAwesomeIcon
+                                      className="angle-down"
+                                      icon="angle-down"
+                                    >
+                                      <i
+                                        className="angle-down"
+                                        icon="angle-down"
+                                      />
+                                    </FontAwesomeIcon>
+                                  </span>
+                                </button>
+                              </div>
+                              <div
+                                className="dropdown-menu"
+                                id="dropdown-menu"
+                                role="menu"
+                              >
+                                <div
+                                  className="dropdown-content"
+                                >
+                                  <div
+                                    className="dropdown-item is-active"
+                                    key="Number per square meter"
+                                    onClick={[Function]}
+                                  >
+                                    Number per square meter
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </Dropdown>
+                        </td>
+                        <td>
+                          <input
+                            className="input"
+                            onChange={[Function]}
+                            type="text"
+                            value=""
+                          />
+                        </td>
+                        <td>
+                          <a
+                            className="add button"
+                            onClick={[Function]}
+                          >
+                            common.add
+                          </a>
+                        </td>
+                      </tr>
+                    </MeasurementRow>
+                    <MeasurementRow
+                      key="Ash-free dry weight biomass of biological entity specified elsewhere per unit volume of the water body"
+                      onClickAdd={[Function]}
+                      type="Ash-free dry weight biomass of biological entity specified elsewhere per unit volume of the water body"
+                      units={
+                        Array [
+                          Object {
+                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/UCML",
+                            "name": "Number per liter",
+                          },
+                        ]
+                      }
+                    >
+                      <tr
+                        className="measurement-row fieldrow"
+                      >
+                        <td>
+                          Ash-free dry weight biomass of biological entity specified elsewhere per unit volume of the water body
+                        </td>
+                        <td>
+                          <Dropdown
+                            onChange={[Function]}
+                            options={
+                              Array [
+                                "Number per liter",
+                              ]
+                            }
+                            value="Number per liter"
+                          >
+                            <div
+                              className="dropdown"
+                              onClick={[Function]}
+                            >
+                              <div
+                                className="dropdown-trigger"
+                              >
+                                <button
+                                  aria-controls="dropdown-menu"
+                                  aria-haspopup="true"
+                                  className="button"
+                                >
+                                  <span
+                                    className="selected-value"
+                                  >
+                                    Number per liter
+                                  </span>
+                                  <span
+                                    className="icon is-small"
+                                  >
+                                    <FontAwesomeIcon
+                                      className="angle-down"
+                                      icon="angle-down"
+                                    >
+                                      <i
+                                        className="angle-down"
+                                        icon="angle-down"
+                                      />
+                                    </FontAwesomeIcon>
+                                  </span>
+                                </button>
+                              </div>
+                              <div
+                                className="dropdown-menu"
+                                id="dropdown-menu"
+                                role="menu"
+                              >
+                                <div
+                                  className="dropdown-content"
+                                >
+                                  <div
+                                    className="dropdown-item is-active"
+                                    key="Number per liter"
+                                    onClick={[Function]}
+                                  >
+                                    Number per liter
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </Dropdown>
+                        </td>
+                        <td>
+                          <input
+                            className="input"
+                            onChange={[Function]}
+                            type="text"
+                            value=""
+                          />
+                        </td>
+                        <td>
+                          <a
+                            className="add button"
+                            onClick={[Function]}
+                          >
+                            common.add
+                          </a>
+                        </td>
+                      </tr>
+                    </MeasurementRow>
+                    <MeasurementRow
+                      key="Length of biological entity specified elsewhere"
+                      onClickAdd={[Function]}
+                      type="Length of biological entity specified elsewhere"
+                      units={
+                        Array [
+                          Object {
+                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/UMSQ",
+                            "name": "Square meter",
+                          },
+                        ]
+                      }
+                    >
+                      <tr
+                        className="measurement-row fieldrow"
+                      >
+                        <td>
+                          Length of biological entity specified elsewhere
+                        </td>
+                        <td>
+                          <Dropdown
+                            onChange={[Function]}
+                            options={
+                              Array [
+                                "Square meter",
+                              ]
+                            }
+                            value="Square meter"
+                          >
+                            <div
+                              className="dropdown"
+                              onClick={[Function]}
+                            >
+                              <div
+                                className="dropdown-trigger"
+                              >
+                                <button
+                                  aria-controls="dropdown-menu"
+                                  aria-haspopup="true"
+                                  className="button"
+                                >
+                                  <span
+                                    className="selected-value"
+                                  >
+                                    Square meter
+                                  </span>
+                                  <span
+                                    className="icon is-small"
+                                  >
+                                    <FontAwesomeIcon
+                                      className="angle-down"
+                                      icon="angle-down"
+                                    >
+                                      <i
+                                        className="angle-down"
+                                        icon="angle-down"
+                                      />
+                                    </FontAwesomeIcon>
+                                  </span>
+                                </button>
+                              </div>
+                              <div
+                                className="dropdown-menu"
+                                id="dropdown-menu"
+                                role="menu"
+                              >
+                                <div
+                                  className="dropdown-content"
+                                >
+                                  <div
+                                    className="dropdown-item is-active"
+                                    key="Square meter"
+                                    onClick={[Function]}
+                                  >
+                                    Square meter
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </Dropdown>
+                        </td>
+                        <td>
+                          <input
+                            className="input"
+                            onChange={[Function]}
+                            type="text"
+                            value=""
+                          />
+                        </td>
+                        <td>
+                          <a
+                            className="add button"
+                            onClick={[Function]}
+                          >
+                            common.add
+                          </a>
+                        </td>
+                      </tr>
+                    </MeasurementRow>
+                    <MeasurementRow
+                      key="Specimen weight of biological entity specified elsewhere"
+                      onClickAdd={[Function]}
+                      type="Specimen weight of biological entity specified elsewhere"
+                      units={
+                        Array [
+                          Object {
+                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/MCUB/",
+                            "name": "Cubic metres",
+                          },
+                        ]
+                      }
+                    >
+                      <tr
+                        className="measurement-row fieldrow"
+                      >
+                        <td>
+                          Specimen weight of biological entity specified elsewhere
+                        </td>
+                        <td>
+                          <Dropdown
+                            onChange={[Function]}
+                            options={
+                              Array [
+                                "Cubic metres",
+                              ]
+                            }
+                            value="Cubic metres"
+                          >
+                            <div
+                              className="dropdown"
+                              onClick={[Function]}
+                            >
+                              <div
+                                className="dropdown-trigger"
+                              >
+                                <button
+                                  aria-controls="dropdown-menu"
+                                  aria-haspopup="true"
+                                  className="button"
+                                >
+                                  <span
+                                    className="selected-value"
+                                  >
+                                    Cubic metres
+                                  </span>
+                                  <span
+                                    className="icon is-small"
+                                  >
+                                    <FontAwesomeIcon
+                                      className="angle-down"
+                                      icon="angle-down"
+                                    >
+                                      <i
+                                        className="angle-down"
+                                        icon="angle-down"
+                                      />
+                                    </FontAwesomeIcon>
+                                  </span>
+                                </button>
+                              </div>
+                              <div
+                                className="dropdown-menu"
+                                id="dropdown-menu"
+                                role="menu"
+                              >
+                                <div
+                                  className="dropdown-content"
+                                >
+                                  <div
+                                    className="dropdown-item is-active"
+                                    key="Cubic metres"
+                                    onClick={[Function]}
+                                  >
+                                    Cubic metres
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </Dropdown>
+                        </td>
+                        <td>
+                          <input
+                            className="input"
+                            onChange={[Function]}
+                            type="text"
+                            value=""
+                          />
+                        </td>
+                        <td>
+                          <a
+                            className="add button"
+                            onClick={[Function]}
+                          >
+                            common.add
+                          </a>
+                        </td>
+                      </tr>
+                    </MeasurementRow>
+                  </tbody>
+                </table>
+              </div>
+              <div
+                className="column is-half supplied"
+              >
+                <h1
+                  className="title"
+                >
+                  occurrenceForm.measurementOrFact.supplied.title
+                </h1>
+                <h2
+                  className="subtitle"
+                >
+                   
+                </h2>
+                <table
+                  className="supplied table is-fullwidth is-striped is-hoverable"
+                >
+                  <thead>
+                    <tr>
+                      <th
+                        style={
+                          Object {
+                            "width": "60%",
+                          }
+                        }
+                      >
+                        common.type
+                      </th>
+                      <th
+                        style={
+                          Object {
+                            "width": "20%",
+                          }
+                        }
+                      >
+                        common.unit
+                      </th>
+                      <th
+                        style={
+                          Object {
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        common.value
+                      </th>
+                      <th
+                        style={
+                          Object {
+                            "width": "5%",
+                          }
+                        }
+                      />
+                      <th
+                        style={
+                          Object {
+                            "width": "5%",
+                          }
+                        }
+                      />
+                    </tr>
+                  </thead>
+                  <tbody />
+                </table>
               </div>
             </div>
+            <CopyPreviousData>
+              <div
+                className="columns"
+              >
+                <div
+                  className="copy-previous-data column is-narrow"
+                >
+                  copy data from previous entry
+                </div>
+              </div>
+            </CopyPreviousData>
           </div>
-        </StubFormContent>
+        </MeasurementOrFact>
       </StepHeader>
     </ActiveStepHeader>
     <NotConfirmedStepHeader
-      className="step-5 background-color-25"
+      className="step-6 background-color-25"
       dataDescription=""
       key="Darwin Core Fields"
       onStepTitleClick={[Function]}
@@ -1743,7 +3253,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
       stepTitle="6 - Darwin Core Fields"
     >
       <StepHeader
-        className="not-confirmed has-text-white step-5 background-color-25"
+        className="not-confirmed has-text-white step-6 background-color-25"
         dataDescription=""
         iconVisible={false}
         onStepTitleClick={[Function]}
@@ -1752,7 +3262,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
         stepTitle="6 - Darwin Core Fields"
       >
         <div
-          className="step-header columns is-vcentered not-confirmed has-text-white step-5 background-color-25"
+          className="step-header columns is-vcentered not-confirmed has-text-white step-6 background-color-25"
           onClick={[Function]}
         >
           <div
@@ -1788,6 +3298,1413 @@ exports[`OccurrenceForm renders correctly 3`] = `
         </div>
       </StepHeader>
     </NotConfirmedStepHeader>
+  </section>
+</OccurrenceForm>
+`;
+
+exports[`OccurrenceForm renders correctly 4`] = `
+<OccurrenceForm>
+  <section
+    className="section"
+  >
+    <ConfirmedStepHeader
+      className="step-1 background-color-0"
+      dataDescription="occurrenceForm.selectDataset.dataDescription"
+      key="occurrenceForm.selectDataset.stepTitle"
+      onStepTitleClick={[Function]}
+      selectedData="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
+      stepDescription="occurrenceForm.selectDataset.stepDescription"
+      stepTitle="1 - occurrenceForm.selectDataset.stepTitle"
+    >
+      <StepHeader
+        className="confirmed has-background-white has-text-black"
+        dataDescription="occurrenceForm.selectDataset.dataDescription"
+        iconVisible={true}
+        onStepTitleClick={[Function]}
+        selectedData="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
+        stepDescription="occurrenceForm.selectDataset.stepDescription"
+        stepTitle="1 - occurrenceForm.selectDataset.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered confirmed has-background-white has-text-black"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b>
+                occurrenceForm.selectDataset.dataDescription
+              </b>
+            </p>
+          </div>
+          <div
+            className="column is-7 is-size-5"
+          >
+            HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.
+          </div>
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              occurrenceForm.selectDataset.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <FontAwesomeIcon
+                className="check-circle"
+                icon="check-circle"
+              >
+                <i
+                  className="check-circle"
+                  icon="check-circle"
+                />
+              </FontAwesomeIcon>
+              <b
+                className="step-title"
+              >
+                1 - occurrenceForm.selectDataset.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </ConfirmedStepHeader>
+    <ConfirmedStepHeader
+      className="step-2 background-color-5"
+      dataDescription="Given Values"
+      key="Basic Data"
+      onStepTitleClick={[Function]}
+      selectedData=" 29 April 2019 "
+      stepDescription="Mandatory observation information"
+      stepTitle="2 - Basic Data"
+    >
+      <StepHeader
+        className="confirmed has-background-white has-text-black"
+        dataDescription="Given Values"
+        iconVisible={true}
+        onStepTitleClick={[Function]}
+        selectedData=" 29 April 2019 "
+        stepDescription="Mandatory observation information"
+        stepTitle="2 - Basic Data"
+      >
+        <div
+          className="step-header columns is-vcentered confirmed has-background-white has-text-black"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b>
+                Given Values
+              </b>
+            </p>
+          </div>
+          <div
+            className="column is-7 is-size-5"
+          >
+             29 April 2019 
+          </div>
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              Mandatory observation information
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <FontAwesomeIcon
+                className="check-circle"
+                icon="check-circle"
+              >
+                <i
+                  className="check-circle"
+                  icon="check-circle"
+                />
+              </FontAwesomeIcon>
+              <b
+                className="step-title"
+              >
+                2 - Basic Data
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </ConfirmedStepHeader>
+    <ConfirmedStepHeader
+      className="step-3 background-color-10"
+      dataDescription="occurrenceForm.locationData.step.dataDescription"
+      key="occurrenceForm.locationData.step.stepTitle"
+      onStepTitleClick={[Function]}
+      selectedData={
+        <SelectedLocation
+          coordinateUncertainty={null}
+          decimalLatitude={0.12345}
+          decimalLongitude={-0.54321}
+          maximumDepth={null}
+          minimumDepth={null}
+          verbatimCoordinates=""
+          verbatimDepth=""
+          verbatimEventDate=""
+        />
+      }
+      stepDescription="occurrenceForm.locationData.step.stepDescription"
+      stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
+    >
+      <StepHeader
+        className="confirmed has-background-white has-text-black"
+        dataDescription="occurrenceForm.locationData.step.dataDescription"
+        iconVisible={true}
+        onStepTitleClick={[Function]}
+        selectedData={
+          <SelectedLocation
+            coordinateUncertainty={null}
+            decimalLatitude={0.12345}
+            decimalLongitude={-0.54321}
+            maximumDepth={null}
+            minimumDepth={null}
+            verbatimCoordinates=""
+            verbatimDepth=""
+            verbatimEventDate=""
+          />
+        }
+        stepDescription="occurrenceForm.locationData.step.stepDescription"
+        stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered confirmed has-background-white has-text-black"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b>
+                occurrenceForm.locationData.step.dataDescription
+              </b>
+            </p>
+          </div>
+          <div
+            className="column is-7 is-size-5"
+          >
+            <SelectedLocation
+              coordinateUncertainty={null}
+              decimalLatitude={0.12345}
+              decimalLongitude={-0.54321}
+              maximumDepth={null}
+              minimumDepth={null}
+              verbatimCoordinates=""
+              verbatimDepth=""
+              verbatimEventDate=""
+            >
+              <div>
+                occurrenceForm.locationData.step.selectedData.latitude
+                : 
+                0.12345
+              </div>
+              <div>
+                occurrenceForm.locationData.step.selectedData.longitude
+                : 
+                -0.54321
+              </div>
+            </SelectedLocation>
+          </div>
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              occurrenceForm.locationData.step.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <FontAwesomeIcon
+                className="check-circle"
+                icon="check-circle"
+              >
+                <i
+                  className="check-circle"
+                  icon="check-circle"
+                />
+              </FontAwesomeIcon>
+              <b
+                className="step-title"
+              >
+                3 - occurrenceForm.locationData.step.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </ConfirmedStepHeader>
+    <ConfirmedStepHeader
+      className="step-4 background-color-15"
+      dataDescription="Main Info"
+      key="Observation Data"
+      onStepTitleClick={[Function]}
+      selectedData="Institution: institution code; Identified by: Indiana Jones"
+      stepDescription="Enter further specifics"
+      stepTitle="4 - Observation Data"
+    >
+      <StepHeader
+        className="confirmed has-background-white has-text-black"
+        dataDescription="Main Info"
+        iconVisible={true}
+        onStepTitleClick={[Function]}
+        selectedData="Institution: institution code; Identified by: Indiana Jones"
+        stepDescription="Enter further specifics"
+        stepTitle="4 - Observation Data"
+      >
+        <div
+          className="step-header columns is-vcentered confirmed has-background-white has-text-black"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b>
+                Main Info
+              </b>
+            </p>
+          </div>
+          <div
+            className="column is-7 is-size-5"
+          >
+            Institution: institution code; Identified by: Indiana Jones
+          </div>
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              Enter further specifics
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <FontAwesomeIcon
+                className="check-circle"
+                icon="check-circle"
+              >
+                <i
+                  className="check-circle"
+                  icon="check-circle"
+                />
+              </FontAwesomeIcon>
+              <b
+                className="step-title"
+              >
+                4 - Observation Data
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </ConfirmedStepHeader>
+    <ConfirmedStepHeader
+      className="step-5 background-color-20"
+      dataDescription="Given values"
+      key="Measurement or Fact"
+      onStepTitleClick={[Function]}
+      selectedData={
+        <MeasurementOrFactSummary
+          data={
+            Array [
+              Object {
+                "type": "Pressure",
+                "unit": "Kilogram",
+                "units": Array [
+                  Object {
+                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
+                    "name": "Kilogram",
+                  },
+                  Object {
+                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
+                    "name": "Gram",
+                  },
+                ],
+                "value": "10",
+              },
+            ]
+          }
+        />
+      }
+      stepDescription="Enter further specifics"
+      stepTitle="5 - Measurement or Fact"
+    >
+      <StepHeader
+        className="confirmed has-background-white has-text-black"
+        dataDescription="Given values"
+        iconVisible={true}
+        onStepTitleClick={[Function]}
+        selectedData={
+          <MeasurementOrFactSummary
+            data={
+              Array [
+                Object {
+                  "type": "Pressure",
+                  "unit": "Kilogram",
+                  "units": Array [
+                    Object {
+                      "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
+                      "name": "Kilogram",
+                    },
+                    Object {
+                      "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
+                      "name": "Gram",
+                    },
+                  ],
+                  "value": "10",
+                },
+              ]
+            }
+          />
+        }
+        stepDescription="Enter further specifics"
+        stepTitle="5 - Measurement or Fact"
+      >
+        <div
+          className="step-header columns is-vcentered confirmed has-background-white has-text-black"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b>
+                Given values
+              </b>
+            </p>
+          </div>
+          <div
+            className="column is-7 is-size-5"
+          >
+            <MeasurementOrFactSummary
+              data={
+                Array [
+                  Object {
+                    "type": "Pressure",
+                    "unit": "Kilogram",
+                    "units": Array [
+                      Object {
+                        "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
+                        "name": "Kilogram",
+                      },
+                      Object {
+                        "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
+                        "name": "Gram",
+                      },
+                    ],
+                    "value": "10",
+                  },
+                ]
+              }
+            >
+              <div>
+                occurrenceForm.measurementOrFact.step.title {"number":1}
+              </div>
+            </MeasurementOrFactSummary>
+          </div>
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              Enter further specifics
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <FontAwesomeIcon
+                className="check-circle"
+                icon="check-circle"
+              >
+                <i
+                  className="check-circle"
+                  icon="check-circle"
+                />
+              </FontAwesomeIcon>
+              <b
+                className="step-title"
+              >
+                5 - Measurement or Fact
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </ConfirmedStepHeader>
+    <ActiveStepHeader
+      className="step-6 background-color-25"
+      dataDescription=""
+      key="Darwin Core Fields"
+      onStepTitleClick={[Function]}
+      selectedData=""
+      stepDescription="Supply specific Darwin core fields"
+      stepTitle="6 - Darwin Core Fields"
+    >
+      <StepHeader
+        className="active has-background-grey has-text-white"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="Supply specific Darwin core fields"
+        stepTitle="6 - Darwin Core Fields"
+      >
+        <div
+          className="step-header columns is-vcentered active has-background-grey has-text-white"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="column is-7 is-size-5 is-hidden-mobile"
+          />
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              Supply specific Darwin core fields
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                6 - Darwin Core Fields
+              </b>
+            </div>
+          </div>
+        </div>
+        <DarwinCoreFields
+          darwinCoreFieldsData={Array []}
+          onChange={[Function]}
+        >
+          <div
+            className="darwin-core-fields section is-fluid"
+          >
+            <h2>
+              DARWIN CORE CUSTOM SELECTION
+            </h2>
+            <p>
+              This form enables you to add any aditional fields you may need to specify, that were ot previously included in this form. Please be advised to use the Darwin Core Archive names
+            </p>
+            <div
+              className="columns is-grouped"
+            >
+              <InputText
+                className="field-name"
+                name="occurrenceForm.darwinCoreFields.fieldName"
+                onChange={[Function]}
+              >
+                <div
+                  className="column field field-name"
+                >
+                  <label
+                    className="label"
+                  >
+                    occurrenceForm.darwinCoreFields.fieldName.label
+                  </label>
+                  <input
+                    className="input"
+                    onChange={[Function]}
+                    type="text"
+                  />
+                </div>
+              </InputText>
+              <InputText
+                className="value"
+                name="occurrenceForm.darwinCoreFields.value"
+                onChange={[Function]}
+              >
+                <div
+                  className="column field value"
+                >
+                  <label
+                    className="label"
+                  >
+                    occurrenceForm.darwinCoreFields.value.label
+                  </label>
+                  <input
+                    className="input"
+                    onChange={[Function]}
+                    type="text"
+                  />
+                </div>
+              </InputText>
+              <div
+                className="column add"
+              >
+                <span
+                  className="label"
+                >
+                   
+                </span>
+                <a
+                  className="button"
+                  onClick={[Function]}
+                >
+                  add
+                </a>
+              </div>
+            </div>
+            <table
+              className="table is-fullwidth"
+            >
+              <thead>
+                <tr>
+                  <th>
+                    name
+                  </th>
+                  <th>
+                    value
+                  </th>
+                  <th />
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  className="fieldrow"
+                  key="dummy fielddummy value"
+                >
+                  <td>
+                    dummy field
+                  </td>
+                  <td>
+                    dummy value
+                  </td>
+                  <td>
+                    <a
+                      className="button is-small remove"
+                      onClick={[Function]}
+                    >
+                      remove
+                    </a>
+                  </td>
+                </tr>
+                <tr
+                  className="fieldrow"
+                  key="dummy2 fielddummy value"
+                >
+                  <td>
+                    dummy2 field
+                  </td>
+                  <td>
+                    dummy value
+                  </td>
+                  <td>
+                    <a
+                      className="button is-small remove"
+                      onClick={[Function]}
+                    >
+                      remove
+                    </a>
+                  </td>
+                </tr>
+                <tr
+                  className="fieldrow"
+                  key="dummy3 fielddummy value"
+                >
+                  <td>
+                    dummy3 field
+                  </td>
+                  <td>
+                    dummy value
+                  </td>
+                  <td>
+                    <a
+                      className="button is-small remove"
+                      onClick={[Function]}
+                    >
+                      remove
+                    </a>
+                  </td>
+                </tr>
+                <tr
+                  className="fieldrow"
+                  key="dummy4 fielddummy value"
+                >
+                  <td>
+                    dummy4 field
+                  </td>
+                  <td>
+                    dummy value
+                  </td>
+                  <td>
+                    <a
+                      className="button is-small remove"
+                      onClick={[Function]}
+                    >
+                      remove
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </DarwinCoreFields>
+      </StepHeader>
+    </ActiveStepHeader>
+  </section>
+</OccurrenceForm>
+`;
+
+exports[`OccurrenceForm renders correctly 5`] = `
+<OccurrenceForm>
+  <section
+    className="section"
+  >
+    <ConfirmedStepHeader
+      className="step-1 background-color-0"
+      dataDescription="occurrenceForm.selectDataset.dataDescription"
+      key="occurrenceForm.selectDataset.stepTitle"
+      onStepTitleClick={[Function]}
+      selectedData="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
+      stepDescription="occurrenceForm.selectDataset.stepDescription"
+      stepTitle="1 - occurrenceForm.selectDataset.stepTitle"
+    >
+      <StepHeader
+        className="confirmed has-background-white has-text-black"
+        dataDescription="occurrenceForm.selectDataset.dataDescription"
+        iconVisible={true}
+        onStepTitleClick={[Function]}
+        selectedData="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
+        stepDescription="occurrenceForm.selectDataset.stepDescription"
+        stepTitle="1 - occurrenceForm.selectDataset.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered confirmed has-background-white has-text-black"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b>
+                occurrenceForm.selectDataset.dataDescription
+              </b>
+            </p>
+          </div>
+          <div
+            className="column is-7 is-size-5"
+          >
+            HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.
+          </div>
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              occurrenceForm.selectDataset.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <FontAwesomeIcon
+                className="check-circle"
+                icon="check-circle"
+              >
+                <i
+                  className="check-circle"
+                  icon="check-circle"
+                />
+              </FontAwesomeIcon>
+              <b
+                className="step-title"
+              >
+                1 - occurrenceForm.selectDataset.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </ConfirmedStepHeader>
+    <ConfirmedStepHeader
+      className="step-2 background-color-5"
+      dataDescription="Given Values"
+      key="Basic Data"
+      onStepTitleClick={[Function]}
+      selectedData=" 29 April 2019 "
+      stepDescription="Mandatory observation information"
+      stepTitle="2 - Basic Data"
+    >
+      <StepHeader
+        className="confirmed has-background-white has-text-black"
+        dataDescription="Given Values"
+        iconVisible={true}
+        onStepTitleClick={[Function]}
+        selectedData=" 29 April 2019 "
+        stepDescription="Mandatory observation information"
+        stepTitle="2 - Basic Data"
+      >
+        <div
+          className="step-header columns is-vcentered confirmed has-background-white has-text-black"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b>
+                Given Values
+              </b>
+            </p>
+          </div>
+          <div
+            className="column is-7 is-size-5"
+          >
+             29 April 2019 
+          </div>
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              Mandatory observation information
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <FontAwesomeIcon
+                className="check-circle"
+                icon="check-circle"
+              >
+                <i
+                  className="check-circle"
+                  icon="check-circle"
+                />
+              </FontAwesomeIcon>
+              <b
+                className="step-title"
+              >
+                2 - Basic Data
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </ConfirmedStepHeader>
+    <ConfirmedStepHeader
+      className="step-3 background-color-10"
+      dataDescription="occurrenceForm.locationData.step.dataDescription"
+      key="occurrenceForm.locationData.step.stepTitle"
+      onStepTitleClick={[Function]}
+      selectedData={
+        <SelectedLocation
+          coordinateUncertainty={null}
+          decimalLatitude={0.12345}
+          decimalLongitude={-0.54321}
+          maximumDepth={null}
+          minimumDepth={null}
+          verbatimCoordinates=""
+          verbatimDepth=""
+          verbatimEventDate=""
+        />
+      }
+      stepDescription="occurrenceForm.locationData.step.stepDescription"
+      stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
+    >
+      <StepHeader
+        className="confirmed has-background-white has-text-black"
+        dataDescription="occurrenceForm.locationData.step.dataDescription"
+        iconVisible={true}
+        onStepTitleClick={[Function]}
+        selectedData={
+          <SelectedLocation
+            coordinateUncertainty={null}
+            decimalLatitude={0.12345}
+            decimalLongitude={-0.54321}
+            maximumDepth={null}
+            minimumDepth={null}
+            verbatimCoordinates=""
+            verbatimDepth=""
+            verbatimEventDate=""
+          />
+        }
+        stepDescription="occurrenceForm.locationData.step.stepDescription"
+        stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered confirmed has-background-white has-text-black"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b>
+                occurrenceForm.locationData.step.dataDescription
+              </b>
+            </p>
+          </div>
+          <div
+            className="column is-7 is-size-5"
+          >
+            <SelectedLocation
+              coordinateUncertainty={null}
+              decimalLatitude={0.12345}
+              decimalLongitude={-0.54321}
+              maximumDepth={null}
+              minimumDepth={null}
+              verbatimCoordinates=""
+              verbatimDepth=""
+              verbatimEventDate=""
+            >
+              <div>
+                occurrenceForm.locationData.step.selectedData.latitude
+                : 
+                0.12345
+              </div>
+              <div>
+                occurrenceForm.locationData.step.selectedData.longitude
+                : 
+                -0.54321
+              </div>
+            </SelectedLocation>
+          </div>
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              occurrenceForm.locationData.step.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <FontAwesomeIcon
+                className="check-circle"
+                icon="check-circle"
+              >
+                <i
+                  className="check-circle"
+                  icon="check-circle"
+                />
+              </FontAwesomeIcon>
+              <b
+                className="step-title"
+              >
+                3 - occurrenceForm.locationData.step.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </ConfirmedStepHeader>
+    <ConfirmedStepHeader
+      className="step-4 background-color-15"
+      dataDescription="Main Info"
+      key="Observation Data"
+      onStepTitleClick={[Function]}
+      selectedData="Institution: institution code; Identified by: Indiana Jones"
+      stepDescription="Enter further specifics"
+      stepTitle="4 - Observation Data"
+    >
+      <StepHeader
+        className="confirmed has-background-white has-text-black"
+        dataDescription="Main Info"
+        iconVisible={true}
+        onStepTitleClick={[Function]}
+        selectedData="Institution: institution code; Identified by: Indiana Jones"
+        stepDescription="Enter further specifics"
+        stepTitle="4 - Observation Data"
+      >
+        <div
+          className="step-header columns is-vcentered confirmed has-background-white has-text-black"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b>
+                Main Info
+              </b>
+            </p>
+          </div>
+          <div
+            className="column is-7 is-size-5"
+          >
+            Institution: institution code; Identified by: Indiana Jones
+          </div>
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              Enter further specifics
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <FontAwesomeIcon
+                className="check-circle"
+                icon="check-circle"
+              >
+                <i
+                  className="check-circle"
+                  icon="check-circle"
+                />
+              </FontAwesomeIcon>
+              <b
+                className="step-title"
+              >
+                4 - Observation Data
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </ConfirmedStepHeader>
+    <ConfirmedStepHeader
+      className="step-5 background-color-20"
+      dataDescription="Given values"
+      key="Measurement or Fact"
+      onStepTitleClick={[Function]}
+      selectedData={
+        <MeasurementOrFactSummary
+          data={
+            Array [
+              Object {
+                "type": "Pressure",
+                "unit": "Kilogram",
+                "units": Array [
+                  Object {
+                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
+                    "name": "Kilogram",
+                  },
+                  Object {
+                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
+                    "name": "Gram",
+                  },
+                ],
+                "value": "10",
+              },
+              Object {
+                "type": "Pressure",
+                "unit": "Kilogram",
+                "units": Array [
+                  Object {
+                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
+                    "name": "Kilogram",
+                  },
+                  Object {
+                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
+                    "name": "Gram",
+                  },
+                ],
+                "value": "20",
+              },
+            ]
+          }
+        />
+      }
+      stepDescription="Enter further specifics"
+      stepTitle="5 - Measurement or Fact"
+    >
+      <StepHeader
+        className="confirmed has-background-white has-text-black"
+        dataDescription="Given values"
+        iconVisible={true}
+        onStepTitleClick={[Function]}
+        selectedData={
+          <MeasurementOrFactSummary
+            data={
+              Array [
+                Object {
+                  "type": "Pressure",
+                  "unit": "Kilogram",
+                  "units": Array [
+                    Object {
+                      "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
+                      "name": "Kilogram",
+                    },
+                    Object {
+                      "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
+                      "name": "Gram",
+                    },
+                  ],
+                  "value": "10",
+                },
+                Object {
+                  "type": "Pressure",
+                  "unit": "Kilogram",
+                  "units": Array [
+                    Object {
+                      "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
+                      "name": "Kilogram",
+                    },
+                    Object {
+                      "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
+                      "name": "Gram",
+                    },
+                  ],
+                  "value": "20",
+                },
+              ]
+            }
+          />
+        }
+        stepDescription="Enter further specifics"
+        stepTitle="5 - Measurement or Fact"
+      >
+        <div
+          className="step-header columns is-vcentered confirmed has-background-white has-text-black"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b>
+                Given values
+              </b>
+            </p>
+          </div>
+          <div
+            className="column is-7 is-size-5"
+          >
+            <MeasurementOrFactSummary
+              data={
+                Array [
+                  Object {
+                    "type": "Pressure",
+                    "unit": "Kilogram",
+                    "units": Array [
+                      Object {
+                        "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
+                        "name": "Kilogram",
+                      },
+                      Object {
+                        "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
+                        "name": "Gram",
+                      },
+                    ],
+                    "value": "10",
+                  },
+                  Object {
+                    "type": "Pressure",
+                    "unit": "Kilogram",
+                    "units": Array [
+                      Object {
+                        "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
+                        "name": "Kilogram",
+                      },
+                      Object {
+                        "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
+                        "name": "Gram",
+                      },
+                    ],
+                    "value": "20",
+                  },
+                ]
+              }
+            >
+              <div>
+                occurrenceForm.measurementOrFact.step.title {"number":2}
+              </div>
+            </MeasurementOrFactSummary>
+          </div>
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              Enter further specifics
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <FontAwesomeIcon
+                className="check-circle"
+                icon="check-circle"
+              >
+                <i
+                  className="check-circle"
+                  icon="check-circle"
+                />
+              </FontAwesomeIcon>
+              <b
+                className="step-title"
+              >
+                5 - Measurement or Fact
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </ConfirmedStepHeader>
+    <ActiveStepHeader
+      className="step-6 background-color-25"
+      dataDescription=""
+      key="Darwin Core Fields"
+      onStepTitleClick={[Function]}
+      selectedData=""
+      stepDescription="Supply specific Darwin core fields"
+      stepTitle="6 - Darwin Core Fields"
+    >
+      <StepHeader
+        className="active has-background-grey has-text-white"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="Supply specific Darwin core fields"
+        stepTitle="6 - Darwin Core Fields"
+      >
+        <div
+          className="step-header columns is-vcentered active has-background-grey has-text-white"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="column is-7 is-size-5 is-hidden-mobile"
+          />
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              Supply specific Darwin core fields
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                6 - Darwin Core Fields
+              </b>
+            </div>
+          </div>
+        </div>
+        <DarwinCoreFields
+          darwinCoreFieldsData={Array []}
+          onChange={[Function]}
+        >
+          <div
+            className="darwin-core-fields section is-fluid"
+          >
+            <h2>
+              DARWIN CORE CUSTOM SELECTION
+            </h2>
+            <p>
+              This form enables you to add any aditional fields you may need to specify, that were ot previously included in this form. Please be advised to use the Darwin Core Archive names
+            </p>
+            <div
+              className="columns is-grouped"
+            >
+              <InputText
+                className="field-name"
+                name="occurrenceForm.darwinCoreFields.fieldName"
+                onChange={[Function]}
+              >
+                <div
+                  className="column field field-name"
+                >
+                  <label
+                    className="label"
+                  >
+                    occurrenceForm.darwinCoreFields.fieldName.label
+                  </label>
+                  <input
+                    className="input"
+                    onChange={[Function]}
+                    type="text"
+                  />
+                </div>
+              </InputText>
+              <InputText
+                className="value"
+                name="occurrenceForm.darwinCoreFields.value"
+                onChange={[Function]}
+              >
+                <div
+                  className="column field value"
+                >
+                  <label
+                    className="label"
+                  >
+                    occurrenceForm.darwinCoreFields.value.label
+                  </label>
+                  <input
+                    className="input"
+                    onChange={[Function]}
+                    type="text"
+                  />
+                </div>
+              </InputText>
+              <div
+                className="column add"
+              >
+                <span
+                  className="label"
+                >
+                   
+                </span>
+                <a
+                  className="button"
+                  onClick={[Function]}
+                >
+                  add
+                </a>
+              </div>
+            </div>
+            <table
+              className="table is-fullwidth"
+            >
+              <thead>
+                <tr>
+                  <th>
+                    name
+                  </th>
+                  <th>
+                    value
+                  </th>
+                  <th />
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  className="fieldrow"
+                  key="dummy fielddummy value"
+                >
+                  <td>
+                    dummy field
+                  </td>
+                  <td>
+                    dummy value
+                  </td>
+                  <td>
+                    <a
+                      className="button is-small remove"
+                      onClick={[Function]}
+                    >
+                      remove
+                    </a>
+                  </td>
+                </tr>
+                <tr
+                  className="fieldrow"
+                  key="dummy2 fielddummy value"
+                >
+                  <td>
+                    dummy2 field
+                  </td>
+                  <td>
+                    dummy value
+                  </td>
+                  <td>
+                    <a
+                      className="button is-small remove"
+                      onClick={[Function]}
+                    >
+                      remove
+                    </a>
+                  </td>
+                </tr>
+                <tr
+                  className="fieldrow"
+                  key="dummy3 fielddummy value"
+                >
+                  <td>
+                    dummy3 field
+                  </td>
+                  <td>
+                    dummy value
+                  </td>
+                  <td>
+                    <a
+                      className="button is-small remove"
+                      onClick={[Function]}
+                    >
+                      remove
+                    </a>
+                  </td>
+                </tr>
+                <tr
+                  className="fieldrow"
+                  key="dummy4 fielddummy value"
+                >
+                  <td>
+                    dummy4 field
+                  </td>
+                  <td>
+                    dummy value
+                  </td>
+                  <td>
+                    <a
+                      className="button is-small remove"
+                      onClick={[Function]}
+                    >
+                      remove
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </DarwinCoreFields>
+      </StepHeader>
+    </ActiveStepHeader>
   </section>
 </OccurrenceForm>
 `;

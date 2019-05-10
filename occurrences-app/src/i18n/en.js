@@ -1,8 +1,13 @@
 export default {
   translation: {
     common:         {
-      copy: 'Copy',
-      edit: 'Edit'
+      add:    'Add',
+      copy:   'Copy',
+      edit:   'Edit',
+      remove: 'Remove',
+      type:   'Type',
+      unit:   'Unit',
+      value:  'Value'
     },
     inputDataPage:  {
       inputNewOccurrence: 'INPUT NEW OCCURRENCE',
@@ -16,12 +21,12 @@ export default {
       }
     },
     occurrenceForm: {
-      selectDataset:    {
+      selectDataset:     {
         dataDescription: 'Using Data',
         stepDescription: 'Choose the dataset for adding observations',
         stepTitle:       'Selected Dataset'
       },
-      basicData:        {
+      basicData:         {
         scientificName:   'Scientific name',
         eventBeginDate:   'Event begin date',
         eventEndDate:     'Event end date',
@@ -55,7 +60,7 @@ export default {
           unspecified: 'unspecified'
         }
       },
-      locationData:     {
+      locationData:      {
         enterCoordinates:      {
           title:    'Enter coordinates',
           subtitle: 'bold fields are mandatory'
@@ -112,7 +117,7 @@ export default {
           }
         }
       },
-      observationData:  {
+      observationData:   {
         institutionCode:         {
           label:       'institution code',
           placeholder: 'institution code'
@@ -159,7 +164,23 @@ export default {
           help:        'hit enter to add a reference to list'
         }
       },
-      darwinCoreFields: {
+      measurementOrFact: {
+        step: {
+          title: 'You have submitted {{number}} extra fields'
+        },
+        general:  {
+          title:    'STEP 1: General sample information',
+          subtitle: 'Supply any information you may have on the sample, setting, environment, ...'
+        },
+        specific: {
+          title:    'STEP 2: Specific measurements or facts',
+          subtitle: 'Enter the exact measurements or facts consecutively'
+        },
+        supplied: {
+          title: 'Supplied measurements or facts'
+        }
+      },
+      darwinCoreFields:  {
         fieldName: {
           label:       'Darwin core fieldname',
           placeholder: '',

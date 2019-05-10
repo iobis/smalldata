@@ -6,9 +6,9 @@ export default function ConfirmedStepHeader({ dataDescription, onStepTitleClick,
   return (
     <StepHeader
       className="confirmed has-background-white has-text-black"
+      dataDescription={dataDescription}
       iconVisible={true}
       onStepTitleClick={onStepTitleClick}
-      dataDescription={dataDescription}
       selectedData={selectedData}
       stepDescription={stepDescription}
       stepTitle={stepTitle}/>
