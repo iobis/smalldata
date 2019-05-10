@@ -20,7 +20,7 @@ const DefaultIcon = L.icon({
 
 L.Marker.prototype.options.icon = DefaultIcon
 
-export default function LocationPicker() {
+export default function LocationPicker({ onChange }) {
   const { t } = useTranslation()
   const [latitude, setLatitude] = useState(51.505)
   const [longitude, setLongitude] = useState(-0.09)
@@ -32,6 +32,7 @@ export default function LocationPicker() {
   function setMarkerCoordinates(latlng) {
     setLatitude(latlng.lat)
     setLongitude(latlng.lng)
+    onChange({ latitude: latlng.lat, longitude: latlng.lng })
   }
 
   const debouncedSearch = useDebounce(searchString, 500)
@@ -94,6 +95,10 @@ export default function LocationPicker() {
       </div>
     </div>
   )
+}
+
+LocationPicker.propTypes = {
+  onChange: PropTypes.func.isRequired
 }
 
 function SuggestionsResult({ suggestions, onClick }) {

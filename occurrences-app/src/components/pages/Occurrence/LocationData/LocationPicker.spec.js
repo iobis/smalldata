@@ -12,5 +12,5 @@ describe('LocationPicker', () => {
 })
 
 function createComponent() {
-  return <LocationPicker/>
+  return <LocationPicker onChange={jest.fn()}/>
 }
