@@ -32,7 +32,7 @@ exports[`LocationPicker renders correctly 1`] = `
               />
             </span>
             <span
-              class="icon is-small is-right"
+              class="clear icon is-small is-right"
             >
               <i
                 class="times-circle"

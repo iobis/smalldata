@@ -52,6 +52,16 @@ export default function LocationPicker({ onChange }) {
     mapRef.current.leafletElement.invalidateSize(true)
   })
 
+  function handleClearClick() {
+    setSuggestions([])
+    setSearchString('')
+  }
+
+  function handleSearchStringChange(newSearchString) {
+    setSearchString(newSearchString)
+    if (!newSearchString) setSuggestions([])
+  }
+
   return (
     <div className="location-picker section is-fluid">
       <div className="columns">
@@ -60,15 +70,15 @@ export default function LocationPicker({ onChange }) {
             <div className="control has-icons-left has-icons-right">
               <input
                 className="input"
-                onChange={(e) => setSearchString(e.target.value)}
+                onChange={(e) => handleSearchStringChange(e.target.value)}
                 placeholder={t('occurrenceForm.locationData.locationPicker.searchTip')}
                 type="text"
                 value={searchString}/>
               <span className="icon is-left">
                 <FontAwesomeIcon className="search" icon="search"/>
               </span>
-              <span className="icon is-small is-right">
-                <FontAwesomeIcon className="times-circle" icon="times-circle"/>
+              <span className="clear icon is-small is-right">
+                <FontAwesomeIcon className="times-circle" icon="times-circle" onClick={handleClearClick}/>
               </span>
             </div>
           </div>
