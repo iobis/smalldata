@@ -10,10 +10,10 @@ export default function MeasurementOrFact({ data, onChange }) {
   const { t } = useTranslation()
   const generalMeasurements = getGeneralMeasurements()
   const specificMeasurements = getSpecificMeasurements()
-  const [suppliedMeasurements, setSuppliedMeasurements] = useState(data)
+  const [suppliedMeasurements, setSuppliedMeasurements] = useState(data.map(addUuidIfMissing))
 
   function addSuppliedMeasurements(measurement) {
-    const updatedMeasurements = [...suppliedMeasurements, measurement]
+    const updatedMeasurements = [...suppliedMeasurements, addUuidIfMissing(measurement)]
       .sort((left, right) => left.type.toLowerCase().localeCompare(right.type.toLowerCase()))
     onChange(updatedMeasurements.map(({ unit, units, type, value }) => ({ unit, units, type, value })))
     setSuppliedMeasurements(updatedMeasurements)
@@ -34,6 +34,12 @@ export default function MeasurementOrFact({ data, onChange }) {
     })
     onChange(updatedMeasurements.map(({ unit, units, type, value }) => ({ unit, units, type, value })))
     setSuppliedMeasurements(updatedMeasurements)
+  }
+
+  function addUuidIfMissing(measurment) {
+    return !measurment.uuid
+      ? { uuid: uuid(), ...measurment }
+      : measurment
   }
 
   return (
@@ -97,10 +103,10 @@ export default function MeasurementOrFact({ data, onChange }) {
             </tr>
             </thead>
             <tbody>
-            {suppliedMeasurements.map(({ id, type, unit, units, value }, index) => (
+            {suppliedMeasurements.map(({ uuid, type, unit, units, value }, index) => (
               <SuppliedMeasurementRow
-                key={id}
-                onChange={(updatedMeasurement) => updateSuppliedMeasurement(index, { id, ...updatedMeasurement })}
+                key={uuid}
+                onChange={(updatedMeasurement) => updateSuppliedMeasurement(index, { uuid, ...updatedMeasurement })}
                 onCopy={addSuppliedMeasurements}
                 onRemove={() => removeSuppliedMeasurement(index)}
                 type={type}
@@ -146,7 +152,7 @@ function MeasurementRow({ onClickAdd, type, units }) {
       <td>
         <a
           className="add button"
-          onClick={() => onClickAdd({ id: uuid(), unit: selectedUnit, units, type, value: selectedValue })}>
+          onClick={() => onClickAdd({ unit: selectedUnit, units, type, value: selectedValue })}>
           {t('common.add')}
         </a>
       </td>
@@ -194,7 +200,7 @@ function SuppliedMeasurementRow({ onChange, onCopy, onRemove, type, unit, units,
           value={selectedValue}/>
       </td>
       <td>
-        <a className="copy button" onClick={() => onCopy({ id: uuid(), type, unit, units, value })}>
+        <a className="copy button" onClick={() => onCopy({ type, unit, units, value })}>
           {t('common.copy')}
         </a>
       </td>
