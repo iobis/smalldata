@@ -3,6 +3,7 @@ export default {
     common:         {
       add:       'Add',
       copy:      'Copy',
+      cancel:    'Cancel',
       edit:      'Edit',
       latitude:  'Latitude',
       longitude: 'Longitude',
