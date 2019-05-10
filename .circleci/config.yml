@@ -32,7 +32,6 @@ jobs:
          name: Install Front End Deps
          command: |
            yarn install --frozen-lockfile
-           apt-get install -y sudo
       - run:
           name: Setup known hosts
           command: |
