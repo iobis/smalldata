@@ -26,5 +26,16 @@ describe('OccurrenceForm', () => {
     wrapper.find('.identified-by input').simulate('keydown', { key: 'Enter' })
     wrapper.find('.step-4 .step-header').simulate('click')
     expect(wrapper).toMatchSnapshot()
+
+    wrapper.find('.general .measurement-row .input').at(0).simulate('change', { target: { value: '10' } })
+    wrapper.find('.general .measurement-row .button.add').at(0).simulate('click')
+    wrapper.find('.step-5 .step-header').simulate('click')
+    expect(wrapper).toMatchSnapshot()
+
+    wrapper.find('.step-4 .step-header').simulate('click')
+    wrapper.find('.general .measurement-row .input').at(0).simulate('change', { target: { value: '20' } })
+    wrapper.find('.general .measurement-row .button.add').at(0).simulate('click')
+    wrapper.find('.step-5 .step-header').simulate('click')
+    expect(wrapper).toMatchSnapshot()
   })
 })

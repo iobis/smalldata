@@ -93,7 +93,7 @@ export default function OccurrenceForm() {
                        onChange={setObservationData}/>
   }, {
     dataDescription: 'Given values',
-    selectedData:    'You have submitted 7 extra fields',
+    selectedData:    <MeasurementOrFactSummary data={measurementOrFact}/>,
     stepDescription: 'Enter further specifics',
     stepTitle:       'Measurement or Fact',
     children:        <MeasurementOrFact
@@ -151,4 +151,12 @@ function renderIdentifiedByLabel({ identifiedBy, institutionCode }) {
   const institutionCodeLabel = institutionCode ? `Institution: ${institutionCode}` : ''
   const identifiedByLabel = identifiedBy.length > 0 ? 'Identified by: ' + identifiedBy.join(', ') : ''
   return [institutionCodeLabel, identifiedByLabel].filter(label => !!label).join('; ')
+}
+
+function MeasurementOrFactSummary({ data }) {
+  return <div>You have submitted {data.length} extra fields</div>
+}
+
+MeasurementOrFactSummary.propTypes = {
+  data: PropTypes.array.isRequired
 }
