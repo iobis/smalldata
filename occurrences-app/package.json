@@ -1,7 +1,6 @@
 {
   "name": "@smalldata/occurrences-app",
   "version": "1.0.0",
-  "homepage": "/occurrences",
   "private": true,
   "scripts": {
     "build": "react-app-rewired build",
