@@ -154,7 +154,9 @@ function renderIdentifiedByLabel({ identifiedBy, institutionCode }) {
 }
 
 function MeasurementOrFactSummary({ data }) {
-  return <div>You have submitted {data.length} extra fields</div>
+  const { t } = useTranslation()
+
+  return <div>{t('occurrenceForm.measurementOrFact.step.title', { number: data.length })}</div>
 }
 
 MeasurementOrFactSummary.propTypes = {

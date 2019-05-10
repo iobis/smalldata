@@ -3737,9 +3737,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
               }
             >
               <div>
-                You have submitted 
-                1
-                 extra fields
+                occurrenceForm.measurementOrFact.step.title {"number":1}
               </div>
             </MeasurementOrFactSummary>
           </div>
@@ -4465,9 +4463,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
               }
             >
               <div>
-                You have submitted 
-                2
-                 extra fields
+                occurrenceForm.measurementOrFact.step.title {"number":2}
               </div>
             </MeasurementOrFactSummary>
           </div>

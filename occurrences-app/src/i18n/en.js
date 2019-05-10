@@ -165,6 +165,9 @@ export default {
         }
       },
       measurementOrFact: {
+        step: {
+          title: 'You have submitted {{number}} extra fields'
+        },
         general:  {
           title:    'STEP 1: General sample information',
           subtitle: 'Supply any information you may have on the sample, setting, environment, ...'
