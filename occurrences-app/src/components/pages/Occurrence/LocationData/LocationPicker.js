@@ -3,7 +3,7 @@ import iconRetinaUrl from 'leaflet/dist/images/marker-icon-2x.png'
 import iconUrl from 'leaflet/dist/images/marker-icon.png'
 import L from 'leaflet'
 import PropTypes from 'prop-types'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import shadowUrlUrl from 'leaflet/dist/images/marker-shadow.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
@@ -22,6 +22,7 @@ L.Marker.prototype.options.icon = DefaultIcon
 
 export default function LocationPicker({ onChange }) {
   const { t } = useTranslation()
+  const mapRef = useRef()
   const [latitude, setLatitude] = useState(51.505)
   const [longitude, setLongitude] = useState(-0.09)
   const coordinates = [latitude, longitude]
@@ -46,6 +47,10 @@ export default function LocationPicker({ onChange }) {
 
     if (debouncedSearch) fetchSuggestions()
   }, [debouncedSearch])
+
+  useEffect(() => {
+    mapRef.current.leafletElement.invalidateSize(true)
+  })
 
   return (
     <div className="location-picker section is-fluid">
@@ -77,6 +82,7 @@ export default function LocationPicker({ onChange }) {
             center={coordinates}
             onClick={(e) => setMarkerCoordinates(e.latlng)}
             onZoomEnd={(e) => setZoom(e.target.getZoom())}
+            ref={mapRef}
             zoom={zoom}>
             <TileLayer
               attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
