@@ -2,7 +2,7 @@ import CopyPreviousData from '../CopyPreviousData'
 import Dropdown from '../../../form/Dropdown'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import uuid from 'uuid/v4'
+import { addUuid, removeUuid } from '../../../../common/uuids'
 import { getGeneralMeasurements, getSpecificMeasurements } from '../../../../clients/measurments'
 import { useTranslation } from 'react-i18next'
 
@@ -34,17 +34,6 @@ export default function MeasurementOrFact({ data, onChange }) {
     })
     onChange(updatedMeasurements.map(removeUuid))
     setSuppliedMeasurements(updatedMeasurements)
-  }
-
-  function addUuid(measurment) {
-    return !measurment.uuid
-      ? { uuid: uuid(), ...measurment }
-      : measurment
-  }
-
-  function removeUuid(original) {
-    const { uuid, ...measurement } = original
-    return measurement
   }
 
   return (
