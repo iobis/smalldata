@@ -23,7 +23,7 @@ export default function LocationPicker() {
   const [zoom, setZoom] = useState(12)
   const [searchString, setSearchString] = useState('')
 
-  function handleClick({ latlng }) {
+  function setMarkerCoordinates(latlng) {
     setLatitude(latlng.lat)
     setLongitude(latlng.lng)
   }
@@ -44,11 +44,18 @@ export default function LocationPicker() {
           <p>Have you tried entering an address in the geocoding box?</p>
         </div>
         <div className="column is-half">
-          <Map center={coordinates} onClick={handleClick} onZoomEnd={(e) => setZoom(e.target.getZoom())} zoom={zoom}>
+          <Map
+            center={coordinates}
+            onClick={(e) => setMarkerCoordinates(e.latlng)}
+            onZoomEnd={(e) => setZoom(e.target.getZoom())}
+            zoom={zoom}>
             <TileLayer
               attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
-            <Marker position={coordinates}>
+            <Marker
+              draggable={true}
+              onDragend={(e) => setMarkerCoordinates(e.target.getLatLng())}
+              position={coordinates}>
               <Popup>
                 <div>latitude: {latitude}</div>
                 <div>longitude: {longitude}</div>
