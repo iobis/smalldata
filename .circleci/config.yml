@@ -47,6 +47,7 @@ jobs:
                                        unzip -o image.zip && \
                                        rm image.zip"
             scp -r ./src/main/resources/* "$SSH_USER@$SSH_HOST:/opt/smalldata/image/"
+            ssh "$SSH_USER@$SSH_HOST" "mkdir -p /opt/smalldata/image/webroot"
             scp -r ../occurrences-app/build/* "$SSH_USER@$SSH_HOST:/opt/smalldata/image/webroot/"
             ssh "$SSH_USER@$SSH_HOST" "sudo systemctl restart smalldata && \
                                        systemctl status smalldata"
