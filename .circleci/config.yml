@@ -29,13 +29,12 @@ jobs:
     steps:
       - checkout
       - run:
+         name: Install Front End Deps
+         command: yarn install --frozen-lockfile
+      - run:
           name: Setup known hosts
           command: |
             ssh-keyscan -H smalldata.obis.org >> ~/.ssh/known_hosts
-      - run:
-          name: Setup environment and software
-          command: |
-            yarn add npm-run-all --dev -W
       - run:
           name: Build and deploy image over ssh
           command: |
