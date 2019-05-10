@@ -50,13 +50,12 @@ export default function LocationPicker() {
     <div className="location-picker section is-fluid">
       <div className="columns">
         <div className="column is-half">
-          <h1 className="title">{t('occurrenceForm.locationData.locationPicker.title')}</h1>
-          <p>{t('occurrenceForm.locationData.locationPicker.searchTip')}</p>
           <div className="location-search field">
             <div className="control has-icons-left has-icons-right">
               <input
                 className="input"
                 onChange={(e) => setSearchString(e.target.value)}
+                placeholder={t('occurrenceForm.locationData.locationPicker.searchTip')}
                 type="text"
                 value={searchString}/>
               <span className="icon is-left">
@@ -67,7 +66,7 @@ export default function LocationPicker() {
               </span>
             </div>
           </div>
-          <h1 className="title">{t('occurrenceForm.locationData.locationPicker.resultsTitle')}</h1>
+          <h4 className="result title is-4">{t('occurrenceForm.locationData.locationPicker.resultsTitle')}</h4>
           {suggestions.length > 0
             ? <SuggestionsResult onClick={setMarkerCoordinates} suggestions={suggestions}/>
             : <SuggestionsResultEmpty/>}

@@ -11,14 +11,6 @@ exports[`LocationPicker renders correctly 1`] = `
       <div
         class="column is-half"
       >
-        <h1
-          class="title"
-        >
-          occurrenceForm.locationData.locationPicker.title
-        </h1>
-        <p>
-          occurrenceForm.locationData.locationPicker.searchTip
-        </p>
         <div
           class="location-search field"
         >
@@ -27,6 +19,7 @@ exports[`LocationPicker renders correctly 1`] = `
           >
             <input
               class="input"
+              placeholder="occurrenceForm.locationData.locationPicker.searchTip"
               type="text"
               value=""
             />
@@ -48,11 +41,11 @@ exports[`LocationPicker renders correctly 1`] = `
             </span>
           </div>
         </div>
-        <h1
-          class="title"
+        <h4
+          class="result title is-4"
         >
           occurrenceForm.locationData.locationPicker.resultsTitle
-        </h1>
+        </h4>
         <p>
           occurrenceForm.locationData.locationPicker.emptyResult
         </p>
