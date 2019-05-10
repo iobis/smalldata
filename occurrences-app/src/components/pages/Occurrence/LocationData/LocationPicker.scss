@@ -1,4 +1,7 @@
 .location-picker {
+  .suggestion-row {
+    cursor: pointer;
+  }
   .leaflet-container {
     height: 500px;
     width: 100%;

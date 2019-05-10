@@ -1,13 +1,16 @@
 export default {
   translation: {
     common:         {
-      add:    'Add',
-      copy:   'Copy',
-      edit:   'Edit',
-      remove: 'Remove',
-      type:   'Type',
-      unit:   'Unit',
-      value:  'Value'
+      add:       'Add',
+      copy:      'Copy',
+      edit:      'Edit',
+      latitude:  'Latitude',
+      longitude: 'Longitude',
+      name:      'Name',
+      remove:    'Remove',
+      type:      'Type',
+      unit:      'Unit',
+      value:     'Value'
     },
     inputDataPage:  {
       inputNewOccurrence: 'INPUT NEW OCCURRENCE',
@@ -115,6 +118,13 @@ export default {
             latitude:  'Latitude',
             longitude: 'Longitude'
           }
+        },
+        locationPicker:        {
+          emptyResult:    'No search results yet',
+          emptyResultTip: 'Have you tried entering an address in the geocoding box?',
+          resultsTitle:   'Results',
+          searchTip:      'Find location by name',
+          title:          'Don\'t know the exact coordinates?'
         }
       },
       observationData:   {
@@ -165,7 +175,7 @@ export default {
         }
       },
       measurementOrFact: {
-        step: {
+        step:     {
           title: 'You have submitted {{number}} extra fields'
         },
         general:  {

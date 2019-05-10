@@ -2,9 +2,13 @@ import 'leaflet/dist/leaflet.css'
 import iconRetinaUrl from 'leaflet/dist/images/marker-icon-2x.png'
 import iconUrl from 'leaflet/dist/images/marker-icon.png'
 import L from 'leaflet'
-import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import React, { useState, useEffect } from 'react'
 import shadowUrlUrl from 'leaflet/dist/images/marker-shadow.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
+import { useDebounce } from '../../../../hooks/hooks'
+import { useTranslation } from 'react-i18next'
 
 // This part of code relates to issue with react-leaflet. Please update the code when issues is fixed. Refer
 // to https://github.com/PaulLeCam/react-leaflet/issues/453 for more details
@@ -17,31 +21,56 @@ const DefaultIcon = L.icon({
 L.Marker.prototype.options.icon = DefaultIcon
 
 export default function LocationPicker() {
+  const { t } = useTranslation()
   const [latitude, setLatitude] = useState(51.505)
   const [longitude, setLongitude] = useState(-0.09)
   const coordinates = [latitude, longitude]
   const [zoom, setZoom] = useState(12)
   const [searchString, setSearchString] = useState('')
+  const [suggestions, setSuggestions] = useState([])
 
   function setMarkerCoordinates(latlng) {
     setLatitude(latlng.lat)
     setLongitude(latlng.lng)
   }
 
+  const debouncedSearch = useDebounce(searchString, 500)
+
+  useEffect(() => {
+    const fetchSuggestions = async() => {
+      const response = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${searchString}`)
+      const suggestions = await response.json()
+      setSuggestions(suggestions)
+    }
+
+    if (debouncedSearch) fetchSuggestions()
+  }, [debouncedSearch])
+
   return (
     <div className="location-picker section is-fluid">
       <div className="columns">
         <div className="column is-half">
-          <h1 className="title">Don't know the exact coordinates?</h1>
-          <p>Find location by name</p>
-          <input
-            className="input"
-            onChange={(e) => setSearchString(e.target.value)}
-            type="text"
-            value={searchString}/>
-          <h1 className="title">Results</h1>
-          <p>No search results yet</p>
-          <p>Have you tried entering an address in the geocoding box?</p>
+          <h1 className="title">{t('occurrenceForm.locationData.locationPicker.title')}</h1>
+          <p>{t('occurrenceForm.locationData.locationPicker.searchTip')}</p>
+          <div className="location-search field">
+            <div className="control has-icons-left has-icons-right">
+              <input
+                className="input"
+                onChange={(e) => setSearchString(e.target.value)}
+                type="text"
+                value={searchString}/>
+              <span className="icon is-left">
+                <FontAwesomeIcon className="search" icon="search"/>
+              </span>
+              <span className="icon is-small is-right">
+                <FontAwesomeIcon className="times-circle" icon="times-circle"/>
+              </span>
+            </div>
+          </div>
+          <h1 className="title">{t('occurrenceForm.locationData.locationPicker.resultsTitle')}</h1>
+          {suggestions.length > 0
+            ? <SuggestionsResult onClick={setMarkerCoordinates} suggestions={suggestions}/>
+            : <SuggestionsResultEmpty/>}
         </div>
         <div className="column is-half">
           <Map
@@ -65,5 +94,59 @@ export default function LocationPicker() {
         </div>
       </div>
     </div>
+  )
+}
+
+function SuggestionsResult({ suggestions, onClick }) {
+  const { t } = useTranslation()
+
+  return (
+    <table className="table is-fullwidth is-striped is-hoverable">
+      <thead>
+      <tr>
+        <th>{t('common.type')}</th>
+        <th>{t('common.name')}</th>
+        <th>{t('common.longitude')}</th>
+        <th>{t('common.latitude')}</th>
+      </tr>
+      </thead>
+      <tbody>
+      {suggestions.map(suggestion => (
+        <tr
+          className="suggestion-row fieldrow"
+          key={suggestion.place_id}
+          onClick={() => onClick({ lat: suggestion.lat, lng: suggestion.lon })}>
+          <td className="type">
+            {suggestion.type}
+          </td>
+          <td className="name">
+            {suggestion.display_name}
+          </td>
+          <td className="longitude">
+            {suggestion.lon}
+          </td>
+          <td className="latitude">
+            {suggestion.lat}
+          </td>
+        </tr>
+      ))}
+      </tbody>
+    </table>
+  )
+}
+
+SuggestionsResult.propTypes = {
+  onClick:     PropTypes.func.isRequired,
+  suggestions: PropTypes.array.isRequired
+}
+
+function SuggestionsResultEmpty() {
+  const { t } = useTranslation()
+
+  return (
+    <>
+      <p>{t('occurrenceForm.locationData.locationPicker.emptyResult')}</p>
+      <p>{t('occurrenceForm.locationData.locationPicker.emptyResultTip')}</p>
+    </>
   )
 }
