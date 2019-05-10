@@ -41,7 +41,7 @@ jobs:
             yarn build:zip
             cd server
             scp -r ./build/image.zip "$SSH_USER@$SSH_HOST:/opt/smalldata"
-            ssh "$SSH_USER@$SSH_HOST" "cd /opt/smalldata && unzip image.zip && rm image.zip && sudo systemctl restart smalldata"
+            ssh "$SSH_USER@$SSH_HOST" "cd /opt/smalldata && unzip -o image.zip && rm image.zip && sudo systemctl restart smalldata"
             systemctl -H "$SSH_USER@$SSH_HOST" status smalldata.service
 
 workflows:
