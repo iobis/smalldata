@@ -3,6 +3,12 @@ import React from 'react'
 import { getEmptyData } from './LocationData.fixture'
 import { mount } from 'enzyme'
 
+jest.mock('./LocationPicker', () => () => (
+  <div id="location-picker-mock">
+    LocationPickerMock
+  </div>
+))
+
 describe('LocationData', () => {
   it('renders correctly', () => {
     expect(mount(createComponent())).toMatchSnapshot()

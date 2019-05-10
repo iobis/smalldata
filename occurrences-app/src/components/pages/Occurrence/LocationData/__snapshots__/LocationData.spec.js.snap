@@ -161,6 +161,76 @@ exports[`LocationData renders correctly 1`] = `
       </InputNumber>
     </div>
     <div
+      className="columns"
+    >
+      <div
+        className="location-picker-notice column is-narrow"
+        onClick={[Function]}
+      >
+        occurrenceForm.locationData.locationPicker.title
+      </div>
+    </div>
+    <LocationPickerModal
+      active={false}
+      onChange={[Function]}
+      onClose={[Function]}
+    >
+      <div
+        className="location-picker-modal modal"
+      >
+        <div
+          className="modal-background"
+        />
+        <div
+          className="modal-card"
+        >
+          <header
+            className="modal-card-head"
+          >
+            <p
+              className="modal-card-title"
+            >
+              occurrenceForm.locationData.locationPicker.title
+            </p>
+            <button
+              aria-label="close"
+              className="delete"
+              onClick={[Function]}
+            />
+          </header>
+          <section
+            className="modal-card-body"
+          >
+            <Component
+              onChange={[Function]}
+            >
+              <div
+                id="location-picker-mock"
+              >
+                LocationPickerMock
+              </div>
+            </Component>
+          </section>
+          <footer
+            className="modal-card-foot"
+          >
+            <button
+              className="button is-success"
+              onClick={[Function]}
+            >
+              Save changes
+            </button>
+            <button
+              className="button"
+              onClick={[Function]}
+            >
+              common.cancel
+            </button>
+          </footer>
+        </div>
+      </div>
+    </LocationPickerModal>
+    <div
       className="verbatim-data"
     >
       <h1

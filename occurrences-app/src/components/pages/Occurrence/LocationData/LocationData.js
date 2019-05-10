@@ -1,14 +1,22 @@
+import CopyPreviousData from '../CopyPreviousData'
 import InputNumber from '../../../form/InputNumber'
 import InputText from '../../../form/InputText'
+import LocationPickerModal from './LocationPickerModal'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import CopyPreviousData from '../CopyPreviousData'
 
 export default function LocationData({ data, onChange }) {
   const { t } = useTranslation()
   const updateField = (name, value) => {
     const newSelection = { ...data, [name]: value }
+    onChange(newSelection)
+  }
+  const [locationPickerVisible, setLocationPickerVisible] = useState(false)
+
+  function handleLocationUpdate(location) {
+    setLocationPickerVisible(false)
+    const newSelection = { ...data, decimalLatitude: location.latitude, decimalLongitude: location.longitude }
     onChange(newSelection)
   }
 
@@ -53,6 +61,15 @@ export default function LocationData({ data, onChange }) {
           step={0.01}
           value={data.maximumDepth}/>
       </div>
+      <div className="columns">
+        <div className="location-picker-notice column is-narrow" onClick={() => setLocationPickerVisible(true)}>
+          {t('occurrenceForm.locationData.locationPicker.title')}
+        </div>
+      </div>
+      <LocationPickerModal
+        active={locationPickerVisible}
+        onChange={handleLocationUpdate}
+        onClose={() => setLocationPickerVisible(false)}/>
       <div className="verbatim-data">
         <h1 className="title">{t('occurrenceForm.locationData.verbatimData.title')}</h1>
         <h2 className="subtitle">{t('occurrenceForm.locationData.verbatimData.subtitle')}</h2>
