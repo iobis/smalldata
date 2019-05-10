@@ -11,7 +11,7 @@
     "occurrences-app"
   ],
   "scripts": {
-    "build:back-end": "cd server && gradlew runtimeZip",
+    "build:back-end": "cd server && ./gradlew runtimeZip",
     "build:front-end": "run-s occurrences-app:build occurrences-app:copy-to-server",
     "build:zip": "run-s build:front-end build:back-end",
     "clean": "shx rm -rf ./occurrences-app/build ./server/src/main/resources/webroot/*",
