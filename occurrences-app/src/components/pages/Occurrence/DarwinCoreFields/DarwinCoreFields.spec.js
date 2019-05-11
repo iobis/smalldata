@@ -1,6 +1,6 @@
 import React from 'react'
 import DarwinCoreFields from './DarwinCoreFields'
-import { mount } from 'enzyme/build'
+import { mount } from 'enzyme'
 
 describe('DarwinCoreFields', () => {
   it('renders correctly', () => {

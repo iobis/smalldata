@@ -1,6 +1,6 @@
 import InputNumber from './InputNumber'
 import React from 'react'
-import { mount } from 'enzyme/build'
+import { mount } from 'enzyme'
 
 describe('InputText', () => {
   it('renders correctly', () => {

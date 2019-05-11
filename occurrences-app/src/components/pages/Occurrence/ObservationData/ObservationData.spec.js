@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 import ObservationData from './ObservationData'
-import { mount } from 'enzyme/build'
+import { mount } from 'enzyme'
 
 describe('ObservationData', () => {
   it('renders correctly', () => {

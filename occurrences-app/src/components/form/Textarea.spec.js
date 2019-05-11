@@ -1,6 +1,6 @@
 import Textarea from './Textarea'
 import React from 'react'
-import { mount } from 'enzyme/build'
+import { mount } from 'enzyme'
 
 describe('Textarea', () => {
   it('renders correctly', () => {
