@@ -7,12 +7,18 @@ exports[`DarwinCoreFields renders correctly 1`] = `
   <div
     className="darwin-core-fields section is-fluid"
   >
-    <h2>
-      DARWIN CORE CUSTOM SELECTION
+    <h1
+      className="title"
+    >
+      occurrenceForm.darwinCoreFields.title
+    </h1>
+    <h2
+      className="subtitle"
+    >
+      occurrenceForm.darwinCoreFields.subtitle
+       
+      occurrenceForm.darwinCoreFields.tip
     </h2>
-    <p>
-      This form enables you to add any aditional fields you may need to specify, that were ot previously included in this form. Please be advised to use the Darwin Core Archive names
-    </p>
     <div
       className="columns is-grouped"
     >
@@ -68,7 +74,7 @@ exports[`DarwinCoreFields renders correctly 1`] = `
           className="button"
           onClick={[Function]}
         >
-          add
+          common.add
         </button>
       </div>
     </div>
@@ -78,10 +84,10 @@ exports[`DarwinCoreFields renders correctly 1`] = `
       <thead>
         <tr>
           <th>
-            name
+            common.name
           </th>
           <th>
-            value
+            common.value
           </th>
           <th />
         </tr>
@@ -102,7 +108,7 @@ exports[`DarwinCoreFields renders correctly 1`] = `
               className="button remove"
               onClick={[Function]}
             >
-              remove
+              common.remove
             </button>
           </td>
         </tr>
@@ -121,7 +127,7 @@ exports[`DarwinCoreFields renders correctly 1`] = `
               className="button remove"
               onClick={[Function]}
             >
-              remove
+              common.remove
             </button>
           </td>
         </tr>
@@ -140,7 +146,7 @@ exports[`DarwinCoreFields renders correctly 1`] = `
               className="button remove"
               onClick={[Function]}
             >
-              remove
+              common.remove
             </button>
           </td>
         </tr>
@@ -159,7 +165,7 @@ exports[`DarwinCoreFields renders correctly 1`] = `
               className="button remove"
               onClick={[Function]}
             >
-              remove
+              common.remove
             </button>
           </td>
         </tr>

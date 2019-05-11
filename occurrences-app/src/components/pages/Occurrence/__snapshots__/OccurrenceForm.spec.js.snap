@@ -3817,12 +3817,18 @@ exports[`OccurrenceForm renders correctly 4`] = `
           <div
             className="darwin-core-fields section is-fluid"
           >
-            <h2>
-              DARWIN CORE CUSTOM SELECTION
+            <h1
+              className="title"
+            >
+              occurrenceForm.darwinCoreFields.title
+            </h1>
+            <h2
+              className="subtitle"
+            >
+              occurrenceForm.darwinCoreFields.subtitle
+               
+              occurrenceForm.darwinCoreFields.tip
             </h2>
-            <p>
-              This form enables you to add any aditional fields you may need to specify, that were ot previously included in this form. Please be advised to use the Darwin Core Archive names
-            </p>
             <div
               className="columns is-grouped"
             >
@@ -3878,7 +3884,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
                   className="button"
                   onClick={[Function]}
                 >
-                  add
+                  common.add
                 </button>
               </div>
             </div>
@@ -3888,10 +3894,10 @@ exports[`OccurrenceForm renders correctly 4`] = `
               <thead>
                 <tr>
                   <th>
-                    name
+                    common.name
                   </th>
                   <th>
-                    value
+                    common.value
                   </th>
                   <th />
                 </tr>
@@ -3912,7 +3918,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
                       className="button remove"
                       onClick={[Function]}
                     >
-                      remove
+                      common.remove
                     </button>
                   </td>
                 </tr>
@@ -3931,7 +3937,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
                       className="button remove"
                       onClick={[Function]}
                     >
-                      remove
+                      common.remove
                     </button>
                   </td>
                 </tr>
@@ -3950,7 +3956,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
                       className="button remove"
                       onClick={[Function]}
                     >
-                      remove
+                      common.remove
                     </button>
                   </td>
                 </tr>
@@ -3969,7 +3975,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
                       className="button remove"
                       onClick={[Function]}
                     >
-                      remove
+                      common.remove
                     </button>
                   </td>
                 </tr>
@@ -4543,12 +4549,18 @@ exports[`OccurrenceForm renders correctly 5`] = `
           <div
             className="darwin-core-fields section is-fluid"
           >
-            <h2>
-              DARWIN CORE CUSTOM SELECTION
+            <h1
+              className="title"
+            >
+              occurrenceForm.darwinCoreFields.title
+            </h1>
+            <h2
+              className="subtitle"
+            >
+              occurrenceForm.darwinCoreFields.subtitle
+               
+              occurrenceForm.darwinCoreFields.tip
             </h2>
-            <p>
-              This form enables you to add any aditional fields you may need to specify, that were ot previously included in this form. Please be advised to use the Darwin Core Archive names
-            </p>
             <div
               className="columns is-grouped"
             >
@@ -4604,7 +4616,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
                   className="button"
                   onClick={[Function]}
                 >
-                  add
+                  common.add
                 </button>
               </div>
             </div>
@@ -4614,10 +4626,10 @@ exports[`OccurrenceForm renders correctly 5`] = `
               <thead>
                 <tr>
                   <th>
-                    name
+                    common.name
                   </th>
                   <th>
-                    value
+                    common.value
                   </th>
                   <th />
                 </tr>
@@ -4638,7 +4650,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
                       className="button remove"
                       onClick={[Function]}
                     >
-                      remove
+                      common.remove
                     </button>
                   </td>
                 </tr>
@@ -4657,7 +4669,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
                       className="button remove"
                       onClick={[Function]}
                     >
-                      remove
+                      common.remove
                     </button>
                   </td>
                 </tr>
@@ -4676,7 +4688,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
                       className="button remove"
                       onClick={[Function]}
                     >
-                      remove
+                      common.remove
                     </button>
                   </td>
                 </tr>
@@ -4695,7 +4707,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
                       className="button remove"
                       onClick={[Function]}
                     >
-                      remove
+                      common.remove
                     </button>
                   </td>
                 </tr>

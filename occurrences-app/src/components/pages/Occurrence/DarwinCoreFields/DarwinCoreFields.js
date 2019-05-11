@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import InputText from '../../../form/InputText'
+import { useTranslation } from 'react-i18next'
 
 export default function DarwinCoreFields({ onChange }) {
+  const { t } = useTranslation()
   const [fields, setFields] = useState([
     { name: 'dummy field', value: 'dummy value' },
     { name: 'dummy2 field', value: 'dummy value' },
@@ -25,25 +27,27 @@ export default function DarwinCoreFields({ onChange }) {
 
   return (
     <div className="darwin-core-fields section is-fluid">
-      <h2>DARWIN CORE CUSTOM SELECTION</h2>
-      <p>This form enables you to add any aditional fields you may need to specify, that were ot previously included in
-        this form.
-        Please be advised to use the Darwin Core Archive names</p>
+      <h1 className="title">{t('occurrenceForm.darwinCoreFields.title')}</h1>
+      <h2 className="subtitle">
+        {t('occurrenceForm.darwinCoreFields.subtitle')}
+        {' '}
+        {t('occurrenceForm.darwinCoreFields.tip')}
+      </h2>
       <div className="columns is-grouped">
         <InputText className="field-name" name="occurrenceForm.darwinCoreFields.fieldName" onChange={setName}/>
         <InputText className="value" name="occurrenceForm.darwinCoreFields.value" onChange={setValue}/>
         <div className="column add">
           <span className="label">&nbsp;</span>
-          <button className="button" onClick={makeDarwinCoreObject}>add</button>
+          <button className="button" onClick={makeDarwinCoreObject}>{t('common.add')}</button>
         </div>
       </div>
 
       <table className="table is-fullwidth">
         <thead>
         <tr>
-          <th>name</th>
-          <th>value</th>
-          <th></th>
+          <th>{t('common.name')}</th>
+          <th>{t('common.value')}</th>
+          <th/>
         </tr>
         </thead>
         <tbody>
@@ -53,14 +57,13 @@ export default function DarwinCoreFields({ onChange }) {
             <td>{field.value}</td>
             <td>
               <button className="button remove" onClick={() => removeRowItem(i)}>
-                remove
+                {t('common.remove')}
               </button>
             </td>
           </tr>
         ))}
         </tbody>
       </table>
-
     </div>
   )
 }
