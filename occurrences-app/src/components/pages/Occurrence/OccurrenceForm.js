@@ -38,7 +38,7 @@ export default function OccurrenceForm() {
     identificationRemarks:   '',
     references:              []
   })
-  const [darwinCoreFieldsData, setDarwinCoreFieldsData] = useState([])
+  const [darwinCoreFields, setDarwinCoreFields] = useState([])
 
   const [activeStepIndex, setActiveStepIndex] = useState(0)
   const basicDataLabel = [
@@ -105,8 +105,8 @@ export default function OccurrenceForm() {
     stepDescription: 'Supply specific Darwin core fields',
     stepTitle:       'Darwin Core Fields',
     children:        <DarwinCoreFields
-                       darwinCoreFieldsData={darwinCoreFieldsData}
-                       onChange={setDarwinCoreFieldsData}/>
+                       fields={darwinCoreFields}
+                       onChange={setDarwinCoreFields}/>
   }]
 
   return (

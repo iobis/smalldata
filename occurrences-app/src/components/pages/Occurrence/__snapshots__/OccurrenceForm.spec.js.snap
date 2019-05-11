@@ -3811,7 +3811,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
           </div>
         </div>
         <DarwinCoreFields
-          darwinCoreFieldsData={Array []}
+          fields={Array []}
           onChange={[Function]}
         >
           <div
@@ -4543,7 +4543,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
           </div>
         </div>
         <DarwinCoreFields
-          darwinCoreFieldsData={Array []}
+          fields={Array []}
           onChange={[Function]}
         >
           <div

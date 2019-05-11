@@ -20,7 +20,7 @@ describe('DarwinCoreFields', () => {
 
   })
 
-  it('removes element when clicking remove button',()=> {
+  it('removes element when clicking remove button', () => {
     const wrapper = mount(createComponent())
 
     wrapper.find('.remove').first().simulate('click')
@@ -28,9 +28,16 @@ describe('DarwinCoreFields', () => {
   })
 })
 
-function createComponent() {
-  return (
-    <DarwinCoreFields
-      onChange={jest.fn()}/>
-  )
+function createComponent(props) {
+  const defaultProps = {
+    fields:   [
+      { name: 'dummy field', value: 'dummy value' },
+      { name: 'dummy2 field', value: 'dummy value' },
+      { name: 'dummy3 field', value: 'dummy value' },
+      { name: 'dummy4 field', value: 'dummy value' }
+    ],
+    onChange: jest.fn()
+  }
+
+  return <DarwinCoreFields {...defaultProps} {...props}/>
 }

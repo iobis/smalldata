@@ -3,9 +3,9 @@ import React, { useState } from 'react'
 import InputText from '../../../form/InputText'
 import { useTranslation } from 'react-i18next'
 
-export default function DarwinCoreFields({ onChange }) {
+export default function DarwinCoreFields({ fields, onChange }) {
   const { t } = useTranslation()
-  const [fields, setFields] = useState([
+  const [selectedFields, setSelectedFields] = useState([
     { name: 'dummy field', value: 'dummy value' },
     { name: 'dummy2 field', value: 'dummy value' },
     { name: 'dummy3 field', value: 'dummy value' },
@@ -16,13 +16,13 @@ export default function DarwinCoreFields({ onChange }) {
   const [value, setValue] = useState('')
 
   function makeDarwinCoreObject() {
-    setFields([...fields, { name, value }])
+    setSelectedFields([...fields, { name, value }])
   }
 
   function removeRowItem(index) {
-    const values = [...fields]
-    values.splice(index, 1)
-    setFields(values)
+    const updatedFields = [...fields]
+    updatedFields.splice(index, 1)
+    setSelectedFields(updatedFields)
   }
 
   return (
@@ -41,7 +41,6 @@ export default function DarwinCoreFields({ onChange }) {
           <button className="button" onClick={makeDarwinCoreObject}>{t('common.add')}</button>
         </div>
       </div>
-
       <table className="table is-fullwidth">
         <thead>
         <tr>
@@ -51,7 +50,7 @@ export default function DarwinCoreFields({ onChange }) {
         </tr>
         </thead>
         <tbody>
-        {fields.map((field, i) => (
+        {selectedFields.map((field, i) => (
           <tr className="fieldrow" key={field.name + field.value}>
             <td>{field.name}</td>
             <td>{field.value}</td>
@@ -69,5 +68,9 @@ export default function DarwinCoreFields({ onChange }) {
 }
 
 DarwinCoreFields.propTypes = {
+  fields:   PropTypes.arrayOf(PropTypes.shape({
+    name:  PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired
+  })).isRequired,
   onChange: PropTypes.func.isRequired
 }
