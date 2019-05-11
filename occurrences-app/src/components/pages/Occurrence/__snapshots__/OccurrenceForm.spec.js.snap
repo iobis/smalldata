@@ -3833,12 +3833,12 @@ exports[`OccurrenceForm renders correctly 4`] = `
               className="columns is-grouped"
             >
               <InputText
-                className="field-name"
+                className="is-3 field-name"
                 name="occurrenceForm.darwinCoreFields.fieldName"
                 onChange={[Function]}
               >
                 <div
-                  className="column field field-name"
+                  className="column field is-3 field-name"
                 >
                   <label
                     className="label"
@@ -3853,12 +3853,12 @@ exports[`OccurrenceForm renders correctly 4`] = `
                 </div>
               </InputText>
               <InputText
-                className="value"
+                className="is-3 value"
                 name="occurrenceForm.darwinCoreFields.value"
                 onChange={[Function]}
               >
                 <div
-                  className="column field value"
+                  className="column field is-3 value"
                 >
                   <label
                     className="label"
@@ -4488,12 +4488,12 @@ exports[`OccurrenceForm renders correctly 5`] = `
               className="columns is-grouped"
             >
               <InputText
-                className="field-name"
+                className="is-3 field-name"
                 name="occurrenceForm.darwinCoreFields.fieldName"
                 onChange={[Function]}
               >
                 <div
-                  className="column field field-name"
+                  className="column field is-3 field-name"
                 >
                   <label
                     className="label"
@@ -4508,12 +4508,12 @@ exports[`OccurrenceForm renders correctly 5`] = `
                 </div>
               </InputText>
               <InputText
-                className="value"
+                className="is-3 value"
                 name="occurrenceForm.darwinCoreFields.value"
                 onChange={[Function]}
               >
                 <div
-                  className="column field value"
+                  className="column field is-3 value"
                 >
                   <label
                     className="label"
@@ -5188,12 +5188,12 @@ exports[`OccurrenceForm renders correctly 6`] = `
               className="columns is-grouped"
             >
               <InputText
-                className="field-name"
+                className="is-3 field-name"
                 name="occurrenceForm.darwinCoreFields.fieldName"
                 onChange={[Function]}
               >
                 <div
-                  className="column field field-name"
+                  className="column field is-3 field-name"
                 >
                   <label
                     className="label"
@@ -5208,12 +5208,12 @@ exports[`OccurrenceForm renders correctly 6`] = `
                 </div>
               </InputText>
               <InputText
-                className="value"
+                className="is-3 value"
                 name="occurrenceForm.darwinCoreFields.value"
                 onChange={[Function]}
               >
                 <div
-                  className="column field value"
+                  className="column field is-3 value"
                 >
                   <label
                     className="label"

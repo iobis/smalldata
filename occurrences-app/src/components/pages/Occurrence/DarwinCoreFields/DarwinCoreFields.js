@@ -30,8 +30,8 @@ export default function DarwinCoreFields({ fields, onChange }) {
         {t('occurrenceForm.darwinCoreFields.tip')}
       </h2>
       <div className="columns is-grouped">
-        <InputText className="field-name" name="occurrenceForm.darwinCoreFields.fieldName" onChange={setName}/>
-        <InputText className="value" name="occurrenceForm.darwinCoreFields.value" onChange={setValue}/>
+        <InputText className="is-3 field-name" name="occurrenceForm.darwinCoreFields.fieldName" onChange={setName}/>
+        <InputText className="is-3 value" name="occurrenceForm.darwinCoreFields.value" onChange={setValue}/>
         <div className="column add">
           <span className="label">&nbsp;</span>
           <button className="button" onClick={() => addDarwinField({ name, value })}>{t('common.add')}</button>
