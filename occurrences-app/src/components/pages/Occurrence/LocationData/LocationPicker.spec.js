@@ -5,13 +5,19 @@ import TestUtils, { act } from 'react-dom/test-utils'
 import waitUntil from 'async-wait-until'
 
 describe('LocationPicker', () => {
+  const originalError = console.error
   let container
 
   beforeAll(() => {
+    console.error = (...args) => {
+      if (/Warning.*not wrapped in act/.test(args[0])) return
+      originalError.call(console, ...args)
+    }
     container = document.createElement('div')
   })
 
   afterAll(() => {
+    console.error = originalError
     ReactDOM.unmountComponentAtNode(container)
     document.body.removeChild(container)
   })
