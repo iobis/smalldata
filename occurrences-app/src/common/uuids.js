@@ -1,12 +1,12 @@
 import uuid from 'uuid/v4'
 
-export function addUuid(measurment) {
-  return !measurment.uuid
-    ? { uuid: uuid(), ...measurment }
-    : measurment
+export function addUuid(obj) {
+  return !obj.uuid
+    ? { uuid: uuid(), ...obj }
+    : obj
 }
 
 export function removeUuid(original) {
-  const { uuid, ...measurement } = original
-  return measurement
+  const { uuid, ...obj} = original
+  return obj
 }
