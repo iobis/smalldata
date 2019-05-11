@@ -168,9 +168,9 @@ function SuggestionsResultEmpty() {
   const { t } = useTranslation()
 
   return (
-    <>
+    <div className="suggestions-result-empty">
       <p>{t('occurrenceForm.locationData.locationPicker.emptyResult')}</p>
       <p>{t('occurrenceForm.locationData.locationPicker.emptyResultTip')}</p>
-    </>
+    </div>
   )
 }

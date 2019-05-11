@@ -59,6 +59,7 @@ describe('LocationPicker', () => {
     act(() => {
       ReactDOM.render(createComponent({ onChange }), container)
     })
+    expect(container.querySelectorAll('.suggestions-result-empty')).toHaveLength(1)
     expect(container.querySelectorAll('.suggestions-result .suggestion-row')).toHaveLength(0)
     expect(container.querySelector('.search-string.input').value).toBe('')
 
@@ -69,6 +70,7 @@ describe('LocationPicker', () => {
     expect(onChange).toHaveBeenCalledTimes(0)
     expect(fetch).toHaveBeenCalledTimes(1)
     expect(fetch).toHaveBeenNthCalledWith(1, 'https://nominatim.openstreetmap.org/search?format=json&q=St. Petersburg, Russ')
+    expect(container.querySelectorAll('.suggestions-result-empty')).toHaveLength(0)
     expect(container.querySelectorAll('.suggestions-result .suggestion-row')).toHaveLength(1)
     expect(container.querySelector('.search-string.input').value).toBe('St. Petersburg, Russ')
 
@@ -78,6 +80,7 @@ describe('LocationPicker', () => {
     expect(onChange).toHaveBeenCalledTimes(1)
     expect(onChange).toHaveBeenNthCalledWith(1, { latitude: '59.9403302', longitude: '30.3189535' })
     expect(fetch).toHaveBeenCalledTimes(1)
+    expect(container.querySelectorAll('.suggestions-result-empty')).toHaveLength(0)
     expect(container.querySelectorAll('.suggestions-result .suggestion-row')).toHaveLength(1)
     expect(container.querySelector('.search-string.input').value).toBe('St. Petersburg, Russ')
 
@@ -87,6 +90,7 @@ describe('LocationPicker', () => {
     expect(onChange).toHaveBeenCalledTimes(1)
     expect(fetch).toHaveBeenCalledTimes(1)
     expect(container.querySelectorAll('.suggestions-result .suggestion-row')).toHaveLength(0)
+    expect(container.querySelectorAll('.suggestions-result-empty')).toHaveLength(1)
     expect(container.querySelector('.search-string.input').value).toBe('')
   })
 })
