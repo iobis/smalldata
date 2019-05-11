@@ -102,11 +102,15 @@ export default function LocationPicker({ onChange }) {
               onDragend={(e) => setMarkerCoordinates(e.target.getLatLng())}
               position={coordinates}>
               <Popup>
-                <div>latitude: {latitude}</div>
-                <div>longitude: {longitude}</div>
+                <div>{t('common.latitude')}: {latitude}</div>
+                <div>{t('common.longitude')}: {longitude}</div>
               </Popup>
             </Marker>
           </Map>
+          <div>
+            <div>{t('common.latitude')}: {latitude}</div>
+            <div>{t('common.longitude')}: {longitude}</div>
+          </div>
         </div>
       </div>
     </div>

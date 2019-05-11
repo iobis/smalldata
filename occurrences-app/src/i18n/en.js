@@ -2,8 +2,9 @@ export default {
   translation: {
     common:         {
       add:       'Add',
-      copy:      'Copy',
       cancel:    'Cancel',
+      confirm:   'Confirm',
+      copy:      'Copy',
       edit:      'Edit',
       latitude:  'Latitude',
       longitude: 'Longitude',

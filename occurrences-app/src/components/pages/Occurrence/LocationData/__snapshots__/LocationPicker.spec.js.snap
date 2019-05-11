@@ -175,6 +175,18 @@ exports[`LocationPicker renders correctly 1`] = `
             </div>
           </div>
         </div>
+        <div>
+          <div>
+            common.latitude
+            : 
+            51.505
+          </div>
+          <div>
+            common.longitude
+            : 
+            -0.09
+          </div>
+        </div>
       </div>
     </div>
   </div>

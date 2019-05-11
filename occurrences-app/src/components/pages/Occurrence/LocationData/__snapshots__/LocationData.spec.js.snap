@@ -218,7 +218,7 @@ exports[`LocationData renders correctly 1`] = `
               className="button is-success"
               onClick={[Function]}
             >
-              Save changes
+              common.confirm
             </button>
             <button
               className="button"

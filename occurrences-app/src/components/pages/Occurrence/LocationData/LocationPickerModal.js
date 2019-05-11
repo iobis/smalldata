@@ -20,7 +20,7 @@ export default function LocationPickerModal({ active, onClose, onChange }) {
           <LocationPicker onChange={(location) => setLocation(location)}/>
         </section>
         <footer className="modal-card-foot">
-          <button className="button is-success" onClick={() => onChange(location)}>Save changes</button>
+          <button className="button is-success" onClick={() => onChange(location)}>{t('common.confirm')}</button>
           <button className="button" onClick={() => onClose()}>{t('common.cancel')}</button>
         </footer>
       </div>
