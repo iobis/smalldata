@@ -329,7 +329,17 @@ exports[`OccurrenceForm renders correctly 1`] = `
       dataDescription="Given Values"
       key="occurrenceForm.occurrenceData.step.stepTitle"
       onStepTitleClick={[Function]}
-      selectedData=" 29 April 2019 "
+      selectedData={
+        <OccurrenceDataSummary
+          basisOfRecord={null}
+          beginDate={1556496000000}
+          endDate={null}
+          lifestage={null}
+          occurrenceStatus={null}
+          scientificName=""
+          sex={null}
+        />
+      }
       stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
       stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
     >
@@ -696,7 +706,17 @@ exports[`OccurrenceForm renders correctly 2`] = `
       dataDescription="Given Values"
       key="occurrenceForm.occurrenceData.step.stepTitle"
       onStepTitleClick={[Function]}
-      selectedData=" 29 April 2019 "
+      selectedData={
+        <OccurrenceDataSummary
+          basisOfRecord={null}
+          beginDate={1556496000000}
+          endDate={null}
+          lifestage={null}
+          occurrenceStatus={null}
+          scientificName=""
+          sex={null}
+        />
+      }
       stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
       stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
     >
@@ -705,7 +725,17 @@ exports[`OccurrenceForm renders correctly 2`] = `
         dataDescription="Given Values"
         iconVisible={true}
         onStepTitleClick={[Function]}
-        selectedData=" 29 April 2019 "
+        selectedData={
+          <OccurrenceDataSummary
+            basisOfRecord={null}
+            beginDate={1556496000000}
+            endDate={null}
+            lifestage={null}
+            occurrenceStatus={null}
+            scientificName=""
+            sex={null}
+          />
+        }
         stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
         stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
       >
@@ -727,7 +757,19 @@ exports[`OccurrenceForm renders correctly 2`] = `
           <div
             className="column is-7 is-size-5"
           >
-             29 April 2019 
+            <OccurrenceDataSummary
+              basisOfRecord={null}
+              beginDate={1556496000000}
+              endDate={null}
+              lifestage={null}
+              occurrenceStatus={null}
+              scientificName=""
+              sex={null}
+            >
+              <div>
+                 29 April 2019 
+              </div>
+            </OccurrenceDataSummary>
           </div>
           <div
             className="column details"
@@ -1444,7 +1486,17 @@ exports[`OccurrenceForm renders correctly 3`] = `
       dataDescription="Given Values"
       key="occurrenceForm.occurrenceData.step.stepTitle"
       onStepTitleClick={[Function]}
-      selectedData=" 29 April 2019 "
+      selectedData={
+        <OccurrenceDataSummary
+          basisOfRecord={null}
+          beginDate={1556496000000}
+          endDate={null}
+          lifestage={null}
+          occurrenceStatus={null}
+          scientificName=""
+          sex={null}
+        />
+      }
       stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
       stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
     >
@@ -1453,7 +1505,17 @@ exports[`OccurrenceForm renders correctly 3`] = `
         dataDescription="Given Values"
         iconVisible={true}
         onStepTitleClick={[Function]}
-        selectedData=" 29 April 2019 "
+        selectedData={
+          <OccurrenceDataSummary
+            basisOfRecord={null}
+            beginDate={1556496000000}
+            endDate={null}
+            lifestage={null}
+            occurrenceStatus={null}
+            scientificName=""
+            sex={null}
+          />
+        }
         stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
         stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
       >
@@ -1475,7 +1537,19 @@ exports[`OccurrenceForm renders correctly 3`] = `
           <div
             className="column is-7 is-size-5"
           >
-             29 April 2019 
+            <OccurrenceDataSummary
+              basisOfRecord={null}
+              beginDate={1556496000000}
+              endDate={null}
+              lifestage={null}
+              occurrenceStatus={null}
+              scientificName=""
+              sex={null}
+            >
+              <div>
+                 29 April 2019 
+              </div>
+            </OccurrenceDataSummary>
           </div>
           <div
             className="column details"
@@ -3380,7 +3454,17 @@ exports[`OccurrenceForm renders correctly 4`] = `
       dataDescription="Given Values"
       key="occurrenceForm.occurrenceData.step.stepTitle"
       onStepTitleClick={[Function]}
-      selectedData=" 29 April 2019 "
+      selectedData={
+        <OccurrenceDataSummary
+          basisOfRecord={null}
+          beginDate={1556496000000}
+          endDate={null}
+          lifestage={null}
+          occurrenceStatus={null}
+          scientificName=""
+          sex={null}
+        />
+      }
       stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
       stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
     >
@@ -3389,7 +3473,17 @@ exports[`OccurrenceForm renders correctly 4`] = `
         dataDescription="Given Values"
         iconVisible={true}
         onStepTitleClick={[Function]}
-        selectedData=" 29 April 2019 "
+        selectedData={
+          <OccurrenceDataSummary
+            basisOfRecord={null}
+            beginDate={1556496000000}
+            endDate={null}
+            lifestage={null}
+            occurrenceStatus={null}
+            scientificName=""
+            sex={null}
+          />
+        }
         stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
         stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
       >
@@ -3411,7 +3505,19 @@ exports[`OccurrenceForm renders correctly 4`] = `
           <div
             className="column is-7 is-size-5"
           >
-             29 April 2019 
+            <OccurrenceDataSummary
+              basisOfRecord={null}
+              beginDate={1556496000000}
+              endDate={null}
+              lifestage={null}
+              occurrenceStatus={null}
+              scientificName=""
+              sex={null}
+            >
+              <div>
+                 29 April 2019 
+              </div>
+            </OccurrenceDataSummary>
           </div>
           <div
             className="column details"
@@ -3990,7 +4096,17 @@ exports[`OccurrenceForm renders correctly 5`] = `
       dataDescription="Given Values"
       key="occurrenceForm.occurrenceData.step.stepTitle"
       onStepTitleClick={[Function]}
-      selectedData=" 29 April 2019 "
+      selectedData={
+        <OccurrenceDataSummary
+          basisOfRecord={null}
+          beginDate={1556496000000}
+          endDate={null}
+          lifestage={null}
+          occurrenceStatus={null}
+          scientificName=""
+          sex={null}
+        />
+      }
       stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
       stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
     >
@@ -3999,7 +4115,17 @@ exports[`OccurrenceForm renders correctly 5`] = `
         dataDescription="Given Values"
         iconVisible={true}
         onStepTitleClick={[Function]}
-        selectedData=" 29 April 2019 "
+        selectedData={
+          <OccurrenceDataSummary
+            basisOfRecord={null}
+            beginDate={1556496000000}
+            endDate={null}
+            lifestage={null}
+            occurrenceStatus={null}
+            scientificName=""
+            sex={null}
+          />
+        }
         stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
         stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
       >
@@ -4021,7 +4147,19 @@ exports[`OccurrenceForm renders correctly 5`] = `
           <div
             className="column is-7 is-size-5"
           >
-             29 April 2019 
+            <OccurrenceDataSummary
+              basisOfRecord={null}
+              beginDate={1556496000000}
+              endDate={null}
+              lifestage={null}
+              occurrenceStatus={null}
+              scientificName=""
+              sex={null}
+            >
+              <div>
+                 29 April 2019 
+              </div>
+            </OccurrenceDataSummary>
           </div>
           <div
             className="column details"
@@ -4645,7 +4783,17 @@ exports[`OccurrenceForm renders correctly 6`] = `
       dataDescription="Given Values"
       key="occurrenceForm.occurrenceData.step.stepTitle"
       onStepTitleClick={[Function]}
-      selectedData=" 29 April 2019 "
+      selectedData={
+        <OccurrenceDataSummary
+          basisOfRecord={null}
+          beginDate={1556496000000}
+          endDate={null}
+          lifestage={null}
+          occurrenceStatus={null}
+          scientificName=""
+          sex={null}
+        />
+      }
       stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
       stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
     >
@@ -4654,7 +4802,17 @@ exports[`OccurrenceForm renders correctly 6`] = `
         dataDescription="Given Values"
         iconVisible={true}
         onStepTitleClick={[Function]}
-        selectedData=" 29 April 2019 "
+        selectedData={
+          <OccurrenceDataSummary
+            basisOfRecord={null}
+            beginDate={1556496000000}
+            endDate={null}
+            lifestage={null}
+            occurrenceStatus={null}
+            scientificName=""
+            sex={null}
+          />
+        }
         stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
         stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
       >
@@ -4676,7 +4834,19 @@ exports[`OccurrenceForm renders correctly 6`] = `
           <div
             className="column is-7 is-size-5"
           >
-             29 April 2019 
+            <OccurrenceDataSummary
+              basisOfRecord={null}
+              beginDate={1556496000000}
+              endDate={null}
+              lifestage={null}
+              occurrenceStatus={null}
+              scientificName=""
+              sex={null}
+            >
+              <div>
+                 29 April 2019 
+              </div>
+            </OccurrenceDataSummary>
           </div>
           <div
             className="column details"

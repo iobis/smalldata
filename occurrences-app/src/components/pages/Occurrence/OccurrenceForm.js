@@ -39,13 +39,7 @@ export default function OccurrenceForm() {
     references:              []
   })
   const [darwinCoreFields, setDarwinCoreFields] = useState([])
-
   const [activeStepIndex, setActiveStepIndex] = useState(0)
-  const occurrenceDataLabel = [
-    occurrenceData.scientificName,
-    format(occurrenceData.beginDate, 'D MMMM YYYY'),
-    occurrenceData.endDate ? ' - ' + format(occurrenceData.endDate, 'D MMMM YYYY') : ''
-  ].join(' ')
   const [locationData, setLocationData] = useState({
       decimalLongitude:      null,
       decimalLatitude:       null,
@@ -69,7 +63,7 @@ export default function OccurrenceForm() {
                        selectedDataset={selectedDataset}/>
   }, {
     dataDescription: 'Given Values',
-    selectedData:    occurrenceDataLabel,
+    selectedData:    <OccurrenceDataSummary {...occurrenceData}/>,
     stepDescription: t('occurrenceForm.occurrenceData.step.stepDescription'),
     stepTitle:       t('occurrenceForm.occurrenceData.step.stepTitle'),
     children:        <OccurrenceData
@@ -162,4 +156,22 @@ function MeasurementOrFactSummary({ data }) {
 
 MeasurementOrFactSummary.propTypes = {
   data: PropTypes.array.isRequired
+}
+
+function OccurrenceDataSummary({ scientificName, beginDate, endDate }) {
+  const occurrenceDataLabel = [
+    scientificName,
+    format(beginDate, 'D MMMM YYYY'),
+    endDate ? ' - ' + format(endDate, 'D MMMM YYYY') : ''
+  ].join(' ')
+
+  return (
+    <div>{occurrenceDataLabel}</div>
+  )
+}
+
+OccurrenceDataSummary.propTypes = {
+  beginDate:      PropTypes.number,
+  endDate:        PropTypes.number,
+  scientificName: PropTypes.string
 }
