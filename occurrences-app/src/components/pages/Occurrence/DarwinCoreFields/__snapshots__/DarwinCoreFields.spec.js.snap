@@ -5,20 +5,16 @@ exports[`DarwinCoreFields renders correctly 1`] = `
   fields={
     Array [
       Object {
-        "name": "dummy field",
-        "value": "dummy value",
+        "name": "name-1",
+        "value": "value-1",
       },
       Object {
-        "name": "dummy2 field",
-        "value": "dummy value",
+        "name": "name-2",
+        "value": "value-2",
       },
       Object {
-        "name": "dummy3 field",
-        "value": "dummy value",
-      },
-      Object {
-        "name": "dummy4 field",
-        "value": "dummy value",
+        "name": "name-3",
+        "value": "value-3",
       },
     ]
   }
@@ -115,13 +111,13 @@ exports[`DarwinCoreFields renders correctly 1`] = `
       <tbody>
         <tr
           className="fieldrow"
-          key="dummy fielddummy value"
+          key="name-1value-1"
         >
           <td>
-            dummy field
+            name-1
           </td>
           <td>
-            dummy value
+            value-1
           </td>
           <td>
             <button
@@ -134,13 +130,13 @@ exports[`DarwinCoreFields renders correctly 1`] = `
         </tr>
         <tr
           className="fieldrow"
-          key="dummy2 fielddummy value"
+          key="name-2value-2"
         >
           <td>
-            dummy2 field
+            name-2
           </td>
           <td>
-            dummy value
+            value-2
           </td>
           <td>
             <button
@@ -153,32 +149,13 @@ exports[`DarwinCoreFields renders correctly 1`] = `
         </tr>
         <tr
           className="fieldrow"
-          key="dummy3 fielddummy value"
+          key="name-3value-3"
         >
           <td>
-            dummy3 field
+            name-3
           </td>
           <td>
-            dummy value
-          </td>
-          <td>
-            <button
-              className="button remove"
-              onClick={[Function]}
-            >
-              common.remove
-            </button>
-          </td>
-        </tr>
-        <tr
-          className="fieldrow"
-          key="dummy4 fielddummy value"
-        >
-          <td>
-            dummy4 field
-          </td>
-          <td>
-            dummy value
+            value-3
           </td>
           <td>
             <button

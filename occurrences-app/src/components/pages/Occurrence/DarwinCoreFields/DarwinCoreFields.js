@@ -5,24 +5,21 @@ import { useTranslation } from 'react-i18next'
 
 export default function DarwinCoreFields({ fields, onChange }) {
   const { t } = useTranslation()
-  const [selectedFields, setSelectedFields] = useState([
-    { name: 'dummy field', value: 'dummy value' },
-    { name: 'dummy2 field', value: 'dummy value' },
-    { name: 'dummy3 field', value: 'dummy value' },
-    { name: 'dummy4 field', value: 'dummy value' }
-  ])
-
+  const [selectedFields, setSelectedFields] = useState(fields)
   const [name, setName] = useState('')
   const [value, setValue] = useState('')
 
-  function makeDarwinCoreObject() {
+  function addDarwinField() {
+    const updatedFields = [...fields, { name, value }]
     setSelectedFields([...fields, { name, value }])
+    onChange(updatedFields)
   }
 
-  function removeRowItem(index) {
+  function removeDarwinField(index) {
     const updatedFields = [...fields]
     updatedFields.splice(index, 1)
     setSelectedFields(updatedFields)
+    onChange(updatedFields)
   }
 
   return (
@@ -38,7 +35,7 @@ export default function DarwinCoreFields({ fields, onChange }) {
         <InputText className="value" name="occurrenceForm.darwinCoreFields.value" onChange={setValue}/>
         <div className="column add">
           <span className="label">&nbsp;</span>
-          <button className="button" onClick={makeDarwinCoreObject}>{t('common.add')}</button>
+          <button className="button" onClick={addDarwinField}>{t('common.add')}</button>
         </div>
       </div>
       <table className="table is-fullwidth">
@@ -55,7 +52,7 @@ export default function DarwinCoreFields({ fields, onChange }) {
             <td>{field.name}</td>
             <td>{field.value}</td>
             <td>
-              <button className="button remove" onClick={() => removeRowItem(i)}>
+              <button className="button remove" onClick={() => removeDarwinField(i)}>
                 {t('common.remove')}
               </button>
             </td>
