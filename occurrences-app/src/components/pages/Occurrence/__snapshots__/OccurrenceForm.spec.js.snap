@@ -327,11 +327,11 @@ exports[`OccurrenceForm renders correctly 1`] = `
     <NotConfirmedStepHeader
       className="step-2 background-color-5"
       dataDescription="Given Values"
-      key="Basic Data"
+      key="occurrenceForm.occurrenceData.step.stepTitle"
       onStepTitleClick={[Function]}
       selectedData=" 29 April 2019 "
-      stepDescription="Mandatory observation information"
-      stepTitle="2 - Basic Data"
+      stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
+      stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
     >
       <StepHeader
         className="not-confirmed has-text-white step-2 background-color-5"
@@ -339,8 +339,8 @@ exports[`OccurrenceForm renders correctly 1`] = `
         iconVisible={false}
         onStepTitleClick={[Function]}
         selectedData=""
-        stepDescription="Mandatory observation information"
-        stepTitle="2 - Basic Data"
+        stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
+        stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
       >
         <div
           className="step-header columns is-vcentered not-confirmed has-text-white step-2 background-color-5"
@@ -364,7 +364,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
             <div
               className="is-size-6"
             >
-              Mandatory observation information
+              occurrenceForm.occurrenceData.step.stepDescription
             </div>
             <div
               className="is-size-5 is-uppercase"
@@ -372,7 +372,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
               <b
                 className="step-title"
               >
-                2 - Basic Data
+                2 - occurrenceForm.occurrenceData.step.stepTitle
               </b>
             </div>
           </div>
@@ -694,11 +694,11 @@ exports[`OccurrenceForm renders correctly 2`] = `
     <ConfirmedStepHeader
       className="step-2 background-color-5"
       dataDescription="Given Values"
-      key="Basic Data"
+      key="occurrenceForm.occurrenceData.step.stepTitle"
       onStepTitleClick={[Function]}
       selectedData=" 29 April 2019 "
-      stepDescription="Mandatory observation information"
-      stepTitle="2 - Basic Data"
+      stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
+      stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
     >
       <StepHeader
         className="confirmed has-background-white has-text-black"
@@ -706,8 +706,8 @@ exports[`OccurrenceForm renders correctly 2`] = `
         iconVisible={true}
         onStepTitleClick={[Function]}
         selectedData=" 29 April 2019 "
-        stepDescription="Mandatory observation information"
-        stepTitle="2 - Basic Data"
+        stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
+        stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
       >
         <div
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
@@ -735,7 +735,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
             <div
               className="is-size-6"
             >
-              Mandatory observation information
+              occurrenceForm.occurrenceData.step.stepDescription
             </div>
             <div
               className="is-size-5 is-uppercase"
@@ -752,7 +752,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
               <b
                 className="step-title"
               >
-                2 - Basic Data
+                2 - occurrenceForm.occurrenceData.step.stepTitle
               </b>
             </div>
           </div>
@@ -1442,11 +1442,11 @@ exports[`OccurrenceForm renders correctly 3`] = `
     <ConfirmedStepHeader
       className="step-2 background-color-5"
       dataDescription="Given Values"
-      key="Basic Data"
+      key="occurrenceForm.occurrenceData.step.stepTitle"
       onStepTitleClick={[Function]}
       selectedData=" 29 April 2019 "
-      stepDescription="Mandatory observation information"
-      stepTitle="2 - Basic Data"
+      stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
+      stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
     >
       <StepHeader
         className="confirmed has-background-white has-text-black"
@@ -1454,8 +1454,8 @@ exports[`OccurrenceForm renders correctly 3`] = `
         iconVisible={true}
         onStepTitleClick={[Function]}
         selectedData=" 29 April 2019 "
-        stepDescription="Mandatory observation information"
-        stepTitle="2 - Basic Data"
+        stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
+        stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
       >
         <div
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
@@ -1483,7 +1483,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
             <div
               className="is-size-6"
             >
-              Mandatory observation information
+              occurrenceForm.occurrenceData.step.stepDescription
             </div>
             <div
               className="is-size-5 is-uppercase"
@@ -1500,7 +1500,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
               <b
                 className="step-title"
               >
-                2 - Basic Data
+                2 - occurrenceForm.occurrenceData.step.stepTitle
               </b>
             </div>
           </div>
@@ -3378,11 +3378,11 @@ exports[`OccurrenceForm renders correctly 4`] = `
     <ConfirmedStepHeader
       className="step-2 background-color-5"
       dataDescription="Given Values"
-      key="Basic Data"
+      key="occurrenceForm.occurrenceData.step.stepTitle"
       onStepTitleClick={[Function]}
       selectedData=" 29 April 2019 "
-      stepDescription="Mandatory observation information"
-      stepTitle="2 - Basic Data"
+      stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
+      stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
     >
       <StepHeader
         className="confirmed has-background-white has-text-black"
@@ -3390,8 +3390,8 @@ exports[`OccurrenceForm renders correctly 4`] = `
         iconVisible={true}
         onStepTitleClick={[Function]}
         selectedData=" 29 April 2019 "
-        stepDescription="Mandatory observation information"
-        stepTitle="2 - Basic Data"
+        stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
+        stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
       >
         <div
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
@@ -3419,7 +3419,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
             <div
               className="is-size-6"
             >
-              Mandatory observation information
+              occurrenceForm.occurrenceData.step.stepDescription
             </div>
             <div
               className="is-size-5 is-uppercase"
@@ -3436,7 +3436,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
               <b
                 className="step-title"
               >
-                2 - Basic Data
+                2 - occurrenceForm.occurrenceData.step.stepTitle
               </b>
             </div>
           </div>
@@ -3988,11 +3988,11 @@ exports[`OccurrenceForm renders correctly 5`] = `
     <ConfirmedStepHeader
       className="step-2 background-color-5"
       dataDescription="Given Values"
-      key="Basic Data"
+      key="occurrenceForm.occurrenceData.step.stepTitle"
       onStepTitleClick={[Function]}
       selectedData=" 29 April 2019 "
-      stepDescription="Mandatory observation information"
-      stepTitle="2 - Basic Data"
+      stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
+      stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
     >
       <StepHeader
         className="confirmed has-background-white has-text-black"
@@ -4000,8 +4000,8 @@ exports[`OccurrenceForm renders correctly 5`] = `
         iconVisible={true}
         onStepTitleClick={[Function]}
         selectedData=" 29 April 2019 "
-        stepDescription="Mandatory observation information"
-        stepTitle="2 - Basic Data"
+        stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
+        stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
       >
         <div
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
@@ -4029,7 +4029,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
             <div
               className="is-size-6"
             >
-              Mandatory observation information
+              occurrenceForm.occurrenceData.step.stepDescription
             </div>
             <div
               className="is-size-5 is-uppercase"
@@ -4046,7 +4046,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
               <b
                 className="step-title"
               >
-                2 - Basic Data
+                2 - occurrenceForm.occurrenceData.step.stepTitle
               </b>
             </div>
           </div>
@@ -4643,11 +4643,11 @@ exports[`OccurrenceForm renders correctly 6`] = `
     <ConfirmedStepHeader
       className="step-2 background-color-5"
       dataDescription="Given Values"
-      key="Basic Data"
+      key="occurrenceForm.occurrenceData.step.stepTitle"
       onStepTitleClick={[Function]}
       selectedData=" 29 April 2019 "
-      stepDescription="Mandatory observation information"
-      stepTitle="2 - Basic Data"
+      stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
+      stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
     >
       <StepHeader
         className="confirmed has-background-white has-text-black"
@@ -4655,8 +4655,8 @@ exports[`OccurrenceForm renders correctly 6`] = `
         iconVisible={true}
         onStepTitleClick={[Function]}
         selectedData=" 29 April 2019 "
-        stepDescription="Mandatory observation information"
-        stepTitle="2 - Basic Data"
+        stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
+        stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
       >
         <div
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
@@ -4684,7 +4684,7 @@ exports[`OccurrenceForm renders correctly 6`] = `
             <div
               className="is-size-6"
             >
-              Mandatory observation information
+              occurrenceForm.occurrenceData.step.stepDescription
             </div>
             <div
               className="is-size-5 is-uppercase"
@@ -4701,7 +4701,7 @@ exports[`OccurrenceForm renders correctly 6`] = `
               <b
                 className="step-title"
               >
-                2 - Basic Data
+                2 - occurrenceForm.occurrenceData.step.stepTitle
               </b>
             </div>
           </div>

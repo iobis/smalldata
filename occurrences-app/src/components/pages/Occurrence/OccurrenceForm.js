@@ -70,8 +70,8 @@ export default function OccurrenceForm() {
   }, {
     dataDescription: 'Given Values',
     selectedData:    occurrenceDataLabel,
-    stepDescription: 'Mandatory observation information',
-    stepTitle:       'Basic Data',
+    stepDescription: t('occurrenceForm.occurrenceData.step.stepDescription'),
+    stepTitle:       t('occurrenceForm.occurrenceData.step.stepTitle'),
     children:        <OccurrenceData
                        data={occurrenceData}
                        onChange={setOccurrenceData}/>

@@ -32,6 +32,10 @@ export default {
         stepTitle:       'Selected Dataset'
       },
       occurrenceData:    {
+        step:             {
+          stepDescription: 'Mandatory observation information',
+          stepTitle:       'Occurrence Data'
+        },
         scientificName:   'Scientific name',
         eventBeginDate:   'Event begin date',
         eventEndDate:     'Event end date',
