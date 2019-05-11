@@ -3874,12 +3874,12 @@ exports[`OccurrenceForm renders correctly 4`] = `
                 >
                    
                 </span>
-                <a
+                <button
                   className="button"
                   onClick={[Function]}
                 >
                   add
-                </a>
+                </button>
               </div>
             </div>
             <table
@@ -3908,12 +3908,12 @@ exports[`OccurrenceForm renders correctly 4`] = `
                     dummy value
                   </td>
                   <td>
-                    <a
-                      className="button is-small remove"
+                    <button
+                      className="button remove"
                       onClick={[Function]}
                     >
                       remove
-                    </a>
+                    </button>
                   </td>
                 </tr>
                 <tr
@@ -3927,12 +3927,12 @@ exports[`OccurrenceForm renders correctly 4`] = `
                     dummy value
                   </td>
                   <td>
-                    <a
-                      className="button is-small remove"
+                    <button
+                      className="button remove"
                       onClick={[Function]}
                     >
                       remove
-                    </a>
+                    </button>
                   </td>
                 </tr>
                 <tr
@@ -3946,12 +3946,12 @@ exports[`OccurrenceForm renders correctly 4`] = `
                     dummy value
                   </td>
                   <td>
-                    <a
-                      className="button is-small remove"
+                    <button
+                      className="button remove"
                       onClick={[Function]}
                     >
                       remove
-                    </a>
+                    </button>
                   </td>
                 </tr>
                 <tr
@@ -3965,12 +3965,12 @@ exports[`OccurrenceForm renders correctly 4`] = `
                     dummy value
                   </td>
                   <td>
-                    <a
-                      className="button is-small remove"
+                    <button
+                      className="button remove"
                       onClick={[Function]}
                     >
                       remove
-                    </a>
+                    </button>
                   </td>
                 </tr>
               </tbody>
@@ -4600,12 +4600,12 @@ exports[`OccurrenceForm renders correctly 5`] = `
                 >
                    
                 </span>
-                <a
+                <button
                   className="button"
                   onClick={[Function]}
                 >
                   add
-                </a>
+                </button>
               </div>
             </div>
             <table
@@ -4634,12 +4634,12 @@ exports[`OccurrenceForm renders correctly 5`] = `
                     dummy value
                   </td>
                   <td>
-                    <a
-                      className="button is-small remove"
+                    <button
+                      className="button remove"
                       onClick={[Function]}
                     >
                       remove
-                    </a>
+                    </button>
                   </td>
                 </tr>
                 <tr
@@ -4653,12 +4653,12 @@ exports[`OccurrenceForm renders correctly 5`] = `
                     dummy value
                   </td>
                   <td>
-                    <a
-                      className="button is-small remove"
+                    <button
+                      className="button remove"
                       onClick={[Function]}
                     >
                       remove
-                    </a>
+                    </button>
                   </td>
                 </tr>
                 <tr
@@ -4672,12 +4672,12 @@ exports[`OccurrenceForm renders correctly 5`] = `
                     dummy value
                   </td>
                   <td>
-                    <a
-                      className="button is-small remove"
+                    <button
+                      className="button remove"
                       onClick={[Function]}
                     >
                       remove
-                    </a>
+                    </button>
                   </td>
                 </tr>
                 <tr
@@ -4691,12 +4691,12 @@ exports[`OccurrenceForm renders correctly 5`] = `
                     dummy value
                   </td>
                   <td>
-                    <a
-                      className="button is-small remove"
+                    <button
+                      className="button remove"
                       onClick={[Function]}
                     >
                       remove
-                    </a>
+                    </button>
                   </td>
                 </tr>
               </tbody>

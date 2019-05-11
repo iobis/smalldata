@@ -64,12 +64,12 @@ exports[`DarwinCoreFields renders correctly 1`] = `
         >
            
         </span>
-        <a
+        <button
           className="button"
           onClick={[Function]}
         >
           add
-        </a>
+        </button>
       </div>
     </div>
     <table
@@ -98,12 +98,12 @@ exports[`DarwinCoreFields renders correctly 1`] = `
             dummy value
           </td>
           <td>
-            <a
-              className="button is-small remove"
+            <button
+              className="button remove"
               onClick={[Function]}
             >
               remove
-            </a>
+            </button>
           </td>
         </tr>
         <tr
@@ -117,12 +117,12 @@ exports[`DarwinCoreFields renders correctly 1`] = `
             dummy value
           </td>
           <td>
-            <a
-              className="button is-small remove"
+            <button
+              className="button remove"
               onClick={[Function]}
             >
               remove
-            </a>
+            </button>
           </td>
         </tr>
         <tr
@@ -136,12 +136,12 @@ exports[`DarwinCoreFields renders correctly 1`] = `
             dummy value
           </td>
           <td>
-            <a
-              className="button is-small remove"
+            <button
+              className="button remove"
               onClick={[Function]}
             >
               remove
-            </a>
+            </button>
           </td>
         </tr>
         <tr
@@ -155,12 +155,12 @@ exports[`DarwinCoreFields renders correctly 1`] = `
             dummy value
           </td>
           <td>
-            <a
-              className="button is-small remove"
+            <button
+              className="button remove"
               onClick={[Function]}
             >
               remove
-            </a>
+            </button>
           </td>
         </tr>
       </tbody>

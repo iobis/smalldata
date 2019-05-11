@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import InputText from '../../../form/InputText'
@@ -26,18 +25,16 @@ export default function DarwinCoreFields({ onChange }) {
 
   return (
     <div className="darwin-core-fields section is-fluid">
-
       <h2>DARWIN CORE CUSTOM SELECTION</h2>
       <p>This form enables you to add any aditional fields you may need to specify, that were ot previously included in
         this form.
         Please be advised to use the Darwin Core Archive names</p>
-
       <div className="columns is-grouped">
         <InputText className="field-name" name="occurrenceForm.darwinCoreFields.fieldName" onChange={setName}/>
         <InputText className="value" name="occurrenceForm.darwinCoreFields.value" onChange={setValue}/>
         <div className="column add">
           <span className="label">&nbsp;</span>
-          <a className="button" onClick={makeDarwinCoreObject}>add</a>
+          <button className="button" onClick={makeDarwinCoreObject}>add</button>
         </div>
       </div>
 
@@ -54,8 +51,11 @@ export default function DarwinCoreFields({ onChange }) {
           <tr className="fieldrow" key={field.name + field.value}>
             <td>{field.name}</td>
             <td>{field.value}</td>
-            <td><a className="button is-small remove" onClick={() => removeRowItem(i)}>remove</a></td>
-
+            <td>
+              <button className="button remove" onClick={() => removeRowItem(i)}>
+                remove
+              </button>
+            </td>
           </tr>
         ))}
         </tbody>
