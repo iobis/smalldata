@@ -86,8 +86,6 @@ export default function LocationData({ data, onChange }) {
             onChange={(value) => updateField('verbatimEventDate', value)}
             optional
             value={data.verbatimEventDate}/>
-        </div>
-        <div className="columns">
           <InputText
             className="verbatim-depth is-3"
             name="occurrenceForm.locationData.verbatimDepth"

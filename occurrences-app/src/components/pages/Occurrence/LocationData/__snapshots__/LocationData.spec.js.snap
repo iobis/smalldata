@@ -292,10 +292,6 @@ exports[`LocationData renders correctly 1`] = `
             />
           </div>
         </InputText>
-      </div>
-      <div
-        className="columns"
-      >
         <InputText
           className="verbatim-depth is-3"
           name="occurrenceForm.locationData.verbatimDepth"
