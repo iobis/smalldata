@@ -5,6 +5,11 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
+const basisOfRecordOptions = ['humanObservation', 'fossilSpecimen', 'livingSpecimen', 'machineSpecimen', 'preservedSpecimen']
+const lifestageOptions = ['egg', 'eft', 'juvenile', 'adult', 'unspecified']
+const occurrenceStatusOptions = ['absent', 'present']
+const sexOptions = ['male', 'female', 'hermaphrodite', 'unspecified']
+
 export default function OccurrenceData({ onChange, data }) {
   const { t } = useTranslation()
   const { basisOfRecord, beginDate, endDate, lifestage, occurrenceStatus, scientificName, sex } = data
@@ -49,22 +54,22 @@ export default function OccurrenceData({ onChange, data }) {
       <InputRadioGroup
         name="occurrenceForm.occurrenceData.occurrenceStatus"
         onChange={(value) => updateField('occurrenceStatus', value)}
-        options={['absent', 'present']}
+        options={occurrenceStatusOptions}
         selectedValue={occurrenceStatus}/>
       <InputRadioGroup
         name="occurrenceForm.occurrenceData.basisOfRecord"
         onChange={(value) => updateField('basisOfRecord', value)}
-        options={['humanObservation', 'fossilSpecimen', 'livingSpecimen', 'machineSpecimen', 'preservedSpecimen']}
+        options={basisOfRecordOptions}
         selectedValue={basisOfRecord}/>
       <InputRadioGroup
         name="occurrenceForm.occurrenceData.sex"
         onChange={(value) => updateField('sex', value)}
-        options={['male', 'female', 'hermaphrodite', 'unspecified']}
+        options={sexOptions}
         selectedValue={sex}/>
       <InputRadioGroup
         name="occurrenceForm.occurrenceData.lifestage"
         onChange={(value) => updateField('lifestage', value)}
-        options={['egg', 'eft', 'juvenile', 'adult', 'unspecified']}
+        options={lifestageOptions}
         selectedValue={lifestage}/>
       <CopyPreviousData/>
     </div>
@@ -72,6 +77,14 @@ export default function OccurrenceData({ onChange, data }) {
 }
 
 OccurrenceData.propTypes = {
-  data:     PropTypes.object.isRequired,
+  data:     PropTypes.shape({
+    basisOfRecord:    PropTypes.oneOf(basisOfRecordOptions).isRequired,
+    beginDate:        PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.number]).isRequired,
+    endDate:          PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.number]),
+    lifestage:        PropTypes.oneOf(lifestageOptions),
+    occurrenceStatus: PropTypes.oneOf(occurrenceStatusOptions).isRequired,
+    scientificName:   PropTypes.string.isRequired,
+    sex:              PropTypes.oneOf(sexOptions)
+  }).isRequired,
   onChange: PropTypes.func.isRequired
 }

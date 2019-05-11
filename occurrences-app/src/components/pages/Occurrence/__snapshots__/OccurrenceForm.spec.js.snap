@@ -331,11 +331,11 @@ exports[`OccurrenceForm renders correctly 1`] = `
       onStepTitleClick={[Function]}
       selectedData={
         <OccurrenceDataSummary
-          basisOfRecord={null}
+          basisOfRecord="humanObservation"
           beginDate={1556496000000}
           endDate={null}
           lifestage={null}
-          occurrenceStatus={null}
+          occurrenceStatus="present"
           scientificName=""
           sex={null}
         />
@@ -708,11 +708,11 @@ exports[`OccurrenceForm renders correctly 2`] = `
       onStepTitleClick={[Function]}
       selectedData={
         <OccurrenceDataSummary
-          basisOfRecord={null}
+          basisOfRecord="humanObservation"
           beginDate={1556496000000}
           endDate={null}
           lifestage={null}
-          occurrenceStatus={null}
+          occurrenceStatus="present"
           scientificName=""
           sex={null}
         />
@@ -727,11 +727,11 @@ exports[`OccurrenceForm renders correctly 2`] = `
         onStepTitleClick={[Function]}
         selectedData={
           <OccurrenceDataSummary
-            basisOfRecord={null}
+            basisOfRecord="humanObservation"
             beginDate={1556496000000}
             endDate={null}
             lifestage={null}
-            occurrenceStatus={null}
+            occurrenceStatus="present"
             scientificName=""
             sex={null}
           />
@@ -758,11 +758,11 @@ exports[`OccurrenceForm renders correctly 2`] = `
             className="column is-7 is-size-5"
           >
             <OccurrenceDataSummary
-              basisOfRecord={null}
+              basisOfRecord="humanObservation"
               beginDate={1556496000000}
               endDate={null}
               lifestage={null}
-              occurrenceStatus={null}
+              occurrenceStatus="present"
               scientificName=""
               sex={null}
             >
@@ -1488,11 +1488,11 @@ exports[`OccurrenceForm renders correctly 3`] = `
       onStepTitleClick={[Function]}
       selectedData={
         <OccurrenceDataSummary
-          basisOfRecord={null}
+          basisOfRecord="humanObservation"
           beginDate={1556496000000}
           endDate={null}
           lifestage={null}
-          occurrenceStatus={null}
+          occurrenceStatus="present"
           scientificName=""
           sex={null}
         />
@@ -1507,11 +1507,11 @@ exports[`OccurrenceForm renders correctly 3`] = `
         onStepTitleClick={[Function]}
         selectedData={
           <OccurrenceDataSummary
-            basisOfRecord={null}
+            basisOfRecord="humanObservation"
             beginDate={1556496000000}
             endDate={null}
             lifestage={null}
-            occurrenceStatus={null}
+            occurrenceStatus="present"
             scientificName=""
             sex={null}
           />
@@ -1538,11 +1538,11 @@ exports[`OccurrenceForm renders correctly 3`] = `
             className="column is-7 is-size-5"
           >
             <OccurrenceDataSummary
-              basisOfRecord={null}
+              basisOfRecord="humanObservation"
               beginDate={1556496000000}
               endDate={null}
               lifestage={null}
-              occurrenceStatus={null}
+              occurrenceStatus="present"
               scientificName=""
               sex={null}
             >
@@ -3456,11 +3456,11 @@ exports[`OccurrenceForm renders correctly 4`] = `
       onStepTitleClick={[Function]}
       selectedData={
         <OccurrenceDataSummary
-          basisOfRecord={null}
+          basisOfRecord="humanObservation"
           beginDate={1556496000000}
           endDate={null}
           lifestage={null}
-          occurrenceStatus={null}
+          occurrenceStatus="present"
           scientificName=""
           sex={null}
         />
@@ -3475,11 +3475,11 @@ exports[`OccurrenceForm renders correctly 4`] = `
         onStepTitleClick={[Function]}
         selectedData={
           <OccurrenceDataSummary
-            basisOfRecord={null}
+            basisOfRecord="humanObservation"
             beginDate={1556496000000}
             endDate={null}
             lifestage={null}
-            occurrenceStatus={null}
+            occurrenceStatus="present"
             scientificName=""
             sex={null}
           />
@@ -3506,11 +3506,11 @@ exports[`OccurrenceForm renders correctly 4`] = `
             className="column is-7 is-size-5"
           >
             <OccurrenceDataSummary
-              basisOfRecord={null}
+              basisOfRecord="humanObservation"
               beginDate={1556496000000}
               endDate={null}
               lifestage={null}
-              occurrenceStatus={null}
+              occurrenceStatus="present"
               scientificName=""
               sex={null}
             >
@@ -4098,11 +4098,11 @@ exports[`OccurrenceForm renders correctly 5`] = `
       onStepTitleClick={[Function]}
       selectedData={
         <OccurrenceDataSummary
-          basisOfRecord={null}
+          basisOfRecord="humanObservation"
           beginDate={1556496000000}
           endDate={null}
           lifestage={null}
-          occurrenceStatus={null}
+          occurrenceStatus="present"
           scientificName=""
           sex={null}
         />
@@ -4117,11 +4117,11 @@ exports[`OccurrenceForm renders correctly 5`] = `
         onStepTitleClick={[Function]}
         selectedData={
           <OccurrenceDataSummary
-            basisOfRecord={null}
+            basisOfRecord="humanObservation"
             beginDate={1556496000000}
             endDate={null}
             lifestage={null}
-            occurrenceStatus={null}
+            occurrenceStatus="present"
             scientificName=""
             sex={null}
           />
@@ -4148,11 +4148,11 @@ exports[`OccurrenceForm renders correctly 5`] = `
             className="column is-7 is-size-5"
           >
             <OccurrenceDataSummary
-              basisOfRecord={null}
+              basisOfRecord="humanObservation"
               beginDate={1556496000000}
               endDate={null}
               lifestage={null}
-              occurrenceStatus={null}
+              occurrenceStatus="present"
               scientificName=""
               sex={null}
             >
@@ -4785,11 +4785,11 @@ exports[`OccurrenceForm renders correctly 6`] = `
       onStepTitleClick={[Function]}
       selectedData={
         <OccurrenceDataSummary
-          basisOfRecord={null}
+          basisOfRecord="humanObservation"
           beginDate={1556496000000}
           endDate={null}
           lifestage={null}
-          occurrenceStatus={null}
+          occurrenceStatus="present"
           scientificName=""
           sex={null}
         />
@@ -4804,11 +4804,11 @@ exports[`OccurrenceForm renders correctly 6`] = `
         onStepTitleClick={[Function]}
         selectedData={
           <OccurrenceDataSummary
-            basisOfRecord={null}
+            basisOfRecord="humanObservation"
             beginDate={1556496000000}
             endDate={null}
             lifestage={null}
-            occurrenceStatus={null}
+            occurrenceStatus="present"
             scientificName=""
             sex={null}
           />
@@ -4835,11 +4835,11 @@ exports[`OccurrenceForm renders correctly 6`] = `
             className="column is-7 is-size-5"
           >
             <OccurrenceDataSummary
-              basisOfRecord={null}
+              basisOfRecord="humanObservation"
               beginDate={1556496000000}
               endDate={null}
               lifestage={null}
-              occurrenceStatus={null}
+              occurrenceStatus="present"
               scientificName=""
               sex={null}
             >

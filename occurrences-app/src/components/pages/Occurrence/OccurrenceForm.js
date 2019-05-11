@@ -18,11 +18,11 @@ export default function OccurrenceForm() {
   const { t } = useTranslation()
   const [selectedDataset, setSelectedDataset] = useState(datasets[0])
   const [occurrenceData, setOccurrenceData] = useState({
-    basisOfRecord:    null,
+    basisOfRecord:    'humanObservation',
     beginDate:        Date.now(),
     endDate:          null,
     lifestage:        null,
-    occurrenceStatus: null,
+    occurrenceStatus: 'present',
     scientificName:   '',
     sex:              null
   })
