@@ -7,7 +7,6 @@ $section-padding: 0.5rem;
 @import 'components/form/Dropdown';
 @import 'components/form/InputRadio';
 @import 'components/layout/Divider';
-@import 'components/pages/Occurrence/BasicData/BasicData';
 @import 'components/pages/Occurrence/CopyPreviousData';
 @import 'components/pages/Occurrence/DarwinCoreFields/DarwinCoreFields';
 @import 'components/pages/Occurrence/LocationData/LocationData';
@@ -15,6 +14,7 @@ $section-padding: 0.5rem;
 @import 'components/pages/Occurrence/LocationData/LocationPickerModal';
 @import 'components/pages/Occurrence/MeasurementOrFact/MeasurementOrFact';
 @import 'components/pages/Occurrence/ObservationData/ObservationData';
+@import 'components/pages/Occurrence/OccurrenceData/OccurrenceData';
 @import 'components/pages/Occurrence/SelectDataset/SelectDataset';
 @import 'components/pages/Occurrence/StepHeader';
 

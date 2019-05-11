@@ -1,5 +1,5 @@
 import ActiveStepHeader from './ActiveStepHeader'
-import BasicData from './BasicData/BasicData'
+import OccurrenceData from './OccurrenceData/OccurrenceData'
 import ConfirmedStepHeader from './ConfirmedStepHeader'
 import DarwinCoreFields from './DarwinCoreFields/DarwinCoreFields'
 import LocationData from './LocationData/LocationData'
@@ -17,7 +17,7 @@ export default function OccurrenceForm() {
   const datasets = getDatasetMock()
   const { t } = useTranslation()
   const [selectedDataset, setSelectedDataset] = useState(datasets[0])
-  const [basicData, setBasicData] = useState({
+  const [occurrenceData, setOccurrenceData] = useState({
     basisOfRecord:    null,
     beginDate:        Date.now(),
     endDate:          null,
@@ -41,10 +41,10 @@ export default function OccurrenceForm() {
   const [darwinCoreFields, setDarwinCoreFields] = useState([])
 
   const [activeStepIndex, setActiveStepIndex] = useState(0)
-  const basicDataLabel = [
-    basicData.scientificName,
-    format(basicData.beginDate, 'D MMMM YYYY'),
-    basicData.endDate ? ' - ' + format(basicData.endDate, 'D MMMM YYYY') : ''
+  const occurrenceDataLabel = [
+    occurrenceData.scientificName,
+    format(occurrenceData.beginDate, 'D MMMM YYYY'),
+    occurrenceData.endDate ? ' - ' + format(occurrenceData.endDate, 'D MMMM YYYY') : ''
   ].join(' ')
   const [locationData, setLocationData] = useState({
       decimalLongitude:      null,
@@ -69,12 +69,12 @@ export default function OccurrenceForm() {
                        selectedDataset={selectedDataset}/>
   }, {
     dataDescription: 'Given Values',
-    selectedData:    basicDataLabel,
+    selectedData:    occurrenceDataLabel,
     stepDescription: 'Mandatory observation information',
     stepTitle:       'Basic Data',
-    children:        <BasicData
-                       basicData={basicData}
-                       onChange={setBasicData}/>
+    children:        <OccurrenceData
+                       data={occurrenceData}
+                       onChange={setOccurrenceData}/>
   }, {
     dataDescription: t('occurrenceForm.locationData.step.dataDescription'),
     selectedData:    <SelectedLocation {...locationData}/>,

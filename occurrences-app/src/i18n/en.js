@@ -31,7 +31,7 @@ export default {
         stepDescription: 'Choose the dataset for adding observations',
         stepTitle:       'Selected Dataset'
       },
-      basicData:         {
+      occurrenceData:    {
         scientificName:   'Scientific name',
         eventBeginDate:   'Event begin date',
         eventEndDate:     'Event end date',

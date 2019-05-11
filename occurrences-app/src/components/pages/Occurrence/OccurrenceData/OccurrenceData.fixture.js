@@ -1,11 +1,11 @@
-import BasicData from './BasicData'
+import OccurrenceData from './OccurrenceData'
 
 export default [{
-  component: BasicData,
+  component: OccurrenceData,
   name:      'no selection step',
   props:     {
-    onChange:  console.log,
-    basicData: {
+    onChange: console.log,
+    data:     {
       basisOfRecord:    null,
       beginDate:        new Date(),
       endDate:          null,
@@ -16,11 +16,11 @@ export default [{
     }
   }
 }, {
-  component: BasicData,
+  component: OccurrenceData,
   name:      'with selections',
   props:     {
-    onChange:  console.log,
-    basicData: {
+    onChange: console.log,
+    data:     {
       basisOfRecord:    'humanObservation',
       beginDate:        new Date(),
       endDate:          new Date(),
