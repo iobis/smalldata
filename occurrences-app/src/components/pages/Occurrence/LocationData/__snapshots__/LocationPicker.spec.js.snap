@@ -18,7 +18,7 @@ exports[`LocationPicker renders correctly 1`] = `
             class="control has-icons-left has-icons-right"
           >
             <input
-              class="input"
+              class="search-string input"
               placeholder="occurrenceForm.locationData.locationPicker.searchTip"
               type="text"
               value=""

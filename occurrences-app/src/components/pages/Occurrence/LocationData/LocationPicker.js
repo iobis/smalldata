@@ -69,7 +69,7 @@ export default function LocationPicker({ onChange }) {
           <div className="location-search field">
             <div className="control has-icons-left has-icons-right">
               <input
-                className="input"
+                className="search-string input"
                 onChange={(e) => handleSearchStringChange(e.target.value)}
                 placeholder={t('occurrenceForm.locationData.locationPicker.searchTip')}
                 type="text"
@@ -121,7 +121,7 @@ function SuggestionsResult({ suggestions, onClick }) {
   const { t } = useTranslation()
 
   return (
-    <table className="table is-fullwidth is-striped is-hoverable">
+    <table className="suggestions-result table is-fullwidth is-striped is-hoverable">
       <thead>
       <tr>
         <th>{t('common.type')}</th>
