@@ -1,0 +1,19 @@
+.location-picker {
+  .result.title {
+    margin-bottom: 0.5rem;
+  }
+
+  .times-circle {
+    cursor: pointer;
+    pointer-events: initial
+  }
+
+  .suggestion-row {
+    cursor: pointer;
+  }
+
+  .leaflet-container {
+    height: 500px;
+    width: 100%;
+  }
+}

@@ -1,6 +1,6 @@
 import Dropdown from './Dropdown'
 import React from 'react'
-import { mount } from 'enzyme/build'
+import { mount } from 'enzyme'
 
 describe('Dropdown', () => {
   it('renders correctly', () => {

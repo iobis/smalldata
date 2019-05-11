@@ -1,5 +1,5 @@
 import ActiveStepHeader from './ActiveStepHeader'
-import BasicData from './BasicData/BasicData'
+import OccurrenceData from './OccurrenceData/OccurrenceData'
 import ConfirmedStepHeader from './ConfirmedStepHeader'
 import DarwinCoreFields from './DarwinCoreFields/DarwinCoreFields'
 import LocationData from './LocationData/LocationData'
@@ -17,12 +17,12 @@ export default function OccurrenceForm() {
   const datasets = getDatasetMock()
   const { t } = useTranslation()
   const [selectedDataset, setSelectedDataset] = useState(datasets[0])
-  const [basicData, setBasicData] = useState({
-    basisOfRecord:    null,
+  const [occurrenceData, setOccurrenceData] = useState({
+    basisOfRecord:    'humanObservation',
     beginDate:        Date.now(),
     endDate:          null,
     lifestage:        null,
-    occurrenceStatus: null,
+    occurrenceStatus: 'present',
     scientificName:   '',
     sex:              null
   })
@@ -38,14 +38,8 @@ export default function OccurrenceForm() {
     identificationRemarks:   '',
     references:              []
   })
-  const [darwinCoreFieldsData, setDarwinCoreFieldsData] = useState([])
-
+  const [darwinCoreFields, setDarwinCoreFields] = useState([])
   const [activeStepIndex, setActiveStepIndex] = useState(0)
-  const basicDataLabel = [
-    basicData.scientificName,
-    format(basicData.beginDate, 'D MMMM YYYY'),
-    basicData.endDate ? ' - ' + format(basicData.endDate, 'D MMMM YYYY') : ''
-  ].join(' ')
   const [locationData, setLocationData] = useState({
       decimalLongitude:      null,
       decimalLatitude:       null,
@@ -69,12 +63,12 @@ export default function OccurrenceForm() {
                        selectedDataset={selectedDataset}/>
   }, {
     dataDescription: 'Given Values',
-    selectedData:    basicDataLabel,
-    stepDescription: 'Mandatory observation information',
-    stepTitle:       'Basic Data',
-    children:        <BasicData
-                       basicData={basicData}
-                       onChange={setBasicData}/>
+    selectedData:    <OccurrenceDataSummary {...occurrenceData}/>,
+    stepDescription: t('occurrenceForm.occurrenceData.step.stepDescription'),
+    stepTitle:       t('occurrenceForm.occurrenceData.step.stepTitle'),
+    children:        <OccurrenceData
+                       data={occurrenceData}
+                       onChange={setOccurrenceData}/>
   }, {
     dataDescription: t('occurrenceForm.locationData.step.dataDescription'),
     selectedData:    <SelectedLocation {...locationData}/>,
@@ -105,8 +99,8 @@ export default function OccurrenceForm() {
     stepDescription: 'Supply specific Darwin core fields',
     stepTitle:       'Darwin Core Fields',
     children:        <DarwinCoreFields
-                       darwinCoreFieldsData={darwinCoreFieldsData}
-                       onChange={setDarwinCoreFieldsData}/>
+                       fields={darwinCoreFields}
+                       onChange={setDarwinCoreFields}/>
   }]
 
   return (
@@ -162,4 +156,22 @@ function MeasurementOrFactSummary({ data }) {
 
 MeasurementOrFactSummary.propTypes = {
   data: PropTypes.array.isRequired
+}
+
+function OccurrenceDataSummary({ scientificName, beginDate, endDate }) {
+  const occurrenceDataLabel = [
+    scientificName,
+    format(beginDate, 'D MMMM YYYY'),
+    endDate ? ' - ' + format(endDate, 'D MMMM YYYY') : ''
+  ].join(' ')
+
+  return (
+    <div>{occurrenceDataLabel}</div>
+  )
+}
+
+OccurrenceDataSummary.propTypes = {
+  beginDate:      PropTypes.number,
+  endDate:        PropTypes.number,
+  scientificName: PropTypes.string
 }

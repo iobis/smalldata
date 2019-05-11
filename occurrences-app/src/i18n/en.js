@@ -1,13 +1,18 @@
 export default {
   translation: {
     common:         {
-      add:    'Add',
-      copy:   'Copy',
-      edit:   'Edit',
-      remove: 'Remove',
-      type:   'Type',
-      unit:   'Unit',
-      value:  'Value'
+      add:       'Add',
+      cancel:    'Cancel',
+      confirm:   'Confirm',
+      copy:      'Copy',
+      edit:      'Edit',
+      latitude:  'Latitude',
+      longitude: 'Longitude',
+      name:      'Name',
+      remove:    'Remove',
+      type:      'Type',
+      unit:      'Unit',
+      value:     'Value'
     },
     inputDataPage:  {
       inputNewOccurrence: 'INPUT NEW OCCURRENCE',
@@ -26,7 +31,11 @@ export default {
         stepDescription: 'Choose the dataset for adding observations',
         stepTitle:       'Selected Dataset'
       },
-      basicData:         {
+      occurrenceData:    {
+        step:             {
+          stepDescription: 'Mandatory observation information',
+          stepTitle:       'Occurrence Data'
+        },
         scientificName:   'Scientific name',
         eventBeginDate:   'Event begin date',
         eventEndDate:     'Event end date',
@@ -115,6 +124,13 @@ export default {
             latitude:  'Latitude',
             longitude: 'Longitude'
           }
+        },
+        locationPicker:        {
+          emptyResult:    'No search results yet',
+          emptyResultTip: 'Have you tried entering an address in the geocoding box?',
+          resultsTitle:   'Results',
+          searchTip:      'Find location by name',
+          title:          'Don\'t know the exact coordinates?'
         }
       },
       observationData:   {
@@ -165,7 +181,7 @@ export default {
         }
       },
       measurementOrFact: {
-        step: {
+        step:     {
           title: 'You have submitted {{number}} extra fields'
         },
         general:  {
@@ -181,13 +197,16 @@ export default {
         }
       },
       darwinCoreFields:  {
+        title:     'Darwin Core Custom Selection',
+        subtitle:  'This form enables you to add any additional fields you may need to specify, that were ot previously included in this form.',
+        tip:       'Please be advised to use the Darwin Core Archive names',
         fieldName: {
           label:       'Darwin core fieldname',
           placeholder: '',
           help:        ''
         },
         value:     {
-          label:       'value',
+          label:       'Value',
           placeholder: '',
           help:        ''
         }

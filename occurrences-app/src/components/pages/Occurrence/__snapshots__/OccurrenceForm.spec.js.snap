@@ -327,11 +327,21 @@ exports[`OccurrenceForm renders correctly 1`] = `
     <NotConfirmedStepHeader
       className="step-2 background-color-5"
       dataDescription="Given Values"
-      key="Basic Data"
+      key="occurrenceForm.occurrenceData.step.stepTitle"
       onStepTitleClick={[Function]}
-      selectedData=" 29 April 2019 "
-      stepDescription="Mandatory observation information"
-      stepTitle="2 - Basic Data"
+      selectedData={
+        <OccurrenceDataSummary
+          basisOfRecord="humanObservation"
+          beginDate={1556496000000}
+          endDate={null}
+          lifestage={null}
+          occurrenceStatus="present"
+          scientificName=""
+          sex={null}
+        />
+      }
+      stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
+      stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
     >
       <StepHeader
         className="not-confirmed has-text-white step-2 background-color-5"
@@ -339,8 +349,8 @@ exports[`OccurrenceForm renders correctly 1`] = `
         iconVisible={false}
         onStepTitleClick={[Function]}
         selectedData=""
-        stepDescription="Mandatory observation information"
-        stepTitle="2 - Basic Data"
+        stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
+        stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
       >
         <div
           className="step-header columns is-vcentered not-confirmed has-text-white step-2 background-color-5"
@@ -364,7 +374,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
             <div
               className="is-size-6"
             >
-              Mandatory observation information
+              occurrenceForm.occurrenceData.step.stepDescription
             </div>
             <div
               className="is-size-5 is-uppercase"
@@ -372,7 +382,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
               <b
                 className="step-title"
               >
-                2 - Basic Data
+                2 - occurrenceForm.occurrenceData.step.stepTitle
               </b>
             </div>
           </div>
@@ -694,20 +704,40 @@ exports[`OccurrenceForm renders correctly 2`] = `
     <ConfirmedStepHeader
       className="step-2 background-color-5"
       dataDescription="Given Values"
-      key="Basic Data"
+      key="occurrenceForm.occurrenceData.step.stepTitle"
       onStepTitleClick={[Function]}
-      selectedData=" 29 April 2019 "
-      stepDescription="Mandatory observation information"
-      stepTitle="2 - Basic Data"
+      selectedData={
+        <OccurrenceDataSummary
+          basisOfRecord="humanObservation"
+          beginDate={1556496000000}
+          endDate={null}
+          lifestage={null}
+          occurrenceStatus="present"
+          scientificName=""
+          sex={null}
+        />
+      }
+      stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
+      stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
     >
       <StepHeader
         className="confirmed has-background-white has-text-black"
         dataDescription="Given Values"
         iconVisible={true}
         onStepTitleClick={[Function]}
-        selectedData=" 29 April 2019 "
-        stepDescription="Mandatory observation information"
-        stepTitle="2 - Basic Data"
+        selectedData={
+          <OccurrenceDataSummary
+            basisOfRecord="humanObservation"
+            beginDate={1556496000000}
+            endDate={null}
+            lifestage={null}
+            occurrenceStatus="present"
+            scientificName=""
+            sex={null}
+          />
+        }
+        stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
+        stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
       >
         <div
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
@@ -727,7 +757,19 @@ exports[`OccurrenceForm renders correctly 2`] = `
           <div
             className="column is-7 is-size-5"
           >
-             29 April 2019 
+            <OccurrenceDataSummary
+              basisOfRecord="humanObservation"
+              beginDate={1556496000000}
+              endDate={null}
+              lifestage={null}
+              occurrenceStatus="present"
+              scientificName=""
+              sex={null}
+            >
+              <div>
+                 29 April 2019 
+              </div>
+            </OccurrenceDataSummary>
           </div>
           <div
             className="column details"
@@ -735,7 +777,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
             <div
               className="is-size-6"
             >
-              Mandatory observation information
+              occurrenceForm.occurrenceData.step.stepDescription
             </div>
             <div
               className="is-size-5 is-uppercase"
@@ -752,7 +794,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
               <b
                 className="step-title"
               >
-                2 - Basic Data
+                2 - occurrenceForm.occurrenceData.step.stepTitle
               </b>
             </div>
           </div>
@@ -1442,20 +1484,40 @@ exports[`OccurrenceForm renders correctly 3`] = `
     <ConfirmedStepHeader
       className="step-2 background-color-5"
       dataDescription="Given Values"
-      key="Basic Data"
+      key="occurrenceForm.occurrenceData.step.stepTitle"
       onStepTitleClick={[Function]}
-      selectedData=" 29 April 2019 "
-      stepDescription="Mandatory observation information"
-      stepTitle="2 - Basic Data"
+      selectedData={
+        <OccurrenceDataSummary
+          basisOfRecord="humanObservation"
+          beginDate={1556496000000}
+          endDate={null}
+          lifestage={null}
+          occurrenceStatus="present"
+          scientificName=""
+          sex={null}
+        />
+      }
+      stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
+      stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
     >
       <StepHeader
         className="confirmed has-background-white has-text-black"
         dataDescription="Given Values"
         iconVisible={true}
         onStepTitleClick={[Function]}
-        selectedData=" 29 April 2019 "
-        stepDescription="Mandatory observation information"
-        stepTitle="2 - Basic Data"
+        selectedData={
+          <OccurrenceDataSummary
+            basisOfRecord="humanObservation"
+            beginDate={1556496000000}
+            endDate={null}
+            lifestage={null}
+            occurrenceStatus="present"
+            scientificName=""
+            sex={null}
+          />
+        }
+        stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
+        stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
       >
         <div
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
@@ -1475,7 +1537,19 @@ exports[`OccurrenceForm renders correctly 3`] = `
           <div
             className="column is-7 is-size-5"
           >
-             29 April 2019 
+            <OccurrenceDataSummary
+              basisOfRecord="humanObservation"
+              beginDate={1556496000000}
+              endDate={null}
+              lifestage={null}
+              occurrenceStatus="present"
+              scientificName=""
+              sex={null}
+            >
+              <div>
+                 29 April 2019 
+              </div>
+            </OccurrenceDataSummary>
           </div>
           <div
             className="column details"
@@ -1483,7 +1557,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
             <div
               className="is-size-6"
             >
-              Mandatory observation information
+              occurrenceForm.occurrenceData.step.stepDescription
             </div>
             <div
               className="is-size-5 is-uppercase"
@@ -1500,7 +1574,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
               <b
                 className="step-title"
               >
-                2 - Basic Data
+                2 - occurrenceForm.occurrenceData.step.stepTitle
               </b>
             </div>
           </div>
@@ -3378,20 +3452,40 @@ exports[`OccurrenceForm renders correctly 4`] = `
     <ConfirmedStepHeader
       className="step-2 background-color-5"
       dataDescription="Given Values"
-      key="Basic Data"
+      key="occurrenceForm.occurrenceData.step.stepTitle"
       onStepTitleClick={[Function]}
-      selectedData=" 29 April 2019 "
-      stepDescription="Mandatory observation information"
-      stepTitle="2 - Basic Data"
+      selectedData={
+        <OccurrenceDataSummary
+          basisOfRecord="humanObservation"
+          beginDate={1556496000000}
+          endDate={null}
+          lifestage={null}
+          occurrenceStatus="present"
+          scientificName=""
+          sex={null}
+        />
+      }
+      stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
+      stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
     >
       <StepHeader
         className="confirmed has-background-white has-text-black"
         dataDescription="Given Values"
         iconVisible={true}
         onStepTitleClick={[Function]}
-        selectedData=" 29 April 2019 "
-        stepDescription="Mandatory observation information"
-        stepTitle="2 - Basic Data"
+        selectedData={
+          <OccurrenceDataSummary
+            basisOfRecord="humanObservation"
+            beginDate={1556496000000}
+            endDate={null}
+            lifestage={null}
+            occurrenceStatus="present"
+            scientificName=""
+            sex={null}
+          />
+        }
+        stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
+        stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
       >
         <div
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
@@ -3411,7 +3505,19 @@ exports[`OccurrenceForm renders correctly 4`] = `
           <div
             className="column is-7 is-size-5"
           >
-             29 April 2019 
+            <OccurrenceDataSummary
+              basisOfRecord="humanObservation"
+              beginDate={1556496000000}
+              endDate={null}
+              lifestage={null}
+              occurrenceStatus="present"
+              scientificName=""
+              sex={null}
+            >
+              <div>
+                 29 April 2019 
+              </div>
+            </OccurrenceDataSummary>
           </div>
           <div
             className="column details"
@@ -3419,7 +3525,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
             <div
               className="is-size-6"
             >
-              Mandatory observation information
+              occurrenceForm.occurrenceData.step.stepDescription
             </div>
             <div
               className="is-size-5 is-uppercase"
@@ -3436,7 +3542,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
               <b
                 className="step-title"
               >
-                2 - Basic Data
+                2 - occurrenceForm.occurrenceData.step.stepTitle
               </b>
             </div>
           </div>
@@ -3811,28 +3917,34 @@ exports[`OccurrenceForm renders correctly 4`] = `
           </div>
         </div>
         <DarwinCoreFields
-          darwinCoreFieldsData={Array []}
+          fields={Array []}
           onChange={[Function]}
         >
           <div
             className="darwin-core-fields section is-fluid"
           >
-            <h2>
-              DARWIN CORE CUSTOM SELECTION
+            <h1
+              className="title"
+            >
+              occurrenceForm.darwinCoreFields.title
+            </h1>
+            <h2
+              className="subtitle"
+            >
+              occurrenceForm.darwinCoreFields.subtitle
+               
+              occurrenceForm.darwinCoreFields.tip
             </h2>
-            <p>
-              This form enables you to add any aditional fields you may need to specify, that were ot previously included in this form. Please be advised to use the Darwin Core Archive names
-            </p>
             <div
               className="columns is-grouped"
             >
               <InputText
-                className="field-name"
+                className="is-3 field-name"
                 name="occurrenceForm.darwinCoreFields.fieldName"
                 onChange={[Function]}
               >
                 <div
-                  className="column field field-name"
+                  className="column field is-3 field-name"
                 >
                   <label
                     className="label"
@@ -3847,12 +3959,12 @@ exports[`OccurrenceForm renders correctly 4`] = `
                 </div>
               </InputText>
               <InputText
-                className="value"
+                className="is-3 value"
                 name="occurrenceForm.darwinCoreFields.value"
                 onChange={[Function]}
               >
                 <div
-                  className="column field value"
+                  className="column field is-3 value"
                 >
                   <label
                     className="label"
@@ -3874,12 +3986,12 @@ exports[`OccurrenceForm renders correctly 4`] = `
                 >
                    
                 </span>
-                <a
+                <button
                   className="button"
                   onClick={[Function]}
                 >
-                  add
-                </a>
+                  common.add
+                </button>
               </div>
             </div>
             <table
@@ -3888,92 +4000,15 @@ exports[`OccurrenceForm renders correctly 4`] = `
               <thead>
                 <tr>
                   <th>
-                    name
+                    common.name
                   </th>
                   <th>
-                    value
+                    common.value
                   </th>
                   <th />
                 </tr>
               </thead>
-              <tbody>
-                <tr
-                  className="fieldrow"
-                  key="dummy fielddummy value"
-                >
-                  <td>
-                    dummy field
-                  </td>
-                  <td>
-                    dummy value
-                  </td>
-                  <td>
-                    <a
-                      className="button is-small remove"
-                      onClick={[Function]}
-                    >
-                      remove
-                    </a>
-                  </td>
-                </tr>
-                <tr
-                  className="fieldrow"
-                  key="dummy2 fielddummy value"
-                >
-                  <td>
-                    dummy2 field
-                  </td>
-                  <td>
-                    dummy value
-                  </td>
-                  <td>
-                    <a
-                      className="button is-small remove"
-                      onClick={[Function]}
-                    >
-                      remove
-                    </a>
-                  </td>
-                </tr>
-                <tr
-                  className="fieldrow"
-                  key="dummy3 fielddummy value"
-                >
-                  <td>
-                    dummy3 field
-                  </td>
-                  <td>
-                    dummy value
-                  </td>
-                  <td>
-                    <a
-                      className="button is-small remove"
-                      onClick={[Function]}
-                    >
-                      remove
-                    </a>
-                  </td>
-                </tr>
-                <tr
-                  className="fieldrow"
-                  key="dummy4 fielddummy value"
-                >
-                  <td>
-                    dummy4 field
-                  </td>
-                  <td>
-                    dummy value
-                  </td>
-                  <td>
-                    <a
-                      className="button is-small remove"
-                      onClick={[Function]}
-                    >
-                      remove
-                    </a>
-                  </td>
-                </tr>
-              </tbody>
+              <tbody />
             </table>
           </div>
         </DarwinCoreFields>
@@ -4059,20 +4094,40 @@ exports[`OccurrenceForm renders correctly 5`] = `
     <ConfirmedStepHeader
       className="step-2 background-color-5"
       dataDescription="Given Values"
-      key="Basic Data"
+      key="occurrenceForm.occurrenceData.step.stepTitle"
       onStepTitleClick={[Function]}
-      selectedData=" 29 April 2019 "
-      stepDescription="Mandatory observation information"
-      stepTitle="2 - Basic Data"
+      selectedData={
+        <OccurrenceDataSummary
+          basisOfRecord="humanObservation"
+          beginDate={1556496000000}
+          endDate={null}
+          lifestage={null}
+          occurrenceStatus="present"
+          scientificName=""
+          sex={null}
+        />
+      }
+      stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
+      stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
     >
       <StepHeader
         className="confirmed has-background-white has-text-black"
         dataDescription="Given Values"
         iconVisible={true}
         onStepTitleClick={[Function]}
-        selectedData=" 29 April 2019 "
-        stepDescription="Mandatory observation information"
-        stepTitle="2 - Basic Data"
+        selectedData={
+          <OccurrenceDataSummary
+            basisOfRecord="humanObservation"
+            beginDate={1556496000000}
+            endDate={null}
+            lifestage={null}
+            occurrenceStatus="present"
+            scientificName=""
+            sex={null}
+          />
+        }
+        stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
+        stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
       >
         <div
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
@@ -4092,7 +4147,19 @@ exports[`OccurrenceForm renders correctly 5`] = `
           <div
             className="column is-7 is-size-5"
           >
-             29 April 2019 
+            <OccurrenceDataSummary
+              basisOfRecord="humanObservation"
+              beginDate={1556496000000}
+              endDate={null}
+              lifestage={null}
+              occurrenceStatus="present"
+              scientificName=""
+              sex={null}
+            >
+              <div>
+                 29 April 2019 
+              </div>
+            </OccurrenceDataSummary>
           </div>
           <div
             className="column details"
@@ -4100,7 +4167,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
             <div
               className="is-size-6"
             >
-              Mandatory observation information
+              occurrenceForm.occurrenceData.step.stepDescription
             </div>
             <div
               className="is-size-5 is-uppercase"
@@ -4117,7 +4184,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
               <b
                 className="step-title"
               >
-                2 - Basic Data
+                2 - occurrenceForm.occurrenceData.step.stepTitle
               </b>
             </div>
           </div>
@@ -4537,28 +4604,34 @@ exports[`OccurrenceForm renders correctly 5`] = `
           </div>
         </div>
         <DarwinCoreFields
-          darwinCoreFieldsData={Array []}
+          fields={Array []}
           onChange={[Function]}
         >
           <div
             className="darwin-core-fields section is-fluid"
           >
-            <h2>
-              DARWIN CORE CUSTOM SELECTION
+            <h1
+              className="title"
+            >
+              occurrenceForm.darwinCoreFields.title
+            </h1>
+            <h2
+              className="subtitle"
+            >
+              occurrenceForm.darwinCoreFields.subtitle
+               
+              occurrenceForm.darwinCoreFields.tip
             </h2>
-            <p>
-              This form enables you to add any aditional fields you may need to specify, that were ot previously included in this form. Please be advised to use the Darwin Core Archive names
-            </p>
             <div
               className="columns is-grouped"
             >
               <InputText
-                className="field-name"
+                className="is-3 field-name"
                 name="occurrenceForm.darwinCoreFields.fieldName"
                 onChange={[Function]}
               >
                 <div
-                  className="column field field-name"
+                  className="column field is-3 field-name"
                 >
                   <label
                     className="label"
@@ -4573,12 +4646,12 @@ exports[`OccurrenceForm renders correctly 5`] = `
                 </div>
               </InputText>
               <InputText
-                className="value"
+                className="is-3 value"
                 name="occurrenceForm.darwinCoreFields.value"
                 onChange={[Function]}
               >
                 <div
-                  className="column field value"
+                  className="column field is-3 value"
                 >
                   <label
                     className="label"
@@ -4600,12 +4673,12 @@ exports[`OccurrenceForm renders correctly 5`] = `
                 >
                    
                 </span>
-                <a
+                <button
                   className="button"
                   onClick={[Function]}
                 >
-                  add
-                </a>
+                  common.add
+                </button>
               </div>
             </div>
             <table
@@ -4614,92 +4687,747 @@ exports[`OccurrenceForm renders correctly 5`] = `
               <thead>
                 <tr>
                   <th>
-                    name
+                    common.name
                   </th>
                   <th>
-                    value
+                    common.value
                   </th>
                   <th />
                 </tr>
               </thead>
-              <tbody>
-                <tr
-                  className="fieldrow"
-                  key="dummy fielddummy value"
+              <tbody />
+            </table>
+          </div>
+        </DarwinCoreFields>
+      </StepHeader>
+    </ActiveStepHeader>
+  </section>
+</OccurrenceForm>
+`;
+
+exports[`OccurrenceForm renders correctly 6`] = `
+<OccurrenceForm>
+  <section
+    className="section"
+  >
+    <ConfirmedStepHeader
+      className="step-1 background-color-0"
+      dataDescription="occurrenceForm.selectDataset.dataDescription"
+      key="occurrenceForm.selectDataset.stepTitle"
+      onStepTitleClick={[Function]}
+      selectedData="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
+      stepDescription="occurrenceForm.selectDataset.stepDescription"
+      stepTitle="1 - occurrenceForm.selectDataset.stepTitle"
+    >
+      <StepHeader
+        className="confirmed has-background-white has-text-black"
+        dataDescription="occurrenceForm.selectDataset.dataDescription"
+        iconVisible={true}
+        onStepTitleClick={[Function]}
+        selectedData="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
+        stepDescription="occurrenceForm.selectDataset.stepDescription"
+        stepTitle="1 - occurrenceForm.selectDataset.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered confirmed has-background-white has-text-black"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b>
+                occurrenceForm.selectDataset.dataDescription
+              </b>
+            </p>
+          </div>
+          <div
+            className="column is-7 is-size-5"
+          >
+            HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.
+          </div>
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              occurrenceForm.selectDataset.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <FontAwesomeIcon
+                className="check-circle"
+                icon="check-circle"
+              >
+                <i
+                  className="check-circle"
+                  icon="check-circle"
+                />
+              </FontAwesomeIcon>
+              <b
+                className="step-title"
+              >
+                1 - occurrenceForm.selectDataset.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </ConfirmedStepHeader>
+    <ConfirmedStepHeader
+      className="step-2 background-color-5"
+      dataDescription="Given Values"
+      key="occurrenceForm.occurrenceData.step.stepTitle"
+      onStepTitleClick={[Function]}
+      selectedData={
+        <OccurrenceDataSummary
+          basisOfRecord="humanObservation"
+          beginDate={1556496000000}
+          endDate={null}
+          lifestage={null}
+          occurrenceStatus="present"
+          scientificName=""
+          sex={null}
+        />
+      }
+      stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
+      stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
+    >
+      <StepHeader
+        className="confirmed has-background-white has-text-black"
+        dataDescription="Given Values"
+        iconVisible={true}
+        onStepTitleClick={[Function]}
+        selectedData={
+          <OccurrenceDataSummary
+            basisOfRecord="humanObservation"
+            beginDate={1556496000000}
+            endDate={null}
+            lifestage={null}
+            occurrenceStatus="present"
+            scientificName=""
+            sex={null}
+          />
+        }
+        stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
+        stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered confirmed has-background-white has-text-black"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b>
+                Given Values
+              </b>
+            </p>
+          </div>
+          <div
+            className="column is-7 is-size-5"
+          >
+            <OccurrenceDataSummary
+              basisOfRecord="humanObservation"
+              beginDate={1556496000000}
+              endDate={null}
+              lifestage={null}
+              occurrenceStatus="present"
+              scientificName=""
+              sex={null}
+            >
+              <div>
+                 29 April 2019 
+              </div>
+            </OccurrenceDataSummary>
+          </div>
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              occurrenceForm.occurrenceData.step.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <FontAwesomeIcon
+                className="check-circle"
+                icon="check-circle"
+              >
+                <i
+                  className="check-circle"
+                  icon="check-circle"
+                />
+              </FontAwesomeIcon>
+              <b
+                className="step-title"
+              >
+                2 - occurrenceForm.occurrenceData.step.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </ConfirmedStepHeader>
+    <ConfirmedStepHeader
+      className="step-3 background-color-10"
+      dataDescription="occurrenceForm.locationData.step.dataDescription"
+      key="occurrenceForm.locationData.step.stepTitle"
+      onStepTitleClick={[Function]}
+      selectedData={
+        <SelectedLocation
+          coordinateUncertainty={null}
+          decimalLatitude={0.12345}
+          decimalLongitude={-0.54321}
+          maximumDepth={null}
+          minimumDepth={null}
+          verbatimCoordinates=""
+          verbatimDepth=""
+          verbatimEventDate=""
+        />
+      }
+      stepDescription="occurrenceForm.locationData.step.stepDescription"
+      stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
+    >
+      <StepHeader
+        className="confirmed has-background-white has-text-black"
+        dataDescription="occurrenceForm.locationData.step.dataDescription"
+        iconVisible={true}
+        onStepTitleClick={[Function]}
+        selectedData={
+          <SelectedLocation
+            coordinateUncertainty={null}
+            decimalLatitude={0.12345}
+            decimalLongitude={-0.54321}
+            maximumDepth={null}
+            minimumDepth={null}
+            verbatimCoordinates=""
+            verbatimDepth=""
+            verbatimEventDate=""
+          />
+        }
+        stepDescription="occurrenceForm.locationData.step.stepDescription"
+        stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered confirmed has-background-white has-text-black"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b>
+                occurrenceForm.locationData.step.dataDescription
+              </b>
+            </p>
+          </div>
+          <div
+            className="column is-7 is-size-5"
+          >
+            <SelectedLocation
+              coordinateUncertainty={null}
+              decimalLatitude={0.12345}
+              decimalLongitude={-0.54321}
+              maximumDepth={null}
+              minimumDepth={null}
+              verbatimCoordinates=""
+              verbatimDepth=""
+              verbatimEventDate=""
+            >
+              <div>
+                occurrenceForm.locationData.step.selectedData.latitude
+                : 
+                0.12345
+              </div>
+              <div>
+                occurrenceForm.locationData.step.selectedData.longitude
+                : 
+                -0.54321
+              </div>
+            </SelectedLocation>
+          </div>
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              occurrenceForm.locationData.step.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <FontAwesomeIcon
+                className="check-circle"
+                icon="check-circle"
+              >
+                <i
+                  className="check-circle"
+                  icon="check-circle"
+                />
+              </FontAwesomeIcon>
+              <b
+                className="step-title"
+              >
+                3 - occurrenceForm.locationData.step.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </ConfirmedStepHeader>
+    <ConfirmedStepHeader
+      className="step-4 background-color-15"
+      dataDescription="Main Info"
+      key="Observation Data"
+      onStepTitleClick={[Function]}
+      selectedData="Institution: institution code; Identified by: Indiana Jones"
+      stepDescription="Enter further specifics"
+      stepTitle="4 - Observation Data"
+    >
+      <StepHeader
+        className="confirmed has-background-white has-text-black"
+        dataDescription="Main Info"
+        iconVisible={true}
+        onStepTitleClick={[Function]}
+        selectedData="Institution: institution code; Identified by: Indiana Jones"
+        stepDescription="Enter further specifics"
+        stepTitle="4 - Observation Data"
+      >
+        <div
+          className="step-header columns is-vcentered confirmed has-background-white has-text-black"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b>
+                Main Info
+              </b>
+            </p>
+          </div>
+          <div
+            className="column is-7 is-size-5"
+          >
+            Institution: institution code; Identified by: Indiana Jones
+          </div>
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              Enter further specifics
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <FontAwesomeIcon
+                className="check-circle"
+                icon="check-circle"
+              >
+                <i
+                  className="check-circle"
+                  icon="check-circle"
+                />
+              </FontAwesomeIcon>
+              <b
+                className="step-title"
+              >
+                4 - Observation Data
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </ConfirmedStepHeader>
+    <ConfirmedStepHeader
+      className="step-5 background-color-20"
+      dataDescription="Given values"
+      key="Measurement or Fact"
+      onStepTitleClick={[Function]}
+      selectedData={
+        <MeasurementOrFactSummary
+          data={
+            Array [
+              Object {
+                "type": "Pressure",
+                "unit": "Kilogram",
+                "units": Array [
+                  Object {
+                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
+                    "name": "Kilogram",
+                  },
+                  Object {
+                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
+                    "name": "Gram",
+                  },
+                ],
+                "value": "10",
+              },
+              Object {
+                "type": "Pressure",
+                "unit": "Kilogram",
+                "units": Array [
+                  Object {
+                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
+                    "name": "Kilogram",
+                  },
+                  Object {
+                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
+                    "name": "Gram",
+                  },
+                ],
+                "value": "20",
+              },
+              Object {
+                "type": "Pressure",
+                "unit": "Kilogram",
+                "units": Array [
+                  Object {
+                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
+                    "name": "Kilogram",
+                  },
+                  Object {
+                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
+                    "name": "Gram",
+                  },
+                ],
+                "value": "20",
+              },
+            ]
+          }
+        />
+      }
+      stepDescription="Enter further specifics"
+      stepTitle="5 - Measurement or Fact"
+    >
+      <StepHeader
+        className="confirmed has-background-white has-text-black"
+        dataDescription="Given values"
+        iconVisible={true}
+        onStepTitleClick={[Function]}
+        selectedData={
+          <MeasurementOrFactSummary
+            data={
+              Array [
+                Object {
+                  "type": "Pressure",
+                  "unit": "Kilogram",
+                  "units": Array [
+                    Object {
+                      "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
+                      "name": "Kilogram",
+                    },
+                    Object {
+                      "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
+                      "name": "Gram",
+                    },
+                  ],
+                  "value": "10",
+                },
+                Object {
+                  "type": "Pressure",
+                  "unit": "Kilogram",
+                  "units": Array [
+                    Object {
+                      "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
+                      "name": "Kilogram",
+                    },
+                    Object {
+                      "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
+                      "name": "Gram",
+                    },
+                  ],
+                  "value": "20",
+                },
+                Object {
+                  "type": "Pressure",
+                  "unit": "Kilogram",
+                  "units": Array [
+                    Object {
+                      "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
+                      "name": "Kilogram",
+                    },
+                    Object {
+                      "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
+                      "name": "Gram",
+                    },
+                  ],
+                  "value": "20",
+                },
+              ]
+            }
+          />
+        }
+        stepDescription="Enter further specifics"
+        stepTitle="5 - Measurement or Fact"
+      >
+        <div
+          className="step-header columns is-vcentered confirmed has-background-white has-text-black"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b>
+                Given values
+              </b>
+            </p>
+          </div>
+          <div
+            className="column is-7 is-size-5"
+          >
+            <MeasurementOrFactSummary
+              data={
+                Array [
+                  Object {
+                    "type": "Pressure",
+                    "unit": "Kilogram",
+                    "units": Array [
+                      Object {
+                        "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
+                        "name": "Kilogram",
+                      },
+                      Object {
+                        "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
+                        "name": "Gram",
+                      },
+                    ],
+                    "value": "10",
+                  },
+                  Object {
+                    "type": "Pressure",
+                    "unit": "Kilogram",
+                    "units": Array [
+                      Object {
+                        "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
+                        "name": "Kilogram",
+                      },
+                      Object {
+                        "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
+                        "name": "Gram",
+                      },
+                    ],
+                    "value": "20",
+                  },
+                  Object {
+                    "type": "Pressure",
+                    "unit": "Kilogram",
+                    "units": Array [
+                      Object {
+                        "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
+                        "name": "Kilogram",
+                      },
+                      Object {
+                        "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
+                        "name": "Gram",
+                      },
+                    ],
+                    "value": "20",
+                  },
+                ]
+              }
+            >
+              <div>
+                occurrenceForm.measurementOrFact.step.title {"number":3}
+              </div>
+            </MeasurementOrFactSummary>
+          </div>
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              Enter further specifics
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <FontAwesomeIcon
+                className="check-circle"
+                icon="check-circle"
+              >
+                <i
+                  className="check-circle"
+                  icon="check-circle"
+                />
+              </FontAwesomeIcon>
+              <b
+                className="step-title"
+              >
+                5 - Measurement or Fact
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </ConfirmedStepHeader>
+    <ActiveStepHeader
+      className="step-6 background-color-25"
+      dataDescription=""
+      key="Darwin Core Fields"
+      onStepTitleClick={[Function]}
+      selectedData=""
+      stepDescription="Supply specific Darwin core fields"
+      stepTitle="6 - Darwin Core Fields"
+    >
+      <StepHeader
+        className="active has-background-grey has-text-white"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="Supply specific Darwin core fields"
+        stepTitle="6 - Darwin Core Fields"
+      >
+        <div
+          className="step-header columns is-vcentered active has-background-grey has-text-white"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="column is-7 is-size-5 is-hidden-mobile"
+          />
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              Supply specific Darwin core fields
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                6 - Darwin Core Fields
+              </b>
+            </div>
+          </div>
+        </div>
+        <DarwinCoreFields
+          fields={Array []}
+          onChange={[Function]}
+        >
+          <div
+            className="darwin-core-fields section is-fluid"
+          >
+            <h1
+              className="title"
+            >
+              occurrenceForm.darwinCoreFields.title
+            </h1>
+            <h2
+              className="subtitle"
+            >
+              occurrenceForm.darwinCoreFields.subtitle
+               
+              occurrenceForm.darwinCoreFields.tip
+            </h2>
+            <div
+              className="columns is-grouped"
+            >
+              <InputText
+                className="is-3 field-name"
+                name="occurrenceForm.darwinCoreFields.fieldName"
+                onChange={[Function]}
+              >
+                <div
+                  className="column field is-3 field-name"
                 >
-                  <td>
-                    dummy field
-                  </td>
-                  <td>
-                    dummy value
-                  </td>
-                  <td>
-                    <a
-                      className="button is-small remove"
-                      onClick={[Function]}
-                    >
-                      remove
-                    </a>
-                  </td>
-                </tr>
-                <tr
-                  className="fieldrow"
-                  key="dummy2 fielddummy value"
+                  <label
+                    className="label"
+                  >
+                    occurrenceForm.darwinCoreFields.fieldName.label
+                  </label>
+                  <input
+                    className="input"
+                    onChange={[Function]}
+                    type="text"
+                  />
+                </div>
+              </InputText>
+              <InputText
+                className="is-3 value"
+                name="occurrenceForm.darwinCoreFields.value"
+                onChange={[Function]}
+              >
+                <div
+                  className="column field is-3 value"
                 >
-                  <td>
-                    dummy2 field
-                  </td>
-                  <td>
-                    dummy value
-                  </td>
-                  <td>
-                    <a
-                      className="button is-small remove"
-                      onClick={[Function]}
-                    >
-                      remove
-                    </a>
-                  </td>
-                </tr>
-                <tr
-                  className="fieldrow"
-                  key="dummy3 fielddummy value"
+                  <label
+                    className="label"
+                  >
+                    occurrenceForm.darwinCoreFields.value.label
+                  </label>
+                  <input
+                    className="input"
+                    onChange={[Function]}
+                    type="text"
+                  />
+                </div>
+              </InputText>
+              <div
+                className="column add"
+              >
+                <span
+                  className="label"
                 >
-                  <td>
-                    dummy3 field
-                  </td>
-                  <td>
-                    dummy value
-                  </td>
-                  <td>
-                    <a
-                      className="button is-small remove"
-                      onClick={[Function]}
-                    >
-                      remove
-                    </a>
-                  </td>
-                </tr>
-                <tr
-                  className="fieldrow"
-                  key="dummy4 fielddummy value"
+                   
+                </span>
+                <button
+                  className="button"
+                  onClick={[Function]}
                 >
-                  <td>
-                    dummy4 field
-                  </td>
-                  <td>
-                    dummy value
-                  </td>
-                  <td>
-                    <a
-                      className="button is-small remove"
-                      onClick={[Function]}
-                    >
-                      remove
-                    </a>
-                  </td>
+                  common.add
+                </button>
+              </div>
+            </div>
+            <table
+              className="table is-fullwidth"
+            >
+              <thead>
+                <tr>
+                  <th>
+                    common.name
+                  </th>
+                  <th>
+                    common.value
+                  </th>
+                  <th />
                 </tr>
-              </tbody>
+              </thead>
+              <tbody />
             </table>
           </div>
         </DarwinCoreFields>
