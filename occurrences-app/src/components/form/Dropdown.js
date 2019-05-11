@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -32,13 +31,12 @@ export default function Dropdown({ onChange, options, value }) {
       <div className="dropdown-menu" id="dropdown-menu" role="menu">
         <div className="dropdown-content">
           {options.map(option => (
-            <a
+            <div
               className={classNames('dropdown-item', { 'is-active': option === selectedValue })}
-              href="#"
               key={option}
               onClick={() => handleChange(option)}>
               {option}
-            </a>
+            </div>
           ))}
         </div>
       </div>

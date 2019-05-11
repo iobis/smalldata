@@ -140,22 +140,20 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                         <div
                           className="dropdown-content"
                         >
-                          <a
+                          <div
                             className="dropdown-item is-active"
-                            href="#"
                             key="Kilogram"
                             onClick={[Function]}
                           >
                             Kilogram
-                          </a>
-                          <a
+                          </div>
+                          <div
                             className="dropdown-item"
-                            href="#"
                             key="Gram"
                             onClick={[Function]}
                           >
                             Gram
-                          </a>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -248,14 +246,13 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                         <div
                           className="dropdown-content"
                         >
-                          <a
+                          <div
                             className="dropdown-item is-active"
-                            href="#"
                             key="Degrees Celsius"
                             onClick={[Function]}
                           >
                             Degrees Celsius
-                          </a>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -348,14 +345,13 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                         <div
                           className="dropdown-content"
                         >
-                          <a
+                          <div
                             className="dropdown-item is-active"
-                            href="#"
                             key="Degrees Celsius"
                             onClick={[Function]}
                           >
                             Degrees Celsius
-                          </a>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -502,14 +498,13 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                         <div
                           className="dropdown-content"
                         >
-                          <a
+                          <div
                             className="dropdown-item is-active"
-                            href="#"
                             key="Kilogram"
                             onClick={[Function]}
                           >
                             Kilogram
-                          </a>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -602,14 +597,13 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                         <div
                           className="dropdown-content"
                         >
-                          <a
+                          <div
                             className="dropdown-item is-active"
-                            href="#"
                             key="Millimeter"
                             onClick={[Function]}
                           >
                             Millimeter
-                          </a>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -702,14 +696,13 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                         <div
                           className="dropdown-content"
                         >
-                          <a
+                          <div
                             className="dropdown-item is-active"
-                            href="#"
                             key="Meter"
                             onClick={[Function]}
                           >
                             Meter
-                          </a>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -802,14 +795,13 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                         <div
                           className="dropdown-content"
                         >
-                          <a
+                          <div
                             className="dropdown-item is-active"
-                            href="#"
                             key="Grams"
                             onClick={[Function]}
                           >
                             Grams
-                          </a>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -902,14 +894,13 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                         <div
                           className="dropdown-content"
                         >
-                          <a
+                          <div
                             className="dropdown-item is-active"
-                            href="#"
                             key="Micrometer"
                             onClick={[Function]}
                           >
                             Micrometer
-                          </a>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -1002,14 +993,13 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                         <div
                           className="dropdown-content"
                         >
-                          <a
+                          <div
                             className="dropdown-item is-active"
-                            href="#"
                             key="Grams per square meter"
                             onClick={[Function]}
                           >
                             Grams per square meter
-                          </a>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -1102,14 +1092,13 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                         <div
                           className="dropdown-content"
                         >
-                          <a
+                          <div
                             className="dropdown-item is-active"
-                            href="#"
                             key="Number per square meter"
                             onClick={[Function]}
                           >
                             Number per square meter
-                          </a>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -1202,14 +1191,13 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                         <div
                           className="dropdown-content"
                         >
-                          <a
+                          <div
                             className="dropdown-item is-active"
-                            href="#"
                             key="Number per liter"
                             onClick={[Function]}
                           >
                             Number per liter
-                          </a>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -1302,14 +1290,13 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                         <div
                           className="dropdown-content"
                         >
-                          <a
+                          <div
                             className="dropdown-item is-active"
-                            href="#"
                             key="Square meter"
                             onClick={[Function]}
                           >
                             Square meter
-                          </a>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -1402,14 +1389,13 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                         <div
                           className="dropdown-content"
                         >
-                          <a
+                          <div
                             className="dropdown-item is-active"
-                            href="#"
                             key="Cubic metres"
                             onClick={[Function]}
                           >
                             Cubic metres
-                          </a>
+                          </div>
                         </div>
                       </div>
                     </div>

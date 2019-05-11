@@ -7,7 +7,7 @@ plugins {
   id "com.github.spotbugs" version "1.7.1"
   id "io.franzbecker.gradle-lombok" version "2.1"
   id "java"
-  id "org.beryx.runtime" version "1.1.5"
+  id "org.beryx.runtime" version "1.1.6"
   id "org.javamodularity.moduleplugin" version "1.4.0"
   id "pmd"
 }
@@ -37,6 +37,7 @@ def doOnChange = "./gradlew classes"
 
 runtime {
   options = ["--strip-debug", "--compress", "2", "--no-header-files", "--no-man-pages"]
+  modules = ['java.logging', 'java.sql', 'jdk.crypto.ec', 'java.desktop']
 }
 
 dependencies {

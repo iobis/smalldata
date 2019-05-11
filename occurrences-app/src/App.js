@@ -19,7 +19,7 @@ library.add(faAngleDown, faEnvelope, faCheckCircle, faSearch, faTimesCircle, faU
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <div className="App">
         <Navbar/>
         <Switch>
