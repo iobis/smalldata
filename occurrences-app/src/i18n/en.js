@@ -202,7 +202,7 @@ export default {
           help:        ''
         },
         value:     {
-          label:       'value',
+          label:       'Value',
           placeholder: '',
           help:        ''
         }

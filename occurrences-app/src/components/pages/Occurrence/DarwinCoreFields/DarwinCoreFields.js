@@ -9,17 +9,16 @@ export default function DarwinCoreFields({ fields, onChange }) {
   const [name, setName] = useState('')
   const [value, setValue] = useState('')
 
-  function addDarwinField() {
-    const updatedFields = [...fields, { name, value }]
-    setSelectedFields([...fields, { name, value }])
+  function addDarwinField(field) {
+    const updatedFields = [...fields, field]
     onChange(updatedFields)
+    setSelectedFields(updatedFields)
   }
 
-  function removeDarwinField(index) {
-    const updatedFields = [...fields]
-    updatedFields.splice(index, 1)
-    setSelectedFields(updatedFields)
+  function removeRowItem(index) {
+    const updatedFields = fields.filter((_, i) => i !== index)
     onChange(updatedFields)
+    setSelectedFields(updatedFields)
   }
 
   return (
@@ -35,7 +34,7 @@ export default function DarwinCoreFields({ fields, onChange }) {
         <InputText className="value" name="occurrenceForm.darwinCoreFields.value" onChange={setValue}/>
         <div className="column add">
           <span className="label">&nbsp;</span>
-          <button className="button" onClick={addDarwinField}>{t('common.add')}</button>
+          <button className="button" onClick={() => addDarwinField({ name, value })}>{t('common.add')}</button>
         </div>
       </div>
       <table className="table is-fullwidth">
@@ -48,11 +47,12 @@ export default function DarwinCoreFields({ fields, onChange }) {
         </thead>
         <tbody>
         {selectedFields.map((field, i) => (
-          <tr className="fieldrow" key={field.name + field.value}>
+          // eslint-disable-next-line react/no-array-index-key
+          <tr className="fieldrow" key={i}>
             <td>{field.name}</td>
             <td>{field.value}</td>
             <td>
-              <button className="button remove" onClick={() => removeDarwinField(i)}>
+              <button className="button remove" onClick={() => removeRowItem(i)}>
                 {t('common.remove')}
               </button>
             </td>

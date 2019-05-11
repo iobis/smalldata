@@ -111,7 +111,7 @@ exports[`DarwinCoreFields renders correctly 1`] = `
       <tbody>
         <tr
           className="fieldrow"
-          key="name-1value-1"
+          key="0"
         >
           <td>
             name-1
@@ -130,7 +130,7 @@ exports[`DarwinCoreFields renders correctly 1`] = `
         </tr>
         <tr
           className="fieldrow"
-          key="name-2value-2"
+          key="1"
         >
           <td>
             name-2
@@ -149,7 +149,7 @@ exports[`DarwinCoreFields renders correctly 1`] = `
         </tr>
         <tr
           className="fieldrow"
-          key="name-3value-3"
+          key="2"
         >
           <td>
             name-3
