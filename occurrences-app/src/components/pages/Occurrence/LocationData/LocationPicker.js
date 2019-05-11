@@ -31,9 +31,11 @@ export default function LocationPicker({ onChange }) {
   const [suggestions, setSuggestions] = useState([])
 
   function setMarkerCoordinates(latlng) {
-    setLatitude(latlng.lat)
-    setLongitude(latlng.lng)
-    onChange({ latitude: latlng.lat, longitude: latlng.lng })
+    const latitude = Number(latlng.lat)
+    const longitude = Number(latlng.lng)
+    setLatitude(latitude)
+    setLongitude(longitude)
+    onChange({ latitude, longitude })
   }
 
   const debouncedSearch = useDebounce(searchString, 500)
@@ -139,7 +141,7 @@ function SuggestionsResult({ suggestions, onClick }) {
         <tr
           className="suggestion-row fieldrow"
           key={suggestion.place_id}
-          onClick={() => onClick({ lat: suggestion.lat, lng: suggestion.lon })}>
+          onClick={() => onClick({ lat: Number(suggestion.lat), lng: Number(suggestion.lon) })}>
           <td className="type">
             {suggestion.type}
           </td>

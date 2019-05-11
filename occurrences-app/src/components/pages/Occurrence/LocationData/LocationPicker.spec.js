@@ -78,7 +78,7 @@ describe('LocationPicker', () => {
       TestUtils.Simulate.click(container.querySelectorAll('.suggestions-result .suggestion-row')[0])
     })
     expect(onChange).toHaveBeenCalledTimes(1)
-    expect(onChange).toHaveBeenNthCalledWith(1, { latitude: '59.9403302', longitude: '30.3189535' })
+    expect(onChange).toHaveBeenNthCalledWith(1, { latitude: 59.9403302, longitude: 30.3189535 })
     expect(fetch).toHaveBeenCalledTimes(1)
     expect(container.querySelectorAll('.suggestions-result-empty')).toHaveLength(0)
     expect(container.querySelectorAll('.suggestions-result .suggestion-row')).toHaveLength(1)
