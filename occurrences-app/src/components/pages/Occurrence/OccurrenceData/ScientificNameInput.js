@@ -39,6 +39,7 @@ export default function ScientificNameInput({ scientificName, onChange }) {
   }, [debouncedName])
 
   function handleNameChange(newName) {
+    if(newName === '') setNameValid(false)
     onChange(newName)
     setName(newName)
   }
