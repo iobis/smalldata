@@ -1,7 +1,13 @@
 module.exports = {
   extends: 'react-app',
-  plugins: ['react'],
+  plugins: [
+    'react-hooks',
+    'react'
+  ],
   rules:   {
+    'react-hooks/exhaustive-deps': 0,
+    'react-hooks/rules-of-hooks':  2,
+
     'jsx-quotes':                         [2, 'prefer-double'],
     'react/jsx-closing-bracket-location': [2, {
       'nonEmpty':    'after-props',
