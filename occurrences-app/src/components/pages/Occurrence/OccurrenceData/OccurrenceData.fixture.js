@@ -1,10 +1,9 @@
 import OccurrenceData from './OccurrenceData'
 
 export default [{
-  component: OccurrenceData,
-  name:      'no selection step',
-  props:     {
-    onChange: console.log,
+  component:   OccurrenceData,
+  name:        'no selection step',
+  props:       {
     data:     {
       basisOfRecord:    'humanObservation',
       beginDate:        Date.now(),
@@ -14,6 +13,9 @@ export default [{
       scientificName:   '',
       sex:              null
     }
+  },
+  controllers: {
+    onChange: data =>({ data })
   }
 }, {
   component: OccurrenceData,
