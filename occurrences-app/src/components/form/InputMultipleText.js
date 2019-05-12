@@ -37,7 +37,7 @@ export default function InputMultipleText({ className, name, values, onChange, l
   )
 }
 
-InputMultipleText.props = {
+InputMultipleText.propTypes = {
   className:      PropTypes.string,
   labelComponent: PropTypes.func,
   name:           PropTypes.string.isRequired,
@@ -48,13 +48,14 @@ InputMultipleText.props = {
 function Tags({ strings, onDelete, labelComponent }) {
   return (
     <div className="block">
-      {strings.map((string, index) =>
-        (<div key={index}>
+      {strings.map((string, index) => (
+        // eslint-disable-next-line react/no-array-index-key
+        <div key={index}>
           <span className="tag">
             {labelComponent ? labelComponent(string) : string}
             <button className="delete is-small" onClick={() => onDelete(deleteByIndex(index))}/></span>
-        </div>)
-      )}
+        </div>
+      ))}
     </div>
   )
 

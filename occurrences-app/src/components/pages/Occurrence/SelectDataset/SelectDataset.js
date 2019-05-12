@@ -42,5 +42,6 @@ function DatasetOption({ id, checked, description, onClick }) {
 DatasetOption.propTypes = {
   checked:     PropTypes.bool.isRequired,
   description: PropTypes.string.isRequired,
+  id:          PropTypes.number.isRequired,
   onClick:     PropTypes.func.isRequired
 }

@@ -18,6 +18,7 @@ export default function ActiveStepHeader({ children, onStepTitleClick, stepDescr
 }
 
 ActiveStepHeader.propTypes = {
+  children:         PropTypes.node,
   onStepTitleClick: PropTypes.func.isRequired,
   stepDescription:  PropTypes.string.isRequired,
   stepTitle:        PropTypes.string.isRequired

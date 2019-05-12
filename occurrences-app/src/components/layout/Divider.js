@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 
 export default function Divider({ children }) {
@@ -6,4 +7,8 @@ export default function Divider({ children }) {
       <span>{children}</span>
     </div>
   )
+}
+
+Divider.propTypes = {
+  children: PropTypes.node
 }

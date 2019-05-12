@@ -3,6 +3,7 @@ import { getOccurrenceMock } from '../../clients/server'
 import Divider from '../layout/Divider'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 export default function InputDataPage() {
   const { t } = useTranslation()
@@ -42,7 +43,7 @@ export default function InputDataPage() {
   )
 }
 
-function OccurrenceRow({ id, addedDate, scientificName, dataset, occurrenceDate }) {
+function OccurrenceRow({ addedDate, dataset, id, occurrenceDate, scientificName }) {
   const { t } = useTranslation()
 
   return (
@@ -59,4 +60,12 @@ function OccurrenceRow({ id, addedDate, scientificName, dataset, occurrenceDate 
       </td>
     </tr>
   )
+}
+
+OccurrenceRow.propTypes = {
+  addedDate:      PropTypes.string.isRequired,
+  dataset:        PropTypes.string.isRequired,
+  id:             PropTypes.number.isRequired,
+  occurrenceDate: PropTypes.string.isRequired,
+  scientificName: PropTypes.string.isRequired
 }

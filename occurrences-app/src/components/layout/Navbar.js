@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import classNames from 'classnames'
+import PropTypes from 'prop-types'
 import React, { useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link, NavLink } from 'react-router-dom'
@@ -53,3 +54,9 @@ const NavbarItem = ({ children, onClick, to }) => (
     {children}
   </NavLink>
 )
+
+NavbarItem.propTypes = {
+  children: PropTypes.string.isRequired,
+  onClick:  PropTypes.func.isRequired,
+  to:       PropTypes.string.isRequired
+}
