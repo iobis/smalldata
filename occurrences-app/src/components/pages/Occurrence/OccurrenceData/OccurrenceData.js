@@ -135,7 +135,7 @@ function ScientificNameInput({ scientificName, onChange }) {
           <label className="label">{t('occurrenceForm.occurrenceData.scientificName')}</label>
           <div className={classNames('control has-icons-right', { 'is-loading': loading })}>
             <input
-              className={classNames('input', { 'is-danger': !firstRender && !nameValid && suggestions.length === 0 })}
+              className={classNames('input', { 'is-danger': !firstRender && !nameValid && !dropdownActive})}
               onChange={(value) => handleNameChange(value.target.value)}
               onClick={showDropdownOption}
               placeholder={t('occurrenceForm.occurrenceData.scientificName')}
