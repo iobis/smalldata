@@ -97,7 +97,7 @@ exports[`LocationPicker renders correctly 1`] = `
                 alt=""
                 class="leaflet-marker-shadow leaflet-zoom-hide"
                 src="marker-shadow.png"
-                style="left: 0px; top: 0px;"
+                style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; left: 0px; top: 0px;"
               />
             </div>
             <div
@@ -110,7 +110,7 @@ exports[`LocationPicker renders correctly 1`] = `
                 alt=""
                 class="leaflet-marker-icon leaflet-zoom-hide leaflet-interactive leaflet-marker-draggable"
                 src="marker-icon.png"
-                style="left: 0px; top: 0px; z-index: 0;"
+                style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; left: 0px; top: 0px; z-index: 0;"
                 tabindex="0"
               />
             </div>
