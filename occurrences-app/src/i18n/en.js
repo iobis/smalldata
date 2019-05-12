@@ -198,7 +198,7 @@ export default {
       },
       darwinCoreFields:  {
         title:     'Darwin Core Custom Selection',
-        subtitle:  'This form enables you to add any additional fields you may need to specify, that were ot previously included in this form.',
+        subtitle:  'This form enables you to add any additional fields you may need to specify, that were not previously included in this form.',
         tip:       'Please be advised to use the Darwin Core Archive names',
         fieldName: {
           label:       'Darwin core fieldname',
