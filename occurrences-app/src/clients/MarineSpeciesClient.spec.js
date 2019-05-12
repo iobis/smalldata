@@ -1,32 +1,52 @@
 import { isScientificNameId, getByName, getById } from './MarineSpeciesClient'
 
 describe('MarineSpeciesClient', () => {
-  beforeEach(() => {
-    global.fetch = jest.fn().mockImplementation(() =>
-      new Promise((resolve) => {
-        resolve({ json: () => ([{ result: [] }]) })
-      })
-    )
-  })
-
   afterEach(() => {
     global.fetch.mockRestore()
   })
 
-  it('getByName', async() => {
-    const response = await getByName('Ala abra')
+  describe('getByName', () => {
+    beforeEach(() => {
+      global.fetch = jest.fn().mockImplementation(() =>
+        new Promise((resolve) => {
+          resolve({ text: () => '[{ "result": [] }]' })
+        })
+      )
+    })
 
-    expect(response).toEqual([{ result: [] }])
-    expect(fetch).toHaveBeenCalledTimes(1)
-    expect(fetch).toHaveBeenCalledWith('http://www.marinespecies.org/rest/AphiaRecordsByName/Ala abra?like=true&marine_only=false')
+    it('for some name', async() => {
+      const response = await getByName('Ala abra')
+
+      expect(response).toEqual([{ result: [] }])
+      expect(fetch).toHaveBeenCalledTimes(1)
+      expect(fetch).toHaveBeenCalledWith('http://www.marinespecies.org/rest/AphiaRecordsByName/Ala abra?like=true&marine_only=false')
+    })
+
+    it('for name with extra whitespaces spaces', async() => {
+      const response = await getByName('  Ala   ')
+
+      expect(response).toEqual([{ result: [] }])
+      expect(fetch).toHaveBeenCalledTimes(1)
+      expect(fetch).toHaveBeenCalledWith('http://www.marinespecies.org/rest/AphiaRecordsByName/Ala?like=true&marine_only=false')
+    })
   })
 
-  it('getById', async() => {
-    const response = await getById('urn:lsid:marinespecies.org:taxname:141433')
+  describe('getById', () => {
+    beforeEach(() => {
+      global.fetch = jest.fn().mockImplementation(() =>
+        new Promise((resolve) => {
+          resolve({ text: () => '{"result": "ok"}' })
+        })
+      )
+    })
 
-    expect(response).toEqual([{ result: [] }])
-    expect(fetch).toHaveBeenCalledTimes(1)
-    expect(fetch).toHaveBeenCalledWith('http://www.marinespecies.org/rest/AphiaRecordByAphiaID/141433')
+    it('for correct id', async() => {
+      const response = await getById('urn:lsid:marinespecies.org:taxname:141433')
+
+      expect(response).toEqual({ result: 'ok' })
+      expect(fetch).toHaveBeenCalledTimes(1)
+      expect(fetch).toHaveBeenCalledWith('http://www.marinespecies.org/rest/AphiaRecordByAphiaID/141433')
+    })
   })
 
   it('isScientificNameId', () => {
