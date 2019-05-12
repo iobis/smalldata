@@ -85,5 +85,6 @@ OccurrenceData.propTypes = {
     occurrenceStatus: PropTypes.oneOf(occurrenceStatusOptions).isRequired,
     scientificName:   PropTypes.string.isRequired,
     sex:              PropTypes.oneOf(sexOptions)
-  }).isRequired
+  }).isRequired,
+  onChange: PropTypes.func.isRequired
 }

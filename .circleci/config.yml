@@ -10,9 +10,6 @@ jobs:
           name: Install JavaScript Deps
           command: yarn install --frozen-lockfile
       - run:
-          name: JavaScript Linter
-          command: yarn workspaces run lint
-      - run:
           name: Run Unit Tests
           command: yarn test:ci
       - run:
