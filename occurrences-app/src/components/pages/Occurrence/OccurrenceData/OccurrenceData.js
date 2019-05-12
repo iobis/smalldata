@@ -94,7 +94,7 @@ function ScientificNameInput({ scientificName, onChange }) {
   useEffect(() => {
     const getByName = async() => {
       const response = await MarineSpeciesClient.getByName(name)
-      const newValid = response.find(record => record.scientificname.toLocaleLowerCase() === name.toLowerCase())
+      const newValid = response.find(record => (record.scientificname || '').toLocaleLowerCase() === name.toLowerCase())
       setValid(newValid)
     }
 
