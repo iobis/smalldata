@@ -3,6 +3,7 @@ import DatePicker from '../../../form/DatePicker'
 import InputRadioGroup from '../../../form/InputRadioGroup'
 import PropTypes from 'prop-types'
 import React from 'react'
+import ScientificNameInput from './ScientificNameInput'
 import { useTranslation } from 'react-i18next'
 
 const basisOfRecordOptions = ['humanObservation', 'fossilSpecimen', 'livingSpecimen', 'machineSpecimen', 'preservedSpecimen']
@@ -22,17 +23,9 @@ export default function OccurrenceData({ onChange, data }) {
   return (
     <div className="occurrence-data section is-fluid">
       <div className="columns">
-        <div className="field is-four-fifths column">
-          <label className="label">{t('occurrenceForm.occurrenceData.scientificName')}</label>
-          <div className="control">
-            <input
-              className="input"
-              onChange={(value) => updateField('scientificName', value.target.value)}
-              placeholder={t('occurrenceForm.occurrenceData.scientificName')}
-              type="text"
-              value={scientificName}/>
-          </div>
-        </div>
+        <ScientificNameInput
+          onChange={(value) => updateField('scientificName', value)}
+          scientificName={scientificName}/>
       </div>
       <div className="columns">
         <div className="event-begin-date column field is-two-fifths">

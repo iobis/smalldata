@@ -8,23 +8,41 @@ exports[`OccurrenceData renders correctly 1`] = `
     className="columns"
   >
     <div
-      className="field is-four-fifths column"
+      className="field column is-four-fifths"
     >
-      <label
-        className="label"
-      >
-        occurrenceForm.occurrenceData.scientificName
-      </label>
       <div
-        className="control"
+        className="dropdown"
       >
-        <input
-          className="input"
-          onChange={[Function]}
-          placeholder="occurrenceForm.occurrenceData.scientificName"
-          type="text"
-          value="scientific name"
-        />
+        <div
+          className="dropdown-trigger"
+        >
+          <label
+            className="label"
+          >
+            occurrenceForm.occurrenceData.scientificName
+          </label>
+          <div
+            className="control has-icons-right"
+          >
+            <input
+              className="input"
+              onChange={[Function]}
+              onClick={[Function]}
+              placeholder="occurrenceForm.occurrenceData.scientificName"
+              type="text"
+              value="scientific name"
+            />
+          </div>
+        </div>
+        <div
+          className="dropdown-menu"
+          id="dropdown-menu"
+          role="menu"
+        >
+          <div
+            className="dropdown-content"
+          />
+        </div>
       </div>
     </div>
   </div>

@@ -1,19 +1,25 @@
 import OccurrenceData from './OccurrenceData'
+import { faCheck } from '@fortawesome/free-solid-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
+
+library.add(faCheck)
 
 export default [{
-  component: OccurrenceData,
-  name:      'no selection step',
-  props:     {
-    onChange: console.log,
+  component:   OccurrenceData,
+  name:        'no selection step',
+  props:       {
     data:     {
-      basisOfRecord:    null,
-      beginDate:        new Date(),
+      basisOfRecord:    'humanObservation',
+      beginDate:        Date.now(),
       endDate:          null,
       lifestage:        null,
-      occurrenceStatus: null,
+      occurrenceStatus: 'present',
       scientificName:   '',
       sex:              null
     }
+  },
+  controllers: {
+    onChange: data =>({ data })
   }
 }, {
   component: OccurrenceData,
