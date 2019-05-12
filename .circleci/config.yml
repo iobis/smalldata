@@ -15,8 +15,8 @@ jobs:
       - run:
           name: Save JavaScript Linter results
           command: |
-            mkdir -p ~/test-results/junit/
-            cp occurrences-app/reports/junit/js-lint-results.xml ~/test-results/junit/occurrences-app/ \;
+            mkdir -p ~/test-results/junit/occurrences-app/
+            cp occurrences-app/reports/junit/js-lint-results.xml ~/test-results/junit/occurrences-app/
       - run:
           name: Run Unit Tests
           command: yarn test:ci
