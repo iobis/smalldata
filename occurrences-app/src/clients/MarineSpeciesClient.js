@@ -4,7 +4,11 @@ export function getByName(scientificName) {
   const url = 'http://www.marinespecies.org/rest/AphiaRecordsByName/' + scientificName.trim() + '?like=true&marine_only=false'
   return fetch(url)
     .then((res) => res.text())
-    .then((text) => text.length ? JSON.parse(text) : defaultResult)
+    .then((text) => text.length ? JSON.parse(text).filter(isRecordAvailable) : defaultResult)
+}
+
+function isRecordAvailable(record) {
+  return record.status !== 'quarantined' && record.status !== 'deleted'
 }
 
 export function getById(scientificNameId) {
