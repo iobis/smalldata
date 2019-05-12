@@ -216,7 +216,8 @@ export default {
     navbar:         {
       help:      'HELP',
       inputData: 'INPUT DATA',
-      logout:    'logout'
+      logout:    'logout',
+      login:     'login'
     }
   }
 }

@@ -5,9 +5,11 @@ import React, { useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link, NavLink } from 'react-router-dom'
 import { useOnClickOutside } from '../../hooks/hooks'
+import { useAuth } from '../../hooks/auth'
 import { useTranslation } from 'react-i18next'
 
 export default function Navbar() {
+  const { auth } = useAuth()
   const { t } = useTranslation()
   const [navbarMenuActive, setNavbarMenuActive] = useState(false)
   const menuRef = useRef()
@@ -30,22 +32,62 @@ export default function Navbar() {
         </a>
       </div>
       <div className={classNames('navbar-menu', { 'is-active': navbarMenuActive })}>
-        <div className="navbar-start">
-          <NavbarItem onClick={hideNavbarMenu} to="/input-data">
-            {t('navbar.inputData')}
-          </NavbarItem>
-          <NavbarItem onClick={hideNavbarMenu} to="/help">
-            {t('navbar.help')}
-          </NavbarItem>
-        </div>
-        <div className="navbar-end">
-          <a className="navbar-item" onClick={() => console.log('TBD: logout clicked')}>
-            <span className="icon" style={{ 'marginRight': 6 }}><FontAwesomeIcon icon="user"/></span>
-            {t('navbar.logout')}
-          </a>
-        </div>
+        { auth.loggedIn?
+          <div className="navbar-start">
+            <NavbarItem onClick={hideNavbarMenu} to="/input-data">
+              {t('navbar.inputData')}
+            </NavbarItem>
+            <NavbarItem onClick={hideNavbarMenu} to="/help">
+              {t('navbar.help')}
+            </NavbarItem>
+          </div>:
+          <div/>
+        }
+        <LoggedButton isLoggedIn={auth.loggedIn}/>
       </div>
     </nav>
+  )
+}
+
+const LoggedButton = ({ isLoggedIn }) => {
+  const { auth } = useAuth()
+  const name = auth.claims && auth.claims.name
+  return (
+    <div className="navbar-end">
+      <span className="navbar-item">{name}</span>
+      {isLoggedIn?<Logout/>:<Login/>}
+    </div>
+  )
+}
+
+LoggedButton.propTypes = {
+  isLoggedIn: PropTypes.bool.isRequired
+}
+
+function Logout() {
+  const { logOut } = useAuth()
+  return AuthButton('navbar.logout', logOut)
+}
+
+function Login() {
+  return AuthButton('navbar.login',
+    () => {
+      const callback = (process.env.PUBLIC_URL==null || process.env.PUBLIC_URL==='')?
+        window.location.origin:process.env.PUBLIC_URL
+      window.location = "https://oceanexpert.net/socialsignin/?callback=" + callback
+    }
+  )
+}
+
+function AuthButton(label, onClick) {
+  const { t } = useTranslation()
+  return (
+    <a className="navbar-item" onClick={onClick}>
+      <span className="icon" style={{ 'marginRight': 6 }}>
+        <FontAwesomeIcon icon="user"/>
+      </span>
+      {t(label)}
+    </a>
   )
 }
 
