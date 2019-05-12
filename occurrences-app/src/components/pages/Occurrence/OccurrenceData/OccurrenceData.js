@@ -2,9 +2,11 @@ import CopyPreviousData from '../CopyPreviousData'
 import DatePicker from '../../../form/DatePicker'
 import InputRadioGroup from '../../../form/InputRadioGroup'
 import PropTypes from 'prop-types'
-import React from 'react'
-import { useTranslation } from 'react-i18next'
+import React, { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import * as MarineSpeciesClient from '../../../../clients/MarineSpeciesClient'
+import { useDebounce } from '../../../../hooks/hooks'
+import { useTranslation } from 'react-i18next'
 
 const basisOfRecordOptions = ['humanObservation', 'fossilSpecimen', 'livingSpecimen', 'machineSpecimen', 'preservedSpecimen']
 const lifestageOptions = ['egg', 'eft', 'juvenile', 'adult', 'unspecified']
@@ -24,7 +26,7 @@ export default function OccurrenceData({ onChange, data }) {
     <div className="occurrence-data section is-fluid">
       <div className="columns">
         <ScientificNameInput
-          onChange={(value) => updateField('scientificName', value.target.value)}
+          onChange={(value) => updateField('scientificName', value)}
           scientificName={scientificName}/>
       </div>
       <div className="columns">
@@ -84,6 +86,25 @@ OccurrenceData.propTypes = {
 
 function ScientificNameInput({ scientificName, onChange }) {
   const { t } = useTranslation()
+  const [valid, setValid] = useState(false)
+  const [name, setName] = useState(scientificName)
+
+  const debouncedName = useDebounce(name, 500)
+
+  useEffect(() => {
+    const getByName = async() => {
+      const response = await MarineSpeciesClient.getByName(name)
+      const newValid = response.find(record => record.scientificname.toLocaleLowerCase() === name.toLowerCase())
+      setValid(newValid)
+    }
+
+    if (debouncedName) getByName()
+  }, [debouncedName])
+
+  function handleNameChange(newName) {
+    onChange(newName)
+    setName(newName)
+  }
 
   return (
     <div className="field is-four-fifths column">
@@ -91,13 +112,13 @@ function ScientificNameInput({ scientificName, onChange }) {
       <div className="control has-icons-right">
         <input
           className="input"
-          onChange={(value) => onChange('scientificName', value.target.value)}
+          onChange={(value) => handleNameChange(value.target.value)}
           placeholder={t('occurrenceForm.occurrenceData.scientificName')}
           type="text"
-          value={scientificName}/>
-        <span className="clear icon is-small is-right">
-          <FontAwesomeIcon className="check" icon="check"/>
-        </span>
+          value={name}/>
+        {valid
+          ? <span className="clear icon is-small is-right"><FontAwesomeIcon className="check" icon="check"/></span>
+          : null}
       </div>
     </div>
   )

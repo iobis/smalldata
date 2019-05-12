@@ -25,14 +25,6 @@ exports[`OccurrenceData renders correctly 1`] = `
           type="text"
           value="scientific name"
         />
-        <span
-          className="clear icon is-small is-right"
-        >
-          <i
-            className="check"
-            icon="check"
-          />
-        </span>
       </div>
     </div>
   </div>
