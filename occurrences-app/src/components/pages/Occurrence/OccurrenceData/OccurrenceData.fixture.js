@@ -6,11 +6,11 @@ export default [{
   props:     {
     onChange: console.log,
     data:     {
-      basisOfRecord:    null,
-      beginDate:        new Date(),
+      basisOfRecord:    'humanObservation',
+      beginDate:        Date.now(),
       endDate:          null,
       lifestage:        null,
-      occurrenceStatus: null,
+      occurrenceStatus: 'present',
       scientificName:   '',
       sex:              null
     }
