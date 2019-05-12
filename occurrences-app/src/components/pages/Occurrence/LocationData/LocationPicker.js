@@ -15,7 +15,12 @@ import { useTranslation } from 'react-i18next'
 const DefaultIcon = L.icon({
   iconRetinaUrl: iconRetinaUrl,
   iconUrl:       iconUrl,
-  shadowUrl:     shadowUrlUrl
+  shadowUrl:     shadowUrlUrl,
+  iconSize:      [25, 41],
+  iconAnchor:    [12, 41],
+  popupAnchor:   [1, -34],
+  tooltipAnchor: [16, -28],
+  shadowSize:    [41, 41]
 })
 
 L.Marker.prototype.options.icon = DefaultIcon

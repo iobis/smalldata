@@ -8,6 +8,8 @@ export default [{
   component: LocationPickerModal,
   name:      'default',
   props:     {
-    onChange: console.log
+    active:   true,
+    onChange: console.log,
+    onClose: console.log
   }
 }]
