@@ -15,12 +15,6 @@ export default function InputText({ className, name, onChange, optional, value }
       <label className={classNames('label', { 'has-text-weight-normal': optional })}>
         {label}
       </label>
-      <input
-        className="input"
-        onChange={(e) => onChange(e.target.value)}
-        placeholder={i18next.exists(placeholderKey) ? t(placeholderKey) : undefined}
-        type="text"
-        value={value}/>
       {i18next.exists(helpKey) ? <p className="help">{t(helpKey)}</p> : null}
     </div>
   )
