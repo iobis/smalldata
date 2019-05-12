@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import {
   faAngleDown,
   faCheckCircle,
+  faCheck,
   faEnvelope,
   faSearch,
   faTimesCircle,
@@ -15,7 +16,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 
-library.add(faAngleDown, faEnvelope, faCheckCircle, faSearch, faTimesCircle, faUser)
+library.add(faAngleDown, faCheck, faEnvelope, faCheckCircle, faSearch, faTimesCircle, faUser)
 
 export default function App() {
   return (

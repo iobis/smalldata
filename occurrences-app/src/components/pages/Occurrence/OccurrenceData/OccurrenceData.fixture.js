@@ -1,4 +1,8 @@
 import OccurrenceData from './OccurrenceData'
+import { faCheck } from '@fortawesome/free-solid-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
+
+library.add(faCheck)
 
 export default [{
   component:   OccurrenceData,
