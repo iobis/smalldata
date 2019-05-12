@@ -1,10 +1,6 @@
 import { isScientificNameId, getByName, getById } from './MarineSpeciesClient'
 
 describe('MarineSpeciesClient', () => {
-  afterEach(() => {
-    global.fetch.mockRestore()
-  })
-
   describe('getByName', () => {
     beforeEach(() => {
       global.fetch = jest.fn().mockImplementation(() =>
@@ -14,12 +10,16 @@ describe('MarineSpeciesClient', () => {
       )
     })
 
+    afterEach(() => {
+      global.fetch.mockRestore()
+    })
+
     it('for some name', async() => {
-      const response = await getByName('Ala abra')
+      const response = await getByName('Abra alba')
 
       expect(response).toEqual([{ result: [] }])
       expect(fetch).toHaveBeenCalledTimes(1)
-      expect(fetch).toHaveBeenCalledWith('http://www.marinespecies.org/rest/AphiaRecordsByName/Ala abra?like=true&marine_only=false')
+      expect(fetch).toHaveBeenCalledWith('http://www.marinespecies.org/rest/AphiaRecordsByName/Abra alba?like=true&marine_only=false')
     })
 
     it('for name with extra whitespaces spaces', async() => {
@@ -28,6 +28,13 @@ describe('MarineSpeciesClient', () => {
       expect(response).toEqual([{ result: [] }])
       expect(fetch).toHaveBeenCalledTimes(1)
       expect(fetch).toHaveBeenCalledWith('http://www.marinespecies.org/rest/AphiaRecordsByName/Ala?like=true&marine_only=false')
+    })
+
+    it('for name with spaces only', async() => {
+      const response = await getByName('     ')
+
+      expect(response).toEqual([])
+      expect(fetch).toHaveBeenCalledTimes(0)
     })
   })
 
@@ -38,6 +45,10 @@ describe('MarineSpeciesClient', () => {
           resolve({ text: () => '{"result": "ok"}' })
         })
       )
+    })
+
+    afterEach(() => {
+      global.fetch.mockRestore()
     })
 
     it('for correct id', async() => {
