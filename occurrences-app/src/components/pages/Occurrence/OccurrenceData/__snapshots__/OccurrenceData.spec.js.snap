@@ -16,7 +16,7 @@ exports[`OccurrenceData renders correctly 1`] = `
         occurrenceForm.occurrenceData.scientificName
       </label>
       <div
-        className="control"
+        className="control has-icons-right"
       >
         <input
           className="input"
@@ -25,6 +25,14 @@ exports[`OccurrenceData renders correctly 1`] = `
           type="text"
           value="scientific name"
         />
+        <span
+          className="clear icon is-small is-right"
+        >
+          <i
+            className="check"
+            icon="check"
+          />
+        </span>
       </div>
     </div>
   </div>

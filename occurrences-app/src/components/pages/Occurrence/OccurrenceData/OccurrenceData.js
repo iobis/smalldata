@@ -4,6 +4,7 @@ import InputRadioGroup from '../../../form/InputRadioGroup'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const basisOfRecordOptions = ['humanObservation', 'fossilSpecimen', 'livingSpecimen', 'machineSpecimen', 'preservedSpecimen']
 const lifestageOptions = ['egg', 'eft', 'juvenile', 'adult', 'unspecified']
@@ -22,17 +23,9 @@ export default function OccurrenceData({ onChange, data }) {
   return (
     <div className="occurrence-data section is-fluid">
       <div className="columns">
-        <div className="field is-four-fifths column">
-          <label className="label">{t('occurrenceForm.occurrenceData.scientificName')}</label>
-          <div className="control">
-            <input
-              className="input"
-              onChange={(value) => updateField('scientificName', value.target.value)}
-              placeholder={t('occurrenceForm.occurrenceData.scientificName')}
-              type="text"
-              value={scientificName}/>
-          </div>
-        </div>
+        <ScientificNameInput
+          onChange={(value) => updateField('scientificName', value.target.value)}
+          scientificName={scientificName}/>
       </div>
       <div className="columns">
         <div className="event-begin-date column field is-two-fifths">
@@ -87,4 +80,30 @@ OccurrenceData.propTypes = {
     sex:              PropTypes.oneOf(sexOptions)
   }).isRequired,
   onChange: PropTypes.func.isRequired
+}
+
+function ScientificNameInput({ scientificName, onChange }) {
+  const { t } = useTranslation()
+
+  return (
+    <div className="field is-four-fifths column">
+      <label className="label">{t('occurrenceForm.occurrenceData.scientificName')}</label>
+      <div className="control has-icons-right">
+        <input
+          className="input"
+          onChange={(value) => onChange('scientificName', value.target.value)}
+          placeholder={t('occurrenceForm.occurrenceData.scientificName')}
+          type="text"
+          value={scientificName}/>
+        <span className="clear icon is-small is-right">
+          <FontAwesomeIcon className="check" icon="check"/>
+        </span>
+      </div>
+    </div>
+  )
+}
+
+ScientificNameInput.propTypes = {
+  onChange:       PropTypes.func.isRequired,
+  scientificName: PropTypes.string.isRequired
 }
