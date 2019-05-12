@@ -94,22 +94,22 @@ function ScientificNameInput({ scientificName, onChange }) {
   const [nameValid, setNameValid] = useState(false)
   const [suggestions, setSuggestions] = useState([])
   const [dropdownActive, setDropdownActive] = useState(false)
-  const hideOptions = () => setDropdownActive(false)
-  const showOptions = () => {if (dropdownActive === false) setDropdownActive(true)}
+  const hideDropdownOptions = () => setDropdownActive(false)
+  const showDropdownOption = () => {if (dropdownActive === false) setDropdownActive(true)}
   const debouncedName = useDebounce(name, 500)
-  const isRecordWithName = (record, name) => (record.scientificname || '').toLowerCase() === (name || '').toLowerCase()
-  const findRecordWithSameName = (name, records) => records.find(record => isRecordWithName(record, name))
+  const isRecordWithName = (record, name) => (record.scientificname || '').trim().toLowerCase() === (name || '').trim().toLowerCase()
+  const findRecordWithName = (records, name) => records.find(record => isRecordWithName(record, name))
 
-  useOnClickOutside(ref, hideOptions)
+  useOnClickOutside(ref, hideDropdownOptions)
 
   useEffect(() => {
     const getByName = async() => {
       setLoading(true)
-      const records = await MarineSpeciesClient.getByName(name)
-      const newValid = findRecordWithSameName(name, records)
-      setSuggestions(records)
-      setNameValid(newValid)
-      if (nameValid) hideOptions()
+      const newSuggestions = await MarineSpeciesClient.getByName(name)
+      const newNameValid = !!findRecordWithName(newSuggestions, name)
+      setSuggestions(newSuggestions)
+      setNameValid(newNameValid)
+      if (!newNameValid && newSuggestions.length > 0) showDropdownOption()
       setLoading(false)
       setFirstRender(false)
     }
@@ -123,7 +123,7 @@ function ScientificNameInput({ scientificName, onChange }) {
   }
 
   function handleSuggestionClick(newName) {
-    hideOptions()
+    hideDropdownOptions()
     onChange(newName)
     setName(newName)
   }
@@ -137,7 +137,7 @@ function ScientificNameInput({ scientificName, onChange }) {
             <input
               className={classNames('input', { 'is-danger': !firstRender && !nameValid && suggestions.length === 0 })}
               onChange={(value) => handleNameChange(value.target.value)}
-              onClick={showOptions}
+              onClick={showDropdownOption}
               placeholder={t('occurrenceForm.occurrenceData.scientificName')}
               type="text"
               value={name}/>
