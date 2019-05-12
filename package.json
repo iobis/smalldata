@@ -1,8 +1,8 @@
 {
   "name": "smalldata",
   "version": "1.0.0",
-  "homepage": "/occurrences",
   "private": true,
+  "homepage": "/occurrences",
   "repository": "https://github.com/iobis/smalldata",
   "license": "MIT",
   "main": "index.js",
@@ -16,6 +16,7 @@
     "build:front-end": "run-s occurrences-app:build occurrences-app:copy-to-server",
     "build:zip": "run-s build:front-end build:back-end",
     "clean": "shx rm -rf ./occurrences-app/build ./server/src/main/resources/webroot/*",
+    "lint": "yarn workspaces run lint",
     "occurrences-app:build": "yarn workspace @smalldata/occurrences-app build",
     "occurrences-app:copy-to-server": "shx mkdir -p ./server/src/main/resources/webroot/ && shx cp -rf ./occurrences-app/build/* ./server/src/main/resources/webroot/",
     "prettier": "prettier --print-width 100 --jsx-bracket-same-line --single-quote --no-semi --write **/*.{scss,css,json,js,jsx}",

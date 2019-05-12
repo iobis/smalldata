@@ -4,6 +4,7 @@
   "private": true,
   "main": "src/index.js",
   "scripts": {
+    "lint": "echo Nothig to lint yet",
     "test:ci": "jest"
   },
   "dependencies": {
