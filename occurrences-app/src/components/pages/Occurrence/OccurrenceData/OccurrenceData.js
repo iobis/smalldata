@@ -88,6 +88,8 @@ OccurrenceData.propTypes = {
 function ScientificNameInput({ scientificName, onChange }) {
   const { t } = useTranslation()
   const ref = useRef()
+  const [firstRender, setFirstRender] = useState(true)
+  const [loading, setLoading] = useState(false)
   const [name, setName] = useState(scientificName)
   const [nameValid, setNameValid] = useState(false)
   const [suggestions, setSuggestions] = useState([])
@@ -95,24 +97,32 @@ function ScientificNameInput({ scientificName, onChange }) {
   const hideOptions = () => setDropdownActive(false)
   const showOptions = () => {if (dropdownActive === false) setDropdownActive(true)}
   const debouncedName = useDebounce(name, 500)
-  const isRecordWithName = (record, name) =>  (record.scientificname || '').toLowerCase() === (name || '').toLowerCase()
+  const isRecordWithName = (record, name) => (record.scientificname || '').toLowerCase() === (name || '').toLowerCase()
   const findRecordWithSameName = (name, records) => records.find(record => isRecordWithName(record, name))
 
   useOnClickOutside(ref, hideOptions)
 
   useEffect(() => {
     const getByName = async() => {
+      setLoading(true)
       const records = await MarineSpeciesClient.getByName(name)
       const newValid = findRecordWithSameName(name, records)
-      showOptions()
       setSuggestions(records)
       setNameValid(newValid)
+      if (nameValid) hideOptions()
+      setLoading(false)
+      setFirstRender(false)
     }
 
     if (debouncedName) getByName()
   }, [debouncedName])
 
   function handleNameChange(newName) {
+    onChange(newName)
+    setName(newName)
+  }
+
+  function handleSuggestionClick(newName) {
     hideOptions()
     onChange(newName)
     setName(newName)
@@ -123,15 +133,15 @@ function ScientificNameInput({ scientificName, onChange }) {
       <div className={classNames('dropdown', { 'is-active': dropdownActive && suggestions.length > 0 })}>
         <div className="dropdown-trigger">
           <label className="label">{t('occurrenceForm.occurrenceData.scientificName')}</label>
-          <div className="control has-icons-right">
+          <div className={classNames('control has-icons-right', { 'is-loading': loading })}>
             <input
-              className="input"
+              className={classNames('input', { 'is-danger': !firstRender && !nameValid && suggestions.length === 0 })}
               onChange={(value) => handleNameChange(value.target.value)}
               onClick={showOptions}
               placeholder={t('occurrenceForm.occurrenceData.scientificName')}
               type="text"
               value={name}/>
-            {nameValid
+            {nameValid && !loading
               ? <span className="clear icon is-small is-right"><FontAwesomeIcon className="check" icon="check"/></span>
               : null}
           </div>
@@ -142,7 +152,7 @@ function ScientificNameInput({ scientificName, onChange }) {
               <div
                 className={classNames('dropdown-item', { 'is-active': isRecordWithName(record, name) })}
                 key={record.lsid}
-                onClick={() => handleNameChange(record.scientificname)}>
+                onClick={() => handleSuggestionClick(record.scientificname)}>
                 {record.scientificname}
               </div>
             ))}
