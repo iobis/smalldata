@@ -1,6 +1,19 @@
 .occurrence-data {
   margin-bottom: 1.25rem;
 
+  .dropdown {
+    display: block;
+
+    .dropdown-content {
+      max-height: 15em;
+      overflow: auto;
+    }
+
+    .dropdown-menu {
+      width: 100%;
+    }
+  }
+
   .field {
     .label {
       small {

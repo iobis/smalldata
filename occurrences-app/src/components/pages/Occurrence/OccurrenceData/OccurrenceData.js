@@ -2,11 +2,12 @@ import CopyPreviousData from '../CopyPreviousData'
 import DatePicker from '../../../form/DatePicker'
 import InputRadioGroup from '../../../form/InputRadioGroup'
 import PropTypes from 'prop-types'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as MarineSpeciesClient from '../../../../clients/MarineSpeciesClient'
-import { useDebounce } from '../../../../hooks/hooks'
+import { useDebounce, useOnClickOutside } from '../../../../hooks/hooks'
 import { useTranslation } from 'react-i18next'
+import classNames from 'classnames'
 
 const basisOfRecordOptions = ['humanObservation', 'fossilSpecimen', 'livingSpecimen', 'machineSpecimen', 'preservedSpecimen']
 const lifestageOptions = ['egg', 'eft', 'juvenile', 'adult', 'unspecified']
@@ -86,39 +87,67 @@ OccurrenceData.propTypes = {
 
 function ScientificNameInput({ scientificName, onChange }) {
   const { t } = useTranslation()
-  const [valid, setValid] = useState(false)
+  const ref = useRef()
   const [name, setName] = useState(scientificName)
-
+  const [nameValid, setNameValid] = useState(false)
+  const [suggestions, setSuggestions] = useState([])
+  const [dropdownActive, setDropdownActive] = useState(false)
+  const hideOptions = () => setDropdownActive(false)
+  const showOptions = () => {if (dropdownActive === false) setDropdownActive(true)}
   const debouncedName = useDebounce(name, 500)
+  const isRecordWithName = (record, name) =>  (record.scientificname || '').toLowerCase() === (name || '').toLowerCase()
+  const findRecordWithSameName = (name, records) => records.find(record => isRecordWithName(record, name))
+
+  useOnClickOutside(ref, hideOptions)
 
   useEffect(() => {
     const getByName = async() => {
-      const response = await MarineSpeciesClient.getByName(name)
-      const newValid = response.find(record => (record.scientificname || '').toLocaleLowerCase() === name.toLowerCase())
-      setValid(newValid)
+      const records = await MarineSpeciesClient.getByName(name)
+      const newValid = findRecordWithSameName(name, records)
+      showOptions()
+      setSuggestions(records)
+      setNameValid(newValid)
     }
 
     if (debouncedName) getByName()
   }, [debouncedName])
 
   function handleNameChange(newName) {
+    hideOptions()
     onChange(newName)
     setName(newName)
   }
 
   return (
-    <div className="field is-four-fifths column">
-      <label className="label">{t('occurrenceForm.occurrenceData.scientificName')}</label>
-      <div className="control has-icons-right">
-        <input
-          className="input"
-          onChange={(value) => handleNameChange(value.target.value)}
-          placeholder={t('occurrenceForm.occurrenceData.scientificName')}
-          type="text"
-          value={name}/>
-        {valid
-          ? <span className="clear icon is-small is-right"><FontAwesomeIcon className="check" icon="check"/></span>
-          : null}
+    <div className="field column is-four-fifths" ref={ref}>
+      <div className={classNames('dropdown', { 'is-active': dropdownActive && suggestions.length > 0 })}>
+        <div className="dropdown-trigger">
+          <label className="label">{t('occurrenceForm.occurrenceData.scientificName')}</label>
+          <div className="control has-icons-right">
+            <input
+              className="input"
+              onChange={(value) => handleNameChange(value.target.value)}
+              onClick={showOptions}
+              placeholder={t('occurrenceForm.occurrenceData.scientificName')}
+              type="text"
+              value={name}/>
+            {nameValid
+              ? <span className="clear icon is-small is-right"><FontAwesomeIcon className="check" icon="check"/></span>
+              : null}
+          </div>
+        </div>
+        <div className="dropdown-menu" id="dropdown-menu" role="menu">
+          <div className="dropdown-content">
+            {suggestions.map(record => (
+              <div
+                className={classNames('dropdown-item', { 'is-active': isRecordWithName(record, name) })}
+                key={record.lsid}
+                onClick={() => handleNameChange(record.scientificname)}>
+                {record.scientificname}
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   )
