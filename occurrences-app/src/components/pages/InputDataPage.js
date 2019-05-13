@@ -24,17 +24,17 @@ export default function InputDataPage() {
           <h4 className="title is-4">{t('inputDataPage.copyPreviousHeader')}</h4>
           <table className="table is-striped is-hoverable is-fullwidth">
             <thead>
-            <tr>
-              <th/>
-              <th>{t('inputDataPage.table.dateAdded')}</th>
-              <th>{t('inputDataPage.table.scientificName')}</th>
-              <th>{t('inputDataPage.table.dataset')}</th>
-              <th>{t('inputDataPage.table.occurrenceDate')}</th>
-              <th/>
-            </tr>
+              <tr>
+                <th/>
+                <th>{t('inputDataPage.table.dateAdded')}</th>
+                <th>{t('inputDataPage.table.scientificName')}</th>
+                <th>{t('inputDataPage.table.dataset')}</th>
+                <th>{t('inputDataPage.table.occurrenceDate')}</th>
+                <th/>
+              </tr>
             </thead>
             <tbody>
-            {occurrences.map(occurrence => <OccurrenceRow key={occurrence.id} {...occurrence}/>)}
+              {occurrences.map(occurrence => <OccurrenceRow key={occurrence.id} {...occurrence}/>)}
             </tbody>
           </table>
         </div>

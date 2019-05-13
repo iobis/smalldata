@@ -32,7 +32,7 @@ export default function Navbar() {
         </a>
       </div>
       <div className={classNames('navbar-menu', { 'is-active': navbarMenuActive })}>
-        { auth.loggedIn?
+        { auth.loggedIn ?
           <div className="navbar-start">
             <NavbarItem onClick={hideNavbarMenu} to="/input-data">
               {t('navbar.inputData')}
@@ -40,7 +40,7 @@ export default function Navbar() {
             <NavbarItem onClick={hideNavbarMenu} to="/help">
               {t('navbar.help')}
             </NavbarItem>
-          </div>:
+          </div> :
           <div/>
         }
         <LoggedButton isLoggedIn={auth.loggedIn}/>
@@ -55,7 +55,7 @@ const LoggedButton = ({ isLoggedIn }) => {
   return (
     <div className="navbar-end">
       <span className="navbar-item">{name}</span>
-      {isLoggedIn?<Logout/>:<Login/>}
+      {isLoggedIn ? <Logout/> : <Login/>}
     </div>
   )
 }
@@ -72,9 +72,9 @@ function Logout() {
 function Login() {
   return AuthButton('navbar.login',
     () => {
-      const callback = (process.env.PUBLIC_URL==null || process.env.PUBLIC_URL==='')?
-        window.location.origin:process.env.PUBLIC_URL
-      window.location = "https://oceanexpert.net/socialsignin/?callback=" + callback
+      const callback = (process.env.PUBLIC_URL == null || process.env.PUBLIC_URL === '') ?
+        window.location.origin : process.env.PUBLIC_URL
+      window.location = 'https://oceanexpert.net/socialsignin/?callback=' + callback
     }
   )
 }

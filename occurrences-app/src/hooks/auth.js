@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types'
 import React, { createContext, useContext, useState } from 'react'
 
-export const AuthContext = createContext([{}, () => {}]);
+export const AuthContext = createContext([{}, () => {}])
 
 export const AuthProvider = (props) => {
-  const [state, setState] = useState({loggedIn: false})
+  const [state, setState] = useState({ loggedIn: false })
   return (
     <AuthContext.Provider value={[state, setState]}>
       {props.children}
@@ -13,20 +13,19 @@ export const AuthProvider = (props) => {
 }
 
 AuthProvider.propTypes = {
-  children: PropTypes.object.isRequired,
+  children: PropTypes.object.isRequired
 }
-
 
 const parseJwt = (token) => {
   try {
-    return JSON.parse(atob(token.split('.')[1]));
+    return JSON.parse(atob(token.split('.')[1]))
   } catch (e) {
-    return null;
+    return null
   }
 }
 
 export const useAuth = () => {
-  const [auth, setAuth] = useContext(AuthContext);
+  const [auth, setAuth] = useContext(AuthContext)
 
   function logIn(token) {
     localStorage.setItem('jwt', token)
@@ -40,9 +39,8 @@ export const useAuth = () => {
   }
 
   function setClaims(claims) {
-    setAuth(auth => ({...auth, claims: claims}))
+    setAuth(auth => ({ ...auth, claims: claims }))
   }
-
 
   return { auth, logIn, logOut }
 }

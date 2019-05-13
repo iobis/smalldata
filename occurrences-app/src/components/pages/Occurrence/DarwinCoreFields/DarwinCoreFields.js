@@ -39,25 +39,25 @@ export default function DarwinCoreFields({ fields, onChange }) {
       </div>
       <table className="table is-fullwidth">
         <thead>
-        <tr>
-          <th>{t('common.name')}</th>
-          <th>{t('common.value')}</th>
-          <th/>
-        </tr>
+          <tr>
+            <th>{t('common.name')}</th>
+            <th>{t('common.value')}</th>
+            <th/>
+          </tr>
         </thead>
         <tbody>
-        {selectedFields.map((field, i) => (
+          {selectedFields.map((field, i) => (
           // eslint-disable-next-line react/no-array-index-key
-          <tr className="fieldrow" key={i}>
-            <td>{field.name}</td>
-            <td>{field.value}</td>
-            <td>
-              <button className="button remove" onClick={() => removeRowItem(i)}>
-                {t('common.remove')}
-              </button>
-            </td>
-          </tr>
-        ))}
+            <tr className="fieldrow" key={i}>
+              <td>{field.name}</td>
+              <td>{field.value}</td>
+              <td>
+                <button className="button remove" onClick={() => removeRowItem(i)}>
+                  {t('common.remove')}
+                </button>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>

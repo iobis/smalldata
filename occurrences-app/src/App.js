@@ -21,7 +21,6 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 library.add(faAngleDown, faEnvelope, faCheckCircle, faSearch, faTimesCircle, faUser)
 
 export default function App() {
-
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <AuthProvider>
@@ -37,23 +36,23 @@ const SecureRoute = ({ component: Component, ...rest }) => {
   return (
     <Route
       {...rest}
-      render = {(props) => auth.loggedIn?
-        <Component {...props}/>:<Redirect to="/"/>}/>
+      render = {(props) => auth.loggedIn ?
+        <Component {...props}/> : <Redirect to="/"/>}/>
   )
 }
 
 SecureRoute.propTypes = {
   component: PropTypes.func.isRequired,
-  exact: PropTypes.bool,
-  path: PropTypes.string.isRequired
+  exact:     PropTypes.bool,
+  path:      PropTypes.string.isRequired
 }
 
 const AppDiv = () => {
   const { auth, logIn } = useAuth()
 
   const urlParams = new URLSearchParams(window.location.search)
-  if(!auth.loggedIn) {
-    var token = urlParams.get('token') || localStorage.getItem('jwt')
+  if (!auth.loggedIn) {
+    const token = urlParams.get('token') || localStorage.getItem('jwt')
     if (token) logIn(token)
   }
 
@@ -62,12 +61,13 @@ const AppDiv = () => {
       <Navbar/>
       <Switch>
         <Route
-          exact path="/" render = {() => auth.loggedIn?
-          <Redirect to="/input-data"/>:
-          <div>Please log in!</div>}/>
+          exact path="/" render = {() => auth.loggedIn ?
+            <Redirect to="/input-data"/> :
+            <div>Please log in!</div>}/>
         <SecureRoute component={InputDataPage} exact path="/input-data"/>
         <SecureRoute component={OccurrenceForm} exact path="/input-data/new"/>
         <Route component={HelpPage} exact path="/help"/>
       </Switch>
     </div>
-  )}
+  )
+}

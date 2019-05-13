@@ -7,6 +7,6 @@ export function addUuid(obj) {
 }
 
 export function removeUuid(original) {
-  const { uuid, ...obj} = original
+  const { uuid, ...obj } = original
   return obj
 }

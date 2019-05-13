@@ -129,33 +129,33 @@ function SuggestionsResult({ suggestions, onClick }) {
   return (
     <table className="suggestions-result table is-fullwidth is-striped is-hoverable">
       <thead>
-      <tr>
-        <th>{t('common.type')}</th>
-        <th>{t('common.name')}</th>
-        <th>{t('common.longitude')}</th>
-        <th>{t('common.latitude')}</th>
-      </tr>
+        <tr>
+          <th>{t('common.type')}</th>
+          <th>{t('common.name')}</th>
+          <th>{t('common.longitude')}</th>
+          <th>{t('common.latitude')}</th>
+        </tr>
       </thead>
       <tbody>
-      {suggestions.map(suggestion => (
-        <tr
-          className="suggestion-row fieldrow"
-          key={suggestion.place_id}
-          onClick={() => onClick({ lat: Number(suggestion.lat), lng: Number(suggestion.lon) })}>
-          <td className="type">
-            {suggestion.type}
-          </td>
-          <td className="name">
-            {suggestion.display_name}
-          </td>
-          <td className="longitude">
-            {suggestion.lon}
-          </td>
-          <td className="latitude">
-            {suggestion.lat}
-          </td>
-        </tr>
-      ))}
+        {suggestions.map(suggestion => (
+          <tr
+            className="suggestion-row fieldrow"
+            key={suggestion.place_id}
+            onClick={() => onClick({ lat: Number(suggestion.lat), lng: Number(suggestion.lon) })}>
+            <td className="type">
+              {suggestion.type}
+            </td>
+            <td className="name">
+              {suggestion.display_name}
+            </td>
+            <td className="longitude">
+              {suggestion.lon}
+            </td>
+            <td className="latitude">
+              {suggestion.lat}
+            </td>
+          </tr>
+        ))}
       </tbody>
     </table>
   )

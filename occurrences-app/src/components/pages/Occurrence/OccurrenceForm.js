@@ -41,15 +41,15 @@ export default function OccurrenceForm() {
   const [darwinCoreFields, setDarwinCoreFields] = useState([])
   const [activeStepIndex, setActiveStepIndex] = useState(0)
   const [locationData, setLocationData] = useState({
-      decimalLongitude:      null,
-      decimalLatitude:       null,
-      coordinateUncertainty: null,
-      minimumDepth:          null,
-      maximumDepth:          null,
-      verbatimCoordinates:   '',
-      verbatimEventDate:     '',
-      verbatimDepth:         ''
-    }
+    decimalLongitude:      null,
+    decimalLatitude:       null,
+    coordinateUncertainty: null,
+    minimumDepth:          null,
+    maximumDepth:          null,
+    verbatimCoordinates:   '',
+    verbatimEventDate:     '',
+    verbatimDepth:         ''
+  }
   )
   const [measurementOrFact, setMeasurementOrFact] = useState([])
   const steps = [{
@@ -58,49 +58,49 @@ export default function OccurrenceForm() {
     stepDescription: t('occurrenceForm.selectDataset.stepDescription'),
     stepTitle:       t('occurrenceForm.selectDataset.stepTitle'),
     children:        <SelectDataset
-                       datasets={datasets}
-                       onChange={setSelectedDataset}
-                       selectedDataset={selectedDataset}/>
+      datasets={datasets}
+      onChange={setSelectedDataset}
+      selectedDataset={selectedDataset}/>
   }, {
     dataDescription: 'Given Values',
     selectedData:    <OccurrenceDataSummary {...occurrenceData}/>,
     stepDescription: t('occurrenceForm.occurrenceData.step.stepDescription'),
     stepTitle:       t('occurrenceForm.occurrenceData.step.stepTitle'),
     children:        <OccurrenceData
-                       data={occurrenceData}
-                       onChange={setOccurrenceData}/>
+      data={occurrenceData}
+      onChange={setOccurrenceData}/>
   }, {
     dataDescription: t('occurrenceForm.locationData.step.dataDescription'),
     selectedData:    <SelectedLocation {...locationData}/>,
     stepDescription: t('occurrenceForm.locationData.step.stepDescription'),
     stepTitle:       t('occurrenceForm.locationData.step.stepTitle'),
     children:        <LocationData
-                       data={locationData}
-                       onChange={setLocationData}/>
+      data={locationData}
+      onChange={setLocationData}/>
   }, {
     dataDescription: 'Main Info',
     selectedData:    renderIdentifiedByLabel(observationData),
     stepDescription: 'Enter further specifics',
     stepTitle:       'Observation Data',
     children:        <ObservationData
-                       observationData={observationData}
-                       onChange={setObservationData}/>
+      observationData={observationData}
+      onChange={setObservationData}/>
   }, {
     dataDescription: 'Given values',
     selectedData:    <MeasurementOrFactSummary data={measurementOrFact}/>,
     stepDescription: 'Enter further specifics',
     stepTitle:       'Measurement or Fact',
     children:        <MeasurementOrFact
-                       data={measurementOrFact}
-                       onChange={setMeasurementOrFact}/>
+      data={measurementOrFact}
+      onChange={setMeasurementOrFact}/>
   }, {
     dataDescription: '',
     selectedData:    '',
     stepDescription: 'Supply specific Darwin core fields',
     stepTitle:       'Darwin Core Fields',
     children:        <DarwinCoreFields
-                       fields={darwinCoreFields}
-                       onChange={setDarwinCoreFields}/>
+      fields={darwinCoreFields}
+      onChange={setDarwinCoreFields}/>
   }]
 
   return (

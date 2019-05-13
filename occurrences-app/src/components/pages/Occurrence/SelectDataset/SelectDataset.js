@@ -7,12 +7,12 @@ export default function SelectDataset({ datasets, selectedDataset, onChange }) {
     <div className="select-dataset columns is-fluid">
       <table className="table is-striped is-fullwidth">
         <tbody>
-        {datasets.map(dataset => (
-          <DatasetOption
-            checked={dataset.id === selectedDataset.id}
-            key={dataset.id}
-            onClick={() => onChange(dataset)}
-            {...dataset}/>))}
+          {datasets.map(dataset => (
+            <DatasetOption
+              checked={dataset.id === selectedDataset.id}
+              key={dataset.id}
+              onClick={() => onChange(dataset)}
+              {...dataset}/>))}
         </tbody>
       </table>
     </div>
