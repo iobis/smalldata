@@ -72,9 +72,9 @@ function Logout() {
 function Login() {
   return AuthButton('navbar.login',
     () => {
-    const callback = window.location.origin + process.env.PUBLIC_URL
-    window.location = 'https://oceanexpert.net/socialsignin/?callback=' + callback
-  })
+      const callback = window.location.origin + process.env.PUBLIC_URL
+      window.location = 'https://oceanexpert.net/socialsignin/?callback=' + callback
+    })
 }
 
 function AuthButton(label, onClick) {

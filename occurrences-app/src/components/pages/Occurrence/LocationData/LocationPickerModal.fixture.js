@@ -10,6 +10,6 @@ export default [{
   props:     {
     active:   true,
     onChange: console.log,
-    onClose: console.log
+    onClose:  console.log
   }
 }]

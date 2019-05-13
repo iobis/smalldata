@@ -39,7 +39,7 @@ export default function ScientificNameInput({ scientificName, onChange }) {
   }, [debouncedName])
 
   function handleNameChange(newName) {
-    if(newName === '') setNameValid(false)
+    if (newName === '') setNameValid(false)
     onChange(newName)
     setName(newName)
   }
@@ -57,7 +57,7 @@ export default function ScientificNameInput({ scientificName, onChange }) {
           <label className="label">{t('occurrenceForm.occurrenceData.scientificName')}</label>
           <div className={classNames('control has-icons-right', { 'is-loading': loading })}>
             <input
-              className={classNames('input', { 'is-danger': !firstRender && !nameValid && !dropdownActive})}
+              className={classNames('input', { 'is-danger': !firstRender && !nameValid && !dropdownActive })}
               onChange={(value) => handleNameChange(value.target.value)}
               onClick={showDropdownOption}
               placeholder={t('occurrenceForm.occurrenceData.scientificName')}

@@ -19,7 +19,7 @@ export default [{
     }
   },
   controllers: {
-    onChange: data =>({ data })
+    onChange: data => ({ data })
   }
 }, {
   component: OccurrenceData,
