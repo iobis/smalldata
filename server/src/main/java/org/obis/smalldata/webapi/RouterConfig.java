@@ -15,6 +15,7 @@ class RouterConfig {
     "getDatasets", new OperationHandlers(DatasetsHandler::fetch),
     "getOneDataset", new OperationHandlers(DatasetsHandler::fetch),
     "getDwcaRecords", new OperationHandlers(DwcaHandler::getRecords),
+    "getDwcaRecord", new OperationHandlers(DwcaHandler::getRecord),
     "login", new OperationHandlers(LoginHandler::login),
     "getStatus", new OperationHandlers(StatusHandler::status),
     "getRss", new OperationHandlers(RssHandler::fetch),

@@ -5,10 +5,14 @@ import io.vertx.core.CompositeFuture;
 import io.vertx.core.Future;
 import io.vertx.core.eventbus.Message;
 import io.vertx.core.eventbus.ReplyFailure;
+import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.mongo.MongoClient;
 
 import java.util.List;
+import java.util.stream.Collectors;
+
+import static org.pmw.tinylog.Logger.info;
 
 public class Dwca extends AbstractVerticle {
 
@@ -25,13 +29,50 @@ public class Dwca extends AbstractVerticle {
 
   private void handleDwcaEvents(Message<JsonObject> message) {
     var action = message.body().getString("action");
-    if ("generate".equals(action)) {
-      generateZipFile(message.body().getString("findDataset"))
-        .setHandler(zip -> message.reply(zip.result()));
-    } else {
-      message.fail(ReplyFailure.RECIPIENT_FAILURE.toInt(), "Action " + action
-        + " not found on address " + message.address());
+    switch (action) {
+      case "recordForUser":
+        recordForUser(message.body().getString("userRef"),
+          message.body().getString("dwcaId"))
+          .setHandler(record -> message.reply(record.result()));
+        break;
+      case "recordsForUser":
+        allRecordsForUser(message.body().getString("userRef"))
+          .setHandler(records -> message.reply(records.result()));
+        break;
+      case "generate":
+        generateZipFile(message.body().getString("findDataset"))
+          .setHandler(zip -> message.reply(zip.result()));
+        break;
+      default:
+        message.fail(ReplyFailure.RECIPIENT_FAILURE.toInt(), "Action " + action
+          + " not found on address " + message.address());
+        break;
     }
+  }
+
+  private Future<JsonObject> recordForUser(String userRef, String dwcaId) {
+    info("getting dwca-record {} for user {}", dwcaId, userRef);
+    var result = Future.<JsonObject>future();
+    dbQuery.findDwcaRecordForUser(userRef, dwcaId).setHandler(
+      record -> {
+        record.result().remove("_id");
+        result.complete(record.result());
+      });
+    return result;
+  }
+
+  private Future<JsonArray> allRecordsForUser(String userRef) {
+    info("getting dwca-records for user {}", userRef);
+    var result = Future.<JsonArray>future();
+    dbQuery.findDwcaRecordsForUser(userRef).setHandler(
+      records -> result.complete(new JsonArray(records.result().stream()
+        .map(rec -> {
+          rec.remove("_id");
+          return rec;
+        })
+        .collect(Collectors.toList())))
+    );
+    return result;
   }
 
   private Future<JsonObject> generateZipFile(String datasetRef) {

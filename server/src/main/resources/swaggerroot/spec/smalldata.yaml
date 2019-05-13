@@ -70,6 +70,32 @@ paths:
                     occurrence:
                       dwcg:
                         habitat: Bruges
+  /api/users/{userRef}/dwca/{dwcaId}:
+    get:
+      summary: get one dwca record for a user
+      operationId: getDwcaRecord
+      parameters:
+        - name: userRef
+          in: path
+          description: unique reference (id) of the user
+          required: true
+          schema:
+            type: string
+        - name: dwcaId
+          in: path
+          description: unique reference (id) of the dwca record
+          required: true
+          schema:
+            type: string
+      tags:
+        - DWCA
+      responses:
+        200:
+          description: dwca record
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DWCA"
 
   /api/login:
     post:
