@@ -42,13 +42,13 @@ export default function Navbar() {
             </NavbarItem>
           </div>
         ) : null}
-        <LoginNabItem loggedIn={auth.loggedIn}/>
+        <LoginNavItem loggedIn={auth.loggedIn}/>
       </div>
     </nav>
   )
 }
 
-function LoginNabItem({ loggedIn }) {
+function LoginNavItem({ loggedIn }) {
   const { auth, logOut } = useAuth()
   const name = auth.claims && auth.claims.name
 
@@ -67,7 +67,7 @@ function LoginNabItem({ loggedIn }) {
   )
 }
 
-LoginNabItem.propTypes = {
+LoginNavItem.propTypes = {
   loggedIn: PropTypes.bool.isRequired
 }
 
