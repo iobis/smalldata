@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { createContext, useContext, useState } from 'react'
 
-export const AuthContext = createContext([ {}, () => {}]);
+export const AuthContext = createContext([{}, () => {}]);
 
 export const AuthProvider = (props) => {
   const [state, setState] = useState({loggedIn: false})

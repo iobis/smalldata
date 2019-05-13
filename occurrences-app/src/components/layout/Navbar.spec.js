@@ -2,12 +2,15 @@ import Navbar from './Navbar'
 import React from 'react'
 import renderer from 'react-test-renderer'
 import { MemoryRouter } from 'react-router-dom'
+import { AuthProvider } from '../../hooks/auth'
 
 describe('Navbar', () => {
   it('renders correctly for route /', () => {
     expect(renderer.create(
       <MemoryRouter initialEntries={['/']}>
-        <Navbar/>
+        <AuthProvider>
+          <Navbar/>
+        </AuthProvider>
       </MemoryRouter>
     ).toJSON()).toMatchSnapshot()
   })
@@ -15,7 +18,9 @@ describe('Navbar', () => {
   it('renders correctly for route /input-data', () => {
     expect(renderer.create(
       <MemoryRouter initialEntries={['/input-data']}>
-        <Navbar/>
+        <AuthProvider>
+          <Navbar/>
+        </AuthProvider>
       </MemoryRouter>
     ).toJSON()).toMatchSnapshot()
   })
@@ -23,7 +28,9 @@ describe('Navbar', () => {
   it('renders correctly for route /input-data/new', () => {
     expect(renderer.create(
       <MemoryRouter initialEntries={['/input-data/new']}>
-        <Navbar/>
+        <AuthProvider>
+          <Navbar/>
+        </AuthProvider>
       </MemoryRouter>
     ).toJSON()).toMatchSnapshot()
   })
@@ -31,7 +38,9 @@ describe('Navbar', () => {
   it('renders correctly for route /help', () => {
     expect(renderer.create(
       <MemoryRouter initialEntries={['/help']}>
-        <Navbar/>
+        <AuthProvider>
+          <Navbar/>
+        </AuthProvider>
       </MemoryRouter>
     ).toJSON()).toMatchSnapshot()
   })
