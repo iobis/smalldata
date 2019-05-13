@@ -1,10 +1,45 @@
 module.exports = {
-  extends: 'react-app',
+  extends: ['eslint:recommended', 'react-app'],
   plugins: [
     'react-hooks',
     'react'
   ],
   rules:   {
+    'arrow-body-style':            ['error', 'as-needed'],
+    'arrow-spacing':               2,
+    'brace-style':                 [2, '1tbs', { 'allowSingleLine': true }],
+    'camelcase':                   2,
+    'comma-dangle':                [2, {
+      'arrays':    'never',
+      'objects':   'never',
+      'imports':   'never',
+      'exports':   'never',
+      'functions': 'never'
+    }],
+    'eol-last':                    2,
+    'eqeqeq':                      2,
+    'indent':                      [2, 2, { 'SwitchCase': 1 }],
+    'key-spacing':                 [2, { 'align': 'value', 'mode': 'minimum' }],
+    'keyword-spacing':             2,
+    'linebreak-style':             [2, 'unix'],
+    'no-console':                  0,
+    'no-multi-spaces':             2,
+    'no-multiple-empty-lines':     [2, { 'max': 1, 'maxEOF': 0, 'maxBOF': 0 }],
+    'no-return-assign':            2,
+    'no-trailing-spaces':          2,
+    'no-var':                      2,
+    'no-void':                     2,
+    'object-curly-spacing':        [2, 'always'],
+    'padded-blocks':               [2, 'never'],
+    'prefer-arrow-callback':       2,
+    'prefer-const':                2,
+    'quotes':                      [2, 'single'],
+    'semi':                        [2, 'never'],
+    'space-before-function-paren': [2, 'never'],
+    'space-in-parens':             [2, 'never'],
+    'space-infix-ops':             [2, { 'int32Hint': true }],
+    'strict':                      0,
+
     'react-hooks/exhaustive-deps': 0,
     'react-hooks/rules-of-hooks':  2,
 
