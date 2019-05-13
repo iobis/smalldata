@@ -45,29 +45,13 @@ exports[`Navbar renders correctly for route / 1`] = `
   <div
     className="navbar-menu"
   >
-    <div
-      className="navbar-start"
-    >
-      <a
-        aria-current={null}
-        className="navbar-item"
-        href="/input-data"
-        onClick={[Function]}
-      >
-        navbar.inputData
-      </a>
-      <a
-        aria-current={null}
-        className="navbar-item"
-        href="/help"
-        onClick={[Function]}
-      >
-        navbar.help
-      </a>
-    </div>
+    <div />
     <div
       className="navbar-end"
     >
+      <span
+        className="navbar-item"
+      />
       <a
         className="navbar-item"
         onClick={[Function]}
@@ -85,7 +69,7 @@ exports[`Navbar renders correctly for route / 1`] = `
             icon="user"
           />
         </span>
-        navbar.logout
+        navbar.login
       </a>
     </div>
   </div>
@@ -137,30 +121,13 @@ exports[`Navbar renders correctly for route /help 1`] = `
   <div
     className="navbar-menu"
   >
-    <div
-      className="navbar-start"
-    >
-      <a
-        aria-current={null}
-        className="navbar-item"
-        href="/input-data"
-        onClick={[Function]}
-      >
-        navbar.inputData
-      </a>
-      <a
-        aria-current="page"
-        className="navbar-item is-active"
-        href="/help"
-        onClick={[Function]}
-        style={Object {}}
-      >
-        navbar.help
-      </a>
-    </div>
+    <div />
     <div
       className="navbar-end"
     >
+      <span
+        className="navbar-item"
+      />
       <a
         className="navbar-item"
         onClick={[Function]}
@@ -178,7 +145,7 @@ exports[`Navbar renders correctly for route /help 1`] = `
             icon="user"
           />
         </span>
-        navbar.logout
+        navbar.login
       </a>
     </div>
   </div>
@@ -230,30 +197,13 @@ exports[`Navbar renders correctly for route /input-data 1`] = `
   <div
     className="navbar-menu"
   >
-    <div
-      className="navbar-start"
-    >
-      <a
-        aria-current="page"
-        className="navbar-item is-active"
-        href="/input-data"
-        onClick={[Function]}
-        style={Object {}}
-      >
-        navbar.inputData
-      </a>
-      <a
-        aria-current={null}
-        className="navbar-item"
-        href="/help"
-        onClick={[Function]}
-      >
-        navbar.help
-      </a>
-    </div>
+    <div />
     <div
       className="navbar-end"
     >
+      <span
+        className="navbar-item"
+      />
       <a
         className="navbar-item"
         onClick={[Function]}
@@ -271,7 +221,7 @@ exports[`Navbar renders correctly for route /input-data 1`] = `
             icon="user"
           />
         </span>
-        navbar.logout
+        navbar.login
       </a>
     </div>
   </div>
@@ -323,30 +273,13 @@ exports[`Navbar renders correctly for route /input-data/new 1`] = `
   <div
     className="navbar-menu"
   >
-    <div
-      className="navbar-start"
-    >
-      <a
-        aria-current="page"
-        className="navbar-item is-active"
-        href="/input-data"
-        onClick={[Function]}
-        style={Object {}}
-      >
-        navbar.inputData
-      </a>
-      <a
-        aria-current={null}
-        className="navbar-item"
-        href="/help"
-        onClick={[Function]}
-      >
-        navbar.help
-      </a>
-    </div>
+    <div />
     <div
       className="navbar-end"
     >
+      <span
+        className="navbar-item"
+      />
       <a
         className="navbar-item"
         onClick={[Function]}
@@ -364,7 +297,7 @@ exports[`Navbar renders correctly for route /input-data/new 1`] = `
             icon="user"
           />
         </span>
-        navbar.logout
+        navbar.login
       </a>
     </div>
   </div>
