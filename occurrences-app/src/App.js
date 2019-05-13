@@ -2,9 +2,9 @@ import './i18n/i18n'
 import HelpPage from './components/pages/HelpPage'
 import InputDataPage from './components/pages/InputDataPage'
 import Navbar from './components/layout/Navbar'
+import LogInPage from './components/pages/LogInPage'
 import PropTypes from 'prop-types'
 import { AuthProvider, useAuth } from './hooks/auth'
-
 import OccurrenceForm from './components/pages/Occurrence/OccurrenceForm'
 import React from 'react'
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
@@ -31,23 +31,6 @@ export default function App() {
   )
 }
 
-const SecureRoute = ({ component: Component, ...rest }) => {
-  const { auth } = useAuth()
-
-  return (
-    <Route
-      {...rest}
-      render = {(props) => auth.loggedIn ?
-        <Component {...props}/> : <Redirect to="/"/>}/>
-  )
-}
-
-SecureRoute.propTypes = {
-  component: PropTypes.func.isRequired,
-  exact:     PropTypes.bool,
-  path:      PropTypes.string.isRequired
-}
-
 const AppDiv = () => {
   const { auth, logIn } = useAuth()
 
@@ -61,14 +44,29 @@ const AppDiv = () => {
     <div className="App">
       <Navbar/>
       <Switch>
-        <Route
-          exact path="/" render = {() => auth.loggedIn ?
-            <Redirect to="/input-data"/> :
-            <div>Please log in!</div>}/>
-        <SecureRoute component={InputDataPage} exact path="/input-data"/>
-        <SecureRoute component={OccurrenceForm} exact path="/input-data/new"/>
+        <Route exact path="/" render={() => auth.loggedIn ? <Redirect to="/input-data"/> : <LogInPage/>}/>
+        <ProtectedRoute component={InputDataPage} exact path="/input-data"/>
+        <ProtectedRoute component={OccurrenceForm} exact path="/input-data/new"/>
         <Route component={HelpPage} exact path="/help"/>
       </Switch>
     </div>
   )
+}
+
+const ProtectedRoute = ({ component: Component, ...rest }) => {
+  const { auth } = useAuth()
+  return (
+    <Route
+      {...rest}
+      render={(props) => (
+        auth.loggedIn
+          ? <Component {...props}/>
+          : <Redirect to="/"/>)}/>
+  )
+}
+
+ProtectedRoute.propTypes = {
+  component: PropTypes.func.isRequired,
+  exact:     PropTypes.bool,
+  path:      PropTypes.string.isRequired
 }
