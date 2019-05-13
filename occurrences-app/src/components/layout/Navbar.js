@@ -20,7 +20,7 @@ export default function Navbar() {
     <nav aria-label="main navigation" className="navbar is-info" ref={menuRef} role="navigation">
       <div className="navbar-brand">
         <Link className="navbar-item" onClick={hideNavbarMenu} to="/input-data">
-          <p style={{ 'width': 112, 'fontSize': 26, 'fontWeight': 'bold' }}>OBIS</p>
+          <p>OBIS</p>
         </Link>
         <a
           className="navbar-burger"
