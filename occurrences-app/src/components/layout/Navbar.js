@@ -42,43 +42,36 @@ export default function Navbar() {
             </NavbarItem>
           </div>
         ) : null}
-        <LoggedButton isLoggedIn={auth.loggedIn}/>
+        <LoginNabItem loggedIn={auth.loggedIn}/>
       </div>
     </nav>
   )
 }
 
-function LoggedButton({ isLoggedIn }) {
-  const { auth } = useAuth()
+function LoginNabItem({ loggedIn }) {
+  const { auth, logOut } = useAuth()
   const name = auth.claims && auth.claims.name
 
-  return (
-    <div className="navbar-end">
-      <span className="navbar-item">{name}</span>
-      {isLoggedIn ? <Logout/> : <Login/>}
-    </div>
-  )
-}
-
-LoggedButton.propTypes = {
-  isLoggedIn: PropTypes.bool.isRequired
-}
-
-function Logout() {
-  const { logOut } = useAuth()
-  return <AuthButton label="navbar.logout" onClick={logOut}/>
-}
-
-function Login() {
   function redirectToOceanExpert() {
     const callback = window.location.origin + process.env.PUBLIC_URL
     window.location = 'https://oceanexpert.net/socialsignin/?callback=' + callback
   }
 
-  return <AuthButton label="navbar.login" onClick={redirectToOceanExpert}/>
+  return (
+    <div className="navbar-end">
+      <span className="navbar-item">{name}</span>
+      {loggedIn
+        ? <AuthButton labelKey="navbar.logout" onClick={logOut}/>
+        : <AuthButton labelKey="navbar.login" onClick={redirectToOceanExpert}/>}
+    </div>
+  )
 }
 
-function AuthButton({ label, onClick }) {
+LoginNabItem.propTypes = {
+  loggedIn: PropTypes.bool.isRequired
+}
+
+function AuthButton({ labelKey, onClick }) {
   const { t } = useTranslation()
 
   return (
@@ -86,14 +79,14 @@ function AuthButton({ label, onClick }) {
       <span className="icon" style={{ 'marginRight': 6 }}>
         <FontAwesomeIcon icon="user"/>
       </span>
-      {t(label)}
+      {t(labelKey)}
     </a>
   )
 }
 
 AuthButton.propTypes = {
-  label:   PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired
+  labelKey: PropTypes.string.isRequired,
+  onClick:  PropTypes.func.isRequired
 }
 
 const NavbarItem = ({ children, onClick, to }) => (
