@@ -9,8 +9,8 @@ import { useAuth } from '../../hooks/auth'
 import { useTranslation } from 'react-i18next'
 
 export default function Navbar() {
-  const { auth } = useAuth()
   const { t } = useTranslation()
+  const { auth } = useAuth()
   const [navbarMenuActive, setNavbarMenuActive] = useState(false)
   const menuRef = useRef()
   const hideNavbarMenu = () => setNavbarMenuActive(false)
