@@ -3,8 +3,9 @@ import React, { createContext, useContext, useState } from 'react'
 
 export const AuthContext = createContext([{}, () => {}])
 
-export const AuthProvider = (props) => {
+export function AuthProvider(props) {
   const [state, setState] = useState({ loggedIn: false })
+
   return (
     <AuthContext.Provider value={[state, setState]}>
       {props.children}
@@ -13,18 +14,10 @@ export const AuthProvider = (props) => {
 }
 
 AuthProvider.propTypes = {
-  children: PropTypes.object.isRequired
+  children: PropTypes.node.isRequired
 }
 
-const parseJwt = (token) => {
-  try {
-    return JSON.parse(atob(token.split('.')[1]))
-  } catch (e) {
-    return null
-  }
-}
-
-export const useAuth = () => {
+export function useAuth() {
   const [auth, setAuth] = useContext(AuthContext)
 
   function logIn(token) {
@@ -43,4 +36,12 @@ export const useAuth = () => {
   }
 
   return { auth, logIn, logOut }
+}
+
+function parseJwt(token) {
+  try {
+    return JSON.parse(atob(token.split('.')[1]))
+  } catch (e) {
+    return null
+  }
 }
