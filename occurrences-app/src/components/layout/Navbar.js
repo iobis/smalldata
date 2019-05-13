@@ -41,9 +41,7 @@ export default function Navbar() {
               {t('navbar.help')}
             </NavbarItem>
           </div>
-        ) : (
-          <div/>
-        )}
+        ) : null}
         <LoggedButton isLoggedIn={auth.loggedIn}/>
       </div>
     </nav>

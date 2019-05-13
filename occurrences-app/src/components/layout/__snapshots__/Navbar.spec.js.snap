@@ -37,7 +37,6 @@ exports[`Navbar renders correctly for route / 1`] = `
   <div
     className="navbar-menu"
   >
-    <div />
     <div
       className="navbar-end"
     >
@@ -105,7 +104,6 @@ exports[`Navbar renders correctly for route /help 1`] = `
   <div
     className="navbar-menu"
   >
-    <div />
     <div
       className="navbar-end"
     >
@@ -173,7 +171,6 @@ exports[`Navbar renders correctly for route /input-data 1`] = `
   <div
     className="navbar-menu"
   >
-    <div />
     <div
       className="navbar-end"
     >
@@ -241,7 +238,6 @@ exports[`Navbar renders correctly for route /input-data/new 1`] = `
   <div
     className="navbar-menu"
   >
-    <div />
     <div
       className="navbar-end"
     >
