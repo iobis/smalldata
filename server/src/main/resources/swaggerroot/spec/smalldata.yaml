@@ -5,6 +5,7 @@ info:
   license:
     name: MIT
 servers:
+  - url: http://smalldata.obis.org/
   - url: http://localhost:8080/
   - url: http://localhost:8008/
 paths:
