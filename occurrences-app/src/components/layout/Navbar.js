@@ -32,7 +32,7 @@ export default function Navbar() {
         </a>
       </div>
       <div className={classNames('navbar-menu', { 'is-active': navbarMenuActive })}>
-        { auth.loggedIn ?
+        {auth.loggedIn ? (
           <div className="navbar-start">
             <NavbarItem onClick={hideNavbarMenu} to="/input-data">
               {t('navbar.inputData')}
@@ -40,18 +40,20 @@ export default function Navbar() {
             <NavbarItem onClick={hideNavbarMenu} to="/help">
               {t('navbar.help')}
             </NavbarItem>
-          </div> :
+          </div>
+        ) : (
           <div/>
-        }
+        )}
         <LoggedButton isLoggedIn={auth.loggedIn}/>
       </div>
     </nav>
   )
 }
 
-const LoggedButton = ({ isLoggedIn }) => {
+function LoggedButton({ isLoggedIn }) {
   const { auth } = useAuth()
   const name = auth.claims && auth.claims.name
+
   return (
     <div className="navbar-end">
       <span className="navbar-item">{name}</span>
@@ -66,19 +68,21 @@ LoggedButton.propTypes = {
 
 function Logout() {
   const { logOut } = useAuth()
-  return AuthButton('navbar.logout', logOut)
+  return <AuthButton label="navbar.logout" onClick={logOut}/>
 }
 
 function Login() {
-  return AuthButton('navbar.login',
-    () => {
-      const callback = window.location.origin + process.env.PUBLIC_URL
-      window.location = 'https://oceanexpert.net/socialsignin/?callback=' + callback
-    })
+  function redirectToOceanExpert() {
+    const callback = window.location.origin + process.env.PUBLIC_URL
+    window.location = 'https://oceanexpert.net/socialsignin/?callback=' + callback
+  }
+
+  return <AuthButton label="navbar.login" onClick={redirectToOceanExpert}/>
 }
 
-function AuthButton(label, onClick) {
+function AuthButton({ label, onClick }) {
   const { t } = useTranslation()
+
   return (
     <a className="navbar-item" onClick={onClick}>
       <span className="icon" style={{ 'marginRight': 6 }}>
@@ -87,6 +91,11 @@ function AuthButton(label, onClick) {
       {t(label)}
     </a>
   )
+}
+
+AuthButton.propTypes = {
+  label:   PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired
 }
 
 const NavbarItem = ({ children, onClick, to }) => (
