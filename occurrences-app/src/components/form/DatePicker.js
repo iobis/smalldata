@@ -22,5 +22,5 @@ export default function DatePicker({ onChange, value }) {
 
 DatePicker.propTypes = {
   onChange: PropTypes.func.isRequired,
-  value:    PropTypes.instanceOf(Date)
+  value:    PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.number])
 }

@@ -14,15 +14,7 @@ exports[`Navbar renders correctly for route / 1`] = `
       href="/input-data"
       onClick={[Function]}
     >
-      <p
-        style={
-          Object {
-            "fontSize": 26,
-            "fontWeight": "bold",
-            "width": 112,
-          }
-        }
-      >
+      <p>
         OBIS
       </p>
     </a>
@@ -46,28 +38,11 @@ exports[`Navbar renders correctly for route / 1`] = `
     className="navbar-menu"
   >
     <div
-      className="navbar-start"
-    >
-      <a
-        aria-current={null}
-        className="navbar-item"
-        href="/input-data"
-        onClick={[Function]}
-      >
-        navbar.inputData
-      </a>
-      <a
-        aria-current={null}
-        className="navbar-item"
-        href="/help"
-        onClick={[Function]}
-      >
-        navbar.help
-      </a>
-    </div>
-    <div
       className="navbar-end"
     >
+      <span
+        className="navbar-item"
+      />
       <a
         className="navbar-item"
         onClick={[Function]}
@@ -85,7 +60,7 @@ exports[`Navbar renders correctly for route / 1`] = `
             icon="user"
           />
         </span>
-        navbar.logout
+        navbar.login
       </a>
     </div>
   </div>
@@ -106,15 +81,7 @@ exports[`Navbar renders correctly for route /help 1`] = `
       href="/input-data"
       onClick={[Function]}
     >
-      <p
-        style={
-          Object {
-            "fontSize": 26,
-            "fontWeight": "bold",
-            "width": 112,
-          }
-        }
-      >
+      <p>
         OBIS
       </p>
     </a>
@@ -138,29 +105,11 @@ exports[`Navbar renders correctly for route /help 1`] = `
     className="navbar-menu"
   >
     <div
-      className="navbar-start"
-    >
-      <a
-        aria-current={null}
-        className="navbar-item"
-        href="/input-data"
-        onClick={[Function]}
-      >
-        navbar.inputData
-      </a>
-      <a
-        aria-current="page"
-        className="navbar-item is-active"
-        href="/help"
-        onClick={[Function]}
-        style={Object {}}
-      >
-        navbar.help
-      </a>
-    </div>
-    <div
       className="navbar-end"
     >
+      <span
+        className="navbar-item"
+      />
       <a
         className="navbar-item"
         onClick={[Function]}
@@ -178,7 +127,7 @@ exports[`Navbar renders correctly for route /help 1`] = `
             icon="user"
           />
         </span>
-        navbar.logout
+        navbar.login
       </a>
     </div>
   </div>
@@ -199,15 +148,7 @@ exports[`Navbar renders correctly for route /input-data 1`] = `
       href="/input-data"
       onClick={[Function]}
     >
-      <p
-        style={
-          Object {
-            "fontSize": 26,
-            "fontWeight": "bold",
-            "width": 112,
-          }
-        }
-      >
+      <p>
         OBIS
       </p>
     </a>
@@ -231,29 +172,11 @@ exports[`Navbar renders correctly for route /input-data 1`] = `
     className="navbar-menu"
   >
     <div
-      className="navbar-start"
-    >
-      <a
-        aria-current="page"
-        className="navbar-item is-active"
-        href="/input-data"
-        onClick={[Function]}
-        style={Object {}}
-      >
-        navbar.inputData
-      </a>
-      <a
-        aria-current={null}
-        className="navbar-item"
-        href="/help"
-        onClick={[Function]}
-      >
-        navbar.help
-      </a>
-    </div>
-    <div
       className="navbar-end"
     >
+      <span
+        className="navbar-item"
+      />
       <a
         className="navbar-item"
         onClick={[Function]}
@@ -271,7 +194,7 @@ exports[`Navbar renders correctly for route /input-data 1`] = `
             icon="user"
           />
         </span>
-        navbar.logout
+        navbar.login
       </a>
     </div>
   </div>
@@ -292,15 +215,7 @@ exports[`Navbar renders correctly for route /input-data/new 1`] = `
       href="/input-data"
       onClick={[Function]}
     >
-      <p
-        style={
-          Object {
-            "fontSize": 26,
-            "fontWeight": "bold",
-            "width": 112,
-          }
-        }
-      >
+      <p>
         OBIS
       </p>
     </a>
@@ -324,29 +239,11 @@ exports[`Navbar renders correctly for route /input-data/new 1`] = `
     className="navbar-menu"
   >
     <div
-      className="navbar-start"
-    >
-      <a
-        aria-current="page"
-        className="navbar-item is-active"
-        href="/input-data"
-        onClick={[Function]}
-        style={Object {}}
-      >
-        navbar.inputData
-      </a>
-      <a
-        aria-current={null}
-        className="navbar-item"
-        href="/help"
-        onClick={[Function]}
-      >
-        navbar.help
-      </a>
-    </div>
-    <div
       className="navbar-end"
     >
+      <span
+        className="navbar-item"
+      />
       <a
         className="navbar-item"
         onClick={[Function]}
@@ -364,7 +261,7 @@ exports[`Navbar renders correctly for route /input-data/new 1`] = `
             icon="user"
           />
         </span>
-        navbar.logout
+        navbar.login
       </a>
     </div>
   </div>

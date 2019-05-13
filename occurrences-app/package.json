@@ -2,11 +2,14 @@
   "name": "@smalldata/occurrences-app",
   "version": "1.0.0",
   "private": true,
+  "homepage": "/occurrences",
   "scripts": {
     "build": "react-app-rewired build",
     "cosmos": "cosmos",
     "cosmos:export": "cosmos-export",
     "eject": "react-app-rewired eject",
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "eslint src/**/*.js --fix",
     "start": "react-app-rewired start",
     "test": "react-app-rewired test --env=jsdom",
     "test:ci": "cross-env CI=true react-app-rewired test --env=jsdom",
@@ -32,16 +35,21 @@
     "classnames": "2.2.6",
     "date-fns": "1.30.1",
     "i18next": "15.0.4",
+    "leaflet": "1.5.1",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-i18next": "10.2.0",
+    "react-leaflet": "2.3.0",
     "react-router-dom": "4.3.1",
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "uuid": "3.3.2"
   },
   "devDependencies": {
+    "async-wait-until": "1.2.4",
     "cross-env": "5.2.0",
     "enzyme": "3.9.0",
     "enzyme-adapter-react-16": "1.12.1",
+    "eslint-plugin-react-hooks": "1.6.0",
     "jest": "23.6.0",
     "jest-dom": "3.0.0",
     "jest-enzyme": "7.0.2",
@@ -50,6 +58,7 @@
     "react-app-rewired": "2.1.1",
     "react-cosmos": "4.8.1",
     "react-cosmos-router-proxy": "4.8.2",
+    "react-cosmos-stateful-proxy": "2.0.0",
     "react-test-renderer": "16.8.6"
   }
 }

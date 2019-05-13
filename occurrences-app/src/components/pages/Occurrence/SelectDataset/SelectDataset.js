@@ -7,13 +7,12 @@ export default function SelectDataset({ datasets, selectedDataset, onChange }) {
     <div className="select-dataset columns is-fluid">
       <table className="table is-striped is-fullwidth">
         <tbody>
-        {datasets.map(dataset => (
-          <DatasetOption
-            key={dataset.id}
-            onClick={() => onChange(dataset)}
-            checked={dataset.id === selectedDataset.id}
-            {...dataset}
-          />))}
+          {datasets.map(dataset => (
+            <DatasetOption
+              checked={dataset.id === selectedDataset.id}
+              key={dataset.id}
+              onClick={() => onChange(dataset)}
+              {...dataset}/>))}
         </tbody>
       </table>
     </div>
@@ -43,5 +42,6 @@ function DatasetOption({ id, checked, description, onClick }) {
 DatasetOption.propTypes = {
   checked:     PropTypes.bool.isRequired,
   description: PropTypes.string.isRequired,
+  id:          PropTypes.number.isRequired,
   onClick:     PropTypes.func.isRequired
 }

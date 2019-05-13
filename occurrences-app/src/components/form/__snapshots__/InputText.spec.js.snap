@@ -24,3 +24,29 @@ exports[`InputText renders correctly 1`] = `
   </div>
 </InputText>
 `;
+
+exports[`InputText renders correctly if optional 1`] = `
+<InputText
+  className="custom-class-name"
+  name="field-name"
+  onChange={[MockFunction]}
+  optional={true}
+  value="value"
+>
+  <div
+    className="column field custom-class-name"
+  >
+    <label
+      className="label has-text-weight-normal"
+    >
+      field-name.label
+    </label>
+    <input
+      className="input"
+      onChange={[Function]}
+      type="text"
+      value="value"
+    />
+  </div>
+</InputText>
+`;

@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install Front End Deps
+          name: Install JavaScript Deps
           command: yarn install --frozen-lockfile
       - run:
           name: Run Unit Tests
@@ -22,9 +22,44 @@ jobs:
           path: ~/test-results
       - store_artifacts:
           path: ~/test-results/junit
+  deploy:
+    docker:
+      - image: circleci/openjdk:11.0.3-jdk-stretch-node
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run:
+          name: Install Front End Deps
+          command: |
+            yarn install --frozen-lockfile
+      - run:
+          name: Setup known hosts
+          command: |
+            ssh-keyscan -H smalldata.obis.org,37.139.25.139 >> ~/.ssh/known_hosts
+      - run:
+          name: Build and deploy smalldata app and server image over ssh
+          command: |
+            yarn occurrences-app:build
+            ssh "$SSH_USER@$SSH_HOST" "mkdir -p /var/www/html/occurrences"
+            scp -r ./occurrences-app/build/* "$SSH_USER@$SSH_HOST:/var/www/html/occurrences/"
+            cd server
+            ./gradlew runtimeZip
+            scp -r ./build/image.zip "$SSH_USER@$SSH_HOST:/opt/smalldata"
+            ssh "$SSH_USER@$SSH_HOST" "cd /opt/smalldata && \
+                                       unzip -o image.zip && \
+                                       rm image.zip"
+            scp -r ./src/main/resources/* "$SSH_USER@$SSH_HOST:/opt/smalldata/image/"
+            ssh "$SSH_USER@$SSH_HOST" "sudo systemctl restart smalldata && \
+                                       systemctl status smalldata"
 
 workflows:
   version: 2
   build_and_test:
     jobs:
       - test
+      - deploy:
+          requires:
+            - test
+          filters:
+            branches:
+              only: master

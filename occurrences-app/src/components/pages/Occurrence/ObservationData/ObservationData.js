@@ -71,9 +71,9 @@ export default function ObservationData({ onChange, observationData }) {
       <div className="columns">
         <InputMultipleText
           className="references is-9"
+          labelComponent={(link) => <a href={link}>{link}</a>}
           name="occurrenceForm.observationData.references"
           onChange={(value) => updateField('references', value)}
-          labelComponent={(link) => <a href={link}>{link}</a>}
           values={observationData.references}/>
       </div>
       <CopyPreviousData/>

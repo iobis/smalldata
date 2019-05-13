@@ -1,0 +1,14 @@
+.location-data {
+  margin-bottom: 1.25rem;
+
+  .location-picker-notice {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .verbatim-data {
+    background-color: $background;
+    padding: 1.25em 1.5em;
+    border-radius: $radius;
+  }
+}

@@ -8,8 +8,8 @@ export default function ActiveStepHeader({ children, onStepTitleClick, stepDescr
       className="active has-background-grey has-text-white"
       dataDescription=""
       iconVisible={false}
-      selectedData=""
       onStepTitleClick={onStepTitleClick}
+      selectedData=""
       stepDescription={stepDescription}
       stepTitle={stepTitle}>
       {children}
@@ -18,6 +18,7 @@ export default function ActiveStepHeader({ children, onStepTitleClick, stepDescr
 }
 
 ActiveStepHeader.propTypes = {
+  children:         PropTypes.node,
   onStepTitleClick: PropTypes.func.isRequired,
   stepDescription:  PropTypes.string.isRequired,
   stepTitle:        PropTypes.string.isRequired

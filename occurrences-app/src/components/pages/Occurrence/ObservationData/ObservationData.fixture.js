@@ -2,8 +2,20 @@ import ObservationData from './ObservationData'
 
 export default [{
   component: ObservationData,
-  name:      'ObservationData',
+  name:      'default',
   props:     {
-    onChange: console.log
+    observationData: {
+      institutionCode:         '',
+      collectionCode:          '',
+      fieldNumber:             '',
+      catalogNumber:           '',
+      recordNumber:            '',
+      identifiedBy:            [],
+      recordedBy:              [],
+      identificationQualifier: '',
+      identificationRemarks:   '',
+      references:              []
+    },
+    onChange:        console.log
   }
 }]

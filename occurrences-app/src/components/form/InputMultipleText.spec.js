@@ -1,6 +1,6 @@
 import InputMultipleText from './InputMultipleText'
 import React from 'react'
-import { mount } from 'enzyme/build'
+import { mount } from 'enzyme'
 
 describe('InputMultipleText', () => {
   it('renders correctly', () => {

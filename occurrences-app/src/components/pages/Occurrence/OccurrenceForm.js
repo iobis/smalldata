@@ -1,25 +1,28 @@
 import ActiveStepHeader from './ActiveStepHeader'
-import BasicData from './BasicData/BasicData'
+import OccurrenceData from './OccurrenceData/OccurrenceData'
 import ConfirmedStepHeader from './ConfirmedStepHeader'
+import DarwinCoreFields from './DarwinCoreFields/DarwinCoreFields'
+import LocationData from './LocationData/LocationData'
+import MeasurementOrFact from './MeasurementOrFact/MeasurementOrFact'
 import NotConfirmedStepHeader from './NotConfirmedStepHeader'
 import ObservationData from './ObservationData/ObservationData'
+import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import SelectDataset from './SelectDataset/SelectDataset'
 import { format } from 'date-fns'
 import { getDatasetMock } from '../../../clients/server'
 import { useTranslation } from 'react-i18next'
-import DarwinCoreFields from './DarwinCoreFields/DarwinCoreFields'
 
 export default function OccurrenceForm() {
   const datasets = getDatasetMock()
   const { t } = useTranslation()
   const [selectedDataset, setSelectedDataset] = useState(datasets[0])
-  const [basicData, setBasicData] = useState({
-    basisOfRecord:    null,
+  const [occurrenceData, setOccurrenceData] = useState({
+    basisOfRecord:    'humanObservation',
     beginDate:        Date.now(),
     endDate:          null,
     lifestage:        null,
-    occurrenceStatus: null,
+    occurrenceStatus: 'present',
     scientificName:   '',
     sex:              null
   })
@@ -35,64 +38,76 @@ export default function OccurrenceForm() {
     identificationRemarks:   '',
     references:              []
   })
-  const [darwinCoreFieldsData, setDarwinCoreFieldsData] = useState([])
-
+  const [darwinCoreFields, setDarwinCoreFields] = useState([])
   const [activeStepIndex, setActiveStepIndex] = useState(0)
-  const basicDataLabel = [
-    basicData.scientificName,
-    format(basicData.beginDate, 'D MMMM YYYY'),
-    basicData.endDate ? ' - ' + format(basicData.endDate, 'D MMMM YYYY') : ''
-  ].join(' ')
-
+  const [locationData, setLocationData] = useState({
+    decimalLongitude:      null,
+    decimalLatitude:       null,
+    coordinateUncertainty: null,
+    minimumDepth:          null,
+    maximumDepth:          null,
+    verbatimCoordinates:   '',
+    verbatimEventDate:     '',
+    verbatimDepth:         ''
+  }
+  )
+  const [measurementOrFact, setMeasurementOrFact] = useState([])
   const steps = [{
     dataDescription: t('occurrenceForm.selectDataset.dataDescription'),
     selectedData:    selectedDataset.description,
     stepDescription: t('occurrenceForm.selectDataset.stepDescription'),
     stepTitle:       t('occurrenceForm.selectDataset.stepTitle'),
     children:        <SelectDataset
-                       datasets={datasets}
-                       selectedDataset={selectedDataset}
-                       onChange={(dataset) => setSelectedDataset(dataset)}/>
+      datasets={datasets}
+      onChange={setSelectedDataset}
+      selectedDataset={selectedDataset}/>
   }, {
     dataDescription: 'Given Values',
-    selectedData:    basicDataLabel,
-    stepDescription: 'Mandatory observation information',
-    stepTitle:       'Basic Data',
-    children:        <BasicData
-                       onChange={(basicData) => setBasicData(basicData)}
-                       basicData={basicData}/>
+    selectedData:    <OccurrenceDataSummary {...occurrenceData}/>,
+    stepDescription: t('occurrenceForm.occurrenceData.step.stepDescription'),
+    stepTitle:       t('occurrenceForm.occurrenceData.step.stepTitle'),
+    children:        <OccurrenceData
+      data={occurrenceData}
+      onChange={setOccurrenceData}/>
   }, {
-    dataDescription: 'Main Location',
-    selectedData:    'North Sea',
-    stepDescription: 'Select the location for data collected',
-    stepTitle:       'Location Data',
-    children:        <StubFormContent/>
+    dataDescription: t('occurrenceForm.locationData.step.dataDescription'),
+    selectedData:    <SelectedLocation {...locationData}/>,
+    stepDescription: t('occurrenceForm.locationData.step.stepDescription'),
+    stepTitle:       t('occurrenceForm.locationData.step.stepTitle'),
+    children:        <LocationData
+      data={locationData}
+      onChange={setLocationData}/>
   }, {
     dataDescription: 'Main Info',
     selectedData:    renderIdentifiedByLabel(observationData),
     stepDescription: 'Enter further specifics',
     stepTitle:       'Observation Data',
     children:        <ObservationData
-                       observationData={observationData}
-                       onChange={data => setObservationData(data)}/>
+      observationData={observationData}
+      onChange={setObservationData}/>
   }, {
     dataDescription: 'Given values',
-    selectedData:    'You have submitted 7 extra fields',
+    selectedData:    <MeasurementOrFactSummary data={measurementOrFact}/>,
     stepDescription: 'Enter further specifics',
     stepTitle:       'Measurement or Fact',
-    children:        <StubFormContent/>
+    children:        <MeasurementOrFact
+      data={measurementOrFact}
+      onChange={setMeasurementOrFact}/>
   }, {
     dataDescription: '',
     selectedData:    '',
     stepDescription: 'Supply specific Darwin core fields',
     stepTitle:       'Darwin Core Fields',
-    children:        <DarwinCoreFields darwinCoreFieldsData={darwinCoreFieldsData} onChange={data => setDarwinCoreFieldsData(data)} />
+    children:        <DarwinCoreFields
+      fields={darwinCoreFields}
+      onChange={setDarwinCoreFields}/>
   }]
 
   return (
     <section className="section">
       {steps.map((step, index) => {
-        const className = 'step-' + index + ' background-color-' + Math.floor(30 / steps.length * index)
+        const stepNumber = index + 1
+        const className = 'step-' + stepNumber + ' background-color-' + Math.floor(30 / steps.length * index)
         const StepComponent = activeStepIndex === index
           ? ActiveStepHeader
           : activeStepIndex > index
@@ -104,11 +119,27 @@ export default function OccurrenceForm() {
             className={className}
             key={step.stepTitle}
             onStepTitleClick={() => setActiveStepIndex(index)}
-            stepTitle={(index + 1) + ' - ' + step.stepTitle}/>
+            stepTitle={stepNumber + ' - ' + step.stepTitle}/>
         )
       })}
     </section>
   )
+}
+
+function SelectedLocation({ decimalLatitude, decimalLongitude }) {
+  const { t } = useTranslation()
+
+  return (
+    <>
+      <div>{t('occurrenceForm.locationData.step.selectedData.latitude')}: {decimalLatitude}</div>
+      <div>{t('occurrenceForm.locationData.step.selectedData.longitude')}: {decimalLongitude}</div>
+    </>
+  )
+}
+
+SelectedLocation.propTypes = {
+  decimalLatitude:  PropTypes.number,
+  decimalLongitude: PropTypes.number
 }
 
 function renderIdentifiedByLabel({ identifiedBy, institutionCode }) {
@@ -117,14 +148,30 @@ function renderIdentifiedByLabel({ identifiedBy, institutionCode }) {
   return [institutionCodeLabel, identifiedByLabel].filter(label => !!label).join('; ')
 }
 
-function StubFormContent() {
+function MeasurementOrFactSummary({ data }) {
+  const { t } = useTranslation()
+
+  return <div>{t('occurrenceForm.measurementOrFact.step.title', { number: data.length })}</div>
+}
+
+MeasurementOrFactSummary.propTypes = {
+  data: PropTypes.array.isRequired
+}
+
+function OccurrenceDataSummary({ scientificName, beginDate, endDate }) {
+  const occurrenceDataLabel = [
+    scientificName,
+    format(beginDate, 'D MMMM YYYY'),
+    endDate ? ' - ' + format(endDate, 'D MMMM YYYY') : ''
+  ].join(' ')
+
   return (
-    <div className="is-fluid">
-      <div className="columns">
-        <div className="column">
-          Form Content To Be Added
-        </div>
-      </div>
-    </div>
+    <div>{occurrenceDataLabel}</div>
   )
+}
+
+OccurrenceDataSummary.propTypes = {
+  beginDate:      PropTypes.number,
+  endDate:        PropTypes.number,
+  scientificName: PropTypes.string
 }

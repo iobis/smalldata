@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-export default function InputText({ className, name, onChange, value }) {
+export default function InputText({ className, name, onChange, optional, value }) {
   const { t } = useTranslation()
   const label = t(name + '.label')
   const placeholderKey = name + '.placeholder'
@@ -12,7 +12,7 @@ export default function InputText({ className, name, onChange, value }) {
 
   return (
     <div className={classNames('column field', className)}>
-      <label className="label">
+      <label className={classNames('label', { 'has-text-weight-normal': optional })}>
         {label}
       </label>
       <input
@@ -30,5 +30,6 @@ InputText.propTypes = {
   className: PropTypes.string,
   name:      PropTypes.string.isRequired,
   onChange:  PropTypes.func.isRequired,
+  optional:  PropTypes.bool,
   value:     PropTypes.string
 }

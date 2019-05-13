@@ -1,8 +1,18 @@
 export default {
   translation: {
     common:         {
-      copy: 'Copy',
-      edit: 'Edit'
+      add:       'Add',
+      cancel:    'Cancel',
+      confirm:   'Confirm',
+      copy:      'Copy',
+      edit:      'Edit',
+      latitude:  'Latitude',
+      longitude: 'Longitude',
+      name:      'Name',
+      remove:    'Remove',
+      type:      'Type',
+      unit:      'Unit',
+      value:     'Value'
     },
     inputDataPage:  {
       inputNewOccurrence: 'INPUT NEW OCCURRENCE',
@@ -16,12 +26,16 @@ export default {
       }
     },
     occurrenceForm: {
-      selectDataset:   {
+      selectDataset:     {
         dataDescription: 'Using Data',
         stepDescription: 'Choose the dataset for adding observations',
         stepTitle:       'Selected Dataset'
       },
-      basicData:       {
+      occurrenceData:    {
+        step:             {
+          stepDescription: 'Mandatory observation information',
+          stepTitle:       'Occurrence Data'
+        },
         scientificName:   'Scientific name',
         eventBeginDate:   'Event begin date',
         eventEndDate:     'Event end date',
@@ -55,7 +69,71 @@ export default {
           unspecified: 'unspecified'
         }
       },
-      observationData: {
+      locationData:      {
+        enterCoordinates:      {
+          title:    'Enter coordinates',
+          subtitle: 'bold fields are mandatory'
+        },
+        verbatimData:          {
+          title:    'Verbatim Data',
+          subtitle: 'optionally supply verbatim data as it appeared originally in the notes'
+        },
+        decimalLongitude:      {
+          label:       'decimal longitude',
+          placeholder: '5.12334'
+        },
+        decimalLatitude:       {
+          label:       'decimal latitude',
+          placeholder: '53.2345'
+        },
+        coordinateUncertainty: {
+          label:       'coordinate uncertainty',
+          placeholder: '',
+          help:        'meters'
+        },
+        minimumDepth:          {
+          label:       'minimum depth',
+          placeholder: '',
+          help:        'meters'
+        },
+        maximumDepth:          {
+          label:       'maximum depth',
+          placeholder: '',
+          help:        'meters'
+        },
+        verbatimCoordinates:   {
+          label:       'verbatim coordinates',
+          placeholder: '',
+          help:        'Example: "41 05 54S 121 05 34W", "17T 630000 4833400"'
+        },
+        verbatimEventDate:     {
+          label:       'verbatim event date',
+          placeholder: '',
+          help:        'Examples: "spring 1910", "Marzo 2002", "1999-03-XX", "17IV1934"'
+        },
+        verbatimDepth:         {
+          label:       'verbatim depth',
+          placeholder: '',
+          help:        'Examples: "100-200 m"'
+        },
+        step:                  {
+          stepDescription: 'Select the location for data collected',
+          stepTitle:       'Location Data',
+          dataDescription: 'Main Location',
+          selectedData:    {
+            latitude:  'Latitude',
+            longitude: 'Longitude'
+          }
+        },
+        locationPicker:        {
+          emptyResult:    'No search results yet',
+          emptyResultTip: 'Have you tried entering an address in the geocoding box?',
+          resultsTitle:   'Results',
+          searchTip:      'Find location by name',
+          title:          'Don\'t know the exact coordinates?'
+        }
+      },
+      observationData:   {
         institutionCode:         {
           label:       'institution code',
           placeholder: 'institution code'
@@ -102,14 +180,33 @@ export default {
           help:        'hit enter to add a reference to list'
         }
       },
-      darwinCoreFields: {
-        fieldName:  {
+      measurementOrFact: {
+        step:     {
+          title: 'You have submitted {{number}} extra fields'
+        },
+        general:  {
+          title:    'STEP 1: General sample information',
+          subtitle: 'Supply any information you may have on the sample, setting, environment, ...'
+        },
+        specific: {
+          title:    'STEP 2: Specific measurements or facts',
+          subtitle: 'Enter the exact measurements or facts consecutively'
+        },
+        supplied: {
+          title: 'Supplied measurements or facts'
+        }
+      },
+      darwinCoreFields:  {
+        title:     'Darwin Core Custom Selection',
+        subtitle:  'This form enables you to add any additional fields you may need to specify, that were not previously included in this form.',
+        tip:       'Please be advised to use the Darwin Core Archive names',
+        fieldName: {
           label:       'Darwin core fieldname',
           placeholder: '',
           help:        ''
         },
-        value:  {
-          label:       'value',
+        value:     {
+          label:       'Value',
           placeholder: '',
           help:        ''
         }
@@ -119,7 +216,8 @@ export default {
     navbar:         {
       help:      'HELP',
       inputData: 'INPUT DATA',
-      logout:    'logout'
+      logout:    'logout',
+      login:     'login'
     }
   }
 }

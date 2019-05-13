@@ -3,6 +3,7 @@ import { getOccurrenceMock } from '../../clients/server'
 import Divider from '../layout/Divider'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 export default function InputDataPage() {
   const { t } = useTranslation()
@@ -12,7 +13,7 @@ export default function InputDataPage() {
     <>
       <section className="section">
         <div className="container is-fluid has-text-centered">
-          <Link to="/input-data/new" className="button is-info">
+          <Link className="button is-info" to="/input-data/new">
             {t('inputDataPage.inputNewOccurrence')}
           </Link>
         </div>
@@ -23,17 +24,17 @@ export default function InputDataPage() {
           <h4 className="title is-4">{t('inputDataPage.copyPreviousHeader')}</h4>
           <table className="table is-striped is-hoverable is-fullwidth">
             <thead>
-            <tr>
-              <th/>
-              <th>{t('inputDataPage.table.dateAdded')}</th>
-              <th>{t('inputDataPage.table.scientificName')}</th>
-              <th>{t('inputDataPage.table.dataset')}</th>
-              <th>{t('inputDataPage.table.occurrenceDate')}</th>
-              <th/>
-            </tr>
+              <tr>
+                <th/>
+                <th>{t('inputDataPage.table.dateAdded')}</th>
+                <th>{t('inputDataPage.table.scientificName')}</th>
+                <th>{t('inputDataPage.table.dataset')}</th>
+                <th>{t('inputDataPage.table.occurrenceDate')}</th>
+                <th/>
+              </tr>
             </thead>
             <tbody>
-            {occurrences.map(occurrence => <OccurrenceRow key={occurrence.id} {...occurrence}/>)}
+              {occurrences.map(occurrence => <OccurrenceRow key={occurrence.id} {...occurrence}/>)}
             </tbody>
           </table>
         </div>
@@ -42,7 +43,7 @@ export default function InputDataPage() {
   )
 }
 
-function OccurrenceRow({ id, addedDate, scientificName, dataset, occurrenceDate }) {
+function OccurrenceRow({ addedDate, dataset, id, occurrenceDate, scientificName }) {
   const { t } = useTranslation()
 
   return (
@@ -59,4 +60,12 @@ function OccurrenceRow({ id, addedDate, scientificName, dataset, occurrenceDate 
       </td>
     </tr>
   )
+}
+
+OccurrenceRow.propTypes = {
+  addedDate:      PropTypes.string.isRequired,
+  dataset:        PropTypes.string.isRequired,
+  id:             PropTypes.number.isRequired,
+  occurrenceDate: PropTypes.string.isRequired,
+  scientificName: PropTypes.string.isRequired
 }

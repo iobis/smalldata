@@ -2,27 +2,49 @@
 
 exports[`DarwinCoreFields renders correctly 1`] = `
 <DarwinCoreFields
+  fields={
+    Array [
+      Object {
+        "name": "name-1",
+        "value": "value-1",
+      },
+      Object {
+        "name": "name-2",
+        "value": "value-2",
+      },
+      Object {
+        "name": "name-3",
+        "value": "value-3",
+      },
+    ]
+  }
   onChange={[MockFunction]}
 >
   <div
     className="darwin-core-fields section is-fluid"
   >
-    <h2>
-      DARWIN CORE CUSTOM SELECTION
+    <h1
+      className="title"
+    >
+      occurrenceForm.darwinCoreFields.title
+    </h1>
+    <h2
+      className="subtitle"
+    >
+      occurrenceForm.darwinCoreFields.subtitle
+       
+      occurrenceForm.darwinCoreFields.tip
     </h2>
-    <p>
-      This form enables you to add any aditional fields you may need to specify, that were ot previously included in this form. Please be advised to use the Darwin Core Archive names
-    </p>
     <div
       className="columns is-grouped"
     >
       <InputText
-        className="field-name"
+        className="is-3 field-name"
         name="occurrenceForm.darwinCoreFields.fieldName"
         onChange={[Function]}
       >
         <div
-          className="column field field-name"
+          className="column field is-3 field-name"
         >
           <label
             className="label"
@@ -37,12 +59,12 @@ exports[`DarwinCoreFields renders correctly 1`] = `
         </div>
       </InputText>
       <InputText
-        className="value"
+        className="is-3 value"
         name="occurrenceForm.darwinCoreFields.value"
         onChange={[Function]}
       >
         <div
-          className="column field value"
+          className="column field is-3 value"
         >
           <label
             className="label"
@@ -64,12 +86,12 @@ exports[`DarwinCoreFields renders correctly 1`] = `
         >
            
         </span>
-        <a
+        <button
           className="button"
           onClick={[Function]}
         >
-          add
-        </a>
+          common.add
+        </button>
       </div>
     </div>
     <table
@@ -78,10 +100,10 @@ exports[`DarwinCoreFields renders correctly 1`] = `
       <thead>
         <tr>
           <th>
-            name
+            common.name
           </th>
           <th>
-            value
+            common.value
           </th>
           <th />
         </tr>
@@ -89,78 +111,59 @@ exports[`DarwinCoreFields renders correctly 1`] = `
       <tbody>
         <tr
           className="fieldrow"
-          key="dummy fielddummy value"
+          key="0"
         >
           <td>
-            dummy field
+            name-1
           </td>
           <td>
-            dummy value
+            value-1
           </td>
           <td>
-            <a
-              className="button is-small remove"
+            <button
+              className="button remove"
               onClick={[Function]}
             >
-              remove
-            </a>
+              common.remove
+            </button>
           </td>
         </tr>
         <tr
           className="fieldrow"
-          key="dummy2 fielddummy value"
+          key="1"
         >
           <td>
-            dummy2 field
+            name-2
           </td>
           <td>
-            dummy value
+            value-2
           </td>
           <td>
-            <a
-              className="button is-small remove"
+            <button
+              className="button remove"
               onClick={[Function]}
             >
-              remove
-            </a>
+              common.remove
+            </button>
           </td>
         </tr>
         <tr
           className="fieldrow"
-          key="dummy3 fielddummy value"
+          key="2"
         >
           <td>
-            dummy3 field
+            name-3
           </td>
           <td>
-            dummy value
+            value-3
           </td>
           <td>
-            <a
-              className="button is-small remove"
+            <button
+              className="button remove"
               onClick={[Function]}
             >
-              remove
-            </a>
-          </td>
-        </tr>
-        <tr
-          className="fieldrow"
-          key="dummy4 fielddummy value"
-        >
-          <td>
-            dummy4 field
-          </td>
-          <td>
-            dummy value
-          </td>
-          <td>
-            <a
-              className="button is-small remove"
-              onClick={[Function]}
-            >
-              remove
-            </a>
+              common.remove
+            </button>
           </td>
         </tr>
       </tbody>

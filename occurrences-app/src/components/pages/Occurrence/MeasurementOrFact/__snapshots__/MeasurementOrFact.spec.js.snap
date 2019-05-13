@@ -1,0 +1,512 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MeasurementOrFact renders correctly 1`] = `
+<MeasurementOrFact
+  data={Array []}
+  onChange={[MockFunction]}
+>
+  <div
+    className="measurement-or-fact section is-fluid"
+  >
+    <div
+      className="columns"
+    >
+      <div
+        className="column is-half"
+      >
+        <h1
+          className="title"
+        >
+          occurrenceForm.measurementOrFact.general.title
+        </h1>
+        <h2
+          className="subtitle"
+        >
+          occurrenceForm.measurementOrFact.general.subtitle
+        </h2>
+        <table
+          className="general table is-fullwidth is-striped is-hoverable"
+        >
+          <thead>
+            <tr>
+              <th
+                style={
+                  Object {
+                    "width": "60%",
+                  }
+                }
+              >
+                common.type
+              </th>
+              <th
+                style={
+                  Object {
+                    "width": "20%",
+                  }
+                }
+              >
+                common.unit
+              </th>
+              <th
+                style={
+                  Object {
+                    "width": "10%",
+                  }
+                }
+              >
+                common.value
+              </th>
+              <th
+                style={
+                  Object {
+                    "width": "10%",
+                  }
+                }
+              />
+            </tr>
+          </thead>
+          <tbody>
+            <MeasurementRow
+              key="general-measurement-1"
+              onClickAdd={[Function]}
+              type="general-measurement-1"
+              units={
+                Array [
+                  Object {
+                    "id": "http://general-measurement-1-unit-1/",
+                    "name": "general-measurement-1-unit-1",
+                  },
+                  Object {
+                    "id": "http://general-measurement-1-unit-2/",
+                    "name": "general-measurement-1-unit-2",
+                  },
+                ]
+              }
+            >
+              <tr
+                className="measurement-row fieldrow"
+              >
+                <td>
+                  general-measurement-1
+                </td>
+                <td>
+                  <Dropdown
+                    onChange={[Function]}
+                    options={
+                      Array [
+                        "general-measurement-1-unit-1",
+                        "general-measurement-1-unit-2",
+                      ]
+                    }
+                    value="general-measurement-1-unit-1"
+                  >
+                    <div
+                      className="dropdown"
+                      onClick={[Function]}
+                    >
+                      <div
+                        className="dropdown-trigger"
+                      >
+                        <button
+                          aria-controls="dropdown-menu"
+                          aria-haspopup="true"
+                          className="button"
+                        >
+                          <span
+                            className="selected-value"
+                          >
+                            general-measurement-1-unit-1
+                          </span>
+                          <span
+                            className="icon is-small"
+                          >
+                            <FontAwesomeIcon
+                              className="angle-down"
+                              icon="angle-down"
+                            >
+                              <i
+                                className="angle-down"
+                                icon="angle-down"
+                              />
+                            </FontAwesomeIcon>
+                          </span>
+                        </button>
+                      </div>
+                      <div
+                        className="dropdown-menu"
+                        id="dropdown-menu"
+                        role="menu"
+                      >
+                        <div
+                          className="dropdown-content"
+                        >
+                          <div
+                            className="dropdown-item is-active"
+                            key="general-measurement-1-unit-1"
+                            onClick={[Function]}
+                          >
+                            general-measurement-1-unit-1
+                          </div>
+                          <div
+                            className="dropdown-item"
+                            key="general-measurement-1-unit-2"
+                            onClick={[Function]}
+                          >
+                            general-measurement-1-unit-2
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </Dropdown>
+                </td>
+                <td>
+                  <input
+                    className="input"
+                    onChange={[Function]}
+                    type="text"
+                    value=""
+                  />
+                </td>
+                <td>
+                  <a
+                    className="add button"
+                    onClick={[Function]}
+                  >
+                    common.add
+                  </a>
+                </td>
+              </tr>
+            </MeasurementRow>
+            <MeasurementRow
+              key="general-measurement-2"
+              onClickAdd={[Function]}
+              type="general-measurement-2"
+              units={
+                Array [
+                  Object {
+                    "id": "general-measurement-2-unit-1",
+                    "name": "general-measurement-2-unit-1",
+                  },
+                ]
+              }
+            >
+              <tr
+                className="measurement-row fieldrow"
+              >
+                <td>
+                  general-measurement-2
+                </td>
+                <td>
+                  <Dropdown
+                    onChange={[Function]}
+                    options={
+                      Array [
+                        "general-measurement-2-unit-1",
+                      ]
+                    }
+                    value="general-measurement-2-unit-1"
+                  >
+                    <div
+                      className="dropdown"
+                      onClick={[Function]}
+                    >
+                      <div
+                        className="dropdown-trigger"
+                      >
+                        <button
+                          aria-controls="dropdown-menu"
+                          aria-haspopup="true"
+                          className="button"
+                        >
+                          <span
+                            className="selected-value"
+                          >
+                            general-measurement-2-unit-1
+                          </span>
+                          <span
+                            className="icon is-small"
+                          >
+                            <FontAwesomeIcon
+                              className="angle-down"
+                              icon="angle-down"
+                            >
+                              <i
+                                className="angle-down"
+                                icon="angle-down"
+                              />
+                            </FontAwesomeIcon>
+                          </span>
+                        </button>
+                      </div>
+                      <div
+                        className="dropdown-menu"
+                        id="dropdown-menu"
+                        role="menu"
+                      >
+                        <div
+                          className="dropdown-content"
+                        >
+                          <div
+                            className="dropdown-item is-active"
+                            key="general-measurement-2-unit-1"
+                            onClick={[Function]}
+                          >
+                            general-measurement-2-unit-1
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </Dropdown>
+                </td>
+                <td>
+                  <input
+                    className="input"
+                    onChange={[Function]}
+                    type="text"
+                    value=""
+                  />
+                </td>
+                <td>
+                  <a
+                    className="add button"
+                    onClick={[Function]}
+                  >
+                    common.add
+                  </a>
+                </td>
+              </tr>
+            </MeasurementRow>
+            <MeasurementRow
+              key="general-measurement-3"
+              onClickAdd={[Function]}
+              type="general-measurement-3"
+              units={
+                Array [
+                  Object {
+                    "id": "general-measurement-3-unit-1",
+                    "name": "general-measurement-3-unit-1",
+                  },
+                ]
+              }
+            >
+              <tr
+                className="measurement-row fieldrow"
+              >
+                <td>
+                  general-measurement-3
+                </td>
+                <td>
+                  <Dropdown
+                    onChange={[Function]}
+                    options={
+                      Array [
+                        "general-measurement-3-unit-1",
+                      ]
+                    }
+                    value="general-measurement-3-unit-1"
+                  >
+                    <div
+                      className="dropdown"
+                      onClick={[Function]}
+                    >
+                      <div
+                        className="dropdown-trigger"
+                      >
+                        <button
+                          aria-controls="dropdown-menu"
+                          aria-haspopup="true"
+                          className="button"
+                        >
+                          <span
+                            className="selected-value"
+                          >
+                            general-measurement-3-unit-1
+                          </span>
+                          <span
+                            className="icon is-small"
+                          >
+                            <FontAwesomeIcon
+                              className="angle-down"
+                              icon="angle-down"
+                            >
+                              <i
+                                className="angle-down"
+                                icon="angle-down"
+                              />
+                            </FontAwesomeIcon>
+                          </span>
+                        </button>
+                      </div>
+                      <div
+                        className="dropdown-menu"
+                        id="dropdown-menu"
+                        role="menu"
+                      >
+                        <div
+                          className="dropdown-content"
+                        >
+                          <div
+                            className="dropdown-item is-active"
+                            key="general-measurement-3-unit-1"
+                            onClick={[Function]}
+                          >
+                            general-measurement-3-unit-1
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </Dropdown>
+                </td>
+                <td>
+                  <input
+                    className="input"
+                    onChange={[Function]}
+                    type="text"
+                    value=""
+                  />
+                </td>
+                <td>
+                  <a
+                    className="add button"
+                    onClick={[Function]}
+                  >
+                    common.add
+                  </a>
+                </td>
+              </tr>
+            </MeasurementRow>
+          </tbody>
+        </table>
+        <h1
+          className="title"
+        >
+          occurrenceForm.measurementOrFact.specific.title
+        </h1>
+        <h2
+          className="subtitle"
+        >
+          occurrenceForm.measurementOrFact.specific.subtitle
+        </h2>
+        <table
+          className="specific table is-fullwidth is-striped is-hoverable"
+        >
+          <thead>
+            <tr>
+              <th
+                style={
+                  Object {
+                    "width": "60%",
+                  }
+                }
+              >
+                common.type
+              </th>
+              <th
+                style={
+                  Object {
+                    "width": "20%",
+                  }
+                }
+              >
+                common.unit
+              </th>
+              <th
+                style={
+                  Object {
+                    "width": "10%",
+                  }
+                }
+              >
+                common.value
+              </th>
+              <th
+                style={
+                  Object {
+                    "width": "10%",
+                  }
+                }
+              />
+            </tr>
+          </thead>
+          <tbody />
+        </table>
+      </div>
+      <div
+        className="column is-half supplied"
+      >
+        <h1
+          className="title"
+        >
+          occurrenceForm.measurementOrFact.supplied.title
+        </h1>
+        <h2
+          className="subtitle"
+        >
+           
+        </h2>
+        <table
+          className="supplied table is-fullwidth is-striped is-hoverable"
+        >
+          <thead>
+            <tr>
+              <th
+                style={
+                  Object {
+                    "width": "60%",
+                  }
+                }
+              >
+                common.type
+              </th>
+              <th
+                style={
+                  Object {
+                    "width": "20%",
+                  }
+                }
+              >
+                common.unit
+              </th>
+              <th
+                style={
+                  Object {
+                    "width": "10%",
+                  }
+                }
+              >
+                common.value
+              </th>
+              <th
+                style={
+                  Object {
+                    "width": "5%",
+                  }
+                }
+              />
+              <th
+                style={
+                  Object {
+                    "width": "5%",
+                  }
+                }
+              />
+            </tr>
+          </thead>
+          <tbody />
+        </table>
+      </div>
+    </div>
+    <CopyPreviousData>
+      <div
+        className="columns"
+      >
+        <div
+          className="copy-previous-data column is-narrow"
+        >
+          copy data from previous entry
+        </div>
+      </div>
+    </CopyPreviousData>
+  </div>
+</MeasurementOrFact>
+`;
