@@ -1888,12 +1888,8 @@ exports[`OccurrenceForm renders correctly 3`] = `
                       units={
                         Array [
                           Object {
-                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
-                            "name": "Kilogram",
-                          },
-                          Object {
-                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
-                            "name": "Gram",
+                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPDB/",
+                            "name": "Decibars",
                           },
                         ]
                       }
@@ -1909,11 +1905,10 @@ exports[`OccurrenceForm renders correctly 3`] = `
                             onChange={[Function]}
                             options={
                               Array [
-                                "Kilogram",
-                                "Gram",
+                                "Decibars",
                               ]
                             }
-                            value="Kilogram"
+                            value="Decibars"
                           >
                             <div
                               className="dropdown"
@@ -1930,7 +1925,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                                   <span
                                     className="selected-value"
                                   >
-                                    Kilogram
+                                    Decibars
                                   </span>
                                   <span
                                     className="icon is-small"
@@ -1957,17 +1952,10 @@ exports[`OccurrenceForm renders correctly 3`] = `
                                 >
                                   <div
                                     className="dropdown-item is-active"
-                                    key="Kilogram"
+                                    key="Decibars"
                                     onClick={[Function]}
                                   >
-                                    Kilogram
-                                  </div>
-                                  <div
-                                    className="dropdown-item"
-                                    key="Gram"
-                                    onClick={[Function]}
-                                  >
-                                    Gram
+                                    Decibars
                                   </div>
                                 </div>
                               </div>
@@ -2098,8 +2086,12 @@ exports[`OccurrenceForm renders correctly 3`] = `
                       units={
                         Array [
                           Object {
-                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPAA",
-                            "name": "Degrees Celsius",
+                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGKG",
+                            "name": "Grams per kilogram",
+                          },
+                          Object {
+                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/UUUU/",
+                            "name": "PSU (dimensionless)",
                           },
                         ]
                       }
@@ -2115,10 +2107,11 @@ exports[`OccurrenceForm renders correctly 3`] = `
                             onChange={[Function]}
                             options={
                               Array [
-                                "Degrees Celsius",
+                                "Grams per kilogram",
+                                "PSU (dimensionless)",
                               ]
                             }
-                            value="Degrees Celsius"
+                            value="Grams per kilogram"
                           >
                             <div
                               className="dropdown"
@@ -2135,7 +2128,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                                   <span
                                     className="selected-value"
                                   >
-                                    Degrees Celsius
+                                    Grams per kilogram
                                   </span>
                                   <span
                                     className="icon is-small"
@@ -2162,10 +2155,17 @@ exports[`OccurrenceForm renders correctly 3`] = `
                                 >
                                   <div
                                     className="dropdown-item is-active"
-                                    key="Degrees Celsius"
+                                    key="Grams per kilogram"
                                     onClick={[Function]}
                                   >
-                                    Degrees Celsius
+                                    Grams per kilogram
+                                  </div>
+                                  <div
+                                    className="dropdown-item"
+                                    key="PSU (dimensionless)"
+                                    onClick={[Function]}
+                                  >
+                                    PSU (dimensionless)
                                   </div>
                                 </div>
                               </div>
@@ -2251,8 +2251,8 @@ exports[`OccurrenceForm renders correctly 3`] = `
                       units={
                         Array [
                           Object {
-                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
-                            "name": "Kilogram",
+                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/UUUU/",
+                            "name": "Dimensionless",
                           },
                         ]
                       }
@@ -2268,10 +2268,10 @@ exports[`OccurrenceForm renders correctly 3`] = `
                             onChange={[Function]}
                             options={
                               Array [
-                                "Kilogram",
+                                "Dimensionless",
                               ]
                             }
-                            value="Kilogram"
+                            value="Dimensionless"
                           >
                             <div
                               className="dropdown"
@@ -2288,7 +2288,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                                   <span
                                     className="selected-value"
                                   >
-                                    Kilogram
+                                    Dimensionless
                                   </span>
                                   <span
                                     className="icon is-small"
@@ -2315,10 +2315,10 @@ exports[`OccurrenceForm renders correctly 3`] = `
                                 >
                                   <div
                                     className="dropdown-item is-active"
-                                    key="Kilogram"
+                                    key="Dimensionless"
                                     onClick={[Function]}
                                   >
-                                    Kilogram
+                                    Dimensionless
                                   </div>
                                 </div>
                               </div>
@@ -2350,8 +2350,8 @@ exports[`OccurrenceForm renders correctly 3`] = `
                       units={
                         Array [
                           Object {
-                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/UXMM",
-                            "name": "Millimeter",
+                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/UUUU/",
+                            "name": "Dimensionless",
                           },
                         ]
                       }
@@ -2367,10 +2367,10 @@ exports[`OccurrenceForm renders correctly 3`] = `
                             onChange={[Function]}
                             options={
                               Array [
-                                "Millimeter",
+                                "Dimensionless",
                               ]
                             }
-                            value="Millimeter"
+                            value="Dimensionless"
                           >
                             <div
                               className="dropdown"
@@ -2387,7 +2387,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                                   <span
                                     className="selected-value"
                                   >
-                                    Millimeter
+                                    Dimensionless
                                   </span>
                                   <span
                                     className="icon is-small"
@@ -2414,10 +2414,10 @@ exports[`OccurrenceForm renders correctly 3`] = `
                                 >
                                   <div
                                     className="dropdown-item is-active"
-                                    key="Millimeter"
+                                    key="Dimensionless"
                                     onClick={[Function]}
                                   >
-                                    Millimeter
+                                    Dimensionless
                                   </div>
                                 </div>
                               </div>
@@ -2449,403 +2449,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                       units={
                         Array [
                           Object {
-                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
-                            "name": "Meter",
-                          },
-                        ]
-                      }
-                    >
-                      <tr
-                        className="measurement-row fieldrow"
-                      >
-                        <td>
-                          Abundance of biological entity specified elsewhere per unit area of the bed
-                        </td>
-                        <td>
-                          <Dropdown
-                            onChange={[Function]}
-                            options={
-                              Array [
-                                "Meter",
-                              ]
-                            }
-                            value="Meter"
-                          >
-                            <div
-                              className="dropdown"
-                              onClick={[Function]}
-                            >
-                              <div
-                                className="dropdown-trigger"
-                              >
-                                <button
-                                  aria-controls="dropdown-menu"
-                                  aria-haspopup="true"
-                                  className="button"
-                                >
-                                  <span
-                                    className="selected-value"
-                                  >
-                                    Meter
-                                  </span>
-                                  <span
-                                    className="icon is-small"
-                                  >
-                                    <FontAwesomeIcon
-                                      className="angle-down"
-                                      icon="angle-down"
-                                    >
-                                      <i
-                                        className="angle-down"
-                                        icon="angle-down"
-                                      />
-                                    </FontAwesomeIcon>
-                                  </span>
-                                </button>
-                              </div>
-                              <div
-                                className="dropdown-menu"
-                                id="dropdown-menu"
-                                role="menu"
-                              >
-                                <div
-                                  className="dropdown-content"
-                                >
-                                  <div
-                                    className="dropdown-item is-active"
-                                    key="Meter"
-                                    onClick={[Function]}
-                                  >
-                                    Meter
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </Dropdown>
-                        </td>
-                        <td>
-                          <input
-                            className="input"
-                            onChange={[Function]}
-                            type="text"
-                            value=""
-                          />
-                        </td>
-                        <td>
-                          <a
-                            className="add button"
-                            onClick={[Function]}
-                          >
-                            common.add
-                          </a>
-                        </td>
-                      </tr>
-                    </MeasurementRow>
-                    <MeasurementRow
-                      key="Abundance of biological entity specified elsewhere per unit volume of the sediment"
-                      onClickAdd={[Function]}
-                      type="Abundance of biological entity specified elsewhere per unit volume of the sediment"
-                      units={
-                        Array [
-                          Object {
-                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM",
-                            "name": "Grams",
-                          },
-                        ]
-                      }
-                    >
-                      <tr
-                        className="measurement-row fieldrow"
-                      >
-                        <td>
-                          Abundance of biological entity specified elsewhere per unit volume of the sediment
-                        </td>
-                        <td>
-                          <Dropdown
-                            onChange={[Function]}
-                            options={
-                              Array [
-                                "Grams",
-                              ]
-                            }
-                            value="Grams"
-                          >
-                            <div
-                              className="dropdown"
-                              onClick={[Function]}
-                            >
-                              <div
-                                className="dropdown-trigger"
-                              >
-                                <button
-                                  aria-controls="dropdown-menu"
-                                  aria-haspopup="true"
-                                  className="button"
-                                >
-                                  <span
-                                    className="selected-value"
-                                  >
-                                    Grams
-                                  </span>
-                                  <span
-                                    className="icon is-small"
-                                  >
-                                    <FontAwesomeIcon
-                                      className="angle-down"
-                                      icon="angle-down"
-                                    >
-                                      <i
-                                        className="angle-down"
-                                        icon="angle-down"
-                                      />
-                                    </FontAwesomeIcon>
-                                  </span>
-                                </button>
-                              </div>
-                              <div
-                                className="dropdown-menu"
-                                id="dropdown-menu"
-                                role="menu"
-                              >
-                                <div
-                                  className="dropdown-content"
-                                >
-                                  <div
-                                    className="dropdown-item is-active"
-                                    key="Grams"
-                                    onClick={[Function]}
-                                  >
-                                    Grams
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </Dropdown>
-                        </td>
-                        <td>
-                          <input
-                            className="input"
-                            onChange={[Function]}
-                            type="text"
-                            value=""
-                          />
-                        </td>
-                        <td>
-                          <a
-                            className="add button"
-                            onClick={[Function]}
-                          >
-                            common.add
-                          </a>
-                        </td>
-                      </tr>
-                    </MeasurementRow>
-                    <MeasurementRow
-                      key="Abundance of biological entity specified elsewhere per unit volume of the water body"
-                      onClickAdd={[Function]}
-                      type="Abundance of biological entity specified elsewhere per unit volume of the water body"
-                      units={
-                        Array [
-                          Object {
-                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/UMIC",
-                            "name": "Micrometer",
-                          },
-                        ]
-                      }
-                    >
-                      <tr
-                        className="measurement-row fieldrow"
-                      >
-                        <td>
-                          Abundance of biological entity specified elsewhere per unit volume of the water body
-                        </td>
-                        <td>
-                          <Dropdown
-                            onChange={[Function]}
-                            options={
-                              Array [
-                                "Micrometer",
-                              ]
-                            }
-                            value="Micrometer"
-                          >
-                            <div
-                              className="dropdown"
-                              onClick={[Function]}
-                            >
-                              <div
-                                className="dropdown-trigger"
-                              >
-                                <button
-                                  aria-controls="dropdown-menu"
-                                  aria-haspopup="true"
-                                  className="button"
-                                >
-                                  <span
-                                    className="selected-value"
-                                  >
-                                    Micrometer
-                                  </span>
-                                  <span
-                                    className="icon is-small"
-                                  >
-                                    <FontAwesomeIcon
-                                      className="angle-down"
-                                      icon="angle-down"
-                                    >
-                                      <i
-                                        className="angle-down"
-                                        icon="angle-down"
-                                      />
-                                    </FontAwesomeIcon>
-                                  </span>
-                                </button>
-                              </div>
-                              <div
-                                className="dropdown-menu"
-                                id="dropdown-menu"
-                                role="menu"
-                              >
-                                <div
-                                  className="dropdown-content"
-                                >
-                                  <div
-                                    className="dropdown-item is-active"
-                                    key="Micrometer"
-                                    onClick={[Function]}
-                                  >
-                                    Micrometer
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </Dropdown>
-                        </td>
-                        <td>
-                          <input
-                            className="input"
-                            onChange={[Function]}
-                            type="text"
-                            value=""
-                          />
-                        </td>
-                        <td>
-                          <a
-                            className="add button"
-                            onClick={[Function]}
-                          >
-                            common.add
-                          </a>
-                        </td>
-                      </tr>
-                    </MeasurementRow>
-                    <MeasurementRow
-                      key="Ash-free dry weight biomass (as carbon) of biological entity specified elsewhere per unit volume of the sediment"
-                      onClickAdd={[Function]}
-                      type="Ash-free dry weight biomass (as carbon) of biological entity specified elsewhere per unit volume of the sediment"
-                      units={
-                        Array [
-                          Object {
-                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGMS",
-                            "name": "Grams per square meter",
-                          },
-                        ]
-                      }
-                    >
-                      <tr
-                        className="measurement-row fieldrow"
-                      >
-                        <td>
-                          Ash-free dry weight biomass (as carbon) of biological entity specified elsewhere per unit volume of the sediment
-                        </td>
-                        <td>
-                          <Dropdown
-                            onChange={[Function]}
-                            options={
-                              Array [
-                                "Grams per square meter",
-                              ]
-                            }
-                            value="Grams per square meter"
-                          >
-                            <div
-                              className="dropdown"
-                              onClick={[Function]}
-                            >
-                              <div
-                                className="dropdown-trigger"
-                              >
-                                <button
-                                  aria-controls="dropdown-menu"
-                                  aria-haspopup="true"
-                                  className="button"
-                                >
-                                  <span
-                                    className="selected-value"
-                                  >
-                                    Grams per square meter
-                                  </span>
-                                  <span
-                                    className="icon is-small"
-                                  >
-                                    <FontAwesomeIcon
-                                      className="angle-down"
-                                      icon="angle-down"
-                                    >
-                                      <i
-                                        className="angle-down"
-                                        icon="angle-down"
-                                      />
-                                    </FontAwesomeIcon>
-                                  </span>
-                                </button>
-                              </div>
-                              <div
-                                className="dropdown-menu"
-                                id="dropdown-menu"
-                                role="menu"
-                              >
-                                <div
-                                  className="dropdown-content"
-                                >
-                                  <div
-                                    className="dropdown-item is-active"
-                                    key="Grams per square meter"
-                                    onClick={[Function]}
-                                  >
-                                    Grams per square meter
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </Dropdown>
-                        </td>
-                        <td>
-                          <input
-                            className="input"
-                            onChange={[Function]}
-                            type="text"
-                            value=""
-                          />
-                        </td>
-                        <td>
-                          <a
-                            className="add button"
-                            onClick={[Function]}
-                          >
-                            common.add
-                          </a>
-                        </td>
-                      </tr>
-                    </MeasurementRow>
-                    <MeasurementRow
-                      key="Ash-free dry weight biomass of biological entity specified elsewhere per unit area of the bed"
-                      onClickAdd={[Function]}
-                      type="Ash-free dry weight biomass of biological entity specified elsewhere per unit area of the bed"
-                      units={
-                        Array [
-                          Object {
-                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPMS",
+                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPMS/",
                             "name": "Number per square meter",
                           },
                         ]
@@ -2855,7 +2459,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                         className="measurement-row fieldrow"
                       >
                         <td>
-                          Ash-free dry weight biomass of biological entity specified elsewhere per unit area of the bed
+                          Abundance of biological entity specified elsewhere per unit area of the bed
                         </td>
                         <td>
                           <Dropdown
@@ -2938,14 +2542,14 @@ exports[`OccurrenceForm renders correctly 3`] = `
                       </tr>
                     </MeasurementRow>
                     <MeasurementRow
-                      key="Ash-free dry weight biomass of biological entity specified elsewhere per unit volume of the water body"
+                      key="Abundance of biological entity specified elsewhere per unit volume of the sediment"
                       onClickAdd={[Function]}
-                      type="Ash-free dry weight biomass of biological entity specified elsewhere per unit volume of the water body"
+                      type="Abundance of biological entity specified elsewhere per unit volume of the sediment"
                       units={
                         Array [
                           Object {
-                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/UCML",
-                            "name": "Number per liter",
+                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPMM/",
+                            "name": "Number per cubic meter",
                           },
                         ]
                       }
@@ -2954,17 +2558,17 @@ exports[`OccurrenceForm renders correctly 3`] = `
                         className="measurement-row fieldrow"
                       >
                         <td>
-                          Ash-free dry weight biomass of biological entity specified elsewhere per unit volume of the water body
+                          Abundance of biological entity specified elsewhere per unit volume of the sediment
                         </td>
                         <td>
                           <Dropdown
                             onChange={[Function]}
                             options={
                               Array [
-                                "Number per liter",
+                                "Number per cubic meter",
                               ]
                             }
-                            value="Number per liter"
+                            value="Number per cubic meter"
                           >
                             <div
                               className="dropdown"
@@ -2981,7 +2585,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                                   <span
                                     className="selected-value"
                                   >
-                                    Number per liter
+                                    Number per cubic meter
                                   </span>
                                   <span
                                     className="icon is-small"
@@ -3008,10 +2612,406 @@ exports[`OccurrenceForm renders correctly 3`] = `
                                 >
                                   <div
                                     className="dropdown-item is-active"
-                                    key="Number per liter"
+                                    key="Number per cubic meter"
                                     onClick={[Function]}
                                   >
-                                    Number per liter
+                                    Number per cubic meter
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </Dropdown>
+                        </td>
+                        <td>
+                          <input
+                            className="input"
+                            onChange={[Function]}
+                            type="text"
+                            value=""
+                          />
+                        </td>
+                        <td>
+                          <a
+                            className="add button"
+                            onClick={[Function]}
+                          >
+                            common.add
+                          </a>
+                        </td>
+                      </tr>
+                    </MeasurementRow>
+                    <MeasurementRow
+                      key="Abundance of biological entity specified elsewhere per unit volume of the water body"
+                      onClickAdd={[Function]}
+                      type="Abundance of biological entity specified elsewhere per unit volume of the water body"
+                      units={
+                        Array [
+                          Object {
+                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPMM/",
+                            "name": "Number per cubic meter",
+                          },
+                        ]
+                      }
+                    >
+                      <tr
+                        className="measurement-row fieldrow"
+                      >
+                        <td>
+                          Abundance of biological entity specified elsewhere per unit volume of the water body
+                        </td>
+                        <td>
+                          <Dropdown
+                            onChange={[Function]}
+                            options={
+                              Array [
+                                "Number per cubic meter",
+                              ]
+                            }
+                            value="Number per cubic meter"
+                          >
+                            <div
+                              className="dropdown"
+                              onClick={[Function]}
+                            >
+                              <div
+                                className="dropdown-trigger"
+                              >
+                                <button
+                                  aria-controls="dropdown-menu"
+                                  aria-haspopup="true"
+                                  className="button"
+                                >
+                                  <span
+                                    className="selected-value"
+                                  >
+                                    Number per cubic meter
+                                  </span>
+                                  <span
+                                    className="icon is-small"
+                                  >
+                                    <FontAwesomeIcon
+                                      className="angle-down"
+                                      icon="angle-down"
+                                    >
+                                      <i
+                                        className="angle-down"
+                                        icon="angle-down"
+                                      />
+                                    </FontAwesomeIcon>
+                                  </span>
+                                </button>
+                              </div>
+                              <div
+                                className="dropdown-menu"
+                                id="dropdown-menu"
+                                role="menu"
+                              >
+                                <div
+                                  className="dropdown-content"
+                                >
+                                  <div
+                                    className="dropdown-item is-active"
+                                    key="Number per cubic meter"
+                                    onClick={[Function]}
+                                  >
+                                    Number per cubic meter
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </Dropdown>
+                        </td>
+                        <td>
+                          <input
+                            className="input"
+                            onChange={[Function]}
+                            type="text"
+                            value=""
+                          />
+                        </td>
+                        <td>
+                          <a
+                            className="add button"
+                            onClick={[Function]}
+                          >
+                            common.add
+                          </a>
+                        </td>
+                      </tr>
+                    </MeasurementRow>
+                    <MeasurementRow
+                      key="Ash-free dry weight biomass (as carbon) of biological entity specified elsewhere per unit volume of the sediment"
+                      onClickAdd={[Function]}
+                      type="Ash-free dry weight biomass (as carbon) of biological entity specified elsewhere per unit volume of the sediment"
+                      units={
+                        Array [
+                          Object {
+                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/UMMC/",
+                            "name": "Milligrams per cubic meter",
+                          },
+                        ]
+                      }
+                    >
+                      <tr
+                        className="measurement-row fieldrow"
+                      >
+                        <td>
+                          Ash-free dry weight biomass (as carbon) of biological entity specified elsewhere per unit volume of the sediment
+                        </td>
+                        <td>
+                          <Dropdown
+                            onChange={[Function]}
+                            options={
+                              Array [
+                                "Milligrams per cubic meter",
+                              ]
+                            }
+                            value="Milligrams per cubic meter"
+                          >
+                            <div
+                              className="dropdown"
+                              onClick={[Function]}
+                            >
+                              <div
+                                className="dropdown-trigger"
+                              >
+                                <button
+                                  aria-controls="dropdown-menu"
+                                  aria-haspopup="true"
+                                  className="button"
+                                >
+                                  <span
+                                    className="selected-value"
+                                  >
+                                    Milligrams per cubic meter
+                                  </span>
+                                  <span
+                                    className="icon is-small"
+                                  >
+                                    <FontAwesomeIcon
+                                      className="angle-down"
+                                      icon="angle-down"
+                                    >
+                                      <i
+                                        className="angle-down"
+                                        icon="angle-down"
+                                      />
+                                    </FontAwesomeIcon>
+                                  </span>
+                                </button>
+                              </div>
+                              <div
+                                className="dropdown-menu"
+                                id="dropdown-menu"
+                                role="menu"
+                              >
+                                <div
+                                  className="dropdown-content"
+                                >
+                                  <div
+                                    className="dropdown-item is-active"
+                                    key="Milligrams per cubic meter"
+                                    onClick={[Function]}
+                                  >
+                                    Milligrams per cubic meter
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </Dropdown>
+                        </td>
+                        <td>
+                          <input
+                            className="input"
+                            onChange={[Function]}
+                            type="text"
+                            value=""
+                          />
+                        </td>
+                        <td>
+                          <a
+                            className="add button"
+                            onClick={[Function]}
+                          >
+                            common.add
+                          </a>
+                        </td>
+                      </tr>
+                    </MeasurementRow>
+                    <MeasurementRow
+                      key="Ash-free dry weight biomass of biological entity specified elsewhere per unit area of the bed"
+                      onClickAdd={[Function]}
+                      type="Ash-free dry weight biomass of biological entity specified elsewhere per unit area of the bed"
+                      units={
+                        Array [
+                          Object {
+                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/UMMS/",
+                            "name": "Milligrams per square meter",
+                          },
+                        ]
+                      }
+                    >
+                      <tr
+                        className="measurement-row fieldrow"
+                      >
+                        <td>
+                          Ash-free dry weight biomass of biological entity specified elsewhere per unit area of the bed
+                        </td>
+                        <td>
+                          <Dropdown
+                            onChange={[Function]}
+                            options={
+                              Array [
+                                "Milligrams per square meter",
+                              ]
+                            }
+                            value="Milligrams per square meter"
+                          >
+                            <div
+                              className="dropdown"
+                              onClick={[Function]}
+                            >
+                              <div
+                                className="dropdown-trigger"
+                              >
+                                <button
+                                  aria-controls="dropdown-menu"
+                                  aria-haspopup="true"
+                                  className="button"
+                                >
+                                  <span
+                                    className="selected-value"
+                                  >
+                                    Milligrams per square meter
+                                  </span>
+                                  <span
+                                    className="icon is-small"
+                                  >
+                                    <FontAwesomeIcon
+                                      className="angle-down"
+                                      icon="angle-down"
+                                    >
+                                      <i
+                                        className="angle-down"
+                                        icon="angle-down"
+                                      />
+                                    </FontAwesomeIcon>
+                                  </span>
+                                </button>
+                              </div>
+                              <div
+                                className="dropdown-menu"
+                                id="dropdown-menu"
+                                role="menu"
+                              >
+                                <div
+                                  className="dropdown-content"
+                                >
+                                  <div
+                                    className="dropdown-item is-active"
+                                    key="Milligrams per square meter"
+                                    onClick={[Function]}
+                                  >
+                                    Milligrams per square meter
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </Dropdown>
+                        </td>
+                        <td>
+                          <input
+                            className="input"
+                            onChange={[Function]}
+                            type="text"
+                            value=""
+                          />
+                        </td>
+                        <td>
+                          <a
+                            className="add button"
+                            onClick={[Function]}
+                          >
+                            common.add
+                          </a>
+                        </td>
+                      </tr>
+                    </MeasurementRow>
+                    <MeasurementRow
+                      key="Ash-free dry weight biomass of biological entity specified elsewhere per unit volume of the water body"
+                      onClickAdd={[Function]}
+                      type="Ash-free dry weight biomass of biological entity specified elsewhere per unit volume of the water body"
+                      units={
+                        Array [
+                          Object {
+                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/UMMC/",
+                            "name": "Milligrams per cubic meter",
+                          },
+                        ]
+                      }
+                    >
+                      <tr
+                        className="measurement-row fieldrow"
+                      >
+                        <td>
+                          Ash-free dry weight biomass of biological entity specified elsewhere per unit volume of the water body
+                        </td>
+                        <td>
+                          <Dropdown
+                            onChange={[Function]}
+                            options={
+                              Array [
+                                "Milligrams per cubic meter",
+                              ]
+                            }
+                            value="Milligrams per cubic meter"
+                          >
+                            <div
+                              className="dropdown"
+                              onClick={[Function]}
+                            >
+                              <div
+                                className="dropdown-trigger"
+                              >
+                                <button
+                                  aria-controls="dropdown-menu"
+                                  aria-haspopup="true"
+                                  className="button"
+                                >
+                                  <span
+                                    className="selected-value"
+                                  >
+                                    Milligrams per cubic meter
+                                  </span>
+                                  <span
+                                    className="icon is-small"
+                                  >
+                                    <FontAwesomeIcon
+                                      className="angle-down"
+                                      icon="angle-down"
+                                    >
+                                      <i
+                                        className="angle-down"
+                                        icon="angle-down"
+                                      />
+                                    </FontAwesomeIcon>
+                                  </span>
+                                </button>
+                              </div>
+                              <div
+                                className="dropdown-menu"
+                                id="dropdown-menu"
+                                role="menu"
+                              >
+                                <div
+                                  className="dropdown-content"
+                                >
+                                  <div
+                                    className="dropdown-item is-active"
+                                    key="Milligrams per cubic meter"
+                                    onClick={[Function]}
+                                  >
+                                    Milligrams per cubic meter
                                   </div>
                                 </div>
                               </div>
@@ -3043,8 +3043,8 @@ exports[`OccurrenceForm renders correctly 3`] = `
                       units={
                         Array [
                           Object {
-                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/UMSQ",
-                            "name": "Square meter",
+                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX/",
+                            "name": "Meter",
                           },
                         ]
                       }
@@ -3060,10 +3060,10 @@ exports[`OccurrenceForm renders correctly 3`] = `
                             onChange={[Function]}
                             options={
                               Array [
-                                "Square meter",
+                                "Meter",
                               ]
                             }
-                            value="Square meter"
+                            value="Meter"
                           >
                             <div
                               className="dropdown"
@@ -3080,7 +3080,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                                   <span
                                     className="selected-value"
                                   >
-                                    Square meter
+                                    Meter
                                   </span>
                                   <span
                                     className="icon is-small"
@@ -3107,10 +3107,10 @@ exports[`OccurrenceForm renders correctly 3`] = `
                                 >
                                   <div
                                     className="dropdown-item is-active"
-                                    key="Square meter"
+                                    key="Meter"
                                     onClick={[Function]}
                                   >
-                                    Square meter
+                                    Meter
                                   </div>
                                 </div>
                               </div>
@@ -3142,8 +3142,8 @@ exports[`OccurrenceForm renders correctly 3`] = `
                       units={
                         Array [
                           Object {
-                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/MCUB/",
-                            "name": "Cubic metres",
+                            "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
+                            "name": "Grams",
                           },
                         ]
                       }
@@ -3159,10 +3159,10 @@ exports[`OccurrenceForm renders correctly 3`] = `
                             onChange={[Function]}
                             options={
                               Array [
-                                "Cubic metres",
+                                "Grams",
                               ]
                             }
-                            value="Cubic metres"
+                            value="Grams"
                           >
                             <div
                               className="dropdown"
@@ -3179,7 +3179,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                                   <span
                                     className="selected-value"
                                   >
-                                    Cubic metres
+                                    Grams
                                   </span>
                                   <span
                                     className="icon is-small"
@@ -3206,10 +3206,10 @@ exports[`OccurrenceForm renders correctly 3`] = `
                                 >
                                   <div
                                     className="dropdown-item is-active"
-                                    key="Cubic metres"
+                                    key="Grams"
                                     onClick={[Function]}
                                   >
-                                    Cubic metres
+                                    Grams
                                   </div>
                                 </div>
                               </div>
@@ -3738,15 +3738,11 @@ exports[`OccurrenceForm renders correctly 4`] = `
             Array [
               Object {
                 "type": "Pressure",
-                "unit": "Kilogram",
+                "unit": "Decibars",
                 "units": Array [
                   Object {
-                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
-                    "name": "Kilogram",
-                  },
-                  Object {
-                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
-                    "name": "Gram",
+                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPDB/",
+                    "name": "Decibars",
                   },
                 ],
                 "value": "10",
@@ -3769,15 +3765,11 @@ exports[`OccurrenceForm renders correctly 4`] = `
               Array [
                 Object {
                   "type": "Pressure",
-                  "unit": "Kilogram",
+                  "unit": "Decibars",
                   "units": Array [
                     Object {
-                      "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
-                      "name": "Kilogram",
-                    },
-                    Object {
-                      "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
-                      "name": "Gram",
+                      "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPDB/",
+                      "name": "Decibars",
                     },
                   ],
                   "value": "10",
@@ -3812,15 +3804,11 @@ exports[`OccurrenceForm renders correctly 4`] = `
                 Array [
                   Object {
                     "type": "Pressure",
-                    "unit": "Kilogram",
+                    "unit": "Decibars",
                     "units": Array [
                       Object {
-                        "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
-                        "name": "Kilogram",
-                      },
-                      Object {
-                        "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
-                        "name": "Gram",
+                        "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPDB/",
+                        "name": "Decibars",
                       },
                     ],
                     "value": "10",
@@ -4380,30 +4368,22 @@ exports[`OccurrenceForm renders correctly 5`] = `
             Array [
               Object {
                 "type": "Pressure",
-                "unit": "Kilogram",
+                "unit": "Decibars",
                 "units": Array [
                   Object {
-                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
-                    "name": "Kilogram",
-                  },
-                  Object {
-                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
-                    "name": "Gram",
+                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPDB/",
+                    "name": "Decibars",
                   },
                 ],
                 "value": "10",
               },
               Object {
                 "type": "Pressure",
-                "unit": "Kilogram",
+                "unit": "Decibars",
                 "units": Array [
                   Object {
-                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
-                    "name": "Kilogram",
-                  },
-                  Object {
-                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
-                    "name": "Gram",
+                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPDB/",
+                    "name": "Decibars",
                   },
                 ],
                 "value": "20",
@@ -4426,30 +4406,22 @@ exports[`OccurrenceForm renders correctly 5`] = `
               Array [
                 Object {
                   "type": "Pressure",
-                  "unit": "Kilogram",
+                  "unit": "Decibars",
                   "units": Array [
                     Object {
-                      "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
-                      "name": "Kilogram",
-                    },
-                    Object {
-                      "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
-                      "name": "Gram",
+                      "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPDB/",
+                      "name": "Decibars",
                     },
                   ],
                   "value": "10",
                 },
                 Object {
                   "type": "Pressure",
-                  "unit": "Kilogram",
+                  "unit": "Decibars",
                   "units": Array [
                     Object {
-                      "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
-                      "name": "Kilogram",
-                    },
-                    Object {
-                      "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
-                      "name": "Gram",
+                      "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPDB/",
+                      "name": "Decibars",
                     },
                   ],
                   "value": "20",
@@ -4484,30 +4456,22 @@ exports[`OccurrenceForm renders correctly 5`] = `
                 Array [
                   Object {
                     "type": "Pressure",
-                    "unit": "Kilogram",
+                    "unit": "Decibars",
                     "units": Array [
                       Object {
-                        "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
-                        "name": "Kilogram",
-                      },
-                      Object {
-                        "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
-                        "name": "Gram",
+                        "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPDB/",
+                        "name": "Decibars",
                       },
                     ],
                     "value": "10",
                   },
                   Object {
                     "type": "Pressure",
-                    "unit": "Kilogram",
+                    "unit": "Decibars",
                     "units": Array [
                       Object {
-                        "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
-                        "name": "Kilogram",
-                      },
-                      Object {
-                        "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
-                        "name": "Gram",
+                        "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPDB/",
+                        "name": "Decibars",
                       },
                     ],
                     "value": "20",
@@ -5067,45 +5031,33 @@ exports[`OccurrenceForm renders correctly 6`] = `
             Array [
               Object {
                 "type": "Pressure",
-                "unit": "Kilogram",
+                "unit": "Decibars",
                 "units": Array [
                   Object {
-                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
-                    "name": "Kilogram",
-                  },
-                  Object {
-                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
-                    "name": "Gram",
+                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPDB/",
+                    "name": "Decibars",
                   },
                 ],
                 "value": "10",
               },
               Object {
                 "type": "Pressure",
-                "unit": "Kilogram",
+                "unit": "Decibars",
                 "units": Array [
                   Object {
-                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
-                    "name": "Kilogram",
-                  },
-                  Object {
-                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
-                    "name": "Gram",
+                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPDB/",
+                    "name": "Decibars",
                   },
                 ],
                 "value": "20",
               },
               Object {
                 "type": "Pressure",
-                "unit": "Kilogram",
+                "unit": "Decibars",
                 "units": Array [
                   Object {
-                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
-                    "name": "Kilogram",
-                  },
-                  Object {
-                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
-                    "name": "Gram",
+                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPDB/",
+                    "name": "Decibars",
                   },
                 ],
                 "value": "20",
@@ -5128,45 +5080,33 @@ exports[`OccurrenceForm renders correctly 6`] = `
               Array [
                 Object {
                   "type": "Pressure",
-                  "unit": "Kilogram",
+                  "unit": "Decibars",
                   "units": Array [
                     Object {
-                      "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
-                      "name": "Kilogram",
-                    },
-                    Object {
-                      "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
-                      "name": "Gram",
+                      "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPDB/",
+                      "name": "Decibars",
                     },
                   ],
                   "value": "10",
                 },
                 Object {
                   "type": "Pressure",
-                  "unit": "Kilogram",
+                  "unit": "Decibars",
                   "units": Array [
                     Object {
-                      "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
-                      "name": "Kilogram",
-                    },
-                    Object {
-                      "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
-                      "name": "Gram",
+                      "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPDB/",
+                      "name": "Decibars",
                     },
                   ],
                   "value": "20",
                 },
                 Object {
                   "type": "Pressure",
-                  "unit": "Kilogram",
+                  "unit": "Decibars",
                   "units": Array [
                     Object {
-                      "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
-                      "name": "Kilogram",
-                    },
-                    Object {
-                      "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
-                      "name": "Gram",
+                      "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPDB/",
+                      "name": "Decibars",
                     },
                   ],
                   "value": "20",
@@ -5201,45 +5141,33 @@ exports[`OccurrenceForm renders correctly 6`] = `
                 Array [
                   Object {
                     "type": "Pressure",
-                    "unit": "Kilogram",
+                    "unit": "Decibars",
                     "units": Array [
                       Object {
-                        "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
-                        "name": "Kilogram",
-                      },
-                      Object {
-                        "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
-                        "name": "Gram",
+                        "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPDB/",
+                        "name": "Decibars",
                       },
                     ],
                     "value": "10",
                   },
                   Object {
                     "type": "Pressure",
-                    "unit": "Kilogram",
+                    "unit": "Decibars",
                     "units": Array [
                       Object {
-                        "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
-                        "name": "Kilogram",
-                      },
-                      Object {
-                        "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
-                        "name": "Gram",
+                        "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPDB/",
+                        "name": "Decibars",
                       },
                     ],
                     "value": "20",
                   },
                   Object {
                     "type": "Pressure",
-                    "unit": "Kilogram",
+                    "unit": "Decibars",
                     "units": Array [
                       Object {
-                        "id": "http://vocab.nerc.ac.uk/collection/P06/current/KGXX",
-                        "name": "Kilogram",
-                      },
-                      Object {
-                        "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/",
-                        "name": "Gram",
+                        "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPDB/",
+                        "name": "Decibars",
                       },
                     ],
                     "value": "20",
