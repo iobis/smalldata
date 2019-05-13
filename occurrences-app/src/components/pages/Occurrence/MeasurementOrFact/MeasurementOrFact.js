@@ -28,11 +28,9 @@ export default function MeasurementOrFact({ data, onChange }) {
   }
 
   function updateSuppliedMeasurement(index, updatedMeasurement) {
-    const updatedMeasurements = suppliedMeasurements.map((measurment, i) => {
-      return i === index
-        ? updatedMeasurement
-        : measurment
-    })
+    const updatedMeasurements = suppliedMeasurements.map((measurment, i) => i === index
+      ? updatedMeasurement
+      : measurment)
     onChange(updatedMeasurements.map(removeUuid))
     setSuppliedMeasurements(updatedMeasurements)
   }
@@ -45,42 +43,42 @@ export default function MeasurementOrFact({ data, onChange }) {
           <h2 className="subtitle">{t('occurrenceForm.measurementOrFact.general.subtitle')}</h2>
           <table className="general table is-fullwidth is-striped is-hoverable">
             <thead>
-            <tr>
-              <th style={{ width: '60%' }}>{t('common.type')}</th>
-              <th style={{ width: '20%' }}>{t('common.unit')}</th>
-              <th style={{ width: '10%' }}>{t('common.value')}</th>
-              <th style={{ width: '10%' }}/>
-            </tr>
+              <tr>
+                <th style={{ width: '60%' }}>{t('common.type')}</th>
+                <th style={{ width: '20%' }}>{t('common.unit')}</th>
+                <th style={{ width: '10%' }}>{t('common.value')}</th>
+                <th style={{ width: '10%' }}/>
+              </tr>
             </thead>
             <tbody>
-            {generalMeasurements.map(generalMeasurement => (
-              <MeasurementRow
-                key={generalMeasurement.type}
-                onClickAdd={addSuppliedMeasurements}
-                type={generalMeasurement.type}
-                units={generalMeasurement.units}/>
-            ))}
+              {generalMeasurements.map(generalMeasurement => (
+                <MeasurementRow
+                  key={generalMeasurement.type}
+                  onClickAdd={addSuppliedMeasurements}
+                  type={generalMeasurement.type}
+                  units={generalMeasurement.units}/>
+              ))}
             </tbody>
           </table>
           <h1 className="title">{t('occurrenceForm.measurementOrFact.specific.title')}</h1>
           <h2 className="subtitle">{t('occurrenceForm.measurementOrFact.specific.subtitle')}</h2>
           <table className="specific table is-fullwidth is-striped is-hoverable">
             <thead>
-            <tr>
-              <th style={{ width: '60%' }}>{t('common.type')}</th>
-              <th style={{ width: '20%' }}>{t('common.unit')}</th>
-              <th style={{ width: '10%' }}>{t('common.value')}</th>
-              <th style={{ width: '10%' }}/>
-            </tr>
+              <tr>
+                <th style={{ width: '60%' }}>{t('common.type')}</th>
+                <th style={{ width: '20%' }}>{t('common.unit')}</th>
+                <th style={{ width: '10%' }}>{t('common.value')}</th>
+                <th style={{ width: '10%' }}/>
+              </tr>
             </thead>
             <tbody>
-            {specificMeasurements.map(specificMeasurement => (
-              <MeasurementRow
-                key={specificMeasurement.type}
-                onClickAdd={addSuppliedMeasurements}
-                type={specificMeasurement.type}
-                units={specificMeasurement.units}/>
-            ))}
+              {specificMeasurements.map(specificMeasurement => (
+                <MeasurementRow
+                  key={specificMeasurement.type}
+                  onClickAdd={addSuppliedMeasurements}
+                  type={specificMeasurement.type}
+                  units={specificMeasurement.units}/>
+              ))}
             </tbody>
           </table>
         </div>
@@ -89,26 +87,26 @@ export default function MeasurementOrFact({ data, onChange }) {
           <h2 className="subtitle">&nbsp;</h2>
           <table className="supplied table is-fullwidth is-striped is-hoverable">
             <thead>
-            <tr>
-              <th style={{ width: '60%' }}>{t('common.type')}</th>
-              <th style={{ width: '20%' }}>{t('common.unit')}</th>
-              <th style={{ width: '10%' }}>{t('common.value')}</th>
-              <th style={{ width: '5%' }}/>
-              <th style={{ width: '5%' }}/>
-            </tr>
+              <tr>
+                <th style={{ width: '60%' }}>{t('common.type')}</th>
+                <th style={{ width: '20%' }}>{t('common.unit')}</th>
+                <th style={{ width: '10%' }}>{t('common.value')}</th>
+                <th style={{ width: '5%' }}/>
+                <th style={{ width: '5%' }}/>
+              </tr>
             </thead>
             <tbody>
-            {suppliedMeasurements.map(({ uuid, type, unit, units, value }, index) => (
-              <SuppliedMeasurementRow
-                key={uuid}
-                onChange={(updatedMeasurement) => updateSuppliedMeasurement(index, { uuid, ...updatedMeasurement })}
-                onCopy={addSuppliedMeasurements}
-                onRemove={() => removeSuppliedMeasurement(index)}
-                type={type}
-                unit={unit}
-                units={units}
-                value={value}/>
-            ))}
+              {suppliedMeasurements.map(({ uuid, type, unit, units, value }, index) => (
+                <SuppliedMeasurementRow
+                  key={uuid}
+                  onChange={(updatedMeasurement) => updateSuppliedMeasurement(index, { uuid, ...updatedMeasurement })}
+                  onCopy={addSuppliedMeasurements}
+                  onRemove={() => removeSuppliedMeasurement(index)}
+                  type={type}
+                  unit={unit}
+                  units={units}
+                  value={value}/>
+              ))}
             </tbody>
           </table>
         </div>
