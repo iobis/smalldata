@@ -82,7 +82,7 @@ class DbQueryTest {
       var result = ar.result();
       assertThat(result).hasSize(2955);
       var records = result.stream()
-        .filter(rec -> rec.getString("_ref").equals("UgDE1dOR5RlsjQ4"))
+        .filter(record -> record.getString("_ref").equals("UgDE1dOR5RlsjQ4"))
         .collect(Collectors.toList());
       assertThat(records).hasSize(1);
       assertThat(records.get(0).getJsonObject("dwcRecord").getJsonObject("tdwg").getString("occurrenceID"))
@@ -94,7 +94,8 @@ class DbQueryTest {
 
   @Test
   void findDatasetForUser(VertxTestContext testContext) {
-    var dataset = dbQuery.findDwcaRecordForUser("ovZTtaOJZ98xDDY",
+    var dataset = dbQuery.findDwcaRecordForUser(
+      "ovZTtaOJZ98xDDY",
       "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_331");
     dataset.setHandler(ar -> {
       var record = ar.result();

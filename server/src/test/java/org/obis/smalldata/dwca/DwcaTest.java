@@ -28,11 +28,13 @@ public class DwcaTest {
   public static void deployVerticle(Vertx vertx, VertxTestContext testContext) {
     testDb = new TestDb();
     testDb.init(vertx);
-    vertx.sharedData().getLocalMap("settings")
-      .putAll(Map.of("storage", new JsonObject()
-        .put("host", "localhost")
-          .put("port", 12345)
-          .put("path", ""),
+    var storageSetting = new JsonObject()
+      .put("host", "localhost")
+      .put("port", 12345)
+      .put("path", "");
+    vertx.sharedData().getLocalMap("settings").putAll(
+      Map.of(
+        "storage", storageSetting,
         "baseUrl", "https://my.domain.org/"));
     vertx.deployVerticle(
       Dwca.class.getName(),
@@ -110,5 +112,4 @@ public class DwcaTest {
         }
       });
   }
-
 }
