@@ -64,14 +64,14 @@ public class Dwca extends AbstractVerticle {
   private Future<JsonArray> allRecordsForUser(String userRef) {
     info("getting dwca-records for user {}", userRef);
     var result = Future.<JsonArray>future();
-    dbQuery.findDwcaRecordsForUser(userRef).setHandler(
-      records -> result.complete(new JsonArray(records.result().stream()
-        .map(rec -> {
-          rec.remove("_id");
-          return rec;
-        })
-        .collect(Collectors.toList())))
-    );
+    dbQuery
+      .findDwcaRecordsForUser(userRef)
+      .setHandler(
+        ar -> result.complete(
+          new JsonArray(ar.result().stream()
+            .peek(record -> record.remove("_id"))
+            .collect(Collectors.toList())))
+      );
     return result;
   }
 
