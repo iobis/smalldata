@@ -28,18 +28,19 @@ public class Dwca extends AbstractVerticle {
   }
 
   private void handleDwcaEvents(Message<JsonObject> message) {
-    var action = message.body().getString("action");
+    var body = message.body();
+    var action = body.getString("action");
     switch (action) {
       case "recordForUser":
-        recordForUser(message.body().getString("userRef"), message.body().getString("dwcaId"))
+        recordForUser(body.getString("userRef"), body.getString("dwcaId"))
           .setHandler(record -> message.reply(record.result()));
         break;
       case "recordsForUser":
-        allRecordsForUser(message.body().getString("userRef"))
+        allRecordsForUser(body.getString("userRef"))
           .setHandler(records -> message.reply(records.result()));
         break;
       case "generate":
-        generateZipFile(message.body().getString("findDataset"))
+        generateZipFile(body.getString("findDataset"))
           .setHandler(zip -> message.reply(zip.result()));
         break;
       default:
