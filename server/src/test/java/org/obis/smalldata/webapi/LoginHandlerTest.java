@@ -33,7 +33,7 @@ public class LoginHandlerTest {
 
   @Test
   @DisplayName("check if a proper jwt is returned")
-  @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
+  @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
   void startHttpServer(Vertx vertx, VertxTestContext testContext) {
     WebClient client = WebClient.create(vertx);
     vertx.eventBus().localConsumer("auth.login",

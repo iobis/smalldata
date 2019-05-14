@@ -39,7 +39,7 @@ public class WebRssComponentApiTest {
 
   @Test
   @DisplayName("Test rss handling")
-  @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
+  @Timeout(value = 10, timeUnit = TimeUnit.SECONDS)
   void replyRssFile(Vertx vertx, VertxTestContext testContext) {
     WebClient client = WebClient.create(vertx);
     client.get(HTTP_PORT, "localhost", "/api/rss/weekly")

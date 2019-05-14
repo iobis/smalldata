@@ -34,7 +34,7 @@ public class WebApiTest {
 
   @Test
   @DisplayName("starts a http server on port 8080")
-  @Timeout(value = 10, timeUnit = TimeUnit.SECONDS)
+  @Timeout(value = 15, timeUnit = TimeUnit.SECONDS)
   void startHttpServer(Vertx vertx, VertxTestContext testContext) {
     WebClient client = WebClient.create(vertx);
     client.get(HTTP_PORT, "localhost", "/api/status")

@@ -32,4 +32,23 @@ class DbQuery {
       res -> dataset.complete(res.result()));
     return dataset;
   }
+
+  Future<List<JsonObject>> findDwcaRecordsForUser(String userRef) {
+    var dwcaRecords = Future.<List<JsonObject>>future();
+    mongoClient.find(
+      "dwcarecords",
+      new JsonObject().put("user_ref", userRef),
+      res -> dwcaRecords.complete(res.result()));
+    return dwcaRecords;
+  }
+
+  Future<JsonObject> findDwcaRecordForUser(String userRef, String dwcaId) {
+    var dwcaRecord = Future.<JsonObject>future();
+    mongoClient.findOne(
+      "dwcarecords",
+      new JsonObject().put("user_ref", userRef).put("dwcRecord.id", dwcaId),
+      new JsonObject(),
+      res -> dwcaRecord.complete(res.result()));
+    return dwcaRecord;
+  }
 }
