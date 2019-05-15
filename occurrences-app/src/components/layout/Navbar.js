@@ -53,7 +53,7 @@ function LoginNavItem({ loggedIn }) {
   const name = claims && claims.name
 
   return (
-    <div className="navbar-end">
+    <div className="login-nav-item navbar-end">
       <span className="navbar-item">{name}</span>
       {loggedIn
         ? <AuthButton labelKey="navbar.logout" onClick={logOut}/>
@@ -70,7 +70,7 @@ function AuthButton({ labelKey, onClick }) {
   const { t } = useTranslation()
 
   return (
-    <a className="navbar-item" onClick={onClick}>
+    <a className="auth-button navbar-item" onClick={onClick}>
       <span className="icon" style={{ 'marginRight': 6 }}>
         <FontAwesomeIcon icon="user"/>
       </span>

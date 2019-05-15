@@ -53,12 +53,37 @@ describe('Navbar', () => {
       logOut:   logOut
     }
 
-    expect(mount(
+    const wrapper = mount(
       <MemoryRouter initialEntries={[{ pathname: '/', key: 'testKey' }]}>
         <AuthContext.Provider value={authProviderValue}>
           <Navbar/>
         </AuthContext.Provider>
       </MemoryRouter>
-    )).toMatchSnapshot()
+    )
+    expect(wrapper).toMatchSnapshot()
+
+    wrapper.find('.login-nav-item .auth-button').simulate('click')
+    expect(logOut).toHaveBeenCalledTimes(1)
+  })
+
+  it('renders correctly when logged out', () => {
+    const redirectToOceanExpert = jest.fn()
+    const authProviderValue = {
+      claims:   {},
+      loggedIn: false,
+      redirectToOceanExpert
+    }
+
+    const wrapper = mount(
+      <MemoryRouter initialEntries={[{ pathname: '/', key: 'testKey' }]}>
+        <AuthContext.Provider value={authProviderValue}>
+          <Navbar/>
+        </AuthContext.Provider>
+      </MemoryRouter>
+    )
+    expect(wrapper).toMatchSnapshot()
+
+    wrapper.find('.login-nav-item .auth-button').simulate('click')
+    expect(redirectToOceanExpert).toHaveBeenCalledTimes(1)
   })
 })
