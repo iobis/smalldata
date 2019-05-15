@@ -49,13 +49,8 @@ export default function Navbar() {
 }
 
 function LoginNavItem({ loggedIn }) {
-  const { claims, logOut } = useContext(AuthContext)
+  const { claims, logOut, redirectToOceanExpert } = useContext(AuthContext)
   const name = claims && claims.name
-
-  function redirectToOceanExpert() {
-    const callback = window.location.origin + process.env.PUBLIC_URL
-    window.location = 'https://oceanexpert.net/socialsignin/?callback=' + callback
-  }
 
   return (
     <div className="navbar-end">

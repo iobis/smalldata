@@ -22,8 +22,13 @@ export function AuthProvider({ children }) {
     setLoggedIn(false)
   }
 
+  function redirectToOceanExpert() {
+    const callback = window.location.origin + process.env.PUBLIC_URL
+    window.location = 'https://oceanexpert.net/socialsignin/?callback=' + callback
+  }
+
   return (
-    <AuthContext.Provider value={{ claims, loggedIn, setLoggedIn, logIn, logOut }}>
+    <AuthContext.Provider value={{ claims, loggedIn, setLoggedIn, logIn, logOut, redirectToOceanExpert }}>
       {children}
     </AuthContext.Provider>
   )
