@@ -42,7 +42,6 @@ public class LoginHandlerTest {
       testContext.succeeding(id -> testContext.completeNow()));
   }
 
-
   @Test
   @DisplayName("use eb to code and decode the token")
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
@@ -111,7 +110,9 @@ public class LoginHandlerTest {
     vertx.eventBus().<JsonObject>send(
       "auth.verify",
       new JsonObject()
-        .put("jwt", "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJvY2N1cnJlbmNlcy1PQklTIiwic3ViIjoicGF1bG8iLCJpYXQiOjE1NTc5NDk4NDN9.O0RBl686U2YafsZqdRNTz-dFQR3znlnD3YHFgGcE7GhAa4ykR1gnHQkskLvu7YJ_iO2z7rvVdrrCGGVA6KBbXw"),
+        .put("jwt", "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9."
+          + "eyJhdWQiOiJvY2N1cnJlbmNlcy1PQklTIiwic3ViIjoicGF1bG8iLCJpYXQiOjE1NTc5NDk4NDN9."
+          + "O0RBl686U2YafsZqdRNTz-dFQR3znlnD3YHFgGcE7GhAa4ykR1gnHQkskLvu7YJ_iO2z7rvVdrrCGGVA6KBbXw"),
       result -> {
         info(result);
         if (result.succeeded()) {
