@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { createContext, useState } from 'react'
 
-export const AuthContext = createContext([{}, () => {}])
+export const AuthContext = createContext(null)
 
 export function AuthProvider({ children }) {
   const [loggedIn, setLoggedIn] = useState(false)
