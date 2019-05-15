@@ -7,7 +7,10 @@ export function AuthProvider({ children }) {
   const [loggedIn, setLoggedIn] = useState(false)
   const [claims, setClaims] = useState({})
 
-  function logIn(token) {
+  function logIn() {
+    const urlParams = new URLSearchParams(window.location.search)
+    const token = urlParams.get('token') || localStorage.getItem('jwt')
+    if (!token) return
     localStorage.setItem('jwt', token)
     setClaims(parseJwt(token))
     setLoggedIn(true)

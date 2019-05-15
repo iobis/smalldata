@@ -33,12 +33,7 @@ export default function App() {
 
 const AppDiv = () => {
   const { loggedIn, logIn } = useContext(AuthContext)
-
-  const urlParams = new URLSearchParams(window.location.search)
-  if (!loggedIn) {
-    const token = urlParams.get('token') || localStorage.getItem('jwt')
-    if (token) logIn(token)
-  }
+  if (!loggedIn) logIn()
 
   return (
     <div className="App">
