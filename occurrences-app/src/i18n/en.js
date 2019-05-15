@@ -46,12 +46,12 @@ export default {
           present: 'present'
         },
         basisOfRecord:    {
-          title:             'Basis of record',
-          humanObservation:  'human observation',
-          fossilSpecimen:    'fossil specimen',
-          livingSpecimen:    'living specimen',
-          machineSpecimen:   'machine specimen',
-          preservedSpecimen: 'preserved specimen'
+          title:              'Basis of record',
+          humanObservation:   'human observation',
+          fossilSpecimen:     'fossil specimen',
+          livingSpecimen:     'living specimen',
+          machineObservation: 'machine observation',
+          preservedSpecimen:  'preserved specimen'
         },
         sex:              {
           title:         'Sex',

@@ -182,16 +182,16 @@ exports[`OccurrenceData renders correctly 1`] = `
       <input
         checked={false}
         className="input-radio is-checkradio"
-        id="occurrenceForm.occurrenceData.basisOfRecord-machineSpecimen"
+        id="occurrenceForm.occurrenceData.basisOfRecord-machineObservation"
         name="occurrenceForm.occurrenceData.basisOfRecord"
         onChange={[Function]}
         type="radio"
-        value="machineSpecimen"
+        value="machineObservation"
       />
       <label
-        htmlFor="occurrenceForm.occurrenceData.basisOfRecord-machineSpecimen"
+        htmlFor="occurrenceForm.occurrenceData.basisOfRecord-machineObservation"
       >
-        occurrenceForm.occurrenceData.basisOfRecord.machineSpecimen
+        occurrenceForm.occurrenceData.basisOfRecord.machineObservation
       </label>
       <input
         checked={false}
