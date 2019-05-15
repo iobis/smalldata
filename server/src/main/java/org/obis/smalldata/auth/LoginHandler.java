@@ -37,4 +37,15 @@ class LoginHandler {
       message.fail(401, "Cannot login, invalid credentials");
     }
   }
+
+  void verifyToken(Message<JsonObject> message) {
+    info("verifying token: {}", message.body());
+    authProvider.authenticate(message.body(), ar -> {
+      if (ar.succeeded()) {
+        message.reply(ar.result());
+      } else {
+        message.fail(401, "Cannot login, invalid token");
+      }
+    });
+  }
 }

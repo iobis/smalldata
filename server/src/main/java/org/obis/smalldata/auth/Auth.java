@@ -22,8 +22,8 @@ import static org.pmw.tinylog.Logger.warn;
 
 public class Auth extends AbstractVerticle {
 
-  private static final String PUBLIC_KEY = "publicKey";
-  private static final String SECURITY_KEY = "securityKey";
+  private static final String VERIFY_KEY = "verifyKey";
+  private static final String SIGN_KEY = "signKey";
   private static final String ALG_KEY = "alg";
   private static final String AUTH_ES256 = "ES256";
 
@@ -32,7 +32,8 @@ public class Auth extends AbstractVerticle {
     info("starting module 'Auth'");
     LoginHandler loginHandler = null;
     try {
-      loginHandler = new LoginHandler(generateAuthProvider());
+      var authProvider = generateAuthProvider();
+      loginHandler = new LoginHandler(authProvider);
       startFuture.complete();
     } catch (InvalidKeyException | InvalidAlgorithmParameterException | NoSuchAlgorithmException e) {
       error("Cannot start Auth component: possibly wrong algorithm or keys for JWT signing/verification? {}",
@@ -40,35 +41,40 @@ public class Auth extends AbstractVerticle {
       startFuture.fail(e);
     }
     vertx.eventBus().localConsumer("auth.login", loginHandler::login);
+    vertx.eventBus().localConsumer("auth.verify", loginHandler::verifyToken);
   }
 
   private AuthProvider generateAuthProvider() throws InvalidKeyException,
     InvalidAlgorithmParameterException, NoSuchAlgorithmException {
     AuthProvider provider;
     if ("local".equals(config().getString("provider", "local"))) {
-      if (isNullOrBlank(config().getString(PUBLIC_KEY)) || isNullOrBlank(config().getString(SECURITY_KEY))) {
-        warn("generating a new keypair for local JWT generation");
+      info("... using local keys");
+      if (isNullOrBlank(config().getString(VERIFY_KEY)) || isNullOrBlank(config().getString(SIGN_KEY))) {
+        warn("... generating a new keypair for local JWT generation");
         KeyPairGenerator generator = KeyPairGenerator.getInstance("EC");
         ECGenParameterSpec spec = new ECGenParameterSpec("secp256r1");
         generator.initialize(spec);
         KeyPair keyPair = generator.generateKeyPair();
-        config().put(PUBLIC_KEY, createPublicKey(keyPair));
-        config().put(SECURITY_KEY, createSecretKey(keyPair));
+        config().put(VERIFY_KEY, createPublicKey(keyPair));
+        config().put(SIGN_KEY, createSecretKey(keyPair));
       }
+      info("... {}", config().getString(VERIFY_KEY).substring(30).replaceAll("\n", " "));
+      info("... {}", config().getString(SIGN_KEY).substring(50).replaceAll("\n", " "));
       provider = JWTAuth.create(vertx, new JWTAuthOptions()
         .addPubSecKey(new PubSecKeyOptions()
           .setAlgorithm(config().getString(ALG_KEY, AUTH_ES256))
-          .setPublicKey(config().getString(PUBLIC_KEY))
-          .setSecretKey(config().getString(SECURITY_KEY))
+          .setPublicKey(config().getString(VERIFY_KEY))
+          .setSecretKey(config().getString(SIGN_KEY))
         ));
     } else {
-      if (config().getString(PUBLIC_KEY).isBlank()) {
+      info("... using external verification key");
+      if (isNullOrBlank(config().getString(VERIFY_KEY))) {
         throw new InvalidKeyException("Need to provide a public key for non-local JWT authorization");
       } else {
         provider = JWTAuth.create(vertx, new JWTAuthOptions()
           .addPubSecKey(new PubSecKeyOptions()
             .setAlgorithm(config().getString(ALG_KEY, AUTH_ES256))
-            .setPublicKey(config().getString(PUBLIC_KEY))
+            .setPublicKey(config().getString(VERIFY_KEY))
           ));
       }
     }
