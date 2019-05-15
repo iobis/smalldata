@@ -61,8 +61,7 @@ export default {
         },
         lifestage:        {
           title:       'Lifestage',
-          egg:         'egg',
-          eft:         'eft',
+          larva:       'larva',
           juvenile:    'juvenile',
           adult:       'adult',
           unspecified: 'unspecified'

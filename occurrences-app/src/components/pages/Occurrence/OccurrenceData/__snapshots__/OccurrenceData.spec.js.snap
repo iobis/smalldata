@@ -278,30 +278,16 @@ exports[`OccurrenceData renders correctly 1`] = `
       <input
         checked={true}
         className="input-radio is-checkradio"
-        id="occurrenceForm.occurrenceData.lifestage-egg"
+        id="occurrenceForm.occurrenceData.lifestage-larva"
         name="occurrenceForm.occurrenceData.lifestage"
         onChange={[Function]}
         type="radio"
-        value="egg"
+        value="larva"
       />
       <label
-        htmlFor="occurrenceForm.occurrenceData.lifestage-egg"
+        htmlFor="occurrenceForm.occurrenceData.lifestage-larva"
       >
-        occurrenceForm.occurrenceData.lifestage.egg
-      </label>
-      <input
-        checked={false}
-        className="input-radio is-checkradio"
-        id="occurrenceForm.occurrenceData.lifestage-eft"
-        name="occurrenceForm.occurrenceData.lifestage"
-        onChange={[Function]}
-        type="radio"
-        value="eft"
-      />
-      <label
-        htmlFor="occurrenceForm.occurrenceData.lifestage-eft"
-      >
-        occurrenceForm.occurrenceData.lifestage.eft
+        occurrenceForm.occurrenceData.lifestage.larva
       </label>
       <input
         checked={false}
