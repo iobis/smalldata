@@ -1,48 +1,48 @@
 import Navbar from './Navbar'
 import React from 'react'
-import renderer from 'react-test-renderer'
-import { MemoryRouter } from 'react-router-dom'
 import { AuthContext, AuthProvider } from '../../context/AuthContext'
+import { MemoryRouter } from 'react-router-dom'
+import { mount } from 'enzyme'
 
 describe('Navbar', () => {
   it('renders correctly for route /', () => {
-    expect(renderer.create(
-      <MemoryRouter initialEntries={['/']}>
+    expect(mount(
+      <MemoryRouter initialEntries={[{ pathname: '/', key: 'testKey' }]}>
         <AuthProvider>
           <Navbar/>
         </AuthProvider>
       </MemoryRouter>
-    ).toJSON()).toMatchSnapshot()
+    )).toMatchSnapshot()
   })
 
   it('renders correctly for route /input-data', () => {
-    expect(renderer.create(
-      <MemoryRouter initialEntries={['/input-data']}>
+    expect(mount(
+      <MemoryRouter initialEntries={[{ pathname: '/input-data', key: 'testKey' }]}>
         <AuthProvider>
           <Navbar/>
         </AuthProvider>
       </MemoryRouter>
-    ).toJSON()).toMatchSnapshot()
+    )).toMatchSnapshot()
   })
 
   it('renders correctly for route /input-data/new', () => {
-    expect(renderer.create(
-      <MemoryRouter initialEntries={['/input-data/new']}>
+    expect(mount(
+      <MemoryRouter initialEntries={[{ pathname: '/input-data/new', key: 'testKey' }]}>
         <AuthProvider>
           <Navbar/>
         </AuthProvider>
       </MemoryRouter>
-    ).toJSON()).toMatchSnapshot()
+    )).toMatchSnapshot()
   })
 
   it('renders correctly for route /help', () => {
-    expect(renderer.create(
-      <MemoryRouter initialEntries={['/help']}>
+    expect(mount(
+      <MemoryRouter initialEntries={[{ pathname: '/help', key: 'testKey' }]}>
         <AuthProvider>
           <Navbar/>
         </AuthProvider>
       </MemoryRouter>
-    ).toJSON()).toMatchSnapshot()
+    )).toMatchSnapshot()
   })
 
   it('renders correctly when logged in', () => {
@@ -53,12 +53,12 @@ describe('Navbar', () => {
       logOut:   logOut
     }
 
-    expect(renderer.create(
-      <MemoryRouter initialEntries={['/']}>
+    expect(mount(
+      <MemoryRouter initialEntries={[{ pathname: '/', key: 'testKey' }]}>
         <AuthContext.Provider value={authProviderValue}>
           <Navbar/>
         </AuthContext.Provider>
       </MemoryRouter>
-    ).toJSON()).toMatchSnapshot()
+    )).toMatchSnapshot()
   })
 })
