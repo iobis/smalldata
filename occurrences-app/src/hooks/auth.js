@@ -5,17 +5,17 @@ export const AuthContext = createContext([{}, () => {}])
 
 export function AuthProvider({ children }) {
   const [loggedIn, setLoggedIn] = useState(false)
-  const [claims, setClaim] = useState({})
+  const [claims, setClaims] = useState({})
 
   function logIn(token) {
     localStorage.setItem('jwt', token)
-    const claims = parseJwt(token)
-    setClaim(claims)
+    setClaims(parseJwt(token))
     setLoggedIn(true)
   }
 
   function logOut() {
     localStorage.clear()
+    setClaims({})
     setLoggedIn(false)
   }
 
@@ -34,6 +34,6 @@ function parseJwt(token) {
   try {
     return JSON.parse(atob(token.split('.')[1]))
   } catch (e) {
-    return null
+    return {}
   }
 }
