@@ -1,12 +1,12 @@
 import './i18n/i18n'
 import HelpPage from './components/pages/HelpPage'
 import InputDataPage from './components/pages/InputDataPage'
-import Navbar from './components/layout/Navbar'
 import LogInPage from './components/pages/LogInPage'
-import PropTypes from 'prop-types'
-import { AuthContext, AuthProvider } from './hooks/auth'
+import Navbar from './components/layout/Navbar'
 import OccurrenceForm from './components/pages/Occurrence/OccurrenceForm'
+import PropTypes from 'prop-types'
 import React, { useContext } from 'react'
+import { AuthContext, AuthProvider } from './context/AuthContext'
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
 import {
   faAngleDown,

@@ -2,7 +2,7 @@
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import React, { useContext, useRef, useState } from 'react'
-import { AuthContext } from '../../hooks/auth'
+import { AuthContext } from '../../context/AuthContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link, NavLink } from 'react-router-dom'
 import { useOnClickOutside } from '../../hooks/hooks'

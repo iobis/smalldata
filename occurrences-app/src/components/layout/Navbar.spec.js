@@ -2,7 +2,7 @@ import Navbar from './Navbar'
 import React from 'react'
 import renderer from 'react-test-renderer'
 import { MemoryRouter } from 'react-router-dom'
-import { AuthProvider } from '../../hooks/auth'
+import { AuthProvider } from '../../context/AuthContext'
 
 describe('Navbar', () => {
   it('renders correctly for route /', () => {
