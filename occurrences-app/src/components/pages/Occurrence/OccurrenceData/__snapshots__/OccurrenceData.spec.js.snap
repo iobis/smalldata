@@ -251,20 +251,6 @@ exports[`OccurrenceData renders correctly 1`] = `
       <input
         checked={false}
         className="input-radio is-checkradio"
-        id="occurrenceForm.occurrenceData.sex-hermaphrodite"
-        name="occurrenceForm.occurrenceData.sex"
-        onChange={[Function]}
-        type="radio"
-        value="hermaphrodite"
-      />
-      <label
-        htmlFor="occurrenceForm.occurrenceData.sex-hermaphrodite"
-      >
-        occurrenceForm.occurrenceData.sex.hermaphrodite
-      </label>
-      <input
-        checked={false}
-        className="input-radio is-checkradio"
         id="occurrenceForm.occurrenceData.sex-unspecified"
         name="occurrenceForm.occurrenceData.sex"
         onChange={[Function]}

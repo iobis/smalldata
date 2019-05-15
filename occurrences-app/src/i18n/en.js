@@ -54,11 +54,10 @@ export default {
           preservedSpecimen:  'preserved specimen'
         },
         sex:              {
-          title:         'Sex',
-          male:          'male',
-          female:        'female',
-          hermaphrodite: 'hermaphrodite',
-          unspecified:   'unspecified'
+          title:       'Sex',
+          male:        'male',
+          female:      'female',
+          unspecified: 'unspecified'
         },
         lifestage:        {
           title:       'Lifestage',

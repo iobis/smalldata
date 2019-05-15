@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next'
 const basisOfRecordOptions = ['humanObservation', 'fossilSpecimen', 'livingSpecimen', 'machineObservation', 'preservedSpecimen']
 const lifestageOptions = ['egg', 'eft', 'juvenile', 'adult', 'unspecified']
 const occurrenceStatusOptions = ['absent', 'present']
-const sexOptions = ['male', 'female', 'hermaphrodite', 'unspecified']
+const sexOptions = ['male', 'female', 'unspecified']
 
 export default function OccurrenceData({ onChange, data }) {
   const { t } = useTranslation()
