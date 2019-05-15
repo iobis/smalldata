@@ -1,16 +1,16 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
-import React, { useRef, useState } from 'react'
+import React, { useContext, useRef, useState } from 'react'
+import { AuthContext } from '../../hooks/auth'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link, NavLink } from 'react-router-dom'
 import { useOnClickOutside } from '../../hooks/hooks'
-import { useAuth } from '../../hooks/auth'
 import { useTranslation } from 'react-i18next'
 
 export default function Navbar() {
   const { t } = useTranslation()
-  const { auth } = useAuth()
+  const { loggedIn } = useContext(AuthContext)
   const [navbarMenuActive, setNavbarMenuActive] = useState(false)
   const menuRef = useRef()
   const hideNavbarMenu = () => setNavbarMenuActive(false)
@@ -32,7 +32,7 @@ export default function Navbar() {
         </a>
       </div>
       <div className={classNames('navbar-menu', { 'is-active': navbarMenuActive })}>
-        {auth.loggedIn ? (
+        {loggedIn ? (
           <div className="navbar-start">
             <NavbarItem onClick={hideNavbarMenu} to="/input-data">
               {t('navbar.inputData')}
@@ -42,15 +42,15 @@ export default function Navbar() {
             </NavbarItem>
           </div>
         ) : null}
-        <LoginNavItem loggedIn={auth.loggedIn}/>
+        <LoginNavItem loggedIn={loggedIn}/>
       </div>
     </nav>
   )
 }
 
 function LoginNavItem({ loggedIn }) {
-  const { auth, logOut } = useAuth()
-  const name = auth.claims && auth.claims.name
+  const { claims, logOut } = useContext(AuthContext)
+  const name = claims && claims.name
 
   function redirectToOceanExpert() {
     const callback = window.location.origin + process.env.PUBLIC_URL
