@@ -154,6 +154,20 @@ exports[`OccurrenceData renders correctly 1`] = `
       <input
         checked={false}
         className="input-radio is-checkradio"
+        id="occurrenceForm.occurrenceData.basisOfRecord-machineObservation"
+        name="occurrenceForm.occurrenceData.basisOfRecord"
+        onChange={[Function]}
+        type="radio"
+        value="machineObservation"
+      />
+      <label
+        htmlFor="occurrenceForm.occurrenceData.basisOfRecord-machineObservation"
+      >
+        occurrenceForm.occurrenceData.basisOfRecord.machineObservation
+      </label>
+      <input
+        checked={false}
+        className="input-radio is-checkradio"
         id="occurrenceForm.occurrenceData.basisOfRecord-fossilSpecimen"
         name="occurrenceForm.occurrenceData.basisOfRecord"
         onChange={[Function]}
@@ -178,20 +192,6 @@ exports[`OccurrenceData renders correctly 1`] = `
         htmlFor="occurrenceForm.occurrenceData.basisOfRecord-livingSpecimen"
       >
         occurrenceForm.occurrenceData.basisOfRecord.livingSpecimen
-      </label>
-      <input
-        checked={false}
-        className="input-radio is-checkradio"
-        id="occurrenceForm.occurrenceData.basisOfRecord-machineObservation"
-        name="occurrenceForm.occurrenceData.basisOfRecord"
-        onChange={[Function]}
-        type="radio"
-        value="machineObservation"
-      />
-      <label
-        htmlFor="occurrenceForm.occurrenceData.basisOfRecord-machineObservation"
-      >
-        occurrenceForm.occurrenceData.basisOfRecord.machineObservation
       </label>
       <input
         checked={false}

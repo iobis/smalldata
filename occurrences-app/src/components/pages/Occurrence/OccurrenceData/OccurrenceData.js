@@ -6,7 +6,7 @@ import React from 'react'
 import ScientificNameInput from './ScientificNameInput'
 import { useTranslation } from 'react-i18next'
 
-const basisOfRecordOptions = ['humanObservation', 'fossilSpecimen', 'livingSpecimen', 'machineObservation', 'preservedSpecimen']
+const basisOfRecordOptions = ['humanObservation', 'machineObservation', 'fossilSpecimen', 'livingSpecimen', 'preservedSpecimen']
 const lifestageOptions = ['larva', 'juvenile', 'adult', 'unspecified']
 const occurrenceStatusOptions = ['absent', 'present']
 const sexOptions = ['male', 'female', 'unspecified']
