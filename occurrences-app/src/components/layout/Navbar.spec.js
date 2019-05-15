@@ -2,7 +2,7 @@ import Navbar from './Navbar'
 import React from 'react'
 import renderer from 'react-test-renderer'
 import { MemoryRouter } from 'react-router-dom'
-import { AuthProvider } from '../../context/AuthContext'
+import { AuthContext, AuthProvider } from '../../context/AuthContext'
 
 describe('Navbar', () => {
   it('renders correctly for route /', () => {
@@ -41,6 +41,23 @@ describe('Navbar', () => {
         <AuthProvider>
           <Navbar/>
         </AuthProvider>
+      </MemoryRouter>
+    ).toJSON()).toMatchSnapshot()
+  })
+
+  it('renders correctly when logged in', () => {
+    const logOut = jest.fn()
+    const authProviderValue = {
+      claims:   { name: 'Zeus' },
+      loggedIn: true,
+      logOut:   logOut
+    }
+
+    expect(renderer.create(
+      <MemoryRouter initialEntries={['/']}>
+        <AuthContext.Provider value={authProviderValue}>
+          <Navbar/>
+        </AuthContext.Provider>
       </MemoryRouter>
     ).toJSON()).toMatchSnapshot()
   })

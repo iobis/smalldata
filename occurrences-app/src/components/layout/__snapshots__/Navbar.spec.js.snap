@@ -267,3 +267,92 @@ exports[`Navbar renders correctly for route /input-data/new 1`] = `
   </div>
 </nav>
 `;
+
+exports[`Navbar renders correctly when logged in 1`] = `
+<nav
+  aria-label="main navigation"
+  className="navbar is-info"
+  role="navigation"
+>
+  <div
+    className="navbar-brand"
+  >
+    <a
+      className="navbar-item"
+      href="/input-data"
+      onClick={[Function]}
+    >
+      <p>
+        OBIS
+      </p>
+    </a>
+    <a
+      className="navbar-burger"
+      onClick={[Function]}
+      role="button"
+    >
+      <span
+        aria-hidden="true"
+      />
+      <span
+        aria-hidden="true"
+      />
+      <span
+        aria-hidden="true"
+      />
+    </a>
+  </div>
+  <div
+    className="navbar-menu"
+  >
+    <div
+      className="navbar-start"
+    >
+      <a
+        aria-current={null}
+        className="navbar-item"
+        href="/input-data"
+        onClick={[Function]}
+      >
+        navbar.inputData
+      </a>
+      <a
+        aria-current={null}
+        className="navbar-item"
+        href="/help"
+        onClick={[Function]}
+      >
+        navbar.help
+      </a>
+    </div>
+    <div
+      className="navbar-end"
+    >
+      <span
+        className="navbar-item"
+      >
+        Zeus
+      </span>
+      <a
+        className="navbar-item"
+        onClick={[MockFunction]}
+      >
+        <span
+          className="icon"
+          style={
+            Object {
+              "marginRight": 6,
+            }
+          }
+        >
+          <i
+            className="fa"
+            icon="user"
+          />
+        </span>
+        navbar.logout
+      </a>
+    </div>
+  </div>
+</nav>
+`;
