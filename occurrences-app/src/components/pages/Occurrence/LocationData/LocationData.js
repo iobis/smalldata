@@ -81,12 +81,6 @@ export default function LocationData({ data, onChange }) {
             optional
             value={data.verbatimCoordinates}/>
           <InputText
-            className="verbatim-event-date is-3"
-            name="occurrenceForm.locationData.verbatimEventDate"
-            onChange={(value) => updateField('verbatimEventDate', value)}
-            optional
-            value={data.verbatimEventDate}/>
-          <InputText
             className="verbatim-depth is-3"
             name="occurrenceForm.locationData.verbatimDepth"
             onChange={(value) => updateField('verbatimDepth', value)}
@@ -107,7 +101,6 @@ LocationData.propTypes = {
     minimumDepth:          PropTypes.number,
     maximumDepth:          PropTypes.number,
     verbatimCoordinates:   PropTypes.string.isRequired,
-    verbatimEventDate:     PropTypes.string.isRequired,
     verbatimDepth:         PropTypes.string.isRequired
   }).isRequired,
   onChange: PropTypes.func.isRequired

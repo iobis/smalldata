@@ -403,7 +403,6 @@ exports[`OccurrenceForm renders correctly 1`] = `
           minimumDepth={null}
           verbatimCoordinates=""
           verbatimDepth=""
-          verbatimEventDate=""
         />
       }
       stepDescription="occurrenceForm.locationData.step.stepDescription"
@@ -815,7 +814,6 @@ exports[`OccurrenceForm renders correctly 2`] = `
           minimumDepth={null}
           verbatimCoordinates=""
           verbatimDepth=""
-          verbatimEventDate=""
         />
       }
       stepDescription="occurrenceForm.locationData.step.stepDescription"
@@ -835,7 +833,6 @@ exports[`OccurrenceForm renders correctly 2`] = `
             minimumDepth={null}
             verbatimCoordinates=""
             verbatimDepth=""
-            verbatimEventDate=""
           />
         }
         stepDescription="occurrenceForm.locationData.step.stepDescription"
@@ -867,7 +864,6 @@ exports[`OccurrenceForm renders correctly 2`] = `
               minimumDepth={null}
               verbatimCoordinates=""
               verbatimDepth=""
-              verbatimEventDate=""
             >
               <div>
                 occurrenceForm.locationData.step.selectedData.latitude
@@ -1595,7 +1591,6 @@ exports[`OccurrenceForm renders correctly 3`] = `
           minimumDepth={null}
           verbatimCoordinates=""
           verbatimDepth=""
-          verbatimEventDate=""
         />
       }
       stepDescription="occurrenceForm.locationData.step.stepDescription"
@@ -1615,7 +1610,6 @@ exports[`OccurrenceForm renders correctly 3`] = `
             minimumDepth={null}
             verbatimCoordinates=""
             verbatimDepth=""
-            verbatimEventDate=""
           />
         }
         stepDescription="occurrenceForm.locationData.step.stepDescription"
@@ -1647,7 +1641,6 @@ exports[`OccurrenceForm renders correctly 3`] = `
               minimumDepth={null}
               verbatimCoordinates=""
               verbatimDepth=""
-              verbatimEventDate=""
             >
               <div>
                 occurrenceForm.locationData.step.selectedData.latitude
@@ -3563,7 +3556,6 @@ exports[`OccurrenceForm renders correctly 4`] = `
           minimumDepth={null}
           verbatimCoordinates=""
           verbatimDepth=""
-          verbatimEventDate=""
         />
       }
       stepDescription="occurrenceForm.locationData.step.stepDescription"
@@ -3583,7 +3575,6 @@ exports[`OccurrenceForm renders correctly 4`] = `
             minimumDepth={null}
             verbatimCoordinates=""
             verbatimDepth=""
-            verbatimEventDate=""
           />
         }
         stepDescription="occurrenceForm.locationData.step.stepDescription"
@@ -3615,7 +3606,6 @@ exports[`OccurrenceForm renders correctly 4`] = `
               minimumDepth={null}
               verbatimCoordinates=""
               verbatimDepth=""
-              verbatimEventDate=""
             >
               <div>
                 occurrenceForm.locationData.step.selectedData.latitude
@@ -4193,7 +4183,6 @@ exports[`OccurrenceForm renders correctly 5`] = `
           minimumDepth={null}
           verbatimCoordinates=""
           verbatimDepth=""
-          verbatimEventDate=""
         />
       }
       stepDescription="occurrenceForm.locationData.step.stepDescription"
@@ -4213,7 +4202,6 @@ exports[`OccurrenceForm renders correctly 5`] = `
             minimumDepth={null}
             verbatimCoordinates=""
             verbatimDepth=""
-            verbatimEventDate=""
           />
         }
         stepDescription="occurrenceForm.locationData.step.stepDescription"
@@ -4245,7 +4233,6 @@ exports[`OccurrenceForm renders correctly 5`] = `
               minimumDepth={null}
               verbatimCoordinates=""
               verbatimDepth=""
-              verbatimEventDate=""
             >
               <div>
                 occurrenceForm.locationData.step.selectedData.latitude
@@ -4856,7 +4843,6 @@ exports[`OccurrenceForm renders correctly 6`] = `
           minimumDepth={null}
           verbatimCoordinates=""
           verbatimDepth=""
-          verbatimEventDate=""
         />
       }
       stepDescription="occurrenceForm.locationData.step.stepDescription"
@@ -4876,7 +4862,6 @@ exports[`OccurrenceForm renders correctly 6`] = `
             minimumDepth={null}
             verbatimCoordinates=""
             verbatimDepth=""
-            verbatimEventDate=""
           />
         }
         stepDescription="occurrenceForm.locationData.step.stepDescription"
@@ -4908,7 +4893,6 @@ exports[`OccurrenceForm renders correctly 6`] = `
               minimumDepth={null}
               verbatimCoordinates=""
               verbatimDepth=""
-              verbatimEventDate=""
             >
               <div>
                 occurrenceForm.locationData.step.selectedData.latitude

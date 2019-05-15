@@ -106,11 +106,6 @@ export default {
           placeholder: '',
           help:        'Example: "41 05 54S 121 05 34W", "17T 630000 4833400"'
         },
-        verbatimEventDate:     {
-          label:       'verbatim event date',
-          placeholder: '',
-          help:        'Examples: "spring 1910", "Marzo 2002", "1999-03-XX", "17IV1934"'
-        },
         verbatimDepth:         {
           label:       'verbatim depth',
           placeholder: '',

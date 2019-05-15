@@ -47,10 +47,8 @@ export default function OccurrenceForm() {
     minimumDepth:          null,
     maximumDepth:          null,
     verbatimCoordinates:   '',
-    verbatimEventDate:     '',
     verbatimDepth:         ''
-  }
-  )
+  })
   const [measurementOrFact, setMeasurementOrFact] = useState([])
   const steps = [{
     dataDescription: t('occurrenceForm.selectDataset.dataDescription'),
