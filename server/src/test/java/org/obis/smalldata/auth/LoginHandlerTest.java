@@ -9,6 +9,7 @@ import io.vertx.ext.auth.jwt.JWTAuthOptions;
 import io.vertx.junit5.Timeout;
 import io.vertx.junit5.VertxExtension;
 import io.vertx.junit5.VertxTestContext;
+import org.assertj.core.data.Offset;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -17,8 +18,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import java.time.Instant;
 import java.util.concurrent.TimeUnit;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.pmw.tinylog.Logger.info;
+import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(VertxExtension.class)
 public class LoginHandlerTest {
@@ -33,6 +33,8 @@ public class LoginHandlerTest {
     .put("alg", AUTH_ALG)
     .put("verifyKey", AUTH_VERIFY_KEY)
     .put("signKey", AUTH_SIGN_KEY);
+  private static final JsonObject DEFAULT_CREDENTIALS = new JsonObject().put("username", "paulo").put("password", "secret");
+  private static final String KEY_JWT = "jwt";
 
   @BeforeEach
   void deployVerticle(Vertx vertx, VertxTestContext testContext) {
@@ -43,23 +45,46 @@ public class LoginHandlerTest {
   }
 
   @Test
-  @DisplayName("use eb to code and decode the token")
+  @DisplayName("code and decode the token with LoginHandler")
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
-  void testEncodeDecodeToken(Vertx vertx, VertxTestContext testContext) {
+  void testLoginHandlerEncodeDecodeToken(Vertx vertx, VertxTestContext testContext) {
+    var provider = JWTAuth.create(vertx, new JWTAuthOptions()
+      .addPubSecKey(new PubSecKeyOptions()
+        .setAlgorithm(AUTH_ALG)
+        .setPublicKey(AUTH_VERIFY_KEY)
+        .setSecretKey(AUTH_SIGN_KEY)));
+    var loginHandler = new LoginHandler(provider);
+    loginHandler.login(DEFAULT_CREDENTIALS,
+      token -> {
+        loginHandler.verifyToken(new JsonObject().put(KEY_JWT, token),
+          user -> {
+            var claims = user.principal();
+            long now = Instant.now().getEpochSecond();
+            assertClaims(testContext, claims, now);
+          },
+          (errorCode, errorMessage) -> testContext.failNow(new Throwable("failed to verify")));
+      },
+      (errorCode, errorMessage) -> testContext.failNow(new Throwable("failed to login")));
+  }
+
+  @Test
+  @DisplayName("code and decode the token over the event bus")
+  @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
+  void testEventBusEncodeDecodeToken(Vertx vertx, VertxTestContext testContext) {
     vertx.eventBus().<JsonObject>send(
       "auth.login",
-      new JsonObject()
-        .put("username", "paulo")
-        .put("password", "secret"),
+      DEFAULT_CREDENTIALS,
       result -> {
         if (result.succeeded()) {
           JsonObject body = result.result().body();
           vertx.eventBus().<JsonObject>send(
             "auth.verify",
-            new JsonObject().put("jwt", body.getString("token")),
+            new JsonObject().put(KEY_JWT, body.getString("token")),
             authResult -> {
               if (authResult.succeeded()) {
-                testContext.completeNow();
+                var claims = authResult.result().body();
+                long now = Instant.now().getEpochSecond();
+                assertClaims(testContext, claims, now);
               } else {
                 testContext.failNow(authResult.cause());
               }
@@ -71,30 +96,26 @@ public class LoginHandlerTest {
   }
 
   @Test
-  @DisplayName("check if a proper jwt is returned")
+  @DisplayName("check jwt claims with new provider")
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
   void testJwtTokenClaims(Vertx vertx, VertxTestContext testContext) {
     vertx.eventBus().<JsonObject>send(
       "auth.login",
-      new JsonObject()
-        .put("username", "paulo")
-        .put("password", "secret"),
+      DEFAULT_CREDENTIALS,
       result -> {
         if (result.succeeded()) {
           JsonObject body = result.result().body();
           var authProvider = JWTAuth.create(vertx, new JWTAuthOptions()
-              .addPubSecKey(new PubSecKeyOptions()
-                .setAlgorithm(AUTH_ALG)
-                .setPublicKey(AUTH_VERIFY_KEY)
-                .setSecretKey(AUTH_SIGN_KEY)));
+            .addPubSecKey(new PubSecKeyOptions()
+              .setAlgorithm(AUTH_ALG)
+              .setPublicKey(AUTH_VERIFY_KEY)
+              .setSecretKey(AUTH_SIGN_KEY)));
           authProvider.authenticate(new JsonObject()
-              .put("jwt", body.getString("token")),
+              .put(KEY_JWT, body.getString("token")),
             authResult -> {
               JsonObject claims = authResult.result().principal();
               long now = Instant.now().getEpochSecond();
-              assertEquals(claims.getString("sub"), "paulo");
-              assertEquals(claims.getString("aud"), "occurrences-OBIS");
-              assertEquals(claims.getLong("iat") / 1.0, now / 1.0, 1.0);
+              assertClaims(testContext, claims, now);
               testContext.completeNow();
             });
         } else {
@@ -104,19 +125,19 @@ public class LoginHandlerTest {
   }
 
   @Test
-  @DisplayName("check if a proper jwt is returned")
+  @DisplayName("check jwt with new token")
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
   void testJwtVerification(Vertx vertx, VertxTestContext testContext) {
     vertx.eventBus().<JsonObject>send(
       "auth.verify",
       new JsonObject()
-        .put("jwt", "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9."
+        .put(KEY_JWT, "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9."
           + "eyJhdWQiOiJvY2N1cnJlbmNlcy1PQklTIiwic3ViIjoicGF1bG8iLCJpYXQiOjE1NTc5NDk4NDN9."
           + "O0RBl686U2YafsZqdRNTz-dFQR3znlnD3YHFgGcE7GhAa4ykR1gnHQkskLvu7YJ_iO2z7rvVdrrCGGVA6KBbXw"),
       result -> {
-        info(result);
         if (result.succeeded()) {
-          info(result.result());
+          var claims = result.result().body();
+          assertClaims(testContext, claims, 1557949843L);
           testContext.completeNow();
         } else {
           testContext.failNow(result.cause());
@@ -124,4 +145,10 @@ public class LoginHandlerTest {
       });
   }
 
+  private void assertClaims(VertxTestContext testContext, JsonObject claims, long iat) {
+    assertThat("paulo").isEqualTo(claims.getString("sub"));
+    assertThat("occurrences-OBIS").isEqualTo(claims.getString("aud"));
+    assertThat(iat).isCloseTo(claims.getLong("iat"), Offset.offset(1L));
+    testContext.completeNow();
+  }
 }

@@ -2,6 +2,7 @@ package org.obis.smalldata.auth;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Future;
+import io.vertx.core.json.JsonObject;
 import io.vertx.ext.auth.AuthProvider;
 import io.vertx.ext.auth.PubSecKeyOptions;
 import io.vertx.ext.auth.jwt.JWTAuth;
@@ -40,8 +41,9 @@ public class Auth extends AbstractVerticle {
         e.getCause());
       startFuture.fail(e);
     }
-    vertx.eventBus().localConsumer("auth.login", loginHandler::login);
-    vertx.eventBus().localConsumer("auth.verify", loginHandler::verifyToken);
+
+    vertx.eventBus().<JsonObject>localConsumer("auth.login", loginHandler::login);
+    vertx.eventBus().<JsonObject>localConsumer("auth.verify", loginHandler::verifyToken);
   }
 
   private AuthProvider generateAuthProvider() throws InvalidKeyException,

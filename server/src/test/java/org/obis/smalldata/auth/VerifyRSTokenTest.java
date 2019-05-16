@@ -15,7 +15,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import java.util.concurrent.TimeUnit;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.pmw.tinylog.Logger.info;
 
 @ExtendWith(VertxExtension.class)
 public class VerifyRSTokenTest {
