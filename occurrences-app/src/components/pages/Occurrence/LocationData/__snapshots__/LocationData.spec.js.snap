@@ -11,7 +11,6 @@ exports[`LocationData renders correctly 1`] = `
       "minimumDepth": null,
       "verbatimCoordinates": "",
       "verbatimDepth": "",
-      "verbatimEventDate": "",
     }
   }
   onChange={[MockFunction]}
@@ -260,29 +259,6 @@ exports[`LocationData renders correctly 1`] = `
               className="label has-text-weight-normal"
             >
               occurrenceForm.locationData.verbatimCoordinates.label
-            </label>
-            <input
-              className="input"
-              onChange={[Function]}
-              type="text"
-              value=""
-            />
-          </div>
-        </InputText>
-        <InputText
-          className="verbatim-event-date is-3"
-          name="occurrenceForm.locationData.verbatimEventDate"
-          onChange={[Function]}
-          optional={true}
-          value=""
-        >
-          <div
-            className="column field verbatim-event-date is-3"
-          >
-            <label
-              className="label has-text-weight-normal"
-            >
-              occurrenceForm.locationData.verbatimEventDate.label
             </label>
             <input
               className="input"

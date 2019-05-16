@@ -17,7 +17,6 @@ export function getEmptyData() {
     minimumDepth:          null,
     maximumDepth:          null,
     verbatimCoordinates:   '',
-    verbatimEventDate:     '',
     verbatimDepth:         ''
   }
 }

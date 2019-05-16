@@ -26,8 +26,7 @@ describe('LocationData', () => {
       maximumDepth:          null,
       minimumDepth:          null,
       verbatimCoordinates:   '',
-      verbatimDepth:         '',
-      verbatimEventDate:     ''
+      verbatimDepth:         ''
     })
   })
 
@@ -43,8 +42,7 @@ describe('LocationData', () => {
       maximumDepth:          null,
       minimumDepth:          null,
       verbatimCoordinates:   '',
-      verbatimDepth:         '',
-      verbatimEventDate:     ''
+      verbatimDepth:         ''
     })
   })
 })
