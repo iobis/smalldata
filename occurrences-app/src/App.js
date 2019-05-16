@@ -1,12 +1,12 @@
 import './i18n/i18n'
 import HelpPage from './components/pages/HelpPage'
 import InputDataPage from './components/pages/InputDataPage'
-import Navbar from './components/layout/Navbar'
 import LogInPage from './components/pages/LogInPage'
-import PropTypes from 'prop-types'
-import { AuthProvider, useAuth } from './hooks/auth'
+import Navbar from './components/layout/Navbar'
 import OccurrenceForm from './components/pages/Occurrence/OccurrenceForm'
-import React from 'react'
+import PropTypes from 'prop-types'
+import React, { useContext } from 'react'
+import { AuthContext, AuthProvider } from './context/AuthContext'
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
 import {
   faAngleDown,
@@ -32,19 +32,14 @@ export default function App() {
 }
 
 const AppDiv = () => {
-  const { auth, logIn } = useAuth()
-
-  const urlParams = new URLSearchParams(window.location.search)
-  if (!auth.loggedIn) {
-    const token = urlParams.get('token') || localStorage.getItem('jwt')
-    if (token) logIn(token)
-  }
+  const { loggedIn, logIn } = useContext(AuthContext)
+  if (!loggedIn) logIn()
 
   return (
     <div className="App">
       <Navbar/>
       <Switch>
-        <Route exact path="/" render={() => auth.loggedIn ? <Redirect to="/input-data"/> : <LogInPage/>}/>
+        <Route exact path="/" render={() => loggedIn ? <Redirect to="/input-data"/> : <LogInPage/>}/>
         <ProtectedRoute component={InputDataPage} exact path="/input-data"/>
         <ProtectedRoute component={OccurrenceForm} exact path="/input-data/new"/>
         <Route component={HelpPage} exact path="/help"/>
@@ -54,12 +49,12 @@ const AppDiv = () => {
 }
 
 const ProtectedRoute = ({ component: Component, ...rest }) => {
-  const { auth } = useAuth()
+  const { loggedIn } = useContext(AuthContext)
   return (
     <Route
       {...rest}
       render={(props) => (
-        auth.loggedIn
+        loggedIn
           ? <Component {...props}/>
           : <Redirect to="/"/>)}/>
   )

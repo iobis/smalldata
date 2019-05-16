@@ -1,16 +1,16 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
-import React, { useRef, useState } from 'react'
+import React, { useContext, useRef, useState } from 'react'
+import { AuthContext } from '../../context/AuthContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link, NavLink } from 'react-router-dom'
 import { useOnClickOutside } from '../../hooks/hooks'
-import { useAuth } from '../../hooks/auth'
 import { useTranslation } from 'react-i18next'
 
 export default function Navbar() {
   const { t } = useTranslation()
-  const { auth } = useAuth()
+  const { loggedIn } = useContext(AuthContext)
   const [navbarMenuActive, setNavbarMenuActive] = useState(false)
   const menuRef = useRef()
   const hideNavbarMenu = () => setNavbarMenuActive(false)
@@ -32,7 +32,7 @@ export default function Navbar() {
         </a>
       </div>
       <div className={classNames('navbar-menu', { 'is-active': navbarMenuActive })}>
-        {auth.loggedIn ? (
+        {loggedIn ? (
           <div className="navbar-start">
             <NavbarItem onClick={hideNavbarMenu} to="/input-data">
               {t('navbar.inputData')}
@@ -42,23 +42,18 @@ export default function Navbar() {
             </NavbarItem>
           </div>
         ) : null}
-        <LoginNavItem loggedIn={auth.loggedIn}/>
+        <LoginNavItem loggedIn={loggedIn}/>
       </div>
     </nav>
   )
 }
 
 function LoginNavItem({ loggedIn }) {
-  const { auth, logOut } = useAuth()
-  const name = auth.claims && auth.claims.name
-
-  function redirectToOceanExpert() {
-    const callback = window.location.origin + process.env.PUBLIC_URL
-    window.location = 'https://oceanexpert.net/socialsignin/?callback=' + callback
-  }
+  const { claims, logOut, redirectToOceanExpert } = useContext(AuthContext)
+  const name = claims && claims.name
 
   return (
-    <div className="navbar-end">
+    <div className="login-nav-item navbar-end">
       <span className="navbar-item">{name}</span>
       {loggedIn
         ? <AuthButton labelKey="navbar.logout" onClick={logOut}/>
@@ -75,7 +70,7 @@ function AuthButton({ labelKey, onClick }) {
   const { t } = useTranslation()
 
   return (
-    <a className="navbar-item" onClick={onClick}>
+    <a className="auth-button navbar-item" onClick={onClick}>
       <span className="icon" style={{ 'marginRight': 6 }}>
         <FontAwesomeIcon icon="user"/>
       </span>
