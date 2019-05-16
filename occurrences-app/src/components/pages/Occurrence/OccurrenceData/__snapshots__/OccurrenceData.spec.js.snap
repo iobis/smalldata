@@ -154,6 +154,20 @@ exports[`OccurrenceData renders correctly 1`] = `
       <input
         checked={false}
         className="input-radio is-checkradio"
+        id="occurrenceForm.occurrenceData.basisOfRecord-machineObservation"
+        name="occurrenceForm.occurrenceData.basisOfRecord"
+        onChange={[Function]}
+        type="radio"
+        value="machineObservation"
+      />
+      <label
+        htmlFor="occurrenceForm.occurrenceData.basisOfRecord-machineObservation"
+      >
+        occurrenceForm.occurrenceData.basisOfRecord.machineObservation
+      </label>
+      <input
+        checked={false}
+        className="input-radio is-checkradio"
         id="occurrenceForm.occurrenceData.basisOfRecord-fossilSpecimen"
         name="occurrenceForm.occurrenceData.basisOfRecord"
         onChange={[Function]}
@@ -178,20 +192,6 @@ exports[`OccurrenceData renders correctly 1`] = `
         htmlFor="occurrenceForm.occurrenceData.basisOfRecord-livingSpecimen"
       >
         occurrenceForm.occurrenceData.basisOfRecord.livingSpecimen
-      </label>
-      <input
-        checked={false}
-        className="input-radio is-checkradio"
-        id="occurrenceForm.occurrenceData.basisOfRecord-machineSpecimen"
-        name="occurrenceForm.occurrenceData.basisOfRecord"
-        onChange={[Function]}
-        type="radio"
-        value="machineSpecimen"
-      />
-      <label
-        htmlFor="occurrenceForm.occurrenceData.basisOfRecord-machineSpecimen"
-      >
-        occurrenceForm.occurrenceData.basisOfRecord.machineSpecimen
       </label>
       <input
         checked={false}
@@ -251,20 +251,6 @@ exports[`OccurrenceData renders correctly 1`] = `
       <input
         checked={false}
         className="input-radio is-checkradio"
-        id="occurrenceForm.occurrenceData.sex-hermaphrodite"
-        name="occurrenceForm.occurrenceData.sex"
-        onChange={[Function]}
-        type="radio"
-        value="hermaphrodite"
-      />
-      <label
-        htmlFor="occurrenceForm.occurrenceData.sex-hermaphrodite"
-      >
-        occurrenceForm.occurrenceData.sex.hermaphrodite
-      </label>
-      <input
-        checked={false}
-        className="input-radio is-checkradio"
         id="occurrenceForm.occurrenceData.sex-unspecified"
         name="occurrenceForm.occurrenceData.sex"
         onChange={[Function]}
@@ -292,30 +278,16 @@ exports[`OccurrenceData renders correctly 1`] = `
       <input
         checked={true}
         className="input-radio is-checkradio"
-        id="occurrenceForm.occurrenceData.lifestage-egg"
+        id="occurrenceForm.occurrenceData.lifestage-larva"
         name="occurrenceForm.occurrenceData.lifestage"
         onChange={[Function]}
         type="radio"
-        value="egg"
+        value="larva"
       />
       <label
-        htmlFor="occurrenceForm.occurrenceData.lifestage-egg"
+        htmlFor="occurrenceForm.occurrenceData.lifestage-larva"
       >
-        occurrenceForm.occurrenceData.lifestage.egg
-      </label>
-      <input
-        checked={false}
-        className="input-radio is-checkradio"
-        id="occurrenceForm.occurrenceData.lifestage-eft"
-        name="occurrenceForm.occurrenceData.lifestage"
-        onChange={[Function]}
-        type="radio"
-        value="eft"
-      />
-      <label
-        htmlFor="occurrenceForm.occurrenceData.lifestage-eft"
-      >
-        occurrenceForm.occurrenceData.lifestage.eft
+        occurrenceForm.occurrenceData.lifestage.larva
       </label>
       <input
         checked={false}
