@@ -40,9 +40,9 @@ public class Dwca extends AbstractVerticle {
     var dwcaRecordsFuture = dbQuery.findDwcaRecords(datasetRef);
     var datasetFuture = dbQuery.findDataset(datasetRef);
     var result = Future.<JsonObject>future();
-    CompositeFuture.all(datasetFuture, dwcaRecordsFuture).setHandler(res -> {
-      var dataset = (JsonObject) res.result().list().get(0);
-      var dwcaRecords = (List<JsonObject>) res.result().list().get(1);
+    CompositeFuture.all(datasetFuture, dwcaRecordsFuture).setHandler(ar -> {
+      var dataset = (JsonObject) ar.result().list().get(0);
+      var dwcaRecords = (List<JsonObject>) ar.result().list().get(1);
       var path = zipGenerator.generate(dwcaRecords, dataset);
       result.complete(new JsonObject().put("file", path.get().toAbsolutePath().toString()));
     });
