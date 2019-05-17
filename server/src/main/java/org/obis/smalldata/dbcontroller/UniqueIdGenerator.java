@@ -6,7 +6,7 @@ import lombok.Value;
 
 import java.util.function.Consumer;
 
-import static org.obis.smalldata.dbcontroller.SecureRandomId.generateId;
+import static org.obis.smalldata.dbcontroller.SecureRandomString.generateId;
 
 @Value
 public class UniqueIdGenerator {

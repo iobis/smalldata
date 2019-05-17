@@ -1,0 +1,12 @@
+section {
+  text-align: center;
+}
+
+section h1 {
+  width: 100%;
+}
+
+section form {
+  display: flex;
+  justify-content: center;
+}

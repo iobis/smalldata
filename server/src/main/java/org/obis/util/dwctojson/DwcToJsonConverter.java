@@ -17,7 +17,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.stream.Collectors;
 
-import static org.obis.smalldata.dbcontroller.SecureRandomId.generateId;
+import static org.obis.smalldata.dbcontroller.SecureRandomString.generateId;
 import static org.pmw.tinylog.Logger.error;
 
 public class DwcToJsonConverter {

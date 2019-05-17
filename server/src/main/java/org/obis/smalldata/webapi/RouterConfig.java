@@ -34,6 +34,7 @@ class RouterConfig {
     });
     var router = routerFactory.getRouter();
     router.get("/openapi/*").handler(StaticHandler.create("swaggerroot"));
+    router.get("/login/*").handler(StaticHandler.create("loginroot"));
     router.get("/*").handler(StaticHandler.create());
 
     completionHandler.accept(router);
