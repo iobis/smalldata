@@ -13,28 +13,33 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Map;
 
+import static org.pmw.tinylog.Logger.error;
+
 public class MockServerLoginPage {
 
-  private static MessageDigest MESSAGE_DIGEST;
-  private static final Map<String, String> HASH_PASSWORD_MAP = Map.of(
-    "kurtsys", BaseEncoding.base16().lowerCase().encode(
-      MESSAGE_DIGEST.digest((SALT_MAP.get("kurtsys") + "kurtsys").getBytes(StandardCharsets.UTF_8))),
-    "dummy", BaseEncoding.base16().lowerCase().encode(
-      MESSAGE_DIGEST.digest((SALT_MAP.get("dummy") + "secret").getBytes(StandardCharsets.UTF_8)))
-  );
-
-  private static final Map<String, String> SALT_MAP = Map.of(
-    "kurtsys", SecureRandomString.generateSalt(),
-    "dummy", SecureRandomString.generateSalt());
+  private static MessageDigest messageDigest;
 
   static {
     try {
-      MESSAGE_DIGEST = MessageDigest.getInstance("SHA-256");
+      messageDigest = MessageDigest.getInstance("SHA-256");
     } catch (NoSuchAlgorithmException e) {
-      e.printStackTrace();
+      error(e.getMessage());
     }
   }
 
+  private static final String KURTSYS = "kurtsys";
+  private static final String DUMMY = "dummy";
+
+  private static final Map<String, String> SALT_MAP = Map.of(
+    KURTSYS, SecureRandomString.generateSalt(),
+    DUMMY, SecureRandomString.generateSalt());
+
+  private static final Map<String, String> HASH_PASSWORD_MAP = Map.of(
+    KURTSYS, BaseEncoding.base16().lowerCase().encode(
+      messageDigest.digest((SALT_MAP.get("KURTSYS") + "mypass").getBytes(StandardCharsets.UTF_8))),
+    DUMMY, BaseEncoding.base16().lowerCase().encode(
+      messageDigest.digest((SALT_MAP.get(DUMMY) + "secret").getBytes(StandardCharsets.UTF_8)))
+  );
 
   private MockServerLoginPage(Vertx vertx) {
     var server = vertx.createHttpServer();
