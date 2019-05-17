@@ -3,7 +3,7 @@ function initLogin(callback, queryParamOptional) {
   const algorithm = 'sha-256'
   const queryParam = queryParamOptional || 'token'
   let salt = null
-  let userid = null
+  let userId = null
 
   function hex(buff) {
     return [].map.call(new Uint8Array(buff), b => ('00' + b.toString(16)).slice(-2)).join('')
@@ -19,7 +19,7 @@ function initLogin(callback, queryParamOptional) {
     e.preventDefault()
     let password = document.querySelector('form > input[type=password]').value
     digest(`${salt}${password}`).then(function(digested) {
-      fetch(`login/token/${userid}/${digested}`)
+      fetch(`login/token/${userId}/${digested}`)
         .then(function(response) {
           return response.text()
         })
@@ -34,12 +34,12 @@ function initLogin(callback, queryParamOptional) {
   }
 
   function newsalt(e) {
-    userid = e.target.value
-    fetch(`login/salt/${userid}`).then(function(response) {
+    userId = e.target.value
+    fetch(`login/salt/${userId}`).then(function(response) {
       if (!response.ok) throw Error(response.statusText)
       return response.text()
-    }).then(function(newsalt) {
-      salt = newsalt
+    }).then(function(newSalt) {
+      salt = newSalt
     }).catch(function(error) {
       console.log('Cannot fetch salt - invalid username?')
       console.log(error)
