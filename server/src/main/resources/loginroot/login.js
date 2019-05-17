@@ -57,5 +57,5 @@ function init() {
   const urlParams = new URLSearchParams(window.location.search)
   const login = initLogin(urlParams.get('callback'), urlParams.get('queryParam'))
   document.querySelector('form > input[type=text]').addEventListener('blur', login.newsalt)
-  document.querySelector('form > input[type=submit]').addEventListener('click', login.login)
+  document.querySelector('form').addEventListener('submit', login.login)
 }
