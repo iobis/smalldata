@@ -29,11 +29,11 @@ public class VerifyRSTokenTest {
     + "eWCpKfix3FzJwvp2seelcUo5ayweYK4Oq6yAco01sjVzZjwoFwu246GBiGVdxV5z\n"
     + "pQIDAQAB\n";
   private static final String VALID_JWT = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9"
-        + ".eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTUxNjIzOTAyMn0.ZzcTqoekur4Em_"
-        + "hyV995z2le0szrmq9agup-Yy1__BmvpTBDc44B3lQ7oB2bCk3G0gyGFV1WQmRtYKzHrjm0SEHwSNVFB2B76JUR4D7IIQcPgK6bOhsdg9yg5"
-        + "oPS40ceFkR_SosmEtt_4njpAATSl_9jxT1NJV0lLIm3F9rGiPx_Tze_JCROtK7SCuBqQ6JKktn_Pn1GFsv4z9Q0TQFeorfvhPo7NDGRhKno"
-        + "fDTBVizf0h_JwC6XwCmlHISXJg7G6v3LPhR5iDjlDw0mBW6b0Fzb58metEMg4pmiYyxPigdQkJqzIJ2FoO6wUcmPT2cj3oFRkBpnWk3LQIt"
-        + "16CGEDA";
+    + ".eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTUxNjIzOTAyMn0.ZzcTqoekur4Em_"
+    + "hyV995z2le0szrmq9agup-Yy1__BmvpTBDc44B3lQ7oB2bCk3G0gyGFV1WQmRtYKzHrjm0SEHwSNVFB2B76JUR4D7IIQcPgK6bOhsdg9yg5"
+    + "oPS40ceFkR_SosmEtt_4njpAATSl_9jxT1NJV0lLIm3F9rGiPx_Tze_JCROtK7SCuBqQ6JKktn_Pn1GFsv4z9Q0TQFeorfvhPo7NDGRhKno"
+    + "fDTBVizf0h_JwC6XwCmlHISXJg7G6v3LPhR5iDjlDw0mBW6b0Fzb58metEMg4pmiYyxPigdQkJqzIJ2FoO6wUcmPT2cj3oFRkBpnWk3LQIt"
+    + "16CGEDA";
 
   private JWTAuth authProvider;
 
@@ -47,16 +47,15 @@ public class VerifyRSTokenTest {
         .addPubSecKey(new PubSecKeyOptions()
           .setAlgorithm(AUTH_ALG)
           .setPublicKey(AUTH_PUBLIC_KEY)));
-    authProvider.authenticate(new JsonObject().put("jwt", VALID_JWT),
-      res -> {
-        if (res.succeeded()) {
-          var claims = res.result().principal();
-          assertThat(claims.getString("name")).isEqualTo("John Doe");
-          assertThat(claims.getLong("iat")).isEqualTo(1516239022);
-          testContext.completeNow();
-        } else {
-          testContext.failNow(res.cause());
-        }
+    authProvider.authenticate(
+      new JsonObject().put("jwt", VALID_JWT),
+      ar -> {
+        if (ar.failed()) testContext.failNow(ar.cause());
+        var claims = ar.result().principal();
+        assertThat(claims).isNotNull();
+        assertThat(claims.getString("name")).isEqualTo("John Doe");
+        assertThat(claims.getLong("iat")).isEqualTo(1516239022);
+        testContext.completeNow();
       });
     testContext.awaitCompletion(2, TimeUnit.SECONDS);
   }
@@ -71,14 +70,12 @@ public class VerifyRSTokenTest {
         .addPubSecKey(new PubSecKeyOptions()
           .setAlgorithm(AUTH_ALG)
           .setPublicKey(AUTH_PUBLIC_KEY)));
-    authProvider.authenticate(new JsonObject().put("jwt", VALID_JWT.replace("EDA", "eDA")),
-      res -> {
-        if (res.succeeded()) {
-          testContext.failNow(new Throwable("shouldn't reach this"));
-        } else {
-          assertThat(res.cause().getMessage()).isEqualTo("Signature verification failed");
-          testContext.completeNow();
-        }
+    authProvider.authenticate(
+      new JsonObject().put("jwt", VALID_JWT.replace("EDA", "eDA")),
+      ar -> {
+        if (ar.succeeded()) testContext.failNow(new Throwable("shouldn't reach this"));
+        assertThat(ar.cause()).hasMessage("Signature verification failed");
+        testContext.completeNow();
       });
     testContext.awaitCompletion(2, TimeUnit.SECONDS);
   }
@@ -93,14 +90,12 @@ public class VerifyRSTokenTest {
         .addPubSecKey(new PubSecKeyOptions()
           .setAlgorithm(AUTH_ALG)
           .setPublicKey(AUTH_PUBLIC_KEY.replaceFirst("QAB", "QaB"))));
-    authProvider.authenticate(new JsonObject().put("jwt", VALID_JWT),
-      res -> {
-        if (res.succeeded()) {
-          testContext.failNow(new Throwable("shouldn't reach this"));
-        } else {
-          assertThat(res.cause().getMessage()).isEqualTo("Signature verification failed");
-          testContext.completeNow();
-        }
+    authProvider.authenticate(
+      new JsonObject().put("jwt", VALID_JWT),
+      ar -> {
+        if (ar.succeeded()) testContext.failNow(new Throwable("shouldn't reach this"));
+        assertThat(ar.cause()).hasMessage("Signature verification failed");
+        testContext.completeNow();
       });
     testContext.awaitCompletion(2, TimeUnit.SECONDS);
   }

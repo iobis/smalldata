@@ -41,17 +41,15 @@ public class VerifyECTokenTest {
         .addPubSecKey(new PubSecKeyOptions()
           .setAlgorithm(AUTH_ALG)
           .setPublicKey(AUTH_PUBLIC_KEY)));
-    authProvider.authenticate(new JsonObject().put("jwt", VALID_JWT),
-      res -> {
-        if (res.succeeded()) {
-          var claims = res.result().principal();
-          info(claims);
-          assertThat(claims.getString("iss")).isEqualTo("https://jwt-idp.example.com");
-          assertThat(claims.getLong("iat")).isEqualTo(1557949205);
-          testContext.completeNow();
-        } else {
-          testContext.failNow(res.cause());
-        }
+    authProvider.authenticate(
+      new JsonObject().put("jwt", VALID_JWT),
+      ar -> {
+        if (ar.failed()) testContext.failNow(ar.cause());
+        var claims = ar.result().principal();
+        assertThat(claims).isNotNull();
+        assertThat(claims.getString("iss")).isEqualTo("https://jwt-idp.example.com");
+        assertThat(claims.getLong("iat")).isEqualTo(1557949205);
+        testContext.completeNow();
       });
     testContext.awaitCompletion(2, TimeUnit.SECONDS);
   }
@@ -66,14 +64,12 @@ public class VerifyECTokenTest {
         .addPubSecKey(new PubSecKeyOptions()
           .setAlgorithm(AUTH_ALG)
           .setPublicKey(AUTH_PUBLIC_KEY)));
-    authProvider.authenticate(new JsonObject().put("jwt", VALID_JWT.replace("ryQ", "ryq")),
-      res -> {
-        if (res.succeeded()) {
-          testContext.failNow(new Throwable("shouldn't reach this"));
-        } else {
-          assertThat(res.cause().getMessage()).isEqualTo("Signature verification failed");
-          testContext.completeNow();
-        }
+    authProvider.authenticate(
+      new JsonObject().put("jwt", VALID_JWT.replace("ryQ", "ryq")),
+      ar -> {
+        if (ar.succeeded()) testContext.failNow(new Throwable("shouldn't reach this"));
+        assertThat(ar.cause()).hasMessage("Signature verification failed");
+        testContext.completeNow();
       });
     testContext.awaitCompletion(2, TimeUnit.SECONDS);
   }
@@ -88,14 +84,12 @@ public class VerifyECTokenTest {
         .addPubSecKey(new PubSecKeyOptions()
           .setAlgorithm(AUTH_ALG)
           .setPublicKey(AUTH_PUBLIC_KEY.replaceFirst("DKw", "DKW"))));
-    authProvider.authenticate(new JsonObject().put("jwt", VALID_JWT),
-      res -> {
-        if (res.succeeded()) {
-          testContext.failNow(new Throwable("shouldn't reach this"));
-        } else {
-          assertThat(res.cause().getMessage()).isEqualTo("Signature verification failed");
-          testContext.completeNow();
-        }
+    authProvider.authenticate(
+      new JsonObject().put("jwt", VALID_JWT),
+      ar -> {
+        if (ar.succeeded()) testContext.failNow(new Throwable("shouldn't reach this"));
+        assertThat(ar.cause()).hasMessage("Signature verification failed");
+        testContext.completeNow();
       });
     testContext.awaitCompletion(2, TimeUnit.SECONDS);
   }
