@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FinalSummary renders correctly 1`] = `
+<FinalSummary
+  onChange={[MockFunction]}
+  onSubmit={[MockFunction]}
+>
+  <div
+    className="final-summary section is-fluid"
+  >
+    <h1
+      className="title"
+    >
+      occurrenceForm.finalSummary.title
+    </h1>
+  </div>
+</FinalSummary>
+`;
