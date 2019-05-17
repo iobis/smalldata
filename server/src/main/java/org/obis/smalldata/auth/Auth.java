@@ -59,22 +59,20 @@ public class Auth extends AbstractVerticle {
       }
       info("... {}", config().getString(VERIFY_KEY).substring(30).replaceAll("\n", " "));
       info("... {}", config().getString(SIGN_KEY).substring(50).replaceAll("\n", " "));
-      provider = JWTAuth.create(vertx, new JWTAuthOptions()
-        .addPubSecKey(new PubSecKeyOptions()
-          .setAlgorithm(config().getString(ALG_KEY, AUTH_ES256))
-          .setPublicKey(config().getString(VERIFY_KEY))
-          .setSecretKey(config().getString(SIGN_KEY))
-        ));
+      var pubSecKey = new PubSecKeyOptions()
+        .setAlgorithm(config().getString(ALG_KEY, AUTH_ES256))
+        .setPublicKey(config().getString(VERIFY_KEY))
+        .setSecretKey(config().getString(SIGN_KEY));
+      provider = JWTAuth.create(vertx, new JWTAuthOptions().addPubSecKey(pubSecKey));
     } else {
       info("... using external verification key");
       if (isNullOrBlank(config().getString(VERIFY_KEY))) {
         throw new InvalidKeyException("Need to provide a public key for non-local JWT authorization");
       } else {
-        provider = JWTAuth.create(vertx, new JWTAuthOptions()
-          .addPubSecKey(new PubSecKeyOptions()
-            .setAlgorithm(config().getString(ALG_KEY, AUTH_ES256))
-            .setPublicKey(config().getString(VERIFY_KEY))
-          ));
+        var pubSecKey = new PubSecKeyOptions()
+          .setAlgorithm(config().getString(ALG_KEY, AUTH_ES256))
+          .setPublicKey(config().getString(VERIFY_KEY));
+        provider = JWTAuth.create(vertx, new JWTAuthOptions().addPubSecKey(pubSecKey));
       }
     }
     return provider;
