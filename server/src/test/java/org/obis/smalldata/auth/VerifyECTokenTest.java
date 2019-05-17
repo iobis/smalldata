@@ -15,7 +15,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import java.util.concurrent.TimeUnit;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.pmw.tinylog.Logger.info;
 
 @ExtendWith(VertxExtension.class)
 public class VerifyECTokenTest {
@@ -44,7 +43,7 @@ public class VerifyECTokenTest {
     authProvider.authenticate(
       new JsonObject().put("jwt", VALID_JWT),
       ar -> {
-        if (ar.failed()) testContext.failNow(ar.cause());
+        assertThat(ar.succeeded()).isTrue();
         var claims = ar.result().principal();
         assertThat(claims).isNotNull();
         assertThat(claims.getString("iss")).isEqualTo("https://jwt-idp.example.com");
@@ -67,7 +66,7 @@ public class VerifyECTokenTest {
     authProvider.authenticate(
       new JsonObject().put("jwt", VALID_JWT.replace("ryQ", "ryq")),
       ar -> {
-        if (ar.succeeded()) testContext.failNow(new Throwable("shouldn't reach this"));
+        assertThat(ar.failed()).isTrue();
         assertThat(ar.cause()).hasMessage("Signature verification failed");
         testContext.completeNow();
       });
@@ -87,7 +86,7 @@ public class VerifyECTokenTest {
     authProvider.authenticate(
       new JsonObject().put("jwt", VALID_JWT),
       ar -> {
-        if (ar.succeeded()) testContext.failNow(new Throwable("shouldn't reach this"));
+        assertThat(ar.failed()).isTrue();
         assertThat(ar.cause()).hasMessage("Signature verification failed");
         testContext.completeNow();
       });

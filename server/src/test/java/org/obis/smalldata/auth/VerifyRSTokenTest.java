@@ -50,7 +50,7 @@ public class VerifyRSTokenTest {
     authProvider.authenticate(
       new JsonObject().put("jwt", VALID_JWT),
       ar -> {
-        if (ar.failed()) testContext.failNow(ar.cause());
+        assertThat(ar.succeeded()).isTrue();
         var claims = ar.result().principal();
         assertThat(claims).isNotNull();
         assertThat(claims.getString("name")).isEqualTo("John Doe");
@@ -73,7 +73,8 @@ public class VerifyRSTokenTest {
     authProvider.authenticate(
       new JsonObject().put("jwt", VALID_JWT.replace("EDA", "eDA")),
       ar -> {
-        if (ar.succeeded()) testContext.failNow(new Throwable("shouldn't reach this"));
+        assertThat(ar.failed()).isTrue();
+        assertThat(ar.succeeded()).isFalse();
         assertThat(ar.cause()).hasMessage("Signature verification failed");
         testContext.completeNow();
       });
@@ -93,7 +94,7 @@ public class VerifyRSTokenTest {
     authProvider.authenticate(
       new JsonObject().put("jwt", VALID_JWT),
       ar -> {
-        if (ar.succeeded()) testContext.failNow(new Throwable("shouldn't reach this"));
+        assertThat(ar.failed()).isTrue();
         assertThat(ar.cause()).hasMessage("Signature verification failed");
         testContext.completeNow();
       });
