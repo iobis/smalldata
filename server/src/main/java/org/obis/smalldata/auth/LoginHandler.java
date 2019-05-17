@@ -27,8 +27,10 @@ class LoginHandler {
   }
 
   void login(Message<JsonObject> message) {
-    login(message.body(), token -> message.reply(new JsonObject().put("token", token)),
-      (code, failmessage) -> message.fail(code, failmessage));
+    login(
+      message.body(),
+      token -> message.reply(new JsonObject().put("token", token)),
+      message::fail);
   }
 
   void login(JsonObject message, Consumer<String> successConsumer, BiConsumer<Integer, String> failConsumer) {
@@ -47,18 +49,22 @@ class LoginHandler {
   }
 
   void verifyToken(Message<JsonObject> message) {
-    verifyToken(message.body(), user -> message.reply(user.principal()),
-      (code, failmessage) -> message.fail(code, failmessage));
+    verifyToken(
+      message.body(),
+      user -> message.reply(user.principal()),
+      message::fail);
   }
 
   void verifyToken(JsonObject message, Consumer<User> successConsumer, BiConsumer<Integer, String> failConsumer) {
-    authProvider.authenticate(message, ar -> {
-      info("authenticating {}", ar);
-      if (ar.succeeded()) {
-        successConsumer.accept(ar.result());
-      } else {
-        failConsumer.accept(401, "Cannot login, invalid token");
-      }
-    });
+    authProvider.authenticate(
+      message,
+      ar -> {
+        info("authenticating {}", ar);
+        if (ar.succeeded()) {
+          successConsumer.accept(ar.result());
+        } else {
+          failConsumer.accept(401, "Cannot login, invalid token");
+        }
+      });
   }
 }

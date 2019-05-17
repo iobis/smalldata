@@ -45,32 +45,30 @@ public class LoginHandlerTest {
   }
 
   @Test
-  @DisplayName("code and decode the token with LoginHandler")
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
-  void testLoginHandlerEncodeDecodeToken(Vertx vertx, VertxTestContext testContext) {
+  void codeAndDecodeTheTokenWithLoginHandler(Vertx vertx, VertxTestContext testContext) {
     var provider = JWTAuth.create(vertx, new JWTAuthOptions()
       .addPubSecKey(new PubSecKeyOptions()
         .setAlgorithm(AUTH_ALG)
         .setPublicKey(AUTH_VERIFY_KEY)
         .setSecretKey(AUTH_SIGN_KEY)));
     var loginHandler = new LoginHandler(provider);
-    loginHandler.login(DEFAULT_CREDENTIALS,
-      token -> {
-        loginHandler.verifyToken(new JsonObject().put(KEY_JWT, token),
-          user -> {
-            var claims = user.principal();
-            long now = Instant.now().getEpochSecond();
-            assertClaims(testContext, claims, now);
-          },
-          (errorCode, errorMessage) -> testContext.failNow(new Throwable("failed to verify")));
-      },
+    loginHandler.login(
+      DEFAULT_CREDENTIALS,
+      token -> loginHandler.verifyToken(
+        new JsonObject().put(KEY_JWT, token),
+        user -> {
+          var claims = user.principal();
+          var now = Instant.now().getEpochSecond();
+          assertClaims(testContext, claims, now);
+        },
+        (errorCode, errorMessage) -> testContext.failNow(new Throwable("failed to verify"))),
       (errorCode, errorMessage) -> testContext.failNow(new Throwable("failed to login")));
   }
 
   @Test
-  @DisplayName("code and decode the token over the event bus")
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
-  void testEventBusEncodeDecodeToken(Vertx vertx, VertxTestContext testContext) {
+  void codeAndDecodeTheTokenOverTheEventBus(Vertx vertx, VertxTestContext testContext) {
     vertx.eventBus().<JsonObject>send(
       "auth.login",
       DEFAULT_CREDENTIALS,
@@ -83,7 +81,7 @@ public class LoginHandlerTest {
             authResult -> {
               if (authResult.succeeded()) {
                 var claims = authResult.result().body();
-                long now = Instant.now().getEpochSecond();
+                var now = Instant.now().getEpochSecond();
                 assertClaims(testContext, claims, now);
               } else {
                 testContext.failNow(authResult.cause());
@@ -96,15 +94,14 @@ public class LoginHandlerTest {
   }
 
   @Test
-  @DisplayName("check jwt claims with new provider")
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
-  void testJwtTokenClaims(Vertx vertx, VertxTestContext testContext) {
+  void checkJwtClaimsWithNewProvider(Vertx vertx, VertxTestContext testContext) {
     vertx.eventBus().<JsonObject>send(
       "auth.login",
       DEFAULT_CREDENTIALS,
-      result -> {
-        if (result.succeeded()) {
-          JsonObject body = result.result().body();
+      ar -> {
+        if (ar.succeeded()) {
+          JsonObject body = ar.result().body();
           var authProvider = JWTAuth.create(vertx, new JWTAuthOptions()
             .addPubSecKey(new PubSecKeyOptions()
               .setAlgorithm(AUTH_ALG)
@@ -119,28 +116,27 @@ public class LoginHandlerTest {
               testContext.completeNow();
             });
         } else {
-          testContext.failNow(result.cause());
+          testContext.failNow(ar.cause());
         }
       });
   }
 
   @Test
-  @DisplayName("check jwt with new token")
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
-  void testJwtVerification(Vertx vertx, VertxTestContext testContext) {
+  void checkJwtWithNewToken(Vertx vertx, VertxTestContext testContext) {
     vertx.eventBus().<JsonObject>send(
       "auth.verify",
       new JsonObject()
         .put(KEY_JWT, "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9."
           + "eyJhdWQiOiJvY2N1cnJlbmNlcy1PQklTIiwic3ViIjoicGF1bG8iLCJpYXQiOjE1NTc5NDk4NDN9."
           + "O0RBl686U2YafsZqdRNTz-dFQR3znlnD3YHFgGcE7GhAa4ykR1gnHQkskLvu7YJ_iO2z7rvVdrrCGGVA6KBbXw"),
-      result -> {
-        if (result.succeeded()) {
-          var claims = result.result().body();
+      ar -> {
+        if (ar.succeeded()) {
+          var claims = ar.result().body();
           assertClaims(testContext, claims, 1557949843L);
           testContext.completeNow();
         } else {
-          testContext.failNow(result.cause());
+          testContext.failNow(ar.cause());
         }
       });
   }
