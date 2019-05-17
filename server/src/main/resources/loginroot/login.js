@@ -21,6 +21,7 @@ function initLogin(callback, queryParamOptional) {
     digest(`${salt}${password}`).then(function(digested) {
       fetch(`login/token/${userId}/${digested}`)
         .then(function(response) {
+          if (!response.ok) throw Error(response.statusText || 'login error')
           return response.text()
         })
         .then(function(token) {
