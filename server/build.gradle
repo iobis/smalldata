@@ -87,9 +87,9 @@ run {
 
 task(runClientTest, dependsOn: 'classes', type: JavaExec) {
   main = 'org.obis.loginclient.MockServerLoginPage'
-  classpath = files ( sourceSets.test.runtimeClasspath
-    .collect { it.toString().replaceAll("build/resources/main", "src/main/resources")  }
-    .collect { it.toString().replaceAll("build/resources/test", "src/test/resources")  } )
+  classpath = files(sourceSets.test.runtimeClasspath
+    .collect { it.toString().replaceAll("build/resources/main", "src/main/resources") }
+    .collect { it.toString().replaceAll("build/resources/test", "src/test/resources") })
 }
 
 shadowJar {
