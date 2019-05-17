@@ -37,8 +37,7 @@ public class Auth extends AbstractVerticle {
       loginHandler = new LoginHandler(authProvider);
       startFuture.complete();
     } catch (InvalidKeyException | InvalidAlgorithmParameterException | NoSuchAlgorithmException e) {
-      error("Cannot start Auth component: possibly wrong algorithm or keys for JWT signing/verification? {}",
-        e.getCause());
+      error(e, "Cannot start Auth component: possibly wrong algorithm or keys for JWT signing/verification?");
       startFuture.fail(e);
     }
 
