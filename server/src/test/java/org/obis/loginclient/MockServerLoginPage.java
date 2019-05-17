@@ -13,7 +13,7 @@ import static org.pmw.tinylog.Logger.info;
 
 public class MockServerLoginPage {
 
-  private static final Map<String, String> saltMap = Map.of(
+  private static final Map<String, String> SALT_MAP = Map.of(
     "kurtsys", SecureRandomString.generateSalt(),
     "dummy", SecureRandomString.generateSalt());
 
@@ -24,7 +24,7 @@ public class MockServerLoginPage {
     router.route("/login/salt/:userid").handler(context -> {
       var userid = context.request().getParam("userid");
       info(userid);
-      context.response().end(saltMap.get(userid));
+      context.response().end(SALT_MAP.get(userid));
     });
     router.route("/login/token/:userid/:passhash").handler(context -> {
       var userId = context.request().getParam("userid");
