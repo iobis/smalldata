@@ -106,8 +106,8 @@ public class LoginHandlerTest {
               .setAlgorithm(AUTH_ALG)
               .setPublicKey(AUTH_VERIFY_KEY)
               .setSecretKey(AUTH_SIGN_KEY)));
-          authProvider.authenticate(new JsonObject()
-              .put(KEY_JWT, body.getString("token")),
+          authProvider.authenticate(
+            new JsonObject().put(KEY_JWT, body.getString("token")),
             authResult -> {
               JsonObject claims = authResult.result().principal();
               long now = Instant.now().getEpochSecond();
@@ -141,9 +141,9 @@ public class LoginHandlerTest {
   }
 
   private void assertClaims(VertxTestContext testContext, JsonObject claims, long iat) {
-    assertThat("paulo").isEqualTo(claims.getString("sub"));
-    assertThat("occurrences-OBIS").isEqualTo(claims.getString("aud"));
-    assertThat(iat).isCloseTo(claims.getLong("iat"), Offset.offset(1L));
+    assertThat(claims.getString("sub")).isEqualTo("paulo");
+    assertThat(claims.getString("aud")).isEqualTo("occurrences-OBIS");
+    assertThat(claims.getLong("iat")).isCloseTo(iat, Offset.offset(1L));
     testContext.completeNow();
   }
 }
