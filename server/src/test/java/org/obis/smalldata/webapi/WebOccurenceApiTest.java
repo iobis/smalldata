@@ -33,7 +33,7 @@ public class WebOccurenceApiTest {
 
   @Test
   @DisplayName("Test dwca")
-  @Timeout(value = 10, timeUnit = TimeUnit.SECONDS)
+  @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
   void replyRssFile(Vertx vertx, VertxTestContext testContext) {
     WebClient client = WebClient.create(vertx);
     client.post(HTTP_PORT, "localhost", "/api/dwca")

@@ -5,7 +5,6 @@ info:
   license:
     name: MIT
 servers:
-  - url: 'http://smalldata.obis.org/'
   - url: 'http://localhost:8080/'
   - url: 'http://localhost:8008/'
 paths:
@@ -135,59 +134,6 @@ paths:
                             type: string
                         keywordThesaurus:
                           type: string
-  '/api/users/{userRef}/dwca':
-    get:
-      summary: get all dwca records for a user
-      operationId: getDwcaRecords
-      parameters:
-        - name: userRef
-          in: path
-          description: unique reference (id) of the user
-          required: true
-          schema:
-            type: string
-      tags:
-        - DWCA
-      responses:
-        '200':
-          description: array with dwca records
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/DWCA'
-                example:
-                  - core: occurrence
-                    occurrence:
-                      dwcg:
-                        habitat: Bruges
-  '/api/users/{userRef}/dwca/{dwcaId}':
-    get:
-      summary: get one dwca record for a user
-      operationId: getDwcaRecord
-      parameters:
-        - name: userRef
-          in: path
-          description: unique reference (id) of the user
-          required: true
-          schema:
-            type: string
-        - name: dwcaId
-          in: path
-          description: unique reference (id) of the dwca record
-          required: true
-          schema:
-            type: string
-      tags:
-        - DWCA
-      responses:
-        '200':
-          description: dwca record
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/DWCA'
   /api/login:
     post:
       summary: get jwt token
@@ -313,7 +259,7 @@ components:
           example: OK
     DWCA:
       type: object
-      description: dwca record
+      description: post dwca record
       properties:
         core:
           type: string

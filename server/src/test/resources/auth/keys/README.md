@@ -1,0 +1,3 @@
+These keys are generated for testing purposes only. They are publicly available...
+
+DO NOT USE THEM IN PRODUCTION SYSTEMS!

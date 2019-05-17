@@ -10,8 +10,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.obis.smalldata.testutil.TestDb;
 
-import java.util.stream.Collectors;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(VertxExtension.class)
@@ -74,38 +72,4 @@ class DbQueryTest {
       testContext.completeNow();
     });
   }
-
-  @Test
-  void findDatasetsForUser(VertxTestContext testContext) {
-    var dataset = dbQuery.findDwcaRecordsForUser("ovZTtaOJZ98xDDY");
-    dataset.setHandler(ar -> {
-      var result = ar.result();
-      assertThat(result).hasSize(2955);
-      var records = result.stream()
-        .filter(record -> record.getString("_ref").equals("UgDE1dOR5RlsjQ4"))
-        .collect(Collectors.toList());
-      assertThat(records).hasSize(1);
-      assertThat(records.get(0).getJsonObject("dwcRecord").getJsonObject("tdwg").getString("occurrenceID"))
-        .isEqualTo("urn::catalog:JAMSTEC:hosono:00045");
-
-      testContext.completeNow();
-    });
-  }
-
-  @Test
-  void findDatasetForUser(VertxTestContext testContext) {
-    var dataset = dbQuery.findDwcaRecordForUser(
-      "ovZTtaOJZ98xDDY",
-      "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_331");
-    dataset.setHandler(ar -> {
-      var record = ar.result();
-      assertThat(record.getJsonObject("dwcRecord").getJsonObject("tdwg").getString("occurrenceID"))
-        .isEqualTo("IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_331");
-      assertThat(record.getJsonObject("dwcRecord").getJsonObject("tdwg").getString("measurementUnit"))
-        .isEqualTo("ind/m2");
-
-      testContext.completeNow();
-    });
-  }
-
 }

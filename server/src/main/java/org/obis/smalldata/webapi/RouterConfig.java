@@ -14,12 +14,10 @@ class RouterConfig {
   private static final Map<String, OperationHandlers> HANDLERS = Map.of(
     "getDatasets", new OperationHandlers(DatasetsHandler::fetch),
     "getOneDataset", new OperationHandlers(DatasetsHandler::fetch),
-    "getDwcaRecords", new OperationHandlers(DwcaHandler::getRecords),
-    "getDwcaRecord", new OperationHandlers(DwcaHandler::getRecord),
     "login", new OperationHandlers(LoginHandler::login),
     "getStatus", new OperationHandlers(StatusHandler::status),
     "getRss", new OperationHandlers(RssHandler::fetch),
-    "getDWCA", new OperationHandlers(DwcaHandler::getZip),
+    "getDWCA", new OperationHandlers(DwcaHandler::get),
     "postDWCA", new OperationHandlers(OccurrenceHandler::post)
   );
 

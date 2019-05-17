@@ -2,6 +2,7 @@ package org.obis.smalldata.auth;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Future;
+import io.vertx.core.json.JsonObject;
 import io.vertx.ext.auth.AuthProvider;
 import io.vertx.ext.auth.PubSecKeyOptions;
 import io.vertx.ext.auth.jwt.JWTAuth;
@@ -22,54 +23,56 @@ import static org.pmw.tinylog.Logger.warn;
 
 public class Auth extends AbstractVerticle {
 
-  private static final String PUBLIC_KEY = "publicKey";
-  private static final String SECURITY_KEY = "securityKey";
+  private static final String VERIFY_KEY = "verifyKey";
+  private static final String SIGN_KEY = "signKey";
   private static final String ALG_KEY = "alg";
   private static final String AUTH_ES256 = "ES256";
 
   @Override
   public void start(Future<Void> startFuture) {
     info("starting module 'Auth'");
-    LoginHandler loginHandler = null;
     try {
-      loginHandler = new LoginHandler(generateAuthProvider());
+      var authProvider = generateAuthProvider();
+      LoginHandler loginHandler = new LoginHandler(authProvider);
+      vertx.eventBus().<JsonObject>localConsumer("auth.login", loginHandler::login);
+      vertx.eventBus().<JsonObject>localConsumer("auth.verify", loginHandler::verifyToken);
       startFuture.complete();
     } catch (InvalidKeyException | InvalidAlgorithmParameterException | NoSuchAlgorithmException e) {
-      error("Cannot start Auth component: possibly wrong algorithm or keys for JWT signing/verification? {}",
-        e.getCause());
+      error(e, "Cannot start Auth component: possibly wrong algorithm or keys for JWT signing/verification?");
       startFuture.fail(e);
     }
-    vertx.eventBus().localConsumer("auth.login", loginHandler::login);
   }
 
   private AuthProvider generateAuthProvider() throws InvalidKeyException,
     InvalidAlgorithmParameterException, NoSuchAlgorithmException {
     AuthProvider provider;
     if ("local".equals(config().getString("provider", "local"))) {
-      if (isNullOrBlank(config().getString(PUBLIC_KEY)) || isNullOrBlank(config().getString(SECURITY_KEY))) {
-        warn("generating a new keypair for local JWT generation");
+      info("... using local keys");
+      if (isNullOrBlank(config().getString(VERIFY_KEY)) || isNullOrBlank(config().getString(SIGN_KEY))) {
+        warn("... generating a new keypair for local JWT generation");
         KeyPairGenerator generator = KeyPairGenerator.getInstance("EC");
         ECGenParameterSpec spec = new ECGenParameterSpec("secp256r1");
         generator.initialize(spec);
         KeyPair keyPair = generator.generateKeyPair();
-        config().put(PUBLIC_KEY, createPublicKey(keyPair));
-        config().put(SECURITY_KEY, createSecretKey(keyPair));
+        config().put(VERIFY_KEY, createPublicKey(keyPair));
+        config().put(SIGN_KEY, createSecretKey(keyPair));
       }
-      provider = JWTAuth.create(vertx, new JWTAuthOptions()
-        .addPubSecKey(new PubSecKeyOptions()
-          .setAlgorithm(config().getString(ALG_KEY, AUTH_ES256))
-          .setPublicKey(config().getString(PUBLIC_KEY))
-          .setSecretKey(config().getString(SECURITY_KEY))
-        ));
+      info("... {}", config().getString(VERIFY_KEY).substring(30).replaceAll("\n", " "));
+      info("... {}", config().getString(SIGN_KEY).substring(50).replaceAll("\n", " "));
+      var pubSecKey = new PubSecKeyOptions()
+        .setAlgorithm(config().getString(ALG_KEY, AUTH_ES256))
+        .setPublicKey(config().getString(VERIFY_KEY))
+        .setSecretKey(config().getString(SIGN_KEY));
+      provider = JWTAuth.create(vertx, new JWTAuthOptions().addPubSecKey(pubSecKey));
     } else {
-      if (config().getString(PUBLIC_KEY).isBlank()) {
+      info("... using external verification key");
+      if (isNullOrBlank(config().getString(VERIFY_KEY))) {
         throw new InvalidKeyException("Need to provide a public key for non-local JWT authorization");
       } else {
-        provider = JWTAuth.create(vertx, new JWTAuthOptions()
-          .addPubSecKey(new PubSecKeyOptions()
-            .setAlgorithm(config().getString(ALG_KEY, AUTH_ES256))
-            .setPublicKey(config().getString(PUBLIC_KEY))
-          ));
+        var pubSecKey = new PubSecKeyOptions()
+          .setAlgorithm(config().getString(ALG_KEY, AUTH_ES256))
+          .setPublicKey(config().getString(VERIFY_KEY));
+        provider = JWTAuth.create(vertx, new JWTAuthOptions().addPubSecKey(pubSecKey));
       }
     }
     return provider;
