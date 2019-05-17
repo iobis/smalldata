@@ -31,18 +31,16 @@ public class Auth extends AbstractVerticle {
   @Override
   public void start(Future<Void> startFuture) {
     info("starting module 'Auth'");
-    LoginHandler loginHandler = null;
     try {
       var authProvider = generateAuthProvider();
-      loginHandler = new LoginHandler(authProvider);
+      LoginHandler loginHandler = new LoginHandler(authProvider);
+      vertx.eventBus().<JsonObject>localConsumer("auth.login", loginHandler::login);
+      vertx.eventBus().<JsonObject>localConsumer("auth.verify", loginHandler::verifyToken);
       startFuture.complete();
     } catch (InvalidKeyException | InvalidAlgorithmParameterException | NoSuchAlgorithmException e) {
       error(e, "Cannot start Auth component: possibly wrong algorithm or keys for JWT signing/verification?");
       startFuture.fail(e);
     }
-
-    vertx.eventBus().<JsonObject>localConsumer("auth.login", loginHandler::login);
-    vertx.eventBus().<JsonObject>localConsumer("auth.verify", loginHandler::verifyToken);
   }
 
   private AuthProvider generateAuthProvider() throws InvalidKeyException,
