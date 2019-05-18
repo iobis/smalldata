@@ -16,7 +16,7 @@ import { useTranslation } from 'react-i18next'
 export default function OccurrenceForm() {
   const datasets = getDatasetMock()
   const { t } = useTranslation()
-  const [selectedDataset, setSelectedDataset] = useState(datasets[0])
+  const [dataset, setSelectedDataset] = useState(datasets[0])
   const [occurrenceData, setOccurrenceData] = useState({
     basisOfRecord:    'humanObservation',
     beginDate:        Date.now(),
@@ -52,13 +52,13 @@ export default function OccurrenceForm() {
   const [measurementOrFact, setMeasurementOrFact] = useState([])
   const steps = [{
     dataDescription: t('occurrenceForm.selectDataset.dataDescription'),
-    selectedData:    selectedDataset.description,
+    selectedData:    dataset.description,
     stepDescription: t('occurrenceForm.selectDataset.stepDescription'),
     stepTitle:       t('occurrenceForm.selectDataset.stepTitle'),
     children:        <SelectDataset
       datasets={datasets}
       onChange={setSelectedDataset}
-      selectedDataset={selectedDataset}/>
+      selectedDataset={dataset}/>
   }, {
     dataDescription: 'Given Values',
     selectedData:    <OccurrenceDataSummary {...occurrenceData}/>,
