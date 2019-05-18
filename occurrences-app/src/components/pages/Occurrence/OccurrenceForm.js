@@ -38,8 +38,6 @@ export default function OccurrenceForm() {
     identificationRemarks:   '',
     references:              []
   })
-  const [darwinCoreFields, setDarwinCoreFields] = useState([])
-  const [activeStepIndex, setActiveStepIndex] = useState(0)
   const [locationData, setLocationData] = useState({
     decimalLongitude:      null,
     decimalLatitude:       null,
@@ -49,6 +47,8 @@ export default function OccurrenceForm() {
     verbatimCoordinates:   '',
     verbatimDepth:         ''
   })
+  const [darwinCoreFields, setDarwinCoreFields] = useState([])
+  const [activeStepIndex, setActiveStepIndex] = useState(0)
   const [measurementOrFact, setMeasurementOrFact] = useState([])
   const steps = [{
     dataDescription: t('occurrenceForm.selectDataset.dataDescription'),
