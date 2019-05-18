@@ -59,7 +59,7 @@ FinalSummary.propTypes = {
     verbatimCoordinates:   PropTypes.string.isRequired,
     verbatimDepth:         PropTypes.string.isRequired
   }).isRequired,
-  occurrenceData: PropTypes.shape(PropTypes.shape({
+  occurrenceData: PropTypes.shape({
     basisOfRecord:    PropTypes.oneOf(basisOfRecordOptions).isRequired,
     beginDate:        PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.number]).isRequired,
     endDate:          PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.number]),
@@ -67,7 +67,7 @@ FinalSummary.propTypes = {
     occurrenceStatus: PropTypes.oneOf(occurrenceStatusOptions).isRequired,
     scientificName:   PropTypes.string.isRequired,
     sex:              PropTypes.oneOf(sexOptions)
-  }).isRequired).isRequired,
+  }).isRequired,
   onChange:       PropTypes.func.isRequired,
   onSubmit:       PropTypes.func.isRequired
 }
