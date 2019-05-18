@@ -22,8 +22,8 @@ exports[`FinalSummary renders correctly 1`] = `
   occurrenceData={
     Object {
       "basisOfRecord": "humanObservation",
-      "beginDate": 2019-05-18T08:31:44.275Z,
-      "endDate": 2019-05-18T08:31:44.275Z,
+      "beginDate": 1556496000000,
+      "endDate": 1556582400000,
       "lifestage": "adult",
       "occurrenceStatus": "absent",
       "scientificName": "ala abra",
@@ -63,62 +63,97 @@ exports[`FinalSummary renders correctly 1`] = `
       className="table is-striped"
     >
       <tbody>
-        <tr>
-          <td>
-            scientific name
-          </td>
-          <td>
-            ala abra
-          </td>
-        </tr>
-        <tr>
-          <td>
-            beginDate
-          </td>
-          <td>
-            18 May 2019
-          </td>
-        </tr>
-        <tr>
-          <td>
-            endDate
-          </td>
-          <td>
-            18 May 2019
-          </td>
-        </tr>
-        <tr>
-          <td>
-            occurrenceStatus
-          </td>
-          <td>
-            absent
-          </td>
-        </tr>
-        <tr>
-          <td>
-            basisOfRecord
-          </td>
-          <td>
-            humanObservation
-          </td>
-        </tr>
-        <tr>
-          <td>
-            sex
-          </td>
-          <td>
-            male
-          </td>
-        </tr>
-        <tr>
-          <td>
-            lifestage
-          </td>
-          <td>
-            adult
-          </td>
-        </tr>
+        <NameValueRow
+          name="scientific name"
+          value="ala abra"
+        >
+          <tr>
+            <td>
+              scientific name
+            </td>
+            <td>
+              ala abra
+            </td>
+          </tr>
+        </NameValueRow>
+        <NameValueRow
+          name="beginDate"
+          value="29 April 2019"
+        >
+          <tr>
+            <td>
+              beginDate
+            </td>
+            <td>
+              29 April 2019
+            </td>
+          </tr>
+        </NameValueRow>
+        <NameValueRow
+          name="endDate"
+          value="30 April 2019"
+        >
+          <tr>
+            <td>
+              endDate
+            </td>
+            <td>
+              30 April 2019
+            </td>
+          </tr>
+        </NameValueRow>
+        <NameValueRow
+          name="occurrenceStatus"
+          value="absent"
+        >
+          <tr>
+            <td>
+              occurrenceStatus
+            </td>
+            <td>
+              absent
+            </td>
+          </tr>
+        </NameValueRow>
+        <NameValueRow
+          name="basisOfRecord"
+          value="humanObservation"
+        >
+          <tr>
+            <td>
+              basisOfRecord
+            </td>
+            <td>
+              humanObservation
+            </td>
+          </tr>
+        </NameValueRow>
+        <NameValueRow
+          name="sex"
+          value="male"
+        >
+          <tr>
+            <td>
+              sex
+            </td>
+            <td>
+              male
+            </td>
+          </tr>
+        </NameValueRow>
+        <NameValueRow
+          name="lifestage"
+          value="adult"
+        >
+          <tr>
+            <td>
+              lifestage
+            </td>
+            <td>
+              adult
+            </td>
+          </tr>
+        </NameValueRow>
       </tbody>
     </table>
     <h2
@@ -130,58 +165,93 @@ exports[`FinalSummary renders correctly 1`] = `
       className="table is-striped"
     >
       <tbody>
-        <tr>
-          <td>
-            Latitude
-          </td>
-          <td>
-            51.3354656
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Longitude
-          </td>
-          <td>
-            2.345456
-          </td>
-        </tr>
-        <tr>
-          <td>
-            coordinateUncertainty
-          </td>
-          <td>
-            40 meters
-          </td>
-        </tr>
-        <tr>
-          <td>
-            minimumDepth
-          </td>
-          <td />
-        </tr>
-        <tr>
-          <td>
-            maximumDepth
-          </td>
-          <td />
-        </tr>
-        <tr>
-          <td>
-            verbatimCoordinates
-          </td>
-          <td>
-            41 05 54S 121 05 34W
-          </td>
-        </tr>
-        <tr>
-          <td>
-            verbatimDepth
-          </td>
-          <td>
-            100 - 200 m
-          </td>
-        </tr>
+        <NameValueRow
+          name="Latitude"
+          value={51.3354656}
+        >
+          <tr>
+            <td>
+              Latitude
+            </td>
+            <td>
+              51.3354656
+            </td>
+          </tr>
+        </NameValueRow>
+        <NameValueRow
+          name="Longitude"
+          value={2.345456}
+        >
+          <tr>
+            <td>
+              Longitude
+            </td>
+            <td>
+              2.345456
+            </td>
+          </tr>
+        </NameValueRow>
+        <NameValueRow
+          name="coordinateUncertainty"
+          value="40 meters"
+        >
+          <tr>
+            <td>
+              coordinateUncertainty
+            </td>
+            <td>
+              40 meters
+            </td>
+          </tr>
+        </NameValueRow>
+        <NameValueRow
+          name="minimumDepth"
+          value={null}
+        >
+          <tr>
+            <td>
+              minimumDepth
+            </td>
+            <td />
+          </tr>
+        </NameValueRow>
+        <NameValueRow
+          name="maximumDepth"
+          value={null}
+        >
+          <tr>
+            <td>
+              maximumDepth
+            </td>
+            <td />
+          </tr>
+        </NameValueRow>
+        <NameValueRow
+          name="verbatimCoordinates"
+          value="41 05 54S 121 05 34W"
+        >
+          <tr>
+            <td>
+              verbatimCoordinates
+            </td>
+            <td>
+              41 05 54S 121 05 34W
+            </td>
+          </tr>
+        </NameValueRow>
+        <NameValueRow
+          name="verbatimDepth"
+          value="100 - 200 m"
+        >
+          <tr>
+            <td>
+              verbatimDepth
+            </td>
+            <td>
+              100 - 200 m
+            </td>
+          </tr>
+        </NameValueRow>
       </tbody>
     </table>
   </div>

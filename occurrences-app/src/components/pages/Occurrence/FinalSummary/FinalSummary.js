@@ -20,67 +20,25 @@ export default function FinalSummary({ dataset, occurrenceData, locationData, on
       <h2 className="title is-5">2 - OCCURRENCE DATA</h2>
       <table className="table is-striped">
         <tbody>
-          <tr>
-            <td>scientific name</td>
-            <td>{occurrenceData.scientificName}</td>
-          </tr>
-          <tr>
-            <td>beginDate</td>
-            <td>{format(occurrenceData.beginDate, 'D MMMM YYYY')}</td>
-          </tr>
-          <tr>
-            <td>endDate</td>
-            <td>{format(occurrenceData.endDate, 'D MMMM YYYY')}</td>
-          </tr>
-          <tr>
-            <td>occurrenceStatus</td>
-            <td>{occurrenceData.occurrenceStatus}</td>
-          </tr>
-          <tr>
-            <td>basisOfRecord</td>
-            <td>{occurrenceData.basisOfRecord}</td>
-          </tr>
-          <tr>
-            <td>sex</td>
-            <td>{occurrenceData.sex}</td>
-          </tr>
-          <tr>
-            <td>lifestage</td>
-            <td>{occurrenceData.lifestage}</td>
-          </tr>
+          <NameValueRow name="scientific name" value={occurrenceData.scientificName}/>
+          <NameValueRow name="beginDate" value={format(occurrenceData.beginDate, 'D MMMM YYYY')}/>
+          <NameValueRow name="endDate" value={format(occurrenceData.endDate, 'D MMMM YYYY')}/>
+          <NameValueRow name="occurrenceStatus" value={occurrenceData.occurrenceStatus}/>
+          <NameValueRow name="basisOfRecord" value={occurrenceData.basisOfRecord}/>
+          <NameValueRow name="sex" value={occurrenceData.sex}/>
+          <NameValueRow name="lifestage" value={occurrenceData.lifestage}/>
         </tbody>
       </table>
       <h2 className="title is-5">3 - LOCATION DATA</h2>
       <table className="table is-striped">
         <tbody>
-          <tr>
-            <td>Latitude</td>
-            <td>{locationData.decimalLatitude}</td>
-          </tr>
-          <tr>
-            <td>Longitude</td>
-            <td>{locationData.decimalLongitude}</td>
-          </tr>
-          <tr>
-            <td>coordinateUncertainty</td>
-            <td>{locationData.coordinateUncertainty}</td>
-          </tr>
-          <tr>
-            <td>minimumDepth</td>
-            <td>{locationData.minimumDepth}</td>
-          </tr>
-          <tr>
-            <td>maximumDepth</td>
-            <td>{locationData.maximumDepth}</td>
-          </tr>
-          <tr>
-            <td>verbatimCoordinates</td>
-            <td>{locationData.verbatimCoordinates}</td>
-          </tr>
-          <tr>
-            <td>verbatimDepth</td>
-            <td>{locationData.verbatimDepth}</td>
-          </tr>
+          <NameValueRow name="Latitude" value={locationData.decimalLatitude}/>
+          <NameValueRow name="Longitude" value={locationData.decimalLongitude}/>
+          <NameValueRow name="coordinateUncertainty" value={locationData.coordinateUncertainty}/>
+          <NameValueRow name="minimumDepth" value={locationData.minimumDepth}/>
+          <NameValueRow name="maximumDepth" value={locationData.maximumDepth}/>
+          <NameValueRow name="verbatimCoordinates" value={locationData.verbatimCoordinates}/>
+          <NameValueRow name="verbatimDepth" value={locationData.verbatimDepth}/>
         </tbody>
       </table>
     </div>
@@ -112,4 +70,18 @@ FinalSummary.propTypes = {
   }).isRequired).isRequired,
   onChange:       PropTypes.func.isRequired,
   onSubmit:       PropTypes.func.isRequired
+}
+
+function NameValueRow({ name, value }) {
+  return (
+    <tr>
+      <td>{name}</td>
+      <td>{value}</td>
+    </tr>
+  )
+}
+
+NameValueRow.propTypes = {
+  name:  PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 }
