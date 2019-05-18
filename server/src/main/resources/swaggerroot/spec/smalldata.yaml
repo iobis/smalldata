@@ -5,6 +5,7 @@ info:
   license:
     name: MIT
 servers:
+  - url: http://smalldata.obis.org/occurrences/
   - url: http://localhost:8080/
   - url: http://localhost:8008/
 paths:
@@ -43,6 +44,94 @@ paths:
             application/json:
               schema:
                 $ref: 'dataset.yaml#/Dataset'
+  /api/dwca/{datasetRef}/user/{userRef}/records:
+    post:
+      summary: post a new dwca record to the server
+      operationId: postDWCA
+      parameters:
+        - name: datasetRef
+          in: path
+          description: reference to the dataset the record must be added
+          required: true
+          schema:
+            type: string
+        - name: userRef
+          in: path
+          description: reference to the user owning this record
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/DWCA"
+      tags:
+        - dwca
+      responses:
+        200:
+          description: new occurences data created and stored
+          content:
+            application/json: {}
+        405:
+          description: invalid input
+  /api/dwca/{datasetRef}/user/{userRef}/records/{dwcaRef}:
+    put:
+      summary: update (overwrite) a new dwca record
+      operationId: putDWCA
+      parameters:
+        - name: datasetRef
+          in: path
+          description: reference to the dataset of which the record belongs
+          required: true
+          schema:
+            type: string
+        - name: userRef
+          in: path
+          description: reference to the user owning this record
+          required: true
+          schema:
+            type: string
+        - name: dwcaRef
+          in: path
+          description: reference to the record
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/DWCA"
+      tags:
+        - dwca
+      responses:
+        200:
+          description: occurences data updated
+          content:
+            application/json: {}
+        405:
+          description: invalid input
+  /api/dwca/{datasetRef}:
+    get:
+      summary: get dwca zip
+      operationId: getDWCA
+      parameters:
+        - name: datasetRef
+          in: path
+          description: ref of the dataset
+          required: true
+          schema:
+            type: string
+      tags:
+        - dwca
+      responses:
+        200:
+          description: got dwca file
+          content:
+            application/zip: {}
   /api/login:
     post:
       summary: get jwt token
@@ -70,25 +159,6 @@ paths:
                     type: string
         401:
           description: cannot login
-  /api/status:
-    get:
-      summary: get status of the server
-      operationId: getStatus
-      tags:
-        - info
-      responses:
-        200:
-          description: application running
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-        default:
-          description: unexpected error
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Error"
   /api/rss/{periodicity}:
     get:
       summary: rss feed
@@ -109,44 +179,25 @@ paths:
           description: received rss
           content:
             application/xml+rss: {}
-  /api/dwca/{dataset}:
+  /api/status:
     get:
-      summary: get dwca zip
-      operationId: getDWCA
-      parameters:
-        - name: dataset
-          in: path
-          description: ref of the dataset
-          required: true
-          schema:
-            type: string
+      summary: get status of the server
+      operationId: getStatus
       tags:
-        - dwca
+        - info
       responses:
         200:
-          description: got dwca file
+          description: application running
           content:
-            application/zip: {}
-  /api/dwca/:
-    post:
-      summary: post new data to small data occurences
-      operationId: postDWCA
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/DWCA"
-
-      tags:
-        - dwca
-      responses:
-        200:
-          description: new occurences data created and stored
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+        default:
+          description: unexpected error
           content:
-            application/json: {}
-        405:
-          description: invalid input
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
 
 components:
   schemas:
@@ -162,21 +213,32 @@ components:
           example: 'OK'
     DWCA:
       type: object
-      description: post dwca record
+      description: dwca record - the core table must have exactly 1 element
+      required:
+        - core
       properties:
         core:
           type: string
           enum: ['occurrence', 'taxon', 'event', 'emof']
           example: 'occurrence'
         occurrence:
-          # $ref: 'http://smalldata.obis.org/spec/occurrence.yaml#/Occurrence' # "./spec/occurrence.yaml#/Occurrence"
-          $ref: "occurrence.yaml#/Occurrence"
+          type: array
+          items:
+            $ref: 'occurrence.yaml#/Occurrence'
         taxon:
-          $ref: "taxon.yaml#/Taxon"
+          type: array
+          items:
+            $ref: "taxon.yaml#/Taxon"
         event:
-          $ref: "event.yaml#/Event"
+          type: array
+          items:
+            $ref: "event.yaml#/Event"
         emof:
-          $ref: "emof.yaml#/EMOF"
+          type: array
+          items:
+            $ref: "emof.yaml#/EMOF"
+      #example:
+      #  $ref: "#/components/examples/DWCA990722-02"
     Error:
       type: object
       required:
@@ -188,3 +250,35 @@ components:
           format: int32
         message:
           type: string
+#  examples:
+#    objectExample:
+#      core: occurrence
+#      occurrence:
+#        - purl:
+#            modified: 2017-10-25T12:32
+#          tdwg:
+#            eventID: 990722-01
+#            occurrenceStatus: Present
+#            basisOfRecord: HumanObservation
+#            scientificNameID: urn:lsid:marinespecies.org:taxname:101827
+#            scientificName: Caprella danilevskii
+#            occurrenceID: urn::catalog:JAMSTEC:hosono:00011
+#      emof:
+#        - iobis:
+#            measurementUnitID: http://vocab.nerc.ac.uk/collection/P06/current/UGMS
+#            measurementTypeID: http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL04
+#          tdwg:
+#            measurementValue: '106.272'
+#            measurementType: wet weight
+#            occurrenceID: urn::catalog:JAMSTEC:hosono:00011
+#            measurementID: '00001'
+#            measurementUnit: g/m2
+#        - iobis:
+#            measurementUnitID: http://vocab.nerc.ac.uk/collection/P06/current/UGMS
+#            measurementTypeID: http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL04
+#          tdwg:
+#            measurementValue: '106.212'
+#            measurementType: wet weight
+#            occurrenceID: urn::catalog:JAMSTEC:hosono:00011
+#            measurementID: '00002'
+#            measurementUnit: g/m2

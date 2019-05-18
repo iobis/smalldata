@@ -1,7 +1,9 @@
 package org.obis.smalldata.dwca;
 
 import io.vertx.core.Vertx;
+import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+import io.vertx.ext.mongo.MongoClient;
 import io.vertx.junit5.Timeout;
 import io.vertx.junit5.VertxExtension;
 import io.vertx.junit5.VertxTestContext;
@@ -14,18 +16,28 @@ import org.obis.smalldata.testutil.TestDb;
 
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.pmw.tinylog.Logger.info;
 
 @ExtendWith(VertxExtension.class)
 public class DwcaTest {
 
+  private static final JsonObject DWCA_OCCURRENCE_RECORD = new JsonObject().put("core", "occurrence")
+    .put("occurrence", new JsonArray()
+      .add(new JsonObject().put("iobis", new JsonObject())))
+    .put("emof", new JsonArray()
+      .add(new JsonObject().put("purl", new JsonObject())
+        .put("iobis", new JsonObject()))
+      .add(new JsonObject().put("iobis", new JsonObject())));
   private static TestDb testDb;
+  private static MongoClient mongoClient;
 
   @BeforeAll
   public static void deployVerticle(Vertx vertx, VertxTestContext testContext) {
     testDb = new TestDb();
-    testDb.init(vertx);
+    mongoClient = testDb.init(vertx);
     vertx.sharedData().getLocalMap("settings")
       .putAll(Map.of("storage", new JsonObject()
         .put("host", "localhost")
@@ -55,6 +67,39 @@ public class DwcaTest {
         if (ar.succeeded()) {
           JsonObject body = ar.result().body();
           info("success {}", body);
+          testContext.completeNow();
+        } else {
+          info("error {}", ar.cause());
+          testContext.failNow(ar.cause());
+        }
+      });
+  }
+
+  @Test
+  @DisplayName("add a new dwca record")
+  @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
+  void testAddDwcaRecord(Vertx vertx, VertxTestContext testContext) {
+    vertx.eventBus().<JsonObject>send(
+      "dwca.record",
+      new JsonObject()
+        .put("action", "insert")
+        .put("userRef", "someuser")
+        .put("datasetRef", "NnqVLwIyPn-nRkc")
+        .put("record", DWCA_OCCURRENCE_RECORD),
+      ar -> {
+        if (ar.succeeded()) {
+          JsonObject body = ar.result().body();
+          assertThat(body.getJsonObject("result").getInteger("insertedCount")).isEqualTo(3);
+          assertThat(body.getJsonObject("result").getJsonArray("upserts")).hasSize(0);
+          mongoClient.find("dwcarecords", new JsonObject().put("dwcRecord.id", body.getString("id")),
+            arFind -> {
+              var foundRecords = arFind.result();
+              assertThat(foundRecords).hasSize(3);
+              var groupedRecords = foundRecords.stream()
+                .collect(Collectors.groupingBy(record -> record.getString("dwcTable")));
+              assertThat(groupedRecords.get("occurrence")).hasSize(1);
+              assertThat(groupedRecords.get("emof")).hasSize(2);
+            });
           testContext.completeNow();
         } else {
           info("error {}", ar.cause());

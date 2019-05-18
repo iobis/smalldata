@@ -3,6 +3,9 @@ package org.obis.smalldata.dbcontroller;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.mongo.MongoClient;
+import org.obis.smalldata.util.BulkOperationUtil;
+import org.obis.smalldata.util.Collections;
+import org.obis.smalldata.util.DbConst;
 import org.obis.util.file.IoFile;
 
 import java.util.List;
@@ -50,7 +53,7 @@ public class DbInitializer {
           entry[0],
           new JsonObject()
             .put(entry[1], 1)
-            .put("collation", Const.INSTANCE.collation)
+            .put("collation", DbConst.INSTANCE.collation)
             .put("background", true),
           x -> info("created index '{}.{}'", entry[0], entry[1])));
   }
@@ -62,7 +65,7 @@ public class DbInitializer {
       "dwcarecords", "demodata/dwcarecords.json")
       .entrySet().stream()
       .map(entry -> Map.entry(entry.getKey(), IoFile.loadFromResources(entry.getValue())))
-      .map(entry -> Map.entry(entry.getKey(), BulkOperationUtil.createOperationsFromJson(entry.getValue())))
+      .map(entry -> Map.entry(entry.getKey(), BulkOperationUtil.createInsertsFromJson(entry.getValue())))
       .forEach(entry -> client.bulkWrite(
         entry.getKey(),
         entry.getValue(),

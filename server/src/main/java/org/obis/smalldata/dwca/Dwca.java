@@ -12,14 +12,16 @@ import java.util.List;
 
 public class Dwca extends AbstractVerticle {
 
-  private DbQuery dbQuery;
+  private DbOperation dbQuery;
 
   @Override
   public void start(Future<Void> startFuture) {
     var dbConfig = (JsonObject) vertx.sharedData().getLocalMap("settings").get("storage");
     var mongoClient = MongoClient.createShared(vertx, dbConfig);
-    dbQuery = new DbQuery(mongoClient);
+    dbQuery = new DbOperation(mongoClient);
+    var recordHandler = new RecordHandler(dbQuery);
     vertx.eventBus().localConsumer("dwca", this::handleDwcaEvents);
+    vertx.eventBus().localConsumer("dwca.record", recordHandler::handleDwcaRecordEvents);
     startFuture.complete();
   }
 

@@ -1,6 +1,7 @@
 package org.obis.smalldata.dbcontroller;
 
 import org.junit.jupiter.api.Test;
+import org.obis.smalldata.util.SecureRandomString;
 
 import java.util.stream.Stream;
 

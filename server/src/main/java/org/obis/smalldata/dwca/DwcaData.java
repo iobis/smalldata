@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import static org.pmw.tinylog.Logger.debug;
+import static org.pmw.tinylog.Logger.info;
 
 class DwcaData {
 
@@ -35,13 +36,14 @@ class DwcaData {
 
   private static JsonObject flattenDwcFields(JsonObject dwcRecord) {
     var id = dwcRecord.getString("id");
+    info(dwcRecord);
     return dwcRecord.stream()
       .filter(ns -> !"id".equals(ns.getKey()))
       .filter(ns -> !((JsonObject) ns.getValue()).isEmpty())
       .map(DwcaData::mapNsFields)
       .map(entry -> new JsonObject().put("id", id).mergeIn(entry))
       .reduce(JsonObject::mergeIn)
-      .get();
+      .orElseGet(() -> new JsonObject());
   }
 
   private static JsonObject mapNsFields(Map.Entry<String, Object> nsFields) {
