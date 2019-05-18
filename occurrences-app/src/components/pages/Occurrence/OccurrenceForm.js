@@ -26,6 +26,15 @@ export default function OccurrenceForm() {
     scientificName:   '',
     sex:              null
   })
+  const [locationData, setLocationData] = useState({
+    decimalLongitude:      null,
+    decimalLatitude:       null,
+    coordinateUncertainty: null,
+    minimumDepth:          null,
+    maximumDepth:          null,
+    verbatimCoordinates:   '',
+    verbatimDepth:         ''
+  })
   const [observationData, setObservationData] = useState({
     institutionCode:         '',
     collectionCode:          '',
@@ -37,15 +46,6 @@ export default function OccurrenceForm() {
     identificationQualifier: '',
     identificationRemarks:   '',
     references:              []
-  })
-  const [locationData, setLocationData] = useState({
-    decimalLongitude:      null,
-    decimalLatitude:       null,
-    coordinateUncertainty: null,
-    minimumDepth:          null,
-    maximumDepth:          null,
-    verbatimCoordinates:   '',
-    verbatimDepth:         ''
   })
   const [darwinCoreFields, setDarwinCoreFields] = useState([])
   const [activeStepIndex, setActiveStepIndex] = useState(0)

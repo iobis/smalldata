@@ -10,13 +10,34 @@ exports[`FinalSummary renders correctly 1`] = `
   }
   locationData={
     Object {
-      "coordinateUncertainty": "40 meters",
+      "coordinateUncertainty": null,
       "decimalLatitude": 51.3354656,
       "decimalLongitude": 2.345456,
       "maximumDepth": null,
       "minimumDepth": null,
       "verbatimCoordinates": "41 05 54S 121 05 34W",
       "verbatimDepth": "100 - 200 m",
+    }
+  }
+  observationData={
+    Object {
+      "catalogNumber": "IBSS_Benthos_1935_1331",
+      "collectionCode": "R/V N. Danilevskiy 1935 Azov Sea benthos data",
+      "fieldNumber": "557",
+      "identificationQualifier": "some identification qualifier",
+      "identificationRemarks": "some identification remarks",
+      "identifiedBy": Array [
+        "Indiana Jones",
+      ],
+      "institutionCode": "IBSS",
+      "recordNumber": "123456",
+      "recordedBy": Array [
+        "Harrison Ford",
+      ],
+      "references": Array [
+        "http://www.google.com",
+        "https://clojure.org/",
+      ],
     }
   }
   occurrenceData={
@@ -193,15 +214,13 @@ exports[`FinalSummary renders correctly 1`] = `
         </NameValueRow>
         <NameValueRow
           name="coordinateUncertainty"
-          value="40 meters"
+          value={null}
         >
           <tr>
             <td>
               coordinateUncertainty
             </td>
-            <td>
-              40 meters
-            </td>
+            <td />
           </tr>
         </NameValueRow>
         <NameValueRow
@@ -226,6 +245,17 @@ exports[`FinalSummary renders correctly 1`] = `
             <td />
           </tr>
         </NameValueRow>
+      </tbody>
+    </table>
+    <h2
+      className="title is-6"
+    >
+      Verbatim data
+    </h2>
+    <table
+      className="table is-striped"
+    >
+      <tbody>
         <NameValueRow
           name="verbatimCoordinates"
           value="41 05 54S 121 05 34W"
@@ -249,6 +279,137 @@ exports[`FinalSummary renders correctly 1`] = `
             </td>
             <td>
               100 - 200 m
+            </td>
+          </tr>
+        </NameValueRow>
+      </tbody>
+    </table>
+    <h2
+      className="title is-5"
+    >
+      4 - OBSERVATION DATA
+    </h2>
+    <h2
+      className="title is-6"
+    >
+      Catalog data
+    </h2>
+    <table
+      className="table is-striped"
+    >
+      <tbody>
+        <NameValueRow
+          name="institutionCode"
+          value="IBSS"
+        >
+          <tr>
+            <td>
+              institutionCode
+            </td>
+            <td>
+              IBSS
+            </td>
+          </tr>
+        </NameValueRow>
+        <NameValueRow
+          name="collectionCode"
+          value="R/V N. Danilevskiy 1935 Azov Sea benthos data"
+        >
+          <tr>
+            <td>
+              collectionCode
+            </td>
+            <td>
+              R/V N. Danilevskiy 1935 Azov Sea benthos data
+            </td>
+          </tr>
+        </NameValueRow>
+        <NameValueRow
+          name="fieldNumber"
+          value="557"
+        >
+          <tr>
+            <td>
+              fieldNumber
+            </td>
+            <td>
+              557
+            </td>
+          </tr>
+        </NameValueRow>
+        <NameValueRow
+          name="catalogNumber"
+          value="IBSS_Benthos_1935_1331"
+        >
+          <tr>
+            <td>
+              catalogNumber
+            </td>
+            <td>
+              IBSS_Benthos_1935_1331
+            </td>
+          </tr>
+        </NameValueRow>
+        <NameValueRow
+          name="recordNumber"
+          value="123456"
+        >
+          <tr>
+            <td>
+              recordNumber
+            </td>
+            <td>
+              123456
+            </td>
+          </tr>
+        </NameValueRow>
+      </tbody>
+    </table>
+    <h2
+      className="title is-6"
+    >
+      Species data
+    </h2>
+    <table
+      className="table is-striped"
+    >
+      <tbody>
+        <NameValueRow
+          name="references"
+          value="http://www.google.com, https://clojure.org/"
+        >
+          <tr>
+            <td>
+              references
+            </td>
+            <td>
+              http://www.google.com, https://clojure.org/
+            </td>
+          </tr>
+        </NameValueRow>
+        <NameValueRow
+          name="identificationQualifier"
+          value="some identification qualifier"
+        >
+          <tr>
+            <td>
+              identificationQualifier
+            </td>
+            <td>
+              some identification qualifier
+            </td>
+          </tr>
+        </NameValueRow>
+        <NameValueRow
+          name="identificationRemarks"
+          value="some identification remarks"
+        >
+          <tr>
+            <td>
+              identificationRemarks
+            </td>
+            <td>
+              some identification remarks
             </td>
           </tr>
         </NameValueRow>

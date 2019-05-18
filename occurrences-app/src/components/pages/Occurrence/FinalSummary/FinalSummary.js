@@ -8,7 +8,14 @@ const lifestageOptions = ['larva', 'juvenile', 'adult', 'unspecified']
 const occurrenceStatusOptions = ['absent', 'present']
 const sexOptions = ['male', 'female', 'unspecified']
 
-export default function FinalSummary({ dataset, occurrenceData, locationData, onChange, onSubmit }) {
+export default function FinalSummary({
+  dataset,
+  occurrenceData,
+  observationData,
+  locationData,
+  onChange,
+  onSubmit
+}) {
   const { t } = useTranslation()
 
   return (
@@ -37,8 +44,32 @@ export default function FinalSummary({ dataset, occurrenceData, locationData, on
           <NameValueRow name="coordinateUncertainty" value={locationData.coordinateUncertainty}/>
           <NameValueRow name="minimumDepth" value={locationData.minimumDepth}/>
           <NameValueRow name="maximumDepth" value={locationData.maximumDepth}/>
+        </tbody>
+      </table>
+      <h2 className="title is-6">Verbatim data</h2>
+      <table className="table is-striped">
+        <tbody>
           <NameValueRow name="verbatimCoordinates" value={locationData.verbatimCoordinates}/>
           <NameValueRow name="verbatimDepth" value={locationData.verbatimDepth}/>
+        </tbody>
+      </table>
+      <h2 className="title is-5">4 - OBSERVATION DATA</h2>
+      <h2 className="title is-6">Catalog data</h2>
+      <table className="table is-striped">
+        <tbody>
+          <NameValueRow name="institutionCode" value={observationData.institutionCode}/>
+          <NameValueRow name="collectionCode" value={observationData.collectionCode}/>
+          <NameValueRow name="fieldNumber" value={observationData.fieldNumber}/>
+          <NameValueRow name="catalogNumber" value={observationData.catalogNumber}/>
+          <NameValueRow name="recordNumber" value={observationData.recordNumber}/>
+        </tbody>
+      </table>
+      <h2 className="title is-6">Species data</h2>
+      <table className="table is-striped">
+        <tbody>
+          <NameValueRow name="references" value={observationData.references.join(', ')}/>
+          <NameValueRow name="identificationQualifier" value={observationData.identificationQualifier}/>
+          <NameValueRow name="identificationRemarks" value={observationData.identificationRemarks}/>
         </tbody>
       </table>
     </div>
@@ -46,11 +77,11 @@ export default function FinalSummary({ dataset, occurrenceData, locationData, on
 }
 
 FinalSummary.propTypes = {
-  dataset:        PropTypes.shape({
+  dataset:         PropTypes.shape({
     description: PropTypes.string.isRequired,
     id:          PropTypes.number.isRequired
   }).isRequired,
-  locationData:   PropTypes.shape({
+  locationData:    PropTypes.shape({
     decimalLongitude:      PropTypes.number,
     decimalLatitude:       PropTypes.number,
     coordinateUncertainty: PropTypes.number,
@@ -59,7 +90,19 @@ FinalSummary.propTypes = {
     verbatimCoordinates:   PropTypes.string.isRequired,
     verbatimDepth:         PropTypes.string.isRequired
   }).isRequired,
-  occurrenceData: PropTypes.shape({
+  observationData: PropTypes.shape({
+    institutionCode:         PropTypes.string.isRequired,
+    collectionCode:          PropTypes.string.isRequired,
+    fieldNumber:             PropTypes.string.isRequired,
+    catalogNumber:           PropTypes.string.isRequired,
+    recordNumber:            PropTypes.string.isRequired,
+    identifiedBy:            PropTypes.arrayOf(PropTypes.string).isRequired,
+    recordedBy:              PropTypes.arrayOf(PropTypes.string).isRequired,
+    identificationQualifier: PropTypes.string.isRequired,
+    identificationRemarks:   PropTypes.string.isRequired,
+    references:              PropTypes.arrayOf(PropTypes.string).isRequired
+  }).isRequired,
+  occurrenceData:  PropTypes.shape({
     basisOfRecord:    PropTypes.oneOf(basisOfRecordOptions).isRequired,
     beginDate:        PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.number]).isRequired,
     endDate:          PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.number]),
@@ -68,8 +111,8 @@ FinalSummary.propTypes = {
     scientificName:   PropTypes.string.isRequired,
     sex:              PropTypes.oneOf(sexOptions)
   }).isRequired,
-  onChange:       PropTypes.func.isRequired,
-  onSubmit:       PropTypes.func.isRequired
+  onChange:        PropTypes.func.isRequired,
+  onSubmit:        PropTypes.func.isRequired
 }
 
 function NameValueRow({ name, value }) {
