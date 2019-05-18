@@ -24,6 +24,15 @@ export function getDefaultProps() {
       occurrenceStatus: 'absent',
       scientificName:   'ala abra',
       sex:              'male'
+    },
+    locationData:   {
+      decimalLongitude:      2.345456,
+      decimalLatitude:       51.3354656,
+      coordinateUncertainty: '40 meters',
+      minimumDepth:          null,
+      maximumDepth:          null,
+      verbatimCoordinates:   '41 05 54S 121 05 34W',
+      verbatimDepth:         '100 - 200 m'
     }
   }
 }

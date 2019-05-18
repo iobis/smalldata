@@ -8,7 +8,7 @@ const lifestageOptions = ['larva', 'juvenile', 'adult', 'unspecified']
 const occurrenceStatusOptions = ['absent', 'present']
 const sexOptions = ['male', 'female', 'unspecified']
 
-export default function FinalSummary({ dataset, occurrenceData, onChange, onSubmit }) {
+export default function FinalSummary({ dataset, occurrenceData, locationData, onChange, onSubmit }) {
   const { t } = useTranslation()
 
   return (
@@ -50,6 +50,39 @@ export default function FinalSummary({ dataset, occurrenceData, onChange, onSubm
           </tr>
         </tbody>
       </table>
+      <h2 className="title is-5">3 - LOCATION DATA</h2>
+      <table className="table is-striped">
+        <tbody>
+          <tr>
+            <td>Latitude</td>
+            <td>{locationData.decimalLatitude}</td>
+          </tr>
+          <tr>
+            <td>Longitude</td>
+            <td>{locationData.decimalLongitude}</td>
+          </tr>
+          <tr>
+            <td>coordinateUncertainty</td>
+            <td>{locationData.coordinateUncertainty}</td>
+          </tr>
+          <tr>
+            <td>minimumDepth</td>
+            <td>{locationData.minimumDepth}</td>
+          </tr>
+          <tr>
+            <td>maximumDepth</td>
+            <td>{locationData.maximumDepth}</td>
+          </tr>
+          <tr>
+            <td>verbatimCoordinates</td>
+            <td>{locationData.verbatimCoordinates}</td>
+          </tr>
+          <tr>
+            <td>verbatimDepth</td>
+            <td>{locationData.verbatimDepth}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   )
 }
@@ -58,6 +91,15 @@ FinalSummary.propTypes = {
   dataset:        PropTypes.shape({
     description: PropTypes.string.isRequired,
     id:          PropTypes.number.isRequired
+  }).isRequired,
+  locationData:   PropTypes.shape({
+    decimalLongitude:      PropTypes.number,
+    decimalLatitude:       PropTypes.number,
+    coordinateUncertainty: PropTypes.number,
+    minimumDepth:          PropTypes.number,
+    maximumDepth:          PropTypes.number,
+    verbatimCoordinates:   PropTypes.string.isRequired,
+    verbatimDepth:         PropTypes.string.isRequired
   }).isRequired,
   occurrenceData: PropTypes.shape(PropTypes.shape({
     basisOfRecord:    PropTypes.oneOf(basisOfRecordOptions).isRequired,

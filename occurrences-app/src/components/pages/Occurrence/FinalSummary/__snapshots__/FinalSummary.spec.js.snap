@@ -8,11 +8,22 @@ exports[`FinalSummary renders correctly 1`] = `
       "id": 1,
     }
   }
+  locationData={
+    Object {
+      "coordinateUncertainty": "40 meters",
+      "decimalLatitude": 51.3354656,
+      "decimalLongitude": 2.345456,
+      "maximumDepth": null,
+      "minimumDepth": null,
+      "verbatimCoordinates": "41 05 54S 121 05 34W",
+      "verbatimDepth": "100 - 200 m",
+    }
+  }
   occurrenceData={
     Object {
       "basisOfRecord": "humanObservation",
-      "beginDate": 2019-05-18T08:14:38.788Z,
-      "endDate": 2019-05-18T08:14:38.788Z,
+      "beginDate": 2019-05-18T08:31:44.275Z,
+      "endDate": 2019-05-18T08:31:44.275Z,
       "lifestage": "adult",
       "occurrenceStatus": "absent",
       "scientificName": "ala abra",
@@ -106,6 +117,69 @@ exports[`FinalSummary renders correctly 1`] = `
           </td>
           <td>
             adult
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h2
+      className="title is-5"
+    >
+      3 - LOCATION DATA
+    </h2>
+    <table
+      className="table is-striped"
+    >
+      <tbody>
+        <tr>
+          <td>
+            Latitude
+          </td>
+          <td>
+            51.3354656
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Longitude
+          </td>
+          <td>
+            2.345456
+          </td>
+        </tr>
+        <tr>
+          <td>
+            coordinateUncertainty
+          </td>
+          <td>
+            40 meters
+          </td>
+        </tr>
+        <tr>
+          <td>
+            minimumDepth
+          </td>
+          <td />
+        </tr>
+        <tr>
+          <td>
+            maximumDepth
+          </td>
+          <td />
+        </tr>
+        <tr>
+          <td>
+            verbatimCoordinates
+          </td>
+          <td>
+            41 05 54S 121 05 34W
+          </td>
+        </tr>
+        <tr>
+          <td>
+            verbatimDepth
+          </td>
+          <td>
+            100 - 200 m
           </td>
         </tr>
       </tbody>
