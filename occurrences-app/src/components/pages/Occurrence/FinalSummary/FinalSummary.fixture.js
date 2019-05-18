@@ -11,5 +11,19 @@ export default [{
 }]
 
 export function getDefaultProps() {
-  return {}
+  return {
+    dataset:        {
+      id:          1,
+      description: 'NPPSD Short-tailed Albatross Sightings'
+    },
+    occurrenceData: {
+      basisOfRecord:    'humanObservation',
+      beginDate:        new Date(),
+      endDate:          new Date(),
+      lifestage:        'adult',
+      occurrenceStatus: 'absent',
+      scientificName:   'ala abra',
+      sex:              'male'
+    }
+  }
 }

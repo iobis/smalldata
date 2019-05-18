@@ -2,6 +2,23 @@
 
 exports[`FinalSummary renders correctly 1`] = `
 <FinalSummary
+  dataset={
+    Object {
+      "description": "NPPSD Short-tailed Albatross Sightings",
+      "id": 1,
+    }
+  }
+  occurrenceData={
+    Object {
+      "basisOfRecord": "humanObservation",
+      "beginDate": 2019-05-18T08:14:38.788Z,
+      "endDate": 2019-05-18T08:14:38.788Z,
+      "lifestage": "adult",
+      "occurrenceStatus": "absent",
+      "scientificName": "ala abra",
+      "sex": "male",
+    }
+  }
   onChange={[MockFunction]}
   onSubmit={[MockFunction]}
 >
@@ -9,10 +26,90 @@ exports[`FinalSummary renders correctly 1`] = `
     className="final-summary section is-fluid"
   >
     <h1
-      className="title"
+      className="title is-3"
     >
       occurrenceForm.finalSummary.title
     </h1>
+    <button
+      className="button is-info is-medium"
+    >
+      Submit Entry
+    </button>
+    <h2
+      className="title is-5"
+    >
+      1 - DATASET
+    </h2>
+    <p>
+      NPPSD Short-tailed Albatross Sightings
+    </p>
+    <h2
+      className="title is-5"
+    >
+      2 - OCCURRENCE DATA
+    </h2>
+    <table
+      className="table is-striped"
+    >
+      <tbody>
+        <tr>
+          <td>
+            scientific name
+          </td>
+          <td>
+            ala abra
+          </td>
+        </tr>
+        <tr>
+          <td>
+            beginDate
+          </td>
+          <td>
+            18 May 2019
+          </td>
+        </tr>
+        <tr>
+          <td>
+            endDate
+          </td>
+          <td>
+            18 May 2019
+          </td>
+        </tr>
+        <tr>
+          <td>
+            occurrenceStatus
+          </td>
+          <td>
+            absent
+          </td>
+        </tr>
+        <tr>
+          <td>
+            basisOfRecord
+          </td>
+          <td>
+            humanObservation
+          </td>
+        </tr>
+        <tr>
+          <td>
+            sex
+          </td>
+          <td>
+            male
+          </td>
+        </tr>
+        <tr>
+          <td>
+            lifestage
+          </td>
+          <td>
+            adult
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </FinalSummary>
 `;
