@@ -25,7 +25,7 @@ export default function FinalSummary({
       <h2 className="title is-5">1 - DATASET</h2>
       <p>{dataset.description}</p>
       <h2 className="title is-5">2 - OCCURRENCE DATA</h2>
-      <table className="table is-striped">
+      <table className="table is-striped is-fullwidth is-hoverable">
         <tbody>
           <NameValueRow name="scientific name" value={occurrenceData.scientificName}/>
           <NameValueRow name="beginDate" value={format(occurrenceData.beginDate, 'D MMMM YYYY')}/>
@@ -37,7 +37,7 @@ export default function FinalSummary({
         </tbody>
       </table>
       <h2 className="title is-5">3 - LOCATION DATA</h2>
-      <table className="table is-striped">
+      <table className="table is-striped is-fullwidth is-hoverable">
         <tbody>
           <NameValueRow name="Latitude" value={locationData.decimalLatitude}/>
           <NameValueRow name="Longitude" value={locationData.decimalLongitude}/>
@@ -47,7 +47,7 @@ export default function FinalSummary({
         </tbody>
       </table>
       <h2 className="title is-6">Verbatim data</h2>
-      <table className="table is-striped">
+      <table className="table is-striped is-fullwidth is-hoverable">
         <tbody>
           <NameValueRow name="verbatimCoordinates" value={locationData.verbatimCoordinates}/>
           <NameValueRow name="verbatimDepth" value={locationData.verbatimDepth}/>
@@ -55,7 +55,7 @@ export default function FinalSummary({
       </table>
       <h2 className="title is-5">4 - OBSERVATION DATA</h2>
       <h2 className="title is-6">Catalog data</h2>
-      <table className="table is-striped">
+      <table className="table is-striped is-fullwidth is-hoverable">
         <tbody>
           <NameValueRow name="institutionCode" value={observationData.institutionCode}/>
           <NameValueRow name="collectionCode" value={observationData.collectionCode}/>
@@ -65,7 +65,7 @@ export default function FinalSummary({
         </tbody>
       </table>
       <h2 className="title is-6">Species data</h2>
-      <table className="table is-striped">
+      <table className="table is-striped is-fullwidth is-hoverable">
         <tbody>
           <NameValueRow name="references" value={observationData.references.join(', ')}/>
           <NameValueRow name="identificationQualifier" value={observationData.identificationQualifier}/>
@@ -117,9 +117,9 @@ FinalSummary.propTypes = {
 
 function NameValueRow({ name, value }) {
   return (
-    <tr>
-      <td>{name}</td>
-      <td>{value}</td>
+    <tr className="name-value-row fieldrow">
+      <td className="name">{name}</td>
+      <td className="value">{value}</td>
     </tr>
   )
 }

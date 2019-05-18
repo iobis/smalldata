@@ -81,18 +81,24 @@ exports[`FinalSummary renders correctly 1`] = `
       2 - OCCURRENCE DATA
     </h2>
     <table
-      className="table is-striped"
+      className="table is-striped is-fullwidth is-hoverable"
     >
       <tbody>
         <NameValueRow
           name="scientific name"
           value="ala abra"
         >
-          <tr>
-            <td>
+          <tr
+            className="name-value-row fieldrow"
+          >
+            <td
+              className="name"
+            >
               scientific name
             </td>
-            <td>
+            <td
+              className="value"
+            >
               ala abra
             </td>
           </tr>
@@ -101,11 +107,17 @@ exports[`FinalSummary renders correctly 1`] = `
           name="beginDate"
           value="29 April 2019"
         >
-          <tr>
-            <td>
+          <tr
+            className="name-value-row fieldrow"
+          >
+            <td
+              className="name"
+            >
               beginDate
             </td>
-            <td>
+            <td
+              className="value"
+            >
               29 April 2019
             </td>
           </tr>
@@ -114,11 +126,17 @@ exports[`FinalSummary renders correctly 1`] = `
           name="endDate"
           value="30 April 2019"
         >
-          <tr>
-            <td>
+          <tr
+            className="name-value-row fieldrow"
+          >
+            <td
+              className="name"
+            >
               endDate
             </td>
-            <td>
+            <td
+              className="value"
+            >
               30 April 2019
             </td>
           </tr>
@@ -127,11 +145,17 @@ exports[`FinalSummary renders correctly 1`] = `
           name="occurrenceStatus"
           value="absent"
         >
-          <tr>
-            <td>
+          <tr
+            className="name-value-row fieldrow"
+          >
+            <td
+              className="name"
+            >
               occurrenceStatus
             </td>
-            <td>
+            <td
+              className="value"
+            >
               absent
             </td>
           </tr>
@@ -140,11 +164,17 @@ exports[`FinalSummary renders correctly 1`] = `
           name="basisOfRecord"
           value="humanObservation"
         >
-          <tr>
-            <td>
+          <tr
+            className="name-value-row fieldrow"
+          >
+            <td
+              className="name"
+            >
               basisOfRecord
             </td>
-            <td>
+            <td
+              className="value"
+            >
               humanObservation
             </td>
           </tr>
@@ -153,11 +183,17 @@ exports[`FinalSummary renders correctly 1`] = `
           name="sex"
           value="male"
         >
-          <tr>
-            <td>
+          <tr
+            className="name-value-row fieldrow"
+          >
+            <td
+              className="name"
+            >
               sex
             </td>
-            <td>
+            <td
+              className="value"
+            >
               male
             </td>
           </tr>
@@ -166,11 +202,17 @@ exports[`FinalSummary renders correctly 1`] = `
           name="lifestage"
           value="adult"
         >
-          <tr>
-            <td>
+          <tr
+            className="name-value-row fieldrow"
+          >
+            <td
+              className="name"
+            >
               lifestage
             </td>
-            <td>
+            <td
+              className="value"
+            >
               adult
             </td>
           </tr>
@@ -183,18 +225,24 @@ exports[`FinalSummary renders correctly 1`] = `
       3 - LOCATION DATA
     </h2>
     <table
-      className="table is-striped"
+      className="table is-striped is-fullwidth is-hoverable"
     >
       <tbody>
         <NameValueRow
           name="Latitude"
           value={51.3354656}
         >
-          <tr>
-            <td>
+          <tr
+            className="name-value-row fieldrow"
+          >
+            <td
+              className="name"
+            >
               Latitude
             </td>
-            <td>
+            <td
+              className="value"
+            >
               51.3354656
             </td>
           </tr>
@@ -203,11 +251,17 @@ exports[`FinalSummary renders correctly 1`] = `
           name="Longitude"
           value={2.345456}
         >
-          <tr>
-            <td>
+          <tr
+            className="name-value-row fieldrow"
+          >
+            <td
+              className="name"
+            >
               Longitude
             </td>
-            <td>
+            <td
+              className="value"
+            >
               2.345456
             </td>
           </tr>
@@ -216,33 +270,51 @@ exports[`FinalSummary renders correctly 1`] = `
           name="coordinateUncertainty"
           value={null}
         >
-          <tr>
-            <td>
+          <tr
+            className="name-value-row fieldrow"
+          >
+            <td
+              className="name"
+            >
               coordinateUncertainty
             </td>
-            <td />
+            <td
+              className="value"
+            />
           </tr>
         </NameValueRow>
         <NameValueRow
           name="minimumDepth"
           value={null}
         >
-          <tr>
-            <td>
+          <tr
+            className="name-value-row fieldrow"
+          >
+            <td
+              className="name"
+            >
               minimumDepth
             </td>
-            <td />
+            <td
+              className="value"
+            />
           </tr>
         </NameValueRow>
         <NameValueRow
           name="maximumDepth"
           value={null}
         >
-          <tr>
-            <td>
+          <tr
+            className="name-value-row fieldrow"
+          >
+            <td
+              className="name"
+            >
               maximumDepth
             </td>
-            <td />
+            <td
+              className="value"
+            />
           </tr>
         </NameValueRow>
       </tbody>
@@ -253,18 +325,24 @@ exports[`FinalSummary renders correctly 1`] = `
       Verbatim data
     </h2>
     <table
-      className="table is-striped"
+      className="table is-striped is-fullwidth is-hoverable"
     >
       <tbody>
         <NameValueRow
           name="verbatimCoordinates"
           value="41 05 54S 121 05 34W"
         >
-          <tr>
-            <td>
+          <tr
+            className="name-value-row fieldrow"
+          >
+            <td
+              className="name"
+            >
               verbatimCoordinates
             </td>
-            <td>
+            <td
+              className="value"
+            >
               41 05 54S 121 05 34W
             </td>
           </tr>
@@ -273,11 +351,17 @@ exports[`FinalSummary renders correctly 1`] = `
           name="verbatimDepth"
           value="100 - 200 m"
         >
-          <tr>
-            <td>
+          <tr
+            className="name-value-row fieldrow"
+          >
+            <td
+              className="name"
+            >
               verbatimDepth
             </td>
-            <td>
+            <td
+              className="value"
+            >
               100 - 200 m
             </td>
           </tr>
@@ -295,18 +379,24 @@ exports[`FinalSummary renders correctly 1`] = `
       Catalog data
     </h2>
     <table
-      className="table is-striped"
+      className="table is-striped is-fullwidth is-hoverable"
     >
       <tbody>
         <NameValueRow
           name="institutionCode"
           value="IBSS"
         >
-          <tr>
-            <td>
+          <tr
+            className="name-value-row fieldrow"
+          >
+            <td
+              className="name"
+            >
               institutionCode
             </td>
-            <td>
+            <td
+              className="value"
+            >
               IBSS
             </td>
           </tr>
@@ -315,11 +405,17 @@ exports[`FinalSummary renders correctly 1`] = `
           name="collectionCode"
           value="R/V N. Danilevskiy 1935 Azov Sea benthos data"
         >
-          <tr>
-            <td>
+          <tr
+            className="name-value-row fieldrow"
+          >
+            <td
+              className="name"
+            >
               collectionCode
             </td>
-            <td>
+            <td
+              className="value"
+            >
               R/V N. Danilevskiy 1935 Azov Sea benthos data
             </td>
           </tr>
@@ -328,11 +424,17 @@ exports[`FinalSummary renders correctly 1`] = `
           name="fieldNumber"
           value="557"
         >
-          <tr>
-            <td>
+          <tr
+            className="name-value-row fieldrow"
+          >
+            <td
+              className="name"
+            >
               fieldNumber
             </td>
-            <td>
+            <td
+              className="value"
+            >
               557
             </td>
           </tr>
@@ -341,11 +443,17 @@ exports[`FinalSummary renders correctly 1`] = `
           name="catalogNumber"
           value="IBSS_Benthos_1935_1331"
         >
-          <tr>
-            <td>
+          <tr
+            className="name-value-row fieldrow"
+          >
+            <td
+              className="name"
+            >
               catalogNumber
             </td>
-            <td>
+            <td
+              className="value"
+            >
               IBSS_Benthos_1935_1331
             </td>
           </tr>
@@ -354,11 +462,17 @@ exports[`FinalSummary renders correctly 1`] = `
           name="recordNumber"
           value="123456"
         >
-          <tr>
-            <td>
+          <tr
+            className="name-value-row fieldrow"
+          >
+            <td
+              className="name"
+            >
               recordNumber
             </td>
-            <td>
+            <td
+              className="value"
+            >
               123456
             </td>
           </tr>
@@ -371,18 +485,24 @@ exports[`FinalSummary renders correctly 1`] = `
       Species data
     </h2>
     <table
-      className="table is-striped"
+      className="table is-striped is-fullwidth is-hoverable"
     >
       <tbody>
         <NameValueRow
           name="references"
           value="http://www.google.com, https://clojure.org/"
         >
-          <tr>
-            <td>
+          <tr
+            className="name-value-row fieldrow"
+          >
+            <td
+              className="name"
+            >
               references
             </td>
-            <td>
+            <td
+              className="value"
+            >
               http://www.google.com, https://clojure.org/
             </td>
           </tr>
@@ -391,11 +511,17 @@ exports[`FinalSummary renders correctly 1`] = `
           name="identificationQualifier"
           value="some identification qualifier"
         >
-          <tr>
-            <td>
+          <tr
+            className="name-value-row fieldrow"
+          >
+            <td
+              className="name"
+            >
               identificationQualifier
             </td>
-            <td>
+            <td
+              className="value"
+            >
               some identification qualifier
             </td>
           </tr>
@@ -404,11 +530,17 @@ exports[`FinalSummary renders correctly 1`] = `
           name="identificationRemarks"
           value="some identification remarks"
         >
-          <tr>
-            <td>
+          <tr
+            className="name-value-row fieldrow"
+          >
+            <td
+              className="name"
+            >
               identificationRemarks
             </td>
-            <td>
+            <td
+              className="value"
+            >
               some identification remarks
             </td>
           </tr>
