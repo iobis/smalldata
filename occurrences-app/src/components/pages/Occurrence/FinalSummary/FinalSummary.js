@@ -55,15 +55,31 @@ export default function FinalSummary({
       </table>
       <h2 className="title is-5">4 - OBSERVATION DATA</h2>
       <h2 className="title is-6">Catalog data</h2>
-      <table className="table is-striped is-fullwidth is-hoverable">
-        <tbody>
-          <NameValueRow name="institutionCode" value={observationData.institutionCode}/>
-          <NameValueRow name="collectionCode" value={observationData.collectionCode}/>
-          <NameValueRow name="fieldNumber" value={observationData.fieldNumber}/>
-          <NameValueRow name="catalogNumber" value={observationData.catalogNumber}/>
-          <NameValueRow name="recordNumber" value={observationData.recordNumber}/>
-        </tbody>
-      </table>
+      <div className="content">
+        <table className="table is-striped is-fullwidth is-hoverable">
+          <tbody>
+            <NameValueRow name="institutionCode" value={observationData.institutionCode}/>
+            <NameValueRow name="collectionCode" value={observationData.collectionCode}/>
+            <NameValueRow name="fieldNumber" value={observationData.fieldNumber}/>
+            <NameValueRow name="catalogNumber" value={observationData.catalogNumber}/>
+            <NameValueRow name="recordNumber" value={observationData.recordNumber}/>
+          </tbody>
+        </table>
+        <div className="columns">
+          <div className="column is-3">
+            <p className="title is-6">{t('occurrenceForm.observationData.identifiedBy.label')}</p>
+            <ul>
+              {observationData.identifiedBy.map((name) => <li key={name}>{name}</li>)}
+            </ul>
+          </div>
+          <div className="column is-3">
+            <p className="title is-6">{t('occurrenceForm.observationData.recordedBy.label')}</p>
+            <ul>
+              {observationData.recordedBy.map((name) => <li key={name}>{name}</li>)}
+            </ul>
+          </div>
+        </div>
+      </div>
       <h2 className="title is-6">Species data</h2>
       <table className="table is-striped is-fullwidth is-hoverable">
         <tbody>

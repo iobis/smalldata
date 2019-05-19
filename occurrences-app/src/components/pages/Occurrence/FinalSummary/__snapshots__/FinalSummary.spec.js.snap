@@ -378,107 +378,147 @@ exports[`FinalSummary renders correctly 1`] = `
     >
       Catalog data
     </h2>
-    <table
-      className="table is-striped is-fullwidth is-hoverable"
+    <div
+      className="content"
     >
-      <tbody>
-        <NameValueRow
-          name="institutionCode"
-          value="IBSS"
-        >
-          <tr
-            className="name-value-row fieldrow"
+      <table
+        className="table is-striped is-fullwidth is-hoverable"
+      >
+        <tbody>
+          <NameValueRow
+            name="institutionCode"
+            value="IBSS"
           >
-            <td
-              className="name"
+            <tr
+              className="name-value-row fieldrow"
             >
-              institutionCode
-            </td>
-            <td
-              className="value"
-            >
-              IBSS
-            </td>
-          </tr>
-        </NameValueRow>
-        <NameValueRow
-          name="collectionCode"
-          value="R/V N. Danilevskiy 1935 Azov Sea benthos data"
-        >
-          <tr
-            className="name-value-row fieldrow"
+              <td
+                className="name"
+              >
+                institutionCode
+              </td>
+              <td
+                className="value"
+              >
+                IBSS
+              </td>
+            </tr>
+          </NameValueRow>
+          <NameValueRow
+            name="collectionCode"
+            value="R/V N. Danilevskiy 1935 Azov Sea benthos data"
           >
-            <td
-              className="name"
+            <tr
+              className="name-value-row fieldrow"
             >
-              collectionCode
-            </td>
-            <td
-              className="value"
-            >
-              R/V N. Danilevskiy 1935 Azov Sea benthos data
-            </td>
-          </tr>
-        </NameValueRow>
-        <NameValueRow
-          name="fieldNumber"
-          value="557"
-        >
-          <tr
-            className="name-value-row fieldrow"
+              <td
+                className="name"
+              >
+                collectionCode
+              </td>
+              <td
+                className="value"
+              >
+                R/V N. Danilevskiy 1935 Azov Sea benthos data
+              </td>
+            </tr>
+          </NameValueRow>
+          <NameValueRow
+            name="fieldNumber"
+            value="557"
           >
-            <td
-              className="name"
+            <tr
+              className="name-value-row fieldrow"
             >
-              fieldNumber
-            </td>
-            <td
-              className="value"
-            >
-              557
-            </td>
-          </tr>
-        </NameValueRow>
-        <NameValueRow
-          name="catalogNumber"
-          value="IBSS_Benthos_1935_1331"
-        >
-          <tr
-            className="name-value-row fieldrow"
+              <td
+                className="name"
+              >
+                fieldNumber
+              </td>
+              <td
+                className="value"
+              >
+                557
+              </td>
+            </tr>
+          </NameValueRow>
+          <NameValueRow
+            name="catalogNumber"
+            value="IBSS_Benthos_1935_1331"
           >
-            <td
-              className="name"
+            <tr
+              className="name-value-row fieldrow"
             >
-              catalogNumber
-            </td>
-            <td
-              className="value"
-            >
-              IBSS_Benthos_1935_1331
-            </td>
-          </tr>
-        </NameValueRow>
-        <NameValueRow
-          name="recordNumber"
-          value="123456"
-        >
-          <tr
-            className="name-value-row fieldrow"
+              <td
+                className="name"
+              >
+                catalogNumber
+              </td>
+              <td
+                className="value"
+              >
+                IBSS_Benthos_1935_1331
+              </td>
+            </tr>
+          </NameValueRow>
+          <NameValueRow
+            name="recordNumber"
+            value="123456"
           >
-            <td
-              className="name"
+            <tr
+              className="name-value-row fieldrow"
             >
-              recordNumber
-            </td>
-            <td
-              className="value"
+              <td
+                className="name"
+              >
+                recordNumber
+              </td>
+              <td
+                className="value"
+              >
+                123456
+              </td>
+            </tr>
+          </NameValueRow>
+        </tbody>
+      </table>
+      <div
+        className="columns"
+      >
+        <div
+          className="column is-3"
+        >
+          <p
+            className="title is-6"
+          >
+            occurrenceForm.observationData.identifiedBy.label
+          </p>
+          <ul>
+            <li
+              key="Indiana Jones"
             >
-              123456
-            </td>
-          </tr>
-        </NameValueRow>
-      </tbody>
-    </table>
+              Indiana Jones
+            </li>
+          </ul>
+        </div>
+        <div
+          className="column is-3"
+        >
+          <p
+            className="title is-6"
+          >
+            occurrenceForm.observationData.recordedBy.label
+          </p>
+          <ul>
+            <li
+              key="Harrison Ford"
+            >
+              Harrison Ford
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
     <h2
       className="title is-6"
     >
