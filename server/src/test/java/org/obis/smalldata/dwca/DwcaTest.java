@@ -16,9 +16,9 @@ import org.obis.smalldata.testutil.TestDb;
 
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.pmw.tinylog.Logger.error;
 import static org.pmw.tinylog.Logger.info;
 
 @ExtendWith(VertxExtension.class)
@@ -89,20 +89,12 @@ public class DwcaTest {
       ar -> {
         if (ar.succeeded()) {
           JsonObject body = ar.result().body();
-          assertThat(body.getJsonObject("result").getInteger("insertedCount")).isEqualTo(3);
-          assertThat(body.getJsonObject("result").getJsonArray("upserts")).hasSize(0);
-          mongoClient.find("dwcarecords", new JsonObject().put("dwcRecord.id", body.getString("id")),
-            arFind -> {
-              var foundRecords = arFind.result();
-              assertThat(foundRecords).hasSize(3);
-              var groupedRecords = foundRecords.stream()
-                .collect(Collectors.groupingBy(record -> record.getString("dwcTable")));
-              assertThat(groupedRecords.get("occurrence")).hasSize(1);
-              assertThat(groupedRecords.get("emof")).hasSize(2);
-            });
+          info(body);
+          assertThat(body.getJsonObject("records").getJsonArray("occurrence").size()).isEqualTo(1);
+          assertThat(body.getJsonObject("records").getJsonArray("emof").size()).isEqualTo(2);
           testContext.completeNow();
         } else {
-          info("error {}", ar.cause());
+          error("error {}", ar.cause());
           testContext.failNow(ar.cause());
         }
       });

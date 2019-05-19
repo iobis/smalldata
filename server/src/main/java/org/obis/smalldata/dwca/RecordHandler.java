@@ -5,6 +5,7 @@ import io.vertx.core.eventbus.ReplyFailure;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import lombok.Value;
+import org.bson.types.ObjectId;
 
 import java.util.List;
 import java.util.Map;
@@ -32,13 +33,18 @@ class RecordHandler {
               var record = dwcRecord.getJsonObject("dwcRecord");
               record.put("id", id);
               dwcRecord.put("dwcRecord", record);
+              dwcRecord.put("_id", ObjectId.get().toHexString());
               return dwcRecord;
             })
             .collect(Collectors.toList());
           var result = dbOperation.insertRecords(records);
           result.setHandler(ar -> message.reply(new JsonObject()
-            .put("id", id)
-            .put("result", ar.result())));
+            .put("dwcaId", id)
+            .put("records", records.stream()
+              .collect(Collectors.groupingBy(dwca -> dwca.getString("dwcTable"))).entrySet().stream()
+              .collect(Collectors.toMap(Map.Entry::getKey, dwcList -> dwcList.getValue().stream()
+                .map(dwca -> dwca.getJsonObject("dwcRecord"))
+                .collect(Collectors.toList()))))));
         });
         break;
       case "update":

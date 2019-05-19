@@ -1,14 +1,13 @@
 package org.obis.smalldata.dwca;
 
 import io.vertx.core.Future;
+import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.ext.mongo.BulkOperation;
 import io.vertx.ext.mongo.MongoClient;
 import org.obis.smalldata.util.UniqueIdGenerator;
 
 import java.util.List;
 import java.util.function.Consumer;
-import java.util.stream.Collectors;
 
 class DbOperation {
 
@@ -41,10 +40,13 @@ class DbOperation {
 
   Future<JsonObject> insertRecords(List<JsonObject> records) {
     var result = Future.<JsonObject>future();
-    var dwcInserts = records.stream()
-      .map(BulkOperation::createInsert)
-      .collect(Collectors.toList());
-    mongoClient.bulkWrite("dwcarecords", dwcInserts, ar -> result.complete(ar.result().toJson()));
+    var dwcInserts = new JsonArray();
+    records.stream()
+      .forEach(dwcInserts::add);
+    mongoClient.runCommand("insert",
+      new JsonObject().put("insert", "dwcarecords")
+        .put("documents", new JsonArray(records)),
+      ar -> result.complete(ar.result()));
     return result;
   }
 
