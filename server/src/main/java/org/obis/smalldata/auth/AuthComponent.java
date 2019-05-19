@@ -21,7 +21,7 @@ import static org.pmw.tinylog.Logger.error;
 import static org.pmw.tinylog.Logger.info;
 import static org.pmw.tinylog.Logger.warn;
 
-public class Auth extends AbstractVerticle {
+public class AuthComponent extends AbstractVerticle {
 
   private static final String VERIFY_KEY = "verifyKey";
   private static final String SIGN_KEY = "signKey";
@@ -30,7 +30,7 @@ public class Auth extends AbstractVerticle {
 
   @Override
   public void start(Future<Void> startFuture) {
-    info("starting module 'Auth'");
+    info("starting module 'AuthComponent'");
     try {
       var authProvider = generateAuthProvider();
       LoginHandler loginHandler = new LoginHandler(authProvider);
@@ -38,7 +38,7 @@ public class Auth extends AbstractVerticle {
       vertx.eventBus().<JsonObject>localConsumer("auth.verify", loginHandler::verifyToken);
       startFuture.complete();
     } catch (InvalidKeyException | InvalidAlgorithmParameterException | NoSuchAlgorithmException e) {
-      error(e, "Cannot start Auth component: possibly wrong algorithm or keys for JWT signing/verification?");
+      error(e, "Cannot start AuthComponent component: possibly wrong algorithm or keys for JWT signing/verification?");
       startFuture.fail(e);
     }
   }

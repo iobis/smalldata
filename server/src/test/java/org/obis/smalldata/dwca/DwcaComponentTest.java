@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 import static org.pmw.tinylog.Logger.info;
 
 @ExtendWith(VertxExtension.class)
-public class DwcaTest {
+public class DwcaComponentTest {
 
   private static TestDb testDb;
 
@@ -33,7 +33,7 @@ public class DwcaTest {
           .put("path", ""),
         "baseUrl", "https://my.domain.org/"));
     vertx.deployVerticle(
-      Dwca.class.getName(),
+      DwcaComponent.class.getName(),
       testContext.succeeding(id -> testContext.completeNow()));
   }
 
