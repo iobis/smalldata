@@ -19,6 +19,7 @@ import static org.pmw.tinylog.Logger.info;
 @ExtendWith(VertxExtension.class)
 public class DatasetComponentTest {
 
+  private static final String QUERY_REF = "ref";
   private static TestDb testDb;
 
   @BeforeAll
@@ -52,7 +53,7 @@ public class DatasetComponentTest {
         assertThat(datasets).hasSize(4);
         var refs = datasets.stream()
           .map(JsonObject.class::cast)
-          .map(jsonObject -> jsonObject.getString(DatasetComponent.QUERY_REF))
+          .map(jsonObject -> jsonObject.getString(QUERY_REF))
           .collect(Collectors.toSet());
         assertThat(refs).containsExactlyInAnyOrder("NnqVLwIyPn-nRkc", "wEaBfmFyQhYCdsk", "ntDOtUc7XsRrIus", "PoJnGNMaxsupE4w");
         testContext.completeNow();
@@ -64,11 +65,11 @@ public class DatasetComponentTest {
     var ref = "ntDOtUc7XsRrIus";
     vertx.eventBus().<JsonArray>send(
       "datasets.query",
-      new JsonObject().put(DatasetComponent.QUERY_REF, ref),
+      new JsonObject().put(QUERY_REF, ref),
       ar -> {
         var datasets = ar.result().body();
         assertThat(datasets).hasSize(1);
-        assertThat(datasets.getJsonObject(0).getString(DatasetComponent.QUERY_REF)).isEqualTo(ref);
+        assertThat(datasets.getJsonObject(0).getString(QUERY_REF)).isEqualTo(ref);
         testContext.completeNow();
       });
   }
@@ -77,7 +78,7 @@ public class DatasetComponentTest {
   void getNotAvailableDataset(Vertx vertx, VertxTestContext testContext) {
     vertx.eventBus().<JsonArray>send(
       "datasets.query",
-      new JsonObject().put(DatasetComponent.QUERY_REF, "unknown"),
+      new JsonObject().put(QUERY_REF, "unknown"),
       ar -> {
         var datasets = ar.result().body();
         assertThat(datasets).hasSize(0);

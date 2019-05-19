@@ -3,7 +3,6 @@ package org.obis.smalldata.dwca;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.ext.mongo.MongoClient;
 import io.vertx.junit5.Timeout;
 import io.vertx.junit5.VertxExtension;
 import io.vertx.junit5.VertxTestContext;
@@ -32,12 +31,11 @@ public class DwcaTest {
         .put("iobis", new JsonObject()))
       .add(new JsonObject().put("iobis", new JsonObject())));
   private static TestDb testDb;
-  private static MongoClient mongoClient;
 
   @BeforeAll
   public static void deployVerticle(Vertx vertx, VertxTestContext testContext) {
     testDb = new TestDb();
-    mongoClient = testDb.init(vertx);
+    testDb.init(vertx);
     vertx.sharedData().getLocalMap("settings")
       .putAll(Map.of("storage", new JsonObject()
         .put("host", "localhost")

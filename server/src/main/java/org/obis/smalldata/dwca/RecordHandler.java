@@ -16,6 +16,8 @@ import static org.pmw.tinylog.Logger.info;
 
 class RecordHandler {
 
+  private static final String COLLECTION_DWCARECORD = "dwcarecords";
+  private static final String DWC_RECORD = "dwcRecord";
   private final DbOperation dbOperation;
 
   RecordHandler(DbOperation dbOperation) {
@@ -25,25 +27,27 @@ class RecordHandler {
   void handleDwcaRecordEvents(Message<JsonObject> message) {
     List<JsonObject> dwcRecords = dwcaRecordToDwcList(message.body());
     var action = message.body().getString("action");
+    info(message.body());
     switch (action) {
       case "insert":
-        dbOperation.withNewId("dwcarecords", id -> {
+        dbOperation.withNewId(COLLECTION_DWCARECORD, id -> {
           var records = dwcRecords.stream()
             .map(dwcRecord -> {
-              var record = dwcRecord.getJsonObject("dwcRecord");
+              var record = dwcRecord.getJsonObject(DWC_RECORD);
               record.put("id", id);
-              dwcRecord.put("dwcRecord", record);
+              dwcRecord.put(DWC_RECORD, record);
               dwcRecord.put("_id", ObjectId.get().toHexString());
               return dwcRecord;
             })
             .collect(Collectors.toList());
           var result = dbOperation.insertRecords(records);
+          info("result {}", result);
           result.setHandler(ar -> message.reply(new JsonObject()
             .put("dwcaId", id)
             .put("records", records.stream()
               .collect(Collectors.groupingBy(dwca -> dwca.getString("dwcTable"))).entrySet().stream()
               .collect(Collectors.toMap(Map.Entry::getKey, dwcList -> dwcList.getValue().stream()
-                .map(dwca -> dwca.getJsonObject("dwcRecord"))
+                .map(dwca -> dwca.getJsonObject(DWC_RECORD))
                 .collect(Collectors.toList()))))));
         });
         break;
@@ -81,7 +85,7 @@ class RecordHandler {
           .put("dwcTable", tableName)
           .put("user_ref", userRef)
           .put("dataset_ref", datasetRef)
-          .put("dwcRecord", dwcRecord));
+          .put(DWC_RECORD, dwcRecord));
     }
   }
 }

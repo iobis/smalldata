@@ -74,8 +74,8 @@ paths:
           description: new occurences data created and stored
           content:
             application/json: {}
-        405:
-          description: invalid input
+        422:
+          description: Invalid request body
   /api/dwca/{datasetRef}/user/{userRef}/records/{dwcaRef}:
     put:
       summary: update (overwrite) a new dwca record
