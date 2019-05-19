@@ -6,7 +6,7 @@ import io.vertx.core.json.JsonObject;
 
 import java.time.Instant;
 
-public class User extends AbstractVerticle {
+public class UserComponent extends AbstractVerticle {
 
   @Override
   public void start(Future<Void> startFuture) {

@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(VertxExtension.class)
-public class WebApiTest {
+public class HttpComponentTest {
 
   private static final int HTTP_PORT = 8080;
   private static final JsonObject CONFIG = new JsonObject().put("port", HTTP_PORT);
@@ -27,7 +27,7 @@ public class WebApiTest {
   @BeforeEach
   void deployVerticle(Vertx vertx, VertxTestContext testContext) {
     vertx.deployVerticle(
-      new WebApi(),
+      new HttpComponent(),
       new DeploymentOptions().setConfig(CONFIG),
       testContext.succeeding(id -> testContext.completeNow()));
   }

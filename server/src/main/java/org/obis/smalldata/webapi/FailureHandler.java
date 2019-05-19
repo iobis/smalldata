@@ -4,7 +4,7 @@ import io.vertx.core.http.HttpHeaders;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 
-public class FailureHandler {
+class FailureHandler {
 
   public static void fallback(RoutingContext context) {
     var error = new JsonObject()

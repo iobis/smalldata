@@ -9,7 +9,7 @@ import io.vertx.ext.web.RoutingContext;
 
 import static org.pmw.tinylog.Logger.info;
 
-public class RssHandler {
+class RssHandler {
 
   public static void fetch(RoutingContext context) {
     var periodicity = context.request().getParam("periodicity");

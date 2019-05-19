@@ -31,7 +31,7 @@ public class WebRssComponentApiTest {
   @BeforeEach
   void deployVerticle(Vertx vertx, VertxTestContext testContext) {
     vertx.deployVerticle(
-      new WebApi(),
+      new HttpComponent(),
       new DeploymentOptions().setConfig(CONFIG),
       testContext.succeeding(id -> testContext.completeNow()));
     vertx.deployVerticle(new MockRssComponent());
