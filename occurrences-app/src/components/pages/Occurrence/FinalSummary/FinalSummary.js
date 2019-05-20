@@ -12,6 +12,7 @@ export default function FinalSummary({
   occurrenceData,
   observationData,
   locationData,
+  measurements,
   onChange,
   onSubmit
 }) {
@@ -87,6 +88,26 @@ export default function FinalSummary({
           <NameValueRow name="identificationRemarks" value={observationData.identificationRemarks}/>
         </tbody>
       </table>
+      <h2 className="title is-5">5 - MEASUREMENT OR FACT</h2>
+      <table className="measurements table is-fullwidth is-striped is-hoverable">
+        <thead>
+          <tr>
+            <th className="type">{t('common.type')}</th>
+            <th className="unit">{t('common.unit')}</th>
+            <th className="value">{t('common.value')}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {measurements.map(({ type, unit, value }, index) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <tr className="fieldrow" key={index}>
+              <td>{type}</td>
+              <td>{unit}</td>
+              <td>{value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   )
 }
@@ -94,6 +115,7 @@ export default function FinalSummary({
 FinalSummary.propTypes = {
   dataset:         PropTypes.shape(datasetShape).isRequired,
   locationData:    PropTypes.shape(locationDataShape).isRequired,
+  measurements:    PropTypes.array.isRequired,
   observationData: PropTypes.shape(observationDataShape).isRequired,
   occurrenceData:  PropTypes.shape(occurrenceDataShape).isRequired,
   onChange:        PropTypes.func.isRequired,

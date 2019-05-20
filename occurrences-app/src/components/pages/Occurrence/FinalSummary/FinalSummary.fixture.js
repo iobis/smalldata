@@ -45,6 +45,15 @@ export function getDefaultProps() {
       identificationQualifier: 'some identification qualifier',
       identificationRemarks:   'some identification remarks',
       references:              ['http://www.google.com', 'https://clojure.org/']
-    }
+    },
+    measurements:    [{
+      type:  'Pressure',
+      unit:  'Decibars',
+      value: '10'
+    }, {
+      type:  'Pressure',
+      unit:  'Decibars',
+      value: '50'
+    }]
   }
 }

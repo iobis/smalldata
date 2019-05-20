@@ -19,6 +19,20 @@ exports[`FinalSummary renders correctly 1`] = `
       "verbatimDepth": "100 - 200 m",
     }
   }
+  measurements={
+    Array [
+      Object {
+        "type": "Pressure",
+        "unit": "Decibars",
+        "value": "10",
+      },
+      Object {
+        "type": "Pressure",
+        "unit": "Decibars",
+        "value": "50",
+      },
+    ]
+  }
   observationData={
     Object {
       "catalogNumber": "IBSS_Benthos_1935_1331",
@@ -585,6 +599,64 @@ exports[`FinalSummary renders correctly 1`] = `
             </td>
           </tr>
         </NameValueRow>
+      </tbody>
+    </table>
+    <h2
+      className="title is-5"
+    >
+      5 - MEASUREMENT OR FACT
+    </h2>
+    <table
+      className="measurements table is-fullwidth is-striped is-hoverable"
+    >
+      <thead>
+        <tr>
+          <th
+            className="type"
+          >
+            common.type
+          </th>
+          <th
+            className="unit"
+          >
+            common.unit
+          </th>
+          <th
+            className="value"
+          >
+            common.value
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          className="fieldrow"
+          key="0"
+        >
+          <td>
+            Pressure
+          </td>
+          <td>
+            Decibars
+          </td>
+          <td>
+            10
+          </td>
+        </tr>
+        <tr
+          className="fieldrow"
+          key="1"
+        >
+          <td>
+            Pressure
+          </td>
+          <td>
+            Decibars
+          </td>
+          <td>
+            50
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>
