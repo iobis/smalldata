@@ -1,12 +1,11 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { useTranslation } from 'react-i18next'
+import { datasetShape } from '../SelectDataset/SelectDataset'
 import { format } from 'date-fns'
-
-const basisOfRecordOptions = ['humanObservation', 'machineObservation', 'fossilSpecimen', 'livingSpecimen', 'preservedSpecimen']
-const lifestageOptions = ['larva', 'juvenile', 'adult', 'unspecified']
-const occurrenceStatusOptions = ['absent', 'present']
-const sexOptions = ['male', 'female', 'unspecified']
+import { locationDataShape } from '../LocationData/LocationData'
+import { observationDataShape } from '../ObservationData/ObservationData'
+import { occurrenceDataShape } from '../OccurrenceData/OccurrenceData'
+import { useTranslation } from 'react-i18next'
 
 export default function FinalSummary({
   dataset,
@@ -93,40 +92,10 @@ export default function FinalSummary({
 }
 
 FinalSummary.propTypes = {
-  dataset:         PropTypes.shape({
-    description: PropTypes.string.isRequired,
-    id:          PropTypes.number.isRequired
-  }).isRequired,
-  locationData:    PropTypes.shape({
-    decimalLongitude:      PropTypes.number,
-    decimalLatitude:       PropTypes.number,
-    coordinateUncertainty: PropTypes.number,
-    minimumDepth:          PropTypes.number,
-    maximumDepth:          PropTypes.number,
-    verbatimCoordinates:   PropTypes.string.isRequired,
-    verbatimDepth:         PropTypes.string.isRequired
-  }).isRequired,
-  observationData: PropTypes.shape({
-    institutionCode:         PropTypes.string.isRequired,
-    collectionCode:          PropTypes.string.isRequired,
-    fieldNumber:             PropTypes.string.isRequired,
-    catalogNumber:           PropTypes.string.isRequired,
-    recordNumber:            PropTypes.string.isRequired,
-    identifiedBy:            PropTypes.arrayOf(PropTypes.string).isRequired,
-    recordedBy:              PropTypes.arrayOf(PropTypes.string).isRequired,
-    identificationQualifier: PropTypes.string.isRequired,
-    identificationRemarks:   PropTypes.string.isRequired,
-    references:              PropTypes.arrayOf(PropTypes.string).isRequired
-  }).isRequired,
-  occurrenceData:  PropTypes.shape({
-    basisOfRecord:    PropTypes.oneOf(basisOfRecordOptions).isRequired,
-    beginDate:        PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.number]).isRequired,
-    endDate:          PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.number]),
-    lifestage:        PropTypes.oneOf(lifestageOptions),
-    occurrenceStatus: PropTypes.oneOf(occurrenceStatusOptions).isRequired,
-    scientificName:   PropTypes.string.isRequired,
-    sex:              PropTypes.oneOf(sexOptions)
-  }).isRequired,
+  dataset:         PropTypes.shape(datasetShape).isRequired,
+  locationData:    PropTypes.shape(locationDataShape).isRequired,
+  observationData: PropTypes.shape(observationDataShape).isRequired,
+  occurrenceData:  PropTypes.shape(occurrenceDataShape).isRequired,
   onChange:        PropTypes.func.isRequired,
   onSubmit:        PropTypes.func.isRequired
 }

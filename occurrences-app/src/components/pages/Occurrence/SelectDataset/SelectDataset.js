@@ -19,7 +19,7 @@ export default function SelectDataset({ datasets, selectedDataset, onChange }) {
   )
 }
 
-const datasetShape = {
+export const datasetShape = {
   id:          PropTypes.number.isRequired,
   description: PropTypes.string.isRequired
 }

@@ -69,15 +69,17 @@ export default function OccurrenceData({ onChange, data }) {
   )
 }
 
+export const occurrenceDataShape = {
+  basisOfRecord:    PropTypes.oneOf(basisOfRecordOptions).isRequired,
+  beginDate:        PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.number]).isRequired,
+  endDate:          PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.number]),
+  lifestage:        PropTypes.oneOf(lifestageOptions),
+  occurrenceStatus: PropTypes.oneOf(occurrenceStatusOptions).isRequired,
+  scientificName:   PropTypes.string.isRequired,
+  sex:              PropTypes.oneOf(sexOptions)
+}
+
 OccurrenceData.propTypes = {
-  data:     PropTypes.shape({
-    basisOfRecord:    PropTypes.oneOf(basisOfRecordOptions).isRequired,
-    beginDate:        PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.number]).isRequired,
-    endDate:          PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.number]),
-    lifestage:        PropTypes.oneOf(lifestageOptions),
-    occurrenceStatus: PropTypes.oneOf(occurrenceStatusOptions).isRequired,
-    scientificName:   PropTypes.string.isRequired,
-    sex:              PropTypes.oneOf(sexOptions)
-  }).isRequired,
+  data:     PropTypes.shape(occurrenceDataShape).isRequired,
   onChange: PropTypes.func.isRequired
 }
