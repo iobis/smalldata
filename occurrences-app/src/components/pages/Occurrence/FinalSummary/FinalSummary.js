@@ -6,9 +6,11 @@ import { locationDataShape } from '../LocationData/LocationData'
 import { observationDataShape } from '../ObservationData/ObservationData'
 import { occurrenceDataShape } from '../OccurrenceData/OccurrenceData'
 import { useTranslation } from 'react-i18next'
+import DarwinCoreFields, { darwinCoreFieldShape } from '../DarwinCoreFields/DarwinCoreFields'
 
 export default function FinalSummary({
   dataset,
+  darwinCoreFields,
   occurrenceData,
   observationData,
   locationData,
@@ -108,18 +110,28 @@ export default function FinalSummary({
           ))}
         </tbody>
       </table>
+      <h2 className="title is-5">6 - DARWIN CORE FIELDS</h2>
+      <table className="table is-striped is-fullwidth is-hoverable">
+        <tbody>
+          {darwinCoreFields.map((field, index) =>
+            // eslint-disable-next-line react/no-array-index-key
+            <NameValueRow key={index} {...field}/>
+          )}
+        </tbody>
+      </table>
     </div>
   )
 }
 
 FinalSummary.propTypes = {
-  dataset:         PropTypes.shape(datasetShape).isRequired,
-  locationData:    PropTypes.shape(locationDataShape).isRequired,
-  measurements:    PropTypes.array.isRequired,
-  observationData: PropTypes.shape(observationDataShape).isRequired,
-  occurrenceData:  PropTypes.shape(occurrenceDataShape).isRequired,
-  onChange:        PropTypes.func.isRequired,
-  onSubmit:        PropTypes.func.isRequired
+  darwinCoreFields: PropTypes.arrayOf(PropTypes.shape(darwinCoreFieldShape)).isRequired,
+  dataset:          PropTypes.shape(datasetShape).isRequired,
+  locationData:     PropTypes.shape(locationDataShape).isRequired,
+  measurements:     PropTypes.array.isRequired,
+  observationData:  PropTypes.shape(observationDataShape).isRequired,
+  occurrenceData:   PropTypes.shape(occurrenceDataShape).isRequired,
+  onChange:         PropTypes.func.isRequired,
+  onSubmit:         PropTypes.func.isRequired
 }
 
 function NameValueRow({ name, value }) {

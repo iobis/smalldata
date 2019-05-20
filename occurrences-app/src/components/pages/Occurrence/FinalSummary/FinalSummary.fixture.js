@@ -12,11 +12,11 @@ export default [{
 
 export function getDefaultProps() {
   return {
-    dataset:         {
+    dataset:          {
       id:          1,
       description: 'NPPSD Short-tailed Albatross Sightings'
     },
-    occurrenceData:  {
+    occurrenceData:   {
       basisOfRecord:    'humanObservation',
       beginDate:        Date.UTC(2019, 3, 29),
       endDate:          Date.UTC(2019, 3, 30),
@@ -25,7 +25,7 @@ export function getDefaultProps() {
       scientificName:   'ala abra',
       sex:              'male'
     },
-    locationData:    {
+    locationData:     {
       decimalLongitude:      2.345456,
       decimalLatitude:       51.3354656,
       coordinateUncertainty: null,
@@ -34,7 +34,7 @@ export function getDefaultProps() {
       verbatimCoordinates:   '41 05 54S 121 05 34W',
       verbatimDepth:         '100 - 200 m'
     },
-    observationData: {
+    observationData:  {
       institutionCode:         'IBSS',
       collectionCode:          'R/V N. Danilevskiy 1935 Azov Sea benthos data',
       fieldNumber:             '557',
@@ -46,14 +46,14 @@ export function getDefaultProps() {
       identificationRemarks:   'some identification remarks',
       references:              ['http://www.google.com', 'https://clojure.org/']
     },
-    measurements:    [{
-      type:  'Pressure',
-      unit:  'Decibars',
-      value: '10'
-    }, {
-      type:  'Pressure',
-      unit:  'Decibars',
-      value: '50'
-    }]
+    measurements:     [
+      { type: 'Pressure', unit: 'Decibars', value: '10' },
+      { type: 'Pressure', unit: 'Decibars', value: '50' }
+    ],
+    darwinCoreFields: [
+      { name: 'name-1', value: 'value-1' },
+      { name: 'name-2', value: 'value-2' },
+      { name: 'name-3', value: 'value-3' }
+    ]
   }
 }

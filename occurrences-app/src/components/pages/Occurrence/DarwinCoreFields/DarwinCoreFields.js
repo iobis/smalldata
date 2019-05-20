@@ -64,10 +64,12 @@ export default function DarwinCoreFields({ fields, onChange }) {
   )
 }
 
+export const darwinCoreFieldShape = {
+  name:  PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired
+}
+
 DarwinCoreFields.propTypes = {
-  fields:   PropTypes.arrayOf(PropTypes.shape({
-    name:  PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired
-  })).isRequired,
+  fields:   PropTypes.arrayOf(PropTypes.shape(darwinCoreFieldShape)).isRequired,
   onChange: PropTypes.func.isRequired
 }

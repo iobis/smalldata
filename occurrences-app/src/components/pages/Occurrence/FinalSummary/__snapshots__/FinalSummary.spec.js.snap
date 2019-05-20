@@ -2,6 +2,22 @@
 
 exports[`FinalSummary renders correctly 1`] = `
 <FinalSummary
+  darwinCoreFields={
+    Array [
+      Object {
+        "name": "name-1",
+        "value": "value-1",
+      },
+      Object {
+        "name": "name-2",
+        "value": "value-2",
+      },
+      Object {
+        "name": "name-3",
+        "value": "value-3",
+      },
+    ]
+  }
   dataset={
     Object {
       "description": "NPPSD Short-tailed Albatross Sightings",
@@ -657,6 +673,77 @@ exports[`FinalSummary renders correctly 1`] = `
             50
           </td>
         </tr>
+      </tbody>
+    </table>
+    <h2
+      className="title is-5"
+    >
+      6 - DARWIN CORE FIELDS
+    </h2>
+    <table
+      className="table is-striped is-fullwidth is-hoverable"
+    >
+      <tbody>
+        <NameValueRow
+          key="0"
+          name="name-1"
+          value="value-1"
+        >
+          <tr
+            className="name-value-row fieldrow"
+          >
+            <td
+              className="name"
+            >
+              name-1
+            </td>
+            <td
+              className="value"
+            >
+              value-1
+            </td>
+          </tr>
+        </NameValueRow>
+        <NameValueRow
+          key="1"
+          name="name-2"
+          value="value-2"
+        >
+          <tr
+            className="name-value-row fieldrow"
+          >
+            <td
+              className="name"
+            >
+              name-2
+            </td>
+            <td
+              className="value"
+            >
+              value-2
+            </td>
+          </tr>
+        </NameValueRow>
+        <NameValueRow
+          key="2"
+          name="name-3"
+          value="value-3"
+        >
+          <tr
+            className="name-value-row fieldrow"
+          >
+            <td
+              className="name"
+            >
+              name-3
+            </td>
+            <td
+              className="value"
+            >
+              value-3
+            </td>
+          </tr>
+        </NameValueRow>
       </tbody>
     </table>
   </div>
