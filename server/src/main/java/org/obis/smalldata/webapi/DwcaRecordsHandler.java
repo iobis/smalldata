@@ -34,16 +34,18 @@ public class DwcaRecordsHandler {
       if (arMessages.result().isEmpty()) {
         context.vertx().eventBus().<JsonObject>send(
           "dwca.record",
-          new JsonObject().put("action", "insert")
+          new JsonObject()
+            .put("action", "insert")
             .put("datasetRef", datasetRef)
             .put("userRef", userRef)
             .put("record", context.getBodyAsJson()),
-          ar -> context.response()
+          ar -> context
+            .response()
             .putHeader(HttpHeaders.CONTENT_TYPE, "application/json")
             .end(ar.result().body().encode()));
       } else {
         var jsonMessages = new JsonArray();
-        arMessages.result().stream().forEach(jsonMessages::add);
+        arMessages.result().forEach(jsonMessages::add);
         context.response()
           .setStatusCode(422)
           .setStatusMessage("Invalid request body")
