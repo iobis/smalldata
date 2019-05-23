@@ -13,7 +13,7 @@ import io.vertx.core.Future;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.mongo.MongoClient;
-import org.obis.smalldata.dbcontroller.BulkOperationUtil;
+import org.obis.smalldata.util.BulkOperationUtil;
 
 import java.io.IOException;
 import java.util.concurrent.CountDownLatch;
@@ -43,12 +43,12 @@ public class TestDb {
       var dwcaFuture = Future.<Long>future();
       var mongoClient = MongoClient.createNonShared(vertx, dbClientConfig);
       mongoClient.bulkWrite("dwcarecords",
-        BulkOperationUtil.createOperationsFromFile("testdata/dwca/dwcarecords.json"),
+        BulkOperationUtil.createInsertsFromFile("testdata/dwca/dwcarecords.json"),
         client -> dwcaFuture.complete(client.result().getInsertedCount()));
       dwcaFuture.setHandler(res -> info("added {} dwca records", res));
       var datasetFuture = Future.<Long>future();
       mongoClient.bulkWrite("datasets",
-        BulkOperationUtil.createOperationsFromFile("testdata/dwca/datasets.json"),
+        BulkOperationUtil.createInsertsFromFile("testdata/dwca/datasets.json"),
         client -> datasetFuture.complete(client.result().getInsertedCount()));
       datasetFuture.setHandler(res -> info("added {} dwca records", res));
 

@@ -41,7 +41,6 @@ public class WebOccurenceApiTest {
       .sendJson(new JsonObject(),
         result -> {
           Logger.info(result);
-          Logger.info(result.result().body());
           testContext.completeNow();
         });
   }

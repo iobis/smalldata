@@ -3,6 +3,9 @@ package org.obis.smalldata.dbcontroller;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.mongo.MongoClient;
+import org.obis.smalldata.util.BulkOperationUtil;
+import org.obis.smalldata.util.Collections;
+import org.obis.smalldata.util.DbConst;
 import org.obis.util.file.IoFile;
 
 import java.util.List;
@@ -23,7 +26,7 @@ public class DbInitializer {
     client.find(
       Collections.USERS.dbName(),
       new JsonObject().put("userid", userId),
-      arUserId -> info("userID: {}", arUserId.result()));
+      arUserId -> info("userId: {}", arUserId.result()));
     client.insert(
       Collections.USERS.dbName(),
       new JsonObject()
@@ -34,7 +37,9 @@ public class DbInitializer {
       arObjectId -> {
         var objectId = arObjectId.result();
         info("added object {}", objectId);
-        client.find("users", new JsonObject().put("userid", userId),
+        client.find(
+          "users",
+          new JsonObject().put("userid", userId),
           arRecord -> info(arRecord.result()));
       });
   }
@@ -50,7 +55,7 @@ public class DbInitializer {
           entry[0],
           new JsonObject()
             .put(entry[1], 1)
-            .put("collation", Const.INSTANCE.collation)
+            .put("collation", DbConst.INSTANCE.collation)
             .put("background", true),
           x -> info("created index '{}.{}'", entry[0], entry[1])));
   }
@@ -62,7 +67,7 @@ public class DbInitializer {
       "dwcarecords", "demodata/dwcarecords.json")
       .entrySet().stream()
       .map(entry -> Map.entry(entry.getKey(), IoFile.loadFromResources(entry.getValue())))
-      .map(entry -> Map.entry(entry.getKey(), BulkOperationUtil.createOperationsFromJson(entry.getValue())))
+      .map(entry -> Map.entry(entry.getKey(), BulkOperationUtil.createInsertsFromJson(entry.getValue())))
       .forEach(entry -> client.bulkWrite(
         entry.getKey(),
         entry.getValue(),
@@ -71,9 +76,9 @@ public class DbInitializer {
 
   void mockData() {
     warn("Adding mock data!");
-    client.getCollections(arColls -> {
-      if (arColls.result() != null) {
-        arColls.result().forEach(coll -> client.dropCollection(coll, ar ->
+    client.getCollections(arCollections -> {
+      if (arCollections.result() != null) {
+        arCollections.result().forEach(coll -> client.dropCollection(coll, ar ->
           info("Dropped collection {}", coll)));
       }
     });
@@ -81,15 +86,15 @@ public class DbInitializer {
   }
 
   void setupCollections() {
-    client.getCollections(arColls -> {
-      var colls = arColls.result();
-      if (colls.isEmpty()) {
+    client.getCollections(arCollections -> {
+      var collections = arCollections.result();
+      if (collections.isEmpty()) {
         info("No data found, creating indices");
         addIndices();
-      } else if (colls.contains("users") && colls.contains("datasets")) {
-        info("Found collections {} - OK", colls);
+      } else if (collections.contains("users") && collections.contains("datasets")) {
+        info("Found collections {} - OK", collections);
       } else {
-        warn("Found not all collections {} - No clue what to do now", colls);
+        warn("Found not all collections {} - No clue what to do now", collections);
       }
     });
   }

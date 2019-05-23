@@ -12,14 +12,16 @@ import java.util.List;
 
 public class DwcaComponent extends AbstractVerticle {
 
-  private DbQuery dbQuery;
+  private DbOperation dbQuery;
 
   @Override
   public void start(Future<Void> startFuture) {
     var dbConfig = (JsonObject) vertx.sharedData().getLocalMap("settings").get("storage");
     var mongoClient = MongoClient.createShared(vertx, dbConfig);
-    dbQuery = new DbQuery(mongoClient);
+    dbQuery = new DbOperation(mongoClient);
+    var recordHandler = new RecordHandler(dbQuery);
     vertx.eventBus().localConsumer("dwca", this::handleDwcaEvents);
+    vertx.eventBus().localConsumer("dwca.record", recordHandler::handleDwcaRecordEvents);
     startFuture.complete();
   }
 
@@ -29,8 +31,9 @@ public class DwcaComponent extends AbstractVerticle {
       generateZipFile(message.body().getString("findDataset"))
         .setHandler(zip -> message.reply(zip.result()));
     } else {
-      message.fail(ReplyFailure.RECIPIENT_FAILURE.toInt(), "Action " + action
-        + " not found on address " + message.address());
+      message.fail(
+        ReplyFailure.RECIPIENT_FAILURE.toInt(),
+        "Action " + action + " not found on address " + message.address());
     }
   }
 
