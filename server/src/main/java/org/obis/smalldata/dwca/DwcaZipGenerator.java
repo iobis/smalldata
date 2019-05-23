@@ -38,12 +38,18 @@ class DwcaZipGenerator {
     try {
       var tempDirectory = Files.createTempDirectory("iobis-dwca");
       var emlXml = new File(tempDirectory + "/eml.xml");
-      if (!new EmlGenerator().writeXml(dataset,
-        StringTemplate.interpolate("#{baseUrl}#{datasetRef}",
-          Map.of("baseUrl", baseUrl, "datasetRef", dataset.getString("_ref"))),
-        emlXml)) {
-        error("Cannot create eml file {}", emlXml);
-        throw new IOException("Failed to create:  " + emlXml);
+      var success = new EmlGenerator().writeXml(
+        dataset,
+        StringTemplate.interpolate(
+          "#{baseUrl}#{datasetRef}",
+          Map.of(
+            "baseUrl", baseUrl,
+            "datasetRef", dataset.getString("_ref"))),
+        emlXml);
+      if (!success) {
+        var message = "Cannot create eml file " + emlXml;
+        error(message);
+        throw new IOException(message);
       }
       var csvFiles = generateCsvFiles(dwcaRecords, tempDirectory);
       var metaXml = generateMetaFile(dataset, csvFiles, tempDirectory);
