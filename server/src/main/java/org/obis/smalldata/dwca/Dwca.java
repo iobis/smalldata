@@ -31,8 +31,9 @@ public class Dwca extends AbstractVerticle {
       generateZipFile(message.body().getString("findDataset"))
         .setHandler(zip -> message.reply(zip.result()));
     } else {
-      message.fail(ReplyFailure.RECIPIENT_FAILURE.toInt(), "Action " + action
-        + " not found on address " + message.address());
+      message.fail(
+        ReplyFailure.RECIPIENT_FAILURE.toInt(),
+        "Action " + action + " not found on address " + message.address());
     }
   }
 

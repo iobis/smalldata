@@ -42,8 +42,10 @@ class DbOperation {
     var result = Future.<JsonObject>future();
     var dwcInserts = new JsonArray();
     records.stream().forEach(dwcInserts::add);
-    mongoClient.runCommand("insert",
-      new JsonObject().put("insert", "dwcarecords")
+    mongoClient.runCommand(
+      "insert",
+      new JsonObject()
+        .put("insert", "dwcarecords")
         .put("documents", new JsonArray(records)),
       ar -> result.complete(ar.result()));
     return result;

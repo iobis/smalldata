@@ -19,13 +19,15 @@ public class UniqueIdGenerator {
 
   public void consumeNewId(String collection, String idField, Consumer<String> idConsumer) {
     var newId = generateId();
-    client.find(collection, new JsonObject().put(idField, newId),
+    client.find(
+      collection,
+      new JsonObject().put(idField, newId),
       arId -> {
-        var result = arId.result();
-        if (result.isEmpty()) {
+        var id = arId.result();
+        if (id.isEmpty()) {
           idConsumer.accept(newId);
         } else {
-          this.consumeNewId(collection, idField, idConsumer);
+          consumeNewId(collection, idField, idConsumer);
         }
       });
   }

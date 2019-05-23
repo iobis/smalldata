@@ -25,9 +25,10 @@ class RecordHandler {
   }
 
   void handleDwcaRecordEvents(Message<JsonObject> message) {
-    List<JsonObject> dwcRecords = dwcaRecordToDwcList(message.body());
-    var action = message.body().getString("action");
-    info(message.body());
+    var body = message.body();
+    info(body);
+    List<JsonObject> dwcRecords = dwcaRecordToDwcList(body);
+    var action = body.getString("action");
     switch (action) {
       case "insert":
         dbOperation.withNewId(COLLECTION_DWCARECORD, id -> {
@@ -41,22 +42,27 @@ class RecordHandler {
             })
             .collect(Collectors.toList());
           var result = dbOperation.insertRecords(records);
-          info("result {}", result);
+          info("insertion result {}", result);
           result.setHandler(ar -> message.reply(new JsonObject()
             .put("dwcaId", id)
             .put("records", records.stream()
-              .collect(Collectors.groupingBy(dwca -> dwca.getString("dwcTable"))).entrySet().stream()
-              .collect(Collectors.toMap(Map.Entry::getKey, dwcList -> dwcList.getValue().stream()
-                .map(dwca -> dwca.getJsonObject(DWC_RECORD))
-                .collect(Collectors.toList()))))));
+              .collect(Collectors.groupingBy(dwca -> dwca.getString("dwcTable")))
+              .entrySet()
+              .stream()
+              .collect(Collectors.toMap(
+                Map.Entry::getKey,
+                dwcList -> dwcList.getValue().stream()
+                  .map(dwca -> dwca.getJsonObject(DWC_RECORD))
+                  .collect(Collectors.toList()))))));
         });
         break;
       case "update":
-        info("update record {}", message.body().getString("record"));
+        info("update record {}", body.getString("record"));
         break;
       default:
-        message.fail(ReplyFailure.RECIPIENT_FAILURE.toInt(), "Action " + action
-          + " not found on address " + message.address());
+        message.fail(
+          ReplyFailure.RECIPIENT_FAILURE.toInt(),
+          "Action " + action + " not found on address " + message.address());
     }
   }
 
@@ -71,8 +77,7 @@ class RecordHandler {
   }
 
   @Value
-  static class DwcTableListMapper {
-
+  private static class DwcTableListMapper {
     private final String userRef;
     private final String datasetRef;
 
