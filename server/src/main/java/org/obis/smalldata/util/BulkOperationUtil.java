@@ -21,21 +21,20 @@ public class BulkOperationUtil {
   }
 
   public static List<BulkOperation> createInsertsFromFile(String path) {
-    warn("reading file for dbcontroller import {}", path);
+    warn("reading file for import {}", path);
     return createInsertsFromJson(IoFile.loadFromResources(path));
   }
 
   public static List<BulkOperation> createInsertsFromJson(String json) {
     try {
-      List<Map<String, Object>> l = MAPPER.readValue(json, new TypeReference<List<Map<String, Object>>>() {
+      List<Map<String, Object>> list = MAPPER.readValue(json, new TypeReference<List<Map<String, Object>>>() {
       });
-      return l.stream()
-        .map(jsonmap -> BulkOperation.createInsert(new JsonObject(jsonmap)))
+      return list.stream()
+        .map(jsonMap -> BulkOperation.createInsert(new JsonObject(jsonMap)))
         .collect(Collectors.toList());
     } catch (IOException e) {
       warn("could not map to inserts: {}", json);
       return List.of();
     }
   }
-
 }
