@@ -55,19 +55,19 @@ public class DwcaRecordsHandler {
   @Value
   static class DwcaBodyValidator {
 
-    private final EventBus eb;
+    private final EventBus eventBus;
     private final String datasetRef;
     private final String userRef;
 
     Future<Boolean> userExists() {
       var exists = Future.<Boolean>future();
-      eb.<Boolean>send("users.exists", userRef, ar -> exists.complete(ar.result().body()));
+      eventBus.<Boolean>send("users.exists", userRef, ar -> exists.complete(ar.result().body()));
       return exists;
     }
 
     Future<Boolean> datasetExists() {
       var exists = Future.<Boolean>future();
-      eb.<Boolean>send("datasets.exists", datasetRef, ar -> {
+      eventBus.<Boolean>send("datasets.exists", datasetRef, ar -> {
         info(ar);
         exists.complete(ar.result().body());
       });
