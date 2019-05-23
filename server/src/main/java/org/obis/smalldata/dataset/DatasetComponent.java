@@ -9,10 +9,12 @@ import io.vertx.ext.mongo.MongoClient;
 
 import java.util.stream.Collectors;
 
+import static org.pmw.tinylog.Logger.info;
+
 public class DatasetComponent extends AbstractVerticle {
 
   private static final String KEY_REF = "_ref";
-  public static final String QUERY_REF = "ref";
+  private static final String QUERY_REF = "ref";
 
   private MongoClient mongoClient;
 
@@ -21,7 +23,15 @@ public class DatasetComponent extends AbstractVerticle {
     var dbConfig = (JsonObject) vertx.sharedData().getLocalMap("settings").get("storage");
     mongoClient = MongoClient.createShared(vertx, dbConfig);
     vertx.eventBus().localConsumer("datasets.query", this::handleDatasetEvents);
+    vertx.eventBus().localConsumer("datasets.exists", this::handleExists);
     startFuture.complete();
+  }
+
+  private void handleExists(Message<String> message) {
+    //TODO: check against db
+    var userRef = message.body();
+    info(userRef);
+    message.reply(true);
   }
 
   private void handleDatasetEvents(Message<JsonObject> message) {

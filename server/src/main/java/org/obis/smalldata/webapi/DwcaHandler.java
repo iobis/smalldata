@@ -10,7 +10,7 @@ class DwcaHandler {
 
   static void get(RoutingContext context) {
     info("context: {}", context.request());
-    var dataset = context.request().getParam("dataset");
+    var dataset = context.request().getParam("datasetRef");
     context.vertx().eventBus().<JsonObject>send(
       "dwca",
       new JsonObject()

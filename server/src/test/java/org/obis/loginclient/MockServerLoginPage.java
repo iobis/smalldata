@@ -6,7 +6,7 @@ import io.vertx.core.VertxOptions;
 import io.vertx.core.file.FileSystemOptions;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.handler.StaticHandler;
-import org.obis.smalldata.dbcontroller.SecureRandomString;
+import org.obis.smalldata.util.SecureRandomString;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;

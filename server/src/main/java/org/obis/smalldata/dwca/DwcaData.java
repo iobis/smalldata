@@ -41,7 +41,7 @@ class DwcaData {
       .map(DwcaData::mapNsFields)
       .map(entry -> new JsonObject().put("id", id).mergeIn(entry))
       .reduce(JsonObject::mergeIn)
-      .get();
+      .orElseGet(() -> new JsonObject());
   }
 
   private static JsonObject mapNsFields(Map.Entry<String, Object> nsFields) {
