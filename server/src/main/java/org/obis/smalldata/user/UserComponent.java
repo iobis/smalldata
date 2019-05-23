@@ -9,7 +9,7 @@ import java.time.Instant;
 
 import static org.pmw.tinylog.Logger.info;
 
-public class User extends AbstractVerticle {
+public class UserComponent extends AbstractVerticle {
 
   @Override
   public void start(Future<Void> startFuture) {
