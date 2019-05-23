@@ -17,6 +17,8 @@ import org.obis.smalldata.util.SecureRandomString;
 
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -47,17 +49,20 @@ public class DwcaRecordsHandlerTest {
     var url = "/api/dwca/wEaBfmFyQhYCdsk/user/"
       + URLEncoder.encode("dithras@game.play", StandardCharsets.UTF_8)
       + "/records";
-    vertx.eventBus().localConsumer("dwca.record", message ->
-      message.reply(new JsonObject().put("dwcaId", SecureRandomString.generateId())));
-    client.post(HTTP_PORT, "localhost", url)
+    vertx.eventBus().localConsumer(
+      "dwca.record",
+      message -> message.reply(new JsonObject().put("dwcaId", SecureRandomString.generateId())));
+    client
+      .post(HTTP_PORT, "localhost", url)
       .as(BodyCodec.jsonObject())
-      .sendJson(new JsonObject().put("core", OCCURRENCE)
-          .put(OCCURRENCE, new JsonArray().add(new JsonObject())),
+      .sendJson(new JsonObject(Map.of(
+        "core", OCCURRENCE,
+        OCCURRENCE, new JsonArray().add(new JsonObject()))),
         ar -> {
           assertThat(ar.succeeded()).isTrue();
-          var reply = ar.result().body();
-          assertThat(reply.containsKey("dwcaId")).isTrue();
-          assertThat(reply.getString("dwcaId")).hasSize(15);
+          var resonse = ar.result().body();
+          assertThat(resonse.containsKey("dwcaId")).isTrue();
+          assertThat(resonse.getString("dwcaId")).hasSize(15);
           context.completeNow();
         });
   }
@@ -72,15 +77,18 @@ public class DwcaRecordsHandlerTest {
     var url = "/api/dwca/wEaBfmFyQhYCdsk/user/"
       + URLEncoder.encode("dithras@game.play", StandardCharsets.UTF_8)
       + "/records";
-    client.post(HTTP_PORT, "localhost", url)
+    client
+      .post(HTTP_PORT, "localhost", url)
       .as(BodyCodec.jsonObject())
-      .sendJson(new JsonObject().put("core", OCCURRENCE)
-          .put(OCCURRENCE, new JsonArray().add(new JsonObject()).add(new JsonObject())),
+      .sendJson(new JsonObject(Map.of(
+        "core", OCCURRENCE,
+        OCCURRENCE, new JsonArray(List.of(new JsonObject(), new JsonObject())))),
         ar -> {
           assertThat(ar.succeeded()).isTrue();
           assertThat(ar.result().statusCode()).isEqualTo(422);
           assertThat(ar.result().statusMessage()).isEqualTo("Invalid request body");
-          assertThat(ar.result().body().getJsonArray("messages")).hasSize(1);
+          assertThat(ar.result().body().getJsonArray("messages")).containsOnly(
+            "core table 'occurrence' can have only 1 record.");
           context.completeNow();
         });
   }
@@ -89,13 +97,14 @@ public class DwcaRecordsHandlerTest {
   @DisplayName("multiple messages: no item in occurrence, wrong userRef")
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
   void testPostHandlerMultipleMessages(Vertx vertx, VertxTestContext context) {
-    addItemRefs(vertx, true, false);
+    addItemRefs(vertx, false);
 
     var client = WebClient.create(vertx);
     var url = "/api/dwca/wEaBfmFyQhYCdsk/user/"
       + URLEncoder.encode("whatever", StandardCharsets.UTF_8)
       + "/records";
-    client.post(HTTP_PORT, "localhost", url)
+    client
+      .post(HTTP_PORT, "localhost", url)
       .as(BodyCodec.jsonObject())
       .sendJson(new JsonObject().put("core", OCCURRENCE)
           .put(OCCURRENCE, new JsonArray()),
@@ -103,24 +112,25 @@ public class DwcaRecordsHandlerTest {
           assertThat(ar.succeeded()).isTrue();
           assertThat(ar.result().statusCode()).isEqualTo(422);
           assertThat(ar.result().statusMessage()).isEqualTo("Invalid request body");
-          assertThat(ar.result().body().getJsonArray("messages")).hasSize(2);
+          assertThat(ar.result().body().getJsonArray("messages")).containsExactly(
+            "core table 'occurrence' can have only 1 record.",
+            "user with ref 'whatever' does not exist.");
           context.completeNow();
         });
   }
 
-  private void addItemRefs(Vertx vertx, Boolean datasetRef, Boolean userRef) {
+  private void addSucceedingRefs(Vertx vertx) {
+    addItemRefs(vertx, true);
+  }
+
+  private void addItemRefs(Vertx vertx, boolean userRef) {
     vertx.eventBus().localConsumer("datasets.exists", ar -> {
       info(ar.body());
-      ar.reply(datasetRef);
+      ar.reply(true);
     });
     vertx.eventBus().localConsumer("users.exists", ar -> {
       info(ar.body());
       ar.reply(userRef);
     });
   }
-
-  private void addSucceedingRefs(Vertx vertx) {
-    addItemRefs(vertx, true, true);
-  }
-
 }

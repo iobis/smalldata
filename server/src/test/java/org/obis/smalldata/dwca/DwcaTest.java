@@ -23,12 +23,12 @@ import static org.pmw.tinylog.Logger.info;
 @ExtendWith(VertxExtension.class)
 public class DwcaTest {
 
-  private static final JsonObject DWCA_OCCURRENCE_RECORD = new JsonObject().put("core", "occurrence")
+  private static final JsonObject DWCA_OCCURRENCE_RECORD = new JsonObject()
+    .put("core", "occurrence")
     .put("occurrence", new JsonArray()
       .add(new JsonObject().put("iobis", new JsonObject())))
     .put("emof", new JsonArray()
-      .add(new JsonObject().put("purl", new JsonObject())
-        .put("iobis", new JsonObject()))
+      .add(new JsonObject().put("purl", new JsonObject()).put("iobis", new JsonObject()))
       .add(new JsonObject().put("iobis", new JsonObject())));
   private static TestDb testDb;
 
@@ -37,10 +37,12 @@ public class DwcaTest {
     testDb = new TestDb();
     testDb.init(vertx);
     vertx.sharedData().getLocalMap("settings")
-      .putAll(Map.of("storage", new JsonObject()
-        .put("host", "localhost")
-          .put("port", 12345)
-          .put("path", ""),
+      .putAll(Map.of(
+        "storage",
+        new JsonObject(Map.of(
+          "host", "localhost",
+          "port", 12345,
+          "path", "")),
         "baseUrl", "https://my.domain.org/"));
     vertx.deployVerticle(
       Dwca.class.getName(),
@@ -58,9 +60,10 @@ public class DwcaTest {
   void testGenerateZipFile(Vertx vertx, VertxTestContext testContext) {
     vertx.eventBus().<JsonObject>send(
       "dwca",
-      new JsonObject()
-        .put("action", "generate")
-        .put("findDataset", "NnqVLwIyPn-nRkc"),
+      new JsonObject(Map.of(
+        "action", "generate",
+        "findDataset", "NnqVLwIyPn-nRkc"
+      )),
       ar -> {
         if (ar.succeeded()) {
           JsonObject body = ar.result().body();
@@ -79,11 +82,12 @@ public class DwcaTest {
   void testAddDwcaRecord(Vertx vertx, VertxTestContext testContext) {
     vertx.eventBus().<JsonObject>send(
       "dwca.record",
-      new JsonObject()
-        .put("action", "insert")
-        .put("userRef", "someuser")
-        .put("datasetRef", "NnqVLwIyPn-nRkc")
-        .put("record", DWCA_OCCURRENCE_RECORD),
+      new JsonObject(Map.of(
+        "action", "insert",
+        "userRef", "someuser",
+        "datasetRef", "NnqVLwIyPn-nRkc",
+        "record", DWCA_OCCURRENCE_RECORD
+      )),
       ar -> {
         if (ar.succeeded()) {
           JsonObject body = ar.result().body();
