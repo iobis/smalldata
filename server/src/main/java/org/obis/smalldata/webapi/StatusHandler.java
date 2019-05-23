@@ -3,7 +3,7 @@ package org.obis.smalldata.webapi;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 
-public class StatusHandler {
+class StatusHandler {
 
   public static void status(RoutingContext context) {
     context.response()

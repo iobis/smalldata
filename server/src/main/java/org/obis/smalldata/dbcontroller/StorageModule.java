@@ -20,7 +20,7 @@ import static org.pmw.tinylog.Logger.error;
 import static org.pmw.tinylog.Logger.info;
 import static org.pmw.tinylog.Logger.warn;
 
-public class EmbeddedDb extends AbstractVerticle {
+public class StorageModule extends AbstractVerticle {
   private static final MongodStarter MONGOD_STARTER = MongodStarter.getDefaultInstance();
   private static final String BIND_IP_DEFAULT = "localhost";
   private static final int PORT_DEFAULT = 27017;

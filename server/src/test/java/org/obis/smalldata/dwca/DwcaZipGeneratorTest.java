@@ -11,7 +11,6 @@ import org.junit.jupiter.api.Test;
 import org.obis.smalldata.testutil.TestDb;
 
 import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 import java.util.Optional;
@@ -77,6 +76,6 @@ public class DwcaZipGeneratorTest {
     assertThat(fileNamesInZip.get(2)).isEqualTo("meta.xml");
     assertThat(fileNamesInZip.get(3)).matches("occurrence[0-9]+.txt");
     zipFile.close();
-    Files.delete(path);
+    //Files.delete(path);
   }
 }

@@ -34,7 +34,7 @@ public class DwcaRecordsHandlerTest {
   @BeforeEach
   void deployVerticle(Vertx vertx, VertxTestContext testContext) {
     vertx.deployVerticle(
-      new WebApi(),
+      new HttpComponent(),
       new DeploymentOptions().setConfig(CONFIG),
       testContext.succeeding(id -> testContext.completeNow()));
   }
@@ -60,9 +60,9 @@ public class DwcaRecordsHandlerTest {
         OCCURRENCE, new JsonArray().add(new JsonObject()))),
         ar -> {
           assertThat(ar.succeeded()).isTrue();
-          var resonse = ar.result().body();
-          assertThat(resonse.containsKey("dwcaId")).isTrue();
-          assertThat(resonse.getString("dwcaId")).hasSize(15);
+          var json = ar.result().body();
+          assertThat(json.containsKey("dwcaId")).isTrue();
+          assertThat(json.getString("dwcaId")).hasSize(15);
           context.completeNow();
         });
   }

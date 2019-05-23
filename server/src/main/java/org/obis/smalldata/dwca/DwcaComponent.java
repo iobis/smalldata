@@ -10,7 +10,7 @@ import io.vertx.ext.mongo.MongoClient;
 
 import java.util.List;
 
-public class Dwca extends AbstractVerticle {
+public class DwcaComponent extends AbstractVerticle {
 
   private DbOperation dbQuery;
 

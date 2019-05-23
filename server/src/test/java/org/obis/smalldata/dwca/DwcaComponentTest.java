@@ -21,7 +21,7 @@ import static org.pmw.tinylog.Logger.error;
 import static org.pmw.tinylog.Logger.info;
 
 @ExtendWith(VertxExtension.class)
-public class DwcaTest {
+public class DwcaComponentTest {
 
   private static final JsonObject DWCA_OCCURRENCE_RECORD = new JsonObject()
     .put("core", "occurrence")
@@ -45,7 +45,7 @@ public class DwcaTest {
           "path", "")),
         "baseUrl", "https://my.domain.org/"));
     vertx.deployVerticle(
-      Dwca.class.getName(),
+      DwcaComponent.class.getName(),
       testContext.succeeding(id -> testContext.completeNow()));
   }
 

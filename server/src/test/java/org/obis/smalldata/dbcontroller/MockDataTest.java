@@ -32,7 +32,7 @@ public class MockDataTest {
   public void setUp(Vertx vertx, VertxTestContext testContext) {
     vertx.sharedData().getLocalMap("settings").put("mode", "TEST");
     vertx.deployVerticle(
-      new EmbeddedDb(),
+      new StorageModule(),
       new DeploymentOptions().setConfig(MongoConfigs.ofServer(BIND_IP, PORT)),
       testContext.succeeding(deployId -> {
         info("Deployed DB {}", deployId);

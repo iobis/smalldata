@@ -31,7 +31,7 @@ public class EmlGeneratorTest {
     var dataSetEmlMaps = json.stream()
       .map(JsonObject::new)
       .map(dataset -> emlGenerator.generate(dataset,
-        "http://localhost:3000/" + dataset.getString("_ref")))
+        "http://localhost:8080/" + dataset.getString("_ref")))
       .map(Optional::get);
 
     assertThat(dataSetEmlMaps)

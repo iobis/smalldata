@@ -9,7 +9,7 @@ import java.util.function.Consumer;
 
 import static org.pmw.tinylog.Logger.info;
 
-public class WebApi extends AbstractVerticle {
+public class HttpComponent extends AbstractVerticle {
 
   @Override
   public void start(Future<Void> startFuture) {

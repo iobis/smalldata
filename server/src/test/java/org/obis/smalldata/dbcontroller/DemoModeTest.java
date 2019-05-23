@@ -30,7 +30,7 @@ public class DemoModeTest {
     vertx.sharedData()
       .getLocalMap("settings").put("mode", "DEMO");
     vertx.deployVerticle(
-      new EmbeddedDb(),
+      new StorageModule(),
       new DeploymentOptions().setConfig(MongoConfigs.ofServer(BIND_IP, PORT)),
       testContext.succeeding(deployId -> {
         mongoClient = MongoClient.createNonShared(vertx, MongoConfigs.ofClient(BIND_IP, PORT));
