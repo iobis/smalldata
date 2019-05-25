@@ -1,7 +1,28 @@
 * smalldata
 ** requirement
 
-   - install and use [[https://yarnpkg.com/en/][yarn]] package manager for front end development
+   - install and use [[https://yarnpkg.com/en/][yarn]] package manager for (web) client development
+   - install and use [[https://gradle.org][gradle]] build tool for server development
+
+** server
+*** how to start during dev
+
+the api spec has been split into several files. However, due to some issues with relative paths and reading the specs,
+the different files need to be bundled into 1 spec file before running the server. In the root of the project:
+
+#+BEGIN_SRC shell
+yarn server:bundle-spec
+#+END_SRC
+
+This task can also be set to run before ~./gradlew run~ in your IDE. In intellij:
+1. upper right: drop down of the tasks
+2. ~edit configuration~
+3. ~server[run]~
+4. ~launch before~ (right bottom pane) -- ~+~
+5. ~Run npm script~
+6. choose the right ~package.json~, it's the one in the root of the project
+7. in ~scripts~: ~server:bundle-spec~
+
 
 ** occurrences-app
 *** how to start for development

@@ -4,13 +4,13 @@ import io.vertx.core.AbstractVerticle;
 import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
-import org.obis.smalldata.auth.Auth;
+import org.obis.smalldata.auth.AuthComponent;
 import org.obis.smalldata.dataset.DatasetComponent;
-import org.obis.smalldata.dbcontroller.EmbeddedDb;
-import org.obis.smalldata.dwca.Dwca;
+import org.obis.smalldata.dbcontroller.StorageModule;
+import org.obis.smalldata.dwca.DwcaComponent;
 import org.obis.smalldata.rss.RssComponent;
-import org.obis.smalldata.user.User;
-import org.obis.smalldata.webapi.WebApi;
+import org.obis.smalldata.user.UserComponent;
+import org.obis.smalldata.webapi.HttpComponent;
 import org.obis.util.Urls;
 
 import java.util.Map;
@@ -30,7 +30,7 @@ public class Starter extends AbstractVerticle {
   @Override
   public void start(Future<Void> startFuture) {
     debug("starting the application with config: {}", config().encodePrettily());
-    var baseUrl = (String) config().getValue("baseUrl", "http://localhost:3000/");
+    var baseUrl = (String) config().getValue("baseUrl", "http://localhost:8080/");
     var mode = config().getValue("mode", "DEV");
 
     if (!Urls.isValid(baseUrl)) {
@@ -52,15 +52,15 @@ public class Starter extends AbstractVerticle {
         "storage", config().getJsonObject("storage", CONFIG_DEFAULT_STORAGE)));
 
     vertx.deployVerticle(
-      EmbeddedDb.class.getName(),
+      StorageModule.class.getName(),
       new DeploymentOptions().setConfig(config().getJsonObject("storage")),
       ar -> {
         info("Deployed Embedded DB verticle {}", ar.result());
-        deploy(User.class, "user");
-        deploy(Dwca.class, "dwca");
+        deploy(UserComponent.class, "user");
+        deploy(DwcaComponent.class, "dwca");
         deploy(RssComponent.class, "rss");
-        deploy(WebApi.class, "http");
-        deploy(Auth.class, "auth");
+        deploy(HttpComponent.class, "http");
+        deploy(AuthComponent.class, "auth");
         deploy(DatasetComponent.class, "dataset");
       });
   }

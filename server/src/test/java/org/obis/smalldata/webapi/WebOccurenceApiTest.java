@@ -26,7 +26,7 @@ public class WebOccurenceApiTest {
   void deployVerticle(Vertx vertx, VertxTestContext testContext) {
     Logger.info("starting with config: {}", CONFIG);
     vertx.deployVerticle(
-      WebApi.class.getName(),
+      HttpComponent.class.getName(),
       new DeploymentOptions().setConfig(CONFIG),
       testContext.succeeding(id -> testContext.completeNow()));
   }
@@ -41,7 +41,6 @@ public class WebOccurenceApiTest {
       .sendJson(new JsonObject(),
         result -> {
           Logger.info(result);
-          Logger.info(result.result().body());
           testContext.completeNow();
         });
   }

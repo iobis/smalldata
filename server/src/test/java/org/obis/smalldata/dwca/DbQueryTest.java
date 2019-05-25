@@ -16,13 +16,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 class DbQueryTest {
   private static TestDb testDb;
   private static MongoClient mongoClient;
-  private static DbQuery dbQuery;
+  private static DbOperation dbQuery;
 
   @BeforeAll
   public static void setUp() {
     testDb = new TestDb();
     mongoClient = testDb.init(Vertx.vertx());
-    dbQuery = new DbQuery(mongoClient);
+    dbQuery = new DbOperation(mongoClient);
   }
 
   @AfterAll

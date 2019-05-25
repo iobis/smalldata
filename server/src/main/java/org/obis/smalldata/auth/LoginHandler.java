@@ -20,9 +20,9 @@ class LoginHandler {
     info("authProvider {}", authProvider);
     if (authProvider instanceof JWTAuth) {
       this.authProvider = (JWTAuth) authProvider;
-      info("Started 'Auth LoginHandler'");
+      info("Started 'AuthComponent LoginHandler'");
     } else {
-      throw new ExceptionInInitializerError("Invalid Auth Provider");
+      throw new ExceptionInInitializerError("Invalid AuthComponent Provider");
     }
   }
 

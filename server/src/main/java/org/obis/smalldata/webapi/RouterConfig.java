@@ -18,7 +18,8 @@ class RouterConfig {
     "getStatus", new OperationHandlers(StatusHandler::status),
     "getRss", new OperationHandlers(RssHandler::fetch),
     "getDWCA", new OperationHandlers(DwcaHandler::get),
-    "postDWCA", new OperationHandlers(OccurrenceHandler::post)
+    "postDWCA", new OperationHandlers(DwcaRecordsHandler::post),
+    "putDWCA", new OperationHandlers(DwcaRecordsHandler::put)
   );
 
   private final Consumer<Router> completionHandler;

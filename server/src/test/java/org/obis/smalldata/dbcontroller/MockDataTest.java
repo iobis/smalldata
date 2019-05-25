@@ -13,6 +13,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.obis.smalldata.util.BulkOperationUtil;
 
 import java.util.concurrent.TimeUnit;
 
@@ -31,7 +32,7 @@ public class MockDataTest {
   public void setUp(Vertx vertx, VertxTestContext testContext) {
     vertx.sharedData().getLocalMap("settings").put("mode", "TEST");
     vertx.deployVerticle(
-      new EmbeddedDb(),
+      new StorageModule(),
       new DeploymentOptions().setConfig(MongoConfigs.ofServer(BIND_IP, PORT)),
       testContext.succeeding(deployId -> {
         info("Deployed DB {}", deployId);
@@ -50,7 +51,7 @@ public class MockDataTest {
   @DisplayName("read mock data from json and add to dbcontroller")
   @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
   public void bulkWrite(VertxTestContext testContext) {
-    var operations = BulkOperationUtil.createOperationsFromFile("testdata/testusers.json");
+    var operations = BulkOperationUtil.createInsertsFromFile("testdata/testusers.json");
     Checkpoint checks = testContext.checkpoint(2);
     mongoClient.bulkWrite("users", operations,
       arClient -> {

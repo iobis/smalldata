@@ -38,7 +38,7 @@ public class LoginHandlerTest {
   @BeforeEach
   void deployVerticle(Vertx vertx, VertxTestContext testContext) {
     vertx.deployVerticle(
-      Auth.class.getName(),
+      AuthComponent.class.getName(),
       new DeploymentOptions().setConfig(AUTH_CONFIG),
       testContext.succeeding(id -> testContext.completeNow()));
   }

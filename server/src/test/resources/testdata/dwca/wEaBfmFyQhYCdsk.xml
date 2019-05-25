@@ -1,4 +1,7 @@
-<eml:eml xmlns:eml="eml://ecoinformatics.org/eml-2.1.1" xmlns:dc="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 http://rs.gbif.org/schema/eml-gbif-profile/1.1/eml.xsd" packageId="http://localhost:3000/wEaBfmFyQhYCdsk" system="https://obis.org" scope="system" xml:lang="en">
+<eml:eml xmlns:eml="eml://ecoinformatics.org/eml-2.1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 http://rs.gbif.org/schema/eml-gbif-profile/1.1/eml.xsd"
+         packageId="http://localhost:8080/wEaBfmFyQhYCdsk" system="https://smalldata.obis.org" scope="system"
+         xml:lang="en">
   <dataset id="wEaBfmFyQhYCdsk">
     <title xml:lang="en">Caprellids polulation structure in Usujiri, Hokkaido, Japan</title>
     <creator>

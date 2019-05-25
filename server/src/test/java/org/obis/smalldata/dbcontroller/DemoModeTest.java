@@ -12,6 +12,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.obis.smalldata.util.Collections;
 
 import java.util.concurrent.TimeUnit;
 
@@ -29,7 +30,7 @@ public class DemoModeTest {
     vertx.sharedData()
       .getLocalMap("settings").put("mode", "DEMO");
     vertx.deployVerticle(
-      new EmbeddedDb(),
+      new StorageModule(),
       new DeploymentOptions().setConfig(MongoConfigs.ofServer(BIND_IP, PORT)),
       testContext.succeeding(deployId -> {
         mongoClient = MongoClient.createNonShared(vertx, MongoConfigs.ofClient(BIND_IP, PORT));

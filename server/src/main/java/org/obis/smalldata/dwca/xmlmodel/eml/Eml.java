@@ -32,7 +32,7 @@ public class Eml {
 
   @JacksonXmlProperty(localName = "system", isAttribute = true)
   @Builder.Default
-  private final String system = "https://obis.org";
+  private final String system = "https://smalldata.obis.org";
 
   @JacksonXmlProperty(localName = "scope", isAttribute = true)
   @Builder.Default
