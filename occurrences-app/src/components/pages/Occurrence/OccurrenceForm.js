@@ -51,16 +51,16 @@ export default function OccurrenceForm() {
   const [activeStepIndex, setActiveStepIndex] = useState(0)
   const [measurementOrFact, setMeasurementOrFact] = useState([])
   const steps = [{
-    dataDescription: t('occurrenceForm.selectDataset.dataDescription'),
+    dataDescription: t('occurrenceForm.selectDataset.step.dataDescription'),
     selectedData:    dataset.description,
-    stepDescription: t('occurrenceForm.selectDataset.stepDescription'),
-    stepTitle:       t('occurrenceForm.selectDataset.stepTitle'),
+    stepDescription: t('occurrenceForm.selectDataset.step.stepDescription'),
+    stepTitle:       t('occurrenceForm.selectDataset.step.stepTitle'),
     children:        <SelectDataset
       datasets={datasets}
       onChange={setSelectedDataset}
       selectedDataset={dataset}/>
   }, {
-    dataDescription: 'Given Values',
+    dataDescription: t('occurrenceForm.occurrenceData.step.dataDescription'),
     selectedData:    <OccurrenceDataSummary {...occurrenceData}/>,
     stepDescription: t('occurrenceForm.occurrenceData.step.stepDescription'),
     stepTitle:       t('occurrenceForm.occurrenceData.step.stepTitle'),
@@ -76,7 +76,7 @@ export default function OccurrenceForm() {
       data={locationData}
       onChange={setLocationData}/>
   }, {
-    dataDescription: 'Main Info',
+    dataDescription: t('occurrenceForm.observationData.step.dataDescription'),
     selectedData:    renderIdentifiedByLabel(observationData),
     stepDescription: t('occurrenceForm.observationData.step.stepDescription'),
     stepTitle:       t('occurrenceForm.observationData.step.stepTitle'),
@@ -84,7 +84,7 @@ export default function OccurrenceForm() {
       observationData={observationData}
       onChange={setObservationData}/>
   }, {
-    dataDescription: 'Given values',
+    dataDescription: t('occurrenceForm.measurementOrFact.step.dataDescription'),
     selectedData:    <MeasurementOrFactSummary data={measurementOrFact}/>,
     stepDescription: t('occurrenceForm.measurementOrFact.step.stepDescription'),
     stepTitle:       t('occurrenceForm.measurementOrFact.step.stepTitle'),

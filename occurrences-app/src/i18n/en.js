@@ -27,12 +27,15 @@ export default {
     },
     occurrenceForm: {
       selectDataset:     {
-        dataDescription: 'Using Data',
-        stepDescription: 'Choose the dataset for adding observations',
-        stepTitle:       'Selected Dataset'
+        step: {
+          dataDescription: 'Using Data',
+          stepDescription: 'Choose the dataset for adding observations',
+          stepTitle:       'Selected Dataset'
+        }
       },
       occurrenceData:    {
         step:             {
+          dataDescription: 'Given Values',
           stepDescription: 'Mandatory observation information',
           stepTitle:       'Occurrence Data'
         },
@@ -128,6 +131,7 @@ export default {
       },
       observationData:   {
         step:                    {
+          dataDescription: 'Main Info',
           stepDescription: 'Enter further specifics',
           stepTitle:       'Observation Data'
         },
@@ -179,6 +183,7 @@ export default {
       },
       measurementOrFact: {
         step:     {
+          dataDescription: 'Given values',
           stepDescription: 'Enter further specifics',
           stepTitle:       'Measurement or Fact',
           title:           'You have submitted {{number}} extra fields'
