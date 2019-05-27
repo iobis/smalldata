@@ -395,7 +395,9 @@ exports[`FinalSummary renders correctly 1`] = `
               </td>
               <td
                 className="value"
-              />
+              >
+                —
+              </td>
             </tr>
           </NameValueRow>
           <NameValueRow
@@ -412,7 +414,9 @@ exports[`FinalSummary renders correctly 1`] = `
               </td>
               <td
                 className="value"
-              />
+              >
+                —
+              </td>
             </tr>
           </NameValueRow>
           <NameValueRow
@@ -429,7 +433,9 @@ exports[`FinalSummary renders correctly 1`] = `
               </td>
               <td
                 className="value"
-              />
+              >
+                —
+              </td>
             </tr>
           </NameValueRow>
         </tbody>

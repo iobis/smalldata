@@ -221,7 +221,7 @@ function NameValueRow({ name, value }) {
   return (
     <tr className="name-value-row fieldrow">
       <td className="name">{name}</td>
-      <td className="value">{value}</td>
+      <td className="value">{!value ? '—' : value}</td>
     </tr>
   )
 }
