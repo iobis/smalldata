@@ -15,8 +15,8 @@ export default function FinalSummary({
   observationData,
   locationData,
   measurements,
-  onChange,
-  onSubmit
+  onChangeClick,
+  onSubmitClick
 }) {
   const { t } = useTranslation()
 
@@ -25,13 +25,13 @@ export default function FinalSummary({
       <div className="columns is-centered">
         <h1 className="final-summary-title title is-3">{t('occurrenceForm.finalSummary.title')}</h1>
       </div>
-      <SubmitEntryButton onClick={onSubmit}/>
-      <section>
+      <SubmitEntryButton onClick={onSubmitClick}/>
+      <section className="select-dataset">
         <SectionTitle>1 - {t('occurrenceForm.selectDataset.step.stepTitle')}</SectionTitle>
         <p>{dataset.description}</p>
-        <ChangeButton onClick={() => onChange('selectDataset')}/>
+        <ChangeButton onClick={() => onChangeClick('selectDataset')}/>
       </section>
-      <section>
+      <section className="occurrence-data">
         <SectionTitle>2 - {t('occurrenceForm.occurrenceData.step.stepTitle')}</SectionTitle>
         <table className="table is-striped is-fullwidth is-hoverable">
           <tbody>
@@ -44,9 +44,9 @@ export default function FinalSummary({
             <NameValueRow name="lifestage" value={occurrenceData.lifestage}/>
           </tbody>
         </table>
-        <ChangeButton onClick={() => onChange('occurrenceData')}/>
+        <ChangeButton onClick={() => onChangeClick('occurrenceData')}/>
       </section>
-      <section>
+      <section className="location-data">
         <SectionTitle>3 - {t('occurrenceForm.locationData.step.stepTitle')}</SectionTitle>
         <table className="table is-striped is-fullwidth is-hoverable">
           <tbody>
@@ -64,9 +64,9 @@ export default function FinalSummary({
             <NameValueRow name="verbatimDepth" value={locationData.verbatimDepth}/>
           </tbody>
         </table>
-        <ChangeButton onClick={() => onChange('locationData')}/>
+        <ChangeButton onClick={() => onChangeClick('locationData')}/>
       </section>
-      <section>
+      <section className="observation-data">
         <SectionTitle>4 - {t('occurrenceForm.observationData.step.stepTitle')}</SectionTitle>
         <SectionSubtitle>{t('occurrenceForm.finalSummary.observationData.catalogDataSubtitle')}</SectionSubtitle>
         <div className="content">
@@ -102,9 +102,9 @@ export default function FinalSummary({
             <NameValueRow name="identificationRemarks" value={observationData.identificationRemarks}/>
           </tbody>
         </table>
-        <ChangeButton onClick={() => onChange('observationData')}/>
+        <ChangeButton onClick={() => onChangeClick('observationData')}/>
       </section>
-      <section>
+      <section className="measurement-or-fact">
         <SectionTitle>5 - {t('occurrenceForm.measurementOrFact.step.stepTitle')}</SectionTitle>
         <table className="measurements table is-fullwidth is-striped is-hoverable">
           <thead>
@@ -125,9 +125,9 @@ export default function FinalSummary({
             ))}
           </tbody>
         </table>
-        <ChangeButton onClick={() => onChange('measurementOrFact')}/>
+        <ChangeButton onClick={() => onChangeClick('measurementOrFact')}/>
       </section>
-      <section>
+      <section className="darwin-core-fields">
         <SectionTitle>6 - {t('occurrenceForm.darwinCoreFields.step.stepTitle')}</SectionTitle>
         <table className="table is-striped is-fullwidth is-hoverable">
           <tbody>
@@ -137,9 +137,9 @@ export default function FinalSummary({
             )}
           </tbody>
         </table>
-        <ChangeButton onClick={() => onChange('darwinCoreFields')}/>
+        <ChangeButton onClick={() => onChangeClick('darwinCoreFields')}/>
       </section>
-      <SubmitEntryButton onClick={onSubmit}/>
+      <SubmitEntryButton onClick={onSubmitClick}/>
     </div>
   )
 }
@@ -151,8 +151,8 @@ FinalSummary.propTypes = {
   measurements:     PropTypes.array.isRequired,
   observationData:  PropTypes.shape(observationDataShape).isRequired,
   occurrenceData:   PropTypes.shape(occurrenceDataShape).isRequired,
-  onChange:         PropTypes.func.isRequired,
-  onSubmit:         PropTypes.func.isRequired
+  onChangeClick:    PropTypes.func.isRequired,
+  onSubmitClick:    PropTypes.func.isRequired
 }
 
 function NameValueRow({ name, value }) {
@@ -197,7 +197,7 @@ SectionTitle.propTypes = {
 function ChangeButton({ onClick }) {
   const { t } = useTranslation()
   return (
-    <button className="button" onClick={onClick}>
+    <button className="change-button button" onClick={onClick}>
       {t('common.change')}
     </button>
   )

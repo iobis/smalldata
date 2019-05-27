@@ -81,8 +81,8 @@ exports[`FinalSummary renders correctly 1`] = `
       "sex": "male",
     }
   }
-  onChange={[MockFunction]}
-  onSubmit={[MockFunction]}
+  onChangeClick={[MockFunction]}
+  onSubmitClick={[MockFunction]}
 >
   <div
     className="final-summary section is-fluid"
@@ -110,7 +110,9 @@ exports[`FinalSummary renders correctly 1`] = `
         </button>
       </div>
     </SubmitEntryButton>
-    <section>
+    <section
+      className="select-dataset"
+    >
       <SectionTitle>
         <h2
           className="title is-4"
@@ -126,14 +128,16 @@ exports[`FinalSummary renders correctly 1`] = `
         onClick={[Function]}
       >
         <button
-          className="button"
+          className="change-button button"
           onClick={[Function]}
         >
           common.change
         </button>
       </ChangeButton>
     </section>
-    <section>
+    <section
+      className="occurrence-data"
+    >
       <SectionTitle>
         <h2
           className="title is-4"
@@ -285,14 +289,16 @@ exports[`FinalSummary renders correctly 1`] = `
         onClick={[Function]}
       >
         <button
-          className="button"
+          className="change-button button"
           onClick={[Function]}
         >
           common.change
         </button>
       </ChangeButton>
     </section>
-    <section>
+    <section
+      className="location-data"
+    >
       <SectionTitle>
         <h2
           className="title is-4"
@@ -451,14 +457,16 @@ exports[`FinalSummary renders correctly 1`] = `
         onClick={[Function]}
       >
         <button
-          className="button"
+          className="change-button button"
           onClick={[Function]}
         >
           common.change
         </button>
       </ChangeButton>
     </section>
-    <section>
+    <section
+      className="observation-data"
+    >
       <SectionTitle>
         <h2
           className="title is-4"
@@ -689,14 +697,16 @@ exports[`FinalSummary renders correctly 1`] = `
         onClick={[Function]}
       >
         <button
-          className="button"
+          className="change-button button"
           onClick={[Function]}
         >
           common.change
         </button>
       </ChangeButton>
     </section>
-    <section>
+    <section
+      className="measurement-or-fact"
+    >
       <SectionTitle>
         <h2
           className="title is-4"
@@ -762,14 +772,16 @@ exports[`FinalSummary renders correctly 1`] = `
         onClick={[Function]}
       >
         <button
-          className="button"
+          className="change-button button"
           onClick={[Function]}
         >
           common.change
         </button>
       </ChangeButton>
     </section>
-    <section>
+    <section
+      className="darwin-core-fields"
+    >
       <SectionTitle>
         <h2
           className="title is-4"
@@ -848,7 +860,7 @@ exports[`FinalSummary renders correctly 1`] = `
         onClick={[Function]}
       >
         <button
-          className="button"
+          className="change-button button"
           onClick={[Function]}
         >
           common.change

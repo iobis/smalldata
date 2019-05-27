@@ -5,8 +5,8 @@ export default [{
   name:      'FinalSummary',
   props:     {
     ...getDefaultProps(),
-    onChange: console.log,
-    onSubmit: console.log
+    onChangeClick: console.log,
+    onSubmitClick: console.log
   }
 }]
 
