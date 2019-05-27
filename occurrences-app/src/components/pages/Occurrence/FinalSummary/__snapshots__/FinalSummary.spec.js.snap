@@ -87,337 +87,56 @@ exports[`FinalSummary renders correctly 1`] = `
   <div
     className="final-summary section is-fluid"
   >
-    <h1
-      className="title is-3"
-    >
-      occurrenceForm.finalSummary.title
-    </h1>
-    <button
-      className="button is-info is-medium"
-    >
-      Submit Entry
-    </button>
-    <h2
-      className="title is-5"
-    >
-      1 - DATASET
-    </h2>
-    <p>
-      NPPSD Short-tailed Albatross Sightings
-    </p>
-    <h2
-      className="title is-5"
-    >
-      2 - OCCURRENCE DATA
-    </h2>
-    <table
-      className="table is-striped is-fullwidth is-hoverable"
-    >
-      <tbody>
-        <NameValueRow
-          name="scientific name"
-          value="ala abra"
-        >
-          <tr
-            className="name-value-row fieldrow"
-          >
-            <td
-              className="name"
-            >
-              scientific name
-            </td>
-            <td
-              className="value"
-            >
-              ala abra
-            </td>
-          </tr>
-        </NameValueRow>
-        <NameValueRow
-          name="beginDate"
-          value="29 April 2019"
-        >
-          <tr
-            className="name-value-row fieldrow"
-          >
-            <td
-              className="name"
-            >
-              beginDate
-            </td>
-            <td
-              className="value"
-            >
-              29 April 2019
-            </td>
-          </tr>
-        </NameValueRow>
-        <NameValueRow
-          name="endDate"
-          value="30 April 2019"
-        >
-          <tr
-            className="name-value-row fieldrow"
-          >
-            <td
-              className="name"
-            >
-              endDate
-            </td>
-            <td
-              className="value"
-            >
-              30 April 2019
-            </td>
-          </tr>
-        </NameValueRow>
-        <NameValueRow
-          name="occurrenceStatus"
-          value="absent"
-        >
-          <tr
-            className="name-value-row fieldrow"
-          >
-            <td
-              className="name"
-            >
-              occurrenceStatus
-            </td>
-            <td
-              className="value"
-            >
-              absent
-            </td>
-          </tr>
-        </NameValueRow>
-        <NameValueRow
-          name="basisOfRecord"
-          value="humanObservation"
-        >
-          <tr
-            className="name-value-row fieldrow"
-          >
-            <td
-              className="name"
-            >
-              basisOfRecord
-            </td>
-            <td
-              className="value"
-            >
-              humanObservation
-            </td>
-          </tr>
-        </NameValueRow>
-        <NameValueRow
-          name="sex"
-          value="male"
-        >
-          <tr
-            className="name-value-row fieldrow"
-          >
-            <td
-              className="name"
-            >
-              sex
-            </td>
-            <td
-              className="value"
-            >
-              male
-            </td>
-          </tr>
-        </NameValueRow>
-        <NameValueRow
-          name="lifestage"
-          value="adult"
-        >
-          <tr
-            className="name-value-row fieldrow"
-          >
-            <td
-              className="name"
-            >
-              lifestage
-            </td>
-            <td
-              className="value"
-            >
-              adult
-            </td>
-          </tr>
-        </NameValueRow>
-      </tbody>
-    </table>
-    <h2
-      className="title is-5"
-    >
-      3 - LOCATION DATA
-    </h2>
-    <table
-      className="table is-striped is-fullwidth is-hoverable"
-    >
-      <tbody>
-        <NameValueRow
-          name="Latitude"
-          value={51.3354656}
-        >
-          <tr
-            className="name-value-row fieldrow"
-          >
-            <td
-              className="name"
-            >
-              Latitude
-            </td>
-            <td
-              className="value"
-            >
-              51.3354656
-            </td>
-          </tr>
-        </NameValueRow>
-        <NameValueRow
-          name="Longitude"
-          value={2.345456}
-        >
-          <tr
-            className="name-value-row fieldrow"
-          >
-            <td
-              className="name"
-            >
-              Longitude
-            </td>
-            <td
-              className="value"
-            >
-              2.345456
-            </td>
-          </tr>
-        </NameValueRow>
-        <NameValueRow
-          name="coordinateUncertainty"
-          value={null}
-        >
-          <tr
-            className="name-value-row fieldrow"
-          >
-            <td
-              className="name"
-            >
-              coordinateUncertainty
-            </td>
-            <td
-              className="value"
-            />
-          </tr>
-        </NameValueRow>
-        <NameValueRow
-          name="minimumDepth"
-          value={null}
-        >
-          <tr
-            className="name-value-row fieldrow"
-          >
-            <td
-              className="name"
-            >
-              minimumDepth
-            </td>
-            <td
-              className="value"
-            />
-          </tr>
-        </NameValueRow>
-        <NameValueRow
-          name="maximumDepth"
-          value={null}
-        >
-          <tr
-            className="name-value-row fieldrow"
-          >
-            <td
-              className="name"
-            >
-              maximumDepth
-            </td>
-            <td
-              className="value"
-            />
-          </tr>
-        </NameValueRow>
-      </tbody>
-    </table>
-    <h2
-      className="title is-6"
-    >
-      Verbatim data
-    </h2>
-    <table
-      className="table is-striped is-fullwidth is-hoverable"
-    >
-      <tbody>
-        <NameValueRow
-          name="verbatimCoordinates"
-          value="41 05 54S 121 05 34W"
-        >
-          <tr
-            className="name-value-row fieldrow"
-          >
-            <td
-              className="name"
-            >
-              verbatimCoordinates
-            </td>
-            <td
-              className="value"
-            >
-              41 05 54S 121 05 34W
-            </td>
-          </tr>
-        </NameValueRow>
-        <NameValueRow
-          name="verbatimDepth"
-          value="100 - 200 m"
-        >
-          <tr
-            className="name-value-row fieldrow"
-          >
-            <td
-              className="name"
-            >
-              verbatimDepth
-            </td>
-            <td
-              className="value"
-            >
-              100 - 200 m
-            </td>
-          </tr>
-        </NameValueRow>
-      </tbody>
-    </table>
-    <h2
-      className="title is-5"
-    >
-      4 - OBSERVATION DATA
-    </h2>
-    <h2
-      className="title is-6"
-    >
-      Catalog data
-    </h2>
     <div
-      className="content"
+      className="columns is-centered"
     >
+      <h1
+        className="final-summary-title title is-3"
+      >
+        occurrenceForm.finalSummary.title
+      </h1>
+    </div>
+    <SubmitEntryButton
+      onClick={[MockFunction]}
+    >
+      <div
+        className="submit-entry-button columns is-centered"
+      >
+        <button
+          className="button is-info is-medium"
+          onClick={[MockFunction]}
+        >
+          occurrenceForm.finalSummary.submitEntryButton
+        </button>
+      </div>
+    </SubmitEntryButton>
+    <section>
+      <SectionTitle>
+        <h2
+          className="title is-4"
+        >
+          1 - DATASET
+        </h2>
+      </SectionTitle>
+      <p>
+        NPPSD Short-tailed Albatross Sightings
+      </p>
+    </section>
+    <section>
+      <SectionTitle>
+        <h2
+          className="title is-4"
+        >
+          2 - OCCURRENCE DATA
+        </h2>
+      </SectionTitle>
       <table
         className="table is-striped is-fullwidth is-hoverable"
       >
         <tbody>
           <NameValueRow
-            name="institutionCode"
-            value="IBSS"
+            name="scientific name"
+            value="ala abra"
           >
             <tr
               className="name-value-row fieldrow"
@@ -425,18 +144,18 @@ exports[`FinalSummary renders correctly 1`] = `
               <td
                 className="name"
               >
-                institutionCode
+                scientific name
               </td>
               <td
                 className="value"
               >
-                IBSS
+                ala abra
               </td>
             </tr>
           </NameValueRow>
           <NameValueRow
-            name="collectionCode"
-            value="R/V N. Danilevskiy 1935 Azov Sea benthos data"
+            name="beginDate"
+            value="29 April 2019"
           >
             <tr
               className="name-value-row fieldrow"
@@ -444,18 +163,18 @@ exports[`FinalSummary renders correctly 1`] = `
               <td
                 className="name"
               >
-                collectionCode
+                beginDate
               </td>
               <td
                 className="value"
               >
-                R/V N. Danilevskiy 1935 Azov Sea benthos data
+                29 April 2019
               </td>
             </tr>
           </NameValueRow>
           <NameValueRow
-            name="fieldNumber"
-            value="557"
+            name="endDate"
+            value="30 April 2019"
           >
             <tr
               className="name-value-row fieldrow"
@@ -463,18 +182,18 @@ exports[`FinalSummary renders correctly 1`] = `
               <td
                 className="name"
               >
-                fieldNumber
+                endDate
               </td>
               <td
                 className="value"
               >
-                557
+                30 April 2019
               </td>
             </tr>
           </NameValueRow>
           <NameValueRow
-            name="catalogNumber"
-            value="IBSS_Benthos_1935_1331"
+            name="occurrenceStatus"
+            value="absent"
           >
             <tr
               className="name-value-row fieldrow"
@@ -482,18 +201,18 @@ exports[`FinalSummary renders correctly 1`] = `
               <td
                 className="name"
               >
-                catalogNumber
+                occurrenceStatus
               </td>
               <td
                 className="value"
               >
-                IBSS_Benthos_1935_1331
+                absent
               </td>
             </tr>
           </NameValueRow>
           <NameValueRow
-            name="recordNumber"
-            value="123456"
+            name="basisOfRecord"
+            value="humanObservation"
           >
             <tr
               className="name-value-row fieldrow"
@@ -501,251 +220,589 @@ exports[`FinalSummary renders correctly 1`] = `
               <td
                 className="name"
               >
-                recordNumber
+                basisOfRecord
               </td>
               <td
                 className="value"
               >
-                123456
+                humanObservation
+              </td>
+            </tr>
+          </NameValueRow>
+          <NameValueRow
+            name="sex"
+            value="male"
+          >
+            <tr
+              className="name-value-row fieldrow"
+            >
+              <td
+                className="name"
+              >
+                sex
+              </td>
+              <td
+                className="value"
+              >
+                male
+              </td>
+            </tr>
+          </NameValueRow>
+          <NameValueRow
+            name="lifestage"
+            value="adult"
+          >
+            <tr
+              className="name-value-row fieldrow"
+            >
+              <td
+                className="name"
+              >
+                lifestage
+              </td>
+              <td
+                className="value"
+              >
+                adult
               </td>
             </tr>
           </NameValueRow>
         </tbody>
       </table>
-      <div
-        className="columns"
+    </section>
+    <section>
+      <SectionTitle>
+        <h2
+          className="title is-4"
+        >
+          3 - LOCATION DATA
+        </h2>
+      </SectionTitle>
+      <table
+        className="table is-striped is-fullwidth is-hoverable"
       >
-        <div
-          className="column is-3"
-        >
-          <p
-            className="title is-6"
+        <tbody>
+          <NameValueRow
+            name="Latitude"
+            value={51.3354656}
           >
-            occurrenceForm.observationData.identifiedBy.label
-          </p>
-          <ul>
-            <li
-              key="Indiana Jones"
+            <tr
+              className="name-value-row fieldrow"
             >
-              Indiana Jones
-            </li>
-          </ul>
-        </div>
-        <div
-          className="column is-3"
-        >
-          <p
-            className="title is-6"
+              <td
+                className="name"
+              >
+                Latitude
+              </td>
+              <td
+                className="value"
+              >
+                51.3354656
+              </td>
+            </tr>
+          </NameValueRow>
+          <NameValueRow
+            name="Longitude"
+            value={2.345456}
           >
-            occurrenceForm.observationData.recordedBy.label
-          </p>
-          <ul>
-            <li
-              key="Harrison Ford"
+            <tr
+              className="name-value-row fieldrow"
             >
-              Harrison Ford
-            </li>
-          </ul>
+              <td
+                className="name"
+              >
+                Longitude
+              </td>
+              <td
+                className="value"
+              >
+                2.345456
+              </td>
+            </tr>
+          </NameValueRow>
+          <NameValueRow
+            name="coordinateUncertainty"
+            value={null}
+          >
+            <tr
+              className="name-value-row fieldrow"
+            >
+              <td
+                className="name"
+              >
+                coordinateUncertainty
+              </td>
+              <td
+                className="value"
+              />
+            </tr>
+          </NameValueRow>
+          <NameValueRow
+            name="minimumDepth"
+            value={null}
+          >
+            <tr
+              className="name-value-row fieldrow"
+            >
+              <td
+                className="name"
+              >
+                minimumDepth
+              </td>
+              <td
+                className="value"
+              />
+            </tr>
+          </NameValueRow>
+          <NameValueRow
+            name="maximumDepth"
+            value={null}
+          >
+            <tr
+              className="name-value-row fieldrow"
+            >
+              <td
+                className="name"
+              >
+                maximumDepth
+              </td>
+              <td
+                className="value"
+              />
+            </tr>
+          </NameValueRow>
+        </tbody>
+      </table>
+      <SectionSubtitle>
+        <h2
+          className="title is-5"
+        >
+          Verbatim data
+        </h2>
+      </SectionSubtitle>
+      <table
+        className="table is-striped is-fullwidth is-hoverable"
+      >
+        <tbody>
+          <NameValueRow
+            name="verbatimCoordinates"
+            value="41 05 54S 121 05 34W"
+          >
+            <tr
+              className="name-value-row fieldrow"
+            >
+              <td
+                className="name"
+              >
+                verbatimCoordinates
+              </td>
+              <td
+                className="value"
+              >
+                41 05 54S 121 05 34W
+              </td>
+            </tr>
+          </NameValueRow>
+          <NameValueRow
+            name="verbatimDepth"
+            value="100 - 200 m"
+          >
+            <tr
+              className="name-value-row fieldrow"
+            >
+              <td
+                className="name"
+              >
+                verbatimDepth
+              </td>
+              <td
+                className="value"
+              >
+                100 - 200 m
+              </td>
+            </tr>
+          </NameValueRow>
+        </tbody>
+      </table>
+    </section>
+    <section>
+      <SectionTitle>
+        <h2
+          className="title is-4"
+        >
+          4 - OBSERVATION DATA
+        </h2>
+      </SectionTitle>
+      <SectionSubtitle>
+        <h2
+          className="title is-5"
+        >
+          Catalog data
+        </h2>
+      </SectionSubtitle>
+      <div
+        className="content"
+      >
+        <table
+          className="table is-striped is-fullwidth is-hoverable"
+        >
+          <tbody>
+            <NameValueRow
+              name="institutionCode"
+              value="IBSS"
+            >
+              <tr
+                className="name-value-row fieldrow"
+              >
+                <td
+                  className="name"
+                >
+                  institutionCode
+                </td>
+                <td
+                  className="value"
+                >
+                  IBSS
+                </td>
+              </tr>
+            </NameValueRow>
+            <NameValueRow
+              name="collectionCode"
+              value="R/V N. Danilevskiy 1935 Azov Sea benthos data"
+            >
+              <tr
+                className="name-value-row fieldrow"
+              >
+                <td
+                  className="name"
+                >
+                  collectionCode
+                </td>
+                <td
+                  className="value"
+                >
+                  R/V N. Danilevskiy 1935 Azov Sea benthos data
+                </td>
+              </tr>
+            </NameValueRow>
+            <NameValueRow
+              name="fieldNumber"
+              value="557"
+            >
+              <tr
+                className="name-value-row fieldrow"
+              >
+                <td
+                  className="name"
+                >
+                  fieldNumber
+                </td>
+                <td
+                  className="value"
+                >
+                  557
+                </td>
+              </tr>
+            </NameValueRow>
+            <NameValueRow
+              name="catalogNumber"
+              value="IBSS_Benthos_1935_1331"
+            >
+              <tr
+                className="name-value-row fieldrow"
+              >
+                <td
+                  className="name"
+                >
+                  catalogNumber
+                </td>
+                <td
+                  className="value"
+                >
+                  IBSS_Benthos_1935_1331
+                </td>
+              </tr>
+            </NameValueRow>
+            <NameValueRow
+              name="recordNumber"
+              value="123456"
+            >
+              <tr
+                className="name-value-row fieldrow"
+              >
+                <td
+                  className="name"
+                >
+                  recordNumber
+                </td>
+                <td
+                  className="value"
+                >
+                  123456
+                </td>
+              </tr>
+            </NameValueRow>
+          </tbody>
+        </table>
+        <div
+          className="columns"
+        >
+          <div
+            className="column is-3"
+          >
+            <p
+              className="title is-5"
+            >
+              occurrenceForm.observationData.identifiedBy.label
+            </p>
+            <ul>
+              <li
+                key="Indiana Jones"
+              >
+                Indiana Jones
+              </li>
+            </ul>
+          </div>
+          <div
+            className="column is-3"
+          >
+            <p
+              className="title is-5"
+            >
+              occurrenceForm.observationData.recordedBy.label
+            </p>
+            <ul>
+              <li
+                key="Harrison Ford"
+              >
+                Harrison Ford
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-    <h2
-      className="title is-6"
-    >
-      Species data
-    </h2>
-    <table
-      className="table is-striped is-fullwidth is-hoverable"
-    >
-      <tbody>
-        <NameValueRow
-          name="references"
-          value="http://www.google.com, https://clojure.org/"
+      <SectionSubtitle>
+        <h2
+          className="title is-5"
         >
-          <tr
-            className="name-value-row fieldrow"
+          Species data
+        </h2>
+      </SectionSubtitle>
+      <table
+        className="table is-striped is-fullwidth is-hoverable"
+      >
+        <tbody>
+          <NameValueRow
+            name="references"
+            value="http://www.google.com, https://clojure.org/"
           >
-            <td
-              className="name"
+            <tr
+              className="name-value-row fieldrow"
             >
-              references
-            </td>
-            <td
+              <td
+                className="name"
+              >
+                references
+              </td>
+              <td
+                className="value"
+              >
+                http://www.google.com, https://clojure.org/
+              </td>
+            </tr>
+          </NameValueRow>
+          <NameValueRow
+            name="identificationQualifier"
+            value="some identification qualifier"
+          >
+            <tr
+              className="name-value-row fieldrow"
+            >
+              <td
+                className="name"
+              >
+                identificationQualifier
+              </td>
+              <td
+                className="value"
+              >
+                some identification qualifier
+              </td>
+            </tr>
+          </NameValueRow>
+          <NameValueRow
+            name="identificationRemarks"
+            value="some identification remarks"
+          >
+            <tr
+              className="name-value-row fieldrow"
+            >
+              <td
+                className="name"
+              >
+                identificationRemarks
+              </td>
+              <td
+                className="value"
+              >
+                some identification remarks
+              </td>
+            </tr>
+          </NameValueRow>
+        </tbody>
+      </table>
+    </section>
+    <section>
+      <SectionTitle>
+        <h2
+          className="title is-4"
+        >
+          5 - MEASUREMENT OR FACT
+        </h2>
+      </SectionTitle>
+      <table
+        className="measurements table is-fullwidth is-striped is-hoverable"
+      >
+        <thead>
+          <tr>
+            <th
+              className="type"
+            >
+              common.type
+            </th>
+            <th
+              className="unit"
+            >
+              common.unit
+            </th>
+            <th
               className="value"
             >
-              http://www.google.com, https://clojure.org/
-            </td>
+              common.value
+            </th>
           </tr>
-        </NameValueRow>
-        <NameValueRow
-          name="identificationQualifier"
-          value="some identification qualifier"
-        >
+        </thead>
+        <tbody>
           <tr
-            className="name-value-row fieldrow"
+            className="fieldrow"
+            key="0"
           >
-            <td
-              className="name"
-            >
-              identificationQualifier
+            <td>
+              Pressure
             </td>
-            <td
-              className="value"
-            >
-              some identification qualifier
+            <td>
+              Decibars
+            </td>
+            <td>
+              10
             </td>
           </tr>
-        </NameValueRow>
-        <NameValueRow
-          name="identificationRemarks"
-          value="some identification remarks"
-        >
           <tr
-            className="name-value-row fieldrow"
+            className="fieldrow"
+            key="1"
           >
-            <td
-              className="name"
-            >
-              identificationRemarks
+            <td>
+              Pressure
             </td>
-            <td
-              className="value"
-            >
-              some identification remarks
+            <td>
+              Decibars
+            </td>
+            <td>
+              50
             </td>
           </tr>
-        </NameValueRow>
-      </tbody>
-    </table>
-    <h2
-      className="title is-5"
+        </tbody>
+      </table>
+    </section>
+    <section>
+      <SectionTitle>
+        <h2
+          className="title is-4"
+        >
+          6 - DARWIN CORE FIELDS
+        </h2>
+      </SectionTitle>
+      <table
+        className="table is-striped is-fullwidth is-hoverable"
+      >
+        <tbody>
+          <NameValueRow
+            key="0"
+            name="name-1"
+            value="value-1"
+          >
+            <tr
+              className="name-value-row fieldrow"
+            >
+              <td
+                className="name"
+              >
+                name-1
+              </td>
+              <td
+                className="value"
+              >
+                value-1
+              </td>
+            </tr>
+          </NameValueRow>
+          <NameValueRow
+            key="1"
+            name="name-2"
+            value="value-2"
+          >
+            <tr
+              className="name-value-row fieldrow"
+            >
+              <td
+                className="name"
+              >
+                name-2
+              </td>
+              <td
+                className="value"
+              >
+                value-2
+              </td>
+            </tr>
+          </NameValueRow>
+          <NameValueRow
+            key="2"
+            name="name-3"
+            value="value-3"
+          >
+            <tr
+              className="name-value-row fieldrow"
+            >
+              <td
+                className="name"
+              >
+                name-3
+              </td>
+              <td
+                className="value"
+              >
+                value-3
+              </td>
+            </tr>
+          </NameValueRow>
+        </tbody>
+      </table>
+    </section>
+    <SubmitEntryButton
+      onClick={[MockFunction]}
     >
-      5 - MEASUREMENT OR FACT
-    </h2>
-    <table
-      className="measurements table is-fullwidth is-striped is-hoverable"
-    >
-      <thead>
-        <tr>
-          <th
-            className="type"
-          >
-            common.type
-          </th>
-          <th
-            className="unit"
-          >
-            common.unit
-          </th>
-          <th
-            className="value"
-          >
-            common.value
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr
-          className="fieldrow"
-          key="0"
+      <div
+        className="submit-entry-button columns is-centered"
+      >
+        <button
+          className="button is-info is-medium"
+          onClick={[MockFunction]}
         >
-          <td>
-            Pressure
-          </td>
-          <td>
-            Decibars
-          </td>
-          <td>
-            10
-          </td>
-        </tr>
-        <tr
-          className="fieldrow"
-          key="1"
-        >
-          <td>
-            Pressure
-          </td>
-          <td>
-            Decibars
-          </td>
-          <td>
-            50
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <h2
-      className="title is-5"
-    >
-      6 - DARWIN CORE FIELDS
-    </h2>
-    <table
-      className="table is-striped is-fullwidth is-hoverable"
-    >
-      <tbody>
-        <NameValueRow
-          key="0"
-          name="name-1"
-          value="value-1"
-        >
-          <tr
-            className="name-value-row fieldrow"
-          >
-            <td
-              className="name"
-            >
-              name-1
-            </td>
-            <td
-              className="value"
-            >
-              value-1
-            </td>
-          </tr>
-        </NameValueRow>
-        <NameValueRow
-          key="1"
-          name="name-2"
-          value="value-2"
-        >
-          <tr
-            className="name-value-row fieldrow"
-          >
-            <td
-              className="name"
-            >
-              name-2
-            </td>
-            <td
-              className="value"
-            >
-              value-2
-            </td>
-          </tr>
-        </NameValueRow>
-        <NameValueRow
-          key="2"
-          name="name-3"
-          value="value-3"
-        >
-          <tr
-            className="name-value-row fieldrow"
-          >
-            <td
-              className="name"
-            >
-              name-3
-            </td>
-            <td
-              className="value"
-            >
-              value-3
-            </td>
-          </tr>
-        </NameValueRow>
-      </tbody>
-    </table>
+          occurrenceForm.finalSummary.submitEntryButton
+        </button>
+      </div>
+    </SubmitEntryButton>
   </div>
 </FinalSummary>
 `;

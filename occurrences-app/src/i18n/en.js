@@ -203,8 +203,11 @@ export default {
           placeholder: '',
           help:        ''
         }
+      },
+      finalSummary:      {
+        title:             'Final Summary',
+        submitEntryButton: 'Submit Entry'
       }
-
     },
     navbar:         {
       help:      'HELP',

@@ -1,4 +1,16 @@
 .final-summary {
+  .final-summary-title {
+    margin-bottom: 1.5rem;
+  }
+
+  .submit-entry-button {
+    margin-bottom: 1.5rem;
+  }
+
+  section {
+    margin-bottom: 1.5rem;
+  }
+
   .name-value-row {
     .name {
       width: 20%;
@@ -18,7 +30,7 @@
       width: 20%
     }
 
-    .value{
+    .value {
       width: 20%
     }
   }
