@@ -9,19 +9,19 @@ describe('FinalSummary', () => {
   })
 
   describe('when clicking change button', () => {
-    [{ className: 'select-dataset-summary', eventString: 'selectDataset' },
-      { className: 'occurrence-data-summary', eventString: 'occurrenceData' },
-      { className: 'location-data-summary', eventString: 'locationData' },
-      { className: 'observation-data-summary', eventString: 'observationData' },
-      { className: 'measurement-or-fact-summary', eventString: 'measurementOrFact' },
-      { className: 'darwin-core-fields-summary', eventString: 'darwinCoreFields' }
-    ].forEach(({ className, eventString }) => {
-      it(`calls onChangeClick handler with ${eventString} when clicking change button in ${className}`, () => {
+    [{ className: 'select-dataset-summary', params: { index: 0, value: 'selectDataset' } },
+      { className: 'occurrence-data-summary', params: { index: 1, value: 'occurrenceData' } },
+      { className: 'location-data-summary', params: { index: 2, value: 'locationData' } },
+      { className: 'observation-data-summary', params: { index: 3, value: 'observationData' } },
+      { className: 'measurement-or-fact-summary', params: { index: 4, value: 'measurementOrFact' } },
+      { className: 'darwin-core-fields-summary', params: { index: 5, value: 'darwinCoreFields' } }
+    ].forEach(({ className, params }) => {
+      it(`calls onChangeClick handler with ${params.value} when clicking change button in ${className}`, () => {
         const onChangeClick = jest.fn()
         const wrapper = mount(createComponent({ onChangeClick }))
         wrapper.find('.' + className + ' .change-button').simulate('click')
         expect(onChangeClick).toHaveBeenCalledTimes(1)
-        expect(onChangeClick).toBeCalledWith(eventString)
+        expect(onChangeClick).toBeCalledWith(params)
       })
     })
   })

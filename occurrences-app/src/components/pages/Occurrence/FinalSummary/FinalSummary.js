@@ -29,7 +29,7 @@ export default function FinalSummary({
       <section className="select-dataset-summary">
         <SectionTitle>1 - {t('occurrenceForm.selectDataset.step.stepTitle')}</SectionTitle>
         <p>{dataset.description}</p>
-        <ChangeButton onClick={() => onChangeClick('selectDataset')}/>
+        <ChangeButton onClick={() => onChangeClick({ index: 0, value: 'selectDataset' })}/>
       </section>
       <section className="occurrence-data-summary">
         <SectionTitle>2 - {t('occurrenceForm.occurrenceData.step.stepTitle')}</SectionTitle>
@@ -59,7 +59,7 @@ export default function FinalSummary({
               value={t('occurrenceForm.occurrenceData.lifestage.' + occurrenceData.lifestage)}/>
           </tbody>
         </table>
-        <ChangeButton onClick={() => onChangeClick('occurrenceData')}/>
+        <ChangeButton onClick={() => onChangeClick({ index: 1, value: 'occurrenceData' })}/>
       </section>
       <section className="location-data-summary">
         <SectionTitle>3 - {t('occurrenceForm.locationData.step.stepTitle')}</SectionTitle>
@@ -94,7 +94,7 @@ export default function FinalSummary({
               value={locationData.verbatimDepth}/>
           </tbody>
         </table>
-        <ChangeButton onClick={() => onChangeClick('locationData')}/>
+        <ChangeButton onClick={() => onChangeClick({ index: 2, value: 'locationData' })}/>
       </section>
       <section className="observation-data-summary">
         <SectionTitle>4 - {t('occurrenceForm.observationData.step.stepTitle')}</SectionTitle>
@@ -150,7 +150,7 @@ export default function FinalSummary({
               value={observationData.identificationRemarks}/>
           </tbody>
         </table>
-        <ChangeButton onClick={() => onChangeClick('observationData')}/>
+        <ChangeButton onClick={() => onChangeClick({ index: 3, value: 'observationData' })}/>
       </section>
       <section className="measurement-or-fact-summary">
         <SectionTitle>5 - {t('occurrenceForm.measurementOrFact.step.stepTitle')}</SectionTitle>
@@ -173,7 +173,7 @@ export default function FinalSummary({
             ))}
           </tbody>
         </table>
-        <ChangeButton onClick={() => onChangeClick('measurementOrFact')}/>
+        <ChangeButton onClick={() => onChangeClick({ index: 4, value: 'measurementOrFact' })}/>
       </section>
       <section className="darwin-core-fields-summary">
         <SectionTitle>6 - {t('occurrenceForm.darwinCoreFields.step.stepTitle')}</SectionTitle>
@@ -186,7 +186,7 @@ export default function FinalSummary({
             )}
           </tbody>
         </table>
-        <ChangeButton onClick={() => onChangeClick('darwinCoreFields')}/>
+        <ChangeButton onClick={() => onChangeClick({ index: 5, value: 'darwinCoreFields' })}/>
       </section>
       <SubmitEntryButton onClick={onSubmitClick}/>
     </div>
