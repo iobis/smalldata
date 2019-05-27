@@ -27,7 +27,7 @@ export default function FinalSummary({
       </div>
       <SubmitEntryButton onClick={onSubmit}/>
       <section>
-        <SectionTitle>1 - {t('occurrenceForm.selectDataset.stepTitle')}</SectionTitle>
+        <SectionTitle>1 - {t('occurrenceForm.selectDataset.step.stepTitle')}</SectionTitle>
         <p>{dataset.description}</p>
       </section>
       <section>
