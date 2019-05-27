@@ -15,6 +15,7 @@ export default function DatePicker({ onChange, value }) {
       type:               'date'
     })
     calendar[0].on('select', (e) => onChange(new Date(e.data.value())))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return <input className="input" ref={datePickerEl} type="date"/>

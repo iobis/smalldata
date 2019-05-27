@@ -36,6 +36,7 @@ export default function ScientificNameInput({ scientificName, onChange }) {
     }
 
     if (debouncedName) getByName()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedName])
 
   function handleNameChange(newName) {
