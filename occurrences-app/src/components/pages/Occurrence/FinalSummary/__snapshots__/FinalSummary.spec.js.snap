@@ -111,7 +111,7 @@ exports[`FinalSummary renders correctly 1`] = `
       </div>
     </SubmitEntryButton>
     <section
-      className="select-dataset"
+      className="select-dataset-summary"
     >
       <SectionTitle>
         <h2
@@ -136,7 +136,7 @@ exports[`FinalSummary renders correctly 1`] = `
       </ChangeButton>
     </section>
     <section
-      className="occurrence-data"
+      className="occurrence-data-summary"
     >
       <SectionTitle>
         <h2
@@ -149,9 +149,25 @@ exports[`FinalSummary renders correctly 1`] = `
       <table
         className="table is-striped is-fullwidth is-hoverable"
       >
+        <NameValueHeader>
+          <thead>
+            <tr>
+              <th
+                className="type"
+              >
+                common.name
+              </th>
+              <th
+                className="value"
+              >
+                common.value
+              </th>
+            </tr>
+          </thead>
+        </NameValueHeader>
         <tbody>
           <NameValueRow
-            name="scientific name"
+            name="occurrenceForm.occurrenceData.scientificName"
             value="ala abra"
           >
             <tr
@@ -160,7 +176,7 @@ exports[`FinalSummary renders correctly 1`] = `
               <td
                 className="name"
               >
-                scientific name
+                occurrenceForm.occurrenceData.scientificName
               </td>
               <td
                 className="value"
@@ -170,7 +186,7 @@ exports[`FinalSummary renders correctly 1`] = `
             </tr>
           </NameValueRow>
           <NameValueRow
-            name="beginDate"
+            name="occurrenceForm.occurrenceData.eventBeginDate"
             value="29 April 2019"
           >
             <tr
@@ -179,7 +195,7 @@ exports[`FinalSummary renders correctly 1`] = `
               <td
                 className="name"
               >
-                beginDate
+                occurrenceForm.occurrenceData.eventBeginDate
               </td>
               <td
                 className="value"
@@ -189,7 +205,7 @@ exports[`FinalSummary renders correctly 1`] = `
             </tr>
           </NameValueRow>
           <NameValueRow
-            name="endDate"
+            name="occurrenceForm.occurrenceData.eventEndDate"
             value="30 April 2019"
           >
             <tr
@@ -198,7 +214,7 @@ exports[`FinalSummary renders correctly 1`] = `
               <td
                 className="name"
               >
-                endDate
+                occurrenceForm.occurrenceData.eventEndDate
               </td>
               <td
                 className="value"
@@ -208,8 +224,8 @@ exports[`FinalSummary renders correctly 1`] = `
             </tr>
           </NameValueRow>
           <NameValueRow
-            name="occurrenceStatus"
-            value="absent"
+            name="occurrenceForm.occurrenceData.occurrenceStatus.title"
+            value="occurrenceForm.occurrenceData.occurrenceStatus.absent"
           >
             <tr
               className="name-value-row fieldrow"
@@ -217,18 +233,18 @@ exports[`FinalSummary renders correctly 1`] = `
               <td
                 className="name"
               >
-                occurrenceStatus
+                occurrenceForm.occurrenceData.occurrenceStatus.title
               </td>
               <td
                 className="value"
               >
-                absent
+                occurrenceForm.occurrenceData.occurrenceStatus.absent
               </td>
             </tr>
           </NameValueRow>
           <NameValueRow
-            name="basisOfRecord"
-            value="humanObservation"
+            name="occurrenceForm.occurrenceData.basisOfRecord.title"
+            value="occurrenceForm.occurrenceData.basisOfRecord.humanObservation"
           >
             <tr
               className="name-value-row fieldrow"
@@ -236,18 +252,18 @@ exports[`FinalSummary renders correctly 1`] = `
               <td
                 className="name"
               >
-                basisOfRecord
+                occurrenceForm.occurrenceData.basisOfRecord.title
               </td>
               <td
                 className="value"
               >
-                humanObservation
+                occurrenceForm.occurrenceData.basisOfRecord.humanObservation
               </td>
             </tr>
           </NameValueRow>
           <NameValueRow
-            name="sex"
-            value="male"
+            name="occurrenceForm.occurrenceData.sex.title"
+            value="occurrenceForm.occurrenceData.sex.male"
           >
             <tr
               className="name-value-row fieldrow"
@@ -255,18 +271,18 @@ exports[`FinalSummary renders correctly 1`] = `
               <td
                 className="name"
               >
-                sex
+                occurrenceForm.occurrenceData.sex.title
               </td>
               <td
                 className="value"
               >
-                male
+                occurrenceForm.occurrenceData.sex.male
               </td>
             </tr>
           </NameValueRow>
           <NameValueRow
-            name="lifestage"
-            value="adult"
+            name="occurrenceForm.occurrenceData.lifestage.title"
+            value="occurrenceForm.occurrenceData.lifestage.adult"
           >
             <tr
               className="name-value-row fieldrow"
@@ -274,12 +290,12 @@ exports[`FinalSummary renders correctly 1`] = `
               <td
                 className="name"
               >
-                lifestage
+                occurrenceForm.occurrenceData.lifestage.title
               </td>
               <td
                 className="value"
               >
-                adult
+                occurrenceForm.occurrenceData.lifestage.adult
               </td>
             </tr>
           </NameValueRow>
@@ -297,7 +313,7 @@ exports[`FinalSummary renders correctly 1`] = `
       </ChangeButton>
     </section>
     <section
-      className="location-data"
+      className="location-data-summary"
     >
       <SectionTitle>
         <h2
@@ -310,9 +326,25 @@ exports[`FinalSummary renders correctly 1`] = `
       <table
         className="table is-striped is-fullwidth is-hoverable"
       >
+        <NameValueHeader>
+          <thead>
+            <tr>
+              <th
+                className="type"
+              >
+                common.name
+              </th>
+              <th
+                className="value"
+              >
+                common.value
+              </th>
+            </tr>
+          </thead>
+        </NameValueHeader>
         <tbody>
           <NameValueRow
-            name="Latitude"
+            name="occurrenceForm.locationData.decimalLatitude.label"
             value={51.3354656}
           >
             <tr
@@ -321,7 +353,7 @@ exports[`FinalSummary renders correctly 1`] = `
               <td
                 className="name"
               >
-                Latitude
+                occurrenceForm.locationData.decimalLatitude.label
               </td>
               <td
                 className="value"
@@ -331,7 +363,7 @@ exports[`FinalSummary renders correctly 1`] = `
             </tr>
           </NameValueRow>
           <NameValueRow
-            name="Longitude"
+            name="occurrenceForm.locationData.decimalLongitude.label"
             value={2.345456}
           >
             <tr
@@ -340,7 +372,7 @@ exports[`FinalSummary renders correctly 1`] = `
               <td
                 className="name"
               >
-                Longitude
+                occurrenceForm.locationData.decimalLongitude.label
               </td>
               <td
                 className="value"
@@ -350,7 +382,7 @@ exports[`FinalSummary renders correctly 1`] = `
             </tr>
           </NameValueRow>
           <NameValueRow
-            name="coordinateUncertainty"
+            name="occurrenceForm.locationData.coordinateUncertainty.label"
             value={null}
           >
             <tr
@@ -359,7 +391,7 @@ exports[`FinalSummary renders correctly 1`] = `
               <td
                 className="name"
               >
-                coordinateUncertainty
+                occurrenceForm.locationData.coordinateUncertainty.label
               </td>
               <td
                 className="value"
@@ -367,7 +399,7 @@ exports[`FinalSummary renders correctly 1`] = `
             </tr>
           </NameValueRow>
           <NameValueRow
-            name="minimumDepth"
+            name="occurrenceForm.locationData.minimumDepth.label"
             value={null}
           >
             <tr
@@ -376,7 +408,7 @@ exports[`FinalSummary renders correctly 1`] = `
               <td
                 className="name"
               >
-                minimumDepth
+                occurrenceForm.locationData.minimumDepth.label
               </td>
               <td
                 className="value"
@@ -384,7 +416,7 @@ exports[`FinalSummary renders correctly 1`] = `
             </tr>
           </NameValueRow>
           <NameValueRow
-            name="maximumDepth"
+            name="occurrenceForm.locationData.maximumDepth.label"
             value={null}
           >
             <tr
@@ -393,7 +425,7 @@ exports[`FinalSummary renders correctly 1`] = `
               <td
                 className="name"
               >
-                maximumDepth
+                occurrenceForm.locationData.maximumDepth.label
               </td>
               <td
                 className="value"
@@ -414,7 +446,7 @@ exports[`FinalSummary renders correctly 1`] = `
       >
         <tbody>
           <NameValueRow
-            name="verbatimCoordinates"
+            name="occurrenceForm.locationData.verbatimCoordinates.label"
             value="41 05 54S 121 05 34W"
           >
             <tr
@@ -423,7 +455,7 @@ exports[`FinalSummary renders correctly 1`] = `
               <td
                 className="name"
               >
-                verbatimCoordinates
+                occurrenceForm.locationData.verbatimCoordinates.label
               </td>
               <td
                 className="value"
@@ -433,7 +465,7 @@ exports[`FinalSummary renders correctly 1`] = `
             </tr>
           </NameValueRow>
           <NameValueRow
-            name="verbatimDepth"
+            name="occurrenceForm.locationData.verbatimDepth.label"
             value="100 - 200 m"
           >
             <tr
@@ -442,7 +474,7 @@ exports[`FinalSummary renders correctly 1`] = `
               <td
                 className="name"
               >
-                verbatimDepth
+                occurrenceForm.locationData.verbatimDepth.label
               </td>
               <td
                 className="value"
@@ -465,7 +497,7 @@ exports[`FinalSummary renders correctly 1`] = `
       </ChangeButton>
     </section>
     <section
-      className="observation-data"
+      className="observation-data-summary"
     >
       <SectionTitle>
         <h2
@@ -488,9 +520,25 @@ exports[`FinalSummary renders correctly 1`] = `
         <table
           className="table is-striped is-fullwidth is-hoverable"
         >
+          <NameValueHeader>
+            <thead>
+              <tr>
+                <th
+                  className="type"
+                >
+                  common.name
+                </th>
+                <th
+                  className="value"
+                >
+                  common.value
+                </th>
+              </tr>
+            </thead>
+          </NameValueHeader>
           <tbody>
             <NameValueRow
-              name="institutionCode"
+              name="occurrenceForm.observationData.institutionCode.label"
               value="IBSS"
             >
               <tr
@@ -499,7 +547,7 @@ exports[`FinalSummary renders correctly 1`] = `
                 <td
                   className="name"
                 >
-                  institutionCode
+                  occurrenceForm.observationData.institutionCode.label
                 </td>
                 <td
                   className="value"
@@ -509,7 +557,7 @@ exports[`FinalSummary renders correctly 1`] = `
               </tr>
             </NameValueRow>
             <NameValueRow
-              name="collectionCode"
+              name="occurrenceForm.observationData.collectionCode.label"
               value="R/V N. Danilevskiy 1935 Azov Sea benthos data"
             >
               <tr
@@ -518,7 +566,7 @@ exports[`FinalSummary renders correctly 1`] = `
                 <td
                   className="name"
                 >
-                  collectionCode
+                  occurrenceForm.observationData.collectionCode.label
                 </td>
                 <td
                   className="value"
@@ -528,7 +576,7 @@ exports[`FinalSummary renders correctly 1`] = `
               </tr>
             </NameValueRow>
             <NameValueRow
-              name="fieldNumber"
+              name="occurrenceForm.observationData.fieldNumber.label"
               value="557"
             >
               <tr
@@ -537,7 +585,7 @@ exports[`FinalSummary renders correctly 1`] = `
                 <td
                   className="name"
                 >
-                  fieldNumber
+                  occurrenceForm.observationData.fieldNumber.label
                 </td>
                 <td
                   className="value"
@@ -547,7 +595,7 @@ exports[`FinalSummary renders correctly 1`] = `
               </tr>
             </NameValueRow>
             <NameValueRow
-              name="catalogNumber"
+              name="occurrenceForm.observationData.catalogNumber.label"
               value="IBSS_Benthos_1935_1331"
             >
               <tr
@@ -556,7 +604,7 @@ exports[`FinalSummary renders correctly 1`] = `
                 <td
                   className="name"
                 >
-                  catalogNumber
+                  occurrenceForm.observationData.catalogNumber.label
                 </td>
                 <td
                   className="value"
@@ -566,7 +614,7 @@ exports[`FinalSummary renders correctly 1`] = `
               </tr>
             </NameValueRow>
             <NameValueRow
-              name="recordNumber"
+              name="occurrenceForm.observationData.recordNumber.label"
               value="123456"
             >
               <tr
@@ -575,7 +623,7 @@ exports[`FinalSummary renders correctly 1`] = `
                 <td
                   className="name"
                 >
-                  recordNumber
+                  occurrenceForm.observationData.recordNumber.label
                 </td>
                 <td
                   className="value"
@@ -633,9 +681,25 @@ exports[`FinalSummary renders correctly 1`] = `
       <table
         className="table is-striped is-fullwidth is-hoverable"
       >
+        <NameValueHeader>
+          <thead>
+            <tr>
+              <th
+                className="type"
+              >
+                common.name
+              </th>
+              <th
+                className="value"
+              >
+                common.value
+              </th>
+            </tr>
+          </thead>
+        </NameValueHeader>
         <tbody>
           <NameValueRow
-            name="references"
+            name="occurrenceForm.observationData.references.label"
             value="http://www.google.com, https://clojure.org/"
           >
             <tr
@@ -644,7 +708,7 @@ exports[`FinalSummary renders correctly 1`] = `
               <td
                 className="name"
               >
-                references
+                occurrenceForm.observationData.references.label
               </td>
               <td
                 className="value"
@@ -654,7 +718,7 @@ exports[`FinalSummary renders correctly 1`] = `
             </tr>
           </NameValueRow>
           <NameValueRow
-            name="identificationQualifier"
+            name="occurrenceForm.observationData.identificationQualifier.label"
             value="some identification qualifier"
           >
             <tr
@@ -663,7 +727,7 @@ exports[`FinalSummary renders correctly 1`] = `
               <td
                 className="name"
               >
-                identificationQualifier
+                occurrenceForm.observationData.identificationQualifier.label
               </td>
               <td
                 className="value"
@@ -673,7 +737,7 @@ exports[`FinalSummary renders correctly 1`] = `
             </tr>
           </NameValueRow>
           <NameValueRow
-            name="identificationRemarks"
+            name="occurrenceForm.observationData.identificationRemarks.label"
             value="some identification remarks"
           >
             <tr
@@ -682,7 +746,7 @@ exports[`FinalSummary renders correctly 1`] = `
               <td
                 className="name"
               >
-                identificationRemarks
+                occurrenceForm.observationData.identificationRemarks.label
               </td>
               <td
                 className="value"
@@ -705,7 +769,7 @@ exports[`FinalSummary renders correctly 1`] = `
       </ChangeButton>
     </section>
     <section
-      className="measurement-or-fact"
+      className="measurement-or-fact-summary"
     >
       <SectionTitle>
         <h2
@@ -726,9 +790,9 @@ exports[`FinalSummary renders correctly 1`] = `
               common.type
             </th>
             <th
-              className="unit"
+              className="name"
             >
-              common.unit
+              common.name
             </th>
             <th
               className="value"
@@ -780,7 +844,7 @@ exports[`FinalSummary renders correctly 1`] = `
       </ChangeButton>
     </section>
     <section
-      className="darwin-core-fields"
+      className="darwin-core-fields-summary"
     >
       <SectionTitle>
         <h2
@@ -793,6 +857,22 @@ exports[`FinalSummary renders correctly 1`] = `
       <table
         className="table is-striped is-fullwidth is-hoverable"
       >
+        <NameValueHeader>
+          <thead>
+            <tr>
+              <th
+                className="type"
+              >
+                common.name
+              </th>
+              <th
+                className="value"
+              >
+                common.value
+              </th>
+            </tr>
+          </thead>
+        </NameValueHeader>
         <tbody>
           <NameValueRow
             key="0"

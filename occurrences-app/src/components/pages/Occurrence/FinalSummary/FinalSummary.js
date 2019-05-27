@@ -26,57 +26,98 @@ export default function FinalSummary({
         <h1 className="final-summary-title title is-3">{t('occurrenceForm.finalSummary.title')}</h1>
       </div>
       <SubmitEntryButton onClick={onSubmitClick}/>
-      <section className="select-dataset">
+      <section className="select-dataset-summary">
         <SectionTitle>1 - {t('occurrenceForm.selectDataset.step.stepTitle')}</SectionTitle>
         <p>{dataset.description}</p>
         <ChangeButton onClick={() => onChangeClick('selectDataset')}/>
       </section>
-      <section className="occurrence-data">
+      <section className="occurrence-data-summary">
         <SectionTitle>2 - {t('occurrenceForm.occurrenceData.step.stepTitle')}</SectionTitle>
         <table className="table is-striped is-fullwidth is-hoverable">
+          <NameValueHeader/>
           <tbody>
-            <NameValueRow name="scientific name" value={occurrenceData.scientificName}/>
-            <NameValueRow name="beginDate" value={format(occurrenceData.beginDate, 'D MMMM YYYY')}/>
-            <NameValueRow name="endDate" value={format(occurrenceData.endDate, 'D MMMM YYYY')}/>
-            <NameValueRow name="occurrenceStatus" value={occurrenceData.occurrenceStatus}/>
-            <NameValueRow name="basisOfRecord" value={occurrenceData.basisOfRecord}/>
-            <NameValueRow name="sex" value={occurrenceData.sex}/>
-            <NameValueRow name="lifestage" value={occurrenceData.lifestage}/>
+            <NameValueRow
+              name={t('occurrenceForm.occurrenceData.scientificName')}
+              value={occurrenceData.scientificName}/>
+            <NameValueRow
+              name={t('occurrenceForm.occurrenceData.eventBeginDate')}
+              value={format(occurrenceData.beginDate, 'D MMMM YYYY')}/>
+            <NameValueRow
+              name={t('occurrenceForm.occurrenceData.eventEndDate')}
+              value={format(occurrenceData.endDate, 'D MMMM YYYY')}/>
+            <NameValueRow
+              name={t('occurrenceForm.occurrenceData.occurrenceStatus.title')}
+              value={t('occurrenceForm.occurrenceData.occurrenceStatus.' + occurrenceData.occurrenceStatus)}/>
+            <NameValueRow
+              name={t('occurrenceForm.occurrenceData.basisOfRecord.title')}
+              value={t('occurrenceForm.occurrenceData.basisOfRecord.' + occurrenceData.basisOfRecord)}/>
+            <NameValueRow
+              name={t('occurrenceForm.occurrenceData.sex.title')}
+              value={t('occurrenceForm.occurrenceData.sex.' + occurrenceData.sex)}/>
+            <NameValueRow
+              name={t('occurrenceForm.occurrenceData.lifestage.title')}
+              value={t('occurrenceForm.occurrenceData.lifestage.' + occurrenceData.lifestage)}/>
           </tbody>
         </table>
         <ChangeButton onClick={() => onChangeClick('occurrenceData')}/>
       </section>
-      <section className="location-data">
+      <section className="location-data-summary">
         <SectionTitle>3 - {t('occurrenceForm.locationData.step.stepTitle')}</SectionTitle>
         <table className="table is-striped is-fullwidth is-hoverable">
+          <NameValueHeader/>
           <tbody>
-            <NameValueRow name="Latitude" value={locationData.decimalLatitude}/>
-            <NameValueRow name="Longitude" value={locationData.decimalLongitude}/>
-            <NameValueRow name="coordinateUncertainty" value={locationData.coordinateUncertainty}/>
-            <NameValueRow name="minimumDepth" value={locationData.minimumDepth}/>
-            <NameValueRow name="maximumDepth" value={locationData.maximumDepth}/>
+            <NameValueRow
+              name={t('occurrenceForm.locationData.decimalLatitude.label')}
+              value={locationData.decimalLatitude}/>
+            <NameValueRow
+              name={t('occurrenceForm.locationData.decimalLongitude.label')}
+              value={locationData.decimalLongitude}/>
+            <NameValueRow
+              name={t('occurrenceForm.locationData.coordinateUncertainty.label')}
+              value={locationData.coordinateUncertainty}/>
+            <NameValueRow
+              name={t('occurrenceForm.locationData.minimumDepth.label')}
+              value={locationData.minimumDepth}/>
+            <NameValueRow
+              name={t('occurrenceForm.locationData.maximumDepth.label')}
+              value={locationData.maximumDepth}/>
           </tbody>
         </table>
         <SectionSubtitle>{t('occurrenceForm.finalSummary.locationData.verbatimDataSubtitle')}</SectionSubtitle>
         <table className="table is-striped is-fullwidth is-hoverable">
           <tbody>
-            <NameValueRow name="verbatimCoordinates" value={locationData.verbatimCoordinates}/>
-            <NameValueRow name="verbatimDepth" value={locationData.verbatimDepth}/>
+            <NameValueRow
+              name={t('occurrenceForm.locationData.verbatimCoordinates.label')}
+              value={locationData.verbatimCoordinates}/>
+            <NameValueRow
+              name={t('occurrenceForm.locationData.verbatimDepth.label')}
+              value={locationData.verbatimDepth}/>
           </tbody>
         </table>
         <ChangeButton onClick={() => onChangeClick('locationData')}/>
       </section>
-      <section className="observation-data">
+      <section className="observation-data-summary">
         <SectionTitle>4 - {t('occurrenceForm.observationData.step.stepTitle')}</SectionTitle>
         <SectionSubtitle>{t('occurrenceForm.finalSummary.observationData.catalogDataSubtitle')}</SectionSubtitle>
         <div className="content">
           <table className="table is-striped is-fullwidth is-hoverable">
+            <NameValueHeader/>
             <tbody>
-              <NameValueRow name="institutionCode" value={observationData.institutionCode}/>
-              <NameValueRow name="collectionCode" value={observationData.collectionCode}/>
-              <NameValueRow name="fieldNumber" value={observationData.fieldNumber}/>
-              <NameValueRow name="catalogNumber" value={observationData.catalogNumber}/>
-              <NameValueRow name="recordNumber" value={observationData.recordNumber}/>
+              <NameValueRow
+                name={t('occurrenceForm.observationData.institutionCode.label')}
+                value={observationData.institutionCode}/>
+              <NameValueRow
+                name={t('occurrenceForm.observationData.collectionCode.label')}
+                value={observationData.collectionCode}/>
+              <NameValueRow
+                name={t('occurrenceForm.observationData.fieldNumber.label')}
+                value={observationData.fieldNumber}/>
+              <NameValueRow
+                name={t('occurrenceForm.observationData.catalogNumber.label')}
+                value={observationData.catalogNumber}/>
+              <NameValueRow
+                name={t('occurrenceForm.observationData.recordNumber.label')}
+                value={observationData.recordNumber}/>
             </tbody>
           </table>
           <div className="columns">
@@ -96,21 +137,28 @@ export default function FinalSummary({
         </div>
         <SectionSubtitle>{t('occurrenceForm.finalSummary.observationData.speciesDataSubtitle')}</SectionSubtitle>
         <table className="table is-striped is-fullwidth is-hoverable">
+          <NameValueHeader/>
           <tbody>
-            <NameValueRow name="references" value={observationData.references.join(', ')}/>
-            <NameValueRow name="identificationQualifier" value={observationData.identificationQualifier}/>
-            <NameValueRow name="identificationRemarks" value={observationData.identificationRemarks}/>
+            <NameValueRow
+              name={t('occurrenceForm.observationData.references.label')}
+              value={observationData.references.join(', ')}/>
+            <NameValueRow
+              name={t('occurrenceForm.observationData.identificationQualifier.label')}
+              value={observationData.identificationQualifier}/>
+            <NameValueRow
+              name={t('occurrenceForm.observationData.identificationRemarks.label')}
+              value={observationData.identificationRemarks}/>
           </tbody>
         </table>
         <ChangeButton onClick={() => onChangeClick('observationData')}/>
       </section>
-      <section className="measurement-or-fact">
+      <section className="measurement-or-fact-summary">
         <SectionTitle>5 - {t('occurrenceForm.measurementOrFact.step.stepTitle')}</SectionTitle>
         <table className="measurements table is-fullwidth is-striped is-hoverable">
           <thead>
             <tr>
               <th className="type">{t('common.type')}</th>
-              <th className="unit">{t('common.unit')}</th>
+              <th className="name">{t('common.name')}</th>
               <th className="value">{t('common.value')}</th>
             </tr>
           </thead>
@@ -127,9 +175,10 @@ export default function FinalSummary({
         </table>
         <ChangeButton onClick={() => onChangeClick('measurementOrFact')}/>
       </section>
-      <section className="darwin-core-fields">
+      <section className="darwin-core-fields-summary">
         <SectionTitle>6 - {t('occurrenceForm.darwinCoreFields.step.stepTitle')}</SectionTitle>
         <table className="table is-striped is-fullwidth is-hoverable">
+          <NameValueHeader/>
           <tbody>
             {darwinCoreFields.map((field, index) =>
               // eslint-disable-next-line react/no-array-index-key
@@ -153,6 +202,19 @@ FinalSummary.propTypes = {
   occurrenceData:   PropTypes.shape(occurrenceDataShape).isRequired,
   onChangeClick:    PropTypes.func.isRequired,
   onSubmitClick:    PropTypes.func.isRequired
+}
+
+function NameValueHeader() {
+  const { t } = useTranslation()
+
+  return (
+    <thead>
+      <tr>
+        <th className="type">{t('common.name')}</th>
+        <th className="value">{t('common.value')}</th>
+      </tr>
+    </thead>
+  )
 }
 
 function NameValueRow({ name, value }) {

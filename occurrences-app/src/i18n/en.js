@@ -40,17 +40,17 @@ export default {
           stepDescription: 'Mandatory observation information',
           stepTitle:       'Occurrence Data'
         },
-        scientificName:   'Scientific name',
-        eventBeginDate:   'Event begin date',
-        eventEndDate:     'Event end date',
+        scientificName:   'Scientific Name',
+        eventBeginDate:   'Event Begin Date',
+        eventEndDate:     'Event End Date',
         eventEndDateHelp: 'optional: only in case of date range',
         occurrenceStatus: {
-          title:   'Occurrence status',
+          title:   'Occurrence Status',
           absent:  'absent',
           present: 'present'
         },
         basisOfRecord:    {
-          title:              'Basis of record',
+          title:              'Basis of Record',
           humanObservation:   'human observation',
           fossilSpecimen:     'fossil specimen',
           livingSpecimen:     'living specimen',

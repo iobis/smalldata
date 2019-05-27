@@ -9,12 +9,12 @@ describe('FinalSummary', () => {
   })
 
   describe('when clicking change button', () => {
-    [{ className: 'select-dataset', eventString: 'selectDataset' },
-      { className: 'occurrence-data', eventString: 'occurrenceData' },
-      { className: 'location-data', eventString: 'locationData' },
-      { className: 'observation-data', eventString: 'observationData' },
-      { className: 'measurement-or-fact', eventString: 'measurementOrFact' },
-      { className: 'darwin-core-fields', eventString: 'darwinCoreFields' }
+    [{ className: 'select-dataset-summary', eventString: 'selectDataset' },
+      { className: 'occurrence-data-summary', eventString: 'occurrenceData' },
+      { className: 'location-data-summary', eventString: 'locationData' },
+      { className: 'observation-data-summary', eventString: 'observationData' },
+      { className: 'measurement-or-fact-summary', eventString: 'measurementOrFact' },
+      { className: 'darwin-core-fields-summary', eventString: 'darwinCoreFields' }
     ].forEach(({ className, eventString }) => {
       it(`calls onChangeClick handler with ${eventString} when clicking change button in ${className}`, () => {
         const onChangeClick = jest.fn()

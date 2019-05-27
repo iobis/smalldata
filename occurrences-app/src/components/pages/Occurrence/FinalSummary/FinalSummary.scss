@@ -9,21 +9,26 @@
 
   section {
     margin-bottom: 1.5rem;
+    &.select-dataset-summary {
+      .change-button {
+        margin-top: 1rem;
+      }
+    }
   }
 
   .name-value-row {
     .name {
-      width: 20%;
+      width: 30%;
     }
 
     .value {
-      width: 80%;
+      width: 70%;
     }
   }
 
   .measurements {
     .type {
-      width: 60%
+      width: 30%
     }
 
     .unit {
