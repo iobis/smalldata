@@ -27,14 +27,15 @@ export default {
       }
     },
     occurrenceForm: {
-      selectDataset:     {
+      reviewAndSubmitButton: 'Review & Submit',
+      selectDataset:         {
         step: {
           dataDescription: 'Using Data',
           stepDescription: 'Choose the dataset for adding observations',
           stepTitle:       'Selected Dataset'
         }
       },
-      occurrenceData:    {
+      occurrenceData:        {
         step:             {
           dataDescription: 'Given Values',
           stepDescription: 'Mandatory observation information',
@@ -71,7 +72,7 @@ export default {
           unspecified: 'unspecified'
         }
       },
-      locationData:      {
+      locationData:          {
         enterCoordinates:      {
           title:    'Enter coordinates',
           subtitle: 'bold fields are mandatory'
@@ -130,7 +131,7 @@ export default {
           title:          'Don\'t know the exact coordinates?'
         }
       },
-      observationData:   {
+      observationData:       {
         step:                    {
           dataDescription: 'Main Info',
           stepDescription: 'Enter further specifics',
@@ -182,7 +183,7 @@ export default {
           help:        'hit enter to add a reference to list'
         }
       },
-      measurementOrFact: {
+      measurementOrFact:     {
         step:     {
           dataDescription: 'Given values',
           stepDescription: 'Enter further specifics',
@@ -201,7 +202,7 @@ export default {
           title: 'Supplied measurements or facts'
         }
       },
-      darwinCoreFields:  {
+      darwinCoreFields:      {
         step:      {
           stepDescription: 'Supply specific Darwin core fields',
           stepTitle:       'Darwin Core Fields'
@@ -220,7 +221,7 @@ export default {
           help:        ''
         }
       },
-      finalSummary:      {
+      finalSummary:          {
         submitEntryButton: 'Submit Entry',
         title:             'Final Summary',
         locationData:      {

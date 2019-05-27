@@ -1,11 +1,12 @@
 import ActiveStepHeader from './StepHeaders/ActiveStepHeader'
-import OccurrenceData from './OccurrenceData/OccurrenceData'
 import ConfirmedStepHeader from './StepHeaders/ConfirmedStepHeader'
 import DarwinCoreFields from './DarwinCoreFields/DarwinCoreFields'
+import FinalSummary from './FinalSummary/FinalSummary'
 import LocationData from './LocationData/LocationData'
 import MeasurementOrFact from './MeasurementOrFact/MeasurementOrFact'
 import NotConfirmedStepHeader from './StepHeaders/NotConfirmedStepHeader'
 import ObservationData from './ObservationData/ObservationData'
+import OccurrenceData from './OccurrenceData/OccurrenceData'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import SelectDataset from './SelectDataset/SelectDataset'
@@ -50,6 +51,7 @@ export default function OccurrenceForm() {
   const [darwinCoreFields, setDarwinCoreFields] = useState([])
   const [activeStepIndex, setActiveStepIndex] = useState(0)
   const [measurementOrFact, setMeasurementOrFact] = useState([])
+  const [finalSummaryVisible, setFinalSummaryVisible] = useState(false)
   const steps = [{
     dataDescription: t('occurrenceForm.selectDataset.step.dataDescription'),
     selectedData:    dataset.description,
@@ -101,6 +103,16 @@ export default function OccurrenceForm() {
       onChange={setDarwinCoreFields}/>
   }]
 
+  function showFinalSummary() {
+    setActiveStepIndex(null)
+    setFinalSummaryVisible(true)
+  }
+
+  function showActiveStep(stepIndex) {
+    setActiveStepIndex(stepIndex)
+    setFinalSummaryVisible(false)
+  }
+
   return (
     <section className="section">
       {steps.map((step, index) => {
@@ -116,10 +128,25 @@ export default function OccurrenceForm() {
             {...step}
             className={className}
             key={step.stepTitle}
-            onStepTitleClick={() => setActiveStepIndex(index)}
+            onStepTitleClick={() => showActiveStep(index)}
             stepTitle={stepNumber + ' - ' + step.stepTitle}/>
         )
       })}
+      {finalSummaryVisible ?
+        (<FinalSummary
+          darwinCoreFields={darwinCoreFields}
+          dataset={dataset}
+          locationData={locationData}
+          measurements={measurementOrFact}
+          observationData={observationData}
+          occurrenceData={occurrenceData}
+          onChangeClick={(params) => showActiveStep(params.index)}
+          onSubmitClick={() => {}}/>) :
+        (<div className="columns column is-centered">
+          <button className="review-and-submit-button button is-medium is-info" onClick={showFinalSummary}>
+            {t('occurrenceForm.reviewAndSubmitButton')}
+          </button>
+        </div>)}
     </section>
   )
 }

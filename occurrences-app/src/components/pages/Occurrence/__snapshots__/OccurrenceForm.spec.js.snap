@@ -623,6 +623,16 @@ exports[`OccurrenceForm renders correctly 1`] = `
         </div>
       </StepHeader>
     </NotConfirmedStepHeader>
+    <div
+      className="columns column is-centered"
+    >
+      <button
+        className="review-and-submit-button button is-medium is-info"
+        onClick={[Function]}
+      >
+        occurrenceForm.reviewAndSubmitButton
+      </button>
+    </div>
   </section>
 </OccurrenceForm>
 `;
@@ -1400,6 +1410,16 @@ exports[`OccurrenceForm renders correctly 2`] = `
         </div>
       </StepHeader>
     </NotConfirmedStepHeader>
+    <div
+      className="columns column is-centered"
+    >
+      <button
+        className="review-and-submit-button button is-medium is-info"
+        onClick={[Function]}
+      >
+        occurrenceForm.reviewAndSubmitButton
+      </button>
+    </div>
   </section>
 </OccurrenceForm>
 `;
@@ -3365,6 +3385,16 @@ exports[`OccurrenceForm renders correctly 3`] = `
         </div>
       </StepHeader>
     </NotConfirmedStepHeader>
+    <div
+      className="columns column is-centered"
+    >
+      <button
+        className="review-and-submit-button button is-medium is-info"
+        onClick={[Function]}
+      >
+        occurrenceForm.reviewAndSubmitButton
+      </button>
+    </div>
   </section>
 </OccurrenceForm>
 `;
@@ -3992,6 +4022,16 @@ exports[`OccurrenceForm renders correctly 4`] = `
         </DarwinCoreFields>
       </StepHeader>
     </ActiveStepHeader>
+    <div
+      className="columns column is-centered"
+    >
+      <button
+        className="review-and-submit-button button is-medium is-info"
+        onClick={[Function]}
+      >
+        occurrenceForm.reviewAndSubmitButton
+      </button>
+    </div>
   </section>
 </OccurrenceForm>
 `;
@@ -4652,6 +4692,16 @@ exports[`OccurrenceForm renders correctly 5`] = `
         </DarwinCoreFields>
       </StepHeader>
     </ActiveStepHeader>
+    <div
+      className="columns column is-centered"
+    >
+      <button
+        className="review-and-submit-button button is-medium is-info"
+        onClick={[Function]}
+      >
+        occurrenceForm.reviewAndSubmitButton
+      </button>
+    </div>
   </section>
 </OccurrenceForm>
 `;
@@ -5345,6 +5395,16 @@ exports[`OccurrenceForm renders correctly 6`] = `
         </DarwinCoreFields>
       </StepHeader>
     </ActiveStepHeader>
+    <div
+      className="columns column is-centered"
+    >
+      <button
+        className="review-and-submit-button button is-medium is-info"
+        onClick={[Function]}
+      >
+        occurrenceForm.reviewAndSubmitButton
+      </button>
+    </div>
   </section>
 </OccurrenceForm>
 `;
