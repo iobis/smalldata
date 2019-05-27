@@ -127,6 +127,10 @@ export default {
         }
       },
       observationData:   {
+        step:                    {
+          stepDescription: 'Enter further specifics',
+          stepTitle:       'Observation Data'
+        },
         institutionCode:         {
           label:       'institution code',
           placeholder: 'institution code'
@@ -175,7 +179,9 @@ export default {
       },
       measurementOrFact: {
         step:     {
-          title: 'You have submitted {{number}} extra fields'
+          stepDescription: 'Enter further specifics',
+          stepTitle:       'Measurement or Fact',
+          title:           'You have submitted {{number}} extra fields'
         },
         general:  {
           title:    'STEP 1: General sample information',
@@ -190,6 +196,10 @@ export default {
         }
       },
       darwinCoreFields:  {
+        step:      {
+          stepDescription: 'Supply specific Darwin core fields',
+          stepTitle:       'Darwin Core Fields'
+        },
         title:     'Darwin Core Custom Selection',
         subtitle:  'This form enables you to add any additional fields you may need to specify, that were not previously included in this form.',
         tip:       'Please be advised to use the Darwin Core Archive names',

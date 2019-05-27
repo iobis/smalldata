@@ -27,11 +27,11 @@ export default function FinalSummary({
       </div>
       <SubmitEntryButton onClick={onSubmit}/>
       <section>
-        <SectionTitle>1 - DATASET</SectionTitle>
+        <SectionTitle>1 - {t('occurrenceForm.selectDataset.stepTitle')}</SectionTitle>
         <p>{dataset.description}</p>
       </section>
       <section>
-        <SectionTitle>2 - OCCURRENCE DATA</SectionTitle>
+        <SectionTitle>2 - {t('occurrenceForm.occurrenceData.step.stepTitle')}</SectionTitle>
         <table className="table is-striped is-fullwidth is-hoverable">
           <tbody>
             <NameValueRow name="scientific name" value={occurrenceData.scientificName}/>
@@ -45,7 +45,7 @@ export default function FinalSummary({
         </table>
       </section>
       <section>
-        <SectionTitle>3 - LOCATION DATA</SectionTitle>
+        <SectionTitle>3 - {t('occurrenceForm.locationData.step.stepTitle')}</SectionTitle>
         <table className="table is-striped is-fullwidth is-hoverable">
           <tbody>
             <NameValueRow name="Latitude" value={locationData.decimalLatitude}/>
@@ -64,7 +64,7 @@ export default function FinalSummary({
         </table>
       </section>
       <section>
-        <SectionTitle>4 - OBSERVATION DATA</SectionTitle>
+        <SectionTitle>4 - {t('occurrenceForm.observationData.step.stepTitle')}</SectionTitle>
         <SectionSubtitle>Catalog data</SectionSubtitle>
         <div className="content">
           <table className="table is-striped is-fullwidth is-hoverable">
@@ -101,7 +101,7 @@ export default function FinalSummary({
         </table>
       </section>
       <section>
-        <SectionTitle>5 - MEASUREMENT OR FACT</SectionTitle>
+        <SectionTitle>5 - {t('occurrenceForm.measurementOrFact.step.stepTitle')}</SectionTitle>
         <table className="measurements table is-fullwidth is-striped is-hoverable">
           <thead>
             <tr>
@@ -123,7 +123,7 @@ export default function FinalSummary({
         </table>
       </section>
       <section>
-        <SectionTitle>6 - DARWIN CORE FIELDS</SectionTitle>
+        <SectionTitle>6 - {t('occurrenceForm.darwinCoreFields.step.stepTitle')}</SectionTitle>
         <table className="table is-striped is-fullwidth is-hoverable">
           <tbody>
             {darwinCoreFields.map((field, index) =>
@@ -183,7 +183,7 @@ function SectionTitle({ children }) {
 }
 
 SectionTitle.propTypes = {
-  children: PropTypes.string.isRequired
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired
 }
 
 function SectionSubtitle({ children }) {
@@ -191,5 +191,5 @@ function SectionSubtitle({ children }) {
 }
 
 SectionSubtitle.propTypes = {
-  children: PropTypes.string.isRequired
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired
 }

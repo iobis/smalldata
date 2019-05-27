@@ -78,24 +78,24 @@ export default function OccurrenceForm() {
   }, {
     dataDescription: 'Main Info',
     selectedData:    renderIdentifiedByLabel(observationData),
-    stepDescription: 'Enter further specifics',
-    stepTitle:       'Observation Data',
+    stepDescription: t('occurrenceForm.observationData.step.stepDescription'),
+    stepTitle:       t('occurrenceForm.observationData.step.stepTitle'),
     children:        <ObservationData
       observationData={observationData}
       onChange={setObservationData}/>
   }, {
     dataDescription: 'Given values',
     selectedData:    <MeasurementOrFactSummary data={measurementOrFact}/>,
-    stepDescription: 'Enter further specifics',
-    stepTitle:       'Measurement or Fact',
+    stepDescription: t('occurrenceForm.measurementOrFact.step.stepDescription'),
+    stepTitle:       t('occurrenceForm.measurementOrFact.step.stepTitle'),
     children:        <MeasurementOrFact
       data={measurementOrFact}
       onChange={setMeasurementOrFact}/>
   }, {
     dataDescription: '',
     selectedData:    '',
-    stepDescription: 'Supply specific Darwin core fields',
-    stepTitle:       'Darwin Core Fields',
+    stepDescription: t('occurrenceForm.darwinCoreFields.step.stepDescription'),
+    stepTitle:       t('occurrenceForm.darwinCoreFields.step.stepTitle'),
     children:        <DarwinCoreFields
       fields={darwinCoreFields}
       onChange={setDarwinCoreFields}/>

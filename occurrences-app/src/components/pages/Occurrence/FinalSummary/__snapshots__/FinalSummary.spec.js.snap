@@ -115,7 +115,8 @@ exports[`FinalSummary renders correctly 1`] = `
         <h2
           className="title is-4"
         >
-          1 - DATASET
+          1 - 
+          occurrenceForm.selectDataset.stepTitle
         </h2>
       </SectionTitle>
       <p>
@@ -127,7 +128,8 @@ exports[`FinalSummary renders correctly 1`] = `
         <h2
           className="title is-4"
         >
-          2 - OCCURRENCE DATA
+          2 - 
+          occurrenceForm.occurrenceData.step.stepTitle
         </h2>
       </SectionTitle>
       <table
@@ -275,7 +277,8 @@ exports[`FinalSummary renders correctly 1`] = `
         <h2
           className="title is-4"
         >
-          3 - LOCATION DATA
+          3 - 
+          occurrenceForm.locationData.step.stepTitle
         </h2>
       </SectionTitle>
       <table
@@ -430,7 +433,8 @@ exports[`FinalSummary renders correctly 1`] = `
         <h2
           className="title is-4"
         >
-          4 - OBSERVATION DATA
+          4 - 
+          occurrenceForm.observationData.step.stepTitle
         </h2>
       </SectionTitle>
       <SectionSubtitle>
@@ -657,7 +661,8 @@ exports[`FinalSummary renders correctly 1`] = `
         <h2
           className="title is-4"
         >
-          5 - MEASUREMENT OR FACT
+          5 - 
+          occurrenceForm.measurementOrFact.step.stepTitle
         </h2>
       </SectionTitle>
       <table
@@ -719,7 +724,8 @@ exports[`FinalSummary renders correctly 1`] = `
         <h2
           className="title is-4"
         >
-          6 - DARWIN CORE FIELDS
+          6 - 
+          occurrenceForm.darwinCoreFields.step.stepTitle
         </h2>
       </SectionTitle>
       <table
