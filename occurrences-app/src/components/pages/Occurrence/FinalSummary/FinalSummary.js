@@ -29,6 +29,7 @@ export default function FinalSummary({
       <section>
         <SectionTitle>1 - {t('occurrenceForm.selectDataset.step.stepTitle')}</SectionTitle>
         <p>{dataset.description}</p>
+        <ChangeButton onClick={() => onChange('selectDataset')}/>
       </section>
       <section>
         <SectionTitle>2 - {t('occurrenceForm.occurrenceData.step.stepTitle')}</SectionTitle>
@@ -43,6 +44,7 @@ export default function FinalSummary({
             <NameValueRow name="lifestage" value={occurrenceData.lifestage}/>
           </tbody>
         </table>
+        <ChangeButton onClick={() => onChange('occurrenceData')}/>
       </section>
       <section>
         <SectionTitle>3 - {t('occurrenceForm.locationData.step.stepTitle')}</SectionTitle>
@@ -62,6 +64,7 @@ export default function FinalSummary({
             <NameValueRow name="verbatimDepth" value={locationData.verbatimDepth}/>
           </tbody>
         </table>
+        <ChangeButton onClick={() => onChange('locationData')}/>
       </section>
       <section>
         <SectionTitle>4 - {t('occurrenceForm.observationData.step.stepTitle')}</SectionTitle>
@@ -99,6 +102,7 @@ export default function FinalSummary({
             <NameValueRow name="identificationRemarks" value={observationData.identificationRemarks}/>
           </tbody>
         </table>
+        <ChangeButton onClick={() => onChange('observationData')}/>
       </section>
       <section>
         <SectionTitle>5 - {t('occurrenceForm.measurementOrFact.step.stepTitle')}</SectionTitle>
@@ -121,6 +125,7 @@ export default function FinalSummary({
             ))}
           </tbody>
         </table>
+        <ChangeButton onClick={() => onChange('measurementOrFact')}/>
       </section>
       <section>
         <SectionTitle>6 - {t('occurrenceForm.darwinCoreFields.step.stepTitle')}</SectionTitle>
@@ -132,6 +137,7 @@ export default function FinalSummary({
             )}
           </tbody>
         </table>
+        <ChangeButton onClick={() => onChange('darwinCoreFields')}/>
       </section>
       <SubmitEntryButton onClick={onSubmit}/>
     </div>
@@ -179,11 +185,26 @@ SubmitEntryButton.propTypes = {
 }
 
 function SectionTitle({ children }) {
-  return <h2 className="title is-4">{children}</h2>
+  return (
+    <h2 className="title is-4">{children}</h2>
+  )
 }
 
 SectionTitle.propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired
+}
+
+function ChangeButton({ onClick }) {
+  const { t } = useTranslation()
+  return (
+    <button className="button" onClick={onClick}>
+      {t('common.change')}
+    </button>
+  )
+}
+
+ChangeButton.propTypes = {
+  onClick: PropTypes.func.isRequired
 }
 
 function SectionSubtitle({ children }) {

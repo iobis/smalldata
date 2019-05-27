@@ -3,6 +3,7 @@ export default {
     common:         {
       add:       'Add',
       cancel:    'Cancel',
+      change:    'Change',
       confirm:   'Confirm',
       copy:      'Copy',
       edit:      'Edit',
@@ -220,8 +221,8 @@ export default {
         }
       },
       finalSummary:      {
-        title:             'Final Summary',
         submitEntryButton: 'Submit Entry',
+        title:             'Final Summary',
         locationData:      {
           verbatimDataSubtitle: 'Verbatim data'
         },

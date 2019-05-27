@@ -122,6 +122,16 @@ exports[`FinalSummary renders correctly 1`] = `
       <p>
         NPPSD Short-tailed Albatross Sightings
       </p>
+      <ChangeButton
+        onClick={[Function]}
+      >
+        <button
+          className="button"
+          onClick={[Function]}
+        >
+          common.change
+        </button>
+      </ChangeButton>
     </section>
     <section>
       <SectionTitle>
@@ -271,6 +281,16 @@ exports[`FinalSummary renders correctly 1`] = `
           </NameValueRow>
         </tbody>
       </table>
+      <ChangeButton
+        onClick={[Function]}
+      >
+        <button
+          className="button"
+          onClick={[Function]}
+        >
+          common.change
+        </button>
+      </ChangeButton>
     </section>
     <section>
       <SectionTitle>
@@ -427,6 +447,16 @@ exports[`FinalSummary renders correctly 1`] = `
           </NameValueRow>
         </tbody>
       </table>
+      <ChangeButton
+        onClick={[Function]}
+      >
+        <button
+          className="button"
+          onClick={[Function]}
+        >
+          common.change
+        </button>
+      </ChangeButton>
     </section>
     <section>
       <SectionTitle>
@@ -655,6 +685,16 @@ exports[`FinalSummary renders correctly 1`] = `
           </NameValueRow>
         </tbody>
       </table>
+      <ChangeButton
+        onClick={[Function]}
+      >
+        <button
+          className="button"
+          onClick={[Function]}
+        >
+          common.change
+        </button>
+      </ChangeButton>
     </section>
     <section>
       <SectionTitle>
@@ -718,6 +758,16 @@ exports[`FinalSummary renders correctly 1`] = `
           </tr>
         </tbody>
       </table>
+      <ChangeButton
+        onClick={[Function]}
+      >
+        <button
+          className="button"
+          onClick={[Function]}
+        >
+          common.change
+        </button>
+      </ChangeButton>
     </section>
     <section>
       <SectionTitle>
@@ -794,6 +844,16 @@ exports[`FinalSummary renders correctly 1`] = `
           </NameValueRow>
         </tbody>
       </table>
+      <ChangeButton
+        onClick={[Function]}
+      >
+        <button
+          className="button"
+          onClick={[Function]}
+        >
+          common.change
+        </button>
+      </ChangeButton>
     </section>
     <SubmitEntryButton
       onClick={[MockFunction]}
