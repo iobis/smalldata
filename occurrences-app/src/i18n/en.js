@@ -81,35 +81,35 @@ export default {
           subtitle: 'optionally supply verbatim data as it appeared originally in the notes'
         },
         decimalLongitude:      {
-          label:       'decimal longitude',
+          label:       'Decimal Longitude',
           placeholder: '5.12334'
         },
         decimalLatitude:       {
-          label:       'decimal latitude',
+          label:       'Decimal Latitude',
           placeholder: '53.2345'
         },
         coordinateUncertainty: {
-          label:       'coordinate uncertainty',
+          label:       'Coordinate Uncertainty',
           placeholder: '',
           help:        'meters'
         },
         minimumDepth:          {
-          label:       'minimum depth',
+          label:       'Minimum Depth',
           placeholder: '',
           help:        'meters'
         },
         maximumDepth:          {
-          label:       'maximum depth',
+          label:       'Maximum Depth',
           placeholder: '',
           help:        'meters'
         },
         verbatimCoordinates:   {
-          label:       'verbatim coordinates',
+          label:       'Verbatim Coordinates',
           placeholder: '',
           help:        'Example: "41 05 54S 121 05 34W", "17T 630000 4833400"'
         },
         verbatimDepth:         {
-          label:       'verbatim depth',
+          label:       'Verbatim Depth',
           placeholder: '',
           help:        'Examples: "100-200 m"'
         },
@@ -137,47 +137,47 @@ export default {
           stepTitle:       'Observation Data'
         },
         institutionCode:         {
-          label:       'institution code',
+          label:       'Institution Code',
           placeholder: 'institution code'
         },
         collectionCode:          {
-          label:       'collection code',
+          label:       'Collection Code',
           placeholder: 'collection code'
         },
         fieldNumber:             {
-          label:       'field number',
+          label:       'Field Number',
           placeholder: 'field number'
         },
         catalogNumber:           {
-          label:       'catalog number',
+          label:       'Catalog Number',
           placeholder: 'catalog number'
         },
         recordNumber:            {
-          label:       'record number',
+          label:       'Record Number',
           placeholder: 'record number'
         },
         identifiedBy:            {
-          label:       'identified by',
+          label:       'Identified by',
           placeholder: '',
           help:        'hit enter to add person to list'
         },
         recordedBy:              {
-          label:       'recorded by',
+          label:       'Recorded by',
           placeholder: '',
           help:        'hit enter to add person to list'
         },
         identificationQualifier: {
-          label:       'identification qualifier',
+          label:       'Identification Qualifier',
           placeholder: '',
           help:        'aff. agrifolia var. oxyadenia (for Quercus aff. agrifolia var. oxyadenia with accompanying values Quercus in genus, agrifolia in specificEpithet, oxyadenia in infraspecificEpithet, and var. in taxonRank. cf. var. oxyadenia for Quercus agrifolia cf. var. oxyadenia with accompanying values Quercus in genus, agrifolia in specificEpithet, oxyadenia in infraspecificEpithet, and var. in taxonRank.'
         },
         identificationRemarks:   {
-          label:       'identification remarks',
+          label:       'Identification Remarks',
           placeholder: '',
           help:        'Example: “Distinguished between Anthus correndera and Anthus hellmayri based on the comparative lengths of the uñas.”'
         },
         references:              {
-          label:       'references',
+          label:       'References',
           placeholder: '',
           help:        'hit enter to add a reference to list'
         }
