@@ -380,7 +380,7 @@ exports[`FinalSummary renders correctly 1`] = `
         <h2
           className="title is-5"
         >
-          Verbatim data
+          occurrenceForm.finalSummary.locationData.verbatimDataSubtitle
         </h2>
       </SectionSubtitle>
       <table
@@ -441,7 +441,7 @@ exports[`FinalSummary renders correctly 1`] = `
         <h2
           className="title is-5"
         >
-          Catalog data
+          occurrenceForm.finalSummary.observationData.catalogDataSubtitle
         </h2>
       </SectionSubtitle>
       <div
@@ -589,7 +589,7 @@ exports[`FinalSummary renders correctly 1`] = `
         <h2
           className="title is-5"
         >
-          Species data
+          occurrenceForm.finalSummary.observationData.speciesDataSubtitle
         </h2>
       </SectionSubtitle>
       <table

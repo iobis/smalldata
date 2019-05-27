@@ -216,7 +216,14 @@ export default {
       },
       finalSummary:      {
         title:             'Final Summary',
-        submitEntryButton: 'Submit Entry'
+        submitEntryButton: 'Submit Entry',
+        locationData:      {
+          verbatimDataSubtitle: 'Verbatim data'
+        },
+        observationData:   {
+          catalogDataSubtitle: 'Catalog data',
+          speciesDataSubtitle: 'Species data'
+        }
       }
     },
     navbar:         {

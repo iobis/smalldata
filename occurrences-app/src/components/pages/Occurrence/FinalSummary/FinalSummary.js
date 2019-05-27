@@ -55,7 +55,7 @@ export default function FinalSummary({
             <NameValueRow name="maximumDepth" value={locationData.maximumDepth}/>
           </tbody>
         </table>
-        <SectionSubtitle>Verbatim data</SectionSubtitle>
+        <SectionSubtitle>{t('occurrenceForm.finalSummary.locationData.verbatimDataSubtitle')}</SectionSubtitle>
         <table className="table is-striped is-fullwidth is-hoverable">
           <tbody>
             <NameValueRow name="verbatimCoordinates" value={locationData.verbatimCoordinates}/>
@@ -65,7 +65,7 @@ export default function FinalSummary({
       </section>
       <section>
         <SectionTitle>4 - {t('occurrenceForm.observationData.step.stepTitle')}</SectionTitle>
-        <SectionSubtitle>Catalog data</SectionSubtitle>
+        <SectionSubtitle>{t('occurrenceForm.finalSummary.observationData.catalogDataSubtitle')}</SectionSubtitle>
         <div className="content">
           <table className="table is-striped is-fullwidth is-hoverable">
             <tbody>
@@ -91,7 +91,7 @@ export default function FinalSummary({
             </div>
           </div>
         </div>
-        <SectionSubtitle>Species data</SectionSubtitle>
+        <SectionSubtitle>{t('occurrenceForm.finalSummary.observationData.speciesDataSubtitle')}</SectionSubtitle>
         <table className="table is-striped is-fullwidth is-hoverable">
           <tbody>
             <NameValueRow name="references" value={observationData.references.join(', ')}/>
