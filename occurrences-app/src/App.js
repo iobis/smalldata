@@ -7,7 +7,7 @@ import OccurrenceForm from './components/pages/Occurrence/OccurrenceForm'
 import PropTypes from 'prop-types'
 import React, { useContext } from 'react'
 import { AuthContext, AuthProvider } from './context/AuthContext'
-import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import {
   faAngleDown,
   faCheckCircle,
