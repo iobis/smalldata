@@ -9,7 +9,7 @@ import ObservationData from './ObservationData/ObservationData'
 import OccurrenceData from './OccurrenceData/OccurrenceData'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import SelectDataset from './SelectDataset/SelectDataset'
+import Dataset from './Dataset/Dataset'
 import { format } from 'date-fns'
 import { getDatasetMock } from '../../../clients/server'
 import { useTranslation } from 'react-i18next'
@@ -53,11 +53,11 @@ export default function OccurrenceForm() {
   const [measurementOrFact, setMeasurementOrFact] = useState([])
   const [finalSummaryVisible, setFinalSummaryVisible] = useState(false)
   const steps = [{
-    dataDescription: t('occurrenceForm.selectDataset.step.dataDescription'),
+    dataDescription: t('occurrenceForm.dataset.step.dataDescription'),
     selectedData:    dataset.description,
-    stepDescription: t('occurrenceForm.selectDataset.step.stepDescription'),
-    stepTitle:       t('occurrenceForm.selectDataset.step.stepTitle'),
-    children:        <SelectDataset
+    stepDescription: t('occurrenceForm.dataset.step.stepDescription'),
+    stepTitle:       t('occurrenceForm.dataset.step.stepTitle'),
+    children:        <Dataset
       datasets={datasets}
       onChange={setSelectedDataset}
       selectedDataset={dataset}/>

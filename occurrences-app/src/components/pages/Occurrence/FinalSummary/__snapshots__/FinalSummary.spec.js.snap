@@ -111,14 +111,14 @@ exports[`FinalSummary renders correctly 1`] = `
       </div>
     </SubmitEntryButton>
     <section
-      className="select-dataset-summary"
+      className="dataset-summary"
     >
       <SectionTitle>
         <h2
           className="title is-4"
         >
           1 - 
-          occurrenceForm.selectDataset.step.stepTitle
+          occurrenceForm.dataset.step.stepTitle
         </h2>
       </SectionTitle>
       <p>

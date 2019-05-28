@@ -28,7 +28,7 @@ export default {
     },
     occurrenceForm: {
       reviewAndSubmitButton: 'Review & Submit',
-      selectDataset:         {
+      dataset:               {
         step: {
           dataDescription: 'Using Data',
           stepDescription: 'Choose the dataset for adding observations',

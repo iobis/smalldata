@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import { darwinCoreFieldShape } from '../DarwinCoreFields/DarwinCoreFields'
-import { datasetShape } from '../SelectDataset/SelectDataset'
+import { datasetShape } from '../Dataset/Dataset'
 import { format } from 'date-fns'
 import { locationDataShape } from '../LocationData/LocationData'
 import { observationDataShape } from '../ObservationData/ObservationData'
@@ -26,10 +26,10 @@ export default function FinalSummary({
         <h1 className="final-summary-title title is-3">{t('occurrenceForm.finalSummary.title')}</h1>
       </div>
       <SubmitEntryButton onClick={onSubmitClick}/>
-      <section className="select-dataset-summary">
-        <SectionTitle>1 - {t('occurrenceForm.selectDataset.step.stepTitle')}</SectionTitle>
+      <section className="dataset-summary">
+        <SectionTitle>1 - {t('occurrenceForm.dataset.step.stepTitle')}</SectionTitle>
         <p>{dataset.description}</p>
-        <ChangeButton onClick={() => onChangeClick({ index: 0, value: 'selectDataset' })}/>
+        <ChangeButton onClick={() => onChangeClick({ index: 0, value: 'dataset' })}/>
       </section>
       <section className="occurrence-data-summary">
         <SectionTitle>2 - {t('occurrenceForm.occurrenceData.step.stepTitle')}</SectionTitle>

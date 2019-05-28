@@ -7,12 +7,12 @@ exports[`OccurrenceForm renders correctly 1`] = `
   >
     <ActiveStepHeader
       className="step-1 background-color-0"
-      dataDescription="occurrenceForm.selectDataset.step.dataDescription"
-      key="occurrenceForm.selectDataset.step.stepTitle"
+      dataDescription="occurrenceForm.dataset.step.dataDescription"
+      key="occurrenceForm.dataset.step.stepTitle"
       onStepTitleClick={[Function]}
       selectedData="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
-      stepDescription="occurrenceForm.selectDataset.step.stepDescription"
-      stepTitle="1 - occurrenceForm.selectDataset.step.stepTitle"
+      stepDescription="occurrenceForm.dataset.step.stepDescription"
+      stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
     >
       <StepHeader
         className="active has-background-grey has-text-white"
@@ -20,8 +20,8 @@ exports[`OccurrenceForm renders correctly 1`] = `
         iconVisible={false}
         onStepTitleClick={[Function]}
         selectedData=""
-        stepDescription="occurrenceForm.selectDataset.step.stepDescription"
-        stepTitle="1 - occurrenceForm.selectDataset.step.stepTitle"
+        stepDescription="occurrenceForm.dataset.step.stepDescription"
+        stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
       >
         <div
           className="step-header columns is-vcentered active has-background-grey has-text-white"
@@ -45,7 +45,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
             <div
               className="is-size-6"
             >
-              occurrenceForm.selectDataset.step.stepDescription
+              occurrenceForm.dataset.step.stepDescription
             </div>
             <div
               className="is-size-5 is-uppercase"
@@ -53,12 +53,12 @@ exports[`OccurrenceForm renders correctly 1`] = `
               <b
                 className="step-title"
               >
-                1 - occurrenceForm.selectDataset.step.stepTitle
+                1 - occurrenceForm.dataset.step.stepTitle
               </b>
             </div>
           </div>
         </div>
-        <SelectDataset
+        <Dataset
           datasets={
             Array [
               Object {
@@ -96,7 +96,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
           }
         >
           <div
-            className="select-dataset columns is-fluid"
+            className="dataset columns is-fluid"
           >
             <table
               className="table is-striped is-fullwidth"
@@ -327,7 +327,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
               </tbody>
             </table>
           </div>
-        </SelectDataset>
+        </Dataset>
       </StepHeader>
     </ActiveStepHeader>
     <NotConfirmedStepHeader
@@ -650,21 +650,21 @@ exports[`OccurrenceForm renders correctly 2`] = `
   >
     <ConfirmedStepHeader
       className="step-1 background-color-0"
-      dataDescription="occurrenceForm.selectDataset.step.dataDescription"
-      key="occurrenceForm.selectDataset.step.stepTitle"
+      dataDescription="occurrenceForm.dataset.step.dataDescription"
+      key="occurrenceForm.dataset.step.stepTitle"
       onStepTitleClick={[Function]}
       selectedData="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
-      stepDescription="occurrenceForm.selectDataset.step.stepDescription"
-      stepTitle="1 - occurrenceForm.selectDataset.step.stepTitle"
+      stepDescription="occurrenceForm.dataset.step.stepDescription"
+      stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
     >
       <StepHeader
         className="confirmed has-background-white has-text-black"
-        dataDescription="occurrenceForm.selectDataset.step.dataDescription"
+        dataDescription="occurrenceForm.dataset.step.dataDescription"
         iconVisible={true}
         onStepTitleClick={[Function]}
         selectedData="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
-        stepDescription="occurrenceForm.selectDataset.step.stepDescription"
-        stepTitle="1 - occurrenceForm.selectDataset.step.stepTitle"
+        stepDescription="occurrenceForm.dataset.step.stepDescription"
+        stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
       >
         <div
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
@@ -677,7 +677,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
               className="is-size-5 is-uppercase"
             >
               <b>
-                occurrenceForm.selectDataset.step.dataDescription
+                occurrenceForm.dataset.step.dataDescription
               </b>
             </p>
           </div>
@@ -692,7 +692,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
             <div
               className="is-size-6"
             >
-              occurrenceForm.selectDataset.step.stepDescription
+              occurrenceForm.dataset.step.stepDescription
             </div>
             <div
               className="is-size-5 is-uppercase"
@@ -709,7 +709,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
               <b
                 className="step-title"
               >
-                1 - occurrenceForm.selectDataset.step.stepTitle
+                1 - occurrenceForm.dataset.step.stepTitle
               </b>
             </div>
           </div>
@@ -1437,21 +1437,21 @@ exports[`OccurrenceForm renders correctly 3`] = `
   >
     <ConfirmedStepHeader
       className="step-1 background-color-0"
-      dataDescription="occurrenceForm.selectDataset.step.dataDescription"
-      key="occurrenceForm.selectDataset.step.stepTitle"
+      dataDescription="occurrenceForm.dataset.step.dataDescription"
+      key="occurrenceForm.dataset.step.stepTitle"
       onStepTitleClick={[Function]}
       selectedData="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
-      stepDescription="occurrenceForm.selectDataset.step.stepDescription"
-      stepTitle="1 - occurrenceForm.selectDataset.step.stepTitle"
+      stepDescription="occurrenceForm.dataset.step.stepDescription"
+      stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
     >
       <StepHeader
         className="confirmed has-background-white has-text-black"
-        dataDescription="occurrenceForm.selectDataset.step.dataDescription"
+        dataDescription="occurrenceForm.dataset.step.dataDescription"
         iconVisible={true}
         onStepTitleClick={[Function]}
         selectedData="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
-        stepDescription="occurrenceForm.selectDataset.step.stepDescription"
-        stepTitle="1 - occurrenceForm.selectDataset.step.stepTitle"
+        stepDescription="occurrenceForm.dataset.step.stepDescription"
+        stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
       >
         <div
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
@@ -1464,7 +1464,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
               className="is-size-5 is-uppercase"
             >
               <b>
-                occurrenceForm.selectDataset.step.dataDescription
+                occurrenceForm.dataset.step.dataDescription
               </b>
             </p>
           </div>
@@ -1479,7 +1479,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
             <div
               className="is-size-6"
             >
-              occurrenceForm.selectDataset.step.stepDescription
+              occurrenceForm.dataset.step.stepDescription
             </div>
             <div
               className="is-size-5 is-uppercase"
@@ -1496,7 +1496,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
               <b
                 className="step-title"
               >
-                1 - occurrenceForm.selectDataset.step.stepTitle
+                1 - occurrenceForm.dataset.step.stepTitle
               </b>
             </div>
           </div>
@@ -3412,21 +3412,21 @@ exports[`OccurrenceForm renders correctly 4`] = `
   >
     <ConfirmedStepHeader
       className="step-1 background-color-0"
-      dataDescription="occurrenceForm.selectDataset.step.dataDescription"
-      key="occurrenceForm.selectDataset.step.stepTitle"
+      dataDescription="occurrenceForm.dataset.step.dataDescription"
+      key="occurrenceForm.dataset.step.stepTitle"
       onStepTitleClick={[Function]}
       selectedData="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
-      stepDescription="occurrenceForm.selectDataset.step.stepDescription"
-      stepTitle="1 - occurrenceForm.selectDataset.step.stepTitle"
+      stepDescription="occurrenceForm.dataset.step.stepDescription"
+      stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
     >
       <StepHeader
         className="confirmed has-background-white has-text-black"
-        dataDescription="occurrenceForm.selectDataset.step.dataDescription"
+        dataDescription="occurrenceForm.dataset.step.dataDescription"
         iconVisible={true}
         onStepTitleClick={[Function]}
         selectedData="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
-        stepDescription="occurrenceForm.selectDataset.step.stepDescription"
-        stepTitle="1 - occurrenceForm.selectDataset.step.stepTitle"
+        stepDescription="occurrenceForm.dataset.step.stepDescription"
+        stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
       >
         <div
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
@@ -3439,7 +3439,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
               className="is-size-5 is-uppercase"
             >
               <b>
-                occurrenceForm.selectDataset.step.dataDescription
+                occurrenceForm.dataset.step.dataDescription
               </b>
             </p>
           </div>
@@ -3454,7 +3454,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
             <div
               className="is-size-6"
             >
-              occurrenceForm.selectDataset.step.stepDescription
+              occurrenceForm.dataset.step.stepDescription
             </div>
             <div
               className="is-size-5 is-uppercase"
@@ -3471,7 +3471,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
               <b
                 className="step-title"
               >
-                1 - occurrenceForm.selectDataset.step.stepTitle
+                1 - occurrenceForm.dataset.step.stepTitle
               </b>
             </div>
           </div>
@@ -4049,21 +4049,21 @@ exports[`OccurrenceForm renders correctly 5`] = `
   >
     <ConfirmedStepHeader
       className="step-1 background-color-0"
-      dataDescription="occurrenceForm.selectDataset.step.dataDescription"
-      key="occurrenceForm.selectDataset.step.stepTitle"
+      dataDescription="occurrenceForm.dataset.step.dataDescription"
+      key="occurrenceForm.dataset.step.stepTitle"
       onStepTitleClick={[Function]}
       selectedData="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
-      stepDescription="occurrenceForm.selectDataset.step.stepDescription"
-      stepTitle="1 - occurrenceForm.selectDataset.step.stepTitle"
+      stepDescription="occurrenceForm.dataset.step.stepDescription"
+      stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
     >
       <StepHeader
         className="confirmed has-background-white has-text-black"
-        dataDescription="occurrenceForm.selectDataset.step.dataDescription"
+        dataDescription="occurrenceForm.dataset.step.dataDescription"
         iconVisible={true}
         onStepTitleClick={[Function]}
         selectedData="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
-        stepDescription="occurrenceForm.selectDataset.step.stepDescription"
-        stepTitle="1 - occurrenceForm.selectDataset.step.stepTitle"
+        stepDescription="occurrenceForm.dataset.step.stepDescription"
+        stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
       >
         <div
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
@@ -4076,7 +4076,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
               className="is-size-5 is-uppercase"
             >
               <b>
-                occurrenceForm.selectDataset.step.dataDescription
+                occurrenceForm.dataset.step.dataDescription
               </b>
             </p>
           </div>
@@ -4091,7 +4091,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
             <div
               className="is-size-6"
             >
-              occurrenceForm.selectDataset.step.stepDescription
+              occurrenceForm.dataset.step.stepDescription
             </div>
             <div
               className="is-size-5 is-uppercase"
@@ -4108,7 +4108,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
               <b
                 className="step-title"
               >
-                1 - occurrenceForm.selectDataset.step.stepTitle
+                1 - occurrenceForm.dataset.step.stepTitle
               </b>
             </div>
           </div>
@@ -4719,21 +4719,21 @@ exports[`OccurrenceForm renders correctly 6`] = `
   >
     <ConfirmedStepHeader
       className="step-1 background-color-0"
-      dataDescription="occurrenceForm.selectDataset.step.dataDescription"
-      key="occurrenceForm.selectDataset.step.stepTitle"
+      dataDescription="occurrenceForm.dataset.step.dataDescription"
+      key="occurrenceForm.dataset.step.stepTitle"
       onStepTitleClick={[Function]}
       selectedData="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
-      stepDescription="occurrenceForm.selectDataset.step.stepDescription"
-      stepTitle="1 - occurrenceForm.selectDataset.step.stepTitle"
+      stepDescription="occurrenceForm.dataset.step.stepDescription"
+      stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
     >
       <StepHeader
         className="confirmed has-background-white has-text-black"
-        dataDescription="occurrenceForm.selectDataset.step.dataDescription"
+        dataDescription="occurrenceForm.dataset.step.dataDescription"
         iconVisible={true}
         onStepTitleClick={[Function]}
         selectedData="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
-        stepDescription="occurrenceForm.selectDataset.step.stepDescription"
-        stepTitle="1 - occurrenceForm.selectDataset.step.stepTitle"
+        stepDescription="occurrenceForm.dataset.step.stepDescription"
+        stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
       >
         <div
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
@@ -4746,7 +4746,7 @@ exports[`OccurrenceForm renders correctly 6`] = `
               className="is-size-5 is-uppercase"
             >
               <b>
-                occurrenceForm.selectDataset.step.dataDescription
+                occurrenceForm.dataset.step.dataDescription
               </b>
             </p>
           </div>
@@ -4761,7 +4761,7 @@ exports[`OccurrenceForm renders correctly 6`] = `
             <div
               className="is-size-6"
             >
-              occurrenceForm.selectDataset.step.stepDescription
+              occurrenceForm.dataset.step.stepDescription
             </div>
             <div
               className="is-size-5 is-uppercase"
@@ -4778,7 +4778,7 @@ exports[`OccurrenceForm renders correctly 6`] = `
               <b
                 className="step-title"
               >
-                1 - occurrenceForm.selectDataset.step.stepTitle
+                1 - occurrenceForm.dataset.step.stepTitle
               </b>
             </div>
           </div>
@@ -5422,12 +5422,12 @@ exports[`OccurrenceForm renders correctly 7`] = `
   >
     <NotConfirmedStepHeader
       className="step-1 background-color-0"
-      dataDescription="occurrenceForm.selectDataset.step.dataDescription"
-      key="occurrenceForm.selectDataset.step.stepTitle"
+      dataDescription="occurrenceForm.dataset.step.dataDescription"
+      key="occurrenceForm.dataset.step.stepTitle"
       onStepTitleClick={[Function]}
       selectedData="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
-      stepDescription="occurrenceForm.selectDataset.step.stepDescription"
-      stepTitle="1 - occurrenceForm.selectDataset.step.stepTitle"
+      stepDescription="occurrenceForm.dataset.step.stepDescription"
+      stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
     >
       <StepHeader
         className="not-confirmed has-text-white step-1 background-color-0"
@@ -5435,8 +5435,8 @@ exports[`OccurrenceForm renders correctly 7`] = `
         iconVisible={false}
         onStepTitleClick={[Function]}
         selectedData=""
-        stepDescription="occurrenceForm.selectDataset.step.stepDescription"
-        stepTitle="1 - occurrenceForm.selectDataset.step.stepTitle"
+        stepDescription="occurrenceForm.dataset.step.stepDescription"
+        stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
       >
         <div
           className="step-header columns is-vcentered not-confirmed has-text-white step-1 background-color-0"
@@ -5460,7 +5460,7 @@ exports[`OccurrenceForm renders correctly 7`] = `
             <div
               className="is-size-6"
             >
-              occurrenceForm.selectDataset.step.stepDescription
+              occurrenceForm.dataset.step.stepDescription
             </div>
             <div
               className="is-size-5 is-uppercase"
@@ -5468,7 +5468,7 @@ exports[`OccurrenceForm renders correctly 7`] = `
               <b
                 className="step-title"
               >
-                1 - occurrenceForm.selectDataset.step.stepTitle
+                1 - occurrenceForm.dataset.step.stepTitle
               </b>
             </div>
           </div>
@@ -5934,14 +5934,14 @@ exports[`OccurrenceForm renders correctly 7`] = `
           </div>
         </SubmitEntryButton>
         <section
-          className="select-dataset-summary"
+          className="dataset-summary"
         >
           <SectionTitle>
             <h2
               className="title is-4"
             >
               1 - 
-              occurrenceForm.selectDataset.step.stepTitle
+              occurrenceForm.dataset.step.stepTitle
             </h2>
           </SectionTitle>
           <p>

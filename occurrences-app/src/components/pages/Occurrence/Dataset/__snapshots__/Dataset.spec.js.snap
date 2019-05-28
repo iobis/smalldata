@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SelectDataset renders correctly 1`] = `
-<SelectDataset
+exports[`Dataset renders correctly 1`] = `
+<Dataset
   datasets={
     Array [
       Object {
@@ -39,7 +39,7 @@ exports[`SelectDataset renders correctly 1`] = `
   }
 >
   <div
-    className="select-dataset columns is-fluid"
+    className="dataset columns is-fluid"
   >
     <table
       className="table is-striped is-fullwidth"
@@ -270,5 +270,5 @@ exports[`SelectDataset renders correctly 1`] = `
       </tbody>
     </table>
   </div>
-</SelectDataset>
+</Dataset>
 `;

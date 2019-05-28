@@ -9,7 +9,7 @@ describe('FinalSummary', () => {
   })
 
   describe('when clicking change button', () => {
-    [{ className: 'select-dataset-summary', params: { index: 0, value: 'selectDataset' } },
+    [{ className: 'dataset-summary', params: { index: 0, value: 'dataset' } },
       { className: 'occurrence-data-summary', params: { index: 1, value: 'occurrenceData' } },
       { className: 'location-data-summary', params: { index: 2, value: 'locationData' } },
       { className: 'observation-data-summary', params: { index: 3, value: 'observationData' } },

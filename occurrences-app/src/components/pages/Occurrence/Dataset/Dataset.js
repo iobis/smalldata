@@ -2,9 +2,9 @@ import InputRadio from '../../../form/InputRadio'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-export default function SelectDataset({ datasets, selectedDataset, onChange }) {
+export default function Dataset({ datasets, selectedDataset, onChange }) {
   return (
-    <div className="select-dataset columns is-fluid">
+    <div className="dataset columns is-fluid">
       <table className="table is-striped is-fullwidth">
         <tbody>
           {datasets.map(dataset => (
@@ -24,7 +24,7 @@ export const datasetShape = {
   description: PropTypes.string.isRequired
 }
 
-SelectDataset.propTypes = {
+Dataset.propTypes = {
   datasets:        PropTypes.arrayOf(PropTypes.shape(datasetShape)).isRequired,
   onChange:        PropTypes.func.isRequired,
   selectedDataset: PropTypes.shape(datasetShape).isRequired
