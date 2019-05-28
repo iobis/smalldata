@@ -6,12 +6,12 @@ import { mount } from 'enzyme'
 
 describe('SelectDataset', () => {
   it('renders correctly', () => {
-    expect(renderer.create(
+    expect(mount(
       <SelectDataset
         datasets={getDatasetMock()}
         onChange={() => {}}
         selectedDataset={getDatasetMock()[0]}/>
-    ).toJSON()).toMatchSnapshot()
+    )).toMatchSnapshot()
   })
 
   it('returns selected dataset when clicking on it', () => {

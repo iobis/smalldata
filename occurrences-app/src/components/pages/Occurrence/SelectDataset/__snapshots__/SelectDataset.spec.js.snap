@@ -1,158 +1,274 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SelectDataset renders correctly 1`] = `
-<div
-  className="select-dataset columns is-fluid"
+<SelectDataset
+  datasets={
+    Array [
+      Object {
+        "description": "HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.",
+        "id": 0,
+      },
+      Object {
+        "description": "NPPSD Short-tailed Albatross Sightings",
+        "id": 1,
+      },
+      Object {
+        "description": "PANGAEA - Data from Christian-Albrechts-University Kiel",
+        "id": 2,
+      },
+      Object {
+        "description": "NSIS: List of marine benthic algae from Magdalen Islands, Quebec as recorded in 1979",
+        "id": 3,
+      },
+      Object {
+        "description": "Seguimiento de 10 crías de tortuga boba nacidas en 2016 en el litoral valenciano, en el marco del Proyecto LIFE 15 IPE ES 012 (aggregated per 1-degree cell)",
+        "id": 4,
+      },
+      Object {
+        "description": "Waved Albatross Tracking (aggregated per 1-degree cell)",
+        "id": 5,
+      },
+    ]
+  }
+  onChange={[Function]}
+  selectedDataset={
+    Object {
+      "description": "HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.",
+      "id": 0,
+    }
+  }
 >
-  <table
-    className="table is-striped is-fullwidth"
+  <div
+    className="select-dataset columns is-fluid"
   >
-    <tbody>
-      <tr
-        className="dataset-option"
-        onClick={[Function]}
-      >
-        <td>
-          <input
-            checked={true}
-            className="input-radio is-checkradio"
-            id="dataset-0"
-            name="dataset"
-            onChange={[Function]}
-            type="radio"
-            value={0}
-          />
-          <label
-            htmlFor="dataset-0"
+    <table
+      className="table is-striped is-fullwidth"
+    >
+      <tbody>
+        <DatasetOption
+          checked={true}
+          description="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
+          id={0}
+          key="0"
+          onClick={[Function]}
+        >
+          <tr
+            className="dataset-option"
+            onClick={[Function]}
           >
-            
-          </label>
-        </td>
-        <td>
-          HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.
-        </td>
-      </tr>
-      <tr
-        className="dataset-option"
-        onClick={[Function]}
-      >
-        <td>
-          <input
-            checked={false}
-            className="input-radio is-checkradio"
-            id="dataset-1"
-            name="dataset"
-            onChange={[Function]}
-            type="radio"
-            value={1}
-          />
-          <label
-            htmlFor="dataset-1"
+            <td>
+              <InputRadio
+                checked={true}
+                name="dataset"
+                onChange={[Function]}
+                value={0}
+              >
+                <input
+                  checked={true}
+                  className="input-radio is-checkradio"
+                  id="dataset-0"
+                  name="dataset"
+                  onChange={[Function]}
+                  type="radio"
+                  value={0}
+                />
+                <label
+                  htmlFor="dataset-0"
+                />
+              </InputRadio>
+            </td>
+            <td>
+              HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.
+            </td>
+          </tr>
+        </DatasetOption>
+        <DatasetOption
+          checked={false}
+          description="NPPSD Short-tailed Albatross Sightings"
+          id={1}
+          key="1"
+          onClick={[Function]}
+        >
+          <tr
+            className="dataset-option"
+            onClick={[Function]}
           >
-            
-          </label>
-        </td>
-        <td>
-          NPPSD Short-tailed Albatross Sightings
-        </td>
-      </tr>
-      <tr
-        className="dataset-option"
-        onClick={[Function]}
-      >
-        <td>
-          <input
-            checked={false}
-            className="input-radio is-checkradio"
-            id="dataset-2"
-            name="dataset"
-            onChange={[Function]}
-            type="radio"
-            value={2}
-          />
-          <label
-            htmlFor="dataset-2"
+            <td>
+              <InputRadio
+                checked={false}
+                name="dataset"
+                onChange={[Function]}
+                value={1}
+              >
+                <input
+                  checked={false}
+                  className="input-radio is-checkradio"
+                  id="dataset-1"
+                  name="dataset"
+                  onChange={[Function]}
+                  type="radio"
+                  value={1}
+                />
+                <label
+                  htmlFor="dataset-1"
+                />
+              </InputRadio>
+            </td>
+            <td>
+              NPPSD Short-tailed Albatross Sightings
+            </td>
+          </tr>
+        </DatasetOption>
+        <DatasetOption
+          checked={false}
+          description="PANGAEA - Data from Christian-Albrechts-University Kiel"
+          id={2}
+          key="2"
+          onClick={[Function]}
+        >
+          <tr
+            className="dataset-option"
+            onClick={[Function]}
           >
-            
-          </label>
-        </td>
-        <td>
-          PANGAEA - Data from Christian-Albrechts-University Kiel
-        </td>
-      </tr>
-      <tr
-        className="dataset-option"
-        onClick={[Function]}
-      >
-        <td>
-          <input
-            checked={false}
-            className="input-radio is-checkradio"
-            id="dataset-3"
-            name="dataset"
-            onChange={[Function]}
-            type="radio"
-            value={3}
-          />
-          <label
-            htmlFor="dataset-3"
+            <td>
+              <InputRadio
+                checked={false}
+                name="dataset"
+                onChange={[Function]}
+                value={2}
+              >
+                <input
+                  checked={false}
+                  className="input-radio is-checkradio"
+                  id="dataset-2"
+                  name="dataset"
+                  onChange={[Function]}
+                  type="radio"
+                  value={2}
+                />
+                <label
+                  htmlFor="dataset-2"
+                />
+              </InputRadio>
+            </td>
+            <td>
+              PANGAEA - Data from Christian-Albrechts-University Kiel
+            </td>
+          </tr>
+        </DatasetOption>
+        <DatasetOption
+          checked={false}
+          description="NSIS: List of marine benthic algae from Magdalen Islands, Quebec as recorded in 1979"
+          id={3}
+          key="3"
+          onClick={[Function]}
+        >
+          <tr
+            className="dataset-option"
+            onClick={[Function]}
           >
-            
-          </label>
-        </td>
-        <td>
-          NSIS: List of marine benthic algae from Magdalen Islands, Quebec as recorded in 1979
-        </td>
-      </tr>
-      <tr
-        className="dataset-option"
-        onClick={[Function]}
-      >
-        <td>
-          <input
-            checked={false}
-            className="input-radio is-checkradio"
-            id="dataset-4"
-            name="dataset"
-            onChange={[Function]}
-            type="radio"
-            value={4}
-          />
-          <label
-            htmlFor="dataset-4"
+            <td>
+              <InputRadio
+                checked={false}
+                name="dataset"
+                onChange={[Function]}
+                value={3}
+              >
+                <input
+                  checked={false}
+                  className="input-radio is-checkradio"
+                  id="dataset-3"
+                  name="dataset"
+                  onChange={[Function]}
+                  type="radio"
+                  value={3}
+                />
+                <label
+                  htmlFor="dataset-3"
+                />
+              </InputRadio>
+            </td>
+            <td>
+              NSIS: List of marine benthic algae from Magdalen Islands, Quebec as recorded in 1979
+            </td>
+          </tr>
+        </DatasetOption>
+        <DatasetOption
+          checked={false}
+          description="Seguimiento de 10 crías de tortuga boba nacidas en 2016 en el litoral valenciano, en el marco del Proyecto LIFE 15 IPE ES 012 (aggregated per 1-degree cell)"
+          id={4}
+          key="4"
+          onClick={[Function]}
+        >
+          <tr
+            className="dataset-option"
+            onClick={[Function]}
           >
-            
-          </label>
-        </td>
-        <td>
-          Seguimiento de 10 crías de tortuga boba nacidas en 2016 en el litoral valenciano, en el marco del Proyecto LIFE 15 IPE ES 012 (aggregated per 1-degree cell)
-        </td>
-      </tr>
-      <tr
-        className="dataset-option"
-        onClick={[Function]}
-      >
-        <td>
-          <input
-            checked={false}
-            className="input-radio is-checkradio"
-            id="dataset-5"
-            name="dataset"
-            onChange={[Function]}
-            type="radio"
-            value={5}
-          />
-          <label
-            htmlFor="dataset-5"
+            <td>
+              <InputRadio
+                checked={false}
+                name="dataset"
+                onChange={[Function]}
+                value={4}
+              >
+                <input
+                  checked={false}
+                  className="input-radio is-checkradio"
+                  id="dataset-4"
+                  name="dataset"
+                  onChange={[Function]}
+                  type="radio"
+                  value={4}
+                />
+                <label
+                  htmlFor="dataset-4"
+                />
+              </InputRadio>
+            </td>
+            <td>
+              Seguimiento de 10 crías de tortuga boba nacidas en 2016 en el litoral valenciano, en el marco del Proyecto LIFE 15 IPE ES 012 (aggregated per 1-degree cell)
+            </td>
+          </tr>
+        </DatasetOption>
+        <DatasetOption
+          checked={false}
+          description="Waved Albatross Tracking (aggregated per 1-degree cell)"
+          id={5}
+          key="5"
+          onClick={[Function]}
+        >
+          <tr
+            className="dataset-option"
+            onClick={[Function]}
           >
-            
-          </label>
-        </td>
-        <td>
-          Waved Albatross Tracking (aggregated per 1-degree cell)
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+            <td>
+              <InputRadio
+                checked={false}
+                name="dataset"
+                onChange={[Function]}
+                value={5}
+              >
+                <input
+                  checked={false}
+                  className="input-radio is-checkradio"
+                  id="dataset-5"
+                  name="dataset"
+                  onChange={[Function]}
+                  type="radio"
+                  value={5}
+                />
+                <label
+                  htmlFor="dataset-5"
+                />
+              </InputRadio>
+            </td>
+            <td>
+              Waved Albatross Tracking (aggregated per 1-degree cell)
+            </td>
+          </tr>
+        </DatasetOption>
+      </tbody>
+    </table>
+  </div>
+</SelectDataset>
 `;
