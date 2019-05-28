@@ -22,12 +22,16 @@ describe('SelectDataset', () => {
         onChange={onChange}
         selectedDataset={getDatasetMock()[0]}/>)
 
-    wrapper.find('.dataset-option input').first().simulate('change')
-    expect(onChange.mock.calls.length).toBe(1)
-    expect(onChange.mock.calls[0][0]).toEqual(getDatasetMock()[0])
+    wrapper.find('.dataset-option input').at(0).simulate('change')
+    expect(onChange).toHaveBeenCalledTimes(1)
+    expect(onChange).toHaveBeenNthCalledWith(1, getDatasetMock()[0])
 
     wrapper.find('.dataset-option input').at(1).simulate('change')
-    expect(onChange.mock.calls.length).toBe(2)
-    expect(onChange.mock.calls[1][0]).toEqual(getDatasetMock()[1])
+    expect(onChange).toHaveBeenCalledTimes(2)
+    expect(onChange).toHaveBeenNthCalledWith(2, getDatasetMock()[1])
+
+    wrapper.find('.dataset-option').at(2).simulate('click')
+    expect(onChange).toHaveBeenCalledTimes(3)
+    expect(onChange).toHaveBeenNthCalledWith(3, getDatasetMock()[2])
   })
 })

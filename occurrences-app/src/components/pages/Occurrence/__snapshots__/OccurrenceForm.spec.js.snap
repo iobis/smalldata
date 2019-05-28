@@ -111,6 +111,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
                 >
                   <tr
                     className="dataset-option"
+                    onClick={[Function]}
                   >
                     <td>
                       <InputRadio
@@ -147,6 +148,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
                 >
                   <tr
                     className="dataset-option"
+                    onClick={[Function]}
                   >
                     <td>
                       <InputRadio
@@ -183,6 +185,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
                 >
                   <tr
                     className="dataset-option"
+                    onClick={[Function]}
                   >
                     <td>
                       <InputRadio
@@ -219,6 +222,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
                 >
                   <tr
                     className="dataset-option"
+                    onClick={[Function]}
                   >
                     <td>
                       <InputRadio
@@ -255,6 +259,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
                 >
                   <tr
                     className="dataset-option"
+                    onClick={[Function]}
                   >
                     <td>
                       <InputRadio
@@ -291,6 +296,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
                 >
                   <tr
                     className="dataset-option"
+                    onClick={[Function]}
                   >
                     <td>
                       <InputRadio

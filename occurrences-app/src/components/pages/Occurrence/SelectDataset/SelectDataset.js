@@ -32,7 +32,7 @@ SelectDataset.propTypes = {
 
 function DatasetOption({ id, checked, description, onClick }) {
   return (
-    <tr className="dataset-option">
+    <tr className="dataset-option" onClick={onClick}>
       <td><InputRadio checked={checked} name="dataset" onChange={onClick} value={id}/></td>
       <td>{description}</td>
     </tr>
