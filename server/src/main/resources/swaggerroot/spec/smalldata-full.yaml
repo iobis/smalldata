@@ -5,7 +5,7 @@ info:
   license:
     name: MIT
 servers:
-  - url: 'http://smalldata.obis.org/occurrences/'
+  - url: 'http://smalldata.obis.org/'
   - url: 'http://localhost:8080/'
   - url: 'http://localhost:8008/'
 paths:
@@ -146,27 +146,55 @@ paths:
           required: true
           schema:
             type: string
+          examples:
+            blacksea:
+              value: NnqVLwIyPn-nRkc
+              description: Benthic data from Sevastopol (Black Sea)
+            Antipatharia:
+              value: PoJnGNMaxsupE4w
+              description: 'Antipatharia distribution data from: Deep-sea fauna of European seas - an annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe'
+            azovsea:
+              value: ntDOtUc7XsRrIus
+              description: Benthos collected in the Azov Sea in 1935 on board the R/V "N. Danilevskiy"
+            Caprellids:
+              value: wEaBfmFyQhYCdsk
+              description: 'Caprellids polulation structure in Usujiri, Hokkaido, Japan'
         - name: userRef
           in: path
           description: reference to the user owning this record
           required: true
           schema:
             type: string
+          examples:
+            ovZTtaOJZ98xDDY:
+              value: ovZTtaOJZ98xDDY
+            FsfEMwhUTO_8I68:
+              value: FsfEMwhUTO_8I68
       requestBody:
         required: true
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/DWCA'
+            example:
+              core: occurrence
+              occurrence:
+                - iobis: {}
+              emof:
+                - purl: {}
+                  iobis: {}
+                - iobis: {}
       tags:
         - dwca
       responses:
         '200':
           description: new occurences data created and stored
           content:
-            application/json: {}
-        '405':
-          description: invalid input
+            application/json:
+              schema:
+                $ref: '#/paths/~1api~1datasets~1%7BdatasetRef%7D/get/responses/200/content/application~1json/schema'
+        '422':
+          description: Invalid request body
   '/api/dwca/{datasetRef}/user/{userRef}/records/{dwcaRef}':
     put:
       summary: update (overwrite) a new dwca record
