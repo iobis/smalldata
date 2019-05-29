@@ -23,9 +23,10 @@ import static org.pmw.tinylog.Logger.info;
 @ExtendWith(VertxExtension.class)
 public class DwcaComponentTest {
 
+  private static final String OCCURRENCE = "occurrence";
   private static final JsonObject DWCA_OCCURRENCE_RECORD = new JsonObject()
-    .put("core", "occurrence")
-    .put("occurrence", new JsonArray()
+    .put("core", OCCURRENCE)
+    .put(OCCURRENCE, new JsonArray()
       .add(new JsonObject().put("iobis", new JsonObject())))
     .put("emof", new JsonArray()
       .add(new JsonObject().put("purl", new JsonObject()).put("iobis", new JsonObject()))
@@ -90,10 +91,10 @@ public class DwcaComponentTest {
       )),
       ar -> {
         if (ar.succeeded()) {
-          JsonObject body = ar.result().body();
-          info(body);
-          assertThat(body.getJsonObject("records").getJsonArray("occurrence").size()).isEqualTo(1);
-          assertThat(body.getJsonObject("records").getJsonArray("emof").size()).isEqualTo(2);
+          JsonObject records = ar.result().body().getJsonObject("records");
+          assertThat(records.getJsonArray(OCCURRENCE)).hasSize(1);
+          assertThat(records.getJsonArray("emof")).hasSize(2);
+          assertThat(records.getString("core")).isEqualTo(OCCURRENCE);
           testContext.completeNow();
         } else {
           error("error {}", ar.cause());
