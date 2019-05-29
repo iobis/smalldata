@@ -12,10 +12,10 @@ export default [{
       basisOfRecord:    'humanObservation',
       beginDate:        Date.now(),
       endDate:          null,
-      lifestage:        null,
+      lifestage:        'larva',
       occurrenceStatus: 'present',
       scientificName:   '',
-      sex:              null
+      sex:              'male'
     }
   },
   controllers: {

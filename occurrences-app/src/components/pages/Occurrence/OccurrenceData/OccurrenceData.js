@@ -73,10 +73,10 @@ export const occurrenceDataShape = {
   basisOfRecord:    PropTypes.oneOf(basisOfRecordOptions).isRequired,
   beginDate:        PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.number]).isRequired,
   endDate:          PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.number]),
-  lifestage:        PropTypes.oneOf(lifestageOptions),
+  lifestage:        PropTypes.oneOf(lifestageOptions).isRequired,
   occurrenceStatus: PropTypes.oneOf(occurrenceStatusOptions).isRequired,
   scientificName:   PropTypes.string.isRequired,
-  sex:              PropTypes.oneOf(sexOptions)
+  sex:              PropTypes.oneOf(sexOptions).isRequired
 }
 
 OccurrenceData.propTypes = {

@@ -22,10 +22,10 @@ export default function OccurrenceForm() {
     basisOfRecord:    'humanObservation',
     beginDate:        Date.now(),
     endDate:          null,
-    lifestage:        null,
+    lifestage:        'larva',
     occurrenceStatus: 'present',
     scientificName:   '',
-    sex:              null
+    sex:              'male'
   })
   const [locationData, setLocationData] = useState({
     decimalLongitude:      null,

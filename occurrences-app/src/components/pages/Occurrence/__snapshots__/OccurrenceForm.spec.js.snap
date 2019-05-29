@@ -340,10 +340,10 @@ exports[`OccurrenceForm renders correctly 1`] = `
           basisOfRecord="humanObservation"
           beginDate={1556496000000}
           endDate={null}
-          lifestage={null}
+          lifestage="larva"
           occurrenceStatus="present"
           scientificName=""
-          sex={null}
+          sex="male"
         />
       }
       stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
@@ -726,10 +726,10 @@ exports[`OccurrenceForm renders correctly 2`] = `
           basisOfRecord="humanObservation"
           beginDate={1556496000000}
           endDate={null}
-          lifestage={null}
+          lifestage="larva"
           occurrenceStatus="present"
           scientificName=""
-          sex={null}
+          sex="male"
         />
       }
       stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
@@ -745,10 +745,10 @@ exports[`OccurrenceForm renders correctly 2`] = `
             basisOfRecord="humanObservation"
             beginDate={1556496000000}
             endDate={null}
-            lifestage={null}
+            lifestage="larva"
             occurrenceStatus="present"
             scientificName=""
-            sex={null}
+            sex="male"
           />
         }
         stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
@@ -776,10 +776,10 @@ exports[`OccurrenceForm renders correctly 2`] = `
               basisOfRecord="humanObservation"
               beginDate={1556496000000}
               endDate={null}
-              lifestage={null}
+              lifestage="larva"
               occurrenceStatus="present"
               scientificName=""
-              sex={null}
+              sex="male"
             >
               <div>
                  29 April 2019 
@@ -1513,10 +1513,10 @@ exports[`OccurrenceForm renders correctly 3`] = `
           basisOfRecord="humanObservation"
           beginDate={1556496000000}
           endDate={null}
-          lifestage={null}
+          lifestage="larva"
           occurrenceStatus="present"
           scientificName=""
-          sex={null}
+          sex="male"
         />
       }
       stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
@@ -1532,10 +1532,10 @@ exports[`OccurrenceForm renders correctly 3`] = `
             basisOfRecord="humanObservation"
             beginDate={1556496000000}
             endDate={null}
-            lifestage={null}
+            lifestage="larva"
             occurrenceStatus="present"
             scientificName=""
-            sex={null}
+            sex="male"
           />
         }
         stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
@@ -1563,10 +1563,10 @@ exports[`OccurrenceForm renders correctly 3`] = `
               basisOfRecord="humanObservation"
               beginDate={1556496000000}
               endDate={null}
-              lifestage={null}
+              lifestage="larva"
               occurrenceStatus="present"
               scientificName=""
-              sex={null}
+              sex="male"
             >
               <div>
                  29 April 2019 
@@ -3488,10 +3488,10 @@ exports[`OccurrenceForm renders correctly 4`] = `
           basisOfRecord="humanObservation"
           beginDate={1556496000000}
           endDate={null}
-          lifestage={null}
+          lifestage="larva"
           occurrenceStatus="present"
           scientificName=""
-          sex={null}
+          sex="male"
         />
       }
       stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
@@ -3507,10 +3507,10 @@ exports[`OccurrenceForm renders correctly 4`] = `
             basisOfRecord="humanObservation"
             beginDate={1556496000000}
             endDate={null}
-            lifestage={null}
+            lifestage="larva"
             occurrenceStatus="present"
             scientificName=""
-            sex={null}
+            sex="male"
           />
         }
         stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
@@ -3538,10 +3538,10 @@ exports[`OccurrenceForm renders correctly 4`] = `
               basisOfRecord="humanObservation"
               beginDate={1556496000000}
               endDate={null}
-              lifestage={null}
+              lifestage="larva"
               occurrenceStatus="present"
               scientificName=""
-              sex={null}
+              sex="male"
             >
               <div>
                  29 April 2019 
@@ -4125,10 +4125,10 @@ exports[`OccurrenceForm renders correctly 5`] = `
           basisOfRecord="humanObservation"
           beginDate={1556496000000}
           endDate={null}
-          lifestage={null}
+          lifestage="larva"
           occurrenceStatus="present"
           scientificName=""
-          sex={null}
+          sex="male"
         />
       }
       stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
@@ -4144,10 +4144,10 @@ exports[`OccurrenceForm renders correctly 5`] = `
             basisOfRecord="humanObservation"
             beginDate={1556496000000}
             endDate={null}
-            lifestage={null}
+            lifestage="larva"
             occurrenceStatus="present"
             scientificName=""
-            sex={null}
+            sex="male"
           />
         }
         stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
@@ -4175,10 +4175,10 @@ exports[`OccurrenceForm renders correctly 5`] = `
               basisOfRecord="humanObservation"
               beginDate={1556496000000}
               endDate={null}
-              lifestage={null}
+              lifestage="larva"
               occurrenceStatus="present"
               scientificName=""
-              sex={null}
+              sex="male"
             >
               <div>
                  29 April 2019 
@@ -4795,10 +4795,10 @@ exports[`OccurrenceForm renders correctly 6`] = `
           basisOfRecord="humanObservation"
           beginDate={1556496000000}
           endDate={null}
-          lifestage={null}
+          lifestage="larva"
           occurrenceStatus="present"
           scientificName=""
-          sex={null}
+          sex="male"
         />
       }
       stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
@@ -4814,10 +4814,10 @@ exports[`OccurrenceForm renders correctly 6`] = `
             basisOfRecord="humanObservation"
             beginDate={1556496000000}
             endDate={null}
-            lifestage={null}
+            lifestage="larva"
             occurrenceStatus="present"
             scientificName=""
-            sex={null}
+            sex="male"
           />
         }
         stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
@@ -4845,10 +4845,10 @@ exports[`OccurrenceForm renders correctly 6`] = `
               basisOfRecord="humanObservation"
               beginDate={1556496000000}
               endDate={null}
-              lifestage={null}
+              lifestage="larva"
               occurrenceStatus="present"
               scientificName=""
-              sex={null}
+              sex="male"
             >
               <div>
                  29 April 2019 
@@ -5485,10 +5485,10 @@ exports[`OccurrenceForm renders correctly 7`] = `
           basisOfRecord="humanObservation"
           beginDate={1556496000000}
           endDate={null}
-          lifestage={null}
+          lifestage="larva"
           occurrenceStatus="present"
           scientificName=""
-          sex={null}
+          sex="male"
         />
       }
       stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
@@ -5898,10 +5898,10 @@ exports[`OccurrenceForm renders correctly 7`] = `
           "basisOfRecord": "humanObservation",
           "beginDate": 1556496000000,
           "endDate": null,
-          "lifestage": null,
+          "lifestage": "larva",
           "occurrenceStatus": "present",
           "scientificName": "",
-          "sex": null,
+          "sex": "male",
         }
       }
       onChangeClick={[Function]}
@@ -6086,7 +6086,7 @@ exports[`OccurrenceForm renders correctly 7`] = `
               </NameValueRow>
               <NameValueRow
                 name="occurrenceForm.occurrenceData.sex.title"
-                value="occurrenceForm.occurrenceData.sex.null"
+                value="occurrenceForm.occurrenceData.sex.male"
               >
                 <tr
                   className="name-value-row fieldrow"
@@ -6099,13 +6099,13 @@ exports[`OccurrenceForm renders correctly 7`] = `
                   <td
                     className="value"
                   >
-                    occurrenceForm.occurrenceData.sex.null
+                    occurrenceForm.occurrenceData.sex.male
                   </td>
                 </tr>
               </NameValueRow>
               <NameValueRow
                 name="occurrenceForm.occurrenceData.lifestage.title"
-                value="occurrenceForm.occurrenceData.lifestage.null"
+                value="occurrenceForm.occurrenceData.lifestage.larva"
               >
                 <tr
                   className="name-value-row fieldrow"
@@ -6118,7 +6118,7 @@ exports[`OccurrenceForm renders correctly 7`] = `
                   <td
                     className="value"
                   >
-                    occurrenceForm.occurrenceData.lifestage.null
+                    occurrenceForm.occurrenceData.lifestage.larva
                   </td>
                 </tr>
               </NameValueRow>
