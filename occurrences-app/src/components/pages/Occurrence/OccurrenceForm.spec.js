@@ -56,6 +56,9 @@ describe('OccurrenceForm', () => {
 
     removeDarwinCoreField(wrapper, 1)
     expect(wrapper.find('.fieldrow')).toHaveLength(2)
+
+    wrapper.find('.review-and-submit-button').simulate('click')
+    expect(wrapper).toMatchSnapshot()
   })
 
   function addDarwinCoreField(wrapper, name, value) {

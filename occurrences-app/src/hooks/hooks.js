@@ -12,6 +12,7 @@ export function useOnClickOutside(ref, handler) {
       document.removeEventListener('mousedown', listener)
       document.removeEventListener('touchstart', listener)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 }
 
@@ -20,6 +21,7 @@ export function useDebounce(value, delay) {
   useEffect(() => {
     const handler = setTimeout(() => setDebouncedValue(value), delay)
     return () => clearTimeout(handler)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value])
   return debouncedValue
 }

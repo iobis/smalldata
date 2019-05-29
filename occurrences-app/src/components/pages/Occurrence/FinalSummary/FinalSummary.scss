@@ -1,0 +1,42 @@
+.final-summary {
+  .final-summary-title {
+    margin-bottom: 1.5rem;
+  }
+
+  .submit-entry-button {
+    margin-bottom: 1.5rem;
+  }
+
+  section {
+    margin-bottom: 1.5rem;
+    &.dataset-summary {
+      .change-button {
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  .name-value-row {
+    .name {
+      width: 30%;
+    }
+
+    .value {
+      width: 70%;
+    }
+  }
+
+  .measurements {
+    .type {
+      width: 30%
+    }
+
+    .unit {
+      width: 20%
+    }
+
+    .value {
+      width: 20%
+    }
+  }
+}

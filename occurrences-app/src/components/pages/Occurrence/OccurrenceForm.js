@@ -1,14 +1,15 @@
-import ActiveStepHeader from './ActiveStepHeader'
-import OccurrenceData from './OccurrenceData/OccurrenceData'
-import ConfirmedStepHeader from './ConfirmedStepHeader'
+import ActiveStepHeader from './StepHeaders/ActiveStepHeader'
+import ConfirmedStepHeader from './StepHeaders/ConfirmedStepHeader'
 import DarwinCoreFields from './DarwinCoreFields/DarwinCoreFields'
+import FinalSummary from './FinalSummary/FinalSummary'
 import LocationData from './LocationData/LocationData'
 import MeasurementOrFact from './MeasurementOrFact/MeasurementOrFact'
-import NotConfirmedStepHeader from './NotConfirmedStepHeader'
+import NotConfirmedStepHeader from './StepHeaders/NotConfirmedStepHeader'
 import ObservationData from './ObservationData/ObservationData'
+import OccurrenceData from './OccurrenceData/OccurrenceData'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import SelectDataset from './SelectDataset/SelectDataset'
+import Dataset from './Dataset/Dataset'
 import { format } from 'date-fns'
 import { getDatasetMock } from '../../../clients/server'
 import { useTranslation } from 'react-i18next'
@@ -16,7 +17,7 @@ import { useTranslation } from 'react-i18next'
 export default function OccurrenceForm() {
   const datasets = getDatasetMock()
   const { t } = useTranslation()
-  const [selectedDataset, setSelectedDataset] = useState(datasets[0])
+  const [dataset, setSelectedDataset] = useState(datasets[0])
   const [occurrenceData, setOccurrenceData] = useState({
     basisOfRecord:    'humanObservation',
     beginDate:        Date.now(),
@@ -25,6 +26,15 @@ export default function OccurrenceForm() {
     occurrenceStatus: 'present',
     scientificName:   '',
     sex:              null
+  })
+  const [locationData, setLocationData] = useState({
+    decimalLongitude:      null,
+    decimalLatitude:       null,
+    coordinateUncertainty: null,
+    minimumDepth:          null,
+    maximumDepth:          null,
+    verbatimCoordinates:   '',
+    verbatimDepth:         ''
   })
   const [observationData, setObservationData] = useState({
     institutionCode:         '',
@@ -40,27 +50,19 @@ export default function OccurrenceForm() {
   })
   const [darwinCoreFields, setDarwinCoreFields] = useState([])
   const [activeStepIndex, setActiveStepIndex] = useState(0)
-  const [locationData, setLocationData] = useState({
-    decimalLongitude:      null,
-    decimalLatitude:       null,
-    coordinateUncertainty: null,
-    minimumDepth:          null,
-    maximumDepth:          null,
-    verbatimCoordinates:   '',
-    verbatimDepth:         ''
-  })
   const [measurementOrFact, setMeasurementOrFact] = useState([])
+  const [finalSummaryVisible, setFinalSummaryVisible] = useState(false)
   const steps = [{
-    dataDescription: t('occurrenceForm.selectDataset.dataDescription'),
-    selectedData:    selectedDataset.description,
-    stepDescription: t('occurrenceForm.selectDataset.stepDescription'),
-    stepTitle:       t('occurrenceForm.selectDataset.stepTitle'),
-    children:        <SelectDataset
+    dataDescription: t('occurrenceForm.dataset.step.dataDescription'),
+    selectedData:    dataset.description,
+    stepDescription: t('occurrenceForm.dataset.step.stepDescription'),
+    stepTitle:       t('occurrenceForm.dataset.step.stepTitle'),
+    children:        <Dataset
       datasets={datasets}
       onChange={setSelectedDataset}
-      selectedDataset={selectedDataset}/>
+      selectedDataset={dataset}/>
   }, {
-    dataDescription: 'Given Values',
+    dataDescription: t('occurrenceForm.occurrenceData.step.dataDescription'),
     selectedData:    <OccurrenceDataSummary {...occurrenceData}/>,
     stepDescription: t('occurrenceForm.occurrenceData.step.stepDescription'),
     stepTitle:       t('occurrenceForm.occurrenceData.step.stepTitle'),
@@ -76,30 +78,40 @@ export default function OccurrenceForm() {
       data={locationData}
       onChange={setLocationData}/>
   }, {
-    dataDescription: 'Main Info',
+    dataDescription: t('occurrenceForm.observationData.step.dataDescription'),
     selectedData:    renderIdentifiedByLabel(observationData),
-    stepDescription: 'Enter further specifics',
-    stepTitle:       'Observation Data',
+    stepDescription: t('occurrenceForm.observationData.step.stepDescription'),
+    stepTitle:       t('occurrenceForm.observationData.step.stepTitle'),
     children:        <ObservationData
       observationData={observationData}
       onChange={setObservationData}/>
   }, {
-    dataDescription: 'Given values',
+    dataDescription: t('occurrenceForm.measurementOrFact.step.dataDescription'),
     selectedData:    <MeasurementOrFactSummary data={measurementOrFact}/>,
-    stepDescription: 'Enter further specifics',
-    stepTitle:       'Measurement or Fact',
+    stepDescription: t('occurrenceForm.measurementOrFact.step.stepDescription'),
+    stepTitle:       t('occurrenceForm.measurementOrFact.step.stepTitle'),
     children:        <MeasurementOrFact
       data={measurementOrFact}
       onChange={setMeasurementOrFact}/>
   }, {
     dataDescription: '',
     selectedData:    '',
-    stepDescription: 'Supply specific Darwin core fields',
-    stepTitle:       'Darwin Core Fields',
+    stepDescription: t('occurrenceForm.darwinCoreFields.step.stepDescription'),
+    stepTitle:       t('occurrenceForm.darwinCoreFields.step.stepTitle'),
     children:        <DarwinCoreFields
       fields={darwinCoreFields}
       onChange={setDarwinCoreFields}/>
   }]
+
+  function showFinalSummary() {
+    setActiveStepIndex(null)
+    setFinalSummaryVisible(true)
+  }
+
+  function showActiveStep(stepIndex) {
+    setActiveStepIndex(stepIndex)
+    setFinalSummaryVisible(false)
+  }
 
   return (
     <section className="section">
@@ -116,10 +128,25 @@ export default function OccurrenceForm() {
             {...step}
             className={className}
             key={step.stepTitle}
-            onStepTitleClick={() => setActiveStepIndex(index)}
+            onStepTitleClick={() => showActiveStep(index)}
             stepTitle={stepNumber + ' - ' + step.stepTitle}/>
         )
       })}
+      {finalSummaryVisible ?
+        (<FinalSummary
+          darwinCoreFields={darwinCoreFields}
+          dataset={dataset}
+          locationData={locationData}
+          measurements={measurementOrFact}
+          observationData={observationData}
+          occurrenceData={occurrenceData}
+          onChangeClick={(params) => showActiveStep(params.index)}
+          onSubmitClick={() => {}}/>) :
+        (<div className="columns column is-centered">
+          <button className="review-and-submit-button button is-medium is-info" onClick={showFinalSummary}>
+            {t('occurrenceForm.reviewAndSubmitButton')}
+          </button>
+        </div>)}
     </section>
   )
 }

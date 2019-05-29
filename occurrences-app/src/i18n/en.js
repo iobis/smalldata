@@ -3,6 +3,7 @@ export default {
     common:         {
       add:       'Add',
       cancel:    'Cancel',
+      change:    'Change',
       confirm:   'Confirm',
       copy:      'Copy',
       edit:      'Edit',
@@ -26,27 +27,31 @@ export default {
       }
     },
     occurrenceForm: {
-      selectDataset:     {
-        dataDescription: 'Using Data',
-        stepDescription: 'Choose the dataset for adding observations',
-        stepTitle:       'Selected Dataset'
+      reviewAndSubmitButton: 'Review & Submit',
+      dataset:               {
+        step: {
+          dataDescription: 'Using Data',
+          stepDescription: 'Choose the dataset for adding observations',
+          stepTitle:       'Selected Dataset'
+        }
       },
-      occurrenceData:    {
+      occurrenceData:        {
         step:             {
+          dataDescription: 'Given Values',
           stepDescription: 'Mandatory observation information',
           stepTitle:       'Occurrence Data'
         },
-        scientificName:   'Scientific name',
-        eventBeginDate:   'Event begin date',
-        eventEndDate:     'Event end date',
+        scientificName:   'Scientific Name',
+        eventBeginDate:   'Event Begin Date',
+        eventEndDate:     'Event End Date',
         eventEndDateHelp: 'optional: only in case of date range',
         occurrenceStatus: {
-          title:   'Occurrence status',
+          title:   'Occurrence Status',
           absent:  'absent',
           present: 'present'
         },
         basisOfRecord:    {
-          title:              'Basis of record',
+          title:              'Basis of Record',
           humanObservation:   'human observation',
           fossilSpecimen:     'fossil specimen',
           livingSpecimen:     'living specimen',
@@ -67,7 +72,7 @@ export default {
           unspecified: 'unspecified'
         }
       },
-      locationData:      {
+      locationData:          {
         enterCoordinates:      {
           title:    'Enter coordinates',
           subtitle: 'bold fields are mandatory'
@@ -77,35 +82,35 @@ export default {
           subtitle: 'optionally supply verbatim data as it appeared originally in the notes'
         },
         decimalLongitude:      {
-          label:       'decimal longitude',
+          label:       'Decimal Longitude',
           placeholder: '5.12334'
         },
         decimalLatitude:       {
-          label:       'decimal latitude',
+          label:       'Decimal Latitude',
           placeholder: '53.2345'
         },
         coordinateUncertainty: {
-          label:       'coordinate uncertainty',
+          label:       'Coordinate Uncertainty',
           placeholder: '',
           help:        'meters'
         },
         minimumDepth:          {
-          label:       'minimum depth',
+          label:       'Minimum Depth',
           placeholder: '',
           help:        'meters'
         },
         maximumDepth:          {
-          label:       'maximum depth',
+          label:       'Maximum Depth',
           placeholder: '',
           help:        'meters'
         },
         verbatimCoordinates:   {
-          label:       'verbatim coordinates',
+          label:       'Verbatim Coordinates',
           placeholder: '',
           help:        'Example: "41 05 54S 121 05 34W", "17T 630000 4833400"'
         },
         verbatimDepth:         {
-          label:       'verbatim depth',
+          label:       'Verbatim Depth',
           placeholder: '',
           help:        'Examples: "100-200 m"'
         },
@@ -126,56 +131,64 @@ export default {
           title:          'Don\'t know the exact coordinates?'
         }
       },
-      observationData:   {
+      observationData:       {
+        step:                    {
+          dataDescription: 'Main Info',
+          stepDescription: 'Enter further specifics',
+          stepTitle:       'Observation Data'
+        },
         institutionCode:         {
-          label:       'institution code',
+          label:       'Institution Code',
           placeholder: 'institution code'
         },
         collectionCode:          {
-          label:       'collection code',
+          label:       'Collection Code',
           placeholder: 'collection code'
         },
         fieldNumber:             {
-          label:       'field number',
+          label:       'Field Number',
           placeholder: 'field number'
         },
         catalogNumber:           {
-          label:       'catalog number',
+          label:       'Catalog Number',
           placeholder: 'catalog number'
         },
         recordNumber:            {
-          label:       'record number',
+          label:       'Record Number',
           placeholder: 'record number'
         },
         identifiedBy:            {
-          label:       'identified by',
+          label:       'Identified by',
           placeholder: '',
           help:        'hit enter to add person to list'
         },
         recordedBy:              {
-          label:       'recorded by',
+          label:       'Recorded by',
           placeholder: '',
           help:        'hit enter to add person to list'
         },
         identificationQualifier: {
-          label:       'identification qualifier',
+          label:       'Identification Qualifier',
           placeholder: '',
           help:        'aff. agrifolia var. oxyadenia (for Quercus aff. agrifolia var. oxyadenia with accompanying values Quercus in genus, agrifolia in specificEpithet, oxyadenia in infraspecificEpithet, and var. in taxonRank. cf. var. oxyadenia for Quercus agrifolia cf. var. oxyadenia with accompanying values Quercus in genus, agrifolia in specificEpithet, oxyadenia in infraspecificEpithet, and var. in taxonRank.'
         },
         identificationRemarks:   {
-          label:       'identification remarks',
+          label:       'Identification Remarks',
           placeholder: '',
           help:        'Example: “Distinguished between Anthus correndera and Anthus hellmayri based on the comparative lengths of the uñas.”'
         },
         references:              {
-          label:       'references',
+          label:       'References',
           placeholder: '',
           help:        'hit enter to add a reference to list'
         }
       },
-      measurementOrFact: {
+      measurementOrFact:     {
         step:     {
-          title: 'You have submitted {{number}} extra fields'
+          dataDescription: 'Given values',
+          stepDescription: 'Enter further specifics',
+          stepTitle:       'Measurement or Fact',
+          title:           'You have submitted {{number}} extra fields'
         },
         general:  {
           title:    'STEP 1: General sample information',
@@ -189,7 +202,11 @@ export default {
           title: 'Supplied measurements or facts'
         }
       },
-      darwinCoreFields:  {
+      darwinCoreFields:      {
+        step:      {
+          stepDescription: 'Supply specific Darwin core fields',
+          stepTitle:       'Darwin Core Fields'
+        },
         title:     'Darwin Core Custom Selection',
         subtitle:  'This form enables you to add any additional fields you may need to specify, that were not previously included in this form.',
         tip:       'Please be advised to use the Darwin Core Archive names',
@@ -203,8 +220,18 @@ export default {
           placeholder: '',
           help:        ''
         }
+      },
+      finalSummary:          {
+        submitEntryButton: 'Submit Entry',
+        title:             'Final Summary',
+        locationData:      {
+          verbatimDataSubtitle: 'Verbatim data'
+        },
+        observationData:   {
+          catalogDataSubtitle: 'Catalog data',
+          speciesDataSubtitle: 'Species data'
+        }
       }
-
     },
     navbar:         {
       help:      'HELP',

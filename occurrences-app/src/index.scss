@@ -11,14 +11,15 @@ $section-padding: 0.5rem;
 @import 'components/layout/Navbar';
 @import 'components/pages/Occurrence/CopyPreviousData';
 @import 'components/pages/Occurrence/DarwinCoreFields/DarwinCoreFields';
+@import 'components/pages/Occurrence/Dataset/Dataset';
+@import 'components/pages/Occurrence/FinalSummary/FinalSummary';
 @import 'components/pages/Occurrence/LocationData/LocationData';
 @import 'components/pages/Occurrence/LocationData/LocationPicker';
 @import 'components/pages/Occurrence/LocationData/LocationPickerModal';
 @import 'components/pages/Occurrence/MeasurementOrFact/MeasurementOrFact';
 @import 'components/pages/Occurrence/ObservationData/ObservationData';
 @import 'components/pages/Occurrence/OccurrenceData/OccurrenceData';
-@import 'components/pages/Occurrence/SelectDataset/SelectDataset';
-@import 'components/pages/Occurrence/StepHeader';
+@import 'components/pages/Occurrence/StepHeaders/StepHeader';
 
 body {
   margin: 0;

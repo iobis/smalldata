@@ -81,7 +81,7 @@ export default function ObservationData({ onChange, observationData }) {
   )
 }
 
-const observationDataShape = {
+export const observationDataShape = {
   institutionCode:         PropTypes.string.isRequired,
   collectionCode:          PropTypes.string.isRequired,
   fieldNumber:             PropTypes.string.isRequired,

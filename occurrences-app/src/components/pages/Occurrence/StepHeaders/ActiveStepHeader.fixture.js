@@ -1,8 +1,8 @@
-import NotConfirmedStepHeader from '../NotConfirmedStepHeader'
+import ActiveStepHeader from './ActiveStepHeader'
 
 export default [{
-  component: NotConfirmedStepHeader,
-  name:      'not confirmed step',
+  component: ActiveStepHeader,
+  name:      'active step',
   props:     {
     stepDescription: 'Choose the dataset for adding observations',
     stepTitle:       '1 - Select Dataset'

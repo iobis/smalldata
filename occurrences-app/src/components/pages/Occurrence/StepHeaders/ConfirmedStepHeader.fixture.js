@@ -1,4 +1,4 @@
-import ConfirmedStepHeader from '../ConfirmedStepHeader'
+import ConfirmedStepHeader from './ConfirmedStepHeader'
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 

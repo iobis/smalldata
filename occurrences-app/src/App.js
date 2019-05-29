@@ -7,7 +7,7 @@ import OccurrenceForm from './components/pages/Occurrence/OccurrenceForm'
 import PropTypes from 'prop-types'
 import React, { useContext } from 'react'
 import { AuthContext, AuthProvider } from './context/AuthContext'
-import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import {
   faAngleDown,
   faCheckCircle,
@@ -39,7 +39,7 @@ const AppDiv = () => {
     <div className="App">
       <Navbar/>
       <Switch>
-        <Route exact path="/" render={() => loggedIn ? <Redirect to="/input-data"/> : <LogInPage/>}/>
+        <ProtectedRoute component={InputDataPage} exact path="/"/>
         <ProtectedRoute component={InputDataPage} exact path="/input-data"/>
         <ProtectedRoute component={OccurrenceForm} exact path="/input-data/new"/>
         <Route component={HelpPage} exact path="/help"/>
@@ -50,13 +50,11 @@ const AppDiv = () => {
 
 const ProtectedRoute = ({ component: Component, ...rest }) => {
   const { loggedIn } = useContext(AuthContext)
+  const render = (props) => loggedIn
+    ? <Component {...props}/>
+    : <LogInPage/>
   return (
-    <Route
-      {...rest}
-      render={(props) => (
-        loggedIn
-          ? <Component {...props}/>
-          : <Redirect to="/"/>)}/>
+    <Route {...rest} render={render}/>
   )
 }
 

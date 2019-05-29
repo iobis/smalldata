@@ -93,15 +93,17 @@ export default function LocationData({ data, onChange }) {
   )
 }
 
+export const locationDataShape = {
+  decimalLongitude:      PropTypes.number,
+  decimalLatitude:       PropTypes.number,
+  coordinateUncertainty: PropTypes.number,
+  minimumDepth:          PropTypes.number,
+  maximumDepth:          PropTypes.number,
+  verbatimCoordinates:   PropTypes.string.isRequired,
+  verbatimDepth:         PropTypes.string.isRequired
+}
+
 LocationData.propTypes = {
-  data:     PropTypes.shape({
-    decimalLongitude:      PropTypes.number,
-    decimalLatitude:       PropTypes.number,
-    coordinateUncertainty: PropTypes.number,
-    minimumDepth:          PropTypes.number,
-    maximumDepth:          PropTypes.number,
-    verbatimCoordinates:   PropTypes.string.isRequired,
-    verbatimDepth:         PropTypes.string.isRequired
-  }).isRequired,
+  data:     PropTypes.shape(locationDataShape).isRequired,
   onChange: PropTypes.func.isRequired
 }
