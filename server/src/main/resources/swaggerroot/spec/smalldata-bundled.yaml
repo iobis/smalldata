@@ -192,7 +192,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/paths/~1api~1datasets~1%7BdatasetRef%7D/get/responses/200/content/application~1json/schema'
+                $ref: '#/components/schemas/DWCA'
         '422':
           description: Invalid request body
   '/api/dwca/{datasetRef}/user/{userRef}/records/{dwcaRef}':

@@ -12,7 +12,7 @@
     "occurrences-app"
   ],
   "scripts": {
-    "build:back-end": "run-s server:bundle-spec server:runtime-zip",
+    "build:back-end": "run-s server:bundle-openapi-spec server:runtime-zip",
     "build:front-end": "run-s occurrences-app:build occurrences-app:copy-to-server",
     "build:zip": "run-s build:front-end build:back-end",
     "clean": "shx rm -rf ./occurrences-app/build ./server/src/main/resources/webroot/*",
@@ -20,7 +20,7 @@
     "occurrences-app:build": "yarn workspace @smalldata/occurrences-app build",
     "occurrences-app:copy-to-server": "shx mkdir -p ./server/src/main/resources/webroot/ && shx cp -rf ./occurrences-app/build/* ./server/src/main/resources/webroot/",
     "prettier": "prettier --print-width 100 --jsx-bracket-same-line --single-quote --no-semi --write **/*.{scss,css,json,js,jsx}",
-    "server:bundle-spec": "swagger-cli bundle server/src/main/resources/swaggerroot/spec/smalldata.yaml -t yaml -o server/src/main/resources/swaggerroot/spec/smalldata-full.yaml",
+    "server:bundle-openapi-spec": "swagger-cli bundle server/src/main/resources/swaggerroot/spec/smalldata.yaml -t yaml -o server/src/main/resources/swaggerroot/spec/smalldata-bundled.yaml",
     "server:runtime-zip": "cd server && ./gradlew runtimeZip",
     "sort-package-json": "sort-package-json package.json admin-app/package.json dwca-lib/package.json occurrences-app/package.json",
     "test:ci": "yarn test:front-end:ci && yarn test:server:ci",

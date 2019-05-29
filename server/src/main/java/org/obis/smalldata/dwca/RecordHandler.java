@@ -46,17 +46,7 @@ class RecordHandler {
           info("insertion result {}", result);
           result.setHandler(ar -> message.reply(new JsonObject()
             .put("dwcaId", id)
-            .put("records", new JsonObject(records.stream()
-              .collect(Collectors.groupingBy(dwca -> dwca.getString("dwcTable")))
-              .entrySet()
-              .stream()
-              .collect(Collectors.toMap(
-                Map.Entry::getKey,
-                dwcList -> dwcList.getValue().stream()
-                  .map(dwca -> dwca.getJsonObject(DWC_RECORD))
-                  .collect(Collectors.toList()))
-              ))
-              .put("core", coreTable))));
+            .put("records", generateDwcaJsonResponse(coreTable, records))));
         });
         break;
       case "update":
@@ -71,6 +61,20 @@ class RecordHandler {
 
   private String getCoreTable(JsonObject body) {
     return body.getJsonObject("record").getString("core");
+  }
+
+  private JsonObject generateDwcaJsonResponse(String coreTable, List<JsonObject> records) {
+    return new JsonObject(records.stream()
+      .collect(Collectors.groupingBy(dwca -> dwca.getString("dwcTable")))
+      .entrySet()
+      .stream()
+      .collect(Collectors.toMap(
+        Map.Entry::getKey,
+        dwcList -> dwcList.getValue().stream()
+          .map(dwca -> dwca.getJsonObject(DWC_RECORD))
+          .collect(Collectors.toList()))
+      ))
+      .put("core", coreTable);
   }
 
   private List<JsonObject> dwcaRecordToDwcList(JsonObject dwcaRecord) {

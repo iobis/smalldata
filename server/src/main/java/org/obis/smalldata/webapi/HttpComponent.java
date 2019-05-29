@@ -15,7 +15,7 @@ public class HttpComponent extends AbstractVerticle {
   public void start(Future<Void> startFuture) {
     info("starting module 'webapi': {}", config().encodePrettily());
     var port = config().getInteger("port", 8008);
-    OpenAPI3RouterFactory.create(vertx, "swaggerroot/spec/smalldata-full.yaml",
+    OpenAPI3RouterFactory.create(vertx, "swaggerroot/spec/smalldata-bundled.yaml",
       ar -> {
         if (ar.succeeded()) {
           info("started OpenAPI: {}", ar.succeeded());

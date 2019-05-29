@@ -23,7 +23,7 @@ import static org.pmw.tinylog.Logger.info;
 @ExtendWith(VertxExtension.class)
 public class DwcaComponentTest {
 
-  public static final String OCCURRENCE = "occurrence";
+  private static final String OCCURRENCE = "occurrence";
   private static final JsonObject DWCA_OCCURRENCE_RECORD = new JsonObject()
     .put("core", OCCURRENCE)
     .put(OCCURRENCE, new JsonArray()
@@ -91,11 +91,10 @@ public class DwcaComponentTest {
       )),
       ar -> {
         if (ar.succeeded()) {
-          JsonObject body = ar.result().body();
-          info(body);
-          assertThat(body.getJsonObject("records").getJsonArray(OCCURRENCE).size()).isEqualTo(1);
-          assertThat(body.getJsonObject("records").getJsonArray("emof").size()).isEqualTo(2);
-          assertThat(body.getJsonObject("records").getString("core")).isEqualTo(OCCURRENCE);
+          JsonObject records = ar.result().body().getJsonObject("records");
+          assertThat(records.getJsonArray(OCCURRENCE)).hasSize(1);
+          assertThat(records.getJsonArray("emof")).hasSize(2);
+          assertThat(records.getString("core")).isEqualTo(OCCURRENCE);
           testContext.completeNow();
         } else {
           error("error {}", ar.cause());
