@@ -1,6 +1,7 @@
 package org.obis.smalldata.dwca;
 
 import io.vertx.core.Vertx;
+import io.vertx.core.json.JsonObject;
 import io.vertx.ext.mongo.MongoClient;
 import io.vertx.junit5.VertxExtension;
 import io.vertx.junit5.VertxTestContext;
@@ -34,7 +35,7 @@ class DbQueryTest {
   @Test
   void findDwcaRecords(VertxTestContext testContext) {
     var datasetRef = "NnqVLwIyPn-nRkc";
-    var dwcaRecords = dbQuery.findDwcaRecords(datasetRef);
+    var dwcaRecords = dbQuery.queryDwcaRecords(new JsonObject().put("dataset_ref", datasetRef));
     dwcaRecords.setHandler(ar -> {
       var result = ar.result();
       assertThat(result).hasSize(642);
@@ -44,10 +45,20 @@ class DbQueryTest {
 
   @Test
   void findDwcaRecordsForUnknownRefReturnsEmptyList(VertxTestContext testContext) {
-    var dwcaRecords = dbQuery.findDwcaRecords("unknown");
+    var dwcaRecords = dbQuery.queryDwcaRecords(new JsonObject().put("dataset_ref", "unknown"));
     dwcaRecords.setHandler(ar -> {
       var result = ar.result();
       assertThat(result).hasSize(0);
+      testContext.completeNow();
+    });
+  }
+
+  @Test
+  void findDwcaRecordsForUser(VertxTestContext testContext) {
+    var dwcaRecords = dbQuery.queryDwcaRecords(new JsonObject().put("user_ref", "ovZTtaOJZ98xDDY"));
+    dwcaRecords.setHandler(ar -> {
+      var result = ar.result();
+      assertThat(result).hasSize(2955);
       testContext.completeNow();
     });
   }
@@ -59,6 +70,17 @@ class DbQueryTest {
     dataset.setHandler(ar -> {
       var result = ar.result();
       assertThat(result).hasSize(12);
+      testContext.completeNow();
+    });
+  }
+
+  @Test
+  void findDatasetCoreTable(VertxTestContext testContext) {
+    var datasetRef = "PoJnGNMaxsupE4w";
+    var dataset = dbQuery.findDatasetCoreTable(datasetRef);
+    dataset.setHandler(ar -> {
+      var result = ar.result();
+      assertThat(result).isEqualTo("occurrence");
       testContext.completeNow();
     });
   }

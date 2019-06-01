@@ -54,6 +54,22 @@ public class DwcaRecordsHandler {
     });
   }
 
+  public static void getForUser(RoutingContext context) {
+    var userRef = context.request().getParam("userRef");
+    var eventbus = context.vertx().eventBus();
+    eventbus.<Boolean>send("users.exists", userRef,
+      arUserExists -> {
+        if (arUserExists.succeeded() && arUserExists.result().body()) {
+          eventbus.<JsonArray>send("dwca.record", new JsonObject()
+              .put("action", "query")
+              .put("query", new JsonObject().put("user_ref", userRef)),
+            ar -> context.response().end(ar.result().body().encode()));
+        } else {
+          context.response().setStatusCode(400).end("User doesn't exist");
+        }
+      });
+  }
+
   @Value
   static class DwcaBodyValidator {
 
