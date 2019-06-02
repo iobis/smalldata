@@ -135,6 +135,37 @@ paths:
                             type: string
                         keywordThesaurus:
                           type: string
+  '/api/dwca/user/{userRef}/records':
+    get:
+      summary: get a list of dwca records for a user
+      operationId: getUserRecords
+      parameters:
+        - name: userRef
+          in: path
+          description: unique reference to the user
+          required: true
+          schema:
+            type: string
+          example: FsfEMwhUTO_8I68
+      tags:
+        - dwca
+        - users
+      responses:
+        '200':
+          description: list of dwca records belonging to this user
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    dwcaId:
+                      type: string
+                    dataset:
+                      type: string
+                    dwcRecords:
+                      $ref: '#/components/schemas/DWCA'
   '/api/dwca/{datasetRef}/user/{userRef}/records':
     post:
       summary: post a new dwca record to the server
@@ -146,6 +177,7 @@ paths:
           required: true
           schema:
             type: string
+          example: NnqVLwIyPn-nRkc
           examples:
             blacksea:
               value: NnqVLwIyPn-nRkc
@@ -165,6 +197,7 @@ paths:
           required: true
           schema:
             type: string
+          example: ovZTtaOJZ98xDDY
           examples:
             ovZTtaOJZ98xDDY:
               value: ovZTtaOJZ98xDDY

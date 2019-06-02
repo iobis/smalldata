@@ -1,5 +1,6 @@
 package org.obis.smalldata.dwca;
 
+import io.vertx.core.CompositeFuture;
 import io.vertx.core.eventbus.Message;
 import io.vertx.core.eventbus.ReplyFailure;
 import io.vertx.core.json.JsonArray;
@@ -19,6 +20,7 @@ class RecordHandler {
 
   private static final String COLLECTION_DWCARECORD = "dwcarecords";
   private static final String DWC_RECORD = "dwcRecord";
+  private static final String KEY_CORE = "core";
   private final DbOperation dbOperation;
 
   RecordHandler(DbOperation dbOperation) {
@@ -28,11 +30,11 @@ class RecordHandler {
   void handleDwcaRecordEvents(Message<JsonObject> message) {
     var body = message.body();
     info(body);
-    var coreTable = getCoreTable(body);
-    var dwcRecords = dwcaRecordToDwcList(body);
     var action = body.getString("action");
     switch (action) {
       case "insert":
+        var coreTable = getCoreTable(body);
+        var dwcRecords = dwcaRecordToDwcList(body);
         dbOperation.withNewId(COLLECTION_DWCARECORD, id -> {
           var insertDate = Instant.now();
           var records = dwcRecords.stream()
@@ -49,8 +51,27 @@ class RecordHandler {
           info("insertion result {}", result);
           result.setHandler(ar -> message.reply(new JsonObject()
             .put("dwcaId", id)
-            .put("dateAdded", insertDate)
-            .put("records", generateDwcaJsonResponse(coreTable, records))));
+            .put("records", generateDwcaJsonResponse(records).put(KEY_CORE, coreTable))));
+        });
+        break;
+      case "find":
+        var dwcaRecordsFuture = dbOperation.findDwcaRecords(body.getJsonObject("query"));
+        var coreTableMapFuture = dbOperation.coreTableMap();
+        CompositeFuture.all(dwcaRecordsFuture, coreTableMapFuture).setHandler(ar -> {
+          var dwcaRecords = (List<JsonObject>) ar.result().list().get(0);
+          var coreTableMap = (Map<String, String>) ar.result().list().get(1);
+          var records = new JsonArray(dwcaRecords.stream()
+            .collect(Collectors.groupingBy(record -> record.getJsonObject("dwcRecord").getString("id")))
+            .entrySet().stream()
+            .flatMap(entry -> entry.getValue().stream()
+              .map(record -> {
+                var datasetRef = record.getString("dataset_ref");
+                return new JsonObject().put("dwcaId", entry.getKey())
+                  .put("dataset", datasetRef)
+                  .put("dwcRecords", generateDwcaJsonResponse(entry.getValue()).put(KEY_CORE, coreTableMap.get(datasetRef)));
+              }))
+            .collect(Collectors.toList()));
+          message.reply(records);
         });
         break;
       case "update":
@@ -64,21 +85,19 @@ class RecordHandler {
   }
 
   private String getCoreTable(JsonObject body) {
-    return body.getJsonObject("record").getString("core");
+    return body.getJsonObject("record").getString(KEY_CORE);
   }
 
-  private JsonObject generateDwcaJsonResponse(String coreTable, List<JsonObject> records) {
+  private JsonObject generateDwcaJsonResponse(List<JsonObject> records) {
     return new JsonObject(records.stream()
       .collect(Collectors.groupingBy(dwca -> dwca.getString("dwcTable")))
-      .entrySet()
-      .stream()
+      .entrySet().stream()
       .collect(Collectors.toMap(
         Map.Entry::getKey,
         dwcList -> dwcList.getValue().stream()
           .map(dwca -> dwca.getJsonObject(DWC_RECORD))
           .collect(Collectors.toList()))
-      ))
-      .put("core", coreTable);
+      ));
   }
 
   private List<JsonObject> dwcaRecordToDwcList(JsonObject dwcaRecord) {
@@ -86,7 +105,7 @@ class RecordHandler {
     var datasetRef = dwcaRecord.getString("datasetRef");
     var dwcTableListMapper = new DwcTableListMapper(userRef, datasetRef);
     return dwcaRecord.getJsonObject("record").stream()
-      .filter(table -> !table.getKey().equals("core"))
+      .filter(table -> !table.getKey().equals(KEY_CORE))
       .flatMap(dwcTableListMapper::mapTable)
       .collect(Collectors.toList());
   }

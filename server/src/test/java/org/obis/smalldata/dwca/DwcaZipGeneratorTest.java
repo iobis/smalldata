@@ -46,7 +46,7 @@ public class DwcaZipGeneratorTest {
     var datasetRef = "NnqVLwIyPn-nRkc";
     var dbQuery = new DbOperation(mongoClient);
     var zipGenerator = new DwcaZipGenerator("http://localhost:3000/");
-    var dwcaRecordsFuture = dbQuery.findDwcaRecords(datasetRef);
+    var dwcaRecordsFuture = dbQuery.findDwcaRecords(new JsonObject().put("dataset_ref", datasetRef));
     var datasetFuture = dbQuery.findDataset(datasetRef);
     var result = Future.<Optional<Path>>future();
     var countDownLatch = new CountDownLatch(1);

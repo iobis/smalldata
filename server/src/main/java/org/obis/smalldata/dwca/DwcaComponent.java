@@ -26,9 +26,10 @@ public class DwcaComponent extends AbstractVerticle {
   }
 
   private void handleDwcaEvents(Message<JsonObject> message) {
-    var action = message.body().getString("action");
+    var body = message.body();
+    var action = body.getString("action");
     if ("generate".equals(action)) {
-      generateZipFile(message.body().getString("findDataset"))
+      generateZipFile(body.getString("findDataset"))
         .setHandler(zip -> message.reply(zip.result()));
     } else {
       message.fail(
@@ -40,7 +41,7 @@ public class DwcaComponent extends AbstractVerticle {
   private Future<JsonObject> generateZipFile(String datasetRef) {
     var baseUrl = (String) vertx.sharedData().getLocalMap("settings").get("baseUrl");
     var zipGenerator = new DwcaZipGenerator(baseUrl);
-    var dwcaRecordsFuture = dbQuery.findDwcaRecords(datasetRef);
+    var dwcaRecordsFuture = dbQuery.findDwcaRecords(new JsonObject().put("dataset_ref", datasetRef));
     var datasetFuture = dbQuery.findDataset(datasetRef);
     var result = Future.<JsonObject>future();
     CompositeFuture.all(datasetFuture, dwcaRecordsFuture).setHandler(ar -> {
