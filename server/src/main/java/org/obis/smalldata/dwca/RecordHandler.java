@@ -51,6 +51,7 @@ class RecordHandler {
           info("insertion result {}", result);
           result.setHandler(ar -> message.reply(new JsonObject()
             .put("dwcaId", id)
+            .put("dateAdded", insertDate)
             .put("records", generateDwcaJsonResponse(records).put(KEY_CORE, coreTable))));
         });
         break;
