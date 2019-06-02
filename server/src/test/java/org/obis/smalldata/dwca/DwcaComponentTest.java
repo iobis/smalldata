@@ -58,9 +58,8 @@ public class DwcaComponentTest {
   }
 
   @Test
-  @DisplayName("check if a valid dwca zip file is generated")
   @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
-  void testGenerateZipFile(Vertx vertx, VertxTestContext testContext) {
+  void generateZipFile(Vertx vertx, VertxTestContext testContext) {
     vertx.eventBus().<JsonObject>send(
       "dwca",
       new JsonObject(Map.of(
@@ -80,9 +79,8 @@ public class DwcaComponentTest {
   }
 
   @Test
-  @DisplayName("add a new dwca record")
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
-  void testAddDwcaRecord(Vertx vertx, VertxTestContext testContext) {
+  void insertDwcaRecord(Vertx vertx, VertxTestContext testContext) {
     vertx.eventBus().<JsonObject>send(
       "dwca.record",
       new JsonObject(Map.of(
@@ -93,14 +91,20 @@ public class DwcaComponentTest {
       )),
       ar -> {
         if (ar.succeeded()) {
-          var dateAdded = Instant.parse(ar.result().body().getString("dateAdded"));
+          var body = ar.result().body();
+          assertThat(body.getMap()).containsKeys("dateAdded", "dwcaId", "records");
+          var dateAddedString = body.getString("dateAdded");
+          assertThat(dateAddedString).isNotBlank();
+          var dateAdded = Instant.parse(dateAddedString);
           var now = Instant.now();
           assertThat(now).isAfter(dateAdded);
-          assertThat(Duration.between(dateAdded, now).toMillis()).isLessThan(100);
-          JsonObject records = ar.result().body().getJsonObject("records");
+          assertThat(Duration.between(dateAdded, now)).isLessThan(Duration.ofMillis(500));
+
+          JsonObject records = body.getJsonObject("records");
           assertThat(records.getJsonArray(OCCURRENCE)).hasSize(1);
           assertThat(records.getJsonArray("emof")).hasSize(2);
           assertThat(records.getString("core")).isEqualTo(OCCURRENCE);
+
           testContext.completeNow();
         } else {
           error("error {}", ar.cause());
