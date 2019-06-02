@@ -51,7 +51,7 @@ class RecordHandler {
             .put("records", generateDwcaJsonResponse(records).put(KEY_CORE, coreTable))));
         });
         break;
-      case "query":
+      case "find":
         var dwcaRecordsFuture = dbOperation.findDwcaRecords(body.getJsonObject("query"));
         var coreTableMapFuture = dbOperation.coreTableMap();
         CompositeFuture.all(dwcaRecordsFuture, coreTableMapFuture).setHandler(ar -> {

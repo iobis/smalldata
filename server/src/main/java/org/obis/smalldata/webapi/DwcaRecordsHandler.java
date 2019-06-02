@@ -65,7 +65,7 @@ public class DwcaRecordsHandler {
           eventBus.<JsonArray>send(
             "dwca.record",
             new JsonObject()
-              .put("action", "query")
+              .put("action", "find")
               .put("query", new JsonObject().put("user_ref", userRef)),
             ar -> context.response().end(ar.result().body().encode()));
         } else {

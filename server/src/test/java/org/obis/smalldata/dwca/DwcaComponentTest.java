@@ -104,13 +104,12 @@ public class DwcaComponentTest {
   }
 
   @Test
-  @DisplayName("query dwca records by name")
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
-  void testQueryDwcaRecordsByName(Vertx vertx, VertxTestContext testContext) {
+  void findDwcaRecordsByName(Vertx vertx, VertxTestContext testContext) {
     vertx.eventBus().<JsonArray>send(
       "dwca.record",
       new JsonObject(Map.of(
-        "action", "query",
+        "action", "find",
         "query", new JsonObject().put("user_ref", "FsfEMwhUTO_8I68")
       )),
       ar -> {
