@@ -42,8 +42,7 @@ class DbOperation {
       new FindOptions().setFields(new JsonObject().put("meta.dwcTables.core", true)),
       res -> {
         if (res.succeeded() && res.result().size() == 1) {
-          var core = res.result().get(0).getJsonObject("meta").getJsonObject("dwcTables").getString("core");
-          coreTable.complete(core);
+          coreTable.complete(extractCoreTable(res.result().get(0)));
         } else {
           coreTable.fail("Cannot find dataset");
         }
@@ -84,12 +83,16 @@ class DbOperation {
       ar -> coreTableMap.complete(ar.result().stream()
         .map(dataset -> new AbstractMap.SimpleEntry<>(
           dataset.getString(KEY_REF),
-          dataset.getJsonObject("meta").getJsonObject("dwcTables").getString("core")))
+          extractCoreTable(dataset)))
         .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue))));
     return coreTableMap;
   }
 
   void withNewId(String collection, Consumer<String> idConsumer) {
     idGenerator.consumeNewId(collection, "id", idConsumer);
+  }
+
+  private String extractCoreTable(JsonObject dataset) {
+    return dataset.getJsonObject("meta").getJsonObject("dwcTables").getString("core");
   }
 }
