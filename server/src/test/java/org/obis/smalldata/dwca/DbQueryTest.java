@@ -33,9 +33,8 @@ class DbQueryTest {
   }
 
   @Test
-  void findDwcaRecords(VertxTestContext testContext) {
-    var datasetRef = "NnqVLwIyPn-nRkc";
-    var dwcaRecords = dbQuery.queryDwcaRecords(new JsonObject().put("dataset_ref", datasetRef));
+  void queryDwcaRecordsForKnownDatasetRef(VertxTestContext testContext) {
+    var dwcaRecords = dbQuery.queryDwcaRecords(new JsonObject().put("dataset_ref", "NnqVLwIyPn-nRkc"));
     dwcaRecords.setHandler(ar -> {
       var result = ar.result();
       assertThat(result).hasSize(642);
@@ -44,21 +43,31 @@ class DbQueryTest {
   }
 
   @Test
-  void findDwcaRecordsForUnknownRefReturnsEmptyList(VertxTestContext testContext) {
+  void queryDwcaRecordsForUnknownDatasetRef(VertxTestContext testContext) {
     var dwcaRecords = dbQuery.queryDwcaRecords(new JsonObject().put("dataset_ref", "unknown"));
     dwcaRecords.setHandler(ar -> {
       var result = ar.result();
-      assertThat(result).hasSize(0);
+      assertThat(result).isEmpty();
       testContext.completeNow();
     });
   }
 
   @Test
-  void findDwcaRecordsForUser(VertxTestContext testContext) {
+  void queryDwcaRecordsForUserRef(VertxTestContext testContext) {
     var dwcaRecords = dbQuery.queryDwcaRecords(new JsonObject().put("user_ref", "ovZTtaOJZ98xDDY"));
     dwcaRecords.setHandler(ar -> {
       var result = ar.result();
       assertThat(result).hasSize(2955);
+      testContext.completeNow();
+    });
+  }
+
+  @Test
+  void queryDwcaRecordsForUnknownUserRef(VertxTestContext testContext) {
+    var dwcaRecords = dbQuery.queryDwcaRecords(new JsonObject().put("user_ref", "unknown"));
+    dwcaRecords.setHandler(ar -> {
+      var result = ar.result();
+      assertThat(result).isEmpty();
       testContext.completeNow();
     });
   }
@@ -75,22 +84,21 @@ class DbQueryTest {
   }
 
   @Test
-  void findDatasetCoreTable(VertxTestContext testContext) {
-    var datasetRef = "PoJnGNMaxsupE4w";
-    var dataset = dbQuery.findDatasetCoreTable(datasetRef);
-    dataset.setHandler(ar -> {
-      var result = ar.result();
-      assertThat(result).isEqualTo("occurrence");
-      testContext.completeNow();
-    });
-  }
-
-  @Test
   void findDatasetForUnknownRefReturnsNull(VertxTestContext testContext) {
     var dataset = dbQuery.findDataset("unknown");
     dataset.setHandler(ar -> {
       var result = ar.result();
       assertThat(result).isNull();
+      testContext.completeNow();
+    });
+  }
+
+  @Test
+  void findDatasetCoreTable(VertxTestContext testContext) {
+    var dataset = dbQuery.findDatasetCoreTable("PoJnGNMaxsupE4w");
+    dataset.setHandler(ar -> {
+      var result = ar.result();
+      assertThat(result).isEqualTo("occurrence");
       testContext.completeNow();
     });
   }
