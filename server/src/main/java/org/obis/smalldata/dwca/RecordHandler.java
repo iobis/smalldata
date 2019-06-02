@@ -36,13 +36,13 @@ class RecordHandler {
         var coreTable = getCoreTable(body);
         var dwcRecords = dwcaRecordToDwcList(body);
         dbOperation.withNewId(COLLECTION_DWCARECORD, id -> {
-          var insertDate = Instant.now();
+          var dateAdded = Instant.now();
           var records = dwcRecords.stream()
             .map(dwcRecord -> {
               var record = dwcRecord.getJsonObject(DWC_RECORD);
               record.put("id", id);
               dwcRecord.put(DWC_RECORD, record);
-              dwcRecord.put("dateAdded", insertDate);
+              dwcRecord.put("dateAdded", dateAdded);
               dwcRecord.put("_id", ObjectId.get().toHexString());
               return dwcRecord;
             })
@@ -51,7 +51,7 @@ class RecordHandler {
           info("insertion result {}", result);
           result.setHandler(ar -> message.reply(new JsonObject()
             .put("dwcaId", id)
-            .put("dateAdded", insertDate)
+            .put("dateAdded", dateAdded)
             .put("records", generateDwcaJsonResponse(records).put(KEY_CORE, coreTable))));
         });
         break;
