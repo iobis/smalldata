@@ -76,12 +76,14 @@ class DbOperation {
 
   Future<Map<String, String>> coreTableMap() {
     var coreTableMap = Future.<Map<String, String>>future();
-    mongoClient.findWithOptions("datasets",
+    mongoClient.findWithOptions(
+      "datasets",
       new JsonObject(),
       new FindOptions().setFields(new JsonObject().put("meta.dwcTables.core", true)
         .put(KEY_REF, true)),
       ar -> coreTableMap.complete(ar.result().stream()
-        .map(dataset -> new AbstractMap.SimpleEntry<String, String>(dataset.getString(KEY_REF),
+        .map(dataset -> new AbstractMap.SimpleEntry<>(
+          dataset.getString(KEY_REF),
           dataset.getJsonObject("meta").getJsonObject("dwcTables").getString("core")))
         .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue))));
     return coreTableMap;
