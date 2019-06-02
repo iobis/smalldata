@@ -14,16 +14,16 @@ import org.obis.smalldata.testutil.TestDb;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(VertxExtension.class)
-class DbQueryTest {
+class DbOperationTest {
   private static TestDb testDb;
   private static MongoClient mongoClient;
-  private static DbOperation dbQuery;
+  private static DbOperation dbOperation;
 
   @BeforeAll
   public static void setUp() {
     testDb = new TestDb();
     mongoClient = testDb.init(Vertx.vertx());
-    dbQuery = new DbOperation(mongoClient);
+    dbOperation = new DbOperation(mongoClient);
   }
 
   @AfterAll
@@ -34,7 +34,7 @@ class DbQueryTest {
 
   @Test
   void findDwcaRecordsForKnownDatasetRef(VertxTestContext testContext) {
-    var dwcaRecords = dbQuery.findDwcaRecords(new JsonObject().put("dataset_ref", "NnqVLwIyPn-nRkc"));
+    var dwcaRecords = dbOperation.findDwcaRecords(new JsonObject().put("dataset_ref", "NnqVLwIyPn-nRkc"));
     dwcaRecords.setHandler(ar -> {
       var result = ar.result();
       assertThat(result).hasSize(642);
@@ -44,7 +44,7 @@ class DbQueryTest {
 
   @Test
   void findDwcaRecordsForUnknownDatasetRef(VertxTestContext testContext) {
-    var dwcaRecords = dbQuery.findDwcaRecords(new JsonObject().put("dataset_ref", "unknown"));
+    var dwcaRecords = dbOperation.findDwcaRecords(new JsonObject().put("dataset_ref", "unknown"));
     dwcaRecords.setHandler(ar -> {
       var result = ar.result();
       assertThat(result).isEmpty();
@@ -54,7 +54,7 @@ class DbQueryTest {
 
   @Test
   void findDwcaRecordsForUserRef(VertxTestContext testContext) {
-    var dwcaRecords = dbQuery.findDwcaRecords(new JsonObject().put("user_ref", "ovZTtaOJZ98xDDY"));
+    var dwcaRecords = dbOperation.findDwcaRecords(new JsonObject().put("user_ref", "ovZTtaOJZ98xDDY"));
     dwcaRecords.setHandler(ar -> {
       var result = ar.result();
       assertThat(result).hasSize(2955);
@@ -64,7 +64,7 @@ class DbQueryTest {
 
   @Test
   void findDwcaRecordsForUnknownUserRef(VertxTestContext testContext) {
-    var dwcaRecords = dbQuery.findDwcaRecords(new JsonObject().put("user_ref", "unknown"));
+    var dwcaRecords = dbOperation.findDwcaRecords(new JsonObject().put("user_ref", "unknown"));
     dwcaRecords.setHandler(ar -> {
       var result = ar.result();
       assertThat(result).isEmpty();
@@ -75,7 +75,7 @@ class DbQueryTest {
   @Test
   void findDataset(VertxTestContext testContext) {
     var datasetRef = "NnqVLwIyPn-nRkc";
-    var dataset = dbQuery.findDataset(datasetRef);
+    var dataset = dbOperation.findDataset(datasetRef);
     dataset.setHandler(ar -> {
       var result = ar.result();
       assertThat(result).hasSize(12);
@@ -85,7 +85,7 @@ class DbQueryTest {
 
   @Test
   void findDatasetForUnknownRefReturnsNull(VertxTestContext testContext) {
-    var dataset = dbQuery.findDataset("unknown");
+    var dataset = dbOperation.findDataset("unknown");
     dataset.setHandler(ar -> {
       var result = ar.result();
       assertThat(result).isNull();
@@ -95,7 +95,7 @@ class DbQueryTest {
 
   @Test
   void findDatasetCoreTable(VertxTestContext testContext) {
-    var dataset = dbQuery.findDatasetCoreTable("PoJnGNMaxsupE4w");
+    var dataset = dbOperation.findDatasetCoreTable("PoJnGNMaxsupE4w");
     dataset.setHandler(ar -> {
       var result = ar.result();
       assertThat(result).isEqualTo("occurrence");
