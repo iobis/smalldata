@@ -102,4 +102,29 @@ public class DwcaComponentTest {
         }
       });
   }
+
+  @Test
+  @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
+  void findDwcaRecordsByName(Vertx vertx, VertxTestContext testContext) {
+    vertx.eventBus().<JsonArray>send(
+      "dwca.record",
+      new JsonObject(Map.of(
+        "action", "find",
+        "query", new JsonObject().put("user_ref", "FsfEMwhUTO_8I68")
+      )),
+      ar -> {
+        if (ar.succeeded()) {
+          JsonArray records = ar.result().body();
+          assertThat(records).hasSize(2310);
+          info(records.getJsonObject(0));
+          records.stream()
+            .map(JsonObject.class::cast)
+            .forEach(record -> assertThat(record.getJsonObject("dwcRecords").containsKey("core")).isTrue());
+          testContext.completeNow();
+        } else {
+          error("error {}", ar.cause());
+          testContext.failNow(ar.cause());
+        }
+      });
+  }
 }
