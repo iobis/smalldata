@@ -13,6 +13,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.obis.smalldata.testutil.TestDb;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -91,6 +93,10 @@ public class DwcaComponentTest {
       )),
       ar -> {
         if (ar.succeeded()) {
+          var dateAdded = Instant.parse(ar.result().body().getString("dateAdded"));
+          var now = Instant.now();
+          assertThat(now).isAfter(dateAdded);
+          assertThat(Duration.between(dateAdded, now).toMillis()).isLessThan(100);
           JsonObject records = ar.result().body().getJsonObject("records");
           assertThat(records.getJsonArray(OCCURRENCE)).hasSize(1);
           assertThat(records.getJsonArray("emof")).hasSize(2);

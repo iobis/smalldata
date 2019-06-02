@@ -7,6 +7,7 @@ import io.vertx.core.json.JsonObject;
 import lombok.Value;
 import org.bson.types.ObjectId;
 
+import java.time.Instant;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -33,11 +34,13 @@ class RecordHandler {
     switch (action) {
       case "insert":
         dbOperation.withNewId(COLLECTION_DWCARECORD, id -> {
+          var insertDate = Instant.now();
           var records = dwcRecords.stream()
             .map(dwcRecord -> {
               var record = dwcRecord.getJsonObject(DWC_RECORD);
               record.put("id", id);
               dwcRecord.put(DWC_RECORD, record);
+              dwcRecord.put("dateAdded", insertDate);
               dwcRecord.put("_id", ObjectId.get().toHexString());
               return dwcRecord;
             })
@@ -46,6 +49,7 @@ class RecordHandler {
           info("insertion result {}", result);
           result.setHandler(ar -> message.reply(new JsonObject()
             .put("dwcaId", id)
+            .put("dateAdded", insertDate)
             .put("records", generateDwcaJsonResponse(coreTable, records))));
         });
         break;
