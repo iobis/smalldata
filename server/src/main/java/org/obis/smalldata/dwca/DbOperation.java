@@ -25,7 +25,7 @@ class DbOperation {
     this.idGenerator = new UniqueIdGenerator(mongoClient);
   }
 
-  Future<List<JsonObject>> queryDwcaRecords(JsonObject query) {
+  Future<List<JsonObject>> findDwcaRecords(JsonObject query) {
     var dwcaRecords = Future.<List<JsonObject>>future();
     mongoClient.find(
       "dwcarecords",

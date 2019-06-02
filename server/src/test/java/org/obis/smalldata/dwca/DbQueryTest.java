@@ -33,8 +33,8 @@ class DbQueryTest {
   }
 
   @Test
-  void queryDwcaRecordsForKnownDatasetRef(VertxTestContext testContext) {
-    var dwcaRecords = dbQuery.queryDwcaRecords(new JsonObject().put("dataset_ref", "NnqVLwIyPn-nRkc"));
+  void findDwcaRecordsForKnownDatasetRef(VertxTestContext testContext) {
+    var dwcaRecords = dbQuery.findDwcaRecords(new JsonObject().put("dataset_ref", "NnqVLwIyPn-nRkc"));
     dwcaRecords.setHandler(ar -> {
       var result = ar.result();
       assertThat(result).hasSize(642);
@@ -43,8 +43,8 @@ class DbQueryTest {
   }
 
   @Test
-  void queryDwcaRecordsForUnknownDatasetRef(VertxTestContext testContext) {
-    var dwcaRecords = dbQuery.queryDwcaRecords(new JsonObject().put("dataset_ref", "unknown"));
+  void findDwcaRecordsForUnknownDatasetRef(VertxTestContext testContext) {
+    var dwcaRecords = dbQuery.findDwcaRecords(new JsonObject().put("dataset_ref", "unknown"));
     dwcaRecords.setHandler(ar -> {
       var result = ar.result();
       assertThat(result).isEmpty();
@@ -53,8 +53,8 @@ class DbQueryTest {
   }
 
   @Test
-  void queryDwcaRecordsForUserRef(VertxTestContext testContext) {
-    var dwcaRecords = dbQuery.queryDwcaRecords(new JsonObject().put("user_ref", "ovZTtaOJZ98xDDY"));
+  void findDwcaRecordsForUserRef(VertxTestContext testContext) {
+    var dwcaRecords = dbQuery.findDwcaRecords(new JsonObject().put("user_ref", "ovZTtaOJZ98xDDY"));
     dwcaRecords.setHandler(ar -> {
       var result = ar.result();
       assertThat(result).hasSize(2955);
@@ -63,8 +63,8 @@ class DbQueryTest {
   }
 
   @Test
-  void queryDwcaRecordsForUnknownUserRef(VertxTestContext testContext) {
-    var dwcaRecords = dbQuery.queryDwcaRecords(new JsonObject().put("user_ref", "unknown"));
+  void findDwcaRecordsForUnknownUserRef(VertxTestContext testContext) {
+    var dwcaRecords = dbQuery.findDwcaRecords(new JsonObject().put("user_ref", "unknown"));
     dwcaRecords.setHandler(ar -> {
       var result = ar.result();
       assertThat(result).isEmpty();

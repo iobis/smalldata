@@ -52,7 +52,7 @@ class RecordHandler {
         });
         break;
       case "query":
-        var dwcaRecordsFuture = dbOperation.queryDwcaRecords(body.getJsonObject("query"));
+        var dwcaRecordsFuture = dbOperation.findDwcaRecords(body.getJsonObject("query"));
         var coreTableMapFuture = dbOperation.coreTableMap();
         CompositeFuture.all(dwcaRecordsFuture, coreTableMapFuture).setHandler(ar -> {
           var dwcaRecords = (List<JsonObject>) ar.result().list().get(0);
