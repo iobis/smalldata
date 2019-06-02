@@ -13,6 +13,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.obis.smalldata.testutil.TestDb;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -56,9 +58,8 @@ public class DwcaComponentTest {
   }
 
   @Test
-  @DisplayName("check if a valid dwca zip file is generated")
   @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
-  void testGenerateZipFile(Vertx vertx, VertxTestContext testContext) {
+  void generateZipFile(Vertx vertx, VertxTestContext testContext) {
     vertx.eventBus().<JsonObject>send(
       "dwca",
       new JsonObject(Map.of(
@@ -78,9 +79,8 @@ public class DwcaComponentTest {
   }
 
   @Test
-  @DisplayName("add a new dwca record")
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
-  void testAddDwcaRecord(Vertx vertx, VertxTestContext testContext) {
+  void insertDwcaRecord(Vertx vertx, VertxTestContext testContext) {
     vertx.eventBus().<JsonObject>send(
       "dwca.record",
       new JsonObject(Map.of(
@@ -91,10 +91,45 @@ public class DwcaComponentTest {
       )),
       ar -> {
         if (ar.succeeded()) {
-          JsonObject records = ar.result().body().getJsonObject("records");
+          var body = ar.result().body();
+          assertThat(body.getMap()).containsKeys("dateAdded", "dwcaId", "records");
+          var dateAddedString = body.getString("dateAdded");
+          assertThat(dateAddedString).isNotBlank();
+          var dateAdded = Instant.parse(dateAddedString);
+          var now = Instant.now();
+          assertThat(now).isAfter(dateAdded);
+          assertThat(Duration.between(dateAdded, now)).isLessThan(Duration.ofMillis(500));
+
+          JsonObject records = body.getJsonObject("records");
           assertThat(records.getJsonArray(OCCURRENCE)).hasSize(1);
           assertThat(records.getJsonArray("emof")).hasSize(2);
           assertThat(records.getString("core")).isEqualTo(OCCURRENCE);
+
+          testContext.completeNow();
+        } else {
+          error("error {}", ar.cause());
+          testContext.failNow(ar.cause());
+        }
+      });
+  }
+
+  @Test
+  @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
+  void findDwcaRecordsByName(Vertx vertx, VertxTestContext testContext) {
+    vertx.eventBus().<JsonArray>send(
+      "dwca.record",
+      new JsonObject(Map.of(
+        "action", "find",
+        "query", new JsonObject().put("user_ref", "FsfEMwhUTO_8I68")
+      )),
+      ar -> {
+        if (ar.succeeded()) {
+          JsonArray records = ar.result().body();
+          assertThat(records).hasSize(2310);
+          info(records.getJsonObject(0));
+          records.stream()
+            .map(JsonObject.class::cast)
+            .forEach(record -> assertThat(record.getJsonObject("dwcRecords").containsKey("core")).isTrue());
           testContext.completeNow();
         } else {
           error("error {}", ar.cause());
