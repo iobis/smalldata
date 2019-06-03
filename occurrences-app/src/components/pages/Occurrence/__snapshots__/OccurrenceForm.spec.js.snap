@@ -10,7 +10,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
       dataDescription="occurrenceForm.dataset.step.dataDescription"
       key="occurrenceForm.dataset.step.stepTitle"
       onStepTitleClick={[Function]}
-      selectedData="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
+      selectedData=""
       stepDescription="occurrenceForm.dataset.step.stepDescription"
       stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
     >
@@ -58,276 +58,6 @@ exports[`OccurrenceForm renders correctly 1`] = `
             </div>
           </div>
         </div>
-        <Dataset
-          datasets={
-            Array [
-              Object {
-                "description": "HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.",
-                "id": 0,
-              },
-              Object {
-                "description": "NPPSD Short-tailed Albatross Sightings",
-                "id": 1,
-              },
-              Object {
-                "description": "PANGAEA - Data from Christian-Albrechts-University Kiel",
-                "id": 2,
-              },
-              Object {
-                "description": "NSIS: List of marine benthic algae from Magdalen Islands, Quebec as recorded in 1979",
-                "id": 3,
-              },
-              Object {
-                "description": "Seguimiento de 10 crías de tortuga boba nacidas en 2016 en el litoral valenciano, en el marco del Proyecto LIFE 15 IPE ES 012 (aggregated per 1-degree cell)",
-                "id": 4,
-              },
-              Object {
-                "description": "Waved Albatross Tracking (aggregated per 1-degree cell)",
-                "id": 5,
-              },
-            ]
-          }
-          onChange={[Function]}
-          selectedDataset={
-            Object {
-              "description": "HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.",
-              "id": 0,
-            }
-          }
-        >
-          <div
-            className="dataset columns is-fluid"
-          >
-            <table
-              className="table is-striped is-fullwidth"
-            >
-              <tbody>
-                <DatasetOption
-                  checked={true}
-                  description="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
-                  id={0}
-                  key="0"
-                  onClick={[Function]}
-                >
-                  <tr
-                    className="dataset-option"
-                    onClick={[Function]}
-                  >
-                    <td>
-                      <InputRadio
-                        checked={true}
-                        name="dataset"
-                        onChange={[Function]}
-                        value={0}
-                      >
-                        <input
-                          checked={true}
-                          className="input-radio is-checkradio"
-                          id="dataset-0"
-                          name="dataset"
-                          onChange={[Function]}
-                          type="radio"
-                          value={0}
-                        />
-                        <label
-                          htmlFor="dataset-0"
-                        />
-                      </InputRadio>
-                    </td>
-                    <td>
-                      HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.
-                    </td>
-                  </tr>
-                </DatasetOption>
-                <DatasetOption
-                  checked={false}
-                  description="NPPSD Short-tailed Albatross Sightings"
-                  id={1}
-                  key="1"
-                  onClick={[Function]}
-                >
-                  <tr
-                    className="dataset-option"
-                    onClick={[Function]}
-                  >
-                    <td>
-                      <InputRadio
-                        checked={false}
-                        name="dataset"
-                        onChange={[Function]}
-                        value={1}
-                      >
-                        <input
-                          checked={false}
-                          className="input-radio is-checkradio"
-                          id="dataset-1"
-                          name="dataset"
-                          onChange={[Function]}
-                          type="radio"
-                          value={1}
-                        />
-                        <label
-                          htmlFor="dataset-1"
-                        />
-                      </InputRadio>
-                    </td>
-                    <td>
-                      NPPSD Short-tailed Albatross Sightings
-                    </td>
-                  </tr>
-                </DatasetOption>
-                <DatasetOption
-                  checked={false}
-                  description="PANGAEA - Data from Christian-Albrechts-University Kiel"
-                  id={2}
-                  key="2"
-                  onClick={[Function]}
-                >
-                  <tr
-                    className="dataset-option"
-                    onClick={[Function]}
-                  >
-                    <td>
-                      <InputRadio
-                        checked={false}
-                        name="dataset"
-                        onChange={[Function]}
-                        value={2}
-                      >
-                        <input
-                          checked={false}
-                          className="input-radio is-checkradio"
-                          id="dataset-2"
-                          name="dataset"
-                          onChange={[Function]}
-                          type="radio"
-                          value={2}
-                        />
-                        <label
-                          htmlFor="dataset-2"
-                        />
-                      </InputRadio>
-                    </td>
-                    <td>
-                      PANGAEA - Data from Christian-Albrechts-University Kiel
-                    </td>
-                  </tr>
-                </DatasetOption>
-                <DatasetOption
-                  checked={false}
-                  description="NSIS: List of marine benthic algae from Magdalen Islands, Quebec as recorded in 1979"
-                  id={3}
-                  key="3"
-                  onClick={[Function]}
-                >
-                  <tr
-                    className="dataset-option"
-                    onClick={[Function]}
-                  >
-                    <td>
-                      <InputRadio
-                        checked={false}
-                        name="dataset"
-                        onChange={[Function]}
-                        value={3}
-                      >
-                        <input
-                          checked={false}
-                          className="input-radio is-checkradio"
-                          id="dataset-3"
-                          name="dataset"
-                          onChange={[Function]}
-                          type="radio"
-                          value={3}
-                        />
-                        <label
-                          htmlFor="dataset-3"
-                        />
-                      </InputRadio>
-                    </td>
-                    <td>
-                      NSIS: List of marine benthic algae from Magdalen Islands, Quebec as recorded in 1979
-                    </td>
-                  </tr>
-                </DatasetOption>
-                <DatasetOption
-                  checked={false}
-                  description="Seguimiento de 10 crías de tortuga boba nacidas en 2016 en el litoral valenciano, en el marco del Proyecto LIFE 15 IPE ES 012 (aggregated per 1-degree cell)"
-                  id={4}
-                  key="4"
-                  onClick={[Function]}
-                >
-                  <tr
-                    className="dataset-option"
-                    onClick={[Function]}
-                  >
-                    <td>
-                      <InputRadio
-                        checked={false}
-                        name="dataset"
-                        onChange={[Function]}
-                        value={4}
-                      >
-                        <input
-                          checked={false}
-                          className="input-radio is-checkradio"
-                          id="dataset-4"
-                          name="dataset"
-                          onChange={[Function]}
-                          type="radio"
-                          value={4}
-                        />
-                        <label
-                          htmlFor="dataset-4"
-                        />
-                      </InputRadio>
-                    </td>
-                    <td>
-                      Seguimiento de 10 crías de tortuga boba nacidas en 2016 en el litoral valenciano, en el marco del Proyecto LIFE 15 IPE ES 012 (aggregated per 1-degree cell)
-                    </td>
-                  </tr>
-                </DatasetOption>
-                <DatasetOption
-                  checked={false}
-                  description="Waved Albatross Tracking (aggregated per 1-degree cell)"
-                  id={5}
-                  key="5"
-                  onClick={[Function]}
-                >
-                  <tr
-                    className="dataset-option"
-                    onClick={[Function]}
-                  >
-                    <td>
-                      <InputRadio
-                        checked={false}
-                        name="dataset"
-                        onChange={[Function]}
-                        value={5}
-                      >
-                        <input
-                          checked={false}
-                          className="input-radio is-checkradio"
-                          id="dataset-5"
-                          name="dataset"
-                          onChange={[Function]}
-                          type="radio"
-                          value={5}
-                        />
-                        <label
-                          htmlFor="dataset-5"
-                        />
-                      </InputRadio>
-                    </td>
-                    <td>
-                      Waved Albatross Tracking (aggregated per 1-degree cell)
-                    </td>
-                  </tr>
-                </DatasetOption>
-              </tbody>
-            </table>
-          </div>
-        </Dataset>
       </StepHeader>
     </ActiveStepHeader>
     <NotConfirmedStepHeader
@@ -653,7 +383,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
       dataDescription="occurrenceForm.dataset.step.dataDescription"
       key="occurrenceForm.dataset.step.stepTitle"
       onStepTitleClick={[Function]}
-      selectedData="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
+      selectedData=""
       stepDescription="occurrenceForm.dataset.step.stepDescription"
       stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
     >
@@ -662,7 +392,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
         dataDescription="occurrenceForm.dataset.step.dataDescription"
         iconVisible={true}
         onStepTitleClick={[Function]}
-        selectedData="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
+        selectedData=""
         stepDescription="occurrenceForm.dataset.step.stepDescription"
         stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
       >
@@ -682,10 +412,8 @@ exports[`OccurrenceForm renders correctly 2`] = `
             </p>
           </div>
           <div
-            className="column is-7 is-size-5"
-          >
-            HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.
-          </div>
+            className="column is-7 is-size-5 is-hidden-mobile"
+          />
           <div
             className="column details"
           >
@@ -1440,7 +1168,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
       dataDescription="occurrenceForm.dataset.step.dataDescription"
       key="occurrenceForm.dataset.step.stepTitle"
       onStepTitleClick={[Function]}
-      selectedData="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
+      selectedData=""
       stepDescription="occurrenceForm.dataset.step.stepDescription"
       stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
     >
@@ -1449,7 +1177,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
         dataDescription="occurrenceForm.dataset.step.dataDescription"
         iconVisible={true}
         onStepTitleClick={[Function]}
-        selectedData="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
+        selectedData=""
         stepDescription="occurrenceForm.dataset.step.stepDescription"
         stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
       >
@@ -1469,10 +1197,8 @@ exports[`OccurrenceForm renders correctly 3`] = `
             </p>
           </div>
           <div
-            className="column is-7 is-size-5"
-          >
-            HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.
-          </div>
+            className="column is-7 is-size-5 is-hidden-mobile"
+          />
           <div
             className="column details"
           >
@@ -3415,7 +3141,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
       dataDescription="occurrenceForm.dataset.step.dataDescription"
       key="occurrenceForm.dataset.step.stepTitle"
       onStepTitleClick={[Function]}
-      selectedData="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
+      selectedData=""
       stepDescription="occurrenceForm.dataset.step.stepDescription"
       stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
     >
@@ -3424,7 +3150,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
         dataDescription="occurrenceForm.dataset.step.dataDescription"
         iconVisible={true}
         onStepTitleClick={[Function]}
-        selectedData="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
+        selectedData=""
         stepDescription="occurrenceForm.dataset.step.stepDescription"
         stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
       >
@@ -3444,10 +3170,8 @@ exports[`OccurrenceForm renders correctly 4`] = `
             </p>
           </div>
           <div
-            className="column is-7 is-size-5"
-          >
-            HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.
-          </div>
+            className="column is-7 is-size-5 is-hidden-mobile"
+          />
           <div
             className="column details"
           >
@@ -4052,7 +3776,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
       dataDescription="occurrenceForm.dataset.step.dataDescription"
       key="occurrenceForm.dataset.step.stepTitle"
       onStepTitleClick={[Function]}
-      selectedData="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
+      selectedData=""
       stepDescription="occurrenceForm.dataset.step.stepDescription"
       stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
     >
@@ -4061,7 +3785,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
         dataDescription="occurrenceForm.dataset.step.dataDescription"
         iconVisible={true}
         onStepTitleClick={[Function]}
-        selectedData="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
+        selectedData=""
         stepDescription="occurrenceForm.dataset.step.stepDescription"
         stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
       >
@@ -4081,10 +3805,8 @@ exports[`OccurrenceForm renders correctly 5`] = `
             </p>
           </div>
           <div
-            className="column is-7 is-size-5"
-          >
-            HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.
-          </div>
+            className="column is-7 is-size-5 is-hidden-mobile"
+          />
           <div
             className="column details"
           >
@@ -4722,7 +4444,7 @@ exports[`OccurrenceForm renders correctly 6`] = `
       dataDescription="occurrenceForm.dataset.step.dataDescription"
       key="occurrenceForm.dataset.step.stepTitle"
       onStepTitleClick={[Function]}
-      selectedData="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
+      selectedData=""
       stepDescription="occurrenceForm.dataset.step.stepDescription"
       stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
     >
@@ -4731,7 +4453,7 @@ exports[`OccurrenceForm renders correctly 6`] = `
         dataDescription="occurrenceForm.dataset.step.dataDescription"
         iconVisible={true}
         onStepTitleClick={[Function]}
-        selectedData="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
+        selectedData=""
         stepDescription="occurrenceForm.dataset.step.stepDescription"
         stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
       >
@@ -4751,10 +4473,8 @@ exports[`OccurrenceForm renders correctly 6`] = `
             </p>
           </div>
           <div
-            className="column is-7 is-size-5"
-          >
-            HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.
-          </div>
+            className="column is-7 is-size-5 is-hidden-mobile"
+          />
           <div
             className="column details"
           >
@@ -5425,7 +5145,7 @@ exports[`OccurrenceForm renders correctly 7`] = `
       dataDescription="occurrenceForm.dataset.step.dataDescription"
       key="occurrenceForm.dataset.step.stepTitle"
       onStepTitleClick={[Function]}
-      selectedData="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
+      selectedData=""
       stepDescription="occurrenceForm.dataset.step.stepDescription"
       stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
     >
@@ -5823,12 +5543,7 @@ exports[`OccurrenceForm renders correctly 7`] = `
           },
         ]
       }
-      dataset={
-        Object {
-          "description": "HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.",
-          "id": 0,
-        }
-      }
+      dataset={null}
       locationData={
         Object {
           "coordinateUncertainty": null,
@@ -5944,9 +5659,7 @@ exports[`OccurrenceForm renders correctly 7`] = `
               occurrenceForm.dataset.step.stepTitle
             </h2>
           </SectionTitle>
-          <p>
-            HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.
-          </p>
+          <p />
           <ChangeButton
             onClick={[Function]}
           >

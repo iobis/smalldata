@@ -1,6 +1,7 @@
 import InputRadio from '../../../form/InputRadio'
 import PropTypes from 'prop-types'
 import React from 'react'
+import { datasetTitleOf } from '../../../../clients/SmalldataClient'
 
 export default function Dataset({ datasets, selectedDataset, onChange }) {
   return (
@@ -10,9 +11,10 @@ export default function Dataset({ datasets, selectedDataset, onChange }) {
           {datasets.map(dataset => (
             <DatasetOption
               checked={dataset.id === selectedDataset.id}
+              id={dataset.id}
               key={dataset.id}
               onClick={() => onChange(dataset)}
-              {...dataset}/>))}
+              title={datasetTitleOf(dataset)}/>))}
         </tbody>
       </table>
     </div>
@@ -20,8 +22,10 @@ export default function Dataset({ datasets, selectedDataset, onChange }) {
 }
 
 export const datasetShape = {
-  id:          PropTypes.number.isRequired,
-  description: PropTypes.string.isRequired
+  id:    PropTypes.string.isRequired,
+  title: PropTypes.shape({
+    value: PropTypes.string.isRequired
+  }).isRequired
 }
 
 Dataset.propTypes = {
@@ -30,18 +34,18 @@ Dataset.propTypes = {
   selectedDataset: PropTypes.shape(datasetShape).isRequired
 }
 
-function DatasetOption({ id, checked, description, onClick }) {
+function DatasetOption({ id, checked, title, onClick }) {
   return (
     <tr className="dataset-option" onClick={onClick}>
       <td><InputRadio checked={checked} name="dataset" onChange={onClick} value={id}/></td>
-      <td>{description}</td>
+      <td>{title}</td>
     </tr>
   )
 }
 
 DatasetOption.propTypes = {
-  checked:     PropTypes.bool.isRequired,
-  description: PropTypes.string.isRequired,
-  id:          PropTypes.number.isRequired,
-  onClick:     PropTypes.func.isRequired
+  checked: PropTypes.bool.isRequired,
+  id:      PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  title:   PropTypes.string.isRequired
 }

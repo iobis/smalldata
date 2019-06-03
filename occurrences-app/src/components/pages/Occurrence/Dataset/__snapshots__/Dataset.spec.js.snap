@@ -5,36 +5,367 @@ exports[`Dataset renders correctly 1`] = `
   datasets={
     Array [
       Object {
-        "description": "HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.",
-        "id": 0,
+        "abstract": Object {
+          "paragraphs": Array [
+            "Population structure data of Caprella species used in the article \\"Hosono T (2014) Temperature explains reproductive dynamics in caprellids at different latitudes. Marine Ecology Progress Series 511:129-141\\"",
+          ],
+        },
+        "contacts": Array [
+          Object {
+            "individualName": Object {
+              "givenName": "Takashi",
+              "surName": "Hosono",
+            },
+          },
+        ],
+        "creators": Array [
+          Object {
+            "individualName": Object {
+              "givenName": "Takashi",
+              "surName": "Hosono",
+            },
+          },
+        ],
+        "id": "wEaBfmFyQhYCdsk",
+        "keywordSets": Array [
+          Object {
+            "keywordThesaurus": "GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml",
+            "keywords": Array [
+              "Samplingevent",
+            ],
+          },
+        ],
+        "language": "en",
+        "license": Object {
+          "title": "Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License",
+          "url": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+        },
+        "meta": Object {
+          "dwcTables": Object {
+            "core": "event",
+            "extensions": Array [
+              "emof",
+              "occurrence",
+            ],
+          },
+          "type": "event",
+        },
+        "metadataProviders": Array [
+          Object {
+            "electronicMailAddress": "hosonot@jamstec.go.jp",
+            "individualName": Object {
+              "givenName": "Takashi",
+              "surName": "Hosono",
+            },
+          },
+        ],
+        "title": Object {
+          "language": "en",
+          "value": "Caprellids polulation structure in Usujiri, Hokkaido, Japan",
+        },
       },
       Object {
-        "description": "NPPSD Short-tailed Albatross Sightings",
-        "id": 1,
+        "abstract": Object {
+          "paragraphs": Array [
+            "The data were collected in the Azov Sea during a cruise on board of R/V N. Danilevskiy in 1935. This dataset contains abundance data (individuals per m²) and biomass data (g/m²) for benthic taxa. No additional metadata is available.",
+            "This dataset was rescued through data archaeology activities in the framework of the EMODnet Biology data grants.",
+          ],
+        },
+        "contacts": Array [
+          Object {
+            "electronicMailAddress": "o.sergeyeva@gsva.net",
+            "individualName": Object {
+              "givenName": "Oleksandra",
+              "surName": "Sergeyeva",
+            },
+            "organizationName": "National Academy of Sciences of Ukraine Institute of Biology of the Southern Seas (NASU-IBSS)",
+          },
+        ],
+        "creators": Array [
+          Object {
+            "electronicMailAddress": "director@ibss.iuf.net",
+            "individualName": Object {
+              "givenName": "Yu. B.",
+              "surName": "Belogurova",
+            },
+            "organizationName": "National Academy of Sciences of Ukraine Institute of Biology of the Southern Seas (NASU-IBSS)",
+          },
+          Object {
+            "electronicMailAddress": "o.sergeyeva@gsva.net",
+            "individualName": Object {
+              "givenName": "Oleksandra",
+              "surName": "Sergeyeva",
+            },
+            "organizationName": "National Academy of Sciences of Ukraine Institute of Biology of the Southern Seas (NASU-IBSS)",
+          },
+        ],
+        "id": "ntDOtUc7XsRrIus",
+        "keywordSets": Array [
+          Object {
+            "keywordThesaurus": "GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml",
+            "keywords": Array [
+              "Occurrence",
+            ],
+          },
+          Object {
+            "keywordThesaurus": "GBIF Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml",
+            "keywords": Array [
+              "Observation",
+            ],
+          },
+        ],
+        "language": "en",
+        "license": Object {
+          "title": "Creative Commons Attribution Non Commercial (CC-BY) 4.0 License",
+          "url": "http://creativecommons.org/licenses/by/4.0/legalcode",
+        },
+        "meta": Object {
+          "dwcTables": Object {
+            "core": "occurrence",
+            "extensions": Array [
+              "emof",
+            ],
+          },
+          "type": "occurrence",
+        },
+        "metadataProviders": Array [
+          Object {
+            "electronicMailAddress": "info@eurobis.org",
+            "individualName": Object {
+              "surName": "EurOBIS Data Management Team",
+            },
+            "organizationName": "Flanders Marine Institute (VLIZ)",
+          },
+        ],
+        "title": Object {
+          "language": "en",
+          "value": "Benthos collected in the Azov Sea in 1935 on board the R/V \\"N. Danilevskiy\\"",
+        },
       },
       Object {
-        "description": "PANGAEA - Data from Christian-Albrechts-University Kiel",
-        "id": 2,
+        "abstract": Object {
+          "paragraphs": Array [
+            "An annotated check-list is given of Antipatharia species occurring deeper than 2000 m in the seas bordering Europe.",
+            "The check-list is based on published data. It includes 12 species. For each species synonymy, data on localities in European seas and general species distribution are provided. Only distributions for which geographic coordinates are availlable were retained, as these are made available through EurOBIS.",
+          ],
+        },
+        "contacts": Array [
+          Object {
+            "electronicMailAddress": "tina@ocean.ru",
+            "individualName": Object {
+              "givenName": "Tina",
+              "surName": "Molodtsova",
+            },
+            "organizationName": "Russian Academy of Sciences P. P. Shirshov Institute of Oceanology (RAS-SIO RAS)",
+          },
+        ],
+        "creators": Array [
+          Object {
+            "electronicMailAddress": "tina@ocean.ru",
+            "individualName": Object {
+              "givenName": "Tina",
+              "surName": "Molodtsova",
+            },
+            "organizationName": "Russian Academy of Sciences P. P. Shirshov Institute of Oceanology (RAS-SIO RAS)",
+          },
+        ],
+        "id": "PoJnGNMaxsupE4w",
+        "keywordSets": Array [
+          Object {
+            "keywordThesaurus": "GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml",
+            "keywords": Array [
+              "Occurrence",
+            ],
+          },
+          Object {
+            "keywordThesaurus": "GBIF Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml",
+            "keywords": Array [
+              "Observation",
+            ],
+          },
+        ],
+        "language": "en",
+        "license": Object {
+          "title": "Creative Commons Attribution Non Commercial (CC-BY) 4.0 License",
+          "url": "http://creativecommons.org/licenses/by/4.0/legalcode",
+        },
+        "meta": Object {
+          "dwcTables": Object {
+            "core": "occurrence",
+            "extensions": Array [
+              "emof",
+            ],
+          },
+          "type": "occurrence",
+        },
+        "metadataProviders": Array [
+          Object {
+            "electronicMailAddress": "info@eurobis.org",
+            "individualName": Object {
+              "surName": "EurOBIS Data Management Team",
+            },
+            "organizationName": "Flanders Marine Institute (VLIZ)",
+          },
+        ],
+        "title": Object {
+          "language": "en",
+          "value": "Antipatharia distribution data from: Deep-sea fauna of European seas - an annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe",
+        },
       },
       Object {
-        "description": "NSIS: List of marine benthic algae from Magdalen Islands, Quebec as recorded in 1979",
-        "id": 3,
-      },
-      Object {
-        "description": "Seguimiento de 10 crías de tortuga boba nacidas en 2016 en el litoral valenciano, en el marco del Proyecto LIFE 15 IPE ES 012 (aggregated per 1-degree cell)",
-        "id": 4,
-      },
-      Object {
-        "description": "Waved Albatross Tracking (aggregated per 1-degree cell)",
-        "id": 5,
+        "abstract": Object {
+          "paragraphs": Array [
+            "The dataset contains the abundance and biomass values of sediment organisms from the Sevastopol region (South-Western Crimea, The Black Sea, Ukraine) collected between 1982 and 1992.",
+            "Abundance and Biomass of benthic organisms and key abiotic variables (covering irregular sampling surveys within 1982-1992) from the Sevastopol Area (South-Western Crimea, The Black Sea, Ukraine) including estuaries and small sheltered and semi-closed bays within the area of &quot;big Sevastopol bay&quot;
+Sevastopol Bay is located in south western part of the Crimean peninsula, Ukraine and comprehends the one of the biggest marine harbours of the Black Sea and has served as an industrialized naval base for decades. A consequence of this long-term industrial, military and municipal activity was the deterioration of the marine environment of the bay, depressed state of benthic assemblages and occurrence of expanded bottom areas that became contaminated with various sediment-associated pollutants including polycyclic aromatic hydrocarbons (PAHs), polychlorinated biphenyls (PCBs), pesticides, and metals. Benthic samples in Sevastopol bay heve been taken between 1982 and 1992.",
+          ],
+        },
+        "contacts": Array [
+          Object {
+            "electronicMailAddress": "arvanitidis@her.hcmr.gr",
+            "individualName": Object {
+              "givenName": "Christos",
+              "surName": "Arvanitidis",
+            },
+            "organizationName": "Hellenic Centre for Marine Research (HCMR)",
+          },
+        ],
+        "creators": Array [
+          Object {
+            "electronicMailAddress": "arvanitidis@her.hcmr.gr",
+            "individualName": Object {
+              "givenName": "Christos",
+              "surName": "Arvanitidis",
+            },
+            "organizationName": "Hellenic Centre for Marine Research (HCMR)",
+          },
+          Object {
+            "organizationName": "Hellenic Centre for Marine Research (HCMR)",
+          },
+          Object {
+            "electronicMailAddress": "alexpet@ibss.iuf.net",
+            "individualName": Object {
+              "givenName": "Alexei",
+              "surName": "Petrov",
+            },
+            "organizationName": "National Academy of Sciences of Ukraine Institute of Biology of the Southern Seas (NASU-IBSS",
+          },
+        ],
+        "id": "NnqVLwIyPn-nRkc",
+        "keywordSets": Array [
+          Object {
+            "keywordThesaurus": "GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml",
+            "keywords": Array [
+              "Occurrence",
+            ],
+          },
+          Object {
+            "keywordThesaurus": "GBIF Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml",
+            "keywords": Array [
+              "Observation",
+            ],
+          },
+          Object {
+            "keywordThesaurus": "ASFA",
+            "keywords": Array [
+              "Benthic biomass",
+              "Benthos",
+              "Data",
+              "Marine Genomics",
+            ],
+          },
+        ],
+        "language": "en",
+        "license": Object {
+          "title": "Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License",
+          "url": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+        },
+        "meta": Object {
+          "dwcTables": Object {
+            "core": "occurrence",
+            "extensions": Array [
+              "emof",
+            ],
+          },
+          "type": "occurrence",
+        },
+        "metadataProviders": Array [
+          Object {
+            "electronicMailAddress": "info@eurobis.org",
+            "individualName": Object {
+              "surName": "EurOBIS Data Management Team",
+            },
+            "organizationName": "Flanders Marine Institute (VLIZ)",
+          },
+        ],
+        "title": Object {
+          "language": "en",
+          "value": "Benthic data from Sevastopol (Black Sea)",
+        },
       },
     ]
   }
   onChange={[Function]}
   selectedDataset={
     Object {
-      "description": "HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.",
-      "id": 0,
+      "abstract": Object {
+        "paragraphs": Array [
+          "Population structure data of Caprella species used in the article \\"Hosono T (2014) Temperature explains reproductive dynamics in caprellids at different latitudes. Marine Ecology Progress Series 511:129-141\\"",
+        ],
+      },
+      "contacts": Array [
+        Object {
+          "individualName": Object {
+            "givenName": "Takashi",
+            "surName": "Hosono",
+          },
+        },
+      ],
+      "creators": Array [
+        Object {
+          "individualName": Object {
+            "givenName": "Takashi",
+            "surName": "Hosono",
+          },
+        },
+      ],
+      "id": "wEaBfmFyQhYCdsk",
+      "keywordSets": Array [
+        Object {
+          "keywordThesaurus": "GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml",
+          "keywords": Array [
+            "Samplingevent",
+          ],
+        },
+      ],
+      "language": "en",
+      "license": Object {
+        "title": "Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License",
+        "url": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+      },
+      "meta": Object {
+        "dwcTables": Object {
+          "core": "event",
+          "extensions": Array [
+            "emof",
+            "occurrence",
+          ],
+        },
+        "type": "event",
+      },
+      "metadataProviders": Array [
+        Object {
+          "electronicMailAddress": "hosonot@jamstec.go.jp",
+          "individualName": Object {
+            "givenName": "Takashi",
+            "surName": "Hosono",
+          },
+        },
+      ],
+      "title": Object {
+        "language": "en",
+        "value": "Caprellids polulation structure in Usujiri, Hokkaido, Japan",
+      },
     }
   }
 >
@@ -47,10 +378,10 @@ exports[`Dataset renders correctly 1`] = `
       <tbody>
         <DatasetOption
           checked={true}
-          description="HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project."
-          id={0}
-          key="0"
+          id="wEaBfmFyQhYCdsk"
+          key="wEaBfmFyQhYCdsk"
           onClick={[Function]}
+          title="Caprellids polulation structure in Usujiri, Hokkaido, Japan"
         >
           <tr
             className="dataset-option"
@@ -61,33 +392,33 @@ exports[`Dataset renders correctly 1`] = `
                 checked={true}
                 name="dataset"
                 onChange={[Function]}
-                value={0}
+                value="wEaBfmFyQhYCdsk"
               >
                 <input
                   checked={true}
                   className="input-radio is-checkradio"
-                  id="dataset-0"
+                  id="dataset-wEaBfmFyQhYCdsk"
                   name="dataset"
                   onChange={[Function]}
                   type="radio"
-                  value={0}
+                  value="wEaBfmFyQhYCdsk"
                 />
                 <label
-                  htmlFor="dataset-0"
+                  htmlFor="dataset-wEaBfmFyQhYCdsk"
                 />
               </InputRadio>
             </td>
             <td>
-              HAB Region 2: Occurrences of harmful (toxic) algal taxa within an area of interest to El Salvador compiled as part of a literature search project.
+              Caprellids polulation structure in Usujiri, Hokkaido, Japan
             </td>
           </tr>
         </DatasetOption>
         <DatasetOption
           checked={false}
-          description="NPPSD Short-tailed Albatross Sightings"
-          id={1}
-          key="1"
+          id="ntDOtUc7XsRrIus"
+          key="ntDOtUc7XsRrIus"
           onClick={[Function]}
+          title="Benthos collected in the Azov Sea in 1935 on board the R/V \\"N. Danilevskiy\\""
         >
           <tr
             className="dataset-option"
@@ -98,33 +429,33 @@ exports[`Dataset renders correctly 1`] = `
                 checked={false}
                 name="dataset"
                 onChange={[Function]}
-                value={1}
+                value="ntDOtUc7XsRrIus"
               >
                 <input
                   checked={false}
                   className="input-radio is-checkradio"
-                  id="dataset-1"
+                  id="dataset-ntDOtUc7XsRrIus"
                   name="dataset"
                   onChange={[Function]}
                   type="radio"
-                  value={1}
+                  value="ntDOtUc7XsRrIus"
                 />
                 <label
-                  htmlFor="dataset-1"
+                  htmlFor="dataset-ntDOtUc7XsRrIus"
                 />
               </InputRadio>
             </td>
             <td>
-              NPPSD Short-tailed Albatross Sightings
+              Benthos collected in the Azov Sea in 1935 on board the R/V "N. Danilevskiy"
             </td>
           </tr>
         </DatasetOption>
         <DatasetOption
           checked={false}
-          description="PANGAEA - Data from Christian-Albrechts-University Kiel"
-          id={2}
-          key="2"
+          id="PoJnGNMaxsupE4w"
+          key="PoJnGNMaxsupE4w"
           onClick={[Function]}
+          title="Antipatharia distribution data from: Deep-sea fauna of European seas - an annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe"
         >
           <tr
             className="dataset-option"
@@ -135,33 +466,33 @@ exports[`Dataset renders correctly 1`] = `
                 checked={false}
                 name="dataset"
                 onChange={[Function]}
-                value={2}
+                value="PoJnGNMaxsupE4w"
               >
                 <input
                   checked={false}
                   className="input-radio is-checkradio"
-                  id="dataset-2"
+                  id="dataset-PoJnGNMaxsupE4w"
                   name="dataset"
                   onChange={[Function]}
                   type="radio"
-                  value={2}
+                  value="PoJnGNMaxsupE4w"
                 />
                 <label
-                  htmlFor="dataset-2"
+                  htmlFor="dataset-PoJnGNMaxsupE4w"
                 />
               </InputRadio>
             </td>
             <td>
-              PANGAEA - Data from Christian-Albrechts-University Kiel
+              Antipatharia distribution data from: Deep-sea fauna of European seas - an annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe
             </td>
           </tr>
         </DatasetOption>
         <DatasetOption
           checked={false}
-          description="NSIS: List of marine benthic algae from Magdalen Islands, Quebec as recorded in 1979"
-          id={3}
-          key="3"
+          id="NnqVLwIyPn-nRkc"
+          key="NnqVLwIyPn-nRkc"
           onClick={[Function]}
+          title="Benthic data from Sevastopol (Black Sea)"
         >
           <tr
             className="dataset-option"
@@ -172,98 +503,24 @@ exports[`Dataset renders correctly 1`] = `
                 checked={false}
                 name="dataset"
                 onChange={[Function]}
-                value={3}
+                value="NnqVLwIyPn-nRkc"
               >
                 <input
                   checked={false}
                   className="input-radio is-checkradio"
-                  id="dataset-3"
+                  id="dataset-NnqVLwIyPn-nRkc"
                   name="dataset"
                   onChange={[Function]}
                   type="radio"
-                  value={3}
+                  value="NnqVLwIyPn-nRkc"
                 />
                 <label
-                  htmlFor="dataset-3"
+                  htmlFor="dataset-NnqVLwIyPn-nRkc"
                 />
               </InputRadio>
             </td>
             <td>
-              NSIS: List of marine benthic algae from Magdalen Islands, Quebec as recorded in 1979
-            </td>
-          </tr>
-        </DatasetOption>
-        <DatasetOption
-          checked={false}
-          description="Seguimiento de 10 crías de tortuga boba nacidas en 2016 en el litoral valenciano, en el marco del Proyecto LIFE 15 IPE ES 012 (aggregated per 1-degree cell)"
-          id={4}
-          key="4"
-          onClick={[Function]}
-        >
-          <tr
-            className="dataset-option"
-            onClick={[Function]}
-          >
-            <td>
-              <InputRadio
-                checked={false}
-                name="dataset"
-                onChange={[Function]}
-                value={4}
-              >
-                <input
-                  checked={false}
-                  className="input-radio is-checkradio"
-                  id="dataset-4"
-                  name="dataset"
-                  onChange={[Function]}
-                  type="radio"
-                  value={4}
-                />
-                <label
-                  htmlFor="dataset-4"
-                />
-              </InputRadio>
-            </td>
-            <td>
-              Seguimiento de 10 crías de tortuga boba nacidas en 2016 en el litoral valenciano, en el marco del Proyecto LIFE 15 IPE ES 012 (aggregated per 1-degree cell)
-            </td>
-          </tr>
-        </DatasetOption>
-        <DatasetOption
-          checked={false}
-          description="Waved Albatross Tracking (aggregated per 1-degree cell)"
-          id={5}
-          key="5"
-          onClick={[Function]}
-        >
-          <tr
-            className="dataset-option"
-            onClick={[Function]}
-          >
-            <td>
-              <InputRadio
-                checked={false}
-                name="dataset"
-                onChange={[Function]}
-                value={5}
-              >
-                <input
-                  checked={false}
-                  className="input-radio is-checkradio"
-                  id="dataset-5"
-                  name="dataset"
-                  onChange={[Function]}
-                  type="radio"
-                  value={5}
-                />
-                <label
-                  htmlFor="dataset-5"
-                />
-              </InputRadio>
-            </td>
-            <td>
-              Waved Albatross Tracking (aggregated per 1-degree cell)
+              Benthic data from Sevastopol (Black Sea)
             </td>
           </tr>
         </DatasetOption>
