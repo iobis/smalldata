@@ -15,4 +15,5 @@ public enum Collections {
   public String dbName() {
     return dbName;
   }
+
 }

@@ -5,7 +5,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.ext.mongo.MongoClient;
 import org.obis.smalldata.util.BulkOperationUtil;
 import org.obis.smalldata.util.Collections;
-import org.obis.smalldata.util.DbConst;
+import org.obis.smalldata.util.DbUtils;
 import org.obis.util.file.IoFile;
 
 import java.util.List;
@@ -55,7 +55,7 @@ public class DbInitializer {
           entry[0],
           new JsonObject()
             .put(entry[1], 1)
-            .put("collation", DbConst.INSTANCE.collation)
+            .put("collation", DbUtils.INSTANCE.collation)
             .put("background", true),
           x -> info("created index '{}.{}'", entry[0], entry[1])));
   }
