@@ -42,26 +42,30 @@ public class TestDb {
 
       var mongoClient = MongoClient.createNonShared(vertx, dbClientConfig);
       var dwcaFuture = Future.<Long>future();
-      mongoClient.bulkWrite("dwcarecords",
+      mongoClient.bulkWrite(
+        "dwcarecords",
         BulkOperationUtil.createInsertsFromFile("testdata/dwca/dwcarecords.json"),
         client -> dwcaFuture.complete(client.result().getInsertedCount()));
-      dwcaFuture.setHandler(res -> info("added {} dwca records", res));
+      dwcaFuture.setHandler(ar -> info("added {} dwca records", ar));
       var datasetFuture = Future.<Long>future();
-      mongoClient.bulkWrite("datasets",
+      mongoClient.bulkWrite(
+        "datasets",
         BulkOperationUtil.createInsertsFromFile("testdata/dwca/datasets.json"),
         client -> datasetFuture.complete(client.result().getInsertedCount()));
-      datasetFuture.setHandler(res -> info("added {} dwca records", res));
+      datasetFuture.setHandler(ar -> info("added {} dwca records", ar));
       var usersFuture = Future.<Long>future();
-      mongoClient.bulkWrite("users",
+      mongoClient.bulkWrite(
+        "users",
         BulkOperationUtil.createInsertsFromFile("testdata/dwca/users.json"),
         client -> usersFuture.complete(client.result().getInsertedCount()));
       usersFuture.setHandler(res -> info("added {} users", res));
 
       var countDownLatch = new CountDownLatch(1);
-      CompositeFuture.all(datasetFuture, dwcaFuture, usersFuture).setHandler(res -> {
-        info(res.result());
-        countDownLatch.countDown();
-      });
+      CompositeFuture.all(datasetFuture, dwcaFuture, usersFuture)
+        .setHandler(ar -> {
+          info(ar.result());
+          countDownLatch.countDown();
+        });
       if (!countDownLatch.await(2000, TimeUnit.MILLISECONDS)) {
         error("Cannot write data to database to setup tests");
         throw new InterruptedException("Cannot write data to database to setup tests");

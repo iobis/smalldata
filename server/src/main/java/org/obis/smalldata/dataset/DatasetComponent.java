@@ -30,7 +30,6 @@ public class DatasetComponent extends AbstractVerticle {
   private void handleExists(Message<String> message) {
     var datasetRef = message.body();
     DbUtils.INSTANCE.findOne(mongoClient, Collections.DATASETS, new JsonObject().put("_ref", datasetRef), message);
-
   }
 
   private void handleDatasetEvents(Message<JsonObject> message) {

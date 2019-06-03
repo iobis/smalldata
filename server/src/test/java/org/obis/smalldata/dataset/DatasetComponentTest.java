@@ -75,7 +75,19 @@ public class DatasetComponentTest {
   }
 
   @Test
-  void testExistsSuccess(Vertx vertx, VertxTestContext context) {
+  void getNotAvailableDataset(Vertx vertx, VertxTestContext testContext) {
+    vertx.eventBus().<JsonArray>send(
+      "datasets.query",
+      new JsonObject().put(QUERY_REF, "unknown"),
+      ar -> {
+        var datasets = ar.result().body();
+        assertThat(datasets).hasSize(0);
+        testContext.completeNow();
+      });
+  }
+
+  @Test
+  void existsSuccess(Vertx vertx, VertxTestContext context) {
     vertx.eventBus().<Boolean>send(
       "datasets.exists",
       "PoJnGNMaxsupE4w",
@@ -87,7 +99,7 @@ public class DatasetComponentTest {
   }
 
   @Test
-  void testExistsNonExistingDataset(Vertx vertx, VertxTestContext context) {
+  void existsNonExistingDataset(Vertx vertx, VertxTestContext context) {
     vertx.eventBus().<Boolean>send(
       "datasets.exists",
       "unknown",
@@ -95,18 +107,6 @@ public class DatasetComponentTest {
         assertThat(ar.succeeded()).isTrue();
         assertThat(ar.result().body()).isFalse();
         context.completeNow();
-      });
-  }
-
-  @Test
-  void getNotAvailableDataset(Vertx vertx, VertxTestContext testContext) {
-    vertx.eventBus().<JsonArray>send(
-      "datasets.query",
-      new JsonObject().put(QUERY_REF, "unknown"),
-      ar -> {
-        var datasets = ar.result().body();
-        assertThat(datasets).hasSize(0);
-        testContext.completeNow();
       });
   }
 }

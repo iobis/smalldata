@@ -22,6 +22,5 @@ public enum DbUtils {
           message.fail(500, "couldn't execute query");
         }
       });
-
   }
 }

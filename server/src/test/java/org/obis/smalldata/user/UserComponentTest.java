@@ -24,10 +24,12 @@ public class UserComponentTest {
     testDb.init(vertx);
     vertx.sharedData()
       .getLocalMap("settings")
-      .put("storage", new JsonObject()
-        .put("host", "localhost")
-        .put("port", 12345)
-        .put("path", ""));
+      .put(
+        "storage",
+        new JsonObject()
+          .put("host", "localhost")
+          .put("port", 12345)
+          .put("path", ""));
     vertx.deployVerticle(
       UserComponent.class.getName(),
       testContext.succeeding(id -> testContext.completeNow()));
@@ -40,7 +42,7 @@ public class UserComponentTest {
   }
 
   @Test
-  void testExistsSuccess(Vertx vertx, VertxTestContext context) {
+  void existsSuccess(Vertx vertx, VertxTestContext context) {
     vertx.eventBus().<Boolean>send(
       "users.exists",
       "FsfEMwhUTO_8I68",
@@ -52,7 +54,7 @@ public class UserComponentTest {
   }
 
   @Test
-  void testExistsNonExistingUser(Vertx vertx, VertxTestContext context) {
+  void existsNonExistingUser(Vertx vertx, VertxTestContext context) {
     vertx.eventBus().<Boolean>send(
       "users.exists",
       "unknown",
