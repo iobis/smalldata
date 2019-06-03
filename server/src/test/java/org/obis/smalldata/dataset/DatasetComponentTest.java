@@ -75,6 +75,30 @@ public class DatasetComponentTest {
   }
 
   @Test
+  void testExistsSuccess(Vertx vertx, VertxTestContext context) {
+    vertx.eventBus().<Boolean>send(
+      "datasets.exists",
+      "PoJnGNMaxsupE4w",
+      ar -> {
+        assertThat(ar.succeeded()).isTrue();
+        assertThat(ar.result().body()).isTrue();
+        context.completeNow();
+      });
+  }
+
+  @Test
+  void testExistsNonExistingDataset(Vertx vertx, VertxTestContext context) {
+    vertx.eventBus().<Boolean>send(
+      "datasets.exists",
+      "unknown",
+      ar -> {
+        assertThat(ar.succeeded()).isTrue();
+        assertThat(ar.result().body()).isFalse();
+        context.completeNow();
+      });
+  }
+
+  @Test
   void getNotAvailableDataset(Vertx vertx, VertxTestContext testContext) {
     vertx.eventBus().<JsonArray>send(
       "datasets.query",

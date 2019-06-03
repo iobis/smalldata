@@ -6,10 +6,10 @@ import io.vertx.core.eventbus.Message;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.mongo.MongoClient;
+import org.obis.smalldata.util.Collections;
+import org.obis.smalldata.util.DbUtils;
 
 import java.util.stream.Collectors;
-
-import static org.pmw.tinylog.Logger.info;
 
 public class DatasetComponent extends AbstractVerticle {
 
@@ -28,10 +28,9 @@ public class DatasetComponent extends AbstractVerticle {
   }
 
   private void handleExists(Message<String> message) {
-    //TODO: check against db
-    var userRef = message.body();
-    info(userRef);
-    message.reply(true);
+    var datasetRef = message.body();
+    DbUtils.INSTANCE.findOne(mongoClient, Collections.DATASETS, new JsonObject().put("_ref", datasetRef), message);
+
   }
 
   private void handleDatasetEvents(Message<JsonObject> message) {

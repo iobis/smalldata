@@ -40,8 +40,8 @@ public class TestDb {
       executable = MongodStarter.getDefaultInstance().prepare(mongodConfig.build());
       process = executable.start();
 
-      var dwcaFuture = Future.<Long>future();
       var mongoClient = MongoClient.createNonShared(vertx, dbClientConfig);
+      var dwcaFuture = Future.<Long>future();
       mongoClient.bulkWrite("dwcarecords",
         BulkOperationUtil.createInsertsFromFile("testdata/dwca/dwcarecords.json"),
         client -> dwcaFuture.complete(client.result().getInsertedCount()));
@@ -51,9 +51,15 @@ public class TestDb {
         BulkOperationUtil.createInsertsFromFile("testdata/dwca/datasets.json"),
         client -> datasetFuture.complete(client.result().getInsertedCount()));
       datasetFuture.setHandler(res -> info("added {} dwca records", res));
+      var usersFuture = Future.<Long>future();
+      mongoClient.bulkWrite("users",
+        BulkOperationUtil.createInsertsFromFile("testdata/dwca/users.json"),
+        client -> usersFuture.complete(client.result().getInsertedCount()));
+      usersFuture.setHandler(res -> info("added {} users", res));
 
       var countDownLatch = new CountDownLatch(1);
-      CompositeFuture.all(datasetFuture, dwcaFuture).setHandler(res -> {
+      CompositeFuture.all(datasetFuture, dwcaFuture, usersFuture).setHandler(res -> {
+        info(res.result());
         countDownLatch.countDown();
       });
       if (!countDownLatch.await(2000, TimeUnit.MILLISECONDS)) {

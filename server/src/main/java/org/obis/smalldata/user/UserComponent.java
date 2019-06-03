@@ -4,15 +4,20 @@ import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Future;
 import io.vertx.core.eventbus.Message;
 import io.vertx.core.json.JsonObject;
+import io.vertx.ext.mongo.MongoClient;
+import org.obis.smalldata.util.Collections;
+import org.obis.smalldata.util.DbUtils;
 
 import java.time.Instant;
 
-import static org.pmw.tinylog.Logger.info;
-
 public class UserComponent extends AbstractVerticle {
+
+  private MongoClient mongoClient;
 
   @Override
   public void start(Future<Void> startFuture) {
+    var dbConfig = (JsonObject) vertx.sharedData().getLocalMap("settings").get("storage");
+    mongoClient = MongoClient.createShared(vertx, dbConfig);
     // TODO: calculate new bulkiness on new record:
     // bulkinessCalculator.decay(previousValue, previousInstant) + 1
     var bulkinessConfig = config().getJsonObject("bulkiness", new JsonObject().put("halfTimeInDays", 1.0));
@@ -25,10 +30,8 @@ public class UserComponent extends AbstractVerticle {
   }
 
   private void handleExists(Message<String> message) {
-    //TODO: check against db
     var userRef = message.body();
-    info(userRef);
-    message.reply(true);
+    DbUtils.INSTANCE.findOne(mongoClient, Collections.USERS, new JsonObject().put("_ref", userRef), message);
   }
 
 }
