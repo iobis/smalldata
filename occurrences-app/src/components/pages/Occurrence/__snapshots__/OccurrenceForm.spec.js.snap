@@ -364,6 +364,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
     >
       <button
         className="review-and-submit-button button is-medium is-info"
+        disabled={true}
         onClick={[Function]}
       >
         occurrenceForm.reviewAndSubmitButton
@@ -1149,6 +1150,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
     >
       <button
         className="review-and-submit-button button is-medium is-info"
+        disabled={true}
         onClick={[Function]}
       >
         occurrenceForm.reviewAndSubmitButton
@@ -3122,6 +3124,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
     >
       <button
         className="review-and-submit-button button is-medium is-info"
+        disabled={true}
         onClick={[Function]}
       >
         occurrenceForm.reviewAndSubmitButton
@@ -3757,6 +3760,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
     >
       <button
         className="review-and-submit-button button is-medium is-info"
+        disabled={true}
         onClick={[Function]}
       >
         occurrenceForm.reviewAndSubmitButton
@@ -4425,6 +4429,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
     >
       <button
         className="review-and-submit-button button is-medium is-info"
+        disabled={true}
         onClick={[Function]}
       >
         occurrenceForm.reviewAndSubmitButton
@@ -5126,6 +5131,7 @@ exports[`OccurrenceForm renders correctly 6`] = `
     >
       <button
         className="review-and-submit-button button is-medium is-info"
+        disabled={true}
         onClick={[Function]}
       >
         occurrenceForm.reviewAndSubmitButton
@@ -5140,7 +5146,7 @@ exports[`OccurrenceForm renders correctly 7`] = `
   <section
     className="section"
   >
-    <NotConfirmedStepHeader
+    <ConfirmedStepHeader
       className="step-1 background-color-0"
       dataDescription="occurrenceForm.dataset.step.dataDescription"
       key="occurrenceForm.dataset.step.stepTitle"
@@ -5150,25 +5156,27 @@ exports[`OccurrenceForm renders correctly 7`] = `
       stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
     >
       <StepHeader
-        className="not-confirmed has-text-white step-1 background-color-0"
-        dataDescription=""
-        iconVisible={false}
+        className="confirmed has-background-white has-text-black"
+        dataDescription="occurrenceForm.dataset.step.dataDescription"
+        iconVisible={true}
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="occurrenceForm.dataset.step.stepDescription"
         stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
       >
         <div
-          className="step-header columns is-vcentered not-confirmed has-text-white step-1 background-color-0"
+          className="step-header columns is-vcentered confirmed has-background-white has-text-black"
           onClick={[Function]}
         >
           <div
-            className="column is-1 is-hidden-mobile"
+            className="column is-1"
           >
             <p
               className="is-size-5 is-uppercase"
             >
-              <b />
+              <b>
+                occurrenceForm.dataset.step.dataDescription
+              </b>
             </p>
           </div>
           <div
@@ -5185,6 +5193,15 @@ exports[`OccurrenceForm renders correctly 7`] = `
             <div
               className="is-size-5 is-uppercase"
             >
+              <FontAwesomeIcon
+                className="check-circle"
+                icon="check-circle"
+              >
+                <i
+                  className="check-circle"
+                  icon="check-circle"
+                />
+              </FontAwesomeIcon>
               <b
                 className="step-title"
               >
@@ -5194,8 +5211,8 @@ exports[`OccurrenceForm renders correctly 7`] = `
           </div>
         </div>
       </StepHeader>
-    </NotConfirmedStepHeader>
-    <NotConfirmedStepHeader
+    </ConfirmedStepHeader>
+    <ConfirmedStepHeader
       className="step-2 background-color-5"
       dataDescription="occurrenceForm.occurrenceData.step.dataDescription"
       key="occurrenceForm.occurrenceData.step.stepTitle"
@@ -5215,30 +5232,56 @@ exports[`OccurrenceForm renders correctly 7`] = `
       stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
     >
       <StepHeader
-        className="not-confirmed has-text-white step-2 background-color-5"
-        dataDescription=""
-        iconVisible={false}
+        className="confirmed has-background-white has-text-black"
+        dataDescription="occurrenceForm.occurrenceData.step.dataDescription"
+        iconVisible={true}
         onStepTitleClick={[Function]}
-        selectedData=""
+        selectedData={
+          <OccurrenceDataSummary
+            basisOfRecord="humanObservation"
+            beginDate={1556496000000}
+            endDate={null}
+            lifestage="larva"
+            occurrenceStatus="present"
+            scientificName=""
+            sex="male"
+          />
+        }
         stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
         stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
       >
         <div
-          className="step-header columns is-vcentered not-confirmed has-text-white step-2 background-color-5"
+          className="step-header columns is-vcentered confirmed has-background-white has-text-black"
           onClick={[Function]}
         >
           <div
-            className="column is-1 is-hidden-mobile"
+            className="column is-1"
           >
             <p
               className="is-size-5 is-uppercase"
             >
-              <b />
+              <b>
+                occurrenceForm.occurrenceData.step.dataDescription
+              </b>
             </p>
           </div>
           <div
-            className="column is-7 is-size-5 is-hidden-mobile"
-          />
+            className="column is-7 is-size-5"
+          >
+            <OccurrenceDataSummary
+              basisOfRecord="humanObservation"
+              beginDate={1556496000000}
+              endDate={null}
+              lifestage="larva"
+              occurrenceStatus="present"
+              scientificName=""
+              sex="male"
+            >
+              <div>
+                 29 April 2019 
+              </div>
+            </OccurrenceDataSummary>
+          </div>
           <div
             className="column details"
           >
@@ -5250,6 +5293,15 @@ exports[`OccurrenceForm renders correctly 7`] = `
             <div
               className="is-size-5 is-uppercase"
             >
+              <FontAwesomeIcon
+                className="check-circle"
+                icon="check-circle"
+              >
+                <i
+                  className="check-circle"
+                  icon="check-circle"
+                />
+              </FontAwesomeIcon>
               <b
                 className="step-title"
               >
@@ -5259,8 +5311,8 @@ exports[`OccurrenceForm renders correctly 7`] = `
           </div>
         </div>
       </StepHeader>
-    </NotConfirmedStepHeader>
-    <NotConfirmedStepHeader
+    </ConfirmedStepHeader>
+    <ConfirmedStepHeader
       className="step-3 background-color-10"
       dataDescription="occurrenceForm.locationData.step.dataDescription"
       key="occurrenceForm.locationData.step.stepTitle"
@@ -5280,30 +5332,63 @@ exports[`OccurrenceForm renders correctly 7`] = `
       stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
     >
       <StepHeader
-        className="not-confirmed has-text-white step-3 background-color-10"
-        dataDescription=""
-        iconVisible={false}
+        className="confirmed has-background-white has-text-black"
+        dataDescription="occurrenceForm.locationData.step.dataDescription"
+        iconVisible={true}
         onStepTitleClick={[Function]}
-        selectedData=""
+        selectedData={
+          <SelectedLocation
+            coordinateUncertainty={null}
+            decimalLatitude={0.12345}
+            decimalLongitude={-0.54321}
+            maximumDepth={null}
+            minimumDepth={null}
+            verbatimCoordinates=""
+            verbatimDepth=""
+          />
+        }
         stepDescription="occurrenceForm.locationData.step.stepDescription"
         stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
       >
         <div
-          className="step-header columns is-vcentered not-confirmed has-text-white step-3 background-color-10"
+          className="step-header columns is-vcentered confirmed has-background-white has-text-black"
           onClick={[Function]}
         >
           <div
-            className="column is-1 is-hidden-mobile"
+            className="column is-1"
           >
             <p
               className="is-size-5 is-uppercase"
             >
-              <b />
+              <b>
+                occurrenceForm.locationData.step.dataDescription
+              </b>
             </p>
           </div>
           <div
-            className="column is-7 is-size-5 is-hidden-mobile"
-          />
+            className="column is-7 is-size-5"
+          >
+            <SelectedLocation
+              coordinateUncertainty={null}
+              decimalLatitude={0.12345}
+              decimalLongitude={-0.54321}
+              maximumDepth={null}
+              minimumDepth={null}
+              verbatimCoordinates=""
+              verbatimDepth=""
+            >
+              <div>
+                occurrenceForm.locationData.step.selectedData.latitude
+                : 
+                0.12345
+              </div>
+              <div>
+                occurrenceForm.locationData.step.selectedData.longitude
+                : 
+                -0.54321
+              </div>
+            </SelectedLocation>
+          </div>
           <div
             className="column details"
           >
@@ -5315,6 +5400,15 @@ exports[`OccurrenceForm renders correctly 7`] = `
             <div
               className="is-size-5 is-uppercase"
             >
+              <FontAwesomeIcon
+                className="check-circle"
+                icon="check-circle"
+              >
+                <i
+                  className="check-circle"
+                  icon="check-circle"
+                />
+              </FontAwesomeIcon>
               <b
                 className="step-title"
               >
@@ -5324,8 +5418,8 @@ exports[`OccurrenceForm renders correctly 7`] = `
           </div>
         </div>
       </StepHeader>
-    </NotConfirmedStepHeader>
-    <NotConfirmedStepHeader
+    </ConfirmedStepHeader>
+    <ConfirmedStepHeader
       className="step-4 background-color-15"
       dataDescription="occurrenceForm.observationData.step.dataDescription"
       key="occurrenceForm.observationData.step.stepTitle"
@@ -5335,30 +5429,34 @@ exports[`OccurrenceForm renders correctly 7`] = `
       stepTitle="4 - occurrenceForm.observationData.step.stepTitle"
     >
       <StepHeader
-        className="not-confirmed has-text-white step-4 background-color-15"
-        dataDescription=""
-        iconVisible={false}
+        className="confirmed has-background-white has-text-black"
+        dataDescription="occurrenceForm.observationData.step.dataDescription"
+        iconVisible={true}
         onStepTitleClick={[Function]}
-        selectedData=""
+        selectedData="Institution: institution code; Identified by: Indiana Jones"
         stepDescription="occurrenceForm.observationData.step.stepDescription"
         stepTitle="4 - occurrenceForm.observationData.step.stepTitle"
       >
         <div
-          className="step-header columns is-vcentered not-confirmed has-text-white step-4 background-color-15"
+          className="step-header columns is-vcentered confirmed has-background-white has-text-black"
           onClick={[Function]}
         >
           <div
-            className="column is-1 is-hidden-mobile"
+            className="column is-1"
           >
             <p
               className="is-size-5 is-uppercase"
             >
-              <b />
+              <b>
+                occurrenceForm.observationData.step.dataDescription
+              </b>
             </p>
           </div>
           <div
-            className="column is-7 is-size-5 is-hidden-mobile"
-          />
+            className="column is-7 is-size-5"
+          >
+            Institution: institution code; Identified by: Indiana Jones
+          </div>
           <div
             className="column details"
           >
@@ -5370,6 +5468,15 @@ exports[`OccurrenceForm renders correctly 7`] = `
             <div
               className="is-size-5 is-uppercase"
             >
+              <FontAwesomeIcon
+                className="check-circle"
+                icon="check-circle"
+              >
+                <i
+                  className="check-circle"
+                  icon="check-circle"
+                />
+              </FontAwesomeIcon>
               <b
                 className="step-title"
               >
@@ -5379,8 +5486,8 @@ exports[`OccurrenceForm renders correctly 7`] = `
           </div>
         </div>
       </StepHeader>
-    </NotConfirmedStepHeader>
-    <NotConfirmedStepHeader
+    </ConfirmedStepHeader>
+    <ConfirmedStepHeader
       className="step-5 background-color-20"
       dataDescription="occurrenceForm.measurementOrFact.step.dataDescription"
       key="occurrenceForm.measurementOrFact.step.stepTitle"
@@ -5430,30 +5537,116 @@ exports[`OccurrenceForm renders correctly 7`] = `
       stepTitle="5 - occurrenceForm.measurementOrFact.step.stepTitle"
     >
       <StepHeader
-        className="not-confirmed has-text-white step-5 background-color-20"
-        dataDescription=""
-        iconVisible={false}
+        className="confirmed has-background-white has-text-black"
+        dataDescription="occurrenceForm.measurementOrFact.step.dataDescription"
+        iconVisible={true}
         onStepTitleClick={[Function]}
-        selectedData=""
+        selectedData={
+          <MeasurementOrFactSummary
+            data={
+              Array [
+                Object {
+                  "type": "Pressure",
+                  "unit": "Decibars",
+                  "units": Array [
+                    Object {
+                      "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPDB/",
+                      "name": "Decibars",
+                    },
+                  ],
+                  "value": "10",
+                },
+                Object {
+                  "type": "Pressure",
+                  "unit": "Decibars",
+                  "units": Array [
+                    Object {
+                      "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPDB/",
+                      "name": "Decibars",
+                    },
+                  ],
+                  "value": "20",
+                },
+                Object {
+                  "type": "Pressure",
+                  "unit": "Decibars",
+                  "units": Array [
+                    Object {
+                      "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPDB/",
+                      "name": "Decibars",
+                    },
+                  ],
+                  "value": "20",
+                },
+              ]
+            }
+          />
+        }
         stepDescription="occurrenceForm.measurementOrFact.step.stepDescription"
         stepTitle="5 - occurrenceForm.measurementOrFact.step.stepTitle"
       >
         <div
-          className="step-header columns is-vcentered not-confirmed has-text-white step-5 background-color-20"
+          className="step-header columns is-vcentered confirmed has-background-white has-text-black"
           onClick={[Function]}
         >
           <div
-            className="column is-1 is-hidden-mobile"
+            className="column is-1"
           >
             <p
               className="is-size-5 is-uppercase"
             >
-              <b />
+              <b>
+                occurrenceForm.measurementOrFact.step.dataDescription
+              </b>
             </p>
           </div>
           <div
-            className="column is-7 is-size-5 is-hidden-mobile"
-          />
+            className="column is-7 is-size-5"
+          >
+            <MeasurementOrFactSummary
+              data={
+                Array [
+                  Object {
+                    "type": "Pressure",
+                    "unit": "Decibars",
+                    "units": Array [
+                      Object {
+                        "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPDB/",
+                        "name": "Decibars",
+                      },
+                    ],
+                    "value": "10",
+                  },
+                  Object {
+                    "type": "Pressure",
+                    "unit": "Decibars",
+                    "units": Array [
+                      Object {
+                        "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPDB/",
+                        "name": "Decibars",
+                      },
+                    ],
+                    "value": "20",
+                  },
+                  Object {
+                    "type": "Pressure",
+                    "unit": "Decibars",
+                    "units": Array [
+                      Object {
+                        "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPDB/",
+                        "name": "Decibars",
+                      },
+                    ],
+                    "value": "20",
+                  },
+                ]
+              }
+            >
+              <div>
+                occurrenceForm.measurementOrFact.step.title {"number":3}
+              </div>
+            </MeasurementOrFactSummary>
+          </div>
           <div
             className="column details"
           >
@@ -5465,6 +5658,15 @@ exports[`OccurrenceForm renders correctly 7`] = `
             <div
               className="is-size-5 is-uppercase"
             >
+              <FontAwesomeIcon
+                className="check-circle"
+                icon="check-circle"
+              >
+                <i
+                  className="check-circle"
+                  icon="check-circle"
+                />
+              </FontAwesomeIcon>
               <b
                 className="step-title"
               >
@@ -5474,8 +5676,8 @@ exports[`OccurrenceForm renders correctly 7`] = `
           </div>
         </div>
       </StepHeader>
-    </NotConfirmedStepHeader>
-    <NotConfirmedStepHeader
+    </ConfirmedStepHeader>
+    <ActiveStepHeader
       className="step-6 background-color-25"
       dataDescription=""
       key="occurrenceForm.darwinCoreFields.step.stepTitle"
@@ -5485,7 +5687,7 @@ exports[`OccurrenceForm renders correctly 7`] = `
       stepTitle="6 - occurrenceForm.darwinCoreFields.step.stepTitle"
     >
       <StepHeader
-        className="not-confirmed has-text-white step-6 background-color-25"
+        className="active has-background-grey has-text-white"
         dataDescription=""
         iconVisible={false}
         onStepTitleClick={[Function]}
@@ -5494,7 +5696,7 @@ exports[`OccurrenceForm renders correctly 7`] = `
         stepTitle="6 - occurrenceForm.darwinCoreFields.step.stepTitle"
       >
         <div
-          className="step-header columns is-vcentered not-confirmed has-text-white step-6 background-color-25"
+          className="step-header columns is-vcentered active has-background-grey has-text-white"
           onClick={[Function]}
         >
           <div
@@ -5528,971 +5730,165 @@ exports[`OccurrenceForm renders correctly 7`] = `
             </div>
           </div>
         </div>
-      </StepHeader>
-    </NotConfirmedStepHeader>
-    <FinalSummary
-      darwinCoreFields={
-        Array [
-          Object {
-            "name": "name-1",
-            "value": "value-1",
-          },
-          Object {
-            "name": "name-3",
-            "value": "value-3",
-          },
-        ]
-      }
-      dataset={null}
-      locationData={
-        Object {
-          "coordinateUncertainty": null,
-          "decimalLatitude": 0.12345,
-          "decimalLongitude": -0.54321,
-          "maximumDepth": null,
-          "minimumDepth": null,
-          "verbatimCoordinates": "",
-          "verbatimDepth": "",
-        }
-      }
-      measurements={
-        Array [
-          Object {
-            "type": "Pressure",
-            "unit": "Decibars",
-            "units": Array [
+        <DarwinCoreFields
+          fields={
+            Array [
               Object {
-                "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPDB/",
-                "name": "Decibars",
+                "name": "name-1",
+                "value": "value-1",
               },
-            ],
-            "value": "10",
-          },
-          Object {
-            "type": "Pressure",
-            "unit": "Decibars",
-            "units": Array [
               Object {
-                "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPDB/",
-                "name": "Decibars",
+                "name": "name-3",
+                "value": "value-3",
               },
-            ],
-            "value": "20",
-          },
-          Object {
-            "type": "Pressure",
-            "unit": "Decibars",
-            "units": Array [
-              Object {
-                "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPDB/",
-                "name": "Decibars",
-              },
-            ],
-            "value": "20",
-          },
-        ]
-      }
-      observationData={
-        Object {
-          "catalogNumber": "",
-          "collectionCode": "",
-          "fieldNumber": "",
-          "identificationQualifier": "",
-          "identificationRemarks": "",
-          "identifiedBy": Array [
-            "Indiana Jones",
-          ],
-          "institutionCode": "institution code",
-          "recordNumber": "",
-          "recordedBy": Array [],
-          "references": Array [],
-        }
-      }
-      occurrenceData={
-        Object {
-          "basisOfRecord": "humanObservation",
-          "beginDate": 1556496000000,
-          "endDate": null,
-          "lifestage": "larva",
-          "occurrenceStatus": "present",
-          "scientificName": "",
-          "sex": "male",
-        }
-      }
-      onChangeClick={[Function]}
-      onSubmitClick={[Function]}
-    >
-      <div
-        className="final-summary section is-fluid"
-      >
-        <div
-          className="columns is-centered"
-        >
-          <h1
-            className="final-summary-title title is-3"
-          >
-            occurrenceForm.finalSummary.title
-          </h1>
-        </div>
-        <SubmitEntryButton
-          onClick={[Function]}
+            ]
+          }
+          onChange={[Function]}
         >
           <div
-            className="submit-entry-button columns is-centered"
+            className="darwin-core-fields section is-fluid"
           >
-            <button
-              className="button is-info is-medium"
-              onClick={[Function]}
+            <h1
+              className="title"
             >
-              occurrenceForm.finalSummary.submitEntryButton
-            </button>
-          </div>
-        </SubmitEntryButton>
-        <section
-          className="dataset-summary"
-        >
-          <SectionTitle>
+              occurrenceForm.darwinCoreFields.title
+            </h1>
             <h2
-              className="title is-4"
+              className="subtitle"
             >
-              1 - 
-              occurrenceForm.dataset.step.stepTitle
+              occurrenceForm.darwinCoreFields.subtitle
+               
+              occurrenceForm.darwinCoreFields.tip
             </h2>
-          </SectionTitle>
-          <p />
-          <ChangeButton
-            onClick={[Function]}
-          >
-            <button
-              className="change-button button"
-              onClick={[Function]}
-            >
-              common.change
-            </button>
-          </ChangeButton>
-        </section>
-        <section
-          className="occurrence-data-summary"
-        >
-          <SectionTitle>
-            <h2
-              className="title is-4"
-            >
-              2 - 
-              occurrenceForm.occurrenceData.step.stepTitle
-            </h2>
-          </SectionTitle>
-          <table
-            className="table is-striped is-fullwidth is-hoverable"
-          >
-            <NameValueHeader>
-              <thead>
-                <tr>
-                  <th
-                    className="type"
-                  >
-                    common.name
-                  </th>
-                  <th
-                    className="value"
-                  >
-                    common.value
-                  </th>
-                </tr>
-              </thead>
-            </NameValueHeader>
-            <tbody>
-              <NameValueRow
-                name="occurrenceForm.occurrenceData.scientificName"
-                value=""
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.occurrenceData.scientificName
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    —
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.occurrenceData.eventBeginDate"
-                value="29 April 2019"
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.occurrenceData.eventBeginDate
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    29 April 2019
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.occurrenceData.eventEndDate"
-                value="1 January 1970"
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.occurrenceData.eventEndDate
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    1 January 1970
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.occurrenceData.occurrenceStatus.title"
-                value="occurrenceForm.occurrenceData.occurrenceStatus.present"
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.occurrenceData.occurrenceStatus.title
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    occurrenceForm.occurrenceData.occurrenceStatus.present
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.occurrenceData.basisOfRecord.title"
-                value="occurrenceForm.occurrenceData.basisOfRecord.humanObservation"
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.occurrenceData.basisOfRecord.title
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    occurrenceForm.occurrenceData.basisOfRecord.humanObservation
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.occurrenceData.sex.title"
-                value="occurrenceForm.occurrenceData.sex.male"
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.occurrenceData.sex.title
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    occurrenceForm.occurrenceData.sex.male
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.occurrenceData.lifestage.title"
-                value="occurrenceForm.occurrenceData.lifestage.larva"
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.occurrenceData.lifestage.title
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    occurrenceForm.occurrenceData.lifestage.larva
-                  </td>
-                </tr>
-              </NameValueRow>
-            </tbody>
-          </table>
-          <ChangeButton
-            onClick={[Function]}
-          >
-            <button
-              className="change-button button"
-              onClick={[Function]}
-            >
-              common.change
-            </button>
-          </ChangeButton>
-        </section>
-        <section
-          className="location-data-summary"
-        >
-          <SectionTitle>
-            <h2
-              className="title is-4"
-            >
-              3 - 
-              occurrenceForm.locationData.step.stepTitle
-            </h2>
-          </SectionTitle>
-          <table
-            className="table is-striped is-fullwidth is-hoverable"
-          >
-            <NameValueHeader>
-              <thead>
-                <tr>
-                  <th
-                    className="type"
-                  >
-                    common.name
-                  </th>
-                  <th
-                    className="value"
-                  >
-                    common.value
-                  </th>
-                </tr>
-              </thead>
-            </NameValueHeader>
-            <tbody>
-              <NameValueRow
-                name="occurrenceForm.locationData.decimalLatitude.label"
-                value={0.12345}
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.locationData.decimalLatitude.label
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    0.12345
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.locationData.decimalLongitude.label"
-                value={-0.54321}
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.locationData.decimalLongitude.label
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    -0.54321
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.locationData.coordinateUncertainty.label"
-                value={null}
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.locationData.coordinateUncertainty.label
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    —
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.locationData.minimumDepth.label"
-                value={null}
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.locationData.minimumDepth.label
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    —
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.locationData.maximumDepth.label"
-                value={null}
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.locationData.maximumDepth.label
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    —
-                  </td>
-                </tr>
-              </NameValueRow>
-            </tbody>
-          </table>
-          <SectionSubtitle>
-            <h2
-              className="title is-5"
-            >
-              occurrenceForm.finalSummary.locationData.verbatimDataSubtitle
-            </h2>
-          </SectionSubtitle>
-          <table
-            className="table is-striped is-fullwidth is-hoverable"
-          >
-            <tbody>
-              <NameValueRow
-                name="occurrenceForm.locationData.verbatimCoordinates.label"
-                value=""
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.locationData.verbatimCoordinates.label
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    —
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.locationData.verbatimDepth.label"
-                value=""
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.locationData.verbatimDepth.label
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    —
-                  </td>
-                </tr>
-              </NameValueRow>
-            </tbody>
-          </table>
-          <ChangeButton
-            onClick={[Function]}
-          >
-            <button
-              className="change-button button"
-              onClick={[Function]}
-            >
-              common.change
-            </button>
-          </ChangeButton>
-        </section>
-        <section
-          className="observation-data-summary"
-        >
-          <SectionTitle>
-            <h2
-              className="title is-4"
-            >
-              4 - 
-              occurrenceForm.observationData.step.stepTitle
-            </h2>
-          </SectionTitle>
-          <SectionSubtitle>
-            <h2
-              className="title is-5"
-            >
-              occurrenceForm.finalSummary.observationData.catalogDataSubtitle
-            </h2>
-          </SectionSubtitle>
-          <div
-            className="content"
-          >
-            <table
-              className="table is-striped is-fullwidth is-hoverable"
-            >
-              <NameValueHeader>
-                <thead>
-                  <tr>
-                    <th
-                      className="type"
-                    >
-                      common.name
-                    </th>
-                    <th
-                      className="value"
-                    >
-                      common.value
-                    </th>
-                  </tr>
-                </thead>
-              </NameValueHeader>
-              <tbody>
-                <NameValueRow
-                  name="occurrenceForm.observationData.institutionCode.label"
-                  value="institution code"
-                >
-                  <tr
-                    className="name-value-row fieldrow"
-                  >
-                    <td
-                      className="name"
-                    >
-                      occurrenceForm.observationData.institutionCode.label
-                    </td>
-                    <td
-                      className="value"
-                    >
-                      institution code
-                    </td>
-                  </tr>
-                </NameValueRow>
-                <NameValueRow
-                  name="occurrenceForm.observationData.collectionCode.label"
-                  value=""
-                >
-                  <tr
-                    className="name-value-row fieldrow"
-                  >
-                    <td
-                      className="name"
-                    >
-                      occurrenceForm.observationData.collectionCode.label
-                    </td>
-                    <td
-                      className="value"
-                    >
-                      —
-                    </td>
-                  </tr>
-                </NameValueRow>
-                <NameValueRow
-                  name="occurrenceForm.observationData.fieldNumber.label"
-                  value=""
-                >
-                  <tr
-                    className="name-value-row fieldrow"
-                  >
-                    <td
-                      className="name"
-                    >
-                      occurrenceForm.observationData.fieldNumber.label
-                    </td>
-                    <td
-                      className="value"
-                    >
-                      —
-                    </td>
-                  </tr>
-                </NameValueRow>
-                <NameValueRow
-                  name="occurrenceForm.observationData.catalogNumber.label"
-                  value=""
-                >
-                  <tr
-                    className="name-value-row fieldrow"
-                  >
-                    <td
-                      className="name"
-                    >
-                      occurrenceForm.observationData.catalogNumber.label
-                    </td>
-                    <td
-                      className="value"
-                    >
-                      —
-                    </td>
-                  </tr>
-                </NameValueRow>
-                <NameValueRow
-                  name="occurrenceForm.observationData.recordNumber.label"
-                  value=""
-                >
-                  <tr
-                    className="name-value-row fieldrow"
-                  >
-                    <td
-                      className="name"
-                    >
-                      occurrenceForm.observationData.recordNumber.label
-                    </td>
-                    <td
-                      className="value"
-                    >
-                      —
-                    </td>
-                  </tr>
-                </NameValueRow>
-              </tbody>
-            </table>
             <div
-              className="columns"
+              className="columns is-grouped"
             >
-              <div
-                className="column is-3"
+              <InputText
+                className="is-3 field-name"
+                name="occurrenceForm.darwinCoreFields.fieldName"
+                onChange={[Function]}
               >
-                <p
-                  className="title is-5"
+                <div
+                  className="column field is-3 field-name"
                 >
-                  occurrenceForm.observationData.identifiedBy.label
-                </p>
-                <ul>
-                  <li
-                    key="Indiana Jones"
+                  <label
+                    className="label"
                   >
-                    Indiana Jones
-                  </li>
-                </ul>
-              </div>
-              <div
-                className="column is-3"
+                    occurrenceForm.darwinCoreFields.fieldName.label
+                  </label>
+                  <input
+                    className="input"
+                    onChange={[Function]}
+                    type="text"
+                  />
+                </div>
+              </InputText>
+              <InputText
+                className="is-3 value"
+                name="occurrenceForm.darwinCoreFields.value"
+                onChange={[Function]}
               >
-                <p
-                  className="title is-5"
+                <div
+                  className="column field is-3 value"
                 >
-                  occurrenceForm.observationData.recordedBy.label
-                </p>
-                <ul />
+                  <label
+                    className="label"
+                  >
+                    occurrenceForm.darwinCoreFields.value.label
+                  </label>
+                  <input
+                    className="input"
+                    onChange={[Function]}
+                    type="text"
+                  />
+                </div>
+              </InputText>
+              <div
+                className="column add"
+              >
+                <span
+                  className="label"
+                >
+                   
+                </span>
+                <button
+                  className="button"
+                  onClick={[Function]}
+                >
+                  common.add
+                </button>
               </div>
             </div>
-          </div>
-          <SectionSubtitle>
-            <h2
-              className="title is-5"
+            <table
+              className="table is-fullwidth"
             >
-              occurrenceForm.finalSummary.observationData.speciesDataSubtitle
-            </h2>
-          </SectionSubtitle>
-          <table
-            className="table is-striped is-fullwidth is-hoverable"
-          >
-            <NameValueHeader>
               <thead>
                 <tr>
-                  <th
-                    className="type"
-                  >
+                  <th>
                     common.name
                   </th>
-                  <th
-                    className="value"
-                  >
+                  <th>
                     common.value
                   </th>
+                  <th />
                 </tr>
               </thead>
-            </NameValueHeader>
-            <tbody>
-              <NameValueRow
-                name="occurrenceForm.observationData.references.label"
-                value=""
-              >
+              <tbody>
                 <tr
-                  className="name-value-row fieldrow"
+                  className="fieldrow"
+                  key="0"
                 >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.observationData.references.label
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    —
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.observationData.identificationQualifier.label"
-                value=""
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.observationData.identificationQualifier.label
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    —
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.observationData.identificationRemarks.label"
-                value=""
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.observationData.identificationRemarks.label
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    —
-                  </td>
-                </tr>
-              </NameValueRow>
-            </tbody>
-          </table>
-          <ChangeButton
-            onClick={[Function]}
-          >
-            <button
-              className="change-button button"
-              onClick={[Function]}
-            >
-              common.change
-            </button>
-          </ChangeButton>
-        </section>
-        <section
-          className="measurement-or-fact-summary"
-        >
-          <SectionTitle>
-            <h2
-              className="title is-4"
-            >
-              5 - 
-              occurrenceForm.measurementOrFact.step.stepTitle
-            </h2>
-          </SectionTitle>
-          <table
-            className="measurements table is-fullwidth is-striped is-hoverable"
-          >
-            <thead>
-              <tr>
-                <th
-                  className="type"
-                >
-                  common.type
-                </th>
-                <th
-                  className="name"
-                >
-                  common.name
-                </th>
-                <th
-                  className="value"
-                >
-                  common.value
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr
-                className="fieldrow"
-                key="0"
-              >
-                <td>
-                  Pressure
-                </td>
-                <td>
-                  Decibars
-                </td>
-                <td>
-                  10
-                </td>
-              </tr>
-              <tr
-                className="fieldrow"
-                key="1"
-              >
-                <td>
-                  Pressure
-                </td>
-                <td>
-                  Decibars
-                </td>
-                <td>
-                  20
-                </td>
-              </tr>
-              <tr
-                className="fieldrow"
-                key="2"
-              >
-                <td>
-                  Pressure
-                </td>
-                <td>
-                  Decibars
-                </td>
-                <td>
-                  20
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <ChangeButton
-            onClick={[Function]}
-          >
-            <button
-              className="change-button button"
-              onClick={[Function]}
-            >
-              common.change
-            </button>
-          </ChangeButton>
-        </section>
-        <section
-          className="darwin-core-fields-summary"
-        >
-          <SectionTitle>
-            <h2
-              className="title is-4"
-            >
-              6 - 
-              occurrenceForm.darwinCoreFields.step.stepTitle
-            </h2>
-          </SectionTitle>
-          <table
-            className="table is-striped is-fullwidth is-hoverable"
-          >
-            <NameValueHeader>
-              <thead>
-                <tr>
-                  <th
-                    className="type"
-                  >
-                    common.name
-                  </th>
-                  <th
-                    className="value"
-                  >
-                    common.value
-                  </th>
-                </tr>
-              </thead>
-            </NameValueHeader>
-            <tbody>
-              <NameValueRow
-                key="0"
-                name="name-1"
-                value="value-1"
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
+                  <td>
                     name-1
                   </td>
-                  <td
-                    className="value"
-                  >
+                  <td>
                     value-1
                   </td>
+                  <td>
+                    <button
+                      className="button remove"
+                      onClick={[Function]}
+                    >
+                      common.remove
+                    </button>
+                  </td>
                 </tr>
-              </NameValueRow>
-              <NameValueRow
-                key="1"
-                name="name-3"
-                value="value-3"
-              >
                 <tr
-                  className="name-value-row fieldrow"
+                  className="fieldrow"
+                  key="1"
                 >
-                  <td
-                    className="name"
-                  >
+                  <td>
                     name-3
                   </td>
-                  <td
-                    className="value"
-                  >
+                  <td>
                     value-3
                   </td>
+                  <td>
+                    <button
+                      className="button remove"
+                      onClick={[Function]}
+                    >
+                      common.remove
+                    </button>
+                  </td>
                 </tr>
-              </NameValueRow>
-            </tbody>
-          </table>
-          <ChangeButton
-            onClick={[Function]}
-          >
-            <button
-              className="change-button button"
-              onClick={[Function]}
-            >
-              common.change
-            </button>
-          </ChangeButton>
-        </section>
-        <SubmitEntryButton
-          onClick={[Function]}
-        >
-          <div
-            className="submit-entry-button columns is-centered"
-          >
-            <button
-              className="button is-info is-medium"
-              onClick={[Function]}
-            >
-              occurrenceForm.finalSummary.submitEntryButton
-            </button>
+              </tbody>
+            </table>
           </div>
-        </SubmitEntryButton>
-      </div>
-    </FinalSummary>
+        </DarwinCoreFields>
+      </StepHeader>
+    </ActiveStepHeader>
+    <div
+      className="columns column is-centered"
+    >
+      <button
+        className="review-and-submit-button button is-medium is-info"
+        disabled={true}
+        onClick={[Function]}
+      >
+        occurrenceForm.reviewAndSubmitButton
+      </button>
+    </div>
   </section>
 </OccurrenceForm>
 `;

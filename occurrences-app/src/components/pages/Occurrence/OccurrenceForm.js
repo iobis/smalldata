@@ -62,6 +62,20 @@ export default function OccurrenceForm() {
     fetchDatasets()
   }, [])
 
+  function showFinalSummary() {
+    setActiveStepIndex(null)
+    setFinalSummaryVisible(true)
+  }
+
+  function showActiveStep(stepIndex) {
+    setActiveStepIndex(stepIndex)
+    setFinalSummaryVisible(false)
+  }
+
+  function isOccurrenceValid() {
+    return !dataset
+  }
+
   const steps = [{
     dataDescription: t('occurrenceForm.dataset.step.dataDescription'),
     selectedData:    datasetTitleOf(dataset),
@@ -114,16 +128,6 @@ export default function OccurrenceForm() {
       onChange={setDarwinCoreFields}/>
   }]
 
-  function showFinalSummary() {
-    setActiveStepIndex(null)
-    setFinalSummaryVisible(true)
-  }
-
-  function showActiveStep(stepIndex) {
-    setActiveStepIndex(stepIndex)
-    setFinalSummaryVisible(false)
-  }
-
   return (
     <section className="section">
       {steps.map((step, index) => {
@@ -154,7 +158,7 @@ export default function OccurrenceForm() {
           onChangeClick={(params) => showActiveStep(params.index)}
           onSubmitClick={() => {}}/>) :
         (<div className="columns column is-centered">
-          <button className="review-and-submit-button button is-medium is-info" onClick={showFinalSummary}>
+          <button className="review-and-submit-button button is-medium is-info" disabled={isOccurrenceValid()} onClick={showFinalSummary}>
             {t('occurrenceForm.reviewAndSubmitButton')}
           </button>
         </div>)}
