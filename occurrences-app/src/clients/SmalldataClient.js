@@ -8,10 +8,6 @@ export function renameRefToId({ ref, ...rest }) {
   return ({ id: ref, ...rest })
 }
 
-export function datasetTitlesOf(datasets) {
-  return datasets.map(dataset => dataset.title.value)
-}
-
 export function datasetTitleOf(dataset) {
   const title = dataset && dataset.title && dataset.title.value
   return title || ''
