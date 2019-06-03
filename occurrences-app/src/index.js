@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import './index.scss'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
+import 'whatwg-fetch'
 
 const rootEl = document.getElementById('root')
 
