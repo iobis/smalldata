@@ -1,3 +1,12 @@
+export function getDatasets() {
+  return fetch('/api/datasets')
+    .then(response => response.json())
+}
+
+export function datasetTitlesOf(datasets) {
+  return datasets.map(dataset => dataset.title.value)
+}
+
 export function getDatasetMock() {
   return [{
     id:          0,
