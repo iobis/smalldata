@@ -1,6 +1,6 @@
 import React from 'react'
 import Dataset from './Dataset'
-import { getDatasetMock } from '../../../../clients/server'
+import { getDatasetMock } from '../../../../clients/SmalldataClient'
 import { mount } from 'enzyme'
 
 describe('Dataset', () => {

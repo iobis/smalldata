@@ -11,7 +11,7 @@ import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import Dataset from './Dataset/Dataset'
 import { format } from 'date-fns'
-import { getDatasetMock } from '../../../clients/server'
+import { getDatasetMock } from '../../../clients/SmalldataClient'
 import { useTranslation } from 'react-i18next'
 
 export default function OccurrenceForm() {

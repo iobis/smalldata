@@ -1,4 +1,4 @@
-import * as ServerClient from './server'
+import * as ServerClient from './SmalldataClient'
 import { RESPONSE_DEFAULT } from './SmalldataClient.fixture'
 
 describe('ServerClient', () => {
