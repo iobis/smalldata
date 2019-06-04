@@ -1,5 +1,6 @@
 package org.obis.smalldata.dwca;
 
+import com.google.common.collect.ImmutableList;
 import io.vertx.core.CompositeFuture;
 import io.vertx.core.Future;
 import io.vertx.core.eventbus.Message;
