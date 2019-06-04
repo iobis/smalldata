@@ -34,7 +34,6 @@ public class DwcaComponentTest {
       .add(new JsonObject().put("purl", new JsonObject()).put("iobis", new JsonObject()))
       .add(new JsonObject().put("iobis", new JsonObject())));
   private static final String KEY_ACTION = "action";
-  private static final String INFO_ERROR = "error {}";
   private static final String KEY_DATE_ADDED = "dateAdded";
   private static final String KEY_RECORDS = "records";
   private static TestDb testDb;
@@ -76,7 +75,6 @@ public class DwcaComponentTest {
           info("success {}", body);
           testContext.completeNow();
         } else {
-          info(INFO_ERROR, ar.cause());
           testContext.failNow(ar.cause());
         }
       });
@@ -111,7 +109,6 @@ public class DwcaComponentTest {
 
           testContext.completeNow();
         } else {
-          error(INFO_ERROR, ar.cause());
           testContext.failNow(ar.cause());
         }
       });
@@ -135,7 +132,6 @@ public class DwcaComponentTest {
             .forEach(record -> assertThat(record.getJsonObject("dwcRecords").containsKey(KEY_CORE)).isTrue());
           testContext.completeNow();
         } else {
-          error(INFO_ERROR, ar.cause());
           testContext.failNow(ar.cause());
         }
       });
@@ -161,8 +157,6 @@ public class DwcaComponentTest {
           assertThat(dwcRecords.getJsonArray("occurrence")).hasSize(1);
           testContext.completeNow();
         } else {
-          error(INFO_ERROR, ar.cause());
-          error(INFO_ERROR, ar.cause());
           testContext.failNow(ar.cause());
         }
       });
