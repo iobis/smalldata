@@ -1,18 +1,37 @@
 import OccurrenceForm from './OccurrenceForm'
 import React from 'react'
+import { act } from 'react-dom/test-utils'
 import { mount } from 'enzyme'
+import { RESPONSE_DEFAULT } from '../../../clients/SmalldataClient.fixture'
 
 describe('OccurrenceForm', () => {
+  const originalError = console.error
+  let wrapper
+
   beforeAll(() => {
+    console.error = (...args) => {
+      if (/Warning.*not wrapped in act/.test(args[0])) return
+      originalError.call(console, ...args)
+    }
     jest.spyOn(Date, 'now').mockImplementation(() => new Date(Date.UTC(2019, 3, 29)).valueOf())
+    global.fetch = jest.fn().mockImplementation(() =>
+      new Promise((resolve) => {
+        resolve({ json: () => RESPONSE_DEFAULT })
+      })
+    )
   })
 
   afterAll(() => {
+    console.error = originalError
     jest.spyOn(Date, 'now').mockRestore()
   })
 
   it('renders correctly', () => {
-    const wrapper = mount(<OccurrenceForm/>)
+    act(() => {
+      wrapper = mount(<OccurrenceForm/>)
+    })
+    expect(global.fetch).toHaveBeenCalledTimes(1)
+    expect(global.fetch).toHaveBeenCalledWith('/api/datasets')
     expect(wrapper).toMatchSnapshot()
 
     wrapper.find('.step-3 .step-header').simulate('click')
