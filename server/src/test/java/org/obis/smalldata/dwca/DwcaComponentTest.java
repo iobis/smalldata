@@ -18,7 +18,6 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.pmw.tinylog.Logger.error;
 import static org.pmw.tinylog.Logger.info;
 
 @ExtendWith(VertxExtension.class)
