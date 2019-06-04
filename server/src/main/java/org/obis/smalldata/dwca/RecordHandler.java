@@ -100,15 +100,17 @@ class RecordHandler {
       var dwcaRecords = (List<JsonObject>) ar.result().list().get(0);
       var coreTableMap = (Map<String, String>) ar.result().list().get(1);
       var records = new JsonArray(dwcaRecords.stream()
-        .collect(Collectors.groupingBy(record -> record.getJsonObject("dwcRecord").getString("id")))
+        .collect(Collectors.groupingBy(record -> ImmutableList.of(
+          record.getJsonObject("dwcRecord").getString("id"),
+          record.getString("dataset_ref"))))
         .entrySet().stream()
-        .flatMap(entry -> entry.getValue().stream()
-          .map(record -> {
-            var datasetRef = record.getString("dataset_ref");
-            return new JsonObject().put("dwcaId", entry.getKey())
-              .put("dataset", datasetRef)
-              .put("dwcRecords", generateDwcaJsonResponse(entry.getValue()).put(KEY_CORE, coreTableMap.get(datasetRef)));
-          }))
+        .map(entry -> {
+          var datasetRef = entry.getKey().get(1);
+          return new JsonObject()
+            .put("dwcaId", entry.getKey().get(0))
+            .put("dataset", datasetRef)
+            .put("dwcRecords", generateDwcaJsonResponse(entry.getValue()).put(KEY_CORE, coreTableMap.get(datasetRef)));
+        })
         .collect(Collectors.toList()));
       message.reply(records);
     });

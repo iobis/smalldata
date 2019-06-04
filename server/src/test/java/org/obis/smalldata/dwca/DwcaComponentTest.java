@@ -96,8 +96,8 @@ public class DwcaComponentTest {
       ar -> {
         if (ar.succeeded()) {
           var body = ar.result().body();
-          assertThat(body.getMap()).containsKeys("dateAdded", "dwcaId", "records");
-          var dateAddedString = body.getString("dateAdded");
+          assertThat(body.getMap()).containsKeys(KEY_DATE_ADDED, "dwcaId", KEY_RECORDS);
+          var dateAddedString = body.getString(KEY_DATE_ADDED);
           assertThat(dateAddedString).isNotBlank();
           var dateAdded = Instant.parse(dateAddedString);
           var now = Instant.now();
