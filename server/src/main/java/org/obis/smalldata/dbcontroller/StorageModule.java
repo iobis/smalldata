@@ -3,6 +3,7 @@ package org.obis.smalldata.dbcontroller;
 import de.flapdoodle.embed.mongo.MongodExecutable;
 import de.flapdoodle.embed.mongo.MongodProcess;
 import de.flapdoodle.embed.mongo.MongodStarter;
+import de.flapdoodle.embed.mongo.config.MongoCmdOptionsBuilder;
 import de.flapdoodle.embed.mongo.config.MongodConfigBuilder;
 import de.flapdoodle.embed.mongo.config.Net;
 import de.flapdoodle.embed.mongo.config.Storage;
@@ -24,6 +25,7 @@ public class StorageModule extends AbstractVerticle {
   private static final MongodStarter MONGOD_STARTER = MongodStarter.getDefaultInstance();
   private static final String BIND_IP_DEFAULT = "localhost";
   private static final int PORT_DEFAULT = 27017;
+  private static final int SYNCDELAY_DEFAULT = 60;
   private static final String DEMO_MODE = "DEMO";
 
   private MongodExecutable executable;
@@ -34,10 +36,12 @@ public class StorageModule extends AbstractVerticle {
     info("starting mongo db with config {}", config());
     var bindIp = config().getString("bindIp", BIND_IP_DEFAULT);
     var port = config().getInteger("port", PORT_DEFAULT);
+    var syncDelay = config().getInteger("syncDelay", SYNCDELAY_DEFAULT);
     var path = config().getString("path", "");
     try {
       var mongodConfig = new MongodConfigBuilder()
         .net(new Net(bindIp, port, Network.localhostIsIPv6()))
+        .cmdOptions(new MongoCmdOptionsBuilder().syncDelay(syncDelay).build())
         .version(Version.Main.PRODUCTION);
 
       if (!path.isEmpty() && Files.exists(Paths.get(path))) {
