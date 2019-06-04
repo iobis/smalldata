@@ -62,7 +62,8 @@ class RecordHandler {
   private void insertRecords(Message<JsonObject> message, JsonObject body) {
     var coreTable = getCoreTable(body);
     var dwcRecords = dwcaRecordToDwcList(body);
-    dbOperation.withNewId(COLLECTION_DWCARECORD,
+    dbOperation.withNewId(
+      COLLECTION_DWCARECORD,
       id -> updateRecords(message, coreTable, dwcRecords, id, dbOperation::insertRecords));
   }
 
@@ -79,11 +80,12 @@ class RecordHandler {
       .collect(Collectors.toList());
   }
 
-  private void updateRecords(Message<JsonObject> message,
-                             String coreTable,
-                             List<JsonObject> dwcRecords,
-                             String dwcaId,
-                             BiFunction<String, List<JsonObject>, Future<JsonObject>> dbOperation) {
+  private void updateRecords(
+    Message<JsonObject> message,
+    String coreTable,
+    List<JsonObject> dwcRecords,
+    String dwcaId,
+    BiFunction<String, List<JsonObject>, Future<JsonObject>> dbOperation) {
     var dateAdded = Instant.now();
     List<JsonObject> records = generateDwcDbRecords(dwcRecords, dwcaId, dateAdded);
     var result = dbOperation.apply(dwcaId, records);
@@ -109,7 +111,8 @@ class RecordHandler {
           return new JsonObject()
             .put("dwcaId", entry.getKey().get(0))
             .put("dataset", datasetRef)
-            .put("dwcRecords", generateDwcaJsonResponse(entry.getValue()).put(KEY_CORE, coreTableMap.get(datasetRef)));
+            .put("dwcRecords", generateDwcaJsonResponse(entry.getValue())
+              .put(KEY_CORE, coreTableMap.get(datasetRef)));
         })
         .collect(Collectors.toList()));
       message.reply(records);

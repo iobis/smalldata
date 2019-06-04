@@ -41,7 +41,7 @@ class DbOperation {
   Future<String> findDatasetCoreTable(String datasetRef) {
     var coreTable = Future.<String>future();
     mongoClient.findWithOptions(
-      "datasets",
+      Collections.DATASETS.dbName(),
       new JsonObject().put(KEY_REF, datasetRef),
       new FindOptions().setFields(new JsonObject().put("meta.dwcTables.core", true)),
       res -> {
@@ -57,7 +57,7 @@ class DbOperation {
   Future<JsonObject> findDataset(String datasetRef) {
     var dataset = Future.<JsonObject>future();
     mongoClient.findOne(
-      "datasets",
+      Collections.DATASETS.dbName(),
       new JsonObject().put(KEY_REF, datasetRef),
       new JsonObject(),
       res -> dataset.complete(res.result()));
@@ -80,18 +80,22 @@ class DbOperation {
     info("Replace dwca {}", dwcaId);
     var result = Future.<JsonObject>future();
 
-    mongoClient.findWithOptions(Collections.DATASETRECORDS.dbName(),
+    mongoClient.findWithOptions(
+      Collections.DATASETRECORDS.dbName(),
       new JsonObject().put("dwcRecord.id", dwcaId),
       new FindOptions().setFields(new JsonObject().put("_id", true)),
       arFind -> {
-        var oldIds = arFind.result().stream().map(id -> id.getString("_id")).collect(Collectors.toList());
+        var oldIds = arFind.result().stream()
+          .map(id -> id.getString("_id"))
+          .collect(Collectors.toList());
         var operations = oldIds.stream()
           .map(id -> BulkOperation.createDelete(new JsonObject().put("_id", id)))
           .collect(Collectors.toList());
         operations.addAll(records.stream()
-          .map(record -> BulkOperation.createInsert(record))
+          .map(BulkOperation::createInsert)
           .collect(Collectors.toList()));
-        mongoClient.bulkWrite(Collections.DATASETRECORDS.dbName(),
+        mongoClient.bulkWrite(
+          Collections.DATASETRECORDS.dbName(),
           operations,
           ar -> result.complete(ar.result().toJson()));
       });
@@ -101,7 +105,7 @@ class DbOperation {
   Future<Map<String, String>> coreTableMap() {
     var coreTableMap = Future.<Map<String, String>>future();
     mongoClient.findWithOptions(
-      "datasets",
+      Collections.DATASETS.dbName(),
       new JsonObject(),
       new FindOptions().setFields(new JsonObject().put("meta.dwcTables.core", true)
         .put(KEY_REF, true)),
