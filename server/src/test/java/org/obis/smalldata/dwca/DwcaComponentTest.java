@@ -151,6 +151,7 @@ public class DwcaComponentTest {
           JsonArray records = ar.result().body();
           assertThat(records).hasSize(1);
           JsonObject result = records.getJsonObject(0);
+          assertThat(result.getMap()).containsOnlyKeys("dataset", "dwcRecords", "dwcaId");
           assertThat(result.getString("dataset")).isEqualTo("ntDOtUc7XsRrIus");
           JsonObject dwcRecords = result.getJsonObject("dwcRecords");
           assertThat(dwcRecords.getString(KEY_CORE)).isEqualTo("occurrence");
