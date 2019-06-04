@@ -2,6 +2,7 @@ package org.obis.smalldata.dwca;
 
 import com.google.common.collect.ImmutableList;
 import io.vertx.core.CompositeFuture;
+import io.vertx.core.Future;
 import io.vertx.core.eventbus.Message;
 import io.vertx.core.eventbus.ReplyFailure;
 import io.vertx.core.json.JsonArray;
@@ -12,6 +13,7 @@ import org.bson.types.ObjectId;
 import java.time.Instant;
 import java.util.List;
 import java.util.Map;
+import java.util.function.BiFunction;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -30,62 +32,91 @@ class RecordHandler {
 
   void handleDwcaRecordEvents(Message<JsonObject> message) {
     var body = message.body();
-    info(body);
     var action = body.getString("action");
     switch (action) {
       case "insert":
-        var coreTable = getCoreTable(body);
-        var dwcRecords = dwcaRecordToDwcList(body);
-        dbOperation.withNewId(COLLECTION_DWCARECORD, id -> {
-          var dateAdded = Instant.now();
-          var records = dwcRecords.stream()
-            .map(dwcRecord -> {
-              var record = dwcRecord.getJsonObject(DWC_RECORD);
-              record.put("id", id);
-              dwcRecord.put(DWC_RECORD, record);
-              dwcRecord.put("dateAdded", dateAdded);
-              dwcRecord.put("_id", ObjectId.get().toHexString());
-              return dwcRecord;
-            })
-            .collect(Collectors.toList());
-          var result = dbOperation.insertRecords(records);
-          info("insertion result {}", result);
-          result.setHandler(ar -> message.reply(new JsonObject()
-            .put("dwcaId", id)
-            .put("dateAdded", dateAdded)
-            .put("records", generateDwcaJsonResponse(records).put(KEY_CORE, coreTable))));
-        });
+        insertRecords(message, body);
         break;
       case "find":
-        var dwcaRecordsFuture = dbOperation.findDwcaRecords(body.getJsonObject("query"));
-        var coreTableMapFuture = dbOperation.coreTableMap();
-        CompositeFuture.all(dwcaRecordsFuture, coreTableMapFuture).setHandler(ar -> {
-          var dwcaRecords = (List<JsonObject>) ar.result().list().get(0);
-          var coreTableMap = (Map<String, String>) ar.result().list().get(1);
-          var records = new JsonArray(dwcaRecords.stream()
-            .collect(Collectors.groupingBy(record -> ImmutableList.of(
-              record.getJsonObject("dwcRecord").getString("id"),
-              record.getString("dataset_ref"))))
-            .entrySet().stream()
-            .map(entry -> {
-              var datasetRef = entry.getKey().get(1);
-              return new JsonObject()
-                .put("dwcaId", entry.getKey().get(0))
-                .put("dataset", datasetRef)
-                .put("dwcRecords", generateDwcaJsonResponse(entry.getValue()).put(KEY_CORE, coreTableMap.get(datasetRef)));
-            })
-            .collect(Collectors.toList()));
-          message.reply(records);
-        });
+        findRecords(message, body);
         break;
-      case "update":
-        info("update record {}", body.getString("record"));
+      case "replace":
+        putRecords(message, body);
         break;
       default:
         message.fail(
           ReplyFailure.RECIPIENT_FAILURE.toInt(),
           "Action " + action + " not found on address " + message.address());
+        break;
     }
+  }
+
+  private void putRecords(Message<JsonObject> message, JsonObject body) {
+    var coreTable = getCoreTable(body);
+    var dwcRecords = dwcaRecordToDwcList(body);
+    info(dwcRecords);
+    var dwcaId = body.getString("dwcaId");
+    updateRecords(message, coreTable, dwcRecords, dwcaId, dbOperation::putDwcaRecord);
+  }
+
+  private void insertRecords(Message<JsonObject> message, JsonObject body) {
+    var coreTable = getCoreTable(body);
+    var dwcRecords = dwcaRecordToDwcList(body);
+    dbOperation.withNewId(
+      COLLECTION_DWCARECORD,
+      id -> updateRecords(message, coreTable, dwcRecords, id, dbOperation::insertRecords));
+  }
+
+  private List<JsonObject> generateDwcDbRecords(List<JsonObject> dwcRecords, String dwcaId, Instant dateAdded) {
+    return dwcRecords.stream()
+      .map(dwcRecord -> {
+        var record = dwcRecord.getJsonObject(DWC_RECORD);
+        record.put("id", dwcaId);
+        dwcRecord.put(DWC_RECORD, record);
+        dwcRecord.put("dateAdded", dateAdded);
+        dwcRecord.put("_id", ObjectId.get().toHexString());
+        return dwcRecord;
+      })
+      .collect(Collectors.toList());
+  }
+
+  private void updateRecords(
+    Message<JsonObject> message,
+    String coreTable,
+    List<JsonObject> dwcRecords,
+    String dwcaId,
+    BiFunction<String, List<JsonObject>, Future<JsonObject>> dbOperation) {
+    var dateAdded = Instant.now();
+    List<JsonObject> records = generateDwcDbRecords(dwcRecords, dwcaId, dateAdded);
+    var result = dbOperation.apply(dwcaId, records);
+    result.setHandler(ar -> message.reply(new JsonObject()
+      .put("dwcaId", dwcaId)
+      .put("dateAdded", dateAdded)
+      .put("records", generateDwcaJsonResponse(records).put(KEY_CORE, coreTable))));
+  }
+
+  private void findRecords(Message<JsonObject> message, JsonObject body) {
+    var dwcaRecordsFuture = dbOperation.findDwcaRecords(body.getJsonObject("query"));
+    var coreTableMapFuture = dbOperation.coreTableMap();
+    CompositeFuture.all(dwcaRecordsFuture, coreTableMapFuture).setHandler(ar -> {
+      var dwcaRecords = (List<JsonObject>) ar.result().list().get(0);
+      var coreTableMap = (Map<String, String>) ar.result().list().get(1);
+      var records = new JsonArray(dwcaRecords.stream()
+        .collect(Collectors.groupingBy(record -> ImmutableList.of(
+          record.getJsonObject("dwcRecord").getString("id"),
+          record.getString("dataset_ref"))))
+        .entrySet().stream()
+        .map(entry -> {
+          var datasetRef = entry.getKey().get(1);
+          return new JsonObject()
+            .put("dwcaId", entry.getKey().get(0))
+            .put("dataset", datasetRef)
+            .put("dwcRecords", generateDwcaJsonResponse(entry.getValue())
+              .put(KEY_CORE, coreTableMap.get(datasetRef)));
+        })
+        .collect(Collectors.toList()));
+      message.reply(records);
+    });
   }
 
   private String getCoreTable(JsonObject body) {
