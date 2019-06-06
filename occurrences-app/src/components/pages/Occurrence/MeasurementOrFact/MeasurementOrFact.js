@@ -139,6 +139,11 @@ function MeasurementRow({ onClickAdd, type, units }) {
         <input
           className="input"
           onChange={(e) => setSelectedValue(e.target.value)}
+          onKeyDown={(e) => {
+            if(e.key=== 'Enter'){
+              onClickAdd({ unit: selectedUnit, units, type, value: selectedValue })
+            }
+          }}
           type="text"
           value={selectedValue}/>
       </td>
