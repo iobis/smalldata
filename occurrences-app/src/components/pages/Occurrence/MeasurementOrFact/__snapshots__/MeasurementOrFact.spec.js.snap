@@ -163,6 +163,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                   <input
                     className="input"
                     onChange={[Function]}
+                    onKeyDown={[Function]}
                     type="text"
                     value=""
                   />
@@ -262,6 +263,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                   <input
                     className="input"
                     onChange={[Function]}
+                    onKeyDown={[Function]}
                     type="text"
                     value=""
                   />
@@ -361,6 +363,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                   <input
                     className="input"
                     onChange={[Function]}
+                    onKeyDown={[Function]}
                     type="text"
                     value=""
                   />

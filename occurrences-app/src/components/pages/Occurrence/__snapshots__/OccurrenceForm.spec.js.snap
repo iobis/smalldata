@@ -1713,6 +1713,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                           <input
                             className="input"
                             onChange={[Function]}
+                            onKeyDown={[Function]}
                             type="text"
                             value=""
                           />
@@ -1812,6 +1813,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                           <input
                             className="input"
                             onChange={[Function]}
+                            onKeyDown={[Function]}
                             type="text"
                             value=""
                           />
@@ -1923,6 +1925,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                           <input
                             className="input"
                             onChange={[Function]}
+                            onKeyDown={[Function]}
                             type="text"
                             value=""
                           />
@@ -2076,6 +2079,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                           <input
                             className="input"
                             onChange={[Function]}
+                            onKeyDown={[Function]}
                             type="text"
                             value=""
                           />
@@ -2175,6 +2179,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                           <input
                             className="input"
                             onChange={[Function]}
+                            onKeyDown={[Function]}
                             type="text"
                             value=""
                           />
@@ -2274,6 +2279,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                           <input
                             className="input"
                             onChange={[Function]}
+                            onKeyDown={[Function]}
                             type="text"
                             value=""
                           />
@@ -2373,6 +2379,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                           <input
                             className="input"
                             onChange={[Function]}
+                            onKeyDown={[Function]}
                             type="text"
                             value=""
                           />
@@ -2472,6 +2479,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                           <input
                             className="input"
                             onChange={[Function]}
+                            onKeyDown={[Function]}
                             type="text"
                             value=""
                           />
@@ -2571,6 +2579,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                           <input
                             className="input"
                             onChange={[Function]}
+                            onKeyDown={[Function]}
                             type="text"
                             value=""
                           />
@@ -2670,6 +2679,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                           <input
                             className="input"
                             onChange={[Function]}
+                            onKeyDown={[Function]}
                             type="text"
                             value=""
                           />
@@ -2769,6 +2779,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                           <input
                             className="input"
                             onChange={[Function]}
+                            onKeyDown={[Function]}
                             type="text"
                             value=""
                           />
@@ -2868,6 +2879,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                           <input
                             className="input"
                             onChange={[Function]}
+                            onKeyDown={[Function]}
                             type="text"
                             value=""
                           />
@@ -2967,6 +2979,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                           <input
                             className="input"
                             onChange={[Function]}
+                            onKeyDown={[Function]}
                             type="text"
                             value=""
                           />
