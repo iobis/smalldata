@@ -56,11 +56,11 @@ exports[`Navbar renders correctly for route / 1`] = `
             <Link
               className="navbar-item"
               onClick={[Function]}
-              to="/input-data"
+              to="/manage-dataset"
             >
               <a
                 className="navbar-item"
-                href="/input-data"
+                href="/manage-dataset"
                 onClick={[Function]}
               >
                 <p>
@@ -190,11 +190,11 @@ exports[`Navbar renders correctly for route /help 1`] = `
             <Link
               className="navbar-item"
               onClick={[Function]}
-              to="/input-data"
+              to="/manage-dataset"
             >
               <a
                 className="navbar-item"
-                href="/input-data"
+                href="/manage-dataset"
                 onClick={[Function]}
               >
                 <p>
@@ -324,11 +324,11 @@ exports[`Navbar renders correctly for route /input-data 1`] = `
             <Link
               className="navbar-item"
               onClick={[Function]}
-              to="/input-data"
+              to="/manage-dataset"
             >
               <a
                 className="navbar-item"
-                href="/input-data"
+                href="/manage-dataset"
                 onClick={[Function]}
               >
                 <p>
@@ -458,11 +458,11 @@ exports[`Navbar renders correctly for route /input-data/new 1`] = `
             <Link
               className="navbar-item"
               onClick={[Function]}
-              to="/input-data"
+              to="/manage-dataset"
             >
               <a
                 className="navbar-item"
-                href="/input-data"
+                href="/manage-dataset"
                 onClick={[Function]}
               >
                 <p>
@@ -591,11 +591,11 @@ exports[`Navbar renders correctly when logged in 1`] = `
           <Link
             className="navbar-item"
             onClick={[Function]}
-            to="/input-data"
+            to="/manage-dataset"
           >
             <a
               className="navbar-item"
-              href="/input-data"
+              href="/manage-dataset"
               onClick={[Function]}
             >
               <p>
@@ -627,6 +627,68 @@ exports[`Navbar renders correctly when logged in 1`] = `
           >
             <NavbarItem
               onClick={[Function]}
+              to="/manage-dataset"
+            >
+              <NavLink
+                activeClassName="is-active"
+                className="navbar-item"
+                onClick={[Function]}
+                to="/manage-dataset"
+              >
+                <Route
+                  path="\\\\/manage-dataset"
+                >
+                  <Link
+                    aria-current={null}
+                    className="navbar-item"
+                    onClick={[Function]}
+                    to="/manage-dataset"
+                  >
+                    <a
+                      aria-current={null}
+                      className="navbar-item"
+                      href="/manage-dataset"
+                      onClick={[Function]}
+                    >
+                      navbar.manageDataset
+                    </a>
+                  </Link>
+                </Route>
+              </NavLink>
+            </NavbarItem>
+            <NavbarItem
+              onClick={[Function]}
+              to="/manage-users"
+            >
+              <NavLink
+                activeClassName="is-active"
+                className="navbar-item"
+                onClick={[Function]}
+                to="/manage-users"
+              >
+                <Route
+                  path="\\\\/manage-users"
+                >
+                  <Link
+                    aria-current={null}
+                    className="navbar-item"
+                    onClick={[Function]}
+                    to="/manage-users"
+                  >
+                    <a
+                      aria-current={null}
+                      className="navbar-item"
+                      href="/manage-users"
+                      onClick={[Function]}
+                    >
+                      navbar.manageUsers
+                    </a>
+                  </Link>
+                </Route>
+              </NavLink>
+            </NavbarItem>
+            <NavbarItem
+              onClick={[Function]}
               to="/input-data"
             >
               <NavLink
@@ -651,37 +713,6 @@ exports[`Navbar renders correctly when logged in 1`] = `
                       onClick={[Function]}
                     >
                       navbar.inputData
-                    </a>
-                  </Link>
-                </Route>
-              </NavLink>
-            </NavbarItem>
-            <NavbarItem
-              onClick={[Function]}
-              to="/help"
-            >
-              <NavLink
-                activeClassName="is-active"
-                className="navbar-item"
-                onClick={[Function]}
-                to="/help"
-              >
-                <Route
-                  path="\\\\/help"
-                >
-                  <Link
-                    aria-current={null}
-                    className="navbar-item"
-                    onClick={[Function]}
-                    to="/help"
-                  >
-                    <a
-                      aria-current={null}
-                      className="navbar-item"
-                      href="/help"
-                      onClick={[Function]}
-                    >
-                      navbar.help
                     </a>
                   </Link>
                 </Route>
@@ -791,11 +822,11 @@ exports[`Navbar renders correctly when logged out 1`] = `
           <Link
             className="navbar-item"
             onClick={[Function]}
-            to="/input-data"
+            to="/manage-dataset"
           >
             <a
               className="navbar-item"
-              href="/input-data"
+              href="/manage-dataset"
               onClick={[Function]}
             >
               <p>

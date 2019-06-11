@@ -19,7 +19,7 @@ export default function Navbar() {
   return (
     <nav aria-label="main navigation" className="navbar is-info" ref={menuRef} role="navigation">
       <div className="navbar-brand">
-        <Link className="navbar-item" onClick={hideNavbarMenu} to="/input-data">
+        <Link className="navbar-item" onClick={hideNavbarMenu} to="/manage-dataset">
           <p>OBIS</p>
         </Link>
         <a
@@ -34,11 +34,14 @@ export default function Navbar() {
       <div className={classNames('navbar-menu', { 'is-active': navbarMenuActive })}>
         {loggedIn ? (
           <div className="navbar-start">
+            <NavbarItem onClick={hideNavbarMenu} to="/manage-dataset">
+              {t('navbar.manageDataset')}
+            </NavbarItem>
+            <NavbarItem onClick={hideNavbarMenu} to="/manage-users">
+              {t('navbar.manageUsers')}
+            </NavbarItem>
             <NavbarItem onClick={hideNavbarMenu} to="/input-data">
               {t('navbar.inputData')}
-            </NavbarItem>
-            <NavbarItem onClick={hideNavbarMenu} to="/help">
-              {t('navbar.help')}
             </NavbarItem>
           </div>
         ) : null}
