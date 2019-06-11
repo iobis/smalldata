@@ -245,9 +245,12 @@ describe('MeasurementOrFact', () => {
 
         it('invokes onChange handler', () => {
           expect(onChange).toHaveBeenCalledTimes(5)
-          expect(onChange).toHaveBeenNthCalledWith(5, [
-            { type: 'general-measurement-1', unit: 'general-measurement-1-unit-1', value: '20', units: getPressureUnits() }
-          ])
+          expect(onChange).toHaveBeenNthCalledWith(5, [{
+            type:  'general-measurement-1',
+            unit:  'general-measurement-1-unit-1',
+            value: '20',
+            units: getPressureUnits()
+          }])
         })
 
         it('renders 1 measurements', () => {
@@ -255,6 +258,28 @@ describe('MeasurementOrFact', () => {
           expect(wrapper.find('.supplied .fieldrow').map(suppliedMeasurementValue)).toEqual(['20'])
         })
       })
+    })
+  })
+
+  describe('when adding measurement by pressing Enter key', () => {
+    beforeAll(() => {
+      wrapper = mount(createComponent({ onChange }))
+      wrapper.find('.general .measurement-row .input').at(0).simulate('change', { target: { value: '123' } })
+      wrapper.find('.general .measurement-row .input').at(0).simulate('keydown', { key: 'Enter' })
+    })
+
+    afterAll(() => {
+      onChange.mockReset()
+    })
+
+    it('invokes onChange handler', () => {
+      expect(onChange).toHaveBeenCalledTimes(1)
+      expect(onChange).toHaveBeenNthCalledWith(1, [{
+        type:  'general-measurement-1',
+        unit:  'general-measurement-1-unit-1',
+        value: '123',
+        units: getPressureUnits()
+      }])
     })
   })
 
