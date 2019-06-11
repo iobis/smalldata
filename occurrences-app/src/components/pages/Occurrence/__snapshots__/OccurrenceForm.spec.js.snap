@@ -1630,7 +1630,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                   <tbody>
                     <MeasurementRow
                       key="Pressure"
-                      onClickAdd={[Function]}
+                      onAdd={[Function]}
                       type="Pressure"
                       units={
                         Array [
@@ -1730,7 +1730,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                     </MeasurementRow>
                     <MeasurementRow
                       key="Temperature"
-                      onClickAdd={[Function]}
+                      onAdd={[Function]}
                       type="Temperature"
                       units={
                         Array [
@@ -1830,7 +1830,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                     </MeasurementRow>
                     <MeasurementRow
                       key="Salinity"
-                      onClickAdd={[Function]}
+                      onAdd={[Function]}
                       type="Salinity"
                       units={
                         Array [
@@ -1996,7 +1996,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                   <tbody>
                     <MeasurementRow
                       key="ObservedIndividualCount"
-                      onClickAdd={[Function]}
+                      onAdd={[Function]}
                       type="ObservedIndividualCount"
                       units={
                         Array [
@@ -2096,7 +2096,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                     </MeasurementRow>
                     <MeasurementRow
                       key="Abundance category of biological entity specified elsewhere"
-                      onClickAdd={[Function]}
+                      onAdd={[Function]}
                       type="Abundance category of biological entity specified elsewhere"
                       units={
                         Array [
@@ -2196,7 +2196,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                     </MeasurementRow>
                     <MeasurementRow
                       key="Abundance of biological entity specified elsewhere per unit area of the bed"
-                      onClickAdd={[Function]}
+                      onAdd={[Function]}
                       type="Abundance of biological entity specified elsewhere per unit area of the bed"
                       units={
                         Array [
@@ -2296,7 +2296,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                     </MeasurementRow>
                     <MeasurementRow
                       key="Abundance of biological entity specified elsewhere per unit volume of the sediment"
-                      onClickAdd={[Function]}
+                      onAdd={[Function]}
                       type="Abundance of biological entity specified elsewhere per unit volume of the sediment"
                       units={
                         Array [
@@ -2396,7 +2396,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                     </MeasurementRow>
                     <MeasurementRow
                       key="Abundance of biological entity specified elsewhere per unit volume of the water body"
-                      onClickAdd={[Function]}
+                      onAdd={[Function]}
                       type="Abundance of biological entity specified elsewhere per unit volume of the water body"
                       units={
                         Array [
@@ -2496,7 +2496,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                     </MeasurementRow>
                     <MeasurementRow
                       key="Ash-free dry weight biomass (as carbon) of biological entity specified elsewhere per unit volume of the sediment"
-                      onClickAdd={[Function]}
+                      onAdd={[Function]}
                       type="Ash-free dry weight biomass (as carbon) of biological entity specified elsewhere per unit volume of the sediment"
                       units={
                         Array [
@@ -2596,7 +2596,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                     </MeasurementRow>
                     <MeasurementRow
                       key="Ash-free dry weight biomass of biological entity specified elsewhere per unit area of the bed"
-                      onClickAdd={[Function]}
+                      onAdd={[Function]}
                       type="Ash-free dry weight biomass of biological entity specified elsewhere per unit area of the bed"
                       units={
                         Array [
@@ -2696,7 +2696,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                     </MeasurementRow>
                     <MeasurementRow
                       key="Ash-free dry weight biomass of biological entity specified elsewhere per unit volume of the water body"
-                      onClickAdd={[Function]}
+                      onAdd={[Function]}
                       type="Ash-free dry weight biomass of biological entity specified elsewhere per unit volume of the water body"
                       units={
                         Array [
@@ -2796,7 +2796,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                     </MeasurementRow>
                     <MeasurementRow
                       key="Length of biological entity specified elsewhere"
-                      onClickAdd={[Function]}
+                      onAdd={[Function]}
                       type="Length of biological entity specified elsewhere"
                       units={
                         Array [
@@ -2896,7 +2896,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                     </MeasurementRow>
                     <MeasurementRow
                       key="Specimen weight of biological entity specified elsewhere"
-                      onClickAdd={[Function]}
+                      onAdd={[Function]}
                       type="Specimen weight of biological entity specified elsewhere"
                       units={
                         Array [
