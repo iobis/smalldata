@@ -140,7 +140,7 @@ function MeasurementRow({ onClickAdd, type, units }) {
           className="input"
           onChange={(e) => setSelectedValue(e.target.value)}
           onKeyDown={(e) => {
-            if(e.key=== 'Enter'){
+            if (e.key === 'Enter') {
               onClickAdd({ unit: selectedUnit, units, type, value: selectedValue })
             }
           }}
