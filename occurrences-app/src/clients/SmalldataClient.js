@@ -28,3 +28,19 @@ export function getOccurrenceMock() {
     occurrenceDate: '2011-12-09'
   }]
 }
+
+export async function createOccurrence({ datasetRef, userRef }) {
+  const occurrence = {
+    core:       'occurrence',
+    occurrence: [{
+      iobis: {}
+    }],
+    emof:       [{
+      purl:  {},
+      iobis: {}
+    }, {
+      iobis: {}
+    }]
+  }
+  const url = `/api/dwca/${datasetRef}/user/${userRef}/records`
+}
