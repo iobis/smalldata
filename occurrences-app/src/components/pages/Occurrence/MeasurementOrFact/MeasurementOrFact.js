@@ -126,6 +126,10 @@ function MeasurementRow({ onAdd, type, units }) {
   const [selectedUnit, setSelectedUnit] = useState(units[0].name)
   const [selectedValue, setSelectedValue] = useState('')
 
+  function handleAdd() {
+    onAdd({ unit: selectedUnit, units, type, value: selectedValue })
+  }
+
   return (
     <tr className="measurement-row fieldrow">
       <td>{type}</td>
@@ -140,9 +144,7 @@ function MeasurementRow({ onAdd, type, units }) {
           className="input"
           onChange={(e) => setSelectedValue(e.target.value)}
           onKeyDown={(e) => {
-            if (e.key === 'Enter') {
-              onAdd({ unit: selectedUnit, units, type, value: selectedValue })
-            }
+            if (e.key === 'Enter') handleAdd()
           }}
           type="text"
           value={selectedValue}/>
@@ -150,7 +152,7 @@ function MeasurementRow({ onAdd, type, units }) {
       <td>
         <a
           className="add button"
-          onClick={() => onAdd({ unit: selectedUnit, units, type, value: selectedValue })}>
+          onClick={handleAdd}>
           {t('common.add')}
         </a>
       </td>
