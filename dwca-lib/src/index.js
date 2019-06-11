@@ -1,10 +1,10 @@
-import Button from './Button/Button'
+import * as hooks from './hooks/hooks'
 
 function log(name) {
   console.log('log:', name)
 }
 
-export default {
-  Button,
-  log
+export {
+  log,
+  hooks
 }

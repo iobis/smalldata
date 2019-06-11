@@ -1,10 +1,10 @@
+import * as MarineSpeciesClient from '../../../../clients/MarineSpeciesClient'
+import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import React, { useEffect, useState, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import * as MarineSpeciesClient from '../../../../clients/MarineSpeciesClient'
-import { useDebounce, useOnClickOutside } from '../../../../hooks/hooks'
+import { hooks } from '@smalldata/dwca-lib'
 import { useTranslation } from 'react-i18next'
-import classNames from 'classnames'
 
 export default function ScientificNameInput({ scientificName, onChange }) {
   const { t } = useTranslation()
@@ -17,11 +17,11 @@ export default function ScientificNameInput({ scientificName, onChange }) {
   const [dropdownActive, setDropdownActive] = useState(false)
   const hideDropdownOptions = () => setDropdownActive(false)
   const showDropdownOption = () => {if (dropdownActive === false) setDropdownActive(true)}
-  const debouncedName = useDebounce(name, 500)
+  const debouncedName = hooks.useDebounce(name, 500)
   const isRecordWithName = (record, name) => (record.scientificname || '').trim().toLowerCase() === (name || '').trim().toLowerCase()
   const findRecordWithName = (records, name) => records.find(record => isRecordWithName(record, name))
 
-  useOnClickOutside(ref, hideDropdownOptions)
+  hooks.useOnClickOutside(ref, hideDropdownOptions)
 
   useEffect(() => {
     const getByName = async() => {
