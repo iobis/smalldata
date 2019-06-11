@@ -3,8 +3,10 @@ package org.obis.smalldata.dwca;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+import io.vertx.ext.mongo.BulkOperation;
 import io.vertx.ext.mongo.FindOptions;
 import io.vertx.ext.mongo.MongoClient;
+import org.obis.smalldata.util.Collections;
 import org.obis.smalldata.util.UniqueIdGenerator;
 
 import java.util.AbstractMap;
@@ -12,6 +14,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
+
+import static org.pmw.tinylog.Logger.info;
 
 class DbOperation {
 
@@ -28,7 +32,7 @@ class DbOperation {
   Future<List<JsonObject>> findDwcaRecords(JsonObject query) {
     var dwcaRecords = Future.<List<JsonObject>>future();
     mongoClient.find(
-      "dwcarecords",
+      Collections.DATASETRECORDS.dbName(),
       query,
       res -> dwcaRecords.complete(res.result()));
     return dwcaRecords;
@@ -37,7 +41,7 @@ class DbOperation {
   Future<String> findDatasetCoreTable(String datasetRef) {
     var coreTable = Future.<String>future();
     mongoClient.findWithOptions(
-      "datasets",
+      Collections.DATASETS.dbName(),
       new JsonObject().put(KEY_REF, datasetRef),
       new FindOptions().setFields(new JsonObject().put("meta.dwcTables.core", true)),
       res -> {
@@ -53,30 +57,55 @@ class DbOperation {
   Future<JsonObject> findDataset(String datasetRef) {
     var dataset = Future.<JsonObject>future();
     mongoClient.findOne(
-      "datasets",
+      Collections.DATASETS.dbName(),
       new JsonObject().put(KEY_REF, datasetRef),
       new JsonObject(),
       res -> dataset.complete(res.result()));
     return dataset;
   }
 
-  Future<JsonObject> insertRecords(List<JsonObject> records) {
+  Future<JsonObject> insertRecords(String dwcaId, List<JsonObject> records) {
+    info("Inserting dwca {}", dwcaId);
     var result = Future.<JsonObject>future();
-    var dwcInserts = new JsonArray();
-    records.forEach(dwcInserts::add);
     mongoClient.runCommand(
       "insert",
       new JsonObject()
-        .put("insert", "dwcarecords")
+        .put("insert", Collections.DATASETRECORDS.dbName())
         .put("documents", new JsonArray(records)),
       ar -> result.complete(ar.result()));
+    return result;
+  }
+
+  Future<JsonObject> putDwcaRecord(String dwcaId, List<JsonObject> records) {
+    info("Replace dwca {}", dwcaId);
+    var result = Future.<JsonObject>future();
+
+    mongoClient.findWithOptions(
+      Collections.DATASETRECORDS.dbName(),
+      new JsonObject().put("dwcRecord.id", dwcaId),
+      new FindOptions().setFields(new JsonObject().put("_id", true)),
+      arFind -> {
+        var oldIds = arFind.result().stream()
+          .map(id -> id.getString("_id"))
+          .collect(Collectors.toList());
+        var operations = oldIds.stream()
+          .map(id -> BulkOperation.createDelete(new JsonObject().put("_id", id)))
+          .collect(Collectors.toList());
+        operations.addAll(records.stream()
+          .map(BulkOperation::createInsert)
+          .collect(Collectors.toList()));
+        mongoClient.bulkWrite(
+          Collections.DATASETRECORDS.dbName(),
+          operations,
+          ar -> result.complete(ar.result().toJson()));
+      });
     return result;
   }
 
   Future<Map<String, String>> coreTableMap() {
     var coreTableMap = Future.<Map<String, String>>future();
     mongoClient.findWithOptions(
-      "datasets",
+      Collections.DATASETS.dbName(),
       new JsonObject(),
       new FindOptions().setFields(new JsonObject().put("meta.dwcTables.core", true)
         .put(KEY_REF, true)),

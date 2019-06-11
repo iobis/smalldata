@@ -1,5 +1,5 @@
 import React from 'react'
-import { getOccurrenceMock } from '../../clients/server'
+import { getOccurrenceMock } from '../../clients/SmalldataClient'
 import Divider from '../layout/Divider'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'

@@ -169,7 +169,7 @@ paths:
   '/api/dwca/{datasetRef}/user/{userRef}/records':
     post:
       summary: post a new dwca record to the server
-      operationId: postDWCA
+      operationId: postDWCARecord
       parameters:
         - name: datasetRef
           in: path
@@ -228,10 +228,44 @@ paths:
                 $ref: '#/components/schemas/DWCA'
         '422':
           description: Invalid request body
-  '/api/dwca/{datasetRef}/user/{userRef}/records/{dwcaRef}':
+  '/api/dwca/{datasetRef}/user/{userRef}/records/{dwcaId}':
+    get:
+      summary: get one dwca record
+      operationId: getDWCARecord
+      parameters:
+        - name: datasetRef
+          in: path
+          description: reference to the dataset of which the record belongs
+          required: true
+          schema:
+            type: string
+          example: NnqVLwIyPn-nRkc
+        - name: userRef
+          in: path
+          description: reference to the user owning this record
+          required: true
+          schema:
+            type: string
+          example: ovZTtaOJZ98xDDY
+        - name: dwcaId
+          in: path
+          description: reference to the record (dwca ID)
+          required: true
+          schema:
+            type: string
+          example: IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1032
+      tags:
+        - dwca
+      responses:
+        '200':
+          description: dwca record
+          content:
+            application/json: {}
+        '400':
+          description: invalid input
     put:
       summary: update (overwrite) a new dwca record
-      operationId: putDWCA
+      operationId: putDWCARecord
       parameters:
         - name: datasetRef
           in: path
@@ -245,9 +279,9 @@ paths:
           required: true
           schema:
             type: string
-        - name: dwcaRef
+        - name: dwcaId
           in: path
-          description: reference to the record
+          description: reference to the record (DWCA ID)
           required: true
           schema:
             type: string
@@ -264,7 +298,7 @@ paths:
           description: occurences data updated
           content:
             application/json: {}
-        '405':
+        '400':
           description: invalid input
   '/api/dwca/{datasetRef}':
     get:

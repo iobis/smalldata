@@ -56,7 +56,6 @@ exports[`Navbar renders correctly for route / 1`] = `
             <Link
               className="navbar-item"
               onClick={[Function]}
-              replace={false}
               to="/input-data"
             >
               <a
@@ -191,7 +190,6 @@ exports[`Navbar renders correctly for route /help 1`] = `
             <Link
               className="navbar-item"
               onClick={[Function]}
-              replace={false}
               to="/input-data"
             >
               <a
@@ -326,7 +324,6 @@ exports[`Navbar renders correctly for route /input-data 1`] = `
             <Link
               className="navbar-item"
               onClick={[Function]}
-              replace={false}
               to="/input-data"
             >
               <a
@@ -461,7 +458,6 @@ exports[`Navbar renders correctly for route /input-data/new 1`] = `
             <Link
               className="navbar-item"
               onClick={[Function]}
-              replace={false}
               to="/input-data"
             >
               <a
@@ -595,7 +591,6 @@ exports[`Navbar renders correctly when logged in 1`] = `
           <Link
             className="navbar-item"
             onClick={[Function]}
-            replace={false}
             to="/input-data"
           >
             <a
@@ -636,7 +631,6 @@ exports[`Navbar renders correctly when logged in 1`] = `
             >
               <NavLink
                 activeClassName="is-active"
-                aria-current="page"
                 className="navbar-item"
                 onClick={[Function]}
                 to="/input-data"
@@ -648,7 +642,6 @@ exports[`Navbar renders correctly when logged in 1`] = `
                     aria-current={null}
                     className="navbar-item"
                     onClick={[Function]}
-                    replace={false}
                     to="/input-data"
                   >
                     <a
@@ -669,7 +662,6 @@ exports[`Navbar renders correctly when logged in 1`] = `
             >
               <NavLink
                 activeClassName="is-active"
-                aria-current="page"
                 className="navbar-item"
                 onClick={[Function]}
                 to="/help"
@@ -681,7 +673,6 @@ exports[`Navbar renders correctly when logged in 1`] = `
                     aria-current={null}
                     className="navbar-item"
                     onClick={[Function]}
-                    replace={false}
                     to="/help"
                   >
                     <a
@@ -800,7 +791,6 @@ exports[`Navbar renders correctly when logged out 1`] = `
           <Link
             className="navbar-item"
             onClick={[Function]}
-            replace={false}
             to="/input-data"
           >
             <a

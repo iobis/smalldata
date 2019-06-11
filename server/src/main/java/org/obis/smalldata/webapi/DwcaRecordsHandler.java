@@ -11,38 +11,107 @@ import lombok.Value;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.BiConsumer;
+import java.util.function.BiFunction;
 
 import static org.pmw.tinylog.Logger.info;
 
 public class DwcaRecordsHandler {
 
-  public static void put(RoutingContext context) {
-    info("context: {}", context.request());
-    info("host: {}", context.request().host());
-    context
-      .response()
-      .putHeader(HttpHeaders.CONTENT_TYPE, "application/json")
-      .end(new JsonObject().put("occurenceID", "some ID").encode());
-  }
+  private static final String MIME_APPLICATION_JSON = "application/json";
+  private static final String DOES_NOT_EXIST = "' does not exist.";
+  private static final String ADDRESS_DWCA_RECORD = "dwca.record";
+  private static final String KEY_ACTION = "action";
+  private static final String KEY_USER_REF = "userRef";
+  private static final String KEY_DATASET_REF = "datasetRef";
+  private static final String KEY_DWCA_ID = "dwcaId";
 
-  public static void post(RoutingContext context) {
-    var datasetRef = context.request().getParam("datasetRef");
-    var userRef = context.request().getParam("userRef");
-    var messages = new DwcaBodyValidator(context.vertx().eventBus(), datasetRef, userRef).validate(context.getBodyAsJson());
-    messages.setHandler(arMessages -> {
-      info(arMessages);
-      if (arMessages.result().isEmpty()) {
+  public static void put(RoutingContext context) {
+    actionOnDwcaRecord(context,
+      (datasetRef, userRef) ->
+        new DwcaBodyValidator(context.vertx().eventBus(), datasetRef, userRef).validate(context.getBodyAsJson()),
+      (datasetRef, userRef) ->
         context.vertx().eventBus().<JsonObject>send(
-          "dwca.record",
+          ADDRESS_DWCA_RECORD,
           new JsonObject()
-            .put("action", "insert")
-            .put("datasetRef", datasetRef)
-            .put("userRef", userRef)
+            .put(KEY_ACTION, "replace")
+            .put(KEY_DATASET_REF, datasetRef)
+            .put(KEY_USER_REF, userRef)
+            .put(KEY_DWCA_ID, context.request().getParam(KEY_DWCA_ID))
             .put("record", context.getBodyAsJson()),
           ar -> context
             .response()
-            .putHeader(HttpHeaders.CONTENT_TYPE, "application/json")
-            .end(ar.result().body().encode()));
+            .putHeader(HttpHeaders.CONTENT_TYPE, MIME_APPLICATION_JSON)
+            .end(ar.result().body().encode())));
+  }
+
+  public static void post(RoutingContext context) {
+    actionOnDwcaRecord(context,
+      (datasetRef, userRef) ->
+        new DwcaBodyValidator(context.vertx().eventBus(), datasetRef, userRef).validate(context.getBodyAsJson()),
+      (datasetRef, userRef) ->
+      context.vertx().eventBus().<JsonObject>send(
+        ADDRESS_DWCA_RECORD,
+        new JsonObject()
+          .put(KEY_ACTION, "insert")
+          .put(KEY_DATASET_REF, datasetRef)
+          .put(KEY_USER_REF, userRef)
+          .put("record", context.getBodyAsJson()),
+        ar -> context
+          .response()
+          .putHeader(HttpHeaders.CONTENT_TYPE, MIME_APPLICATION_JSON)
+          .end(ar.result().body().encode())));
+  }
+
+  public static void get(RoutingContext context) {
+    actionOnDwcaRecord(context,
+      (datasetRef, userRef) ->
+        new DwcaBodyValidator(context.vertx().eventBus(), datasetRef, userRef).validate(),
+      (datasetRef, userRef) ->
+        context.vertx().eventBus().<JsonArray>send(
+          ADDRESS_DWCA_RECORD,
+          new JsonObject()
+            .put(KEY_ACTION, "find")
+            .put("query", new JsonObject().put("dwcRecord.id", context.request().getParam(KEY_DWCA_ID))),
+          ar -> {
+            var result = ar.result().body();
+            info(result.encodePrettily());
+            info(result.size());
+            switch (result.size()) {
+              case 0:
+                context
+                  .response()
+                  .putHeader(HttpHeaders.CONTENT_TYPE, MIME_APPLICATION_JSON)
+                  .setStatusCode(404)
+                  .end(new JsonObject().put("error", "record "
+                    + context.request().getParam(KEY_DWCA_ID)
+                    + DOES_NOT_EXIST).encode());
+                break;
+              case 1:
+                context
+                  .response()
+                  .putHeader(HttpHeaders.CONTENT_TYPE, MIME_APPLICATION_JSON)
+                  .end(ar.result().body().getJsonObject(0).encode());
+                break;
+              default:
+                context
+                  .response()
+                  .putHeader(HttpHeaders.CONTENT_TYPE, MIME_APPLICATION_JSON)
+                  .setStatusCode(400)
+                  .end(new JsonObject().put("error", "illegal db state: more than 1 record with this id").encode());
+                break;
+            }
+          }));
+  }
+
+  private static void actionOnDwcaRecord(RoutingContext context,
+                                         BiFunction<String, String, Future<List<String>>> messages,
+                                         BiConsumer<String, String> succesHandler) {
+    var datasetRef = context.request().getParam(KEY_DATASET_REF);
+    var userRef = context.request().getParam(KEY_USER_REF);
+    messages.apply(datasetRef, userRef).setHandler(arMessages -> {
+      if (arMessages.result().isEmpty()) {
+        succesHandler.accept(datasetRef, userRef);
       } else {
         var jsonMessages = new JsonArray();
         arMessages.result().forEach(jsonMessages::add);
@@ -55,7 +124,7 @@ public class DwcaRecordsHandler {
   }
 
   public static void getForUser(RoutingContext context) {
-    var userRef = context.request().getParam("userRef");
+    var userRef = context.request().getParam(KEY_USER_REF);
     var eventBus = context.vertx().eventBus();
     eventBus.<Boolean>send(
       "users.exists",
@@ -63,9 +132,9 @@ public class DwcaRecordsHandler {
       arUserExists -> {
         if (arUserExists.succeeded() && arUserExists.result().body()) {
           eventBus.<JsonArray>send(
-            "dwca.record",
+            ADDRESS_DWCA_RECORD,
             new JsonObject()
-              .put("action", "find")
+              .put(KEY_ACTION, "find")
               .put("query", new JsonObject().put("user_ref", userRef)),
             ar -> context.response().end(ar.result().body().encode()));
         } else {
@@ -90,10 +159,27 @@ public class DwcaRecordsHandler {
     Future<Boolean> datasetExists() {
       var exists = Future.<Boolean>future();
       eventBus.<Boolean>send("datasets.exists", datasetRef, ar -> {
-        info(ar);
         exists.complete(ar.result().body());
       });
       return exists;
+    }
+
+    Future<List<String>> validate() {
+      var result = Future.<List<String>>future();
+
+      CompositeFuture.all(datasetExists(), userExists()).setHandler(ar -> {
+        var messages = new ArrayList<String>();
+        var datasetExists = (Boolean) ar.result().list().get(0);
+        var userExists = (Boolean) ar.result().list().get(1);
+        if (!datasetExists) {
+          messages.add("dataset with ref '" + datasetRef + DOES_NOT_EXIST);
+        }
+        if (!userExists) {
+          messages.add("user with ref '" + userRef + DOES_NOT_EXIST);
+        }
+        result.complete(messages);
+      });
+      return result;
     }
 
     Future<List<String>> validate(JsonObject dwcaRecord) {
@@ -109,10 +195,10 @@ public class DwcaRecordsHandler {
           messages.add("core table '" + coreTable + "' can have only 1 record.");
         }
         if (!datasetExists) {
-          messages.add("dataset with ref '" + datasetRef + "' does not exist.");
+          messages.add("dataset with ref '" + datasetRef + DOES_NOT_EXIST);
         }
         if (!userExists) {
-          messages.add("user with ref '" + userRef + "' does not exist.");
+          messages.add("user with ref '" + userRef + DOES_NOT_EXIST);
         }
         result.complete(messages);
       });

@@ -8,16 +8,16 @@ import NotConfirmedStepHeader from './StepHeaders/NotConfirmedStepHeader'
 import ObservationData from './ObservationData/ObservationData'
 import OccurrenceData from './OccurrenceData/OccurrenceData'
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Dataset from './Dataset/Dataset'
 import { format } from 'date-fns'
-import { getDatasetMock } from '../../../clients/server'
+import { getDatasets, datasetTitleOf } from '../../../clients/SmalldataClient'
 import { useTranslation } from 'react-i18next'
 
 export default function OccurrenceForm() {
-  const datasets = getDatasetMock()
   const { t } = useTranslation()
-  const [dataset, setSelectedDataset] = useState(datasets[0])
+  const [datasets, setDatasets] = useState([])
+  const [dataset, setDataset] = useState(null)
   const [occurrenceData, setOccurrenceData] = useState({
     basisOfRecord:    'humanObservation',
     beginDate:        Date.now(),
@@ -52,15 +52,40 @@ export default function OccurrenceForm() {
   const [activeStepIndex, setActiveStepIndex] = useState(0)
   const [measurementOrFact, setMeasurementOrFact] = useState([])
   const [finalSummaryVisible, setFinalSummaryVisible] = useState(false)
+
+  useEffect(() => {
+    const fetchDatasets = async() => {
+      const datasets = await getDatasets()
+      setDatasets(datasets)
+      setDataset(datasets[0])
+    }
+    fetchDatasets()
+  }, [])
+
+  function showFinalSummary() {
+    setActiveStepIndex(null)
+    setFinalSummaryVisible(true)
+  }
+
+  function showActiveStep(stepIndex) {
+    setActiveStepIndex(stepIndex)
+    setFinalSummaryVisible(false)
+  }
+
+  function isOccurrenceValid() {
+    return !dataset
+  }
+
   const steps = [{
     dataDescription: t('occurrenceForm.dataset.step.dataDescription'),
-    selectedData:    dataset.description,
+    selectedData:    datasetTitleOf(dataset),
     stepDescription: t('occurrenceForm.dataset.step.stepDescription'),
     stepTitle:       t('occurrenceForm.dataset.step.stepTitle'),
-    children:        <Dataset
-      datasets={datasets}
-      onChange={setSelectedDataset}
-      selectedDataset={dataset}/>
+    children:        datasets && dataset && (
+      <Dataset
+        datasets={datasets}
+        onChange={setDataset}
+        selectedDataset={dataset}/>)
   }, {
     dataDescription: t('occurrenceForm.occurrenceData.step.dataDescription'),
     selectedData:    <OccurrenceDataSummary {...occurrenceData}/>,
@@ -103,16 +128,6 @@ export default function OccurrenceForm() {
       onChange={setDarwinCoreFields}/>
   }]
 
-  function showFinalSummary() {
-    setActiveStepIndex(null)
-    setFinalSummaryVisible(true)
-  }
-
-  function showActiveStep(stepIndex) {
-    setActiveStepIndex(stepIndex)
-    setFinalSummaryVisible(false)
-  }
-
   return (
     <section className="section">
       {steps.map((step, index) => {
@@ -143,7 +158,7 @@ export default function OccurrenceForm() {
           onChangeClick={(params) => showActiveStep(params.index)}
           onSubmitClick={() => {}}/>) :
         (<div className="columns column is-centered">
-          <button className="review-and-submit-button button is-medium is-info" onClick={showFinalSummary}>
+          <button className="review-and-submit-button button is-medium is-info" disabled={isOccurrenceValid()} onClick={showFinalSummary}>
             {t('occurrenceForm.reviewAndSubmitButton')}
           </button>
         </div>)}

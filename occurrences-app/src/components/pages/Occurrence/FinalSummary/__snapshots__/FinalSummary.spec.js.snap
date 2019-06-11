@@ -20,8 +20,64 @@ exports[`FinalSummary renders correctly 1`] = `
   }
   dataset={
     Object {
-      "description": "NPPSD Short-tailed Albatross Sightings",
-      "id": 1,
+      "abstract": Object {
+        "paragraphs": Array [
+          "Population structure data of Caprella species used in the article \\"Hosono T (2014) Temperature explains reproductive dynamics in caprellids at different latitudes. Marine Ecology Progress Series 511:129-141\\"",
+        ],
+      },
+      "contacts": Array [
+        Object {
+          "individualName": Object {
+            "givenName": "Takashi",
+            "surName": "Hosono",
+          },
+        },
+      ],
+      "creators": Array [
+        Object {
+          "individualName": Object {
+            "givenName": "Takashi",
+            "surName": "Hosono",
+          },
+        },
+      ],
+      "id": "wEaBfmFyQhYCdsk",
+      "keywordSets": Array [
+        Object {
+          "keywordThesaurus": "GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml",
+          "keywords": Array [
+            "Samplingevent",
+          ],
+        },
+      ],
+      "language": "en",
+      "license": Object {
+        "title": "Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License",
+        "url": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+      },
+      "meta": Object {
+        "dwcTables": Object {
+          "core": "event",
+          "extensions": Array [
+            "emof",
+            "occurrence",
+          ],
+        },
+        "type": "event",
+      },
+      "metadataProviders": Array [
+        Object {
+          "electronicMailAddress": "hosonot@jamstec.go.jp",
+          "individualName": Object {
+            "givenName": "Takashi",
+            "surName": "Hosono",
+          },
+        },
+      ],
+      "title": Object {
+        "language": "en",
+        "value": "Caprellids polulation structure in Usujiri, Hokkaido, Japan",
+      },
     }
   }
   locationData={
@@ -122,7 +178,7 @@ exports[`FinalSummary renders correctly 1`] = `
         </h2>
       </SectionTitle>
       <p>
-        NPPSD Short-tailed Albatross Sightings
+        Caprellids polulation structure in Usujiri, Hokkaido, Japan
       </p>
       <ChangeButton
         onClick={[Function]}

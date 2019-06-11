@@ -18,20 +18,23 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.pmw.tinylog.Logger.error;
 import static org.pmw.tinylog.Logger.info;
 
 @ExtendWith(VertxExtension.class)
 public class DwcaComponentTest {
 
   private static final String OCCURRENCE = "occurrence";
+  private static final String KEY_CORE = "core";
   private static final JsonObject DWCA_OCCURRENCE_RECORD = new JsonObject()
-    .put("core", OCCURRENCE)
+    .put(KEY_CORE, OCCURRENCE)
     .put(OCCURRENCE, new JsonArray()
       .add(new JsonObject().put("iobis", new JsonObject())))
     .put("emof", new JsonArray()
       .add(new JsonObject().put("purl", new JsonObject()).put("iobis", new JsonObject()))
       .add(new JsonObject().put("iobis", new JsonObject())));
+  private static final String KEY_ACTION = "action";
+  private static final String KEY_DATE_ADDED = "dateAdded";
+  private static final String KEY_RECORDS = "records";
   private static TestDb testDb;
 
   @BeforeAll
@@ -62,7 +65,7 @@ public class DwcaComponentTest {
     vertx.eventBus().<JsonObject>send(
       "dwca",
       new JsonObject(Map.of(
-        "action", "generate",
+        KEY_ACTION, "generate",
         "findDataset", "NnqVLwIyPn-nRkc"
       )),
       ar -> {
@@ -71,7 +74,6 @@ public class DwcaComponentTest {
           info("success {}", body);
           testContext.completeNow();
         } else {
-          info("error {}", ar.cause());
           testContext.failNow(ar.cause());
         }
       });
@@ -83,7 +85,7 @@ public class DwcaComponentTest {
     vertx.eventBus().<JsonObject>send(
       "dwca.record",
       new JsonObject(Map.of(
-        "action", "insert",
+        KEY_ACTION, "insert",
         "userRef", "someuser",
         "datasetRef", "NnqVLwIyPn-nRkc",
         "record", DWCA_OCCURRENCE_RECORD
@@ -91,22 +93,21 @@ public class DwcaComponentTest {
       ar -> {
         if (ar.succeeded()) {
           var body = ar.result().body();
-          assertThat(body.getMap()).containsKeys("dateAdded", "dwcaId", "records");
-          var dateAddedString = body.getString("dateAdded");
+          assertThat(body.getMap()).containsKeys(KEY_DATE_ADDED, "dwcaId", KEY_RECORDS);
+          var dateAddedString = body.getString(KEY_DATE_ADDED);
           assertThat(dateAddedString).isNotBlank();
           var dateAdded = Instant.parse(dateAddedString);
           var now = Instant.now();
           assertThat(now).isAfter(dateAdded);
           assertThat(Duration.between(dateAdded, now)).isLessThan(Duration.ofMillis(500));
 
-          JsonObject records = body.getJsonObject("records");
+          JsonObject records = body.getJsonObject(KEY_RECORDS);
           assertThat(records.getJsonArray(OCCURRENCE)).hasSize(1);
           assertThat(records.getJsonArray("emof")).hasSize(2);
-          assertThat(records.getString("core")).isEqualTo(OCCURRENCE);
+          assertThat(records.getString(KEY_CORE)).isEqualTo(OCCURRENCE);
 
           testContext.completeNow();
         } else {
-          error("error {}", ar.cause());
           testContext.failNow(ar.cause());
         }
       });
@@ -118,20 +119,44 @@ public class DwcaComponentTest {
     vertx.eventBus().<JsonArray>send(
       "dwca.record",
       new JsonObject(Map.of(
-        "action", "find",
+        KEY_ACTION, "find",
         "query", new JsonObject().put("user_ref", "FsfEMwhUTO_8I68")
       )),
       ar -> {
         if (ar.succeeded()) {
           JsonArray records = ar.result().body();
-          assertThat(records).hasSize(2310);
-          info(records.getJsonObject(0));
+          assertThat(records).hasSize(1042);
           records.stream()
             .map(JsonObject.class::cast)
-            .forEach(record -> assertThat(record.getJsonObject("dwcRecords").containsKey("core")).isTrue());
+            .forEach(record -> assertThat(record.getJsonObject("dwcRecords").containsKey(KEY_CORE)).isTrue());
           testContext.completeNow();
         } else {
-          error("error {}", ar.cause());
+          testContext.failNow(ar.cause());
+        }
+      });
+  }
+
+  @Test
+  @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
+  void findDwcaRecordsByDwcaId(Vertx vertx, VertxTestContext testContext) {
+    vertx.eventBus().<JsonArray>send(
+      "dwca.record",
+      new JsonObject(Map.of(
+        KEY_ACTION, "find",
+        "query", new JsonObject().put("dwcRecord.id", "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1032")
+      )),
+      ar -> {
+        if (ar.succeeded()) {
+          JsonArray records = ar.result().body();
+          assertThat(records).hasSize(1);
+          JsonObject result = records.getJsonObject(0);
+          assertThat(result.getMap()).containsOnlyKeys("dataset", "dwcRecords", "dwcaId");
+          assertThat(result.getString("dataset")).isEqualTo("ntDOtUc7XsRrIus");
+          JsonObject dwcRecords = result.getJsonObject("dwcRecords");
+          assertThat(dwcRecords.getString(KEY_CORE)).isEqualTo("occurrence");
+          assertThat(dwcRecords.getJsonArray("occurrence")).hasSize(1);
+          testContext.completeNow();
+        } else {
           testContext.failNow(ar.cause());
         }
       });

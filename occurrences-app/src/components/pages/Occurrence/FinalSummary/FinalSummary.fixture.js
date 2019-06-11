@@ -1,3 +1,5 @@
+import * as SmalldataClient from '../../../../clients/SmalldataClient'
+import * as SmalldataClientFixture from '../../../../clients/SmalldataClient.fixture'
 import FinalSummary from './FinalSummary'
 
 export default [{
@@ -12,10 +14,7 @@ export default [{
 
 export function getDefaultProps() {
   return {
-    dataset:          {
-      id:          1,
-      description: 'NPPSD Short-tailed Albatross Sightings'
-    },
+    dataset:          SmalldataClientFixture.RESPONSE_DEFAULT.map(SmalldataClient.renameRefToId)[0],
     occurrenceData:   {
       basisOfRecord:    'humanObservation',
       beginDate:        Date.UTC(2019, 3, 29),

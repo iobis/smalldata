@@ -7,6 +7,7 @@ import { locationDataShape } from '../LocationData/LocationData'
 import { observationDataShape } from '../ObservationData/ObservationData'
 import { occurrenceDataShape } from '../OccurrenceData/OccurrenceData'
 import { useTranslation } from 'react-i18next'
+import { datasetTitleOf } from '../../../../clients/SmalldataClient'
 
 export default function FinalSummary({
   dataset,
@@ -28,7 +29,7 @@ export default function FinalSummary({
       <SubmitEntryButton onClick={onSubmitClick}/>
       <section className="dataset-summary">
         <SectionTitle>1 - {t('occurrenceForm.dataset.step.stepTitle')}</SectionTitle>
-        <p>{dataset.description}</p>
+        <p>{datasetTitleOf(dataset)}</p>
         <ChangeButton onClick={() => onChangeClick({ index: 0, value: 'dataset' })}/>
       </section>
       <section className="occurrence-data-summary">

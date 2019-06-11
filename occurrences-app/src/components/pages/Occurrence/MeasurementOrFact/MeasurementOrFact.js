@@ -54,7 +54,7 @@ export default function MeasurementOrFact({ data, onChange }) {
               {generalMeasurements.map(generalMeasurement => (
                 <MeasurementRow
                   key={generalMeasurement.type}
-                  onClickAdd={addSuppliedMeasurements}
+                  onAdd={addSuppliedMeasurements}
                   type={generalMeasurement.type}
                   units={generalMeasurement.units}/>
               ))}
@@ -75,7 +75,7 @@ export default function MeasurementOrFact({ data, onChange }) {
               {specificMeasurements.map(specificMeasurement => (
                 <MeasurementRow
                   key={specificMeasurement.type}
-                  onClickAdd={addSuppliedMeasurements}
+                  onAdd={addSuppliedMeasurements}
                   type={specificMeasurement.type}
                   units={specificMeasurement.units}/>
               ))}
@@ -121,10 +121,14 @@ MeasurementOrFact.propTypes = {
   onChange: PropTypes.func.isRequired
 }
 
-function MeasurementRow({ onClickAdd, type, units }) {
+function MeasurementRow({ onAdd, type, units }) {
   const { t } = useTranslation()
   const [selectedUnit, setSelectedUnit] = useState(units[0].name)
   const [selectedValue, setSelectedValue] = useState('')
+
+  function handleAdd() {
+    onAdd({ unit: selectedUnit, units, type, value: selectedValue })
+  }
 
   return (
     <tr className="measurement-row fieldrow">
@@ -139,13 +143,16 @@ function MeasurementRow({ onClickAdd, type, units }) {
         <input
           className="input"
           onChange={(e) => setSelectedValue(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') handleAdd()
+          }}
           type="text"
           value={selectedValue}/>
       </td>
       <td>
         <a
           className="add button"
-          onClick={() => onClickAdd({ unit: selectedUnit, units, type, value: selectedValue })}>
+          onClick={handleAdd}>
           {t('common.add')}
         </a>
       </td>
@@ -154,9 +161,9 @@ function MeasurementRow({ onClickAdd, type, units }) {
 }
 
 MeasurementRow.propTypes = {
-  onClickAdd: PropTypes.func.isRequired,
-  type:       PropTypes.string.isRequired,
-  units:      PropTypes.arrayOf(PropTypes.shape({
+  onAdd: PropTypes.func.isRequired,
+  type:  PropTypes.string.isRequired,
+  units: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired
   })).isRequired
 }
