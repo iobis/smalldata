@@ -68,7 +68,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
           <tbody>
             <MeasurementRow
               key="general-measurement-1"
-              onClickAdd={[Function]}
+              onAdd={[Function]}
               type="general-measurement-1"
               units={
                 Array [
@@ -163,6 +163,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                   <input
                     className="input"
                     onChange={[Function]}
+                    onKeyDown={[Function]}
                     type="text"
                     value=""
                   />
@@ -179,7 +180,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
             </MeasurementRow>
             <MeasurementRow
               key="general-measurement-2"
-              onClickAdd={[Function]}
+              onAdd={[Function]}
               type="general-measurement-2"
               units={
                 Array [
@@ -262,6 +263,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                   <input
                     className="input"
                     onChange={[Function]}
+                    onKeyDown={[Function]}
                     type="text"
                     value=""
                   />
@@ -278,7 +280,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
             </MeasurementRow>
             <MeasurementRow
               key="general-measurement-3"
-              onClickAdd={[Function]}
+              onAdd={[Function]}
               type="general-measurement-3"
               units={
                 Array [
@@ -361,6 +363,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
                   <input
                     className="input"
                     onChange={[Function]}
+                    onKeyDown={[Function]}
                     type="text"
                     value=""
                   />
