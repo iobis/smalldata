@@ -39,9 +39,6 @@ export default function Navbar() {
             <NavbarItem onClick={hideNavbarMenu} to="/manage-users">
               {t('navbar.manageUsers')}
             </NavbarItem>
-            <NavbarItem onClick={hideNavbarMenu} to="/input-data">
-              {t('navbar.inputData')}
-            </NavbarItem>
           </div>
         ) : null}
         <LoginNavItem loggedIn={loggedIn}/>

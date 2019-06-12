@@ -1,5 +1,4 @@
 import './i18n/i18n'
-import InputDataPage from './components/pages/InputDataPage'
 import LogInPage from './components/pages/LogInPage'
 import ManageDatasetPage from './components/pages/ManageDatasetPage'
 import ManageUsersPage from './components/pages/ManageUsersPage'
@@ -40,7 +39,6 @@ const AppDiv = () => {
       <Navbar/>
       <Switch>
         <ProtectedRoute component={ManageDatasetPage} exact path="/"/>
-        <ProtectedRoute component={InputDataPage} exact path="/input-data"/>
         <ProtectedRoute component={ManageDatasetPage} exact path="/manage-dataset"/>
         <ProtectedRoute component={ManageUsersPage} exact path="/manage-users"/>
       </Switch>
