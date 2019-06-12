@@ -30,13 +30,13 @@ describe('SmalldataClient', () => {
   it('postOccurrence()', async() => {
     await SmalldataClient.postOccurrence({
       occurence: {
-        dataset:        {
+        dataset:         {
           id:    'wEaBfmFyQhYCdsk',
           title: {
             value: 'Caprellids polulation structure in Usujiri, Hokkaido, Japan'
           }
         },
-        occurrenceData: {
+        occurrenceData:  {
           basisOfRecord:    'humanObservation',
           beginDate:        Date.UTC(2019, 3, 29),
           endDate:          Date.UTC(2019, 3, 30),
@@ -45,7 +45,7 @@ describe('SmalldataClient', () => {
           scientificName:   'ala abra',
           sex:              'male'
         },
-        locationData:   {
+        locationData:    {
           decimalLongitude:      2.345456,
           decimalLatitude:       51.3354656,
           coordinateUncertainty: 1,
@@ -53,6 +53,18 @@ describe('SmalldataClient', () => {
           maximumDepth:          30,
           verbatimCoordinates:   '41 05 54S 121 05 34W',
           verbatimDepth:         '100 - 200 m'
+        },
+        observationData: {
+          institutionCode:         'IBSS',
+          collectionCode:          'R/V N. Danilevskiy 1935 Azov Sea benthos data',
+          fieldNumber:             '557',
+          catalogNumber:           'IBSS_Benthos_1935_1331',
+          recordNumber:            '123456',
+          identifiedBy:            ['Indiana Jones'],
+          recordedBy:              ['Harrison Ford', 'Indiana Jones'],
+          identificationQualifier: 'some identification qualifier',
+          identificationRemarks:   'some identification remarks',
+          references:              ['http://www.google.com', 'https://clojure.org/']
         }
       }
     })
@@ -78,7 +90,19 @@ describe('SmalldataClient', () => {
           minimumDepthInMeters:          20,
           maximumDepthInMeters:          30,
           verbatimCoordinates:           '41 05 54S 121 05 34W',
-          verbatimDepth:                 '100 - 200 m'
+          verbatimDepth:                 '100 - 200 m',
+          institutionCode:               'IBSS',
+          collectionCode:                'R/V N. Danilevskiy 1935 Azov Sea benthos data',
+          fieldNumber:                   '557',
+          catalogNumber:                 'IBSS_Benthos_1935_1331',
+          recordNumber:                  '123456',
+          identifiedBy:                  'Indiana Jones',
+          recordedBy:                    'Harrison Ford, Indiana Jones',
+          identificationQualifier:       'some identification qualifier',
+          identificationRemarks:         'some identification remarks'
+        },
+        purl: {
+          references: 'http://www.google.com, https://clojure.org/'
         }
       }],
       emof:       [{
