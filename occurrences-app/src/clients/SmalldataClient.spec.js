@@ -30,11 +30,20 @@ describe('SmalldataClient', () => {
   it('postOccurrence()', async() => {
     await SmalldataClient.postOccurrence({
       occurence: {
-        dataset: {
+        dataset:        {
           id:    'wEaBfmFyQhYCdsk',
           title: {
             value: 'Caprellids polulation structure in Usujiri, Hokkaido, Japan'
           }
+        },
+        occurrenceData: {
+          basisOfRecord:    'humanObservation',
+          beginDate:        Date.UTC(2019, 3, 29),
+          endDate:          Date.UTC(2019, 3, 30),
+          lifeStage:        'adult',
+          occurrenceStatus: 'present',
+          scientificName:   'ala abra',
+          sex:              'male'
         }
       }
     })
@@ -46,8 +55,14 @@ describe('SmalldataClient', () => {
       core:       'occurrence',
       occurrence: [{
         tdwg: {
-          datasetID:   'wEaBfmFyQhYCdsk',
-          datasetName: 'Caprellids polulation structure in Usujiri, Hokkaido, Japan'
+          datasetID:        'wEaBfmFyQhYCdsk',
+          datasetName:      'Caprellids polulation structure in Usujiri, Hokkaido, Japan',
+          basisOfRecord:    'HumanObservation',
+          eventDate:        '2019-04-29/2019-04-30',
+          lifestage:        'adult',
+          occurrenceStatus: 'present',
+          scientificName:   'ala abra',
+          sex:              'male'
         }
       }],
       emof:       [{
