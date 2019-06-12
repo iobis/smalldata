@@ -44,6 +44,15 @@ describe('SmalldataClient', () => {
           occurrenceStatus: 'present',
           scientificName:   'ala abra',
           sex:              'male'
+        },
+        locationData:   {
+          decimalLongitude:      2.345456,
+          decimalLatitude:       51.3354656,
+          coordinateUncertainty: 1,
+          minimumDepth:          20,
+          maximumDepth:          30,
+          verbatimCoordinates:   '41 05 54S 121 05 34W',
+          verbatimDepth:         '100 - 200 m'
         }
       }
     })
@@ -55,14 +64,21 @@ describe('SmalldataClient', () => {
       core:       'occurrence',
       occurrence: [{
         tdwg: {
-          datasetID:        'wEaBfmFyQhYCdsk',
-          datasetName:      'Caprellids polulation structure in Usujiri, Hokkaido, Japan',
-          basisOfRecord:    'HumanObservation',
-          eventDate:        '2019-04-29/2019-04-30',
-          lifestage:        'adult',
-          occurrenceStatus: 'present',
-          scientificName:   'ala abra',
-          sex:              'male'
+          datasetID:                     'wEaBfmFyQhYCdsk',
+          datasetName:                   'Caprellids polulation structure in Usujiri, Hokkaido, Japan',
+          basisOfRecord:                 'HumanObservation',
+          eventDate:                     '2019-04-29/2019-04-30',
+          lifestage:                     'adult',
+          occurrenceStatus:              'present',
+          scientificName:                'ala abra',
+          sex:                           'male',
+          decimalLongitude:              2.345456,
+          decimalLatitude:               51.3354656,
+          coordinateUncertaintyInMeters: 1,
+          minimumDepthInMeters:          20,
+          maximumDepthInMeters:          30,
+          verbatimCoordinates:           '41 05 54S 121 05 34W',
+          verbatimDepth:                 '100 - 200 m'
         }
       }],
       emof:       [{

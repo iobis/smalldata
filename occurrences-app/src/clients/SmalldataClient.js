@@ -37,14 +37,21 @@ export async function postOccurrence({ occurence }) {
     core:       'occurrence',
     occurrence: [{
       tdwg: {
-        datasetID:        occurence.dataset.id,
-        datasetName:      occurence.dataset.title.value,
-        basisOfRecord:    occurence.occurrenceData.basisOfRecord.charAt(0).toUpperCase() + occurence.occurrenceData.basisOfRecord.slice(1),
-        eventDate:        format(occurence.occurrenceData.beginDate, 'YYYY-MM-DD') + '/' + format(occurence.occurrenceData.endDate, 'YYYY-MM-DD'),
-        lifestage:        occurence.occurrenceData.lifeStage,
-        occurrenceStatus: occurence.occurrenceData.occurrenceStatus,
-        scientificName:   occurence.occurrenceData.scientificName,
-        sex:              occurence.occurrenceData.sex
+        datasetID:                     occurence.dataset.id,
+        datasetName:                   occurence.dataset.title.value,
+        basisOfRecord:                 occurence.occurrenceData.basisOfRecord.charAt(0).toUpperCase() + occurence.occurrenceData.basisOfRecord.slice(1),
+        eventDate:                     format(occurence.occurrenceData.beginDate, 'YYYY-MM-DD') + '/' + format(occurence.occurrenceData.endDate, 'YYYY-MM-DD'),
+        lifestage:                     occurence.occurrenceData.lifeStage,
+        occurrenceStatus:              occurence.occurrenceData.occurrenceStatus,
+        scientificName:                occurence.occurrenceData.scientificName,
+        sex:                           occurence.occurrenceData.sex,
+        decimalLongitude:              occurence.locationData.decimalLongitude,
+        decimalLatitude:               occurence.locationData.decimalLatitude,
+        coordinateUncertaintyInMeters: occurence.locationData.coordinateUncertainty,
+        minimumDepthInMeters:          occurence.locationData.minimumDepth,
+        maximumDepthInMeters:          occurence.locationData.maximumDepth,
+        verbatimCoordinates:           occurence.locationData.verbatimCoordinates,
+        verbatimDepth:                 occurence.locationData.verbatimDepth
       }
     }],
     emof:       [{
