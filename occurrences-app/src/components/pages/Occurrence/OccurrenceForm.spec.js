@@ -2,7 +2,7 @@ import OccurrenceForm from './OccurrenceForm'
 import React from 'react'
 import { act } from 'react-dom/test-utils'
 import { mount } from 'enzyme'
-import { RESPONSE_DEFAULT } from '../../../clients/SmalldataClient.fixture'
+import { RESPONSE_DEFAULT } from '../../../clients/SmalldataClient.mock'
 
 describe('OccurrenceForm', () => {
   const originalError = console.error

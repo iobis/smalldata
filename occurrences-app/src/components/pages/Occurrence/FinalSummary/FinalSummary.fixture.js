@@ -1,5 +1,5 @@
 import * as SmalldataClient from '../../../../clients/SmalldataClient'
-import * as SmalldataClientFixture from '../../../../clients/SmalldataClient.fixture'
+import * as SmalldataClientFixture from '../../../../clients/SmalldataClient.mock'
 import FinalSummary from './FinalSummary'
 
 export default [{

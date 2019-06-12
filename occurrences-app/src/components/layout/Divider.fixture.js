@@ -3,7 +3,7 @@ import React from 'react'
 
 export default {
   component: props => (
-    <div style={{ 'padding-top': '1rem' }}>
+    <div style={{ paddingTop: '1rem' }}>
       <Divider {...props}/>
     </div>
   ),
