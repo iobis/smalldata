@@ -33,6 +33,17 @@ export function getOccurrenceMock() {
 
 export async function postOccurrence({ occurence }) {
   const userRef = 'ovZTtaOJZ98xDDY'
+  const emof = occurence.measurements.map(measurment => ({
+    tdwg:  {
+      measurementType:  measurment.type,
+      measurementUnit:  measurment.unit.toLowerCase(),
+      measurementValue: measurment.value
+    },
+    iobis: {
+      measurementTypeID: 'to-be-added',
+      measurementUnitID: 'to-be-added'
+    }
+  }))
   const occurrence = {
     core:       'occurrence',
     occurrence: [{
@@ -69,12 +80,7 @@ export async function postOccurrence({ occurence }) {
         references: occurence.observationData.references.join(', ')
       }
     }],
-    emof:       [{
-      purl:  {},
-      iobis: {}
-    }, {
-      iobis: {}
-    }]
+    emof
   }
   const url = `/api/dwca/${occurence.dataset.id}/user/${userRef}/records`
   return await fetch(url, {

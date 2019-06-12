@@ -65,7 +65,11 @@ describe('SmalldataClient', () => {
           identificationQualifier: 'some identification qualifier',
           identificationRemarks:   'some identification remarks',
           references:              ['http://www.google.com', 'https://clojure.org/']
-        }
+        },
+        measurements:    [
+          { type: 'Pressure', unit: 'Decibars', value: '10' },
+          { type: 'Pressure', unit: 'Decibars', value: '50' }
+        ]
       }
     })
 
@@ -106,10 +110,25 @@ describe('SmalldataClient', () => {
         }
       }],
       emof:       [{
-        purl:  {},
-        iobis: {}
+        tdwg:  {
+          measurementType:  'Pressure',
+          measurementUnit:  'decibars',
+          measurementValue: '10'
+        },
+        iobis: {
+          measurementTypeID: 'to-be-added',
+          measurementUnitID: 'to-be-added'
+        }
       }, {
-        iobis: {}
+        tdwg:  {
+          measurementType:  'Pressure',
+          measurementUnit:  'decibars',
+          measurementValue: '50'
+        },
+        iobis: {
+          measurementTypeID: 'to-be-added',
+          measurementUnitID: 'to-be-added'
+        }
       }]
     })
   })
