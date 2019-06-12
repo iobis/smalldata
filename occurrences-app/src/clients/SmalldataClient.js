@@ -29,11 +29,15 @@ export function getOccurrenceMock() {
   }]
 }
 
-export async function postOccurrence({ datasetRef, userRef }) {
+export async function postOccurrence({ occurence }) {
+  const userRef = 'ovZTtaOJZ98xDDY'
   const occurrence = {
     core:       'occurrence',
     occurrence: [{
-      iobis: {}
+      tdwg: {
+        datasetID:   occurence.dataset.id,
+        datasetName: occurence.dataset.title.value
+      }
     }],
     emof:       [{
       purl:  {},
@@ -42,7 +46,7 @@ export async function postOccurrence({ datasetRef, userRef }) {
       iobis: {}
     }]
   }
-  const url = `/api/dwca/${datasetRef}/user/${userRef}/records`
+  const url = `/api/dwca/${occurence.dataset.id}/user/${userRef}/records`
   return await fetch(url, {
     method:  'POST',
     headers: {
