@@ -2,9 +2,8 @@
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import React, { useContext, useRef, useState } from 'react'
-import { AuthContext } from '@smalldata/dwca-lib'
+import { AuthContext, useOnClickOutside } from '@smalldata/dwca-lib'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { hooks } from '@smalldata/dwca-lib'
 import { Link, NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
@@ -14,7 +13,7 @@ export default function Navbar() {
   const [navbarMenuActive, setNavbarMenuActive] = useState(false)
   const menuRef = useRef()
   const hideNavbarMenu = () => setNavbarMenuActive(false)
-  hooks.useOnClickOutside(menuRef, hideNavbarMenu)
+  useOnClickOutside(menuRef, hideNavbarMenu)
 
   return (
     <nav aria-label="main navigation" className="navbar is-info" ref={menuRef} role="navigation">

@@ -1,4 +1,4 @@
-import * as hooks from './hooks/hooks'
+import { useOnClickOutside, useDebounce } from './hooks/hooks'
 import { AuthContext, AuthProvider } from './context/AuthContext'
 
 function log(name) {
@@ -8,6 +8,7 @@ function log(name) {
 export {
   AuthContext,
   AuthProvider,
-  hooks,
+  useOnClickOutside,
+  useDebounce,
   log
 }

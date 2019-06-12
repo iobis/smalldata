@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import React, { useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { hooks } from '@smalldata/dwca-lib'
+import { useOnClickOutside } from '@smalldata/dwca-lib'
 
 export default function Dropdown({ onChange, options, value }) {
   const ref = useRef()
@@ -16,7 +16,7 @@ export default function Dropdown({ onChange, options, value }) {
     setActive(false)
   }
 
-  hooks.useOnClickOutside(ref, hideOptions)
+  useOnClickOutside(ref, hideOptions)
 
   return (
     <div className={classNames('dropdown', { 'is-active': active })} onClick={showOptions} ref={ref}>

@@ -7,7 +7,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import shadowUrlUrl from 'leaflet/dist/images/marker-shadow.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
-import { hooks } from '@smalldata/dwca-lib'
+import { useDebounce } from '@smalldata/dwca-lib'
 import { useTranslation } from 'react-i18next'
 
 // This part of code relates to issue with react-leaflet. Please update the code when issues is fixed. Refer
@@ -43,7 +43,7 @@ export default function LocationPicker({ onChange }) {
     onChange({ latitude, longitude })
   }
 
-  const debouncedSearch = hooks.useDebounce(searchString, 500)
+  const debouncedSearch = useDebounce(searchString, 500)
 
   useEffect(() => {
     const fetchSuggestions = async() => {

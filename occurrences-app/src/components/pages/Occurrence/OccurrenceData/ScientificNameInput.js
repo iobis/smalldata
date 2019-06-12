@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import React, { useEffect, useState, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { hooks } from '@smalldata/dwca-lib'
+import { useDebounce, useOnClickOutside } from '@smalldata/dwca-lib'
 import { useTranslation } from 'react-i18next'
 
 export default function ScientificNameInput({ scientificName, onChange }) {
@@ -17,11 +17,11 @@ export default function ScientificNameInput({ scientificName, onChange }) {
   const [dropdownActive, setDropdownActive] = useState(false)
   const hideDropdownOptions = () => setDropdownActive(false)
   const showDropdownOption = () => {if (dropdownActive === false) setDropdownActive(true)}
-  const debouncedName = hooks.useDebounce(name, 500)
+  const debouncedName = useDebounce(name, 500)
   const isRecordWithName = (record, name) => (record.scientificname || '').trim().toLowerCase() === (name || '').trim().toLowerCase()
   const findRecordWithName = (records, name) => records.find(record => isRecordWithName(record, name))
 
-  hooks.useOnClickOutside(ref, hideDropdownOptions)
+  useOnClickOutside(ref, hideDropdownOptions)
 
   useEffect(() => {
     const getByName = async() => {
