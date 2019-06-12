@@ -16,6 +16,8 @@ class RouterConfig {
     Map.entry("getOneDataset", new OperationHandlers(DatasetsHandler::fetch)),
     Map.entry("getUserRecords", new OperationHandlers(DwcaRecordsHandler::getForUser)),
     Map.entry("getUsers", new OperationHandlers(UsersHandler::getUsers)),
+    Map.entry("postUser", new OperationHandlers(UsersHandler::postUser)),
+    Map.entry("putUser", new OperationHandlers(UsersHandler::putUser)),
     Map.entry("login", new OperationHandlers(LoginHandler::login)),
     Map.entry("getStatus", new OperationHandlers(StatusHandler::status)),
     Map.entry("getRss", new OperationHandlers(RssHandler::fetch)),

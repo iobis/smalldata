@@ -10,6 +10,8 @@ import io.vertx.ext.mongo.MongoClient;
 import java.util.Map;
 import java.util.function.BiConsumer;
 
+import static org.pmw.tinylog.Logger.info;
+
 class UserHandler {
 
   private final DbUserOperation dbOperation;
@@ -18,10 +20,19 @@ class UserHandler {
   UserHandler(MongoClient mongoClient) {
     this.dbOperation = new DbUserOperation(mongoClient);
     actionMap = ImmutableMap.of(
-      "find", (message, body) -> {
-        var usersFuture = dbOperation.findUsers(body.getJsonObject("query", new JsonObject()));
-        usersFuture.setHandler(ar -> message.reply(new JsonArray(ar.result())));
-      });
+      "find", (message, body) -> dbOperation
+        .findUsers(body.getJsonObject("query", new JsonObject()))
+        .setHandler(ar -> message.reply(new JsonArray(ar.result()))),
+      "insert", (message, body) -> dbOperation
+        .insertUser(body.getJsonObject("user"))
+        .setHandler(ar -> message.reply(ar.result())),
+      "replace", (message, body) -> dbOperation
+        .updateUser(body.getString("userRef"), body.getJsonObject("user"))
+        .setHandler(ar -> {
+          info(ar.result());
+          message.reply(ar.result());
+        })
+    );
   }
 
   void handleAction(Message<JsonObject> message) {

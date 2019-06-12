@@ -2,12 +2,14 @@ package org.obis.smalldata.dbcontroller;
 
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+import io.vertx.ext.mongo.IndexOptions;
 import io.vertx.ext.mongo.MongoClient;
 import org.obis.smalldata.util.BulkOperationUtil;
 import org.obis.smalldata.util.Collections;
 import org.obis.smalldata.util.DbUtils;
 import org.obis.util.file.IoFile;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -49,15 +51,21 @@ public class DbInitializer {
       new String[]{Collections.DATASETRECORDS.dbName(), "dwcRecord.id"},
       new String[]{Collections.DATASETRECORDS.dbName(), "dataset_ref"},
       new String[]{Collections.USERS.dbName(), "dataset_refs"},
-      new String[]{Collections.DATASETS.dbName(), "_ref"})
-      .forEach(entry ->
-        client.createIndex(
+      new String[]{Collections.USERS.dbName(), "emailAddress", "unique"},
+      new String[]{Collections.DATASETS.dbName(), "_ref", "unique"})
+      .forEach(entry -> {
+        var options = new IndexOptions().background(true);
+        if (Arrays.asList(entry).contains("unique")) {
+          options.unique(true);
+        }
+        client.createIndexWithOptions(
           entry[0],
           new JsonObject()
             .put(entry[1], 1)
-            .put("collation", DbUtils.INSTANCE.collation)
-            .put("background", true),
-          x -> info("created index '{}.{}'", entry[0], entry[1])));
+            .put("collation", DbUtils.INSTANCE.collation),
+          options,
+          x -> info("created index '{}.{}'", entry[0], entry[1]));
+      });
   }
 
   private void addMockData() {

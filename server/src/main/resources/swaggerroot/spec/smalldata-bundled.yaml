@@ -302,13 +302,82 @@ paths:
           description: invalid input
   /api/users:
     get:
-      summary: get all user profiles
+      summary: get user profiles (filtered by query params)
       operationId: getUsers
+      parameters:
+        - in: query
+          name: emailAddress
+          required: false
+          schema:
+            type: string
+          description: user primary email address
       tags:
         - users
       responses:
         '200':
           description: list of user profiles
+          content:
+            application/json: {}
+    post:
+      summary: post a new user
+      operationId: postUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                emailAddress:
+                  type: string
+                  example: my.name@organization.ours
+                datasetRefs:
+                  type: array
+                  items:
+                    type: string
+                  example:
+                    - ntDOtUc7XsRrIus
+                    - NnqVLwIyPn-nRkc
+      tags:
+        - users
+      responses:
+        '200':
+          description: new user profile
+          content:
+            application/json: {}
+  '/api/users/{userRef}':
+    put:
+      summary: update a user profile
+      operationId: putUser
+      parameters:
+        - name: userRef
+          in: path
+          description: ref of the user
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                emailAddress:
+                  type: string
+                  example: my.name@organization.ours
+                datasetRefs:
+                  type: array
+                  items:
+                    type: string
+                  example:
+                    - ntDOtUc7XsRrIus
+                    - NnqVLwIyPn-nRkc
+      tags:
+        - users
+      responses:
+        '200':
+          description: new user profile
           content:
             application/json: {}
   '/api/dwca/{datasetRef}':
