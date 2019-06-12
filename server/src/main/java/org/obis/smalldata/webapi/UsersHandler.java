@@ -15,4 +15,6 @@ class UsersHandler {
       ar -> context.response().end(ar.result().body().encode()));
   }
 
+  private UsersHandler() {}
+
 }

@@ -31,7 +31,7 @@ public class GenerateOpenApi {
   private GenerateOpenApi(String targetPath) {
     this.targetPath = targetPath;
     NS_MAPPER.put("purl", "http://purl.org/dc/terms/");
-    NS_MAPPER.put("dwcg", "http://rs.tdwg.org/dwc/terms/");
+    NS_MAPPER.put("tdwg", "http://rs.tdwg.org/dwc/terms/");
     NS_MAPPER.put("obis", "http://rs.iobis.org/obis/terms/");
   }
 

@@ -24,6 +24,9 @@ public class UserComponent extends AbstractVerticle {
     var bulkinessCalculator = new BulkinessCalculator(bulkinessConfig.getDouble("halfTimeInDays"));
     bulkinessCalculator.decay(1, Instant.now());
 
+    var userHandler = new UserHandler(mongoClient);
+
+    vertx.eventBus().localConsumer("users", userHandler::handleAction);
     vertx.eventBus().localConsumer("users.exists", this::handleExists);
 
     startFuture.complete();
