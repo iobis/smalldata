@@ -29,7 +29,7 @@ export function getOccurrenceMock() {
   }]
 }
 
-export async function createOccurrence({ datasetRef, userRef }) {
+export async function postOccurrence({ datasetRef, userRef }) {
   const occurrence = {
     core:       'occurrence',
     occurrence: [{
@@ -43,4 +43,6 @@ export async function createOccurrence({ datasetRef, userRef }) {
     }]
   }
   const url = `/api/dwca/${datasetRef}/user/${userRef}/records`
+  return await fetch(url)
+    .then(response => response.json())
 }

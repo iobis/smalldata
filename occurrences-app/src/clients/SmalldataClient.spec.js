@@ -1,7 +1,7 @@
-import * as ServerClient from './SmalldataClient'
+import * as SmalldataClient from './SmalldataClient'
 import { RESPONSE_DEFAULT } from './SmalldataClient.mock'
 
-describe('ServerClient', () => {
+describe('SmalldataClient', () => {
   beforeEach(() => {
     global.fetch = jest.fn().mockImplementation(() =>
       new Promise((resolve) => {
@@ -15,15 +15,24 @@ describe('ServerClient', () => {
   })
 
   it('getDatasets()', async() => {
-    await ServerClient.getDatasets()
+    await SmalldataClient.getDatasets()
     expect(fetch).toHaveBeenCalledTimes(1)
     expect(fetch).toBeCalledWith('/api/datasets')
   })
 
   it('datasetTitleOf(dataset)', () => {
-    expect(ServerClient.datasetTitleOf(RESPONSE_DEFAULT[0]))
+    expect(SmalldataClient.datasetTitleOf(RESPONSE_DEFAULT[0]))
       .toEqual('Caprellids polulation structure in Usujiri, Hokkaido, Japan')
-    expect(ServerClient.datasetTitleOf(null))
+    expect(SmalldataClient.datasetTitleOf(null))
       .toEqual('')
+  })
+
+  it('postOccurrence()', async() => {
+    await SmalldataClient.postOccurrence({
+      datasetRef: 'NnqVLwIyPn-nRkc-dataset-ref',
+      userRef:    'ovZTtaOJZ98xDDY-user-ref'
+    })
+    expect(fetch).toHaveBeenCalledTimes(1)
+    expect(fetch).toBeCalledWith('/api/dwca/NnqVLwIyPn-nRkc-dataset-ref/user/ovZTtaOJZ98xDDY-user-ref/records')
   })
 })
