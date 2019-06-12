@@ -32,7 +32,21 @@ describe('SmalldataClient', () => {
       datasetRef: 'NnqVLwIyPn-nRkc-dataset-ref',
       userRef:    'ovZTtaOJZ98xDDY-user-ref'
     })
+
     expect(fetch).toHaveBeenCalledTimes(1)
-    expect(fetch).toBeCalledWith('/api/dwca/NnqVLwIyPn-nRkc-dataset-ref/user/ovZTtaOJZ98xDDY-user-ref/records')
+    expect(fetch.mock.calls[0][0]).toBe('/api/dwca/NnqVLwIyPn-nRkc-dataset-ref/user/ovZTtaOJZ98xDDY-user-ref/records')
+    expect(fetch.mock.calls[0][1].method).toBe('POST')
+    expect(JSON.parse(fetch.mock.calls[0][1].body)).toEqual({
+      core:       'occurrence',
+      occurrence: [{
+        iobis: {}
+      }],
+      emof:       [{
+        purl:  {},
+        iobis: {}
+      }, {
+        iobis: {}
+      }]
+    })
   })
 })

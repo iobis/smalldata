@@ -43,6 +43,11 @@ export async function postOccurrence({ datasetRef, userRef }) {
     }]
   }
   const url = `/api/dwca/${datasetRef}/user/${userRef}/records`
-  return await fetch(url)
-    .then(response => response.json())
+  return await fetch(url, {
+    method:  'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body:    JSON.stringify(occurrence)
+  }).then(response => response.json())
 }
