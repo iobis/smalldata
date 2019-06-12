@@ -214,6 +214,13 @@ paths:
     get:
       summary: get all user profiles
       operationId: getUsers
+      parameters:
+        - in: query
+          name: emailAddress
+          required: false
+          schema:
+            type: string
+          description: user primary email address
       tags:
         - users
       responses:

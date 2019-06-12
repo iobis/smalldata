@@ -70,4 +70,30 @@ public class UserHandlerTest {
       });
   }
 
+  @Test
+  @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
+  void findUserByEmail(Vertx vertx, VertxTestContext testContext) {
+    vertx.eventBus().<JsonArray>send(
+      "users",
+      new JsonObject(Map.of(KEY_ACTION, "find",
+      "query", new JsonObject().put("emailAddress", "some.user@domain.org"))),
+      ar -> {
+        if (ar.succeeded()) {
+          JsonArray records = ar.result().body();
+          assertThat(records).hasSize(1);
+          JsonObject userjson = records.stream()
+            .map(JsonObject.class::cast)
+            .filter(user -> user.getString("_ref").equals("ovZTtaOJZ98xDDY"))
+            .findFirst()
+            .get();
+          assertThat(userjson.getJsonArray("dataset_refs")).hasSize(4);
+          assertThat(userjson.getJsonArray("dataset_refs"))
+            .containsExactly("wEaBfmFyQhYCdsk", "ntDOtUc7XsRrIus", "PoJnGNMaxsupE4w", "NnqVLwIyPn-nRkc");
+          testContext.completeNow();
+        } else {
+          testContext.failNow(ar.cause());
+        }
+      });
+  }
+
 }
