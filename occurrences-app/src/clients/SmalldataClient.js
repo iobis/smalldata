@@ -32,10 +32,6 @@ export function getOccurrenceMock() {
   }]
 }
 
-const purlUrl = 'http://purl.org/dc/terms/'
-const tdwgUrl = 'http://rs.tdwg.org/dwc/terms/'
-const iobisUrl = 'http://rs.iobis.org/obis/terms/'
-
 export async function postOccurrence({ occurence }) {
   const userRef = 'ovZTtaOJZ98xDDY'
   const emof = occurence.measurements.map(measurment => {
@@ -52,21 +48,7 @@ export async function postOccurrence({ occurence }) {
       }
     }
   })
-  const darwinCoreFields = occurence.darwinCoreFields.reduce((acc, { name, value }) => {
-    if (name.startsWith(purlUrl)) {
-      acc.purl[name.substring(purlUrl.length)] = value
-    } else if (name.startsWith(tdwgUrl)) {
-      acc.tdwg[name.substring(tdwgUrl.length)] = value
-    } else if (name.startsWith(iobisUrl)) {
-      acc.iobis[name.substring(iobisUrl.length)] = value
-    }
-    return acc
-  }, {
-    purl:  {},
-    tdwg:  {},
-    iobis: {}
-  })
-
+  const darwinCoreFields = mapDarwinCoreFieldsToRequest(occurence.darwinCoreFields)
   const occurrence = {
     core:       'occurrence',
     occurrence: [{
@@ -116,4 +98,25 @@ export async function postOccurrence({ occurence }) {
     },
     body:    JSON.stringify(occurrence)
   }).then(response => response.json())
+}
+
+function mapDarwinCoreFieldsToRequest(darwinCoreFields) {
+  const purlUrl = 'http://purl.org/dc/terms/'
+  const tdwgUrl = 'http://rs.tdwg.org/dwc/terms/'
+  const iobisUrl = 'http://rs.iobis.org/obis/terms/'
+
+  return darwinCoreFields.reduce((acc, { name, value }) => {
+    if (name.startsWith(purlUrl)) {
+      acc.purl[name.substring(purlUrl.length)] = value
+    } else if (name.startsWith(tdwgUrl)) {
+      acc.tdwg[name.substring(tdwgUrl.length)] = value
+    } else if (name.startsWith(iobisUrl)) {
+      acc.iobis[name.substring(iobisUrl.length)] = value
+    }
+    return acc
+  }, {
+    purl:  {},
+    tdwg:  {},
+    iobis: {}
+  })
 }
