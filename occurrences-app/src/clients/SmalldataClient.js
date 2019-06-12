@@ -32,9 +32,9 @@ export function getOccurrenceMock() {
   }]
 }
 
-export async function postOccurrence({ occurence }) {
+export async function postOccurrence({ occurrence }) {
   const userRef = 'ovZTtaOJZ98xDDY'
-  const emof = occurence.measurements.map(measurment => {
+  const emof = occurrence.measurements.map(measurment => {
     const { typeId, unitId } = findTypeAndUnitIdByNames(measurment.type, measurment.unit)
     return {
       tdwg:  {
@@ -48,53 +48,53 @@ export async function postOccurrence({ occurence }) {
       }
     }
   })
-  const darwinCoreFields = mapDarwinCoreFieldsToRequest(occurence.darwinCoreFields)
-  const occurrence = {
+  const darwinCoreFields = mapDarwinCoreFieldsToRequest(occurrence.darwinCoreFields)
+  const requestBody = {
     core:       'occurrence',
     occurrence: [{
       tdwg:  {
-        basisOfRecord:    occurence.occurrenceData.basisOfRecord.charAt(0).toUpperCase() + occurence.occurrenceData.basisOfRecord.slice(1),
-        eventDate:        format(occurence.occurrenceData.beginDate, 'YYYY-MM-DD') + '/' + format(occurence.occurrenceData.endDate, 'YYYY-MM-DD'),
-        lifestage:        occurence.occurrenceData.lifeStage,
-        occurrenceStatus: occurence.occurrenceData.occurrenceStatus,
-        scientificName:   occurence.occurrenceData.scientificName,
-        sex:              occurence.occurrenceData.sex,
+        basisOfRecord:    occurrence.occurrenceData.basisOfRecord.charAt(0).toUpperCase() + occurrence.occurrenceData.basisOfRecord.slice(1),
+        eventDate:        format(occurrence.occurrenceData.beginDate, 'YYYY-MM-DD') + '/' + format(occurrence.occurrenceData.endDate, 'YYYY-MM-DD'),
+        lifestage:        occurrence.occurrenceData.lifeStage,
+        occurrenceStatus: occurrence.occurrenceData.occurrenceStatus,
+        scientificName:   occurrence.occurrenceData.scientificName,
+        sex:              occurrence.occurrenceData.sex,
 
-        decimalLongitude:              occurence.locationData.decimalLongitude,
-        decimalLatitude:               occurence.locationData.decimalLatitude,
-        coordinateUncertaintyInMeters: occurence.locationData.coordinateUncertainty,
-        minimumDepthInMeters:          occurence.locationData.minimumDepth,
-        maximumDepthInMeters:          occurence.locationData.maximumDepth,
-        verbatimCoordinates:           occurence.locationData.verbatimCoordinates,
-        verbatimDepth:                 occurence.locationData.verbatimDepth,
+        decimalLongitude:              occurrence.locationData.decimalLongitude,
+        decimalLatitude:               occurrence.locationData.decimalLatitude,
+        coordinateUncertaintyInMeters: occurrence.locationData.coordinateUncertainty,
+        minimumDepthInMeters:          occurrence.locationData.minimumDepth,
+        maximumDepthInMeters:          occurrence.locationData.maximumDepth,
+        verbatimCoordinates:           occurrence.locationData.verbatimCoordinates,
+        verbatimDepth:                 occurrence.locationData.verbatimDepth,
 
-        institutionCode:         occurence.observationData.institutionCode,
-        collectionCode:          occurence.observationData.collectionCode,
-        fieldNumber:             occurence.observationData.fieldNumber,
-        catalogNumber:           occurence.observationData.catalogNumber,
-        recordNumber:            occurence.observationData.recordNumber,
-        identifiedBy:            occurence.observationData.identifiedBy.join(', '),
-        recordedBy:              occurence.observationData.recordedBy.join(', '),
-        identificationQualifier: occurence.observationData.identificationQualifier,
-        identificationRemarks:   occurence.observationData.identificationRemarks,
+        institutionCode:         occurrence.observationData.institutionCode,
+        collectionCode:          occurrence.observationData.collectionCode,
+        fieldNumber:             occurrence.observationData.fieldNumber,
+        catalogNumber:           occurrence.observationData.catalogNumber,
+        recordNumber:            occurrence.observationData.recordNumber,
+        identifiedBy:            occurrence.observationData.identifiedBy.join(', '),
+        recordedBy:              occurrence.observationData.recordedBy.join(', '),
+        identificationQualifier: occurrence.observationData.identificationQualifier,
+        identificationRemarks:   occurrence.observationData.identificationRemarks,
 
         ...darwinCoreFields.tdwg
       },
       purl:  {
-        references: occurence.observationData.references.join(', '),
+        references: occurrence.observationData.references.join(', '),
         ...darwinCoreFields.purl
       },
       iobis: darwinCoreFields.iobis
     }],
     emof
   }
-  const url = `/api/dwca/${occurence.dataset.id}/user/${userRef}/records`
+  const url = `/api/dwca/${occurrence.dataset.id}/user/${userRef}/records`
   return await fetch(url, {
     method:  'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body:    JSON.stringify(occurrence)
+    body:    JSON.stringify(requestBody)
   }).then(response => response.json())
 }
 

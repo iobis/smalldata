@@ -29,7 +29,7 @@ describe('SmalldataClient', () => {
 
   it('postOccurrence()', async() => {
     await SmalldataClient.postOccurrence({
-      occurence: {
+      occurrence: {
         dataset:          {
           id:    'wEaBfmFyQhYCdsk',
           title: {
@@ -85,7 +85,7 @@ describe('SmalldataClient', () => {
     expect(JSON.parse(fetch.mock.calls[0][1].body)).toEqual({
       core:       'occurrence',
       occurrence: [{
-        tdwg: {
+        tdwg:  {
           basisOfRecord:    'HumanObservation',
           eventDate:        '2019-04-29/2019-04-30',
           lifestage:        'adult',
@@ -113,7 +113,7 @@ describe('SmalldataClient', () => {
 
           collectionID: 'urn:lsid:biocol.org:col:34818'
         },
-        purl: {
+        purl:  {
           references: 'http://www.google.com, https://clojure.org/',
           language:   'es'
         },
