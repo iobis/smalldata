@@ -39,7 +39,7 @@ const AppDiv = () => {
     <div className="App">
       <Navbar/>
       <Switch>
-        <ProtectedRoute component={InputDataPage} exact path="/"/>
+        <ProtectedRoute component={ManageDatasetPage} exact path="/"/>
         <ProtectedRoute component={InputDataPage} exact path="/input-data"/>
         <ProtectedRoute component={ManageDatasetPage} exact path="/manage-dataset"/>
         <ProtectedRoute component={ManageUsersPage} exact path="/manage-users"/>
