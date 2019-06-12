@@ -1,5 +1,5 @@
 import * as ServerClient from './SmalldataClient'
-import { RESPONSE_DEFAULT } from './SmalldataClient.fixture'
+import { RESPONSE_DEFAULT } from './SmalldataClient.mock'
 
 describe('ServerClient', () => {
   beforeEach(() => {

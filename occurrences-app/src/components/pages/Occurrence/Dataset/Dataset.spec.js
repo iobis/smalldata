@@ -1,6 +1,6 @@
 import React from 'react'
 import Dataset from './Dataset'
-import { RESPONSE_DEFAULT } from '../../../../clients/SmalldataClient.fixture'
+import { RESPONSE_DEFAULT } from '../../../../clients/SmalldataClient.mock'
 import { renameRefToId } from '../../../../clients/SmalldataClient'
 import { mount } from 'enzyme'
 
