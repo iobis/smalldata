@@ -30,13 +30,13 @@ describe('SmalldataClient', () => {
   it('postOccurrence()', async() => {
     await SmalldataClient.postOccurrence({
       occurence: {
-        dataset:         {
+        dataset:          {
           id:    'wEaBfmFyQhYCdsk',
           title: {
             value: 'Caprellids polulation structure in Usujiri, Hokkaido, Japan'
           }
         },
-        occurrenceData:  {
+        occurrenceData:   {
           basisOfRecord:    'humanObservation',
           beginDate:        Date.UTC(2019, 3, 29),
           endDate:          Date.UTC(2019, 3, 30),
@@ -45,7 +45,7 @@ describe('SmalldataClient', () => {
           scientificName:   'ala abra',
           sex:              'male'
         },
-        locationData:    {
+        locationData:     {
           decimalLongitude:      2.345456,
           decimalLatitude:       51.3354656,
           coordinateUncertainty: 1,
@@ -54,7 +54,7 @@ describe('SmalldataClient', () => {
           verbatimCoordinates:   '41 05 54S 121 05 34W',
           verbatimDepth:         '100 - 200 m'
         },
-        observationData: {
+        observationData:  {
           institutionCode:         'IBSS',
           collectionCode:          'R/V N. Danilevskiy 1935 Azov Sea benthos data',
           fieldNumber:             '557',
@@ -66,9 +66,15 @@ describe('SmalldataClient', () => {
           identificationRemarks:   'some identification remarks',
           references:              ['http://www.google.com', 'https://clojure.org/']
         },
-        measurements:    [
+        measurements:     [
           { type: 'Pressure', unit: 'Decibars', value: '10' },
           { type: 'Salinity', unit: 'PSU (dimensionless)', value: '50' }
+        ],
+        darwinCoreFields: [
+          { name: 'http://purl.org/dc/terms/language', value: 'es' },
+          { name: 'http://rs.tdwg.org/dwc/terms/collectionID', value: 'urn:lsid:biocol.org:col:34818' },
+          { name: 'http://rs.iobis.org/obis/terms/measurementUnitID', value: 'measurementUnitID value' },
+          { name: 'not supported name', value: 'not supported key value' }
         ]
       }
     })
@@ -80,13 +86,15 @@ describe('SmalldataClient', () => {
       core:       'occurrence',
       occurrence: [{
         tdwg: {
-          datasetName:                   'Caprellids polulation structure in Usujiri, Hokkaido, Japan',
-          basisOfRecord:                 'HumanObservation',
-          eventDate:                     '2019-04-29/2019-04-30',
-          lifestage:                     'adult',
-          occurrenceStatus:              'present',
-          scientificName:                'ala abra',
-          sex:                           'male',
+          datasetName: 'Caprellids polulation structure in Usujiri, Hokkaido, Japan',
+
+          basisOfRecord:    'HumanObservation',
+          eventDate:        '2019-04-29/2019-04-30',
+          lifestage:        'adult',
+          occurrenceStatus: 'present',
+          scientificName:   'ala abra',
+          sex:              'male',
+
           decimalLongitude:              2.345456,
           decimalLatitude:               51.3354656,
           coordinateUncertaintyInMeters: 1,
@@ -94,18 +102,25 @@ describe('SmalldataClient', () => {
           maximumDepthInMeters:          30,
           verbatimCoordinates:           '41 05 54S 121 05 34W',
           verbatimDepth:                 '100 - 200 m',
-          institutionCode:               'IBSS',
-          collectionCode:                'R/V N. Danilevskiy 1935 Azov Sea benthos data',
-          fieldNumber:                   '557',
-          catalogNumber:                 'IBSS_Benthos_1935_1331',
-          recordNumber:                  '123456',
-          identifiedBy:                  'Indiana Jones',
-          recordedBy:                    'Harrison Ford, Indiana Jones',
-          identificationQualifier:       'some identification qualifier',
-          identificationRemarks:         'some identification remarks'
+
+          institutionCode:         'IBSS',
+          collectionCode:          'R/V N. Danilevskiy 1935 Azov Sea benthos data',
+          fieldNumber:             '557',
+          catalogNumber:           'IBSS_Benthos_1935_1331',
+          recordNumber:            '123456',
+          identifiedBy:            'Indiana Jones',
+          recordedBy:              'Harrison Ford, Indiana Jones',
+          identificationQualifier: 'some identification qualifier',
+          identificationRemarks:   'some identification remarks',
+
+          collectionID: 'urn:lsid:biocol.org:col:34818'
         },
         purl: {
-          references: 'http://www.google.com, https://clojure.org/'
+          references: 'http://www.google.com, https://clojure.org/',
+          language:   'es'
+        },
+        iobis: {
+          measurementUnitID: 'measurementUnitID value'
         }
       }],
       emof:       [{

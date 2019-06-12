@@ -32,6 +32,10 @@ export function getOccurrenceMock() {
   }]
 }
 
+const purlUrl = 'http://purl.org/dc/terms/'
+const tdwgUrl = 'http://rs.tdwg.org/dwc/terms/'
+const iobisUrl = 'http://rs.iobis.org/obis/terms/'
+
 export async function postOccurrence({ occurence }) {
   const userRef = 'ovZTtaOJZ98xDDY'
   const emof = occurence.measurements.map(measurment => {
@@ -48,10 +52,25 @@ export async function postOccurrence({ occurence }) {
       }
     }
   })
+  const darwinCoreFields = occurence.darwinCoreFields.reduce((acc, { name, value }) => {
+    if (name.startsWith(purlUrl)) {
+      acc.purl[name.substring(purlUrl.length)] = value
+    } else if (name.startsWith(tdwgUrl)) {
+      acc.tdwg[name.substring(tdwgUrl.length)] = value
+    } else if (name.startsWith(iobisUrl)) {
+      acc.iobis[name.substring(iobisUrl.length)] = value
+    }
+    return acc
+  }, {
+    purl:  {},
+    tdwg:  {},
+    iobis: {}
+  })
+
   const occurrence = {
     core:       'occurrence',
     occurrence: [{
-      tdwg: {
+      tdwg:  {
         datasetName: occurence.dataset.title.value,
 
         basisOfRecord:    occurence.occurrenceData.basisOfRecord.charAt(0).toUpperCase() + occurence.occurrenceData.basisOfRecord.slice(1),
@@ -77,11 +96,15 @@ export async function postOccurrence({ occurence }) {
         identifiedBy:            occurence.observationData.identifiedBy.join(', '),
         recordedBy:              occurence.observationData.recordedBy.join(', '),
         identificationQualifier: occurence.observationData.identificationQualifier,
-        identificationRemarks:   occurence.observationData.identificationRemarks
+        identificationRemarks:   occurence.observationData.identificationRemarks,
+
+        ...darwinCoreFields.tdwg
       },
-      purl: {
-        references: occurence.observationData.references.join(', ')
-      }
+      purl:  {
+        references: occurence.observationData.references.join(', '),
+        ...darwinCoreFields.purl
+      },
+      iobis: darwinCoreFields.iobis
     }],
     emof
   }
