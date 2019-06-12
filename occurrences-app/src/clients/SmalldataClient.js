@@ -53,8 +53,6 @@ export async function postOccurrence({ occurence }) {
     core:       'occurrence',
     occurrence: [{
       tdwg:  {
-        datasetName: occurence.dataset.title.value,
-
         basisOfRecord:    occurence.occurrenceData.basisOfRecord.charAt(0).toUpperCase() + occurence.occurrenceData.basisOfRecord.slice(1),
         eventDate:        format(occurence.occurrenceData.beginDate, 'YYYY-MM-DD') + '/' + format(occurence.occurrenceData.endDate, 'YYYY-MM-DD'),
         lifestage:        occurence.occurrenceData.lifeStage,

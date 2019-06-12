@@ -86,8 +86,6 @@ describe('SmalldataClient', () => {
       core:       'occurrence',
       occurrence: [{
         tdwg: {
-          datasetName: 'Caprellids polulation structure in Usujiri, Hokkaido, Japan',
-
           basisOfRecord:    'HumanObservation',
           eventDate:        '2019-04-29/2019-04-30',
           lifestage:        'adult',
