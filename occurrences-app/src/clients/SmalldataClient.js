@@ -48,7 +48,6 @@ export async function postOccurrence({ occurence }) {
     core:       'occurrence',
     occurrence: [{
       tdwg: {
-        datasetID:   occurence.dataset.id,
         datasetName: occurence.dataset.title.value,
 
         basisOfRecord:    occurence.occurrenceData.basisOfRecord.charAt(0).toUpperCase() + occurence.occurrenceData.basisOfRecord.slice(1),
