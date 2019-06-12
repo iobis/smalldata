@@ -1,0 +1,12 @@
+.divider {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid $grey-lighter;
+  line-height: 0.1em;
+
+  span {
+    background: $white;
+    padding: 0 10px;
+  }
+}
+

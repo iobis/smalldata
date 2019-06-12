@@ -1,8 +1,8 @@
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useOnClickOutside } from '../../hooks/hooks'
 import React, { useRef, useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useOnClickOutside } from '@smalldata/dwca-lib'
 
 export default function Dropdown({ onChange, options, value }) {
   const ref = useRef()
