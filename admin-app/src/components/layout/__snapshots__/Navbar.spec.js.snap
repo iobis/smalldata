@@ -687,37 +687,6 @@ exports[`Navbar renders correctly when logged in 1`] = `
                 </Route>
               </NavLink>
             </NavbarItem>
-            <NavbarItem
-              onClick={[Function]}
-              to="/input-data"
-            >
-              <NavLink
-                activeClassName="is-active"
-                className="navbar-item"
-                onClick={[Function]}
-                to="/input-data"
-              >
-                <Route
-                  path="\\\\/input-data"
-                >
-                  <Link
-                    aria-current={null}
-                    className="navbar-item"
-                    onClick={[Function]}
-                    to="/input-data"
-                  >
-                    <a
-                      aria-current={null}
-                      className="navbar-item"
-                      href="/input-data"
-                      onClick={[Function]}
-                    >
-                      navbar.inputData
-                    </a>
-                  </Link>
-                </Route>
-              </NavLink>
-            </NavbarItem>
           </div>
           <LoginNavItem
             loggedIn={true}
