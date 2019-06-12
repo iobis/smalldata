@@ -209,6 +209,19 @@ paths:
             application/json: {}
         400:
           description: invalid input
+
+  /api/users:
+    get:
+      summary: get all user profiles
+      operationId: getUsers
+      tags:
+        - users
+      responses:
+        200:
+          description: list of user profiles
+          content:
+            application/json: {}
+
   /api/dwca/{datasetRef}:
     get:
       summary: get dwca zip

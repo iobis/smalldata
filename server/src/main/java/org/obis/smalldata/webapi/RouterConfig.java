@@ -11,17 +11,18 @@ import java.util.function.Consumer;
 
 class RouterConfig {
 
-  private static final Map<String, OperationHandlers> HANDLERS = Map.of(
-    "getDatasets", new OperationHandlers(DatasetsHandler::fetch),
-    "getOneDataset", new OperationHandlers(DatasetsHandler::fetch),
-    "getUserRecords", new OperationHandlers(DwcaRecordsHandler::getForUser),
-    "login", new OperationHandlers(LoginHandler::login),
-    "getStatus", new OperationHandlers(StatusHandler::status),
-    "getRss", new OperationHandlers(RssHandler::fetch),
-    "getDWCA", new OperationHandlers(DwcaHandler::get),
-    "getDWCARecord", new OperationHandlers(DwcaRecordsHandler::get),
-    "postDWCARecord", new OperationHandlers(DwcaRecordsHandler::post),
-    "putDWCARecord", new OperationHandlers(DwcaRecordsHandler::put)
+  private static final Map<String, OperationHandlers> HANDLERS = Map.ofEntries(
+    Map.entry("getDatasets", new OperationHandlers(DatasetsHandler::fetch)),
+    Map.entry("getOneDataset", new OperationHandlers(DatasetsHandler::fetch)),
+    Map.entry("getUserRecords", new OperationHandlers(DwcaRecordsHandler::getForUser)),
+    Map.entry("getUsers", new OperationHandlers(UsersHandler::getUsers)),
+    Map.entry("login", new OperationHandlers(LoginHandler::login)),
+    Map.entry("getStatus", new OperationHandlers(StatusHandler::status)),
+    Map.entry("getRss", new OperationHandlers(RssHandler::fetch)),
+    Map.entry("getDWCA", new OperationHandlers(DwcaHandler::get)),
+    Map.entry("getDWCARecord", new OperationHandlers(DwcaRecordsHandler::get)),
+    Map.entry("postDWCARecord", new OperationHandlers(DwcaRecordsHandler::post)),
+    Map.entry("putDWCARecord", new OperationHandlers(DwcaRecordsHandler::put))
   );
 
   private final Consumer<Router> completionHandler;
