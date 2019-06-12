@@ -1,4 +1,5 @@
 import { format } from 'date-fns'
+import { findTypeAndUnitIdByNames } from './measurments'
 
 export async function getDatasets() {
   const response = await fetch('/api/datasets')
@@ -33,17 +34,20 @@ export function getOccurrenceMock() {
 
 export async function postOccurrence({ occurence }) {
   const userRef = 'ovZTtaOJZ98xDDY'
-  const emof = occurence.measurements.map(measurment => ({
-    tdwg:  {
-      measurementType:  measurment.type,
-      measurementUnit:  measurment.unit.toLowerCase(),
-      measurementValue: measurment.value
-    },
-    iobis: {
-      measurementTypeID: 'to-be-added',
-      measurementUnitID: 'to-be-added'
+  const emof = occurence.measurements.map(measurment => {
+    const { typeId, unitId } = findTypeAndUnitIdByNames(measurment.type, measurment.unit)
+    return {
+      tdwg:  {
+        measurementType:  measurment.type,
+        measurementUnit:  measurment.unit,
+        measurementValue: measurment.value
+      },
+      iobis: {
+        measurementTypeID: typeId,
+        measurementUnitID: unitId
+      }
     }
-  }))
+  })
   const occurrence = {
     core:       'occurrence',
     occurrence: [{

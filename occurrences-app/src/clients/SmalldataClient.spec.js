@@ -68,7 +68,7 @@ describe('SmalldataClient', () => {
         },
         measurements:    [
           { type: 'Pressure', unit: 'Decibars', value: '10' },
-          { type: 'Pressure', unit: 'Decibars', value: '50' }
+          { type: 'Salinity', unit: 'PSU (dimensionless)', value: '50' }
         ]
       }
     })
@@ -111,22 +111,22 @@ describe('SmalldataClient', () => {
       emof:       [{
         tdwg:  {
           measurementType:  'Pressure',
-          measurementUnit:  'decibars',
+          measurementUnit:  'Decibars',
           measurementValue: '10'
         },
         iobis: {
-          measurementTypeID: 'to-be-added',
-          measurementUnitID: 'to-be-added'
+          measurementTypeID: 'http://vocab.nerc.ac.uk/collection/P01/current/PRESPS02/',
+          measurementUnitID: 'http://vocab.nerc.ac.uk/collection/P06/current/UPDB/'
         }
       }, {
         tdwg:  {
-          measurementType:  'Pressure',
-          measurementUnit:  'decibars',
+          measurementType:  'Salinity',
+          measurementUnit:  'PSU (dimensionless)',
           measurementValue: '50'
         },
         iobis: {
-          measurementTypeID: 'to-be-added',
-          measurementUnitID: 'to-be-added'
+          measurementTypeID: 'http://vocab.nerc.ac.uk/collection/P01/current/PSALCU01/',
+          measurementUnitID: 'http://vocab.nerc.ac.uk/collection/P06/current/UUUU/'
         }
       }]
     })
