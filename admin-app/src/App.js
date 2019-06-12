@@ -1,9 +1,8 @@
 import './i18n/i18n'
-import HelpPage from './components/pages/HelpPage'
-import InputDataPage from './components/pages/InputDataPage'
 import LogInPage from './components/pages/LogInPage'
+import ManageDatasetPage from './components/pages/ManageDatasetPage'
+import ManageUsersPage from './components/pages/ManageUsersPage'
 import Navbar from './components/layout/Navbar'
-import OccurrenceForm from './components/pages/Occurrence/OccurrenceForm'
 import PropTypes from 'prop-types'
 import React, { useContext } from 'react'
 import { AuthContext, AuthProvider } from '@smalldata/dwca-lib'
@@ -39,10 +38,9 @@ const AppDiv = () => {
     <div className="App">
       <Navbar/>
       <Switch>
-        <ProtectedRoute component={InputDataPage} exact path="/"/>
-        <ProtectedRoute component={InputDataPage} exact path="/input-data"/>
-        <ProtectedRoute component={OccurrenceForm} exact path="/input-data/new"/>
-        <Route component={HelpPage} exact path="/help"/>
+        <ProtectedRoute component={ManageDatasetPage} exact path="/"/>
+        <ProtectedRoute component={ManageDatasetPage} exact path="/manage-dataset"/>
+        <ProtectedRoute component={ManageUsersPage} exact path="/manage-users"/>
       </Switch>
     </div>
   )

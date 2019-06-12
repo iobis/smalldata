@@ -1,10 +1,10 @@
+import * as MarineSpeciesClient from '../../../../clients/MarineSpeciesClient'
+import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import React, { useEffect, useState, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import * as MarineSpeciesClient from '../../../../clients/MarineSpeciesClient'
-import { useDebounce, useOnClickOutside } from '../../../../hooks/hooks'
+import { useDebounce, useOnClickOutside } from '@smalldata/dwca-lib'
 import { useTranslation } from 'react-i18next'
-import classNames from 'classnames'
 
 export default function ScientificNameInput({ scientificName, onChange }) {
   const { t } = useTranslation()
