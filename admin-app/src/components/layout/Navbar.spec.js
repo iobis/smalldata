@@ -1,6 +1,6 @@
 import Navbar from './Navbar'
 import React from 'react'
-import { AuthContext, AuthProvider } from '../../context/AuthContext'
+import { AuthContext, AuthProvider } from '@smalldata/dwca-lib'
 import { MemoryRouter } from 'react-router-dom'
 import { mount } from 'enzyme'
 

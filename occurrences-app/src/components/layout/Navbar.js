@@ -2,7 +2,7 @@
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import React, { useContext, useRef, useState } from 'react'
-import { AuthContext } from '../../context/AuthContext'
+import { AuthContext } from '@smalldata/dwca-lib'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { hooks } from '@smalldata/dwca-lib'
 import { Link, NavLink } from 'react-router-dom'

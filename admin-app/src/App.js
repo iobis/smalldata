@@ -1,12 +1,12 @@
 import './i18n/i18n'
-import ManageDatasetPage from './components/pages/ManageDatasetPage'
-import ManageUsersPage from './components/pages/ManageUsersPage'
 import InputDataPage from './components/pages/InputDataPage'
 import LogInPage from './components/pages/LogInPage'
+import ManageDatasetPage from './components/pages/ManageDatasetPage'
+import ManageUsersPage from './components/pages/ManageUsersPage'
 import Navbar from './components/layout/Navbar'
 import PropTypes from 'prop-types'
 import React, { useContext } from 'react'
-import { AuthContext, AuthProvider } from './context/AuthContext'
+import { AuthContext, AuthProvider } from '@smalldata/dwca-lib'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import {
   faAngleDown,

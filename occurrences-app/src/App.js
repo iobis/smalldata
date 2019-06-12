@@ -6,7 +6,7 @@ import Navbar from './components/layout/Navbar'
 import OccurrenceForm from './components/pages/Occurrence/OccurrenceForm'
 import PropTypes from 'prop-types'
 import React, { useContext } from 'react'
-import { AuthContext, AuthProvider } from './context/AuthContext'
+import { AuthContext, AuthProvider } from '@smalldata/dwca-lib'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import {
   faAngleDown,
