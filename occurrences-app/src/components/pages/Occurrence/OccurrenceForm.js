@@ -50,7 +50,7 @@ export default function OccurrenceForm() {
   })
   const [darwinCoreFields, setDarwinCoreFields] = useState([])
   const [activeStepIndex, setActiveStepIndex] = useState(0)
-  const [measurementOrFact, setMeasurementOrFact] = useState([])
+  const [measurements, setMeasurements] = useState([])
   const [finalSummaryVisible, setFinalSummaryVisible] = useState(false)
 
   useEffect(() => {
@@ -82,7 +82,7 @@ export default function OccurrenceForm() {
       occurrenceData,
       locationData,
       observationData,
-      measurements:     measurementOrFact || [],
+      measurements:     measurements || [],
       darwinCoreFields: darwinCoreFields || []
     }
     postOccurrence({ occurrence })
@@ -124,12 +124,12 @@ export default function OccurrenceForm() {
       onChange={setObservationData}/>
   }, {
     dataDescription: t('occurrenceForm.measurementOrFact.step.dataDescription'),
-    selectedData:    <MeasurementOrFactSummary data={measurementOrFact}/>,
+    selectedData:    <MeasurementOrFactSummary data={measurements}/>,
     stepDescription: t('occurrenceForm.measurementOrFact.step.stepDescription'),
     stepTitle:       t('occurrenceForm.measurementOrFact.step.stepTitle'),
     children:        <MeasurementOrFact
-      data={measurementOrFact}
-      onChange={setMeasurementOrFact}/>
+      data={measurements}
+      onChange={setMeasurements}/>
   }, {
     dataDescription: '',
     selectedData:    '',
@@ -164,7 +164,7 @@ export default function OccurrenceForm() {
           darwinCoreFields={darwinCoreFields}
           dataset={dataset}
           locationData={locationData}
-          measurements={measurementOrFact}
+          measurements={measurements}
           observationData={observationData}
           occurrenceData={occurrenceData}
           onChangeClick={(params) => showActiveStep(params.index)}
