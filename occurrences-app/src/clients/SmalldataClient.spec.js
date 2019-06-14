@@ -79,6 +79,21 @@ describe('SmalldataClient', () => {
         collectionID: 'urn:lsid:biocol.org:col:34818'
       })
     })
+
+    it('when event end date is not provided', async() => {
+      await SmalldataClient.postOccurrence(deepExtend(getDefaultOccurrence(), {
+        occurrence: {
+          occurrenceData: {
+            endDate: null
+          }
+        }
+      }))
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+      expect(fetch.mock.calls[0][0]).toBe('/api/dwca/wEaBfmFyQhYCdsk/user/ovZTtaOJZ98xDDY/records')
+      expect(fetch.mock.calls[0][1].method).toBe('POST')
+      expect(JSON.parse(fetch.mock.calls[0][1].body).occurrence[0].tdwg.eventDate).toEqual('2019-04-29/2019-04-29')
+    })
   })
 })
 
