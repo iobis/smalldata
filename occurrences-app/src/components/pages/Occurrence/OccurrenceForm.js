@@ -11,7 +11,7 @@ import PropTypes from 'prop-types'
 import React, { useState, useEffect } from 'react'
 import Dataset from './Dataset/Dataset'
 import { format } from 'date-fns'
-import { getDatasets, datasetTitleOf } from '../../../clients/SmalldataClient'
+import { getDatasets, datasetTitleOf, postOccurrence } from '../../../clients/SmalldataClient'
 import { useTranslation } from 'react-i18next'
 
 export default function OccurrenceForm() {
@@ -74,6 +74,18 @@ export default function OccurrenceForm() {
 
   function isOccurrenceValid() {
     return !dataset
+  }
+
+  function handleSubmitClick() {
+    const occurrence = {
+      dataset,
+      occurrenceData,
+      locationData,
+      observationData,
+      measurements:     measurementOrFact || [],
+      darwinCoreFields: darwinCoreFields || []
+    }
+    postOccurrence({ occurrence })
   }
 
   const steps = [{
@@ -156,7 +168,7 @@ export default function OccurrenceForm() {
           observationData={observationData}
           occurrenceData={occurrenceData}
           onChangeClick={(params) => showActiveStep(params.index)}
-          onSubmitClick={() => {}}/>) :
+          onSubmitClick={handleSubmitClick}/>) :
         (<div className="columns column is-centered">
           <button className="review-and-submit-button button is-medium is-info" disabled={isOccurrenceValid()} onClick={showFinalSummary}>
             {t('occurrenceForm.reviewAndSubmitButton')}
