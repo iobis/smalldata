@@ -53,12 +53,7 @@ export async function postOccurrence({ occurrence }) {
     core:       'occurrence',
     occurrence: [{
       tdwg:  {
-        basisOfRecord:    occurrence.occurrenceData.basisOfRecord.charAt(0).toUpperCase() + occurrence.occurrenceData.basisOfRecord.slice(1),
-        eventDate:        format(occurrence.occurrenceData.beginDate, 'YYYY-MM-DD') + '/' + format(occurrence.occurrenceData.endDate, 'YYYY-MM-DD'),
-        lifestage:        occurrence.occurrenceData.lifeStage,
-        occurrenceStatus: occurrence.occurrenceData.occurrenceStatus,
-        scientificName:   occurrence.occurrenceData.scientificName,
-        sex:              occurrence.occurrenceData.sex,
+        ...mapOccurrenceDataToTdwg(occurrence.occurrenceData),
 
         decimalLongitude:              occurrence.locationData.decimalLongitude,
         decimalLatitude:               occurrence.locationData.decimalLatitude,
@@ -96,6 +91,17 @@ export async function postOccurrence({ occurrence }) {
     },
     body:    JSON.stringify(requestBody)
   }).then(response => response.json())
+}
+
+function mapOccurrenceDataToTdwg(occurrenceData) {
+  return {
+    basisOfRecord:    occurrenceData.basisOfRecord.charAt(0).toUpperCase() + occurrenceData.basisOfRecord.slice(1),
+    eventDate:        format(occurrenceData.beginDate, 'YYYY-MM-DD') + '/' + format(occurrenceData.endDate, 'YYYY-MM-DD'),
+    lifestage:        occurrenceData.lifeStage,
+    occurrenceStatus: occurrenceData.occurrenceStatus,
+    scientificName:   occurrenceData.scientificName,
+    sex:              occurrenceData.sex
+  }
 }
 
 function mapDarwinCoreFieldsToRequest(darwinCoreFields) {
