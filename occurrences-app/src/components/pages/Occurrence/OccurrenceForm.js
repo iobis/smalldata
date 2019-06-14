@@ -16,6 +16,8 @@ import { useTranslation } from 'react-i18next'
 
 export default function OccurrenceForm() {
   const { t } = useTranslation()
+  const [errorVisible, setErrorVisible] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
   const [datasets, setDatasets] = useState([])
   const [dataset, setDataset] = useState(null)
   const [occurrenceData, setOccurrenceData] = useState({
@@ -76,7 +78,7 @@ export default function OccurrenceForm() {
     return !dataset
   }
 
-  function handleSubmitClick() {
+  async function handleSubmitClick() {
     const occurrence = {
       dataset,
       occurrenceData,
@@ -85,7 +87,16 @@ export default function OccurrenceForm() {
       measurements:     measurements || [],
       darwinCoreFields: darwinCoreFields || []
     }
-    postOccurrence({ occurrence })
+    const response = await postOccurrence({ occurrence })
+    if (response.exception) {
+      setErrorVisible(true)
+      setErrorMessage(response.exception + ': ' + response.exceptionMessage)
+    }
+  }
+
+  function handleErrorClose() {
+    setErrorVisible(false)
+    setErrorMessage('')
   }
 
   const steps = [{
@@ -163,14 +174,20 @@ export default function OccurrenceForm() {
         (<FinalSummary
           darwinCoreFields={darwinCoreFields}
           dataset={dataset}
+          errorMessage={errorMessage}
+          errorVisible={errorVisible}
           locationData={locationData}
           measurements={measurements}
           observationData={observationData}
           occurrenceData={occurrenceData}
           onChangeClick={(params) => showActiveStep(params.index)}
+          onErrorClose={handleErrorClose}
           onSubmitClick={handleSubmitClick}/>) :
         (<div className="columns column is-centered">
-          <button className="review-and-submit-button button is-medium is-info" disabled={isOccurrenceValid()} onClick={showFinalSummary}>
+          <button
+            className="review-and-submit-button button is-medium is-info"
+            disabled={isOccurrenceValid()}
+            onClick={showFinalSummary}>
             {t('occurrenceForm.reviewAndSubmitButton')}
           </button>
         </div>)}
