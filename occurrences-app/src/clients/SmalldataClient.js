@@ -93,14 +93,14 @@ export async function postOccurrence({ occurrence }) {
   }).then(response => response.json())
 }
 
-function mapOccurrenceDataToTdwg(occurrenceData) {
+function mapOccurrenceDataToTdwg({ basisOfRecord, beginDate, endDate, occurrenceStatus, scientificName, lifeStage, sex }) {
   return {
-    basisOfRecord:    occurrenceData.basisOfRecord.charAt(0).toUpperCase() + occurrenceData.basisOfRecord.slice(1),
-    eventDate:        format(occurrenceData.beginDate, 'YYYY-MM-DD') + '/' + format(occurrenceData.endDate, 'YYYY-MM-DD'),
-    lifestage:        occurrenceData.lifeStage,
-    occurrenceStatus: occurrenceData.occurrenceStatus,
-    scientificName:   occurrenceData.scientificName,
-    sex:              occurrenceData.sex
+    basisOfRecord:    basisOfRecord.charAt(0).toUpperCase() + basisOfRecord.slice(1),
+    eventDate:        format(beginDate, 'YYYY-MM-DD') + '/' + format(endDate, 'YYYY-MM-DD'),
+    occurrenceStatus: occurrenceStatus,
+    scientificName:   scientificName,
+    ...(lifeStage === 'unspecified' ? {} : { lifestage: lifeStage }),
+    ...(sex === 'unspecified' ? {} : { sex })
   }
 }
 
