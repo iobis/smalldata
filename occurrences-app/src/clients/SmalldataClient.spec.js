@@ -107,15 +107,15 @@ describe('SmalldataClient', () => {
           catalogNumber:           'IBSS_Benthos_1935_1331',
           recordNumber:            '123456',
           identifiedBy:            'Indiana Jones',
-          recordedBy:              'Harrison Ford, Indiana Jones',
+          recordedBy:              'Harrison Ford|Indiana Jones',
           identificationQualifier: 'some identification qualifier',
           identificationRemarks:   'some identification remarks',
+          associatedReferences:    'http://www.google.com|https://clojure.org/',
 
           collectionID: 'urn:lsid:biocol.org:col:34818'
         },
         purl:  {
-          references: 'http://www.google.com, https://clojure.org/',
-          language:   'es'
+          language: 'es'
         },
         iobis: {
           measurementUnitID: 'measurementUnitID value'

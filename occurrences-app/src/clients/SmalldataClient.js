@@ -73,15 +73,15 @@ export async function postOccurrence({ occurrence }) {
         fieldNumber:             occurrence.observationData.fieldNumber,
         catalogNumber:           occurrence.observationData.catalogNumber,
         recordNumber:            occurrence.observationData.recordNumber,
-        identifiedBy:            occurrence.observationData.identifiedBy.join(', '),
-        recordedBy:              occurrence.observationData.recordedBy.join(', '),
+        identifiedBy:            occurrence.observationData.identifiedBy.join('|'),
+        recordedBy:              occurrence.observationData.recordedBy.join('|'),
         identificationQualifier: occurrence.observationData.identificationQualifier,
         identificationRemarks:   occurrence.observationData.identificationRemarks,
+        associatedReferences:    occurrence.observationData.references.join('|'),
 
         ...darwinCoreFields.tdwg
       },
       purl:  {
-        references: occurrence.observationData.references.join(', '),
         ...darwinCoreFields.purl
       },
       iobis: darwinCoreFields.iobis
