@@ -66,7 +66,7 @@ exports[`OccurrenceData renders correctly 1`] = `
       className="event-end-date column field is-two-fifths"
     >
       <label
-        className="label"
+        className="label has-text-weight-normal"
       >
         occurrenceForm.occurrenceData.eventEndDate
       </label>
