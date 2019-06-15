@@ -26,9 +26,9 @@ class RecordHandler {
   private static final String DWC_RECORD = "dwcRecord";
   private static final String KEY_CORE = "core";
   private static final String KEY_DATE_ADDED = "dateAdded";
-  private final DbOperation dbOperation;
+  private final DbDwcaOperation dbOperation;
 
-  RecordHandler(DbOperation dbOperation) {
+  RecordHandler(DbDwcaOperation dbOperation) {
     this.dbOperation = dbOperation;
   }
 
@@ -65,7 +65,7 @@ class RecordHandler {
     var coreTable = getCoreTable(body);
     var dwcRecords = dwcaRecordToDwcList(body);
     dbOperation.withNewId(
-      COLLECTION_DWCARECORD,
+      Collections.DATASETRECORDS.dbName(),
       id -> updateRecords(message, coreTable, dwcRecords, id, dbOperation::insertRecords));
   }
 

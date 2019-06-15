@@ -55,7 +55,7 @@ class DbDwcaOperationTest {
 
   @Test
   void findDwcaRecordsRestrictDwcFields(VertxTestContext testContext) {
-    var dwcaRecords = dbOperation.findDwcaRecords(
+    var dwcaRecords = dbDwcaOperation.findDwcaRecords(
       new JsonObject().put(KEY_DATASET_REF, DEFAULT_DATASET_REF),
       new JsonObject()
         .put("dwcRecord.tdwg.measurementValue", true)
