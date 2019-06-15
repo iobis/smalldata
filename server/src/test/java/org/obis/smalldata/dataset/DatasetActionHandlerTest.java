@@ -129,7 +129,7 @@ public class DatasetActionHandlerTest {
         if (ar.succeeded()) {
           assertThat(ar.succeeded()).isTrue();
           var json = ar.result().body();
-          assertThat(json.getString("_ref")).hasSize(15);
+          assertThat(json.getString("ref")).hasSize(15);
           assertThat(json.getInteger("universe_key")).isEqualTo(42);
           testContext.completeNow();
         } else {

@@ -12,6 +12,7 @@ import java.util.List;
 class DbUserOperation {
 
   private static final String KEY_REF = "_ref";
+  private static final String QUERY_REF = "ref";
 
   private final MongoClient mongoClient;
   private final UniqueIdGenerator idGenerator;
@@ -47,7 +48,7 @@ class DbUserOperation {
       Collections.USERS.dbName(),
       new JsonObject().put(KEY_REF, userRef),
       userProfile.put(KEY_REF, userRef),
-      ar -> user.complete(userProfile));
+      ar -> user.complete(userProfile.put(QUERY_REF, userProfile.remove(KEY_REF))));
     return user;
   }
 }

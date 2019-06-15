@@ -98,6 +98,30 @@ paths:
             application/json:
               schema:
                 $ref: 'dataset.yaml#/Dataset'
+    put:
+      summary: overwrite a dataset
+      operationId: putDataset
+      parameters:
+        - name: datasetRef
+          in: path
+          description: unique reference of the dataset
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: 'putdataset.yaml#/Dataset'
+      tags:
+        - datasets
+      responses:
+        200:
+          description: dataset information and metadata
+          content:
+            application/json: {}
+
   /api/dwca/user/{userRef}/records:
     get:
       summary: get a list of dwca records for a user
@@ -477,6 +501,8 @@ components:
           format: int32
         message:
           type: string
+
+
 #  examples:
 #    objectExample:
 #      core: occurrence

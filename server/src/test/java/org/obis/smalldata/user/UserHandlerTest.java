@@ -25,6 +25,7 @@ public class UserHandlerTest {
   private static final String KEY_DATASET_REFS = "dataset_refs";
   private static final String KEY_EMAIL_ADDRESS = "emailAddress";
   private static final String KEY_REF = "_ref";
+  private static final String QUERY_REF = "ref";
   private TestDb testDb;
 
   @BeforeEach
@@ -135,7 +136,7 @@ public class UserHandlerTest {
         if (ar.succeeded()) {
           assertThat(ar.succeeded()).isTrue();
           var json = ar.result().body().getMap();
-          assertThat(json).containsOnlyKeys(KEY_REF, KEY_EMAIL_ADDRESS);
+          assertThat(json).containsOnlyKeys(QUERY_REF, KEY_EMAIL_ADDRESS);
           assertThat(json).containsEntry(KEY_EMAIL_ADDRESS, "my.otheruser@domain.com");
           testContext.completeNow();
         } else {

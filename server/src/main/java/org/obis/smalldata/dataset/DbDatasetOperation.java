@@ -6,6 +6,7 @@ import io.vertx.ext.mongo.MongoClient;
 import org.obis.smalldata.util.Collections;
 import org.obis.smalldata.util.DbUtils;
 import org.obis.smalldata.util.UniqueIdGenerator;
+import org.pmw.tinylog.Logger;
 
 import java.util.List;
 
@@ -53,11 +54,12 @@ class DbDatasetOperation {
 
   public Future<JsonObject> updateDataset(String datasetRef, JsonObject dataset) {
     var resultDataset = Future.<JsonObject>future();
+    Logger.info(dataset.put(QUERY_REF, datasetRef));
     mongoClient.replaceDocuments(
-      Collections.USERS.dbName(),
+      Collections.DATASETS.dbName(),
       new JsonObject().put(KEY_REF, datasetRef),
-      dataset.put(QUERY_REF, datasetRef),
-      ar -> resultDataset.complete(dataset));
+      dataset.put(KEY_REF, datasetRef),
+      ar -> resultDataset.complete(dataset.put(QUERY_REF, dataset.remove(KEY_REF))));
     return resultDataset;
   }
 }
