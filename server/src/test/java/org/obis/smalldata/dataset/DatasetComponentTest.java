@@ -46,8 +46,10 @@ public class DatasetComponentTest {
   @Test
   void getAllDataSets(Vertx vertx, VertxTestContext testContext) {
     vertx.eventBus().<JsonArray>send(
-      "datasets.query",
-      new JsonObject(),
+      "datasets",
+      new JsonObject()
+        .put("action", "find")
+        .put("query", new JsonObject()),
       ar -> {
         var datasets = ar.result().body();
         assertThat(datasets).hasSize(4);
@@ -64,8 +66,9 @@ public class DatasetComponentTest {
   void getOneDataset(Vertx vertx, VertxTestContext testContext) {
     var ref = "ntDOtUc7XsRrIus";
     vertx.eventBus().<JsonArray>send(
-      "datasets.query",
-      new JsonObject().put(QUERY_REF, ref),
+      "datasets",
+      new JsonObject().put("action", "find")
+        .put("query", new JsonObject().put(QUERY_REF, ref)),
       ar -> {
         var datasets = ar.result().body();
         assertThat(datasets).hasSize(1);
@@ -77,8 +80,9 @@ public class DatasetComponentTest {
   @Test
   void getNotAvailableDataset(Vertx vertx, VertxTestContext testContext) {
     vertx.eventBus().<JsonArray>send(
-      "datasets.query",
-      new JsonObject().put(QUERY_REF, "unknown"),
+      "datasets",
+      new JsonObject().put("action", "find")
+        .put("query", new JsonObject().put(QUERY_REF, "unknown")),
       ar -> {
         var datasets = ar.result().body();
         assertThat(datasets).hasSize(0);

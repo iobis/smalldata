@@ -13,14 +13,17 @@ class DatasetsHandler {
     if (dataset == null) {
       info("getting all datasets");
       context.vertx().eventBus().<JsonArray>send(
-        "datasets.query",
-        new JsonObject(),
+        "datasets",
+        new JsonObject().put("action", "find"),
         m -> context.response().end(m.result().body().encode()));
     } else {
       info("getting dataset {}", dataset);
       context.vertx().eventBus().<JsonArray>send(
-        "datasets.query",
-        new JsonObject().put("ref", dataset),
+        "datasets",
+        new JsonObject()
+          .put("action", "find")
+          .put("query", new JsonObject()
+            .put("ref", dataset)),
         m -> context.response().end(m.result().body().getJsonObject(0).encode()));
     }
   }
