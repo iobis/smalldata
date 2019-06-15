@@ -13,7 +13,6 @@ import org.obis.smalldata.testutil.TestDb;
 import org.obis.smalldata.util.Collections;
 
 import java.util.List;
-import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -67,11 +66,11 @@ class DbDwcaOperationTest {
     dwcaRecords.setHandler(ar -> {
       var result = ar.result();
       assertThat(result).hasSize(642);
-      result.forEach(dwca -> dwca.containsKey("user_ref"));
+      result
+        .forEach(dwca -> assertThat(dwca.getMap()).containsOnlyKeys("user_ref", "_id", "dataset_ref", "dwcTable", "dwcRecord"));
       result.stream()
-        .map(dwca -> dwca.getJsonObject("dwcRecord").getJsonObject("tdwg"))
-        .map(tdwg -> tdwg.getMap().keySet())
-        .forEach(tdwg -> assertThat(tdwg).isSubsetOf(Set.of("measurementUnitID", "measurementValue")));
+        .map(dwca -> dwca.getJsonObject("dwcRecord").getJsonObject("tdwg").getMap().keySet())
+        .forEach(tdwg -> assertThat(tdwg).isSubsetOf("measurementUnitID", "measurementValue"));
       testContext.completeNow();
     });
   }
