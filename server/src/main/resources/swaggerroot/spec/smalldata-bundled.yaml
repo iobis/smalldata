@@ -23,7 +23,175 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/paths/~1api~1datasets~1%7BdatasetRef%7D/get/responses/200/content/application~1json/schema'
+                  $ref: '#/paths/~1api~1datasets/post/requestBody/content/application~1json/schema'
+    post:
+      summary: post a new dataset
+      operationId: postDataset
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              description: dataset information
+              additionalProperties: false
+              properties:
+                ref:
+                  type: string
+                  description: unique reference
+                meta:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                    dwcTables:
+                      type: object
+                      properties:
+                        core:
+                          type: string
+                          enum:
+                            - occurrence
+                            - taxon
+                            - event
+                            - emof
+                        extensions:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - occurrence
+                              - taxon
+                              - event
+                              - emof
+                title:
+                  type: object
+                  properties:
+                    language:
+                      type: string
+                    value:
+                      type: string
+                language:
+                  type: string
+                abstract:
+                  type: object
+                  properties:
+                    paragraphs:
+                      type: array
+                      items:
+                        type: string
+                license:
+                  type: object
+                  properties:
+                    url:
+                      type: string
+                    title:
+                      type: string
+                creators:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      individualName:
+                        type: object
+                        properties:
+                          givenName:
+                            type: string
+                          surName:
+                            type: string
+                      organizationName:
+                        type: string
+                      electronicMailAddress:
+                        type: string
+                        format: email
+                contacts:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      individualName:
+                        type: object
+                        properties:
+                          givenName:
+                            type: string
+                          surName:
+                            type: string
+                      organizationName:
+                        type: string
+                      electronicMailAddress:
+                        type: string
+                        format: email
+                metadataProviders:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      individualName:
+                        type: object
+                        properties:
+                          givenName:
+                            type: string
+                          surName:
+                            type: string
+                      organizationName:
+                        type: string
+                      electronicMailAddress:
+                        type: string
+                        format: email
+                keywordSets:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      keywords:
+                        type: array
+                        items:
+                          type: string
+                      keywordThesaurus:
+                        type: string
+            example:
+              meta:
+                type: occurrence
+                dwcTables:
+                  core: occurrence
+                  extensions:
+                    - emof
+              title:
+                language: en
+                value: Looking for Melibe nudibranches in the Philippines
+              language: en
+              abstract:
+                paragraphs:
+                  - This is one paragraph
+                  - And this is another one...
+              license:
+                url: 'http://creativecommons.org/licenses/by-nc/4.0/legalcode'
+                title: Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License
+              creators:
+                - individualName:
+                    givenName: Someone
+                    surName: VeryImportant
+              contacts:
+                - individualName:
+                    givenName: Also
+                    surName: VeryImportant
+              metadataProviders:
+                - individualName:
+                    givenName: ProbablySister
+                    surName: VeryImportant
+                  electronicMailAddress: mostimportant@melibesearch.org
+              keywordSets:
+                - keywords:
+                    - SearchEvent
+                    - Nudibranch
+                  keywordThesaurus: example keywords
+      tags:
+        - datasets
+      responses:
+        '200':
+          description: new dataset
+          content:
+            application/json:
+              schema: {}
   '/api/datasets/{datasetRef}':
     get:
       summary: get one dataset by ref
@@ -43,98 +211,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                required:
-                  - ref
-                description: dataset information
-                additionalProperties: false
-                properties:
-                  ref:
-                    type: string
-                    description: unique reference
-                  meta:
-                    type: object
-                    properties:
-                      type:
-                        type: string
-                      dwcTables:
-                        type: object
-                        properties:
-                          core:
-                            type: string
-                            enum:
-                              - occurrence
-                              - taxon
-                              - event
-                              - emof
-                          extensions:
-                            type: array
-                            items:
-                              type: string
-                              enum:
-                                - occurrence
-                                - taxon
-                                - event
-                                - emof
-                  title:
-                    type: object
-                    properties:
-                      language:
-                        type: string
-                      value:
-                        type: string
-                  language:
-                    type: string
-                  abstract:
-                    type: object
-                    properties:
-                      paragraphs:
-                        type: array
-                        items:
-                          type: string
-                  license:
-                    type: object
-                    properties:
-                      url:
-                        type: string
-                      title:
-                        type: string
-                  creators:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        individualName:
-                          type: object
-                          properties:
-                            givenName:
-                              type: string
-                            surName:
-                              type: string
-                        organizationName:
-                          type: string
-                        electronicMailAddress:
-                          type: string
-                          format: email
-                  contacts:
-                    type: array
-                    items:
-                      $ref: '#/paths/~1api~1datasets~1%7BdatasetRef%7D/get/responses/200/content/application~1json/schema/properties/creators/items'
-                  metadataProviders:
-                    type: array
-                    items:
-                      $ref: '#/paths/~1api~1datasets~1%7BdatasetRef%7D/get/responses/200/content/application~1json/schema/properties/creators/items'
-                  keywordSets:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        keywords:
-                          type: array
-                          items:
-                            type: string
-                        keywordThesaurus:
-                          type: string
+                $ref: '#/paths/~1api~1datasets/post/requestBody/content/application~1json/schema'
   '/api/dwca/user/{userRef}/records':
     get:
       summary: get a list of dwca records for a user

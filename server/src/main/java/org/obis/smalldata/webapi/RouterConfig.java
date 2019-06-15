@@ -14,6 +14,7 @@ class RouterConfig {
   private static final Map<String, OperationHandlers> HANDLERS = Map.ofEntries(
     Map.entry("getDatasets", new OperationHandlers(DatasetsHandler::fetch)),
     Map.entry("getOneDataset", new OperationHandlers(DatasetsHandler::fetch)),
+    Map.entry("postDataset", new OperationHandlers(DatasetsHandler::post)),
     Map.entry("getUserRecords", new OperationHandlers(DwcaRecordsHandler::getForUser)),
     Map.entry("getUsers", new OperationHandlers(UsersHandler::getUsers)),
     Map.entry("postUser", new OperationHandlers(UsersHandler::postUser)),

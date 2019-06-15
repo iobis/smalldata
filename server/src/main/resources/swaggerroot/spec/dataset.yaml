@@ -1,8 +1,6 @@
 ---
 Dataset:
   type: object
-  required:
-    - ref
   description: dataset information
   additionalProperties: false
   properties:
@@ -51,15 +49,54 @@ Dataset:
     creators:
       type: array
       items:
-        $ref: '#/PersonInfo'
+        type: object
+        properties:
+          individualName:
+            type: object
+            properties:
+              givenName:
+                type: string
+              surName:
+                type: string
+          organizationName:
+            type: string
+          electronicMailAddress:
+            type: string
+            format: email
     contacts:
       type: array
       items:
-        $ref: '#/PersonInfo'
+        type: object
+        properties:
+          individualName:
+            type: object
+            properties:
+              givenName:
+                type: string
+              surName:
+                type: string
+          organizationName:
+            type: string
+          electronicMailAddress:
+            type: string
+            format: email
     metadataProviders:
       type: array
       items:
-        $ref: '#/PersonInfo'
+        type: object
+        properties:
+          individualName:
+            type: object
+            properties:
+              givenName:
+                type: string
+              surName:
+                type: string
+          organizationName:
+            type: string
+          electronicMailAddress:
+            type: string
+            format: email
     keywordSets:
       type: array
       items:

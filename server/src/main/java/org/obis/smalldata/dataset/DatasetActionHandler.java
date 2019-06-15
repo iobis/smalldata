@@ -21,7 +21,13 @@ class DatasetActionHandler {
   DatasetActionHandler(MongoClient mongoClient) {
     this.dbOperation = new DbDatasetOperation(mongoClient);
     var actionMap = ImmutableMap.<String, BiConsumer<Message<JsonObject>, JsonObject>>of(
-      "find", this::findDatasets);
+      "find", this::findDatasets,
+      "insert", (message, body) -> dbOperation
+        .insertDataset(body.getJsonObject("dataset"))
+        .setHandler(ar -> message.reply(ar.result())),
+      "replace", (message, body) -> dbOperation
+        .updateDataset(body.getString("datasetRef"), body.getJsonObject("dataset"))
+        .setHandler(ar -> message.reply(ar.result())));
     this.actionHandler = new VertxActionHandler(actionMap);
   }
 

@@ -4,6 +4,7 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.mongo.MongoClient;
 import org.obis.smalldata.util.Collections;
+import org.obis.smalldata.util.DbUtils;
 import org.obis.smalldata.util.UniqueIdGenerator;
 
 import java.util.List;
@@ -31,25 +32,12 @@ class DbUserOperation {
 
   Future<JsonObject> insertUser(JsonObject userProfile) {
     var user = Future.<JsonObject>future();
-    mongoClient.find(
-      Collections.USERS.dbName(),
+    DbUtils.INSTANCE.insertDocument(mongoClient,
+      idGenerator,
+      Collections.USERS,
       new JsonObject().put("emailAddress", userProfile.getString("emailAddress")),
-      arFound -> {
-        if (arFound.succeeded() && arFound.result().isEmpty()) {
-          idGenerator.consumeNewId(
-            Collections.USERS.dbName(),
-            KEY_REF,
-            ref -> mongoClient.insert(
-              Collections.USERS.dbName(),
-              userProfile.put(KEY_REF, ref),
-              ar -> {
-                userProfile.remove("_id");
-                user.complete(userProfile);
-              }));
-        } else {
-          user.complete(arFound.result().get(0));
-        }
-      });
+      userProfile,
+      user);
     return user;
   }
 

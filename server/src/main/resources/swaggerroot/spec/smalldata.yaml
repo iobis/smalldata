@@ -23,7 +23,61 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: 'dataset.yaml#/Dataset'
+                  $ref: "dataset.yaml#/Dataset"
+    post:
+      summary: post a new dataset
+      operationId: postDataset
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "dataset.yaml#/Dataset"
+            example:
+              meta:
+                type: occurrence
+                dwcTables:
+                  core: occurrence
+                  extensions:
+                    - emof
+              title:
+                language: en
+                value: "Looking for Melibe nudibranches in the Philippines"
+              language: en
+              abstract:
+                paragraphs:
+                  - "This is one paragraph"
+                  - "And this is another one..."
+              license:
+                url: "http://creativecommons.org/licenses/by-nc/4.0/legalcode"
+                title: "Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License"
+              creators:
+                - individualName:
+                    givenName: "Someone"
+                    surName: "VeryImportant"
+              contacts:
+                - individualName:
+                    givenName: "Also"
+                    surName: "VeryImportant"
+              metadataProviders:
+                - individualName:
+                    givenName: "ProbablySister"
+                    surName: "VeryImportant"
+                  electronicMailAddress: "mostimportant@melibesearch.org"
+              keywordSets:
+                - keywords:
+                    - SearchEvent
+                    - Nudibranch
+                  keywordThesaurus: "example keywords"
+      tags:
+        - datasets
+      responses:
+        200:
+          description: new dataset
+          content:
+            application/json:
+              schema: {}
+
   /api/datasets/{datasetRef}:
     get:
       summary: get one dataset by ref
