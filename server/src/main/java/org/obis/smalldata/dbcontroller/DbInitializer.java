@@ -26,12 +26,12 @@ public class DbInitializer {
   public void newUser(String userId) {
     client.find(
       Collections.USERS.dbName(),
-      new JsonObject().put("userid", userId),
+      new JsonObject().put("userId", userId),
       arUserId -> info("userId: {}", arUserId.result()));
     client.insert(
       Collections.USERS.dbName(),
       new JsonObject()
-        .put("userid", userId)
+        .put("userId", userId)
         .put("username", "admin")
         .put("password", "admin")
         .put("roles", new JsonArray().add("node admin")),
@@ -40,7 +40,7 @@ public class DbInitializer {
         info("added object {}", objectId);
         client.find(
           "users",
-          new JsonObject().put("userid", userId),
+          new JsonObject().put("userId", userId),
           arRecord -> info(arRecord.result()));
       });
   }
