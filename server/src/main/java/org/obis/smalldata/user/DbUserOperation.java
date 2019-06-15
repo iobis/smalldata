@@ -8,8 +8,6 @@ import org.obis.smalldata.util.UniqueIdGenerator;
 
 import java.util.List;
 
-import static org.pmw.tinylog.Logger.info;
-
 class DbUserOperation {
 
   private static final String KEY_REF = "_ref";
@@ -57,15 +55,11 @@ class DbUserOperation {
 
   Future<JsonObject> updateUser(String userRef, JsonObject userProfile) {
     var user = Future.<JsonObject>future();
-    mongoClient.replace(
+    mongoClient.replaceDocuments(
       Collections.USERS.dbName(),
       new JsonObject().put(KEY_REF, userRef),
       userProfile.put(KEY_REF, userRef),
-      ar -> {
-        info(ar.cause());
-        info(ar.result());
-        user.complete(userProfile);
-      });
+      ar -> user.complete(userProfile));
     return user;
   }
 }
