@@ -30,13 +30,22 @@ describe('FinalSummary', () => {
     it('calls onSubmitClick handler', () => {
       const onSubmitClick = jest.fn()
       const wrapper = mount(createComponent({ onSubmitClick }))
-      expect(wrapper.find('.submit-entry-button .button')).toHaveLength(2)
+      expect(wrapper.find('.submit-entry-button .button')).toHaveLength(1)
 
       wrapper.find('.submit-entry-button .button').at(0).simulate('click')
       expect(onSubmitClick).toHaveBeenCalledTimes(1)
+    })
+  })
 
-      wrapper.find('.submit-entry-button .button').at(1).simulate('click')
-      expect(onSubmitClick).toHaveBeenCalledTimes(2)
+  describe('when rendering component with error message', () => {
+    it('calls onSubmitClick handler', () => {
+      const onErrorClose = jest.fn()
+      const wrapper = mount(createComponent({ onErrorClose, errorVisible: true, errorMessage: 'error message' }))
+      expect(wrapper).toMatchSnapshot()
+      expect(wrapper.find('.error-message').exists()).toBe(true)
+
+      wrapper.find('.error-message .close').simulate('click')
+      expect(onErrorClose).toHaveBeenCalledTimes(1)
     })
   })
 })
@@ -45,6 +54,7 @@ function createComponent(props) {
   const defaultProps = {
     ...getDefaultProps(),
     onChangeClick: jest.fn(),
+    onErrorClose:  jest.fn(),
     onSubmitClick: jest.fn()
   }
 

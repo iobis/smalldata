@@ -80,6 +80,7 @@ exports[`FinalSummary renders correctly 1`] = `
       },
     }
   }
+  errorVisible={false}
   locationData={
     Object {
       "coordinateUncertainty": null,
@@ -138,6 +139,7 @@ exports[`FinalSummary renders correctly 1`] = `
     }
   }
   onChangeClick={[MockFunction]}
+  onErrorClose={[MockFunction]}
   onSubmitClick={[MockFunction]}
 >
   <div
@@ -152,20 +154,6 @@ exports[`FinalSummary renders correctly 1`] = `
         occurrenceForm.finalSummary.title
       </h1>
     </div>
-    <SubmitEntryButton
-      onClick={[MockFunction]}
-    >
-      <div
-        className="submit-entry-button columns is-centered"
-      >
-        <button
-          className="button is-info is-medium"
-          onClick={[MockFunction]}
-        >
-          occurrenceForm.finalSummary.submitEntryButton
-        </button>
-      </div>
-    </SubmitEntryButton>
     <section
       className="dataset-summary"
     >
@@ -1013,7 +1001,1032 @@ exports[`FinalSummary renders correctly 1`] = `
       onClick={[MockFunction]}
     >
       <div
-        className="submit-entry-button columns is-centered"
+        className="submit-entry-button columns is-mobile is-centered"
+      >
+        <button
+          className="button is-info is-medium"
+          onClick={[MockFunction]}
+        >
+          occurrenceForm.finalSummary.submitEntryButton
+        </button>
+      </div>
+    </SubmitEntryButton>
+  </div>
+</FinalSummary>
+`;
+
+exports[`FinalSummary when rendering component with error message calls onSubmitClick handler 1`] = `
+<FinalSummary
+  darwinCoreFields={
+    Array [
+      Object {
+        "name": "name-1",
+        "value": "value-1",
+      },
+      Object {
+        "name": "name-2",
+        "value": "value-2",
+      },
+      Object {
+        "name": "name-3",
+        "value": "value-3",
+      },
+    ]
+  }
+  dataset={
+    Object {
+      "abstract": Object {
+        "paragraphs": Array [
+          "Population structure data of Caprella species used in the article \\"Hosono T (2014) Temperature explains reproductive dynamics in caprellids at different latitudes. Marine Ecology Progress Series 511:129-141\\"",
+        ],
+      },
+      "contacts": Array [
+        Object {
+          "individualName": Object {
+            "givenName": "Takashi",
+            "surName": "Hosono",
+          },
+        },
+      ],
+      "creators": Array [
+        Object {
+          "individualName": Object {
+            "givenName": "Takashi",
+            "surName": "Hosono",
+          },
+        },
+      ],
+      "id": "wEaBfmFyQhYCdsk",
+      "keywordSets": Array [
+        Object {
+          "keywordThesaurus": "GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml",
+          "keywords": Array [
+            "Samplingevent",
+          ],
+        },
+      ],
+      "language": "en",
+      "license": Object {
+        "title": "Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License",
+        "url": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+      },
+      "meta": Object {
+        "dwcTables": Object {
+          "core": "event",
+          "extensions": Array [
+            "emof",
+            "occurrence",
+          ],
+        },
+        "type": "event",
+      },
+      "metadataProviders": Array [
+        Object {
+          "electronicMailAddress": "hosonot@jamstec.go.jp",
+          "individualName": Object {
+            "givenName": "Takashi",
+            "surName": "Hosono",
+          },
+        },
+      ],
+      "title": Object {
+        "language": "en",
+        "value": "Caprellids polulation structure in Usujiri, Hokkaido, Japan",
+      },
+    }
+  }
+  errorMessage="error message"
+  errorVisible={true}
+  locationData={
+    Object {
+      "coordinateUncertainty": null,
+      "decimalLatitude": 51.3354656,
+      "decimalLongitude": 2.345456,
+      "maximumDepth": null,
+      "minimumDepth": null,
+      "verbatimCoordinates": "41 05 54S 121 05 34W",
+      "verbatimDepth": "100 - 200 m",
+    }
+  }
+  measurements={
+    Array [
+      Object {
+        "type": "Pressure",
+        "unit": "Decibars",
+        "value": "10",
+      },
+      Object {
+        "type": "Pressure",
+        "unit": "Decibars",
+        "value": "50",
+      },
+    ]
+  }
+  observationData={
+    Object {
+      "catalogNumber": "IBSS_Benthos_1935_1331",
+      "collectionCode": "R/V N. Danilevskiy 1935 Azov Sea benthos data",
+      "fieldNumber": "557",
+      "identificationQualifier": "some identification qualifier",
+      "identificationRemarks": "some identification remarks",
+      "identifiedBy": Array [
+        "Indiana Jones",
+      ],
+      "institutionCode": "IBSS",
+      "recordNumber": "123456",
+      "recordedBy": Array [
+        "Harrison Ford",
+      ],
+      "references": Array [
+        "http://www.google.com",
+        "https://clojure.org/",
+      ],
+    }
+  }
+  occurrenceData={
+    Object {
+      "basisOfRecord": "humanObservation",
+      "beginDate": 1556496000000,
+      "endDate": 1556582400000,
+      "lifestage": "adult",
+      "occurrenceStatus": "absent",
+      "scientificName": "ala abra",
+      "sex": "male",
+    }
+  }
+  onChangeClick={[MockFunction]}
+  onErrorClose={[MockFunction]}
+  onSubmitClick={[MockFunction]}
+>
+  <div
+    className="final-summary section is-fluid"
+  >
+    <div
+      className="columns is-centered"
+    >
+      <h1
+        className="final-summary-title title is-3"
+      >
+        occurrenceForm.finalSummary.title
+      </h1>
+    </div>
+    <section
+      className="dataset-summary"
+    >
+      <SectionTitle>
+        <h2
+          className="title is-4"
+        >
+          1 - 
+          occurrenceForm.dataset.step.stepTitle
+        </h2>
+      </SectionTitle>
+      <p>
+        Caprellids polulation structure in Usujiri, Hokkaido, Japan
+      </p>
+      <ChangeButton
+        onClick={[Function]}
+      >
+        <button
+          className="change-button button"
+          onClick={[Function]}
+        >
+          common.change
+        </button>
+      </ChangeButton>
+    </section>
+    <section
+      className="occurrence-data-summary"
+    >
+      <SectionTitle>
+        <h2
+          className="title is-4"
+        >
+          2 - 
+          occurrenceForm.occurrenceData.step.stepTitle
+        </h2>
+      </SectionTitle>
+      <table
+        className="table is-striped is-fullwidth is-hoverable"
+      >
+        <NameValueHeader>
+          <thead>
+            <tr>
+              <th
+                className="type"
+              >
+                common.name
+              </th>
+              <th
+                className="value"
+              >
+                common.value
+              </th>
+            </tr>
+          </thead>
+        </NameValueHeader>
+        <tbody>
+          <NameValueRow
+            name="occurrenceForm.occurrenceData.scientificName"
+            value="ala abra"
+          >
+            <tr
+              className="name-value-row fieldrow"
+            >
+              <td
+                className="name"
+              >
+                occurrenceForm.occurrenceData.scientificName
+              </td>
+              <td
+                className="value"
+              >
+                ala abra
+              </td>
+            </tr>
+          </NameValueRow>
+          <NameValueRow
+            name="occurrenceForm.occurrenceData.eventBeginDate"
+            value="29 April 2019"
+          >
+            <tr
+              className="name-value-row fieldrow"
+            >
+              <td
+                className="name"
+              >
+                occurrenceForm.occurrenceData.eventBeginDate
+              </td>
+              <td
+                className="value"
+              >
+                29 April 2019
+              </td>
+            </tr>
+          </NameValueRow>
+          <NameValueRow
+            name="occurrenceForm.occurrenceData.eventEndDate"
+            value="30 April 2019"
+          >
+            <tr
+              className="name-value-row fieldrow"
+            >
+              <td
+                className="name"
+              >
+                occurrenceForm.occurrenceData.eventEndDate
+              </td>
+              <td
+                className="value"
+              >
+                30 April 2019
+              </td>
+            </tr>
+          </NameValueRow>
+          <NameValueRow
+            name="occurrenceForm.occurrenceData.occurrenceStatus.title"
+            value="occurrenceForm.occurrenceData.occurrenceStatus.absent"
+          >
+            <tr
+              className="name-value-row fieldrow"
+            >
+              <td
+                className="name"
+              >
+                occurrenceForm.occurrenceData.occurrenceStatus.title
+              </td>
+              <td
+                className="value"
+              >
+                occurrenceForm.occurrenceData.occurrenceStatus.absent
+              </td>
+            </tr>
+          </NameValueRow>
+          <NameValueRow
+            name="occurrenceForm.occurrenceData.basisOfRecord.title"
+            value="occurrenceForm.occurrenceData.basisOfRecord.humanObservation"
+          >
+            <tr
+              className="name-value-row fieldrow"
+            >
+              <td
+                className="name"
+              >
+                occurrenceForm.occurrenceData.basisOfRecord.title
+              </td>
+              <td
+                className="value"
+              >
+                occurrenceForm.occurrenceData.basisOfRecord.humanObservation
+              </td>
+            </tr>
+          </NameValueRow>
+          <NameValueRow
+            name="occurrenceForm.occurrenceData.sex.title"
+            value="occurrenceForm.occurrenceData.sex.male"
+          >
+            <tr
+              className="name-value-row fieldrow"
+            >
+              <td
+                className="name"
+              >
+                occurrenceForm.occurrenceData.sex.title
+              </td>
+              <td
+                className="value"
+              >
+                occurrenceForm.occurrenceData.sex.male
+              </td>
+            </tr>
+          </NameValueRow>
+          <NameValueRow
+            name="occurrenceForm.occurrenceData.lifestage.title"
+            value="occurrenceForm.occurrenceData.lifestage.adult"
+          >
+            <tr
+              className="name-value-row fieldrow"
+            >
+              <td
+                className="name"
+              >
+                occurrenceForm.occurrenceData.lifestage.title
+              </td>
+              <td
+                className="value"
+              >
+                occurrenceForm.occurrenceData.lifestage.adult
+              </td>
+            </tr>
+          </NameValueRow>
+        </tbody>
+      </table>
+      <ChangeButton
+        onClick={[Function]}
+      >
+        <button
+          className="change-button button"
+          onClick={[Function]}
+        >
+          common.change
+        </button>
+      </ChangeButton>
+    </section>
+    <section
+      className="location-data-summary"
+    >
+      <SectionTitle>
+        <h2
+          className="title is-4"
+        >
+          3 - 
+          occurrenceForm.locationData.step.stepTitle
+        </h2>
+      </SectionTitle>
+      <table
+        className="table is-striped is-fullwidth is-hoverable"
+      >
+        <NameValueHeader>
+          <thead>
+            <tr>
+              <th
+                className="type"
+              >
+                common.name
+              </th>
+              <th
+                className="value"
+              >
+                common.value
+              </th>
+            </tr>
+          </thead>
+        </NameValueHeader>
+        <tbody>
+          <NameValueRow
+            name="occurrenceForm.locationData.decimalLatitude.label"
+            value={51.3354656}
+          >
+            <tr
+              className="name-value-row fieldrow"
+            >
+              <td
+                className="name"
+              >
+                occurrenceForm.locationData.decimalLatitude.label
+              </td>
+              <td
+                className="value"
+              >
+                51.3354656
+              </td>
+            </tr>
+          </NameValueRow>
+          <NameValueRow
+            name="occurrenceForm.locationData.decimalLongitude.label"
+            value={2.345456}
+          >
+            <tr
+              className="name-value-row fieldrow"
+            >
+              <td
+                className="name"
+              >
+                occurrenceForm.locationData.decimalLongitude.label
+              </td>
+              <td
+                className="value"
+              >
+                2.345456
+              </td>
+            </tr>
+          </NameValueRow>
+          <NameValueRow
+            name="occurrenceForm.locationData.coordinateUncertainty.label"
+            value={null}
+          >
+            <tr
+              className="name-value-row fieldrow"
+            >
+              <td
+                className="name"
+              >
+                occurrenceForm.locationData.coordinateUncertainty.label
+              </td>
+              <td
+                className="value"
+              >
+                —
+              </td>
+            </tr>
+          </NameValueRow>
+          <NameValueRow
+            name="occurrenceForm.locationData.minimumDepth.label"
+            value={null}
+          >
+            <tr
+              className="name-value-row fieldrow"
+            >
+              <td
+                className="name"
+              >
+                occurrenceForm.locationData.minimumDepth.label
+              </td>
+              <td
+                className="value"
+              >
+                —
+              </td>
+            </tr>
+          </NameValueRow>
+          <NameValueRow
+            name="occurrenceForm.locationData.maximumDepth.label"
+            value={null}
+          >
+            <tr
+              className="name-value-row fieldrow"
+            >
+              <td
+                className="name"
+              >
+                occurrenceForm.locationData.maximumDepth.label
+              </td>
+              <td
+                className="value"
+              >
+                —
+              </td>
+            </tr>
+          </NameValueRow>
+        </tbody>
+      </table>
+      <SectionSubtitle>
+        <h2
+          className="title is-5"
+        >
+          occurrenceForm.finalSummary.locationData.verbatimDataSubtitle
+        </h2>
+      </SectionSubtitle>
+      <table
+        className="table is-striped is-fullwidth is-hoverable"
+      >
+        <tbody>
+          <NameValueRow
+            name="occurrenceForm.locationData.verbatimCoordinates.label"
+            value="41 05 54S 121 05 34W"
+          >
+            <tr
+              className="name-value-row fieldrow"
+            >
+              <td
+                className="name"
+              >
+                occurrenceForm.locationData.verbatimCoordinates.label
+              </td>
+              <td
+                className="value"
+              >
+                41 05 54S 121 05 34W
+              </td>
+            </tr>
+          </NameValueRow>
+          <NameValueRow
+            name="occurrenceForm.locationData.verbatimDepth.label"
+            value="100 - 200 m"
+          >
+            <tr
+              className="name-value-row fieldrow"
+            >
+              <td
+                className="name"
+              >
+                occurrenceForm.locationData.verbatimDepth.label
+              </td>
+              <td
+                className="value"
+              >
+                100 - 200 m
+              </td>
+            </tr>
+          </NameValueRow>
+        </tbody>
+      </table>
+      <ChangeButton
+        onClick={[Function]}
+      >
+        <button
+          className="change-button button"
+          onClick={[Function]}
+        >
+          common.change
+        </button>
+      </ChangeButton>
+    </section>
+    <section
+      className="observation-data-summary"
+    >
+      <SectionTitle>
+        <h2
+          className="title is-4"
+        >
+          4 - 
+          occurrenceForm.observationData.step.stepTitle
+        </h2>
+      </SectionTitle>
+      <SectionSubtitle>
+        <h2
+          className="title is-5"
+        >
+          occurrenceForm.finalSummary.observationData.catalogDataSubtitle
+        </h2>
+      </SectionSubtitle>
+      <div
+        className="content"
+      >
+        <table
+          className="table is-striped is-fullwidth is-hoverable"
+        >
+          <NameValueHeader>
+            <thead>
+              <tr>
+                <th
+                  className="type"
+                >
+                  common.name
+                </th>
+                <th
+                  className="value"
+                >
+                  common.value
+                </th>
+              </tr>
+            </thead>
+          </NameValueHeader>
+          <tbody>
+            <NameValueRow
+              name="occurrenceForm.observationData.institutionCode.label"
+              value="IBSS"
+            >
+              <tr
+                className="name-value-row fieldrow"
+              >
+                <td
+                  className="name"
+                >
+                  occurrenceForm.observationData.institutionCode.label
+                </td>
+                <td
+                  className="value"
+                >
+                  IBSS
+                </td>
+              </tr>
+            </NameValueRow>
+            <NameValueRow
+              name="occurrenceForm.observationData.collectionCode.label"
+              value="R/V N. Danilevskiy 1935 Azov Sea benthos data"
+            >
+              <tr
+                className="name-value-row fieldrow"
+              >
+                <td
+                  className="name"
+                >
+                  occurrenceForm.observationData.collectionCode.label
+                </td>
+                <td
+                  className="value"
+                >
+                  R/V N. Danilevskiy 1935 Azov Sea benthos data
+                </td>
+              </tr>
+            </NameValueRow>
+            <NameValueRow
+              name="occurrenceForm.observationData.fieldNumber.label"
+              value="557"
+            >
+              <tr
+                className="name-value-row fieldrow"
+              >
+                <td
+                  className="name"
+                >
+                  occurrenceForm.observationData.fieldNumber.label
+                </td>
+                <td
+                  className="value"
+                >
+                  557
+                </td>
+              </tr>
+            </NameValueRow>
+            <NameValueRow
+              name="occurrenceForm.observationData.catalogNumber.label"
+              value="IBSS_Benthos_1935_1331"
+            >
+              <tr
+                className="name-value-row fieldrow"
+              >
+                <td
+                  className="name"
+                >
+                  occurrenceForm.observationData.catalogNumber.label
+                </td>
+                <td
+                  className="value"
+                >
+                  IBSS_Benthos_1935_1331
+                </td>
+              </tr>
+            </NameValueRow>
+            <NameValueRow
+              name="occurrenceForm.observationData.recordNumber.label"
+              value="123456"
+            >
+              <tr
+                className="name-value-row fieldrow"
+              >
+                <td
+                  className="name"
+                >
+                  occurrenceForm.observationData.recordNumber.label
+                </td>
+                <td
+                  className="value"
+                >
+                  123456
+                </td>
+              </tr>
+            </NameValueRow>
+          </tbody>
+        </table>
+        <div
+          className="columns"
+        >
+          <div
+            className="column is-3"
+          >
+            <p
+              className="title is-5"
+            >
+              occurrenceForm.observationData.identifiedBy.label
+            </p>
+            <ul>
+              <li
+                key="Indiana Jones"
+              >
+                Indiana Jones
+              </li>
+            </ul>
+          </div>
+          <div
+            className="column is-3"
+          >
+            <p
+              className="title is-5"
+            >
+              occurrenceForm.observationData.recordedBy.label
+            </p>
+            <ul>
+              <li
+                key="Harrison Ford"
+              >
+                Harrison Ford
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <SectionSubtitle>
+        <h2
+          className="title is-5"
+        >
+          occurrenceForm.finalSummary.observationData.speciesDataSubtitle
+        </h2>
+      </SectionSubtitle>
+      <table
+        className="table is-striped is-fullwidth is-hoverable"
+      >
+        <NameValueHeader>
+          <thead>
+            <tr>
+              <th
+                className="type"
+              >
+                common.name
+              </th>
+              <th
+                className="value"
+              >
+                common.value
+              </th>
+            </tr>
+          </thead>
+        </NameValueHeader>
+        <tbody>
+          <NameValueRow
+            name="occurrenceForm.observationData.references.label"
+            value="http://www.google.com, https://clojure.org/"
+          >
+            <tr
+              className="name-value-row fieldrow"
+            >
+              <td
+                className="name"
+              >
+                occurrenceForm.observationData.references.label
+              </td>
+              <td
+                className="value"
+              >
+                http://www.google.com, https://clojure.org/
+              </td>
+            </tr>
+          </NameValueRow>
+          <NameValueRow
+            name="occurrenceForm.observationData.identificationQualifier.label"
+            value="some identification qualifier"
+          >
+            <tr
+              className="name-value-row fieldrow"
+            >
+              <td
+                className="name"
+              >
+                occurrenceForm.observationData.identificationQualifier.label
+              </td>
+              <td
+                className="value"
+              >
+                some identification qualifier
+              </td>
+            </tr>
+          </NameValueRow>
+          <NameValueRow
+            name="occurrenceForm.observationData.identificationRemarks.label"
+            value="some identification remarks"
+          >
+            <tr
+              className="name-value-row fieldrow"
+            >
+              <td
+                className="name"
+              >
+                occurrenceForm.observationData.identificationRemarks.label
+              </td>
+              <td
+                className="value"
+              >
+                some identification remarks
+              </td>
+            </tr>
+          </NameValueRow>
+        </tbody>
+      </table>
+      <ChangeButton
+        onClick={[Function]}
+      >
+        <button
+          className="change-button button"
+          onClick={[Function]}
+        >
+          common.change
+        </button>
+      </ChangeButton>
+    </section>
+    <section
+      className="measurement-or-fact-summary"
+    >
+      <SectionTitle>
+        <h2
+          className="title is-4"
+        >
+          5 - 
+          occurrenceForm.measurementOrFact.step.stepTitle
+        </h2>
+      </SectionTitle>
+      <table
+        className="measurements table is-fullwidth is-striped is-hoverable"
+      >
+        <thead>
+          <tr>
+            <th
+              className="type"
+            >
+              common.type
+            </th>
+            <th
+              className="name"
+            >
+              common.name
+            </th>
+            <th
+              className="value"
+            >
+              common.value
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            className="fieldrow"
+            key="0"
+          >
+            <td>
+              Pressure
+            </td>
+            <td>
+              Decibars
+            </td>
+            <td>
+              10
+            </td>
+          </tr>
+          <tr
+            className="fieldrow"
+            key="1"
+          >
+            <td>
+              Pressure
+            </td>
+            <td>
+              Decibars
+            </td>
+            <td>
+              50
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <ChangeButton
+        onClick={[Function]}
+      >
+        <button
+          className="change-button button"
+          onClick={[Function]}
+        >
+          common.change
+        </button>
+      </ChangeButton>
+    </section>
+    <section
+      className="darwin-core-fields-summary"
+    >
+      <SectionTitle>
+        <h2
+          className="title is-4"
+        >
+          6 - 
+          occurrenceForm.darwinCoreFields.step.stepTitle
+        </h2>
+      </SectionTitle>
+      <table
+        className="table is-striped is-fullwidth is-hoverable"
+      >
+        <NameValueHeader>
+          <thead>
+            <tr>
+              <th
+                className="type"
+              >
+                common.name
+              </th>
+              <th
+                className="value"
+              >
+                common.value
+              </th>
+            </tr>
+          </thead>
+        </NameValueHeader>
+        <tbody>
+          <NameValueRow
+            key="0"
+            name="name-1"
+            value="value-1"
+          >
+            <tr
+              className="name-value-row fieldrow"
+            >
+              <td
+                className="name"
+              >
+                name-1
+              </td>
+              <td
+                className="value"
+              >
+                value-1
+              </td>
+            </tr>
+          </NameValueRow>
+          <NameValueRow
+            key="1"
+            name="name-2"
+            value="value-2"
+          >
+            <tr
+              className="name-value-row fieldrow"
+            >
+              <td
+                className="name"
+              >
+                name-2
+              </td>
+              <td
+                className="value"
+              >
+                value-2
+              </td>
+            </tr>
+          </NameValueRow>
+          <NameValueRow
+            key="2"
+            name="name-3"
+            value="value-3"
+          >
+            <tr
+              className="name-value-row fieldrow"
+            >
+              <td
+                className="name"
+              >
+                name-3
+              </td>
+              <td
+                className="value"
+              >
+                value-3
+              </td>
+            </tr>
+          </NameValueRow>
+        </tbody>
+      </table>
+      <ChangeButton
+        onClick={[Function]}
+      >
+        <button
+          className="change-button button"
+          onClick={[Function]}
+        >
+          common.change
+        </button>
+      </ChangeButton>
+    </section>
+    <div
+      className="error-message notification is-danger"
+    >
+      <button
+        className="close delete"
+        onClick={[MockFunction]}
+      />
+      error message
+    </div>
+    <SubmitEntryButton
+      onClick={[MockFunction]}
+    >
+      <div
+        className="submit-entry-button columns is-mobile is-centered"
       >
         <button
           className="button is-info is-medium"

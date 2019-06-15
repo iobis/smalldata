@@ -4,11 +4,17 @@ import FinalSummary from './FinalSummary'
 
 export default [{
   component: FinalSummary,
-  name:      'FinalSummary',
+  name:      'default',
+  props:     {
+    ...getDefaultProps()
+  }
+}, {
+  component: FinalSummary,
+  name:      'with error',
   props:     {
     ...getDefaultProps(),
-    onChangeClick: console.log,
-    onSubmitClick: console.log
+    errorVisible: true,
+    errorMessage: 'error message'
   }
 }]
 
@@ -53,6 +59,10 @@ export function getDefaultProps() {
       { name: 'name-1', value: 'value-1' },
       { name: 'name-2', value: 'value-2' },
       { name: 'name-3', value: 'value-3' }
-    ]
+    ],
+    onChangeClick:    console.log,
+    onSubmitClick:    console.log,
+    onErrorClose:     console.log,
+    errorVisible:     false
   }
 }

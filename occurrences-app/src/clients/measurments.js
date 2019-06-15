@@ -62,3 +62,13 @@ export function getSpecificMeasurements() {
     units:  [{ name: 'Grams', id: 'http://vocab.nerc.ac.uk/collection/P06/current/UGRM/' }]
   }]
 }
+
+export function findTypeAndUnitIdByNames(typeName, unitName) {
+  const measurement = [...getGeneralMeasurements(), ...getSpecificMeasurements()]
+    .find(measurment => measurment.type === typeName)
+  const unit = measurement.units.find(unit => unit.name === unitName)
+  return {
+    typeId: measurement.typeId,
+    unitId: unit.id
+  }
+}

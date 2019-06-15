@@ -10,13 +10,16 @@ import { useTranslation } from 'react-i18next'
 import { datasetTitleOf } from '../../../../clients/SmalldataClient'
 
 export default function FinalSummary({
-  dataset,
   darwinCoreFields,
-  occurrenceData,
-  observationData,
+  dataset,
+  errorMessage,
+  errorVisible,
   locationData,
   measurements,
+  observationData,
+  occurrenceData,
   onChangeClick,
+  onErrorClose,
   onSubmitClick
 }) {
   const { t } = useTranslation()
@@ -26,7 +29,6 @@ export default function FinalSummary({
       <div className="columns is-centered">
         <h1 className="final-summary-title title is-3">{t('occurrenceForm.finalSummary.title')}</h1>
       </div>
-      <SubmitEntryButton onClick={onSubmitClick}/>
       <section className="dataset-summary">
         <SectionTitle>1 - {t('occurrenceForm.dataset.step.stepTitle')}</SectionTitle>
         <p>{datasetTitleOf(dataset)}</p>
@@ -189,6 +191,11 @@ export default function FinalSummary({
         </table>
         <ChangeButton onClick={() => onChangeClick({ index: 5, value: 'darwinCoreFields' })}/>
       </section>
+      {errorVisible ? (
+        <div className="error-message notification is-danger">
+          <button className="close delete" onClick={onErrorClose}/>
+          {errorMessage}
+        </div>) : null}
       <SubmitEntryButton onClick={onSubmitClick}/>
     </div>
   )
@@ -197,11 +204,14 @@ export default function FinalSummary({
 FinalSummary.propTypes = {
   darwinCoreFields: PropTypes.arrayOf(PropTypes.shape(darwinCoreFieldShape)).isRequired,
   dataset:          PropTypes.shape(datasetShape).isRequired,
+  errorMessage:     PropTypes.string,
+  errorVisible:     PropTypes.bool.isRequired,
   locationData:     PropTypes.shape(locationDataShape).isRequired,
   measurements:     PropTypes.array.isRequired,
   observationData:  PropTypes.shape(observationDataShape).isRequired,
   occurrenceData:   PropTypes.shape(occurrenceDataShape).isRequired,
   onChangeClick:    PropTypes.func.isRequired,
+  onErrorClose:     PropTypes.func.isRequired,
   onSubmitClick:    PropTypes.func.isRequired
 }
 
@@ -235,7 +245,7 @@ NameValueRow.propTypes = {
 function SubmitEntryButton({ onClick }) {
   const { t } = useTranslation()
   return (
-    <div className="submit-entry-button columns is-centered">
+    <div className="submit-entry-button columns is-mobile is-centered">
       <button className="button is-info is-medium" onClick={onClick}>
         {t('occurrenceForm.finalSummary.submitEntryButton')}
       </button>

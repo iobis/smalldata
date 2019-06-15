@@ -35,7 +35,7 @@ export default function OccurrenceData({ onChange, data }) {
           <DatePicker onChange={(value) => updateField('beginDate', value)} value={beginDate}/>
         </div>
         <div className="event-end-date column field is-two-fifths">
-          <label className="label">
+          <label className="label has-text-weight-normal">
             {t('occurrenceForm.occurrenceData.eventEndDate')}
           </label>
           <div className="control">

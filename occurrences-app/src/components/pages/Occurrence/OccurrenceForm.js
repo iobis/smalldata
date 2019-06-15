@@ -11,11 +11,13 @@ import PropTypes from 'prop-types'
 import React, { useState, useEffect } from 'react'
 import Dataset from './Dataset/Dataset'
 import { format } from 'date-fns'
-import { getDatasets, datasetTitleOf } from '../../../clients/SmalldataClient'
+import { getDatasets, datasetTitleOf, postOccurrence } from '../../../clients/SmalldataClient'
 import { useTranslation } from 'react-i18next'
 
 export default function OccurrenceForm() {
   const { t } = useTranslation()
+  const [errorVisible, setErrorVisible] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
   const [datasets, setDatasets] = useState([])
   const [dataset, setDataset] = useState(null)
   const [occurrenceData, setOccurrenceData] = useState({
@@ -50,7 +52,7 @@ export default function OccurrenceForm() {
   })
   const [darwinCoreFields, setDarwinCoreFields] = useState([])
   const [activeStepIndex, setActiveStepIndex] = useState(0)
-  const [measurementOrFact, setMeasurementOrFact] = useState([])
+  const [measurements, setMeasurements] = useState([])
   const [finalSummaryVisible, setFinalSummaryVisible] = useState(false)
 
   useEffect(() => {
@@ -74,6 +76,27 @@ export default function OccurrenceForm() {
 
   function isOccurrenceValid() {
     return !dataset
+  }
+
+  async function handleSubmitClick() {
+    const occurrence = {
+      dataset,
+      occurrenceData,
+      locationData,
+      observationData,
+      measurements:     measurements || [],
+      darwinCoreFields: darwinCoreFields || []
+    }
+    const response = await postOccurrence({ occurrence })
+    if (response.exception) {
+      setErrorVisible(true)
+      setErrorMessage(response.exception + ': ' + response.exceptionMessage)
+    }
+  }
+
+  function handleErrorClose() {
+    setErrorVisible(false)
+    setErrorMessage('')
   }
 
   const steps = [{
@@ -112,12 +135,12 @@ export default function OccurrenceForm() {
       onChange={setObservationData}/>
   }, {
     dataDescription: t('occurrenceForm.measurementOrFact.step.dataDescription'),
-    selectedData:    <MeasurementOrFactSummary data={measurementOrFact}/>,
+    selectedData:    <MeasurementOrFactSummary data={measurements}/>,
     stepDescription: t('occurrenceForm.measurementOrFact.step.stepDescription'),
     stepTitle:       t('occurrenceForm.measurementOrFact.step.stepTitle'),
     children:        <MeasurementOrFact
-      data={measurementOrFact}
-      onChange={setMeasurementOrFact}/>
+      data={measurements}
+      onChange={setMeasurements}/>
   }, {
     dataDescription: '',
     selectedData:    '',
@@ -151,14 +174,20 @@ export default function OccurrenceForm() {
         (<FinalSummary
           darwinCoreFields={darwinCoreFields}
           dataset={dataset}
+          errorMessage={errorMessage}
+          errorVisible={errorVisible}
           locationData={locationData}
-          measurements={measurementOrFact}
+          measurements={measurements}
           observationData={observationData}
           occurrenceData={occurrenceData}
           onChangeClick={(params) => showActiveStep(params.index)}
-          onSubmitClick={() => {}}/>) :
+          onErrorClose={handleErrorClose}
+          onSubmitClick={handleSubmitClick}/>) :
         (<div className="columns column is-centered">
-          <button className="review-and-submit-button button is-medium is-info" disabled={isOccurrenceValid()} onClick={showFinalSummary}>
+          <button
+            className="review-and-submit-button button is-medium is-info"
+            disabled={isOccurrenceValid()}
+            onClick={showFinalSummary}>
             {t('occurrenceForm.reviewAndSubmitButton')}
           </button>
         </div>)}
@@ -211,7 +240,7 @@ function OccurrenceDataSummary({ scientificName, beginDate, endDate }) {
 }
 
 OccurrenceDataSummary.propTypes = {
-  beginDate:      PropTypes.number,
-  endDate:        PropTypes.number,
+  beginDate:      PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.number]),
+  endDate:        PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.number]),
   scientificName: PropTypes.string
 }
