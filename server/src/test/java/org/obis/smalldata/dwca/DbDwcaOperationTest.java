@@ -18,6 +18,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(VertxExtension.class)
 class DbDwcaOperationTest {
+  private static final String DWC_TABLE = "dwcTable";
   private static final String DWC_RECORD = "dwcRecord";
   private static final String DEFAULT_DATASET_REF = "NnqVLwIyPn-nRkc";
   private static final String DEFAULT_USER_REF = "ovZTtaOJZ98xDDY";
@@ -67,9 +68,9 @@ class DbDwcaOperationTest {
       var result = ar.result();
       assertThat(result).hasSize(642);
       result
-        .forEach(dwca -> assertThat(dwca.getMap()).containsOnlyKeys("user_ref", "_id", "dataset_ref", "dwcTable", "dwcRecord"));
+        .forEach(dwca -> assertThat(dwca.getMap()).containsOnlyKeys("user_ref", "_id", "dataset_ref", DWC_TABLE, DWC_RECORD));
       result.stream()
-        .map(dwca -> dwca.getJsonObject("dwcRecord").getJsonObject("tdwg").getMap().keySet())
+        .map(dwca -> dwca.getJsonObject(DWC_RECORD).getJsonObject("tdwg").getMap().keySet())
         .forEach(tdwg -> assertThat(tdwg).isSubsetOf("measurementUnitID", "measurementValue"));
       testContext.completeNow();
     });
@@ -140,14 +141,14 @@ class DbDwcaOperationTest {
     var dwcaId = "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1032";
     var records = List.of(
       new JsonObject()
-        .put("dwcTable", "occurrence")
+        .put(DWC_TABLE, "occurrence")
         .put(KEY_USER_REF, DEFAULT_USER_REF)
         .put(KEY_DATASET_REF, DEFAULT_DATASET_REF)
         .put(DWC_RECORD, new JsonObject()
           .put("id", dwcaId)
           .put(KEY_IOBIS, new JsonObject())),
       new JsonObject()
-        .put("dwcTable", "emof")
+        .put(DWC_TABLE, "emof")
         .put(KEY_USER_REF, DEFAULT_USER_REF)
         .put(KEY_DATASET_REF, DEFAULT_DATASET_REF)
         .put(DWC_RECORD, new JsonObject()
@@ -155,7 +156,7 @@ class DbDwcaOperationTest {
           .put("purl", new JsonObject())
           .put(KEY_IOBIS, new JsonObject())),
       new JsonObject()
-        .put("dwcTable", "emof")
+        .put(DWC_TABLE, "emof")
         .put(KEY_USER_REF, DEFAULT_USER_REF)
         .put(KEY_DATASET_REF, DEFAULT_DATASET_REF)
         .put(DWC_RECORD, new JsonObject()
