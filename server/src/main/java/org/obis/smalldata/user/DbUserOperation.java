@@ -13,6 +13,7 @@ import static org.pmw.tinylog.Logger.info;
 class DbUserOperation {
 
   private static final String KEY_REF = "_ref";
+
   private final MongoClient mongoClient;
   private final UniqueIdGenerator idGenerator;
 
@@ -38,7 +39,8 @@ class DbUserOperation {
       arFound -> {
         if (arFound.succeeded() && arFound.result().isEmpty()) {
           idGenerator.consumeNewId(
-            Collections.USERS.dbName(), KEY_REF,
+            Collections.USERS.dbName(),
+            KEY_REF,
             ref -> mongoClient.insert(
               Collections.USERS.dbName(),
               userProfile.put(KEY_REF, ref),
