@@ -240,7 +240,7 @@ function OccurrenceDataSummary({ scientificName, beginDate, endDate }) {
 }
 
 OccurrenceDataSummary.propTypes = {
-  beginDate:      PropTypes.number,
-  endDate:        PropTypes.number,
+  beginDate:      PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.number]),
+  endDate:        PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.number]),
   scientificName: PropTypes.string
 }
