@@ -9,7 +9,7 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import lombok.Value;
 import org.bson.types.ObjectId;
-import org.pmw.tinylog.Logger;
+import org.obis.smalldata.util.Collections;
 
 import java.time.Instant;
 import java.util.List;
@@ -19,11 +19,13 @@ import java.util.function.BiFunction;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import static org.pmw.tinylog.Logger.info;
+
 class RecordHandler {
 
-  private static final String COLLECTION_DWCARECORD = "dwcarecords";
   private static final String DWC_RECORD = "dwcRecord";
   private static final String KEY_CORE = "core";
+  private static final String KEY_DATE_ADDED = "dateAdded";
   private final DbOperation dbOperation;
 
   RecordHandler(DbOperation dbOperation) {
@@ -61,9 +63,9 @@ class RecordHandler {
   private void insertRecords(Message<JsonObject> message, JsonObject body) {
     var coreTable = getCoreTable(body);
     var dwcRecords = dwcaRecordToDwcList(body);
-    Logger.info(dwcRecords);
+    info(dwcRecords);
     dbOperation.withNewId(
-      COLLECTION_DWCARECORD,
+      Collections.DATASETRECORDS.dbName(),
       id -> updateRecords(message, coreTable, dwcRecords, id, dbOperation::insertRecords));
   }
 
@@ -73,7 +75,7 @@ class RecordHandler {
         var record = dwcRecord.getJsonObject(DWC_RECORD);
         record.put("id", dwcaId);
         dwcRecord.put(DWC_RECORD, record);
-        dwcRecord.put("dateAdded", dateAdded);
+        dwcRecord.put(KEY_DATE_ADDED, dateAdded);
         dwcRecord.put("_id", ObjectId.get().toHexString());
         return dwcRecord;
       })
@@ -91,12 +93,13 @@ class RecordHandler {
     var result = dbOperation.apply(dwcaId, records);
     result.setHandler(ar -> message.reply(new JsonObject()
       .put("dwcaId", dwcaId)
-      .put("dateAdded", dateAdded)
+      .put(KEY_DATE_ADDED, dateAdded)
       .put("records", generateDwcaJsonResponse(records).put(KEY_CORE, coreTable))));
   }
 
   private void findRecords(Message<JsonObject> message, JsonObject body) {
-    var dwcaRecordsFuture = dbOperation.findDwcaRecords(body.getJsonObject("query"));
+    var dwcaRecordsFuture = dbOperation.findDwcaRecords(body.getJsonObject("query"),
+      body.getJsonObject("projectionFields", new JsonObject()));
     var coreTableMapFuture = dbOperation.coreTableMap();
     CompositeFuture.all(dwcaRecordsFuture, coreTableMapFuture).setHandler(ar -> {
       var dwcaRecords = (List<JsonObject>) ar.result().list().get(0);
@@ -110,7 +113,7 @@ class RecordHandler {
         .map(entry -> {
           var datasetRef = entry.getKey().get(1);
           var dateAdded = entry.getValue().stream()
-            .map(record -> record.getString("dateAdded"))
+            .map(record -> record.getString(KEY_DATE_ADDED))
             .filter(Objects::nonNull)
             .map(Instant::parse)
             .max(Instant::compareTo)
@@ -118,7 +121,7 @@ class RecordHandler {
           return new JsonObject()
             .put("dwcaId", entry.getKey().get(0))
             .put("dataset", datasetRef)
-            .put("dateAdded", dateAdded)
+            .put(KEY_DATE_ADDED, dateAdded)
             .put("dwcRecords", generateDwcaJsonResponse(entry.getValue())
               .put(KEY_CORE, coreTableMap.get(datasetRef)));
         })
@@ -129,8 +132,8 @@ class RecordHandler {
   }
 
   private Instant instantFromRecord(JsonObject record) {
-    var dateAdded = record.getString("dateAdded");
-    return null != dateAdded ? Instant.parse(dateAdded) : Instant.MIN;
+    var dateAdded = record.getString(KEY_DATE_ADDED);
+    return null == dateAdded ? Instant.MIN : Instant.parse(dateAdded);
   }
 
   private String getCoreTable(JsonObject body) {

@@ -13,6 +13,7 @@ import org.obis.smalldata.testutil.TestDb;
 import org.obis.smalldata.util.Collections;
 
 import java.util.List;
+import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -48,6 +49,29 @@ class DbOperationTest {
     dwcaRecords.setHandler(ar -> {
       var result = ar.result();
       assertThat(result).hasSize(642);
+      testContext.completeNow();
+    });
+  }
+
+  @Test
+  void findDwcaRecordsRestrictDwcFields(VertxTestContext testContext) {
+    var dwcaRecords = dbOperation.findDwcaRecords(
+      new JsonObject().put(KEY_DATASET_REF, DEFAULT_DATASET_REF),
+      new JsonObject()
+        .put("dwcRecord.tdwg.measurementValue", true)
+        .put("dwcRecord.tdwg.measurementUnitID", true)
+        .put("dwcRecord.dateAdded", true)
+        .put("dwcRecord.id", true)
+        .put("user_ref", false)
+        .put("dataset_ref", true));
+    dwcaRecords.setHandler(ar -> {
+      var result = ar.result();
+      assertThat(result).hasSize(642);
+      result.forEach(dwca -> dwca.containsKey("user_ref"));
+      result.stream()
+        .map(dwca -> dwca.getJsonObject("dwcRecord").getJsonObject("tdwg"))
+        .map(tdwg -> tdwg.getMap().keySet())
+        .forEach(tdwg -> assertThat(tdwg).isSubsetOf(Set.of("measurementUnitID", "measurementValue")));
       testContext.completeNow();
     });
   }
