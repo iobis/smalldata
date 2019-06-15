@@ -24,10 +24,10 @@ class RecordHandler {
   private static final String COLLECTION_DWCARECORD = "dwcarecords";
   private static final String DWC_RECORD = "dwcRecord";
   private static final String KEY_CORE = "core";
-  private final DbOperation dbOperation;
+  private final DbDwcaOperation dbDwcaOperation;
 
-  RecordHandler(DbOperation dbOperation) {
-    this.dbOperation = dbOperation;
+  RecordHandler(DbDwcaOperation dbDwcaOperation) {
+    this.dbDwcaOperation = dbDwcaOperation;
   }
 
   void handleDwcaRecordEvents(Message<JsonObject> message) {
@@ -56,15 +56,15 @@ class RecordHandler {
     var dwcRecords = dwcaRecordToDwcList(body);
     info(dwcRecords);
     var dwcaId = body.getString("dwcaId");
-    updateRecords(message, coreTable, dwcRecords, dwcaId, dbOperation::putDwcaRecord);
+    updateRecords(message, coreTable, dwcRecords, dwcaId, dbDwcaOperation::putDwcaRecord);
   }
 
   private void insertRecords(Message<JsonObject> message, JsonObject body) {
     var coreTable = getCoreTable(body);
     var dwcRecords = dwcaRecordToDwcList(body);
-    dbOperation.withNewId(
+    dbDwcaOperation.withNewId(
       COLLECTION_DWCARECORD,
-      id -> updateRecords(message, coreTable, dwcRecords, id, dbOperation::insertRecords));
+      id -> updateRecords(message, coreTable, dwcRecords, id, dbDwcaOperation::insertRecords));
   }
 
   private List<JsonObject> generateDwcDbRecords(List<JsonObject> dwcRecords, String dwcaId, Instant dateAdded) {
@@ -96,8 +96,8 @@ class RecordHandler {
   }
 
   private void findRecords(Message<JsonObject> message, JsonObject body) {
-    var dwcaRecordsFuture = dbOperation.findDwcaRecords(body.getJsonObject("query"));
-    var coreTableMapFuture = dbOperation.coreTableMap();
+    var dwcaRecordsFuture = dbDwcaOperation.findDwcaRecords(body.getJsonObject("query"));
+    var coreTableMapFuture = dbDwcaOperation.coreTableMap();
     CompositeFuture.all(dwcaRecordsFuture, coreTableMapFuture).setHandler(ar -> {
       var dwcaRecords = (List<JsonObject>) ar.result().list().get(0);
       var coreTableMap = (Map<String, String>) ar.result().list().get(1);

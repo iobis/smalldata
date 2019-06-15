@@ -44,7 +44,7 @@ public class DwcaZipGeneratorTest {
   @Test
   public void writeZipFile() throws InterruptedException, IOException {
     var datasetRef = "NnqVLwIyPn-nRkc";
-    var dbQuery = new DbOperation(mongoClient);
+    var dbQuery = new DbDwcaOperation(mongoClient);
     var zipGenerator = new DwcaZipGenerator("http://localhost:3000/");
     var dwcaRecordsFuture = dbQuery.findDwcaRecords(new JsonObject().put("dataset_ref", datasetRef));
     var datasetFuture = dbQuery.findDataset(datasetRef);
