@@ -47,7 +47,7 @@ export default function FinalSummary({
               value={format(occurrenceData.beginDate, 'D MMMM YYYY')}/>
             <NameValueRow
               name={t('occurrenceForm.occurrenceData.eventEndDate')}
-              value={format(occurrenceData.endDate, 'D MMMM YYYY')}/>
+              value={occurrenceData.endDate && format(occurrenceData.endDate, 'D MMMM YYYY')}/>
             <NameValueRow
               name={t('occurrenceForm.occurrenceData.occurrenceStatus.title')}
               value={t('occurrenceForm.occurrenceData.occurrenceStatus.' + occurrenceData.occurrenceStatus)}/>
