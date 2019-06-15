@@ -9,15 +9,15 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import lombok.Value;
 import org.bson.types.ObjectId;
+import org.pmw.tinylog.Logger;
 
 import java.time.Instant;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.function.BiFunction;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
-import static org.pmw.tinylog.Logger.info;
 
 class RecordHandler {
 
@@ -54,7 +54,6 @@ class RecordHandler {
   private void putRecords(Message<JsonObject> message, JsonObject body) {
     var coreTable = getCoreTable(body);
     var dwcRecords = dwcaRecordToDwcList(body);
-    info(dwcRecords);
     var dwcaId = body.getString("dwcaId");
     updateRecords(message, coreTable, dwcRecords, dwcaId, dbOperation::putDwcaRecord);
   }
@@ -62,6 +61,7 @@ class RecordHandler {
   private void insertRecords(Message<JsonObject> message, JsonObject body) {
     var coreTable = getCoreTable(body);
     var dwcRecords = dwcaRecordToDwcList(body);
+    Logger.info(dwcRecords);
     dbOperation.withNewId(
       COLLECTION_DWCARECORD,
       id -> updateRecords(message, coreTable, dwcRecords, id, dbOperation::insertRecords));
@@ -101,6 +101,7 @@ class RecordHandler {
     CompositeFuture.all(dwcaRecordsFuture, coreTableMapFuture).setHandler(ar -> {
       var dwcaRecords = (List<JsonObject>) ar.result().list().get(0);
       var coreTableMap = (Map<String, String>) ar.result().list().get(1);
+
       var records = new JsonArray(dwcaRecords.stream()
         .collect(Collectors.groupingBy(record -> ImmutableList.of(
           record.getJsonObject("dwcRecord").getString("id"),
@@ -108,15 +109,28 @@ class RecordHandler {
         .entrySet().stream()
         .map(entry -> {
           var datasetRef = entry.getKey().get(1);
+          var dateAdded = entry.getValue().stream()
+            .map(record -> record.getString("dateAdded"))
+            .filter(Objects::nonNull)
+            .map(Instant::parse)
+            .max(Instant::compareTo)
+            .orElse(null);
           return new JsonObject()
             .put("dwcaId", entry.getKey().get(0))
             .put("dataset", datasetRef)
+            .put("dateAdded", dateAdded)
             .put("dwcRecords", generateDwcaJsonResponse(entry.getValue())
               .put(KEY_CORE, coreTableMap.get(datasetRef)));
         })
+        .sorted((record1, record2) -> instantFromRecord(record2).compareTo(instantFromRecord(record1)))
         .collect(Collectors.toList()));
       message.reply(records);
     });
+  }
+
+  private Instant instantFromRecord(JsonObject record) {
+    var dateAdded = record.getString("dateAdded");
+    return null != dateAdded ? Instant.parse(dateAdded) : Instant.MIN;
   }
 
   private String getCoreTable(JsonObject body) {
