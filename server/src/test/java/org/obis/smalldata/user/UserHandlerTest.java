@@ -59,15 +59,15 @@ public class UserHandlerTest {
       new JsonObject(Map.of(KEY_ACTION, "find")),
       ar -> {
         if (ar.succeeded()) {
-          JsonArray records = ar.result().body();
+          var records = ar.result().body();
           assertThat(records).hasSize(2);
-          JsonObject userjson = records.stream()
+          var user = records.stream()
             .map(JsonObject.class::cast)
-            .filter(user -> user.getString(KEY_REF).equals("ovZTtaOJZ98xDDY"))
+            .filter(u -> u.getString(KEY_REF).equals("ovZTtaOJZ98xDDY"))
             .findFirst()
-            .get();
-          assertThat(userjson.getJsonArray(KEY_DATASET_REFS)).hasSize(4);
-          assertThat(userjson.getJsonArray(KEY_DATASET_REFS))
+            .orElseThrow();
+          assertThat(user.getJsonArray(KEY_DATASET_REFS))
+            .hasSize(4)
             .containsExactly("wEaBfmFyQhYCdsk", "ntDOtUc7XsRrIus", "PoJnGNMaxsupE4w", "NnqVLwIyPn-nRkc");
           testContext.completeNow();
         } else {
@@ -81,19 +81,20 @@ public class UserHandlerTest {
   void findUserByEmail(Vertx vertx, VertxTestContext testContext) {
     vertx.eventBus().<JsonArray>send(
       "users",
-      new JsonObject(Map.of(KEY_ACTION, "find",
-      "query", new JsonObject().put(KEY_EMAIL_ADDRESS, "some.user@domain.org"))),
+      new JsonObject(Map.of(
+        KEY_ACTION, "find",
+        "query", new JsonObject().put(KEY_EMAIL_ADDRESS, "some.user@domain.org"))),
       ar -> {
         if (ar.succeeded()) {
-          JsonArray records = ar.result().body();
+          var records = ar.result().body();
           assertThat(records).hasSize(1);
-          JsonObject userjson = records.stream()
+          var user = records.stream()
             .map(JsonObject.class::cast)
-            .filter(user -> user.getString(KEY_REF).equals("ovZTtaOJZ98xDDY"))
+            .filter(u -> u.getString(KEY_REF).equals("ovZTtaOJZ98xDDY"))
             .findFirst()
-            .get();
-          assertThat(userjson.getJsonArray(KEY_DATASET_REFS)).hasSize(4);
-          assertThat(userjson.getJsonArray(KEY_DATASET_REFS))
+            .orElseThrow();
+          assertThat(user.getJsonArray(KEY_DATASET_REFS))
+            .hasSize(4)
             .containsExactly("wEaBfmFyQhYCdsk", "ntDOtUc7XsRrIus", "PoJnGNMaxsupE4w", "NnqVLwIyPn-nRkc");
           testContext.completeNow();
         } else {
@@ -107,16 +108,15 @@ public class UserHandlerTest {
   void insertUser(Vertx vertx, VertxTestContext testContext) {
     vertx.eventBus().<JsonObject>send(
       Collections.USERS.dbName(),
-      new JsonObject(Map.of(KEY_ACTION, "insert",
-      "user", new JsonObject()
-          .put(KEY_EMAIL_ADDRESS, "my.user@domain.org"))),
+      new JsonObject(Map.of(
+        KEY_ACTION, "insert",
+        "user", new JsonObject().put(KEY_EMAIL_ADDRESS, "my.user@domain.org"))),
       ar -> {
         if (ar.succeeded()) {
           assertThat(ar.succeeded()).isTrue();
-          var json = ar.result().body();
-          assertThat(json).contains(new AbstractMap.SimpleEntry(KEY_EMAIL_ADDRESS, "my.user@domain.org"));
-          assertThat(json.containsKey(KEY_REF)).isTrue();
-          assertThat(json.containsKey("_id")).isFalse();
+          var json = ar.result().body().getMap();
+          assertThat(json).containsOnlyKeys(KEY_REF, KEY_EMAIL_ADDRESS);
+          assertThat(json).containsEntry(KEY_EMAIL_ADDRESS, "my.user@domain.org");
           testContext.completeNow();
         } else {
           testContext.failNow(ar.cause());
@@ -135,13 +135,10 @@ public class UserHandlerTest {
         "user", new JsonObject().put(KEY_EMAIL_ADDRESS, "my.otheruser@domain.com"))),
       ar -> {
         if (ar.succeeded()) {
-          info(ar.cause());
           assertThat(ar.succeeded()).isTrue();
-          var json = ar.result().body();
-          info(json);
-          assertThat(json).contains(new AbstractMap.SimpleEntry(KEY_EMAIL_ADDRESS, "my.otheruser@domain.com"));
-          assertThat(json.containsKey(KEY_REF)).isTrue();
-          assertThat(json.containsKey("_id")).isFalse();
+          var json = ar.result().body().getMap();
+          assertThat(json).containsOnlyKeys(KEY_REF, KEY_EMAIL_ADDRESS);
+          assertThat(json).containsEntry(KEY_EMAIL_ADDRESS, "my.otheruser@domain.com");
           testContext.completeNow();
         } else {
           testContext.failNow(ar.cause());
