@@ -35,7 +35,7 @@ class DatasetActionHandler {
     actionHandler.handleAction(message);
   }
 
-  void findDatasets(Message<JsonObject> message, JsonObject body) {
+  private void findDatasets(Message<JsonObject> message, JsonObject body) {
     var query = body.getJsonObject("query", new JsonObject());
     if (query.containsKey(QUERY_REF)) {
       dbOperation.findOneDataset(mapQueryKeys(query)).setHandler(ar -> {

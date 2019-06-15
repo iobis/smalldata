@@ -52,9 +52,9 @@ public class DatasetActionHandlerTest {
   void getAllDataSets(Vertx vertx, VertxTestContext testContext) {
     vertx.eventBus().<JsonArray>send(
       "datasets",
-      new JsonObject()
-        .put(KEY_ACTION, "find")
-        .put("query", new JsonObject()),
+      new JsonObject(Map.of(
+        KEY_ACTION, "find",
+        "query", new JsonObject())),
       ar -> {
         var datasets = ar.result().body();
         assertThat(datasets).hasSize(4);
@@ -72,8 +72,9 @@ public class DatasetActionHandlerTest {
     var ref = "ntDOtUc7XsRrIus";
     vertx.eventBus().<JsonArray>send(
       "datasets",
-      new JsonObject().put(KEY_ACTION, "find")
-        .put("query", new JsonObject().put(QUERY_REF, ref)),
+      new JsonObject(Map.of(
+        KEY_ACTION, "find",
+        "query", new JsonObject().put(QUERY_REF, ref))),
       ar -> {
         var datasets = ar.result().body();
         assertThat(datasets).hasSize(1);
@@ -86,8 +87,9 @@ public class DatasetActionHandlerTest {
   void getNotAvailableDataset(Vertx vertx, VertxTestContext testContext) {
     vertx.eventBus().<JsonArray>send(
       "datasets",
-      new JsonObject().put(KEY_ACTION, "find")
-        .put("query", new JsonObject().put(QUERY_REF, "unknown")),
+      new JsonObject(Map.of(
+        KEY_ACTION, "find",
+        "query", new JsonObject().put(QUERY_REF, "unknown"))),
       ar -> {
         var datasets = ar.result().body();
         assertThat(datasets).hasSize(0);

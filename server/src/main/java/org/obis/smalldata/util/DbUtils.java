@@ -26,12 +26,13 @@ public enum DbUtils {
       });
   }
 
-  public void insertDocument(MongoClient mongoClient,
-                             UniqueIdGenerator idGenerator,
-                             Collections collection,
-                             JsonObject query,
-                             JsonObject document,
-                             Future<JsonObject> resultDocument) {
+  public void insertDocument(
+    MongoClient mongoClient,
+    UniqueIdGenerator idGenerator,
+    Collections collection,
+    JsonObject query,
+    JsonObject document,
+    Future<JsonObject> resultDocument) {
     if (query.isEmpty()) {
       insertDocument(mongoClient, idGenerator, collection, document, resultDocument);
     } else {
@@ -48,11 +49,12 @@ public enum DbUtils {
     }
   }
 
-  public void insertDocument(MongoClient mongoClient,
-                             UniqueIdGenerator idGenerator,
-                             Collections collection,
-                             JsonObject document,
-                             Future<JsonObject> resultDocument) {
+  public void insertDocument(
+    MongoClient mongoClient,
+    UniqueIdGenerator idGenerator,
+    Collections collection,
+    JsonObject document,
+    Future<JsonObject> resultDocument) {
     idGenerator.consumeNewId(
       collection.dbName(),
       KEY_REF,

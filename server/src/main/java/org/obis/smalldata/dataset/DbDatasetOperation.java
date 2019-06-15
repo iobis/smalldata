@@ -6,9 +6,10 @@ import io.vertx.ext.mongo.MongoClient;
 import org.obis.smalldata.util.Collections;
 import org.obis.smalldata.util.DbUtils;
 import org.obis.smalldata.util.UniqueIdGenerator;
-import org.pmw.tinylog.Logger;
 
 import java.util.List;
+
+import static org.pmw.tinylog.Logger.info;
 
 class DbDatasetOperation {
 
@@ -54,7 +55,7 @@ class DbDatasetOperation {
 
   public Future<JsonObject> updateDataset(String datasetRef, JsonObject dataset) {
     var resultDataset = Future.<JsonObject>future();
-    Logger.info(dataset.put(QUERY_REF, datasetRef));
+    info(dataset.put(QUERY_REF, datasetRef));
     mongoClient.replaceDocuments(
       Collections.DATASETS.dbName(),
       new JsonObject().put(KEY_REF, datasetRef),
