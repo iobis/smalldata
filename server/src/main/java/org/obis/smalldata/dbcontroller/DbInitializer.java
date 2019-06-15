@@ -2,6 +2,7 @@ package org.obis.smalldata.dbcontroller;
 
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+import io.vertx.ext.mongo.IndexOptions;
 import io.vertx.ext.mongo.MongoClient;
 import org.obis.smalldata.util.BulkOperationUtil;
 import org.obis.smalldata.util.Collections;
@@ -25,12 +26,12 @@ public class DbInitializer {
   public void newUser(String userId) {
     client.find(
       Collections.USERS.dbName(),
-      new JsonObject().put("userid", userId),
+      new JsonObject().put("userId", userId),
       arUserId -> info("userId: {}", arUserId.result()));
     client.insert(
       Collections.USERS.dbName(),
       new JsonObject()
-        .put("userid", userId)
+        .put("userId", userId)
         .put("username", "admin")
         .put("password", "admin")
         .put("roles", new JsonArray().add("node admin")),
@@ -39,32 +40,38 @@ public class DbInitializer {
         info("added object {}", objectId);
         client.find(
           "users",
-          new JsonObject().put("userid", userId),
+          new JsonObject().put("userId", userId),
           arRecord -> info(arRecord.result()));
       });
   }
 
   private void addIndices() {
     List.of(
-      new String[]{Collections.DATASETRECORDS.dbName(), "dwcRecord.id"},
-      new String[]{Collections.DATASETRECORDS.dbName(), "dataset_ref"},
-      new String[]{Collections.USERS.dbName(), "dataset_refs"},
-      new String[]{Collections.DATASETS.dbName(), "_ref"})
-      .forEach(entry ->
-        client.createIndex(
-          entry[0],
+      List.of(Collections.DATASETRECORDS.dbName(), "dwcRecord.id"),
+      List.of(Collections.DATASETRECORDS.dbName(), "dataset_ref"),
+      List.of(Collections.USERS.dbName(), "dataset_refs"),
+      List.of(Collections.USERS.dbName(), "emailAddress", "unique"),
+      List.of(Collections.DATASETS.dbName(), "_ref", "unique"))
+      .forEach(entry -> {
+        var options = new IndexOptions().background(true);
+        if (entry.contains("unique")) {
+          options.unique(true);
+        }
+        client.createIndexWithOptions(
+          entry.get(0),
           new JsonObject()
-            .put(entry[1], 1)
-            .put("collation", DbUtils.INSTANCE.collation)
-            .put("background", true),
-          x -> info("created index '{}.{}'", entry[0], entry[1])));
+            .put(entry.get(1), 1)
+            .put("collation", DbUtils.INSTANCE.collation),
+          options,
+          x -> info("created index '{}.{}'", entry.get(0), entry.get(1)));
+      });
   }
 
   private void addMockData() {
     Map.of(
-      "users", "demodata/users.json",
-      "datasets", "demodata/datasets.json",
-      "dwcarecords", "demodata/dwcarecords.json")
+      Collections.USERS.dbName(), "demodata/users.json",
+      Collections.DATASETS.dbName(), "demodata/datasets.json",
+      Collections.DATASETRECORDS.dbName(), "demodata/dwcarecords.json")
       .entrySet().stream()
       .map(entry -> Map.entry(entry.getKey(), IoFile.loadFromResources(entry.getValue())))
       .map(entry -> Map.entry(entry.getKey(), BulkOperationUtil.createInsertsFromJson(entry.getValue())))
@@ -78,8 +85,9 @@ public class DbInitializer {
     warn("Adding mock data!");
     client.getCollections(arCollections -> {
       if (arCollections.result() != null) {
-        arCollections.result().forEach(coll -> client.dropCollection(coll, ar ->
-          info("Dropped collection {}", coll)));
+        arCollections
+          .result()
+          .forEach(coll -> client.dropCollection(coll, ar -> info("Dropped collection {}", coll)));
       }
     });
     addMockData();

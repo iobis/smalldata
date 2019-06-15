@@ -56,6 +56,7 @@ class RecordHandler {
   private void putRecords(Message<JsonObject> message, JsonObject body) {
     var coreTable = getCoreTable(body);
     var dwcRecords = dwcaRecordToDwcList(body);
+    info(dwcRecords);
     var dwcaId = body.getString("dwcaId");
     updateRecords(message, coreTable, dwcRecords, dwcaId, dbOperation::putDwcaRecord);
   }
@@ -63,9 +64,8 @@ class RecordHandler {
   private void insertRecords(Message<JsonObject> message, JsonObject body) {
     var coreTable = getCoreTable(body);
     var dwcRecords = dwcaRecordToDwcList(body);
-    info(dwcRecords);
     dbOperation.withNewId(
-      Collections.DATASETRECORDS.dbName(),
+      COLLECTION_DWCARECORD,
       id -> updateRecords(message, coreTable, dwcRecords, id, dbOperation::insertRecords));
   }
 

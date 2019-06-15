@@ -18,7 +18,7 @@ import java.util.Set;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(VertxExtension.class)
-class DbOperationTest {
+class DbDwcaOperationTest {
   private static final String DWC_RECORD = "dwcRecord";
   private static final String DEFAULT_DATASET_REF = "NnqVLwIyPn-nRkc";
   private static final String DEFAULT_USER_REF = "ovZTtaOJZ98xDDY";
@@ -28,13 +28,13 @@ class DbOperationTest {
 
   private static TestDb testDb;
   private static MongoClient mongoClient;
-  private static DbOperation dbOperation;
+  private static DbDwcaOperation dbDwcaOperation;
 
   @BeforeAll
   public static void setUp() {
     testDb = new TestDb();
     mongoClient = testDb.init(Vertx.vertx());
-    dbOperation = new DbOperation(mongoClient);
+    dbDwcaOperation = new DbDwcaOperation(mongoClient);
   }
 
   @AfterAll
@@ -45,7 +45,7 @@ class DbOperationTest {
 
   @Test
   void findDwcaRecordsForKnownDatasetRef(VertxTestContext testContext) {
-    var dwcaRecords = dbOperation.findDwcaRecords(new JsonObject().put(KEY_DATASET_REF, DEFAULT_DATASET_REF));
+    var dwcaRecords = dbDwcaOperation.findDwcaRecords(new JsonObject().put(KEY_DATASET_REF, DEFAULT_DATASET_REF));
     dwcaRecords.setHandler(ar -> {
       var result = ar.result();
       assertThat(result).hasSize(642);
@@ -78,7 +78,7 @@ class DbOperationTest {
 
   @Test
   void findDwcaRecordsForUnknownDatasetRef(VertxTestContext testContext) {
-    var dwcaRecords = dbOperation.findDwcaRecords(new JsonObject().put(KEY_DATASET_REF, "unknown"));
+    var dwcaRecords = dbDwcaOperation.findDwcaRecords(new JsonObject().put(KEY_DATASET_REF, "unknown"));
     dwcaRecords.setHandler(ar -> {
       var result = ar.result();
       assertThat(result).isEmpty();
@@ -88,7 +88,7 @@ class DbOperationTest {
 
   @Test
   void findDwcaRecordsForUserRef(VertxTestContext testContext) {
-    var dwcaRecords = dbOperation.findDwcaRecords(new JsonObject().put(KEY_USER_REF, DEFAULT_USER_REF));
+    var dwcaRecords = dbDwcaOperation.findDwcaRecords(new JsonObject().put(KEY_USER_REF, DEFAULT_USER_REF));
     dwcaRecords.setHandler(ar -> {
       var result = ar.result();
       assertThat(result).hasSize(2955);
@@ -98,7 +98,7 @@ class DbOperationTest {
 
   @Test
   void findDwcaRecordsForUnknownUserRef(VertxTestContext testContext) {
-    var dwcaRecords = dbOperation.findDwcaRecords(new JsonObject().put(KEY_USER_REF, "unknown"));
+    var dwcaRecords = dbDwcaOperation.findDwcaRecords(new JsonObject().put(KEY_USER_REF, "unknown"));
     dwcaRecords.setHandler(ar -> {
       var result = ar.result();
       assertThat(result).isEmpty();
@@ -108,7 +108,7 @@ class DbOperationTest {
 
   @Test
   void findDataset(VertxTestContext testContext) {
-    var dataset = dbOperation.findDataset(DEFAULT_DATASET_REF);
+    var dataset = dbDwcaOperation.findDataset(DEFAULT_DATASET_REF);
     dataset.setHandler(ar -> {
       var result = ar.result();
       assertThat(result).hasSize(12);
@@ -118,7 +118,7 @@ class DbOperationTest {
 
   @Test
   void findDatasetForUnknownRefReturnsNull(VertxTestContext testContext) {
-    var dataset = dbOperation.findDataset("unknown");
+    var dataset = dbDwcaOperation.findDataset("unknown");
     dataset.setHandler(ar -> {
       var result = ar.result();
       assertThat(result).isNull();
@@ -128,7 +128,7 @@ class DbOperationTest {
 
   @Test
   void findDatasetCoreTable(VertxTestContext testContext) {
-    var dataset = dbOperation.findDatasetCoreTable("PoJnGNMaxsupE4w");
+    var dataset = dbDwcaOperation.findDatasetCoreTable("PoJnGNMaxsupE4w");
     dataset.setHandler(ar -> {
       var result = ar.result();
       assertThat(result).isEqualTo("occurrence");
@@ -162,7 +162,7 @@ class DbOperationTest {
         .put(DWC_RECORD, new JsonObject()
           .put("id", dwcaId)
           .put(KEY_IOBIS, new JsonObject())));
-    var result = dbOperation.putDwcaRecord(dwcaId, records);
+    var result = dbDwcaOperation.putDwcaRecord(dwcaId, records);
     result.setHandler(arOperation -> {
       var operationResult = arOperation.result();
       assertThat(operationResult.getInteger("insertedCount")).isEqualTo(3);

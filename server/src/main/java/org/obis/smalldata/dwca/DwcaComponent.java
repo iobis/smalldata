@@ -10,15 +10,17 @@ import io.vertx.ext.mongo.MongoClient;
 
 import java.util.List;
 
+import static org.pmw.tinylog.Logger.info;
+
 public class DwcaComponent extends AbstractVerticle {
 
-  private DbOperation dbQuery;
+  private DbDwcaOperation dbQuery;
 
   @Override
   public void start(Future<Void> startFuture) {
     var dbConfig = (JsonObject) vertx.sharedData().getLocalMap("settings").get("storage");
     var mongoClient = MongoClient.createShared(vertx, dbConfig);
-    dbQuery = new DbOperation(mongoClient);
+    dbQuery = new DbDwcaOperation(mongoClient);
     var recordHandler = new RecordHandler(dbQuery);
     vertx.eventBus().localConsumer("dwca", this::handleDwcaEvents);
     vertx.eventBus().localConsumer("dwca.record", recordHandler::handleDwcaRecordEvents);
@@ -29,7 +31,7 @@ public class DwcaComponent extends AbstractVerticle {
     var body = message.body();
     var action = body.getString("action");
     if ("generate".equals(action)) {
-      generateZipFile(body.getString("findDataset"))
+      generateZipFile(body.getString("dataset"))
         .setHandler(zip -> message.reply(zip.result()));
     } else {
       message.fail(
@@ -46,9 +48,14 @@ public class DwcaComponent extends AbstractVerticle {
     var result = Future.<JsonObject>future();
     CompositeFuture.all(datasetFuture, dwcaRecordsFuture).setHandler(ar -> {
       var dataset = (JsonObject) ar.result().list().get(0);
-      var dwcaRecords = (List<JsonObject>) ar.result().list().get(1);
-      var path = zipGenerator.generate(dwcaRecords, dataset);
-      result.complete(new JsonObject().put("file", path.get().toAbsolutePath().toString()));
+      info(dataset);
+      if (null != dataset && dataset.getString("_ref").equals(datasetRef)) {
+        var dwcaRecords = (List<JsonObject>) ar.result().list().get(1);
+        var path = zipGenerator.generate(dwcaRecords, dataset);
+        result.complete(new JsonObject().put("path", path.get().toAbsolutePath().toString()));
+      } else {
+        result.fail("Can not find dataset reference");
+      }
     });
     return result;
   }

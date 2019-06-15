@@ -45,15 +45,15 @@ public class MockServerLoginPage {
     var server = vertx.createHttpServer();
     var router = Router.router(vertx);
 
-    router.route("/login/salt/:userid").handler(context -> {
-      var userid = context.request().getParam("userid");
-      context.response().end(SALT_MAP.get(userid));
+    router.route("/login/salt/:userId").handler(context -> {
+      var userId = context.request().getParam("userId");
+      context.response().end(SALT_MAP.get(userId));
     });
-    router.route("/login/token/:userid/:passhash").handler(context -> {
-      var userId = context.request().getParam("userid");
+    router.route("/login/token/:userId/:passhash").handler(context -> {
+      var userId = context.request().getParam("userId");
       var passHash = context.request().getParam("passhash");
       if (HASH_PASSWORD_MAP.containsKey(userId) && HASH_PASSWORD_MAP.get(userId).equals(passHash)) {
-        context.response().end("return a jwt if valid userid and passhash");
+        context.response().end("return a jwt if valid userId and passhash");
       } else {
         context.response().setStatusCode(401).end("user doesn't exist or password is wrong!");
       }
