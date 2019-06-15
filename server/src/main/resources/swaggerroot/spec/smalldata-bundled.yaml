@@ -391,6 +391,7 @@ paths:
           required: true
           schema:
             type: string
+          example: NnqVLwIyPn-nRkc
       tags:
         - dwca
       responses:

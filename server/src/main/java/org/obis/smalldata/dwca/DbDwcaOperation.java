@@ -17,14 +17,14 @@ import java.util.stream.Collectors;
 
 import static org.pmw.tinylog.Logger.info;
 
-class DbOperation {
+class DbDwcaOperation {
 
   private static final String KEY_REF = "_ref";
 
   private final MongoClient mongoClient;
   private final UniqueIdGenerator idGenerator;
 
-  DbOperation(MongoClient mongoClient) {
+  DbDwcaOperation(MongoClient mongoClient) {
     this.mongoClient = mongoClient;
     this.idGenerator = new UniqueIdGenerator(mongoClient);
   }
@@ -56,6 +56,7 @@ class DbOperation {
 
   Future<JsonObject> findDataset(String datasetRef) {
     var dataset = Future.<JsonObject>future();
+
     mongoClient.findOne(
       Collections.DATASETS.dbName(),
       new JsonObject().put(KEY_REF, datasetRef),
