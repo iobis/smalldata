@@ -39,9 +39,11 @@ class DbDwcaOperation {
     return findDwcaRecords(query, new JsonObject());
   }
 
-  Future<List<JsonObject>> findDwcaRecords(JsonObject query, JsonObject fieldList) {
+  Future<List<JsonObject>> findDwcaRecords(JsonObject query, JsonObject fields) {
     var dwcaRecords = Future.<List<JsonObject>>future();
-    var fieldProjection = fieldList.size() == 0 ? fieldList : fieldList.mergeIn(DEFAULT_DWCA_FIELDS);
+    var fieldProjection = fields.size() == 0
+      ? fields
+      : fields.mergeIn(DEFAULT_DWCA_FIELDS);
     var options = new FindOptions().setFields(fieldProjection);
     mongoClient.findWithOptions(
       Collections.DATASETRECORDS.dbName(),

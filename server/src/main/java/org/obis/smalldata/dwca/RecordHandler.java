@@ -98,7 +98,8 @@ class RecordHandler {
   }
 
   private void findRecords(Message<JsonObject> message, JsonObject body) {
-    var dwcaRecordsFuture = dbOperation.findDwcaRecords(body.getJsonObject("query"),
+    var dwcaRecordsFuture = dbOperation.findDwcaRecords(
+      body.getJsonObject("query"),
       body.getJsonObject("projectionFields", new JsonObject()));
     var coreTableMapFuture = dbOperation.coreTableMap();
     CompositeFuture.all(dwcaRecordsFuture, coreTableMapFuture).setHandler(ar -> {
