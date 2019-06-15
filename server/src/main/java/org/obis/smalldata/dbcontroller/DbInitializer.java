@@ -9,7 +9,6 @@ import org.obis.smalldata.util.Collections;
 import org.obis.smalldata.util.DbUtils;
 import org.obis.util.file.IoFile;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -48,23 +47,23 @@ public class DbInitializer {
 
   private void addIndices() {
     List.of(
-      new String[]{Collections.DATASETRECORDS.dbName(), "dwcRecord.id"},
-      new String[]{Collections.DATASETRECORDS.dbName(), "dataset_ref"},
-      new String[]{Collections.USERS.dbName(), "dataset_refs"},
-      new String[]{Collections.USERS.dbName(), "emailAddress", "unique"},
-      new String[]{Collections.DATASETS.dbName(), "_ref", "unique"})
+      List.of(Collections.DATASETRECORDS.dbName(), "dwcRecord.id"),
+      List.of(Collections.DATASETRECORDS.dbName(), "dataset_ref"),
+      List.of(Collections.USERS.dbName(), "dataset_refs"),
+      List.of(Collections.USERS.dbName(), "emailAddress", "unique"),
+      List.of(Collections.DATASETS.dbName(), "_ref", "unique"))
       .forEach(entry -> {
         var options = new IndexOptions().background(true);
-        if (Arrays.asList(entry).contains("unique")) {
+        if (entry.contains("unique")) {
           options.unique(true);
         }
         client.createIndexWithOptions(
-          entry[0],
+          entry.get(0),
           new JsonObject()
-            .put(entry[1], 1)
+            .put(entry.get(1), 1)
             .put("collation", DbUtils.INSTANCE.collation),
           options,
-          x -> info("created index '{}.{}'", entry[0], entry[1]));
+          x -> info("created index '{}.{}'", entry.get(0), entry.get(1)));
       });
   }
 
@@ -86,8 +85,9 @@ public class DbInitializer {
     warn("Adding mock data!");
     client.getCollections(arCollections -> {
       if (arCollections.result() != null) {
-        arCollections.result().forEach(coll -> client.dropCollection(coll, ar ->
-          info("Dropped collection {}", coll)));
+        arCollections
+          .result()
+          .forEach(coll -> client.dropCollection(coll, ar -> info("Dropped collection {}", coll)));
       }
     });
     addMockData();
