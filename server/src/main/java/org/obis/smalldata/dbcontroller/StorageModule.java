@@ -66,6 +66,8 @@ public class StorageModule extends AbstractVerticle {
     if (isDemoMode(vertx)) {
       dbInitializer.mockData();
     }
+
+    dbInitializer.initBulkiness();
   }
 
   @Override
