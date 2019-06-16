@@ -9,6 +9,7 @@ import org.obis.smalldata.util.UniqueIdGenerator;
 
 import java.time.Instant;
 import java.util.List;
+import java.util.stream.Collectors;
 
 class DbUserOperation {
 
@@ -32,7 +33,13 @@ class DbUserOperation {
     mongoClient.find(
       Collections.USERS.dbName(),
       query,
-      res -> users.complete(res.result()));
+      res -> users.complete(res.result().stream()
+        .map(user -> {
+          var bulkiness = calculator.decay(user.getJsonObject("bulkiness").getDouble("value"),
+            user.getJsonObject("bulkiness").getInstant("instant"));
+          return user.put("bulkiness", bulkiness);
+        })
+        .collect(Collectors.toList())));
     return users;
   }
 
