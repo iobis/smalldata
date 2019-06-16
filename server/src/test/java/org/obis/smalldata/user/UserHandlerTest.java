@@ -82,7 +82,7 @@ public class UserHandlerTest {
 
   @Test
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
-  void findUserByEmail(Vertx vertx, VertxTestContext testContext) throws InterruptedException {
+  void findUserByEmail(Vertx vertx, VertxTestContext testContext) {
     vertx.eventBus().<JsonArray>send(
       "users",
       new JsonObject(Map.of(
@@ -180,6 +180,23 @@ public class UserHandlerTest {
         } else {
           testContext.failNow(ar.cause());
         }
+      });
+  }
+
+  @Test
+  @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
+  void testIncreaseBulkiness(Vertx vertx, VertxTestContext testContext) {
+    vertx.eventBus().<JsonObject>send(
+      "users.bulkiness",
+      new JsonObject()
+        .put("action", "increase")
+        .put("userRef", "FsfEMwhUTO_8I68"),
+      ar -> {
+        var bulkiness = ar.result().body().getJsonObject("bulkiness");
+        assertThat(bulkiness.getDouble("value")).isGreaterThan(1.0);
+        assertThat(bulkiness.getInstant("instant")).isBetween(
+          Instant.now().minusMillis(200), Instant.now());
+        testContext.completeNow();
       });
   }
 }
