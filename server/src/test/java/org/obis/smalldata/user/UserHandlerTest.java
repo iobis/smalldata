@@ -13,6 +13,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.obis.smalldata.testutil.TestDb;
 import org.obis.smalldata.util.Collections;
 
+import java.time.Instant;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -26,8 +27,9 @@ public class UserHandlerTest {
   private static final String KEY_DATASET_REFS = "dataset_refs";
   private static final String KEY_EMAIL_ADDRESS = "emailAddress";
   private static final String KEY_REF = "_ref";
+  private static final String KEY_VALUE = "value";
   private static final String QUERY_REF = "ref";
-  public static final String DEFAULT_EMAIL_ADDRESS = "my.user@domain.org";
+  private static final String DEFAULT_EMAIL_ADDRESS = "my.user@domain.org";
   private TestDb testDb;
 
   @BeforeEach
@@ -120,7 +122,7 @@ public class UserHandlerTest {
           var json = ar.result().body().getMap();
           assertThat(json).containsOnlyKeys(KEY_REF, KEY_EMAIL_ADDRESS, KEY_BULKINESS);
           assertThat(json).containsEntry(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS);
-          assertThat(json).containsEntry(KEY_BULKINESS, 0.0);
+          assertThat(((JsonObject) json.get(KEY_BULKINESS)).getDouble(KEY_VALUE)).isEqualTo(0.0);
           testContext.completeNow();
         } else {
           testContext.failNow(ar.cause());
@@ -137,14 +139,16 @@ public class UserHandlerTest {
         KEY_ACTION, "insert",
         "user", new JsonObject()
           .put(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS)
-          .put(KEY_BULKINESS, Math.E))),
+          .put(KEY_BULKINESS, new JsonObject()
+            .put("instant", Instant.now())
+            .put(KEY_VALUE, Math.E)))),
       ar -> {
         if (ar.succeeded()) {
           assertThat(ar.succeeded()).isTrue();
           var json = ar.result().body().getMap();
           assertThat(json).containsOnlyKeys(KEY_REF, KEY_EMAIL_ADDRESS, KEY_BULKINESS);
           assertThat(json).containsEntry(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS);
-          assertThat(json).containsEntry(KEY_BULKINESS, Math.E);
+          assertThat(((JsonObject) json.get(KEY_BULKINESS)).getDouble(KEY_VALUE)).isEqualTo(Math.E);
           testContext.completeNow();
         } else {
           testContext.failNow(ar.cause());
@@ -162,14 +166,16 @@ public class UserHandlerTest {
         "userRef", "FsfEMwhUTO_8I68",
         "user", new JsonObject()
           .put(KEY_EMAIL_ADDRESS, "my.otheruser@domain.com")
-          .put(KEY_BULKINESS, Math.PI))),
+          .put(KEY_BULKINESS, new JsonObject()
+            .put("instant", Instant.now())
+            .put(KEY_VALUE, Math.PI)))),
       ar -> {
         if (ar.succeeded()) {
           assertThat(ar.succeeded()).isTrue();
           var json = ar.result().body().getMap();
           assertThat(json).containsOnlyKeys(QUERY_REF, KEY_EMAIL_ADDRESS, KEY_BULKINESS);
           assertThat(json).containsEntry(KEY_EMAIL_ADDRESS, "my.otheruser@domain.com");
-          assertThat(json).containsEntry(KEY_BULKINESS, Math.PI);
+          assertThat(((JsonObject) json.get(KEY_BULKINESS)).getDouble(KEY_VALUE)).isEqualTo(Math.PI);
           testContext.completeNow();
         } else {
           testContext.failNow(ar.cause());

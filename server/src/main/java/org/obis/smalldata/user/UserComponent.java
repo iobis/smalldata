@@ -8,8 +8,6 @@ import io.vertx.ext.mongo.MongoClient;
 import org.obis.smalldata.util.Collections;
 import org.obis.smalldata.util.DbUtils;
 
-import java.time.Instant;
-
 public class UserComponent extends AbstractVerticle {
 
   private MongoClient mongoClient;
@@ -18,15 +16,14 @@ public class UserComponent extends AbstractVerticle {
   public void start(Future<Void> startFuture) {
     var dbConfig = (JsonObject) vertx.sharedData().getLocalMap("settings").get("storage");
     mongoClient = MongoClient.createShared(vertx, dbConfig);
-    // TODO: calculate new bulkiness on new record:
-    // bulkinessCalculator.decay(previousValue, previousInstant) + 1
     var bulkinessConfig = config().getJsonObject("bulkiness", new JsonObject().put("halfTimeInDays", 1.0));
     var bulkinessCalculator = new BulkinessCalculator(bulkinessConfig.getDouble("halfTimeInDays"));
-    bulkinessCalculator.decay(1, Instant.now());
+    var dbUserOperation = new DbUserOperation(bulkinessCalculator, mongoClient);
 
-    var userHandler = new UserHandler(mongoClient);
-
+    var bulkinessHandler = new BulkinessHandler(dbUserOperation);
+    var userHandler = new UserHandler(dbUserOperation);
     vertx.eventBus().localConsumer("users", userHandler::handleAction);
+    vertx.eventBus().localConsumer("users.bulkiness", bulkinessHandler::handleBulkiness);
     vertx.eventBus().localConsumer("users.exists", this::handleExists);
 
     startFuture.complete();

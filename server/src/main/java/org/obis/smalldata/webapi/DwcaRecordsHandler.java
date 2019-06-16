@@ -49,6 +49,7 @@ public class DwcaRecordsHandler {
   }
 
   public static void post(RoutingContext context) {
+    // bulkiness!
     actionOnDwcaRecord(context,
       (datasetRef, userRef) ->
         new DwcaBodyValidator(context.vertx().eventBus(), datasetRef, userRef).validate(context.getBodyAsJson()),
@@ -60,10 +61,17 @@ public class DwcaRecordsHandler {
           .put(KEY_DATASET_REF, datasetRef)
           .put(KEY_USER_REF, userRef)
           .put("record", context.getBodyAsJson()),
-        ar -> context
-          .response()
-          .putHeader(HttpHeaders.CONTENT_TYPE, MIME_APPLICATION_JSON)
-          .end(ar.result().body().encode())));
+        ar -> {
+          context
+            .response()
+            .putHeader(HttpHeaders.CONTENT_TYPE, MIME_APPLICATION_JSON)
+            .end(ar.result().body().encode());
+          context.vertx().eventBus().send(
+            "users.bulkiness",
+            new JsonObject()
+              .put("action", "increase")
+              .put("userRef", userRef));
+        }));
   }
 
   public static void get(RoutingContext context) {

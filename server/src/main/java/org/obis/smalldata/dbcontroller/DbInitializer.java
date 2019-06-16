@@ -10,6 +10,7 @@ import org.obis.smalldata.util.Collections;
 import org.obis.smalldata.util.DbUtils;
 import org.obis.util.file.IoFile;
 
+import java.time.Instant;
 import java.util.List;
 import java.util.Map;
 
@@ -18,6 +19,7 @@ import static org.pmw.tinylog.Logger.warn;
 
 public class DbInitializer {
 
+  private static final String KEY_BULKINESS = "bulkiness";
   private final MongoClient client;
 
   DbInitializer(MongoClient client) {
@@ -56,10 +58,12 @@ public class DbInitializer {
       Collections.USERS.dbName(),
       new JsonObject()
         .put("$or", new JsonArray()
-          .add(new JsonObject().put("bulkiness", new JsonObject().put("$exists", false)))
-          .add(new JsonObject().put("bulkiness", false))),
+          .add(new JsonObject().put(KEY_BULKINESS, new JsonObject().put("$exists", false)))
+          .add(new JsonObject().put(KEY_BULKINESS, false))),
       new JsonObject()
-        .put("$set", new JsonObject().put("bulkiness", 0.0)),
+        .put("$set", new JsonObject().put(KEY_BULKINESS, new JsonObject()
+          .put("instant", Instant.now())
+          .put("value", 0.0))),
       new UpdateOptions().setUpsert(false).setMulti(true),
       ar -> info("Initialized user bulkiness!"));
   }

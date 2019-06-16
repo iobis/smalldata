@@ -12,7 +12,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.obis.smalldata.util.Collections;
+import org.pmw.tinylog.Logger;
 
+import java.time.Instant;
 import java.util.concurrent.TimeUnit;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -21,6 +23,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class DbInitializerTest {
 
   private static final String KEY_BULKINESS = "bulkiness";
+  private static final String KEY_VALUE = "value";
   private static final String BIND_IP = "localhost";
   private static final int PORT = 2357;
 
@@ -47,13 +50,17 @@ public class DbInitializerTest {
   @Test
   @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
   public void checkBulkinessAllNewUsers(VertxTestContext testContext) throws InterruptedException {
-    TimeUnit.MILLISECONDS.sleep(500);
+    TimeUnit.MILLISECONDS.sleep(1000);
     mongoClient.find(Collections.USERS.dbName(),
       new JsonObject(),
       ar -> {
+        Logger.info(ar.result());
         assertThat(ar.result())
           .allMatch(user -> user.containsKey(KEY_BULKINESS))
-          .allMatch(user -> user.getInteger(KEY_BULKINESS).equals(0));
+          .allMatch(user -> {
+            var bulkiness = user.getJsonObject(KEY_BULKINESS);
+            return bulkiness.getDouble(KEY_VALUE).equals(0.0);
+          });
         testContext.completeNow();
       });
   }
@@ -65,7 +72,7 @@ public class DbInitializerTest {
     mongoClient.insert(Collections.USERS.dbName(),
       new JsonObject()
         .put("_ref", "someref")
-        .put(KEY_BULKINESS, 2.5),
+        .put(KEY_BULKINESS, new JsonObject().put("instant", Instant.now()).put("value", 2.5)),
       ar -> mongoClient.find(
         Collections.USERS.dbName(),
         new JsonObject(),
@@ -73,10 +80,11 @@ public class DbInitializerTest {
           assertThat(arUsers.result())
             .allMatch(user -> user.containsKey(KEY_BULKINESS))
             .allMatch(user -> {
+              var bulkiness = user.getJsonObject(KEY_BULKINESS);
               if (user.getString("_ref").equals("someref")) {
-                return user.getDouble(KEY_BULKINESS).equals(2.5);
+                return bulkiness.getDouble(KEY_VALUE).equals(2.5);
               } else {
-                return user.getDouble(KEY_BULKINESS).equals(0.0);
+                return bulkiness.getDouble(KEY_VALUE).equals(0.0);
               }
             });
           testContext.completeNow();
