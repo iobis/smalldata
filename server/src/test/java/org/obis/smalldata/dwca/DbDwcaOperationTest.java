@@ -54,24 +54,52 @@ class DbDwcaOperationTest {
   }
 
   @Test
-  void findDwcaRecordsRestrictDwcFields(VertxTestContext testContext) {
+  void findDwcaRecordsReturnsAllKeysIfFieldsIsEmpty(VertxTestContext testContext) {
     var dwcaRecords = dbDwcaOperation.findDwcaRecords(
       new JsonObject().put(KEY_DATASET_REF, DEFAULT_DATASET_REF),
-      new JsonObject()
-        .put("dwcRecord.tdwg.measurementValue", true)
-        .put("dwcRecord.tdwg.measurementUnitID", true)
-        .put("dwcRecord.dateAdded", true)
-        .put("dwcRecord.id", true)
-        .put("user_ref", false)
-        .put("dataset_ref", true));
+      new JsonObject());
+    dwcaRecords.setHandler(ar -> {
+      var result = ar.result();
+      assertThat(result).hasSize(642);
+      result
+        .forEach(dwca -> assertThat(dwca.getMap()).containsOnlyKeys("_ref", "user_ref", "_id", "dataset_ref", DWC_TABLE, DWC_RECORD));
+      result.stream()
+        .map(dwca -> dwca.getJsonObject(DWC_RECORD).getMap())
+        .forEach(tdwg -> assertThat(tdwg).containsOnlyKeys("id", "tdwg", "purl", "iobis"));
+      testContext.completeNow();
+    });
+  }
+
+  @Test
+  void findDwcaRecordsAlwaysProvidesDefaultSetOfKeysNextToRequiredOnes(VertxTestContext testContext) {
+    var dwcaRecords = dbDwcaOperation.findDwcaRecords(
+      new JsonObject().put(KEY_DATASET_REF, DEFAULT_DATASET_REF),
+      new JsonObject().put("user_ref", false));
     dwcaRecords.setHandler(ar -> {
       var result = ar.result();
       assertThat(result).hasSize(642);
       result
         .forEach(dwca -> assertThat(dwca.getMap()).containsOnlyKeys("user_ref", "_id", "dataset_ref", DWC_TABLE, DWC_RECORD));
       result.stream()
-        .map(dwca -> dwca.getJsonObject(DWC_RECORD).getJsonObject("tdwg").getMap().keySet())
-        .forEach(tdwg -> assertThat(tdwg).isSubsetOf("measurementUnitID", "measurementValue"));
+        .map(dwca -> dwca.getJsonObject(DWC_RECORD).getMap())
+        .forEach(tdwg -> assertThat(tdwg).containsOnlyKeys("id"));
+      testContext.completeNow();
+    });
+  }
+
+  @Test
+  void findDwcaRecordsProvidesNestedData(VertxTestContext testContext) {
+    var dwcaRecords = dbDwcaOperation.findDwcaRecords(
+      new JsonObject().put(KEY_DATASET_REF, DEFAULT_DATASET_REF),
+      new JsonObject().put("dwcRecord.tdwg", true));
+    dwcaRecords.setHandler(ar -> {
+      var result = ar.result();
+      assertThat(result).hasSize(642);
+      result
+        .forEach(dwca -> assertThat(dwca.getMap()).containsOnlyKeys("user_ref", "_id", "dataset_ref", DWC_TABLE, DWC_RECORD));
+      result.stream()
+        .map(dwca -> dwca.getJsonObject(DWC_RECORD).getMap())
+        .forEach(tdwg -> assertThat(tdwg).containsOnlyKeys("id", "tdwg"));
       testContext.completeNow();
     });
   }
