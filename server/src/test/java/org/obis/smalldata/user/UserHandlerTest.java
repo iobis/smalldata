@@ -22,10 +22,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class UserHandlerTest {
 
   private static final String KEY_ACTION = "action";
+  private static final String KEY_BULKINESS = "bulkiness";
   private static final String KEY_DATASET_REFS = "dataset_refs";
   private static final String KEY_EMAIL_ADDRESS = "emailAddress";
   private static final String KEY_REF = "_ref";
   private static final String QUERY_REF = "ref";
+  public static final String DEFAULT_EMAIL_ADDRESS = "my.user@domain.org";
   private TestDb testDb;
 
   @BeforeEach
@@ -68,6 +70,7 @@ public class UserHandlerTest {
           assertThat(user.getJsonArray(KEY_DATASET_REFS))
             .hasSize(4)
             .containsExactly("wEaBfmFyQhYCdsk", "ntDOtUc7XsRrIus", "PoJnGNMaxsupE4w", "NnqVLwIyPn-nRkc");
+          assertThat(user.containsKey(KEY_BULKINESS)).isTrue();
           testContext.completeNow();
         } else {
           testContext.failNow(ar.cause());
@@ -77,7 +80,7 @@ public class UserHandlerTest {
 
   @Test
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
-  void findUserByEmail(Vertx vertx, VertxTestContext testContext) {
+  void findUserByEmail(Vertx vertx, VertxTestContext testContext) throws InterruptedException {
     vertx.eventBus().<JsonArray>send(
       "users",
       new JsonObject(Map.of(
@@ -95,6 +98,7 @@ public class UserHandlerTest {
           assertThat(user.getJsonArray(KEY_DATASET_REFS))
             .hasSize(4)
             .containsExactly("wEaBfmFyQhYCdsk", "ntDOtUc7XsRrIus", "PoJnGNMaxsupE4w", "NnqVLwIyPn-nRkc");
+          assertThat(user.containsKey(KEY_BULKINESS)).isTrue();
           testContext.completeNow();
         } else {
           testContext.failNow(ar.cause());
@@ -109,13 +113,38 @@ public class UserHandlerTest {
       Collections.USERS.dbName(),
       new JsonObject(Map.of(
         KEY_ACTION, "insert",
-        "user", new JsonObject().put(KEY_EMAIL_ADDRESS, "my.user@domain.org"))),
+        "user", new JsonObject().put(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS))),
       ar -> {
         if (ar.succeeded()) {
           assertThat(ar.succeeded()).isTrue();
           var json = ar.result().body().getMap();
-          assertThat(json).containsOnlyKeys(KEY_REF, KEY_EMAIL_ADDRESS);
-          assertThat(json).containsEntry(KEY_EMAIL_ADDRESS, "my.user@domain.org");
+          assertThat(json).containsOnlyKeys(KEY_REF, KEY_EMAIL_ADDRESS, KEY_BULKINESS);
+          assertThat(json).containsEntry(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS);
+          assertThat(json).containsEntry(KEY_BULKINESS, 0.0);
+          testContext.completeNow();
+        } else {
+          testContext.failNow(ar.cause());
+        }
+      });
+  }
+
+  @Test
+  @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
+  void insertUserWithDefaultBulkiness(Vertx vertx, VertxTestContext testContext) {
+    vertx.eventBus().<JsonObject>send(
+      Collections.USERS.dbName(),
+      new JsonObject(Map.of(
+        KEY_ACTION, "insert",
+        "user", new JsonObject()
+          .put(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS)
+          .put(KEY_BULKINESS, Math.E))),
+      ar -> {
+        if (ar.succeeded()) {
+          assertThat(ar.succeeded()).isTrue();
+          var json = ar.result().body().getMap();
+          assertThat(json).containsOnlyKeys(KEY_REF, KEY_EMAIL_ADDRESS, KEY_BULKINESS);
+          assertThat(json).containsEntry(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS);
+          assertThat(json).containsEntry(KEY_BULKINESS, Math.E);
           testContext.completeNow();
         } else {
           testContext.failNow(ar.cause());
@@ -131,13 +160,16 @@ public class UserHandlerTest {
       new JsonObject(Map.of(
         KEY_ACTION, "replace",
         "userRef", "FsfEMwhUTO_8I68",
-        "user", new JsonObject().put(KEY_EMAIL_ADDRESS, "my.otheruser@domain.com"))),
+        "user", new JsonObject()
+          .put(KEY_EMAIL_ADDRESS, "my.otheruser@domain.com")
+          .put(KEY_BULKINESS, Math.PI))),
       ar -> {
         if (ar.succeeded()) {
           assertThat(ar.succeeded()).isTrue();
           var json = ar.result().body().getMap();
-          assertThat(json).containsOnlyKeys(QUERY_REF, KEY_EMAIL_ADDRESS);
+          assertThat(json).containsOnlyKeys(QUERY_REF, KEY_EMAIL_ADDRESS, KEY_BULKINESS);
           assertThat(json).containsEntry(KEY_EMAIL_ADDRESS, "my.otheruser@domain.com");
+          assertThat(json).containsEntry(KEY_BULKINESS, Math.PI);
           testContext.completeNow();
         } else {
           testContext.failNow(ar.cause());

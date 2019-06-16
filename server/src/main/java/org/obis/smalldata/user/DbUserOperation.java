@@ -11,6 +11,7 @@ import java.util.List;
 
 class DbUserOperation {
 
+  private static final String KEY_BULKINESS = "bulkiness";
   private static final String KEY_REF = "_ref";
   private static final String QUERY_REF = "ref";
 
@@ -36,8 +37,9 @@ class DbUserOperation {
     DbUtils.INSTANCE.insertDocument(mongoClient,
       idGenerator,
       Collections.USERS,
-      new JsonObject().put("emailAddress", userProfile.getString("emailAddress")),
-      userProfile,
+      new JsonObject()
+        .put("emailAddress", userProfile.getString("emailAddress")),
+      userProfile.put(KEY_BULKINESS, userProfile.getDouble(KEY_BULKINESS, 0.0)),
       user);
     return user;
   }
@@ -47,7 +49,8 @@ class DbUserOperation {
     mongoClient.replaceDocuments(
       Collections.USERS.dbName(),
       new JsonObject().put(KEY_REF, userRef),
-      userProfile.put(KEY_REF, userRef),
+      userProfile.put(KEY_REF, userRef)
+        .put(KEY_BULKINESS, userProfile.getDouble(KEY_BULKINESS, 0.0)),
       ar -> user.complete(userProfile.put(QUERY_REF, userProfile.remove(KEY_REF))));
     return user;
   }
