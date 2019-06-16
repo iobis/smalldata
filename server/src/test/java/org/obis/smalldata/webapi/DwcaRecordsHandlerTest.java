@@ -63,7 +63,6 @@ public class DwcaRecordsHandlerTest {
       .send(ar -> {
         assertThat(ar.succeeded()).isTrue();
         var json = ar.result().body();
-        info(json);
         assertThat(json.containsKey(KEY_DWCA_ID)).isTrue();
         assertThat(json.getString(KEY_DWCA_ID)).hasSize(15);
         context.completeNow();
