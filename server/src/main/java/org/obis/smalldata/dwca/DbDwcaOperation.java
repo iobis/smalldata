@@ -20,6 +20,12 @@ import static org.pmw.tinylog.Logger.info;
 class DbDwcaOperation {
 
   private static final String KEY_REF = "_ref";
+  private static final JsonObject DEFAULT_DWCA_FIELDS = new JsonObject()
+    .put("dwcRecord.dateAdded", true)
+    .put("dwcRecord.id", true)
+    .put("user_ref", true)
+    .put("dwcTable", true)
+    .put("dataset_ref", true);
 
   private final MongoClient mongoClient;
   private final UniqueIdGenerator idGenerator;
@@ -30,10 +36,19 @@ class DbDwcaOperation {
   }
 
   Future<List<JsonObject>> findDwcaRecords(JsonObject query) {
+    return findDwcaRecords(query, new JsonObject());
+  }
+
+  Future<List<JsonObject>> findDwcaRecords(JsonObject query, JsonObject fields) {
     var dwcaRecords = Future.<List<JsonObject>>future();
-    mongoClient.find(
+    var fieldProjection = fields.size() == 0
+      ? fields
+      : fields.mergeIn(DEFAULT_DWCA_FIELDS);
+    var options = new FindOptions().setFields(fieldProjection);
+    mongoClient.findWithOptions(
       Collections.DATASETRECORDS.dbName(),
       query,
+      options,
       res -> dwcaRecords.complete(res.result()));
     return dwcaRecords;
   }

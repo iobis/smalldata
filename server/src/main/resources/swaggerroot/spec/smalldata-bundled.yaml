@@ -362,6 +362,15 @@ paths:
           schema:
             type: string
           example: FsfEMwhUTO_8I68
+        - name: projectFields
+          in: query
+          description: list of fields to add (comma-separated)
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+          example: 'dwcRecord.tdwg.measurementValue,dwcRecord.tdwg.measurementValueID'
       tags:
         - dwca
         - users
