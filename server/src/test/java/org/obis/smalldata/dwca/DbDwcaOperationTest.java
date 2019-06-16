@@ -25,6 +25,7 @@ class DbDwcaOperationTest {
   private static final String KEY_DATASET_REF = "dataset_ref";
   private static final String KEY_IOBIS = "iobis";
   private static final String KEY_USER_REF = "user_ref";
+  private static final JsonObject DATASET_QUERY = new JsonObject().put(KEY_DATASET_REF, DEFAULT_DATASET_REF);
 
   private static TestDb testDb;
   private static MongoClient mongoClient;
@@ -45,7 +46,7 @@ class DbDwcaOperationTest {
 
   @Test
   void findDwcaRecordsForKnownDatasetRef(VertxTestContext testContext) {
-    var dwcaRecords = dbDwcaOperation.findDwcaRecords(new JsonObject().put(KEY_DATASET_REF, DEFAULT_DATASET_REF));
+    var dwcaRecords = dbDwcaOperation.findDwcaRecords(DATASET_QUERY);
     dwcaRecords.setHandler(ar -> {
       var result = ar.result();
       assertThat(result).hasSize(642);
@@ -56,7 +57,7 @@ class DbDwcaOperationTest {
   @Test
   void findDwcaRecordsReturnsAllKeysIfFieldsIsEmpty(VertxTestContext testContext) {
     var dwcaRecords = dbDwcaOperation.findDwcaRecords(
-      new JsonObject().put(KEY_DATASET_REF, DEFAULT_DATASET_REF),
+      DATASET_QUERY,
       new JsonObject());
     dwcaRecords.setHandler(ar -> {
       var result = ar.result();
@@ -73,7 +74,7 @@ class DbDwcaOperationTest {
   @Test
   void findDwcaRecordsAlwaysProvidesDefaultSetOfKeysNextToRequiredOnes(VertxTestContext testContext) {
     var dwcaRecords = dbDwcaOperation.findDwcaRecords(
-      new JsonObject().put(KEY_DATASET_REF, DEFAULT_DATASET_REF),
+      DATASET_QUERY,
       new JsonObject().put("user_ref", false));
     dwcaRecords.setHandler(ar -> {
       var result = ar.result();
@@ -90,7 +91,7 @@ class DbDwcaOperationTest {
   @Test
   void findDwcaRecordsProvidesNestedData(VertxTestContext testContext) {
     var dwcaRecords = dbDwcaOperation.findDwcaRecords(
-      new JsonObject().put(KEY_DATASET_REF, DEFAULT_DATASET_REF),
+      DATASET_QUERY,
       new JsonObject().put("dwcRecord.tdwg", true));
     dwcaRecords.setHandler(ar -> {
       var result = ar.result();
