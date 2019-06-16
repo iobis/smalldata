@@ -61,12 +61,12 @@ class DbDwcaOperationTest {
       new JsonObject());
     dwcaRecords.setHandler(ar -> {
       var result = ar.result();
-      assertThat(result).hasSize(642);
-      result
-        .forEach(dwca -> assertThat(dwca.getMap()).containsOnlyKeys("_ref", "user_ref", "_id", "dataset_ref", DWC_TABLE, DWC_RECORD));
-      result.stream()
-        .map(dwca -> dwca.getJsonObject(DWC_RECORD).getMap())
-        .forEach(tdwg -> assertThat(tdwg).containsOnlyKeys("id", "tdwg", "purl", "iobis"));
+      assertThat(result)
+        .hasSize(642)
+        .allSatisfy(dwca -> {
+          assertThat(dwca.getMap()).containsOnlyKeys("_ref", "user_ref", "_id", "dataset_ref", DWC_TABLE, DWC_RECORD);
+          assertThat(dwca.getJsonObject(DWC_RECORD).getMap()).containsOnlyKeys("id", "tdwg", "purl", "iobis");
+        });
       testContext.completeNow();
     });
   }
@@ -75,15 +75,16 @@ class DbDwcaOperationTest {
   void findDwcaRecordsAlwaysProvidesDefaultSetOfKeysNextToRequiredOnes(VertxTestContext testContext) {
     var dwcaRecords = dbDwcaOperation.findDwcaRecords(
       DATASET_QUERY,
-      new JsonObject().put("user_ref", false));
+      new JsonObject()
+        .put("_ref", true)
+        .put("user_ref", false));
     dwcaRecords.setHandler(ar -> {
-      var result = ar.result();
-      assertThat(result).hasSize(642);
-      result
-        .forEach(dwca -> assertThat(dwca.getMap()).containsOnlyKeys("user_ref", "_id", "dataset_ref", DWC_TABLE, DWC_RECORD));
-      result.stream()
-        .map(dwca -> dwca.getJsonObject(DWC_RECORD).getMap())
-        .forEach(tdwg -> assertThat(tdwg).containsOnlyKeys("id"));
+      assertThat(ar.result())
+        .hasSize(642)
+        .allSatisfy(dwca -> {
+          assertThat(dwca.getMap()).containsOnlyKeys("_ref", "user_ref", "_id", "dataset_ref", DWC_TABLE, DWC_RECORD);
+          assertThat(dwca.getJsonObject(DWC_RECORD).getMap()).containsOnlyKeys("id");
+        });
       testContext.completeNow();
     });
   }
@@ -94,13 +95,12 @@ class DbDwcaOperationTest {
       DATASET_QUERY,
       new JsonObject().put("dwcRecord.tdwg", true));
     dwcaRecords.setHandler(ar -> {
-      var result = ar.result();
-      assertThat(result).hasSize(642);
-      result
-        .forEach(dwca -> assertThat(dwca.getMap()).containsOnlyKeys("user_ref", "_id", "dataset_ref", DWC_TABLE, DWC_RECORD));
-      result.stream()
-        .map(dwca -> dwca.getJsonObject(DWC_RECORD).getMap())
-        .forEach(tdwg -> assertThat(tdwg).containsOnlyKeys("id", "tdwg"));
+      assertThat(ar.result())
+        .hasSize(642)
+        .allSatisfy(dwca -> {
+          assertThat(dwca.getMap()).containsOnlyKeys("user_ref", "_id", "dataset_ref", DWC_TABLE, DWC_RECORD);
+          assertThat(dwca.getJsonObject(DWC_RECORD).getMap()).containsOnlyKeys("id", "tdwg");
+        });
       testContext.completeNow();
     });
   }
