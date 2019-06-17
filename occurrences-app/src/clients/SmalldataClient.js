@@ -17,24 +17,8 @@ export function datasetTitleOf(dataset) {
 }
 
 export async function getOccurrences({ userRef }) {
-  return await fetch(`/api/dwca/user/${userRef}/records?projectFields=dwcRecord.tdwg.scientificName`)
+  return await fetch(`/api/dwca/user/${userRef}/records?projectFields=dwcRecord.tdwg.scientificName&projectFields=dwcRecord.tdwg.eventDate`)
     .then(response => response.json())
-}
-
-export function getOccurrenceMock() {
-  return [{
-    id:             1,
-    addedDate:      '2011-12-01',
-    scientificName: 'Abra Alba',
-    dataset:        'NPPSD Short-tailed Albatross Sightings',
-    occurrenceDate: '2011-12-09'
-  }, {
-    id:             2,
-    addedDate:      '2011-12-01',
-    scientificName: 'Abra Alba',
-    dataset:        'NPPSD Short-tailed Albatross Sightings',
-    occurrenceDate: '2011-12-09'
-  }]
 }
 
 export async function postOccurrence({ occurrence }) {

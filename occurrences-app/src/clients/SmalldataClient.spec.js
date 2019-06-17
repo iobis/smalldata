@@ -46,7 +46,7 @@ describe('SmalldataClient', () => {
     it('getOccurrences()', async() => {
       await SmalldataClient.getOccurrences({ userRef: 'user-ref' })
       expect(fetch).toHaveBeenCalledTimes(1)
-      expect(fetch).toBeCalledWith('/api/dwca/user/user-ref/records?projectFields=dwcRecord.tdwg.scientificName')
+      expect(fetch).toBeCalledWith('/api/dwca/user/user-ref/records?projectFields=dwcRecord.tdwg.scientificName&projectFields=dwcRecord.tdwg.eventDate')
     })
   })
 

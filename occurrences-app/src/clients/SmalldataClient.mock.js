@@ -159,7 +159,8 @@ export const OCCURRENCES_RESPONSE = [
         {
           'id':   'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796',
           'tdwg': {
-            'scientificName': 'Nereis succinea'
+            'scientificName': 'Nereis succinea',
+            'eventDate':      '1935-10-02'
           }
         }
       ]
@@ -185,7 +186,24 @@ export const OCCURRENCES_RESPONSE = [
         {
           'id':   'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158',
           'tdwg': {
-            'scientificName': 'Brachynotus lucasi'
+            'scientificName': 'Brachynotus lucasi',
+            'eventDate':      '1971'
+          }
+        }
+      ]
+    }
+  },
+  {
+    'dwcaId':     'DeepSea_Antipatharia_35',
+    'dataset':    'PoJnGNMaxsupE4w',
+    'dateAdded':  null,
+    'dwcRecords': {
+      'core':       'occurrence',
+      'occurrence': [
+        {
+          'id':   'DeepSea_Antipatharia_35',
+          'tdwg': {
+            'scientificName': 'Abyssopathes lyra'
           }
         }
       ]
