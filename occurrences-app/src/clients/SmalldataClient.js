@@ -16,6 +16,11 @@ export function datasetTitleOf(dataset) {
   return title || ''
 }
 
+export async function getOccurrences({ userRef }) {
+  return await fetch(`/api/dwca/user/${userRef}/records?projectFields=dwcRecord.tdwg.measurementValue,dwcRecord.tdwg.measurementUnitID`)
+    .then(response => response.json())
+}
+
 export function getOccurrenceMock() {
   return [{
     id:             1,

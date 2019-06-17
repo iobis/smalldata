@@ -1,34 +1,68 @@
 import * as SmalldataClient from './SmalldataClient'
 import deepExtend from 'deep-extend'
-import { RESPONSE_DEFAULT } from './SmalldataClient.mock'
+import { DATASTES_RESPONSE } from './SmalldataClient.mock'
 
 describe('SmalldataClient', () => {
-  beforeEach(() => {
-    global.fetch = jest.fn().mockImplementation(() =>
-      new Promise((resolve) => {
-        resolve({ json: () => RESPONSE_DEFAULT })
-      })
-    )
-  })
-
-  afterEach(() => {
-    global.fetch.mockRestore()
-  })
-
-  it('getDatasets()', async() => {
-    await SmalldataClient.getDatasets()
-    expect(fetch).toHaveBeenCalledTimes(1)
-    expect(fetch).toBeCalledWith('/api/datasets')
-  })
-
   it('datasetTitleOf(dataset)', () => {
-    expect(SmalldataClient.datasetTitleOf(RESPONSE_DEFAULT[0]))
+    expect(SmalldataClient.datasetTitleOf(DATASTES_RESPONSE[0]))
       .toEqual('Caprellids polulation structure in Usujiri, Hokkaido, Japan')
     expect(SmalldataClient.datasetTitleOf(null))
       .toEqual('')
   })
 
+  describe('getDatasets()', () => {
+    beforeEach(() => {
+      global.fetch = jest.fn().mockImplementation(() =>
+        new Promise((resolve) => {
+          resolve({ json: () => DATASTES_RESPONSE })
+        })
+      )
+    })
+
+    afterEach(() => {
+      global.fetch.mockRestore()
+    })
+
+    it('makes default request', async() => {
+      await SmalldataClient.getDatasets()
+      expect(fetch).toHaveBeenCalledTimes(1)
+      expect(fetch).toBeCalledWith('/api/datasets')
+    })
+  })
+
+  describe('getOccurrences()', () => {
+    beforeEach(() => {
+      global.fetch = jest.fn().mockImplementation(() =>
+        new Promise((resolve) => {
+          resolve({ json: () => 'default-response' })
+        })
+      )
+    })
+
+    afterEach(() => {
+      global.fetch.mockRestore()
+    })
+
+    it('getOccurrences()', async() => {
+      await SmalldataClient.getOccurrences({ userRef: 'user-ref' })
+      expect(fetch).toHaveBeenCalledTimes(1)
+      expect(fetch).toBeCalledWith('/api/dwca/user/user-ref/records?projectFields=dwcRecord.tdwg.measurementValue,dwcRecord.tdwg.measurementUnitID')
+    })
+  })
+
   describe('postOccurrence()', () => {
+    beforeEach(() => {
+      global.fetch = jest.fn().mockImplementation(() =>
+        new Promise((resolve) => {
+          resolve({ json: () => 'default-response' })
+        })
+      )
+    })
+
+    afterEach(() => {
+      global.fetch.mockRestore()
+    })
+
     it('when providing all data', async() => {
       await SmalldataClient.postOccurrence(getDefaultOccurrence())
 

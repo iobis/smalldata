@@ -2,7 +2,7 @@ import OccurrenceForm from './OccurrenceForm'
 import React from 'react'
 import { act } from 'react-dom/test-utils'
 import { mount } from 'enzyme'
-import { RESPONSE_DEFAULT } from '../../../clients/SmalldataClient.mock'
+import { DATASTES_RESPONSE } from '../../../clients/SmalldataClient.mock'
 
 describe('OccurrenceForm', () => {
   const originalError = console.error
@@ -16,7 +16,7 @@ describe('OccurrenceForm', () => {
     jest.spyOn(Date, 'now').mockImplementation(() => new Date(Date.UTC(2019, 3, 29)).valueOf())
     global.fetch = jest.fn().mockImplementation(() =>
       new Promise((resolve) => {
-        resolve({ json: () => RESPONSE_DEFAULT })
+        resolve({ json: () => DATASTES_RESPONSE })
       })
     )
   })

@@ -1,4 +1,4 @@
-export const RESPONSE_DEFAULT = [{
+export const DATASTES_RESPONSE = [{
   'meta':              { 'type': 'event', 'dwcTables': { 'core': 'event', 'extensions': ['emof', 'occurrence'] } },
   'title':             {
     'language': 'en',
