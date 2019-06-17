@@ -137,3 +137,58 @@ export const DATASTES_RESPONSE = [{
   }, { 'keywords': ['Benthic biomass', 'Benthos', 'Data', 'Marine Genomics'], 'keywordThesaurus': 'ASFA' }],
   'ref':               'NnqVLwIyPn-nRkc'
 }]
+
+export const OCCURRENCES_RESPONSE = [
+  {
+    'dwcaId':     'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796',
+    'dataset':    'ntDOtUc7XsRrIus',
+    'dateAdded':  null,
+    'dwcRecords': {
+      'emof':       [
+        {
+          'id':   'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796',
+          'tdwg': {}
+        },
+        {
+          'id':   'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796',
+          'tdwg': {}
+        }
+      ],
+      'core':       'occurrence',
+      'occurrence': [
+        {
+          'id':   'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796',
+          'tdwg': {
+            'scientificName': 'Nereis succinea'
+          }
+        }
+      ]
+    }
+  },
+  {
+    'dwcaId':     'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158',
+    'dataset':    'ntDOtUc7XsRrIus',
+    'dateAdded':  null,
+    'dwcRecords': {
+      'emof':       [
+        {
+          'id':   'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158',
+          'tdwg': {}
+        },
+        {
+          'id':   'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158',
+          'tdwg': {}
+        }
+      ],
+      'core':       'occurrence',
+      'occurrence': [
+        {
+          'id':   'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158',
+          'tdwg': {
+            'scientificName': 'Brachynotus lucasi'
+          }
+        }
+      ]
+    }
+  }
+]

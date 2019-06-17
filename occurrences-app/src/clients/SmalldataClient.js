@@ -17,7 +17,7 @@ export function datasetTitleOf(dataset) {
 }
 
 export async function getOccurrences({ userRef }) {
-  return await fetch(`/api/dwca/user/${userRef}/records?projectFields=dwcRecord.tdwg.measurementValue,dwcRecord.tdwg.measurementUnitID`)
+  return await fetch(`/api/dwca/user/${userRef}/records?projectFields=dwcRecord.tdwg.scientificName`)
     .then(response => response.json())
 }
 
