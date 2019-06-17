@@ -1,121 +1,402 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`InputDataPage renders correctly / 1`] = `
-Array [
-  <section
-    className="section"
+exports[`InputDataPage renders correctly 1`] = `
+<MemoryRouter
+  initialEntries={
+    Array [
+      Object {
+        "key": "testKey",
+        "pathname": "/input-data",
+      },
+    ]
+  }
+>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "testKey",
+            "pathname": "/input-data",
+            "search": "",
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "testKey",
+          "pathname": "/input-data",
+          "search": "",
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
   >
-    <div
-      className="container is-fluid has-text-centered"
-    >
-      <a
-        className="button is-info"
-        href="/input-data/new"
-        onClick={[Function]}
+    <InputDataPage>
+      <section
+        className="section"
       >
-        inputDataPage.inputNewOccurrence
-      </a>
-    </div>
-  </section>,
-  <div
-    className="divider"
+        <div
+          className="container is-fluid has-text-centered"
+        >
+          <Link
+            className="button is-info"
+            to="/input-data/new"
+          >
+            <a
+              className="button is-info"
+              href="/input-data/new"
+              onClick={[Function]}
+            >
+              inputDataPage.inputNewOccurrence
+            </a>
+          </Link>
+        </div>
+      </section>
+      <Divider>
+        <div
+          className="divider"
+        >
+          <span>
+            inputDataPage.or
+          </span>
+        </div>
+      </Divider>
+      <section
+        className="section"
+      >
+        <div
+          className="container is-fluid has-text-centered"
+        >
+          <h4
+            className="title is-4"
+          >
+            inputDataPage.copyPreviousHeader
+          </h4>
+          <table
+            className="table is-striped is-hoverable is-fullwidth"
+          >
+            <thead>
+              <tr>
+                <th />
+                <th>
+                  inputDataPage.table.dateAdded
+                </th>
+                <th>
+                  inputDataPage.table.scientificName
+                </th>
+                <th>
+                  inputDataPage.table.dataset
+                </th>
+                <th>
+                  inputDataPage.table.occurrenceDate
+                </th>
+                <th />
+              </tr>
+            </thead>
+            <tbody />
+          </table>
+        </div>
+      </section>
+    </InputDataPage>
+  </Router>
+</MemoryRouter>
+`;
+
+exports[`InputDataPage renders correctly 2`] = `
+<MemoryRouter
+  initialEntries={
+    Array [
+      Object {
+        "key": "testKey",
+        "pathname": "/input-data",
+      },
+    ]
+  }
+>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "testKey",
+            "pathname": "/input-data",
+            "search": "",
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "testKey",
+          "pathname": "/input-data",
+          "search": "",
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
   >
-    <span>
-      inputDataPage.or
-    </span>
-  </div>,
-  <section
-    className="section"
-  >
-    <div
-      className="container is-fluid has-text-centered"
-    >
-      <h4
-        className="title is-4"
+    <InputDataPage>
+      <section
+        className="section"
       >
-        inputDataPage.copyPreviousHeader
-      </h4>
-      <table
-        className="table is-striped is-hoverable is-fullwidth"
+        <div
+          className="container is-fluid has-text-centered"
+        >
+          <Link
+            className="button is-info"
+            to="/input-data/new"
+          >
+            <a
+              className="button is-info"
+              href="/input-data/new"
+              onClick={[Function]}
+            >
+              inputDataPage.inputNewOccurrence
+            </a>
+          </Link>
+        </div>
+      </section>
+      <Divider>
+        <div
+          className="divider"
+        >
+          <span>
+            inputDataPage.or
+          </span>
+        </div>
+      </Divider>
+      <section
+        className="section"
       >
-        <thead>
-          <tr>
-            <th />
-            <th>
-              inputDataPage.table.dateAdded
-            </th>
-            <th>
-              inputDataPage.table.scientificName
-            </th>
-            <th>
-              inputDataPage.table.dataset
-            </th>
-            <th>
-              inputDataPage.table.occurrenceDate
-            </th>
-            <th />
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <div
-                className="button is-info"
+        <div
+          className="container is-fluid has-text-centered"
+        >
+          <h4
+            className="title is-4"
+          >
+            inputDataPage.copyPreviousHeader
+          </h4>
+          <table
+            className="table is-striped is-hoverable is-fullwidth"
+          >
+            <thead>
+              <tr>
+                <th />
+                <th>
+                  inputDataPage.table.dateAdded
+                </th>
+                <th>
+                  inputDataPage.table.scientificName
+                </th>
+                <th>
+                  inputDataPage.table.dataset
+                </th>
+                <th>
+                  inputDataPage.table.occurrenceDate
+                </th>
+                <th />
+              </tr>
+            </thead>
+            <tbody>
+              <OccurrenceRow
+                addedDate={null}
+                dataset="ntDOtUc7XsRrIus"
+                dateAdded={null}
+                dwcRecords={
+                  Object {
+                    "core": "occurrence",
+                    "emof": Array [
+                      Object {
+                        "id": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796",
+                        "tdwg": Object {},
+                      },
+                      Object {
+                        "id": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796",
+                        "tdwg": Object {},
+                      },
+                    ],
+                    "occurrence": Array [
+                      Object {
+                        "id": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796",
+                        "tdwg": Object {
+                          "eventDate": "1935-10-02",
+                          "scientificName": "Nereis succinea",
+                        },
+                      },
+                    ],
+                  }
+                }
+                dwcaId="IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796"
+                key="IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796"
+                occurrenceDate="1935-10-02"
+                scientificName="Nereis succinea"
               >
-                common.edit
-              </div>
-            </td>
-            <td>
-              2011-12-01
-            </td>
-            <td>
-              Abra Alba
-            </td>
-            <td>
-              NPPSD Short-tailed Albatross Sightings
-            </td>
-            <td>
-              2011-12-09
-            </td>
-            <td>
-              <div
-                className="button is-info"
+                <tr>
+                  <td>
+                    <div
+                      className="button is-info"
+                    >
+                      common.edit
+                    </div>
+                  </td>
+                  <td>
+                    —
+                  </td>
+                  <td>
+                    Nereis succinea
+                  </td>
+                  <td>
+                    ntDOtUc7XsRrIus
+                  </td>
+                  <td>
+                    1935-10-02
+                  </td>
+                  <td>
+                    <div
+                      className="button is-info"
+                    >
+                      common.copy
+                    </div>
+                  </td>
+                </tr>
+              </OccurrenceRow>
+              <OccurrenceRow
+                addedDate={null}
+                dataset="ntDOtUc7XsRrIus"
+                dateAdded={null}
+                dwcRecords={
+                  Object {
+                    "core": "occurrence",
+                    "emof": Array [
+                      Object {
+                        "id": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158",
+                        "tdwg": Object {},
+                      },
+                      Object {
+                        "id": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158",
+                        "tdwg": Object {},
+                      },
+                    ],
+                    "occurrence": Array [
+                      Object {
+                        "id": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158",
+                        "tdwg": Object {
+                          "eventDate": "1971",
+                          "scientificName": "Brachynotus lucasi",
+                        },
+                      },
+                    ],
+                  }
+                }
+                dwcaId="IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158"
+                key="IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158"
+                occurrenceDate="1971"
+                scientificName="Brachynotus lucasi"
               >
-                common.copy
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div
-                className="button is-info"
+                <tr>
+                  <td>
+                    <div
+                      className="button is-info"
+                    >
+                      common.edit
+                    </div>
+                  </td>
+                  <td>
+                    —
+                  </td>
+                  <td>
+                    Brachynotus lucasi
+                  </td>
+                  <td>
+                    ntDOtUc7XsRrIus
+                  </td>
+                  <td>
+                    1971
+                  </td>
+                  <td>
+                    <div
+                      className="button is-info"
+                    >
+                      common.copy
+                    </div>
+                  </td>
+                </tr>
+              </OccurrenceRow>
+              <OccurrenceRow
+                addedDate={null}
+                dataset="PoJnGNMaxsupE4w"
+                dateAdded={null}
+                dwcRecords={
+                  Object {
+                    "core": "occurrence",
+                    "occurrence": Array [
+                      Object {
+                        "id": "DeepSea_Antipatharia_35",
+                        "tdwg": Object {
+                          "scientificName": "Abyssopathes lyra",
+                        },
+                      },
+                    ],
+                  }
+                }
+                dwcaId="DeepSea_Antipatharia_35"
+                key="DeepSea_Antipatharia_35"
+                scientificName="Abyssopathes lyra"
               >
-                common.edit
-              </div>
-            </td>
-            <td>
-              2011-12-01
-            </td>
-            <td>
-              Abra Alba
-            </td>
-            <td>
-              NPPSD Short-tailed Albatross Sightings
-            </td>
-            <td>
-              2011-12-09
-            </td>
-            <td>
-              <div
-                className="button is-info"
-              >
-                common.copy
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>,
-]
+                <tr>
+                  <td>
+                    <div
+                      className="button is-info"
+                    >
+                      common.edit
+                    </div>
+                  </td>
+                  <td>
+                    —
+                  </td>
+                  <td>
+                    Abyssopathes lyra
+                  </td>
+                  <td>
+                    PoJnGNMaxsupE4w
+                  </td>
+                  <td />
+                  <td>
+                    <div
+                      className="button is-info"
+                    >
+                      common.copy
+                    </div>
+                  </td>
+                </tr>
+              </OccurrenceRow>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </InputDataPage>
+  </Router>
+</MemoryRouter>
 `;

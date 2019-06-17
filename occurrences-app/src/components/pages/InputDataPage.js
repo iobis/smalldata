@@ -1,5 +1,5 @@
-import React from 'react'
-import { getOccurrenceMock } from '../../clients/SmalldataClient'
+import React, { useEffect, useState } from 'react'
+import { getOccurrences } from '../../clients/SmalldataClient'
 import Divider from '../layout/Divider'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
@@ -7,7 +7,15 @@ import PropTypes from 'prop-types'
 
 export default function InputDataPage() {
   const { t } = useTranslation()
-  const occurrences = getOccurrenceMock()
+  const [occurrences, setOccurrences] = useState([])
+
+  useEffect(() => {
+    const fetchOccurrences = async() => {
+      const occurrences = await getOccurrences({ userRef: 'ovZTtaOJZ98xDDY' })
+      setOccurrences(occurrences)
+    }
+    fetchOccurrences()
+  })
 
   return (
     <>
@@ -34,7 +42,14 @@ export default function InputDataPage() {
               </tr>
             </thead>
             <tbody>
-              {occurrences.map(occurrence => <OccurrenceRow key={occurrence.id} {...occurrence}/>)}
+              {occurrences.map(occurrence => (
+                <OccurrenceRow
+                  addedDate={occurrence.dateAdded}
+                  key={occurrence.dwcaId}
+                  occurrenceDate={occurrence.dwcRecords.occurrence[0].tdwg.eventDate}
+                  scientificName={occurrence.dwcRecords.occurrence[0].tdwg.scientificName}
+                  {...occurrence}/>
+              ))}
             </tbody>
           </table>
         </div>
@@ -43,7 +58,7 @@ export default function InputDataPage() {
   )
 }
 
-function OccurrenceRow({ addedDate, dataset, id, occurrenceDate, scientificName }) {
+function OccurrenceRow({ addedDate, dataset, occurrenceDate, scientificName }) {
   const { t } = useTranslation()
 
   return (
@@ -51,7 +66,7 @@ function OccurrenceRow({ addedDate, dataset, id, occurrenceDate, scientificName 
       <td>
         <div className="button is-info">{t('common.edit')}</div>
       </td>
-      <td>{addedDate}</td>
+      <td>{addedDate || '—'}</td>
       <td>{scientificName}</td>
       <td>{dataset}</td>
       <td>{occurrenceDate}</td>
@@ -63,9 +78,8 @@ function OccurrenceRow({ addedDate, dataset, id, occurrenceDate, scientificName 
 }
 
 OccurrenceRow.propTypes = {
-  addedDate:      PropTypes.string.isRequired,
+  addedDate:      PropTypes.string,
   dataset:        PropTypes.string.isRequired,
-  id:             PropTypes.number.isRequired,
-  occurrenceDate: PropTypes.string.isRequired,
+  occurrenceDate: PropTypes.string,
   scientificName: PropTypes.string.isRequired
 }
