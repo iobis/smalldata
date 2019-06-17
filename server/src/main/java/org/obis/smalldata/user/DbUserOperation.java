@@ -53,7 +53,8 @@ class DbUserOperation {
   }
 
   private JsonObject addCalculatedBulkiness(JsonObject user) {
-    var bulkiness = calculator.decay(user.getJsonObject(KEY_BULKINESS).getDouble(KEY_VALUE),
+    var bulkiness = calculator.decay(
+      user.getJsonObject(KEY_BULKINESS).getDouble(KEY_VALUE),
       user.getJsonObject(KEY_BULKINESS).getInstant(KEY_INSTANT));
     return user.put(KEY_BULKINESS, bulkiness);
   }
@@ -111,7 +112,10 @@ class DbUserOperation {
                 .put(KEY_INSTANT, Instant.now())
                 .put(KEY_VALUE, newBulkiness))),
           new FindOptions(),
-          new UpdateOptions().setMulti(false).setUpsert(false).setReturningNewDocument(true),
+          new UpdateOptions()
+            .setMulti(false)
+            .setUpsert(false)
+            .setReturningNewDocument(true),
           arUpdate -> bulkinessResult.complete(arUpdate.result()));
       });
     return bulkinessResult;
