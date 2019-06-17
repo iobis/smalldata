@@ -1,3 +1,4 @@
+import deepExtend from 'deep-extend'
 import FinalSummary from './FinalSummary'
 import React from 'react'
 import { getDefaultProps } from './FinalSummary.fixture'
@@ -6,6 +7,10 @@ import { mount } from 'enzyme'
 describe('FinalSummary', () => {
   it('renders correctly', () => {
     expect(mount(createComponent())).toMatchSnapshot()
+  })
+
+  it('renders correctly when occurence end date is not provided', () => {
+    expect(mount(createComponent({ occurrenceData: { endDate: null } }))).toMatchSnapshot()
   })
 
   describe('when clicking change button', () => {
@@ -57,6 +62,6 @@ function createComponent(props) {
     onErrorClose:  jest.fn(),
     onSubmitClick: jest.fn()
   }
-
-  return <FinalSummary {...defaultProps} {...props}/>
+  const updatedProps = deepExtend(defaultProps, props)
+  return <FinalSummary {...updatedProps}/>
 }

@@ -24,10 +24,11 @@
     </properties>
   </rule>
   <rule ref="category/java/design.xml">
-    <exclude name="LawOfDemeter"/>
-    <exclude name="ClassWithOnlyPrivateConstructorsShouldBeFinal"/>
     <exclude name="AvoidCatchingGenericException"/>
     <exclude name="AvoidThrowingRawExceptionTypes"/>
+    <exclude name="ClassWithOnlyPrivateConstructorsShouldBeFinal"/>
+    <exclude name="LawOfDemeter"/>
+    <exclude name="TooManyMethods"/>
   </rule>
   <rule ref="category/java/errorprone.xml">
     <exclude name="BeanMembersShouldSerialize"/>

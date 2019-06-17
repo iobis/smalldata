@@ -9,10 +9,13 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 import lombok.Value;
 
+import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
+import java.util.stream.Collectors;
 
 import static org.pmw.tinylog.Logger.info;
 
@@ -124,6 +127,9 @@ public class DwcaRecordsHandler {
   }
 
   public static void getForUser(RoutingContext context) {
+    var projection = new JsonObject(context.queryParam("projectFields").stream()
+      .map(field -> new AbstractMap.SimpleEntry<String, Object>(field, true))
+      .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue)));
     var userRef = context.request().getParam(KEY_USER_REF);
     var eventBus = context.vertx().eventBus();
     eventBus.<Boolean>send(
@@ -135,7 +141,8 @@ public class DwcaRecordsHandler {
             ADDRESS_DWCA_RECORD,
             new JsonObject()
               .put(KEY_ACTION, "find")
-              .put("query", new JsonObject().put("user_ref", userRef)),
+              .put("query", new JsonObject().put("user_ref", userRef))
+              .put("projectionFields", projection),
             ar -> context.response().end(ar.result().body().encode()));
         } else {
           context.response().setStatusCode(400).end("User doesn't exist");
