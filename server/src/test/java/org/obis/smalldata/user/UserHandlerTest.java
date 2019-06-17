@@ -180,7 +180,7 @@ public class UserHandlerTest {
           assertThat(body.getMap())
             .containsOnlyKeys(QUERY_REF, KEY_EMAIL_ADDRESS, KEY_BULKINESS)
             .containsEntry(KEY_EMAIL_ADDRESS, "my.otheruser@domain.com");
-          assertThat((body.getJsonObject(KEY_BULKINESS)).getDouble(KEY_VALUE))
+          assertThat(body.getJsonObject(KEY_BULKINESS).getDouble(KEY_VALUE))
             .isEqualTo(Math.PI);
           testContext.completeNow();
         } else {
@@ -191,7 +191,7 @@ public class UserHandlerTest {
 
   @Test
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
-  void testIncreaseBulkiness(Vertx vertx, VertxTestContext testContext) {
+  void increaseBulkiness(Vertx vertx, VertxTestContext testContext) {
     vertx.eventBus().<JsonObject>send(
       "users.bulkiness",
       new JsonObject()
