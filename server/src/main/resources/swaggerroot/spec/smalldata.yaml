@@ -134,9 +134,11 @@ paths:
           schema:
             type: string
           example: FsfEMwhUTO_8I68
-        - name: projectFields
+        - name: projectField
           in: query
-          description: list of fields to add (comma-separated)
+          description: Darwin core field to include in the reply, e.g. `tdwg.year`. Multiple fields can be specified
+            by adding the `projectField` query parameters several times. If this parameter is not added,
+            all (non-null) fields are replied.
           required: false
           schema:
             type: array
