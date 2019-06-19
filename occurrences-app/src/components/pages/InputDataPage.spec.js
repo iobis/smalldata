@@ -1,7 +1,7 @@
 import InputDataPage from './InputDataPage'
 import React from 'react'
 import { MemoryRouter } from 'react-router-dom'
-import { OCCURRENCES_RESPONSE } from '../../clients/SmalldataClient.mock'
+import { OCCURRENCES_RESPONSE, DATASTES_RESPONSE } from '../../clients/SmalldataClient.mock'
 import { act } from 'react-dom/test-utils'
 import { mount } from 'enzyme'
 
@@ -21,11 +21,18 @@ describe('InputDataPage', () => {
   })
 
   beforeEach(() => {
-    global.fetch = jest.fn().mockImplementation(() =>
-      new Promise((resolve) => {
-        resolve({ json: () => OCCURRENCES_RESPONSE })
-      })
-    )
+    global.fetch = jest
+      .fn()
+      .mockImplementationOnce(() =>
+        new Promise((resolve) => {
+          resolve({ json: () => OCCURRENCES_RESPONSE })
+        })
+      )
+      .mockImplementationOnce(() =>
+        new Promise((resolve) => {
+          resolve({ json: () => DATASTES_RESPONSE })
+        })
+      )
   })
 
   afterEach(() => {
@@ -43,8 +50,9 @@ describe('InputDataPage', () => {
 
     expect(wrapper.find('tbody tr')).toHaveLength(0)
     expect(wrapper).toMatchSnapshot()
-    expect(global.fetch).toHaveBeenCalledTimes(1)
-    expect(global.fetch).toHaveBeenCalledWith('/api/dwca/user/ovZTtaOJZ98xDDY/records?projectFields=dwcRecord.tdwg.scientificName&projectFields=dwcRecord.tdwg.eventDate')
+    expect(global.fetch).toHaveBeenCalledTimes(2)
+    expect(global.fetch).toHaveBeenNthCalledWith(1, '/api/dwca/user/ovZTtaOJZ98xDDY/records?projectFields=dwcRecord.tdwg.scientificName&projectFields=dwcRecord.tdwg.eventDate')
+    expect(global.fetch).toHaveBeenNthCalledWith(2, '/api/datasets')
 
     await flushPromises()
     wrapper.update()

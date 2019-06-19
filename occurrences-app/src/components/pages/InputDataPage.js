@@ -1,7 +1,7 @@
 import Divider from '../layout/Divider'
 import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
-import { getOccurrences } from '../../clients/SmalldataClient'
+import { getDatasets, getOccurrences } from '../../clients/SmalldataClient'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
@@ -11,11 +11,24 @@ export default function InputDataPage() {
 
   useEffect(() => {
     const fetchOccurrences = async() => {
-      const occurrences = await getOccurrences({ userRef: 'ovZTtaOJZ98xDDY' })
-      setOccurrences(occurrences)
+      const [occurrences, datasets] = await Promise.all([
+        getOccurrences({ userRef: 'ovZTtaOJZ98xDDY' }),
+        getDatasets()
+      ])
+      const datasetRefToTitle = datasets
+        .reduce((acc, dataset) => {
+          acc[dataset.id] = dataset.title.value
+          return acc
+        }, {})
+      const occurrencesWithDataset = occurrences
+        .map(occurrence => ({
+          ...occurrence,
+          datasetTitle: datasetRefToTitle[occurrence.dataset]
+        }))
+      setOccurrences(occurrencesWithDataset)
     }
     fetchOccurrences()
-  })
+  }, [])
 
   return (
     <>
@@ -58,7 +71,7 @@ export default function InputDataPage() {
   )
 }
 
-function OccurrenceRow({ addedDate, dataset, occurrenceDate, scientificName }) {
+function OccurrenceRow({ addedDate, datasetTitle, occurrenceDate, scientificName }) {
   const { t } = useTranslation()
 
   return (
@@ -68,7 +81,7 @@ function OccurrenceRow({ addedDate, dataset, occurrenceDate, scientificName }) {
       </td>
       <td>{addedDate || '—'}</td>
       <td>{scientificName}</td>
-      <td>{dataset}</td>
+      <td>{datasetTitle}</td>
       <td>{occurrenceDate || '—'}</td>
       <td>
         <div className="button is-info">{t('common.copy')}</div>
@@ -79,7 +92,7 @@ function OccurrenceRow({ addedDate, dataset, occurrenceDate, scientificName }) {
 
 OccurrenceRow.propTypes = {
   addedDate:      PropTypes.string,
-  dataset:        PropTypes.string.isRequired,
+  datasetTitle:   PropTypes.string.isRequired,
   occurrenceDate: PropTypes.string,
   scientificName: PropTypes.string.isRequired
 }

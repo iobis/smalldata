@@ -223,6 +223,7 @@ exports[`InputDataPage renders correctly 2`] = `
               <OccurrenceRow
                 addedDate={null}
                 dataset="ntDOtUc7XsRrIus"
+                datasetTitle="Benthos collected in the Azov Sea in 1935 on board the R/V \\"N. Danilevskiy\\""
                 dateAdded={null}
                 dwcRecords={
                   Object {
@@ -268,7 +269,7 @@ exports[`InputDataPage renders correctly 2`] = `
                     Nereis succinea
                   </td>
                   <td>
-                    ntDOtUc7XsRrIus
+                    Benthos collected in the Azov Sea in 1935 on board the R/V "N. Danilevskiy"
                   </td>
                   <td>
                     1935-10-02
@@ -285,6 +286,7 @@ exports[`InputDataPage renders correctly 2`] = `
               <OccurrenceRow
                 addedDate={null}
                 dataset="ntDOtUc7XsRrIus"
+                datasetTitle="Benthos collected in the Azov Sea in 1935 on board the R/V \\"N. Danilevskiy\\""
                 dateAdded={null}
                 dwcRecords={
                   Object {
@@ -330,7 +332,7 @@ exports[`InputDataPage renders correctly 2`] = `
                     Brachynotus lucasi
                   </td>
                   <td>
-                    ntDOtUc7XsRrIus
+                    Benthos collected in the Azov Sea in 1935 on board the R/V "N. Danilevskiy"
                   </td>
                   <td>
                     1971
@@ -347,6 +349,7 @@ exports[`InputDataPage renders correctly 2`] = `
               <OccurrenceRow
                 addedDate={null}
                 dataset="PoJnGNMaxsupE4w"
+                datasetTitle="Antipatharia distribution data from: Deep-sea fauna of European seas - an annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe"
                 dateAdded={null}
                 dwcRecords={
                   Object {
@@ -380,7 +383,7 @@ exports[`InputDataPage renders correctly 2`] = `
                     Abyssopathes lyra
                   </td>
                   <td>
-                    PoJnGNMaxsupE4w
+                    Antipatharia distribution data from: Deep-sea fauna of European seas - an annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe
                   </td>
                   <td>
                     —
