@@ -25,7 +25,7 @@ class RecordHandler {
 
   private static final String DWC_RECORD = "dwcRecord";
   private static final String KEY_CORE = "core";
-  private static final String KEY_DATE_ADDED = "dateAdded";
+  private static final String KEY_ADDED_AT = "addedAtInstant";
   private final DbDwcaOperation dbOperation;
 
   RecordHandler(DbDwcaOperation dbOperation) {
@@ -69,13 +69,13 @@ class RecordHandler {
       id -> updateRecords(message, coreTable, dwcRecords, id, dbOperation::insertRecords));
   }
 
-  private List<JsonObject> generateDwcDbRecords(List<JsonObject> dwcRecords, String dwcaId, Instant dateAdded) {
+  private List<JsonObject> generateDwcDbRecords(List<JsonObject> dwcRecords, String dwcaId, Instant addedAtInstant) {
     return dwcRecords.stream()
       .map(dwcRecord -> {
         var record = dwcRecord.getJsonObject(DWC_RECORD);
         record.put("id", dwcaId);
         dwcRecord.put(DWC_RECORD, record);
-        dwcRecord.put(KEY_DATE_ADDED, dateAdded);
+        dwcRecord.put(KEY_ADDED_AT, addedAtInstant);
         dwcRecord.put("_id", ObjectId.get().toHexString());
         return dwcRecord;
       })
@@ -88,12 +88,12 @@ class RecordHandler {
     List<JsonObject> dwcRecords,
     String dwcaId,
     BiFunction<String, List<JsonObject>, Future<JsonObject>> dbOperation) {
-    var dateAdded = Instant.now();
-    List<JsonObject> records = generateDwcDbRecords(dwcRecords, dwcaId, dateAdded);
+    var addedAtInstant = Instant.now();
+    List<JsonObject> records = generateDwcDbRecords(dwcRecords, dwcaId, addedAtInstant);
     var result = dbOperation.apply(dwcaId, records);
     result.setHandler(ar -> message.reply(new JsonObject()
       .put("dwcaId", dwcaId)
-      .put(KEY_DATE_ADDED, dateAdded)
+      .put(KEY_ADDED_AT, addedAtInstant)
       .put("records", generateDwcaJsonResponse(records).put(KEY_CORE, coreTable))));
   }
 
@@ -113,8 +113,8 @@ class RecordHandler {
         .entrySet().stream()
         .map(entry -> {
           var datasetRef = entry.getKey().get(1);
-          var dateAdded = entry.getValue().stream()
-            .map(record -> record.getString(KEY_DATE_ADDED))
+          var addedAtInstant = entry.getValue().stream()
+            .map(record -> record.getString(KEY_ADDED_AT))
             .filter(Objects::nonNull)
             .map(Instant::parse)
             .max(Instant::compareTo)
@@ -122,7 +122,7 @@ class RecordHandler {
           return new JsonObject()
             .put("dwcaId", entry.getKey().get(0))
             .put("dataset", datasetRef)
-            .put(KEY_DATE_ADDED, dateAdded)
+            .put(KEY_ADDED_AT, addedAtInstant)
             .put("dwcRecords", generateDwcaJsonResponse(entry.getValue())
               .put(KEY_CORE, coreTableMap.get(datasetRef)));
         })
@@ -133,8 +133,8 @@ class RecordHandler {
   }
 
   private Instant instantFromRecord(JsonObject record) {
-    var dateAdded = record.getString(KEY_DATE_ADDED);
-    return null == dateAdded ? Instant.MIN : Instant.parse(dateAdded);
+    var addedAtInstant = record.getString(KEY_ADDED_AT);
+    return null == addedAtInstant ? Instant.MIN : Instant.parse(addedAtInstant);
   }
 
   private String getCoreTable(JsonObject body) {
