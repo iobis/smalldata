@@ -21,7 +21,7 @@ class DbDwcaOperation {
 
   private static final String KEY_REF = "_ref";
   private static final JsonObject DEFAULT_DWCA_FIELDS = new JsonObject()
-    .put("dwcRecord.dateAdded", true)
+    .put("dwcRecord.addedAtInstant", true)
     .put("dwcRecord.id", true)
     .put("user_ref", true)
     .put("dwcTable", true)

@@ -33,7 +33,7 @@ public class DwcaComponentTest {
       .add(new JsonObject().put("purl", new JsonObject()).put("iobis", new JsonObject()))
       .add(new JsonObject().put("iobis", new JsonObject())));
   private static final String KEY_ACTION = "action";
-  private static final String KEY_DATE_ADDED = "dateAdded";
+  private static final String KEY_DATE_ADDED = "addedAtInstant";
   private static final String KEY_RECORDS = "records";
   private static TestDb testDb;
 
@@ -94,12 +94,12 @@ public class DwcaComponentTest {
         if (ar.succeeded()) {
           var body = ar.result().body();
           assertThat(body.getMap()).containsKeys(KEY_DATE_ADDED, "dwcaId", KEY_RECORDS);
-          var dateAddedString = body.getString(KEY_DATE_ADDED);
-          assertThat(dateAddedString).isNotBlank();
-          var dateAdded = Instant.parse(dateAddedString);
+          var addedAtInstantString = body.getString(KEY_DATE_ADDED);
+          assertThat(addedAtInstantString).isNotBlank();
+          var addedAtInstant = Instant.parse(addedAtInstantString);
           var now = Instant.now();
-          assertThat(now).isAfter(dateAdded);
-          assertThat(Duration.between(dateAdded, now)).isLessThan(Duration.ofMillis(500));
+          assertThat(now).isAfter(addedAtInstant);
+          assertThat(Duration.between(addedAtInstant, now)).isLessThan(Duration.ofMillis(500));
 
           JsonObject records = body.getJsonObject(KEY_RECORDS);
           assertThat(records.getJsonArray(OCCURRENCE)).hasSize(1);
@@ -150,7 +150,7 @@ public class DwcaComponentTest {
           JsonArray records = ar.result().body();
           assertThat(records).hasSize(1);
           JsonObject result = records.getJsonObject(0);
-          assertThat(result.getMap()).containsOnlyKeys("dataset", "dwcRecords", "dateAdded", "dwcaId");
+          assertThat(result.getMap()).containsOnlyKeys("dataset", "dwcRecords", "addedAtInstant", "dwcaId");
           assertThat(result.getString("dataset")).isEqualTo("ntDOtUc7XsRrIus");
           JsonObject dwcRecords = result.getJsonObject("dwcRecords");
           assertThat(dwcRecords.getString(KEY_CORE)).isEqualTo("occurrence");
