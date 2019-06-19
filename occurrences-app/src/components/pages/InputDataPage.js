@@ -1,9 +1,9 @@
+import Divider from '../layout/Divider'
+import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
 import { getOccurrences } from '../../clients/SmalldataClient'
-import Divider from '../layout/Divider'
-import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types'
+import { useTranslation } from 'react-i18next'
 
 export default function InputDataPage() {
   const { t } = useTranslation()
@@ -69,7 +69,7 @@ function OccurrenceRow({ addedDate, dataset, occurrenceDate, scientificName }) {
       <td>{addedDate || '—'}</td>
       <td>{scientificName}</td>
       <td>{dataset}</td>
-      <td>{occurrenceDate}</td>
+      <td>{occurrenceDate || '—'}</td>
       <td>
         <div className="button is-info">{t('common.copy')}</div>
       </td>

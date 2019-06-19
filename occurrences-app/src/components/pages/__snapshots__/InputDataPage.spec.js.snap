@@ -382,7 +382,9 @@ exports[`InputDataPage renders correctly 2`] = `
                   <td>
                     PoJnGNMaxsupE4w
                   </td>
-                  <td />
+                  <td>
+                    —
+                  </td>
                   <td>
                     <div
                       className="button is-info"
