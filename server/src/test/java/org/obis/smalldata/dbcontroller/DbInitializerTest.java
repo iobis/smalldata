@@ -15,6 +15,7 @@ import org.obis.smalldata.util.Collections;
 import org.pmw.tinylog.Logger;
 
 import java.time.Instant;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -25,7 +26,6 @@ public class DbInitializerTest {
   private static final String KEY_BULKINESS = "bulkiness";
   private static final String KEY_VALUE = "value";
   private static final String BIND_IP = "localhost";
-  private static final int PORT = 2357;
 
   private static MongoClient mongoClient;
 
@@ -33,11 +33,12 @@ public class DbInitializerTest {
   public void setUp(Vertx vertx, VertxTestContext testContext) {
     vertx.sharedData()
       .getLocalMap("settings").put("mode", "DEMO");
+    int port = 1023 + new Random().nextInt(65535 - 1023);
     vertx.deployVerticle(
       new StorageModule(),
-      new DeploymentOptions().setConfig(MongoConfigs.ofServer(BIND_IP, PORT)),
+      new DeploymentOptions().setConfig(MongoConfigs.ofServer(BIND_IP, port)),
       testContext.succeeding(deployId -> {
-        mongoClient = MongoClient.createNonShared(vertx, MongoConfigs.ofClient(BIND_IP, PORT));
+        mongoClient = MongoClient.createNonShared(vertx, MongoConfigs.ofClient(BIND_IP, port));
         testContext.completeNow();
       }));
   }
