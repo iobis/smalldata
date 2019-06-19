@@ -13,10 +13,11 @@ class BulkinessHandler {
 
   BulkinessHandler(DbUserOperation dbOperation) {
     var actionMap = ImmutableMap.<String, BiConsumer<Message<JsonObject>, JsonObject>>of(
-      "increase", (message, body) -> {
-        dbOperation.increaseBulkiness(body.getString("userRef"))
-          .setHandler(ar -> message.reply(ar.result()));
-      });
+      "increase",
+      (message, body) ->
+        dbOperation
+          .increaseBulkiness(body.getString("userRef"))
+          .setHandler(ar -> message.reply(ar.result())));
     this.actionHandler = new VertxActionHandler(actionMap);
   }
 

@@ -62,9 +62,9 @@ public class UserHandlerTest {
       new JsonObject(Map.of(KEY_ACTION, "find")),
       ar -> {
         if (ar.succeeded()) {
-          var records = ar.result().body();
-          assertThat(records).hasSize(2);
-          var user = records.stream()
+          var body = ar.result().body();
+          assertThat(body).hasSize(2);
+          var user = body.stream()
             .map(JsonObject.class::cast)
             .filter(u -> u.getString(KEY_REF).equals("ovZTtaOJZ98xDDY"))
             .findFirst()
@@ -90,9 +90,9 @@ public class UserHandlerTest {
         "query", new JsonObject().put(KEY_EMAIL_ADDRESS, "some.user@domain.org"))),
       ar -> {
         if (ar.succeeded()) {
-          var records = ar.result().body();
-          assertThat(records).hasSize(1);
-          var user = records.stream()
+          var body = ar.result().body();
+          assertThat(body).hasSize(1);
+          var user = body.stream()
             .map(JsonObject.class::cast)
             .filter(u -> u.getString(KEY_REF).equals("ovZTtaOJZ98xDDY"))
             .findFirst()
@@ -119,10 +119,12 @@ public class UserHandlerTest {
       ar -> {
         if (ar.succeeded()) {
           assertThat(ar.succeeded()).isTrue();
-          var json = ar.result().body().getMap();
-          assertThat(json).containsOnlyKeys(KEY_REF, KEY_EMAIL_ADDRESS, KEY_BULKINESS);
-          assertThat(json).containsEntry(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS);
-          assertThat(((JsonObject) json.get(KEY_BULKINESS)).getDouble(KEY_VALUE)).isEqualTo(0.0);
+          var body = ar.result().body();
+          assertThat(body.getMap())
+            .containsOnlyKeys(KEY_REF, KEY_EMAIL_ADDRESS, KEY_BULKINESS)
+            .containsEntry(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS);
+          assertThat(body.getJsonObject(KEY_BULKINESS).getDouble(KEY_VALUE))
+            .isEqualTo(0.0);
           testContext.completeNow();
         } else {
           testContext.failNow(ar.cause());
@@ -145,10 +147,12 @@ public class UserHandlerTest {
       ar -> {
         if (ar.succeeded()) {
           assertThat(ar.succeeded()).isTrue();
-          var json = ar.result().body().getMap();
-          assertThat(json).containsOnlyKeys(KEY_REF, KEY_EMAIL_ADDRESS, KEY_BULKINESS);
-          assertThat(json).containsEntry(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS);
-          assertThat(((JsonObject) json.get(KEY_BULKINESS)).getDouble(KEY_VALUE)).isEqualTo(Math.E);
+          var body = ar.result().body();
+          assertThat(body.getMap())
+            .containsOnlyKeys(KEY_REF, KEY_EMAIL_ADDRESS, KEY_BULKINESS)
+            .containsEntry(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS);
+          assertThat(body.getJsonObject(KEY_BULKINESS).getDouble(KEY_VALUE))
+            .isEqualTo(Math.E);
           testContext.completeNow();
         } else {
           testContext.failNow(ar.cause());
@@ -172,10 +176,12 @@ public class UserHandlerTest {
       ar -> {
         if (ar.succeeded()) {
           assertThat(ar.succeeded()).isTrue();
-          var json = ar.result().body().getMap();
-          assertThat(json).containsOnlyKeys(QUERY_REF, KEY_EMAIL_ADDRESS, KEY_BULKINESS);
-          assertThat(json).containsEntry(KEY_EMAIL_ADDRESS, "my.otheruser@domain.com");
-          assertThat(((JsonObject) json.get(KEY_BULKINESS)).getDouble(KEY_VALUE)).isEqualTo(Math.PI);
+          var body = ar.result().body();
+          assertThat(body.getMap())
+            .containsOnlyKeys(QUERY_REF, KEY_EMAIL_ADDRESS, KEY_BULKINESS)
+            .containsEntry(KEY_EMAIL_ADDRESS, "my.otheruser@domain.com");
+          assertThat(body.getJsonObject(KEY_BULKINESS).getDouble(KEY_VALUE))
+            .isEqualTo(Math.PI);
           testContext.completeNow();
         } else {
           testContext.failNow(ar.cause());
@@ -185,7 +191,7 @@ public class UserHandlerTest {
 
   @Test
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
-  void testIncreaseBulkiness(Vertx vertx, VertxTestContext testContext) {
+  void increaseBulkiness(Vertx vertx, VertxTestContext testContext) {
     vertx.eventBus().<JsonObject>send(
       "users.bulkiness",
       new JsonObject()
@@ -194,8 +200,7 @@ public class UserHandlerTest {
       ar -> {
         var bulkiness = ar.result().body().getJsonObject("bulkiness");
         assertThat(bulkiness.getDouble("value")).isGreaterThan(1.0);
-        assertThat(bulkiness.getInstant("instant")).isBetween(
-          Instant.now().minusMillis(200), Instant.now());
+        assertThat(bulkiness.getInstant("instant")).isBetween(Instant.now().minusMillis(200), Instant.now());
         testContext.completeNow();
       });
   }

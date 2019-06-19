@@ -31,9 +31,11 @@ public class DbInitializerTest {
 
   @BeforeEach
   public void setUp(Vertx vertx, VertxTestContext testContext) {
-    vertx.sharedData()
-      .getLocalMap("settings").put("mode", "DEMO");
-    int port = 1023 + new Random().nextInt(65535 - 1023);
+    vertx
+      .sharedData()
+      .getLocalMap("settings")
+      .put("mode", "DEMO");
+    var port = 1023 + new Random().nextInt(65535 - 1023);
     vertx.deployVerticle(
       new StorageModule(),
       new DeploymentOptions().setConfig(MongoConfigs.ofServer(BIND_IP, port)),
