@@ -140,10 +140,10 @@ export const DATASTES_RESPONSE = [{
 
 export const OCCURRENCES_RESPONSE = [
   {
-    'dwcaId':     'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796',
-    'dataset':    'ntDOtUc7XsRrIus',
-    'dateAdded':  null,
-    'dwcRecords': {
+    'dwcaId':         'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796',
+    'dataset':        'ntDOtUc7XsRrIus',
+    'addedAtInstant': '2019-06-20T09:42:43.788674Z',
+    'dwcRecords':     {
       'emof':       [
         {
           'id':   'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796',
@@ -167,10 +167,10 @@ export const OCCURRENCES_RESPONSE = [
     }
   },
   {
-    'dwcaId':     'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158',
-    'dataset':    'ntDOtUc7XsRrIus',
-    'dateAdded':  null,
-    'dwcRecords': {
+    'dwcaId':         'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158',
+    'dataset':        'ntDOtUc7XsRrIus',
+    'addedAtInstant': null,
+    'dwcRecords':     {
       'emof':       [
         {
           'id':   'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158',
@@ -194,10 +194,10 @@ export const OCCURRENCES_RESPONSE = [
     }
   },
   {
-    'dwcaId':     'DeepSea_Antipatharia_35',
-    'dataset':    'PoJnGNMaxsupE4w',
-    'dateAdded':  null,
-    'dwcRecords': {
+    'dwcaId':         'DeepSea_Antipatharia_35',
+    'dataset':        'PoJnGNMaxsupE4w',
+    'addedAtInstant': null,
+    'dwcRecords':     {
       'core':       'occurrence',
       'occurrence': [
         {
