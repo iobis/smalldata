@@ -3,6 +3,7 @@ import React from 'react'
 import { act } from 'react-dom/test-utils'
 import { mount } from 'enzyme'
 import { DATASTES_RESPONSE } from '../../../clients/SmalldataClient.mock'
+import { AuthProvider } from '@smalldata/dwca-lib'
 
 describe('OccurrenceForm', () => {
   const originalError = console.error
@@ -28,7 +29,7 @@ describe('OccurrenceForm', () => {
 
   it('renders correctly', () => {
     act(() => {
-      wrapper = mount(<OccurrenceForm/>)
+      wrapper = mount(<AuthProvider><OccurrenceForm/></AuthProvider>)
     })
     expect(global.fetch).toHaveBeenCalledTimes(1)
     expect(global.fetch).toHaveBeenCalledWith('/api/datasets')

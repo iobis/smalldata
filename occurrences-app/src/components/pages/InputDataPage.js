@@ -1,6 +1,7 @@
 import Divider from '../layout/Divider'
 import PropTypes from 'prop-types'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { AuthContext } from '@smalldata/dwca-lib'
 import { format } from 'date-fns'
 import { getDatasets, getOccurrences } from '../../clients/SmalldataClient'
 import { Link } from 'react-router-dom'
@@ -8,12 +9,13 @@ import { useTranslation } from 'react-i18next'
 
 export default function InputDataPage() {
   const { t } = useTranslation()
+  const { userRef } = useContext(AuthContext)
   const [occurrences, setOccurrences] = useState([])
 
   useEffect(() => {
     const fetchOccurrences = async() => {
       const [occurrences, datasets] = await Promise.all([
-        getOccurrences({ userRef: 'ovZTtaOJZ98xDDY' }),
+        getOccurrences({ userRef }),
         getDatasets()
       ])
       const datasetRefToTitle = datasets

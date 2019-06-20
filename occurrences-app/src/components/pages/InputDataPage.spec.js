@@ -1,9 +1,10 @@
 import InputDataPage from './InputDataPage'
 import React from 'react'
 import { MemoryRouter } from 'react-router-dom'
-import { OCCURRENCES_RESPONSE, DATASTES_RESPONSE } from '../../clients/SmalldataClient.mock'
+import { DATASTES_RESPONSE, OCCURRENCES_RESPONSE } from '../../clients/SmalldataClient.mock'
 import { act } from 'react-dom/test-utils'
 import { mount } from 'enzyme'
+import { AuthProvider } from '@smalldata/dwca-lib'
 
 describe('InputDataPage', () => {
   const originalError = console.error
@@ -43,7 +44,9 @@ describe('InputDataPage', () => {
     act(() => {
       wrapper = mount(
         <MemoryRouter initialEntries={[{ pathname: '/input-data', key: 'testKey' }]}>
-          <InputDataPage/>
+          <AuthProvider>
+            <InputDataPage/>
+          </AuthProvider>
         </MemoryRouter>
       )
     })

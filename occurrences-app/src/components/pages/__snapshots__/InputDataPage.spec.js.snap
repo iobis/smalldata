@@ -43,73 +43,75 @@ exports[`InputDataPage renders correctly 1`] = `
       }
     }
   >
-    <InputDataPage>
-      <section
-        className="section"
-      >
-        <div
-          className="container is-fluid has-text-centered"
+    <AuthProvider>
+      <InputDataPage>
+        <section
+          className="section"
         >
-          <Link
-            className="button is-info"
-            to="/input-data/new"
+          <div
+            className="container is-fluid has-text-centered"
           >
-            <a
+            <Link
               className="button is-info"
-              href="/input-data/new"
-              onClick={[Function]}
+              to="/input-data/new"
             >
-              inputDataPage.inputNewOccurrence
-            </a>
-          </Link>
-        </div>
-      </section>
-      <Divider>
-        <div
-          className="divider"
-        >
-          <span>
-            inputDataPage.or
-          </span>
-        </div>
-      </Divider>
-      <section
-        className="previous-occurrences section"
-      >
-        <div
-          className="container is-fluid has-text-centered"
-        >
-          <h4
-            className="title is-4"
+              <a
+                className="button is-info"
+                href="/input-data/new"
+                onClick={[Function]}
+              >
+                inputDataPage.inputNewOccurrence
+              </a>
+            </Link>
+          </div>
+        </section>
+        <Divider>
+          <div
+            className="divider"
           >
-            inputDataPage.copyPreviousHeader
-          </h4>
-          <table
-            className="table is-striped is-hoverable is-fullwidth"
+            <span>
+              inputDataPage.or
+            </span>
+          </div>
+        </Divider>
+        <section
+          className="previous-occurrences section"
+        >
+          <div
+            className="container is-fluid has-text-centered"
           >
-            <thead>
-              <tr>
-                <th />
-                <th>
-                  inputDataPage.table.addedAt
-                </th>
-                <th>
-                  inputDataPage.table.scientificName
-                </th>
-                <th>
-                  inputDataPage.table.datasetTitle
-                </th>
-                <th>
-                  inputDataPage.table.occurrenceDate
-                </th>
-                <th />
-              </tr>
-            </thead>
-            <tbody />
-          </table>
-        </div>
-      </section>
-    </InputDataPage>
+            <h4
+              className="title is-4"
+            >
+              inputDataPage.copyPreviousHeader
+            </h4>
+            <table
+              className="table is-striped is-hoverable is-fullwidth"
+            >
+              <thead>
+                <tr>
+                  <th />
+                  <th>
+                    inputDataPage.table.addedAt
+                  </th>
+                  <th>
+                    inputDataPage.table.scientificName
+                  </th>
+                  <th>
+                    inputDataPage.table.datasetTitle
+                  </th>
+                  <th>
+                    inputDataPage.table.occurrenceDate
+                  </th>
+                  <th />
+                </tr>
+              </thead>
+              <tbody />
+            </table>
+          </div>
+        </section>
+      </InputDataPage>
+    </AuthProvider>
   </Router>
 </MemoryRouter>
 `;
@@ -157,290 +159,292 @@ exports[`InputDataPage renders correctly 2`] = `
       }
     }
   >
-    <InputDataPage>
-      <section
-        className="section"
-      >
-        <div
-          className="container is-fluid has-text-centered"
+    <AuthProvider>
+      <InputDataPage>
+        <section
+          className="section"
         >
-          <Link
-            className="button is-info"
-            to="/input-data/new"
+          <div
+            className="container is-fluid has-text-centered"
           >
-            <a
+            <Link
               className="button is-info"
-              href="/input-data/new"
-              onClick={[Function]}
+              to="/input-data/new"
             >
-              inputDataPage.inputNewOccurrence
-            </a>
-          </Link>
-        </div>
-      </section>
-      <Divider>
-        <div
-          className="divider"
-        >
-          <span>
-            inputDataPage.or
-          </span>
-        </div>
-      </Divider>
-      <section
-        className="previous-occurrences section"
-      >
-        <div
-          className="container is-fluid has-text-centered"
-        >
-          <h4
-            className="title is-4"
+              <a
+                className="button is-info"
+                href="/input-data/new"
+                onClick={[Function]}
+              >
+                inputDataPage.inputNewOccurrence
+              </a>
+            </Link>
+          </div>
+        </section>
+        <Divider>
+          <div
+            className="divider"
           >
-            inputDataPage.copyPreviousHeader
-          </h4>
-          <table
-            className="table is-striped is-hoverable is-fullwidth"
+            <span>
+              inputDataPage.or
+            </span>
+          </div>
+        </Divider>
+        <section
+          className="previous-occurrences section"
+        >
+          <div
+            className="container is-fluid has-text-centered"
           >
-            <thead>
-              <tr>
-                <th />
-                <th>
-                  inputDataPage.table.addedAt
-                </th>
-                <th>
-                  inputDataPage.table.scientificName
-                </th>
-                <th>
-                  inputDataPage.table.datasetTitle
-                </th>
-                <th>
-                  inputDataPage.table.occurrenceDate
-                </th>
-                <th />
-              </tr>
-            </thead>
-            <tbody>
-              <OccurrenceRow
-                addedAtInstant="2019-06-20T09:42:43.788674Z"
-                dataset="ntDOtUc7XsRrIus"
-                datasetTitle="Benthos collected in the Azov Sea in 1935 on board the R/V \\"N. Danilevskiy\\""
-                dwcRecords={
-                  Object {
-                    "core": "occurrence",
-                    "emof": Array [
-                      Object {
-                        "id": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796",
-                        "tdwg": Object {},
-                      },
-                      Object {
-                        "id": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796",
-                        "tdwg": Object {},
-                      },
-                    ],
-                    "occurrence": Array [
-                      Object {
-                        "id": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796",
-                        "tdwg": Object {
-                          "eventDate": "1935-10-02",
-                          "scientificName": "Nereis succinea",
-                        },
-                      },
-                    ],
-                  }
-                }
-                dwcaId="IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796"
-                key="IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796"
-                occurrenceDate="1935-10-02"
-                scientificName="Nereis succinea"
-              >
-                <tr
-                  className="occurrence-row"
-                >
-                  <td
-                    className="edit"
-                  >
-                    <div
-                      className="button is-info"
-                    >
-                      common.edit
-                    </div>
-                  </td>
-                  <td
-                    className="added-at"
-                  >
-                    20 June 2019
-                  </td>
-                  <td
-                    className="scientific-name"
-                  >
-                    Nereis succinea
-                  </td>
-                  <td
-                    className="dataset-title"
-                  >
-                    Benthos collected in the Azov Sea in 1935 on board the R/V "N. Danilevskiy"
-                  </td>
-                  <td
-                    className="occurrence-date"
-                  >
-                    1935-10-02
-                  </td>
-                  <td
-                    className="copy"
-                  >
-                    <div
-                      className="button is-info"
-                    >
-                      common.copy
-                    </div>
-                  </td>
+            <h4
+              className="title is-4"
+            >
+              inputDataPage.copyPreviousHeader
+            </h4>
+            <table
+              className="table is-striped is-hoverable is-fullwidth"
+            >
+              <thead>
+                <tr>
+                  <th />
+                  <th>
+                    inputDataPage.table.addedAt
+                  </th>
+                  <th>
+                    inputDataPage.table.scientificName
+                  </th>
+                  <th>
+                    inputDataPage.table.datasetTitle
+                  </th>
+                  <th>
+                    inputDataPage.table.occurrenceDate
+                  </th>
+                  <th />
                 </tr>
-              </OccurrenceRow>
-              <OccurrenceRow
-                addedAtInstant={null}
-                dataset="ntDOtUc7XsRrIus"
-                datasetTitle="Benthos collected in the Azov Sea in 1935 on board the R/V \\"N. Danilevskiy\\""
-                dwcRecords={
-                  Object {
-                    "core": "occurrence",
-                    "emof": Array [
-                      Object {
-                        "id": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158",
-                        "tdwg": Object {},
-                      },
-                      Object {
-                        "id": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158",
-                        "tdwg": Object {},
-                      },
-                    ],
-                    "occurrence": Array [
-                      Object {
-                        "id": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158",
-                        "tdwg": Object {
-                          "eventDate": "1971",
-                          "scientificName": "Brachynotus lucasi",
+              </thead>
+              <tbody>
+                <OccurrenceRow
+                  addedAtInstant="2019-06-20T09:42:43.788674Z"
+                  dataset="ntDOtUc7XsRrIus"
+                  datasetTitle="Benthos collected in the Azov Sea in 1935 on board the R/V \\"N. Danilevskiy\\""
+                  dwcRecords={
+                    Object {
+                      "core": "occurrence",
+                      "emof": Array [
+                        Object {
+                          "id": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796",
+                          "tdwg": Object {},
                         },
-                      },
-                    ],
-                  }
-                }
-                dwcaId="IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158"
-                key="IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158"
-                occurrenceDate="1971"
-                scientificName="Brachynotus lucasi"
-              >
-                <tr
-                  className="occurrence-row"
-                >
-                  <td
-                    className="edit"
-                  >
-                    <div
-                      className="button is-info"
-                    >
-                      common.edit
-                    </div>
-                  </td>
-                  <td
-                    className="added-at"
-                  >
-                    —
-                  </td>
-                  <td
-                    className="scientific-name"
-                  >
-                    Brachynotus lucasi
-                  </td>
-                  <td
-                    className="dataset-title"
-                  >
-                    Benthos collected in the Azov Sea in 1935 on board the R/V "N. Danilevskiy"
-                  </td>
-                  <td
-                    className="occurrence-date"
-                  >
-                    1971
-                  </td>
-                  <td
-                    className="copy"
-                  >
-                    <div
-                      className="button is-info"
-                    >
-                      common.copy
-                    </div>
-                  </td>
-                </tr>
-              </OccurrenceRow>
-              <OccurrenceRow
-                addedAtInstant={null}
-                dataset="PoJnGNMaxsupE4w"
-                datasetTitle="Antipatharia distribution data from: Deep-sea fauna of European seas - an annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe"
-                dwcRecords={
-                  Object {
-                    "core": "occurrence",
-                    "occurrence": Array [
-                      Object {
-                        "id": "DeepSea_Antipatharia_35",
-                        "tdwg": Object {
-                          "scientificName": "Abyssopathes lyra",
+                        Object {
+                          "id": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796",
+                          "tdwg": Object {},
                         },
-                      },
-                    ],
+                      ],
+                      "occurrence": Array [
+                        Object {
+                          "id": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796",
+                          "tdwg": Object {
+                            "eventDate": "1935-10-02",
+                            "scientificName": "Nereis succinea",
+                          },
+                        },
+                      ],
+                    }
                   }
-                }
-                dwcaId="DeepSea_Antipatharia_35"
-                key="DeepSea_Antipatharia_35"
-                scientificName="Abyssopathes lyra"
-              >
-                <tr
-                  className="occurrence-row"
+                  dwcaId="IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796"
+                  key="IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796"
+                  occurrenceDate="1935-10-02"
+                  scientificName="Nereis succinea"
                 >
-                  <td
-                    className="edit"
+                  <tr
+                    className="occurrence-row"
                   >
-                    <div
-                      className="button is-info"
+                    <td
+                      className="edit"
                     >
-                      common.edit
-                    </div>
-                  </td>
-                  <td
-                    className="added-at"
-                  >
-                    —
-                  </td>
-                  <td
-                    className="scientific-name"
-                  >
-                    Abyssopathes lyra
-                  </td>
-                  <td
-                    className="dataset-title"
-                  >
-                    Antipatharia distribution data from: Deep-sea fauna of European seas - an annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe
-                  </td>
-                  <td
-                    className="occurrence-date"
-                  >
-                    —
-                  </td>
-                  <td
-                    className="copy"
-                  >
-                    <div
-                      className="button is-info"
+                      <div
+                        className="button is-info"
+                      >
+                        common.edit
+                      </div>
+                    </td>
+                    <td
+                      className="added-at"
                     >
-                      common.copy
-                    </div>
-                  </td>
-                </tr>
-              </OccurrenceRow>
-            </tbody>
-          </table>
-        </div>
-      </section>
-    </InputDataPage>
+                      20 June 2019
+                    </td>
+                    <td
+                      className="scientific-name"
+                    >
+                      Nereis succinea
+                    </td>
+                    <td
+                      className="dataset-title"
+                    >
+                      Benthos collected in the Azov Sea in 1935 on board the R/V "N. Danilevskiy"
+                    </td>
+                    <td
+                      className="occurrence-date"
+                    >
+                      1935-10-02
+                    </td>
+                    <td
+                      className="copy"
+                    >
+                      <div
+                        className="button is-info"
+                      >
+                        common.copy
+                      </div>
+                    </td>
+                  </tr>
+                </OccurrenceRow>
+                <OccurrenceRow
+                  addedAtInstant={null}
+                  dataset="ntDOtUc7XsRrIus"
+                  datasetTitle="Benthos collected in the Azov Sea in 1935 on board the R/V \\"N. Danilevskiy\\""
+                  dwcRecords={
+                    Object {
+                      "core": "occurrence",
+                      "emof": Array [
+                        Object {
+                          "id": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158",
+                          "tdwg": Object {},
+                        },
+                        Object {
+                          "id": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158",
+                          "tdwg": Object {},
+                        },
+                      ],
+                      "occurrence": Array [
+                        Object {
+                          "id": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158",
+                          "tdwg": Object {
+                            "eventDate": "1971",
+                            "scientificName": "Brachynotus lucasi",
+                          },
+                        },
+                      ],
+                    }
+                  }
+                  dwcaId="IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158"
+                  key="IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158"
+                  occurrenceDate="1971"
+                  scientificName="Brachynotus lucasi"
+                >
+                  <tr
+                    className="occurrence-row"
+                  >
+                    <td
+                      className="edit"
+                    >
+                      <div
+                        className="button is-info"
+                      >
+                        common.edit
+                      </div>
+                    </td>
+                    <td
+                      className="added-at"
+                    >
+                      —
+                    </td>
+                    <td
+                      className="scientific-name"
+                    >
+                      Brachynotus lucasi
+                    </td>
+                    <td
+                      className="dataset-title"
+                    >
+                      Benthos collected in the Azov Sea in 1935 on board the R/V "N. Danilevskiy"
+                    </td>
+                    <td
+                      className="occurrence-date"
+                    >
+                      1971
+                    </td>
+                    <td
+                      className="copy"
+                    >
+                      <div
+                        className="button is-info"
+                      >
+                        common.copy
+                      </div>
+                    </td>
+                  </tr>
+                </OccurrenceRow>
+                <OccurrenceRow
+                  addedAtInstant={null}
+                  dataset="PoJnGNMaxsupE4w"
+                  datasetTitle="Antipatharia distribution data from: Deep-sea fauna of European seas - an annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe"
+                  dwcRecords={
+                    Object {
+                      "core": "occurrence",
+                      "occurrence": Array [
+                        Object {
+                          "id": "DeepSea_Antipatharia_35",
+                          "tdwg": Object {
+                            "scientificName": "Abyssopathes lyra",
+                          },
+                        },
+                      ],
+                    }
+                  }
+                  dwcaId="DeepSea_Antipatharia_35"
+                  key="DeepSea_Antipatharia_35"
+                  scientificName="Abyssopathes lyra"
+                >
+                  <tr
+                    className="occurrence-row"
+                  >
+                    <td
+                      className="edit"
+                    >
+                      <div
+                        className="button is-info"
+                      >
+                        common.edit
+                      </div>
+                    </td>
+                    <td
+                      className="added-at"
+                    >
+                      —
+                    </td>
+                    <td
+                      className="scientific-name"
+                    >
+                      Abyssopathes lyra
+                    </td>
+                    <td
+                      className="dataset-title"
+                    >
+                      Antipatharia distribution data from: Deep-sea fauna of European seas - an annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe
+                    </td>
+                    <td
+                      className="occurrence-date"
+                    >
+                      —
+                    </td>
+                    <td
+                      className="copy"
+                    >
+                      <div
+                        className="button is-info"
+                      >
+                        common.copy
+                      </div>
+                    </td>
+                  </tr>
+                </OccurrenceRow>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </InputDataPage>
+    </AuthProvider>
   </Router>
 </MemoryRouter>
 `;

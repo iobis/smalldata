@@ -21,8 +21,7 @@ export async function getOccurrences({ userRef }) {
     .then(response => response.json())
 }
 
-export async function postOccurrence({ occurrence }) {
-  const userRef = 'ovZTtaOJZ98xDDY'
+export async function postOccurrence({ occurrence, userRef }) {
   const emof = occurrence.measurements.map(measurment => {
     const { typeId, unitId } = findTypeAndUnitIdByNames(measurment.type, measurment.unit)
     return {
