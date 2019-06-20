@@ -16,24 +16,12 @@ export function datasetTitleOf(dataset) {
   return title || ''
 }
 
-export function getOccurrenceMock() {
-  return [{
-    id:             1,
-    addedDate:      '2011-12-01',
-    scientificName: 'Abra Alba',
-    dataset:        'NPPSD Short-tailed Albatross Sightings',
-    occurrenceDate: '2011-12-09'
-  }, {
-    id:             2,
-    addedDate:      '2011-12-01',
-    scientificName: 'Abra Alba',
-    dataset:        'NPPSD Short-tailed Albatross Sightings',
-    occurrenceDate: '2011-12-09'
-  }]
+export async function getOccurrences({ userRef }) {
+  return await fetch(`/api/dwca/user/${userRef}/records?projectFields=dwcRecord.tdwg.scientificName&projectFields=dwcRecord.tdwg.eventDate`)
+    .then(response => response.json())
 }
 
-export async function postOccurrence({ occurrence }) {
-  const userRef = 'ovZTtaOJZ98xDDY'
+export async function postOccurrence({ occurrence, userRef }) {
   const emof = occurrence.measurements.map(measurment => {
     const { typeId, unitId } = findTypeAndUnitIdByNames(measurment.type, measurment.unit)
     return {

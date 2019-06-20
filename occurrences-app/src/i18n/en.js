@@ -20,8 +20,8 @@ export default {
       or:                 'OR',
       copyPreviousHeader: 'copy from previous entries',
       table:              {
-        dataset:        'Dataset',
-        dateAdded:      'Date Added',
+        datasetTitle:   'Dataset',
+        addedAt:        'Date Added',
         occurrenceDate: 'Occurrence Date',
         scientificName: 'Scientific Name'
       }
