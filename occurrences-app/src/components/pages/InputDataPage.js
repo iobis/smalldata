@@ -48,9 +48,9 @@ export default function InputDataPage() {
             <thead>
               <tr>
                 <th/>
-                <th>{t('inputDataPage.table.dateAdded')}</th>
+                <th>{t('inputDataPage.table.addedAt')}</th>
                 <th>{t('inputDataPage.table.scientificName')}</th>
-                <th>{t('inputDataPage.table.dataset')}</th>
+                <th>{t('inputDataPage.table.datasetTitle')}</th>
                 <th>{t('inputDataPage.table.occurrenceDate')}</th>
                 <th/>
               </tr>
@@ -80,7 +80,7 @@ function OccurrenceRow({ addedAtInstant, datasetTitle, occurrenceDate, scientifi
       <td className="edit">
         <div className="button is-info">{t('common.edit')}</div>
       </td>
-      <td className="date-added">{addedAtString}</td>
+      <td className="added-at">{addedAtString}</td>
       <td className="scientific-name">{scientificName}</td>
       <td className="dataset-title">{datasetTitle}</td>
       <td className="occurrence-date">{occurrenceDate || '—'}</td>

@@ -91,13 +91,13 @@ exports[`InputDataPage renders correctly 1`] = `
               <tr>
                 <th />
                 <th>
-                  inputDataPage.table.dateAdded
+                  inputDataPage.table.addedAt
                 </th>
                 <th>
                   inputDataPage.table.scientificName
                 </th>
                 <th>
-                  inputDataPage.table.dataset
+                  inputDataPage.table.datasetTitle
                 </th>
                 <th>
                   inputDataPage.table.occurrenceDate
@@ -205,13 +205,13 @@ exports[`InputDataPage renders correctly 2`] = `
               <tr>
                 <th />
                 <th>
-                  inputDataPage.table.dateAdded
+                  inputDataPage.table.addedAt
                 </th>
                 <th>
                   inputDataPage.table.scientificName
                 </th>
                 <th>
-                  inputDataPage.table.dataset
+                  inputDataPage.table.datasetTitle
                 </th>
                 <th>
                   inputDataPage.table.occurrenceDate
@@ -266,7 +266,7 @@ exports[`InputDataPage renders correctly 2`] = `
                     </div>
                   </td>
                   <td
-                    className="date-added"
+                    className="added-at"
                   >
                     20 June 2019
                   </td>
@@ -342,7 +342,7 @@ exports[`InputDataPage renders correctly 2`] = `
                     </div>
                   </td>
                   <td
-                    className="date-added"
+                    className="added-at"
                   >
                     —
                   </td>
@@ -406,7 +406,7 @@ exports[`InputDataPage renders correctly 2`] = `
                     </div>
                   </td>
                   <td
-                    className="date-added"
+                    className="added-at"
                   >
                     —
                   </td>
