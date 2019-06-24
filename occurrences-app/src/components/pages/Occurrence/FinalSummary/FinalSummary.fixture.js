@@ -70,9 +70,10 @@ export function getDefaultProps() {
       { name: 'name-2', value: 'value-2' },
       { name: 'name-3', value: 'value-3' }
     ],
+    errorVisible:     false,
     onChangeClick:    console.log,
-    onSubmitClick:    console.log,
     onErrorClose:     console.log,
-    errorVisible:     false
+    onSubmitClick:    console.log,
+    successVisible:   false
   }
 }

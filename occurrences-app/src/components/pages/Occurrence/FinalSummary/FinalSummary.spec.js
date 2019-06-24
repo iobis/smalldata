@@ -2,6 +2,7 @@ import deepExtend from 'deep-extend'
 import FinalSummary from './FinalSummary'
 import React from 'react'
 import { getDefaultProps } from './FinalSummary.fixture'
+import { MemoryRouter } from 'react-router-dom'
 import { mount } from 'enzyme'
 
 describe('FinalSummary', () => {
@@ -47,10 +48,20 @@ describe('FinalSummary', () => {
       const onErrorClose = jest.fn()
       const wrapper = mount(createComponent({ onErrorClose, errorVisible: true, errorMessage: 'error message' }))
       expect(wrapper).toMatchSnapshot()
+      expect(wrapper.find('.success-message').exists()).toBe(false)
       expect(wrapper.find('.error-message').exists()).toBe(true)
 
       wrapper.find('.error-message .close').simulate('click')
       expect(onErrorClose).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('when rendering component with success message', () => {
+    it('renders success message', () => {
+      const wrapper = mount(createComponent({ successVisible: true }))
+      expect(wrapper).toMatchSnapshot()
+      expect(wrapper.find('.success-message').exists()).toBe(true)
+      expect(wrapper.find('.error-message').exists()).toBe(false)
     })
   })
 })
@@ -63,5 +74,9 @@ function createComponent(props) {
     onSubmitClick: jest.fn()
   }
   const updatedProps = deepExtend(defaultProps, props)
-  return <FinalSummary {...updatedProps}/>
+  return (
+    <MemoryRouter initialEntries={[{ pathname: '/input-data/new', key: 'testKey' }]}>
+      <FinalSummary {...updatedProps}/>
+    </MemoryRouter>
+  )
 }
