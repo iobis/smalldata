@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContinueButton renders correctly 1`] = `
+<ContinueButton
+  name="continue"
+  value="Continue"
+>
+  <div
+    className="columns"
+  >
+    <button
+      className="button is-info"
+      name="continue"
+    >
+      Continue
+    </button>
+  </div>
+</ContinueButton>
+`;
