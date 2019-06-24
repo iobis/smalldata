@@ -26,6 +26,7 @@ public class DbInitializerTest {
   private static final String KEY_BULKINESS = "bulkiness";
   private static final String KEY_VALUE = "value";
   private static final String BIND_IP = "localhost";
+  private static final int MONGO_MIN_PORT = 1023;
 
   private static MongoClient mongoClient;
 
@@ -35,7 +36,7 @@ public class DbInitializerTest {
       .sharedData()
       .getLocalMap("settings")
       .put("mode", "DEMO");
-    var port = 1023 + new Random().nextInt(65535 - 1023);
+    var port = MONGO_MIN_PORT + new Random().nextInt(65535 - MONGO_MIN_PORT);
     vertx.deployVerticle(
       new StorageModule(),
       new DeploymentOptions().setConfig(MongoConfigs.ofServer(BIND_IP, port)),
