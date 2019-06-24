@@ -2,22 +2,28 @@ import InputRadio from '../../../form/InputRadio'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { datasetTitleOf } from '../../../../clients/SmalldataClient'
+import ContinueButton from '../ContinueButton'
 
 export default function Dataset({ datasets, selectedDataset, onChange }) {
   return (
-    <div className="dataset columns is-fluid">
-      <table className="table is-striped is-fullwidth">
-        <tbody>
-          {datasets.map(dataset => (
-            <DatasetOption
-              checked={dataset.id === selectedDataset.id}
-              id={dataset.id}
-              key={dataset.id}
-              onClick={() => onChange(dataset)}
-              title={datasetTitleOf(dataset)}/>))}
-        </tbody>
-      </table>
-    </div>
+    <>
+      <div className="dataset is-fluid">
+        <table className="table is-striped is-fullwidth">
+          <tbody>
+            {datasets.map(dataset => (
+              <DatasetOption
+                checked={dataset.id === selectedDataset.id}
+                id={dataset.id}
+                key={dataset.id}
+                onClick={() => onChange(dataset)}
+                title={datasetTitleOf(dataset)}/>))}
+          </tbody>
+        </table>
+      </div>
+      <ContinueButton
+        name="datasetContinue"
+        value="Continue to Occurrence Data" wrapperClassName="" />
+    </>
   )
 }
 
