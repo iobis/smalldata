@@ -26,7 +26,7 @@ public class DbInitializerTest {
   private static final String KEY_BULKINESS = "bulkiness";
   private static final String KEY_VALUE = "value";
   private static final String BIND_IP = "localhost";
-  private static final int MONGO_MIN_PORT = 1023;
+  private static final int MONGO_MIN_PORT = 9999;
 
   private static MongoClient mongoClient;
 
