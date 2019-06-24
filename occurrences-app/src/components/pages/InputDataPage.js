@@ -31,6 +31,7 @@ export default function InputDataPage() {
       setOccurrences(occurrencesWithDataset)
     }
     fetchOccurrences()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
