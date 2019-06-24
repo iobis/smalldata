@@ -207,7 +207,7 @@ export default function FinalSummary({
           </section>
           <section>
             <Link className="is-size-5" to="/input-data/new">
-              nothing, I'm done here for today
+              {t('occurrenceForm.finalSummary.successMessage.doNothing')}
             </Link>
           </section>
         </div>) : null}

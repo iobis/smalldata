@@ -235,7 +235,8 @@ export default {
           header:            'Your entry has been added to the OBIS dataset.',
           nextOptions:       'What would you like to do next?',
           createFreshButton: 'Create fresh occurrence',
-          createFromThis:    'Create new based on this'
+          createFromThis:    'Create new based on this',
+          doNothing:         'nothing, I\'m done here for today'
         }
       }
     },
