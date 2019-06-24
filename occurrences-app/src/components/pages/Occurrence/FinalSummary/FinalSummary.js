@@ -197,19 +197,19 @@ export default function FinalSummary({
         <div className="success-message notification is-success">
           <p className="title">{t('occurrenceForm.finalSummary.successMessage.header')}</p>
           <p className="subtitle">{t('occurrenceForm.finalSummary.successMessage.nextOptions')}</p>
-          <div>
+          <section>
             <button className="create-fresh button is-white">
               {t('occurrenceForm.finalSummary.successMessage.createFreshButton')}
             </button>
             <button className="create-from-this button is-white">
               {t('occurrenceForm.finalSummary.successMessage.createFromThis')}
             </button>
-          </div>
-          <div>
+          </section>
+          <section>
             <Link className="is-size-5" to="/input-data/new">
               nothing, I'm done here for today
             </Link>
-          </div>
+          </section>
         </div>) : null}
       {errorVisible ? (
         <div className="error-message notification is-danger">
