@@ -211,7 +211,7 @@ export default {
         subtitle:  'This form enables you to add any additional fields you may need to specify, that were not previously included in this form.',
         tip:       'Please be advised to use the Darwin Core Archive names',
         fieldName: {
-          label:       'Darwin core fieldname',
+          label:       'Darwin core field name',
           placeholder: '',
           help:        ''
         },
