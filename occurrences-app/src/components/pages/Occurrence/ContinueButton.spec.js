@@ -12,14 +12,13 @@ describe('ContinueButton', () => {
     expect(wrapper.find('button').text()).toBe('Go to next page')
   })
 
-
 })
 
 function createCompontent(props) {
-
   const defaultProps = {
-    name:  'continue',
-    value: 'Continue'
+    name:    'continue',
+    onClick: jest.fn(),
+    value:   'Continue'
   }
   return <ContinueButton {...defaultProps} {...props}/>
 }
