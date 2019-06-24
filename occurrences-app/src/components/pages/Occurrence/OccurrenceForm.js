@@ -15,43 +15,8 @@ import { datasetTitleOf, getDatasets, postOccurrence } from '../../../clients/Sm
 import { useTranslation } from 'react-i18next'
 import { AuthContext } from '@smalldata/dwca-lib'
 
-const initialState = {
-  dataset:          null,
-  occurrenceData:   {
-    basisOfRecord:    'humanObservation',
-    beginDate:        Date.now(),
-    endDate:          null,
-    lifestage:        'larva',
-    occurrenceStatus: 'present',
-    scientificName:   '',
-    sex:              'male'
-  },
-  locationData:     {
-    decimalLongitude:      null,
-    decimalLatitude:       null,
-    coordinateUncertainty: null,
-    minimumDepth:          null,
-    maximumDepth:          null,
-    verbatimCoordinates:   '',
-    verbatimDepth:         ''
-  },
-  observationData:  {
-    institutionCode:         '',
-    collectionCode:          '',
-    fieldNumber:             '',
-    catalogNumber:           '',
-    recordNumber:            '',
-    identifiedBy:            [],
-    recordedBy:              [],
-    identificationQualifier: '',
-    identificationRemarks:   '',
-    references:              []
-  },
-  darwinCoreFields: [],
-  measurements:     []
-}
-
 export default function OccurrenceForm() {
+  const initialState = createInitialState()
   const { t } = useTranslation()
   const { userRef } = useContext(AuthContext)
   const [successVisible, setSuccessVisible] = useState(false)
@@ -295,4 +260,42 @@ OccurrenceDataSummary.propTypes = {
   beginDate:      PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.number]),
   endDate:        PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.number]),
   scientificName: PropTypes.string
+}
+
+function createInitialState() {
+  return {
+    dataset:          null,
+    occurrenceData:   {
+      basisOfRecord:    'humanObservation',
+      beginDate:        Date.now(),
+      endDate:          null,
+      lifestage:        'larva',
+      occurrenceStatus: 'present',
+      scientificName:   '',
+      sex:              'male'
+    },
+    locationData:     {
+      decimalLongitude:      null,
+      decimalLatitude:       null,
+      coordinateUncertainty: null,
+      minimumDepth:          null,
+      maximumDepth:          null,
+      verbatimCoordinates:   '',
+      verbatimDepth:         ''
+    },
+    observationData:  {
+      institutionCode:         '',
+      collectionCode:          '',
+      fieldNumber:             '',
+      catalogNumber:           '',
+      recordNumber:            '',
+      identifiedBy:            [],
+      recordedBy:              [],
+      identificationQualifier: '',
+      identificationRemarks:   '',
+      references:              []
+    },
+    darwinCoreFields: [],
+    measurements:     []
+  }
 }
