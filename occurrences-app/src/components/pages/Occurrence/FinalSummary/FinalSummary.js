@@ -194,9 +194,9 @@ export default function FinalSummary({
         <ChangeButton onClick={() => onChangeClick({ index: 5, value: 'darwinCoreFields' })}/>
       </section>
       {successVisible ? (
-        <div className="success-message notification is-success is-size-3">
-          Your entry has been added to the OBIS dataset.<br/>
-          What would you like to do next?<br/>
+        <div className="success-message notification is-success">
+          <p className="title">{t('occurrenceForm.finalSummary.successMessage.header')}</p>
+          <p className="subtitle">{t('occurrenceForm.finalSummary.successMessage.nextOptions')}</p>
           <div>
             <button className="create-fresh button is-white">
               {t('occurrenceForm.finalSummary.successMessage.createFreshButton')}
