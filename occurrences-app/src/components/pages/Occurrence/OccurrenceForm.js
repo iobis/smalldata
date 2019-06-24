@@ -15,15 +15,9 @@ import { datasetTitleOf, getDatasets, postOccurrence } from '../../../clients/Sm
 import { useTranslation } from 'react-i18next'
 import { AuthContext } from '@smalldata/dwca-lib'
 
-export default function OccurrenceForm() {
-  const { t } = useTranslation()
-  const { userRef } = useContext(AuthContext)
-  const [successVisible, setSuccessVisible] = useState(false)
-  const [errorVisible, setErrorVisible] = useState(false)
-  const [errorMessage, setErrorMessage] = useState('')
-  const [datasets, setDatasets] = useState([])
-  const [dataset, setDataset] = useState(null)
-  const [occurrenceData, setOccurrenceData] = useState({
+const initialState = {
+  dataset:          null,
+  occurrenceData:   {
     basisOfRecord:    'humanObservation',
     beginDate:        Date.now(),
     endDate:          null,
@@ -31,8 +25,8 @@ export default function OccurrenceForm() {
     occurrenceStatus: 'present',
     scientificName:   '',
     sex:              'male'
-  })
-  const [locationData, setLocationData] = useState({
+  },
+  locationData:     {
     decimalLongitude:      null,
     decimalLatitude:       null,
     coordinateUncertainty: null,
@@ -40,8 +34,8 @@ export default function OccurrenceForm() {
     maximumDepth:          null,
     verbatimCoordinates:   '',
     verbatimDepth:         ''
-  })
-  const [observationData, setObservationData] = useState({
+  },
+  observationData:  {
     institutionCode:         '',
     collectionCode:          '',
     fieldNumber:             '',
@@ -52,10 +46,25 @@ export default function OccurrenceForm() {
     identificationQualifier: '',
     identificationRemarks:   '',
     references:              []
-  })
-  const [darwinCoreFields, setDarwinCoreFields] = useState([])
+  },
+  darwinCoreFields: [],
+  measurements:     []
+}
+
+export default function OccurrenceForm() {
+  const { t } = useTranslation()
+  const { userRef } = useContext(AuthContext)
+  const [successVisible, setSuccessVisible] = useState(false)
+  const [errorVisible, setErrorVisible] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
+  const [datasets, setDatasets] = useState([])
+  const [dataset, setDataset] = useState(initialState.dataset)
+  const [occurrenceData, setOccurrenceData] = useState(initialState.occurrenceData)
+  const [locationData, setLocationData] = useState(initialState.locationData)
+  const [observationData, setObservationData] = useState(initialState.observationData)
+  const [darwinCoreFields, setDarwinCoreFields] = useState(initialState.darwinCoreFields)
+  const [measurements, setMeasurements] = useState(initialState.measurements)
   const [activeStepIndex, setActiveStepIndex] = useState(0)
-  const [measurements, setMeasurements] = useState([])
   const [finalSummaryVisible, setFinalSummaryVisible] = useState(false)
 
   useEffect(() => {
@@ -104,14 +113,28 @@ export default function OccurrenceForm() {
     setErrorMessage('')
   }
 
-  function handleCreateFreshOccurrenceClick() {
-
+  function handleCreateFreshClick() {
+    resetUiState()
+    resetOccurrenceState()
   }
 
   function handleCreateFromThisClickClick() {
+    resetUiState()
+  }
+
+  function resetUiState() {
     setActiveStepIndex(0)
     setFinalSummaryVisible(false)
     setSuccessVisible(false)
+  }
+
+  function resetOccurrenceState() {
+    setDataset(datasets[0])
+    setOccurrenceData(initialState.occurrenceData)
+    setLocationData(initialState.locationData)
+    setObservationData(initialState.observationData)
+    setDarwinCoreFields(initialState.darwinCoreFields)
+    setMeasurements(initialState.measurements)
   }
 
   const steps = [{
@@ -207,7 +230,7 @@ export default function OccurrenceForm() {
           observationData={observationData}
           occurrenceData={occurrenceData}
           onChangeClick={(params) => showActiveStep(params.index)}
-          onCreateFreshClick={handleCreateFreshOccurrenceClick}
+          onCreateFreshClick={handleCreateFreshClick}
           onCreateFromThisClick={handleCreateFromThisClickClick}
           onErrorClose={handleErrorClose}
           onSubmitClick={handleSubmitClick}
