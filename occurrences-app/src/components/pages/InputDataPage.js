@@ -1,13 +1,37 @@
-import React from 'react'
-import { getOccurrenceMock } from '../../clients/SmalldataClient'
 import Divider from '../layout/Divider'
-import { useTranslation } from 'react-i18next'
-import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
+import React, { useContext, useEffect, useState } from 'react'
+import { AuthContext } from '@smalldata/dwca-lib'
+import { format } from 'date-fns'
+import { getDatasets, getOccurrences } from '../../clients/SmalldataClient'
+import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 export default function InputDataPage() {
   const { t } = useTranslation()
-  const occurrences = getOccurrenceMock()
+  const { userRef } = useContext(AuthContext)
+  const [occurrences, setOccurrences] = useState([])
+
+  useEffect(() => {
+    const fetchOccurrences = async() => {
+      const [occurrences, datasets] = await Promise.all([
+        getOccurrences({ userRef }),
+        getDatasets()
+      ])
+      const datasetRefToTitle = datasets
+        .reduce((acc, dataset) => {
+          acc[dataset.id] = dataset.title.value
+          return acc
+        }, {})
+      const occurrencesWithDataset = occurrences
+        .map(occurrence => ({
+          ...occurrence,
+          datasetTitle: datasetRefToTitle[occurrence.dataset]
+        }))
+      setOccurrences(occurrencesWithDataset)
+    }
+    fetchOccurrences()
+  }, [])
 
   return (
     <>
@@ -19,22 +43,28 @@ export default function InputDataPage() {
         </div>
       </section>
       <Divider>{t('inputDataPage.or')}</Divider>
-      <section className="section">
+      <section className="previous-occurrences section">
         <div className="container is-fluid has-text-centered">
           <h4 className="title is-4">{t('inputDataPage.copyPreviousHeader')}</h4>
           <table className="table is-striped is-hoverable is-fullwidth">
             <thead>
               <tr>
                 <th/>
-                <th>{t('inputDataPage.table.dateAdded')}</th>
+                <th>{t('inputDataPage.table.addedAt')}</th>
                 <th>{t('inputDataPage.table.scientificName')}</th>
-                <th>{t('inputDataPage.table.dataset')}</th>
+                <th>{t('inputDataPage.table.datasetTitle')}</th>
                 <th>{t('inputDataPage.table.occurrenceDate')}</th>
                 <th/>
               </tr>
             </thead>
             <tbody>
-              {occurrences.map(occurrence => <OccurrenceRow key={occurrence.id} {...occurrence}/>)}
+              {occurrences.map(occurrence => (
+                <OccurrenceRow
+                  key={occurrence.dwcaId}
+                  occurrenceDate={occurrence.dwcRecords.occurrence[0].tdwg.eventDate}
+                  scientificName={occurrence.dwcRecords.occurrence[0].tdwg.scientificName}
+                  {...occurrence}/>
+              ))}
             </tbody>
           </table>
         </div>
@@ -43,19 +73,20 @@ export default function InputDataPage() {
   )
 }
 
-function OccurrenceRow({ addedDate, dataset, id, occurrenceDate, scientificName }) {
+function OccurrenceRow({ addedAtInstant, datasetTitle, occurrenceDate, scientificName }) {
   const { t } = useTranslation()
+  const addedAtString = addedAtInstant ? format(addedAtInstant, 'D MMMM YYYY') : '—'
 
   return (
-    <tr>
-      <td>
+    <tr className="occurrence-row">
+      <td className="edit">
         <div className="button is-info">{t('common.edit')}</div>
       </td>
-      <td>{addedDate}</td>
-      <td>{scientificName}</td>
-      <td>{dataset}</td>
-      <td>{occurrenceDate}</td>
-      <td>
+      <td className="added-at">{addedAtString}</td>
+      <td className="scientific-name">{scientificName}</td>
+      <td className="dataset-title">{datasetTitle}</td>
+      <td className="occurrence-date">{occurrenceDate || '—'}</td>
+      <td className="copy">
         <div className="button is-info">{t('common.copy')}</div>
       </td>
     </tr>
@@ -63,9 +94,8 @@ function OccurrenceRow({ addedDate, dataset, id, occurrenceDate, scientificName 
 }
 
 OccurrenceRow.propTypes = {
-  addedDate:      PropTypes.string.isRequired,
-  dataset:        PropTypes.string.isRequired,
-  id:             PropTypes.number.isRequired,
-  occurrenceDate: PropTypes.string.isRequired,
+  addedAtInstant: PropTypes.string,
+  datasetTitle:   PropTypes.string.isRequired,
+  occurrenceDate: PropTypes.string,
   scientificName: PropTypes.string.isRequired
 }

@@ -20,7 +20,7 @@ export default [{
 
 export function getDefaultProps() {
   return {
-    dataset:          SmalldataClientFixture.RESPONSE_DEFAULT.map(SmalldataClient.renameRefToId)[0],
+    dataset:          SmalldataClientFixture.DATASTES_RESPONSE.map(SmalldataClient.renameRefToId)[0],
     occurrenceData:   {
       basisOfRecord:    'humanObservation',
       beginDate:        Date.UTC(2019, 3, 29),

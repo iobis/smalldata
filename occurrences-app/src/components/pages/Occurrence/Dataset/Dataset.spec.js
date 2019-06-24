@@ -1,6 +1,6 @@
 import React from 'react'
 import Dataset from './Dataset'
-import { RESPONSE_DEFAULT } from '../../../../clients/SmalldataClient.mock'
+import { DATASTES_RESPONSE } from '../../../../clients/SmalldataClient.mock'
 import { renameRefToId } from '../../../../clients/SmalldataClient'
 import { mount } from 'enzyme'
 
@@ -37,5 +37,5 @@ describe('Dataset', () => {
 })
 
 function getDefaultDatasets() {
-  return RESPONSE_DEFAULT.map(renameRefToId)
+  return DATASTES_RESPONSE.map(renameRefToId)
 }

@@ -8,14 +8,16 @@ import NotConfirmedStepHeader from './StepHeaders/NotConfirmedStepHeader'
 import ObservationData from './ObservationData/ObservationData'
 import OccurrenceData from './OccurrenceData/OccurrenceData'
 import PropTypes from 'prop-types'
-import React, { useState, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Dataset from './Dataset/Dataset'
 import { format } from 'date-fns'
 import { getDatasets, datasetTitleOf, postOccurrence } from '../../../clients/SmalldataClient'
 import { useTranslation } from 'react-i18next'
+import { AuthContext } from '@smalldata/dwca-lib'
 
 export default function OccurrenceForm() {
   const { t } = useTranslation()
+  const { userRef } = useContext(AuthContext)
   const [errorVisible, setErrorVisible] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
   const [datasets, setDatasets] = useState([])
@@ -87,7 +89,7 @@ export default function OccurrenceForm() {
       measurements:     measurements || [],
       darwinCoreFields: darwinCoreFields || []
     }
-    const response = await postOccurrence({ occurrence })
+    const response = await postOccurrence({ occurrence, userRef })
     if (response.exception) {
       setErrorVisible(true)
       setErrorMessage(response.exception + ': ' + response.exceptionMessage)
