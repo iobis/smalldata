@@ -11,13 +11,14 @@ import PropTypes from 'prop-types'
 import React, { useContext, useEffect, useState } from 'react'
 import Dataset from './Dataset/Dataset'
 import { format } from 'date-fns'
-import { getDatasets, datasetTitleOf, postOccurrence } from '../../../clients/SmalldataClient'
+import { datasetTitleOf, getDatasets, postOccurrence } from '../../../clients/SmalldataClient'
 import { useTranslation } from 'react-i18next'
 import { AuthContext } from '@smalldata/dwca-lib'
 
 export default function OccurrenceForm() {
   const { t } = useTranslation()
   const { userRef } = useContext(AuthContext)
+  const [successVisible, setSuccessVisible] = useState(false)
   const [errorVisible, setErrorVisible] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
   const [datasets, setDatasets] = useState([])
@@ -93,12 +94,24 @@ export default function OccurrenceForm() {
     if (response.exception) {
       setErrorVisible(true)
       setErrorMessage(response.exception + ': ' + response.exceptionMessage)
+    } else {
+      setSuccessVisible(true)
     }
   }
 
   function handleErrorClose() {
     setErrorVisible(false)
     setErrorMessage('')
+  }
+
+  function handleCreateFreshOccurrenceClick() {
+
+  }
+
+  function handleCreateFromThisClickClick() {
+    setActiveStepIndex(0)
+    setFinalSummaryVisible(false)
+    setSuccessVisible(false)
   }
 
   const steps = [{
@@ -183,8 +196,11 @@ export default function OccurrenceForm() {
           observationData={observationData}
           occurrenceData={occurrenceData}
           onChangeClick={(params) => showActiveStep(params.index)}
+          onCreateFreshClick={handleCreateFreshOccurrenceClick}
+          onCreateFromThisClick={handleCreateFromThisClickClick}
           onErrorClose={handleErrorClose}
-          onSubmitClick={handleSubmitClick}/>) :
+          onSubmitClick={handleSubmitClick}
+          successVisible={successVisible}/>) :
         (<div className="columns column is-centered">
           <button
             className="review-and-submit-button button is-medium is-info"
