@@ -119,7 +119,8 @@ export default function OccurrenceForm() {
     selectedData:    datasetTitleOf(dataset),
     stepDescription: t('occurrenceForm.dataset.step.stepDescription'),
     stepTitle:       t('occurrenceForm.dataset.step.stepTitle'),
-    children:        datasets && dataset && (
+
+    children: datasets && dataset && (
       <Dataset
         datasets={datasets}
         onChange={setDataset}
@@ -129,41 +130,51 @@ export default function OccurrenceForm() {
     selectedData:    <OccurrenceDataSummary {...occurrenceData}/>,
     stepDescription: t('occurrenceForm.occurrenceData.step.stepDescription'),
     stepTitle:       t('occurrenceForm.occurrenceData.step.stepTitle'),
-    children:        <OccurrenceData
-      data={occurrenceData}
-      onChange={setOccurrenceData}/>
+
+    children:
+      <OccurrenceData
+        data={occurrenceData}
+        onChange={setOccurrenceData}/>
   }, {
     dataDescription: t('occurrenceForm.locationData.step.dataDescription'),
     selectedData:    <SelectedLocation {...locationData}/>,
     stepDescription: t('occurrenceForm.locationData.step.stepDescription'),
     stepTitle:       t('occurrenceForm.locationData.step.stepTitle'),
-    children:        <LocationData
-      data={locationData}
-      onChange={setLocationData}/>
+
+    children:
+      <LocationData
+        data={locationData}
+        onChange={setLocationData}/>
   }, {
     dataDescription: t('occurrenceForm.observationData.step.dataDescription'),
     selectedData:    renderIdentifiedByLabel(observationData),
     stepDescription: t('occurrenceForm.observationData.step.stepDescription'),
     stepTitle:       t('occurrenceForm.observationData.step.stepTitle'),
-    children:        <ObservationData
-      observationData={observationData}
-      onChange={setObservationData}/>
+
+    children:
+      <ObservationData
+        observationData={observationData}
+        onChange={setObservationData}/>
   }, {
     dataDescription: t('occurrenceForm.measurementOrFact.step.dataDescription'),
     selectedData:    <MeasurementOrFactSummary data={measurements}/>,
     stepDescription: t('occurrenceForm.measurementOrFact.step.stepDescription'),
     stepTitle:       t('occurrenceForm.measurementOrFact.step.stepTitle'),
-    children:        <MeasurementOrFact
-      data={measurements}
-      onChange={setMeasurements}/>
+
+    children:
+      <MeasurementOrFact
+        data={measurements}
+        onChange={setMeasurements}/>
   }, {
     dataDescription: '',
     selectedData:    '',
     stepDescription: t('occurrenceForm.darwinCoreFields.step.stepDescription'),
     stepTitle:       t('occurrenceForm.darwinCoreFields.step.stepTitle'),
-    children:        <DarwinCoreFields
-      fields={darwinCoreFields}
-      onChange={setDarwinCoreFields}/>
+
+    children:
+      <DarwinCoreFields
+        fields={darwinCoreFields}
+        onChange={setDarwinCoreFields}/>
   }]
 
   return (
