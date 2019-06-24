@@ -8,6 +8,7 @@ import { observationDataShape } from '../ObservationData/ObservationData'
 import { occurrenceDataShape } from '../OccurrenceData/OccurrenceData'
 import { useTranslation } from 'react-i18next'
 import { datasetTitleOf } from '../../../../clients/SmalldataClient'
+import { Link } from 'react-router-dom'
 
 export default function FinalSummary({
   darwinCoreFields,
@@ -20,7 +21,8 @@ export default function FinalSummary({
   occurrenceData,
   onChangeClick,
   onErrorClose,
-  onSubmitClick
+  onSubmitClick,
+  successVisible
 }) {
   const { t } = useTranslation()
 
@@ -191,6 +193,24 @@ export default function FinalSummary({
         </table>
         <ChangeButton onClick={() => onChangeClick({ index: 5, value: 'darwinCoreFields' })}/>
       </section>
+      {successVisible ? (
+        <div className="success-message notification is-success is-size-3">
+          Your entry has been added to the OBIS dataset.<br/>
+          What would you like to do next?<br/>
+          <div>
+            <button className="create-fresh button is-white">
+              {t('occurrenceForm.finalSummary.successMessage.createFreshButton')}
+            </button>
+            <button className="create-from-this button is-white">
+              {t('occurrenceForm.finalSummary.successMessage.createFromThis')}
+            </button>
+          </div>
+          <div>
+            <Link className="is-size-5" to="/input-data/new">
+              nothing, I'm done here for today
+            </Link>
+          </div>
+        </div>) : null}
       {errorVisible ? (
         <div className="error-message notification is-danger">
           <button className="close delete" onClick={onErrorClose}/>
@@ -212,7 +232,8 @@ FinalSummary.propTypes = {
   occurrenceData:   PropTypes.shape(occurrenceDataShape).isRequired,
   onChangeClick:    PropTypes.func.isRequired,
   onErrorClose:     PropTypes.func.isRequired,
-  onSubmitClick:    PropTypes.func.isRequired
+  onSubmitClick:    PropTypes.func.isRequired,
+  successVisible:   PropTypes.bool.isRequired
 }
 
 function NameValueHeader() {

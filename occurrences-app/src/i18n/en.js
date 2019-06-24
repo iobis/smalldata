@@ -230,6 +230,10 @@ export default {
         observationData:   {
           catalogDataSubtitle: 'Catalog data',
           speciesDataSubtitle: 'Species data'
+        },
+        successMessage:    {
+          createFreshButton: 'Create fresh occurrence',
+          createFromThis:    'Create new based on this'
         }
       }
     },
