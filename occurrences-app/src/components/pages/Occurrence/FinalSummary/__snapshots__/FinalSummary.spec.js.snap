@@ -4280,20 +4280,6 @@ exports[`FinalSummary when rendering component with success message renders succ
             </Link>
           </section>
         </div>
-        <SubmitEntryButton
-          onClick={[MockFunction]}
-        >
-          <div
-            className="submit-entry-button columns is-mobile is-centered"
-          >
-            <button
-              className="button is-info is-medium"
-              onClick={[MockFunction]}
-            >
-              occurrenceForm.finalSummary.submitEntryButton
-            </button>
-          </div>
-        </SubmitEntryButton>
       </div>
     </FinalSummary>
   </Router>

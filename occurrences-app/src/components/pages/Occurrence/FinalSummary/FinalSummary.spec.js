@@ -48,6 +48,7 @@ describe('FinalSummary', () => {
       const onErrorClose = jest.fn()
       const wrapper = mount(createComponent({ onErrorClose, errorVisible: true, errorMessage: 'error message' }))
       expect(wrapper).toMatchSnapshot()
+      expect(wrapper.find('.submit-entry-button').exists()).toBe(true)
       expect(wrapper.find('.success-message').exists()).toBe(false)
       expect(wrapper.find('.error-message').exists()).toBe(true)
 
@@ -62,6 +63,7 @@ describe('FinalSummary', () => {
       const onCreateFromThisClick = jest.fn()
       const wrapper = mount(createComponent({ onCreateFreshClick, onCreateFromThisClick, successVisible: true }))
       expect(wrapper).toMatchSnapshot()
+      expect(wrapper.find('.submit-entry-button').exists()).toBe(false)
       expect(wrapper.find('.success-message').exists()).toBe(true)
       expect(wrapper.find('.error-message').exists()).toBe(false)
 

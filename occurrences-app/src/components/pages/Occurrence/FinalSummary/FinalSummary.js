@@ -218,7 +218,7 @@ export default function FinalSummary({
           <button className="close delete" onClick={onErrorClose}/>
           {errorMessage}
         </div>) : null}
-      <SubmitEntryButton onClick={onSubmitClick}/>
+      {!successVisible ? <SubmitEntryButton onClick={onSubmitClick}/> : null}
     </div>
   )
 }
