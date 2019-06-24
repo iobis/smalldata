@@ -4268,11 +4268,11 @@ exports[`FinalSummary when rendering component with success message renders succ
           <section>
             <Link
               className="is-size-5"
-              to="/input-data/new"
+              to="/input-data/"
             >
               <a
                 className="is-size-5"
-                href="/input-data/new"
+                href="/input-data/"
                 onClick={[Function]}
               >
                 occurrenceForm.finalSummary.successMessage.doNothing
