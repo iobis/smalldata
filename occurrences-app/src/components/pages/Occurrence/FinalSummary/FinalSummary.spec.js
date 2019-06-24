@@ -58,10 +58,18 @@ describe('FinalSummary', () => {
 
   describe('when rendering component with success message', () => {
     it('renders success message', () => {
-      const wrapper = mount(createComponent({ successVisible: true }))
+      const onCreateFreshClick = jest.fn()
+      const onCreateFromThisClick = jest.fn()
+      const wrapper = mount(createComponent({ onCreateFreshClick, onCreateFromThisClick, successVisible: true }))
       expect(wrapper).toMatchSnapshot()
       expect(wrapper.find('.success-message').exists()).toBe(true)
       expect(wrapper.find('.error-message').exists()).toBe(false)
+
+      wrapper.find('.create-fresh').simulate('click')
+      expect(onCreateFreshClick).toHaveBeenCalledTimes(1)
+
+      wrapper.find('.create-from-this').simulate('click')
+      expect(onCreateFromThisClick).toHaveBeenCalledTimes(1)
     })
   })
 })
@@ -69,9 +77,11 @@ describe('FinalSummary', () => {
 function createComponent(props) {
   const defaultProps = {
     ...getDefaultProps(),
-    onChangeClick: jest.fn(),
-    onErrorClose:  jest.fn(),
-    onSubmitClick: jest.fn()
+    onChangeClick:         jest.fn(),
+    onCreateFreshClick:    jest.fn(),
+    onCreateFromThisClick: jest.fn(),
+    onErrorClose:          jest.fn(),
+    onSubmitClick:         jest.fn()
   }
   const updatedProps = deepExtend(defaultProps, props)
   return (

@@ -181,6 +181,8 @@ exports[`FinalSummary renders correctly 1`] = `
         }
       }
       onChangeClick={[MockFunction]}
+      onCreateFreshClick={[MockFunction]}
+      onCreateFromThisClick={[MockFunction]}
       onErrorClose={[MockFunction]}
       onSubmitClick={[MockFunction]}
       successVisible={false}
@@ -1241,6 +1243,8 @@ exports[`FinalSummary renders correctly when occurence end date is not provided 
         }
       }
       onChangeClick={[MockFunction]}
+      onCreateFreshClick={[MockFunction]}
+      onCreateFromThisClick={[MockFunction]}
       onErrorClose={[MockFunction]}
       onSubmitClick={[MockFunction]}
       successVisible={false}
@@ -2302,6 +2306,8 @@ exports[`FinalSummary when rendering component with error message calls onSubmit
         }
       }
       onChangeClick={[MockFunction]}
+      onCreateFreshClick={[MockFunction]}
+      onCreateFromThisClick={[MockFunction]}
       onErrorClose={[MockFunction]}
       onSubmitClick={[MockFunction]}
       successVisible={false}
@@ -3371,6 +3377,8 @@ exports[`FinalSummary when rendering component with success message renders succ
         }
       }
       onChangeClick={[MockFunction]}
+      onCreateFreshClick={[MockFunction]}
+      onCreateFromThisClick={[MockFunction]}
       onErrorClose={[MockFunction]}
       onSubmitClick={[MockFunction]}
       successVisible={true}
@@ -4246,11 +4254,13 @@ exports[`FinalSummary when rendering component with success message renders succ
           <section>
             <button
               className="create-fresh button is-white"
+              onClick={[MockFunction]}
             >
               occurrenceForm.finalSummary.successMessage.createFreshButton
             </button>
             <button
               className="create-from-this button is-white"
+              onClick={[MockFunction]}
             >
               occurrenceForm.finalSummary.successMessage.createFromThis
             </button>

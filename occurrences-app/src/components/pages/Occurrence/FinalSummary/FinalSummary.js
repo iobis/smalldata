@@ -20,6 +20,8 @@ export default function FinalSummary({
   observationData,
   occurrenceData,
   onChangeClick,
+  onCreateFreshClick,
+  onCreateFromThisClick,
   onErrorClose,
   onSubmitClick,
   successVisible
@@ -198,10 +200,10 @@ export default function FinalSummary({
           <p className="title">{t('occurrenceForm.finalSummary.successMessage.header')}</p>
           <p className="subtitle">{t('occurrenceForm.finalSummary.successMessage.nextOptions')}</p>
           <section>
-            <button className="create-fresh button is-white">
+            <button className="create-fresh button is-white" onClick={onCreateFreshClick}>
               {t('occurrenceForm.finalSummary.successMessage.createFreshButton')}
             </button>
-            <button className="create-from-this button is-white">
+            <button className="create-from-this button is-white" onClick={onCreateFromThisClick}>
               {t('occurrenceForm.finalSummary.successMessage.createFromThis')}
             </button>
           </section>
@@ -222,18 +224,20 @@ export default function FinalSummary({
 }
 
 FinalSummary.propTypes = {
-  darwinCoreFields: PropTypes.arrayOf(PropTypes.shape(darwinCoreFieldShape)).isRequired,
-  dataset:          PropTypes.shape(datasetShape).isRequired,
-  errorMessage:     PropTypes.string,
-  errorVisible:     PropTypes.bool.isRequired,
-  locationData:     PropTypes.shape(locationDataShape).isRequired,
-  measurements:     PropTypes.array.isRequired,
-  observationData:  PropTypes.shape(observationDataShape).isRequired,
-  occurrenceData:   PropTypes.shape(occurrenceDataShape).isRequired,
-  onChangeClick:    PropTypes.func.isRequired,
-  onErrorClose:     PropTypes.func.isRequired,
-  onSubmitClick:    PropTypes.func.isRequired,
-  successVisible:   PropTypes.bool.isRequired
+  darwinCoreFields:      PropTypes.arrayOf(PropTypes.shape(darwinCoreFieldShape)).isRequired,
+  dataset:               PropTypes.shape(datasetShape).isRequired,
+  errorMessage:          PropTypes.string,
+  errorVisible:          PropTypes.bool.isRequired,
+  locationData:          PropTypes.shape(locationDataShape).isRequired,
+  measurements:          PropTypes.array.isRequired,
+  observationData:       PropTypes.shape(observationDataShape).isRequired,
+  occurrenceData:        PropTypes.shape(occurrenceDataShape).isRequired,
+  onChangeClick:         PropTypes.func.isRequired,
+  onCreateFreshClick:    PropTypes.func.isRequired,
+  onCreateFromThisClick: PropTypes.func.isRequired,
+  onErrorClose:          PropTypes.func.isRequired,
+  onSubmitClick:         PropTypes.func.isRequired,
+  successVisible:        PropTypes.bool.isRequired
 }
 
 function NameValueHeader() {
