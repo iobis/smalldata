@@ -36,7 +36,7 @@ describe('FinalSummary', () => {
     it('calls onSubmitClick handler', () => {
       const onSubmitClick = jest.fn()
       const wrapper = mount(createComponent({ onSubmitClick }))
-      expect(wrapper.find('.submit-entry-button .button')).toHaveLength(1)
+      expect(wrapper.find('.submit-entry-button .button')).toHaveLength(2)
 
       wrapper.find('.submit-entry-button .button').at(0).simulate('click')
       expect(onSubmitClick).toHaveBeenCalledTimes(1)

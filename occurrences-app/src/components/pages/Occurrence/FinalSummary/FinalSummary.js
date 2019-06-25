@@ -38,6 +38,10 @@ export default function FinalSummary({
     if (errorVisible) errorMessageRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' })
   }, [errorVisible])
 
+  const submitButton = !successVisible
+    ? <SubmitEntryButton onClick={onSubmitClick}/>
+    : null
+
   return (
     <div className="final-summary section is-fluid">
       <div className="columns is-centered">
@@ -66,6 +70,7 @@ export default function FinalSummary({
           <button className="close delete" onClick={onErrorClose}/>
           {errorMessage}
         </div>) : null}
+      {submitButton}
       <section className="dataset-summary">
         <SectionTitle>1 - {t('occurrenceForm.dataset.step.stepTitle')}</SectionTitle>
         <p>{datasetTitleOf(dataset)}</p>
@@ -228,7 +233,7 @@ export default function FinalSummary({
         </table>
         <ChangeButton onClick={() => onChangeClick({ index: 5, value: 'darwinCoreFields' })}/>
       </section>
-      {!successVisible ? <SubmitEntryButton onClick={onSubmitClick}/> : null}
+      {submitButton}
     </div>
   )
 }

@@ -199,6 +199,20 @@ exports[`FinalSummary renders correctly 1`] = `
             occurrenceForm.finalSummary.title
           </h1>
         </div>
+        <SubmitEntryButton
+          onClick={[MockFunction]}
+        >
+          <div
+            className="submit-entry-button columns is-mobile is-centered"
+          >
+            <button
+              className="button is-info is-medium"
+              onClick={[MockFunction]}
+            >
+              occurrenceForm.finalSummary.submitEntryButton
+            </button>
+          </div>
+        </SubmitEntryButton>
         <section
           className="dataset-summary"
         >
@@ -1261,6 +1275,20 @@ exports[`FinalSummary renders correctly when occurence end date is not provided 
             occurrenceForm.finalSummary.title
           </h1>
         </div>
+        <SubmitEntryButton
+          onClick={[MockFunction]}
+        >
+          <div
+            className="submit-entry-button columns is-mobile is-centered"
+          >
+            <button
+              className="button is-info is-medium"
+              onClick={[MockFunction]}
+            >
+              occurrenceForm.finalSummary.submitEntryButton
+            </button>
+          </div>
+        </SubmitEntryButton>
         <section
           className="dataset-summary"
         >
@@ -2333,6 +2361,20 @@ exports[`FinalSummary when rendering component with error message calls onSubmit
           />
           error message
         </div>
+        <SubmitEntryButton
+          onClick={[MockFunction]}
+        >
+          <div
+            className="submit-entry-button columns is-mobile is-centered"
+          >
+            <button
+              className="button is-info is-medium"
+              onClick={[MockFunction]}
+            >
+              occurrenceForm.finalSummary.submitEntryButton
+            </button>
+          </div>
+        </SubmitEntryButton>
         <section
           className="dataset-summary"
         >
