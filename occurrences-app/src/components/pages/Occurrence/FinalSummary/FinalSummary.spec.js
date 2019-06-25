@@ -32,13 +32,24 @@ describe('FinalSummary', () => {
     })
   })
 
-  describe('when clicking submit button', () => {
+  describe('when clicking first submit button at the top', () => {
     it('calls onSubmitClick handler', () => {
       const onSubmitClick = jest.fn()
       const wrapper = mount(createComponent({ onSubmitClick }))
       expect(wrapper.find('.submit-entry-button .button')).toHaveLength(2)
 
       wrapper.find('.submit-entry-button .button').at(0).simulate('click')
+      expect(onSubmitClick).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('when clicking second submit button at the bottom', () => {
+    it('calls onSubmitClick handler', () => {
+      const onSubmitClick = jest.fn()
+      const wrapper = mount(createComponent({ onSubmitClick }))
+      expect(wrapper.find('.submit-entry-button .button')).toHaveLength(2)
+
+      wrapper.find('.submit-entry-button .button').at(1).simulate('click')
       expect(onSubmitClick).toHaveBeenCalledTimes(1)
     })
   })
