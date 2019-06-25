@@ -635,25 +635,21 @@ exports[`Navbar renders correctly when logged in 1`] = `
                 onClick={[Function]}
                 to="/manage-dataset"
               >
-                <Route
-                  path="\\\\/manage-dataset"
+                <Link
+                  aria-current={null}
+                  className="navbar-item"
+                  onClick={[Function]}
+                  to="/manage-dataset"
                 >
-                  <Link
+                  <a
                     aria-current={null}
                     className="navbar-item"
+                    href="/manage-dataset"
                     onClick={[Function]}
-                    to="/manage-dataset"
                   >
-                    <a
-                      aria-current={null}
-                      className="navbar-item"
-                      href="/manage-dataset"
-                      onClick={[Function]}
-                    >
-                      navbar.manageDataset
-                    </a>
-                  </Link>
-                </Route>
+                    navbar.manageDataset
+                  </a>
+                </Link>
               </NavLink>
             </NavbarItem>
             <NavbarItem
@@ -666,25 +662,21 @@ exports[`Navbar renders correctly when logged in 1`] = `
                 onClick={[Function]}
                 to="/manage-users"
               >
-                <Route
-                  path="\\\\/manage-users"
+                <Link
+                  aria-current={null}
+                  className="navbar-item"
+                  onClick={[Function]}
+                  to="/manage-users"
                 >
-                  <Link
+                  <a
                     aria-current={null}
                     className="navbar-item"
+                    href="/manage-users"
                     onClick={[Function]}
-                    to="/manage-users"
                   >
-                    <a
-                      aria-current={null}
-                      className="navbar-item"
-                      href="/manage-users"
-                      onClick={[Function]}
-                    >
-                      navbar.manageUsers
-                    </a>
-                  </Link>
-                </Route>
+                    navbar.manageUsers
+                  </a>
+                </Link>
               </NavLink>
             </NavbarItem>
           </div>
