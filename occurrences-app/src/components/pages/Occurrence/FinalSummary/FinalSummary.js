@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { darwinCoreFieldShape } from '../DarwinCoreFields/DarwinCoreFields'
 import { datasetShape } from '../Dataset/Dataset'
 import { format } from 'date-fns'
@@ -8,6 +8,7 @@ import { observationDataShape } from '../ObservationData/ObservationData'
 import { occurrenceDataShape } from '../OccurrenceData/OccurrenceData'
 import { useTranslation } from 'react-i18next'
 import { datasetTitleOf } from '../../../../clients/SmalldataClient'
+import { Link } from 'react-router-dom'
 
 export default function FinalSummary({
   darwinCoreFields,
@@ -19,16 +20,61 @@ export default function FinalSummary({
   observationData,
   occurrenceData,
   onChangeClick,
+  onCreateFreshClick,
+  onCreateFromThisClick,
   onErrorClose,
-  onSubmitClick
+  onSubmitClick,
+  successVisible
 }) {
   const { t } = useTranslation()
+  const successMessageRef = useRef()
+  const errorMessageRef = useRef()
+
+  function scrollToRef(ref) {
+    if (ref && ref.current) ref.current.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  }
+
+  useEffect(() => {
+    if (successVisible) scrollToRef(successMessageRef)
+  }, [successVisible])
+
+  useEffect(() => {
+    if (errorVisible) scrollToRef(errorMessageRef)
+  }, [errorVisible])
+
+  const submitButton = !successVisible
+    ? <SubmitEntryButton onClick={onSubmitClick}/>
+    : null
 
   return (
     <div className="final-summary section is-fluid">
       <div className="columns is-centered">
         <h1 className="final-summary-title title is-3">{t('occurrenceForm.finalSummary.title')}</h1>
       </div>
+      {successVisible ? (
+        <div className="success-message notification is-success" ref={successMessageRef}>
+          <p className="title">{t('occurrenceForm.finalSummary.successMessage.header')}</p>
+          <p className="subtitle">{t('occurrenceForm.finalSummary.successMessage.nextOptions')}</p>
+          <section>
+            <button className="create-fresh button is-white" onClick={onCreateFreshClick}>
+              {t('occurrenceForm.finalSummary.successMessage.createFreshButton')}
+            </button>
+            <button className="create-from-this button is-white" onClick={onCreateFromThisClick}>
+              {t('occurrenceForm.finalSummary.successMessage.createFromThis')}
+            </button>
+          </section>
+          <section>
+            <Link className="is-size-5" to="/input-data/">
+              {t('occurrenceForm.finalSummary.successMessage.doNothing')}
+            </Link>
+          </section>
+        </div>) : null}
+      {errorVisible ? (
+        <div className="error-message notification is-danger" ref={errorMessageRef}>
+          <button className="close delete" onClick={onErrorClose}/>
+          {errorMessage}
+        </div>) : null}
+      {submitButton}
       <section className="dataset-summary">
         <SectionTitle>1 - {t('occurrenceForm.dataset.step.stepTitle')}</SectionTitle>
         <p>{datasetTitleOf(dataset)}</p>
@@ -191,28 +237,26 @@ export default function FinalSummary({
         </table>
         <ChangeButton onClick={() => onChangeClick({ index: 5, value: 'darwinCoreFields' })}/>
       </section>
-      {errorVisible ? (
-        <div className="error-message notification is-danger">
-          <button className="close delete" onClick={onErrorClose}/>
-          {errorMessage}
-        </div>) : null}
-      <SubmitEntryButton onClick={onSubmitClick}/>
+      {submitButton}
     </div>
   )
 }
 
 FinalSummary.propTypes = {
-  darwinCoreFields: PropTypes.arrayOf(PropTypes.shape(darwinCoreFieldShape)).isRequired,
-  dataset:          PropTypes.shape(datasetShape).isRequired,
-  errorMessage:     PropTypes.string,
-  errorVisible:     PropTypes.bool.isRequired,
-  locationData:     PropTypes.shape(locationDataShape).isRequired,
-  measurements:     PropTypes.array.isRequired,
-  observationData:  PropTypes.shape(observationDataShape).isRequired,
-  occurrenceData:   PropTypes.shape(occurrenceDataShape).isRequired,
-  onChangeClick:    PropTypes.func.isRequired,
-  onErrorClose:     PropTypes.func.isRequired,
-  onSubmitClick:    PropTypes.func.isRequired
+  darwinCoreFields:      PropTypes.arrayOf(PropTypes.shape(darwinCoreFieldShape)).isRequired,
+  dataset:               PropTypes.shape(datasetShape).isRequired,
+  errorMessage:          PropTypes.string,
+  errorVisible:          PropTypes.bool.isRequired,
+  locationData:          PropTypes.shape(locationDataShape).isRequired,
+  measurements:          PropTypes.array.isRequired,
+  observationData:       PropTypes.shape(observationDataShape).isRequired,
+  occurrenceData:        PropTypes.shape(occurrenceDataShape).isRequired,
+  onChangeClick:         PropTypes.func.isRequired,
+  onCreateFreshClick:    PropTypes.func.isRequired,
+  onCreateFromThisClick: PropTypes.func.isRequired,
+  onErrorClose:          PropTypes.func.isRequired,
+  onSubmitClick:         PropTypes.func.isRequired,
+  successVisible:        PropTypes.bool.isRequired
 }
 
 function NameValueHeader() {
