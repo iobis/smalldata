@@ -2324,6 +2324,15 @@ exports[`FinalSummary when rendering component with error message calls onSubmit
             occurrenceForm.finalSummary.title
           </h1>
         </div>
+        <div
+          className="error-message notification is-danger"
+        >
+          <button
+            className="close delete"
+            onClick={[MockFunction]}
+          />
+          error message
+        </div>
         <section
           className="dataset-summary"
         >
@@ -3167,15 +3176,6 @@ exports[`FinalSummary when rendering component with error message calls onSubmit
             </button>
           </ChangeButton>
         </section>
-        <div
-          className="error-message notification is-danger"
-        >
-          <button
-            className="close delete"
-            onClick={[MockFunction]}
-          />
-          error message
-        </div>
         <SubmitEntryButton
           onClick={[MockFunction]}
         >

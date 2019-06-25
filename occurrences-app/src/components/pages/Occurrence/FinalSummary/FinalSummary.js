@@ -28,10 +28,15 @@ export default function FinalSummary({
 }) {
   const { t } = useTranslation()
   const successMessageRef = useRef()
+  const errorMessageRef = useRef()
 
   useEffect(() => {
     if (successVisible) successMessageRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' })
   }, [successVisible])
+
+  useEffect(() => {
+    if (errorVisible) errorMessageRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  }, [errorVisible])
 
   return (
     <div className="final-summary section is-fluid">
@@ -55,6 +60,11 @@ export default function FinalSummary({
               {t('occurrenceForm.finalSummary.successMessage.doNothing')}
             </Link>
           </section>
+        </div>) : null}
+      {errorVisible ? (
+        <div className="error-message notification is-danger" ref={errorMessageRef}>
+          <button className="close delete" onClick={onErrorClose}/>
+          {errorMessage}
         </div>) : null}
       <section className="dataset-summary">
         <SectionTitle>1 - {t('occurrenceForm.dataset.step.stepTitle')}</SectionTitle>
@@ -218,11 +228,6 @@ export default function FinalSummary({
         </table>
         <ChangeButton onClick={() => onChangeClick({ index: 5, value: 'darwinCoreFields' })}/>
       </section>
-      {errorVisible ? (
-        <div className="error-message notification is-danger">
-          <button className="close delete" onClick={onErrorClose}/>
-          {errorMessage}
-        </div>) : null}
       {!successVisible ? <SubmitEntryButton onClick={onSubmitClick}/> : null}
     </div>
   )
