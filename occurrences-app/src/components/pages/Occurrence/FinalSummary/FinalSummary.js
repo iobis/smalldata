@@ -30,12 +30,16 @@ export default function FinalSummary({
   const successMessageRef = useRef()
   const errorMessageRef = useRef()
 
+  function scrollToRef(ref) {
+    if (ref && ref.current) ref.current.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  }
+
   useEffect(() => {
-    if (successVisible) successMessageRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    if (successVisible) scrollToRef(successMessageRef)
   }, [successVisible])
 
   useEffect(() => {
-    if (errorVisible) errorMessageRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    if (errorVisible) scrollToRef(errorMessageRef)
   }, [errorVisible])
 
   const submitButton = !successVisible
