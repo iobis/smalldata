@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { darwinCoreFieldShape } from '../DarwinCoreFields/DarwinCoreFields'
 import { datasetShape } from '../Dataset/Dataset'
 import { format } from 'date-fns'
@@ -27,6 +27,11 @@ export default function FinalSummary({
   successVisible
 }) {
   const { t } = useTranslation()
+  const successMessageRef = useRef()
+
+  useEffect(() => {
+    if (successVisible) successMessageRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  }, [successVisible])
 
   return (
     <div className="final-summary section is-fluid">
@@ -196,7 +201,7 @@ export default function FinalSummary({
         <ChangeButton onClick={() => onChangeClick({ index: 5, value: 'darwinCoreFields' })}/>
       </section>
       {successVisible ? (
-        <div className="success-message notification is-success">
+        <div className="success-message notification is-success" ref={successMessageRef}>
           <p className="title">{t('occurrenceForm.finalSummary.successMessage.header')}</p>
           <p className="subtitle">{t('occurrenceForm.finalSummary.successMessage.nextOptions')}</p>
           <section>
