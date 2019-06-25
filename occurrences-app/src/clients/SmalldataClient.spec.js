@@ -45,10 +45,40 @@ describe('SmalldataClient', () => {
       global.fetch.mockRestore()
     })
 
-    it('getOccurrences()', async() => {
+    it('fetches data from correct url', async() => {
       await SmalldataClient.getOccurrences({ userRef })
       expect(fetch).toHaveBeenCalledTimes(1)
       expect(fetch).toBeCalledWith('/api/dwca/user/ovZTtaOJZ98xDDY/records?projectFields=dwcRecord.tdwg.scientificName&projectFields=dwcRecord.tdwg.eventDate')
+    })
+  })
+
+  describe('getOccurrence()', () => {
+    beforeEach(() => {
+      global.fetch = jest.fn().mockImplementation(() =>
+        new Promise((resolve) => {
+          resolve({ json: () => 'default-response' })
+        })
+      )
+    })
+
+    afterEach(() => {
+      global.fetch.mockRestore()
+    })
+
+    it('fetches data from correct url', async() => {
+      const datasetId = 'ntDOtUc7XsRrIus'
+      const dwcaId = 'IkadeGqejSCC3Sc'
+      await SmalldataClient.getOccurrence({ datasetId, dwcaId, userRef })
+      expect(fetch).toHaveBeenCalledTimes(1)
+      expect(fetch).toBeCalledWith('/api/dwca/ntDOtUc7XsRrIus/user/ovZTtaOJZ98xDDY/records/IkadeGqejSCC3Sc')
+    })
+
+    it('encodes dwcaId', async() => {
+      const datasetId = 'ntDOtUc7XsRrIus'
+      const dwcaId = 'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_445'
+      await SmalldataClient.getOccurrence({ datasetId, dwcaId, userRef })
+      expect(fetch).toHaveBeenCalledTimes(1)
+      expect(fetch).toBeCalledWith('/api/dwca/ntDOtUc7XsRrIus/user/ovZTtaOJZ98xDDY/records/IBSS_R%2FV%20N.%20Danilevskiy%201935%20Azov%20Sea%20benthos%20data_445')
     })
   })
 
