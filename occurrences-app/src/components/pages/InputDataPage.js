@@ -61,6 +61,7 @@ export default function InputDataPage() {
             <tbody>
               {occurrences.map(occurrence => (
                 <OccurrenceRow
+                  datasetId={occurrence.dataset}
                   key={occurrence.dwcaId}
                   occurrenceDate={occurrence.dwcRecords.occurrence[0].tdwg.eventDate}
                   scientificName={occurrence.dwcRecords.occurrence[0].tdwg.scientificName}
@@ -74,9 +75,13 @@ export default function InputDataPage() {
   )
 }
 
-function OccurrenceRow({ addedAtInstant, datasetTitle, occurrenceDate, scientificName }) {
+function OccurrenceRow({ addedAtInstant, datasetId, dwcaId, datasetTitle, occurrenceDate, scientificName }) {
   const { t } = useTranslation()
   const addedAtString = addedAtInstant ? format(addedAtInstant, 'D MMMM YYYY') : '—'
+  const urlTo = {
+    pathname: '/input-data/new',
+    state:    { dwcaId, datasetId }
+  }
 
   return (
     <tr className="occurrence-row">
@@ -88,7 +93,9 @@ function OccurrenceRow({ addedAtInstant, datasetTitle, occurrenceDate, scientifi
       <td className="dataset-title">{datasetTitle}</td>
       <td className="occurrence-date">{occurrenceDate || '—'}</td>
       <td className="copy">
-        <div className="button is-info">{t('common.copy')}</div>
+        <Link className="button is-info" to={urlTo}>
+          {t('common.copy')}
+        </Link>
       </td>
     </tr>
   )
@@ -96,7 +103,9 @@ function OccurrenceRow({ addedAtInstant, datasetTitle, occurrenceDate, scientifi
 
 OccurrenceRow.propTypes = {
   addedAtInstant: PropTypes.string,
+  datasetId:      PropTypes.string.isRequired,
   datasetTitle:   PropTypes.string.isRequired,
+  dwcaId:         PropTypes.string.isRequired,
   occurrenceDate: PropTypes.string,
   scientificName: PropTypes.string.isRequired
 }
