@@ -117,3 +117,17 @@ function mapDarwinCoreFieldsToRequest(darwinCoreFields) {
     iobis: {}
   })
 }
+
+export function mapDwcaToOccurrenceData(dwca) {
+  const tdwg = dwca.dwcRecords.occurrence[0].tdwg
+  const [beginDate, endDate] = tdwg.eventDate.split('/')
+  return {
+    basisOfRecord:    tdwg.basisOfRecord.charAt(0).toLowerCase() + tdwg.basisOfRecord.slice(1),
+    beginDate:        new Date(beginDate),
+    endDate:          endDate ? new Date(endDate) : null,
+    lifestage:        tdwg.lifeStage || 'unspecified',
+    occurrenceStatus: tdwg.occurrenceStatus,
+    scientificName:   tdwg.scientificName,
+    sex:              tdwg.sex || 'unspecified'
+  }
+}
