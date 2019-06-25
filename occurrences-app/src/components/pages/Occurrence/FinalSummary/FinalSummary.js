@@ -38,6 +38,24 @@ export default function FinalSummary({
       <div className="columns is-centered">
         <h1 className="final-summary-title title is-3">{t('occurrenceForm.finalSummary.title')}</h1>
       </div>
+      {successVisible ? (
+        <div className="success-message notification is-success" ref={successMessageRef}>
+          <p className="title">{t('occurrenceForm.finalSummary.successMessage.header')}</p>
+          <p className="subtitle">{t('occurrenceForm.finalSummary.successMessage.nextOptions')}</p>
+          <section>
+            <button className="create-fresh button is-white" onClick={onCreateFreshClick}>
+              {t('occurrenceForm.finalSummary.successMessage.createFreshButton')}
+            </button>
+            <button className="create-from-this button is-white" onClick={onCreateFromThisClick}>
+              {t('occurrenceForm.finalSummary.successMessage.createFromThis')}
+            </button>
+          </section>
+          <section>
+            <Link className="is-size-5" to="/input-data/">
+              {t('occurrenceForm.finalSummary.successMessage.doNothing')}
+            </Link>
+          </section>
+        </div>) : null}
       <section className="dataset-summary">
         <SectionTitle>1 - {t('occurrenceForm.dataset.step.stepTitle')}</SectionTitle>
         <p>{datasetTitleOf(dataset)}</p>
@@ -200,24 +218,6 @@ export default function FinalSummary({
         </table>
         <ChangeButton onClick={() => onChangeClick({ index: 5, value: 'darwinCoreFields' })}/>
       </section>
-      {successVisible ? (
-        <div className="success-message notification is-success" ref={successMessageRef}>
-          <p className="title">{t('occurrenceForm.finalSummary.successMessage.header')}</p>
-          <p className="subtitle">{t('occurrenceForm.finalSummary.successMessage.nextOptions')}</p>
-          <section>
-            <button className="create-fresh button is-white" onClick={onCreateFreshClick}>
-              {t('occurrenceForm.finalSummary.successMessage.createFreshButton')}
-            </button>
-            <button className="create-from-this button is-white" onClick={onCreateFromThisClick}>
-              {t('occurrenceForm.finalSummary.successMessage.createFromThis')}
-            </button>
-          </section>
-          <section>
-            <Link className="is-size-5" to="/input-data/">
-              {t('occurrenceForm.finalSummary.successMessage.doNothing')}
-            </Link>
-          </section>
-        </div>) : null}
       {errorVisible ? (
         <div className="error-message notification is-danger">
           <button className="close delete" onClick={onErrorClose}/>

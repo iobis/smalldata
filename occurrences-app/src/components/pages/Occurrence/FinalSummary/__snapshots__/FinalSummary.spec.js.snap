@@ -3395,6 +3395,48 @@ exports[`FinalSummary when rendering component with success message renders succ
             occurrenceForm.finalSummary.title
           </h1>
         </div>
+        <div
+          className="success-message notification is-success"
+        >
+          <p
+            className="title"
+          >
+            occurrenceForm.finalSummary.successMessage.header
+          </p>
+          <p
+            className="subtitle"
+          >
+            occurrenceForm.finalSummary.successMessage.nextOptions
+          </p>
+          <section>
+            <button
+              className="create-fresh button is-white"
+              onClick={[MockFunction]}
+            >
+              occurrenceForm.finalSummary.successMessage.createFreshButton
+            </button>
+            <button
+              className="create-from-this button is-white"
+              onClick={[MockFunction]}
+            >
+              occurrenceForm.finalSummary.successMessage.createFromThis
+            </button>
+          </section>
+          <section>
+            <Link
+              className="is-size-5"
+              to="/input-data/"
+            >
+              <a
+                className="is-size-5"
+                href="/input-data/"
+                onClick={[Function]}
+              >
+                occurrenceForm.finalSummary.successMessage.doNothing
+              </a>
+            </Link>
+          </section>
+        </div>
         <section
           className="dataset-summary"
         >
@@ -4238,48 +4280,6 @@ exports[`FinalSummary when rendering component with success message renders succ
             </button>
           </ChangeButton>
         </section>
-        <div
-          className="success-message notification is-success"
-        >
-          <p
-            className="title"
-          >
-            occurrenceForm.finalSummary.successMessage.header
-          </p>
-          <p
-            className="subtitle"
-          >
-            occurrenceForm.finalSummary.successMessage.nextOptions
-          </p>
-          <section>
-            <button
-              className="create-fresh button is-white"
-              onClick={[MockFunction]}
-            >
-              occurrenceForm.finalSummary.successMessage.createFreshButton
-            </button>
-            <button
-              className="create-from-this button is-white"
-              onClick={[MockFunction]}
-            >
-              occurrenceForm.finalSummary.successMessage.createFromThis
-            </button>
-          </section>
-          <section>
-            <Link
-              className="is-size-5"
-              to="/input-data/"
-            >
-              <a
-                className="is-size-5"
-                href="/input-data/"
-                onClick={[Function]}
-              >
-                occurrenceForm.finalSummary.successMessage.doNothing
-              </a>
-            </Link>
-          </section>
-        </div>
       </div>
     </FinalSummary>
   </Router>
