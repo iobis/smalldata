@@ -4,7 +4,7 @@ import React from 'react'
 import { datasetTitleOf } from '../../../../clients/SmalldataClient'
 import ContinueButton from '../ContinueButton'
 
-export default function Dataset({ datasets, selectedDataset, onChange }) {
+export default function Dataset({ datasets, selectedDataset, onChange, nextStepHandler }) {
   return (
     <>
       <div className="dataset is-fluid">
@@ -22,7 +22,9 @@ export default function Dataset({ datasets, selectedDataset, onChange }) {
       </div>
       <ContinueButton
         name="datasetContinue"
-        value="Continue to Occurrence Data" wrapperClassName=""/>
+        nextStepHandler={nextStepHandler}
+        value="Continue to Occurrence Data"
+        wrapperClassName=""/>
     </>
   )
 }
@@ -36,6 +38,7 @@ export const datasetShape = {
 
 Dataset.propTypes = {
   datasets:        PropTypes.arrayOf(PropTypes.shape(datasetShape)).isRequired,
+  nextStepHandler: PropTypes.func.isRequired,
   onChange:        PropTypes.func.isRequired,
   selectedDataset: PropTypes.shape(datasetShape).isRequired
 }

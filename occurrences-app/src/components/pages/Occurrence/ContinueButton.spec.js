@@ -17,7 +17,7 @@ describe('ContinueButton', () => {
 function createCompontent(props) {
   const defaultProps = {
     name:             'continue',
-    onClick:          jest.fn(),
+    nextStepHandler:  jest.fn(),
     value:            'Continue',
     wrapperClassName: 'columns'
   }
