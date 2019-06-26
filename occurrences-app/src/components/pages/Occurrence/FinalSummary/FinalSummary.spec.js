@@ -2,6 +2,7 @@ import deepExtend from 'deep-extend'
 import FinalSummary from './FinalSummary'
 import React from 'react'
 import { getDefaultProps } from './FinalSummary.fixture'
+import { MemoryRouter } from 'react-router-dom'
 import { mount } from 'enzyme'
 
 describe('FinalSummary', () => {
@@ -31,13 +32,24 @@ describe('FinalSummary', () => {
     })
   })
 
-  describe('when clicking submit button', () => {
+  describe('when clicking first submit button at the top', () => {
     it('calls onSubmitClick handler', () => {
       const onSubmitClick = jest.fn()
       const wrapper = mount(createComponent({ onSubmitClick }))
-      expect(wrapper.find('.submit-entry-button .button')).toHaveLength(1)
+      expect(wrapper.find('.submit-entry-button .button')).toHaveLength(2)
 
       wrapper.find('.submit-entry-button .button').at(0).simulate('click')
+      expect(onSubmitClick).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('when clicking second submit button at the bottom', () => {
+    it('calls onSubmitClick handler', () => {
+      const onSubmitClick = jest.fn()
+      const wrapper = mount(createComponent({ onSubmitClick }))
+      expect(wrapper.find('.submit-entry-button .button')).toHaveLength(2)
+
+      wrapper.find('.submit-entry-button .button').at(1).simulate('click')
       expect(onSubmitClick).toHaveBeenCalledTimes(1)
     })
   })
@@ -47,10 +59,30 @@ describe('FinalSummary', () => {
       const onErrorClose = jest.fn()
       const wrapper = mount(createComponent({ onErrorClose, errorVisible: true, errorMessage: 'error message' }))
       expect(wrapper).toMatchSnapshot()
-      expect(wrapper.find('.error-message').exists()).toBe(true)
+      expect(wrapper.exists('.submit-entry-button')).toBe(true)
+      expect(wrapper.exists('.success-message')).toBe(false)
+      expect(wrapper.exists('.error-message')).toBe(true)
 
       wrapper.find('.error-message .close').simulate('click')
       expect(onErrorClose).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('when rendering component with success message', () => {
+    it('renders success message', () => {
+      const onCreateFreshClick = jest.fn()
+      const onCreateFromThisClick = jest.fn()
+      const wrapper = mount(createComponent({ onCreateFreshClick, onCreateFromThisClick, successVisible: true }))
+      expect(wrapper).toMatchSnapshot()
+      expect(wrapper.exists('.submit-entry-button')).toBe(false)
+      expect(wrapper.exists('.success-message')).toBe(true)
+      expect(wrapper.exists('.error-message')).toBe(false)
+
+      wrapper.find('.create-fresh').simulate('click')
+      expect(onCreateFreshClick).toHaveBeenCalledTimes(1)
+
+      wrapper.find('.create-from-this').simulate('click')
+      expect(onCreateFromThisClick).toHaveBeenCalledTimes(1)
     })
   })
 })
@@ -58,10 +90,16 @@ describe('FinalSummary', () => {
 function createComponent(props) {
   const defaultProps = {
     ...getDefaultProps(),
-    onChangeClick: jest.fn(),
-    onErrorClose:  jest.fn(),
-    onSubmitClick: jest.fn()
+    onChangeClick:         jest.fn(),
+    onCreateFreshClick:    jest.fn(),
+    onCreateFromThisClick: jest.fn(),
+    onErrorClose:          jest.fn(),
+    onSubmitClick:         jest.fn()
   }
   const updatedProps = deepExtend(defaultProps, props)
-  return <FinalSummary {...updatedProps}/>
+  return (
+    <MemoryRouter initialEntries={[{ pathname: '/input-data/new', key: 'testKey' }]}>
+      <FinalSummary {...updatedProps}/>
+    </MemoryRouter>
+  )
 }
