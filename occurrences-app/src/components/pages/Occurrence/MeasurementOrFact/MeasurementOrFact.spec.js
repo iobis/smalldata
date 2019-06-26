@@ -301,6 +301,7 @@ const suppliedMeasurementValue = el => el.find('.input').instance().value
 function createComponent(props) {
   const defaultProps = {
     data:     getEmptyData(),
+    nextStepHandler: jest.fn(),
     onChange: jest.fn()
   }
   return <MeasurementOrFact {...defaultProps} {...props}/>

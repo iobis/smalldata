@@ -89,12 +89,14 @@ export default function LocationData({ data, onChange, nextStepHandler }) {
             value={data.verbatimDepth}/>
         </div>
       </div>
-      <CopyPreviousData/>
-      <ContinueButton
-        name="datasetContinue"
-        nextStepHandler={nextStepHandler}
-        value="occurrenceForm.locationData.step.nextStep"
-        wrapperClassName=""/>
+      <div className="columns obis-spaced">
+        <CopyPreviousData/>
+        <ContinueButton
+          name="datasetContinue"
+          nextStepHandler={nextStepHandler}
+          value="occurrenceForm.locationData.step.nextStep"
+          wrapperClassName=""/>
+      </div>
     </div>
   )
 }
@@ -110,7 +112,7 @@ export const locationDataShape = {
 }
 
 LocationData.propTypes = {
-  data:     PropTypes.shape(locationDataShape).isRequired,
+  data:            PropTypes.shape(locationDataShape).isRequired,
   nextStepHandler: PropTypes.func.isRequired,
-  onChange: PropTypes.func.isRequired
+  onChange:        PropTypes.func.isRequired
 }

@@ -9,6 +9,7 @@ describe('Dataset', () => {
     expect(mount(
       <Dataset
         datasets={getDefaultDatasets()}
+        nextStepHandler={() => {}}
         onChange={() => {}}
         selectedDataset={getDefaultDatasets()[0]}/>
     )).toMatchSnapshot()
@@ -19,6 +20,7 @@ describe('Dataset', () => {
     const wrapper = mount(
       <Dataset
         datasets={getDefaultDatasets()}
+        nextStepHandler={() => {}}
         onChange={onChange}
         selectedDataset={getDefaultDatasets()[0]}/>)
 

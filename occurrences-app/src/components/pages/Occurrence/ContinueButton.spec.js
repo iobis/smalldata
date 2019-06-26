@@ -12,6 +12,11 @@ describe('ContinueButton', () => {
     expect(wrapper.find('button').text()).toBe('Go to next page')
   })
 
+  it('applies given CSS classes to wrapper correctly', () => {
+    const wrapper = mount(createCompontent({ wrapperClassName: 'my-own-class' }))
+    expect(wrapper.find('div').at(0).hasClass('my-own-class')).toBe(true)
+  })
+
   it('calls nextStepHandler', () => {
     const nextStepHandler = jest.fn()
     const wrapper = mount(createCompontent({ nextStepHandler: nextStepHandler }))

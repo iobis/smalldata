@@ -305,5 +305,16 @@ exports[`ObservationData renders correctly 1`] = `
       copy data from previous entry
     </div>
   </div>
+  <div
+    className=""
+  >
+    <button
+      className="button is-info"
+      name="datasetContinue"
+      onClick={[MockFunction]}
+    >
+      occurrenceForm.observationData.step.nextStep
+    </button>
+  </div>
 </div>
 `;

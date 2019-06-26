@@ -20,6 +20,7 @@ function createComponent() {
         scientificName:   'scientific name',
         sex:              'male'
       }}
+      nextStepHandler={jest.fn()}
       onChange={jest.fn()}/>
   )
 }

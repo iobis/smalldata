@@ -13,6 +13,7 @@ exports[`LocationData renders correctly 1`] = `
       "verbatimDepth": "",
     }
   }
+  nextStepHandler={[MockFunction]}
   onChange={[MockFunction]}
 >
   <div
@@ -304,6 +305,24 @@ exports[`LocationData renders correctly 1`] = `
         </div>
       </div>
     </CopyPreviousData>
+    <ContinueButton
+      name="datasetContinue"
+      nextStepHandler={[MockFunction]}
+      value="occurrenceForm.locationData.step.nextStep"
+      wrapperClassName=""
+    >
+      <div
+        className=""
+      >
+        <button
+          className="button is-info"
+          name="datasetContinue"
+          onClick={[MockFunction]}
+        >
+          occurrenceForm.locationData.step.nextStep
+        </button>
+      </div>
+    </ContinueButton>
   </div>
 </LocationData>
 `;

@@ -3,6 +3,7 @@
 exports[`MeasurementOrFact renders correctly 1`] = `
 <MeasurementOrFact
   data={Array []}
+  nextStepHandler={[MockFunction]}
   onChange={[MockFunction]}
 >
   <div
@@ -510,6 +511,24 @@ exports[`MeasurementOrFact renders correctly 1`] = `
         </div>
       </div>
     </CopyPreviousData>
+    <ContinueButton
+      name="datasetContinue"
+      nextStepHandler={[MockFunction]}
+      value="occurrenceForm.measurementOrFact.step.nextStep"
+      wrapperClassName=""
+    >
+      <div
+        className=""
+      >
+        <button
+          className="button is-info"
+          name="datasetContinue"
+          onClick={[MockFunction]}
+        >
+          occurrenceForm.measurementOrFact.step.nextStep
+        </button>
+      </div>
+    </ContinueButton>
   </div>
 </MeasurementOrFact>
 `;

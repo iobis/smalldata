@@ -305,6 +305,7 @@ Sevastopol Bay is located in south western part of the Crimean peninsula, Ukrain
       },
     ]
   }
+  nextStepHandler={[Function]}
   onChange={[Function]}
   selectedDataset={
     Object {
@@ -370,7 +371,7 @@ Sevastopol Bay is located in south western part of the Crimean peninsula, Ukrain
   }
 >
   <div
-    className="dataset columns is-fluid"
+    className="dataset is-fluid"
   >
     <table
       className="table is-striped is-fullwidth"
@@ -527,5 +528,23 @@ Sevastopol Bay is located in south western part of the Crimean peninsula, Ukrain
       </tbody>
     </table>
   </div>
+  <ContinueButton
+    name="datasetContinue"
+    nextStepHandler={[Function]}
+    value="Continue to Occurrence Data"
+    wrapperClassName=""
+  >
+    <div
+      className=""
+    >
+      <button
+        className="button is-info"
+        name="datasetContinue"
+        onClick={[Function]}
+      >
+        Continue to Occurrence Data
+      </button>
+    </div>
+  </ContinueButton>
 </Dataset>
 `;

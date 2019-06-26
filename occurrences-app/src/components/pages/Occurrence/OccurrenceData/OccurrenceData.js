@@ -65,12 +65,13 @@ export default function OccurrenceData({ onChange, data, nextStepHandler }) {
         onChange={(value) => updateField('lifestage', value)}
         options={lifestageOptions}
         selectedValue={lifestage}/>
-      <CopyPreviousData/>
-      <ContinueButton
-        name="datasetContinue"
-        nextStepHandler={nextStepHandler}
-        value="occurrenceForm.occurrenceData.step.nextStep"
-        wrapperClassName=""/>
+      <div className="columns obis-spaced">
+        <CopyPreviousData/>
+        <ContinueButton
+          name="datasetContinue"
+          nextStepHandler={nextStepHandler}
+          value="occurrenceForm.occurrenceData.step.nextStep"/>
+      </div>
     </div>
   )
 }

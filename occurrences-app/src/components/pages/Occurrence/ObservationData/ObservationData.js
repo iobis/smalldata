@@ -77,12 +77,14 @@ export default function ObservationData({ onChange, observationData, nextStepHan
           onChange={(value) => updateField('references', value)}
           values={observationData.references}/>
       </div>
-      <CopyPreviousData/>
-      <ContinueButton
-        name="datasetContinue"
-        nextStepHandler={nextStepHandler}
-        value="occurrenceForm.observationData.step.nextStep"
-        wrapperClassName=""/>
+      <div className="columns obis-spaced">
+        <CopyPreviousData/>
+        <ContinueButton
+          name="datasetContinue"
+          nextStepHandler={nextStepHandler}
+          value="occurrenceForm.observationData.step.nextStep"
+          wrapperClassName=""/>
+      </div>
     </div>
   )
 }
