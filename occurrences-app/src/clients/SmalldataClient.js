@@ -1,5 +1,5 @@
 import { format } from 'date-fns'
-import { findTypeAndUnitIdByNames } from './measurments'
+import { findTypeAndUnitIdByNames, findUnitsByTypeId } from './measurments'
 
 export async function getDatasets() {
   const response = await fetch('/api/datasets')
@@ -163,9 +163,10 @@ export function mapDwcaToObservationData(dwca) {
 
 export function mapDwcaToMeasurements(dwca) {
   const emof = dwca.dwcRecords.emof
-  return emof.map(({ tdwg }) => ({
+  return emof.map(({ tdwg, iobis }) => ({
     type:  tdwg.measurementType,
     value: tdwg.measurementValue,
-    unit:  tdwg.measurementUnit
+    unit:  tdwg.measurementUnit,
+    units: findUnitsByTypeId(iobis.measurementTypeID)
   }))
 }
