@@ -22,7 +22,7 @@ export default function Dataset({ datasets, selectedDataset, onChange }) {
       </div>
       <ContinueButton
         name="datasetContinue"
-        value="Continue to Occurrence Data" wrapperClassName="" />
+        value="Continue to Occurrence Data" wrapperClassName=""/>
     </>
   )
 }
