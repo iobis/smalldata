@@ -25,7 +25,7 @@ export default function Dataset({ datasets, selectedDataset, onChange, nextStepH
         name="datasetContinue"
         nextStepHandler={nextStepHandler}
         value="occurrenceForm.dataset.step.nextStep"
-        wrapperClassName=""/>
+        wrapperClassName="field column"/>
     </>
   )
 }
