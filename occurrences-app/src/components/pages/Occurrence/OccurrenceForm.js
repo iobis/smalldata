@@ -57,7 +57,7 @@ export default function OccurrenceForm() {
   const [measurements, setMeasurements] = useState([])
   const [finalSummaryVisible, setFinalSummaryVisible] = useState(false)
 
-  let that = this
+
 
   useEffect(() => {
     const fetchDatasets = async() => {
@@ -111,7 +111,7 @@ export default function OccurrenceForm() {
     children:        datasets && dataset && (
       <Dataset
         datasets={datasets}
-        nextStepHandler={that.showActiveStep}
+        nextStepHandler={() => showActiveStep(activeStepIndex + 1)}
         onChange={setDataset}
         selectedDataset={dataset}/>)
   }, {
