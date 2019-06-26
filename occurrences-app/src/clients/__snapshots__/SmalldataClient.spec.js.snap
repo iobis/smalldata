@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SmalldataClient mapDwcaToMeasurements() 1`] = `
+Array [
+  Object {
+    "type": "Abundance category of biological entity specified elsewhere",
+    "unit": "Dimensionless",
+    "value": "3",
+  },
+  Object {
+    "type": "Abundance of biological entity specified elsewhere per unit area of the bed",
+    "unit": "Number per square meter",
+    "value": "44",
+  },
+  Object {
+    "type": "ObservedIndividualCount",
+    "unit": "Dimensionless",
+    "value": "1",
+  },
+  Object {
+    "type": "Pressure",
+    "unit": "Decibars",
+    "value": "1",
+  },
+  Object {
+    "type": "Salinity",
+    "unit": "Grams per kilogram",
+    "value": "3",
+  },
+  Object {
+    "type": "Temperature",
+    "unit": "Degrees Celsius",
+    "value": "2",
+  },
+]
+`;

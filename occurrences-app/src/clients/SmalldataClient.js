@@ -160,3 +160,12 @@ export function mapDwcaToObservationData(dwca) {
     references:              tdwg.associatedReferences.split('|')
   }
 }
+
+export function mapDwcaToMeasurements(dwca) {
+  const emof = dwca.dwcRecords.emof
+  return emof.map(({ tdwg }) => ({
+    type:  tdwg.measurementType,
+    value: tdwg.measurementValue,
+    unit:  tdwg.measurementUnit
+  }))
+}

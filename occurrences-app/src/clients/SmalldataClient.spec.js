@@ -209,6 +209,10 @@ describe('SmalldataClient', () => {
       references:              ['www.google.com', 'https://clojure.org/']
     })
   })
+
+  it('mapDwcaToMeasurements()', () => {
+    expect(SmalldataClient.mapDwcaToMeasurements(getDefaultDwcaResponse())).toMatchSnapshot()
+  })
 })
 
 function getDefaultOccurrence() {
