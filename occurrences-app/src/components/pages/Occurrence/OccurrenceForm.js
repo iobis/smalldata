@@ -11,11 +11,17 @@ import PropTypes from 'prop-types'
 import React, { useContext, useEffect, useState } from 'react'
 import Dataset from './Dataset/Dataset'
 import { format } from 'date-fns'
-import { datasetTitleOf, getDatasets, postOccurrence } from '../../../clients/SmalldataClient'
+import {
+  datasetTitleOf,
+  getDatasets,
+  getOccurrence,
+  mapDwcaToOccurrenceData,
+  postOccurrence
+} from '../../../clients/SmalldataClient'
 import { useTranslation } from 'react-i18next'
 import { AuthContext } from '@smalldata/dwca-lib'
 
-export default function OccurrenceForm() {
+export default function OccurrenceForm({ location }) {
   const initialState = createInitialState()
   const { t } = useTranslation()
   const { userRef } = useContext(AuthContext)
@@ -31,6 +37,22 @@ export default function OccurrenceForm() {
   const [measurements, setMeasurements] = useState(initialState.measurements)
   const [activeStepIndex, setActiveStepIndex] = useState(0)
   const [finalSummaryVisible, setFinalSummaryVisible] = useState(false)
+
+  useEffect(() => {
+    const fetchOccurrence = async() => {
+      const dwca = await getOccurrence({
+        datasetId: location.state.datasetId,
+        dwcaId:    location.state.dwcaId,
+        userRef
+      })
+      const datasets = await getDatasets()
+      const dataset = datasets.find(d => d.id === dwca.dataset)
+      setDataset(dataset)
+      setOccurrenceData(mapDwcaToOccurrenceData(dwca))
+    }
+    if (location && location.state) fetchOccurrence()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   useEffect(() => {
     const fetchDatasets = async() => {
@@ -210,6 +232,15 @@ export default function OccurrenceForm() {
         </div>)}
     </section>
   )
+}
+
+OccurrenceForm.propTypes = {
+  location: PropTypes.shape({
+    state: PropTypes.shape({
+      datasetId: PropTypes.string.isRequired,
+      dwcaId:    PropTypes.string.isRequired
+    })
+  })
 }
 
 function SelectedLocation({ decimalLatitude, decimalLongitude }) {
