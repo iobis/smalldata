@@ -1,10 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { useTranslation } from 'react-i18next'
 
 export default function ContinueButton({ name, value, onClick, wrapperClassName, nextStepHandler }) {
+  const { t } = useTranslation()
+
   return (
     <div className={wrapperClassName}>
-      <button className="button is-info" name={name} onClick={nextStepHandler}>{value}</button>
+      <button className="button is-info" name={name} onClick={nextStepHandler}>{t(value)}</button>
     </div>
   )
 }

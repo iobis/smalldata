@@ -4,8 +4,9 @@ import InputText from '../../../form/InputText'
 import PropTypes from 'prop-types'
 import React from 'react'
 import Textarea from '../../../form/Textarea'
+import ContinueButton from '../ContinueButton'
 
-export default function ObservationData({ onChange, observationData }) {
+export default function ObservationData({ onChange, observationData, nextStepHandler }) {
   const updateField = (name, value) => {
     const newSelection = { ...observationData, [name]: value }
     onChange(newSelection)
@@ -77,6 +78,11 @@ export default function ObservationData({ onChange, observationData }) {
           values={observationData.references}/>
       </div>
       <CopyPreviousData/>
+      <ContinueButton
+        name="datasetContinue"
+        nextStepHandler={nextStepHandler}
+        value="occurrenceForm.observationData.step.nextStep"
+        wrapperClassName=""/>
     </div>
   )
 }
@@ -95,6 +101,7 @@ export const observationDataShape = {
 }
 
 ObservationData.propTypes = {
+  nextStepHandler: PropTypes.func.isRequired,
   observationData: PropTypes.shape(observationDataShape).isRequired,
   onChange:        PropTypes.func.isRequired
 }

@@ -12,7 +12,7 @@ describe('ContinueButton', () => {
     expect(wrapper.find('button').text()).toBe('Go to next page')
   })
 
-  it('calls nextStepHandles', () => {
+  it('calls nextStepHandler', () => {
     const nextStepHandler = jest.fn()
     const wrapper = mount(createCompontent({ nextStepHandler: nextStepHandler }))
     wrapper.find('button').at(0).simulate('click')

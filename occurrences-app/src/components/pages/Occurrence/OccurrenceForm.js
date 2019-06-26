@@ -57,8 +57,6 @@ export default function OccurrenceForm() {
   const [measurements, setMeasurements] = useState([])
   const [finalSummaryVisible, setFinalSummaryVisible] = useState(false)
 
-
-
   useEffect(() => {
     const fetchDatasets = async() => {
       const datasets = await getDatasets()
@@ -136,8 +134,10 @@ export default function OccurrenceForm() {
     stepDescription: t('occurrenceForm.observationData.step.stepDescription'),
     stepTitle:       t('occurrenceForm.observationData.step.stepTitle'),
     children:        <ObservationData
+                       nextStepHandler={() => showActiveStep(activeStepIndex + 1)}
                        observationData={observationData}
-                       onChange={setObservationData}/>
+                       onChange={setObservationData}
+                       />
   }, {
     dataDescription: t('occurrenceForm.measurementOrFact.step.dataDescription'),
     selectedData:    <MeasurementOrFactSummary data={measurements}/>,

@@ -135,7 +135,8 @@ export default {
         step:                    {
           dataDescription: 'Main Info',
           stepDescription: 'Enter further specifics',
-          stepTitle:       'Observation Data'
+          stepTitle:       'Observation Data',
+          nextStep:         'Continue to measurement or fact data'
         },
         institutionCode:         {
           label:       'Institution Code',
