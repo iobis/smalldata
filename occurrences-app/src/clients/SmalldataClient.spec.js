@@ -182,6 +182,18 @@ describe('SmalldataClient', () => {
       sex:              'female'
     })
   })
+
+  it('mapDwcaToOccurrenceData()', () => {
+    expect(SmalldataClient.mapDwcaToLocationData(getDefaultDwcaResponse())).toEqual({
+      coordinateUncertainty: 1,
+      decimalLatitude:       51.518463972439385,
+      decimalLongitude:      -0.16771316528320315,
+      maximumDepth:          3,
+      minimumDepth:          2,
+      verbatimCoordinates:   '17T 630000 4833400',
+      verbatimDepth:         '100-200 m'
+    })
+  })
 })
 
 function getDefaultOccurrence() {

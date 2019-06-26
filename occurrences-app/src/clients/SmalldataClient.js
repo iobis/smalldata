@@ -131,3 +131,16 @@ export function mapDwcaToOccurrenceData(dwca) {
     sex:              tdwg.sex || 'unspecified'
   }
 }
+
+export function mapDwcaToLocationData(dwca) {
+  const tdwg = dwca.dwcRecords.occurrence[0].tdwg
+  return {
+    decimalLongitude:      tdwg.decimalLongitude,
+    decimalLatitude:       tdwg.decimalLatitude,
+    coordinateUncertainty: tdwg.coordinateUncertaintyInMeters,
+    minimumDepth:          tdwg.minimumDepthInMeters,
+    maximumDepth:          tdwg.maximumDepthInMeters,
+    verbatimCoordinates:   tdwg.verbatimCoordinates,
+    verbatimDepth:         tdwg.verbatimDepth
+  }
+}
