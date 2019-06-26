@@ -17,6 +17,7 @@ import {
   getOccurrence,
   mapDwcaToOccurrenceData,
   mapDwcaToLocationData,
+  mapDwcaToObservationData,
   postOccurrence
 } from '../../../clients/SmalldataClient'
 import { useTranslation } from 'react-i18next'
@@ -51,6 +52,7 @@ export default function OccurrenceForm({ location }) {
       setDataset(dataset)
       setOccurrenceData(mapDwcaToOccurrenceData(dwca))
       setLocationData(mapDwcaToLocationData(dwca))
+      setObservationData(mapDwcaToObservationData(dwca))
     }
     if (location && location.state) fetchOccurrence()
     // eslint-disable-next-line react-hooks/exhaustive-deps
