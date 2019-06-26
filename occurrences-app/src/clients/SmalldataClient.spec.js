@@ -194,6 +194,21 @@ describe('SmalldataClient', () => {
       verbatimDepth:         '100-200 m'
     })
   })
+
+  it('mapDwcaToObservationData()', () => {
+    expect(SmalldataClient.mapDwcaToObservationData(getDefaultDwcaResponse())).toEqual({
+      institutionCode:         'Institution Code',
+      collectionCode:          'Collection Code',
+      fieldNumber:             'Field Number',
+      catalogNumber:           'Catalog Number',
+      recordNumber:            'Record Number',
+      identifiedBy:            ['person-1', 'person-2'],
+      recordedBy:              ['recorded-by-1', 'recorded-by-2'],
+      identificationQualifier: 'Identification Qualifier',
+      identificationRemarks:   'Identification Remarks',
+      references:              ['www.google.com', 'https://clojure.org/']
+    })
+  })
 })
 
 function getDefaultOccurrence() {
@@ -395,10 +410,10 @@ function getDefaultDwcaResponse() {
           'catalogNumber':                 'Catalog Number',
           'recordNumber':                  'Record Number',
           'identifiedBy':                  'person-1|person-2',
-          'recordedBy':                    'recrded-by-1|recorded-by-2',
+          'recordedBy':                    'recorded-by-1|recorded-by-2',
           'identificationQualifier':       'Identification Qualifier',
           'identificationRemarks':         'Identification Remarks',
-          'associatedReferences':          'www.google.com'
+          'associatedReferences':          'www.google.com|https://clojure.org/'
         },
         'purl':  {},
         'iobis': {},

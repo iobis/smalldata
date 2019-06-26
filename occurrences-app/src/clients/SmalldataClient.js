@@ -144,3 +144,19 @@ export function mapDwcaToLocationData(dwca) {
     verbatimDepth:         tdwg.verbatimDepth
   }
 }
+
+export function mapDwcaToObservationData(dwca) {
+  const tdwg = dwca.dwcRecords.occurrence[0].tdwg
+  return {
+    institutionCode:         tdwg.institutionCode,
+    collectionCode:          tdwg.collectionCode,
+    fieldNumber:             tdwg.fieldNumber,
+    catalogNumber:           tdwg.catalogNumber,
+    recordNumber:            tdwg.recordNumber,
+    identifiedBy:            tdwg.identifiedBy.split('|'),
+    recordedBy:              tdwg.recordedBy.split('|'),
+    identificationQualifier: tdwg.identificationQualifier,
+    identificationRemarks:   tdwg.identificationRemarks,
+    references:              tdwg.associatedReferences.split('|')
+  }
+}
