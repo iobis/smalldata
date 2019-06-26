@@ -32,14 +32,16 @@ export default {
         step: {
           dataDescription: 'Using Data',
           stepDescription: 'Choose the dataset for adding observations',
-          stepTitle:       'Selected Dataset'
+          stepTitle:       'Selected Dataset',
+          nextStep:         'Continue to occurrence data'
         }
       },
       occurrenceData:        {
         step:             {
           dataDescription: 'Given Values',
           stepDescription: 'Mandatory observation information',
-          stepTitle:       'Occurrence Data'
+          stepTitle:       'Occurrence Data',
+          nextStep:         'Continue to location data'
         },
         scientificName:   'Scientific Name',
         eventBeginDate:   'Event Begin Date',
@@ -121,7 +123,8 @@ export default {
           selectedData:    {
             latitude:  'Latitude',
             longitude: 'Longitude'
-          }
+          },
+          nextStep:         'Continue to observation data'
         },
         locationPicker:        {
           emptyResult:    'No search results yet',
@@ -189,7 +192,8 @@ export default {
           dataDescription: 'Given values',
           stepDescription: 'Enter further specifics',
           stepTitle:       'Measurement or Fact',
-          title:           'You have submitted {{number}} extra fields'
+          title:           'You have submitted {{number}} extra fields',
+          nextStep:         'Continue to darwin core fields'
         },
         general:  {
           title:    'STEP 1: General sample information',

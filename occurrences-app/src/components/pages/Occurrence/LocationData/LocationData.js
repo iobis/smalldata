@@ -5,8 +5,9 @@ import LocationPickerModal from './LocationPickerModal'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import ContinueButton from '../ContinueButton'
 
-export default function LocationData({ data, onChange }) {
+export default function LocationData({ data, onChange, nextStepHandler }) {
   const { t } = useTranslation()
   const updateField = (name, value) => {
     const newSelection = { ...data, [name]: value }
@@ -89,6 +90,11 @@ export default function LocationData({ data, onChange }) {
         </div>
       </div>
       <CopyPreviousData/>
+      <ContinueButton
+        name="datasetContinue"
+        nextStepHandler={nextStepHandler}
+        value="occurrenceForm.locationData.step.nextStep"
+        wrapperClassName=""/>
     </div>
   )
 }
@@ -105,5 +111,6 @@ export const locationDataShape = {
 
 LocationData.propTypes = {
   data:     PropTypes.shape(locationDataShape).isRequired,
+  nextStepHandler: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired
 }

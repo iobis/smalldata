@@ -6,8 +6,9 @@ import React, { useState } from 'react'
 import { addUuid, removeUuid } from '../../../../common/uuids'
 import { getGeneralMeasurements, getSpecificMeasurements } from '../../../../clients/measurments'
 import { useTranslation } from 'react-i18next'
+import ContinueButton from '../ContinueButton'
 
-export default function MeasurementOrFact({ data, onChange }) {
+export default function MeasurementOrFact({ data, onChange, nextStepHandler }) {
   const { t } = useTranslation()
   const generalMeasurements = getGeneralMeasurements()
   const specificMeasurements = getSpecificMeasurements()
@@ -112,13 +113,19 @@ export default function MeasurementOrFact({ data, onChange }) {
         </div>
       </div>
       <CopyPreviousData/>
+      <ContinueButton
+        name="datasetContinue"
+        nextStepHandler={nextStepHandler}
+        value="occurrenceForm.measurementOrFact.step.nextStep"
+        wrapperClassName=""/>
     </div>
   )
 }
 
 MeasurementOrFact.propTypes = {
-  data:     PropTypes.array.isRequired,
-  onChange: PropTypes.func.isRequired
+  data:            PropTypes.array.isRequired,
+  nextStepHandler: PropTypes.func.isRequired,
+  onChange:        PropTypes.func.isRequired
 }
 
 function MeasurementRow({ onAdd, type, units }) {

@@ -119,6 +119,7 @@ export default function OccurrenceForm() {
     stepTitle:       t('occurrenceForm.occurrenceData.step.stepTitle'),
     children:        <OccurrenceData
                        data={occurrenceData}
+                       nextStepHandler={() => showActiveStep(activeStepIndex + 1)}
                        onChange={setOccurrenceData}/>
   }, {
     dataDescription: t('occurrenceForm.locationData.step.dataDescription'),
@@ -127,6 +128,7 @@ export default function OccurrenceForm() {
     stepTitle:       t('occurrenceForm.locationData.step.stepTitle'),
     children:        <LocationData
                        data={locationData}
+                       nextStepHandler={() => showActiveStep(activeStepIndex + 1)}
                        onChange={setLocationData}/>
   }, {
     dataDescription: t('occurrenceForm.observationData.step.dataDescription'),
@@ -137,7 +139,7 @@ export default function OccurrenceForm() {
                        nextStepHandler={() => showActiveStep(activeStepIndex + 1)}
                        observationData={observationData}
                        onChange={setObservationData}
-                       />
+                     />
   }, {
     dataDescription: t('occurrenceForm.measurementOrFact.step.dataDescription'),
     selectedData:    <MeasurementOrFactSummary data={measurements}/>,
@@ -145,6 +147,7 @@ export default function OccurrenceForm() {
     stepTitle:       t('occurrenceForm.measurementOrFact.step.stepTitle'),
     children:        <MeasurementOrFact
                        data={measurements}
+                       nextStepHandler={() => showActiveStep(activeStepIndex + 1)}
                        onChange={setMeasurements}/>
   }, {
     dataDescription: '',

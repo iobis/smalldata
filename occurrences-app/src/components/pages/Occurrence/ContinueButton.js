@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useTranslation } from 'react-i18next'
 
-export default function ContinueButton({ name, value, onClick, wrapperClassName, nextStepHandler }) {
+export default function ContinueButton({ name, value, wrapperClassName, nextStepHandler }) {
   const { t } = useTranslation()
 
   return (
