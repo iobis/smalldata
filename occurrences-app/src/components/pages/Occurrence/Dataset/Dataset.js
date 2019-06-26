@@ -20,10 +20,11 @@ export default function Dataset({ datasets, selectedDataset, onChange, nextStepH
           </tbody>
         </table>
       </div>
+
       <ContinueButton
         name="datasetContinue"
         nextStepHandler={nextStepHandler}
-        value="Continue to Occurrence Data"
+        value="occurrenceForm.dataset.step.nextStep"
         wrapperClassName=""/>
     </>
   )
