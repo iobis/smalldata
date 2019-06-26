@@ -213,6 +213,28 @@ describe('SmalldataClient', () => {
   it('mapDwcaToMeasurements()', () => {
     expect(SmalldataClient.mapDwcaToMeasurements(getDefaultDwcaResponse())).toMatchSnapshot()
   })
+
+  it('mapDwcsToDarwinCoreFields()', () => {
+    expect(SmalldataClient.mapDwcsToDarwinCoreFields(getDefaultDwcaResponse())).toEqual([{
+      name:  'http://rs.iobis.org/obis/terms/iobis-1',
+      value: 'iobis-1-value'
+    }, {
+      name:  'http://rs.iobis.org/obis/terms/iobis-2',
+      value: 'iobis-2-value'
+    }, {
+      name:  'http://purl.org/dc/terms/purl-field-1',
+      value: 'purl-field-1-value'
+    }, {
+      name:  'http://purl.org/dc/terms/purl-field-2',
+      value: 'purl-field-2-value'
+    }, {
+      name:  'http://rs.tdwg.org/dwc/terms/tdwg-field-1',
+      value: 'tdwg-field-1-value'
+    }, {
+      name:  'http://rs.tdwg.org/dwc/terms/tdwg-field-2',
+      value: 'tdwg-field-2-value'
+    }])
+  })
 })
 
 function getDefaultOccurrence() {
@@ -417,10 +439,18 @@ function getDefaultDwcaResponse() {
           'recordedBy':                    'recorded-by-1|recorded-by-2',
           'identificationQualifier':       'Identification Qualifier',
           'identificationRemarks':         'Identification Remarks',
-          'associatedReferences':          'www.google.com|https://clojure.org/'
+          'associatedReferences':          'www.google.com|https://clojure.org/',
+          'tdwg-field-1':                  'tdwg-field-1-value',
+          'tdwg-field-2':                  'tdwg-field-2-value'
         },
-        'purl':  {},
-        'iobis': {},
+        'purl':  {
+          'purl-field-1': 'purl-field-1-value',
+          'purl-field-2': 'purl-field-2-value'
+        },
+        'iobis': {
+          'iobis-1': 'iobis-1-value',
+          'iobis-2': 'iobis-2-value'
+        },
         'id':    'IkadeGqejSCC3Sc'
       }]
     }

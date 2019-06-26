@@ -19,6 +19,7 @@ import {
   mapDwcaToLocationData,
   mapDwcaToObservationData,
   mapDwcaToMeasurements,
+  mapDwcsToDarwinCoreFields,
   postOccurrence
 } from '../../../clients/SmalldataClient'
 import { useTranslation } from 'react-i18next'
@@ -36,8 +37,8 @@ export default function OccurrenceForm({ location }) {
   const [occurrenceData, setOccurrenceData] = useState(initialState.occurrenceData)
   const [locationData, setLocationData] = useState(initialState.locationData)
   const [observationData, setObservationData] = useState(initialState.observationData)
-  const [darwinCoreFields, setDarwinCoreFields] = useState(initialState.darwinCoreFields)
   const [measurements, setMeasurements] = useState(initialState.measurements)
+  const [darwinCoreFields, setDarwinCoreFields] = useState(initialState.darwinCoreFields)
   const [activeStepIndex, setActiveStepIndex] = useState(0)
   const [finalSummaryVisible, setFinalSummaryVisible] = useState(false)
 
@@ -55,6 +56,7 @@ export default function OccurrenceForm({ location }) {
       setLocationData(mapDwcaToLocationData(dwca))
       setObservationData(mapDwcaToObservationData(dwca))
       setMeasurements(mapDwcaToMeasurements(dwca))
+      setDarwinCoreFields(mapDwcsToDarwinCoreFields(dwca))
     }
     if (location && location.state) fetchOccurrence()
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -332,7 +334,7 @@ function createInitialState() {
       identificationRemarks:   '',
       references:              []
     },
-    darwinCoreFields: [],
-    measurements:     []
+    measurements:     [],
+    darwinCoreFields: []
   }
 }

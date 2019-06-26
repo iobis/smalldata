@@ -1,6 +1,10 @@
 import { format } from 'date-fns'
 import { findTypeAndUnitIdByNames, findUnitsByTypeId } from './measurments'
 
+const purlUrl = 'http://purl.org/dc/terms/'
+const tdwgUrl = 'http://rs.tdwg.org/dwc/terms/'
+const iobisUrl = 'http://rs.iobis.org/obis/terms/'
+
 export async function getDatasets() {
   const response = await fetch('/api/datasets')
     .then(response => response.json())
@@ -98,10 +102,6 @@ function mapOccurrenceDataToTdwg({ basisOfRecord, beginDate, endDate, occurrence
 }
 
 function mapDarwinCoreFieldsToRequest(darwinCoreFields) {
-  const purlUrl = 'http://purl.org/dc/terms/'
-  const tdwgUrl = 'http://rs.tdwg.org/dwc/terms/'
-  const iobisUrl = 'http://rs.iobis.org/obis/terms/'
-
   return darwinCoreFields.reduce((acc, { name, value }) => {
     if (name.startsWith(purlUrl)) {
       acc.purl[name.substring(purlUrl.length)] = value
@@ -169,4 +169,34 @@ export function mapDwcaToMeasurements(dwca) {
     unit:  tdwg.measurementUnit,
     units: findUnitsByTypeId(iobis.measurementTypeID)
   }))
+}
+
+const reservedTdwgFields = ['basisOfRecord', 'eventDate', 'occurrenceStatus', 'scientificName', 'sex',
+  'decimalLongitude', 'decimalLatitude', 'coordinateUncertaintyInMeters', 'minimumDepthInMeters', 'maximumDepthInMeters',
+  'verbatimCoordinates', 'verbatimDepth', 'institutionCode', 'collectionCode', 'fieldNumber', 'catalogNumber',
+  'recordNumber', 'identifiedBy', 'recordedBy', 'identificationQualifier', 'identificationRemarks',
+  'associatedReferences']
+
+export function mapDwcsToDarwinCoreFields(dwca) {
+  const { tdwg, iobis, purl } = dwca.dwcRecords.occurrence[0]
+  const iobisFields = Object
+    .keys(iobis)
+    .map(key => ({
+      name:  iobisUrl + key,
+      value: iobis[key]
+    }))
+  const purlFields = Object
+    .keys(purl)
+    .map(key => ({
+      name:  purlUrl + key,
+      value: purl[key]
+    }))
+  const tdwgFields = Object
+    .keys(tdwg)
+    .filter(key => !reservedTdwgFields.includes(key))
+    .map(key => ({
+      name:  tdwgUrl + key,
+      value: tdwg[key]
+    }))
+  return [...iobisFields, ...purlFields, ...tdwgFields]
 }
