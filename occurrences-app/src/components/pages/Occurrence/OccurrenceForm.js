@@ -177,11 +177,13 @@ export default function OccurrenceForm() {
         return (
           <StepComponent
             {...step}
+            activeStepIndex={activeStepIndex}
             className={className}
             key={step.stepTitle}
             onContinueButtonClick={() => showActiveStep(activeStepIndex + 1)}
             onStepTitleClick={() => showActiveStep(index)}
-            stepTitle={stepNumber + ' - ' + step.stepTitle}/>
+            stepTitle={stepNumber + ' - ' + step.stepTitle}
+            totalSteps={steps.length - 1}/>
         )
       })}
       {finalSummaryVisible ?
