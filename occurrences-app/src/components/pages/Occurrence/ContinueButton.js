@@ -13,8 +13,8 @@ export default function ContinueButton({ name, value, wrapperClassName, nextStep
 }
 
 ContinueButton.propTypes = {
-  name:             PropTypes.string.isRequired,
+  name:             PropTypes.string,
   nextStepHandler:  PropTypes.func.isRequired,
   value:            PropTypes.string.isRequired,
-  wrapperClassName: PropTypes.string.isRequired
+  wrapperClassName: PropTypes.string
 }
