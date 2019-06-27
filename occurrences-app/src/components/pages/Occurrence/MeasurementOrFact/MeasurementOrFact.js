@@ -115,7 +115,7 @@ export default function MeasurementOrFact({ data, onChange, nextStepHandler }) {
       <div className="columns obis-spaced">
         <CopyPreviousData/>
         <ContinueButton
-          name="datasetContinue"
+          name="measurementContinue"
           nextStepHandler={nextStepHandler}
           value="occurrenceForm.measurementOrFact.step.nextStep"
           wrapperClassName=""/>

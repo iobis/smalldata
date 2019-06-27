@@ -92,7 +92,7 @@ export default function LocationData({ data, onChange, nextStepHandler }) {
       <div className="columns obis-spaced">
         <CopyPreviousData/>
         <ContinueButton
-          name="datasetContinue"
+          name="locationContinue"
           nextStepHandler={nextStepHandler}
           value="occurrenceForm.locationData.step.nextStep"
           wrapperClassName=""/>
