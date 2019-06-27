@@ -5,6 +5,7 @@ import CopyPreviousData from '../CopyPreviousData'
 import ContinueButton from '../ContinueButton'
 
 export default function ActiveStepHeader({ children, onStepTitleClick, stepDescription, stepTitle, onContinueButtonClick, totalSteps, activeStepIndex }) {
+  const wrapperClassname = (activeStepIndex === 0) ? 'field column' : ''
   return (
     <>
       <StepHeader
@@ -19,14 +20,16 @@ export default function ActiveStepHeader({ children, onStepTitleClick, stepDescr
       </StepHeader>
       {activeStepIndex < totalSteps &&
       <div className="columns obis-spaced">
+
         {activeStepIndex > 0 &&
         <CopyPreviousData/>
         }
+
         <ContinueButton
           name="locationContinue"
           onClick={onContinueButtonClick}
           value="occurrenceForm.locationData.step.nextStep"
-          wrapperClassName=""/>
+          wrapperClassName={wrapperClassname}/>
       </div>
       }
     </>
