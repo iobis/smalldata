@@ -4,7 +4,7 @@ import StepHeader from './StepHeader'
 import CopyPreviousData from '../CopyPreviousData'
 import ContinueButton from '../ContinueButton'
 
-export default function ActiveStepHeader({ children, onStepTitleClick, stepDescription, stepTitle, onContinueButtonClick, totalSteps, activeStepIndex }) {
+export default function ActiveStepHeader({ children, onStepTitleClick, stepDescription, stepTitle, onContinueButtonClick, totalSteps, activeStepIndex, nextStep }) {
   const wrapperClassname = (activeStepIndex === 0) ? 'column datasetContinueButton' : ''
   return (
     <>
@@ -28,7 +28,7 @@ export default function ActiveStepHeader({ children, onStepTitleClick, stepDescr
         <ContinueButton
           name="locationContinue"
           onClick={onContinueButtonClick}
-          value="occurrenceForm.locationData.step.nextStep"
+          value={nextStep}
           wrapperClassName={wrapperClassname}/>
       </div>
       }
@@ -39,6 +39,7 @@ export default function ActiveStepHeader({ children, onStepTitleClick, stepDescr
 ActiveStepHeader.propTypes = {
   activeStepIndex:       PropTypes.number,
   children:              PropTypes.node,
+  nextStep:              PropTypes.string,
   onContinueButtonClick: PropTypes.func.isRequired,
   onStepTitleClick:      PropTypes.func.isRequired,
   stepDescription:       PropTypes.string.isRequired,

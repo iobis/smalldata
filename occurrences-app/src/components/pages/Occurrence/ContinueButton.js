@@ -7,7 +7,7 @@ export default function ContinueButton({ name, value, wrapperClassName, onClick 
 
   return (
     <div className={wrapperClassName}>
-      <button className="button is-info" name={name} onClick={onClick}>{t(value)}</button>
+      <button className="button is-info" name={name} onClick={onClick}>{t('occurrenceForm.stepContinue')}{value}</button>
     </div>
   )
 }

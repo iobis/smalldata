@@ -104,6 +104,7 @@ export default function OccurrenceForm() {
 
   const steps = [{
     dataDescription: t('occurrenceForm.dataset.step.dataDescription'),
+    nextStep:        t('occurrenceForm.dataset.step.nextStep'),
     selectedData:    datasetTitleOf(dataset),
     stepDescription: t('occurrenceForm.dataset.step.stepDescription'),
     stepTitle:       t('occurrenceForm.dataset.step.stepTitle'),
@@ -115,6 +116,7 @@ export default function OccurrenceForm() {
         selectedDataset={dataset}/>)
   }, {
     dataDescription: t('occurrenceForm.occurrenceData.step.dataDescription'),
+    nextStep:        t('occurrenceForm.occurrenceData.step.nextStep'),
     selectedData:    <OccurrenceDataSummary {...occurrenceData}/>,
     stepDescription: t('occurrenceForm.occurrenceData.step.stepDescription'),
     stepTitle:       t('occurrenceForm.occurrenceData.step.stepTitle'),
@@ -125,6 +127,7 @@ export default function OccurrenceForm() {
         onChange={setOccurrenceData}/>
   }, {
     dataDescription: t('occurrenceForm.locationData.step.dataDescription'),
+    nextStep:        t('occurrenceForm.locationData.step.nextStep'),
     selectedData:    <SelectedLocation {...locationData}/>,
     stepDescription: t('occurrenceForm.locationData.step.stepDescription'),
     stepTitle:       t('occurrenceForm.locationData.step.stepTitle'),
@@ -135,16 +138,18 @@ export default function OccurrenceForm() {
         onChange={setLocationData}/>
   }, {
     dataDescription: t('occurrenceForm.observationData.step.dataDescription'),
+    nextStep:        t('occurrenceForm.observationData.step.nextStep'),
     selectedData:    renderIdentifiedByLabel(observationData),
     stepDescription: t('occurrenceForm.observationData.step.stepDescription'),
     stepTitle:       t('occurrenceForm.observationData.step.stepTitle'),
 
     children:
       <ObservationData
-                       observationData={observationData}
-                       onChange={setObservationData}/>
+        observationData={observationData}
+        onChange={setObservationData}/>
   }, {
     dataDescription: t('occurrenceForm.measurementOrFact.step.dataDescription'),
+    nextStep:        t('occurrenceForm.measurementOrFact.step.nextStep'),
     selectedData:    <MeasurementOrFactSummary data={measurements}/>,
     stepDescription: t('occurrenceForm.measurementOrFact.step.stepDescription'),
     stepTitle:       t('occurrenceForm.measurementOrFact.step.stepTitle'),
@@ -181,6 +186,7 @@ export default function OccurrenceForm() {
             activeStepIndex={activeStepIndex}
             className={className}
             key={step.stepTitle}
+            nextStep={step.nextStep}
             onContinueButtonClick={() => showActiveStep(activeStepIndex + 1)}
             onStepTitleClick={() => showActiveStep(index)}
             stepTitle={stepNumber + ' - ' + step.stepTitle}

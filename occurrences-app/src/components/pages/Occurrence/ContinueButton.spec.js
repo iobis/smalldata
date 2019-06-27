@@ -9,7 +9,7 @@ describe('ContinueButton', () => {
 
   it('renders a given value correctly', () => {
     const wrapper = mount(createComponent({ value: 'Go to next page' }))
-    expect(wrapper.find('button').text()).toBe('Go to next page')
+    expect(wrapper.find('button').text()).toBe('occurrenceForm.stepContinueGo to next page') // There is probably a better way for this but I wasn't sure if I was allowed to include translation in a test?
   })
 
   it('applies given CSS classes to wrapper correctly', () => {

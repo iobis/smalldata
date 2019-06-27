@@ -28,12 +28,13 @@ export default {
     },
     occurrenceForm: {
       reviewAndSubmitButton: 'Review & Submit',
+      stepContinue:          'Continue to ',
       dataset:               {
         step: {
           dataDescription: 'Using Data',
           stepDescription: 'Choose the dataset for adding observations',
           stepTitle:       'Selected Dataset',
-          nextStep:         'Continue to occurrence data'
+          nextStep:        'occurrence data'
         }
       },
       occurrenceData:        {
@@ -41,7 +42,7 @@ export default {
           dataDescription: 'Given Values',
           stepDescription: 'Mandatory observation information',
           stepTitle:       'Occurrence Data',
-          nextStep:         'Continue to location data'
+          nextStep:        'location data'
         },
         scientificName:   'Scientific Name',
         eventBeginDate:   'Event Begin Date',
@@ -124,7 +125,7 @@ export default {
             latitude:  'Latitude',
             longitude: 'Longitude'
           },
-          nextStep:         'Continue to observation data'
+          nextStep:        'observation data'
         },
         locationPicker:        {
           emptyResult:    'No search results yet',
@@ -139,7 +140,7 @@ export default {
           dataDescription: 'Main Info',
           stepDescription: 'Enter further specifics',
           stepTitle:       'Observation Data',
-          nextStep:         'Continue to measurement or fact data'
+          nextStep:        'measurement or fact data'
         },
         institutionCode:         {
           label:       'Institution Code',
@@ -193,7 +194,7 @@ export default {
           stepDescription: 'Enter further specifics',
           stepTitle:       'Measurement or Fact',
           title:           'You have submitted {{number}} extra fields',
-          nextStep:         'Continue to darwin core fields'
+          nextStep:        'darwin core fields'
         },
         general:  {
           title:    'STEP 1: General sample information',
