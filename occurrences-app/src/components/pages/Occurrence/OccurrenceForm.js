@@ -138,10 +138,11 @@ export default function OccurrenceForm() {
     selectedData:    renderIdentifiedByLabel(observationData),
     stepDescription: t('occurrenceForm.observationData.step.stepDescription'),
     stepTitle:       t('occurrenceForm.observationData.step.stepTitle'),
-    children:        <ObservationData
+
+    children:
+      <ObservationData
                        observationData={observationData}
                        onChange={setObservationData}
-                     />
   }, {
     dataDescription: t('occurrenceForm.measurementOrFact.step.dataDescription'),
     selectedData:    <MeasurementOrFactSummary data={measurements}/>,
