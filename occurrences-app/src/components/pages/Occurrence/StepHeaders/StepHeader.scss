@@ -19,4 +19,13 @@
       text-decoration: underline;
     }
   }
+
+}
+
+.datasetContinueButton {
+  display: flex;
+  margin-top: 1rem;
+  button {
+    margin-left: auto;
+  }
 }

@@ -5,7 +5,7 @@ import CopyPreviousData from '../CopyPreviousData'
 import ContinueButton from '../ContinueButton'
 
 export default function ActiveStepHeader({ children, onStepTitleClick, stepDescription, stepTitle, onContinueButtonClick, totalSteps, activeStepIndex }) {
-  const wrapperClassname = (activeStepIndex === 0) ? 'field column' : ''
+  const wrapperClassname = (activeStepIndex === 0) ? 'column datasetContinueButton' : ''
   return (
     <>
       <StepHeader
