@@ -294,39 +294,6 @@ exports[`LocationData renders correctly 1`] = `
         </InputText>
       </div>
     </div>
-    <div
-      className="columns obis-spaced"
-    >
-      <CopyPreviousData>
-        <div
-          className="columns"
-        >
-          <div
-            className="copy-previous-data column is-narrow"
-          >
-            copy data from previous entry
-          </div>
-        </div>
-      </CopyPreviousData>
-      <ContinueButton
-        name="locationContinue"
-        onClick={[MockFunction]}
-        value="occurrenceForm.locationData.step.nextStep"
-        wrapperClassName=""
-      >
-        <div
-          className=""
-        >
-          <button
-            className="button is-info"
-            name="locationContinue"
-            onClick={[MockFunction]}
-          >
-            occurrenceForm.locationData.step.nextStep
-          </button>
-        </div>
-      </ContinueButton>
-    </div>
   </div>
 </LocationData>
 `;
