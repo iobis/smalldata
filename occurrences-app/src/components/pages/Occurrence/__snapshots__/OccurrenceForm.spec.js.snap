@@ -1036,7 +1036,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
                 </CopyPreviousData>
                 <ContinueButton
                   name="observationContinue"
-                  nextStepHandler={[Function]}
+                  onClick={[Function]}
                   value="occurrenceForm.observationData.step.nextStep"
                   wrapperClassName=""
                 >
@@ -3107,7 +3107,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                 </CopyPreviousData>
                 <ContinueButton
                   name="measurementContinue"
-                  nextStepHandler={[Function]}
+                  onClick={[Function]}
                   value="occurrenceForm.measurementOrFact.step.nextStep"
                   wrapperClassName=""
                 >

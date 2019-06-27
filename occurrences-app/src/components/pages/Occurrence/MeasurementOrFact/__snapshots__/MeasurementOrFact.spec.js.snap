@@ -516,7 +516,7 @@ exports[`MeasurementOrFact renders correctly 1`] = `
       </CopyPreviousData>
       <ContinueButton
         name="measurementContinue"
-        nextStepHandler={[MockFunction]}
+        onClick={[MockFunction]}
         value="occurrenceForm.measurementOrFact.step.nextStep"
         wrapperClassName=""
       >

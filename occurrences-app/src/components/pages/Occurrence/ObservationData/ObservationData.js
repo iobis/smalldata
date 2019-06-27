@@ -81,7 +81,7 @@ export default function ObservationData({ onChange, observationData, nextStepHan
         <CopyPreviousData/>
         <ContinueButton
           name="observationContinue"
-          nextStepHandler={nextStepHandler}
+          onClick={nextStepHandler}
           value="occurrenceForm.observationData.step.nextStep"
           wrapperClassName=""/>
       </div>

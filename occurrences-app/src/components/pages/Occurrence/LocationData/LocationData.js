@@ -93,7 +93,7 @@ export default function LocationData({ data, onChange, nextStepHandler }) {
         <CopyPreviousData/>
         <ContinueButton
           name="locationContinue"
-          nextStepHandler={nextStepHandler}
+          onClick={nextStepHandler}
           value="occurrenceForm.locationData.step.nextStep"
           wrapperClassName=""/>
       </div>

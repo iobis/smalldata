@@ -17,19 +17,19 @@ describe('ContinueButton', () => {
     expect(wrapper.find('div').at(0).hasClass('my-own-class')).toBe(true)
   })
 
-  it('calls nextStepHandler', () => {
-    const nextStepHandler = jest.fn()
-    const wrapper = mount(createComponent({ nextStepHandler: nextStepHandler }))
+  it('calls onClick handler', () => {
+    const onClick = jest.fn()
+    const wrapper = mount(createComponent({ onClick: onClick }))
     wrapper.find('button').at(0).simulate('click')
 
-    expect(nextStepHandler).toHaveBeenCalledTimes(1)
+    expect(onClick).toHaveBeenCalledTimes(1)
   })
 })
 
 function createComponent(props) {
   const defaultProps = {
     name:             'continue',
-    nextStepHandler:  jest.fn(),
+    onClick:          jest.fn(),
     value:            'Continue',
     wrapperClassName: 'columns'
   }

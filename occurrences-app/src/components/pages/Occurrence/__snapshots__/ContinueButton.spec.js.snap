@@ -3,7 +3,7 @@
 exports[`ContinueButton renders correctly 1`] = `
 <ContinueButton
   name="continue"
-  nextStepHandler={[MockFunction]}
+  onClick={[MockFunction]}
   value="Continue"
   wrapperClassName="columns"
 >

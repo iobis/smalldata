@@ -69,7 +69,7 @@ export default function OccurrenceData({ onChange, data, nextStepHandler }) {
         <CopyPreviousData/>
         <ContinueButton
           name="datasetContinue"
-          nextStepHandler={nextStepHandler}
+          onClick={nextStepHandler}
           value="occurrenceForm.occurrenceData.step.nextStep"/>
       </div>
     </div>

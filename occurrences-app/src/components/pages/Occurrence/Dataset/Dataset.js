@@ -23,7 +23,7 @@ export default function Dataset({ datasets, selectedDataset, onChange, nextStepH
 
       <ContinueButton
         name="datasetContinue"
-        nextStepHandler={nextStepHandler}
+        onClick={nextStepHandler}
         value="occurrenceForm.dataset.step.nextStep"
         wrapperClassName="field column"/>
     </>

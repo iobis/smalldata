@@ -310,7 +310,7 @@ exports[`LocationData renders correctly 1`] = `
       </CopyPreviousData>
       <ContinueButton
         name="locationContinue"
-        nextStepHandler={[MockFunction]}
+        onClick={[MockFunction]}
         value="occurrenceForm.locationData.step.nextStep"
         wrapperClassName=""
       >
