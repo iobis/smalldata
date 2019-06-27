@@ -2,11 +2,10 @@ import InputRadio from '../../../form/InputRadio'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { datasetTitleOf } from '../../../../clients/SmalldataClient'
-import ContinueButton from '../ContinueButton'
 
-export default function Dataset({ datasets, selectedDataset, onChange, nextStepHandler }) {
+export default function Dataset({ datasets, selectedDataset, onChange }) {
   return (
-    <>
+
       <div className="dataset is-fluid">
         <table className="table is-striped is-fullwidth">
           <tbody>
@@ -21,12 +20,6 @@ export default function Dataset({ datasets, selectedDataset, onChange, nextStepH
         </table>
       </div>
 
-      <ContinueButton
-        name="datasetContinue"
-        nextStepHandler={nextStepHandler}
-        value="occurrenceForm.dataset.step.nextStep"
-        wrapperClassName="field column"/>
-    </>
   )
 }
 
@@ -39,7 +32,6 @@ export const datasetShape = {
 
 Dataset.propTypes = {
   datasets:        PropTypes.arrayOf(PropTypes.shape(datasetShape)).isRequired,
-  nextStepHandler: PropTypes.func.isRequired,
   onChange:        PropTypes.func.isRequired,
   selectedDataset: PropTypes.shape(datasetShape).isRequired
 }

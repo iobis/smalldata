@@ -111,7 +111,6 @@ export default function OccurrenceForm() {
     children: datasets && dataset && (
       <Dataset
         datasets={datasets}
-        nextStepHandler={() => showActiveStep(activeStepIndex + 1)}
         onChange={setDataset}
         selectedDataset={dataset}/>)
   }, {
@@ -123,7 +122,6 @@ export default function OccurrenceForm() {
     children:
       <OccurrenceData
         data={occurrenceData}
-                       nextStepHandler={() => showActiveStep(activeStepIndex + 1)}
         onChange={setOccurrenceData}/>
   }, {
     dataDescription: t('occurrenceForm.locationData.step.dataDescription'),
@@ -134,7 +132,6 @@ export default function OccurrenceForm() {
     children:
       <LocationData
         data={locationData}
-                       nextStepHandler={() => showActiveStep(activeStepIndex + 1)}
         onChange={setLocationData}/>
   }, {
     dataDescription: t('occurrenceForm.observationData.step.dataDescription'),
@@ -142,7 +139,6 @@ export default function OccurrenceForm() {
     stepDescription: t('occurrenceForm.observationData.step.stepDescription'),
     stepTitle:       t('occurrenceForm.observationData.step.stepTitle'),
     children:        <ObservationData
-                       nextStepHandler={() => showActiveStep(activeStepIndex + 1)}
                        observationData={observationData}
                        onChange={setObservationData}
                      />
@@ -155,8 +151,7 @@ export default function OccurrenceForm() {
     children:
       <MeasurementOrFact
         data={measurements}
-                       nextStepHandler={() => showActiveStep(activeStepIndex + 1)}
-                       onChange={setMeasurements}/>
+        onChange={setMeasurements}/>
   }, {
     dataDescription: '',
     selectedData:    '',
@@ -184,6 +179,7 @@ export default function OccurrenceForm() {
             {...step}
             className={className}
             key={step.stepTitle}
+            onContinueButtonClick={() => showActiveStep(activeStepIndex + 1)}
             onStepTitleClick={() => showActiveStep(index)}
             stepTitle={stepNumber + ' - ' + step.stepTitle}/>
         )

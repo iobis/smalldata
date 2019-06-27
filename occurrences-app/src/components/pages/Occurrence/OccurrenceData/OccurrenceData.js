@@ -1,18 +1,16 @@
-import CopyPreviousData from '../CopyPreviousData'
 import DatePicker from '../../../form/DatePicker'
 import InputRadioGroup from '../../../form/InputRadioGroup'
 import PropTypes from 'prop-types'
 import React from 'react'
 import ScientificNameInput from './ScientificNameInput'
 import { useTranslation } from 'react-i18next'
-import ContinueButton from '../ContinueButton'
 
 const basisOfRecordOptions = ['humanObservation', 'machineObservation', 'fossilSpecimen', 'livingSpecimen', 'preservedSpecimen']
 const lifestageOptions = ['larva', 'juvenile', 'adult', 'unspecified']
 const occurrenceStatusOptions = ['absent', 'present']
 const sexOptions = ['male', 'female', 'unspecified']
 
-export default function OccurrenceData({ onChange, data, nextStepHandler }) {
+export default function OccurrenceData({ onChange, data }) {
   const { t } = useTranslation()
   const { basisOfRecord, beginDate, endDate, lifestage, occurrenceStatus, scientificName, sex } = data
 
@@ -65,13 +63,6 @@ export default function OccurrenceData({ onChange, data, nextStepHandler }) {
         onChange={(value) => updateField('lifestage', value)}
         options={lifestageOptions}
         selectedValue={lifestage}/>
-      <div className="columns obis-spaced">
-        <CopyPreviousData/>
-        <ContinueButton
-          name="datasetContinue"
-          nextStepHandler={nextStepHandler}
-          value="occurrenceForm.occurrenceData.step.nextStep"/>
-      </div>
     </div>
   )
 }
@@ -88,6 +79,5 @@ export const occurrenceDataShape = {
 
 OccurrenceData.propTypes = {
   data:            PropTypes.shape(occurrenceDataShape).isRequired,
-  nextStepHandler: PropTypes.func.isRequired,
   onChange:        PropTypes.func.isRequired
 }

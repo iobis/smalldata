@@ -1,14 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import CopyPreviousData from '../CopyPreviousData'
 import Dropdown from '../../../form/Dropdown'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { addUuid, removeUuid } from '../../../../common/uuids'
 import { getGeneralMeasurements, getSpecificMeasurements } from '../../../../clients/measurments'
 import { useTranslation } from 'react-i18next'
-import ContinueButton from '../ContinueButton'
 
-export default function MeasurementOrFact({ data, onChange, nextStepHandler }) {
+export default function MeasurementOrFact({ data, onChange }) {
   const { t } = useTranslation()
   const generalMeasurements = getGeneralMeasurements()
   const specificMeasurements = getSpecificMeasurements()
@@ -112,21 +110,12 @@ export default function MeasurementOrFact({ data, onChange, nextStepHandler }) {
           </table>
         </div>
       </div>
-      <div className="columns obis-spaced">
-        <CopyPreviousData/>
-        <ContinueButton
-          name="measurementContinue"
-          nextStepHandler={nextStepHandler}
-          value="occurrenceForm.measurementOrFact.step.nextStep"
-          wrapperClassName=""/>
-      </div>
     </div>
   )
 }
 
 MeasurementOrFact.propTypes = {
   data:            PropTypes.array.isRequired,
-  nextStepHandler: PropTypes.func.isRequired,
   onChange:        PropTypes.func.isRequired
 }
 
