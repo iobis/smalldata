@@ -142,7 +142,7 @@ export default function OccurrenceForm() {
     children:
       <ObservationData
                        observationData={observationData}
-                       onChange={setObservationData}
+                       onChange={setObservationData}/>
   }, {
     dataDescription: t('occurrenceForm.measurementOrFact.step.dataDescription'),
     selectedData:    <MeasurementOrFactSummary data={measurements}/>,

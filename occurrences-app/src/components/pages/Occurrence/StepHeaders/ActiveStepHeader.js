@@ -24,7 +24,7 @@ export default function ActiveStepHeader({ children, onStepTitleClick, stepDescr
         }
         <ContinueButton
           name="locationContinue"
-          onContinueButtonClick={onContinueButtonClick}
+          onClick={onContinueButtonClick}
           value="occurrenceForm.locationData.step.nextStep"
           wrapperClassName=""/>
       </div>
