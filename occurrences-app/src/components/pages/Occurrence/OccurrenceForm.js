@@ -123,7 +123,7 @@ export default function OccurrenceForm() {
     children:
       <OccurrenceData
         data={occurrenceData}
-                       nextStepHandler={() => showActiveStep(activeStepIndex + 1)}
+        nextStepHandler={() => showActiveStep(activeStepIndex + 1)}
         onChange={setOccurrenceData}/>
   }, {
     dataDescription: t('occurrenceForm.locationData.step.dataDescription'),
@@ -134,18 +134,19 @@ export default function OccurrenceForm() {
     children:
       <LocationData
         data={locationData}
-                       nextStepHandler={() => showActiveStep(activeStepIndex + 1)}
+        nextStepHandler={() => showActiveStep(activeStepIndex + 1)}
         onChange={setLocationData}/>
   }, {
     dataDescription: t('occurrenceForm.observationData.step.dataDescription'),
     selectedData:    renderIdentifiedByLabel(observationData),
     stepDescription: t('occurrenceForm.observationData.step.stepDescription'),
     stepTitle:       t('occurrenceForm.observationData.step.stepTitle'),
-    children:        <ObservationData
-                       nextStepHandler={() => showActiveStep(activeStepIndex + 1)}
-                       observationData={observationData}
-                       onChange={setObservationData}
-                     />
+
+    children:
+      <ObservationData
+        nextStepHandler={() => showActiveStep(activeStepIndex + 1)}
+        observationData={observationData}
+        onChange={setObservationData}/>
   }, {
     dataDescription: t('occurrenceForm.measurementOrFact.step.dataDescription'),
     selectedData:    <MeasurementOrFactSummary data={measurements}/>,
@@ -155,8 +156,8 @@ export default function OccurrenceForm() {
     children:
       <MeasurementOrFact
         data={measurements}
-                       nextStepHandler={() => showActiveStep(activeStepIndex + 1)}
-                       onChange={setMeasurements}/>
+        nextStepHandler={() => showActiveStep(activeStepIndex + 1)}
+        onChange={setMeasurements}/>
   }, {
     dataDescription: '',
     selectedData:    '',
