@@ -500,35 +500,39 @@ exports[`MeasurementOrFact renders correctly 1`] = `
         </table>
       </div>
     </div>
-    <CopyPreviousData>
-      <div
-        className="columns"
+    <div
+      className="columns obis-spaced"
+    >
+      <CopyPreviousData>
+        <div
+          className="columns"
+        >
+          <div
+            className="copy-previous-data column is-narrow"
+          >
+            copy data from previous entry
+          </div>
+        </div>
+      </CopyPreviousData>
+      <ContinueButton
+        name="measurementContinue"
+        nextStepHandler={[MockFunction]}
+        value="occurrenceForm.measurementOrFact.step.nextStep"
+        wrapperClassName=""
       >
         <div
-          className="copy-previous-data column is-narrow"
+          className=""
         >
-          copy data from previous entry
+          <button
+            className="button is-info"
+            name="measurementContinue"
+            onClick={[MockFunction]}
+          >
+            occurrenceForm.measurementOrFact.step.nextStep
+          </button>
         </div>
-      </div>
-    </CopyPreviousData>
-    <ContinueButton
-      name="datasetContinue"
-      nextStepHandler={[MockFunction]}
-      value="occurrenceForm.measurementOrFact.step.nextStep"
-      wrapperClassName=""
-    >
-      <div
-        className=""
-      >
-        <button
-          className="button is-info"
-          name="datasetContinue"
-          onClick={[MockFunction]}
-        >
-          occurrenceForm.measurementOrFact.step.nextStep
-        </button>
-      </div>
-    </ContinueButton>
+      </ContinueButton>
+    </div>
   </div>
 </MeasurementOrFact>
 `;

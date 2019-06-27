@@ -334,24 +334,26 @@ exports[`OccurrenceData renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="columns"
+    className="columns obis-spaced"
   >
     <div
-      className="copy-previous-data column is-narrow"
+      className="columns"
     >
-      copy data from previous entry
+      <div
+        className="copy-previous-data column is-narrow"
+      >
+        copy data from previous entry
+      </div>
     </div>
-  </div>
-  <div
-    className=""
-  >
-    <button
-      className="button is-info"
-      name="datasetContinue"
-      onClick={[MockFunction]}
-    >
-      occurrenceForm.occurrenceData.step.nextStep
-    </button>
+    <div>
+      <button
+        className="button is-info"
+        name="datasetContinue"
+        onClick={[MockFunction]}
+      >
+        occurrenceForm.occurrenceData.step.nextStep
+      </button>
+    </div>
   </div>
 </div>
 `;

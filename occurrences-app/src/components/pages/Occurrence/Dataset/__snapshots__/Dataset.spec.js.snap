@@ -531,18 +531,18 @@ Sevastopol Bay is located in south western part of the Crimean peninsula, Ukrain
   <ContinueButton
     name="datasetContinue"
     nextStepHandler={[Function]}
-    value="Continue to Occurrence Data"
-    wrapperClassName=""
+    value="occurrenceForm.dataset.step.nextStep"
+    wrapperClassName="field column"
   >
     <div
-      className=""
+      className="field column"
     >
       <button
         className="button is-info"
         name="datasetContinue"
         onClick={[Function]}
       >
-        Continue to Occurrence Data
+        occurrenceForm.dataset.step.nextStep
       </button>
     </div>
   </ContinueButton>
