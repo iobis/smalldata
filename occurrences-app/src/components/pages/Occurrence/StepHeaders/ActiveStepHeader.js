@@ -37,12 +37,12 @@ export default function ActiveStepHeader({
 }
 
 ActiveStepHeader.propTypes = {
-  activeStepIndex:       PropTypes.number,
+  activeStepIndex:       PropTypes.number.isRequired,
   children:              PropTypes.node,
   nextStep:              PropTypes.string,
   onContinueButtonClick: PropTypes.func.isRequired,
   onStepTitleClick:      PropTypes.func.isRequired,
   stepDescription:       PropTypes.string.isRequired,
   stepTitle:             PropTypes.string.isRequired,
-  totalSteps:            PropTypes.number
+  totalSteps:            PropTypes.number.isRequired
 }

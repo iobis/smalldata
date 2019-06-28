@@ -7,16 +7,17 @@ export default function StepFooter({ activeStepIndex, onContinueButtonClick, nex
   return (
     <div className="step-footer columns">
       <CopyPreviousData visible={activeStepIndex !== 0}/>
-      <ContinueButton
-        name="locationContinue"
-        onClick={onContinueButtonClick}
-        value={nextStep}/>
+      {!!nextStep && (
+        <ContinueButton
+          name="locationContinue"
+          onClick={onContinueButtonClick}
+          value={nextStep}/>)}
     </div>
   )
 }
 
 StepFooter.propTypes = {
-  activeStepIndex:       PropTypes.number,
+  activeStepIndex:       PropTypes.number.isRequired,
   nextStep:              PropTypes.string,
   onContinueButtonClick: PropTypes.func.isRequired
 }

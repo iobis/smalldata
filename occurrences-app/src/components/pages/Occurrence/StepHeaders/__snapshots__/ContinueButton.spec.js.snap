@@ -7,7 +7,7 @@ exports[`ContinueButton renders correctly 1`] = `
   value="Continue"
 >
   <button
-    className="button is-info"
+    className="continue-button button is-info"
     name="continue"
     onClick={[MockFunction]}
   >

@@ -89,7 +89,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
               value="occurrenceForm.occurrenceData.step.stepTitle"
             >
               <button
-                className="button is-info"
+                className="continue-button button is-info"
                 name="locationContinue"
                 onClick={[Function]}
               >
@@ -1122,7 +1122,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
               value="occurrenceForm.measurementOrFact.step.stepTitle"
             >
               <button
-                className="button is-info"
+                className="continue-button button is-info"
                 name="locationContinue"
                 onClick={[Function]}
               >
@@ -3222,7 +3222,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
               value="occurrenceForm.darwinCoreFields.step.stepTitle"
             >
               <button
-                className="button is-info"
+                className="continue-button button is-info"
                 name="locationContinue"
                 onClick={[Function]}
               >

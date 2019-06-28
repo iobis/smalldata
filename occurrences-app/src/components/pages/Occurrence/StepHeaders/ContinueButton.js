@@ -6,11 +6,11 @@ export default function ContinueButton({ name, value, onClick }) {
   const { t } = useTranslation()
   const label = t('occurrenceForm.stepContinue') + ' ' + value.toLowerCase()
 
-  return <button className="button is-info" name={name} onClick={onClick}>{label}</button>
+  return <button className="continue-button button is-info" name={name} onClick={onClick}>{label}</button>
 }
 
 ContinueButton.propTypes = {
-  name:    PropTypes.string,
+  name:    PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   value:   PropTypes.string.isRequired
 }
