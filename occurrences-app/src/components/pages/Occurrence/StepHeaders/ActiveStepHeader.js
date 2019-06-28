@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import StepFooter from './StepFooter'
 import StepHeader from './StepHeader'
-import CopyPreviousData from '../CopyPreviousData'
-import ContinueButton from '../ContinueButton'
 
 export default function ActiveStepHeader({
   activeStepIndex,
@@ -46,22 +45,4 @@ ActiveStepHeader.propTypes = {
   stepDescription:       PropTypes.string.isRequired,
   stepTitle:             PropTypes.string.isRequired,
   totalSteps:            PropTypes.number
-}
-
-function StepFooter({ activeStepIndex, onContinueButtonClick, nextStep }) {
-  return (
-    <div className="step-footer columns">
-      <CopyPreviousData visible={activeStepIndex !== 0}/>
-      <ContinueButton
-        name="locationContinue"
-        onClick={onContinueButtonClick}
-        value={nextStep}/>
-    </div>
-  )
-}
-
-StepFooter.propTypes = {
-  activeStepIndex:       PropTypes.number,
-  nextStep:              PropTypes.string,
-  onContinueButtonClick: PropTypes.func.isRequired
 }
