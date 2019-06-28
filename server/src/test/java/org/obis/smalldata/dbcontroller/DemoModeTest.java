@@ -46,9 +46,8 @@ public class DemoModeTest {
 
   @Test
   @DisplayName("read default mock data")
-  @Timeout(value = 6, timeUnit = TimeUnit.SECONDS)
+  @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
   void findData(VertxTestContext testContext) throws InterruptedException {
-    TimeUnit.MILLISECONDS.sleep(1000);
     mongoClient.find(
       Collections.DATASETS.dbName(),
       new JsonObject().put("meta.type", "event"),
