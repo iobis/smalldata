@@ -1,4 +1,3 @@
-import CopyPreviousData from '../CopyPreviousData'
 import InputNumber from '../../../form/InputNumber'
 import InputText from '../../../form/InputText'
 import LocationPickerModal from './LocationPickerModal'
@@ -88,7 +87,6 @@ export default function LocationData({ data, onChange }) {
             value={data.verbatimDepth}/>
         </div>
       </div>
-      <CopyPreviousData/>
     </div>
   )
 }

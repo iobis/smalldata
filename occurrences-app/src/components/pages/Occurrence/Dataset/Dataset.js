@@ -5,7 +5,7 @@ import { datasetTitleOf } from '../../../../clients/SmalldataClient'
 
 export default function Dataset({ datasets, selectedDataset, onChange }) {
   return (
-    <div className="dataset columns is-fluid">
+    <div className="dataset is-fluid">
       <table className="table is-striped is-fullwidth">
         <tbody>
           {datasets.map(dataset => (

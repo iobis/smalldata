@@ -1,4 +1,3 @@
-import CopyPreviousData from '../CopyPreviousData'
 import InputMultipleText from '../../../form/InputMultipleText'
 import InputText from '../../../form/InputText'
 import PropTypes from 'prop-types'
@@ -76,7 +75,6 @@ export default function ObservationData({ onChange, observationData }) {
           onChange={(value) => updateField('references', value)}
           values={observationData.references}/>
       </div>
-      <CopyPreviousData/>
     </div>
   )
 }

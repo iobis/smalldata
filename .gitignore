@@ -57,3 +57,4 @@ server/src/main/resources/webroot
 
 # auto-generated files
 occurrences-app/src/index.css
+/.idea/watcherTasks.xml

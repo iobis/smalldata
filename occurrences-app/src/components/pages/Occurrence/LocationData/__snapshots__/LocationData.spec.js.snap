@@ -293,17 +293,6 @@ exports[`LocationData renders correctly 1`] = `
         </InputText>
       </div>
     </div>
-    <CopyPreviousData>
-      <div
-        className="columns"
-      >
-        <div
-          className="copy-previous-data column is-narrow"
-        >
-          copy data from previous entry
-        </div>
-      </div>
-    </CopyPreviousData>
   </div>
 </LocationData>
 `;

@@ -333,14 +333,5 @@ exports[`OccurrenceData renders correctly 1`] = `
       </label>
     </div>
   </div>
-  <div
-    className="columns"
-  >
-    <div
-      className="copy-previous-data column is-narrow"
-    >
-      copy data from previous entry
-    </div>
-  </div>
 </div>
 `;

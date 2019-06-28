@@ -1,4 +1,3 @@
-import CopyPreviousData from '../CopyPreviousData'
 import DatePicker from '../../../form/DatePicker'
 import InputRadioGroup from '../../../form/InputRadioGroup'
 import PropTypes from 'prop-types'
@@ -64,7 +63,6 @@ export default function OccurrenceData({ onChange, data }) {
         onChange={(value) => updateField('lifestage', value)}
         options={lifestageOptions}
         selectedValue={lifestage}/>
-      <CopyPreviousData/>
     </div>
   )
 }
