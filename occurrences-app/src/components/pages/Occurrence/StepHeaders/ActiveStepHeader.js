@@ -31,7 +31,8 @@ export default function ActiveStepHeader({
         <StepFooter
           activeStepIndex={activeStepIndex}
           nextStep={nextStep}
-          onContinueButtonClick={onContinueButtonClick}/>)}
+          onContinueButtonClick={onContinueButtonClick}/>
+      )}
     </>
   )
 }
