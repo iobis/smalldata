@@ -4,6 +4,7 @@ import React, { createContext, useState } from 'react'
 export const AuthContext = createContext(null)
 
 export function AuthProvider({ children }) {
+  const userRef = 'ovZTtaOJZ98xDDY'
   const [loggedIn, setLoggedIn] = useState(false)
   const [claims, setClaims] = useState({})
 
@@ -28,7 +29,7 @@ export function AuthProvider({ children }) {
   }
 
   return (
-    <AuthContext.Provider value={{ claims, loggedIn, setLoggedIn, logIn, logOut, redirectToOceanExpert }}>
+    <AuthContext.Provider value={{ userRef, claims, loggedIn, setLoggedIn, logIn, logOut, redirectToOceanExpert }}>
       {children}
     </AuthContext.Provider>
   )

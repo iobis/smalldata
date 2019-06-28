@@ -1,4 +1,4 @@
-export const RESPONSE_DEFAULT = [{
+export const DATASTES_RESPONSE = [{
   'meta':              { 'type': 'event', 'dwcTables': { 'core': 'event', 'extensions': ['emof', 'occurrence'] } },
   'title':             {
     'language': 'en',
@@ -137,3 +137,76 @@ export const RESPONSE_DEFAULT = [{
   }, { 'keywords': ['Benthic biomass', 'Benthos', 'Data', 'Marine Genomics'], 'keywordThesaurus': 'ASFA' }],
   'ref':               'NnqVLwIyPn-nRkc'
 }]
+
+export const OCCURRENCES_RESPONSE = [
+  {
+    'dwcaId':         'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796',
+    'dataset':        'ntDOtUc7XsRrIus',
+    'addedAtInstant': '2019-06-20T09:42:43.788674Z',
+    'dwcRecords':     {
+      'emof':       [
+        {
+          'id':   'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796',
+          'tdwg': {}
+        },
+        {
+          'id':   'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796',
+          'tdwg': {}
+        }
+      ],
+      'core':       'occurrence',
+      'occurrence': [
+        {
+          'id':   'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796',
+          'tdwg': {
+            'scientificName': 'Nereis succinea',
+            'eventDate':      '1935-10-02'
+          }
+        }
+      ]
+    }
+  },
+  {
+    'dwcaId':         'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158',
+    'dataset':        'ntDOtUc7XsRrIus',
+    'addedAtInstant': null,
+    'dwcRecords':     {
+      'emof':       [
+        {
+          'id':   'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158',
+          'tdwg': {}
+        },
+        {
+          'id':   'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158',
+          'tdwg': {}
+        }
+      ],
+      'core':       'occurrence',
+      'occurrence': [
+        {
+          'id':   'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158',
+          'tdwg': {
+            'scientificName': 'Brachynotus lucasi',
+            'eventDate':      '1971'
+          }
+        }
+      ]
+    }
+  },
+  {
+    'dwcaId':         'DeepSea_Antipatharia_35',
+    'dataset':        'PoJnGNMaxsupE4w',
+    'addedAtInstant': null,
+    'dwcRecords':     {
+      'core':       'occurrence',
+      'occurrence': [
+        {
+          'id':   'DeepSea_Antipatharia_35',
+          'tdwg': {
+            'scientificName': 'Abyssopathes lyra'
+          }
+        }
+      ]
+    }
+  }
+]

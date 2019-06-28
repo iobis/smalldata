@@ -135,7 +135,8 @@ public class DwcaRecordsHandler {
   }
 
   public static void getForUser(RoutingContext context) {
-    var projection = new JsonObject(context.queryParam("projectFields").stream()
+    var projection = new JsonObject(context.queryParam("projectField").stream()
+      .map(field -> "dwcRecord." + field)
       .map(field -> new AbstractMap.SimpleEntry<String, Object>(field, true))
       .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue)));
     var userRef = context.request().getParam(KEY_USER_REF);

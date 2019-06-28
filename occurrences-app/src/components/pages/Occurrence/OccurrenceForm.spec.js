@@ -2,7 +2,8 @@ import OccurrenceForm from './OccurrenceForm'
 import React from 'react'
 import { act } from 'react-dom/test-utils'
 import { mount } from 'enzyme'
-import { RESPONSE_DEFAULT } from '../../../clients/SmalldataClient.mock'
+import { DATASTES_RESPONSE } from '../../../clients/SmalldataClient.mock'
+import { AuthProvider } from '@smalldata/dwca-lib'
 
 describe('OccurrenceForm', () => {
   const originalError = console.error
@@ -16,7 +17,7 @@ describe('OccurrenceForm', () => {
     jest.spyOn(Date, 'now').mockImplementation(() => new Date(Date.UTC(2019, 3, 29)).valueOf())
     global.fetch = jest.fn().mockImplementation(() =>
       new Promise((resolve) => {
-        resolve({ json: () => RESPONSE_DEFAULT })
+        resolve({ json: () => DATASTES_RESPONSE })
       })
     )
   })
@@ -28,38 +29,29 @@ describe('OccurrenceForm', () => {
 
   it('renders correctly', () => {
     act(() => {
-      wrapper = mount(<OccurrenceForm/>)
+      wrapper = mount(<AuthProvider><OccurrenceForm/></AuthProvider>)
     })
     expect(global.fetch).toHaveBeenCalledTimes(1)
     expect(global.fetch).toHaveBeenCalledWith('/api/datasets')
     expect(wrapper).toMatchSnapshot()
 
-    wrapper.find('.step-3 .step-header').simulate('click')
-    wrapper.find('.decimal-latitude input').simulate('change', { target: { value: '0.12345' } })
-    wrapper.find('.decimal-longitude input').simulate('change', { target: { value: '-0.54321' } })
+    addLocation()
     wrapper.find('.step-4 .step-header').simulate('click')
     expect(wrapper).toMatchSnapshot()
 
-    wrapper.find('.identified-by input').simulate('change', { target: { value: 'Indiana Jones' } })
-    wrapper.find('.institution-code input').simulate('change', { target: { value: 'institution code' } })
-    wrapper.find('.identified-by input').simulate('keydown', { key: 'Enter' })
+    addObservationData()
     wrapper.find('.step-5 .step-header').simulate('click')
     expect(wrapper).toMatchSnapshot()
 
-    wrapper.find('.general .measurement-row .input').at(0).simulate('change', { target: { value: '10' } })
-    wrapper.find('.general .measurement-row .button.add').at(0).simulate('click')
+    addMeasurement('10')
     wrapper.find('.step-6 .step-header').simulate('click')
     expect(wrapper).toMatchSnapshot()
 
-    wrapper.find('.step-5 .step-header').simulate('click')
-    wrapper.find('.general .measurement-row .input').at(0).simulate('change', { target: { value: '20' } })
-    wrapper.find('.general .measurement-row .button.add').at(0).simulate('click')
+    addMeasurement('20')
     wrapper.find('.step-6 .step-header').simulate('click')
     expect(wrapper).toMatchSnapshot()
 
-    wrapper.find('.step-5 .step-header').simulate('click')
-    wrapper.find('.general .measurement-row .input').at(0).simulate('change', { target: { value: '20' } })
-    wrapper.find('.general .measurement-row .button.add').at(0).simulate('click')
+    addMeasurement('20')
     wrapper.find('.step-6 .step-header').simulate('click')
     expect(wrapper).toMatchSnapshot()
 
@@ -79,6 +71,25 @@ describe('OccurrenceForm', () => {
     wrapper.find('.review-and-submit-button').simulate('click')
     expect(wrapper).toMatchSnapshot()
   })
+
+  function addLocation() {
+    wrapper.find('.step-3 .step-header').simulate('click')
+    wrapper.find('.decimal-latitude input').simulate('change', { target: { value: '0.12345' } })
+    wrapper.find('.decimal-longitude input').simulate('change', { target: { value: '-0.54321' } })
+  }
+
+  function addObservationData() {
+    wrapper.find('.step-4 .step-header').simulate('click')
+    wrapper.find('.identified-by input').simulate('change', { target: { value: 'Indiana Jones' } })
+    wrapper.find('.institution-code input').simulate('change', { target: { value: 'institution code' } })
+    wrapper.find('.identified-by input').simulate('keydown', { key: 'Enter' })
+  }
+
+  function addMeasurement(value) {
+    wrapper.find('.step-5 .step-header').simulate('click')
+    wrapper.find('.general .measurement-row .input').at(0).simulate('change', { target: { value: value } })
+    wrapper.find('.general .measurement-row .button.add').at(0).simulate('click')
+  }
 
   function addDarwinCoreField(wrapper, name, value) {
     wrapper.find('.darwin-core-fields .field-name input').simulate('change', { target: { value: name } })

@@ -5,22 +5,32 @@ import FinalSummary from './FinalSummary'
 export default [{
   component: FinalSummary,
   name:      'default',
+  url:       '/input-data/new',
   props:     {
     ...getDefaultProps()
   }
 }, {
   component: FinalSummary,
   name:      'with error',
+  url:       '/input-data/new',
   props:     {
     ...getDefaultProps(),
     errorVisible: true,
     errorMessage: 'error message'
   }
+}, {
+  component: FinalSummary,
+  name:      'successfully submitted',
+  url:       '/input-data/new',
+  props:     {
+    ...getDefaultProps(),
+    successVisible: true
+  }
 }]
 
 export function getDefaultProps() {
   return {
-    dataset:          SmalldataClientFixture.RESPONSE_DEFAULT.map(SmalldataClient.renameRefToId)[0],
+    dataset:          SmalldataClientFixture.DATASTES_RESPONSE.map(SmalldataClient.renameRefToId)[0],
     occurrenceData:   {
       basisOfRecord:    'humanObservation',
       beginDate:        Date.UTC(2019, 3, 29),
@@ -60,9 +70,10 @@ export function getDefaultProps() {
       { name: 'name-2', value: 'value-2' },
       { name: 'name-3', value: 'value-3' }
     ],
+    errorVisible:     false,
     onChangeClick:    console.log,
-    onSubmitClick:    console.log,
     onErrorClose:     console.log,
-    errorVisible:     false
+    onSubmitClick:    console.log,
+    successVisible:   false
   }
 }
