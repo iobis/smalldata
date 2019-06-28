@@ -14,7 +14,7 @@ export default function ActiveStepHeader({
   stepTitle,
   totalSteps
 }) {
-  const wrapperClassname = (activeStepIndex === 0) ? 'column dataset-continue-button' : ''
+  const footerVisible = activeStepIndex < totalSteps
   return (
     <>
       <StepHeader
@@ -27,15 +27,11 @@ export default function ActiveStepHeader({
         stepTitle={stepTitle}>
         {children}
       </StepHeader>
-      {activeStepIndex < totalSteps && (
-        <div className="step-footer columns">
-          {activeStepIndex > 0 && <CopyPreviousData/>}
-          <ContinueButton
-            name="locationContinue"
-            onClick={onContinueButtonClick}
-            value={nextStep}
-            wrapperClassName={wrapperClassname}/>
-        </div>)}
+      {footerVisible && (
+        <StepFooter
+          activeStepIndex={activeStepIndex}
+          nextStep={nextStep}
+          onContinueButtonClick={onContinueButtonClick}/>)}
     </>
   )
 }
@@ -49,4 +45,22 @@ ActiveStepHeader.propTypes = {
   stepDescription:       PropTypes.string.isRequired,
   stepTitle:             PropTypes.string.isRequired,
   totalSteps:            PropTypes.number
+}
+
+function StepFooter({ activeStepIndex, onContinueButtonClick, nextStep }) {
+  return (
+    <div className="step-footer columns">
+      <CopyPreviousData visible={activeStepIndex !== 0}/>
+      <ContinueButton
+        name="locationContinue"
+        onClick={onContinueButtonClick}
+        value={nextStep}/>
+    </div>
+  )
+}
+
+StepFooter.propTypes = {
+  activeStepIndex:       PropTypes.number,
+  nextStep:              PropTypes.string,
+  onContinueButtonClick: PropTypes.func.isRequired
 }

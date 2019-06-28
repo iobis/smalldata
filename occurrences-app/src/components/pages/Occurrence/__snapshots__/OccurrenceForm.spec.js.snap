@@ -64,29 +64,43 @@ exports[`OccurrenceForm renders correctly 1`] = `
             </div>
           </div>
         </StepHeader>
-        <div
-          className="step-footer columns"
+        <StepFooter
+          activeStepIndex={0}
+          nextStep="occurrenceForm.dataset.step.nextStep"
+          onContinueButtonClick={[Function]}
         >
-          <ContinueButton
-            name="locationContinue"
-            onClick={[Function]}
-            value="occurrenceForm.dataset.step.nextStep"
-            wrapperClassName="column dataset-continue-button"
+          <div
+            className="step-footer columns"
           >
-            <div
-              className="column dataset-continue-button"
+            <CopyPreviousData
+              visible={false}
             >
-              <button
-                className="button is-info"
-                name="locationContinue"
-                onClick={[Function]}
+              <div
+                className="columns"
               >
-                occurrenceForm.stepContinue
-                occurrenceForm.dataset.step.nextStep
-              </button>
-            </div>
-          </ContinueButton>
-        </div>
+                <div
+                  className="copy-previous-data column is-narrow"
+                />
+              </div>
+            </CopyPreviousData>
+            <ContinueButton
+              name="locationContinue"
+              onClick={[Function]}
+              value="occurrenceForm.dataset.step.nextStep"
+            >
+              <div>
+                <button
+                  className="button is-info"
+                  name="locationContinue"
+                  onClick={[Function]}
+                >
+                  occurrenceForm.stepContinue
+                  occurrenceForm.dataset.step.nextStep
+                </button>
+              </div>
+            </ContinueButton>
+          </div>
+        </StepFooter>
       </ActiveStepHeader>
       <NotConfirmedStepHeader
         activeStepIndex={0}
@@ -1084,40 +1098,45 @@ exports[`OccurrenceForm renders correctly 2`] = `
             </div>
           </ObservationData>
         </StepHeader>
-        <div
-          className="step-footer columns"
+        <StepFooter
+          activeStepIndex={3}
+          nextStep="occurrenceForm.observationData.step.nextStep"
+          onContinueButtonClick={[Function]}
         >
-          <CopyPreviousData>
-            <div
-              className="columns"
+          <div
+            className="step-footer columns"
+          >
+            <CopyPreviousData
+              visible={true}
             >
               <div
-                className="copy-previous-data column is-narrow"
+                className="columns"
               >
-                copy data from previous entry
+                <div
+                  className="copy-previous-data column is-narrow"
+                >
+                  copy data from previous entry
+                </div>
               </div>
-            </div>
-          </CopyPreviousData>
-          <ContinueButton
-            name="locationContinue"
-            onClick={[Function]}
-            value="occurrenceForm.observationData.step.nextStep"
-            wrapperClassName=""
-          >
-            <div
-              className=""
+            </CopyPreviousData>
+            <ContinueButton
+              name="locationContinue"
+              onClick={[Function]}
+              value="occurrenceForm.observationData.step.nextStep"
             >
-              <button
-                className="button is-info"
-                name="locationContinue"
-                onClick={[Function]}
-              >
-                occurrenceForm.stepContinue
-                occurrenceForm.observationData.step.nextStep
-              </button>
-            </div>
-          </ContinueButton>
-        </div>
+              <div>
+                <button
+                  className="button is-info"
+                  name="locationContinue"
+                  onClick={[Function]}
+                >
+                  occurrenceForm.stepContinue
+                  occurrenceForm.observationData.step.nextStep
+                </button>
+              </div>
+            </ContinueButton>
+          </div>
+        </StepFooter>
       </ActiveStepHeader>
       <NotConfirmedStepHeader
         activeStepIndex={3}
@@ -3182,40 +3201,45 @@ exports[`OccurrenceForm renders correctly 3`] = `
             </div>
           </MeasurementOrFact>
         </StepHeader>
-        <div
-          className="step-footer columns"
+        <StepFooter
+          activeStepIndex={4}
+          nextStep="occurrenceForm.measurementOrFact.step.nextStep"
+          onContinueButtonClick={[Function]}
         >
-          <CopyPreviousData>
-            <div
-              className="columns"
+          <div
+            className="step-footer columns"
+          >
+            <CopyPreviousData
+              visible={true}
             >
               <div
-                className="copy-previous-data column is-narrow"
+                className="columns"
               >
-                copy data from previous entry
+                <div
+                  className="copy-previous-data column is-narrow"
+                >
+                  copy data from previous entry
+                </div>
               </div>
-            </div>
-          </CopyPreviousData>
-          <ContinueButton
-            name="locationContinue"
-            onClick={[Function]}
-            value="occurrenceForm.measurementOrFact.step.nextStep"
-            wrapperClassName=""
-          >
-            <div
-              className=""
+            </CopyPreviousData>
+            <ContinueButton
+              name="locationContinue"
+              onClick={[Function]}
+              value="occurrenceForm.measurementOrFact.step.nextStep"
             >
-              <button
-                className="button is-info"
-                name="locationContinue"
-                onClick={[Function]}
-              >
-                occurrenceForm.stepContinue
-                occurrenceForm.measurementOrFact.step.nextStep
-              </button>
-            </div>
-          </ContinueButton>
-        </div>
+              <div>
+                <button
+                  className="button is-info"
+                  name="locationContinue"
+                  onClick={[Function]}
+                >
+                  occurrenceForm.stepContinue
+                  occurrenceForm.measurementOrFact.step.nextStep
+                </button>
+              </div>
+            </ContinueButton>
+          </div>
+        </StepFooter>
       </ActiveStepHeader>
       <NotConfirmedStepHeader
         activeStepIndex={4}

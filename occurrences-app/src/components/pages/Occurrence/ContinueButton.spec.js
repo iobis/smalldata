@@ -12,11 +12,6 @@ describe('ContinueButton', () => {
     expect(wrapper.find('button').text()).toBe('occurrenceForm.stepContinueGo to next page')
   })
 
-  it('applies given CSS classes to wrapper correctly', () => {
-    const wrapper = mount(createComponent({ wrapperClassName: 'my-own-class' }))
-    expect(wrapper.find('div').at(0).hasClass('my-own-class')).toBe(true)
-  })
-
   it('calls onClick handler', () => {
     const onClick = jest.fn()
     const wrapper = mount(createComponent({ onClick: onClick }))
@@ -28,10 +23,9 @@ describe('ContinueButton', () => {
 
 function createComponent(props) {
   const defaultProps = {
-    name:             'continue',
-    onClick:          jest.fn(),
-    value:            'Continue',
-    wrapperClassName: 'columns'
+    name:    'continue',
+    onClick: jest.fn(),
+    value:   'Continue'
   }
   return <ContinueButton {...defaultProps} {...props}/>
 }

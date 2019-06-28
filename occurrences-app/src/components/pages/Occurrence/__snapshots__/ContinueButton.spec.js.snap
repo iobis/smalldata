@@ -5,11 +5,8 @@ exports[`ContinueButton renders correctly 1`] = `
   name="continue"
   onClick={[MockFunction]}
   value="Continue"
-  wrapperClassName="columns"
 >
-  <div
-    className="columns"
-  >
+  <div>
     <button
       className="button is-info"
       name="continue"
