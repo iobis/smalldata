@@ -6,15 +6,13 @@ exports[`ContinueButton renders correctly 1`] = `
   onClick={[MockFunction]}
   value="Continue"
 >
-  <div>
-    <button
-      className="button is-info"
-      name="continue"
-      onClick={[MockFunction]}
-    >
-      occurrenceForm.stepContinue
-      Continue
-    </button>
-  </div>
+  <button
+    className="button is-info"
+    name="continue"
+    onClick={[MockFunction]}
+  >
+    occurrenceForm.stepContinue
+    Continue
+  </button>
 </ContinueButton>
 `;

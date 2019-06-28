@@ -6,14 +6,12 @@ export default function ContinueButton({ name, value, onClick }) {
   const { t } = useTranslation()
 
   return (
-    <div>
-      <button
-        className="button is-info"
-        name={name}
-        onClick={onClick}>
-        {t('occurrenceForm.stepContinue')}{value}
-      </button>
-    </div>
+    <button
+      className="button is-info"
+      name={name}
+      onClick={onClick}>
+      {t('occurrenceForm.stepContinue')}{value}
+    </button>
   )
 }
 

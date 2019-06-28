@@ -88,16 +88,14 @@ exports[`OccurrenceForm renders correctly 1`] = `
               onClick={[Function]}
               value="occurrenceForm.dataset.step.nextStep"
             >
-              <div>
-                <button
-                  className="button is-info"
-                  name="locationContinue"
-                  onClick={[Function]}
-                >
-                  occurrenceForm.stepContinue
-                  occurrenceForm.dataset.step.nextStep
-                </button>
-              </div>
+              <button
+                className="button is-info"
+                name="locationContinue"
+                onClick={[Function]}
+              >
+                occurrenceForm.stepContinue
+                occurrenceForm.dataset.step.nextStep
+              </button>
             </ContinueButton>
           </div>
         </StepFooter>
@@ -1124,16 +1122,14 @@ exports[`OccurrenceForm renders correctly 2`] = `
               onClick={[Function]}
               value="occurrenceForm.observationData.step.nextStep"
             >
-              <div>
-                <button
-                  className="button is-info"
-                  name="locationContinue"
-                  onClick={[Function]}
-                >
-                  occurrenceForm.stepContinue
-                  occurrenceForm.observationData.step.nextStep
-                </button>
-              </div>
+              <button
+                className="button is-info"
+                name="locationContinue"
+                onClick={[Function]}
+              >
+                occurrenceForm.stepContinue
+                occurrenceForm.observationData.step.nextStep
+              </button>
             </ContinueButton>
           </div>
         </StepFooter>
@@ -3227,16 +3223,14 @@ exports[`OccurrenceForm renders correctly 3`] = `
               onClick={[Function]}
               value="occurrenceForm.measurementOrFact.step.nextStep"
             >
-              <div>
-                <button
-                  className="button is-info"
-                  name="locationContinue"
-                  onClick={[Function]}
-                >
-                  occurrenceForm.stepContinue
-                  occurrenceForm.measurementOrFact.step.nextStep
-                </button>
-              </div>
+              <button
+                className="button is-info"
+                name="locationContinue"
+                onClick={[Function]}
+              >
+                occurrenceForm.stepContinue
+                occurrenceForm.measurementOrFact.step.nextStep
+              </button>
             </ContinueButton>
           </div>
         </StepFooter>
