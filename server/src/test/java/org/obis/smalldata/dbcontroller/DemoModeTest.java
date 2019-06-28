@@ -52,7 +52,11 @@ public class DemoModeTest {
       Collections.DATASETS.dbName(),
       new JsonObject().put("meta.type", "event"),
       ar -> {
-        assertThat(ar.result()).hasSize(1);
+        try {
+          assertThat(ar.result()).hasSize(1);
+        } catch (AssertionError e) {
+          testContext.failNow(e);
+        }
         testContext.completeNow();
       });
   }
