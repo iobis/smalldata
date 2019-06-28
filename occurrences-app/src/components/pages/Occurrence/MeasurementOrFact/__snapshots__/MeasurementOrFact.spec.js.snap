@@ -3,7 +3,6 @@
 exports[`MeasurementOrFact renders correctly 1`] = `
 <MeasurementOrFact
   data={Array []}
-  nextStepHandler={[MockFunction]}
   onChange={[MockFunction]}
 >
   <div

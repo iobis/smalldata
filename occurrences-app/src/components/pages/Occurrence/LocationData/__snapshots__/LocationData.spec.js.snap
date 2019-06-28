@@ -13,7 +13,6 @@ exports[`LocationData renders correctly 1`] = `
       "verbatimDepth": "",
     }
   }
-  nextStepHandler={[MockFunction]}
   onChange={[MockFunction]}
 >
   <div

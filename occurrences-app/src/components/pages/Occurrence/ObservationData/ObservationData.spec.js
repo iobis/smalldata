@@ -63,8 +63,7 @@ function createComponent(props) {
   }
   const defaultProps = {
     observationData,
-    nextStepHandler: jest.fn(),
-    onChange:        jest.fn()
+    onChange: jest.fn()
   }
   return <ObservationData {...defaultProps} {...props}/>
 }
