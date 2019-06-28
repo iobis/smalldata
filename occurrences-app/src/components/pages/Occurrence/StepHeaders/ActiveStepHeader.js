@@ -14,7 +14,7 @@ export default function ActiveStepHeader({
   stepTitle,
   totalSteps
 }) {
-  const wrapperClassname = (activeStepIndex === 0) ? 'column datasetContinueButton' : ''
+  const wrapperClassname = (activeStepIndex === 0) ? 'column dataset-continue-button' : ''
   return (
     <>
       <StepHeader

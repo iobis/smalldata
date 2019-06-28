@@ -71,10 +71,10 @@ exports[`OccurrenceForm renders correctly 1`] = `
             name="locationContinue"
             onClick={[Function]}
             value="occurrenceForm.dataset.step.nextStep"
-            wrapperClassName="column datasetContinueButton"
+            wrapperClassName="column dataset-continue-button"
           >
             <div
-              className="column datasetContinueButton"
+              className="column dataset-continue-button"
             >
               <button
                 className="button is-info"
