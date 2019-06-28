@@ -133,8 +133,7 @@ public class DbInitializer {
       Collections.DATASETS.dbName(), "demodata/datasets.json",
       Collections.DATASETRECORDS.dbName(), "demodata/dwcarecords.json");
     var futures = collections.keySet().stream()
-      .collect(Collectors.toMap(Function.identity(),
-        dbName -> Future.<Boolean>future()));
+      .collect(Collectors.toMap(Function.identity(), dbName -> Future.<Boolean>future()));
     collections.entrySet().stream()
       .map(entry -> Map.entry(entry.getKey(), IoFile.loadFromResources(entry.getValue())))
       .map(entry -> Map.entry(entry.getKey(), BulkOperationUtil.createInsertsFromJson(entry.getValue())))
@@ -145,6 +144,7 @@ public class DbInitializer {
           warn("write result: {} from file {}", arClient.result().toJson(), entry.getKey());
           futures.get(entry.getKey()).complete();
         }));
-    CompositeFuture.all(new ArrayList<>(futures.values())).setHandler(ar -> mockDataAdded.complete(ar.succeeded()));
+    CompositeFuture.all(new ArrayList<>(futures.values()))
+      .setHandler(ar -> mockDataAdded.complete(ar.succeeded()));
   }
 }
