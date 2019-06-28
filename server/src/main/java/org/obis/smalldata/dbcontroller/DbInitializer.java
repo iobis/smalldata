@@ -43,11 +43,7 @@ public class DbInitializer {
       } else {
         warn("Found not all collections {} - No clue what to do now", collections);
       }
-      if (arCollections.succeeded()) {
-        setup.complete(true);
-      } else {
-        setup.complete(false);
-      }
+      setup.complete(arCollections.succeeded());
     });
     return setup;
   }
@@ -82,11 +78,7 @@ public class DbInitializer {
       new UpdateOptions().setUpsert(false).setMulti(true),
       ar -> {
         info("Initialized user bulkiness!");
-        if (ar.succeeded()) {
-          initialized.complete(true);
-        } else {
-          initialized.complete(false);
-        }
+        initialized.complete(ar.succeeded());
       });
     return initialized;
   }
