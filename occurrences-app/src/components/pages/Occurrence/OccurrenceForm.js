@@ -104,7 +104,7 @@ export default function OccurrenceForm() {
 
   const steps = [{
     dataDescription: t('occurrenceForm.dataset.step.dataDescription'),
-    nextStep:        t('occurrenceForm.dataset.step.nextStep'),
+    nextStep:        t('occurrenceForm.occurrenceData.step.stepTitle'),
     selectedData:    datasetTitleOf(dataset),
     stepDescription: t('occurrenceForm.dataset.step.stepDescription'),
     stepTitle:       t('occurrenceForm.dataset.step.stepTitle'),
@@ -116,7 +116,7 @@ export default function OccurrenceForm() {
         selectedDataset={dataset}/>)
   }, {
     dataDescription: t('occurrenceForm.occurrenceData.step.dataDescription'),
-    nextStep:        t('occurrenceForm.occurrenceData.step.nextStep'),
+    nextStep:        t('occurrenceForm.locationData.step.stepTitle'),
     selectedData:    <OccurrenceDataSummary {...occurrenceData}/>,
     stepDescription: t('occurrenceForm.occurrenceData.step.stepDescription'),
     stepTitle:       t('occurrenceForm.occurrenceData.step.stepTitle'),
@@ -127,7 +127,7 @@ export default function OccurrenceForm() {
         onChange={setOccurrenceData}/>
   }, {
     dataDescription: t('occurrenceForm.locationData.step.dataDescription'),
-    nextStep:        t('occurrenceForm.locationData.step.nextStep'),
+    nextStep:        t('occurrenceForm.observationData.step.stepTitle'),
     selectedData:    <SelectedLocation {...locationData}/>,
     stepDescription: t('occurrenceForm.locationData.step.stepDescription'),
     stepTitle:       t('occurrenceForm.locationData.step.stepTitle'),
@@ -138,7 +138,7 @@ export default function OccurrenceForm() {
         onChange={setLocationData}/>
   }, {
     dataDescription: t('occurrenceForm.observationData.step.dataDescription'),
-    nextStep:        t('occurrenceForm.observationData.step.nextStep'),
+    nextStep:        t('occurrenceForm.measurementOrFact.step.stepTitle'),
     selectedData:    renderIdentifiedByLabel(observationData),
     stepDescription: t('occurrenceForm.observationData.step.stepDescription'),
     stepTitle:       t('occurrenceForm.observationData.step.stepTitle'),
@@ -149,7 +149,7 @@ export default function OccurrenceForm() {
         onChange={setObservationData}/>
   }, {
     dataDescription: t('occurrenceForm.measurementOrFact.step.dataDescription'),
-    nextStep:        t('occurrenceForm.measurementOrFact.step.nextStep'),
+    nextStep:        t('occurrenceForm.darwinCoreFields.step.stepTitle'),
     selectedData:    <MeasurementOrFactSummary data={measurements}/>,
     stepDescription: t('occurrenceForm.measurementOrFact.step.stepDescription'),
     stepTitle:       t('occurrenceForm.measurementOrFact.step.stepTitle'),

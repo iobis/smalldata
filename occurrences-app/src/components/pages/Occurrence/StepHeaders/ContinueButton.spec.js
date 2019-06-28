@@ -9,7 +9,7 @@ describe('ContinueButton', () => {
 
   it('renders a given value correctly', () => {
     const wrapper = mount(createComponent({ value: 'Go to next page' }))
-    expect(wrapper.find('button').text()).toBe('occurrenceForm.stepContinueGo to next page')
+    expect(wrapper.find('button').text()).toBe('occurrenceForm.stepContinue go to next page')
   })
 
   it('calls onClick handler', () => {

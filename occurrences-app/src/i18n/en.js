@@ -28,21 +28,19 @@ export default {
     },
     occurrenceForm: {
       reviewAndSubmitButton: 'Review & Submit',
-      stepContinue:          'Continue to ',
+      stepContinue:          'Continue to',
       dataset:               {
         step: {
           dataDescription: 'Using Data',
           stepDescription: 'Choose the dataset for adding observations',
-          stepTitle:       'Selected Dataset',
-          nextStep:        'occurrence data'
+          stepTitle:       'Selected Dataset'
         }
       },
       occurrenceData:        {
         step:             {
           dataDescription: 'Given Values',
           stepDescription: 'Mandatory observation information',
-          stepTitle:       'Occurrence Data',
-          nextStep:        'location data'
+          stepTitle:       'Occurrence Data'
         },
         scientificName:   'Scientific Name',
         eventBeginDate:   'Event Begin Date',
@@ -124,8 +122,7 @@ export default {
           selectedData:    {
             latitude:  'Latitude',
             longitude: 'Longitude'
-          },
-          nextStep:        'observation data'
+          }
         },
         locationPicker:        {
           emptyResult:    'No search results yet',
@@ -139,8 +136,7 @@ export default {
         step:                    {
           dataDescription: 'Main Info',
           stepDescription: 'Enter further specifics',
-          stepTitle:       'Observation Data',
-          nextStep:        'measurement or fact data'
+          stepTitle:       'Observation Data'
         },
         institutionCode:         {
           label:       'Institution Code',
@@ -193,8 +189,7 @@ export default {
           dataDescription: 'Given values',
           stepDescription: 'Enter further specifics',
           stepTitle:       'Measurement or Fact',
-          title:           'You have submitted {{number}} extra fields',
-          nextStep:        'darwin core fields'
+          title:           'You have submitted {{number}} extra fields'
         },
         general:  {
           title:    'STEP 1: General sample information',

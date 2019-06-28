@@ -11,7 +11,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
         className="step-1 background-color-0"
         dataDescription="occurrenceForm.dataset.step.dataDescription"
         key="occurrenceForm.dataset.step.stepTitle"
-        nextStep="occurrenceForm.dataset.step.nextStep"
+        nextStep="occurrenceForm.occurrenceData.step.stepTitle"
         onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
@@ -66,7 +66,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
         </StepHeader>
         <StepFooter
           activeStepIndex={0}
-          nextStep="occurrenceForm.dataset.step.nextStep"
+          nextStep="occurrenceForm.occurrenceData.step.stepTitle"
           onContinueButtonClick={[Function]}
         >
           <div
@@ -86,15 +86,14 @@ exports[`OccurrenceForm renders correctly 1`] = `
             <ContinueButton
               name="locationContinue"
               onClick={[Function]}
-              value="occurrenceForm.dataset.step.nextStep"
+              value="occurrenceForm.occurrenceData.step.stepTitle"
             >
               <button
                 className="button is-info"
                 name="locationContinue"
                 onClick={[Function]}
               >
-                occurrenceForm.stepContinue
-                occurrenceForm.dataset.step.nextStep
+                occurrenceForm.stepContinue occurrenceform.occurrencedata.step.steptitle
               </button>
             </ContinueButton>
           </div>
@@ -105,7 +104,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
         className="step-2 background-color-5"
         dataDescription="occurrenceForm.occurrenceData.step.dataDescription"
         key="occurrenceForm.occurrenceData.step.stepTitle"
-        nextStep="occurrenceForm.occurrenceData.step.nextStep"
+        nextStep="occurrenceForm.locationData.step.stepTitle"
         onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
@@ -174,7 +173,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
         className="step-3 background-color-10"
         dataDescription="occurrenceForm.locationData.step.dataDescription"
         key="occurrenceForm.locationData.step.stepTitle"
-        nextStep="occurrenceForm.locationData.step.nextStep"
+        nextStep="occurrenceForm.observationData.step.stepTitle"
         onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
@@ -243,7 +242,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
         className="step-4 background-color-15"
         dataDescription="occurrenceForm.observationData.step.dataDescription"
         key="occurrenceForm.observationData.step.stepTitle"
-        nextStep="occurrenceForm.observationData.step.nextStep"
+        nextStep="occurrenceForm.measurementOrFact.step.stepTitle"
         onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
@@ -302,7 +301,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
         className="step-5 background-color-20"
         dataDescription="occurrenceForm.measurementOrFact.step.dataDescription"
         key="occurrenceForm.measurementOrFact.step.stepTitle"
-        nextStep="occurrenceForm.measurementOrFact.step.nextStep"
+        nextStep="occurrenceForm.darwinCoreFields.step.stepTitle"
         onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
@@ -445,7 +444,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
         className="step-1 background-color-0"
         dataDescription="occurrenceForm.dataset.step.dataDescription"
         key="occurrenceForm.dataset.step.stepTitle"
-        nextStep="occurrenceForm.dataset.step.nextStep"
+        nextStep="occurrenceForm.occurrenceData.step.stepTitle"
         onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
@@ -515,7 +514,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
         className="step-2 background-color-5"
         dataDescription="occurrenceForm.occurrenceData.step.dataDescription"
         key="occurrenceForm.occurrenceData.step.stepTitle"
-        nextStep="occurrenceForm.occurrenceData.step.nextStep"
+        nextStep="occurrenceForm.locationData.step.stepTitle"
         onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
@@ -619,7 +618,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
         className="step-3 background-color-10"
         dataDescription="occurrenceForm.locationData.step.dataDescription"
         key="occurrenceForm.locationData.step.stepTitle"
-        nextStep="occurrenceForm.locationData.step.nextStep"
+        nextStep="occurrenceForm.observationData.step.stepTitle"
         onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
@@ -730,7 +729,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
         className="step-4 background-color-15"
         dataDescription="occurrenceForm.observationData.step.dataDescription"
         key="occurrenceForm.observationData.step.stepTitle"
-        nextStep="occurrenceForm.observationData.step.nextStep"
+        nextStep="occurrenceForm.measurementOrFact.step.stepTitle"
         onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
@@ -1098,7 +1097,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
         </StepHeader>
         <StepFooter
           activeStepIndex={3}
-          nextStep="occurrenceForm.observationData.step.nextStep"
+          nextStep="occurrenceForm.measurementOrFact.step.stepTitle"
           onContinueButtonClick={[Function]}
         >
           <div
@@ -1120,15 +1119,14 @@ exports[`OccurrenceForm renders correctly 2`] = `
             <ContinueButton
               name="locationContinue"
               onClick={[Function]}
-              value="occurrenceForm.observationData.step.nextStep"
+              value="occurrenceForm.measurementOrFact.step.stepTitle"
             >
               <button
                 className="button is-info"
                 name="locationContinue"
                 onClick={[Function]}
               >
-                occurrenceForm.stepContinue
-                occurrenceForm.observationData.step.nextStep
+                occurrenceForm.stepContinue occurrenceform.measurementorfact.step.steptitle
               </button>
             </ContinueButton>
           </div>
@@ -1139,7 +1137,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
         className="step-5 background-color-20"
         dataDescription="occurrenceForm.measurementOrFact.step.dataDescription"
         key="occurrenceForm.measurementOrFact.step.stepTitle"
-        nextStep="occurrenceForm.measurementOrFact.step.nextStep"
+        nextStep="occurrenceForm.darwinCoreFields.step.stepTitle"
         onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
@@ -1282,7 +1280,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
         className="step-1 background-color-0"
         dataDescription="occurrenceForm.dataset.step.dataDescription"
         key="occurrenceForm.dataset.step.stepTitle"
-        nextStep="occurrenceForm.dataset.step.nextStep"
+        nextStep="occurrenceForm.occurrenceData.step.stepTitle"
         onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
@@ -1352,7 +1350,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
         className="step-2 background-color-5"
         dataDescription="occurrenceForm.occurrenceData.step.dataDescription"
         key="occurrenceForm.occurrenceData.step.stepTitle"
-        nextStep="occurrenceForm.occurrenceData.step.nextStep"
+        nextStep="occurrenceForm.locationData.step.stepTitle"
         onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
@@ -1456,7 +1454,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
         className="step-3 background-color-10"
         dataDescription="occurrenceForm.locationData.step.dataDescription"
         key="occurrenceForm.locationData.step.stepTitle"
-        nextStep="occurrenceForm.locationData.step.nextStep"
+        nextStep="occurrenceForm.observationData.step.stepTitle"
         onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
@@ -1567,7 +1565,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
         className="step-4 background-color-15"
         dataDescription="occurrenceForm.observationData.step.dataDescription"
         key="occurrenceForm.observationData.step.stepTitle"
-        nextStep="occurrenceForm.observationData.step.nextStep"
+        nextStep="occurrenceForm.measurementOrFact.step.stepTitle"
         onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData="Institution: institution code; Identified by: Indiana Jones"
@@ -1639,7 +1637,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
         className="step-5 background-color-20"
         dataDescription="occurrenceForm.measurementOrFact.step.dataDescription"
         key="occurrenceForm.measurementOrFact.step.stepTitle"
-        nextStep="occurrenceForm.measurementOrFact.step.nextStep"
+        nextStep="occurrenceForm.darwinCoreFields.step.stepTitle"
         onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
@@ -3199,7 +3197,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
         </StepHeader>
         <StepFooter
           activeStepIndex={4}
-          nextStep="occurrenceForm.measurementOrFact.step.nextStep"
+          nextStep="occurrenceForm.darwinCoreFields.step.stepTitle"
           onContinueButtonClick={[Function]}
         >
           <div
@@ -3221,15 +3219,14 @@ exports[`OccurrenceForm renders correctly 3`] = `
             <ContinueButton
               name="locationContinue"
               onClick={[Function]}
-              value="occurrenceForm.measurementOrFact.step.nextStep"
+              value="occurrenceForm.darwinCoreFields.step.stepTitle"
             >
               <button
                 className="button is-info"
                 name="locationContinue"
                 onClick={[Function]}
               >
-                occurrenceForm.stepContinue
-                occurrenceForm.measurementOrFact.step.nextStep
+                occurrenceForm.stepContinue occurrenceform.darwincorefields.step.steptitle
               </button>
             </ContinueButton>
           </div>
@@ -3320,7 +3317,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
         className="step-1 background-color-0"
         dataDescription="occurrenceForm.dataset.step.dataDescription"
         key="occurrenceForm.dataset.step.stepTitle"
-        nextStep="occurrenceForm.dataset.step.nextStep"
+        nextStep="occurrenceForm.occurrenceData.step.stepTitle"
         onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
@@ -3390,7 +3387,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
         className="step-2 background-color-5"
         dataDescription="occurrenceForm.occurrenceData.step.dataDescription"
         key="occurrenceForm.occurrenceData.step.stepTitle"
-        nextStep="occurrenceForm.occurrenceData.step.nextStep"
+        nextStep="occurrenceForm.locationData.step.stepTitle"
         onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
@@ -3494,7 +3491,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
         className="step-3 background-color-10"
         dataDescription="occurrenceForm.locationData.step.dataDescription"
         key="occurrenceForm.locationData.step.stepTitle"
-        nextStep="occurrenceForm.locationData.step.nextStep"
+        nextStep="occurrenceForm.observationData.step.stepTitle"
         onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
@@ -3605,7 +3602,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
         className="step-4 background-color-15"
         dataDescription="occurrenceForm.observationData.step.dataDescription"
         key="occurrenceForm.observationData.step.stepTitle"
-        nextStep="occurrenceForm.observationData.step.nextStep"
+        nextStep="occurrenceForm.measurementOrFact.step.stepTitle"
         onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData="Institution: institution code; Identified by: Indiana Jones"
@@ -3677,7 +3674,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
         className="step-5 background-color-20"
         dataDescription="occurrenceForm.measurementOrFact.step.dataDescription"
         key="occurrenceForm.measurementOrFact.step.stepTitle"
-        nextStep="occurrenceForm.measurementOrFact.step.nextStep"
+        nextStep="occurrenceForm.darwinCoreFields.step.stepTitle"
         onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
@@ -3981,7 +3978,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
         className="step-1 background-color-0"
         dataDescription="occurrenceForm.dataset.step.dataDescription"
         key="occurrenceForm.dataset.step.stepTitle"
-        nextStep="occurrenceForm.dataset.step.nextStep"
+        nextStep="occurrenceForm.occurrenceData.step.stepTitle"
         onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
@@ -4051,7 +4048,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
         className="step-2 background-color-5"
         dataDescription="occurrenceForm.occurrenceData.step.dataDescription"
         key="occurrenceForm.occurrenceData.step.stepTitle"
-        nextStep="occurrenceForm.occurrenceData.step.nextStep"
+        nextStep="occurrenceForm.locationData.step.stepTitle"
         onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
@@ -4155,7 +4152,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
         className="step-3 background-color-10"
         dataDescription="occurrenceForm.locationData.step.dataDescription"
         key="occurrenceForm.locationData.step.stepTitle"
-        nextStep="occurrenceForm.locationData.step.nextStep"
+        nextStep="occurrenceForm.observationData.step.stepTitle"
         onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
@@ -4266,7 +4263,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
         className="step-4 background-color-15"
         dataDescription="occurrenceForm.observationData.step.dataDescription"
         key="occurrenceForm.observationData.step.stepTitle"
-        nextStep="occurrenceForm.observationData.step.nextStep"
+        nextStep="occurrenceForm.measurementOrFact.step.stepTitle"
         onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData="Institution: institution code; Identified by: Indiana Jones"
@@ -4338,7 +4335,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
         className="step-5 background-color-20"
         dataDescription="occurrenceForm.measurementOrFact.step.dataDescription"
         key="occurrenceForm.measurementOrFact.step.stepTitle"
-        nextStep="occurrenceForm.measurementOrFact.step.nextStep"
+        nextStep="occurrenceForm.darwinCoreFields.step.stepTitle"
         onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
@@ -4675,7 +4672,7 @@ exports[`OccurrenceForm renders correctly 6`] = `
         className="step-1 background-color-0"
         dataDescription="occurrenceForm.dataset.step.dataDescription"
         key="occurrenceForm.dataset.step.stepTitle"
-        nextStep="occurrenceForm.dataset.step.nextStep"
+        nextStep="occurrenceForm.occurrenceData.step.stepTitle"
         onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
@@ -4745,7 +4742,7 @@ exports[`OccurrenceForm renders correctly 6`] = `
         className="step-2 background-color-5"
         dataDescription="occurrenceForm.occurrenceData.step.dataDescription"
         key="occurrenceForm.occurrenceData.step.stepTitle"
-        nextStep="occurrenceForm.occurrenceData.step.nextStep"
+        nextStep="occurrenceForm.locationData.step.stepTitle"
         onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
@@ -4849,7 +4846,7 @@ exports[`OccurrenceForm renders correctly 6`] = `
         className="step-3 background-color-10"
         dataDescription="occurrenceForm.locationData.step.dataDescription"
         key="occurrenceForm.locationData.step.stepTitle"
-        nextStep="occurrenceForm.locationData.step.nextStep"
+        nextStep="occurrenceForm.observationData.step.stepTitle"
         onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
@@ -4960,7 +4957,7 @@ exports[`OccurrenceForm renders correctly 6`] = `
         className="step-4 background-color-15"
         dataDescription="occurrenceForm.observationData.step.dataDescription"
         key="occurrenceForm.observationData.step.stepTitle"
-        nextStep="occurrenceForm.observationData.step.nextStep"
+        nextStep="occurrenceForm.measurementOrFact.step.stepTitle"
         onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData="Institution: institution code; Identified by: Indiana Jones"
@@ -5032,7 +5029,7 @@ exports[`OccurrenceForm renders correctly 6`] = `
         className="step-5 background-color-20"
         dataDescription="occurrenceForm.measurementOrFact.step.dataDescription"
         key="occurrenceForm.measurementOrFact.step.stepTitle"
-        nextStep="occurrenceForm.measurementOrFact.step.nextStep"
+        nextStep="occurrenceForm.darwinCoreFields.step.stepTitle"
         onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
@@ -5402,7 +5399,7 @@ exports[`OccurrenceForm renders correctly 7`] = `
         className="step-1 background-color-0"
         dataDescription="occurrenceForm.dataset.step.dataDescription"
         key="occurrenceForm.dataset.step.stepTitle"
-        nextStep="occurrenceForm.dataset.step.nextStep"
+        nextStep="occurrenceForm.occurrenceData.step.stepTitle"
         onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
@@ -5472,7 +5469,7 @@ exports[`OccurrenceForm renders correctly 7`] = `
         className="step-2 background-color-5"
         dataDescription="occurrenceForm.occurrenceData.step.dataDescription"
         key="occurrenceForm.occurrenceData.step.stepTitle"
-        nextStep="occurrenceForm.occurrenceData.step.nextStep"
+        nextStep="occurrenceForm.locationData.step.stepTitle"
         onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
@@ -5576,7 +5573,7 @@ exports[`OccurrenceForm renders correctly 7`] = `
         className="step-3 background-color-10"
         dataDescription="occurrenceForm.locationData.step.dataDescription"
         key="occurrenceForm.locationData.step.stepTitle"
-        nextStep="occurrenceForm.locationData.step.nextStep"
+        nextStep="occurrenceForm.observationData.step.stepTitle"
         onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
@@ -5687,7 +5684,7 @@ exports[`OccurrenceForm renders correctly 7`] = `
         className="step-4 background-color-15"
         dataDescription="occurrenceForm.observationData.step.dataDescription"
         key="occurrenceForm.observationData.step.stepTitle"
-        nextStep="occurrenceForm.observationData.step.nextStep"
+        nextStep="occurrenceForm.measurementOrFact.step.stepTitle"
         onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData="Institution: institution code; Identified by: Indiana Jones"
@@ -5759,7 +5756,7 @@ exports[`OccurrenceForm renders correctly 7`] = `
         className="step-5 background-color-20"
         dataDescription="occurrenceForm.measurementOrFact.step.dataDescription"
         key="occurrenceForm.measurementOrFact.step.stepTitle"
-        nextStep="occurrenceForm.measurementOrFact.step.nextStep"
+        nextStep="occurrenceForm.darwinCoreFields.step.stepTitle"
         onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
