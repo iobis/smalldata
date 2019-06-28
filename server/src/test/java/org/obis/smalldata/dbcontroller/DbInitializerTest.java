@@ -53,7 +53,7 @@ public class DbInitializerTest {
 
   @Test
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
-  public void checkBulkinessAllNewUsers(VertxTestContext testContext) throws InterruptedException {
+  public void checkBulkinessAllNewUsers(VertxTestContext testContext) {
     mongoClient.find(Collections.USERS.dbName(),
       new JsonObject(),
       ar -> {
@@ -70,7 +70,7 @@ public class DbInitializerTest {
 
   @Test
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
-  public void checkBulkinessExistingBulkiness(VertxTestContext testContext) throws InterruptedException {
+  public void checkBulkinessExistingBulkiness(VertxTestContext testContext) {
     mongoClient.insert(Collections.USERS.dbName(),
       new JsonObject()
         .put("_ref", "someref")
