@@ -70,7 +70,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
           onContinueButtonClick={[Function]}
         >
           <div
-            className="step-footer columns"
+            className="step-footer columns section"
           >
             <CopyPreviousData
               visible={false}
@@ -1101,7 +1101,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
           onContinueButtonClick={[Function]}
         >
           <div
-            className="step-footer columns"
+            className="step-footer columns section"
           >
             <CopyPreviousData
               visible={true}
@@ -3201,7 +3201,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
           onContinueButtonClick={[Function]}
         >
           <div
-            className="step-footer columns"
+            className="step-footer columns section"
           >
             <CopyPreviousData
               visible={true}

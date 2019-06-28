@@ -2,7 +2,8 @@
 
 exports[`ActiveStepHeader does not renders StepFooter if last step 1`] = `
 <ActiveStepHeader
-  activeStepIndex={5}
+  activeStepIndex={6}
+  nextStep="next step"
   onContinueButtonClick={[Function]}
   onStepTitleClick={[Function]}
   stepDescription="step description"
@@ -54,28 +55,6 @@ exports[`ActiveStepHeader does not renders StepFooter if last step 1`] = `
       </div>
     </div>
   </StepHeader>
-  <StepFooter
-    activeStepIndex={5}
-    onContinueButtonClick={[Function]}
-  >
-    <div
-      className="step-footer columns"
-    >
-      <CopyPreviousData
-        visible={true}
-      >
-        <div
-          className="columns"
-        >
-          <div
-            className="copy-previous-data column is-narrow"
-          >
-            copy data from previous entry
-          </div>
-        </div>
-      </CopyPreviousData>
-    </div>
-  </StepFooter>
 </ActiveStepHeader>
 `;
 
@@ -138,7 +117,7 @@ exports[`ActiveStepHeader does not renders StepFooter if next step is not provid
     onContinueButtonClick={[Function]}
   >
     <div
-      className="step-footer columns"
+      className="step-footer columns section"
     >
       <CopyPreviousData
         visible={true}
@@ -219,7 +198,7 @@ exports[`ActiveStepHeader renders StepFooter for 0 step with empty copy-previous
     onContinueButtonClick={[Function]}
   >
     <div
-      className="step-footer columns"
+      className="step-footer columns section"
     >
       <CopyPreviousData
         visible={false}
@@ -311,7 +290,7 @@ exports[`ActiveStepHeader renders StepFooter with all data if next step is provi
     onContinueButtonClick={[Function]}
   >
     <div
-      className="step-footer columns"
+      className="step-footer columns section"
     >
       <CopyPreviousData
         visible={true}

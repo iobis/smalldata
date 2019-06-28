@@ -5,7 +5,7 @@ import React from 'react'
 
 export default function StepFooter({ activeStepIndex, onContinueButtonClick, nextStep }) {
   return (
-    <div className="step-footer columns">
+    <div className="step-footer columns section">
       <CopyPreviousData visible={activeStepIndex !== 0}/>
       {!!nextStep && (
         <ContinueButton
