@@ -52,7 +52,7 @@ public class DbInitializerTest {
   }
 
   @Test
-  @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
+  @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
   public void checkBulkinessAllNewUsers(VertxTestContext testContext) {
     mongoClient.find(Collections.USERS.dbName(),
       new JsonObject(),
@@ -69,7 +69,7 @@ public class DbInitializerTest {
   }
 
   @Test
-  @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
+  @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
   public void checkBulkinessExistingBulkiness(VertxTestContext testContext) {
     mongoClient.insert(Collections.USERS.dbName(),
       new JsonObject()
