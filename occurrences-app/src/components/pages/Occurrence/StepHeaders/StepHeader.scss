@@ -3,7 +3,7 @@
 
   @for $i from 0 through 100 {
     &.background-color-#{$i} {
-      background-color: darken($info,  $i * 1%);
+      background-color: darken($info, $i * 1%);
     }
   }
 
@@ -21,11 +21,17 @@
   }
 }
 
+.step-footer {
+  justify-content: space-between;
+  align-items: center;
 
-.dataset-continue-button {
-  display: flex;
-  margin-top: 1rem;
-  button {
-    margin-left: auto;
+  .dataset-continue-button {
+    display: flex;
+    margin-top: 1rem;
+
+    button {
+      margin-left: auto;
+    }
   }
 }
+

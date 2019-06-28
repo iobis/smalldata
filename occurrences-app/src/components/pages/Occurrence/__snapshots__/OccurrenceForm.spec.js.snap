@@ -65,7 +65,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
           </div>
         </StepHeader>
         <div
-          className="columns obis-spaced"
+          className="step-footer columns"
         >
           <ContinueButton
             name="locationContinue"
@@ -1085,7 +1085,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
           </ObservationData>
         </StepHeader>
         <div
-          className="columns obis-spaced"
+          className="step-footer columns"
         >
           <CopyPreviousData>
             <div
@@ -3183,7 +3183,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
           </MeasurementOrFact>
         </StepHeader>
         <div
-          className="columns obis-spaced"
+          className="step-footer columns"
         >
           <CopyPreviousData>
             <div

@@ -28,7 +28,7 @@ export default function ActiveStepHeader({
         {children}
       </StepHeader>
       {activeStepIndex < totalSteps && (
-        <div className="columns obis-spaced">
+        <div className="step-footer columns">
           {activeStepIndex > 0 && <CopyPreviousData/>}
           <ContinueButton
             name="locationContinue"
