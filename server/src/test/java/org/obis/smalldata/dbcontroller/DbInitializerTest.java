@@ -59,12 +59,16 @@ public class DbInitializerTest {
       new JsonObject(),
       ar -> {
         Logger.info(ar.result());
-        assertThat(ar.result())
-          .allMatch(user -> user.containsKey(KEY_BULKINESS))
-          .allMatch(user -> {
-            var bulkiness = user.getJsonObject(KEY_BULKINESS);
-            return bulkiness.getDouble(KEY_VALUE).equals(0.0);
-          });
+        try {
+          assertThat(ar.result())
+            .allMatch(user -> user.containsKey(KEY_BULKINESS))
+            .allMatch(user -> {
+              var bulkiness = user.getJsonObject(KEY_BULKINESS);
+              return bulkiness.getDouble(KEY_VALUE).equals(0.0);
+            });
+        } catch (AssertionError e) {
+          testContext.failNow(e);
+        }
         testContext.completeNow();
       });
   }
@@ -81,16 +85,20 @@ public class DbInitializerTest {
         Collections.USERS.dbName(),
         new JsonObject(),
         arUsers -> {
-          assertThat(arUsers.result())
-            .allMatch(user -> user.containsKey(KEY_BULKINESS))
-            .allMatch(user -> {
-              var bulkiness = user.getJsonObject(KEY_BULKINESS);
-              if (user.getString("_ref").equals("someref")) {
-                return bulkiness.getDouble(KEY_VALUE).equals(2.5);
-              } else {
-                return bulkiness.getDouble(KEY_VALUE).equals(0.0);
-              }
-            });
+          try {
+            assertThat(arUsers.result())
+              .allMatch(user -> user.containsKey(KEY_BULKINESS))
+              .allMatch(user -> {
+                var bulkiness = user.getJsonObject(KEY_BULKINESS);
+                if (user.getString("_ref").equals("someref")) {
+                  return bulkiness.getDouble(KEY_VALUE).equals(2.5);
+                } else {
+                  return bulkiness.getDouble(KEY_VALUE).equals(0.0);
+                }
+              });
+          } catch (AssertionError e) {
+            testContext.failNow(e);
+          }
           testContext.completeNow();
         })
     );
