@@ -54,7 +54,7 @@ public class DbInitializerTest {
   @Test
   @Timeout(value = 10, timeUnit = TimeUnit.SECONDS)
   public void checkBulkinessAllNewUsers(VertxTestContext testContext) throws InterruptedException {
-    TimeUnit.MILLISECONDS.sleep(1000);
+    TimeUnit.MILLISECONDS.sleep(500);
     mongoClient.find(Collections.USERS.dbName(),
       new JsonObject(),
       ar -> {
