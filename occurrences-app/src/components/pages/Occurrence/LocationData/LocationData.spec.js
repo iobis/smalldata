@@ -49,9 +49,9 @@ describe('LocationData', () => {
 
 function createComponent(props) {
   const defaultProps = {
-    data:     getEmptyData(),
+    data:            getEmptyData(),
     nextStepHandler: jest.fn(),
-    onChange: jest.fn()
+    onChange:        jest.fn()
   }
   return <LocationData {...defaultProps} {...props}/>
 }

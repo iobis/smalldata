@@ -7,13 +7,17 @@ export default function ContinueButton({ name, value, wrapperClassName, onClick 
 
   return (
     <div className={wrapperClassName}>
-      <button className="button is-info" name={name} onClick={onClick}>{t('occurrenceForm.stepContinue')}{value}</button>
+      <button
+        className="button is-info"
+        name={name}
+        onClick={onClick}>
+        {t('occurrenceForm.stepContinue')}{value}
+      </button>
     </div>
   )
 }
 
 ContinueButton.propTypes = {
-
   name:             PropTypes.string,
   onClick:          PropTypes.func.isRequired,
   value:            PropTypes.string.isRequired,

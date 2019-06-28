@@ -88,7 +88,6 @@ export default function LocationData({ data, onChange }) {
             value={data.verbatimDepth}/>
         </div>
       </div>
-
     </div>
   )
 }
@@ -104,6 +103,6 @@ export const locationDataShape = {
 }
 
 LocationData.propTypes = {
-  data:            PropTypes.shape(locationDataShape).isRequired,
-  onChange:        PropTypes.func.isRequired
+  data:     PropTypes.shape(locationDataShape).isRequired,
+  onChange: PropTypes.func.isRequired
 }

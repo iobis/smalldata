@@ -4,7 +4,16 @@ import StepHeader from './StepHeader'
 import CopyPreviousData from '../CopyPreviousData'
 import ContinueButton from '../ContinueButton'
 
-export default function ActiveStepHeader({ children, onStepTitleClick, stepDescription, stepTitle, onContinueButtonClick, totalSteps, activeStepIndex, nextStep }) {
+export default function ActiveStepHeader({
+  activeStepIndex,
+  children,
+  nextStep,
+  onContinueButtonClick,
+  onStepTitleClick,
+  stepDescription,
+  stepTitle,
+  totalSteps
+}) {
   const wrapperClassname = (activeStepIndex === 0) ? 'column datasetContinueButton' : ''
   return (
     <>
@@ -18,20 +27,15 @@ export default function ActiveStepHeader({ children, onStepTitleClick, stepDescr
         stepTitle={stepTitle}>
         {children}
       </StepHeader>
-      {activeStepIndex < totalSteps &&
-      <div className="columns obis-spaced">
-
-        {activeStepIndex > 0 &&
-        <CopyPreviousData/>
-        }
-
-        <ContinueButton
-          name="locationContinue"
-          onClick={onContinueButtonClick}
-          value={nextStep}
-          wrapperClassName={wrapperClassname}/>
-      </div>
-      }
+      {activeStepIndex < totalSteps && (
+        <div className="columns obis-spaced">
+          {activeStepIndex > 0 && <CopyPreviousData/>}
+          <ContinueButton
+            name="locationContinue"
+            onClick={onContinueButtonClick}
+            value={nextStep}
+            wrapperClassName={wrapperClassname}/>
+        </div>)}
     </>
   )
 }

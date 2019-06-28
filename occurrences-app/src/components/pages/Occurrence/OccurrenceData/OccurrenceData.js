@@ -78,6 +78,6 @@ export const occurrenceDataShape = {
 }
 
 OccurrenceData.propTypes = {
-  data:            PropTypes.shape(occurrenceDataShape).isRequired,
-  onChange:        PropTypes.func.isRequired
+  data:     PropTypes.shape(occurrenceDataShape).isRequired,
+  onChange: PropTypes.func.isRequired
 }

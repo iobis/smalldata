@@ -115,8 +115,8 @@ export default function MeasurementOrFact({ data, onChange }) {
 }
 
 MeasurementOrFact.propTypes = {
-  data:            PropTypes.array.isRequired,
-  onChange:        PropTypes.func.isRequired
+  data:     PropTypes.array.isRequired,
+  onChange: PropTypes.func.isRequired
 }
 
 function MeasurementRow({ onAdd, type, units }) {
