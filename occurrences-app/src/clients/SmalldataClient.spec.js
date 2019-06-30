@@ -108,7 +108,7 @@ describe('SmalldataClient', () => {
     })
   })
 
-  describe('postOccurrence()', () => {
+  describe('createOccurrence()', () => {
     beforeEach(() => {
       global.fetch = jest.fn().mockImplementation(() =>
         new Promise((resolve) => {
@@ -122,7 +122,7 @@ describe('SmalldataClient', () => {
     })
 
     it('when providing all data', async() => {
-      await SmalldataClient.postOccurrence({ ...getDefaultOccurrence(), ...{ userRef } })
+      await SmalldataClient.createOccurrence({ ...getDefaultOccurrence(), ...{ userRef } })
 
       expect(fetch).toHaveBeenCalledTimes(1)
       expect(fetch.mock.calls[0][0]).toBe('/api/dwca/wEaBfmFyQhYCdsk/user/ovZTtaOJZ98xDDY/records')
@@ -131,7 +131,7 @@ describe('SmalldataClient', () => {
     })
 
     it('when providing life stage and sex as unspecified', async() => {
-      await SmalldataClient.postOccurrence(
+      await SmalldataClient.createOccurrence(
         deepExtend(
           getDefaultOccurrence(),
           {
@@ -177,7 +177,7 @@ describe('SmalldataClient', () => {
     })
 
     it('when event end date is not provided', async() => {
-      await SmalldataClient.postOccurrence(
+      await SmalldataClient.createOccurrence(
         deepExtend(
           getDefaultOccurrence(),
           {

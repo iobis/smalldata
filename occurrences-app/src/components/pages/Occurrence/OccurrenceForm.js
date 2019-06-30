@@ -20,7 +20,7 @@ import {
   mapDwcaToObservationData,
   mapDwcaToMeasurements,
   mapDwcsToDarwinCoreFields,
-  postOccurrence
+  createOccurrence
 } from '../../../clients/SmalldataClient'
 import { useTranslation } from 'react-i18next'
 import { AuthContext } from '@smalldata/dwca-lib'
@@ -94,7 +94,7 @@ export default function OccurrenceForm({ location }) {
       measurements:     measurements || [],
       darwinCoreFields: darwinCoreFields || []
     }
-    const response = await postOccurrence({ occurrence, userRef })
+    const response = await createOccurrence({ occurrence, userRef })
     if (response.exception) {
       setErrorVisible(true)
       setErrorMessage(response.exception + ': ' + response.exceptionMessage)
