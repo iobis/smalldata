@@ -98,7 +98,7 @@ function createComponent(props) {
   }
   const updatedProps = deepExtend(defaultProps, props)
   return (
-    <MemoryRouter initialEntries={[{ pathname: '/input-data/new', key: 'testKey' }]}>
+    <MemoryRouter initialEntries={[{ pathname: '/input-data/create', key: 'testKey' }]}>
       <FinalSummary {...updatedProps}/>
     </MemoryRouter>
   )

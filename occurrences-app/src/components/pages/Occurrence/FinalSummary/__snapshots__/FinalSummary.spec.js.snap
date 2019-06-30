@@ -6,7 +6,7 @@ exports[`FinalSummary renders correctly 1`] = `
     Array [
       Object {
         "key": "testKey",
-        "pathname": "/input-data/new",
+        "pathname": "/input-data/create",
       },
     ]
   }
@@ -22,7 +22,7 @@ exports[`FinalSummary renders correctly 1`] = `
           Object {
             "hash": "",
             "key": "testKey",
-            "pathname": "/input-data/new",
+            "pathname": "/input-data/create",
             "search": "",
           },
         ],
@@ -35,7 +35,7 @@ exports[`FinalSummary renders correctly 1`] = `
         "location": Object {
           "hash": "",
           "key": "testKey",
-          "pathname": "/input-data/new",
+          "pathname": "/input-data/create",
           "search": "",
         },
         "push": [Function],
@@ -1082,7 +1082,7 @@ exports[`FinalSummary renders correctly when occurence end date is not provided 
     Array [
       Object {
         "key": "testKey",
-        "pathname": "/input-data/new",
+        "pathname": "/input-data/create",
       },
     ]
   }
@@ -1098,7 +1098,7 @@ exports[`FinalSummary renders correctly when occurence end date is not provided 
           Object {
             "hash": "",
             "key": "testKey",
-            "pathname": "/input-data/new",
+            "pathname": "/input-data/create",
             "search": "",
           },
         ],
@@ -1111,7 +1111,7 @@ exports[`FinalSummary renders correctly when occurence end date is not provided 
         "location": Object {
           "hash": "",
           "key": "testKey",
-          "pathname": "/input-data/new",
+          "pathname": "/input-data/create",
           "search": "",
         },
         "push": [Function],
@@ -2158,7 +2158,7 @@ exports[`FinalSummary when rendering component with error message calls onSubmit
     Array [
       Object {
         "key": "testKey",
-        "pathname": "/input-data/new",
+        "pathname": "/input-data/create",
       },
     ]
   }
@@ -2174,7 +2174,7 @@ exports[`FinalSummary when rendering component with error message calls onSubmit
           Object {
             "hash": "",
             "key": "testKey",
-            "pathname": "/input-data/new",
+            "pathname": "/input-data/create",
             "search": "",
           },
         ],
@@ -2187,7 +2187,7 @@ exports[`FinalSummary when rendering component with error message calls onSubmit
         "location": Object {
           "hash": "",
           "key": "testKey",
-          "pathname": "/input-data/new",
+          "pathname": "/input-data/create",
           "search": "",
         },
         "push": [Function],
@@ -3244,7 +3244,7 @@ exports[`FinalSummary when rendering component with success message renders succ
     Array [
       Object {
         "key": "testKey",
-        "pathname": "/input-data/new",
+        "pathname": "/input-data/create",
       },
     ]
   }
@@ -3260,7 +3260,7 @@ exports[`FinalSummary when rendering component with success message renders succ
           Object {
             "hash": "",
             "key": "testKey",
-            "pathname": "/input-data/new",
+            "pathname": "/input-data/create",
             "search": "",
           },
         ],
@@ -3273,7 +3273,7 @@ exports[`FinalSummary when rendering component with success message renders succ
         "location": Object {
           "hash": "",
           "key": "testKey",
-          "pathname": "/input-data/new",
+          "pathname": "/input-data/create",
           "search": "",
         },
         "push": [Function],

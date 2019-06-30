@@ -25,9 +25,9 @@ describe('Navbar', () => {
     )).toMatchSnapshot()
   })
 
-  it('renders correctly for route /input-data/new', () => {
+  it('renders correctly for route /input-data/create', () => {
     expect(mount(
-      <MemoryRouter initialEntries={[{ pathname: '/input-data/new', key: 'testKey' }]}>
+      <MemoryRouter initialEntries={[{ pathname: '/input-data/create', key: 'testKey' }]}>
         <AuthProvider>
           <Navbar/>
         </AuthProvider>
