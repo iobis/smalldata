@@ -30,7 +30,31 @@ export async function getOccurrence({ datasetId, dwcaId, userRef }) {
     .then(response => response.json())
 }
 
+export async function updateOccurrence({ datasetId, occurrence, dwcaId, userRef }) {
+  const request = mapOccurrenceToDwca(occurrence)
+  const url = `/api/dwca/${datasetId}/user/${userRef}/records/${encodeURIComponent(dwcaId)}`
+  return await fetch(url, {
+    method:  'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body:    JSON.stringify(request)
+  }).then(response => response.json())
+}
+
 export async function postOccurrence({ occurrence, userRef }) {
+  const request = mapOccurrenceToDwca(occurrence)
+  const url = `/api/dwca/${occurrence.dataset.id}/user/${userRef}/records`
+  return await fetch(url, {
+    method:  'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body:    JSON.stringify(request)
+  }).then(response => response.json())
+}
+
+function mapOccurrenceToDwca(occurrence) {
   const emof = occurrence.measurements.map(measurment => {
     const { typeId, unitId } = findTypeAndUnitIdByNames(measurment.type, measurment.unit)
     return {
@@ -46,7 +70,7 @@ export async function postOccurrence({ occurrence, userRef }) {
     }
   })
   const darwinCoreFields = mapDarwinCoreFieldsToRequest(occurrence.darwinCoreFields)
-  const requestBody = {
+  return {
     core:       'occurrence',
     occurrence: [{
       tdwg:  {
@@ -80,14 +104,6 @@ export async function postOccurrence({ occurrence, userRef }) {
     }],
     emof
   }
-  const url = `/api/dwca/${occurrence.dataset.id}/user/${userRef}/records`
-  return await fetch(url, {
-    method:  'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body:    JSON.stringify(requestBody)
-  }).then(response => response.json())
 }
 
 function mapOccurrenceDataToTdwg({ basisOfRecord, beginDate, endDate, occurrenceStatus, scientificName, lifeStage, sex }) {

@@ -82,6 +82,98 @@ describe('SmalldataClient', () => {
     })
   })
 
+  describe('updateOccurrence()', () => {
+    const dwcaId = 'IkadeGqejSCC3Sc'
+    const datasetId = 'ntDOtUc7XsRrIus'
+
+    beforeEach(() => {
+      global.fetch = jest.fn().mockImplementation(() =>
+        new Promise((resolve) => {
+          resolve({ json: () => 'default-response' })
+        })
+      )
+    })
+
+    afterEach(() => {
+      global.fetch.mockRestore()
+    })
+
+    it('when providing all data', async() => {
+      await SmalldataClient.updateOccurrence({ ...getDefaultOccurrence(), ...{ userRef, dwcaId, datasetId } })
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+      expect(fetch.mock.calls[0][0]).toBe('/api/dwca/ntDOtUc7XsRrIus/user/ovZTtaOJZ98xDDY/records/IkadeGqejSCC3Sc')
+      expect(fetch.mock.calls[0][1].method).toBe('PUT')
+      expect(JSON.parse(fetch.mock.calls[0][1].body)).toEqual(getDefaultOccurrenceRequest())
+    })
+
+    it('when providing life stage and sex as unspecified', async() => {
+      await SmalldataClient.updateOccurrence(
+        deepExtend(
+          getDefaultOccurrence(),
+          {
+            occurrence: {
+              occurrenceData: {
+                lifeStage: 'unspecified',
+                sex:       'unspecified'
+              }
+            }
+          },
+          { userRef, dwcaId, datasetId }))
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+      expect(fetch.mock.calls[0][0]).toBe('/api/dwca/ntDOtUc7XsRrIus/user/ovZTtaOJZ98xDDY/records/IkadeGqejSCC3Sc')
+      expect(fetch.mock.calls[0][1].method).toBe('PUT')
+      expect(JSON.parse(fetch.mock.calls[0][1].body).occurrence[0].tdwg).toEqual({
+        basisOfRecord:    'HumanObservation',
+        eventDate:        '2019-04-29/2019-04-30',
+        occurrenceStatus: 'present',
+        scientificName:   'ala abra',
+
+        decimalLongitude:              2.345456,
+        decimalLatitude:               51.3354656,
+        coordinateUncertaintyInMeters: 1,
+        minimumDepthInMeters:          20,
+        maximumDepthInMeters:          30,
+        verbatimCoordinates:           '41 05 54S 121 05 34W',
+        verbatimDepth:                 '100 - 200 m',
+
+        institutionCode:         'IBSS',
+        collectionCode:          'R/V N. Danilevskiy 1935 Azov Sea benthos data',
+        fieldNumber:             '557',
+        catalogNumber:           'IBSS_Benthos_1935_1331',
+        recordNumber:            '123456',
+        identifiedBy:            'Indiana Jones',
+        recordedBy:              'Harrison Ford|Indiana Jones',
+        identificationQualifier: 'some identification qualifier',
+        identificationRemarks:   'some identification remarks',
+        associatedReferences:    'http://www.google.com|https://clojure.org/',
+
+        collectionID: 'urn:lsid:biocol.org:col:34818'
+      })
+    })
+
+    it('when event end date is not provided', async() => {
+      await SmalldataClient.updateOccurrence(
+        deepExtend(
+          getDefaultOccurrence(),
+          {
+            occurrence: {
+              occurrenceData: {
+                endDate: null
+              }
+            }
+          },
+          { userRef, dwcaId, datasetId })
+      )
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+      expect(fetch.mock.calls[0][0]).toBe('/api/dwca/ntDOtUc7XsRrIus/user/ovZTtaOJZ98xDDY/records/IkadeGqejSCC3Sc')
+      expect(fetch.mock.calls[0][1].method).toBe('PUT')
+      expect(JSON.parse(fetch.mock.calls[0][1].body).occurrence[0].tdwg.eventDate).toEqual('2019-04-29/2019-04-29')
+    })
+  })
+
   describe('postOccurrence()', () => {
     beforeEach(() => {
       global.fetch = jest.fn().mockImplementation(() =>
