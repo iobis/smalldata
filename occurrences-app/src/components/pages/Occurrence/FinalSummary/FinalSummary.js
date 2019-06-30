@@ -24,6 +24,7 @@ export default function FinalSummary({
   onCreateFromThisClick,
   onErrorClose,
   onSubmitClick,
+  successMessageType,
   successVisible
 }) {
   const { t } = useTranslation()
@@ -53,7 +54,7 @@ export default function FinalSummary({
       </div>
       {successVisible ? (
         <div className="success-message notification is-success" ref={successMessageRef}>
-          <p className="title">{t('occurrenceForm.finalSummary.successMessage.header')}</p>
+          <p className="title">{t('occurrenceForm.finalSummary.successMessage.header.' + successMessageType)}</p>
           <p className="subtitle">{t('occurrenceForm.finalSummary.successMessage.nextOptions')}</p>
           <section>
             <button className="create-fresh button is-white" onClick={onCreateFreshClick}>
@@ -256,6 +257,7 @@ FinalSummary.propTypes = {
   onCreateFromThisClick: PropTypes.func.isRequired,
   onErrorClose:          PropTypes.func.isRequired,
   onSubmitClick:         PropTypes.func.isRequired,
+  successMessageType:    PropTypes.oneOf(['create', 'update']).isRequired,
   successVisible:        PropTypes.bool.isRequired
 }
 

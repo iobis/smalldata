@@ -19,7 +19,7 @@ import {
   mapDwcaToOccurrenceData,
   mapDwcsToDarwinCoreFields
 } from '../../../clients/SmalldataConverters'
-import { createOccurrence, updateOccurrence, getDatasets, getOccurrence } from '../../../clients/SmalldataClient'
+import { createOccurrence, getDatasets, getOccurrence, updateOccurrence } from '../../../clients/SmalldataClient'
 import { useTranslation } from 'react-i18next'
 import { AuthContext } from '@smalldata/dwca-lib'
 
@@ -56,7 +56,7 @@ export default function OccurrenceForm({ location }) {
       setObservationData(mapDwcaToObservationData(dwca))
       setMeasurements(mapDwcaToMeasurements(dwca))
       setDarwinCoreFields(mapDwcsToDarwinCoreFields(dwca))
-      setAction(location.state === 'update' ? 'update' : 'create')
+      setAction(location.state.action === 'update' ? 'update' : 'create')
     }
     if (location && location.state) fetchOccurrence()
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -240,6 +240,7 @@ export default function OccurrenceForm({ location }) {
           onCreateFromThisClick={handleCreateFromThisClickClick}
           onErrorClose={handleErrorClose}
           onSubmitClick={handleSubmitClick}
+          successMessageType={action}
           successVisible={successVisible}/>) :
         (<div className="columns column is-centered">
           <button

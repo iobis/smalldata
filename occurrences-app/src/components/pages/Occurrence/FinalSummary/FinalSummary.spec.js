@@ -10,7 +10,7 @@ describe('FinalSummary', () => {
     expect(mount(createComponent())).toMatchSnapshot()
   })
 
-  it('renders correctly when occurence end date is not provided', () => {
+  it('renders correctly when occurrence end date is not provided', () => {
     expect(mount(createComponent({ occurrenceData: { endDate: null } }))).toMatchSnapshot()
   })
 
@@ -72,7 +72,12 @@ describe('FinalSummary', () => {
     it('renders success message', () => {
       const onCreateFreshClick = jest.fn()
       const onCreateFromThisClick = jest.fn()
-      const wrapper = mount(createComponent({ onCreateFreshClick, onCreateFromThisClick, successVisible: true }))
+      const wrapper = mount(createComponent({
+        onCreateFreshClick,
+        onCreateFromThisClick,
+        successVisible:     true,
+        successVisibleType: 'create'
+      }))
       expect(wrapper).toMatchSnapshot()
       expect(wrapper.exists('.submit-entry-button')).toBe(false)
       expect(wrapper.exists('.success-message')).toBe(true)
@@ -84,6 +89,14 @@ describe('FinalSummary', () => {
       wrapper.find('.create-from-this').simulate('click')
       expect(onCreateFromThisClick).toHaveBeenCalledTimes(1)
     })
+
+    it('renders success message of update type', () => {
+      const wrapper = mount(createComponent({
+        successVisible:     true,
+        successVisibleType: 'update'
+      }))
+      expect(wrapper).toMatchSnapshot()
+    })
   })
 })
 
@@ -94,7 +107,8 @@ function createComponent(props) {
     onCreateFreshClick:    jest.fn(),
     onCreateFromThisClick: jest.fn(),
     onErrorClose:          jest.fn(),
-    onSubmitClick:         jest.fn()
+    onSubmitClick:         jest.fn(),
+    successMessageType:    'create'
   }
   const updatedProps = deepExtend(defaultProps, props)
   return (
