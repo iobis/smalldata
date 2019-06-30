@@ -5,13 +5,6 @@ import { DATASTES_RESPONSE } from './SmalldataClient.mock'
 describe('SmalldataClient', () => {
   const userRef = 'ovZTtaOJZ98xDDY'
 
-  it('datasetTitleOf(dataset)', () => {
-    expect(SmalldataClient.datasetTitleOf(DATASTES_RESPONSE[0]))
-      .toEqual('Caprellids polulation structure in Usujiri, Hokkaido, Japan')
-    expect(SmalldataClient.datasetTitleOf(null))
-      .toEqual('')
-  })
-
   describe('getDatasets()', () => {
     beforeEach(() => {
       global.fetch = jest.fn().mockImplementation(() =>

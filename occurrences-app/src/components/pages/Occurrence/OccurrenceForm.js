@@ -13,15 +13,13 @@ import Dataset from './Dataset/Dataset'
 import { format } from 'date-fns'
 import {
   datasetTitleOf,
-  getDatasets,
-  getOccurrence,
-  mapDwcaToOccurrenceData,
   mapDwcaToLocationData,
-  mapDwcaToObservationData,
   mapDwcaToMeasurements,
-  mapDwcsToDarwinCoreFields,
-  createOccurrence
-} from '../../../clients/SmalldataClient'
+  mapDwcaToObservationData,
+  mapDwcaToOccurrenceData,
+  mapDwcsToDarwinCoreFields
+} from '../../../clients/SmalldataConverters'
+import { createOccurrence, getDatasets, getOccurrence } from '../../../clients/SmalldataClient'
 import { useTranslation } from 'react-i18next'
 import { AuthContext } from '@smalldata/dwca-lib'
 

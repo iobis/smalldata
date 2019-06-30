@@ -5,6 +5,11 @@ const purlUrl = 'http://purl.org/dc/terms/'
 const tdwgUrl = 'http://rs.tdwg.org/dwc/terms/'
 const iobisUrl = 'http://rs.iobis.org/obis/terms/'
 
+export function datasetTitleOf(dataset) {
+  const title = dataset && dataset.title && dataset.title.value
+  return title || ''
+}
+
 export function mapOccurrenceToDwca(occurrence) {
   const emof = occurrence.measurements.map(measurment => {
     const { typeId, unitId } = findTypeAndUnitIdByNames(measurment.type, measurment.unit)

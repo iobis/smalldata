@@ -1,7 +1,14 @@
 import * as SmalldataConverters from './SmalldataConverters'
-import { getDefaultDwcaResponse } from './SmalldataClient.mock'
+import { DATASTES_RESPONSE, getDefaultDwcaResponse } from './SmalldataClient.mock'
 
 describe('SmalldataConverters', () => {
+  it('datasetTitleOf(dataset)', () => {
+    expect(SmalldataConverters.datasetTitleOf(DATASTES_RESPONSE[0]))
+      .toEqual('Caprellids polulation structure in Usujiri, Hokkaido, Japan')
+    expect(SmalldataConverters.datasetTitleOf(null))
+      .toEqual('')
+  })
+
   it('mapDwcaToOccurrenceData()', () => {
     expect(SmalldataConverters.mapDwcaToOccurrenceData(getDefaultDwcaResponse())).toEqual({
       basisOfRecord:    'machineObservation',

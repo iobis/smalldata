@@ -10,11 +10,6 @@ export function renameRefToId({ ref, ...rest }) {
   return ({ id: ref, ...rest })
 }
 
-export function datasetTitleOf(dataset) {
-  const title = dataset && dataset.title && dataset.title.value
-  return title || ''
-}
-
 export async function getOccurrences({ userRef }) {
   return await fetch(`/api/dwca/user/${userRef}/records?projectFields=dwcRecord.tdwg.scientificName&projectFields=dwcRecord.tdwg.eventDate`)
     .then(response => response.json())
