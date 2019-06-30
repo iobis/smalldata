@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SmalldataConverters mapDwcaToMeasurements() 1`] = `
+exports[`SmalldataConverters mapDwcaToMeasurements() when measurements are present 1`] = `
 Array [
   Object {
     "type": "Abundance category of biological entity specified elsewhere",

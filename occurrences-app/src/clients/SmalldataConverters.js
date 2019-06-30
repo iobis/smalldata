@@ -134,13 +134,22 @@ export function mapDwcaToObservationData(dwca) {
 }
 
 export function mapDwcaToMeasurements(dwca) {
-  const emof = dwca.dwcRecords.emof
+  const emof = getProperty(() => dwca.dwcRecords.emof, [])
   return emof.map(({ tdwg, iobis }) => ({
     type:  tdwg.measurementType,
     value: tdwg.measurementValue,
     unit:  tdwg.measurementUnit,
     units: findUnitsByTypeId(iobis.measurementTypeID)
   }))
+}
+
+function getProperty(selectorFn, defaultValue) {
+  try {
+    const value = selectorFn()
+    return value === null || value === undefined ? defaultValue : value
+  } catch (e) {
+    return defaultValue
+  }
 }
 
 const reservedTdwgFields = ['basisOfRecord', 'eventDate', 'occurrenceStatus', 'scientificName', 'sex',

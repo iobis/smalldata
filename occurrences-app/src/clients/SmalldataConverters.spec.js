@@ -48,8 +48,14 @@ describe('SmalldataConverters', () => {
     })
   })
 
-  it('mapDwcaToMeasurements()', () => {
-    expect(SmalldataConverters.mapDwcaToMeasurements(getDefaultDwcaResponse())).toMatchSnapshot()
+  describe('mapDwcaToMeasurements()', () => {
+    it('when measurements are present', () => {
+      expect(SmalldataConverters.mapDwcaToMeasurements(getDefaultDwcaResponse())).toMatchSnapshot()
+    })
+
+    it('when measurements are not present', () => {
+      expect(SmalldataConverters.mapDwcaToMeasurements({})).toEqual([])
+    })
   })
 
   it('mapDwcsToDarwinCoreFields()', () => {
