@@ -20,9 +20,9 @@ export async function getOccurrence({ datasetId, dwcaId, userRef }) {
     .then(response => response.json())
 }
 
-export async function updateOccurrence({ datasetId, occurrence, dwcaId, userRef }) {
+export async function updateOccurrence({ occurrence, userRef, dwcaId }) {
   const request = mapOccurrenceToDwca(occurrence)
-  const url = `/api/dwca/${datasetId}/user/${userRef}/records/${encodeURIComponent(dwcaId)}`
+  const url = `/api/dwca/${occurrence.dataset.id}/user/${userRef}/records/${encodeURIComponent(dwcaId)}`
   return await fetch(url, {
     method:  'PUT',
     headers: {

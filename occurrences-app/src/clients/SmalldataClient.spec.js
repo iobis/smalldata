@@ -77,7 +77,6 @@ describe('SmalldataClient', () => {
 
   describe('updateOccurrence()', () => {
     const dwcaId = 'IkadeGqejSCC3Sc'
-    const datasetId = 'ntDOtUc7XsRrIus'
 
     beforeEach(() => {
       global.fetch = jest.fn().mockImplementation(() =>
@@ -92,10 +91,10 @@ describe('SmalldataClient', () => {
     })
 
     it('when providing all data', async() => {
-      await SmalldataClient.updateOccurrence({ ...getDefaultOccurrence(), ...{ userRef, dwcaId, datasetId } })
+      await SmalldataClient.updateOccurrence({ ...getDefaultOccurrence(), ...{ userRef, dwcaId } })
 
       expect(fetch).toHaveBeenCalledTimes(1)
-      expect(fetch.mock.calls[0][0]).toBe('/api/dwca/ntDOtUc7XsRrIus/user/ovZTtaOJZ98xDDY/records/IkadeGqejSCC3Sc')
+      expect(fetch.mock.calls[0][0]).toBe('/api/dwca/wEaBfmFyQhYCdsk/user/ovZTtaOJZ98xDDY/records/IkadeGqejSCC3Sc')
       expect(fetch.mock.calls[0][1].method).toBe('PUT')
       expect(JSON.parse(fetch.mock.calls[0][1].body)).toEqual(getExpectedDefaultOccurrenceRequest())
     })
