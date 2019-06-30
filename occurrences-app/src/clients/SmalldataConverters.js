@@ -125,11 +125,11 @@ export function mapDwcaToObservationData(dwca) {
     fieldNumber:             tdwg.fieldNumber,
     catalogNumber:           tdwg.catalogNumber,
     recordNumber:            tdwg.recordNumber,
-    identifiedBy:            tdwg.identifiedBy.split('|'),
-    recordedBy:              tdwg.recordedBy.split('|'),
+    identifiedBy:            tdwg.identifiedBy ? tdwg.identifiedBy.split('|') : [],
+    recordedBy:              tdwg.recordedBy ? tdwg.recordedBy.split('|') : [],
     identificationQualifier: tdwg.identificationQualifier,
     identificationRemarks:   tdwg.identificationRemarks,
-    references:              tdwg.associatedReferences.split('|')
+    references:              tdwg.associatedReferences ? tdwg.associatedReferences.split('|') : []
   }
 }
 

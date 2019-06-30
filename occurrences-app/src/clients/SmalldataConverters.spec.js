@@ -1,5 +1,6 @@
 import * as SmalldataConverters from './SmalldataConverters'
 import { DATASTES_RESPONSE, getDefaultDwcaResponse } from './SmalldataClient.mock'
+import deepExtend from 'deep-extend'
 
 describe('SmalldataConverters', () => {
   it('datasetTitleOf(dataset)', () => {
@@ -33,27 +34,58 @@ describe('SmalldataConverters', () => {
     })
   })
 
-  it('mapDwcaToObservationData()', () => {
-    expect(SmalldataConverters.mapDwcaToObservationData(getDefaultDwcaResponse())).toEqual({
-      institutionCode:         'Institution Code',
-      collectionCode:          'Collection Code',
-      fieldNumber:             'Field Number',
-      catalogNumber:           'Catalog Number',
-      recordNumber:            'Record Number',
-      identifiedBy:            ['person-1', 'person-2'],
-      recordedBy:              ['recorded-by-1', 'recorded-by-2'],
-      identificationQualifier: 'Identification Qualifier',
-      identificationRemarks:   'Identification Remarks',
-      references:              ['www.google.com', 'https://clojure.org/']
+  describe('mapDwcaToObservationData()', () => {
+    it('returns correct data when request has all data', () => {
+      expect(SmalldataConverters.mapDwcaToObservationData(getDefaultDwcaResponse())).toEqual({
+        institutionCode:         'Institution Code',
+        collectionCode:          'Collection Code',
+        fieldNumber:             'Field Number',
+        catalogNumber:           'Catalog Number',
+        recordNumber:            'Record Number',
+        identifiedBy:            ['person-1', 'person-2'],
+        recordedBy:              ['recorded-by-1', 'recorded-by-2'],
+        identificationQualifier: 'Identification Qualifier',
+        identificationRemarks:   'Identification Remarks',
+        references:              ['www.google.com', 'https://clojure.org/']
+      })
+    })
+
+    it('returns empty arrays if identified by, recorded by or references empty', () => {
+      expect(SmalldataConverters.mapDwcaToObservationData(deepExtend(
+        getDefaultDwcaResponse(),
+        {
+          dwcRecords: {
+            occurrence: [{
+              tdwg: {
+                ...getDefaultDwcaResponse().dwcRecords.occurrence[0].tdwg,
+                identifiedBy:         null,
+                recordedBy:           null,
+                associatedReferences: null
+              }
+            }]
+          }
+        })))
+        .toEqual({
+          institutionCode:         'Institution Code',
+          collectionCode:          'Collection Code',
+          fieldNumber:             'Field Number',
+          catalogNumber:           'Catalog Number',
+          recordNumber:            'Record Number',
+          identifiedBy:            [],
+          recordedBy:              [],
+          identificationQualifier: 'Identification Qualifier',
+          identificationRemarks:   'Identification Remarks',
+          references:              []
+        })
     })
   })
 
   describe('mapDwcaToMeasurements()', () => {
-    it('when measurements are present', () => {
+    it('returns correct data when measurements present', () => {
       expect(SmalldataConverters.mapDwcaToMeasurements(getDefaultDwcaResponse())).toMatchSnapshot()
     })
 
-    it('when measurements are not present', () => {
+    it('returns empty array when measurements not present', () => {
       expect(SmalldataConverters.mapDwcaToMeasurements({})).toEqual([])
     })
   })
