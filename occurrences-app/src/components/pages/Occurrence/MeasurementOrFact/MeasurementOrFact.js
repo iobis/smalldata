@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import Dropdown from '../../../form/Dropdown'
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { addUuid, removeUuid } from '../../../../common/uuids'
 import { getGeneralMeasurements, getSpecificMeasurements } from '../../../../clients/measurments'
 import { useTranslation } from 'react-i18next'
@@ -11,6 +11,10 @@ export default function MeasurementOrFact({ data, onChange }) {
   const generalMeasurements = getGeneralMeasurements()
   const specificMeasurements = getSpecificMeasurements()
   const [suppliedMeasurements, setSuppliedMeasurements] = useState(data.map(addUuid))
+
+  useEffect(() => {
+    setSuppliedMeasurements(data.map(addUuid))
+  }, [data])
 
   function addSuppliedMeasurements(measurement) {
     const updatedMeasurements = [...suppliedMeasurements, addUuid(measurement)]
