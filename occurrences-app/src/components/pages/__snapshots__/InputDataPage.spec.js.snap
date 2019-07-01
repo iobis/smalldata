@@ -53,11 +53,11 @@ exports[`InputDataPage renders correctly 1`] = `
           >
             <Link
               className="button is-info"
-              to="/input-data/new"
+              to="/input-data/create"
             >
               <a
                 className="button is-info"
-                href="/input-data/new"
+                href="/input-data/create"
                 onClick={[Function]}
               >
                 inputDataPage.inputNewOccurrence
@@ -169,11 +169,11 @@ exports[`InputDataPage renders correctly 2`] = `
           >
             <Link
               className="button is-info"
-              to="/input-data/new"
+              to="/input-data/create"
             >
               <a
                 className="button is-info"
-                href="/input-data/new"
+                href="/input-data/create"
                 onClick={[Function]}
               >
                 inputDataPage.inputNewOccurrence
@@ -263,11 +263,27 @@ exports[`InputDataPage renders correctly 2`] = `
                     <td
                       className="edit"
                     >
-                      <div
+                      <Link
                         className="button is-info"
+                        to={
+                          Object {
+                            "pathname": "/input-data/update",
+                            "state": Object {
+                              "action": "update",
+                              "datasetId": "ntDOtUc7XsRrIus",
+                              "dwcaId": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796",
+                            },
+                          }
+                        }
                       >
-                        common.edit
-                      </div>
+                        <a
+                          className="button is-info"
+                          href="/input-data/update"
+                          onClick={[Function]}
+                        >
+                          common.edit
+                        </a>
+                      </Link>
                     </td>
                     <td
                       className="added-at"
@@ -296,8 +312,9 @@ exports[`InputDataPage renders correctly 2`] = `
                         className="button is-info"
                         to={
                           Object {
-                            "pathname": "/input-data/new",
+                            "pathname": "/input-data/create",
                             "state": Object {
+                              "action": "create",
                               "datasetId": "ntDOtUc7XsRrIus",
                               "dwcaId": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796",
                             },
@@ -306,7 +323,7 @@ exports[`InputDataPage renders correctly 2`] = `
                       >
                         <a
                           className="button is-info"
-                          href="/input-data/new"
+                          href="/input-data/create"
                           onClick={[Function]}
                         >
                           common.copy
@@ -355,11 +372,27 @@ exports[`InputDataPage renders correctly 2`] = `
                     <td
                       className="edit"
                     >
-                      <div
+                      <Link
                         className="button is-info"
+                        to={
+                          Object {
+                            "pathname": "/input-data/update",
+                            "state": Object {
+                              "action": "update",
+                              "datasetId": "ntDOtUc7XsRrIus",
+                              "dwcaId": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158",
+                            },
+                          }
+                        }
                       >
-                        common.edit
-                      </div>
+                        <a
+                          className="button is-info"
+                          href="/input-data/update"
+                          onClick={[Function]}
+                        >
+                          common.edit
+                        </a>
+                      </Link>
                     </td>
                     <td
                       className="added-at"
@@ -388,8 +421,9 @@ exports[`InputDataPage renders correctly 2`] = `
                         className="button is-info"
                         to={
                           Object {
-                            "pathname": "/input-data/new",
+                            "pathname": "/input-data/create",
                             "state": Object {
+                              "action": "create",
                               "datasetId": "ntDOtUc7XsRrIus",
                               "dwcaId": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158",
                             },
@@ -398,7 +432,7 @@ exports[`InputDataPage renders correctly 2`] = `
                       >
                         <a
                           className="button is-info"
-                          href="/input-data/new"
+                          href="/input-data/create"
                           onClick={[Function]}
                         >
                           common.copy
@@ -435,11 +469,27 @@ exports[`InputDataPage renders correctly 2`] = `
                     <td
                       className="edit"
                     >
-                      <div
+                      <Link
                         className="button is-info"
+                        to={
+                          Object {
+                            "pathname": "/input-data/update",
+                            "state": Object {
+                              "action": "update",
+                              "datasetId": "PoJnGNMaxsupE4w",
+                              "dwcaId": "DeepSea_Antipatharia_35",
+                            },
+                          }
+                        }
                       >
-                        common.edit
-                      </div>
+                        <a
+                          className="button is-info"
+                          href="/input-data/update"
+                          onClick={[Function]}
+                        >
+                          common.edit
+                        </a>
+                      </Link>
                     </td>
                     <td
                       className="added-at"
@@ -468,8 +518,9 @@ exports[`InputDataPage renders correctly 2`] = `
                         className="button is-info"
                         to={
                           Object {
-                            "pathname": "/input-data/new",
+                            "pathname": "/input-data/create",
                             "state": Object {
+                              "action": "create",
                               "datasetId": "PoJnGNMaxsupE4w",
                               "dwcaId": "DeepSea_Antipatharia_35",
                             },
@@ -478,7 +529,7 @@ exports[`InputDataPage renders correctly 2`] = `
                       >
                         <a
                           className="button is-info"
-                          href="/input-data/new"
+                          href="/input-data/create"
                           onClick={[Function]}
                         >
                           common.copy

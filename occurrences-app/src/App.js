@@ -41,7 +41,8 @@ const AppDiv = () => {
       <Switch>
         <ProtectedRoute component={InputDataPage} exact path="/"/>
         <ProtectedRoute component={InputDataPage} exact path="/input-data"/>
-        <ProtectedRoute component={OccurrenceForm} exact path="/input-data/new"/>
+        <ProtectedRoute component={OccurrenceForm} exact path="/input-data/create"/>
+        <ProtectedRoute component={OccurrenceForm} exact path="/input-data/update"/>
         <Route component={HelpPage} exact path="/help"/>
       </Switch>
     </div>
