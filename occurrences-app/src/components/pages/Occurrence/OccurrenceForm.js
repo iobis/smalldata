@@ -102,6 +102,7 @@ export default function OccurrenceForm({ location }) {
       setErrorMessage(response.exception + ': ' + response.exceptionMessage)
     } else {
       setSuccessVisible(true)
+      setAction('create')
     }
   }
 
