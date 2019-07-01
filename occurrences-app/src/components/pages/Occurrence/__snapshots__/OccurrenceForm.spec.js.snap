@@ -13,6 +13,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
         key="occurrenceForm.dataset.step.stepTitle"
         nextStep="occurrenceForm.occurrenceData.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="occurrenceForm.dataset.step.stepDescription"
@@ -68,19 +69,24 @@ exports[`OccurrenceForm renders correctly 1`] = `
           activeStepIndex={0}
           nextStep="occurrenceForm.occurrenceData.step.stepTitle"
           onContinueButtonClick={[Function]}
+          onCopyPreviousDataClick={[Function]}
         >
           <div
             className="step-footer columns section"
           >
             <CopyPreviousData
-              visible={false}
+              onClick={[Function]}
+              visible={true}
             >
               <div
                 className="columns"
               >
                 <div
                   className="copy-previous-data column is-narrow"
-                />
+                  onClick={[Function]}
+                >
+                  copy data from previous entry
+                </div>
               </div>
             </CopyPreviousData>
             <ContinueButton
@@ -106,6 +112,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
         key="occurrenceForm.occurrenceData.step.stepTitle"
         nextStep="occurrenceForm.locationData.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <OccurrenceDataSummary
@@ -175,6 +182,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
         key="occurrenceForm.locationData.step.stepTitle"
         nextStep="occurrenceForm.observationData.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <SelectedLocation
@@ -244,6 +252,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
         key="occurrenceForm.observationData.step.stepTitle"
         nextStep="occurrenceForm.measurementOrFact.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="occurrenceForm.observationData.step.stepDescription"
@@ -303,6 +312,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
         key="occurrenceForm.measurementOrFact.step.stepTitle"
         nextStep="occurrenceForm.darwinCoreFields.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <MeasurementOrFactSummary
@@ -365,6 +375,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
         dataDescription=""
         key="occurrenceForm.darwinCoreFields.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="occurrenceForm.darwinCoreFields.step.stepDescription"
@@ -446,6 +457,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
         key="occurrenceForm.dataset.step.stepTitle"
         nextStep="occurrenceForm.occurrenceData.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="occurrenceForm.dataset.step.stepDescription"
@@ -516,6 +528,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
         key="occurrenceForm.occurrenceData.step.stepTitle"
         nextStep="occurrenceForm.locationData.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <OccurrenceDataSummary
@@ -620,6 +633,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
         key="occurrenceForm.locationData.step.stepTitle"
         nextStep="occurrenceForm.observationData.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <SelectedLocation
@@ -731,6 +745,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
         key="occurrenceForm.observationData.step.stepTitle"
         nextStep="occurrenceForm.measurementOrFact.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="occurrenceForm.observationData.step.stepDescription"
@@ -1099,11 +1114,13 @@ exports[`OccurrenceForm renders correctly 2`] = `
           activeStepIndex={3}
           nextStep="occurrenceForm.measurementOrFact.step.stepTitle"
           onContinueButtonClick={[Function]}
+          onCopyPreviousDataClick={[Function]}
         >
           <div
             className="step-footer columns section"
           >
             <CopyPreviousData
+              onClick={[Function]}
               visible={true}
             >
               <div
@@ -1111,6 +1128,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
               >
                 <div
                   className="copy-previous-data column is-narrow"
+                  onClick={[Function]}
                 >
                   copy data from previous entry
                 </div>
@@ -1139,6 +1157,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
         key="occurrenceForm.measurementOrFact.step.stepTitle"
         nextStep="occurrenceForm.darwinCoreFields.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <MeasurementOrFactSummary
@@ -1201,6 +1220,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
         dataDescription=""
         key="occurrenceForm.darwinCoreFields.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="occurrenceForm.darwinCoreFields.step.stepDescription"
@@ -1282,6 +1302,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
         key="occurrenceForm.dataset.step.stepTitle"
         nextStep="occurrenceForm.occurrenceData.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="occurrenceForm.dataset.step.stepDescription"
@@ -1352,6 +1373,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
         key="occurrenceForm.occurrenceData.step.stepTitle"
         nextStep="occurrenceForm.locationData.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <OccurrenceDataSummary
@@ -1456,6 +1478,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
         key="occurrenceForm.locationData.step.stepTitle"
         nextStep="occurrenceForm.observationData.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <SelectedLocation
@@ -1567,6 +1590,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
         key="occurrenceForm.observationData.step.stepTitle"
         nextStep="occurrenceForm.measurementOrFact.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData="Institution: institution code; Identified by: Indiana Jones"
         stepDescription="occurrenceForm.observationData.step.stepDescription"
@@ -1639,6 +1663,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
         key="occurrenceForm.measurementOrFact.step.stepTitle"
         nextStep="occurrenceForm.darwinCoreFields.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <MeasurementOrFactSummary
@@ -3199,11 +3224,13 @@ exports[`OccurrenceForm renders correctly 3`] = `
           activeStepIndex={4}
           nextStep="occurrenceForm.darwinCoreFields.step.stepTitle"
           onContinueButtonClick={[Function]}
+          onCopyPreviousDataClick={[Function]}
         >
           <div
             className="step-footer columns section"
           >
             <CopyPreviousData
+              onClick={[Function]}
               visible={true}
             >
               <div
@@ -3211,6 +3238,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
               >
                 <div
                   className="copy-previous-data column is-narrow"
+                  onClick={[Function]}
                 >
                   copy data from previous entry
                 </div>
@@ -3238,6 +3266,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
         dataDescription=""
         key="occurrenceForm.darwinCoreFields.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="occurrenceForm.darwinCoreFields.step.stepDescription"
@@ -3319,6 +3348,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
         key="occurrenceForm.dataset.step.stepTitle"
         nextStep="occurrenceForm.occurrenceData.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="occurrenceForm.dataset.step.stepDescription"
@@ -3389,6 +3419,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
         key="occurrenceForm.occurrenceData.step.stepTitle"
         nextStep="occurrenceForm.locationData.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <OccurrenceDataSummary
@@ -3493,6 +3524,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
         key="occurrenceForm.locationData.step.stepTitle"
         nextStep="occurrenceForm.observationData.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <SelectedLocation
@@ -3604,6 +3636,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
         key="occurrenceForm.observationData.step.stepTitle"
         nextStep="occurrenceForm.measurementOrFact.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData="Institution: institution code; Identified by: Indiana Jones"
         stepDescription="occurrenceForm.observationData.step.stepDescription"
@@ -3676,6 +3709,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
         key="occurrenceForm.measurementOrFact.step.stepTitle"
         nextStep="occurrenceForm.darwinCoreFields.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <MeasurementOrFactSummary
@@ -3803,6 +3837,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
         dataDescription=""
         key="occurrenceForm.darwinCoreFields.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="occurrenceForm.darwinCoreFields.step.stepDescription"
@@ -3950,6 +3985,31 @@ exports[`OccurrenceForm renders correctly 4`] = `
             </div>
           </DarwinCoreFields>
         </StepHeader>
+        <StepFooter
+          activeStepIndex={5}
+          onContinueButtonClick={[Function]}
+          onCopyPreviousDataClick={[Function]}
+        >
+          <div
+            className="step-footer columns section"
+          >
+            <CopyPreviousData
+              onClick={[Function]}
+              visible={true}
+            >
+              <div
+                className="columns"
+              >
+                <div
+                  className="copy-previous-data column is-narrow"
+                  onClick={[Function]}
+                >
+                  copy data from previous entry
+                </div>
+              </div>
+            </CopyPreviousData>
+          </div>
+        </StepFooter>
       </ActiveStepHeader>
       <div
         className="columns column is-centered"
@@ -3980,6 +4040,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
         key="occurrenceForm.dataset.step.stepTitle"
         nextStep="occurrenceForm.occurrenceData.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="occurrenceForm.dataset.step.stepDescription"
@@ -4050,6 +4111,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
         key="occurrenceForm.occurrenceData.step.stepTitle"
         nextStep="occurrenceForm.locationData.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <OccurrenceDataSummary
@@ -4154,6 +4216,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
         key="occurrenceForm.locationData.step.stepTitle"
         nextStep="occurrenceForm.observationData.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <SelectedLocation
@@ -4265,6 +4328,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
         key="occurrenceForm.observationData.step.stepTitle"
         nextStep="occurrenceForm.measurementOrFact.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData="Institution: institution code; Identified by: Indiana Jones"
         stepDescription="occurrenceForm.observationData.step.stepDescription"
@@ -4337,6 +4401,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
         key="occurrenceForm.measurementOrFact.step.stepTitle"
         nextStep="occurrenceForm.darwinCoreFields.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <MeasurementOrFactSummary
@@ -4497,6 +4562,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
         dataDescription=""
         key="occurrenceForm.darwinCoreFields.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="occurrenceForm.darwinCoreFields.step.stepDescription"
@@ -4644,6 +4710,31 @@ exports[`OccurrenceForm renders correctly 5`] = `
             </div>
           </DarwinCoreFields>
         </StepHeader>
+        <StepFooter
+          activeStepIndex={5}
+          onContinueButtonClick={[Function]}
+          onCopyPreviousDataClick={[Function]}
+        >
+          <div
+            className="step-footer columns section"
+          >
+            <CopyPreviousData
+              onClick={[Function]}
+              visible={true}
+            >
+              <div
+                className="columns"
+              >
+                <div
+                  className="copy-previous-data column is-narrow"
+                  onClick={[Function]}
+                >
+                  copy data from previous entry
+                </div>
+              </div>
+            </CopyPreviousData>
+          </div>
+        </StepFooter>
       </ActiveStepHeader>
       <div
         className="columns column is-centered"
@@ -4674,6 +4765,7 @@ exports[`OccurrenceForm renders correctly 6`] = `
         key="occurrenceForm.dataset.step.stepTitle"
         nextStep="occurrenceForm.occurrenceData.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="occurrenceForm.dataset.step.stepDescription"
@@ -4744,6 +4836,7 @@ exports[`OccurrenceForm renders correctly 6`] = `
         key="occurrenceForm.occurrenceData.step.stepTitle"
         nextStep="occurrenceForm.locationData.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <OccurrenceDataSummary
@@ -4848,6 +4941,7 @@ exports[`OccurrenceForm renders correctly 6`] = `
         key="occurrenceForm.locationData.step.stepTitle"
         nextStep="occurrenceForm.observationData.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <SelectedLocation
@@ -4959,6 +5053,7 @@ exports[`OccurrenceForm renders correctly 6`] = `
         key="occurrenceForm.observationData.step.stepTitle"
         nextStep="occurrenceForm.measurementOrFact.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData="Institution: institution code; Identified by: Indiana Jones"
         stepDescription="occurrenceForm.observationData.step.stepDescription"
@@ -5031,6 +5126,7 @@ exports[`OccurrenceForm renders correctly 6`] = `
         key="occurrenceForm.measurementOrFact.step.stepTitle"
         nextStep="occurrenceForm.darwinCoreFields.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <MeasurementOrFactSummary
@@ -5224,6 +5320,7 @@ exports[`OccurrenceForm renders correctly 6`] = `
         dataDescription=""
         key="occurrenceForm.darwinCoreFields.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="occurrenceForm.darwinCoreFields.step.stepDescription"
@@ -5371,6 +5468,31 @@ exports[`OccurrenceForm renders correctly 6`] = `
             </div>
           </DarwinCoreFields>
         </StepHeader>
+        <StepFooter
+          activeStepIndex={5}
+          onContinueButtonClick={[Function]}
+          onCopyPreviousDataClick={[Function]}
+        >
+          <div
+            className="step-footer columns section"
+          >
+            <CopyPreviousData
+              onClick={[Function]}
+              visible={true}
+            >
+              <div
+                className="columns"
+              >
+                <div
+                  className="copy-previous-data column is-narrow"
+                  onClick={[Function]}
+                >
+                  copy data from previous entry
+                </div>
+              </div>
+            </CopyPreviousData>
+          </div>
+        </StepFooter>
       </ActiveStepHeader>
       <div
         className="columns column is-centered"
@@ -5401,6 +5523,7 @@ exports[`OccurrenceForm renders correctly 7`] = `
         key="occurrenceForm.dataset.step.stepTitle"
         nextStep="occurrenceForm.occurrenceData.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="occurrenceForm.dataset.step.stepDescription"
@@ -5471,6 +5594,7 @@ exports[`OccurrenceForm renders correctly 7`] = `
         key="occurrenceForm.occurrenceData.step.stepTitle"
         nextStep="occurrenceForm.locationData.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <OccurrenceDataSummary
@@ -5575,6 +5699,7 @@ exports[`OccurrenceForm renders correctly 7`] = `
         key="occurrenceForm.locationData.step.stepTitle"
         nextStep="occurrenceForm.observationData.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <SelectedLocation
@@ -5686,6 +5811,7 @@ exports[`OccurrenceForm renders correctly 7`] = `
         key="occurrenceForm.observationData.step.stepTitle"
         nextStep="occurrenceForm.measurementOrFact.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData="Institution: institution code; Identified by: Indiana Jones"
         stepDescription="occurrenceForm.observationData.step.stepDescription"
@@ -5758,6 +5884,7 @@ exports[`OccurrenceForm renders correctly 7`] = `
         key="occurrenceForm.measurementOrFact.step.stepTitle"
         nextStep="occurrenceForm.darwinCoreFields.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <MeasurementOrFactSummary
@@ -5951,6 +6078,7 @@ exports[`OccurrenceForm renders correctly 7`] = `
         dataDescription=""
         key="occurrenceForm.darwinCoreFields.step.stepTitle"
         onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="occurrenceForm.darwinCoreFields.step.stepDescription"
@@ -6148,6 +6276,31 @@ exports[`OccurrenceForm renders correctly 7`] = `
             </div>
           </DarwinCoreFields>
         </StepHeader>
+        <StepFooter
+          activeStepIndex={5}
+          onContinueButtonClick={[Function]}
+          onCopyPreviousDataClick={[Function]}
+        >
+          <div
+            className="step-footer columns section"
+          >
+            <CopyPreviousData
+              onClick={[Function]}
+              visible={true}
+            >
+              <div
+                className="columns"
+              >
+                <div
+                  className="copy-previous-data column is-narrow"
+                  onClick={[Function]}
+                >
+                  copy data from previous entry
+                </div>
+              </div>
+            </CopyPreviousData>
+          </div>
+        </StepFooter>
       </ActiveStepHeader>
       <div
         className="columns column is-centered"
