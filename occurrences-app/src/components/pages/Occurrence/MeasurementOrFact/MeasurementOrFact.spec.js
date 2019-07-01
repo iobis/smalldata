@@ -283,15 +283,13 @@ describe('MeasurementOrFact', () => {
     })
   })
 
-  describe('updates values when updates props', () => {
-    it('invokes onChange handler', () => {
-      wrapper = mount(createComponent())
-      expect(wrapper.find('.supplied .fieldrow')).toHaveLength(0)
+  it('updates values when updates props', () => {
+    wrapper = mount(createComponent())
+    expect(wrapper.find('.supplied .fieldrow')).toHaveLength(0)
 
-      wrapper.setProps({ data: getData() })
-      wrapper.update()
-      expect(wrapper.find('.supplied .fieldrow')).toHaveLength(1)
-    })
+    wrapper.setProps({ data: getData() })
+    wrapper.update()
+    expect(wrapper.find('.supplied .fieldrow')).toHaveLength(1)
   })
 
   function addGeneralMeasurement(value) {
