@@ -85,7 +85,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
                   className="copy-previous-data column is-narrow"
                   onClick={[Function]}
                 >
-                  copy data from previous entry
+                  occurrenceForm.copyPreviousStep
                 </div>
               </div>
             </CopyPreviousData>
@@ -1130,7 +1130,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
                   className="copy-previous-data column is-narrow"
                   onClick={[Function]}
                 >
-                  copy data from previous entry
+                  occurrenceForm.copyPreviousStep
                 </div>
               </div>
             </CopyPreviousData>
@@ -3240,7 +3240,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                   className="copy-previous-data column is-narrow"
                   onClick={[Function]}
                 >
-                  copy data from previous entry
+                  occurrenceForm.copyPreviousStep
                 </div>
               </div>
             </CopyPreviousData>
@@ -4004,7 +4004,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
                   className="copy-previous-data column is-narrow"
                   onClick={[Function]}
                 >
-                  copy data from previous entry
+                  occurrenceForm.copyPreviousStep
                 </div>
               </div>
             </CopyPreviousData>
@@ -4729,7 +4729,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
                   className="copy-previous-data column is-narrow"
                   onClick={[Function]}
                 >
-                  copy data from previous entry
+                  occurrenceForm.copyPreviousStep
                 </div>
               </div>
             </CopyPreviousData>
@@ -5487,7 +5487,7 @@ exports[`OccurrenceForm renders correctly 6`] = `
                   className="copy-previous-data column is-narrow"
                   onClick={[Function]}
                 >
-                  copy data from previous entry
+                  occurrenceForm.copyPreviousStep
                 </div>
               </div>
             </CopyPreviousData>
@@ -6295,7 +6295,7 @@ exports[`OccurrenceForm renders correctly 7`] = `
                   className="copy-previous-data column is-narrow"
                   onClick={[Function]}
                 >
-                  copy data from previous entry
+                  occurrenceForm.copyPreviousStep
                 </div>
               </div>
             </CopyPreviousData>

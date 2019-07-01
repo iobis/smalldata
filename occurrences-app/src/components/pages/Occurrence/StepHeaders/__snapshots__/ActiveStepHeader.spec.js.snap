@@ -70,7 +70,7 @@ exports[`ActiveStepHeader does not renders StepFooter if last step 1`] = `
           <div
             className="copy-previous-data column is-narrow"
           >
-            copy data from previous entry
+            occurrenceForm.copyPreviousStep
           </div>
         </div>
       </CopyPreviousData>
@@ -149,7 +149,7 @@ exports[`ActiveStepHeader does not renders StepFooter if next step is not provid
           <div
             className="copy-previous-data column is-narrow"
           >
-            copy data from previous entry
+            occurrenceForm.copyPreviousStep
           </div>
         </div>
       </CopyPreviousData>
@@ -230,7 +230,7 @@ exports[`ActiveStepHeader renders StepFooter with all data if next step is provi
           <div
             className="copy-previous-data column is-narrow"
           >
-            copy data from previous entry
+            occurrenceForm.copyPreviousStep
           </div>
         </div>
       </CopyPreviousData>

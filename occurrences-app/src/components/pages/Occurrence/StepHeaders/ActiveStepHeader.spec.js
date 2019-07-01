@@ -18,7 +18,7 @@ describe('ActiveStepHeader', () => {
     expect(wrapper).toMatchSnapshot()
     expect(wrapper.find('.step-footer').exists()).toBe(true)
     expect(wrapper.find('.step-footer .copy-previous-data').exists()).toBe(true)
-    expect(wrapper.find('.step-footer .copy-previous-data').text()).toBe('copy data from previous entry')
+    expect(wrapper.find('.step-footer .copy-previous-data').text()).toBe('occurrenceForm.copyPreviousStep')
     expect(wrapper.find('.step-footer .continue-button').exists()).toBe(true)
   })
 
@@ -36,7 +36,7 @@ describe('ActiveStepHeader', () => {
     expect(wrapper).toMatchSnapshot()
     expect(wrapper.find('.step-footer').exists()).toBe(true)
     expect(wrapper.find('.step-footer .copy-previous-data').exists()).toBe(true)
-    expect(wrapper.find('.step-footer .copy-previous-data').text()).toBe('copy data from previous entry')
+    expect(wrapper.find('.step-footer .copy-previous-data').text()).toBe('occurrenceForm.copyPreviousStep')
     expect(wrapper.find('.step-footer .continue-button').exists()).toBe(false)
   })
 
@@ -54,6 +54,7 @@ describe('ActiveStepHeader', () => {
     expect(wrapper).toMatchSnapshot()
     expect(wrapper.find('.step-footer').exists()).toBe(true)
     expect(wrapper.find('.step-footer .copy-previous-data').exists()).toBe(true)
+    expect(wrapper.find('.step-footer .copy-previous-data').text()).toBe('occurrenceForm.copyPreviousStep')
     expect(wrapper.find('.step-footer .continue-button').exists()).toBe(false)
   })
 })

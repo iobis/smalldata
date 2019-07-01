@@ -1,9 +1,11 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 
 export default function CopyPreviousData({ onClick, visible }) {
+  const { t } = useTranslation()
   const label = visible
-    ? 'copy data from previous entry'
+    ? t('occurrenceForm.copyPreviousStep')
     : ''
 
   return (
