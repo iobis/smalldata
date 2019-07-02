@@ -7,6 +7,7 @@ export default function DatePicker({ onChange, value }) {
 
   useEffect(() => {
     const calendar = bulmaCalendar.attach(datePickerEl.current, {
+      dateFormat:         'D MMMM YYYY',
       displayMode:        'default',
       showFooter:         false,
       showHeader:         false,
