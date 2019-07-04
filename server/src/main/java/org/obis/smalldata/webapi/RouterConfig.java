@@ -1,13 +1,22 @@
 package org.obis.smalldata.webapi;
 
 import io.vertx.core.Handler;
+import io.vertx.core.json.JsonObject;
+import io.vertx.ext.auth.PubSecKeyOptions;
+import io.vertx.ext.auth.jwt.JWTAuth;
+import io.vertx.ext.auth.jwt.JWTAuthOptions;
+import io.vertx.ext.auth.jwt.impl.JWTAuthProviderImpl;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.RoutingContext;
+import io.vertx.ext.web.api.contract.RouterFactoryOptions;
 import io.vertx.ext.web.api.contract.openapi3.OpenAPI3RouterFactory;
+import io.vertx.ext.web.handler.JWTAuthHandler;
 import io.vertx.ext.web.handler.StaticHandler;
 
 import java.util.Map;
 import java.util.function.Consumer;
+
+import static org.pmw.tinylog.Logger.info;
 
 class RouterConfig {
 
@@ -28,24 +37,33 @@ class RouterConfig {
     Map.entry("postDWCARecord", new OperationHandlers(DwcaRecordsHandler::post)),
     Map.entry("putDWCARecord", new OperationHandlers(DwcaRecordsHandler::put))
   );
-
   private final Consumer<Router> completionHandler;
+  private final JWTAuth jwtAuth;
 
-  RouterConfig(Consumer<Router> completionHandler) {
+  RouterConfig(Consumer<Router> completionHandler, JWTAuth jwtAuth) {
     this.completionHandler = completionHandler;
+    this.jwtAuth = jwtAuth;
   }
 
   void invoke(OpenAPI3RouterFactory routerFactory) {
+    routerFactory.setOptions(new RouterFactoryOptions().setRequireSecurityHandlers(true));
     HANDLERS.forEach((operationId, handler) -> {
       routerFactory.addHandlerByOperationId(operationId, handler.handler);
       routerFactory.addFailureHandlerByOperationId(operationId, handler.failureHandler);
     });
+    routerFactory.addSecurityHandler("oceanExpertJWT", this::securityHandler); //JWTAuthHandler.create(jwtAuth));
+
     var router = routerFactory.getRouter();
     router.get("/openapi/*").handler(StaticHandler.create("swaggerroot"));
     router.get("/login/*").handler(StaticHandler.create("loginroot"));
     router.get("/*").handler(StaticHandler.create());
 
     completionHandler.accept(router);
+  }
+
+  private void securityHandler(RoutingContext routingContext) {
+    info("handling security in context: {}", routingContext);
+    routingContext.put("JWT", "OK").next();
   }
 
   private static class OperationHandlers {
