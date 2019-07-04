@@ -1,17 +1,13 @@
 package org.obis.smalldata.webapi;
 
 import io.vertx.core.Handler;
-import io.vertx.core.json.JsonObject;
-import io.vertx.ext.auth.PubSecKeyOptions;
 import io.vertx.ext.auth.jwt.JWTAuth;
-import io.vertx.ext.auth.jwt.JWTAuthOptions;
-import io.vertx.ext.auth.jwt.impl.JWTAuthProviderImpl;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.RoutingContext;
 import io.vertx.ext.web.api.contract.RouterFactoryOptions;
 import io.vertx.ext.web.api.contract.openapi3.OpenAPI3RouterFactory;
-import io.vertx.ext.web.handler.JWTAuthHandler;
 import io.vertx.ext.web.handler.StaticHandler;
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
 import java.util.Map;
 import java.util.function.Consumer;
@@ -47,16 +43,17 @@ class RouterConfig {
 
   void invoke(OpenAPI3RouterFactory routerFactory) {
     routerFactory.setOptions(new RouterFactoryOptions().setRequireSecurityHandlers(true));
+    routerFactory.addSecurityHandler("oceanExpertJWT", this::securityHandler); //JWTAuthHandler.create(jwtAuth));
     HANDLERS.forEach((operationId, handler) -> {
       routerFactory.addHandlerByOperationId(operationId, handler.handler);
       routerFactory.addFailureHandlerByOperationId(operationId, handler.failureHandler);
     });
-    routerFactory.addSecurityHandler("oceanExpertJWT", this::securityHandler); //JWTAuthHandler.create(jwtAuth));
 
     var router = routerFactory.getRouter();
+    info("ROUTER: {}", ReflectionToStringBuilder.toString(router));
     router.get("/openapi/*").handler(StaticHandler.create("swaggerroot"));
-    router.get("/login/*").handler(StaticHandler.create("loginroot"));
-    router.get("/*").handler(StaticHandler.create());
+    // router.get("/login/*").handler(StaticHandler.create("loginroot"));
+    // router.get("/*").handler(StaticHandler.create());
 
     completionHandler.accept(router);
   }
