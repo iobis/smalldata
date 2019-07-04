@@ -4,7 +4,6 @@ import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.client.WebClient;
-import io.vertx.ext.web.codec.BodyCodec;
 import io.vertx.junit5.Timeout;
 import io.vertx.junit5.VertxExtension;
 import io.vertx.junit5.VertxTestContext;
@@ -19,10 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(VertxExtension.class)
-public class HttpComponentTest {
-
-  private static final int HTTP_PORT = 8080;
-  private static final JsonObject CONFIG = new JsonObject().put("port", HTTP_PORT);
+public class HttpComponentTest extends DefaultHandlerTest {
 
   @BeforeEach
   void deployVerticle(Vertx vertx, VertxTestContext testContext) {
@@ -37,18 +33,16 @@ public class HttpComponentTest {
   @Timeout(value = 10, timeUnit = TimeUnit.SECONDS)
   void startHttpServer(Vertx vertx, VertxTestContext testContext) {
     WebClient client = WebClient.create(vertx);
-    client.get(HTTP_PORT, "localhost", "/api/status")
-      .as(BodyCodec.jsonObject())
-      .send(result -> {
-        if (result.succeeded()) {
-          assertEquals(200, result.result().statusCode());
-          JsonObject body = result.result().body();
-          assertTrue(body.containsKey("title"));
-          assertTrue(body.getString("title").contains("Small Data"));
-          testContext.completeNow();
-        } else {
-          testContext.failNow(result.cause());
-        }
-      });
+    httpGetJsonBody(client, "/api/status", result -> {
+      if (result.succeeded()) {
+        assertEquals(200, result.result().statusCode());
+        JsonObject body = result.result().body();
+        assertTrue(body.containsKey("title"));
+        assertTrue(body.getString("title").contains("Small Data"));
+        testContext.completeNow();
+      } else {
+        testContext.failNow(result.cause());
+      }
+    });
   }
 }

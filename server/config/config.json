@@ -3,8 +3,11 @@
     "port": 8080
   },
   "auth": {
-    "provider": "local",
-    "type": "JWT"
+    "provider": "external",
+    "type": "JWT",
+    "alg": "RS256",
+    "verifyKey": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAy6o9fPZvmg5fSNz2Pomo\npNGfHBpdYecfPBnomQhrgA/1UIx4BvokBBp56Zd37vXlOykmiWSaubF4mLfxbsEF\n5OL9D5OUe0Ubepk1CDVrze5J9feGWQEhZD+dHkDgZyB13LAcDEJUr+8xZdtScZhB\nsZ24yMQRhPNsLTMueBNk7la8NjOcG9X9mGnhwyrmxDQvovkSD0q/qBvFYGBikGqX\nx/aAiv0ecMe+hj7+s2uKbdNMFsbEyattcvLNJe/yKjD3AZAL4sf/q1x/DTovpB6P\nG7jEWYExLG0psUQ4EUwWAvauFPenI4fQkM7EHVpNyeAComKpakw2Ub6I//9lq8Vg\nrQIDAQAB",
+    "demokey": "verysecret"
   },
   "storage": {
     "bindIp": "localhost",

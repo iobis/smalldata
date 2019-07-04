@@ -1,18 +1,14 @@
 package org.obis.smalldata.webapi;
 
 import io.vertx.core.Handler;
-import io.vertx.ext.auth.jwt.JWTAuth;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.RoutingContext;
 import io.vertx.ext.web.api.contract.RouterFactoryOptions;
 import io.vertx.ext.web.api.contract.openapi3.OpenAPI3RouterFactory;
 import io.vertx.ext.web.handler.StaticHandler;
-import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
 import java.util.Map;
 import java.util.function.Consumer;
-
-import static org.pmw.tinylog.Logger.info;
 
 class RouterConfig {
 
@@ -34,33 +30,27 @@ class RouterConfig {
     Map.entry("putDWCARecord", new OperationHandlers(DwcaRecordsHandler::put))
   );
   private final Consumer<Router> completionHandler;
-  private final JWTAuth jwtAuth;
+  private final Map<String, Handler<RoutingContext>> securityHandlers;
 
-  RouterConfig(Consumer<Router> completionHandler, JWTAuth jwtAuth) {
+  RouterConfig(Consumer<Router> completionHandler, Map<String, Handler<RoutingContext>> securityHandlers) {
     this.completionHandler = completionHandler;
-    this.jwtAuth = jwtAuth;
+    this.securityHandlers = securityHandlers;
   }
 
   void invoke(OpenAPI3RouterFactory routerFactory) {
     routerFactory.setOptions(new RouterFactoryOptions().setRequireSecurityHandlers(true));
-    routerFactory.addSecurityHandler("oceanExpertJWT", this::securityHandler); //JWTAuthHandler.create(jwtAuth));
+    securityHandlers.forEach((securityId, handler) -> routerFactory.addSecurityHandler(securityId, handler));
     HANDLERS.forEach((operationId, handler) -> {
       routerFactory.addHandlerByOperationId(operationId, handler.handler);
       routerFactory.addFailureHandlerByOperationId(operationId, handler.failureHandler);
     });
 
     var router = routerFactory.getRouter();
-    info("ROUTER: {}", ReflectionToStringBuilder.toString(router));
     router.get("/openapi/*").handler(StaticHandler.create("swaggerroot"));
-    // router.get("/login/*").handler(StaticHandler.create("loginroot"));
-    // router.get("/*").handler(StaticHandler.create());
+    router.get("/login/*").handler(StaticHandler.create("loginroot"));
+    router.get("/*").handler(StaticHandler.create());
 
     completionHandler.accept(router);
-  }
-
-  private void securityHandler(RoutingContext routingContext) {
-    info("handling security in context: {}", routingContext);
-    routingContext.put("JWT", "OK").next();
   }
 
   private static class OperationHandlers {

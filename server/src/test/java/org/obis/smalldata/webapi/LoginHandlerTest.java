@@ -4,7 +4,6 @@ import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.client.WebClient;
-import io.vertx.ext.web.codec.BodyCodec;
 import io.vertx.junit5.Timeout;
 import io.vertx.junit5.VertxExtension;
 import io.vertx.junit5.VertxTestContext;
@@ -18,10 +17,7 @@ import java.util.concurrent.TimeUnit;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(VertxExtension.class)
-public class LoginHandlerTest {
-
-  private static final int HTTP_PORT = 8080;
-  private static final JsonObject CONFIG = new JsonObject().put("port", HTTP_PORT);
+public class LoginHandlerTest extends DefaultHandlerTest {
 
   @BeforeEach
   void deployVerticle(Vertx vertx, VertxTestContext testContext) {
@@ -39,19 +35,17 @@ public class LoginHandlerTest {
     vertx.eventBus().localConsumer("auth.login",
       message -> message.reply(new JsonObject()
         .put("token", "qwertyuiop")));
-    client.post(HTTP_PORT, "localhost", "/api/login")
-      .as(BodyCodec.jsonObject())
-      .sendJson(
-        new JsonObject().put("username", "paulo").put("password", "secret"),
-        result -> {
-          if (result.succeeded()) {
-            assertEquals(200, result.result().statusCode());
-            JsonObject body = result.result().body();
-            assertEquals(body.getString("token"), "qwertyuiop");
-            testContext.completeNow();
-          } else {
-            testContext.failNow(result.cause());
-          }
-        });
+    httpPostJsonBody(client, "/api/login",
+      new JsonObject().put("username", "paulo").put("password", "secret"),
+      result -> {
+        if (result.succeeded()) {
+          assertEquals(200, result.result().statusCode());
+          JsonObject body = result.result().body();
+          assertEquals(body.getString("token"), "qwertyuiop");
+          testContext.completeNow();
+        } else {
+          testContext.failNow(result.cause());
+        }
+      });
   }
 }

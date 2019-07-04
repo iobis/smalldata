@@ -9,6 +9,7 @@ servers:
   - url: 'http://localhost:8080/'
   - url: 'http://localhost:8008/'
 security:
+  - demoApiKey: []
   - oceanExpertJWT: []
 paths:
   /api/datasets:
@@ -703,6 +704,10 @@ components:
       type: http
       scheme: bearer
       bearerFormat: JWT
+    demoApiKey:
+      type: apiKey
+      name: Authorization
+      in: header
   schemas:
     Status:
       type: object

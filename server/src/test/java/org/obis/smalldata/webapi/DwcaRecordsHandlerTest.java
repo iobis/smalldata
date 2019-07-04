@@ -5,7 +5,6 @@ import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.client.WebClient;
-import io.vertx.ext.web.codec.BodyCodec;
 import io.vertx.junit5.Timeout;
 import io.vertx.junit5.VertxExtension;
 import io.vertx.junit5.VertxTestContext;
@@ -25,16 +24,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.pmw.tinylog.Logger.info;
 
 @ExtendWith(VertxExtension.class)
-public class DwcaRecordsHandlerTest {
+public class DwcaRecordsHandlerTest extends DefaultHandlerTest {
 
-  private static final int HTTP_PORT = 8080;
-  private static final JsonObject CONFIG = new JsonObject().put("port", HTTP_PORT);
   private static final String OCCURRENCE = "occurrence";
   private static final String DEFAULT_DWCA_REF = "wEaBfmFyQhYCdsk";
   private static final String URL_API_DWCA = "/api/dwca/";
   private static final String PATH_USER = "/user/";
   private static final String KEY_DWCA_ID = "dwcaId";
-  private static final String LOCALHOST = "localhost";
 
   @BeforeEach
   void deployVerticle(Vertx vertx, VertxTestContext testContext) {
@@ -57,17 +53,14 @@ public class DwcaRecordsHandlerTest {
     vertx.eventBus().localConsumer(
       "dwca.record",
       message -> message.reply(new JsonArray().add(new JsonObject().put(KEY_DWCA_ID, SecureRandomString.generateId()))));
-    client
-      .get(HTTP_PORT, LOCALHOST, url)
-      .as(BodyCodec.jsonObject())
-      .send(ar -> {
-        assertThat(ar.succeeded()).isTrue();
-        var json = ar.result().body();
-        info(json);
-        assertThat(json.containsKey(KEY_DWCA_ID)).isTrue();
-        assertThat(json.getString(KEY_DWCA_ID)).hasSize(15);
-        context.completeNow();
-      });
+    httpGetJsonBody(client, url, ar -> {
+      assertThat(ar.succeeded()).isTrue();
+      var json = ar.result().body();
+      info(json);
+      assertThat(json.containsKey(KEY_DWCA_ID)).isTrue();
+      assertThat(json.getString(KEY_DWCA_ID)).hasSize(15);
+      context.completeNow();
+    });
   }
 
   @Test
@@ -83,19 +76,16 @@ public class DwcaRecordsHandlerTest {
     vertx.eventBus().localConsumer(
       "dwca.record",
       message -> message.reply(new JsonObject().put(KEY_DWCA_ID, SecureRandomString.generateId())));
-    client
-      .post(HTTP_PORT, LOCALHOST, url)
-      .as(BodyCodec.jsonObject())
-      .sendJson(new JsonObject(Map.of(
-        "core", OCCURRENCE,
-        OCCURRENCE, new JsonArray().add(new JsonObject()))),
-        ar -> {
-          assertThat(ar.succeeded()).isTrue();
-          var json = ar.result().body();
-          assertThat(json.containsKey(KEY_DWCA_ID)).isTrue();
-          assertThat(json.getString(KEY_DWCA_ID)).hasSize(15);
-          context.completeNow();
-        });
+    httpPostJsonBody(client, url, new JsonObject(Map.of(
+      "core", OCCURRENCE,
+      OCCURRENCE, new JsonArray().add(new JsonObject()))),
+      ar -> {
+        assertThat(ar.succeeded()).isTrue();
+        var json = ar.result().body();
+        assertThat(json.containsKey(KEY_DWCA_ID)).isTrue();
+        assertThat(json.getString(KEY_DWCA_ID)).hasSize(15);
+        context.completeNow();
+      });
   }
 
   @Test
@@ -108,20 +98,17 @@ public class DwcaRecordsHandlerTest {
     var url = URL_API_DWCA + DEFAULT_DWCA_REF + PATH_USER
       + URLEncoder.encode("dithras@game.play", StandardCharsets.UTF_8)
       + "/records";
-    client
-      .post(HTTP_PORT, LOCALHOST, url)
-      .as(BodyCodec.jsonObject())
-      .sendJson(new JsonObject(Map.of(
-        "core", OCCURRENCE,
-        OCCURRENCE, new JsonArray(List.of(new JsonObject(), new JsonObject())))),
-        ar -> {
-          assertThat(ar.succeeded()).isTrue();
-          assertThat(ar.result().statusCode()).isEqualTo(422);
-          assertThat(ar.result().statusMessage()).isEqualTo("Invalid request body");
-          assertThat(ar.result().body().getJsonArray("messages")).containsOnly(
-            "core table 'occurrence' can have only 1 record.");
-          context.completeNow();
-        });
+    httpPostJsonBody(client, url, new JsonObject(Map.of(
+      "core", OCCURRENCE,
+      OCCURRENCE, new JsonArray(List.of(new JsonObject(), new JsonObject())))),
+      ar -> {
+        assertThat(ar.succeeded()).isTrue();
+        assertThat(ar.result().statusCode()).isEqualTo(422);
+        assertThat(ar.result().statusMessage()).isEqualTo("Invalid request body");
+        assertThat(ar.result().body().getJsonArray("messages")).containsOnly(
+          "core table 'occurrence' can have only 1 record.");
+        context.completeNow();
+      });
   }
 
   @Test
@@ -134,20 +121,17 @@ public class DwcaRecordsHandlerTest {
     var url = URL_API_DWCA + DEFAULT_DWCA_REF + PATH_USER
       + URLEncoder.encode("whatever", StandardCharsets.UTF_8)
       + "/records";
-    client
-      .post(HTTP_PORT, LOCALHOST, url)
-      .as(BodyCodec.jsonObject())
-      .sendJson(new JsonObject().put("core", OCCURRENCE)
-          .put(OCCURRENCE, new JsonArray()),
-        ar -> {
-          assertThat(ar.succeeded()).isTrue();
-          assertThat(ar.result().statusCode()).isEqualTo(422);
-          assertThat(ar.result().statusMessage()).isEqualTo("Invalid request body");
-          assertThat(ar.result().body().getJsonArray("messages")).containsExactly(
-            "core table 'occurrence' can have only 1 record.",
-            "user with ref 'whatever' does not exist.");
-          context.completeNow();
-        });
+    httpPostJsonBody(client, url, new JsonObject().put("core", OCCURRENCE)
+        .put(OCCURRENCE, new JsonArray()),
+      ar -> {
+        assertThat(ar.succeeded()).isTrue();
+        assertThat(ar.result().statusCode()).isEqualTo(422);
+        assertThat(ar.result().statusMessage()).isEqualTo("Invalid request body");
+        assertThat(ar.result().body().getJsonArray("messages")).containsExactly(
+          "core table 'occurrence' can have only 1 record.",
+          "user with ref 'whatever' does not exist.");
+        context.completeNow();
+      });
   }
 
   private void addSucceedingRefs(Vertx vertx) {
