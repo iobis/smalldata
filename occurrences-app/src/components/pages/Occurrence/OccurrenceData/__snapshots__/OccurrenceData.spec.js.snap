@@ -5,8 +5,8 @@ exports[`OccurrenceData renders correctly 1`] = `
   data={
     Object {
       "basisOfRecord": "humanObservation",
-      "beginDate": 2019-01-02T10:30:40.000Z,
-      "endDate": 2020-01-02T10:30:40.000Z,
+      "beginDate": 2019-01-02T12:30:40.000Z,
+      "endDate": 2020-01-02T12:30:40.000Z,
       "lifestage": "larva",
       "occurrenceStatus": "absent",
       "scientificName": "scientific name",
@@ -19,8 +19,8 @@ exports[`OccurrenceData renders correctly 1`] = `
         Array [
           Object {
             "basisOfRecord": "humanObservation",
-            "beginDate": 2019-01-02T10:30:40.000Z,
-            "endDate": 2020-01-02T10:30:40.000Z,
+            "beginDate": 2019-01-02T12:30:40.000Z,
+            "endDate": 2020-01-02T12:30:40.000Z,
             "lifestage": "larva",
             "occurrenceStatus": "absent",
             "scientificName": "scientific name",
@@ -30,8 +30,8 @@ exports[`OccurrenceData renders correctly 1`] = `
         Array [
           Object {
             "basisOfRecord": "humanObservation",
-            "beginDate": 2019-01-02T10:30:40.000Z,
-            "endDate": 2020-01-02T10:30:40.000Z,
+            "beginDate": 2019-01-02T12:30:40.000Z,
+            "endDate": 2020-01-02T12:30:40.000Z,
             "lifestage": "larva",
             "occurrenceStatus": "absent",
             "scientificName": "scientific name",
@@ -115,13 +115,13 @@ exports[`OccurrenceData renders correctly 1`] = `
         </label>
         <DatePicker
           onChange={[Function]}
-          value={2019-01-02T10:30:40.000Z}
+          value={2019-01-02T12:30:40.000Z}
         >
           <DateTimePicker
             className="input"
             onChange={[Function]}
             options={Object {}}
-            value={2019-01-02T10:30:40.000Z}
+            value={2019-01-02T12:30:40.000Z}
           >
             <input
               className="input"
@@ -142,13 +142,13 @@ exports[`OccurrenceData renders correctly 1`] = `
         >
           <DatePicker
             onChange={[Function]}
-            value={2020-01-02T10:30:40.000Z}
+            value={2020-01-02T12:30:40.000Z}
           >
             <DateTimePicker
               className="input"
               onChange={[Function]}
               options={Object {}}
-              value={2020-01-02T10:30:40.000Z}
+              value={2020-01-02T12:30:40.000Z}
             >
               <input
                 className="input"
