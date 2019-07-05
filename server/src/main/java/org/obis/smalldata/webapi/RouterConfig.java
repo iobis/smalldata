@@ -3,6 +3,7 @@ package org.obis.smalldata.webapi;
 import io.vertx.core.Handler;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.RoutingContext;
+import io.vertx.ext.web.api.contract.RouterFactoryOptions;
 import io.vertx.ext.web.api.contract.openapi3.OpenAPI3RouterFactory;
 import io.vertx.ext.web.handler.StaticHandler;
 
@@ -28,18 +29,22 @@ class RouterConfig {
     Map.entry("postDWCARecord", new OperationHandlers(DwcaRecordsHandler::post)),
     Map.entry("putDWCARecord", new OperationHandlers(DwcaRecordsHandler::put))
   );
-
   private final Consumer<Router> completionHandler;
+  private final Map<String, Handler<RoutingContext>> securityHandlers;
 
-  RouterConfig(Consumer<Router> completionHandler) {
+  RouterConfig(Consumer<Router> completionHandler, Map<String, Handler<RoutingContext>> securityHandlers) {
     this.completionHandler = completionHandler;
+    this.securityHandlers = securityHandlers;
   }
 
   void invoke(OpenAPI3RouterFactory routerFactory) {
+    routerFactory.setOptions(new RouterFactoryOptions().setRequireSecurityHandlers(true));
+    securityHandlers.forEach((securityId, handler) -> routerFactory.addSecurityHandler(securityId, handler));
     HANDLERS.forEach((operationId, handler) -> {
       routerFactory.addHandlerByOperationId(operationId, handler.handler);
       routerFactory.addFailureHandlerByOperationId(operationId, handler.failureHandler);
     });
+
     var router = routerFactory.getRouter();
     router.get("/openapi/*").handler(StaticHandler.create("swaggerroot"));
     router.get("/login/*").handler(StaticHandler.create("loginroot"));

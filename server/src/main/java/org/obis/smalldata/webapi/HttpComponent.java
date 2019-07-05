@@ -1,25 +1,51 @@
 package org.obis.smalldata.webapi;
 
 import io.vertx.core.AbstractVerticle;
+import io.vertx.core.AsyncResult;
 import io.vertx.core.Future;
+import io.vertx.core.Handler;
+import io.vertx.core.json.JsonObject;
+import io.vertx.ext.auth.AbstractUser;
+import io.vertx.ext.auth.AuthProvider;
+import io.vertx.ext.auth.PubSecKeyOptions;
+import io.vertx.ext.auth.User;
+import io.vertx.ext.auth.jwt.JWTAuth;
+import io.vertx.ext.auth.jwt.JWTAuthOptions;
 import io.vertx.ext.web.Router;
+import io.vertx.ext.web.RoutingContext;
 import io.vertx.ext.web.api.contract.openapi3.OpenAPI3RouterFactory;
+import io.vertx.ext.web.handler.JWTAuthHandler;
 
+import java.util.Map;
 import java.util.function.Consumer;
 
 import static org.pmw.tinylog.Logger.info;
 
 public class HttpComponent extends AbstractVerticle {
 
+  private static final String VERIFY_KEY = "verifyKey";
+  private static final String ALG_KEY = "alg";
+  private static final String AUTH_ES256 = "ES256";
+
   @Override
   public void start(Future<Void> startFuture) {
     info("starting module 'webapi': {}", config().encodePrettily());
-    var port = config().getInteger("port", 8008);
+    var port = config().getJsonObject("http").getInteger("port", 8008);
     OpenAPI3RouterFactory.create(vertx, "swaggerroot/spec/smalldata-bundled.yaml",
       ar -> {
         if (ar.succeeded()) {
           info("started OpenAPI: {}", ar.succeeded());
-          new RouterConfig(startServer(startFuture, port)).invoke(ar.result());
+          var authConfig = config().getJsonObject("auth");
+          var pubSecKey = new PubSecKeyOptions()
+            .setAlgorithm(authConfig.getString(ALG_KEY, AUTH_ES256))
+            .setPublicKey(authConfig.getString(VERIFY_KEY));
+          var jwtAuth = JWTAuth.create(vertx, new JWTAuthOptions().addPubSecKey(pubSecKey));
+          new RouterConfig(
+            startServer(startFuture, port),
+            Map.of(
+              "demoApiKey", new DemoApiKeyHandler(config())::handle,
+              "oceanExpertJWT", JWTAuthHandler.create(jwtAuth)))
+            .invoke(ar.result());
         } else {
           info("failed to start api: {}", ar.cause());
         }
@@ -39,5 +65,37 @@ public class HttpComponent extends AbstractVerticle {
         }
       });
     };
+  }
+
+  private static class DemoApiKeyHandler {
+
+    private final User dummyUser = new AbstractUser() {
+      @Override
+      protected void doIsPermitted(String permission, Handler<AsyncResult<Boolean>> resultHandler) {
+      }
+
+      @Override
+      public JsonObject principal() {
+        return new JsonObject().put("user", "DEMO");
+      }
+
+      @Override
+      public void setAuthProvider(AuthProvider authProvider) {
+      }
+    };
+    private final boolean isDemoMode;
+    private final String secret;
+
+    DemoApiKeyHandler(JsonObject config) {
+      this.isDemoMode = config.getString("mode").equals("DEMO");
+      this.secret = "Basic " + config.getJsonObject("auth").getString("demokey");
+    }
+
+    private void handle(RoutingContext routingContext) {
+      if (isDemoMode && routingContext.request().headers().get("Authorization").equals(secret)) {
+        routingContext.setUser(dummyUser);
+      }
+      routingContext.next();
+    }
   }
 }

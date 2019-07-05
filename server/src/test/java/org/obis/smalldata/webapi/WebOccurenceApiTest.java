@@ -4,7 +4,6 @@ import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.client.WebClient;
-import io.vertx.ext.web.codec.BodyCodec;
 import io.vertx.junit5.Timeout;
 import io.vertx.junit5.VertxExtension;
 import io.vertx.junit5.VertxTestContext;
@@ -17,10 +16,7 @@ import org.pmw.tinylog.Logger;
 import java.util.concurrent.TimeUnit;
 
 @ExtendWith(VertxExtension.class)
-public class WebOccurenceApiTest {
-
-  private static final int HTTP_PORT = 8080;
-  private static final JsonObject CONFIG = new JsonObject().put("port", HTTP_PORT);
+public class WebOccurenceApiTest extends DefaultHandlerTest {
 
   @BeforeEach
   void deployVerticle(Vertx vertx, VertxTestContext testContext) {
@@ -36,13 +32,11 @@ public class WebOccurenceApiTest {
   @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
   void replyRssFile(Vertx vertx, VertxTestContext testContext) {
     WebClient client = WebClient.create(vertx);
-    client.post(HTTP_PORT, "localhost", "/api/dwca")
-      .as(BodyCodec.jsonObject())
-      .sendJson(new JsonObject(),
-        result -> {
-          Logger.info(result);
-          testContext.completeNow();
-        });
+    httpPostJsonBody(client, "/api/dwca",
+      new JsonObject(),
+      result -> {
+        Logger.info(result);
+        testContext.completeNow();
+      });
   }
-
 }
