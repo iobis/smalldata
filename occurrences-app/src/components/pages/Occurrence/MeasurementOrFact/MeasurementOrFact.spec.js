@@ -1,6 +1,6 @@
 import MeasurementOrFact from './MeasurementOrFact'
 import React from 'react'
-import { getEmptyData } from './MeasurementOrFact.fixture'
+import { getData, getEmptyData, getPressureUnits } from './MeasurementOrFact.fixture'
 import { mount } from 'enzyme'
 
 jest.mock('../../../../clients/measurments', () => ({
@@ -283,16 +283,18 @@ describe('MeasurementOrFact', () => {
     })
   })
 
+  it('updates values when updates props', () => {
+    wrapper = mount(createComponent())
+    expect(wrapper.find('.supplied .fieldrow')).toHaveLength(0)
+
+    wrapper.setProps({ data: getData() })
+    wrapper.update()
+    expect(wrapper.find('.supplied .fieldrow')).toHaveLength(1)
+  })
+
   function addGeneralMeasurement(value) {
     wrapper.find('.general .measurement-row .input').at(0).simulate('change', { target: { value } })
     wrapper.find('.general .measurement-row .button.add').at(0).simulate('click')
-  }
-
-  function getPressureUnits() {
-    return [
-      { id: 'http://general-measurement-1-unit-1/', name: 'general-measurement-1-unit-1' },
-      { id: 'http://general-measurement-1-unit-2/', name: 'general-measurement-1-unit-2' }
-    ]
   }
 })
 

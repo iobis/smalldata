@@ -1,9 +1,8 @@
 $section-padding: 0.5rem;
 
 @import '../../node_modules/bulma/bulma';
-@import '../../node_modules/bulma-calendar/src/sass/index';
-@import '../../node_modules/bulma-calendar/src/sass/timepicker';
 @import '../../node_modules/bulma-checkradio/src/sass/index';
+@import '../../node_modules/flatpickr/dist/flatpickr.css';
 @import 'components/form/Dropdown';
 @import 'components/form/InputRadio';
 @import 'components/form/InputRadio';

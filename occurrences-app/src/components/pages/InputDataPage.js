@@ -38,7 +38,7 @@ export default function InputDataPage() {
     <>
       <section className="section">
         <div className="container is-fluid has-text-centered">
-          <Link className="button is-info" to="/input-data/new">
+          <Link className="button is-info" to="/input-data/create">
             {t('inputDataPage.inputNewOccurrence')}
           </Link>
         </div>
@@ -78,22 +78,28 @@ export default function InputDataPage() {
 function OccurrenceRow({ addedAtInstant, datasetId, dwcaId, datasetTitle, occurrenceDate, scientificName }) {
   const { t } = useTranslation()
   const addedAtString = addedAtInstant ? format(addedAtInstant, 'D MMMM YYYY') : '—'
-  const urlTo = {
-    pathname: '/input-data/new',
-    state:    { dwcaId, datasetId }
+  const toCreate = {
+    pathname: '/input-data/create',
+    state:    { action: 'create', dwcaId, datasetId }
+  }
+  const toEdit = {
+    pathname: '/input-data/update',
+    state:    { action: 'update', dwcaId, datasetId }
   }
 
   return (
     <tr className="occurrence-row">
       <td className="edit">
-        <div className="button is-info">{t('common.edit')}</div>
+        <Link className="button is-info" to={toEdit}>
+          {t('common.edit')}
+        </Link>
       </td>
       <td className="added-at">{addedAtString}</td>
       <td className="scientific-name">{scientificName}</td>
       <td className="dataset-title">{datasetTitle}</td>
       <td className="occurrence-date">{occurrenceDate || '—'}</td>
       <td className="copy">
-        <Link className="button is-info" to={urlTo}>
+        <Link className="button is-info" to={toCreate}>
           {t('common.copy')}
         </Link>
       </td>

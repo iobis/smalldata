@@ -27,6 +27,7 @@ export default {
       }
     },
     occurrenceForm: {
+      copyPreviousStep:      'copy data from previous entry',
       reviewAndSubmitButton: 'Review & Submit',
       stepContinue:          'Continue to',
       dataset:               {
@@ -233,7 +234,10 @@ export default {
           speciesDataSubtitle: 'Species data'
         },
         successMessage:    {
-          header:            'Your entry has been added to the OBIS dataset.',
+          header:            {
+            create: 'Your entry has been added to the OBIS dataset.',
+            update: 'Your entry has been updated.'
+          },
           nextOptions:       'What would you like to do next?',
           createFreshButton: 'Create fresh occurrence',
           createFromThis:    'Create new based on this',

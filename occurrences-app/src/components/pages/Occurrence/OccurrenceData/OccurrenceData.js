@@ -1,5 +1,5 @@
-import DatePicker from '../../../form/DatePicker'
 import InputRadioGroup from '../../../form/InputRadioGroup'
+import DatePicker from '../../../form/DatePicker'
 import PropTypes from 'prop-types'
 import React from 'react'
 import ScientificNameInput from './ScientificNameInput'
@@ -31,14 +31,18 @@ export default function OccurrenceData({ onChange, data }) {
           <label className="label">
             {t('occurrenceForm.occurrenceData.eventBeginDate')}
           </label>
-          <DatePicker onChange={(value) => updateField('beginDate', value)} value={beginDate}/>
+          <DatePicker
+            onChange={(value) => updateField('beginDate', value)}
+            value={beginDate}/>
         </div>
         <div className="event-end-date column field is-two-fifths">
           <label className="label has-text-weight-normal">
             {t('occurrenceForm.occurrenceData.eventEndDate')}
           </label>
           <div className="control">
-            <DatePicker onChange={(value) => updateField('endDate', value)} value={endDate}/>
+            <DatePicker
+              onChange={(value) => updateField('endDate', value)}
+              value={endDate}/>
           </div>
           <p className="help">{t('occurrenceForm.occurrenceData.eventEndDateHelp')}</p>
         </div>

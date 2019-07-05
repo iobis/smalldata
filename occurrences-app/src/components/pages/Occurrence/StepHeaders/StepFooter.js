@@ -3,10 +3,16 @@ import ContinueButton from './ContinueButton'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-export default function StepFooter({ activeStepIndex, onContinueButtonClick, nextStep }) {
+export default function StepFooter({
+  onContinueButtonClick,
+  onCopyPreviousDataClick,
+  nextStep
+}) {
   return (
     <div className="step-footer columns section">
-      <CopyPreviousData visible={activeStepIndex !== 0}/>
+      <CopyPreviousData
+        onClick={onCopyPreviousDataClick}
+        visible/>
       {!!nextStep && (
         <ContinueButton
           name="locationContinue"
@@ -17,7 +23,7 @@ export default function StepFooter({ activeStepIndex, onContinueButtonClick, nex
 }
 
 StepFooter.propTypes = {
-  activeStepIndex:       PropTypes.number.isRequired,
-  nextStep:              PropTypes.string,
-  onContinueButtonClick: PropTypes.func.isRequired
+  nextStep:                PropTypes.string,
+  onContinueButtonClick:   PropTypes.func.isRequired,
+  onCopyPreviousDataClick: PropTypes.func
 }

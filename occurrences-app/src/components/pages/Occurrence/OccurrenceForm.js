@@ -13,14 +13,18 @@ import Dataset from './Dataset/Dataset'
 import { format } from 'date-fns'
 import {
   datasetTitleOf,
+  mapDwcaToLocationData,
+  mapDwcaToMeasurements,
+  mapDwcaToObservationData,
+  mapDwcaToOccurrenceData,
+  mapDwcsToDarwinCoreFields
+} from '../../../clients/SmalldataConverters'
+import {
+  createOccurrence,
+  findLatestOccurrence,
   getDatasets,
   getOccurrence,
-  mapDwcaToOccurrenceData,
-  mapDwcaToLocationData,
-  mapDwcaToObservationData,
-  mapDwcaToMeasurements,
-  mapDwcsToDarwinCoreFields,
-  postOccurrence
+  updateOccurrence
 } from '../../../clients/SmalldataClient'
 import { useTranslation } from 'react-i18next'
 import { AuthContext } from '@smalldata/dwca-lib'
@@ -29,6 +33,7 @@ export default function OccurrenceForm({ location }) {
   const initialState = createInitialState()
   const { t } = useTranslation()
   const { userRef } = useContext(AuthContext)
+  const [action, setAction] = useState('create')
   const [successVisible, setSuccessVisible] = useState(false)
   const [errorVisible, setErrorVisible] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
@@ -57,6 +62,7 @@ export default function OccurrenceForm({ location }) {
       setObservationData(mapDwcaToObservationData(dwca))
       setMeasurements(mapDwcaToMeasurements(dwca))
       setDarwinCoreFields(mapDwcsToDarwinCoreFields(dwca))
+      setAction(location.state.action === 'update' ? 'update' : 'create')
     }
     if (location && location.state) fetchOccurrence()
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -94,12 +100,15 @@ export default function OccurrenceForm({ location }) {
       measurements:     measurements || [],
       darwinCoreFields: darwinCoreFields || []
     }
-    const response = await postOccurrence({ occurrence, userRef })
+    const response = action === 'update' && !!location.state.dwcaId
+      ? await updateOccurrence({ occurrence, userRef, dwcaId: location.state.dwcaId })
+      : await createOccurrence({ occurrence, userRef })
     if (response.exception) {
       setErrorVisible(true)
       setErrorMessage(response.exception + ': ' + response.exceptionMessage)
     } else {
       setSuccessVisible(true)
+      setAction('create')
     }
   }
 
@@ -139,6 +148,13 @@ export default function OccurrenceForm({ location }) {
     stepDescription: t('occurrenceForm.dataset.step.stepDescription'),
     stepTitle:       t('occurrenceForm.dataset.step.stepTitle'),
 
+    onCopyPreviousDataClick: async() => {
+      const dwca = await findLatestOccurrence({ userRef })
+      const datasets = await getDatasets()
+      const dataset = datasets.find(d => d.id === dwca.dataset)
+      setDataset(dataset)
+    },
+
     children: datasets && dataset && (
       <Dataset
         datasets={datasets}
@@ -151,6 +167,8 @@ export default function OccurrenceForm({ location }) {
     stepDescription: t('occurrenceForm.occurrenceData.step.stepDescription'),
     stepTitle:       t('occurrenceForm.occurrenceData.step.stepTitle'),
 
+    onCopyPreviousDataClick: async() => setOccurrenceData(mapDwcaToOccurrenceData(await findLatestOccurrence({ userRef }))),
+
     children:
       <OccurrenceData
         data={occurrenceData}
@@ -161,6 +179,8 @@ export default function OccurrenceForm({ location }) {
     selectedData:    <SelectedLocation {...locationData}/>,
     stepDescription: t('occurrenceForm.locationData.step.stepDescription'),
     stepTitle:       t('occurrenceForm.locationData.step.stepTitle'),
+
+    onCopyPreviousDataClick: async() => setLocationData(mapDwcaToLocationData(await findLatestOccurrence({ userRef }))),
 
     children:
       <LocationData
@@ -173,6 +193,8 @@ export default function OccurrenceForm({ location }) {
     stepDescription: t('occurrenceForm.observationData.step.stepDescription'),
     stepTitle:       t('occurrenceForm.observationData.step.stepTitle'),
 
+    onCopyPreviousDataClick: async() => setObservationData(mapDwcaToObservationData(await findLatestOccurrence({ userRef }))),
+
     children:
       <ObservationData
         observationData={observationData}
@@ -184,6 +206,8 @@ export default function OccurrenceForm({ location }) {
     stepDescription: t('occurrenceForm.measurementOrFact.step.stepDescription'),
     stepTitle:       t('occurrenceForm.measurementOrFact.step.stepTitle'),
 
+    onCopyPreviousDataClick: async() => setMeasurements(mapDwcaToMeasurements(await findLatestOccurrence({ userRef }))),
+
     children:
       <MeasurementOrFact
         data={measurements}
@@ -193,6 +217,8 @@ export default function OccurrenceForm({ location }) {
     selectedData:    '',
     stepDescription: t('occurrenceForm.darwinCoreFields.step.stepDescription'),
     stepTitle:       t('occurrenceForm.darwinCoreFields.step.stepTitle'),
+
+    onCopyPreviousDataClick: async() => setDarwinCoreFields(mapDwcsToDarwinCoreFields(await findLatestOccurrence({ userRef }))),
 
     children:
       <DarwinCoreFields
@@ -238,6 +264,7 @@ export default function OccurrenceForm({ location }) {
           onCreateFromThisClick={handleCreateFromThisClickClick}
           onErrorClose={handleErrorClose}
           onSubmitClick={handleSubmitClick}
+          successMessageType={action}
           successVisible={successVisible}/>) :
         (<div className="columns column is-centered">
           <button

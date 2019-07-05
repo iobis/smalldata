@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import InputText from '../../../form/InputText'
 import { useTranslation } from 'react-i18next'
 
@@ -8,6 +8,8 @@ export default function DarwinCoreFields({ fields, onChange }) {
   const [selectedFields, setSelectedFields] = useState(fields)
   const [name, setName] = useState('')
   const [value, setValue] = useState('')
+
+  useEffect(() => setSelectedFields(fields), [fields])
 
   function addDarwinField(field) {
     const updatedFields = [...fields, field]
@@ -47,7 +49,7 @@ export default function DarwinCoreFields({ fields, onChange }) {
         </thead>
         <tbody>
           {selectedFields.map((field, i) => (
-          // eslint-disable-next-line react/no-array-index-key
+            // eslint-disable-next-line react/no-array-index-key
             <tr className="fieldrow" key={i}>
               <td>{field.name}</td>
               <td>{field.value}</td>
