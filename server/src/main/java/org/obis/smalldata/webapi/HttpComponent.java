@@ -40,11 +40,11 @@ public class HttpComponent extends AbstractVerticle {
             .setAlgorithm(authConfig.getString(ALG_KEY, AUTH_ES256))
             .setPublicKey(authConfig.getString(VERIFY_KEY));
           var jwtAuth = JWTAuth.create(vertx, new JWTAuthOptions().addPubSecKey(pubSecKey));
-
-
-          new RouterConfig(startServer(startFuture, port), Map.of(
-            "demoApiKey", new DemoApiKeyHandler(config())::handle,
-            "oceanExpertJWT", JWTAuthHandler.create(jwtAuth)))
+          new RouterConfig(
+            startServer(startFuture, port),
+            Map.of(
+              "demoApiKey", new DemoApiKeyHandler(config())::handle,
+              "oceanExpertJWT", JWTAuthHandler.create(jwtAuth)))
             .invoke(ar.result());
         } else {
           info("failed to start api: {}", ar.cause());
@@ -71,7 +71,8 @@ public class HttpComponent extends AbstractVerticle {
 
     private final User dummyUser = new AbstractUser() {
       @Override
-      protected void doIsPermitted(String permission, Handler<AsyncResult<Boolean>> resultHandler) { }
+      protected void doIsPermitted(String permission, Handler<AsyncResult<Boolean>> resultHandler) {
+      }
 
       @Override
       public JsonObject principal() {
@@ -79,7 +80,8 @@ public class HttpComponent extends AbstractVerticle {
       }
 
       @Override
-      public void setAuthProvider(AuthProvider authProvider) { }
+      public void setAuthProvider(AuthProvider authProvider) {
+      }
     };
     private final boolean isDemoMode;
     private final String secret;
