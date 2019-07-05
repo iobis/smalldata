@@ -68,7 +68,7 @@ function mapOccurrenceDataToTdwg({ basisOfRecord, beginDate, endDate, occurrence
     eventDate:        format(beginDate, 'YYYY-MM-DD') + '/' + format(endDate || beginDate, 'YYYY-MM-DD'),
     occurrenceStatus: occurrenceStatus,
     scientificName:   scientificName,
-    ...(lifeStage === 'unspecified' ? {} : { lifeStage: lifeStage }),
+    ...(lifeStage === 'unspecified' ? {} : { lifeStage }),
     ...(sex === 'unspecified' ? {} : { sex })
   }
 }
@@ -152,7 +152,7 @@ function getProperty(selectorFn, defaultValue) {
   }
 }
 
-const reservedTdwgFields = ['basisOfRecord', 'eventDate', 'occurrenceStatus', 'scientificName', 'sex',
+const reservedTdwgFields = ['basisOfRecord', 'eventDate', 'occurrenceStatus', 'scientificName', 'lifeStage', 'sex',
   'decimalLongitude', 'decimalLatitude', 'coordinateUncertaintyInMeters', 'minimumDepthInMeters', 'maximumDepthInMeters',
   'verbatimCoordinates', 'verbatimDepth', 'institutionCode', 'collectionCode', 'fieldNumber', 'catalogNumber',
   'recordNumber', 'identifiedBy', 'recordedBy', 'identificationQualifier', 'identificationRemarks',
