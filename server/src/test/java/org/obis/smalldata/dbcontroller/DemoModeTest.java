@@ -20,6 +20,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(VertxExtension.class)
 public class DemoModeTest {
+
   private static final String BIND_IP = "localhost";
   private static final int PORT = 12345;
 
@@ -45,14 +46,17 @@ public class DemoModeTest {
 
   @Test
   @DisplayName("read default mock data")
-  @Timeout(value = 6, timeUnit = TimeUnit.SECONDS)
-  void findData(VertxTestContext testContext) throws InterruptedException {
-    TimeUnit.MILLISECONDS.sleep(1000);
+  @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
+  void findData(VertxTestContext testContext) {
     mongoClient.find(
       Collections.DATASETS.dbName(),
       new JsonObject().put("meta.type", "event"),
       ar -> {
-        assertThat(ar.result()).hasSize(1);
+        try {
+          assertThat(ar.result()).hasSize(1);
+        } catch (AssertionError e) {
+          testContext.failNow(e);
+        }
         testContext.completeNow();
       });
   }

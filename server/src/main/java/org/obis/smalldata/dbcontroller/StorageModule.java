@@ -10,6 +10,7 @@ import de.flapdoodle.embed.mongo.config.Storage;
 import de.flapdoodle.embed.mongo.distribution.Version;
 import de.flapdoodle.embed.process.runtime.Network;
 import io.vertx.core.AbstractVerticle;
+import io.vertx.core.Future;
 import io.vertx.core.Vertx;
 import io.vertx.ext.mongo.MongoClient;
 
@@ -32,7 +33,7 @@ public class StorageModule extends AbstractVerticle {
   private MongodProcess process;
 
   @Override
-  public void start() {
+  public void start(Future<Void> done) {
     info("starting mongo db with config {}", config());
     var bindIp = config().getString("bindIp", BIND_IP_DEFAULT);
     var port = config().getInteger("port", PORT_DEFAULT);
@@ -61,11 +62,23 @@ public class StorageModule extends AbstractVerticle {
     }
     var dbInitializer = new DbInitializer(
       MongoClient.createNonShared(vertx, MongoConfigs.ofClient(bindIp, port)));
-    dbInitializer.setupCollections();
+    dbInitializer.setupCollections().setHandler(arCollections -> {
+      if (isDemoMode(vertx)) {
+        dbInitializer.mockData().setHandler(arMock -> initializeBulkiness(done, dbInitializer));
+      } else {
+        initializeBulkiness(done, dbInitializer);
+      }
+    });
+  }
 
-    if (isDemoMode(vertx)) {
-      dbInitializer.mockData();
-    }
+  private void initializeBulkiness(Future<Void> done, DbInitializer dbInitializer) {
+    dbInitializer.initBulkiness().setHandler(ar -> {
+      if (ar.result()) {
+        done.complete();
+      } else {
+        done.fail("Cannot initialize bulkiness");
+      }
+    });
   }
 
   @Override

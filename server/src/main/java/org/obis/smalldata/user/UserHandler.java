@@ -4,7 +4,6 @@ import com.google.common.collect.ImmutableMap;
 import io.vertx.core.eventbus.Message;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.ext.mongo.MongoClient;
 import org.obis.smalldata.util.VertxActionHandler;
 
 import java.util.function.BiConsumer;
@@ -13,11 +12,9 @@ import static org.pmw.tinylog.Logger.info;
 
 class UserHandler {
 
-  private final DbUserOperation dbOperation;
   private final VertxActionHandler actionHandler;
 
-  UserHandler(MongoClient mongoClient) {
-    this.dbOperation = new DbUserOperation(mongoClient);
+  UserHandler(DbUserOperation dbOperation) {
     var actionMap = ImmutableMap.<String, BiConsumer<Message<JsonObject>, JsonObject>>of(
       "find", (message, body) -> dbOperation
         .findUsers(body.getJsonObject("query", new JsonObject()))

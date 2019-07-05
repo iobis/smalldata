@@ -1,26 +1,86 @@
 package org.obis.smalldata.dbcontroller;
 
+import io.vertx.core.CompositeFuture;
+import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.mongo.IndexOptions;
 import io.vertx.ext.mongo.MongoClient;
+import io.vertx.ext.mongo.UpdateOptions;
 import org.obis.smalldata.util.BulkOperationUtil;
 import org.obis.smalldata.util.Collections;
 import org.obis.smalldata.util.DbUtils;
 import org.obis.util.file.IoFile;
 
+import java.time.Instant;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import static org.pmw.tinylog.Logger.info;
 import static org.pmw.tinylog.Logger.warn;
 
 public class DbInitializer {
 
+  private static final String KEY_BULKINESS = "bulkiness";
   private final MongoClient client;
 
   DbInitializer(MongoClient client) {
     this.client = client;
+  }
+
+  Future<Boolean> setupCollections() {
+    var setup = Future.<Boolean>future();
+    client.getCollections(arCollections -> {
+      var collections = arCollections.result();
+      if (collections.isEmpty()) {
+        info("No data found, creating indices");
+        addIndices();
+      } else if (collections.contains("users") && collections.contains("datasets")) {
+        info("Found collections {} - OK", collections);
+      } else {
+        warn("Found not all collections {} - No clue what to do now", collections);
+      }
+      setup.complete(arCollections.succeeded());
+    });
+    return setup;
+  }
+
+  Future<Boolean> mockData() {
+    warn("Adding mock data!");
+    var mock = Future.<Boolean>future();
+    client.getCollections(arCollections -> {
+      if (arCollections.result() != null) {
+        arCollections
+          .result()
+          .forEach(coll -> client.dropCollection(coll, ar -> info("Dropped collection {}", coll)));
+      }
+      addMockData(mock);
+    });
+    return mock;
+  }
+
+  Future<Boolean> initBulkiness() {
+    info("Setting bulkiness to 0 if not defined");
+    var initialized = Future.<Boolean>future();
+    client.updateCollectionWithOptions(
+      Collections.USERS.dbName(),
+      new JsonObject()
+        .put("$or", new JsonArray()
+          .add(new JsonObject().put(KEY_BULKINESS, new JsonObject().put("$exists", false)))
+          .add(new JsonObject().put(KEY_BULKINESS, false))),
+      new JsonObject()
+        .put("$set", new JsonObject().put(KEY_BULKINESS, new JsonObject()
+          .put("instant", Instant.now())
+          .put("value", 0.0))),
+      new UpdateOptions().setUpsert(false).setMulti(true),
+      ar -> {
+        info("Initialized user bulkiness!");
+        initialized.complete(ar.succeeded());
+      });
+    return initialized;
   }
 
   public void newUser(String userId) {
@@ -67,43 +127,24 @@ public class DbInitializer {
       });
   }
 
-  private void addMockData() {
-    Map.of(
+  private void addMockData(Future<Boolean> mockDataAdded) {
+    var collections = Map.of(
       Collections.USERS.dbName(), "demodata/users.json",
       Collections.DATASETS.dbName(), "demodata/datasets.json",
-      Collections.DATASETRECORDS.dbName(), "demodata/dwcarecords.json")
-      .entrySet().stream()
+      Collections.DATASETRECORDS.dbName(), "demodata/dwcarecords.json");
+    var futures = collections.keySet().stream()
+      .collect(Collectors.toMap(Function.identity(), dbName -> Future.<Boolean>future()));
+    collections.entrySet().stream()
       .map(entry -> Map.entry(entry.getKey(), IoFile.loadFromResources(entry.getValue())))
       .map(entry -> Map.entry(entry.getKey(), BulkOperationUtil.createInsertsFromJson(entry.getValue())))
       .forEach(entry -> client.bulkWrite(
         entry.getKey(),
         entry.getValue(),
-        arClient -> warn("write result: {} from file {}", arClient.result().toJson(), entry.getKey())));
-  }
-
-  void mockData() {
-    warn("Adding mock data!");
-    client.getCollections(arCollections -> {
-      if (arCollections.result() != null) {
-        arCollections
-          .result()
-          .forEach(coll -> client.dropCollection(coll, ar -> info("Dropped collection {}", coll)));
-      }
-    });
-    addMockData();
-  }
-
-  void setupCollections() {
-    client.getCollections(arCollections -> {
-      var collections = arCollections.result();
-      if (collections.isEmpty()) {
-        info("No data found, creating indices");
-        addIndices();
-      } else if (collections.contains("users") && collections.contains("datasets")) {
-        info("Found collections {} - OK", collections);
-      } else {
-        warn("Found not all collections {} - No clue what to do now", collections);
-      }
-    });
+        arClient -> {
+          warn("write result: {} from file {}", arClient.result().toJson(), entry.getKey());
+          futures.get(entry.getKey()).complete();
+        }));
+    CompositeFuture.all(new ArrayList<>(futures.values()))
+      .setHandler(ar -> mockDataAdded.complete(ar.succeeded()));
   }
 }

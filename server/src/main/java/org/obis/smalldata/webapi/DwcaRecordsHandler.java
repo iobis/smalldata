@@ -53,17 +53,24 @@ public class DwcaRecordsHandler {
       (datasetRef, userRef) ->
         new DwcaBodyValidator(context.vertx().eventBus(), datasetRef, userRef).validate(context.getBodyAsJson()),
       (datasetRef, userRef) ->
-      context.vertx().eventBus().<JsonObject>send(
-        ADDRESS_DWCA_RECORD,
-        new JsonObject()
-          .put(KEY_ACTION, "insert")
-          .put(KEY_DATASET_REF, datasetRef)
-          .put(KEY_USER_REF, userRef)
-          .put("record", context.getBodyAsJson()),
-        ar -> context
-          .response()
-          .putHeader(HttpHeaders.CONTENT_TYPE, MIME_APPLICATION_JSON)
-          .end(ar.result().body().encode())));
+        context.vertx().eventBus().<JsonObject>send(
+          ADDRESS_DWCA_RECORD,
+          new JsonObject()
+            .put(KEY_ACTION, "insert")
+            .put(KEY_DATASET_REF, datasetRef)
+            .put(KEY_USER_REF, userRef)
+            .put("record", context.getBodyAsJson()),
+          ar -> {
+            context
+              .response()
+              .putHeader(HttpHeaders.CONTENT_TYPE, MIME_APPLICATION_JSON)
+              .end(ar.result().body().encode());
+            context.vertx().eventBus().send(
+              "users.bulkiness",
+              new JsonObject()
+                .put("action", "increase")
+                .put("userRef", userRef));
+          }));
   }
 
   public static void get(RoutingContext context) {
@@ -107,9 +114,10 @@ public class DwcaRecordsHandler {
           }));
   }
 
-  private static void actionOnDwcaRecord(RoutingContext context,
-                                         BiFunction<String, String, Future<List<String>>> messages,
-                                         BiConsumer<String, String> succesHandler) {
+  private static void actionOnDwcaRecord(
+    RoutingContext context,
+    BiFunction<String, String, Future<List<String>>> messages,
+    BiConsumer<String, String> succesHandler) {
     var datasetRef = context.request().getParam(KEY_DATASET_REF);
     var userRef = context.request().getParam(KEY_USER_REF);
     messages.apply(datasetRef, userRef).setHandler(arMessages -> {
