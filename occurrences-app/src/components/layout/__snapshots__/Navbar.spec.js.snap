@@ -635,25 +635,21 @@ exports[`Navbar renders correctly when logged in 1`] = `
                 onClick={[Function]}
                 to="/input-data"
               >
-                <Route
-                  path="\\\\/input-data"
+                <Link
+                  aria-current={null}
+                  className="navbar-item"
+                  onClick={[Function]}
+                  to="/input-data"
                 >
-                  <Link
+                  <a
                     aria-current={null}
                     className="navbar-item"
+                    href="/input-data"
                     onClick={[Function]}
-                    to="/input-data"
                   >
-                    <a
-                      aria-current={null}
-                      className="navbar-item"
-                      href="/input-data"
-                      onClick={[Function]}
-                    >
-                      navbar.inputData
-                    </a>
-                  </Link>
-                </Route>
+                    navbar.inputData
+                  </a>
+                </Link>
               </NavLink>
             </NavbarItem>
             <NavbarItem
@@ -666,25 +662,21 @@ exports[`Navbar renders correctly when logged in 1`] = `
                 onClick={[Function]}
                 to="/help"
               >
-                <Route
-                  path="\\\\/help"
+                <Link
+                  aria-current={null}
+                  className="navbar-item"
+                  onClick={[Function]}
+                  to="/help"
                 >
-                  <Link
+                  <a
                     aria-current={null}
                     className="navbar-item"
+                    href="/help"
                     onClick={[Function]}
-                    to="/help"
                   >
-                    <a
-                      aria-current={null}
-                      className="navbar-item"
-                      href="/help"
-                      onClick={[Function]}
-                    >
-                      navbar.help
-                    </a>
-                  </Link>
-                </Route>
+                    navbar.help
+                  </a>
+                </Link>
               </NavLink>
             </NavbarItem>
           </div>

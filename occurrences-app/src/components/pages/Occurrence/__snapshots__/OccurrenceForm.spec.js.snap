@@ -7,13 +7,17 @@ exports[`OccurrenceForm renders correctly 1`] = `
       className="section"
     >
       <ActiveStepHeader
+        activeStepIndex={0}
         className="step-1 background-color-0"
         dataDescription="occurrenceForm.dataset.step.dataDescription"
         key="occurrenceForm.dataset.step.stepTitle"
+        nextStep="occurrenceForm.occurrenceData.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="occurrenceForm.dataset.step.stepDescription"
         stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="active has-background-grey has-text-white"
@@ -60,11 +64,48 @@ exports[`OccurrenceForm renders correctly 1`] = `
             </div>
           </div>
         </StepHeader>
+        <StepFooter
+          activeStepIndex={0}
+          nextStep="occurrenceForm.occurrenceData.step.stepTitle"
+          onContinueButtonClick={[Function]}
+        >
+          <div
+            className="step-footer columns section"
+          >
+            <CopyPreviousData
+              visible={false}
+            >
+              <div
+                className="columns"
+              >
+                <div
+                  className="copy-previous-data column is-narrow"
+                />
+              </div>
+            </CopyPreviousData>
+            <ContinueButton
+              name="locationContinue"
+              onClick={[Function]}
+              value="occurrenceForm.occurrenceData.step.stepTitle"
+            >
+              <button
+                className="continue-button button is-info"
+                name="locationContinue"
+                onClick={[Function]}
+              >
+                occurrenceForm.stepContinue occurrenceform.occurrencedata.step.steptitle
+              </button>
+            </ContinueButton>
+          </div>
+        </StepFooter>
       </ActiveStepHeader>
       <NotConfirmedStepHeader
+        activeStepIndex={0}
         className="step-2 background-color-5"
         dataDescription="occurrenceForm.occurrenceData.step.dataDescription"
         key="occurrenceForm.occurrenceData.step.stepTitle"
+        nextStep="occurrenceForm.locationData.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <OccurrenceDataSummary
@@ -79,6 +120,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
         }
         stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
         stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="not-confirmed has-text-white step-2 background-color-5"
@@ -127,9 +169,12 @@ exports[`OccurrenceForm renders correctly 1`] = `
         </StepHeader>
       </NotConfirmedStepHeader>
       <NotConfirmedStepHeader
+        activeStepIndex={0}
         className="step-3 background-color-10"
         dataDescription="occurrenceForm.locationData.step.dataDescription"
         key="occurrenceForm.locationData.step.stepTitle"
+        nextStep="occurrenceForm.observationData.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <SelectedLocation
@@ -144,6 +189,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
         }
         stepDescription="occurrenceForm.locationData.step.stepDescription"
         stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="not-confirmed has-text-white step-3 background-color-10"
@@ -192,13 +238,17 @@ exports[`OccurrenceForm renders correctly 1`] = `
         </StepHeader>
       </NotConfirmedStepHeader>
       <NotConfirmedStepHeader
+        activeStepIndex={0}
         className="step-4 background-color-15"
         dataDescription="occurrenceForm.observationData.step.dataDescription"
         key="occurrenceForm.observationData.step.stepTitle"
+        nextStep="occurrenceForm.measurementOrFact.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="occurrenceForm.observationData.step.stepDescription"
         stepTitle="4 - occurrenceForm.observationData.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="not-confirmed has-text-white step-4 background-color-15"
@@ -247,9 +297,12 @@ exports[`OccurrenceForm renders correctly 1`] = `
         </StepHeader>
       </NotConfirmedStepHeader>
       <NotConfirmedStepHeader
+        activeStepIndex={0}
         className="step-5 background-color-20"
         dataDescription="occurrenceForm.measurementOrFact.step.dataDescription"
         key="occurrenceForm.measurementOrFact.step.stepTitle"
+        nextStep="occurrenceForm.darwinCoreFields.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <MeasurementOrFactSummary
@@ -258,6 +311,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
         }
         stepDescription="occurrenceForm.measurementOrFact.step.stepDescription"
         stepTitle="5 - occurrenceForm.measurementOrFact.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="not-confirmed has-text-white step-5 background-color-20"
@@ -306,13 +360,16 @@ exports[`OccurrenceForm renders correctly 1`] = `
         </StepHeader>
       </NotConfirmedStepHeader>
       <NotConfirmedStepHeader
+        activeStepIndex={0}
         className="step-6 background-color-25"
         dataDescription=""
         key="occurrenceForm.darwinCoreFields.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="occurrenceForm.darwinCoreFields.step.stepDescription"
         stepTitle="6 - occurrenceForm.darwinCoreFields.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="not-confirmed has-text-white step-6 background-color-25"
@@ -383,13 +440,17 @@ exports[`OccurrenceForm renders correctly 2`] = `
       className="section"
     >
       <ConfirmedStepHeader
+        activeStepIndex={3}
         className="step-1 background-color-0"
         dataDescription="occurrenceForm.dataset.step.dataDescription"
         key="occurrenceForm.dataset.step.stepTitle"
+        nextStep="occurrenceForm.occurrenceData.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="occurrenceForm.dataset.step.stepDescription"
         stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="confirmed has-background-white has-text-black"
@@ -449,9 +510,12 @@ exports[`OccurrenceForm renders correctly 2`] = `
         </StepHeader>
       </ConfirmedStepHeader>
       <ConfirmedStepHeader
+        activeStepIndex={3}
         className="step-2 background-color-5"
         dataDescription="occurrenceForm.occurrenceData.step.dataDescription"
         key="occurrenceForm.occurrenceData.step.stepTitle"
+        nextStep="occurrenceForm.locationData.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <OccurrenceDataSummary
@@ -466,6 +530,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
         }
         stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
         stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="confirmed has-background-white has-text-black"
@@ -549,9 +614,12 @@ exports[`OccurrenceForm renders correctly 2`] = `
         </StepHeader>
       </ConfirmedStepHeader>
       <ConfirmedStepHeader
+        activeStepIndex={3}
         className="step-3 background-color-10"
         dataDescription="occurrenceForm.locationData.step.dataDescription"
         key="occurrenceForm.locationData.step.stepTitle"
+        nextStep="occurrenceForm.observationData.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <SelectedLocation
@@ -566,6 +634,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
         }
         stepDescription="occurrenceForm.locationData.step.stepDescription"
         stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="confirmed has-background-white has-text-black"
@@ -656,13 +725,17 @@ exports[`OccurrenceForm renders correctly 2`] = `
         </StepHeader>
       </ConfirmedStepHeader>
       <ActiveStepHeader
+        activeStepIndex={3}
         className="step-4 background-color-15"
         dataDescription="occurrenceForm.observationData.step.dataDescription"
         key="occurrenceForm.observationData.step.stepTitle"
+        nextStep="occurrenceForm.measurementOrFact.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="occurrenceForm.observationData.step.stepDescription"
         stepTitle="4 - occurrenceForm.observationData.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="active has-background-grey has-text-white"
@@ -1019,25 +1092,53 @@ exports[`OccurrenceForm renders correctly 2`] = `
                   </div>
                 </InputMultipleText>
               </div>
-              <CopyPreviousData>
-                <div
-                  className="columns"
-                >
-                  <div
-                    className="copy-previous-data column is-narrow"
-                  >
-                    copy data from previous entry
-                  </div>
-                </div>
-              </CopyPreviousData>
             </div>
           </ObservationData>
         </StepHeader>
+        <StepFooter
+          activeStepIndex={3}
+          nextStep="occurrenceForm.measurementOrFact.step.stepTitle"
+          onContinueButtonClick={[Function]}
+        >
+          <div
+            className="step-footer columns section"
+          >
+            <CopyPreviousData
+              visible={true}
+            >
+              <div
+                className="columns"
+              >
+                <div
+                  className="copy-previous-data column is-narrow"
+                >
+                  copy data from previous entry
+                </div>
+              </div>
+            </CopyPreviousData>
+            <ContinueButton
+              name="locationContinue"
+              onClick={[Function]}
+              value="occurrenceForm.measurementOrFact.step.stepTitle"
+            >
+              <button
+                className="continue-button button is-info"
+                name="locationContinue"
+                onClick={[Function]}
+              >
+                occurrenceForm.stepContinue occurrenceform.measurementorfact.step.steptitle
+              </button>
+            </ContinueButton>
+          </div>
+        </StepFooter>
       </ActiveStepHeader>
       <NotConfirmedStepHeader
+        activeStepIndex={3}
         className="step-5 background-color-20"
         dataDescription="occurrenceForm.measurementOrFact.step.dataDescription"
         key="occurrenceForm.measurementOrFact.step.stepTitle"
+        nextStep="occurrenceForm.darwinCoreFields.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <MeasurementOrFactSummary
@@ -1046,6 +1147,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
         }
         stepDescription="occurrenceForm.measurementOrFact.step.stepDescription"
         stepTitle="5 - occurrenceForm.measurementOrFact.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="not-confirmed has-text-white step-5 background-color-20"
@@ -1094,13 +1196,16 @@ exports[`OccurrenceForm renders correctly 2`] = `
         </StepHeader>
       </NotConfirmedStepHeader>
       <NotConfirmedStepHeader
+        activeStepIndex={3}
         className="step-6 background-color-25"
         dataDescription=""
         key="occurrenceForm.darwinCoreFields.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="occurrenceForm.darwinCoreFields.step.stepDescription"
         stepTitle="6 - occurrenceForm.darwinCoreFields.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="not-confirmed has-text-white step-6 background-color-25"
@@ -1171,13 +1276,17 @@ exports[`OccurrenceForm renders correctly 3`] = `
       className="section"
     >
       <ConfirmedStepHeader
+        activeStepIndex={4}
         className="step-1 background-color-0"
         dataDescription="occurrenceForm.dataset.step.dataDescription"
         key="occurrenceForm.dataset.step.stepTitle"
+        nextStep="occurrenceForm.occurrenceData.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="occurrenceForm.dataset.step.stepDescription"
         stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="confirmed has-background-white has-text-black"
@@ -1237,9 +1346,12 @@ exports[`OccurrenceForm renders correctly 3`] = `
         </StepHeader>
       </ConfirmedStepHeader>
       <ConfirmedStepHeader
+        activeStepIndex={4}
         className="step-2 background-color-5"
         dataDescription="occurrenceForm.occurrenceData.step.dataDescription"
         key="occurrenceForm.occurrenceData.step.stepTitle"
+        nextStep="occurrenceForm.locationData.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <OccurrenceDataSummary
@@ -1254,6 +1366,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
         }
         stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
         stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="confirmed has-background-white has-text-black"
@@ -1337,9 +1450,12 @@ exports[`OccurrenceForm renders correctly 3`] = `
         </StepHeader>
       </ConfirmedStepHeader>
       <ConfirmedStepHeader
+        activeStepIndex={4}
         className="step-3 background-color-10"
         dataDescription="occurrenceForm.locationData.step.dataDescription"
         key="occurrenceForm.locationData.step.stepTitle"
+        nextStep="occurrenceForm.observationData.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <SelectedLocation
@@ -1354,6 +1470,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
         }
         stepDescription="occurrenceForm.locationData.step.stepDescription"
         stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="confirmed has-background-white has-text-black"
@@ -1444,13 +1561,17 @@ exports[`OccurrenceForm renders correctly 3`] = `
         </StepHeader>
       </ConfirmedStepHeader>
       <ConfirmedStepHeader
+        activeStepIndex={4}
         className="step-4 background-color-15"
         dataDescription="occurrenceForm.observationData.step.dataDescription"
         key="occurrenceForm.observationData.step.stepTitle"
+        nextStep="occurrenceForm.measurementOrFact.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData="Institution: institution code; Identified by: Indiana Jones"
         stepDescription="occurrenceForm.observationData.step.stepDescription"
         stepTitle="4 - occurrenceForm.observationData.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="confirmed has-background-white has-text-black"
@@ -1512,9 +1633,12 @@ exports[`OccurrenceForm renders correctly 3`] = `
         </StepHeader>
       </ConfirmedStepHeader>
       <ActiveStepHeader
+        activeStepIndex={4}
         className="step-5 background-color-20"
         dataDescription="occurrenceForm.measurementOrFact.step.dataDescription"
         key="occurrenceForm.measurementOrFact.step.stepTitle"
+        nextStep="occurrenceForm.darwinCoreFields.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <MeasurementOrFactSummary
@@ -1523,6 +1647,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
         }
         stepDescription="occurrenceForm.measurementOrFact.step.stepDescription"
         stepTitle="5 - occurrenceForm.measurementOrFact.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="active has-background-grey has-text-white"
@@ -3067,29 +3192,57 @@ exports[`OccurrenceForm renders correctly 3`] = `
                   </table>
                 </div>
               </div>
-              <CopyPreviousData>
-                <div
-                  className="columns"
-                >
-                  <div
-                    className="copy-previous-data column is-narrow"
-                  >
-                    copy data from previous entry
-                  </div>
-                </div>
-              </CopyPreviousData>
             </div>
           </MeasurementOrFact>
         </StepHeader>
+        <StepFooter
+          activeStepIndex={4}
+          nextStep="occurrenceForm.darwinCoreFields.step.stepTitle"
+          onContinueButtonClick={[Function]}
+        >
+          <div
+            className="step-footer columns section"
+          >
+            <CopyPreviousData
+              visible={true}
+            >
+              <div
+                className="columns"
+              >
+                <div
+                  className="copy-previous-data column is-narrow"
+                >
+                  copy data from previous entry
+                </div>
+              </div>
+            </CopyPreviousData>
+            <ContinueButton
+              name="locationContinue"
+              onClick={[Function]}
+              value="occurrenceForm.darwinCoreFields.step.stepTitle"
+            >
+              <button
+                className="continue-button button is-info"
+                name="locationContinue"
+                onClick={[Function]}
+              >
+                occurrenceForm.stepContinue occurrenceform.darwincorefields.step.steptitle
+              </button>
+            </ContinueButton>
+          </div>
+        </StepFooter>
       </ActiveStepHeader>
       <NotConfirmedStepHeader
+        activeStepIndex={4}
         className="step-6 background-color-25"
         dataDescription=""
         key="occurrenceForm.darwinCoreFields.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="occurrenceForm.darwinCoreFields.step.stepDescription"
         stepTitle="6 - occurrenceForm.darwinCoreFields.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="not-confirmed has-text-white step-6 background-color-25"
@@ -3160,13 +3313,17 @@ exports[`OccurrenceForm renders correctly 4`] = `
       className="section"
     >
       <ConfirmedStepHeader
+        activeStepIndex={5}
         className="step-1 background-color-0"
         dataDescription="occurrenceForm.dataset.step.dataDescription"
         key="occurrenceForm.dataset.step.stepTitle"
+        nextStep="occurrenceForm.occurrenceData.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="occurrenceForm.dataset.step.stepDescription"
         stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="confirmed has-background-white has-text-black"
@@ -3226,9 +3383,12 @@ exports[`OccurrenceForm renders correctly 4`] = `
         </StepHeader>
       </ConfirmedStepHeader>
       <ConfirmedStepHeader
+        activeStepIndex={5}
         className="step-2 background-color-5"
         dataDescription="occurrenceForm.occurrenceData.step.dataDescription"
         key="occurrenceForm.occurrenceData.step.stepTitle"
+        nextStep="occurrenceForm.locationData.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <OccurrenceDataSummary
@@ -3243,6 +3403,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
         }
         stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
         stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="confirmed has-background-white has-text-black"
@@ -3326,9 +3487,12 @@ exports[`OccurrenceForm renders correctly 4`] = `
         </StepHeader>
       </ConfirmedStepHeader>
       <ConfirmedStepHeader
+        activeStepIndex={5}
         className="step-3 background-color-10"
         dataDescription="occurrenceForm.locationData.step.dataDescription"
         key="occurrenceForm.locationData.step.stepTitle"
+        nextStep="occurrenceForm.observationData.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <SelectedLocation
@@ -3343,6 +3507,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
         }
         stepDescription="occurrenceForm.locationData.step.stepDescription"
         stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="confirmed has-background-white has-text-black"
@@ -3433,13 +3598,17 @@ exports[`OccurrenceForm renders correctly 4`] = `
         </StepHeader>
       </ConfirmedStepHeader>
       <ConfirmedStepHeader
+        activeStepIndex={5}
         className="step-4 background-color-15"
         dataDescription="occurrenceForm.observationData.step.dataDescription"
         key="occurrenceForm.observationData.step.stepTitle"
+        nextStep="occurrenceForm.measurementOrFact.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData="Institution: institution code; Identified by: Indiana Jones"
         stepDescription="occurrenceForm.observationData.step.stepDescription"
         stepTitle="4 - occurrenceForm.observationData.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="confirmed has-background-white has-text-black"
@@ -3501,9 +3670,12 @@ exports[`OccurrenceForm renders correctly 4`] = `
         </StepHeader>
       </ConfirmedStepHeader>
       <ConfirmedStepHeader
+        activeStepIndex={5}
         className="step-5 background-color-20"
         dataDescription="occurrenceForm.measurementOrFact.step.dataDescription"
         key="occurrenceForm.measurementOrFact.step.stepTitle"
+        nextStep="occurrenceForm.darwinCoreFields.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <MeasurementOrFactSummary
@@ -3526,6 +3698,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
         }
         stepDescription="occurrenceForm.measurementOrFact.step.stepDescription"
         stepTitle="5 - occurrenceForm.measurementOrFact.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="confirmed has-background-white has-text-black"
@@ -3625,13 +3798,16 @@ exports[`OccurrenceForm renders correctly 4`] = `
         </StepHeader>
       </ConfirmedStepHeader>
       <ActiveStepHeader
+        activeStepIndex={5}
         className="step-6 background-color-25"
         dataDescription=""
         key="occurrenceForm.darwinCoreFields.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="occurrenceForm.darwinCoreFields.step.stepDescription"
         stepTitle="6 - occurrenceForm.darwinCoreFields.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="active has-background-grey has-text-white"
@@ -3798,13 +3974,17 @@ exports[`OccurrenceForm renders correctly 5`] = `
       className="section"
     >
       <ConfirmedStepHeader
+        activeStepIndex={5}
         className="step-1 background-color-0"
         dataDescription="occurrenceForm.dataset.step.dataDescription"
         key="occurrenceForm.dataset.step.stepTitle"
+        nextStep="occurrenceForm.occurrenceData.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="occurrenceForm.dataset.step.stepDescription"
         stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="confirmed has-background-white has-text-black"
@@ -3864,9 +4044,12 @@ exports[`OccurrenceForm renders correctly 5`] = `
         </StepHeader>
       </ConfirmedStepHeader>
       <ConfirmedStepHeader
+        activeStepIndex={5}
         className="step-2 background-color-5"
         dataDescription="occurrenceForm.occurrenceData.step.dataDescription"
         key="occurrenceForm.occurrenceData.step.stepTitle"
+        nextStep="occurrenceForm.locationData.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <OccurrenceDataSummary
@@ -3881,6 +4064,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
         }
         stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
         stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="confirmed has-background-white has-text-black"
@@ -3964,9 +4148,12 @@ exports[`OccurrenceForm renders correctly 5`] = `
         </StepHeader>
       </ConfirmedStepHeader>
       <ConfirmedStepHeader
+        activeStepIndex={5}
         className="step-3 background-color-10"
         dataDescription="occurrenceForm.locationData.step.dataDescription"
         key="occurrenceForm.locationData.step.stepTitle"
+        nextStep="occurrenceForm.observationData.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <SelectedLocation
@@ -3981,6 +4168,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
         }
         stepDescription="occurrenceForm.locationData.step.stepDescription"
         stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="confirmed has-background-white has-text-black"
@@ -4071,13 +4259,17 @@ exports[`OccurrenceForm renders correctly 5`] = `
         </StepHeader>
       </ConfirmedStepHeader>
       <ConfirmedStepHeader
+        activeStepIndex={5}
         className="step-4 background-color-15"
         dataDescription="occurrenceForm.observationData.step.dataDescription"
         key="occurrenceForm.observationData.step.stepTitle"
+        nextStep="occurrenceForm.measurementOrFact.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData="Institution: institution code; Identified by: Indiana Jones"
         stepDescription="occurrenceForm.observationData.step.stepDescription"
         stepTitle="4 - occurrenceForm.observationData.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="confirmed has-background-white has-text-black"
@@ -4139,9 +4331,12 @@ exports[`OccurrenceForm renders correctly 5`] = `
         </StepHeader>
       </ConfirmedStepHeader>
       <ConfirmedStepHeader
+        activeStepIndex={5}
         className="step-5 background-color-20"
         dataDescription="occurrenceForm.measurementOrFact.step.dataDescription"
         key="occurrenceForm.measurementOrFact.step.stepTitle"
+        nextStep="occurrenceForm.darwinCoreFields.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <MeasurementOrFactSummary
@@ -4175,6 +4370,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
         }
         stepDescription="occurrenceForm.measurementOrFact.step.stepDescription"
         stepTitle="5 - occurrenceForm.measurementOrFact.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="confirmed has-background-white has-text-black"
@@ -4296,13 +4492,16 @@ exports[`OccurrenceForm renders correctly 5`] = `
         </StepHeader>
       </ConfirmedStepHeader>
       <ActiveStepHeader
+        activeStepIndex={5}
         className="step-6 background-color-25"
         dataDescription=""
         key="occurrenceForm.darwinCoreFields.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="occurrenceForm.darwinCoreFields.step.stepDescription"
         stepTitle="6 - occurrenceForm.darwinCoreFields.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="active has-background-grey has-text-white"
@@ -4469,13 +4668,17 @@ exports[`OccurrenceForm renders correctly 6`] = `
       className="section"
     >
       <ConfirmedStepHeader
+        activeStepIndex={5}
         className="step-1 background-color-0"
         dataDescription="occurrenceForm.dataset.step.dataDescription"
         key="occurrenceForm.dataset.step.stepTitle"
+        nextStep="occurrenceForm.occurrenceData.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="occurrenceForm.dataset.step.stepDescription"
         stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="confirmed has-background-white has-text-black"
@@ -4535,9 +4738,12 @@ exports[`OccurrenceForm renders correctly 6`] = `
         </StepHeader>
       </ConfirmedStepHeader>
       <ConfirmedStepHeader
+        activeStepIndex={5}
         className="step-2 background-color-5"
         dataDescription="occurrenceForm.occurrenceData.step.dataDescription"
         key="occurrenceForm.occurrenceData.step.stepTitle"
+        nextStep="occurrenceForm.locationData.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <OccurrenceDataSummary
@@ -4552,6 +4758,7 @@ exports[`OccurrenceForm renders correctly 6`] = `
         }
         stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
         stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="confirmed has-background-white has-text-black"
@@ -4635,9 +4842,12 @@ exports[`OccurrenceForm renders correctly 6`] = `
         </StepHeader>
       </ConfirmedStepHeader>
       <ConfirmedStepHeader
+        activeStepIndex={5}
         className="step-3 background-color-10"
         dataDescription="occurrenceForm.locationData.step.dataDescription"
         key="occurrenceForm.locationData.step.stepTitle"
+        nextStep="occurrenceForm.observationData.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <SelectedLocation
@@ -4652,6 +4862,7 @@ exports[`OccurrenceForm renders correctly 6`] = `
         }
         stepDescription="occurrenceForm.locationData.step.stepDescription"
         stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="confirmed has-background-white has-text-black"
@@ -4742,13 +4953,17 @@ exports[`OccurrenceForm renders correctly 6`] = `
         </StepHeader>
       </ConfirmedStepHeader>
       <ConfirmedStepHeader
+        activeStepIndex={5}
         className="step-4 background-color-15"
         dataDescription="occurrenceForm.observationData.step.dataDescription"
         key="occurrenceForm.observationData.step.stepTitle"
+        nextStep="occurrenceForm.measurementOrFact.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData="Institution: institution code; Identified by: Indiana Jones"
         stepDescription="occurrenceForm.observationData.step.stepDescription"
         stepTitle="4 - occurrenceForm.observationData.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="confirmed has-background-white has-text-black"
@@ -4810,9 +5025,12 @@ exports[`OccurrenceForm renders correctly 6`] = `
         </StepHeader>
       </ConfirmedStepHeader>
       <ConfirmedStepHeader
+        activeStepIndex={5}
         className="step-5 background-color-20"
         dataDescription="occurrenceForm.measurementOrFact.step.dataDescription"
         key="occurrenceForm.measurementOrFact.step.stepTitle"
+        nextStep="occurrenceForm.darwinCoreFields.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <MeasurementOrFactSummary
@@ -4857,6 +5075,7 @@ exports[`OccurrenceForm renders correctly 6`] = `
         }
         stepDescription="occurrenceForm.measurementOrFact.step.stepDescription"
         stepTitle="5 - occurrenceForm.measurementOrFact.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="confirmed has-background-white has-text-black"
@@ -5000,13 +5219,16 @@ exports[`OccurrenceForm renders correctly 6`] = `
         </StepHeader>
       </ConfirmedStepHeader>
       <ActiveStepHeader
+        activeStepIndex={5}
         className="step-6 background-color-25"
         dataDescription=""
         key="occurrenceForm.darwinCoreFields.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="occurrenceForm.darwinCoreFields.step.stepDescription"
         stepTitle="6 - occurrenceForm.darwinCoreFields.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="active has-background-grey has-text-white"
@@ -5173,13 +5395,17 @@ exports[`OccurrenceForm renders correctly 7`] = `
       className="section"
     >
       <ConfirmedStepHeader
+        activeStepIndex={5}
         className="step-1 background-color-0"
         dataDescription="occurrenceForm.dataset.step.dataDescription"
         key="occurrenceForm.dataset.step.stepTitle"
+        nextStep="occurrenceForm.occurrenceData.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="occurrenceForm.dataset.step.stepDescription"
         stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="confirmed has-background-white has-text-black"
@@ -5239,9 +5465,12 @@ exports[`OccurrenceForm renders correctly 7`] = `
         </StepHeader>
       </ConfirmedStepHeader>
       <ConfirmedStepHeader
+        activeStepIndex={5}
         className="step-2 background-color-5"
         dataDescription="occurrenceForm.occurrenceData.step.dataDescription"
         key="occurrenceForm.occurrenceData.step.stepTitle"
+        nextStep="occurrenceForm.locationData.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <OccurrenceDataSummary
@@ -5256,6 +5485,7 @@ exports[`OccurrenceForm renders correctly 7`] = `
         }
         stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
         stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="confirmed has-background-white has-text-black"
@@ -5339,9 +5569,12 @@ exports[`OccurrenceForm renders correctly 7`] = `
         </StepHeader>
       </ConfirmedStepHeader>
       <ConfirmedStepHeader
+        activeStepIndex={5}
         className="step-3 background-color-10"
         dataDescription="occurrenceForm.locationData.step.dataDescription"
         key="occurrenceForm.locationData.step.stepTitle"
+        nextStep="occurrenceForm.observationData.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <SelectedLocation
@@ -5356,6 +5589,7 @@ exports[`OccurrenceForm renders correctly 7`] = `
         }
         stepDescription="occurrenceForm.locationData.step.stepDescription"
         stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="confirmed has-background-white has-text-black"
@@ -5446,13 +5680,17 @@ exports[`OccurrenceForm renders correctly 7`] = `
         </StepHeader>
       </ConfirmedStepHeader>
       <ConfirmedStepHeader
+        activeStepIndex={5}
         className="step-4 background-color-15"
         dataDescription="occurrenceForm.observationData.step.dataDescription"
         key="occurrenceForm.observationData.step.stepTitle"
+        nextStep="occurrenceForm.measurementOrFact.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData="Institution: institution code; Identified by: Indiana Jones"
         stepDescription="occurrenceForm.observationData.step.stepDescription"
         stepTitle="4 - occurrenceForm.observationData.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="confirmed has-background-white has-text-black"
@@ -5514,9 +5752,12 @@ exports[`OccurrenceForm renders correctly 7`] = `
         </StepHeader>
       </ConfirmedStepHeader>
       <ConfirmedStepHeader
+        activeStepIndex={5}
         className="step-5 background-color-20"
         dataDescription="occurrenceForm.measurementOrFact.step.dataDescription"
         key="occurrenceForm.measurementOrFact.step.stepTitle"
+        nextStep="occurrenceForm.darwinCoreFields.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData={
           <MeasurementOrFactSummary
@@ -5561,6 +5802,7 @@ exports[`OccurrenceForm renders correctly 7`] = `
         }
         stepDescription="occurrenceForm.measurementOrFact.step.stepDescription"
         stepTitle="5 - occurrenceForm.measurementOrFact.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="confirmed has-background-white has-text-black"
@@ -5704,13 +5946,16 @@ exports[`OccurrenceForm renders correctly 7`] = `
         </StepHeader>
       </ConfirmedStepHeader>
       <ActiveStepHeader
+        activeStepIndex={5}
         className="step-6 background-color-25"
         dataDescription=""
         key="occurrenceForm.darwinCoreFields.step.stepTitle"
+        onContinueButtonClick={[Function]}
         onStepTitleClick={[Function]}
         selectedData=""
         stepDescription="occurrenceForm.darwinCoreFields.step.stepDescription"
         stepTitle="6 - occurrenceForm.darwinCoreFields.step.stepTitle"
+        totalSteps={5}
       >
         <StepHeader
           className="active has-background-grey has-text-white"

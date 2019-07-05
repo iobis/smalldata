@@ -28,6 +28,7 @@ export default {
     },
     occurrenceForm: {
       reviewAndSubmitButton: 'Review & Submit',
+      stepContinue:          'Continue to',
       dataset:               {
         step: {
           dataDescription: 'Using Data',

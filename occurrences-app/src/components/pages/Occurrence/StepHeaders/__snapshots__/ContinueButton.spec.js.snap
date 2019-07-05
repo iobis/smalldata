@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContinueButton renders correctly 1`] = `
+<ContinueButton
+  name="continue"
+  onClick={[MockFunction]}
+  value="Continue"
+>
+  <button
+    className="continue-button button is-info"
+    name="continue"
+    onClick={[MockFunction]}
+  >
+    occurrenceForm.stepContinue continue
+  </button>
+</ContinueButton>
+`;

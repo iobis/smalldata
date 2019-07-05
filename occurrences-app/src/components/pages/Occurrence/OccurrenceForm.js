@@ -11,11 +11,21 @@ import PropTypes from 'prop-types'
 import React, { useContext, useEffect, useState } from 'react'
 import Dataset from './Dataset/Dataset'
 import { format } from 'date-fns'
-import { datasetTitleOf, getDatasets, postOccurrence } from '../../../clients/SmalldataClient'
+import {
+  datasetTitleOf,
+  getDatasets,
+  getOccurrence,
+  mapDwcaToOccurrenceData,
+  mapDwcaToLocationData,
+  mapDwcaToObservationData,
+  mapDwcaToMeasurements,
+  mapDwcsToDarwinCoreFields,
+  postOccurrence
+} from '../../../clients/SmalldataClient'
 import { useTranslation } from 'react-i18next'
 import { AuthContext } from '@smalldata/dwca-lib'
 
-export default function OccurrenceForm() {
+export default function OccurrenceForm({ location }) {
   const initialState = createInitialState()
   const { t } = useTranslation()
   const { userRef } = useContext(AuthContext)
@@ -27,10 +37,30 @@ export default function OccurrenceForm() {
   const [occurrenceData, setOccurrenceData] = useState(initialState.occurrenceData)
   const [locationData, setLocationData] = useState(initialState.locationData)
   const [observationData, setObservationData] = useState(initialState.observationData)
-  const [darwinCoreFields, setDarwinCoreFields] = useState(initialState.darwinCoreFields)
   const [measurements, setMeasurements] = useState(initialState.measurements)
+  const [darwinCoreFields, setDarwinCoreFields] = useState(initialState.darwinCoreFields)
   const [activeStepIndex, setActiveStepIndex] = useState(0)
   const [finalSummaryVisible, setFinalSummaryVisible] = useState(false)
+
+  useEffect(() => {
+    const fetchOccurrence = async() => {
+      const dwca = await getOccurrence({
+        datasetId: location.state.datasetId,
+        dwcaId:    location.state.dwcaId,
+        userRef
+      })
+      const datasets = await getDatasets()
+      const dataset = datasets.find(d => d.id === dwca.dataset)
+      setDataset(dataset)
+      setOccurrenceData(mapDwcaToOccurrenceData(dwca))
+      setLocationData(mapDwcaToLocationData(dwca))
+      setObservationData(mapDwcaToObservationData(dwca))
+      setMeasurements(mapDwcaToMeasurements(dwca))
+      setDarwinCoreFields(mapDwcsToDarwinCoreFields(dwca))
+    }
+    if (location && location.state) fetchOccurrence()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   useEffect(() => {
     const fetchDatasets = async() => {
@@ -104,6 +134,7 @@ export default function OccurrenceForm() {
 
   const steps = [{
     dataDescription: t('occurrenceForm.dataset.step.dataDescription'),
+    nextStep:        t('occurrenceForm.occurrenceData.step.stepTitle'),
     selectedData:    datasetTitleOf(dataset),
     stepDescription: t('occurrenceForm.dataset.step.stepDescription'),
     stepTitle:       t('occurrenceForm.dataset.step.stepTitle'),
@@ -115,6 +146,7 @@ export default function OccurrenceForm() {
         selectedDataset={dataset}/>)
   }, {
     dataDescription: t('occurrenceForm.occurrenceData.step.dataDescription'),
+    nextStep:        t('occurrenceForm.locationData.step.stepTitle'),
     selectedData:    <OccurrenceDataSummary {...occurrenceData}/>,
     stepDescription: t('occurrenceForm.occurrenceData.step.stepDescription'),
     stepTitle:       t('occurrenceForm.occurrenceData.step.stepTitle'),
@@ -125,6 +157,7 @@ export default function OccurrenceForm() {
         onChange={setOccurrenceData}/>
   }, {
     dataDescription: t('occurrenceForm.locationData.step.dataDescription'),
+    nextStep:        t('occurrenceForm.observationData.step.stepTitle'),
     selectedData:    <SelectedLocation {...locationData}/>,
     stepDescription: t('occurrenceForm.locationData.step.stepDescription'),
     stepTitle:       t('occurrenceForm.locationData.step.stepTitle'),
@@ -135,6 +168,7 @@ export default function OccurrenceForm() {
         onChange={setLocationData}/>
   }, {
     dataDescription: t('occurrenceForm.observationData.step.dataDescription'),
+    nextStep:        t('occurrenceForm.measurementOrFact.step.stepTitle'),
     selectedData:    renderIdentifiedByLabel(observationData),
     stepDescription: t('occurrenceForm.observationData.step.stepDescription'),
     stepTitle:       t('occurrenceForm.observationData.step.stepTitle'),
@@ -145,6 +179,7 @@ export default function OccurrenceForm() {
         onChange={setObservationData}/>
   }, {
     dataDescription: t('occurrenceForm.measurementOrFact.step.dataDescription'),
+    nextStep:        t('occurrenceForm.darwinCoreFields.step.stepTitle'),
     selectedData:    <MeasurementOrFactSummary data={measurements}/>,
     stepDescription: t('occurrenceForm.measurementOrFact.step.stepDescription'),
     stepTitle:       t('occurrenceForm.measurementOrFact.step.stepTitle'),
@@ -178,10 +213,14 @@ export default function OccurrenceForm() {
         return (
           <StepComponent
             {...step}
+            activeStepIndex={activeStepIndex}
             className={className}
             key={step.stepTitle}
+            nextStep={step.nextStep}
+            onContinueButtonClick={() => showActiveStep(activeStepIndex + 1)}
             onStepTitleClick={() => showActiveStep(index)}
-            stepTitle={stepNumber + ' - ' + step.stepTitle}/>
+            stepTitle={stepNumber + ' - ' + step.stepTitle}
+            totalSteps={steps.length - 1}/>
         )
       })}
       {finalSummaryVisible ?
@@ -210,6 +249,15 @@ export default function OccurrenceForm() {
         </div>)}
     </section>
   )
+}
+
+OccurrenceForm.propTypes = {
+  location: PropTypes.shape({
+    state: PropTypes.shape({
+      datasetId: PropTypes.string.isRequired,
+      dwcaId:    PropTypes.string.isRequired
+    })
+  })
 }
 
 function SelectedLocation({ decimalLatitude, decimalLongitude }) {
@@ -295,7 +343,7 @@ function createInitialState() {
       identificationRemarks:   '',
       references:              []
     },
-    darwinCoreFields: [],
-    measurements:     []
+    measurements:     [],
+    darwinCoreFields: []
   }
 }

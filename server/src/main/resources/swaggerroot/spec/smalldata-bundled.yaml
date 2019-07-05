@@ -8,6 +8,9 @@ servers:
   - url: 'http://smalldata.obis.org/'
   - url: 'http://localhost:8080/'
   - url: 'http://localhost:8008/'
+security:
+  - demoApiKey: []
+  - oceanExpertJWT: []
 paths:
   /api/datasets:
     get:
@@ -696,6 +699,15 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
 components:
+  securitySchemes:
+    oceanExpertJWT:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    demoApiKey:
+      type: apiKey
+      name: Authorization
+      in: header
   schemas:
     Status:
       type: object

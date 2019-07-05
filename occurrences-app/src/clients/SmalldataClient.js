@@ -1,5 +1,9 @@
 import { format } from 'date-fns'
-import { findTypeAndUnitIdByNames } from './measurments'
+import { findTypeAndUnitIdByNames, findUnitsByTypeId } from './measurments'
+
+const purlUrl = 'http://purl.org/dc/terms/'
+const tdwgUrl = 'http://rs.tdwg.org/dwc/terms/'
+const iobisUrl = 'http://rs.iobis.org/obis/terms/'
 
 export async function getDatasets() {
   const response = await fetch('/api/datasets')
@@ -18,6 +22,11 @@ export function datasetTitleOf(dataset) {
 
 export async function getOccurrences({ userRef }) {
   return await fetch(`/api/dwca/user/${userRef}/records?projectFields=dwcRecord.tdwg.scientificName&projectFields=dwcRecord.tdwg.eventDate`)
+    .then(response => response.json())
+}
+
+export async function getOccurrence({ datasetId, dwcaId, userRef }) {
+  return fetch(`/api/dwca/${datasetId}/user/${userRef}/records/${encodeURIComponent(dwcaId)}`)
     .then(response => response.json())
 }
 
@@ -93,10 +102,6 @@ function mapOccurrenceDataToTdwg({ basisOfRecord, beginDate, endDate, occurrence
 }
 
 function mapDarwinCoreFieldsToRequest(darwinCoreFields) {
-  const purlUrl = 'http://purl.org/dc/terms/'
-  const tdwgUrl = 'http://rs.tdwg.org/dwc/terms/'
-  const iobisUrl = 'http://rs.iobis.org/obis/terms/'
-
   return darwinCoreFields.reduce((acc, { name, value }) => {
     if (name.startsWith(purlUrl)) {
       acc.purl[name.substring(purlUrl.length)] = value
@@ -111,4 +116,87 @@ function mapDarwinCoreFieldsToRequest(darwinCoreFields) {
     tdwg:  {},
     iobis: {}
   })
+}
+
+export function mapDwcaToOccurrenceData(dwca) {
+  const tdwg = dwca.dwcRecords.occurrence[0].tdwg
+  const [beginDate, endDate] = tdwg.eventDate.split('/')
+  return {
+    basisOfRecord:    tdwg.basisOfRecord.charAt(0).toLowerCase() + tdwg.basisOfRecord.slice(1),
+    beginDate:        new Date(beginDate),
+    endDate:          endDate ? new Date(endDate) : null,
+    lifestage:        tdwg.lifeStage || 'unspecified',
+    occurrenceStatus: tdwg.occurrenceStatus,
+    scientificName:   tdwg.scientificName,
+    sex:              tdwg.sex || 'unspecified'
+  }
+}
+
+export function mapDwcaToLocationData(dwca) {
+  const tdwg = dwca.dwcRecords.occurrence[0].tdwg
+  return {
+    decimalLongitude:      tdwg.decimalLongitude,
+    decimalLatitude:       tdwg.decimalLatitude,
+    coordinateUncertainty: tdwg.coordinateUncertaintyInMeters,
+    minimumDepth:          tdwg.minimumDepthInMeters,
+    maximumDepth:          tdwg.maximumDepthInMeters,
+    verbatimCoordinates:   tdwg.verbatimCoordinates,
+    verbatimDepth:         tdwg.verbatimDepth
+  }
+}
+
+export function mapDwcaToObservationData(dwca) {
+  const tdwg = dwca.dwcRecords.occurrence[0].tdwg
+  return {
+    institutionCode:         tdwg.institutionCode,
+    collectionCode:          tdwg.collectionCode,
+    fieldNumber:             tdwg.fieldNumber,
+    catalogNumber:           tdwg.catalogNumber,
+    recordNumber:            tdwg.recordNumber,
+    identifiedBy:            tdwg.identifiedBy.split('|'),
+    recordedBy:              tdwg.recordedBy.split('|'),
+    identificationQualifier: tdwg.identificationQualifier,
+    identificationRemarks:   tdwg.identificationRemarks,
+    references:              tdwg.associatedReferences.split('|')
+  }
+}
+
+export function mapDwcaToMeasurements(dwca) {
+  const emof = dwca.dwcRecords.emof
+  return emof.map(({ tdwg, iobis }) => ({
+    type:  tdwg.measurementType,
+    value: tdwg.measurementValue,
+    unit:  tdwg.measurementUnit,
+    units: findUnitsByTypeId(iobis.measurementTypeID)
+  }))
+}
+
+const reservedTdwgFields = ['basisOfRecord', 'eventDate', 'occurrenceStatus', 'scientificName', 'sex',
+  'decimalLongitude', 'decimalLatitude', 'coordinateUncertaintyInMeters', 'minimumDepthInMeters', 'maximumDepthInMeters',
+  'verbatimCoordinates', 'verbatimDepth', 'institutionCode', 'collectionCode', 'fieldNumber', 'catalogNumber',
+  'recordNumber', 'identifiedBy', 'recordedBy', 'identificationQualifier', 'identificationRemarks',
+  'associatedReferences']
+
+export function mapDwcsToDarwinCoreFields(dwca) {
+  const { tdwg, iobis, purl } = dwca.dwcRecords.occurrence[0]
+  const iobisFields = Object
+    .keys(iobis)
+    .map(key => ({
+      name:  iobisUrl + key,
+      value: iobis[key]
+    }))
+  const purlFields = Object
+    .keys(purl)
+    .map(key => ({
+      name:  purlUrl + key,
+      value: purl[key]
+    }))
+  const tdwgFields = Object
+    .keys(tdwg)
+    .filter(key => !reservedTdwgFields.includes(key))
+    .map(key => ({
+      name:  tdwgUrl + key,
+      value: tdwg[key]
+    }))
+  return [...iobisFields, ...purlFields, ...tdwgFields]
 }

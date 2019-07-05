@@ -54,15 +54,16 @@ public class Starter extends AbstractVerticle {
     vertx.deployVerticle(
       StorageModule.class.getName(),
       new DeploymentOptions().setConfig(config().getJsonObject("storage")),
-      ar -> {
-        info("Deployed Embedded DB verticle {}", ar.result());
-        deploy(UserComponent.class, "user");
-        deploy(DwcaComponent.class, "dwca");
-        deploy(RssComponent.class, "rss");
-        deploy(HttpComponent.class, "http");
-        deploy(AuthComponent.class, "auth");
-        deploy(DatasetComponent.class, "dataset");
-      });
+      ar -> vertx.deployVerticle(HttpComponent.class.getName(),
+        new DeploymentOptions().setConfig(config()),
+        arHttp -> {
+          info("Deployed Embedded DB verticle {}", ar.result());
+          deploy(AuthComponent.class, "auth");
+          deploy(DatasetComponent.class, "dataset");
+          deploy(DwcaComponent.class, "dwca");
+          deploy(RssComponent.class, "rss");
+          deploy(UserComponent.class, "user");
+        }));
   }
 
   private void deploy(Class verticleClass, String configKey) {

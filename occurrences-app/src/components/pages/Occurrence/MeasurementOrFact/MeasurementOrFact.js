@@ -1,5 +1,4 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import CopyPreviousData from '../CopyPreviousData'
 import Dropdown from '../../../form/Dropdown'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
@@ -111,7 +110,6 @@ export default function MeasurementOrFact({ data, onChange }) {
           </table>
         </div>
       </div>
-      <CopyPreviousData/>
     </div>
   )
 }

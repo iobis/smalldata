@@ -22,7 +22,10 @@ import static org.pmw.tinylog.Logger.info;
 public class UsersHandlerTest {
 
   private static final int HTTP_PORT = 8080;
-  private static final JsonObject CONFIG = new JsonObject().put("port", HTTP_PORT);
+  private static final JsonObject CONFIG = new JsonObject()
+    .put("mode", "DEMO")
+    .put("auth", new JsonObject().put("demokey", "verysecret"))
+    .put("http", new JsonObject().put("port", HTTP_PORT));
   private static final String LOCALHOST = "localhost";
   private static final String URL_API_USERS = "/api/users/";
   private static final String KEY_USERS_REF = "_ref";
@@ -47,6 +50,7 @@ public class UsersHandlerTest {
       message -> message.reply(new JsonArray().add(new JsonObject().put(KEY_USERS_REF, "some-user-ref"))));
     client
       .get(HTTP_PORT, LOCALHOST, URL_API_USERS)
+      .putHeader("Authorization", "Basic verysecret")
       .as(BodyCodec.jsonArray())
       .send(ar -> {
         assertThat(ar.succeeded()).isTrue();
@@ -68,6 +72,7 @@ public class UsersHandlerTest {
       message -> message.reply(((JsonObject) message.body()).getJsonObject("user")));
     client
       .post(HTTP_PORT, LOCALHOST, URL_API_USERS)
+      .putHeader("Authorization", "Basic verysecret")
       .as(BodyCodec.jsonObject())
       .sendJson(
         new JsonObject()
@@ -91,6 +96,7 @@ public class UsersHandlerTest {
       message -> message.reply(((JsonObject) message.body()).getJsonObject("user")));
     client
       .put(HTTP_PORT, LOCALHOST, URL_API_USERS)
+      .putHeader("Authorization", "Basic verysecret")
       .as(BodyCodec.jsonObject())
       .sendJson(
         new JsonObject()
