@@ -1,10 +1,10 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
+import { mount } from 'enzyme'
 import OccurrenceData from './OccurrenceData'
 
 describe('OccurrenceData', () => {
   it('renders correctly', () => {
-    expect(renderer.create(createComponent()).toJSON()).toMatchSnapshot()
+    expect(mount(createComponent())).toMatchSnapshot()
   })
 })
 

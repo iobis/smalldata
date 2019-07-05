@@ -1,39 +1,25 @@
-import bulmaCalendar from 'bulma-calendar'
+import Flatpickr from 'react-flatpickr'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import React, { useEffect, useRef, useState } from 'react'
-import { differenceInCalendarDays } from 'date-fns'
 
-export default function DatePicker({ onChange, value }) {
-  const datePickerEl = useRef()
-  const [instance, setInstance] = useState(null)
-  const [selectedDate, setSelectedDate] = useState(new Date(value))
-
-  function handleValueChange(e) {
-    const newDate = new Date(e.data.value())
-    setSelectedDate(newDate)
-    onChange(newDate)
-  }
+export default function DatePicker({ value, onChange }) {
+  const [newValue, setNewValue] = useState(value)
 
   useEffect(() => {
-    if (instance === null) {
-      const calendar = bulmaCalendar.attach(datePickerEl.current, {
-        dateFormat:         'D MMMM YYYY',
-        displayMode:        'default',
-        showFooter:         false,
-        showHeader:         false,
-        startDate:          value !== null ? new Date(value) : null,
-        toggleOnInputClick: true,
-        type:               'date'
-      })
-      const instance = calendar[0]
-      instance.on('select', handleValueChange)
-      setInstance(instance)
-    } else if (differenceInCalendarDays(new Date(value), selectedDate) !== 0) {
-      instance.value(value)
-    }
+    onChange(newValue)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [newValue])
+
+  useEffect(() => {
+    setNewValue(value)
   }, [value])
 
-  return <input className="input" ref={datePickerEl} type="date"/>
+  return (
+    <Flatpickr
+      className="input"
+      onChange={(selectedDates) => selectedDates.length > 0 ? setNewValue(new Date(selectedDates[0])) : setNewValue(null)}
+      value={newValue}/>
+  )
 }
 
 DatePicker.propTypes = {
