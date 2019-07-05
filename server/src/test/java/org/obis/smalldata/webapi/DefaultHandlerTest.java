@@ -32,10 +32,11 @@ public class DefaultHandlerTest {
       .send(handler);
   }
 
-  protected void httpPostJsonBody(WebClient client,
-                                  String url,
-                                  JsonObject body,
-                                  Handler<AsyncResult<HttpResponse<JsonObject>>> handler) {
+  protected void httpPostJsonBody(
+    WebClient client,
+    String url,
+    JsonObject body,
+    Handler<AsyncResult<HttpResponse<JsonObject>>> handler) {
     client
       .post(HTTP_PORT, LOCALHOST, url)
       .putHeader("Authorization", "Basic verysecret")
