@@ -7,7 +7,7 @@ exports[`OccurrenceData renders correctly 1`] = `
       "basisOfRecord": "humanObservation",
       "beginDate": 2019-01-02T12:30:40.000Z,
       "endDate": 2020-01-02T12:30:40.000Z,
-      "lifestage": "larva",
+      "lifeStage": "larva",
       "occurrenceStatus": "absent",
       "scientificName": "scientific name",
       "sex": "male",
@@ -21,7 +21,7 @@ exports[`OccurrenceData renders correctly 1`] = `
             "basisOfRecord": "humanObservation",
             "beginDate": 2019-01-02T12:30:40.000Z,
             "endDate": 2020-01-02T12:30:40.000Z,
-            "lifestage": "larva",
+            "lifeStage": "larva",
             "occurrenceStatus": "absent",
             "scientificName": "scientific name",
             "sex": "male",
@@ -32,7 +32,7 @@ exports[`OccurrenceData renders correctly 1`] = `
             "basisOfRecord": "humanObservation",
             "beginDate": 2019-01-02T12:30:40.000Z,
             "endDate": 2020-01-02T12:30:40.000Z,
-            "lifestage": "larva",
+            "lifeStage": "larva",
             "occurrenceStatus": "absent",
             "scientificName": "scientific name",
             "sex": "male",
@@ -473,7 +473,7 @@ exports[`OccurrenceData renders correctly 1`] = `
       </div>
     </InputRadioGroup>
     <InputRadioGroup
-      name="occurrenceForm.occurrenceData.lifestage"
+      name="occurrenceForm.occurrenceData.lifeStage"
       onChange={[Function]}
       options={
         Array [
@@ -491,7 +491,7 @@ exports[`OccurrenceData renders correctly 1`] = `
         <label
           className="label"
         >
-          occurrenceForm.occurrenceData.lifestage.title
+          occurrenceForm.occurrenceData.lifeStage.title
         </label>
         <div
           className="control"
@@ -499,93 +499,93 @@ exports[`OccurrenceData renders correctly 1`] = `
           <InputRadio
             checked={true}
             key="larva"
-            name="occurrenceForm.occurrenceData.lifestage"
+            name="occurrenceForm.occurrenceData.lifeStage"
             onChange={[Function]}
-            text="occurrenceForm.occurrenceData.lifestage.larva"
+            text="occurrenceForm.occurrenceData.lifeStage.larva"
             value="larva"
           >
             <input
               checked={true}
               className="input-radio is-checkradio"
-              id="occurrenceForm.occurrenceData.lifestage-larva"
-              name="occurrenceForm.occurrenceData.lifestage"
+              id="occurrenceForm.occurrenceData.lifeStage-larva"
+              name="occurrenceForm.occurrenceData.lifeStage"
               onChange={[Function]}
               type="radio"
               value="larva"
             />
             <label
-              htmlFor="occurrenceForm.occurrenceData.lifestage-larva"
+              htmlFor="occurrenceForm.occurrenceData.lifeStage-larva"
             >
-              occurrenceForm.occurrenceData.lifestage.larva
+              occurrenceForm.occurrenceData.lifeStage.larva
             </label>
           </InputRadio>
           <InputRadio
             checked={false}
             key="juvenile"
-            name="occurrenceForm.occurrenceData.lifestage"
+            name="occurrenceForm.occurrenceData.lifeStage"
             onChange={[Function]}
-            text="occurrenceForm.occurrenceData.lifestage.juvenile"
+            text="occurrenceForm.occurrenceData.lifeStage.juvenile"
             value="juvenile"
           >
             <input
               checked={false}
               className="input-radio is-checkradio"
-              id="occurrenceForm.occurrenceData.lifestage-juvenile"
-              name="occurrenceForm.occurrenceData.lifestage"
+              id="occurrenceForm.occurrenceData.lifeStage-juvenile"
+              name="occurrenceForm.occurrenceData.lifeStage"
               onChange={[Function]}
               type="radio"
               value="juvenile"
             />
             <label
-              htmlFor="occurrenceForm.occurrenceData.lifestage-juvenile"
+              htmlFor="occurrenceForm.occurrenceData.lifeStage-juvenile"
             >
-              occurrenceForm.occurrenceData.lifestage.juvenile
+              occurrenceForm.occurrenceData.lifeStage.juvenile
             </label>
           </InputRadio>
           <InputRadio
             checked={false}
             key="adult"
-            name="occurrenceForm.occurrenceData.lifestage"
+            name="occurrenceForm.occurrenceData.lifeStage"
             onChange={[Function]}
-            text="occurrenceForm.occurrenceData.lifestage.adult"
+            text="occurrenceForm.occurrenceData.lifeStage.adult"
             value="adult"
           >
             <input
               checked={false}
               className="input-radio is-checkradio"
-              id="occurrenceForm.occurrenceData.lifestage-adult"
-              name="occurrenceForm.occurrenceData.lifestage"
+              id="occurrenceForm.occurrenceData.lifeStage-adult"
+              name="occurrenceForm.occurrenceData.lifeStage"
               onChange={[Function]}
               type="radio"
               value="adult"
             />
             <label
-              htmlFor="occurrenceForm.occurrenceData.lifestage-adult"
+              htmlFor="occurrenceForm.occurrenceData.lifeStage-adult"
             >
-              occurrenceForm.occurrenceData.lifestage.adult
+              occurrenceForm.occurrenceData.lifeStage.adult
             </label>
           </InputRadio>
           <InputRadio
             checked={false}
             key="unspecified"
-            name="occurrenceForm.occurrenceData.lifestage"
+            name="occurrenceForm.occurrenceData.lifeStage"
             onChange={[Function]}
-            text="occurrenceForm.occurrenceData.lifestage.unspecified"
+            text="occurrenceForm.occurrenceData.lifeStage.unspecified"
             value="unspecified"
           >
             <input
               checked={false}
               className="input-radio is-checkradio"
-              id="occurrenceForm.occurrenceData.lifestage-unspecified"
-              name="occurrenceForm.occurrenceData.lifestage"
+              id="occurrenceForm.occurrenceData.lifeStage-unspecified"
+              name="occurrenceForm.occurrenceData.lifeStage"
               onChange={[Function]}
               type="radio"
               value="unspecified"
             />
             <label
-              htmlFor="occurrenceForm.occurrenceData.lifestage-unspecified"
+              htmlFor="occurrenceForm.occurrenceData.lifeStage-unspecified"
             >
-              occurrenceForm.occurrenceData.lifestage.unspecified
+              occurrenceForm.occurrenceData.lifeStage.unspecified
             </label>
           </InputRadio>
         </div>

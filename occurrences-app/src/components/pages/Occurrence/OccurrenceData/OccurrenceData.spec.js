@@ -15,7 +15,7 @@ function createComponent() {
         basisOfRecord:    'humanObservation',
         beginDate:        new Date('2019-01-02T12:30:40+00:00'),
         endDate:          new Date('2020-01-02T12:30:40+00:00'),
-        lifestage:        'larva',
+        lifeStage:        'larva',
         occurrenceStatus: 'absent',
         scientificName:   'scientific name',
         sex:              'male'

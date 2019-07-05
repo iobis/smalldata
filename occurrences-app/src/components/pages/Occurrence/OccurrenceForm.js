@@ -344,7 +344,7 @@ function createInitialState() {
       basisOfRecord:    'humanObservation',
       beginDate:        Date.now(),
       endDate:          null,
-      lifestage:        'larva',
+      lifeStage:        'larva',
       occurrenceStatus: 'present',
       scientificName:   '',
       sex:              'male'
