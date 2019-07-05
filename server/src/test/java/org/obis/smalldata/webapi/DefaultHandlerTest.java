@@ -9,8 +9,8 @@ import io.vertx.ext.web.codec.BodyCodec;
 
 public class DefaultHandlerTest {
 
-  protected static final int HTTP_PORT = 8080;
-  protected static final String LOCALHOST = "localhost";
+  private static final int HTTP_PORT = 8080;
+  private static final String LOCALHOST = "localhost";
   protected static final JsonObject CONFIG = new JsonObject()
     .put("mode", "DEMO")
     .put("auth", new JsonObject().put("demokey", "verysecret"))
