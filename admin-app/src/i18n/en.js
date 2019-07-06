@@ -16,6 +16,16 @@ export default {
         organization: 'Organization',
         licence:      'Licence'
       }
+    },
+    manageUsersPage:   {
+      inputNew:              'Input New User',
+      managePreviousEntries: 'Manage Existing Users',
+      or:                    'OR',
+      table:                 {
+        email:            'Email',
+        accessToDatasets: 'Access to datasets',
+        role:             'Role'
+      }
     }
   }
 }
