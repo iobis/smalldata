@@ -5,14 +5,14 @@ import FinalSummary from './FinalSummary'
 export default [{
   component: FinalSummary,
   name:      'default',
-  url:       '/input-data/new',
+  url:       '/input-data/create',
   props:     {
     ...getDefaultProps()
   }
 }, {
   component: FinalSummary,
   name:      'with error',
-  url:       '/input-data/new',
+  url:       '/input-data/create',
   props:     {
     ...getDefaultProps(),
     errorVisible: true,
@@ -21,7 +21,7 @@ export default [{
 }, {
   component: FinalSummary,
   name:      'successfully submitted',
-  url:       '/input-data/new',
+  url:       '/input-data/create',
   props:     {
     ...getDefaultProps(),
     successVisible: true
@@ -35,7 +35,7 @@ export function getDefaultProps() {
       basisOfRecord:    'humanObservation',
       beginDate:        Date.UTC(2019, 3, 29),
       endDate:          Date.UTC(2019, 3, 30),
-      lifestage:        'adult',
+      lifeStage:        'adult',
       occurrenceStatus: 'absent',
       scientificName:   'ala abra',
       sex:              'male'

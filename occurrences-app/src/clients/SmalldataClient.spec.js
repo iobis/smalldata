@@ -1,16 +1,9 @@
 import * as SmalldataClient from './SmalldataClient'
 import deepExtend from 'deep-extend'
-import { DATASTES_RESPONSE } from './SmalldataClient.mock'
+import { DATASTES_RESPONSE, OCCURRENCES_RESPONSE } from './SmalldataClient.mock'
 
 describe('SmalldataClient', () => {
   const userRef = 'ovZTtaOJZ98xDDY'
-
-  it('datasetTitleOf(dataset)', () => {
-    expect(SmalldataClient.datasetTitleOf(DATASTES_RESPONSE[0]))
-      .toEqual('Caprellids polulation structure in Usujiri, Hokkaido, Japan')
-    expect(SmalldataClient.datasetTitleOf(null))
-      .toEqual('')
-  })
 
   describe('getDatasets()', () => {
     beforeEach(() => {
@@ -52,6 +45,27 @@ describe('SmalldataClient', () => {
     })
   })
 
+  describe('findLatestOccurrence()', () => {
+    beforeEach(() => {
+      global.fetch = jest.fn().mockImplementation(() =>
+        new Promise((resolve) => {
+          resolve({ json: () => OCCURRENCES_RESPONSE })
+        })
+      )
+    })
+
+    afterEach(() => {
+      global.fetch.mockRestore()
+    })
+
+    it('fetches data from correct url', async() => {
+      await SmalldataClient.findLatestOccurrence({ userRef })
+      expect(fetch).toHaveBeenCalledTimes(2)
+      expect(fetch).toHaveBeenNthCalledWith(1, '/api/dwca/user/ovZTtaOJZ98xDDY/records?projectFields=dwcRecord.tdwg.scientificName&projectFields=dwcRecord.tdwg.eventDate')
+      expect(fetch).toHaveBeenNthCalledWith(2, '/api/dwca/ntDOtUc7XsRrIus/user/ovZTtaOJZ98xDDY/records/IBSS_R%2FV%20N.%20Danilevskiy%201935%20Azov%20Sea%20benthos%20data_796')
+    })
+  })
+
   describe('getOccurrence()', () => {
     beforeEach(() => {
       global.fetch = jest.fn().mockImplementation(() =>
@@ -82,7 +96,9 @@ describe('SmalldataClient', () => {
     })
   })
 
-  describe('postOccurrence()', () => {
+  describe('updateOccurrence()', () => {
+    const dwcaId = 'IkadeGqejSCC3Sc'
+
     beforeEach(() => {
       global.fetch = jest.fn().mockImplementation(() =>
         new Promise((resolve) => {
@@ -96,16 +112,39 @@ describe('SmalldataClient', () => {
     })
 
     it('when providing all data', async() => {
-      await SmalldataClient.postOccurrence({ ...getDefaultOccurrence(), ...{ userRef } })
+      await SmalldataClient.updateOccurrence({ ...getDefaultOccurrence(), ...{ userRef, dwcaId } })
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+      expect(fetch.mock.calls[0][0]).toBe('/api/dwca/wEaBfmFyQhYCdsk/user/ovZTtaOJZ98xDDY/records/IkadeGqejSCC3Sc')
+      expect(fetch.mock.calls[0][1].method).toBe('PUT')
+      expect(JSON.parse(fetch.mock.calls[0][1].body)).toEqual(getExpectedDefaultOccurrenceRequest())
+    })
+  })
+
+  describe('createOccurrence()', () => {
+    beforeEach(() => {
+      global.fetch = jest.fn().mockImplementation(() =>
+        new Promise((resolve) => {
+          resolve({ json: () => 'default-response' })
+        })
+      )
+    })
+
+    afterEach(() => {
+      global.fetch.mockRestore()
+    })
+
+    it('when providing all data', async() => {
+      await SmalldataClient.createOccurrence({ ...getDefaultOccurrence(), ...{ userRef } })
 
       expect(fetch).toHaveBeenCalledTimes(1)
       expect(fetch.mock.calls[0][0]).toBe('/api/dwca/wEaBfmFyQhYCdsk/user/ovZTtaOJZ98xDDY/records')
       expect(fetch.mock.calls[0][1].method).toBe('POST')
-      expect(JSON.parse(fetch.mock.calls[0][1].body)).toEqual(getDefaultOccurrenceRequest())
+      expect(JSON.parse(fetch.mock.calls[0][1].body)).toEqual(getExpectedDefaultOccurrenceRequest())
     })
 
     it('when providing life stage and sex as unspecified', async() => {
-      await SmalldataClient.postOccurrence(
+      await SmalldataClient.createOccurrence(
         deepExtend(
           getDefaultOccurrence(),
           {
@@ -151,7 +190,7 @@ describe('SmalldataClient', () => {
     })
 
     it('when event end date is not provided', async() => {
-      await SmalldataClient.postOccurrence(
+      await SmalldataClient.createOccurrence(
         deepExtend(
           getDefaultOccurrence(),
           {
@@ -169,71 +208,6 @@ describe('SmalldataClient', () => {
       expect(fetch.mock.calls[0][1].method).toBe('POST')
       expect(JSON.parse(fetch.mock.calls[0][1].body).occurrence[0].tdwg.eventDate).toEqual('2019-04-29/2019-04-29')
     })
-  })
-
-  it('mapDwcaToOccurrenceData()', () => {
-    expect(SmalldataClient.mapDwcaToOccurrenceData(getDefaultDwcaResponse())).toEqual({
-      basisOfRecord:    'machineObservation',
-      beginDate:        new Date(Date.UTC(2019, 5, 25)),
-      endDate:          new Date(Date.UTC(2019, 5, 26)),
-      lifestage:        'unspecified',
-      occurrenceStatus: 'absent',
-      scientificName:   'Aaadonta',
-      sex:              'female'
-    })
-  })
-
-  it('mapDwcaToOccurrenceData()', () => {
-    expect(SmalldataClient.mapDwcaToLocationData(getDefaultDwcaResponse())).toEqual({
-      coordinateUncertainty: 1,
-      decimalLatitude:       51.518463972439385,
-      decimalLongitude:      -0.16771316528320315,
-      maximumDepth:          3,
-      minimumDepth:          2,
-      verbatimCoordinates:   '17T 630000 4833400',
-      verbatimDepth:         '100-200 m'
-    })
-  })
-
-  it('mapDwcaToObservationData()', () => {
-    expect(SmalldataClient.mapDwcaToObservationData(getDefaultDwcaResponse())).toEqual({
-      institutionCode:         'Institution Code',
-      collectionCode:          'Collection Code',
-      fieldNumber:             'Field Number',
-      catalogNumber:           'Catalog Number',
-      recordNumber:            'Record Number',
-      identifiedBy:            ['person-1', 'person-2'],
-      recordedBy:              ['recorded-by-1', 'recorded-by-2'],
-      identificationQualifier: 'Identification Qualifier',
-      identificationRemarks:   'Identification Remarks',
-      references:              ['www.google.com', 'https://clojure.org/']
-    })
-  })
-
-  it('mapDwcaToMeasurements()', () => {
-    expect(SmalldataClient.mapDwcaToMeasurements(getDefaultDwcaResponse())).toMatchSnapshot()
-  })
-
-  it('mapDwcsToDarwinCoreFields()', () => {
-    expect(SmalldataClient.mapDwcsToDarwinCoreFields(getDefaultDwcaResponse())).toEqual([{
-      name:  'http://rs.iobis.org/obis/terms/iobis-1',
-      value: 'iobis-1-value'
-    }, {
-      name:  'http://rs.iobis.org/obis/terms/iobis-2',
-      value: 'iobis-2-value'
-    }, {
-      name:  'http://purl.org/dc/terms/purl-field-1',
-      value: 'purl-field-1-value'
-    }, {
-      name:  'http://purl.org/dc/terms/purl-field-2',
-      value: 'purl-field-2-value'
-    }, {
-      name:  'http://rs.tdwg.org/dwc/terms/tdwg-field-1',
-      value: 'tdwg-field-1-value'
-    }, {
-      name:  'http://rs.tdwg.org/dwc/terms/tdwg-field-2',
-      value: 'tdwg-field-2-value'
-    }])
   })
 })
 
@@ -290,14 +264,14 @@ function getDefaultOccurrence() {
   }
 }
 
-function getDefaultOccurrenceRequest() {
+function getExpectedDefaultOccurrenceRequest() {
   return {
     core:       'occurrence',
     occurrence: [{
       tdwg:  {
         basisOfRecord:    'HumanObservation',
         eventDate:        '2019-04-29/2019-04-30',
-        lifestage:        'adult',
+        lifeStage:        'adult',
         occurrenceStatus: 'present',
         scientificName:   'ala abra',
         sex:              'male',
@@ -351,108 +325,5 @@ function getDefaultOccurrenceRequest() {
         measurementUnitID: 'http://vocab.nerc.ac.uk/collection/P06/current/UUUU/'
       }
     }]
-  }
-}
-
-function getDefaultDwcaResponse() {
-  return {
-    'dwcaId':         'IkadeGqejSCC3Sc',
-    'dataset':        'ntDOtUc7XsRrIus',
-    'addedAtInstant': '2019-06-25T18:14:48.185360Z',
-    'dwcRecords':     {
-      'emof':       [{
-        'tdwg':  {
-          'measurementType':  'Abundance category of biological entity specified elsewhere',
-          'measurementUnit':  'Dimensionless',
-          'measurementValue': '3'
-        },
-        'iobis': {
-          'measurementTypeID': 'http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL06',
-          'measurementUnitID': 'http://vocab.nerc.ac.uk/collection/P06/current/UUUU/'
-        },
-        'id':    'IkadeGqejSCC3Sc'
-      }, {
-        'tdwg':  {
-          'measurementType':  'Abundance of biological entity specified elsewhere per unit area of the bed',
-          'measurementUnit':  'Number per square meter',
-          'measurementValue': '44'
-        },
-        'iobis': {
-          'measurementTypeID': 'http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL02',
-          'measurementUnitID': 'http://vocab.nerc.ac.uk/collection/P06/current/UPMS/'
-        },
-        'id':    'IkadeGqejSCC3Sc'
-      }, {
-        'tdwg':  {
-          'measurementType':  'ObservedIndividualCount',
-          'measurementUnit':  'Dimensionless',
-          'measurementValue': '1'
-        },
-        'iobis': {
-          'measurementTypeID': 'http://vocab.nerc.ac.uk/collection/P01/current/OCOUNT01',
-          'measurementUnitID': 'http://vocab.nerc.ac.uk/collection/P06/current/UUUU/'
-        },
-        'id':    'IkadeGqejSCC3Sc'
-      }, {
-        'tdwg':  { 'measurementType': 'Pressure', 'measurementUnit': 'Decibars', 'measurementValue': '1' },
-        'iobis': {
-          'measurementTypeID': 'http://vocab.nerc.ac.uk/collection/P01/current/PRESPS02/',
-          'measurementUnitID': 'http://vocab.nerc.ac.uk/collection/P06/current/UPDB/'
-        },
-        'id':    'IkadeGqejSCC3Sc'
-      }, {
-        'tdwg':  { 'measurementType': 'Salinity', 'measurementUnit': 'Grams per kilogram', 'measurementValue': '3' },
-        'iobis': {
-          'measurementTypeID': 'http://vocab.nerc.ac.uk/collection/P01/current/PSALCU01/',
-          'measurementUnitID': 'http://vocab.nerc.ac.uk/collection/P06/current/UGKG'
-        },
-        'id':    'IkadeGqejSCC3Sc'
-      }, {
-        'tdwg':  { 'measurementType': 'Temperature', 'measurementUnit': 'Degrees Celsius', 'measurementValue': '2' },
-        'iobis': {
-          'measurementTypeID': 'http://vocab.nerc.ac.uk/collection/P01/current/TEMPCU01/',
-          'measurementUnitID': 'http://vocab.nerc.ac.uk/collection/P06/current/UPAA'
-        },
-        'id':    'IkadeGqejSCC3Sc'
-      }],
-      'core':       'occurrence',
-      'occurrence': [{
-        'tdwg':  {
-          'basisOfRecord':                 'MachineObservation',
-          'eventDate':                     '2019-06-25/2019-06-26',
-          'occurrenceStatus':              'absent',
-          'scientificName':                'Aaadonta',
-          'sex':                           'female',
-          'decimalLongitude':              -0.16771316528320315,
-          'decimalLatitude':               51.518463972439385,
-          'coordinateUncertaintyInMeters': 1,
-          'minimumDepthInMeters':          2,
-          'maximumDepthInMeters':          3,
-          'verbatimCoordinates':           '17T 630000 4833400',
-          'verbatimDepth':                 '100-200 m',
-          'institutionCode':               'Institution Code',
-          'collectionCode':                'Collection Code',
-          'fieldNumber':                   'Field Number',
-          'catalogNumber':                 'Catalog Number',
-          'recordNumber':                  'Record Number',
-          'identifiedBy':                  'person-1|person-2',
-          'recordedBy':                    'recorded-by-1|recorded-by-2',
-          'identificationQualifier':       'Identification Qualifier',
-          'identificationRemarks':         'Identification Remarks',
-          'associatedReferences':          'www.google.com|https://clojure.org/',
-          'tdwg-field-1':                  'tdwg-field-1-value',
-          'tdwg-field-2':                  'tdwg-field-2-value'
-        },
-        'purl':  {
-          'purl-field-1': 'purl-field-1-value',
-          'purl-field-2': 'purl-field-2-value'
-        },
-        'iobis': {
-          'iobis-1': 'iobis-1-value',
-          'iobis-2': 'iobis-2-value'
-        },
-        'id':    'IkadeGqejSCC3Sc'
-      }]
-    }
   }
 }
