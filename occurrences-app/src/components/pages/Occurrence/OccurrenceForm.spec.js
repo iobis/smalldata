@@ -2,7 +2,7 @@ import OccurrenceForm from './OccurrenceForm'
 import React from 'react'
 import { act } from 'react-dom/test-utils'
 import { mount } from 'enzyme'
-import { DATASTES_RESPONSE } from '../../../clients/SmalldataClient.mock'
+import { DATASTES_RESPONSE } from '@smalldata/dwca-lib/src/clients/SmalldataClient.mock'
 import { AuthProvider } from '@smalldata/dwca-lib'
 
 describe('OccurrenceForm', () => {

@@ -1,7 +1,7 @@
 import InputDataPage from './InputDataPage'
 import React from 'react'
 import { MemoryRouter } from 'react-router-dom'
-import { DATASTES_RESPONSE, OCCURRENCES_RESPONSE } from '../../clients/SmalldataClient.mock'
+import { DATASTES_RESPONSE, OCCURRENCES_RESPONSE } from '@smalldata/dwca-lib/src/clients/SmalldataClient.mock'
 import { act } from 'react-dom/test-utils'
 import { mount } from 'enzyme'
 import { AuthProvider } from '@smalldata/dwca-lib'

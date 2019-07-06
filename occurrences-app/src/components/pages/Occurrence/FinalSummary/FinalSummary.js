@@ -7,7 +7,7 @@ import { locationDataShape } from '../LocationData/LocationData'
 import { observationDataShape } from '../ObservationData/ObservationData'
 import { occurrenceDataShape } from '../OccurrenceData/OccurrenceData'
 import { useTranslation } from 'react-i18next'
-import { datasetTitleOf } from '../../../../clients/SmalldataConverters'
+import { datasetTitleOf } from '@smalldata/dwca-lib/src/clients/SmalldataConverters'
 import { Link } from 'react-router-dom'
 
 export default function FinalSummary({

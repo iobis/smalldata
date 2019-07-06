@@ -3,7 +3,7 @@ import Dropdown from '../../../form/Dropdown'
 import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
 import { addUuid, removeUuid } from '../../../../common/uuids'
-import { getGeneralMeasurements, getSpecificMeasurements } from '../../../../clients/measurments'
+import { getGeneralMeasurements, getSpecificMeasurements } from '@smalldata/dwca-lib/src/clients/measurments'
 import { useTranslation } from 'react-i18next'
 
 export default function MeasurementOrFact({ data, onChange }) {
