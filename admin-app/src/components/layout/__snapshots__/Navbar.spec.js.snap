@@ -402,13 +402,13 @@ exports[`Navbar renders correctly for route /input-data 1`] = `
 </MemoryRouter>
 `;
 
-exports[`Navbar renders correctly for route /input-data/new 1`] = `
+exports[`Navbar renders correctly for route /input-data/create 1`] = `
 <MemoryRouter
   initialEntries={
     Array [
       Object {
         "key": "testKey",
-        "pathname": "/input-data/new",
+        "pathname": "/input-data/create",
       },
     ]
   }
@@ -424,7 +424,7 @@ exports[`Navbar renders correctly for route /input-data/new 1`] = `
           Object {
             "hash": "",
             "key": "testKey",
-            "pathname": "/input-data/new",
+            "pathname": "/input-data/create",
             "search": "",
           },
         ],
@@ -437,7 +437,7 @@ exports[`Navbar renders correctly for route /input-data/new 1`] = `
         "location": Object {
           "hash": "",
           "key": "testKey",
-          "pathname": "/input-data/new",
+          "pathname": "/input-data/create",
           "search": "",
         },
         "push": [Function],

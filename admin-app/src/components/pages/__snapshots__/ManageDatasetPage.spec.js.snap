@@ -1,0 +1,210 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ManageDatasetPage renders correctly for non empty datasets 1`] = `
+<MemoryRouter
+  initialEntries={
+    Array [
+      Object {
+        "key": "testKey",
+        "pathname": "/manage-dataset",
+      },
+    ]
+  }
+>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "testKey",
+            "pathname": "/manage-dataset",
+            "search": "",
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "testKey",
+          "pathname": "/manage-dataset",
+          "search": "",
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <ManageDatasetPage>
+      <section
+        className="section"
+      >
+        <div
+          className="container is-fluid has-text-centered"
+        >
+          <Link
+            className="button is-info"
+            to="/input-data/create"
+          >
+            <a
+              className="button is-info"
+              href="/input-data/create"
+              onClick={[Function]}
+            >
+              manageDatasetPage.inputNew
+            </a>
+          </Link>
+        </div>
+      </section>
+      <Divider>
+        <div
+          className="divider"
+        >
+          <span>
+            manageDatasetPage.or
+          </span>
+        </div>
+      </Divider>
+      <section
+        className="section"
+      >
+        <div
+          className="container is-fluid has-text-centered"
+        >
+          <h4
+            className="title is-4"
+          >
+            manageDatasetPage.managePreviousEntries
+          </h4>
+          <table
+            className="table is-striped is-hoverable is-fullwidth"
+          >
+            <thead>
+              <tr>
+                <th />
+                <th>
+                  manageDatasetPage.table.title
+                </th>
+                <th>
+                  manageDatasetPage.table.organization
+                </th>
+                <th>
+                  manageDatasetPage.table.licence
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <DatasetRow
+                key="id-1"
+                license="title-1"
+                organization="Flanders Marine Institute (VLIZ)"
+                title="with organization name in metadata"
+              >
+                <tr
+                  className="user-row"
+                >
+                  <td
+                    className="edit"
+                  >
+                    <Link
+                      className="button is-info"
+                      to={
+                        Object {
+                          "pathname": "/manage-dataset/update",
+                          "state": Object {
+                            "action": "update",
+                          },
+                        }
+                      }
+                    >
+                      <a
+                        className="button is-info"
+                        href="/manage-dataset/update"
+                        onClick={[Function]}
+                      >
+                        common.edit
+                      </a>
+                    </Link>
+                  </td>
+                  <td
+                    className="dataset-title"
+                  >
+                    with organization name in metadata
+                  </td>
+                  <td
+                    className="organization"
+                  >
+                    Flanders Marine Institute (VLIZ)
+                  </td>
+                  <td
+                    className="license"
+                  >
+                    title-1
+                  </td>
+                </tr>
+              </DatasetRow>
+              <DatasetRow
+                key="id-2"
+                license="title-2"
+                organization="—"
+                title="without organization name in metadata"
+              >
+                <tr
+                  className="user-row"
+                >
+                  <td
+                    className="edit"
+                  >
+                    <Link
+                      className="button is-info"
+                      to={
+                        Object {
+                          "pathname": "/manage-dataset/update",
+                          "state": Object {
+                            "action": "update",
+                          },
+                        }
+                      }
+                    >
+                      <a
+                        className="button is-info"
+                        href="/manage-dataset/update"
+                        onClick={[Function]}
+                      >
+                        common.edit
+                      </a>
+                    </Link>
+                  </td>
+                  <td
+                    className="dataset-title"
+                  >
+                    without organization name in metadata
+                  </td>
+                  <td
+                    className="organization"
+                  >
+                    —
+                  </td>
+                  <td
+                    className="license"
+                  >
+                    title-2
+                  </td>
+                </tr>
+              </DatasetRow>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </ManageDatasetPage>
+  </Router>
+</MemoryRouter>
+`;

@@ -1,25 +1,16 @@
 import InputDataPage from './InputDataPage'
 import React from 'react'
+import { flushPromises, ignoreActWarning } from '@smalldata/test-utils-lib'
 import { MemoryRouter } from 'react-router-dom'
-import { DATASTES_RESPONSE, OCCURRENCES_RESPONSE } from '../../clients/SmalldataClient.mock'
+import { getDatasetDefaultResponse, OCCURRENCES_RESPONSE } from '@smalldata/dwca-lib/src/clients/SmalldataClient.mock'
 import { act } from 'react-dom/test-utils'
 import { mount } from 'enzyme'
 import { AuthProvider } from '@smalldata/dwca-lib'
 
 describe('InputDataPage', () => {
-  const originalError = console.error
+  ignoreActWarning()
+
   let wrapper
-
-  beforeAll(() => {
-    console.error = (...args) => {
-      if (/Warning.*not wrapped in act/.test(args[0])) return
-      originalError.call(console, ...args)
-    }
-  })
-
-  afterAll(() => {
-    console.error = originalError
-  })
 
   beforeEach(() => {
     global.fetch = jest
@@ -31,7 +22,7 @@ describe('InputDataPage', () => {
       )
       .mockImplementationOnce(() =>
         new Promise((resolve) => {
-          resolve({ json: () => DATASTES_RESPONSE })
+          resolve({ json: () => getDatasetDefaultResponse() })
         })
       )
   })
@@ -55,7 +46,7 @@ describe('InputDataPage', () => {
     expect(wrapper).toMatchSnapshot()
     expect(global.fetch).toHaveBeenCalledTimes(2)
     expect(global.fetch).toHaveBeenNthCalledWith(1, '/api/dwca/user/ovZTtaOJZ98xDDY/records?projectFields=dwcRecord.tdwg.scientificName&projectFields=dwcRecord.tdwg.eventDate')
-    expect(global.fetch).toHaveBeenNthCalledWith(2, '/api/datasets')
+    expect(global.fetch).toHaveBeenNthCalledWith(2, '/api/datasets', { headers: { Authorization: 'Basic verysecret' } })
 
     await flushPromises()
     wrapper.update()
@@ -63,7 +54,3 @@ describe('InputDataPage', () => {
     expect(wrapper).toMatchSnapshot()
   })
 })
-
-function flushPromises() {
-  return new Promise(resolve => setImmediate(resolve))
-}

@@ -1,0 +1,11 @@
+{
+  "name": "@smalldata/test-utils-lib",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "lint": "echo Nothig to lint yet",
+    "test": "echo Nothig to test here",
+    "test:ci": "echo Nothig to test here"
+  }
+}

@@ -9,7 +9,8 @@
   "workspaces": [
     "admin-app",
     "dwca-lib",
-    "occurrences-app"
+    "occurrences-app",
+    "test-utils-lib"
   ],
   "scripts": {
     "build:back-end": "run-s server:bundle-openapi-spec server:runtime-zip",

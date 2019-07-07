@@ -7,7 +7,7 @@ import { locationDataShape } from '../LocationData/LocationData'
 import { observationDataShape } from '../ObservationData/ObservationData'
 import { occurrenceDataShape } from '../OccurrenceData/OccurrenceData'
 import { useTranslation } from 'react-i18next'
-import { datasetTitleOf } from '../../../../clients/SmalldataClient'
+import { datasetTitleOf } from '@smalldata/dwca-lib/src/clients/SmalldataConverters'
 import { Link } from 'react-router-dom'
 
 export default function FinalSummary({
@@ -24,6 +24,7 @@ export default function FinalSummary({
   onCreateFromThisClick,
   onErrorClose,
   onSubmitClick,
+  successMessageType,
   successVisible
 }) {
   const { t } = useTranslation()
@@ -53,7 +54,7 @@ export default function FinalSummary({
       </div>
       {successVisible ? (
         <div className="success-message notification is-success" ref={successMessageRef}>
-          <p className="title">{t('occurrenceForm.finalSummary.successMessage.header')}</p>
+          <p className="title">{t('occurrenceForm.finalSummary.successMessage.header.' + successMessageType)}</p>
           <p className="subtitle">{t('occurrenceForm.finalSummary.successMessage.nextOptions')}</p>
           <section>
             <button className="create-fresh button is-white" onClick={onCreateFreshClick}>
@@ -104,8 +105,8 @@ export default function FinalSummary({
               name={t('occurrenceForm.occurrenceData.sex.title')}
               value={t('occurrenceForm.occurrenceData.sex.' + occurrenceData.sex)}/>
             <NameValueRow
-              name={t('occurrenceForm.occurrenceData.lifestage.title')}
-              value={t('occurrenceForm.occurrenceData.lifestage.' + occurrenceData.lifestage)}/>
+              name={t('occurrenceForm.occurrenceData.lifeStage.title')}
+              value={t('occurrenceForm.occurrenceData.lifeStage.' + occurrenceData.lifeStage)}/>
           </tbody>
         </table>
         <ChangeButton onClick={() => onChangeClick({ index: 1, value: 'occurrenceData' })}/>
@@ -256,6 +257,7 @@ FinalSummary.propTypes = {
   onCreateFromThisClick: PropTypes.func.isRequired,
   onErrorClose:          PropTypes.func.isRequired,
   onSubmitClick:         PropTypes.func.isRequired,
+  successMessageType:    PropTypes.oneOf(['create', 'update']).isRequired,
   successVisible:        PropTypes.bool.isRequired
 }
 

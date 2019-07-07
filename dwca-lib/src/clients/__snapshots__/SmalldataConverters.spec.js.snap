@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SmalldataConverters mapDwcaToMeasurements() returns correct data when measurements present 1`] = `
+Array [
+  Object {
+    "type": "Abundance category of biological entity specified elsewhere",
+    "unit": "Dimensionless",
+    "units": Array [
+      Object {
+        "id": "http://vocab.nerc.ac.uk/collection/P06/current/UUUU/",
+        "name": "Dimensionless",
+      },
+    ],
+    "value": "3",
+  },
+  Object {
+    "type": "Abundance of biological entity specified elsewhere per unit area of the bed",
+    "unit": "Number per square meter",
+    "units": Array [
+      Object {
+        "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPMS/",
+        "name": "Number per square meter",
+      },
+    ],
+    "value": "44",
+  },
+  Object {
+    "type": "ObservedIndividualCount",
+    "unit": "Dimensionless",
+    "units": Array [
+      Object {
+        "id": "http://vocab.nerc.ac.uk/collection/P06/current/UUUU/",
+        "name": "Dimensionless",
+      },
+    ],
+    "value": "1",
+  },
+  Object {
+    "type": "Pressure",
+    "unit": "Decibars",
+    "units": Array [
+      Object {
+        "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPDB/",
+        "name": "Decibars",
+      },
+    ],
+    "value": "1",
+  },
+  Object {
+    "type": "Salinity",
+    "unit": "Grams per kilogram",
+    "units": Array [
+      Object {
+        "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGKG",
+        "name": "Grams per kilogram",
+      },
+      Object {
+        "id": "http://vocab.nerc.ac.uk/collection/P06/current/UUUU/",
+        "name": "PSU (dimensionless)",
+      },
+    ],
+    "value": "3",
+  },
+  Object {
+    "type": "Temperature",
+    "unit": "Degrees Celsius",
+    "units": Array [
+      Object {
+        "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPAA",
+        "name": "Degrees Celsius",
+      },
+    ],
+    "value": "2",
+  },
+]
+`;

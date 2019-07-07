@@ -1,18 +1,18 @@
-import * as SmalldataClient from '../../../../clients/SmalldataClient'
-import * as SmalldataClientFixture from '../../../../clients/SmalldataClient.mock'
+import * as SmalldataClient from '@smalldata/dwca-lib/src/clients/SmalldataClient'
+import * as SmalldataClientFixture from '@smalldata/dwca-lib/src/clients/SmalldataClient.mock'
 import FinalSummary from './FinalSummary'
 
 export default [{
   component: FinalSummary,
   name:      'default',
-  url:       '/input-data/new',
+  url:       '/input-data/create',
   props:     {
     ...getDefaultProps()
   }
 }, {
   component: FinalSummary,
   name:      'with error',
-  url:       '/input-data/new',
+  url:       '/input-data/create',
   props:     {
     ...getDefaultProps(),
     errorVisible: true,
@@ -21,7 +21,7 @@ export default [{
 }, {
   component: FinalSummary,
   name:      'successfully submitted',
-  url:       '/input-data/new',
+  url:       '/input-data/create',
   props:     {
     ...getDefaultProps(),
     successVisible: true
@@ -30,12 +30,12 @@ export default [{
 
 export function getDefaultProps() {
   return {
-    dataset:          SmalldataClientFixture.DATASTES_RESPONSE.map(SmalldataClient.renameRefToId)[0],
+    dataset:          SmalldataClientFixture.getDatasetDefaultResponse().map(SmalldataClient.renameRefToId)[0],
     occurrenceData:   {
       basisOfRecord:    'humanObservation',
       beginDate:        Date.UTC(2019, 3, 29),
       endDate:          Date.UTC(2019, 3, 30),
-      lifestage:        'adult',
+      lifeStage:        'adult',
       occurrenceStatus: 'absent',
       scientificName:   'ala abra',
       sex:              'male'

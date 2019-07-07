@@ -1,18 +1,18 @@
-import DatePicker from '../../../form/DatePicker'
 import InputRadioGroup from '../../../form/InputRadioGroup'
+import DatePicker from '../../../form/DatePicker'
 import PropTypes from 'prop-types'
 import React from 'react'
 import ScientificNameInput from './ScientificNameInput'
 import { useTranslation } from 'react-i18next'
 
 const basisOfRecordOptions = ['humanObservation', 'machineObservation', 'fossilSpecimen', 'livingSpecimen', 'preservedSpecimen']
-const lifestageOptions = ['larva', 'juvenile', 'adult', 'unspecified']
+const lifeStageOptions = ['larva', 'juvenile', 'adult', 'unspecified']
 const occurrenceStatusOptions = ['absent', 'present']
 const sexOptions = ['male', 'female', 'unspecified']
 
 export default function OccurrenceData({ onChange, data }) {
   const { t } = useTranslation()
-  const { basisOfRecord, beginDate, endDate, lifestage, occurrenceStatus, scientificName, sex } = data
+  const { basisOfRecord, beginDate, endDate, lifeStage, occurrenceStatus, scientificName, sex } = data
 
   const updateField = (name, value) => {
     const newSelection = { ...data, [name]: value }
@@ -31,14 +31,18 @@ export default function OccurrenceData({ onChange, data }) {
           <label className="label">
             {t('occurrenceForm.occurrenceData.eventBeginDate')}
           </label>
-          <DatePicker onChange={(value) => updateField('beginDate', value)} value={beginDate}/>
+          <DatePicker
+            onChange={(value) => updateField('beginDate', value)}
+            value={beginDate}/>
         </div>
         <div className="event-end-date column field is-two-fifths">
           <label className="label has-text-weight-normal">
             {t('occurrenceForm.occurrenceData.eventEndDate')}
           </label>
           <div className="control">
-            <DatePicker onChange={(value) => updateField('endDate', value)} value={endDate}/>
+            <DatePicker
+              onChange={(value) => updateField('endDate', value)}
+              value={endDate}/>
           </div>
           <p className="help">{t('occurrenceForm.occurrenceData.eventEndDateHelp')}</p>
         </div>
@@ -59,10 +63,10 @@ export default function OccurrenceData({ onChange, data }) {
         options={sexOptions}
         selectedValue={sex}/>
       <InputRadioGroup
-        name="occurrenceForm.occurrenceData.lifestage"
-        onChange={(value) => updateField('lifestage', value)}
-        options={lifestageOptions}
-        selectedValue={lifestage}/>
+        name="occurrenceForm.occurrenceData.lifeStage"
+        onChange={(value) => updateField('lifeStage', value)}
+        options={lifeStageOptions}
+        selectedValue={lifeStage}/>
     </div>
   )
 }
@@ -71,7 +75,7 @@ export const occurrenceDataShape = {
   basisOfRecord:    PropTypes.oneOf(basisOfRecordOptions).isRequired,
   beginDate:        PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.number]).isRequired,
   endDate:          PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.number]),
-  lifestage:        PropTypes.oneOf(lifestageOptions).isRequired,
+  lifeStage:        PropTypes.oneOf(lifeStageOptions).isRequired,
   occurrenceStatus: PropTypes.oneOf(occurrenceStatusOptions).isRequired,
   scientificName:   PropTypes.string.isRequired,
   sex:              PropTypes.oneOf(sexOptions).isRequired

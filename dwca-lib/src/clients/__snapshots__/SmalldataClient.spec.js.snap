@@ -1,0 +1,553 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SmalldataClient getUsersWithDatasets makes 2 requests and combine them 1`] = `
+Array [
+  Object {
+    "_id": "5d21b9eb54308464b1a9e6c7",
+    "_ref": "ovZTtaOJZ98xDDY",
+    "bulkiness": 0,
+    "dataset_refs": Array [
+      "wEaBfmFyQhYCdsk",
+      "ntDOtUc7XsRrIus",
+      "PoJnGNMaxsupE4w",
+      "NnqVLwIyPn-nRkc",
+    ],
+    "datasets": Array [
+      Object {
+        "abstract": Object {
+          "paragraphs": Array [
+            "Population structure data of Caprella species used in the article \\"Hosono T (2014) Temperature explains reproductive dynamics in caprellids at different latitudes. Marine Ecology Progress Series 511:129-141\\"",
+          ],
+        },
+        "contacts": Array [
+          Object {
+            "individualName": Object {
+              "givenName": "Takashi",
+              "surName": "Hosono",
+            },
+          },
+        ],
+        "creators": Array [
+          Object {
+            "individualName": Object {
+              "givenName": "Takashi",
+              "surName": "Hosono",
+            },
+          },
+        ],
+        "id": "wEaBfmFyQhYCdsk",
+        "keywordSets": Array [
+          Object {
+            "keywordThesaurus": "GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml",
+            "keywords": Array [
+              "Samplingevent",
+            ],
+          },
+        ],
+        "language": "en",
+        "license": Object {
+          "title": "Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License",
+          "url": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+        },
+        "meta": Object {
+          "dwcTables": Object {
+            "core": "event",
+            "extensions": Array [
+              "emof",
+              "occurrence",
+            ],
+          },
+          "type": "event",
+        },
+        "metadataProviders": Array [
+          Object {
+            "electronicMailAddress": "hosonot@jamstec.go.jp",
+            "individualName": Object {
+              "givenName": "Takashi",
+              "surName": "Hosono",
+            },
+          },
+        ],
+        "title": Object {
+          "language": "en",
+          "value": "Caprellids polulation structure in Usujiri, Hokkaido, Japan",
+        },
+      },
+      Object {
+        "abstract": Object {
+          "paragraphs": Array [
+            "The data were collected in the Azov Sea during a cruise on board of R/V N. Danilevskiy in 1935. This dataset contains abundance data (individuals per m²) and biomass data (g/m²) for benthic taxa. No additional metadata is available.",
+            "This dataset was rescued through data archaeology activities in the framework of the EMODnet Biology data grants.",
+          ],
+        },
+        "contacts": Array [
+          Object {
+            "electronicMailAddress": "o.sergeyeva@gsva.net",
+            "individualName": Object {
+              "givenName": "Oleksandra",
+              "surName": "Sergeyeva",
+            },
+            "organizationName": "National Academy of Sciences of Ukraine Institute of Biology of the Southern Seas (NASU-IBSS)",
+          },
+        ],
+        "creators": Array [
+          Object {
+            "electronicMailAddress": "director@ibss.iuf.net",
+            "individualName": Object {
+              "givenName": "Yu. B.",
+              "surName": "Belogurova",
+            },
+            "organizationName": "National Academy of Sciences of Ukraine Institute of Biology of the Southern Seas (NASU-IBSS)",
+          },
+          Object {
+            "electronicMailAddress": "o.sergeyeva@gsva.net",
+            "individualName": Object {
+              "givenName": "Oleksandra",
+              "surName": "Sergeyeva",
+            },
+            "organizationName": "National Academy of Sciences of Ukraine Institute of Biology of the Southern Seas (NASU-IBSS)",
+          },
+        ],
+        "id": "ntDOtUc7XsRrIus",
+        "keywordSets": Array [
+          Object {
+            "keywordThesaurus": "GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml",
+            "keywords": Array [
+              "Occurrence",
+            ],
+          },
+          Object {
+            "keywordThesaurus": "GBIF Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml",
+            "keywords": Array [
+              "Observation",
+            ],
+          },
+        ],
+        "language": "en",
+        "license": Object {
+          "title": "Creative Commons Attribution Non Commercial (CC-BY) 4.0 License",
+          "url": "http://creativecommons.org/licenses/by/4.0/legalcode",
+        },
+        "meta": Object {
+          "dwcTables": Object {
+            "core": "occurrence",
+            "extensions": Array [
+              "emof",
+            ],
+          },
+          "type": "occurrence",
+        },
+        "metadataProviders": Array [
+          Object {
+            "electronicMailAddress": "info@eurobis.org",
+            "individualName": Object {
+              "surName": "EurOBIS Data Management Team",
+            },
+            "organizationName": "Flanders Marine Institute (VLIZ)",
+          },
+        ],
+        "title": Object {
+          "language": "en",
+          "value": "Benthos collected in the Azov Sea in 1935 on board the R/V \\"N. Danilevskiy\\"",
+        },
+      },
+      Object {
+        "abstract": Object {
+          "paragraphs": Array [
+            "An annotated check-list is given of Antipatharia species occurring deeper than 2000 m in the seas bordering Europe.",
+            "The check-list is based on published data. It includes 12 species. For each species synonymy, data on localities in European seas and general species distribution are provided. Only distributions for which geographic coordinates are availlable were retained, as these are made available through EurOBIS.",
+          ],
+        },
+        "contacts": Array [
+          Object {
+            "electronicMailAddress": "tina@ocean.ru",
+            "individualName": Object {
+              "givenName": "Tina",
+              "surName": "Molodtsova",
+            },
+            "organizationName": "Russian Academy of Sciences P. P. Shirshov Institute of Oceanology (RAS-SIO RAS)",
+          },
+        ],
+        "creators": Array [
+          Object {
+            "electronicMailAddress": "tina@ocean.ru",
+            "individualName": Object {
+              "givenName": "Tina",
+              "surName": "Molodtsova",
+            },
+            "organizationName": "Russian Academy of Sciences P. P. Shirshov Institute of Oceanology (RAS-SIO RAS)",
+          },
+        ],
+        "id": "PoJnGNMaxsupE4w",
+        "keywordSets": Array [
+          Object {
+            "keywordThesaurus": "GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml",
+            "keywords": Array [
+              "Occurrence",
+            ],
+          },
+          Object {
+            "keywordThesaurus": "GBIF Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml",
+            "keywords": Array [
+              "Observation",
+            ],
+          },
+        ],
+        "language": "en",
+        "license": Object {
+          "title": "Creative Commons Attribution Non Commercial (CC-BY) 4.0 License",
+          "url": "http://creativecommons.org/licenses/by/4.0/legalcode",
+        },
+        "meta": Object {
+          "dwcTables": Object {
+            "core": "occurrence",
+            "extensions": Array [
+              "emof",
+            ],
+          },
+          "type": "occurrence",
+        },
+        "metadataProviders": Array [
+          Object {
+            "electronicMailAddress": "info@eurobis.org",
+            "individualName": Object {
+              "surName": "EurOBIS Data Management Team",
+            },
+            "organizationName": "Flanders Marine Institute (VLIZ)",
+          },
+        ],
+        "title": Object {
+          "language": "en",
+          "value": "Antipatharia distribution data from: Deep-sea fauna of European seas - an annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe",
+        },
+      },
+      Object {
+        "abstract": Object {
+          "paragraphs": Array [
+            "The dataset contains the abundance and biomass values of sediment organisms from the Sevastopol region (South-Western Crimea, The Black Sea, Ukraine) collected between 1982 and 1992.",
+            "Abundance and Biomass of benthic organisms and key abiotic variables (covering irregular sampling surveys within 1982-1992) from the Sevastopol Area (South-Western Crimea, The Black Sea, Ukraine) including estuaries and small sheltered and semi-closed bays within the area of &quot;big Sevastopol bay&quot;
+Sevastopol Bay is located in south western part of the Crimean peninsula, Ukraine and comprehends the one of the biggest marine harbours of the Black Sea and has served as an industrialized naval base for decades. A consequence of this long-term industrial, military and municipal activity was the deterioration of the marine environment of the bay, depressed state of benthic assemblages and occurrence of expanded bottom areas that became contaminated with various sediment-associated pollutants including polycyclic aromatic hydrocarbons (PAHs), polychlorinated biphenyls (PCBs), pesticides, and metals. Benthic samples in Sevastopol bay heve been taken between 1982 and 1992.",
+          ],
+        },
+        "contacts": Array [
+          Object {
+            "electronicMailAddress": "arvanitidis@her.hcmr.gr",
+            "individualName": Object {
+              "givenName": "Christos",
+              "surName": "Arvanitidis",
+            },
+            "organizationName": "Hellenic Centre for Marine Research (HCMR)",
+          },
+        ],
+        "creators": Array [
+          Object {
+            "electronicMailAddress": "arvanitidis@her.hcmr.gr",
+            "individualName": Object {
+              "givenName": "Christos",
+              "surName": "Arvanitidis",
+            },
+            "organizationName": "Hellenic Centre for Marine Research (HCMR)",
+          },
+          Object {
+            "organizationName": "Hellenic Centre for Marine Research (HCMR)",
+          },
+          Object {
+            "electronicMailAddress": "alexpet@ibss.iuf.net",
+            "individualName": Object {
+              "givenName": "Alexei",
+              "surName": "Petrov",
+            },
+            "organizationName": "National Academy of Sciences of Ukraine Institute of Biology of the Southern Seas (NASU-IBSS",
+          },
+        ],
+        "id": "NnqVLwIyPn-nRkc",
+        "keywordSets": Array [
+          Object {
+            "keywordThesaurus": "GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml",
+            "keywords": Array [
+              "Occurrence",
+            ],
+          },
+          Object {
+            "keywordThesaurus": "GBIF Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml",
+            "keywords": Array [
+              "Observation",
+            ],
+          },
+          Object {
+            "keywordThesaurus": "ASFA",
+            "keywords": Array [
+              "Benthic biomass",
+              "Benthos",
+              "Data",
+              "Marine Genomics",
+            ],
+          },
+        ],
+        "language": "en",
+        "license": Object {
+          "title": "Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License",
+          "url": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+        },
+        "meta": Object {
+          "dwcTables": Object {
+            "core": "occurrence",
+            "extensions": Array [
+              "emof",
+            ],
+          },
+          "type": "occurrence",
+        },
+        "metadataProviders": Array [
+          Object {
+            "electronicMailAddress": "info@eurobis.org",
+            "individualName": Object {
+              "surName": "EurOBIS Data Management Team",
+            },
+            "organizationName": "Flanders Marine Institute (VLIZ)",
+          },
+        ],
+        "title": Object {
+          "language": "en",
+          "value": "Benthic data from Sevastopol (Black Sea)",
+        },
+      },
+    ],
+    "emailAddress": "some.user@domain.org",
+  },
+  Object {
+    "_id": "5d21b9eb54308464b1a9e6c8",
+    "_ref": "FsfEMwhUTO_8I68",
+    "bulkiness": 0,
+    "dataset_refs": Array [
+      "wEaBfmFyQhYCdsk",
+      "PoJnGNMaxsupE4w",
+      "NnqVLwIyPn-nRkc",
+    ],
+    "datasets": Array [
+      Object {
+        "abstract": Object {
+          "paragraphs": Array [
+            "Population structure data of Caprella species used in the article \\"Hosono T (2014) Temperature explains reproductive dynamics in caprellids at different latitudes. Marine Ecology Progress Series 511:129-141\\"",
+          ],
+        },
+        "contacts": Array [
+          Object {
+            "individualName": Object {
+              "givenName": "Takashi",
+              "surName": "Hosono",
+            },
+          },
+        ],
+        "creators": Array [
+          Object {
+            "individualName": Object {
+              "givenName": "Takashi",
+              "surName": "Hosono",
+            },
+          },
+        ],
+        "id": "wEaBfmFyQhYCdsk",
+        "keywordSets": Array [
+          Object {
+            "keywordThesaurus": "GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml",
+            "keywords": Array [
+              "Samplingevent",
+            ],
+          },
+        ],
+        "language": "en",
+        "license": Object {
+          "title": "Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License",
+          "url": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+        },
+        "meta": Object {
+          "dwcTables": Object {
+            "core": "event",
+            "extensions": Array [
+              "emof",
+              "occurrence",
+            ],
+          },
+          "type": "event",
+        },
+        "metadataProviders": Array [
+          Object {
+            "electronicMailAddress": "hosonot@jamstec.go.jp",
+            "individualName": Object {
+              "givenName": "Takashi",
+              "surName": "Hosono",
+            },
+          },
+        ],
+        "title": Object {
+          "language": "en",
+          "value": "Caprellids polulation structure in Usujiri, Hokkaido, Japan",
+        },
+      },
+      Object {
+        "abstract": Object {
+          "paragraphs": Array [
+            "An annotated check-list is given of Antipatharia species occurring deeper than 2000 m in the seas bordering Europe.",
+            "The check-list is based on published data. It includes 12 species. For each species synonymy, data on localities in European seas and general species distribution are provided. Only distributions for which geographic coordinates are availlable were retained, as these are made available through EurOBIS.",
+          ],
+        },
+        "contacts": Array [
+          Object {
+            "electronicMailAddress": "tina@ocean.ru",
+            "individualName": Object {
+              "givenName": "Tina",
+              "surName": "Molodtsova",
+            },
+            "organizationName": "Russian Academy of Sciences P. P. Shirshov Institute of Oceanology (RAS-SIO RAS)",
+          },
+        ],
+        "creators": Array [
+          Object {
+            "electronicMailAddress": "tina@ocean.ru",
+            "individualName": Object {
+              "givenName": "Tina",
+              "surName": "Molodtsova",
+            },
+            "organizationName": "Russian Academy of Sciences P. P. Shirshov Institute of Oceanology (RAS-SIO RAS)",
+          },
+        ],
+        "id": "PoJnGNMaxsupE4w",
+        "keywordSets": Array [
+          Object {
+            "keywordThesaurus": "GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml",
+            "keywords": Array [
+              "Occurrence",
+            ],
+          },
+          Object {
+            "keywordThesaurus": "GBIF Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml",
+            "keywords": Array [
+              "Observation",
+            ],
+          },
+        ],
+        "language": "en",
+        "license": Object {
+          "title": "Creative Commons Attribution Non Commercial (CC-BY) 4.0 License",
+          "url": "http://creativecommons.org/licenses/by/4.0/legalcode",
+        },
+        "meta": Object {
+          "dwcTables": Object {
+            "core": "occurrence",
+            "extensions": Array [
+              "emof",
+            ],
+          },
+          "type": "occurrence",
+        },
+        "metadataProviders": Array [
+          Object {
+            "electronicMailAddress": "info@eurobis.org",
+            "individualName": Object {
+              "surName": "EurOBIS Data Management Team",
+            },
+            "organizationName": "Flanders Marine Institute (VLIZ)",
+          },
+        ],
+        "title": Object {
+          "language": "en",
+          "value": "Antipatharia distribution data from: Deep-sea fauna of European seas - an annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe",
+        },
+      },
+      Object {
+        "abstract": Object {
+          "paragraphs": Array [
+            "The dataset contains the abundance and biomass values of sediment organisms from the Sevastopol region (South-Western Crimea, The Black Sea, Ukraine) collected between 1982 and 1992.",
+            "Abundance and Biomass of benthic organisms and key abiotic variables (covering irregular sampling surveys within 1982-1992) from the Sevastopol Area (South-Western Crimea, The Black Sea, Ukraine) including estuaries and small sheltered and semi-closed bays within the area of &quot;big Sevastopol bay&quot;
+Sevastopol Bay is located in south western part of the Crimean peninsula, Ukraine and comprehends the one of the biggest marine harbours of the Black Sea and has served as an industrialized naval base for decades. A consequence of this long-term industrial, military and municipal activity was the deterioration of the marine environment of the bay, depressed state of benthic assemblages and occurrence of expanded bottom areas that became contaminated with various sediment-associated pollutants including polycyclic aromatic hydrocarbons (PAHs), polychlorinated biphenyls (PCBs), pesticides, and metals. Benthic samples in Sevastopol bay heve been taken between 1982 and 1992.",
+          ],
+        },
+        "contacts": Array [
+          Object {
+            "electronicMailAddress": "arvanitidis@her.hcmr.gr",
+            "individualName": Object {
+              "givenName": "Christos",
+              "surName": "Arvanitidis",
+            },
+            "organizationName": "Hellenic Centre for Marine Research (HCMR)",
+          },
+        ],
+        "creators": Array [
+          Object {
+            "electronicMailAddress": "arvanitidis@her.hcmr.gr",
+            "individualName": Object {
+              "givenName": "Christos",
+              "surName": "Arvanitidis",
+            },
+            "organizationName": "Hellenic Centre for Marine Research (HCMR)",
+          },
+          Object {
+            "organizationName": "Hellenic Centre for Marine Research (HCMR)",
+          },
+          Object {
+            "electronicMailAddress": "alexpet@ibss.iuf.net",
+            "individualName": Object {
+              "givenName": "Alexei",
+              "surName": "Petrov",
+            },
+            "organizationName": "National Academy of Sciences of Ukraine Institute of Biology of the Southern Seas (NASU-IBSS",
+          },
+        ],
+        "id": "NnqVLwIyPn-nRkc",
+        "keywordSets": Array [
+          Object {
+            "keywordThesaurus": "GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml",
+            "keywords": Array [
+              "Occurrence",
+            ],
+          },
+          Object {
+            "keywordThesaurus": "GBIF Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml",
+            "keywords": Array [
+              "Observation",
+            ],
+          },
+          Object {
+            "keywordThesaurus": "ASFA",
+            "keywords": Array [
+              "Benthic biomass",
+              "Benthos",
+              "Data",
+              "Marine Genomics",
+            ],
+          },
+        ],
+        "language": "en",
+        "license": Object {
+          "title": "Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License",
+          "url": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+        },
+        "meta": Object {
+          "dwcTables": Object {
+            "core": "occurrence",
+            "extensions": Array [
+              "emof",
+            ],
+          },
+          "type": "occurrence",
+        },
+        "metadataProviders": Array [
+          Object {
+            "electronicMailAddress": "info@eurobis.org",
+            "individualName": Object {
+              "surName": "EurOBIS Data Management Team",
+            },
+            "organizationName": "Flanders Marine Institute (VLIZ)",
+          },
+        ],
+        "title": Object {
+          "language": "en",
+          "value": "Benthic data from Sevastopol (Black Sea)",
+        },
+      },
+    ],
+    "emailAddress": "another.user@domain.org",
+  },
+]
+`;
