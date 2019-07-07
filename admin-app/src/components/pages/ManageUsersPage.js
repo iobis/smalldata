@@ -17,7 +17,7 @@ export default function ManageUsersPage() {
   }, [])
 
   return (
-    <>
+    <div className="manage-users-page">
       <section className="section">
         <div className="container is-fluid has-text-centered">
           <Link className="button is-info" to="/input-data/create">
@@ -49,7 +49,7 @@ export default function ManageUsersPage() {
           </table>
         </div>
       </section>
-    </>
+    </div>
   )
 }
 
@@ -70,7 +70,7 @@ function UserRow({ email, datasets }) {
       </td>
       <td className="email">{email}</td>
       <td className="datasets">
-        <ul style={{ 'list-style-type': 'disc' }}>
+        <ul>
           {datasets.map(dataset => <li key={dataset.id}>{dataset.title.value}</li>)}
         </ul>
       </td>
