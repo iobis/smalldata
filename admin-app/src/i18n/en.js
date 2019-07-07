@@ -1,6 +1,6 @@
 export default {
   translation: {
-    common:         {
+    common:            {
       add:       'Add',
       cancel:    'Cancel',
       change:    'Change',
@@ -40,6 +40,14 @@ export default {
         email:            'Email',
         accessToDatasets: 'Access to datasets',
         role:             'Role'
+      }
+    },
+    userFormPage:      {
+      email: {
+        label: 'Email'
+      },
+      userRole: {
+        label: 'User Role'
       }
     }
   }
