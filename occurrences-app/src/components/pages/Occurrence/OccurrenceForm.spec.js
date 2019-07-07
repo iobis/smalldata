@@ -2,7 +2,7 @@ import OccurrenceForm from './OccurrenceForm'
 import React from 'react'
 import { act } from 'react-dom/test-utils'
 import { mount } from 'enzyme'
-import { DATASTES_RESPONSE } from '@smalldata/dwca-lib/src/clients/SmalldataClient.mock'
+import { getDatasetDefaultResponse } from '@smalldata/dwca-lib/src/clients/SmalldataClient.mock'
 import { AuthProvider } from '@smalldata/dwca-lib'
 
 describe('OccurrenceForm', () => {
@@ -17,7 +17,7 @@ describe('OccurrenceForm', () => {
     jest.spyOn(Date, 'now').mockImplementation(() => new Date(Date.UTC(2019, 3, 29)).valueOf())
     global.fetch = jest.fn().mockImplementation(() =>
       new Promise((resolve) => {
-        resolve({ json: () => DATASTES_RESPONSE })
+        resolve({ json: () => getDatasetDefaultResponse() })
       })
     )
   })
@@ -32,7 +32,7 @@ describe('OccurrenceForm', () => {
       wrapper = mount(<AuthProvider><OccurrenceForm/></AuthProvider>)
     })
     expect(global.fetch).toHaveBeenCalledTimes(1)
-    expect(global.fetch).toHaveBeenCalledWith('/api/datasets')
+    expect(global.fetch).toHaveBeenCalledWith('/api/datasets', { headers: { Authorization: 'Basic verysecret' } })
     expect(wrapper).toMatchSnapshot()
 
     addLocation()

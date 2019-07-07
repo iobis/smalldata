@@ -1,6 +1,6 @@
 import React from 'react'
 import Dataset from './Dataset'
-import { DATASTES_RESPONSE } from '@smalldata/dwca-lib/src/clients/SmalldataClient.mock'
+import { getDatasetDefaultResponse } from '@smalldata/dwca-lib/src/clients/SmalldataClient.mock'
 import { renameRefToId } from '@smalldata/dwca-lib/src/clients/SmalldataClient'
 import { mount } from 'enzyme'
 
@@ -37,5 +37,5 @@ describe('Dataset', () => {
 })
 
 function getDefaultDatasets() {
-  return DATASTES_RESPONSE.map(renameRefToId)
+  return getDatasetDefaultResponse().map(renameRefToId)
 }

@@ -1,10 +1,10 @@
 import * as SmalldataConverters from './SmalldataConverters'
-import { DATASTES_RESPONSE, getDefaultDwcaResponse } from './SmalldataClient.mock'
+import { getDatasetDefaultResponse, getDefaultDwcaResponse } from './SmalldataClient.mock'
 import deepExtend from 'deep-extend'
 
 describe('SmalldataConverters', () => {
   it('datasetTitleOf(dataset)', () => {
-    expect(SmalldataConverters.datasetTitleOf(DATASTES_RESPONSE[0]))
+    expect(SmalldataConverters.datasetTitleOf(getDatasetDefaultResponse()[0]))
       .toEqual('Caprellids polulation structure in Usujiri, Hokkaido, Japan')
     expect(SmalldataConverters.datasetTitleOf(null))
       .toEqual('')

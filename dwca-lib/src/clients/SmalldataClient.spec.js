@@ -1,6 +1,6 @@
 import * as SmalldataClient from './SmalldataClient'
 import deepExtend from 'deep-extend'
-import { DATASTES_RESPONSE, getUsersDefaultResponse, OCCURRENCES_RESPONSE } from './SmalldataClient.mock'
+import { getDatasetDefaultResponse, getUsersDefaultResponse, OCCURRENCES_RESPONSE } from './SmalldataClient.mock'
 
 describe('SmalldataClient', () => {
   const userRef = 'ovZTtaOJZ98xDDY'
@@ -9,7 +9,7 @@ describe('SmalldataClient', () => {
     beforeEach(() => {
       global.fetch = jest.fn().mockImplementation(() =>
         new Promise((resolve) => {
-          resolve({ json: () => DATASTES_RESPONSE })
+          resolve({ json: () => getDatasetDefaultResponse() })
         })
       )
     })
@@ -244,7 +244,7 @@ describe('SmalldataClient', () => {
           }))
         .mockImplementationOnce(() =>
           new Promise((resolve) => {
-            resolve({ json: () => DATASTES_RESPONSE })
+            resolve({ json: () => getDatasetDefaultResponse() })
           }))
     })
 
