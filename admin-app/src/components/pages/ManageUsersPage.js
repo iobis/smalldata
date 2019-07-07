@@ -20,7 +20,7 @@ export default function ManageUsersPage() {
     <div className="manage-users-page">
       <section className="section">
         <div className="container is-fluid has-text-centered">
-          <Link className="button is-info" to="/input-data/create">
+          <Link className="button is-info" to="/manage-users/create">
             {t('manageUsersPage.inputNew')}
           </Link>
         </div>
@@ -57,7 +57,7 @@ function UserRow({ email, datasets }) {
   const { t } = useTranslation()
 
   const toEdit = {
-    pathname: '/input-data/update',
+    pathname: '/manage-users/update',
     state:    { action: 'update' }
   }
 

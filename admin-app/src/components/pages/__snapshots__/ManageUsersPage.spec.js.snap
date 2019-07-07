@@ -55,11 +55,11 @@ exports[`ManageUsersPage renders correctly for non empty users 1`] = `
           >
             <Link
               className="button is-info"
-              to="/input-data/create"
+              to="/manage-users/create"
             >
               <a
                 className="button is-info"
-                href="/input-data/create"
+                href="/manage-users/create"
                 onClick={[Function]}
               >
                 manageUsersPage.inputNew
@@ -129,7 +129,7 @@ exports[`ManageUsersPage renders correctly for non empty users 1`] = `
                         className="button is-info"
                         to={
                           Object {
-                            "pathname": "/input-data/update",
+                            "pathname": "/manage-users/update",
                             "state": Object {
                               "action": "update",
                             },
@@ -138,7 +138,7 @@ exports[`ManageUsersPage renders correctly for non empty users 1`] = `
                       >
                         <a
                           className="button is-info"
-                          href="/input-data/update"
+                          href="/manage-users/update"
                           onClick={[Function]}
                         >
                           common.edit
