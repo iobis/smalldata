@@ -6,6 +6,6 @@
   "scripts": {
     "lint": "echo Nothig to lint yet",
     "test": "echo Nothig to test here",
-    "test:co": "echo Nothig to test here"
+    "test:ci": "echo Nothig to test here"
   }
 }
