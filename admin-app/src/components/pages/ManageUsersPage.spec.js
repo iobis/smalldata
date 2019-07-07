@@ -1,4 +1,5 @@
 import SmalldataClient from '@smalldata/dwca-lib/src/clients/SmalldataClient'
+import { flushPromises, ignoreActWarning } from '@smalldata/test-utils-lib'
 import ManageUsersPage from './ManageUsersPage'
 import { MemoryRouter } from 'react-router-dom'
 import { mount } from 'enzyme'
@@ -21,15 +22,9 @@ jest.mock('@smalldata/dwca-lib/src/clients/SmalldataClient', () => ({
 }))
 
 describe('ManageUsersPage', () => {
-  const originalError = console.error
-  let wrapper
+  ignoreActWarning()
 
-  beforeAll(() => {
-    console.error = (...args) => {
-      if (/Warning.*not wrapped in act/.test(args[0])) return
-      originalError.call(console, ...args)
-    }
-  })
+  let wrapper
 
   it('renders correctly for non empty users', async() => {
     act(() => {
@@ -47,7 +42,3 @@ describe('ManageUsersPage', () => {
     expect(wrapper.find('tbody tr')).toHaveLength(1)
   })
 })
-
-function flushPromises() {
-  return new Promise(resolve => setImmediate(resolve))
-}
