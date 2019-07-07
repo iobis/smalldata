@@ -31,7 +31,7 @@ describe('ManageUsersPage', () => {
     }
   })
 
-  it('renders correctly for empty users', async() => {
+  it('renders correctly for non empty users', async() => {
     act(() => {
       wrapper = mount(
         <MemoryRouter initialEntries={[{ pathname: '/manage-users', key: 'testKey' }]}>
