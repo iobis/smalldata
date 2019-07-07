@@ -1,4 +1,4 @@
-import InputRadio from '../../../form/InputRadio'
+import InputRadio from '@smalldata/dwca-lib/src/components/form/InputRadio'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { datasetTitleOf } from '@smalldata/dwca-lib/src/clients/SmalldataConverters'

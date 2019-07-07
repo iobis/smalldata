@@ -1,5 +1,5 @@
-import InputRadioGroup from '../../../form/InputRadioGroup'
-import DatePicker from '../../../form/DatePicker'
+import InputRadioGroup from '@smalldata/dwca-lib/src/components/form/InputRadioGroup'
+import DatePicker from '@smalldata/dwca-lib/src/components/form/DatePicker'
 import PropTypes from 'prop-types'
 import React from 'react'
 import ScientificNameInput from './ScientificNameInput'

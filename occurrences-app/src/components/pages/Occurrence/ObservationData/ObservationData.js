@@ -1,8 +1,8 @@
-import InputMultipleText from '../../../form/InputMultipleText'
-import InputText from '../../../form/InputText'
+import InputMultipleText from '@smalldata/dwca-lib/src/components/form/InputMultipleText'
+import InputText from '@smalldata/dwca-lib/src/components/form/InputText'
 import PropTypes from 'prop-types'
 import React from 'react'
-import Textarea from '../../../form/Textarea'
+import Textarea from '@smalldata/dwca-lib/src/components/form/Textarea'
 
 export default function ObservationData({ onChange, observationData }) {
   const updateField = (name, value) => {

@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import Dropdown from '../../../form/Dropdown'
+import Dropdown from '@smalldata/dwca-lib/src/components/form/Dropdown'
 import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
 import { addUuid, removeUuid } from '../../../../common/uuids'

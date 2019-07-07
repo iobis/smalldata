@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
-import InputText from '../../../form/InputText'
+import InputText from '@smalldata/dwca-lib/src/components/form/InputText'
 import { useTranslation } from 'react-i18next'
 
 export default function DarwinCoreFields({ fields, onChange }) {
