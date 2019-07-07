@@ -1,10 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import Divider from '../layout/Divider'
+import { getUsersWithDatasets } from '@smalldata/dwca-lib/src/clients/SmalldataClient'
 
 export default function ManageUsersPage() {
   const { t } = useTranslation()
+  const [users, setUsers] = useState([])
+
+  useEffect(() => {
+    const fetchUsers = async() => {
+      setUsers(await getUsersWithDatasets())
+    }
+    fetchUsers()
+  }, [])
 
   return (
     <>
@@ -22,18 +32,61 @@ export default function ManageUsersPage() {
           <table className="table is-striped is-hoverable is-fullwidth">
             <thead>
               <tr>
-                <th></th>
+                <th/>
                 <th>{t('manageUsersPage.table.email')}</th>
                 <th>{t('manageUsersPage.table.accessToDatasets')}</th>
                 <th>{t('manageUsersPage.table.role')}</th>
-                <th/>
               </tr>
             </thead>
             <tbody>
+              {users.map(user => (
+                <UserRow
+                  datasets={user.datasets}
+                  email={user.emailAddress}
+                  key={user._id}/>
+              ))}
             </tbody>
           </table>
         </div>
       </section>
     </>
   )
+}
+
+function UserRow({ email, datasets }) {
+  const { t } = useTranslation()
+
+  const toEdit = {
+    pathname: '/input-data/update',
+    state:    { action: 'update' }
+  }
+
+  return (
+    <tr className="user-row">
+      <td className="edit">
+        <Link className="button is-info" to={toEdit}>
+          {t('common.edit')}
+        </Link>
+      </td>
+      <td className="email">{email}</td>
+      <td className="datasets">
+        <ul style={{ 'list-style-type': 'disc' }}>
+          {datasets.map(dataset => <li key={dataset.id}>{dataset.title.value}</li>)}
+        </ul>
+      </td>
+      <td className="role"/>
+    </tr>
+  )
+}
+
+const datasetShape = {
+  id:    PropTypes.string.isRequired,
+  title: PropTypes.shape({
+    value: PropTypes.string.isRequired
+  }).isRequired
+}
+
+UserRow.propTypes = {
+  datasets: PropTypes.arrayOf(PropTypes.shape(datasetShape)).isRequired,
+  email:    PropTypes.string.isRequired
 }

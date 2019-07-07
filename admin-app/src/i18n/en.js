@@ -1,5 +1,20 @@
 export default {
   translation: {
+    common:         {
+      add:       'Add',
+      cancel:    'Cancel',
+      change:    'Change',
+      confirm:   'Confirm',
+      copy:      'Copy',
+      edit:      'Edit',
+      latitude:  'Latitude',
+      longitude: 'Longitude',
+      name:      'Name',
+      remove:    'Remove',
+      type:      'Type',
+      unit:      'Unit',
+      value:     'Value'
+    },
     navbar:            {
       manageDataset: 'MANAGE DATASET',
       manageUsers:   'MANAGE USERS',
