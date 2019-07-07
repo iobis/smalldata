@@ -1,6 +1,6 @@
 import * as SmalldataClient from './SmalldataClient'
 import deepExtend from 'deep-extend'
-import { DATASTES_RESPONSE, OCCURRENCES_RESPONSE } from './SmalldataClient.mock'
+import { DATASTES_RESPONSE, getUsersDefaultResponse, OCCURRENCES_RESPONSE } from './SmalldataClient.mock'
 
 describe('SmalldataClient', () => {
   const userRef = 'ovZTtaOJZ98xDDY'
@@ -21,7 +21,7 @@ describe('SmalldataClient', () => {
     it('makes default request', async() => {
       await SmalldataClient.getDatasets()
       expect(fetch).toHaveBeenCalledTimes(1)
-      expect(fetch).toBeCalledWith('/api/datasets')
+      expect(fetch).toBeCalledWith('/api/datasets', { headers: { Authorization: 'Basic verysecret' } })
     })
   })
 
@@ -207,6 +207,62 @@ describe('SmalldataClient', () => {
       expect(fetch.mock.calls[0][0]).toBe('/api/dwca/wEaBfmFyQhYCdsk/user/ovZTtaOJZ98xDDY/records')
       expect(fetch.mock.calls[0][1].method).toBe('POST')
       expect(JSON.parse(fetch.mock.calls[0][1].body).occurrence[0].tdwg.eventDate).toEqual('2019-04-29/2019-04-29')
+    })
+  })
+
+  describe('getUsers', () => {
+
+  })
+
+  describe('getUsers', () => {
+    beforeEach(() => {
+      global.fetch = jest.fn().mockImplementation(() =>
+        new Promise((resolve) => {
+          resolve({ json: () => getUsersDefaultResponse() })
+        })
+      )
+    })
+
+    afterEach(() => {
+      global.fetch.mockRestore()
+    })
+
+    it('makes default request', async() => {
+      await SmalldataClient.getUsers()
+      expect(fetch).toHaveBeenCalledTimes(1)
+      expect(fetch).toBeCalledWith('/api/users', { headers: { Authorization: 'Basic verysecret' } })
+    })
+  })
+
+  describe('getUsersWithDatasets', () => {
+    beforeEach(() => {
+      global.fetch = jest
+        .fn()
+        .mockImplementationOnce(() =>
+          new Promise((resolve) => {
+            resolve({ json: () => getUsersDefaultResponse() })
+          }))
+        .mockImplementationOnce(() =>
+          new Promise((resolve) => {
+            resolve({ json: () => DATASTES_RESPONSE })
+          }))
+    })
+
+    afterEach(() => {
+      global.fetch.mockRestore()
+    })
+
+    it('makes 2 requests and combine them', async() => {
+      const actual = await SmalldataClient.getUsersWithDatasets()
+      expect(fetch).toHaveBeenCalledTimes(2)
+      expect(fetch).toHaveBeenNthCalledWith(1, '/api/users', { headers: { Authorization: 'Basic verysecret' } })
+      expect(fetch).toHaveBeenNthCalledWith(2, '/api/datasets', { headers: { Authorization: 'Basic verysecret' } })
+      expect(actual).toMatchSnapshot()
+      expect(actual).toHaveLength(2)
+      expect(actual[0].datasets).toHaveLength(4)
+      expect(actual[0]['dataset_refs']).toHaveLength(4)
+      expect(actual[1].datasets).toHaveLength(3)
+      expect(actual[1]['dataset_refs']).toHaveLength(3)
     })
   })
 })

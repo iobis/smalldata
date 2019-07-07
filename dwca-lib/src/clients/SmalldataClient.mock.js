@@ -313,3 +313,19 @@ export function getDefaultDwcaResponse() {
     }
   }
 }
+
+export function getUsersDefaultResponse() {
+  return [{
+    '_id':          '5d21b9eb54308464b1a9e6c7',
+    '_ref':         'ovZTtaOJZ98xDDY',
+    'emailAddress': 'some.user@domain.org',
+    'dataset_refs': ['wEaBfmFyQhYCdsk', 'ntDOtUc7XsRrIus', 'PoJnGNMaxsupE4w', 'NnqVLwIyPn-nRkc'],
+    'bulkiness':    0.0
+  }, {
+    '_id':          '5d21b9eb54308464b1a9e6c8',
+    '_ref':         'FsfEMwhUTO_8I68',
+    'emailAddress': 'another.user@domain.org',
+    'dataset_refs': ['wEaBfmFyQhYCdsk', 'PoJnGNMaxsupE4w', 'NnqVLwIyPn-nRkc'],
+    'bulkiness':    0.0
+  }]
+}
