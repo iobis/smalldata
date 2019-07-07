@@ -1,5 +1,5 @@
-import InputNumber from '../../../form/InputNumber'
-import InputText from '../../../form/InputText'
+import InputNumber from '@smalldata/dwca-lib/src/components/form/InputNumber'
+import InputText from '@smalldata/dwca-lib/src/components/form/InputText'
 import LocationPickerModal from './LocationPickerModal'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
