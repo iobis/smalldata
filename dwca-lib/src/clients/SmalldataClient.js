@@ -1,8 +1,11 @@
 import { mapOccurrenceToDwca } from './SmalldataConverters'
 
 export async function getDatasets() {
-  const response = await fetch('/api/datasets')
-    .then(response => response.json())
+  const response = await fetch('/api/datasets', {
+    headers: {
+      'Authorization': 'Basic verysecret'
+    }
+  }).then(response => response.json())
   return response.map(renameRefToId)
 }
 
@@ -50,4 +53,28 @@ export async function createOccurrence({ occurrence, userRef }) {
     },
     body:    JSON.stringify(request)
   }).then(response => response.json())
+}
+
+export async function getUsers() {
+  return fetch('/api/users', {
+    headers: {
+      'Authorization': 'Basic verysecret'
+    }
+  }).then(response => response.json())
+}
+
+export async function getUsersWithDatasets() {
+  const [users, datasets] = await Promise.all([getUsers(), getDatasets()])
+  const datasetIdToDataset = groupBy(datasets, 'id')
+  return users.map(user => {
+    const datasets = user['dataset_refs'].map(datasetRef => datasetIdToDataset[datasetRef][0])
+    return { ...user, datasets }
+  })
+}
+
+function groupBy(list, props) {
+  return list.reduce((a, b) => {
+    (a[b[props]] = a[b[props]] || []).push(b)
+    return a
+  }, {})
 }
