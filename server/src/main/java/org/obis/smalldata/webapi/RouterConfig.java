@@ -39,7 +39,7 @@ class RouterConfig {
 
   void invoke(OpenAPI3RouterFactory routerFactory) {
     routerFactory.setOptions(new RouterFactoryOptions().setRequireSecurityHandlers(true));
-    securityHandlers.forEach((securityId, handler) -> routerFactory.addSecurityHandler(securityId, handler));
+    securityHandlers.forEach(routerFactory::addSecurityHandler);
     HANDLERS.forEach((operationId, handler) -> {
       routerFactory.addHandlerByOperationId(operationId, handler.handler);
       routerFactory.addFailureHandlerByOperationId(operationId, handler.failureHandler);

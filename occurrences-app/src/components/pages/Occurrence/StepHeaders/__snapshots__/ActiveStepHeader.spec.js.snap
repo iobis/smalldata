@@ -3,7 +3,6 @@
 exports[`ActiveStepHeader does not renders StepFooter if last step 1`] = `
 <ActiveStepHeader
   activeStepIndex={6}
-  nextStep="next step"
   onContinueButtonClick={[Function]}
   onStepTitleClick={[Function]}
   stepDescription="step description"
@@ -55,6 +54,28 @@ exports[`ActiveStepHeader does not renders StepFooter if last step 1`] = `
       </div>
     </div>
   </StepHeader>
+  <StepFooter
+    activeStepIndex={6}
+    onContinueButtonClick={[Function]}
+  >
+    <div
+      className="step-footer columns section"
+    >
+      <CopyPreviousData
+        visible={true}
+      >
+        <div
+          className="columns"
+        >
+          <div
+            className="copy-previous-data column is-narrow"
+          >
+            occurrenceForm.copyPreviousStep
+          </div>
+        </div>
+      </CopyPreviousData>
+    </div>
+  </StepFooter>
 </ActiveStepHeader>
 `;
 
@@ -128,102 +149,10 @@ exports[`ActiveStepHeader does not renders StepFooter if next step is not provid
           <div
             className="copy-previous-data column is-narrow"
           >
-            copy data from previous entry
+            occurrenceForm.copyPreviousStep
           </div>
         </div>
       </CopyPreviousData>
-    </div>
-  </StepFooter>
-</ActiveStepHeader>
-`;
-
-exports[`ActiveStepHeader renders StepFooter for 0 step with empty copy-previous-data placeholder 1`] = `
-<ActiveStepHeader
-  activeStepIndex={0}
-  nextStep="next step"
-  onContinueButtonClick={[Function]}
-  onStepTitleClick={[Function]}
-  stepDescription="step description"
-  stepTitle="step title"
-  totalSteps={6}
->
-  <StepHeader
-    className="active has-background-grey has-text-white"
-    dataDescription=""
-    iconVisible={false}
-    onStepTitleClick={[Function]}
-    selectedData=""
-    stepDescription="step description"
-    stepTitle="step title"
-  >
-    <div
-      className="step-header columns is-vcentered active has-background-grey has-text-white"
-      onClick={[Function]}
-    >
-      <div
-        className="column is-1 is-hidden-mobile"
-      >
-        <p
-          className="is-size-5 is-uppercase"
-        >
-          <b />
-        </p>
-      </div>
-      <div
-        className="column is-7 is-size-5 is-hidden-mobile"
-      />
-      <div
-        className="column details"
-      >
-        <div
-          className="is-size-6"
-        >
-          step description
-        </div>
-        <div
-          className="is-size-5 is-uppercase"
-        >
-          <b
-            className="step-title"
-          >
-            step title
-          </b>
-        </div>
-      </div>
-    </div>
-  </StepHeader>
-  <StepFooter
-    activeStepIndex={0}
-    nextStep="next step"
-    onContinueButtonClick={[Function]}
-  >
-    <div
-      className="step-footer columns section"
-    >
-      <CopyPreviousData
-        visible={false}
-      >
-        <div
-          className="columns"
-        >
-          <div
-            className="copy-previous-data column is-narrow"
-          />
-        </div>
-      </CopyPreviousData>
-      <ContinueButton
-        name="locationContinue"
-        onClick={[Function]}
-        value="next step"
-      >
-        <button
-          className="continue-button button is-info"
-          name="locationContinue"
-          onClick={[Function]}
-        >
-          occurrenceForm.stepContinue next step
-        </button>
-      </ContinueButton>
     </div>
   </StepFooter>
 </ActiveStepHeader>
@@ -301,7 +230,7 @@ exports[`ActiveStepHeader renders StepFooter with all data if next step is provi
           <div
             className="copy-previous-data column is-narrow"
           >
-            copy data from previous entry
+            occurrenceForm.copyPreviousStep
           </div>
         </div>
       </CopyPreviousData>

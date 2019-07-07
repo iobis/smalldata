@@ -1,24 +1,25 @@
-import bulmaCalendar from 'bulma-calendar'
+import Flatpickr from 'react-flatpickr'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import React, { useEffect, useRef } from 'react'
 
-export default function DatePicker({ onChange, value }) {
-  const datePickerEl = useRef()
+export default function DatePicker({ value, onChange }) {
+  const [newValue, setNewValue] = useState(value)
 
   useEffect(() => {
-    const calendar = bulmaCalendar.attach(datePickerEl.current, {
-      displayMode:        'default',
-      showFooter:         false,
-      showHeader:         false,
-      startDate:          value !== null ? new Date(value) : null,
-      toggleOnInputClick: true,
-      type:               'date'
-    })
-    calendar[0].on('select', (e) => onChange(new Date(e.data.value())))
+    onChange(newValue)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [newValue])
 
-  return <input className="input" ref={datePickerEl} type="date"/>
+  useEffect(() => {
+    setNewValue(value)
+  }, [value])
+
+  return (
+    <Flatpickr
+      className="input"
+      onChange={(selectedDates) => selectedDates.length > 0 ? setNewValue(new Date(selectedDates[0])) : setNewValue(null)}
+      value={newValue}/>
+  )
 }
 
 DatePicker.propTypes = {

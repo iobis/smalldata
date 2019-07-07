@@ -4,6 +4,8 @@ import { mount } from 'enzyme'
 import { getDefaultFields } from './DarwinCoreFields.fixture'
 
 describe('DarwinCoreFields', () => {
+  let wrapper
+
   it('renders correctly', () => {
     expect(mount(createComponent())).toMatchSnapshot()
   })
@@ -26,12 +28,21 @@ describe('DarwinCoreFields', () => {
 
   it('removes element when clicking remove button', () => {
     const onChange = jest.fn()
-    const wrapper = mount(createComponent({ onChange }))
+    wrapper = mount(createComponent({ onChange }))
 
     wrapper.find('.remove').first().simulate('click')
     expect(wrapper.find('.fieldrow')).toHaveLength(2)
     expect(onChange).toHaveBeenCalledTimes(1)
     expect(onChange).toBeCalledWith([getDefaultFields()[1], getDefaultFields()[2]])
+  })
+
+  it('updates values when updates props', () => {
+    wrapper = mount(createComponent({ fields: [] }))
+    expect(wrapper.find('.fieldrow')).toHaveLength(0)
+
+    wrapper.setProps({ fields: getDefaultFields() })
+    wrapper.update()
+    expect(wrapper.find('.fieldrow')).toHaveLength(3)
   })
 })
 

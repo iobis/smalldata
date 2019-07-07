@@ -12,7 +12,7 @@ export default [{
       basisOfRecord:    'humanObservation',
       beginDate:        Date.now(),
       endDate:          null,
-      lifestage:        'larva',
+      lifeStage:        'larva',
       occurrenceStatus: 'present',
       scientificName:   '',
       sex:              'male'
@@ -30,7 +30,7 @@ export default [{
       basisOfRecord:    'humanObservation',
       beginDate:        new Date(),
       endDate:          new Date(),
-      lifestage:        'adult',
+      lifeStage:        'adult',
       occurrenceStatus: 'absent',
       scientificName:   'ala abra',
       sex:              'male'

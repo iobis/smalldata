@@ -8,12 +8,13 @@ export default function ActiveStepHeader({
   children,
   nextStep,
   onContinueButtonClick,
+  onCopyPreviousDataClick,
   onStepTitleClick,
   stepDescription,
   stepTitle,
   totalSteps
 }) {
-  const footerVisible = activeStepIndex < totalSteps
+  const footerVisible = activeStepIndex <= totalSteps
   return (
     <>
       <StepHeader
@@ -30,19 +31,21 @@ export default function ActiveStepHeader({
         <StepFooter
           activeStepIndex={activeStepIndex}
           nextStep={nextStep}
-          onContinueButtonClick={onContinueButtonClick}/>
+          onContinueButtonClick={onContinueButtonClick}
+          onCopyPreviousDataClick={onCopyPreviousDataClick}/>
       )}
     </>
   )
 }
 
 ActiveStepHeader.propTypes = {
-  activeStepIndex:       PropTypes.number.isRequired,
-  children:              PropTypes.node,
-  nextStep:              PropTypes.string,
-  onContinueButtonClick: PropTypes.func.isRequired,
-  onStepTitleClick:      PropTypes.func.isRequired,
-  stepDescription:       PropTypes.string.isRequired,
-  stepTitle:             PropTypes.string.isRequired,
-  totalSteps:            PropTypes.number.isRequired
+  activeStepIndex:         PropTypes.number.isRequired,
+  children:                PropTypes.node,
+  nextStep:                PropTypes.string,
+  onContinueButtonClick:   PropTypes.func.isRequired,
+  onCopyPreviousDataClick: PropTypes.func,
+  onStepTitleClick:        PropTypes.func.isRequired,
+  stepDescription:         PropTypes.string.isRequired,
+  stepTitle:               PropTypes.string.isRequired,
+  totalSteps:              PropTypes.number.isRequired
 }

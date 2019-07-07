@@ -43,7 +43,7 @@ public class UsersHandlerTest {
 
   @Test
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
-  void usersGetHandler(Vertx vertx, VertxTestContext context) {
+  void getUsers(Vertx vertx, VertxTestContext context) {
     var client = WebClient.create(vertx);
     vertx.eventBus().localConsumer(
       "users",
@@ -53,19 +53,23 @@ public class UsersHandlerTest {
       .putHeader("Authorization", "Basic verysecret")
       .as(BodyCodec.jsonArray())
       .send(ar -> {
-        assertThat(ar.succeeded()).isTrue();
-        var json = ar.result().body();
-        assertThat(json).hasSize(1);
-        assertThat(json.getJsonObject(0).getMap())
-          .containsOnlyKeys(KEY_USERS_REF)
-          .containsEntry(KEY_USERS_REF, "some-user-ref");
+        try {
+          assertThat(ar.succeeded()).isTrue();
+          var json = ar.result().body();
+          assertThat(json).hasSize(1);
+          assertThat(json.getJsonObject(0).getMap())
+            .containsOnlyKeys(KEY_USERS_REF)
+            .containsEntry(KEY_USERS_REF, "some-user-ref");
+        } catch (AssertionError e) {
+          context.failNow(e);
+        }
         context.completeNow();
       });
   }
 
   @Test
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
-  void usersPostHandler(Vertx vertx, VertxTestContext context) {
+  void postUser(Vertx vertx, VertxTestContext context) {
     var client = WebClient.create(vertx);
     vertx.eventBus().localConsumer(
       "users",
@@ -78,18 +82,22 @@ public class UsersHandlerTest {
         new JsonObject()
           .put(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS),
         ar -> {
-          assertThat(ar.succeeded()).isTrue();
-          var json = ar.result().body();
-          assertThat(json.getMap())
-            .containsOnlyKeys(KEY_EMAIL_ADDRESS)
-            .containsEntry(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS);
+          try {
+            assertThat(ar.succeeded()).isTrue();
+            var json = ar.result().body();
+            assertThat(json.getMap())
+              .containsOnlyKeys(KEY_EMAIL_ADDRESS)
+              .containsEntry(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS);
+          } catch (AssertionError e) {
+            context.failNow(e);
+          }
           context.completeNow();
         });
   }
 
   @Test
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
-  void usersPutHandler(Vertx vertx, VertxTestContext context) {
+  void putUser(Vertx vertx, VertxTestContext context) {
     var client = WebClient.create(vertx);
     vertx.eventBus().localConsumer(
       "users",
@@ -102,11 +110,16 @@ public class UsersHandlerTest {
         new JsonObject()
           .put(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS),
         ar -> {
-          assertThat(ar.succeeded()).isTrue();
-          var json = ar.result().body();
-          assertThat(json.getMap())
-            .containsOnlyKeys(KEY_EMAIL_ADDRESS)
-            .containsEntry(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS);
+          try {
+            assertThat(ar.succeeded()).isTrue();
+            var json = ar.result().body();
+            assertThat(json.getMap())
+              .containsOnlyKeys(KEY_EMAIL_ADDRESS)
+              .containsEntry(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS);
+            context.completeNow();
+          } catch (AssertionError e) {
+            context.failNow(e);
+          }
           context.completeNow();
         });
   }

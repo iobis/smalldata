@@ -1,7 +1,7 @@
 import InputRadio from '../../../form/InputRadio'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { datasetTitleOf } from '../../../../clients/SmalldataClient'
+import { datasetTitleOf } from '@smalldata/dwca-lib/src/clients/SmalldataConverters'
 
 export default function Dataset({ datasets, selectedDataset, onChange }) {
   return (
