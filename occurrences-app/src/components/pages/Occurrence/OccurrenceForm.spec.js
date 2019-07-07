@@ -29,7 +29,12 @@ describe('OccurrenceForm', () => {
       wrapper = mount(<AuthProvider><OccurrenceForm/></AuthProvider>)
     })
     expect(global.fetch).toHaveBeenCalledTimes(1)
-    expect(global.fetch).toHaveBeenCalledWith('/api/datasets', { headers: { Authorization: 'Basic verysecret' } })
+    expect(global.fetch).toHaveBeenCalledWith('/api/datasets', {
+      headers: {
+        'Authorization': 'Basic verysecret',
+        'Content-Type':  'application/json'
+      }
+    })
     expect(wrapper).toMatchSnapshot()
 
     addLocation()

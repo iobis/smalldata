@@ -45,8 +45,18 @@ describe('InputDataPage', () => {
     expect(wrapper.find('tbody tr')).toHaveLength(0)
     expect(wrapper).toMatchSnapshot()
     expect(global.fetch).toHaveBeenCalledTimes(2)
-    expect(global.fetch).toHaveBeenNthCalledWith(1, '/api/dwca/user/ovZTtaOJZ98xDDY/records?projectFields=dwcRecord.tdwg.scientificName&projectFields=dwcRecord.tdwg.eventDate')
-    expect(global.fetch).toHaveBeenNthCalledWith(2, '/api/datasets', { headers: { Authorization: 'Basic verysecret' } })
+    expect(global.fetch).toHaveBeenNthCalledWith(1, '/api/dwca/user/ovZTtaOJZ98xDDY/records?projectFields=dwcRecord.tdwg.scientificName&projectFields=dwcRecord.tdwg.eventDate', {
+      headers: {
+        'Authorization': 'Basic verysecret',
+        'Content-Type':  'application/json'
+      }
+    })
+    expect(global.fetch).toHaveBeenNthCalledWith(2, '/api/datasets', {
+      headers: {
+        'Authorization': 'Basic verysecret',
+        'Content-Type':  'application/json'
+      }
+    })
 
     await flushPromises()
     wrapper.update()
