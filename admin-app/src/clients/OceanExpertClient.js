@@ -4,5 +4,5 @@ export function getByName(name) {
   const url = 'https://www.oceanexpert.net/api/v1/advanceSearch/search.json?action=browse&type=all&query=' + name.trim()
   return fetch(url)
     .then(response => response.json())
-    .then(json => json.results.data)
+    .then(json => (json.results.data || []).filter(record => !!record.name))
 }
