@@ -13,6 +13,7 @@
     "test-utils-lib"
   ],
   "scripts": {
+    "admin-app:start": "yarn workspace @smalldata/admin-app start",
     "build:back-end": "run-s server:bundle-openapi-spec server:runtime-zip",
     "build:front-end": "run-s occurrences-app:build occurrences-app:copy-to-server",
     "build:zip": "run-s build:front-end build:back-end",
@@ -23,7 +24,9 @@
     "prettier": "prettier --print-width 100 --jsx-bracket-same-line --single-quote --no-semi --write **/*.{scss,css,json,js,jsx}",
     "server:bundle-openapi-spec": "swagger-cli bundle server/src/main/resources/swaggerroot/spec/smalldata.yaml -t yaml -o server/src/main/resources/swaggerroot/spec/smalldata-bundled.yaml",
     "server:runtime-zip": "cd server && ./gradlew runtimeZip",
+    "server:start": "cd server && ./gradlew run",
     "sort-package-json": "sort-package-json package.json admin-app/package.json dwca-lib/package.json occurrences-app/package.json",
+    "start": "run-p server:start admin-app:start",
     "test:ci": "yarn test:front-end:ci && yarn test:server:ci",
     "test:front-end:ci": "yarn workspaces run test:ci",
     "test:server:ci": "cd server && ./gradlew check --no-daemon"
