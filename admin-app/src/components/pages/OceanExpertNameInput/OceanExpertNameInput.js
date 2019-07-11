@@ -28,7 +28,7 @@ export default function OceanExpertNameInput({ oceanExpertName, onChange }) {
   useEffect(() => {
     const getByName = async() => {
       setLoading(true)
-      const newSuggestions = await OceanExpertClient.getByName(name)
+      const newSuggestions = await OceanExpertClient.getByExpertByName(name)
       const newNameValid = !!findRecordWithName(newSuggestions, name)
       setSuggestions(newSuggestions)
       setNameValid(newNameValid)

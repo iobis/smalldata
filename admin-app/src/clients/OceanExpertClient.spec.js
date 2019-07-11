@@ -1,13 +1,13 @@
-import { getByName } from './OceanExpertClient'
+import { getByExpertByName } from './OceanExpertClient'
 
 describe('OceanExpertClient', () => {
-  describe('getByName', () => {
+  describe('getByExpertByName', () => {
     beforeEach(() => {
       global.fetch = jest.fn().mockImplementation(() =>
         new Promise((resolve) => {
           resolve({
             json: () => ({
-              results: { data: [createUser(), createUserWithoutName()] }
+              results: { data: [createUser(), createUserWithoutName(), createInstitutionsRecord()] }
             })
           })
         })
@@ -19,7 +19,7 @@ describe('OceanExpertClient', () => {
     })
 
     it('for some name', async() => {
-      const response = await getByName('Firstname')
+      const response = await getByExpertByName('Firstname')
 
       expect(response).toEqual([createUser()])
       expect(fetch).toHaveBeenCalledTimes(1)
@@ -27,7 +27,7 @@ describe('OceanExpertClient', () => {
     })
 
     it('for name with extra whitespaces spaces', async() => {
-      const response = await getByName('  Firstname   ')
+      const response = await getByExpertByName('  Firstname   ')
 
       expect(response).toEqual([createUser()])
       expect(fetch).toHaveBeenCalledTimes(1)
@@ -35,7 +35,7 @@ describe('OceanExpertClient', () => {
     })
 
     it('for name with spaces only', async() => {
-      const response = await getByName('     ')
+      const response = await getByExpertByName('     ')
 
       expect(fetch).toHaveBeenCalledTimes(0)
       expect(response).toEqual([])
@@ -59,7 +59,7 @@ describe('OceanExpertClient', () => {
       })
 
       it('for not found response', async() => {
-        const response = await getByName('some strange name')
+        const response = await getByExpertByName('some strange name')
 
         expect(fetch).toHaveBeenCalledTimes(1)
         expect(response).toEqual([])
@@ -132,3 +132,27 @@ function createUserWithoutName() {
   }
 }
 
+function createInstitutionsRecord() {
+  return {
+    'type':          'institutions',
+    'activated':     '1',
+    'id_inst':       '7432',
+    'instType':      'Research',
+    'inst_name':     'National Association of Manufacturers and Producers of Canned Fish and Shellfish',
+    'inst_name_eng': '',
+    'inst_address':  'Crta. Colegio Universitario, 16\r\n ',
+    'addr_2':        '',
+    'instCity':      'Vigo',
+    'instState':     'Pontevedra',
+    'instPostCode':  '36310',
+    'country':       'Spain',
+    'activities':    'Bioassay method for PSP and DSP toxins; determination of okadaic acid by HPLC; DSP toxin stability; comparison between bioassay and HPLC methods for detection of DSP toxins; Dinophysis spp.; bivalve m',
+    'relevance':     '0',
+    'jobtitle':      '',
+    'eventtype':     '',
+    'fname':         '',
+    'sname':         '',
+    'name':          '',
+    'parent_id':     '0'
+  }
+}
