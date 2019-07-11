@@ -48,6 +48,9 @@ export default {
       },
       userRole: {
         label: 'User Role'
+      },
+      name: {
+        label: 'Name'
       }
     }
   }

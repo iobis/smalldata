@@ -57,13 +57,13 @@ export default function OceanExpertNameInput({ oceanExpertName, onChange }) {
     <div className="field column is-four-fifths" ref={ref}>
       <div className={classNames('dropdown', { 'is-active': dropdownActive && suggestions.length > 0 })}>
         <div className="dropdown-trigger">
-          <label className="label">{t('occurrenceForm.occurrenceData.scientificName')}</label>
+          <label className="label">{t('userFormPage.name.label')}</label>
           <div className={classNames('control has-icons-right', { 'is-loading': loading })}>
             <input
               className={classNames('input', { 'is-danger': !firstRender && !nameValid && !dropdownActive })}
               onChange={(value) => handleNameChange(value.target.value)}
               onClick={showDropdownOption}
-              placeholder={t('occurrenceForm.occurrenceData.scientificName')}
+              placeholder=""
               type="text"
               value={name}/>
             {nameValid && !loading
