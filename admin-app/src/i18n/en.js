@@ -43,13 +43,14 @@ export default {
       }
     },
     userFormPage:      {
-      email: {
+      addUserButton: 'Add User',
+      email:         {
         label: 'Email'
       },
-      userRole: {
+      userRole:      {
         label: 'User Role'
       },
-      name: {
+      name:          {
         label: 'Name'
       }
     }

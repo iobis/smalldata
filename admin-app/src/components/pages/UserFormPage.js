@@ -5,7 +5,7 @@ import Dropdown from '@smalldata/dwca-lib/src/components/form/Dropdown'
 import classNames from 'classnames'
 import { useTranslation } from 'react-i18next'
 import PropTypes from 'prop-types'
-import { getDatasets } from '@smalldata/dwca-lib/src/clients/SmalldataClient'
+import { createUser, getDatasets } from '@smalldata/dwca-lib/src/clients/SmalldataClient'
 
 const roles = ['researcher', 'node manager']
 
@@ -16,6 +16,7 @@ export default function UserFormPage() {
   const [email, setEmail] = useState('')
   const [role, setRole] = useState(roles[0])
   const [selectedDatasets, setSelectedDatasets] = useState([])
+  const addUserButtonEnabled = name && email
 
   useEffect(() => {
     const fetchDatasets = async() => {
@@ -34,6 +35,13 @@ export default function UserFormPage() {
 
   function handleOceanExpertProfileChange({ name }) {
     setName(name)
+  }
+
+  function handleAddUserButtonClick() {
+    createUser({
+      email,
+      datasetIds: selectedDatasets
+    })
   }
 
   return (
@@ -76,6 +84,7 @@ export default function UserFormPage() {
           ))}
         </tbody>
       </table>
+      <AddUserButton disabled={!addUserButtonEnabled} onClick={handleAddUserButtonClick}/>
     </div>
   )
 }
@@ -97,4 +106,20 @@ DatasetRow.propTypes = {
   onChange:     PropTypes.func.isRequired,
   organization: PropTypes.string.isRequired,
   title:        PropTypes.string.isRequired
+}
+
+function AddUserButton({ onClick, disabled }) {
+  const { t } = useTranslation()
+  return (
+    <div className="add-user-button columns is-mobile is-centered">
+      <button className="button is-info is-medium" disabled={disabled} onClick={onClick}>
+        {t('userFormPage.addUserButton')}
+      </button>
+    </div>
+  )
+}
+
+AddUserButton.propTypes = {
+  disabled: PropTypes.bool.isRequired,
+  onClick:  PropTypes.func.isRequired
 }
