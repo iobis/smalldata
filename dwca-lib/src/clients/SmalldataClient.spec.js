@@ -233,10 +233,6 @@ describe('SmalldataClient', () => {
   })
 
   describe('getUsers', () => {
-
-  })
-
-  describe('getUsers', () => {
     beforeEach(() => {
       global.fetch = jest.fn().mockImplementation(() =>
         new Promise((resolve) => {
@@ -287,6 +283,35 @@ describe('SmalldataClient', () => {
       expect(users[1]['dataset_refs']).toHaveLength(3)
       expect(users[2].datasets).toHaveLength(0)
       expect(users[2]['dataset_refs']).toHaveLength(0)
+    })
+  })
+
+  describe('createUser()', () => {
+    beforeEach(() => {
+      global.fetch = jest.fn().mockImplementation(() =>
+        new Promise((resolve) => {
+          resolve({ json: () => 'default-response' })
+        })
+      )
+    })
+
+    afterEach(() => {
+      global.fetch.mockRestore()
+    })
+
+    it('when providing all data', async() => {
+      await SmalldataClient.createUser({
+        email:      'some@email.com',
+        datasetIds: ['dataset-ref-1', 'dataset-ref-2']
+      })
+      expect(fetch).toHaveBeenCalledTimes(1)
+      expect(fetch.mock.calls[0][0]).toBe('/api/users')
+      expect(fetch.mock.calls[0][1].method).toBe('POST')
+      expect(fetch.mock.calls[0][1].headers).toEqual(expectedHeaders)
+      expect(JSON.parse(fetch.mock.calls[0][1].body)).toEqual({
+        emailAddress:   'some@email.com',
+        'dataset_refs': ['dataset-ref-1', 'dataset-ref-2']
+      })
     })
   })
 })

@@ -70,6 +70,19 @@ export async function getUsersWithDatasets() {
   })
 }
 
+export async function createUser({ email, datasetIds }) {
+  const request = {
+    emailAddress:   email,
+    'dataset_refs': datasetIds
+  }
+  const url = '/api/users'
+  return await fetch(url, {
+    method: 'POST',
+    headers,
+    body:   JSON.stringify(request)
+  }).then(response => response.json())
+}
+
 function groupBy(list, props) {
   return list.reduce((a, b) => {
     (a[b[props]] = a[b[props]] || []).push(b)
