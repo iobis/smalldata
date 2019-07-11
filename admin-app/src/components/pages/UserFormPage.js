@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import OceanExpertNameInput from './OceanExpertNameInput/OceanExpertNameInput'
 import InputText from '@smalldata/dwca-lib/src/components/form/InputText'
 import Dropdown from '@smalldata/dwca-lib/src/components/form/Dropdown'
 import classNames from 'classnames'
@@ -11,6 +12,7 @@ const roles = ['researcher', 'node manager']
 export default function UserFormPage() {
   const { t } = useTranslation()
   const [datasets, setDatasets] = useState([])
+  const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [role, setRole] = useState(roles[0])
   const [selectedDatasets, setSelectedDatasets] = useState([])
@@ -30,8 +32,15 @@ export default function UserFormPage() {
     }
   }
 
+  function handleOceanExpertProfileChange(profile) {
+    setName(profile.name)
+  }
+
   return (
     <div className="user-form-page section is-fluid">
+      <OceanExpertNameInput
+        oceanExpertName={name}
+        onChange={handleOceanExpertProfileChange}/>
       <InputText
         className="institution-code"
         name="userFormPage.email"
