@@ -43,13 +43,19 @@ export default function OceanExpertNameInput({ oceanExpertName, onChange }) {
 
   function handleNameChange(newName) {
     if (newName === '') setNameValid(false)
-    onChange(newName)
+    const profile = {
+      name: newName || ''
+    }
+    onChange(profile)
     setName(newName)
   }
 
   function handleSuggestionClick(user) {
     hideDropdownOptions()
-    onChange(user.name)
+    const profile = {
+      name: user.name || ''
+    }
+    onChange(profile)
     setName(user.name)
   }
 

@@ -32,8 +32,8 @@ export default function UserFormPage() {
     }
   }
 
-  function handleOceanExpertProfileChange(profile) {
-    setName(profile.name)
+  function handleOceanExpertProfileChange({ name }) {
+    setName(name)
   }
 
   return (
