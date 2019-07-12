@@ -3,7 +3,7 @@ import React from 'react'
 import { getData, getEmptyData, getPressureUnits } from './MeasurementOrFact.fixture'
 import { mount } from 'enzyme'
 
-jest.mock('../../../../clients/measurments', () => ({
+jest.mock('@smalldata/dwca-lib/src/clients/measurments', () => ({
   getGeneralMeasurements:  () => (
     [{
       type:   'general-measurement-1',

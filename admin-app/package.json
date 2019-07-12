@@ -58,5 +58,5 @@
     "react-cosmos-stateful-proxy": "2.0.0",
     "react-test-renderer": "16.8.6"
   },
-  "proxy": "http://smalldata.obis.org/"
+  "proxy": "http://localhost:8080/"
 }

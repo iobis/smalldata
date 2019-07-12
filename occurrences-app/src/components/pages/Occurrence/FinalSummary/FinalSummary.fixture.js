@@ -1,5 +1,5 @@
-import * as SmalldataClient from '../../../../clients/SmalldataClient'
-import * as SmalldataClientFixture from '../../../../clients/SmalldataClient.mock'
+import * as SmalldataClient from '@smalldata/dwca-lib/src/clients/SmalldataClient'
+import * as SmalldataClientFixture from '@smalldata/dwca-lib/src/clients/SmalldataClient.mock'
 import FinalSummary from './FinalSummary'
 
 export default [{
@@ -30,7 +30,7 @@ export default [{
 
 export function getDefaultProps() {
   return {
-    dataset:          SmalldataClientFixture.DATASTES_RESPONSE.map(SmalldataClient.renameRefToId)[0],
+    dataset:          SmalldataClientFixture.getDatasetDefaultResponse().map(SmalldataClient.renameRefToId)[0],
     occurrenceData:   {
       basisOfRecord:    'humanObservation',
       beginDate:        Date.UTC(2019, 3, 29),

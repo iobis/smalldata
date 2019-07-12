@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import React, { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '@smalldata/dwca-lib'
 import { format } from 'date-fns'
-import { getDatasets, getOccurrences } from '../../clients/SmalldataClient'
+import { getDatasets, getOccurrences } from '@smalldata/dwca-lib/src/clients/SmalldataClient'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 

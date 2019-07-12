@@ -18,14 +18,14 @@ import {
   mapDwcaToObservationData,
   mapDwcaToOccurrenceData,
   mapDwcsToDarwinCoreFields
-} from '../../../clients/SmalldataConverters'
+} from '@smalldata/dwca-lib/src/clients/SmalldataConverters'
 import {
   createOccurrence,
   findLatestOccurrence,
   getDatasets,
   getOccurrence,
   updateOccurrence
-} from '../../../clients/SmalldataClient'
+} from '@smalldata/dwca-lib/src/clients/SmalldataClient'
 import { useTranslation } from 'react-i18next'
 import { AuthContext } from '@smalldata/dwca-lib'
 
