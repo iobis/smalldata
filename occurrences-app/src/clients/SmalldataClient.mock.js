@@ -210,3 +210,106 @@ export const OCCURRENCES_RESPONSE = [
     }
   }
 ]
+
+export function getDefaultDwcaResponse() {
+  return {
+    'dwcaId':         'IkadeGqejSCC3Sc',
+    'dataset':        'ntDOtUc7XsRrIus',
+    'addedAtInstant': '2019-06-25T18:14:48.185360Z',
+    'dwcRecords':     {
+      'emof':       [{
+        'tdwg':  {
+          'measurementType':  'Abundance category of biological entity specified elsewhere',
+          'measurementUnit':  'Dimensionless',
+          'measurementValue': '3'
+        },
+        'iobis': {
+          'measurementTypeID': 'http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL06',
+          'measurementUnitID': 'http://vocab.nerc.ac.uk/collection/P06/current/UUUU/'
+        },
+        'id':    'IkadeGqejSCC3Sc'
+      }, {
+        'tdwg':  {
+          'measurementType':  'Abundance of biological entity specified elsewhere per unit area of the bed',
+          'measurementUnit':  'Number per square meter',
+          'measurementValue': '44'
+        },
+        'iobis': {
+          'measurementTypeID': 'http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL02',
+          'measurementUnitID': 'http://vocab.nerc.ac.uk/collection/P06/current/UPMS/'
+        },
+        'id':    'IkadeGqejSCC3Sc'
+      }, {
+        'tdwg':  {
+          'measurementType':  'ObservedIndividualCount',
+          'measurementUnit':  'Dimensionless',
+          'measurementValue': '1'
+        },
+        'iobis': {
+          'measurementTypeID': 'http://vocab.nerc.ac.uk/collection/P01/current/OCOUNT01',
+          'measurementUnitID': 'http://vocab.nerc.ac.uk/collection/P06/current/UUUU/'
+        },
+        'id':    'IkadeGqejSCC3Sc'
+      }, {
+        'tdwg':  { 'measurementType': 'Pressure', 'measurementUnit': 'Decibars', 'measurementValue': '1' },
+        'iobis': {
+          'measurementTypeID': 'http://vocab.nerc.ac.uk/collection/P01/current/PRESPS02/',
+          'measurementUnitID': 'http://vocab.nerc.ac.uk/collection/P06/current/UPDB/'
+        },
+        'id':    'IkadeGqejSCC3Sc'
+      }, {
+        'tdwg':  { 'measurementType': 'Salinity', 'measurementUnit': 'Grams per kilogram', 'measurementValue': '3' },
+        'iobis': {
+          'measurementTypeID': 'http://vocab.nerc.ac.uk/collection/P01/current/PSALCU01/',
+          'measurementUnitID': 'http://vocab.nerc.ac.uk/collection/P06/current/UGKG'
+        },
+        'id':    'IkadeGqejSCC3Sc'
+      }, {
+        'tdwg':  { 'measurementType': 'Temperature', 'measurementUnit': 'Degrees Celsius', 'measurementValue': '2' },
+        'iobis': {
+          'measurementTypeID': 'http://vocab.nerc.ac.uk/collection/P01/current/TEMPCU01/',
+          'measurementUnitID': 'http://vocab.nerc.ac.uk/collection/P06/current/UPAA'
+        },
+        'id':    'IkadeGqejSCC3Sc'
+      }],
+      'core':       'occurrence',
+      'occurrence': [{
+        'tdwg':  {
+          'basisOfRecord':                 'MachineObservation',
+          'eventDate':                     '2019-06-25/2019-06-26',
+          'occurrenceStatus':              'absent',
+          'scientificName':                'Aaadonta',
+          'sex':                           'female',
+          'decimalLongitude':              -0.16771316528320315,
+          'decimalLatitude':               51.518463972439385,
+          'coordinateUncertaintyInMeters': 1,
+          'minimumDepthInMeters':          2,
+          'maximumDepthInMeters':          3,
+          'verbatimCoordinates':           '17T 630000 4833400',
+          'verbatimDepth':                 '100-200 m',
+          'institutionCode':               'Institution Code',
+          'collectionCode':                'Collection Code',
+          'fieldNumber':                   'Field Number',
+          'catalogNumber':                 'Catalog Number',
+          'recordNumber':                  'Record Number',
+          'identifiedBy':                  'person-1|person-2',
+          'recordedBy':                    'recorded-by-1|recorded-by-2',
+          'identificationQualifier':       'Identification Qualifier',
+          'identificationRemarks':         'Identification Remarks',
+          'associatedReferences':          'www.google.com|https://clojure.org/',
+          'tdwg-field-1':                  'tdwg-field-1-value',
+          'tdwg-field-2':                  'tdwg-field-2-value'
+        },
+        'purl':  {
+          'purl-field-1': 'purl-field-1-value',
+          'purl-field-2': 'purl-field-2-value'
+        },
+        'iobis': {
+          'iobis-1': 'iobis-1-value',
+          'iobis-2': 'iobis-2-value'
+        },
+        'id':    'IkadeGqejSCC3Sc'
+      }]
+    }
+  }
+}

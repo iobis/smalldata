@@ -5,14 +5,14 @@ import FinalSummary from './FinalSummary'
 export default [{
   component: FinalSummary,
   name:      'default',
-  url:       '/input-data/new',
+  url:       '/input-data/create',
   props:     {
     ...getDefaultProps()
   }
 }, {
   component: FinalSummary,
   name:      'with error',
-  url:       '/input-data/new',
+  url:       '/input-data/create',
   props:     {
     ...getDefaultProps(),
     errorVisible: true,
@@ -21,7 +21,7 @@ export default [{
 }, {
   component: FinalSummary,
   name:      'successfully submitted',
-  url:       '/input-data/new',
+  url:       '/input-data/create',
   props:     {
     ...getDefaultProps(),
     successVisible: true
