@@ -66,8 +66,8 @@ export default {
           female:      'female',
           unspecified: 'unspecified'
         },
-        lifestage:        {
-          title:       'Lifestage',
+        lifeStage:        {
+          title:       'Life Stage',
           larva:       'larva',
           juvenile:    'juvenile',
           adult:       'adult',

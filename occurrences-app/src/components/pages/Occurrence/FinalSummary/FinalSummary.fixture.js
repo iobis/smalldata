@@ -35,7 +35,7 @@ export function getDefaultProps() {
       basisOfRecord:    'humanObservation',
       beginDate:        Date.UTC(2019, 3, 29),
       endDate:          Date.UTC(2019, 3, 30),
-      lifestage:        'adult',
+      lifeStage:        'adult',
       occurrenceStatus: 'absent',
       scientificName:   'ala abra',
       sex:              'male'

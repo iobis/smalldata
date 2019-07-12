@@ -68,7 +68,7 @@ function mapOccurrenceDataToTdwg({ basisOfRecord, beginDate, endDate, occurrence
     eventDate:        format(beginDate, 'YYYY-MM-DD') + '/' + format(endDate || beginDate, 'YYYY-MM-DD'),
     occurrenceStatus: occurrenceStatus,
     scientificName:   scientificName,
-    ...(lifeStage === 'unspecified' ? {} : { lifestage: lifeStage }),
+    ...(lifeStage === 'unspecified' ? {} : { lifeStage }),
     ...(sex === 'unspecified' ? {} : { sex })
   }
 }
@@ -97,7 +97,7 @@ export function mapDwcaToOccurrenceData(dwca) {
     basisOfRecord:    tdwg.basisOfRecord.charAt(0).toLowerCase() + tdwg.basisOfRecord.slice(1),
     beginDate:        new Date(beginDate),
     endDate:          endDate ? new Date(endDate) : null,
-    lifestage:        tdwg.lifeStage || 'unspecified',
+    lifeStage:        tdwg.lifeStage || 'unspecified',
     occurrenceStatus: tdwg.occurrenceStatus,
     scientificName:   tdwg.scientificName,
     sex:              tdwg.sex || 'unspecified'
@@ -152,7 +152,7 @@ function getProperty(selectorFn, defaultValue) {
   }
 }
 
-const reservedTdwgFields = ['basisOfRecord', 'eventDate', 'occurrenceStatus', 'scientificName', 'sex',
+const reservedTdwgFields = ['basisOfRecord', 'eventDate', 'occurrenceStatus', 'scientificName', 'lifeStage', 'sex',
   'decimalLongitude', 'decimalLatitude', 'coordinateUncertaintyInMeters', 'minimumDepthInMeters', 'maximumDepthInMeters',
   'verbatimCoordinates', 'verbatimDepth', 'institutionCode', 'collectionCode', 'fieldNumber', 'catalogNumber',
   'recordNumber', 'identifiedBy', 'recordedBy', 'identificationQualifier', 'identificationRemarks',

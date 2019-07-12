@@ -271,7 +271,7 @@ function getExpectedDefaultOccurrenceRequest() {
       tdwg:  {
         basisOfRecord:    'HumanObservation',
         eventDate:        '2019-04-29/2019-04-30',
-        lifestage:        'adult',
+        lifeStage:        'adult',
         occurrenceStatus: 'present',
         scientificName:   'ala abra',
         sex:              'male',

@@ -15,7 +15,7 @@ describe('SmalldataConverters', () => {
       basisOfRecord:    'machineObservation',
       beginDate:        new Date(Date.UTC(2019, 5, 25)),
       endDate:          new Date(Date.UTC(2019, 5, 26)),
-      lifestage:        'unspecified',
+      lifeStage:        'unspecified',
       occurrenceStatus: 'absent',
       scientificName:   'Aaadonta',
       sex:              'female'

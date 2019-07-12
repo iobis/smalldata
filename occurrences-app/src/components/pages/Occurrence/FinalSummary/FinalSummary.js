@@ -105,8 +105,8 @@ export default function FinalSummary({
               name={t('occurrenceForm.occurrenceData.sex.title')}
               value={t('occurrenceForm.occurrenceData.sex.' + occurrenceData.sex)}/>
             <NameValueRow
-              name={t('occurrenceForm.occurrenceData.lifestage.title')}
-              value={t('occurrenceForm.occurrenceData.lifestage.' + occurrenceData.lifestage)}/>
+              name={t('occurrenceForm.occurrenceData.lifeStage.title')}
+              value={t('occurrenceForm.occurrenceData.lifeStage.' + occurrenceData.lifeStage)}/>
           </tbody>
         </table>
         <ChangeButton onClick={() => onChangeClick({ index: 1, value: 'occurrenceData' })}/>

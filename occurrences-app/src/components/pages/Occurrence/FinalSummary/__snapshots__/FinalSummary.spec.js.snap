@@ -174,7 +174,7 @@ exports[`FinalSummary renders correctly 1`] = `
           "basisOfRecord": "humanObservation",
           "beginDate": 1556496000000,
           "endDate": 1556582400000,
-          "lifestage": "adult",
+          "lifeStage": "adult",
           "occurrenceStatus": "absent",
           "scientificName": "ala abra",
           "sex": "male",
@@ -385,8 +385,8 @@ exports[`FinalSummary renders correctly 1`] = `
                 </tr>
               </NameValueRow>
               <NameValueRow
-                name="occurrenceForm.occurrenceData.lifestage.title"
-                value="occurrenceForm.occurrenceData.lifestage.adult"
+                name="occurrenceForm.occurrenceData.lifeStage.title"
+                value="occurrenceForm.occurrenceData.lifeStage.adult"
               >
                 <tr
                   className="name-value-row fieldrow"
@@ -394,12 +394,12 @@ exports[`FinalSummary renders correctly 1`] = `
                   <td
                     className="name"
                   >
-                    occurrenceForm.occurrenceData.lifestage.title
+                    occurrenceForm.occurrenceData.lifeStage.title
                   </td>
                   <td
                     className="value"
                   >
-                    occurrenceForm.occurrenceData.lifestage.adult
+                    occurrenceForm.occurrenceData.lifeStage.adult
                   </td>
                 </tr>
               </NameValueRow>
@@ -1251,7 +1251,7 @@ exports[`FinalSummary renders correctly when occurrence end date is not provided
           "basisOfRecord": "humanObservation",
           "beginDate": 1556496000000,
           "endDate": null,
-          "lifestage": "adult",
+          "lifeStage": "adult",
           "occurrenceStatus": "absent",
           "scientificName": "ala abra",
           "sex": "male",
@@ -1462,8 +1462,8 @@ exports[`FinalSummary renders correctly when occurrence end date is not provided
                 </tr>
               </NameValueRow>
               <NameValueRow
-                name="occurrenceForm.occurrenceData.lifestage.title"
-                value="occurrenceForm.occurrenceData.lifestage.adult"
+                name="occurrenceForm.occurrenceData.lifeStage.title"
+                value="occurrenceForm.occurrenceData.lifeStage.adult"
               >
                 <tr
                   className="name-value-row fieldrow"
@@ -1471,12 +1471,12 @@ exports[`FinalSummary renders correctly when occurrence end date is not provided
                   <td
                     className="name"
                   >
-                    occurrenceForm.occurrenceData.lifestage.title
+                    occurrenceForm.occurrenceData.lifeStage.title
                   </td>
                   <td
                     className="value"
                   >
-                    occurrenceForm.occurrenceData.lifestage.adult
+                    occurrenceForm.occurrenceData.lifeStage.adult
                   </td>
                 </tr>
               </NameValueRow>
@@ -2329,7 +2329,7 @@ exports[`FinalSummary when rendering component with error message calls onSubmit
           "basisOfRecord": "humanObservation",
           "beginDate": 1556496000000,
           "endDate": 1556582400000,
-          "lifestage": "adult",
+          "lifeStage": "adult",
           "occurrenceStatus": "absent",
           "scientificName": "ala abra",
           "sex": "male",
@@ -2549,8 +2549,8 @@ exports[`FinalSummary when rendering component with error message calls onSubmit
                 </tr>
               </NameValueRow>
               <NameValueRow
-                name="occurrenceForm.occurrenceData.lifestage.title"
-                value="occurrenceForm.occurrenceData.lifestage.adult"
+                name="occurrenceForm.occurrenceData.lifeStage.title"
+                value="occurrenceForm.occurrenceData.lifeStage.adult"
               >
                 <tr
                   className="name-value-row fieldrow"
@@ -2558,12 +2558,12 @@ exports[`FinalSummary when rendering component with error message calls onSubmit
                   <td
                     className="name"
                   >
-                    occurrenceForm.occurrenceData.lifestage.title
+                    occurrenceForm.occurrenceData.lifeStage.title
                   </td>
                   <td
                     className="value"
                   >
-                    occurrenceForm.occurrenceData.lifestage.adult
+                    occurrenceForm.occurrenceData.lifeStage.adult
                   </td>
                 </tr>
               </NameValueRow>
@@ -3415,7 +3415,7 @@ exports[`FinalSummary when rendering component with success message renders succ
           "basisOfRecord": "humanObservation",
           "beginDate": 1556496000000,
           "endDate": 1556582400000,
-          "lifestage": "adult",
+          "lifeStage": "adult",
           "occurrenceStatus": "absent",
           "scientificName": "ala abra",
           "sex": "male",
@@ -3655,8 +3655,8 @@ exports[`FinalSummary when rendering component with success message renders succ
                 </tr>
               </NameValueRow>
               <NameValueRow
-                name="occurrenceForm.occurrenceData.lifestage.title"
-                value="occurrenceForm.occurrenceData.lifestage.adult"
+                name="occurrenceForm.occurrenceData.lifeStage.title"
+                value="occurrenceForm.occurrenceData.lifeStage.adult"
               >
                 <tr
                   className="name-value-row fieldrow"
@@ -3664,12 +3664,12 @@ exports[`FinalSummary when rendering component with success message renders succ
                   <td
                     className="name"
                   >
-                    occurrenceForm.occurrenceData.lifestage.title
+                    occurrenceForm.occurrenceData.lifeStage.title
                   </td>
                   <td
                     className="value"
                   >
-                    occurrenceForm.occurrenceData.lifestage.adult
+                    occurrenceForm.occurrenceData.lifeStage.adult
                   </td>
                 </tr>
               </NameValueRow>
@@ -4507,7 +4507,7 @@ exports[`FinalSummary when rendering component with success message renders succ
           "basisOfRecord": "humanObservation",
           "beginDate": 1556496000000,
           "endDate": 1556582400000,
-          "lifestage": "adult",
+          "lifeStage": "adult",
           "occurrenceStatus": "absent",
           "scientificName": "ala abra",
           "sex": "male",
@@ -4747,8 +4747,8 @@ exports[`FinalSummary when rendering component with success message renders succ
                 </tr>
               </NameValueRow>
               <NameValueRow
-                name="occurrenceForm.occurrenceData.lifestage.title"
-                value="occurrenceForm.occurrenceData.lifestage.adult"
+                name="occurrenceForm.occurrenceData.lifeStage.title"
+                value="occurrenceForm.occurrenceData.lifeStage.adult"
               >
                 <tr
                   className="name-value-row fieldrow"
@@ -4756,12 +4756,12 @@ exports[`FinalSummary when rendering component with success message renders succ
                   <td
                     className="name"
                   >
-                    occurrenceForm.occurrenceData.lifestage.title
+                    occurrenceForm.occurrenceData.lifeStage.title
                   </td>
                   <td
                     className="value"
                   >
-                    occurrenceForm.occurrenceData.lifestage.adult
+                    occurrenceForm.occurrenceData.lifeStage.adult
                   </td>
                 </tr>
               </NameValueRow>
