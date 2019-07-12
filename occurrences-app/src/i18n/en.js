@@ -27,6 +27,7 @@ export default {
       }
     },
     occurrenceForm: {
+      copyPreviousStep:      'copy data from previous entry',
       reviewAndSubmitButton: 'Review & Submit',
       stepContinue:          'Continue to',
       dataset:               {

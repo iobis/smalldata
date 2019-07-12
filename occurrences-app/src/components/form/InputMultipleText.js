@@ -1,12 +1,16 @@
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 
 export default function InputMultipleText({ className, name, values, onChange, labelComponent }) {
   const { t } = useTranslation()
   const [newValues, setNewValues] = useState(values)
   const [inputFieldValue, setInputFieldValue] = useState('')
+
+  useEffect(() => {
+    setNewValues(values)
+  }, [values])
 
   const updateNewValues = (newValues) => {
     onChange(newValues)

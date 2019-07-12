@@ -1,6 +1,6 @@
 import * as SmalldataClient from './SmalldataClient'
 import deepExtend from 'deep-extend'
-import { DATASTES_RESPONSE } from './SmalldataClient.mock'
+import { DATASTES_RESPONSE, OCCURRENCES_RESPONSE } from './SmalldataClient.mock'
 
 describe('SmalldataClient', () => {
   const userRef = 'ovZTtaOJZ98xDDY'
@@ -42,6 +42,27 @@ describe('SmalldataClient', () => {
       await SmalldataClient.getOccurrences({ userRef })
       expect(fetch).toHaveBeenCalledTimes(1)
       expect(fetch).toBeCalledWith('/api/dwca/user/ovZTtaOJZ98xDDY/records?projectFields=dwcRecord.tdwg.scientificName&projectFields=dwcRecord.tdwg.eventDate')
+    })
+  })
+
+  describe('findLatestOccurrence()', () => {
+    beforeEach(() => {
+      global.fetch = jest.fn().mockImplementation(() =>
+        new Promise((resolve) => {
+          resolve({ json: () => OCCURRENCES_RESPONSE })
+        })
+      )
+    })
+
+    afterEach(() => {
+      global.fetch.mockRestore()
+    })
+
+    it('fetches data from correct url', async() => {
+      await SmalldataClient.findLatestOccurrence({ userRef })
+      expect(fetch).toHaveBeenCalledTimes(2)
+      expect(fetch).toHaveBeenNthCalledWith(1, '/api/dwca/user/ovZTtaOJZ98xDDY/records?projectFields=dwcRecord.tdwg.scientificName&projectFields=dwcRecord.tdwg.eventDate')
+      expect(fetch).toHaveBeenNthCalledWith(2, '/api/dwca/ntDOtUc7XsRrIus/user/ovZTtaOJZ98xDDY/records/IBSS_R%2FV%20N.%20Danilevskiy%201935%20Azov%20Sea%20benthos%20data_796')
     })
   })
 

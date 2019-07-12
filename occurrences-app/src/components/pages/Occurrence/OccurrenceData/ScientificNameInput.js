@@ -1,7 +1,7 @@
 import * as MarineSpeciesClient from '../../../../clients/MarineSpeciesClient'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useDebounce, useOnClickOutside } from '@smalldata/dwca-lib'
 import { useTranslation } from 'react-i18next'
@@ -22,6 +22,8 @@ export default function ScientificNameInput({ scientificName, onChange }) {
   const findRecordWithName = (records, name) => records.find(record => isRecordWithName(record, name))
 
   useOnClickOutside(ref, hideDropdownOptions)
+
+  useEffect(() => setName(scientificName), [scientificName])
 
   useEffect(() => {
     const getByName = async() => {

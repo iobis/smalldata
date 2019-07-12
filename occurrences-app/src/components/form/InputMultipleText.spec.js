@@ -38,6 +38,15 @@ describe('InputMultipleText', () => {
     expect(onChange).toHaveBeenCalledTimes(1)
     expect(onChange).toBeCalledWith(['value-2'])
   })
+
+  it('updates values when updates props', () => {
+    const wrapper = mount(createComponent({ values: [] }))
+    expect(wrapper.find('.tag')).toHaveLength(0)
+
+    wrapper.setProps({ values: ['value-3', 'value-4'] })
+    wrapper.update()
+    expect(wrapper.find('.tag')).toHaveLength(2)
+  })
 })
 
 function createComponent(props) {

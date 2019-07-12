@@ -20,6 +20,14 @@ export async function getOccurrence({ datasetId, dwcaId, userRef }) {
     .then(response => response.json())
 }
 
+export async function findLatestOccurrence({ userRef }) {
+  const occurrences = await getOccurrences({ userRef })
+  const latest = occurrences
+    .filter(dwca => !!dwca.addedAtInstant)
+    .sort((left, right) => left.addedAtInstant < right.addedAtInstant ? 1 : -1)[0]
+  return await getOccurrence({ userRef, dwcaId: latest.dwcaId, datasetId: latest.dataset })
+}
+
 export async function updateOccurrence({ occurrence, userRef, dwcaId }) {
   const request = mapOccurrenceToDwca(occurrence)
   const url = `/api/dwca/${occurrence.dataset.id}/user/${userRef}/records/${encodeURIComponent(dwcaId)}`
