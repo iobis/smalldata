@@ -1,4 +1,5 @@
 import OccurrenceForm from './OccurrenceForm'
+import { ignoreActWarning } from '@smalldata/test-utils-lib'
 import React from 'react'
 import { act } from 'react-dom/test-utils'
 import { mount } from 'enzyme'
@@ -6,14 +7,11 @@ import { getDatasetDefaultResponse } from '@smalldata/dwca-lib/src/clients/Small
 import { AuthProvider } from '@smalldata/dwca-lib'
 
 describe('OccurrenceForm', () => {
-  const originalError = console.error
+  ignoreActWarning()
+
   let wrapper
 
   beforeAll(() => {
-    console.error = (...args) => {
-      if (/Warning.*not wrapped in act/.test(args[0])) return
-      originalError.call(console, ...args)
-    }
     jest.spyOn(Date, 'now').mockImplementation(() => new Date(Date.UTC(2019, 3, 29)).valueOf())
     global.fetch = jest.fn().mockImplementation(() =>
       new Promise((resolve) => {
@@ -23,7 +21,6 @@ describe('OccurrenceForm', () => {
   })
 
   afterAll(() => {
-    console.error = originalError
     jest.spyOn(Date, 'now').mockRestore()
   })
 
@@ -32,7 +29,12 @@ describe('OccurrenceForm', () => {
       wrapper = mount(<AuthProvider><OccurrenceForm/></AuthProvider>)
     })
     expect(global.fetch).toHaveBeenCalledTimes(1)
-    expect(global.fetch).toHaveBeenCalledWith('/api/datasets', { headers: { Authorization: 'Basic verysecret' } })
+    expect(global.fetch).toHaveBeenCalledWith('/api/datasets', {
+      headers: {
+        'Authorization': 'Basic verysecret',
+        'Content-Type':  'application/json'
+      }
+    })
     expect(wrapper).toMatchSnapshot()
 
     addLocation()

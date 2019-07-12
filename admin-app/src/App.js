@@ -2,6 +2,7 @@ import './i18n/i18n'
 import LogInPage from './components/pages/LogInPage'
 import ManageDatasetPage from './components/pages/ManageDatasetPage'
 import ManageUsersPage from './components/pages/ManageUsersPage'
+import UserFormPage from './components/pages/UserFormPage'
 import Navbar from './components/layout/Navbar'
 import PropTypes from 'prop-types'
 import React, { useContext } from 'react'
@@ -9,8 +10,8 @@ import { AuthContext, AuthProvider } from '@smalldata/dwca-lib'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import {
   faAngleDown,
-  faCheckCircle,
   faCheck,
+  faCheckCircle,
   faEnvelope,
   faSearch,
   faTimesCircle,
@@ -41,6 +42,8 @@ const AppDiv = () => {
         <ProtectedRoute component={ManageDatasetPage} exact path="/"/>
         <ProtectedRoute component={ManageDatasetPage} exact path="/manage-dataset"/>
         <ProtectedRoute component={ManageUsersPage} exact path="/manage-users"/>
+        <ProtectedRoute component={UserFormPage} exact path="/manage-users/create"/>
+        <ProtectedRoute component={UserFormPage} exact path="/manage-users/update"/>
       </Switch>
     </div>
   )

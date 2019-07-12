@@ -2,6 +2,11 @@ import * as SmalldataClient from './SmalldataClient'
 import deepExtend from 'deep-extend'
 import { getDatasetDefaultResponse, getUsersDefaultResponse, OCCURRENCES_RESPONSE } from './SmalldataClient.mock'
 
+const expectedHeaders = {
+  'Authorization': 'Basic verysecret',
+  'Content-Type':  'application/json'
+}
+
 describe('SmalldataClient', () => {
   const userRef = 'ovZTtaOJZ98xDDY'
 
@@ -21,7 +26,7 @@ describe('SmalldataClient', () => {
     it('makes default request', async() => {
       await SmalldataClient.getDatasets()
       expect(fetch).toHaveBeenCalledTimes(1)
-      expect(fetch).toBeCalledWith('/api/datasets', { headers: { Authorization: 'Basic verysecret' } })
+      expect(fetch).toBeCalledWith('/api/datasets', { headers: expectedHeaders })
     })
   })
 
@@ -41,7 +46,9 @@ describe('SmalldataClient', () => {
     it('fetches data from correct url', async() => {
       await SmalldataClient.getOccurrences({ userRef })
       expect(fetch).toHaveBeenCalledTimes(1)
-      expect(fetch).toBeCalledWith('/api/dwca/user/ovZTtaOJZ98xDDY/records?projectFields=dwcRecord.tdwg.scientificName&projectFields=dwcRecord.tdwg.eventDate')
+      expect(fetch).toBeCalledWith('/api/dwca/user/ovZTtaOJZ98xDDY/records?projectFields=dwcRecord.tdwg.scientificName&projectFields=dwcRecord.tdwg.eventDate', {
+        headers: expectedHeaders
+      })
     })
   })
 
@@ -61,8 +68,15 @@ describe('SmalldataClient', () => {
     it('fetches data from correct url', async() => {
       await SmalldataClient.findLatestOccurrence({ userRef })
       expect(fetch).toHaveBeenCalledTimes(2)
-      expect(fetch).toHaveBeenNthCalledWith(1, '/api/dwca/user/ovZTtaOJZ98xDDY/records?projectFields=dwcRecord.tdwg.scientificName&projectFields=dwcRecord.tdwg.eventDate')
-      expect(fetch).toHaveBeenNthCalledWith(2, '/api/dwca/ntDOtUc7XsRrIus/user/ovZTtaOJZ98xDDY/records/IBSS_R%2FV%20N.%20Danilevskiy%201935%20Azov%20Sea%20benthos%20data_796')
+      expect(fetch).toHaveBeenNthCalledWith(1, '/api/dwca/user/ovZTtaOJZ98xDDY/records?projectFields=dwcRecord.tdwg.scientificName&projectFields=dwcRecord.tdwg.eventDate', {
+        headers: expectedHeaders
+      })
+      expect(fetch).toHaveBeenNthCalledWith(2, '/api/dwca/ntDOtUc7XsRrIus/user/ovZTtaOJZ98xDDY/records/IBSS_R%2FV%20N.%20Danilevskiy%201935%20Azov%20Sea%20benthos%20data_796', {
+        headers: {
+          'Authorization': 'Basic verysecret',
+          'Content-Type':  'application/json'
+        }
+      })
     })
   })
 
@@ -84,7 +98,9 @@ describe('SmalldataClient', () => {
       const dwcaId = 'IkadeGqejSCC3Sc'
       await SmalldataClient.getOccurrence({ datasetId, dwcaId, userRef })
       expect(fetch).toHaveBeenCalledTimes(1)
-      expect(fetch).toBeCalledWith('/api/dwca/ntDOtUc7XsRrIus/user/ovZTtaOJZ98xDDY/records/IkadeGqejSCC3Sc')
+      expect(fetch).toBeCalledWith('/api/dwca/ntDOtUc7XsRrIus/user/ovZTtaOJZ98xDDY/records/IkadeGqejSCC3Sc', {
+        headers: expectedHeaders
+      })
     })
 
     it('encodes dwcaId', async() => {
@@ -92,7 +108,9 @@ describe('SmalldataClient', () => {
       const dwcaId = 'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_445'
       await SmalldataClient.getOccurrence({ datasetId, dwcaId, userRef })
       expect(fetch).toHaveBeenCalledTimes(1)
-      expect(fetch).toBeCalledWith('/api/dwca/ntDOtUc7XsRrIus/user/ovZTtaOJZ98xDDY/records/IBSS_R%2FV%20N.%20Danilevskiy%201935%20Azov%20Sea%20benthos%20data_445')
+      expect(fetch).toBeCalledWith('/api/dwca/ntDOtUc7XsRrIus/user/ovZTtaOJZ98xDDY/records/IBSS_R%2FV%20N.%20Danilevskiy%201935%20Azov%20Sea%20benthos%20data_445', {
+        headers: expectedHeaders
+      })
     })
   })
 
@@ -117,6 +135,7 @@ describe('SmalldataClient', () => {
       expect(fetch).toHaveBeenCalledTimes(1)
       expect(fetch.mock.calls[0][0]).toBe('/api/dwca/wEaBfmFyQhYCdsk/user/ovZTtaOJZ98xDDY/records/IkadeGqejSCC3Sc')
       expect(fetch.mock.calls[0][1].method).toBe('PUT')
+      expect(fetch.mock.calls[0][1].headers).toEqual(expectedHeaders)
       expect(JSON.parse(fetch.mock.calls[0][1].body)).toEqual(getExpectedDefaultOccurrenceRequest())
     })
   })
@@ -140,6 +159,7 @@ describe('SmalldataClient', () => {
       expect(fetch).toHaveBeenCalledTimes(1)
       expect(fetch.mock.calls[0][0]).toBe('/api/dwca/wEaBfmFyQhYCdsk/user/ovZTtaOJZ98xDDY/records')
       expect(fetch.mock.calls[0][1].method).toBe('POST')
+      expect(fetch.mock.calls[0][1].headers).toEqual(expectedHeaders)
       expect(JSON.parse(fetch.mock.calls[0][1].body)).toEqual(getExpectedDefaultOccurrenceRequest())
     })
 
@@ -160,6 +180,7 @@ describe('SmalldataClient', () => {
       expect(fetch).toHaveBeenCalledTimes(1)
       expect(fetch.mock.calls[0][0]).toBe('/api/dwca/wEaBfmFyQhYCdsk/user/ovZTtaOJZ98xDDY/records')
       expect(fetch.mock.calls[0][1].method).toBe('POST')
+      expect(fetch.mock.calls[0][1].headers).toEqual(expectedHeaders)
       expect(JSON.parse(fetch.mock.calls[0][1].body).occurrence[0].tdwg).toEqual({
         basisOfRecord:    'HumanObservation',
         eventDate:        '2019-04-29/2019-04-30',
@@ -206,6 +227,7 @@ describe('SmalldataClient', () => {
       expect(fetch).toHaveBeenCalledTimes(1)
       expect(fetch.mock.calls[0][0]).toBe('/api/dwca/wEaBfmFyQhYCdsk/user/ovZTtaOJZ98xDDY/records')
       expect(fetch.mock.calls[0][1].method).toBe('POST')
+      expect(fetch.mock.calls[0][1].headers).toEqual(expectedHeaders)
       expect(JSON.parse(fetch.mock.calls[0][1].body).occurrence[0].tdwg.eventDate).toEqual('2019-04-29/2019-04-29')
     })
   })
@@ -230,7 +252,7 @@ describe('SmalldataClient', () => {
     it('makes default request', async() => {
       await SmalldataClient.getUsers()
       expect(fetch).toHaveBeenCalledTimes(1)
-      expect(fetch).toBeCalledWith('/api/users', { headers: { Authorization: 'Basic verysecret' } })
+      expect(fetch).toBeCalledWith('/api/users', { headers: expectedHeaders })
     })
   })
 
@@ -255,8 +277,8 @@ describe('SmalldataClient', () => {
     it('makes 2 requests and combine them', async() => {
       const actual = await SmalldataClient.getUsersWithDatasets()
       expect(fetch).toHaveBeenCalledTimes(2)
-      expect(fetch).toHaveBeenNthCalledWith(1, '/api/users', { headers: { Authorization: 'Basic verysecret' } })
-      expect(fetch).toHaveBeenNthCalledWith(2, '/api/datasets', { headers: { Authorization: 'Basic verysecret' } })
+      expect(fetch).toHaveBeenNthCalledWith(1, '/api/users', { headers: expectedHeaders })
+      expect(fetch).toHaveBeenNthCalledWith(2, '/api/datasets', { headers: expectedHeaders })
       expect(actual).toMatchSnapshot()
       expect(actual).toHaveLength(2)
       expect(actual[0].datasets).toHaveLength(4)
