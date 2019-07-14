@@ -303,6 +303,7 @@ describe('SmalldataClient', () => {
       await SmalldataClient.createUser({
         datasetIds: ['dataset-ref-1', 'dataset-ref-2'],
         email:      'some@email.com',
+        name:       'name',
         role:       'researcher'
       })
       expect(fetch).toHaveBeenCalledTimes(1)
@@ -312,6 +313,7 @@ describe('SmalldataClient', () => {
       expect(JSON.parse(fetch.mock.calls[0][1].body)).toEqual({
         'dataset_refs': ['dataset-ref-1', 'dataset-ref-2'],
         emailAddress:   'some@email.com',
+        name:           'name',
         role:           'researcher'
       })
     })

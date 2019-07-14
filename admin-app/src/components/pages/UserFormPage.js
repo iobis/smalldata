@@ -51,6 +51,7 @@ export default function UserFormPage() {
     const response = await createUser({
       datasetIds: selectedDatasets,
       email,
+      name,
       role
     })
     if (response.exception) {
