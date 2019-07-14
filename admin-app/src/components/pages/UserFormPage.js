@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import OceanExpertNameInput from './OceanExpertNameInput/OceanExpertNameInput'
 import InputText from '@smalldata/dwca-lib/src/components/form/InputText'
 import Dropdown from '@smalldata/dwca-lib/src/components/form/Dropdown'
@@ -21,6 +21,8 @@ export default function UserFormPage() {
   const [successVisible, setSuccessVisible] = useState(false)
   const [errorVisible, setErrorVisible] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
+  const successMessageRef = useRef()
+  const errorMessageRef = useRef()
 
   useEffect(() => {
     const fetchDatasets = async() => {
@@ -41,6 +43,10 @@ export default function UserFormPage() {
     setName(name)
   }
 
+  function scrollToRef(ref) {
+    if (ref && ref.current) ref.current.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  }
+
   async function handleAddUserButtonClick() {
     const response = await createUser({
       email,
@@ -49,8 +55,10 @@ export default function UserFormPage() {
     if (response.exception) {
       setErrorVisible(true)
       setErrorMessage(response.exception + ': ' + response.exceptionMessage)
+      scrollToRef(errorMessageRef)
     } else {
       setSuccessVisible(true)
+      scrollToRef(successMessageRef)
     }
   }
 
@@ -104,7 +112,7 @@ export default function UserFormPage() {
         </tbody>
       </table>
       {successVisible ? (
-        <div className="success-message notification is-success">
+        <div className="success-message notification is-success" ref={successMessageRef}>
           <p className="title">{t('userFormPage.successMessage.header.create')}</p>
           <section>
             <button className="create-another-user button is-white" onClick={handleCreateAnotherUserClick}>
@@ -118,7 +126,7 @@ export default function UserFormPage() {
           </section>
         </div>) : null}
       {errorVisible ? (
-        <div className="error-message notification is-danger">
+        <div className="error-message notification is-danger" ref={errorMessageRef}>
           <button className="close delete" onClick={handleErrorClose}/>
           {errorMessage}
         </div>) : null}
