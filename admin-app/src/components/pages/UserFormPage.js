@@ -11,8 +11,8 @@ import { useTranslation } from 'react-i18next'
 
 const roles = ['researcher', 'node manager']
 
-export default function UserFormPage() {
-  const initialState = createInitialState()
+export default function UserFormPage({ location }) {
+  const initialState = createInitialState(location)
   const { t } = useTranslation()
   const [datasets, setDatasets] = useState([])
   const [name, setName] = useState(initialState.name)
@@ -143,6 +143,17 @@ export default function UserFormPage() {
   )
 }
 
+UserFormPage.propTypes = {
+  location: PropTypes.shape({
+    state: PropTypes.shape({
+      datasetIds: PropTypes.arrayOf(PropTypes.string).isRequired,
+      email:      PropTypes.string.isRequired,
+      name:       PropTypes.string.isRequired,
+      role:       PropTypes.string.isRequired
+    })
+  })
+}
+
 function DatasetRow({ title, organization, license, onChange, checked }) {
   return (
     <tr className="dataset-row">
@@ -178,11 +189,19 @@ AddUserButton.propTypes = {
   onClick:  PropTypes.func.isRequired
 }
 
-function createInitialState() {
-  return {
+function createInitialState(location) {
+  const defaultInitialState = {
     name:             '',
     email:            '',
     role:             roles[0],
     selectedDatasets: []
   }
+  return !!location && !!location.state
+    ? {
+      name:             location.state.name || defaultInitialState.name,
+      email:            location.state.email || defaultInitialState.email,
+      role:             location.state.role || defaultInitialState.role,
+      selectedDatasets: location.state.datasetIds || defaultInitialState.selectedDatasets
+    }
+    : defaultInitialState
 }

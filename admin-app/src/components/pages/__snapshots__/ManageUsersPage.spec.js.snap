@@ -138,6 +138,8 @@ exports[`ManageUsersPage renders correctly for non empty users 1`] = `
                               ],
                               "email": "email-1@domain.com",
                               "id": "user-1",
+                              "name": "",
+                              "role": "researcher",
                             },
                           }
                         }
