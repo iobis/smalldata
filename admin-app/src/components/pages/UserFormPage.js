@@ -1,12 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react'
-import OceanExpertNameInput from './OceanExpertNameInput/OceanExpertNameInput'
-import InputText from '@smalldata/dwca-lib/src/components/form/InputText'
-import Dropdown from '@smalldata/dwca-lib/src/components/form/Dropdown'
 import classNames from 'classnames'
-import { useTranslation } from 'react-i18next'
+import Dropdown from '@smalldata/dwca-lib/src/components/form/Dropdown'
+import InputText from '@smalldata/dwca-lib/src/components/form/InputText'
+import OceanExpertNameInput from './OceanExpertNameInput/OceanExpertNameInput'
 import PropTypes from 'prop-types'
+import React, { useEffect, useRef, useState } from 'react'
 import { createUser, getDatasets } from '@smalldata/dwca-lib/src/clients/SmalldataClient'
 import { Link } from 'react-router-dom'
+import { scrollToRef } from '@smalldata/dwca-lib/src/browser/scroll'
+import { useTranslation } from 'react-i18next'
 
 const roles = ['researcher', 'node manager']
 
@@ -41,10 +42,6 @@ export default function UserFormPage() {
 
   function handleOceanExpertProfileChange({ name }) {
     setName(name)
-  }
-
-  function scrollToRef(ref) {
-    if (ref && ref.current) ref.current.scrollIntoView({ behavior: 'smooth', block: 'center' })
   }
 
   async function handleAddUserButtonClick() {
