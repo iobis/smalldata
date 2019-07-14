@@ -12,7 +12,6 @@ exports[`DatasetPageFormPage renders correctly 1`] = `
       key="datasetPageFormPage.basicInformation.step.stepTitle"
       nextStep="datasetPageFormPage.resourceContacts.step.stepTitle"
       onContinueButtonClick={[Function]}
-      onCopyPreviousDataClick={[Function]}
       onStepTitleClick={[Function]}
       selectedData="to be added"
       stepDescription="datasetPageFormPage.basicInformation.step.stepDescription"
@@ -71,24 +70,19 @@ exports[`DatasetPageFormPage renders correctly 1`] = `
         activeStepIndex={0}
         nextStep="datasetPageFormPage.resourceContacts.step.stepTitle"
         onContinueButtonClick={[Function]}
-        onCopyPreviousDataClick={[Function]}
       >
         <div
           className="step-footer columns section"
         >
           <CopyPreviousData
-            onClick={[Function]}
-            visible={true}
+            visible={false}
           >
             <div
               className="columns"
             >
               <div
                 className="copy-previous-data column is-narrow"
-                onClick={[Function]}
-              >
-                occurrenceForm.copyPreviousStep
-              </div>
+              />
             </div>
           </CopyPreviousData>
           <ContinueButton
@@ -114,7 +108,6 @@ exports[`DatasetPageFormPage renders correctly 1`] = `
       key="datasetPageFormPage.resourceContacts.step.stepTitle"
       nextStep="datasetPageFormPage.resourceCreators.step.stepTitle"
       onContinueButtonClick={[Function]}
-      onCopyPreviousDataClick={[Function]}
       onStepTitleClick={[Function]}
       selectedData="to be added"
       stepDescription="datasetPageFormPage.resourceContacts.step.stepDescription"
@@ -174,7 +167,6 @@ exports[`DatasetPageFormPage renders correctly 1`] = `
       key="datasetPageFormPage.resourceCreators.step.stepTitle"
       nextStep="datasetPageFormPage.metadataProviders.step.stepTitle"
       onContinueButtonClick={[Function]}
-      onCopyPreviousDataClick={[Function]}
       onStepTitleClick={[Function]}
       selectedData="to be added"
       stepDescription="datasetPageFormPage.resourceCreators.step.stepDescription"
@@ -234,7 +226,6 @@ exports[`DatasetPageFormPage renders correctly 1`] = `
       key="datasetPageFormPage.metadataProviders.step.stepTitle"
       nextStep="datasetPageFormPage.keywords.step.stepTitle"
       onContinueButtonClick={[Function]}
-      onCopyPreviousDataClick={[Function]}
       onStepTitleClick={[Function]}
       selectedData="to be added"
       stepDescription="datasetPageFormPage.metadataProviders.step.stepDescription"
@@ -293,7 +284,6 @@ exports[`DatasetPageFormPage renders correctly 1`] = `
       dataDescription="datasetPageFormPage.keywords.step.dataDescription"
       key="datasetPageFormPage.keywords.step.stepTitle"
       onContinueButtonClick={[Function]}
-      onCopyPreviousDataClick={[Function]}
       onStepTitleClick={[Function]}
       selectedData="to be added"
       stepDescription="datasetPageFormPage.keywords.step.stepDescription"

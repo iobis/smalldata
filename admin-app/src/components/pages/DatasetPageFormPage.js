@@ -30,8 +30,6 @@ export default function DatasetPageFormPage() {
     stepDescription: t('datasetPageFormPage.basicInformation.step.stepDescription'),
     stepTitle:       t('datasetPageFormPage.basicInformation.step.stepTitle'),
 
-    onCopyPreviousDataClick: () => {},
-
     children:
       <div>BASIC INFORMATION</div>
   }, {
@@ -40,8 +38,6 @@ export default function DatasetPageFormPage() {
     selectedData:    'to be added',
     stepDescription: t('datasetPageFormPage.resourceContacts.step.stepDescription'),
     stepTitle:       t('datasetPageFormPage.resourceContacts.step.stepTitle'),
-
-    onCopyPreviousDataClick: () => {},
 
     children:
       <div>RESOURCE CONTACTS</div>
@@ -52,8 +48,6 @@ export default function DatasetPageFormPage() {
     stepDescription: t('datasetPageFormPage.resourceCreators.step.stepDescription'),
     stepTitle:       t('datasetPageFormPage.resourceCreators.step.stepTitle'),
 
-    onCopyPreviousDataClick: () => {},
-
     children:
       <div>RESOURCE CREATOR</div>
   }, {
@@ -63,8 +57,6 @@ export default function DatasetPageFormPage() {
     stepDescription: t('datasetPageFormPage.metadataProviders.step.stepDescription'),
     stepTitle:       t('datasetPageFormPage.metadataProviders.step.stepTitle'),
 
-    onCopyPreviousDataClick: () => {},
-
     children:
       <div>METADATA PROVIDERS</div>
   }, {
@@ -72,8 +64,6 @@ export default function DatasetPageFormPage() {
     selectedData:    'to be added',
     stepDescription: t('datasetPageFormPage.keywords.step.stepDescription'),
     stepTitle:       t('datasetPageFormPage.keywords.step.stepTitle'),
-
-    onCopyPreviousDataClick: () => {},
 
     children:
       <div>KEYWORDS</div>
