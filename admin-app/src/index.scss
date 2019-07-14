@@ -1,9 +1,11 @@
 $section-padding: 0.5rem;
 
 @import '../../node_modules/bulma/bulma';
+@import '../../dwca-lib/src/components/form/all.scss';
 @import 'components/layout/Divider';
 @import 'components/layout/Navbar';
 @import 'components/pages/ManageUsersPage';
+@import 'components/pages/UserFormPage';
 
 body {
   margin: 0;

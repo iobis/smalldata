@@ -329,5 +329,11 @@ export function getUsersDefaultResponse() {
     'emailAddress': 'another.user@domain.org',
     'dataset_refs': ['wEaBfmFyQhYCdsk', 'PoJnGNMaxsupE4w', 'NnqVLwIyPn-nRkc'],
     'bulkiness':    0.0
+  }, {
+    '_id':          'id-3',
+    '_ref':         'red-3',
+    'emailAddress': 'some.user@domain.org',
+    'dataset_refs': undefined,
+    'bulkiness':    0.0
   }]
 }
