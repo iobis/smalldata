@@ -60,7 +60,7 @@ export default function OceanExpertNameInput({ oceanExpertName, onChange }) {
   }
 
   return (
-    <div className="field column is-four-fifths" ref={ref}>
+    <div className="ocean-expert-name-input field column is-four-fifths" ref={ref}>
       <div className={classNames('dropdown', { 'is-active': dropdownActive && suggestions.length > 0 })}>
         <div className="dropdown-trigger">
           <label className="label">{t('userFormPage.name.label')}</label>

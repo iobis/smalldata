@@ -82,7 +82,7 @@ export default function UserFormPage() {
         oceanExpertName={name}
         onChange={handleOceanExpertProfileChange}/>
       <InputText
-        className="institution-code"
+        className="email"
         name="userFormPage.email"
         onChange={setEmail}
         value={email}/>

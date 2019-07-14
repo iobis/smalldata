@@ -1,518 +1,606 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`UserFormPage renders correctly 1`] = `
-<AuthProvider>
-  <UserFormPage>
-    <div
-      className="user-form-page section is-fluid"
-    >
-      <OceanExpertNameInput
-        oceanExpertName=""
-        onChange={[Function]}
-      >
+exports[`UserFormPage renders correctly for successful workflow 1`] = `
+<MemoryRouter
+  initialEntries={
+    Array [
+      Object {
+        "key": "testKey",
+        "pathname": "/manage-users",
+      },
+    ]
+  }
+>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "testKey",
+            "pathname": "/manage-users",
+            "search": "",
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "testKey",
+          "pathname": "/manage-users",
+          "search": "",
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <AuthProvider>
+      <UserFormPage>
         <div
-          className="field column is-four-fifths"
+          className="user-form-page section is-fluid"
         >
-          <div
-            className="dropdown"
+          <OceanExpertNameInput
+            oceanExpertName=""
+            onChange={[Function]}
           >
             <div
-              className="dropdown-trigger"
+              className="ocean-expert-name-input field column is-four-fifths"
+            >
+              <div
+                className="dropdown"
+              >
+                <div
+                  className="dropdown-trigger"
+                >
+                  <label
+                    className="label"
+                  >
+                    userFormPage.name.label
+                  </label>
+                  <div
+                    className="control has-icons-right"
+                  >
+                    <input
+                      className="input"
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      placeholder=""
+                      type="text"
+                      value=""
+                    />
+                  </div>
+                </div>
+                <div
+                  className="dropdown-menu"
+                  id="dropdown-menu"
+                  role="menu"
+                >
+                  <div
+                    className="dropdown-content"
+                  />
+                </div>
+              </div>
+            </div>
+          </OceanExpertNameInput>
+          <InputText
+            className="email"
+            name="userFormPage.email"
+            onChange={[Function]}
+            value=""
+          >
+            <div
+              className="column field email"
             >
               <label
                 className="label"
               >
-                userFormPage.name.label
+                userFormPage.email.label
               </label>
-              <div
-                className="control has-icons-right"
-              >
-                <input
-                  className="input"
-                  onChange={[Function]}
-                  onClick={[Function]}
-                  placeholder=""
-                  type="text"
-                  value=""
-                />
-              </div>
-            </div>
-            <div
-              className="dropdown-menu"
-              id="dropdown-menu"
-              role="menu"
-            >
-              <div
-                className="dropdown-content"
+              <input
+                className="input"
+                onChange={[Function]}
+                type="text"
+                value=""
               />
             </div>
-          </div>
-        </div>
-      </OceanExpertNameInput>
-      <InputText
-        className="institution-code"
-        name="userFormPage.email"
-        onChange={[Function]}
-        value=""
-      >
-        <div
-          className="column field institution-code"
-        >
-          <label
-            className="label"
-          >
-            userFormPage.email.label
-          </label>
-          <input
-            className="input"
-            onChange={[Function]}
-            type="text"
-            value=""
-          />
-        </div>
-      </InputText>
-      <div
-        className="column field"
-      >
-        <label
-          className="label"
-        >
-          userFormPage.userRole.label
-        </label>
-        <Dropdown
-          onChange={[Function]}
-          options={
-            Array [
-              "researcher",
-              "node manager",
-            ]
-          }
-          value="researcher"
-        >
+          </InputText>
           <div
-            className="dropdown"
-            onClick={[Function]}
+            className="column field"
           >
-            <div
-              className="dropdown-trigger"
+            <label
+              className="label"
             >
-              <button
-                aria-controls="dropdown-menu"
-                aria-haspopup="true"
-                className="button"
-              >
-                <span
-                  className="selected-value"
-                >
-                  researcher
-                </span>
-                <span
-                  className="icon is-small"
-                >
-                  <FontAwesomeIcon
-                    className="angle-down"
-                    icon="angle-down"
-                  >
-                    <i
-                      className="angle-down"
-                      icon="angle-down"
-                    />
-                  </FontAwesomeIcon>
-                </span>
-              </button>
-            </div>
-            <div
-              className="dropdown-menu"
-              id="dropdown-menu"
-              role="menu"
+              userFormPage.userRole.label
+            </label>
+            <Dropdown
+              onChange={[Function]}
+              options={
+                Array [
+                  "researcher",
+                  "node manager",
+                ]
+              }
+              value="researcher"
             >
               <div
-                className="dropdown-content"
+                className="dropdown"
+                onClick={[Function]}
               >
                 <div
-                  className="dropdown-item is-active"
-                  key="researcher"
-                  onClick={[Function]}
+                  className="dropdown-trigger"
                 >
-                  researcher
+                  <button
+                    aria-controls="dropdown-menu"
+                    aria-haspopup="true"
+                    className="button"
+                  >
+                    <span
+                      className="selected-value"
+                    >
+                      researcher
+                    </span>
+                    <span
+                      className="icon is-small"
+                    >
+                      <FontAwesomeIcon
+                        className="angle-down"
+                        icon="angle-down"
+                      >
+                        <i
+                          className="angle-down"
+                          icon="angle-down"
+                        />
+                      </FontAwesomeIcon>
+                    </span>
+                  </button>
                 </div>
                 <div
-                  className="dropdown-item"
-                  key="node manager"
-                  onClick={[Function]}
+                  className="dropdown-menu"
+                  id="dropdown-menu"
+                  role="menu"
                 >
-                  node manager
+                  <div
+                    className="dropdown-content"
+                  >
+                    <div
+                      className="dropdown-item is-active"
+                      key="researcher"
+                      onClick={[Function]}
+                    >
+                      researcher
+                    </div>
+                    <div
+                      className="dropdown-item"
+                      key="node manager"
+                      onClick={[Function]}
+                    >
+                      node manager
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Dropdown>
           </div>
-        </Dropdown>
-      </div>
-      <table
-        className="table is-striped is-hoverable is-fullwidth"
-      >
-        <thead>
-          <tr>
-            <th />
-            <th>
-              manageDatasetPage.table.title
-            </th>
-            <th>
-              manageDatasetPage.table.organization
-            </th>
-            <th>
-              manageDatasetPage.table.licence
-            </th>
-          </tr>
-        </thead>
-        <tbody />
-      </table>
-      <AddUserButton
-        disabled={true}
-        onClick={[Function]}
-      >
-        <div
-          className="add-user-button columns is-mobile is-centered"
-        >
-          <button
-            className="button is-info is-medium"
+          <table
+            className="table is-striped is-hoverable is-fullwidth"
+          >
+            <thead>
+              <tr>
+                <th />
+                <th>
+                  manageDatasetPage.table.title
+                </th>
+                <th>
+                  manageDatasetPage.table.organization
+                </th>
+                <th>
+                  manageDatasetPage.table.licence
+                </th>
+              </tr>
+            </thead>
+            <tbody />
+          </table>
+          <AddUserButton
             disabled={true}
             onClick={[Function]}
           >
-            userFormPage.addUserButton
-          </button>
+            <div
+              className="add-user-button columns is-mobile is-centered"
+            >
+              <button
+                className="button is-info is-medium"
+                disabled={true}
+                onClick={[Function]}
+              >
+                userFormPage.addUserButton
+              </button>
+            </div>
+          </AddUserButton>
         </div>
-      </AddUserButton>
-    </div>
-  </UserFormPage>
-</AuthProvider>
+      </UserFormPage>
+    </AuthProvider>
+  </Router>
+</MemoryRouter>
 `;
 
-exports[`UserFormPage renders correctly 2`] = `
-<AuthProvider>
-  <UserFormPage>
-    <div
-      className="user-form-page section is-fluid"
-    >
-      <OceanExpertNameInput
-        oceanExpertName=""
-        onChange={[Function]}
-      >
+exports[`UserFormPage renders correctly for successful workflow 2`] = `
+<MemoryRouter
+  initialEntries={
+    Array [
+      Object {
+        "key": "testKey",
+        "pathname": "/manage-users",
+      },
+    ]
+  }
+>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "testKey",
+            "pathname": "/manage-users",
+            "search": "",
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "testKey",
+          "pathname": "/manage-users",
+          "search": "",
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <AuthProvider>
+      <UserFormPage>
         <div
-          className="field column is-four-fifths"
+          className="user-form-page section is-fluid"
         >
-          <div
-            className="dropdown"
+          <OceanExpertNameInput
+            oceanExpertName=""
+            onChange={[Function]}
           >
             <div
-              className="dropdown-trigger"
+              className="ocean-expert-name-input field column is-four-fifths"
+            >
+              <div
+                className="dropdown"
+              >
+                <div
+                  className="dropdown-trigger"
+                >
+                  <label
+                    className="label"
+                  >
+                    userFormPage.name.label
+                  </label>
+                  <div
+                    className="control has-icons-right"
+                  >
+                    <input
+                      className="input"
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      placeholder=""
+                      type="text"
+                      value=""
+                    />
+                  </div>
+                </div>
+                <div
+                  className="dropdown-menu"
+                  id="dropdown-menu"
+                  role="menu"
+                >
+                  <div
+                    className="dropdown-content"
+                  />
+                </div>
+              </div>
+            </div>
+          </OceanExpertNameInput>
+          <InputText
+            className="email"
+            name="userFormPage.email"
+            onChange={[Function]}
+            value=""
+          >
+            <div
+              className="column field email"
             >
               <label
                 className="label"
               >
-                userFormPage.name.label
+                userFormPage.email.label
               </label>
-              <div
-                className="control has-icons-right"
-              >
-                <input
-                  className="input"
-                  onChange={[Function]}
-                  onClick={[Function]}
-                  placeholder=""
-                  type="text"
-                  value=""
-                />
-              </div>
-            </div>
-            <div
-              className="dropdown-menu"
-              id="dropdown-menu"
-              role="menu"
-            >
-              <div
-                className="dropdown-content"
+              <input
+                className="input"
+                onChange={[Function]}
+                type="text"
+                value=""
               />
             </div>
-          </div>
-        </div>
-      </OceanExpertNameInput>
-      <InputText
-        className="institution-code"
-        name="userFormPage.email"
-        onChange={[Function]}
-        value=""
-      >
-        <div
-          className="column field institution-code"
-        >
-          <label
-            className="label"
-          >
-            userFormPage.email.label
-          </label>
-          <input
-            className="input"
-            onChange={[Function]}
-            type="text"
-            value=""
-          />
-        </div>
-      </InputText>
-      <div
-        className="column field"
-      >
-        <label
-          className="label"
-        >
-          userFormPage.userRole.label
-        </label>
-        <Dropdown
-          onChange={[Function]}
-          options={
-            Array [
-              "researcher",
-              "node manager",
-            ]
-          }
-          value="researcher"
-        >
+          </InputText>
           <div
-            className="dropdown"
-            onClick={[Function]}
+            className="column field"
           >
-            <div
-              className="dropdown-trigger"
+            <label
+              className="label"
             >
-              <button
-                aria-controls="dropdown-menu"
-                aria-haspopup="true"
-                className="button"
-              >
-                <span
-                  className="selected-value"
-                >
-                  researcher
-                </span>
-                <span
-                  className="icon is-small"
-                >
-                  <FontAwesomeIcon
-                    className="angle-down"
-                    icon="angle-down"
-                  >
-                    <i
-                      className="angle-down"
-                      icon="angle-down"
-                    />
-                  </FontAwesomeIcon>
-                </span>
-              </button>
-            </div>
-            <div
-              className="dropdown-menu"
-              id="dropdown-menu"
-              role="menu"
+              userFormPage.userRole.label
+            </label>
+            <Dropdown
+              onChange={[Function]}
+              options={
+                Array [
+                  "researcher",
+                  "node manager",
+                ]
+              }
+              value="researcher"
             >
               <div
-                className="dropdown-content"
+                className="dropdown"
+                onClick={[Function]}
               >
                 <div
-                  className="dropdown-item is-active"
-                  key="researcher"
-                  onClick={[Function]}
+                  className="dropdown-trigger"
                 >
-                  researcher
+                  <button
+                    aria-controls="dropdown-menu"
+                    aria-haspopup="true"
+                    className="button"
+                  >
+                    <span
+                      className="selected-value"
+                    >
+                      researcher
+                    </span>
+                    <span
+                      className="icon is-small"
+                    >
+                      <FontAwesomeIcon
+                        className="angle-down"
+                        icon="angle-down"
+                      >
+                        <i
+                          className="angle-down"
+                          icon="angle-down"
+                        />
+                      </FontAwesomeIcon>
+                    </span>
+                  </button>
                 </div>
                 <div
-                  className="dropdown-item"
-                  key="node manager"
-                  onClick={[Function]}
+                  className="dropdown-menu"
+                  id="dropdown-menu"
+                  role="menu"
                 >
-                  node manager
+                  <div
+                    className="dropdown-content"
+                  >
+                    <div
+                      className="dropdown-item is-active"
+                      key="researcher"
+                      onClick={[Function]}
+                    >
+                      researcher
+                    </div>
+                    <div
+                      className="dropdown-item"
+                      key="node manager"
+                      onClick={[Function]}
+                    >
+                      node manager
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Dropdown>
           </div>
-        </Dropdown>
-      </div>
-      <table
-        className="table is-striped is-hoverable is-fullwidth"
-      >
-        <thead>
-          <tr>
-            <th />
-            <th>
-              manageDatasetPage.table.title
-            </th>
-            <th>
-              manageDatasetPage.table.organization
-            </th>
-            <th>
-              manageDatasetPage.table.licence
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <DatasetRow
-            checked={false}
-            key="wEaBfmFyQhYCdsk"
-            license="Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License"
-            onChange={[Function]}
-            organization="—"
-            title="Caprellids polulation structure in Usujiri, Hokkaido, Japan"
+          <table
+            className="table is-striped is-hoverable is-fullwidth"
           >
-            <tr
-              className="dataset-row"
-            >
-              <td>
-                <input
-                  checked={false}
-                  onChange={[Function]}
-                  type="checkbox"
-                />
-              </td>
-              <td
-                className="dataset-title"
+            <thead>
+              <tr>
+                <th />
+                <th>
+                  manageDatasetPage.table.title
+                </th>
+                <th>
+                  manageDatasetPage.table.organization
+                </th>
+                <th>
+                  manageDatasetPage.table.licence
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <DatasetRow
+                checked={false}
+                key="wEaBfmFyQhYCdsk"
+                license="Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License"
+                onChange={[Function]}
+                organization="—"
+                title="Caprellids polulation structure in Usujiri, Hokkaido, Japan"
               >
-                Caprellids polulation structure in Usujiri, Hokkaido, Japan
-              </td>
-              <td
-                className="organization"
+                <tr
+                  className="dataset-row"
+                >
+                  <td>
+                    <input
+                      checked={false}
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                  </td>
+                  <td
+                    className="dataset-title"
+                  >
+                    Caprellids polulation structure in Usujiri, Hokkaido, Japan
+                  </td>
+                  <td
+                    className="organization"
+                  >
+                    —
+                  </td>
+                  <td
+                    className="license"
+                  >
+                    Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License
+                  </td>
+                </tr>
+              </DatasetRow>
+              <DatasetRow
+                checked={false}
+                key="ntDOtUc7XsRrIus"
+                license="Creative Commons Attribution Non Commercial (CC-BY) 4.0 License"
+                onChange={[Function]}
+                organization="Flanders Marine Institute (VLIZ)"
+                title="Benthos collected in the Azov Sea in 1935 on board the R/V \\"N. Danilevskiy\\""
               >
-                —
-              </td>
-              <td
-                className="license"
+                <tr
+                  className="dataset-row"
+                >
+                  <td>
+                    <input
+                      checked={false}
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                  </td>
+                  <td
+                    className="dataset-title"
+                  >
+                    Benthos collected in the Azov Sea in 1935 on board the R/V "N. Danilevskiy"
+                  </td>
+                  <td
+                    className="organization"
+                  >
+                    Flanders Marine Institute (VLIZ)
+                  </td>
+                  <td
+                    className="license"
+                  >
+                    Creative Commons Attribution Non Commercial (CC-BY) 4.0 License
+                  </td>
+                </tr>
+              </DatasetRow>
+              <DatasetRow
+                checked={false}
+                key="PoJnGNMaxsupE4w"
+                license="Creative Commons Attribution Non Commercial (CC-BY) 4.0 License"
+                onChange={[Function]}
+                organization="Flanders Marine Institute (VLIZ)"
+                title="Antipatharia distribution data from: Deep-sea fauna of European seas - an annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe"
               >
-                Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License
-              </td>
-            </tr>
-          </DatasetRow>
-          <DatasetRow
-            checked={false}
-            key="ntDOtUc7XsRrIus"
-            license="Creative Commons Attribution Non Commercial (CC-BY) 4.0 License"
-            onChange={[Function]}
-            organization="Flanders Marine Institute (VLIZ)"
-            title="Benthos collected in the Azov Sea in 1935 on board the R/V \\"N. Danilevskiy\\""
-          >
-            <tr
-              className="dataset-row"
-            >
-              <td>
-                <input
-                  checked={false}
-                  onChange={[Function]}
-                  type="checkbox"
-                />
-              </td>
-              <td
-                className="dataset-title"
+                <tr
+                  className="dataset-row"
+                >
+                  <td>
+                    <input
+                      checked={false}
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                  </td>
+                  <td
+                    className="dataset-title"
+                  >
+                    Antipatharia distribution data from: Deep-sea fauna of European seas - an annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe
+                  </td>
+                  <td
+                    className="organization"
+                  >
+                    Flanders Marine Institute (VLIZ)
+                  </td>
+                  <td
+                    className="license"
+                  >
+                    Creative Commons Attribution Non Commercial (CC-BY) 4.0 License
+                  </td>
+                </tr>
+              </DatasetRow>
+              <DatasetRow
+                checked={false}
+                key="NnqVLwIyPn-nRkc"
+                license="Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License"
+                onChange={[Function]}
+                organization="Flanders Marine Institute (VLIZ)"
+                title="Benthic data from Sevastopol (Black Sea)"
               >
-                Benthos collected in the Azov Sea in 1935 on board the R/V "N. Danilevskiy"
-              </td>
-              <td
-                className="organization"
-              >
-                Flanders Marine Institute (VLIZ)
-              </td>
-              <td
-                className="license"
-              >
-                Creative Commons Attribution Non Commercial (CC-BY) 4.0 License
-              </td>
-            </tr>
-          </DatasetRow>
-          <DatasetRow
-            checked={false}
-            key="PoJnGNMaxsupE4w"
-            license="Creative Commons Attribution Non Commercial (CC-BY) 4.0 License"
-            onChange={[Function]}
-            organization="Flanders Marine Institute (VLIZ)"
-            title="Antipatharia distribution data from: Deep-sea fauna of European seas - an annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe"
-          >
-            <tr
-              className="dataset-row"
-            >
-              <td>
-                <input
-                  checked={false}
-                  onChange={[Function]}
-                  type="checkbox"
-                />
-              </td>
-              <td
-                className="dataset-title"
-              >
-                Antipatharia distribution data from: Deep-sea fauna of European seas - an annotated species check-list of benthic invertebrates living deeper than 2000 m in the seas bordering Europe
-              </td>
-              <td
-                className="organization"
-              >
-                Flanders Marine Institute (VLIZ)
-              </td>
-              <td
-                className="license"
-              >
-                Creative Commons Attribution Non Commercial (CC-BY) 4.0 License
-              </td>
-            </tr>
-          </DatasetRow>
-          <DatasetRow
-            checked={false}
-            key="NnqVLwIyPn-nRkc"
-            license="Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License"
-            onChange={[Function]}
-            organization="Flanders Marine Institute (VLIZ)"
-            title="Benthic data from Sevastopol (Black Sea)"
-          >
-            <tr
-              className="dataset-row"
-            >
-              <td>
-                <input
-                  checked={false}
-                  onChange={[Function]}
-                  type="checkbox"
-                />
-              </td>
-              <td
-                className="dataset-title"
-              >
-                Benthic data from Sevastopol (Black Sea)
-              </td>
-              <td
-                className="organization"
-              >
-                Flanders Marine Institute (VLIZ)
-              </td>
-              <td
-                className="license"
-              >
-                Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License
-              </td>
-            </tr>
-          </DatasetRow>
-        </tbody>
-      </table>
-      <AddUserButton
-        disabled={true}
-        onClick={[Function]}
-      >
-        <div
-          className="add-user-button columns is-mobile is-centered"
-        >
-          <button
-            className="button is-info is-medium"
+                <tr
+                  className="dataset-row"
+                >
+                  <td>
+                    <input
+                      checked={false}
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                  </td>
+                  <td
+                    className="dataset-title"
+                  >
+                    Benthic data from Sevastopol (Black Sea)
+                  </td>
+                  <td
+                    className="organization"
+                  >
+                    Flanders Marine Institute (VLIZ)
+                  </td>
+                  <td
+                    className="license"
+                  >
+                    Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License
+                  </td>
+                </tr>
+              </DatasetRow>
+            </tbody>
+          </table>
+          <AddUserButton
             disabled={true}
             onClick={[Function]}
           >
-            userFormPage.addUserButton
-          </button>
+            <div
+              className="add-user-button columns is-mobile is-centered"
+            >
+              <button
+                className="button is-info is-medium"
+                disabled={true}
+                onClick={[Function]}
+              >
+                userFormPage.addUserButton
+              </button>
+            </div>
+          </AddUserButton>
         </div>
-      </AddUserButton>
-    </div>
-  </UserFormPage>
-</AuthProvider>
+      </UserFormPage>
+    </AuthProvider>
+  </Router>
+</MemoryRouter>
 `;
