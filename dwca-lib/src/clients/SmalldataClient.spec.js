@@ -301,16 +301,18 @@ describe('SmalldataClient', () => {
 
     it('when providing all data', async() => {
       await SmalldataClient.createUser({
+        datasetIds: ['dataset-ref-1', 'dataset-ref-2'],
         email:      'some@email.com',
-        datasetIds: ['dataset-ref-1', 'dataset-ref-2']
+        role:       'researcher'
       })
       expect(fetch).toHaveBeenCalledTimes(1)
       expect(fetch.mock.calls[0][0]).toBe('/api/users')
       expect(fetch.mock.calls[0][1].method).toBe('POST')
       expect(fetch.mock.calls[0][1].headers).toEqual(expectedHeaders)
       expect(JSON.parse(fetch.mock.calls[0][1].body)).toEqual({
+        'dataset_refs': ['dataset-ref-1', 'dataset-ref-2'],
         emailAddress:   'some@email.com',
-        'dataset_refs': ['dataset-ref-1', 'dataset-ref-2']
+        role:           'researcher'
       })
     })
   })

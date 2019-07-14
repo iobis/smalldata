@@ -70,10 +70,11 @@ export async function getUsersWithDatasets() {
   })
 }
 
-export async function createUser({ email, datasetIds }) {
+export async function createUser({ datasetIds, email, role }) {
   const request = {
     emailAddress:   email,
-    'dataset_refs': datasetIds
+    'dataset_refs': datasetIds,
+    role
   }
   const url = '/api/users'
   return await fetch(url, {
