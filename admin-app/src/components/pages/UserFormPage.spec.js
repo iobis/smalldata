@@ -154,6 +154,54 @@ describe('UserFormPage', () => {
       expect(wrapper.find('.submit-user-button button').props()['disabled']).toBe(false)
       expect(wrapper.find('.submit-user-button button').text()).toBe('userFormPage.submitUserButton.update')
       expect(wrapper).toMatchSnapshot()
+
+      wrapper.find('.ocean-expert-name-input .input').simulate('change', { target: { value: 'Harrison Ford' } })
+      wrapper.update()
+      expect(wrapper.find('.ocean-expert-name-input .input').prop('value')).toBe('Harrison Ford')
+      expect(wrapper.find('.submit-user-button button').props()['disabled']).toBe(false)
+
+      wrapper.find('.email input').simulate('change', { target: { value: 'harrison.ford@gmail.com' } })
+      wrapper.update()
+      expect(wrapper.find('.email input').prop('value')).toBe('harrison.ford@gmail.com')
+      expect(wrapper.find('.submit-user-button button').props()['disabled']).toBe(false)
+
+      wrapper.find('.dropdown').at(1).simulate('click')
+      wrapper.find('.dropdown .dropdown-item').at(0).simulate('click')
+      wrapper.update()
+      expect(wrapper.find('.dropdown .selected-value').text()).toBe('researcher')
+      expect(wrapper.find('.submit-user-button button').props()['disabled']).toBe(false)
+
+      wrapper.find('.submit-user-button button').simulate('click')
+      await waitUntil(() => {
+        wrapper.update()
+        return wrapper.find('.submit-user-button').length === 0
+      })
+      expect(wrapper.exists('.submit-user-button')).toBe(false)
+      expect(wrapper.exists('.success-message')).toBe(true)
+      expect(wrapper.exists('.error-message')).toBe(false)
+      expect(global.fetch).toHaveBeenCalledTimes(2)
+      expect(global.fetch).toHaveBeenNthCalledWith(2, '/api/users/5d2b7998c1d37d36d4a41ab8', {
+        'body':    JSON.stringify({
+          'dataset_refs': ['ntDOtUc7XsRrIus'],
+          'emailAddress': 'harrison.ford@gmail.com',
+          'name':         'Harrison Ford',
+          'role':         'researcher'
+        }),
+        'headers': {
+          'Authorization': 'Basic verysecret',
+          'Content-Type':  'application/json'
+        },
+        'method':  'PUT'
+      })
+
+      wrapper.find('.success-message .create-another-user').simulate('click')
+      expect(wrapper.find('.ocean-expert-name-input .input').prop('value')).toBe('')
+      expect(wrapper.find('.email input').prop('value')).toBe('')
+      expect(wrapper.find('.dropdown .selected-value').text()).toBe('researcher')
+      expect(wrapper.exists('.submit-user-button')).toBe(true)
+      expect(wrapper.find('.submit-user-button button').props()['disabled']).toBe(true)
+      expect(wrapper.exists('.success-message')).toBe(false)
+      expect(wrapper.exists('.error-message')).toBe(false)
     })
   })
 })

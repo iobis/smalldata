@@ -318,6 +318,40 @@ describe('SmalldataClient', () => {
       })
     })
   })
+
+  describe('updateUser()', () => {
+    beforeEach(() => {
+      global.fetch = jest.fn().mockImplementation(() =>
+        new Promise((resolve) => {
+          resolve({ json: () => 'default-response' })
+        })
+      )
+    })
+
+    afterEach(() => {
+      global.fetch.mockRestore()
+    })
+
+    it('when providing all data', async() => {
+      await SmalldataClient.updateUser({
+        id:         'user-id',
+        datasetIds: ['dataset-ref-1', 'dataset-ref-2'],
+        email:      'some@email.com',
+        name:       'name',
+        role:       'researcher'
+      })
+      expect(fetch).toHaveBeenCalledTimes(1)
+      expect(fetch.mock.calls[0][0]).toBe('/api/users/user-id')
+      expect(fetch.mock.calls[0][1].method).toBe('PUT')
+      expect(fetch.mock.calls[0][1].headers).toEqual(expectedHeaders)
+      expect(JSON.parse(fetch.mock.calls[0][1].body)).toEqual({
+        'dataset_refs': ['dataset-ref-1', 'dataset-ref-2'],
+        emailAddress:   'some@email.com',
+        name:           'name',
+        role:           'researcher'
+      })
+    })
+  })
 })
 
 function getDefaultOccurrence() {

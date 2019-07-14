@@ -4,7 +4,7 @@ import InputText from '@smalldata/dwca-lib/src/components/form/InputText'
 import OceanExpertNameInput from './OceanExpertNameInput/OceanExpertNameInput'
 import PropTypes from 'prop-types'
 import React, { useEffect, useRef, useState } from 'react'
-import { createUser, getDatasets } from '@smalldata/dwca-lib/src/clients/SmalldataClient'
+import { createUser, getDatasets, updateUser } from '@smalldata/dwca-lib/src/clients/SmalldataClient'
 import { Link } from 'react-router-dom'
 import { scrollToRef } from '@smalldata/dwca-lib/src/browser/scroll'
 import { useTranslation } from 'react-i18next'
@@ -46,13 +46,17 @@ export default function UserFormPage({ location }) {
     setName(name)
   }
 
-  async function handleAddUserButtonClick() {
-    const response = await createUser({
+  async function handleSubmitUserButtonClick() {
+    const user = {
       datasetIds: selectedDatasets,
       email,
       name,
       role
-    })
+    }
+    const response = action === 'update' && !!location.state.id
+      ? await updateUser({ id: location.state.id, ...user })
+      : await createUser(user)
+
     if (response.exception) {
       setErrorVisible(true)
       setErrorMessage(response.exception + ': ' + response.exceptionMessage)
@@ -70,6 +74,7 @@ export default function UserFormPage({ location }) {
 
   function handleCreateAnotherUserClick() {
     const initialState = createInitialState()
+    setAction('create')
     setSuccessVisible(false)
     setName(initialState.name)
     setEmail(initialState.email)
@@ -137,7 +142,7 @@ export default function UserFormPage({ location }) {
           {errorMessage}
         </div>) : null}
       {!successVisible
-        ? <SubmitUserButton action={action} disabled={!addUserButtonEnabled} onClick={handleAddUserButtonClick}/>
+        ? <SubmitUserButton action={action} disabled={!addUserButtonEnabled} onClick={handleSubmitUserButtonClick}/>
         : null
       }
     </div>
@@ -147,6 +152,7 @@ export default function UserFormPage({ location }) {
 UserFormPage.propTypes = {
   location: PropTypes.shape({
     state: PropTypes.shape({
+      id:         PropTypes.string.isRequired,
       action:     PropTypes.oneOf(['create', 'update']),
       datasetIds: PropTypes.arrayOf(PropTypes.string).isRequired,
       email:      PropTypes.string.isRequired,
