@@ -53,32 +53,33 @@ describe('UserFormPage', () => {
     expect(wrapper.find('.dropdown .selected-value').text()).toBe('researcher')
     expect(wrapper.exists('.success-message')).toBe(false)
     expect(wrapper.exists('.error-message')).toBe(false)
-    expect(wrapper.exists('.add-user-button')).toBe(true)
-    expect(wrapper.find('.add-user-button button').props()['disabled']).toBe(true)
+    expect(wrapper.exists('.submit-user-button')).toBe(true)
+    expect(wrapper.find('.submit-user-button button').props()['disabled']).toBe(true)
+    expect(wrapper.find('.submit-user-button button').text()).toBe('userFormPage.submitUserButton.create')
     expect(wrapper).toMatchSnapshot()
 
     wrapper.find('.ocean-expert-name-input .input').simulate('change', { target: { value: 'Indiana Jones' } })
     wrapper.update()
     expect(wrapper.find('.ocean-expert-name-input .input').prop('value')).toBe('Indiana Jones')
-    expect(wrapper.find('.add-user-button button').props()['disabled']).toBe(true)
+    expect(wrapper.find('.submit-user-button button').props()['disabled']).toBe(true)
 
     wrapper.find('.email input').simulate('change', { target: { value: 'indiana.jones@gmail.com' } })
     wrapper.update()
     expect(wrapper.find('.email input').prop('value')).toBe('indiana.jones@gmail.com')
-    expect(wrapper.find('.add-user-button button').props()['disabled']).toBe(false)
+    expect(wrapper.find('.submit-user-button button').props()['disabled']).toBe(false)
 
     wrapper.find('.dropdown').at(1).simulate('click')
     wrapper.find('.dropdown .dropdown-item').at(1).simulate('click')
     wrapper.update()
     expect(wrapper.find('.dropdown .selected-value').text()).toBe('node manager')
-    expect(wrapper.find('.add-user-button button').props()['disabled']).toBe(false)
+    expect(wrapper.find('.submit-user-button button').props()['disabled']).toBe(false)
 
-    wrapper.find('.add-user-button button').simulate('click')
+    wrapper.find('.submit-user-button button').simulate('click')
     await waitUntil(() => {
       wrapper.update()
-      return wrapper.find('.add-user-button').length === 0
+      return wrapper.find('.submit-user-button').length === 0
     })
-    expect(wrapper.exists('.add-user-button')).toBe(false)
+    expect(wrapper.exists('.submit-user-button')).toBe(false)
     expect(wrapper.exists('.success-message')).toBe(true)
     expect(wrapper.exists('.error-message')).toBe(false)
     expect(global.fetch).toHaveBeenCalledTimes(2)
@@ -100,8 +101,8 @@ describe('UserFormPage', () => {
     expect(wrapper.find('.ocean-expert-name-input .input').prop('value')).toBe('')
     expect(wrapper.find('.email input').prop('value')).toBe('')
     expect(wrapper.find('.dropdown .selected-value').text()).toBe('researcher')
-    expect(wrapper.exists('.add-user-button')).toBe(true)
-    expect(wrapper.find('.add-user-button button').props()['disabled']).toBe(true)
+    expect(wrapper.exists('.submit-user-button')).toBe(true)
+    expect(wrapper.find('.submit-user-button button').props()['disabled']).toBe(true)
     expect(wrapper.exists('.success-message')).toBe(false)
     expect(wrapper.exists('.error-message')).toBe(false)
   })
@@ -116,6 +117,7 @@ describe('UserFormPage', () => {
               <UserFormPage
                 location={{
                   state: {
+                    action:     'update',
                     id:         '5d2b7998c1d37d36d4a41ab8',
                     datasetIds: ['ntDOtUc7XsRrIus'],
                     email:      'indiana.jones@gmail.com',
@@ -148,8 +150,9 @@ describe('UserFormPage', () => {
       expect(wrapper.find('.dataset-row input').map(el => el.props().checked)).toEqual([false, true, false, false])
       expect(wrapper.exists('.success-message')).toBe(false)
       expect(wrapper.exists('.error-message')).toBe(false)
-      expect(wrapper.exists('.add-user-button')).toBe(true)
-      expect(wrapper.find('.add-user-button button').props()['disabled']).toBe(false)
+      expect(wrapper.exists('.submit-user-button')).toBe(true)
+      expect(wrapper.find('.submit-user-button button').props()['disabled']).toBe(false)
+      expect(wrapper.find('.submit-user-button button').text()).toBe('userFormPage.submitUserButton.update')
       expect(wrapper).toMatchSnapshot()
     })
   })

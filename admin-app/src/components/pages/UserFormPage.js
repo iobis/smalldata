@@ -15,6 +15,7 @@ export default function UserFormPage({ location }) {
   const initialState = createInitialState(location)
   const { t } = useTranslation()
   const [datasets, setDatasets] = useState([])
+  const [action, setAction] = useState(initialState.action)
   const [name, setName] = useState(initialState.name)
   const [email, setEmail] = useState(initialState.email)
   const [role, setRole] = useState(initialState.role)
@@ -136,7 +137,7 @@ export default function UserFormPage({ location }) {
           {errorMessage}
         </div>) : null}
       {!successVisible
-        ? <AddUserButton disabled={!addUserButtonEnabled} onClick={handleAddUserButtonClick}/>
+        ? <SubmitUserButton action={action} disabled={!addUserButtonEnabled} onClick={handleAddUserButtonClick}/>
         : null
       }
     </div>
@@ -146,6 +147,7 @@ export default function UserFormPage({ location }) {
 UserFormPage.propTypes = {
   location: PropTypes.shape({
     state: PropTypes.shape({
+      action:     PropTypes.oneOf(['create', 'update']),
       datasetIds: PropTypes.arrayOf(PropTypes.string).isRequired,
       email:      PropTypes.string.isRequired,
       name:       PropTypes.string.isRequired,
@@ -173,24 +175,26 @@ DatasetRow.propTypes = {
   title:        PropTypes.string.isRequired
 }
 
-function AddUserButton({ onClick, disabled }) {
+function SubmitUserButton({ onClick, disabled, action }) {
   const { t } = useTranslation()
   return (
-    <div className="add-user-button columns is-mobile is-centered">
+    <div className="submit-user-button columns is-mobile is-centered">
       <button className="button is-info is-medium" disabled={disabled} onClick={onClick}>
-        {t('userFormPage.addUserButton')}
+        {t('userFormPage.submitUserButton.' + action)}
       </button>
     </div>
   )
 }
 
-AddUserButton.propTypes = {
+SubmitUserButton.propTypes = {
+  action:   PropTypes.oneOf(['create', 'update']).isRequired,
   disabled: PropTypes.bool.isRequired,
   onClick:  PropTypes.func.isRequired
 }
 
 function createInitialState(location) {
   const defaultInitialState = {
+    action:           'create',
     name:             '',
     email:            '',
     role:             roles[0],
@@ -198,6 +202,7 @@ function createInitialState(location) {
   }
   return !!location && !!location.state
     ? {
+      action:           location.state.action || defaultInitialState.action,
       name:             location.state.name || defaultInitialState.name,
       email:            location.state.email || defaultInitialState.email,
       role:             location.state.role || defaultInitialState.role,

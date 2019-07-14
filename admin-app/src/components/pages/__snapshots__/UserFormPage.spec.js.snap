@@ -209,22 +209,23 @@ exports[`UserFormPage renders correctly for successful workflow 1`] = `
             </thead>
             <tbody />
           </table>
-          <AddUserButton
+          <SubmitUserButton
+            action="create"
             disabled={true}
             onClick={[Function]}
           >
             <div
-              className="add-user-button columns is-mobile is-centered"
+              className="submit-user-button columns is-mobile is-centered"
             >
               <button
                 className="button is-info is-medium"
                 disabled={true}
                 onClick={[Function]}
               >
-                userFormPage.addUserButton
+                userFormPage.submitUserButton.create
               </button>
             </div>
-          </AddUserButton>
+          </SubmitUserButton>
         </div>
       </UserFormPage>
     </AuthProvider>
@@ -582,22 +583,23 @@ exports[`UserFormPage renders correctly for successful workflow 2`] = `
               </DatasetRow>
             </tbody>
           </table>
-          <AddUserButton
+          <SubmitUserButton
+            action="create"
             disabled={true}
             onClick={[Function]}
           >
             <div
-              className="add-user-button columns is-mobile is-centered"
+              className="submit-user-button columns is-mobile is-centered"
             >
               <button
                 className="button is-info is-medium"
                 disabled={true}
                 onClick={[Function]}
               >
-                userFormPage.addUserButton
+                userFormPage.submitUserButton.create
               </button>
             </div>
-          </AddUserButton>
+          </SubmitUserButton>
         </div>
       </UserFormPage>
     </AuthProvider>
@@ -653,6 +655,7 @@ exports[`UserFormPage when editing renders correctly for successful workflow 1`]
         location={
           Object {
             "state": Object {
+              "action": "update",
               "datasetIds": Array [
                 "ntDOtUc7XsRrIus",
               ],
@@ -828,22 +831,23 @@ exports[`UserFormPage when editing renders correctly for successful workflow 1`]
             </thead>
             <tbody />
           </table>
-          <AddUserButton
+          <SubmitUserButton
+            action="update"
             disabled={false}
             onClick={[Function]}
           >
             <div
-              className="add-user-button columns is-mobile is-centered"
+              className="submit-user-button columns is-mobile is-centered"
             >
               <button
                 className="button is-info is-medium"
                 disabled={false}
                 onClick={[Function]}
               >
-                userFormPage.addUserButton
+                userFormPage.submitUserButton.update
               </button>
             </div>
-          </AddUserButton>
+          </SubmitUserButton>
         </div>
       </UserFormPage>
     </AuthProvider>
@@ -899,6 +903,7 @@ exports[`UserFormPage when editing renders correctly for successful workflow 2`]
         location={
           Object {
             "state": Object {
+              "action": "update",
               "datasetIds": Array [
                 "ntDOtUc7XsRrIus",
               ],
@@ -1215,22 +1220,23 @@ exports[`UserFormPage when editing renders correctly for successful workflow 2`]
               </DatasetRow>
             </tbody>
           </table>
-          <AddUserButton
+          <SubmitUserButton
+            action="update"
             disabled={false}
             onClick={[Function]}
           >
             <div
-              className="add-user-button columns is-mobile is-centered"
+              className="submit-user-button columns is-mobile is-centered"
             >
               <button
                 className="button is-info is-medium"
                 disabled={false}
                 onClick={[Function]}
               >
-                userFormPage.addUserButton
+                userFormPage.submitUserButton.update
               </button>
             </div>
-          </AddUserButton>
+          </SubmitUserButton>
         </div>
       </UserFormPage>
     </AuthProvider>
