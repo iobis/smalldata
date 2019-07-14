@@ -198,10 +198,14 @@ public class UserHandlerTest {
         .put("action", "increase")
         .put("userRef", "FsfEMwhUTO_8I68"),
       ar -> {
-        var bulkiness = ar.result().body().getJsonObject("bulkiness");
-        assertThat(bulkiness.getDouble("value")).isGreaterThan(1.0);
-        assertThat(bulkiness.getInstant("instant")).isBetween(Instant.now().minusMillis(200), Instant.now());
-        testContext.completeNow();
+        if (ar.succeeded()) {
+          var bulkiness = ar.result().body().getJsonObject("bulkiness");
+          assertThat(bulkiness.getDouble("value")).isGreaterThan(1.0);
+          assertThat(bulkiness.getInstant("instant")).isBetween(Instant.now().minusMillis(200), Instant.now());
+          testContext.completeNow();
+        } else {
+          testContext.failNow(ar.cause());
+        }
       });
   }
 }
