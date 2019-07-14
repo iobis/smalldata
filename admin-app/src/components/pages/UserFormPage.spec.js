@@ -46,6 +46,7 @@ describe('UserFormPage', () => {
       return wrapper.find('.dataset-row').length === 4
     })
     expect(wrapper.find('.dataset-row')).toHaveLength(4)
+    expect(wrapper.find('.dropdown .selected-value').text()).toBe('researcher')
     expect(wrapper.exists('.success-message')).toBe(false)
     expect(wrapper.exists('.error-message')).toBe(false)
     expect(wrapper.exists('.add-user-button')).toBe(true)
@@ -54,7 +55,12 @@ describe('UserFormPage', () => {
 
     wrapper.find('.ocean-expert-name-input .input').simulate('change', { target: { value: 'Indiana Jones' } })
     wrapper.find('.email input').simulate('change', { target: { value: 'indiana.jones@gmail.com' } })
+    wrapper.find('.dropdown').at(1).simulate('click')
+    wrapper.find('.dropdown .dropdown-item').at(1).simulate('click')
     wrapper.update()
+    expect(wrapper.find('.ocean-expert-name-input .input').prop('value')).toBe('Indiana Jones')
+    expect(wrapper.find('.email input').prop('value')).toBe('indiana.jones@gmail.com')
+    expect(wrapper.find('.dropdown .selected-value').text()).toBe('node manager')
     expect(wrapper.find('.add-user-button button').props()['disabled']).toBe(false)
 
     wrapper.find('.add-user-button button').simulate('click')
@@ -67,6 +73,9 @@ describe('UserFormPage', () => {
     expect(wrapper.exists('.error-message')).toBe(false)
 
     wrapper.find('.success-message .create-another-user').simulate('click')
+    expect(wrapper.find('.ocean-expert-name-input .input').prop('value')).toBe('')
+    expect(wrapper.find('.email input').prop('value')).toBe('')
+    expect(wrapper.find('.dropdown .selected-value').text()).toBe('researcher')
     expect(wrapper.exists('.add-user-button')).toBe(true)
     expect(wrapper.find('.add-user-button button').props()['disabled']).toBe(true)
     expect(wrapper.exists('.success-message')).toBe(false)
