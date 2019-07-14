@@ -35,10 +35,25 @@ export default {
     },
     datasetPageFormPage: {
       basicInformation:      {
-        step: {
+        step:                   {
           dataDescription: 'Basic Data',
           stepDescription: 'Supply the mandatory information for the dataset',
           stepTitle:       'Basic Information'
+        },
+        title:                  {
+          label: 'Title'
+        },
+        publishingOrganisation: {
+          label: 'Publishing Organisation'
+        },
+        licence:                {
+          label: 'Licence'
+        },
+        language:               {
+          label: 'Language'
+        },
+        abstract:               {
+          label: 'Abstract'
         }
       },
       resourceContacts:      {
