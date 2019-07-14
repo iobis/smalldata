@@ -43,7 +43,7 @@ const AppDiv = () => {
         <ProtectedRoute component={ManageDatasetPage} exact path="/manage-dataset"/>
         <ProtectedRoute component={ManageUsersPage} exact path="/manage-users"/>
         <ProtectedRoute component={UserFormPage} exact path="/manage-users/create"/>
-        <ProtectedRoute component={UserFormPage} exact path="/manage-users/update"/>
+        <ProtectedRoute component={UserFormPage} exact path="/manage-users/update/:userId"/>
       </Switch>
     </div>
   )
