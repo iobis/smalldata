@@ -124,7 +124,7 @@ export default function UserFormPage({ location }) {
       </table>
       {successVisible ? (
         <div className="success-message notification is-success" ref={successMessageRef}>
-          <p className="title">{t('userFormPage.successMessage.header.create')}</p>
+          <p className="title">{t('userFormPage.successMessage.header.' + action)}</p>
           <section>
             <button className="create-another-user button is-white" onClick={handleCreateAnotherUserClick}>
               {t('userFormPage.successMessage.createAnotherUser')}

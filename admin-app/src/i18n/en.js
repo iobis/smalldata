@@ -58,7 +58,8 @@ export default {
       },
       successMessage:   {
         header:            {
-          create: 'The user has been successfully added'
+          create: 'The user has been successfully added',
+          update: 'The user has been successfully updated'
         },
         createAnotherUser: 'create another user',
         doNothing:         'no thanks, I am done for today'

@@ -81,6 +81,7 @@ describe('UserFormPage', () => {
     })
     expect(wrapper.exists('.submit-user-button')).toBe(false)
     expect(wrapper.exists('.success-message')).toBe(true)
+    expect(wrapper.find('.success-message .title').text()).toEqual('userFormPage.successMessage.header.create')
     expect(wrapper.exists('.error-message')).toBe(false)
     expect(global.fetch).toHaveBeenCalledTimes(2)
     expect(global.fetch).toHaveBeenNthCalledWith(2, '/api/users', {
@@ -103,6 +104,7 @@ describe('UserFormPage', () => {
     expect(wrapper.find('.dropdown .selected-value').text()).toBe('researcher')
     expect(wrapper.exists('.submit-user-button')).toBe(true)
     expect(wrapper.find('.submit-user-button button').props()['disabled']).toBe(true)
+    expect(wrapper.find('.submit-user-button button').text()).toEqual('userFormPage.submitUserButton.create')
     expect(wrapper.exists('.success-message')).toBe(false)
     expect(wrapper.exists('.error-message')).toBe(false)
   })
@@ -178,6 +180,7 @@ describe('UserFormPage', () => {
       })
       expect(wrapper.exists('.submit-user-button')).toBe(false)
       expect(wrapper.exists('.success-message')).toBe(true)
+      expect(wrapper.find('.success-message .title').text()).toEqual('userFormPage.successMessage.header.update')
       expect(wrapper.exists('.error-message')).toBe(false)
       expect(global.fetch).toHaveBeenCalledTimes(2)
       expect(global.fetch).toHaveBeenNthCalledWith(2, '/api/users/5d2b7998c1d37d36d4a41ab8', {
@@ -200,6 +203,7 @@ describe('UserFormPage', () => {
       expect(wrapper.find('.dropdown .selected-value').text()).toBe('researcher')
       expect(wrapper.exists('.submit-user-button')).toBe(true)
       expect(wrapper.find('.submit-user-button button').props()['disabled']).toBe(true)
+      expect(wrapper.find('.submit-user-button button').text()).toEqual('userFormPage.submitUserButton.create')
       expect(wrapper.exists('.success-message')).toBe(false)
       expect(wrapper.exists('.error-message')).toBe(false)
     })
