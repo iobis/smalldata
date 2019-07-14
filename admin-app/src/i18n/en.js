@@ -1,6 +1,6 @@
 export default {
   translation: {
-    common:         {
+    common:            {
       add:       'Add',
       cancel:    'Cancel',
       change:    'Change',
@@ -40,6 +40,29 @@ export default {
         email:            'Email',
         accessToDatasets: 'Access to datasets',
         role:             'Role'
+      }
+    },
+    userFormPage:      {
+      submitUserButton: {
+        create: 'Create User',
+        update: 'Update User'
+      },
+      email:            {
+        label: 'Email'
+      },
+      userRole:         {
+        label: 'User Role'
+      },
+      name:             {
+        label: 'Name'
+      },
+      successMessage:   {
+        header:            {
+          create: 'The user has been successfully added',
+          update: 'The user has been successfully updated'
+        },
+        createAnotherUser: 'create another user',
+        doNothing:         'no thanks, I am done for today'
       }
     }
   }
