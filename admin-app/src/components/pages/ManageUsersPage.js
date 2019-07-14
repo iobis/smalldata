@@ -63,7 +63,9 @@ function UserRow({ id, email, datasets }) {
       action:     'update',
       datasetIds: datasets.map(dataset => dataset.id),
       email,
-      id
+      id,
+      name:       '',
+      role:       'researcher'
     }
   }
 
