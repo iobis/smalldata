@@ -12,12 +12,13 @@ import { useTranslation } from 'react-i18next'
 const roles = ['researcher', 'node manager']
 
 export default function UserFormPage() {
+  const initialState = createInitialState()
   const { t } = useTranslation()
   const [datasets, setDatasets] = useState([])
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [role, setRole] = useState(roles[0])
-  const [selectedDatasets, setSelectedDatasets] = useState([])
+  const [name, setName] = useState(initialState.name)
+  const [email, setEmail] = useState(initialState.email)
+  const [role, setRole] = useState(initialState.role)
+  const [selectedDatasets, setSelectedDatasets] = useState(initialState.selectedDatasets)
   const addUserButtonEnabled = name && email
   const [successVisible, setSuccessVisible] = useState(false)
   const [errorVisible, setErrorVisible] = useState(false)
@@ -67,7 +68,12 @@ export default function UserFormPage() {
   }
 
   function handleCreateAnotherUserClick() {
-    console.log('handleCreateAnotherUserClick')
+    const initialState = createInitialState()
+    setSuccessVisible(false)
+    setName(initialState.name)
+    setEmail(initialState.email)
+    setRole(initialState.role)
+    setSelectedDatasets(initialState.selectedDatasets)
   }
 
   return (
@@ -170,4 +176,13 @@ function AddUserButton({ onClick, disabled }) {
 AddUserButton.propTypes = {
   disabled: PropTypes.bool.isRequired,
   onClick:  PropTypes.func.isRequired
+}
+
+function createInitialState() {
+  return {
+    name:             '',
+    email:            '',
+    role:             roles[0],
+    selectedDatasets: []
+  }
 }
