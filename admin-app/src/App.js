@@ -1,5 +1,5 @@
 import './i18n/i18n'
-import DatasetPageFormPage from './components/pages/DatasetPageFormPage'
+import DatasetPageFormPage from './components/pages/DatasetPageFormPage/DatasetPageFormPage'
 import LogInPage from './components/pages/LogInPage'
 import ManageDatasetPage from './components/pages/ManageDatasetPage'
 import ManageUsersPage from './components/pages/ManageUsersPage'
