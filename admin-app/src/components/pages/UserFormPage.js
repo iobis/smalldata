@@ -49,8 +49,9 @@ export default function UserFormPage() {
 
   async function handleAddUserButtonClick() {
     const response = await createUser({
+      datasetIds: selectedDatasets,
       email,
-      datasetIds: selectedDatasets
+      role
     })
     if (response.exception) {
       setErrorVisible(true)
