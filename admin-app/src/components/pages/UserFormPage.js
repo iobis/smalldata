@@ -145,7 +145,7 @@ export default function UserFormPage() {
 
 function DatasetRow({ title, organization, license, onChange, checked }) {
   return (
-    <tr className="user-row">
+    <tr className="dataset-row">
       <td><input checked={checked} onChange={(e) => onChange(e.target.value)} type="checkbox"/></td>
       <td className="dataset-title">{title}</td>
       <td className="organization">{organization}</td>
