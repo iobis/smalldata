@@ -99,7 +99,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
                 name="locationContinue"
                 onClick={[Function]}
               >
-                occurrenceForm.stepContinue occurrenceform.occurrencedata.step.steptitle
+                common.continueTo occurrenceform.occurrencedata.step.steptitle
               </button>
             </ContinueButton>
           </div>
@@ -1144,7 +1144,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
                 name="locationContinue"
                 onClick={[Function]}
               >
-                occurrenceForm.stepContinue occurrenceform.measurementorfact.step.steptitle
+                common.continueTo occurrenceform.measurementorfact.step.steptitle
               </button>
             </ContinueButton>
           </div>
@@ -3254,7 +3254,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
                 name="locationContinue"
                 onClick={[Function]}
               >
-                occurrenceForm.stepContinue occurrenceform.darwincorefields.step.steptitle
+                common.continueTo occurrenceform.darwincorefields.step.steptitle
               </button>
             </ContinueButton>
           </div>

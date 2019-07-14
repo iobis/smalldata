@@ -1,0 +1,362 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DatasetPageFormPage renders correctly 1`] = `
+<DatasetPageFormPage>
+  <section
+    className="section"
+  >
+    <ActiveStepHeader
+      activeStepIndex={0}
+      className="step-1 background-color-0"
+      dataDescription="datasetPageFormPage.basicInformation.step.dataDescription"
+      key="datasetPageFormPage.basicInformation.step.stepTitle"
+      nextStep="datasetPageFormPage.resourceContacts.step.stepTitle"
+      onContinueButtonClick={[Function]}
+      onCopyPreviousDataClick={[Function]}
+      onStepTitleClick={[Function]}
+      selectedData="to be added"
+      stepDescription="datasetPageFormPage.basicInformation.step.stepDescription"
+      stepTitle="1 - datasetPageFormPage.basicInformation.step.stepTitle"
+      totalSteps={4}
+    >
+      <StepHeader
+        className="active has-background-grey has-text-white"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="datasetPageFormPage.basicInformation.step.stepDescription"
+        stepTitle="1 - datasetPageFormPage.basicInformation.step.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered active has-background-grey has-text-white"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="column is-7 is-size-5 is-hidden-mobile"
+          />
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              datasetPageFormPage.basicInformation.step.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                1 - datasetPageFormPage.basicInformation.step.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+        <div>
+          BASIC INFORMATION
+        </div>
+      </StepHeader>
+      <StepFooter
+        activeStepIndex={0}
+        nextStep="datasetPageFormPage.resourceContacts.step.stepTitle"
+        onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
+      >
+        <div
+          className="step-footer columns section"
+        >
+          <CopyPreviousData
+            onClick={[Function]}
+            visible={true}
+          >
+            <div
+              className="columns"
+            >
+              <div
+                className="copy-previous-data column is-narrow"
+                onClick={[Function]}
+              >
+                occurrenceForm.copyPreviousStep
+              </div>
+            </div>
+          </CopyPreviousData>
+          <ContinueButton
+            name="locationContinue"
+            onClick={[Function]}
+            value="datasetPageFormPage.resourceContacts.step.stepTitle"
+          >
+            <button
+              className="continue-button button is-info"
+              name="locationContinue"
+              onClick={[Function]}
+            >
+              common.continueTo datasetpageformpage.resourcecontacts.step.steptitle
+            </button>
+          </ContinueButton>
+        </div>
+      </StepFooter>
+    </ActiveStepHeader>
+    <NotConfirmedStepHeader
+      activeStepIndex={0}
+      className="step-2 background-color-6"
+      dataDescription="datasetPageFormPage.resourceContacts.step.dataDescription"
+      key="datasetPageFormPage.resourceContacts.step.stepTitle"
+      nextStep="datasetPageFormPage.resourceCreators.step.stepTitle"
+      onContinueButtonClick={[Function]}
+      onCopyPreviousDataClick={[Function]}
+      onStepTitleClick={[Function]}
+      selectedData="to be added"
+      stepDescription="datasetPageFormPage.resourceContacts.step.stepDescription"
+      stepTitle="2 - datasetPageFormPage.resourceContacts.step.stepTitle"
+      totalSteps={4}
+    >
+      <StepHeader
+        className="not-confirmed has-text-white step-2 background-color-6"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="datasetPageFormPage.resourceContacts.step.stepDescription"
+        stepTitle="2 - datasetPageFormPage.resourceContacts.step.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered not-confirmed has-text-white step-2 background-color-6"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="column is-7 is-size-5 is-hidden-mobile"
+          />
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              datasetPageFormPage.resourceContacts.step.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                2 - datasetPageFormPage.resourceContacts.step.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </NotConfirmedStepHeader>
+    <NotConfirmedStepHeader
+      activeStepIndex={0}
+      className="step-3 background-color-12"
+      dataDescription="datasetPageFormPage.resourceCreators.step.dataDescription"
+      key="datasetPageFormPage.resourceCreators.step.stepTitle"
+      nextStep="datasetPageFormPage.metadataProviders.step.stepTitle"
+      onContinueButtonClick={[Function]}
+      onCopyPreviousDataClick={[Function]}
+      onStepTitleClick={[Function]}
+      selectedData="to be added"
+      stepDescription="datasetPageFormPage.resourceCreators.step.stepDescription"
+      stepTitle="3 - datasetPageFormPage.resourceCreators.step.stepTitle"
+      totalSteps={4}
+    >
+      <StepHeader
+        className="not-confirmed has-text-white step-3 background-color-12"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="datasetPageFormPage.resourceCreators.step.stepDescription"
+        stepTitle="3 - datasetPageFormPage.resourceCreators.step.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered not-confirmed has-text-white step-3 background-color-12"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="column is-7 is-size-5 is-hidden-mobile"
+          />
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              datasetPageFormPage.resourceCreators.step.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                3 - datasetPageFormPage.resourceCreators.step.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </NotConfirmedStepHeader>
+    <NotConfirmedStepHeader
+      activeStepIndex={0}
+      className="step-4 background-color-18"
+      dataDescription="datasetPageFormPage.metadataProviders.step.dataDescription"
+      key="datasetPageFormPage.metadataProviders.step.stepTitle"
+      nextStep="datasetPageFormPage.keywords.step.stepTitle"
+      onContinueButtonClick={[Function]}
+      onCopyPreviousDataClick={[Function]}
+      onStepTitleClick={[Function]}
+      selectedData="to be added"
+      stepDescription="datasetPageFormPage.metadataProviders.step.stepDescription"
+      stepTitle="4 - datasetPageFormPage.metadataProviders.step.stepTitle"
+      totalSteps={4}
+    >
+      <StepHeader
+        className="not-confirmed has-text-white step-4 background-color-18"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="datasetPageFormPage.metadataProviders.step.stepDescription"
+        stepTitle="4 - datasetPageFormPage.metadataProviders.step.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered not-confirmed has-text-white step-4 background-color-18"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="column is-7 is-size-5 is-hidden-mobile"
+          />
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              datasetPageFormPage.metadataProviders.step.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                4 - datasetPageFormPage.metadataProviders.step.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </NotConfirmedStepHeader>
+    <NotConfirmedStepHeader
+      activeStepIndex={0}
+      className="step-5 background-color-24"
+      dataDescription="datasetPageFormPage.keywords.step.dataDescription"
+      key="datasetPageFormPage.keywords.step.stepTitle"
+      onContinueButtonClick={[Function]}
+      onCopyPreviousDataClick={[Function]}
+      onStepTitleClick={[Function]}
+      selectedData="to be added"
+      stepDescription="datasetPageFormPage.keywords.step.stepDescription"
+      stepTitle="5 - datasetPageFormPage.keywords.step.stepTitle"
+      totalSteps={4}
+    >
+      <StepHeader
+        className="not-confirmed has-text-white step-5 background-color-24"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="datasetPageFormPage.keywords.step.stepDescription"
+        stepTitle="5 - datasetPageFormPage.keywords.step.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered not-confirmed has-text-white step-5 background-color-24"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="column is-7 is-size-5 is-hidden-mobile"
+          />
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              datasetPageFormPage.keywords.step.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                5 - datasetPageFormPage.keywords.step.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </NotConfirmedStepHeader>
+    <div
+      className="columns column is-centered"
+    >
+      <button
+        className="review-and-submit-button button is-medium is-info"
+        disabled={false}
+        onClick={[Function]}
+      >
+        datasetPageFormPage.reviewAndSubmitButton
+      </button>
+    </div>
+  </section>
+</DatasetPageFormPage>
+`;
