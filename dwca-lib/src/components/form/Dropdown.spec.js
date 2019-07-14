@@ -35,7 +35,7 @@ describe('Dropdown', () => {
     expect(onChange).toHaveBeenCalledTimes(0)
 
     wrapper.setProps({ value: 'option-3' })
-    expect(wrapper.find('.selected-value').text()).toBe('option-2')
+    expect(wrapper.find('.selected-value').text()).toBe('option-3')
   })
 })
 
