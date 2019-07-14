@@ -117,6 +117,7 @@ exports[`ManageUsersPage renders correctly for non empty users 1`] = `
                     ]
                   }
                   email="email-1@domain.com"
+                  id="user-1"
                   key="user-1"
                 >
                   <tr
@@ -129,16 +130,21 @@ exports[`ManageUsersPage renders correctly for non empty users 1`] = `
                         className="button is-info"
                         to={
                           Object {
-                            "pathname": "/manage-users/update",
+                            "pathname": "/manage-users/update/user-1",
                             "state": Object {
                               "action": "update",
+                              "datasetIds": Array [
+                                "dataset-1-id",
+                              ],
+                              "email": "email-1@domain.com",
+                              "id": "user-1",
                             },
                           }
                         }
                       >
                         <a
                           className="button is-info"
-                          href="/manage-users/update"
+                          href="/manage-users/update/user-1"
                           onClick={[Function]}
                         >
                           common.edit

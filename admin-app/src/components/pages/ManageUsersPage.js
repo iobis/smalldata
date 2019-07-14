@@ -43,6 +43,7 @@ export default function ManageUsersPage() {
                 <UserRow
                   datasets={user.datasets}
                   email={user.emailAddress}
+                  id={user._id}
                   key={user._id}/>
               ))}
             </tbody>
@@ -53,12 +54,17 @@ export default function ManageUsersPage() {
   )
 }
 
-function UserRow({ email, datasets }) {
+function UserRow({ id, email, datasets }) {
   const { t } = useTranslation()
 
   const toEdit = {
-    pathname: '/manage-users/update',
-    state:    { action: 'update' }
+    pathname: '/manage-users/update/' + id,
+    state:    {
+      action:     'update',
+      datasetIds: datasets.map(dataset => dataset.id),
+      email,
+      id
+    }
   }
 
   return (
@@ -88,5 +94,6 @@ const datasetShape = {
 
 UserRow.propTypes = {
   datasets: PropTypes.arrayOf(PropTypes.shape(datasetShape)).isRequired,
-  email:    PropTypes.string.isRequired
+  email:    PropTypes.string.isRequired,
+  id:       PropTypes.string.isRequired
 }
