@@ -25,7 +25,7 @@ export default function DatasetPageFormPage() {
 
   const steps = [{
     dataDescription: t('datasetPageFormPage.basicInformation.step.dataDescription'),
-    nextStep:        t('datasetPageFormPage.basicInformation.step.stepTitle'),
+    nextStep:        t('datasetPageFormPage.resourceContacts.step.stepTitle'),
     selectedData:    'to be added',
     stepDescription: t('datasetPageFormPage.basicInformation.step.stepDescription'),
     stepTitle:       t('datasetPageFormPage.basicInformation.step.stepTitle'),
@@ -36,7 +36,7 @@ export default function DatasetPageFormPage() {
       <div>BASIC INFORMATION</div>
   }, {
     dataDescription: t('datasetPageFormPage.resourceContacts.step.dataDescription'),
-    nextStep:        t('datasetPageFormPage.resourceCreator.step.stepTitle'),
+    nextStep:        t('datasetPageFormPage.resourceCreators.step.stepTitle'),
     selectedData:    'to be added',
     stepDescription: t('datasetPageFormPage.resourceContacts.step.stepDescription'),
     stepTitle:       t('datasetPageFormPage.resourceContacts.step.stepTitle'),
@@ -47,7 +47,7 @@ export default function DatasetPageFormPage() {
       <div>RESOURCE CONTACTS</div>
   }, {
     dataDescription: t('datasetPageFormPage.resourceCreators.step.dataDescription'),
-    nextStep:        t('datasetPageFormPage.occurrenceData.step.stepTitle'),
+    nextStep:        t('datasetPageFormPage.metadataProviders.step.stepTitle'),
     selectedData:    'to be added',
     stepDescription: t('datasetPageFormPage.resourceCreators.step.stepDescription'),
     stepTitle:       t('datasetPageFormPage.resourceCreators.step.stepTitle'),
@@ -58,7 +58,7 @@ export default function DatasetPageFormPage() {
       <div>RESOURCE CREATOR</div>
   }, {
     dataDescription: t('datasetPageFormPage.metadataProviders.step.dataDescription'),
-    nextStep:        t('datasetPageFormPage.occurrenceData.step.stepTitle'),
+    nextStep:        t('datasetPageFormPage.keywords.step.stepTitle'),
     selectedData:    'to be added',
     stepDescription: t('datasetPageFormPage.metadataProviders.step.stepDescription'),
     stepTitle:       t('datasetPageFormPage.metadataProviders.step.stepTitle'),
@@ -69,7 +69,6 @@ export default function DatasetPageFormPage() {
       <div>METADATA PROVIDERS</div>
   }, {
     dataDescription: t('datasetPageFormPage.keywords.step.dataDescription'),
-    nextStep:        t('datasetPageFormPage.occurrenceData.step.stepTitle'),
     selectedData:    'to be added',
     stepDescription: t('datasetPageFormPage.keywords.step.stepDescription'),
     stepTitle:       t('datasetPageFormPage.keywords.step.stepTitle'),

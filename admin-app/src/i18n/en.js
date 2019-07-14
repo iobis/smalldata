@@ -1,19 +1,20 @@
 export default {
   translation: {
     common:              {
-      add:       'Add',
-      cancel:    'Cancel',
-      change:    'Change',
-      confirm:   'Confirm',
-      copy:      'Copy',
-      edit:      'Edit',
-      latitude:  'Latitude',
-      longitude: 'Longitude',
-      name:      'Name',
-      remove:    'Remove',
-      type:      'Type',
-      unit:      'Unit',
-      value:     'Value'
+      add:        'Add',
+      cancel:     'Cancel',
+      change:     'Change',
+      confirm:    'Confirm',
+      continueTo: 'Continue to',
+      copy:       'Copy',
+      edit:       'Edit',
+      latitude:   'Latitude',
+      longitude:  'Longitude',
+      name:       'Name',
+      remove:     'Remove',
+      type:       'Type',
+      unit:       'Unit',
+      value:      'Value'
     },
     navbar:              {
       manageDataset: 'MANAGE DATASET',
@@ -33,35 +34,35 @@ export default {
       }
     },
     datasetPageFormPage: {
-      basicInformation: {
+      basicInformation:      {
         step: {
           dataDescription: 'Basic Data',
           stepDescription: 'Supply the mandatory information for the dataset',
           stepTitle:       'Basic Information'
         }
       },
-      resourceContacts: {
+      resourceContacts:      {
         step: {
           dataDescription: 'Couplings',
           stepDescription: 'Resource contact details',
           stepTitle:       'Resource Contacts'
         }
       },
-      resourceCreators: {
+      resourceCreators:      {
         step: {
           dataDescription: 'Couplings',
           stepDescription: 'Resource creators details',
           stepTitle:       'Resource Creators'
         }
       },
-      metadataProviders: {
+      metadataProviders:     {
         step: {
           dataDescription: 'Couplings',
           stepDescription: 'Metadata provider details',
           stepTitle:       'Metadata Providers'
         }
       },
-      keywords: {
+      keywords:              {
         step: {
           dataDescription: 'Couplings',
           stepDescription: 'Specify keywords associated with dataset',
