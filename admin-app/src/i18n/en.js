@@ -1,6 +1,6 @@
 export default {
   translation: {
-    common:            {
+    common:              {
       add:       'Add',
       cancel:    'Cancel',
       change:    'Change',
@@ -15,14 +15,14 @@ export default {
       unit:      'Unit',
       value:     'Value'
     },
-    navbar:            {
+    navbar:              {
       manageDataset: 'MANAGE DATASET',
       manageUsers:   'MANAGE USERS',
       inputData:     'INPUT DATA',
       logout:        'logout',
       login:         'login'
     },
-    manageDatasetPage: {
+    manageDatasetPage:   {
       inputNew:              'Input New Dataset',
       managePreviousEntries: 'Manage Previous Entries',
       or:                    'OR',
@@ -32,7 +32,45 @@ export default {
         licence:      'Licence'
       }
     },
-    manageUsersPage:   {
+    datasetPageFormPage: {
+      basicInformation: {
+        step: {
+          dataDescription: 'Basic Data',
+          stepDescription: 'Supply the mandatory information for the dataset',
+          stepTitle:       'Basic Information'
+        }
+      },
+      resourceContacts: {
+        step: {
+          dataDescription: 'Couplings',
+          stepDescription: 'Resource contact details',
+          stepTitle:       'Resource Contacts'
+        }
+      },
+      resourceCreators: {
+        step: {
+          dataDescription: 'Couplings',
+          stepDescription: 'Resource creators details',
+          stepTitle:       'Resource Creators'
+        }
+      },
+      metadataProviders: {
+        step: {
+          dataDescription: 'Couplings',
+          stepDescription: 'Metadata provider details',
+          stepTitle:       'Metadata Providers'
+        }
+      },
+      keywords: {
+        step: {
+          dataDescription: 'Couplings',
+          stepDescription: 'Specify keywords associated with dataset',
+          stepTitle:       'Keywords'
+        }
+      },
+      reviewAndSubmitButton: 'Review and Submit'
+    },
+    manageUsersPage:     {
       inputNew:              'Input New User',
       managePreviousEntries: 'Manage Existing Users',
       or:                    'OR',
@@ -42,7 +80,7 @@ export default {
         role:             'Role'
       }
     },
-    userFormPage:      {
+    userFormPage:        {
       submitUserButton: {
         create: 'Create User',
         update: 'Update User'
