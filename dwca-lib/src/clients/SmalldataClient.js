@@ -81,6 +81,10 @@ export async function createUser({ email, datasetIds }) {
     headers,
     body:   JSON.stringify(request)
   }).then(response => response.json())
+    .catch(error => ({
+      exception:        'Some error occurred',
+      exceptionMessage: error
+    }))
 }
 
 function groupBy(list, props) {

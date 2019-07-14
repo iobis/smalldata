@@ -41,8 +41,8 @@ export default function UserFormPage() {
     setName(name)
   }
 
-  function handleAddUserButtonClick() {
-    const response = createUser({
+  async function handleAddUserButtonClick() {
+    const response = await createUser({
       email,
       datasetIds: selectedDatasets
     })
