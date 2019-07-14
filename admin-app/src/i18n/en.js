@@ -43,15 +43,22 @@ export default {
       }
     },
     userFormPage:      {
-      addUserButton: 'Add User',
-      email:         {
+      addUserButton:  'Add User',
+      email:          {
         label: 'Email'
       },
-      userRole:      {
+      userRole:       {
         label: 'User Role'
       },
-      name:          {
+      name:           {
         label: 'Name'
+      },
+      successMessage: {
+        header:            {
+          create: 'The user has been successfully added'
+        },
+        createAnotherUser: 'create another user',
+        doNothing:         'no thanks, I am done for today'
       }
     }
   }

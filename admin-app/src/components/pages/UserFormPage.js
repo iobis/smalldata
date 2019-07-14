@@ -6,6 +6,7 @@ import classNames from 'classnames'
 import { useTranslation } from 'react-i18next'
 import PropTypes from 'prop-types'
 import { createUser, getDatasets } from '@smalldata/dwca-lib/src/clients/SmalldataClient'
+import { Link } from 'react-router-dom'
 
 const roles = ['researcher', 'node manager']
 
@@ -17,6 +18,9 @@ export default function UserFormPage() {
   const [role, setRole] = useState(roles[0])
   const [selectedDatasets, setSelectedDatasets] = useState([])
   const addUserButtonEnabled = name && email
+  const [successVisible, setSuccessVisible] = useState(false)
+  const [errorVisible, setErrorVisible] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
 
   useEffect(() => {
     const fetchDatasets = async() => {
@@ -38,10 +42,25 @@ export default function UserFormPage() {
   }
 
   function handleAddUserButtonClick() {
-    createUser({
+    const response = createUser({
       email,
       datasetIds: selectedDatasets
     })
+    if (response.exception) {
+      setErrorVisible(true)
+      setErrorMessage(response.exception + ': ' + response.exceptionMessage)
+    } else {
+      setSuccessVisible(true)
+    }
+  }
+
+  function handleErrorClose() {
+    setErrorVisible(false)
+    setErrorMessage('')
+  }
+
+  function handleCreateAnotherUserClick() {
+    console.log('handleCreateAnotherUserClick')
   }
 
   return (
@@ -84,7 +103,29 @@ export default function UserFormPage() {
           ))}
         </tbody>
       </table>
-      <AddUserButton disabled={!addUserButtonEnabled} onClick={handleAddUserButtonClick}/>
+      {successVisible ? (
+        <div className="success-message notification is-success">
+          <p className="title">{t('userFormPage.successMessage.header.create')}</p>
+          <section>
+            <button className="create-another-user button is-white" onClick={handleCreateAnotherUserClick}>
+              {t('userFormPage.successMessage.createAnotherUser')}
+            </button>
+          </section>
+          <section>
+            <Link className="is-size-5" to="/">
+              {t('userFormPage.successMessage.doNothing')}
+            </Link>
+          </section>
+        </div>) : null}
+      {errorVisible ? (
+        <div className="error-message notification is-danger">
+          <button className="close delete" onClick={handleErrorClose}/>
+          {errorMessage}
+        </div>) : null}
+      {!successVisible
+        ? <AddUserButton disabled={!addUserButtonEnabled} onClick={handleAddUserButtonClick}/>
+        : null
+      }
     </div>
   )
 }
