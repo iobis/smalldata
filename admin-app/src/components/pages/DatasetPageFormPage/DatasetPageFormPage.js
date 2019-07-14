@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import ActiveStepHeader from '@smalldata/dwca-lib/src/components/StepHeaders/ActiveStepHeader'
 import NotConfirmedStepHeader from '@smalldata/dwca-lib/src/components/StepHeaders/NotConfirmedStepHeader'
+import BasicInformation from './BasicInformation'
 import ConfirmedStepHeader from '@smalldata/dwca-lib/src/components/StepHeaders/ConfirmedStepHeader'
 import { useTranslation } from 'react-i18next'
 
@@ -31,7 +32,7 @@ export default function DatasetPageFormPage() {
     stepTitle:       t('datasetPageFormPage.basicInformation.step.stepTitle'),
 
     children:
-      <div>BASIC INFORMATION</div>
+      <BasicInformation/>
   }, {
     dataDescription: t('datasetPageFormPage.resourceContacts.step.dataDescription'),
     nextStep:        t('datasetPageFormPage.resourceCreators.step.stepTitle'),
