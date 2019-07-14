@@ -54,12 +54,18 @@ describe('UserFormPage', () => {
     expect(wrapper).toMatchSnapshot()
 
     wrapper.find('.ocean-expert-name-input .input').simulate('change', { target: { value: 'Indiana Jones' } })
+    wrapper.update()
+    expect(wrapper.find('.ocean-expert-name-input .input').prop('value')).toBe('Indiana Jones')
+    expect(wrapper.find('.add-user-button button').props()['disabled']).toBe(true)
+
     wrapper.find('.email input').simulate('change', { target: { value: 'indiana.jones@gmail.com' } })
+    wrapper.update()
+    expect(wrapper.find('.email input').prop('value')).toBe('indiana.jones@gmail.com')
+    expect(wrapper.find('.add-user-button button').props()['disabled']).toBe(false)
+
     wrapper.find('.dropdown').at(1).simulate('click')
     wrapper.find('.dropdown .dropdown-item').at(1).simulate('click')
     wrapper.update()
-    expect(wrapper.find('.ocean-expert-name-input .input').prop('value')).toBe('Indiana Jones')
-    expect(wrapper.find('.email input').prop('value')).toBe('indiana.jones@gmail.com')
     expect(wrapper.find('.dropdown .selected-value').text()).toBe('node manager')
     expect(wrapper.find('.add-user-button button').props()['disabled']).toBe(false)
 
@@ -71,6 +77,20 @@ describe('UserFormPage', () => {
     expect(wrapper.exists('.add-user-button')).toBe(false)
     expect(wrapper.exists('.success-message')).toBe(true)
     expect(wrapper.exists('.error-message')).toBe(false)
+    expect(global.fetch).toHaveBeenCalledTimes(2)
+    expect(global.fetch).toHaveBeenNthCalledWith(2, '/api/users', {
+      'body':    JSON.stringify({
+        'dataset_refs': [],
+        'emailAddress': 'indiana.jones@gmail.com',
+        'name':         'Indiana Jones',
+        'role':         'node manager'
+      }),
+      'headers': {
+        'Authorization': 'Basic verysecret',
+        'Content-Type':  'application/json'
+      },
+      'method':  'POST'
+    })
 
     wrapper.find('.success-message .create-another-user').simulate('click')
     expect(wrapper.find('.ocean-expert-name-input .input').prop('value')).toBe('')
