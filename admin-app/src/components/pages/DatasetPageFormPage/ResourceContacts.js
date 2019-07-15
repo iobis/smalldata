@@ -43,22 +43,24 @@ export default function ResourceContacts({ data, onChange }) {
       <div className="column field">
         <button className="add button" onClick={handleAddClick}>{t('common.add')}</button>
       </div>
-      <table className="general table is-fullwidth is-striped is-hoverable">
-        <thead>
-          <tr>
-            <th>{t('datasetPageFormPage.resourceContacts.name.label')}</th>
-            <th>{t('datasetPageFormPage.resourceContacts.email.label')}</th>
-            <th>{t('datasetPageFormPage.resourceContacts.organisation.label')}</th>
-            <th>{t('datasetPageFormPage.resourceContacts.position.label')}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {contacts.map((contact, index) => (
-            // eslint-disable-next-line react/no-array-index-key
-            <ContactRow key={index} {...contact}/>
-          ))}
-        </tbody>
-      </table>
+      <div className="column field">
+        <table className="general table is-fullwidth is-striped is-hoverable">
+          <thead>
+            <tr>
+              <th>{t('datasetPageFormPage.resourceContacts.name.label')}</th>
+              <th>{t('datasetPageFormPage.resourceContacts.email.label')}</th>
+              <th>{t('datasetPageFormPage.resourceContacts.organisation.label')}</th>
+              <th>{t('datasetPageFormPage.resourceContacts.position.label')}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {contacts.map((contact, index) => (
+              // eslint-disable-next-line react/no-array-index-key
+              <ContactRow key={index} {...contact}/>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   )
 }

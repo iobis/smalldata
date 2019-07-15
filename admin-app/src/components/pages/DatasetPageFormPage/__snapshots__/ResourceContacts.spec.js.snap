@@ -106,27 +106,31 @@ exports[`ResourceContacts returns contacts when when adding 1`] = `
         common.add
       </button>
     </div>
-    <table
-      className="general table is-fullwidth is-striped is-hoverable"
+    <div
+      className="column field"
     >
-      <thead>
-        <tr>
-          <th>
-            datasetPageFormPage.resourceContacts.name.label
-          </th>
-          <th>
-            datasetPageFormPage.resourceContacts.email.label
-          </th>
-          <th>
-            datasetPageFormPage.resourceContacts.organisation.label
-          </th>
-          <th>
-            datasetPageFormPage.resourceContacts.position.label
-          </th>
-        </tr>
-      </thead>
-      <tbody />
-    </table>
+      <table
+        className="general table is-fullwidth is-striped is-hoverable"
+      >
+        <thead>
+          <tr>
+            <th>
+              datasetPageFormPage.resourceContacts.name.label
+            </th>
+            <th>
+              datasetPageFormPage.resourceContacts.email.label
+            </th>
+            <th>
+              datasetPageFormPage.resourceContacts.organisation.label
+            </th>
+            <th>
+              datasetPageFormPage.resourceContacts.position.label
+            </th>
+          </tr>
+        </thead>
+        <tbody />
+      </table>
+    </div>
   </div>
 </ResourceContacts>
 `;
@@ -246,60 +250,64 @@ exports[`ResourceContacts returns updated contacts when when adding 1`] = `
         common.add
       </button>
     </div>
-    <table
-      className="general table is-fullwidth is-striped is-hoverable"
+    <div
+      className="column field"
     >
-      <thead>
-        <tr>
-          <th>
-            datasetPageFormPage.resourceContacts.name.label
-          </th>
-          <th>
-            datasetPageFormPage.resourceContacts.email.label
-          </th>
-          <th>
-            datasetPageFormPage.resourceContacts.organisation.label
-          </th>
-          <th>
-            datasetPageFormPage.resourceContacts.position.label
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <ContactRow
-          email="email-1"
-          key="0"
-          name="name-1"
-          organisation="organisation-1"
-          position="position-1"
-        >
-          <tr
-            className="contact-row"
-          >
-            <td
-              className="name"
-            >
-              name-1
-            </td>
-            <td
-              className="email"
-            >
-              email-1
-            </td>
-            <td
-              className="organisation"
-            >
-              organisation-1
-            </td>
-            <td
-              className="position"
-            >
-              position-1
-            </td>
+      <table
+        className="general table is-fullwidth is-striped is-hoverable"
+      >
+        <thead>
+          <tr>
+            <th>
+              datasetPageFormPage.resourceContacts.name.label
+            </th>
+            <th>
+              datasetPageFormPage.resourceContacts.email.label
+            </th>
+            <th>
+              datasetPageFormPage.resourceContacts.organisation.label
+            </th>
+            <th>
+              datasetPageFormPage.resourceContacts.position.label
+            </th>
           </tr>
-        </ContactRow>
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          <ContactRow
+            email="email-1"
+            key="0"
+            name="name-1"
+            organisation="organisation-1"
+            position="position-1"
+          >
+            <tr
+              className="contact-row"
+            >
+              <td
+                className="name"
+              >
+                name-1
+              </td>
+              <td
+                className="email"
+              >
+                email-1
+              </td>
+              <td
+                className="organisation"
+              >
+                organisation-1
+              </td>
+              <td
+                className="position"
+              >
+                position-1
+              </td>
+            </tr>
+          </ContactRow>
+        </tbody>
+      </table>
+    </div>
   </div>
 </ResourceContacts>
 `;
