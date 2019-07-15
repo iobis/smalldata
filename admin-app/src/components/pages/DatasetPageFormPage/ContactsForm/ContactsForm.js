@@ -1,9 +1,10 @@
+import classNames from 'classnames'
 import InputText from '@smalldata/dwca-lib/src/components/form/InputText'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-export default function ContactsForm({ data, onChange }) {
+export default function ContactsForm({ className, data, onChange }) {
   const { t } = useTranslation()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -19,7 +20,7 @@ export default function ContactsForm({ data, onChange }) {
   }
 
   return (
-    <div className="contacts-form">
+    <div className={classNames('contacts-form', className)}>
       <InputText
         className="name"
         name="datasetPageFormPage.resourceContacts.name"
@@ -73,8 +74,9 @@ const contactShape = {
 }
 
 ContactsForm.propTypes = {
-  data:     PropTypes.arrayOf(PropTypes.shape(contactShape)).isRequired,
-  onChange: PropTypes.func.isRequired
+  className: PropTypes.string,
+  data:      PropTypes.arrayOf(PropTypes.shape(contactShape)).isRequired,
+  onChange:  PropTypes.func.isRequired
 }
 
 function ContactRow({ email, name, organisation, position }) {

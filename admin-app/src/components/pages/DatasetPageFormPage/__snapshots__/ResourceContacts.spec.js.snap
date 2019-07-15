@@ -6,11 +6,12 @@ exports[`ResourceContacts renders correctly 1`] = `
   onChange={[MockFunction]}
 >
   <ContactsForm
+    className="resource-contacts"
     data={Array []}
     onChange={[MockFunction]}
   >
     <div
-      className="contacts-form"
+      className="contacts-form resource-contacts"
     >
       <InputText
         className="name"
