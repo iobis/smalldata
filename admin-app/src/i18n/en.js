@@ -1,28 +1,29 @@
 export default {
   translation: {
-    common:         {
-      add:       'Add',
-      cancel:    'Cancel',
-      change:    'Change',
-      confirm:   'Confirm',
-      copy:      'Copy',
-      edit:      'Edit',
-      latitude:  'Latitude',
-      longitude: 'Longitude',
-      name:      'Name',
-      remove:    'Remove',
-      type:      'Type',
-      unit:      'Unit',
-      value:     'Value'
+    common:              {
+      add:        'Add',
+      cancel:     'Cancel',
+      change:     'Change',
+      confirm:    'Confirm',
+      continueTo: 'Continue to',
+      copy:       'Copy',
+      edit:       'Edit',
+      latitude:   'Latitude',
+      longitude:  'Longitude',
+      name:       'Name',
+      remove:     'Remove',
+      type:       'Type',
+      unit:       'Unit',
+      value:      'Value'
     },
-    navbar:            {
+    navbar:              {
       manageDataset: 'MANAGE DATASET',
       manageUsers:   'MANAGE USERS',
       inputData:     'INPUT DATA',
       logout:        'logout',
       login:         'login'
     },
-    manageDatasetPage: {
+    manageDatasetPage:   {
       inputNew:              'Input New Dataset',
       managePreviousEntries: 'Manage Previous Entries',
       or:                    'OR',
@@ -32,7 +33,73 @@ export default {
         licence:      'Licence'
       }
     },
-    manageUsersPage:   {
+    datasetPageFormPage: {
+      basicInformation:      {
+        step:                   {
+          dataDescription: 'Basic Data',
+          stepDescription: 'Supply the mandatory information for the dataset',
+          stepTitle:       'Basic Information'
+        },
+        title:                  {
+          label: 'Title'
+        },
+        publishingOrganisation: {
+          label: 'Publishing Organisation'
+        },
+        licence:                {
+          label: 'Licence'
+        },
+        language:               {
+          label: 'Language'
+        },
+        abstract:               {
+          label: 'Abstract'
+        }
+      },
+      resourceContacts:      {
+        step:         {
+          dataDescription: '',
+          stepDescription: 'Resource contact details',
+          stepTitle:       'Resource Contacts',
+          selectedData:    '{{nrOfContacts}} people coupled as resource contact'
+        },
+        name:         {
+          label: 'Name'
+        },
+        email:        {
+          label: 'Email'
+        },
+        organisation: {
+          label: 'Organisation'
+        },
+        position:     {
+          label: 'Position'
+        }
+      },
+      resourceCreators:      {
+        step: {
+          dataDescription: 'Couplings',
+          stepDescription: 'Resource creators details',
+          stepTitle:       'Resource Creators'
+        }
+      },
+      metadataProviders:     {
+        step: {
+          dataDescription: 'Couplings',
+          stepDescription: 'Metadata provider details',
+          stepTitle:       'Metadata Providers'
+        }
+      },
+      keywords:              {
+        step: {
+          dataDescription: 'Couplings',
+          stepDescription: 'Specify keywords associated with dataset',
+          stepTitle:       'Keywords'
+        }
+      },
+      reviewAndSubmitButton: 'Review and Submit'
+    },
+    manageUsersPage:     {
       inputNew:              'Input New User',
       managePreviousEntries: 'Manage Existing Users',
       or:                    'OR',
@@ -40,6 +107,29 @@ export default {
         email:            'Email',
         accessToDatasets: 'Access to datasets',
         role:             'Role'
+      }
+    },
+    userFormPage:        {
+      submitUserButton: {
+        create: 'Create User',
+        update: 'Update User'
+      },
+      email:            {
+        label: 'Email'
+      },
+      userRole:         {
+        label: 'User Role'
+      },
+      name:             {
+        label: 'Name'
+      },
+      successMessage:   {
+        header:            {
+          create: 'The user has been successfully added',
+          update: 'The user has been successfully updated'
+        },
+        createAnotherUser: 'create another user',
+        doNothing:         'no thanks, I am done for today'
       }
     }
   }

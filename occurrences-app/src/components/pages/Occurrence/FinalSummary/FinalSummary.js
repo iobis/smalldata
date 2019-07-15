@@ -2,13 +2,14 @@ import PropTypes from 'prop-types'
 import React, { useEffect, useRef } from 'react'
 import { darwinCoreFieldShape } from '../DarwinCoreFields/DarwinCoreFields'
 import { datasetShape } from '../Dataset/Dataset'
+import { datasetTitleOf } from '@smalldata/dwca-lib/src/clients/SmalldataConverters'
 import { format } from 'date-fns'
+import { Link } from 'react-router-dom'
 import { locationDataShape } from '../LocationData/LocationData'
 import { observationDataShape } from '../ObservationData/ObservationData'
 import { occurrenceDataShape } from '../OccurrenceData/OccurrenceData'
+import { scrollToRef } from '@smalldata/dwca-lib/src/browser/scroll'
 import { useTranslation } from 'react-i18next'
-import { datasetTitleOf } from '@smalldata/dwca-lib/src/clients/SmalldataConverters'
-import { Link } from 'react-router-dom'
 
 export default function FinalSummary({
   darwinCoreFields,
@@ -30,10 +31,6 @@ export default function FinalSummary({
   const { t } = useTranslation()
   const successMessageRef = useRef()
   const errorMessageRef = useRef()
-
-  function scrollToRef(ref) {
-    if (ref && ref.current) ref.current.scrollIntoView({ behavior: 'smooth', block: 'center' })
-  }
 
   useEffect(() => {
     if (successVisible) scrollToRef(successMessageRef)
