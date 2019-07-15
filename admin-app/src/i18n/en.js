@@ -57,23 +57,11 @@ export default {
         }
       },
       resourceContacts:      {
-        step:         {
+        step: {
           dataDescription: '',
           stepDescription: 'Resource contact details',
           stepTitle:       'Resource Contacts',
           selectedData:    '{{nrOfContacts}} people coupled as resource contact'
-        },
-        name:         {
-          label: 'Name'
-        },
-        email:        {
-          label: 'Email'
-        },
-        organisation: {
-          label: 'Organisation'
-        },
-        position:     {
-          label: 'Position'
         }
       },
       resourceCreators:      {
@@ -95,6 +83,20 @@ export default {
           dataDescription: 'Couplings',
           stepDescription: 'Specify keywords associated with dataset',
           stepTitle:       'Keywords'
+        }
+      },
+      contactsForm:          {
+        name:         {
+          label: 'Name'
+        },
+        email:        {
+          label: 'Email'
+        },
+        organisation: {
+          label: 'Organisation'
+        },
+        position:     {
+          label: 'Position'
         }
       },
       reviewAndSubmitButton: 'Review and Submit'

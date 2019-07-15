@@ -23,22 +23,22 @@ export default function ContactsForm({ className, data, onChange }) {
     <div className={classNames('contacts-form', className)}>
       <InputText
         className="name"
-        name="datasetPageFormPage.resourceContacts.name"
+        name="datasetPageFormPage.contactsForm.name"
         onChange={value => setName(value)}
         value={name}/>
       <InputText
         className="email"
-        name="datasetPageFormPage.resourceContacts.email"
+        name="datasetPageFormPage.contactsForm.email"
         onChange={value => setEmail(value)}
         value={email}/>
       <InputText
         className="organisation"
-        name="datasetPageFormPage.resourceContacts.organisation"
+        name="datasetPageFormPage.contactsForm.organisation"
         onChange={value => setOrganisation(value)}
         value={organisation}/>
       <InputText
         className="position"
-        name="datasetPageFormPage.resourceContacts.position"
+        name="datasetPageFormPage.contactsForm.position"
         onChange={value => setPosition(value)}
         value={position}/>
       <div className="column field">
@@ -48,10 +48,10 @@ export default function ContactsForm({ className, data, onChange }) {
         <table className="general table is-fullwidth is-striped is-hoverable">
           <thead>
             <tr>
-              <th>{t('datasetPageFormPage.resourceContacts.name.label')}</th>
-              <th>{t('datasetPageFormPage.resourceContacts.email.label')}</th>
-              <th>{t('datasetPageFormPage.resourceContacts.organisation.label')}</th>
-              <th>{t('datasetPageFormPage.resourceContacts.position.label')}</th>
+              <th>{t('datasetPageFormPage.contactsForm.name.label')}</th>
+              <th>{t('datasetPageFormPage.contactsForm.email.label')}</th>
+              <th>{t('datasetPageFormPage.contactsForm.organisation.label')}</th>
+              <th>{t('datasetPageFormPage.contactsForm.position.label')}</th>
             </tr>
           </thead>
           <tbody>

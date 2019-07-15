@@ -10,7 +10,7 @@ exports[`ContactsForm returns contacts when adding 1`] = `
   >
     <InputText
       className="name"
-      name="datasetPageFormPage.resourceContacts.name"
+      name="datasetPageFormPage.contactsForm.name"
       onChange={[Function]}
       value=""
     >
@@ -20,7 +20,7 @@ exports[`ContactsForm returns contacts when adding 1`] = `
         <label
           className="label"
         >
-          datasetPageFormPage.resourceContacts.name.label
+          datasetPageFormPage.contactsForm.name.label
         </label>
         <input
           className="input"
@@ -32,7 +32,7 @@ exports[`ContactsForm returns contacts when adding 1`] = `
     </InputText>
     <InputText
       className="email"
-      name="datasetPageFormPage.resourceContacts.email"
+      name="datasetPageFormPage.contactsForm.email"
       onChange={[Function]}
       value=""
     >
@@ -42,7 +42,7 @@ exports[`ContactsForm returns contacts when adding 1`] = `
         <label
           className="label"
         >
-          datasetPageFormPage.resourceContacts.email.label
+          datasetPageFormPage.contactsForm.email.label
         </label>
         <input
           className="input"
@@ -54,7 +54,7 @@ exports[`ContactsForm returns contacts when adding 1`] = `
     </InputText>
     <InputText
       className="organisation"
-      name="datasetPageFormPage.resourceContacts.organisation"
+      name="datasetPageFormPage.contactsForm.organisation"
       onChange={[Function]}
       value=""
     >
@@ -64,7 +64,7 @@ exports[`ContactsForm returns contacts when adding 1`] = `
         <label
           className="label"
         >
-          datasetPageFormPage.resourceContacts.organisation.label
+          datasetPageFormPage.contactsForm.organisation.label
         </label>
         <input
           className="input"
@@ -76,7 +76,7 @@ exports[`ContactsForm returns contacts when adding 1`] = `
     </InputText>
     <InputText
       className="position"
-      name="datasetPageFormPage.resourceContacts.position"
+      name="datasetPageFormPage.contactsForm.position"
       onChange={[Function]}
       value=""
     >
@@ -86,7 +86,7 @@ exports[`ContactsForm returns contacts when adding 1`] = `
         <label
           className="label"
         >
-          datasetPageFormPage.resourceContacts.position.label
+          datasetPageFormPage.contactsForm.position.label
         </label>
         <input
           className="input"
@@ -115,16 +115,16 @@ exports[`ContactsForm returns contacts when adding 1`] = `
         <thead>
           <tr>
             <th>
-              datasetPageFormPage.resourceContacts.name.label
+              datasetPageFormPage.contactsForm.name.label
             </th>
             <th>
-              datasetPageFormPage.resourceContacts.email.label
+              datasetPageFormPage.contactsForm.email.label
             </th>
             <th>
-              datasetPageFormPage.resourceContacts.organisation.label
+              datasetPageFormPage.contactsForm.organisation.label
             </th>
             <th>
-              datasetPageFormPage.resourceContacts.position.label
+              datasetPageFormPage.contactsForm.position.label
             </th>
           </tr>
         </thead>
@@ -154,7 +154,7 @@ exports[`ContactsForm returns updated contacts when when adding 1`] = `
   >
     <InputText
       className="name"
-      name="datasetPageFormPage.resourceContacts.name"
+      name="datasetPageFormPage.contactsForm.name"
       onChange={[Function]}
       value=""
     >
@@ -164,7 +164,7 @@ exports[`ContactsForm returns updated contacts when when adding 1`] = `
         <label
           className="label"
         >
-          datasetPageFormPage.resourceContacts.name.label
+          datasetPageFormPage.contactsForm.name.label
         </label>
         <input
           className="input"
@@ -176,7 +176,7 @@ exports[`ContactsForm returns updated contacts when when adding 1`] = `
     </InputText>
     <InputText
       className="email"
-      name="datasetPageFormPage.resourceContacts.email"
+      name="datasetPageFormPage.contactsForm.email"
       onChange={[Function]}
       value=""
     >
@@ -186,7 +186,7 @@ exports[`ContactsForm returns updated contacts when when adding 1`] = `
         <label
           className="label"
         >
-          datasetPageFormPage.resourceContacts.email.label
+          datasetPageFormPage.contactsForm.email.label
         </label>
         <input
           className="input"
@@ -198,7 +198,7 @@ exports[`ContactsForm returns updated contacts when when adding 1`] = `
     </InputText>
     <InputText
       className="organisation"
-      name="datasetPageFormPage.resourceContacts.organisation"
+      name="datasetPageFormPage.contactsForm.organisation"
       onChange={[Function]}
       value=""
     >
@@ -208,7 +208,7 @@ exports[`ContactsForm returns updated contacts when when adding 1`] = `
         <label
           className="label"
         >
-          datasetPageFormPage.resourceContacts.organisation.label
+          datasetPageFormPage.contactsForm.organisation.label
         </label>
         <input
           className="input"
@@ -220,7 +220,7 @@ exports[`ContactsForm returns updated contacts when when adding 1`] = `
     </InputText>
     <InputText
       className="position"
-      name="datasetPageFormPage.resourceContacts.position"
+      name="datasetPageFormPage.contactsForm.position"
       onChange={[Function]}
       value=""
     >
@@ -230,7 +230,7 @@ exports[`ContactsForm returns updated contacts when when adding 1`] = `
         <label
           className="label"
         >
-          datasetPageFormPage.resourceContacts.position.label
+          datasetPageFormPage.contactsForm.position.label
         </label>
         <input
           className="input"
@@ -259,16 +259,16 @@ exports[`ContactsForm returns updated contacts when when adding 1`] = `
         <thead>
           <tr>
             <th>
-              datasetPageFormPage.resourceContacts.name.label
+              datasetPageFormPage.contactsForm.name.label
             </th>
             <th>
-              datasetPageFormPage.resourceContacts.email.label
+              datasetPageFormPage.contactsForm.email.label
             </th>
             <th>
-              datasetPageFormPage.resourceContacts.organisation.label
+              datasetPageFormPage.contactsForm.organisation.label
             </th>
             <th>
-              datasetPageFormPage.resourceContacts.position.label
+              datasetPageFormPage.contactsForm.position.label
             </th>
           </tr>
         </thead>
