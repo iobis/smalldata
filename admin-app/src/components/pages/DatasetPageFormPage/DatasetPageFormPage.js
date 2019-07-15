@@ -55,7 +55,7 @@ export default function DatasetPageFormPage() {
   }, {
     dataDescription: t('datasetPageFormPage.resourceCreators.step.dataDescription'),
     nextStep:        t('datasetPageFormPage.metadataProviders.step.stepTitle'),
-    selectedData:    'to be added',
+    selectedData:    t('datasetPageFormPage.resourceCreators.step.selectedData', { nrOfContacts: resourceCreators.length }),
     stepDescription: t('datasetPageFormPage.resourceCreators.step.stepDescription'),
     stepTitle:       t('datasetPageFormPage.resourceCreators.step.stepTitle'),
 

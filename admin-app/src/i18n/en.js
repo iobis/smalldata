@@ -66,9 +66,10 @@ export default {
       },
       resourceCreators:      {
         step: {
-          dataDescription: 'Couplings',
+          dataDescription: '',
           stepDescription: 'Resource creators details',
-          stepTitle:       'Resource Creators'
+          stepTitle:       'Resource Creators',
+          selectedData:    '{{nrOfContacts}} people coupled as resource creator'
         }
       },
       metadataProviders:     {
