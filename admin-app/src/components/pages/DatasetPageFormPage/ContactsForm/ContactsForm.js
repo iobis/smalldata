@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-export default function ContactsForm({ className, data, onChange }) {
+export default function ContactsForm({ className, contactsTableHeader, data, onChange }) {
   const { t } = useTranslation()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -45,6 +45,7 @@ export default function ContactsForm({ className, data, onChange }) {
         <button className="add button" onClick={handleAddClick}>{t('common.add')}</button>
       </div>
       <div className="column field">
+        <div className="title is-5 contacts-table-header">{contactsTableHeader}</div>
         <table className="general table is-fullwidth is-striped is-hoverable">
           <thead>
             <tr>
@@ -74,9 +75,10 @@ const contactShape = {
 }
 
 ContactsForm.propTypes = {
-  className: PropTypes.string,
-  data:      PropTypes.arrayOf(PropTypes.shape(contactShape)).isRequired,
-  onChange:  PropTypes.func.isRequired
+  className:           PropTypes.string,
+  contactsTableHeader: PropTypes.string.isRequired,
+  data:                PropTypes.arrayOf(PropTypes.shape(contactShape)).isRequired,
+  onChange:            PropTypes.func.isRequired
 }
 
 function ContactRow({ email, name, organisation, position }) {

@@ -2,11 +2,13 @@
 
 exports[`ContactsForm returns contacts when adding 1`] = `
 <ContactsForm
+  className="custom-class"
+  contactsTableHeader="Contacts Table Header"
   data={Array []}
   onChange={[MockFunction]}
 >
   <div
-    className="contacts-form"
+    className="contacts-form custom-class"
   >
     <InputText
       className="name"
@@ -109,6 +111,11 @@ exports[`ContactsForm returns contacts when adding 1`] = `
     <div
       className="column field"
     >
+      <div
+        className="title is-5 contacts-table-header"
+      >
+        Contacts Table Header
+      </div>
       <table
         className="general table is-fullwidth is-striped is-hoverable"
       >
@@ -137,6 +144,8 @@ exports[`ContactsForm returns contacts when adding 1`] = `
 
 exports[`ContactsForm returns updated contacts when when adding 1`] = `
 <ContactsForm
+  className="custom-class"
+  contactsTableHeader="Contacts Table Header"
   data={
     Array [
       Object {
@@ -150,7 +159,7 @@ exports[`ContactsForm returns updated contacts when when adding 1`] = `
   onChange={[MockFunction]}
 >
   <div
-    className="contacts-form"
+    className="contacts-form custom-class"
   >
     <InputText
       className="name"
@@ -253,6 +262,11 @@ exports[`ContactsForm returns updated contacts when when adding 1`] = `
     <div
       className="column field"
     >
+      <div
+        className="title is-5 contacts-table-header"
+      >
+        Contacts Table Header
+      </div>
       <table
         className="general table is-fullwidth is-striped is-hoverable"
       >

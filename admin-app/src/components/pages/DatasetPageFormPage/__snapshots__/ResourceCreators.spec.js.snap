@@ -7,6 +7,7 @@ exports[`ResourceCreators renders correctly 1`] = `
 >
   <ContactsForm
     className="resource-creators"
+    contactsTableHeader="datasetPageFormPage.resourceCreators.contactsTableHeader"
     data={Array []}
     onChange={[MockFunction]}
   >
@@ -114,6 +115,11 @@ exports[`ResourceCreators renders correctly 1`] = `
       <div
         className="column field"
       >
+        <div
+          className="title is-5 contacts-table-header"
+        >
+          datasetPageFormPage.resourceCreators.contactsTableHeader
+        </div>
         <table
           className="general table is-fullwidth is-striped is-hoverable"
         >

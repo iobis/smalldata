@@ -7,6 +7,8 @@ describe('ContactsForm', () => {
     const onChange = jest.fn()
     const wrapper = mount(
       <ContactsForm
+        className="custom-class"
+        contactsTableHeader="Contacts Table Header"
         data={[]}
         onChange={onChange}/>)
     expect(wrapper).toMatchSnapshot()
@@ -31,6 +33,8 @@ describe('ContactsForm', () => {
     const onChange = jest.fn()
     const wrapper = mount(
       <ContactsForm
+        className="custom-class"
+        contactsTableHeader="Contacts Table Header"
         data={[{
           name:         'name-1',
           email:        'email-1',
