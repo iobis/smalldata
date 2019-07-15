@@ -62,7 +62,18 @@ exports[`DatasetPageFormPage renders correctly 1`] = `
             </div>
           </div>
         </div>
-        <BasicInformation>
+        <BasicInformation
+          data={
+            Object {
+              "abstract": "",
+              "language": "English",
+              "licence": "Creative Commons Attribution Non Commercial (CC-BY) 4.0 License",
+              "publishingOrganisation": "",
+              "title": "",
+            }
+          }
+          onChange={[Function]}
+        >
           <div
             className="basic-information"
           >

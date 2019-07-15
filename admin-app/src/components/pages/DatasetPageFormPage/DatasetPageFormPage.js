@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import ActiveStepHeader from '@smalldata/dwca-lib/src/components/StepHeaders/ActiveStepHeader'
 import NotConfirmedStepHeader from '@smalldata/dwca-lib/src/components/StepHeaders/NotConfirmedStepHeader'
-import BasicInformation from './BasicInformation'
+import BasicInformation, { languages, licences } from './BasicInformation'
 import ConfirmedStepHeader from '@smalldata/dwca-lib/src/components/StepHeaders/ConfirmedStepHeader'
 import { useTranslation } from 'react-i18next'
 
 export default function DatasetPageFormPage() {
+  const initialState = createInitialState()
   const { t } = useTranslation()
+  const [basicInformation, setBasicInformation] = useState(initialState.basicInformation)
   const [activeStepIndex, setActiveStepIndex] = useState(0)
   const [finalSummaryVisible, setFinalSummaryVisible] = useState(false)
 
@@ -32,7 +34,9 @@ export default function DatasetPageFormPage() {
     stepTitle:       t('datasetPageFormPage.basicInformation.step.stepTitle'),
 
     children:
-      <BasicInformation/>
+      <BasicInformation
+        data={basicInformation}
+        onChange={setBasicInformation}/>
   }, {
     dataDescription: t('datasetPageFormPage.resourceContacts.step.dataDescription'),
     nextStep:        t('datasetPageFormPage.resourceCreators.step.stepTitle'),
@@ -105,4 +109,16 @@ export default function DatasetPageFormPage() {
         </div>)}
     </section>
   )
+}
+
+function createInitialState() {
+  return {
+    basicInformation: {
+      title:                  '',
+      publishingOrganisation: '',
+      licence:                licences[0],
+      language:               languages[0],
+      abstract:               ''
+    }
+  }
 }
