@@ -57,10 +57,22 @@ export default {
         }
       },
       resourceContacts:      {
-        step: {
+        step:         {
           dataDescription: 'Couplings',
           stepDescription: 'Resource contact details',
           stepTitle:       'Resource Contacts'
+        },
+        name:         {
+          label: 'Name'
+        },
+        email:        {
+          label: 'Email'
+        },
+        organisation: {
+          label: 'Organisation'
+        },
+        position:     {
+          label: 'Position'
         }
       },
       resourceCreators:      {

@@ -1,0 +1,305 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResourceContacts returns contacts when when adding 1`] = `
+<ResourceContacts
+  data={Array []}
+  onChange={[MockFunction]}
+>
+  <div
+    className="resource-contacts"
+  >
+    <InputText
+      className="name"
+      name="datasetPageFormPage.resourceContacts.name"
+      onChange={[Function]}
+      value=""
+    >
+      <div
+        className="column field name"
+      >
+        <label
+          className="label"
+        >
+          datasetPageFormPage.resourceContacts.name.label
+        </label>
+        <input
+          className="input"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </div>
+    </InputText>
+    <InputText
+      className="email"
+      name="datasetPageFormPage.resourceContacts.email"
+      onChange={[Function]}
+      value=""
+    >
+      <div
+        className="column field email"
+      >
+        <label
+          className="label"
+        >
+          datasetPageFormPage.resourceContacts.email.label
+        </label>
+        <input
+          className="input"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </div>
+    </InputText>
+    <InputText
+      className="organisation"
+      name="datasetPageFormPage.resourceContacts.organisation"
+      onChange={[Function]}
+      value=""
+    >
+      <div
+        className="column field organisation"
+      >
+        <label
+          className="label"
+        >
+          datasetPageFormPage.resourceContacts.organisation.label
+        </label>
+        <input
+          className="input"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </div>
+    </InputText>
+    <InputText
+      className="position"
+      name="datasetPageFormPage.resourceContacts.position"
+      onChange={[Function]}
+      value=""
+    >
+      <div
+        className="column field position"
+      >
+        <label
+          className="label"
+        >
+          datasetPageFormPage.resourceContacts.position.label
+        </label>
+        <input
+          className="input"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </div>
+    </InputText>
+    <div
+      className="column field"
+    >
+      <button
+        className="add button"
+        onClick={[Function]}
+      >
+        common.add
+      </button>
+    </div>
+    <table
+      className="general table is-fullwidth is-striped is-hoverable"
+    >
+      <thead>
+        <tr>
+          <th>
+            datasetPageFormPage.resourceContacts.name.label
+          </th>
+          <th>
+            datasetPageFormPage.resourceContacts.email.label
+          </th>
+          <th>
+            datasetPageFormPage.resourceContacts.organisation.label
+          </th>
+          <th>
+            datasetPageFormPage.resourceContacts.position.label
+          </th>
+        </tr>
+      </thead>
+      <tbody />
+    </table>
+  </div>
+</ResourceContacts>
+`;
+
+exports[`ResourceContacts returns updated contacts when when adding 1`] = `
+<ResourceContacts
+  data={
+    Array [
+      Object {
+        "email": "email-1",
+        "name": "name-1",
+        "organisation": "organisation-1",
+        "position": "position-1",
+      },
+    ]
+  }
+  onChange={[MockFunction]}
+>
+  <div
+    className="resource-contacts"
+  >
+    <InputText
+      className="name"
+      name="datasetPageFormPage.resourceContacts.name"
+      onChange={[Function]}
+      value=""
+    >
+      <div
+        className="column field name"
+      >
+        <label
+          className="label"
+        >
+          datasetPageFormPage.resourceContacts.name.label
+        </label>
+        <input
+          className="input"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </div>
+    </InputText>
+    <InputText
+      className="email"
+      name="datasetPageFormPage.resourceContacts.email"
+      onChange={[Function]}
+      value=""
+    >
+      <div
+        className="column field email"
+      >
+        <label
+          className="label"
+        >
+          datasetPageFormPage.resourceContacts.email.label
+        </label>
+        <input
+          className="input"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </div>
+    </InputText>
+    <InputText
+      className="organisation"
+      name="datasetPageFormPage.resourceContacts.organisation"
+      onChange={[Function]}
+      value=""
+    >
+      <div
+        className="column field organisation"
+      >
+        <label
+          className="label"
+        >
+          datasetPageFormPage.resourceContacts.organisation.label
+        </label>
+        <input
+          className="input"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </div>
+    </InputText>
+    <InputText
+      className="position"
+      name="datasetPageFormPage.resourceContacts.position"
+      onChange={[Function]}
+      value=""
+    >
+      <div
+        className="column field position"
+      >
+        <label
+          className="label"
+        >
+          datasetPageFormPage.resourceContacts.position.label
+        </label>
+        <input
+          className="input"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </div>
+    </InputText>
+    <div
+      className="column field"
+    >
+      <button
+        className="add button"
+        onClick={[Function]}
+      >
+        common.add
+      </button>
+    </div>
+    <table
+      className="general table is-fullwidth is-striped is-hoverable"
+    >
+      <thead>
+        <tr>
+          <th>
+            datasetPageFormPage.resourceContacts.name.label
+          </th>
+          <th>
+            datasetPageFormPage.resourceContacts.email.label
+          </th>
+          <th>
+            datasetPageFormPage.resourceContacts.organisation.label
+          </th>
+          <th>
+            datasetPageFormPage.resourceContacts.position.label
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <ContactRow
+          email="email-1"
+          key="0"
+          name="name-1"
+          organisation="organisation-1"
+          position="position-1"
+        >
+          <tr
+            className="contact-row"
+          >
+            <td
+              className="name"
+            >
+              name-1
+            </td>
+            <td
+              className="email"
+            >
+              email-1
+            </td>
+            <td
+              className="organisation"
+            >
+              organisation-1
+            </td>
+            <td
+              className="position"
+            >
+              position-1
+            </td>
+          </tr>
+        </ContactRow>
+      </tbody>
+    </table>
+  </div>
+</ResourceContacts>
+`;
