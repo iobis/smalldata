@@ -23,6 +23,20 @@ describe('Dropdown', () => {
     expect(onChange).toHaveBeenCalledTimes(1)
     expect(onChange).toBeCalledWith('option-2')
   })
+
+  it('updates selected value when props changing', () => {
+    const onChange = jest.fn()
+    const wrapper = mount(createComponent({ onChange }))
+
+    wrapper.find('.dropdown').simulate('click')
+    expect(wrapper.find('.selected-value').text()).toBe('option-1')
+    expect(wrapper.find('.dropdown').hasClass('is-active')).toBe(true)
+    expect(wrapper.find('.dropdown-item')).toHaveLength(3)
+    expect(onChange).toHaveBeenCalledTimes(0)
+
+    wrapper.setProps({ value: 'option-3' })
+    expect(wrapper.find('.selected-value').text()).toBe('option-3')
+  })
 })
 
 function createComponent(props) {

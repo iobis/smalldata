@@ -64,9 +64,48 @@ export async function getUsersWithDatasets() {
   const [users, datasets] = await Promise.all([getUsers(), getDatasets()])
   const datasetIdToDataset = groupBy(datasets, 'id')
   return users.map(user => {
+    if (!user['dataset_refs']) user['dataset_refs'] = []
     const datasets = user['dataset_refs'].map(datasetRef => datasetIdToDataset[datasetRef][0])
     return { ...user, datasets }
   })
+}
+
+export async function createUser({ datasetIds, email, name, role }) {
+  const request = {
+    'dataset_refs': datasetIds,
+    emailAddress:   email,
+    name,
+    role
+  }
+  const url = '/api/users'
+  return await fetch(url, {
+    method: 'POST',
+    headers,
+    body:   JSON.stringify(request)
+  }).then(response => response.json())
+    .catch(error => ({
+      exception:        'Some error occurred',
+      exceptionMessage: error
+    }))
+}
+
+export async function updateUser({ id, datasetIds, email, name, role }) {
+  const request = {
+    'dataset_refs': datasetIds,
+    emailAddress:   email,
+    name,
+    role
+  }
+  const url = '/api/users/' + id
+  return await fetch(url, {
+    method: 'PUT',
+    headers,
+    body:   JSON.stringify(request)
+  }).then(response => response.json())
+    .catch(error => ({
+      exception:        'Some error occurred',
+      exceptionMessage: error
+    }))
 }
 
 function groupBy(list, props) {

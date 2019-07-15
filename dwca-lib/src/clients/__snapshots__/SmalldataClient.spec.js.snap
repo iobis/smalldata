@@ -549,5 +549,13 @@ Sevastopol Bay is located in south western part of the Crimean peninsula, Ukrain
     ],
     "emailAddress": "another.user@domain.org",
   },
+  Object {
+    "_id": "id-3",
+    "_ref": "red-3",
+    "bulkiness": 0,
+    "dataset_refs": Array [],
+    "datasets": Array [],
+    "emailAddress": "some.user@domain.org",
+  },
 ]
 `;
