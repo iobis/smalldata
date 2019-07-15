@@ -72,7 +72,7 @@ export default function FinalSummary({
         <ChangeButton onClick={() => onChangeClick({ index: 3 })}/>
       </section>
       <section className="keywords-summary">
-        <SectionTitle>4 - {t('datasetPageFormPage.keywords.step.stepTitle')}</SectionTitle>
+        <SectionTitle>5 - {t('datasetPageFormPage.keywords.step.stepTitle')}</SectionTitle>
         <div className="content">
           {keywords.join(', ')}
         </div>

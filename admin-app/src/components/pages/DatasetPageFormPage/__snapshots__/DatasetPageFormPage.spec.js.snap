@@ -2142,7 +2142,7 @@ exports[`DatasetPageFormPage renders correctly 3`] = `
             <h2
               className="title is-4"
             >
-              4 - 
+              5 - 
               datasetPageFormPage.keywords.step.stepTitle
             </h2>
           </SectionTitle>
