@@ -57,7 +57,7 @@ export default {
         }
       },
       resourceContacts:      {
-        step: {
+        step:                {
           dataDescription: '',
           stepDescription: 'Resource contact details',
           stepTitle:       'Resource Contacts',
@@ -66,7 +66,7 @@ export default {
         contactsTableHeader: 'Resource creators attached to dataset'
       },
       resourceCreators:      {
-        step: {
+        step:                {
           dataDescription: '',
           stepDescription: 'Resource creators details',
           stepTitle:       'Resource Creators',
@@ -75,11 +75,13 @@ export default {
         contactsTableHeader: 'Resource creators attached to dataset'
       },
       metadataProviders:     {
-        step: {
-          dataDescription: 'Couplings',
+        step:                {
+          dataDescription: '',
           stepDescription: 'Metadata provider details',
-          stepTitle:       'Metadata Providers'
-        }
+          stepTitle:       'Metadata Providers',
+          selectedData:    '{{nrOfContacts}} people coupled as metadata provider'
+        },
+        contactsTableHeader: 'Metadata providers attached to dataset'
       },
       keywords:              {
         step: {

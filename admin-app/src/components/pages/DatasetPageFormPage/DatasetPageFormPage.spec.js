@@ -15,7 +15,7 @@ describe('DatasetPageFormPage', () => {
       .toEqual('dataset title')
     expect(wrapper.find('.resource-contacts .contact-row')).toHaveLength(0)
 
-    addResourceContacts(wrapper, 1)
+    addResourceContact(wrapper, 1)
     wrapper.find('.step-3 .step-header').simulate('click')
     expect(wrapper.find('.step-header .selected-data').at(1).text())
       .toEqual('datasetPageFormPage.resourceContacts.step.selectedData {"nrOfContacts":1}')
@@ -23,13 +23,13 @@ describe('DatasetPageFormPage', () => {
     wrapper.find('.step-2 .step-header').simulate('click')
     expect(wrapper.find('.resource-contacts .contact-row')).toHaveLength(1)
 
-    addResourceContacts(wrapper, 2)
+    addResourceContact(wrapper, 2)
     wrapper.find('.step-3 .step-header').simulate('click')
     expect(wrapper.find('.step-header .selected-data').at(1).text())
       .toEqual('datasetPageFormPage.resourceContacts.step.selectedData {"nrOfContacts":2}')
     expect(wrapper.find('.resource-creators .contact-row')).toHaveLength(0)
 
-    addResourceCreators(wrapper, 1)
+    addResourceCreator(wrapper, 1)
     wrapper.find('.step-4 .step-header').simulate('click')
     expect(wrapper.find('.step-header .selected-data').at(2).text())
       .toEqual('datasetPageFormPage.resourceCreators.step.selectedData {"nrOfContacts":1}')
@@ -37,10 +37,24 @@ describe('DatasetPageFormPage', () => {
     wrapper.find('.step-3 .step-header').simulate('click')
     expect(wrapper.find('.resource-creators .contact-row')).toHaveLength(1)
 
-    addResourceCreators(wrapper, 2)
+    addResourceCreator(wrapper, 2)
     wrapper.find('.step-4 .step-header').simulate('click')
     expect(wrapper.find('.step-header .selected-data').at(2).text())
       .toEqual('datasetPageFormPage.resourceCreators.step.selectedData {"nrOfContacts":2}')
+    expect(wrapper.find('.metadata-providers .contact-row')).toHaveLength(0)
+
+    addMetadataProvider(wrapper, 1)
+    wrapper.find('.step-5 .step-header').simulate('click')
+    expect(wrapper.find('.step-header .selected-data').at(3).text())
+      .toEqual('datasetPageFormPage.metadataProviders.step.selectedData {"nrOfContacts":1}')
+
+    wrapper.find('.step-4 .step-header').simulate('click')
+    expect(wrapper.find('.metadata-providers .contact-row')).toHaveLength(1)
+
+    addMetadataProvider(wrapper, 2)
+    wrapper.find('.step-5 .step-header').simulate('click')
+    expect(wrapper.find('.step-header .selected-data').at(3).text())
+      .toEqual('datasetPageFormPage.metadataProviders.step.selectedData {"nrOfContacts":2}')
   })
 
   function addBasicData(wrapper) {
@@ -56,19 +70,27 @@ describe('DatasetPageFormPage', () => {
       .simulate('change', { target: { value: 'dataset abstract information' } })
   }
 
-  function addResourceContacts(wrapper, id) {
-    wrapper.find('.resource-contacts .name input').simulate('change', { target: { value: 'resource-contacts-name-' + id } })
-    wrapper.find('.resource-contacts .email input').simulate('change', { target: { value: 'resource-contacts-email-' + id } })
-    wrapper.find('.resource-contacts .organisation input').simulate('change', { target: { value: 'resource-contacts-organisation-' + id } })
-    wrapper.find('.resource-contacts .position input').simulate('change', { target: { value: 'resource-contacts-position-' + id } })
+  function addResourceContact(wrapper, id) {
+    wrapper.find('.resource-contacts .name input').simulate('change', { target: { value: 'resource-contact-name-' + id } })
+    wrapper.find('.resource-contacts .email input').simulate('change', { target: { value: 'resource-contact-email-' + id } })
+    wrapper.find('.resource-contacts .organisation input').simulate('change', { target: { value: 'resource-contact-organisation-' + id } })
+    wrapper.find('.resource-contacts .position input').simulate('change', { target: { value: 'resource-contact-position-' + id } })
     wrapper.find('.resource-contacts .add').simulate('click')
   }
 
-  function addResourceCreators(wrapper, id) {
-    wrapper.find('.resource-creators .name input').simulate('change', { target: { value: 'resource-creators-name-' + id } })
-    wrapper.find('.resource-creators .email input').simulate('change', { target: { value: 'resource-creators-email-' + id } })
-    wrapper.find('.resource-creators .organisation input').simulate('change', { target: { value: 'resource-creators-organisation-' + id } })
-    wrapper.find('.resource-creators .position input').simulate('change', { target: { value: 'resource-creators-position-' + id } })
+  function addResourceCreator(wrapper, id) {
+    wrapper.find('.resource-creators .name input').simulate('change', { target: { value: 'resource-creator-name-' + id } })
+    wrapper.find('.resource-creators .email input').simulate('change', { target: { value: 'resource-creator-email-' + id } })
+    wrapper.find('.resource-creators .organisation input').simulate('change', { target: { value: 'resource-creator-organisation-' + id } })
+    wrapper.find('.resource-creators .position input').simulate('change', { target: { value: 'resource-creator-position-' + id } })
     wrapper.find('.resource-creators .add').simulate('click')
+  }
+
+  function addMetadataProvider(wrapper, id) {
+    wrapper.find('.metadata-providers .name input').simulate('change', { target: { value: 'metadata-provider-name-' + id } })
+    wrapper.find('.metadata-providers .email input').simulate('change', { target: { value: 'metadata-provider-email-' + id } })
+    wrapper.find('.metadata-providers .organisation input').simulate('change', { target: { value: 'metadata-provider-organisation-' + id } })
+    wrapper.find('.metadata-providers .position input').simulate('change', { target: { value: 'metadata-provider-position-' + id } })
+    wrapper.find('.metadata-providers .add').simulate('click')
   }
 })
