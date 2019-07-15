@@ -1,7 +1,7 @@
 import { isScientificNameId, getByName, getById } from './MarineSpeciesClient'
 
 describe('MarineSpeciesClient', () => {
-  describe('getByName', () => {
+  describe('getByExpertByName', () => {
     beforeEach(() => {
       global.fetch = jest.fn().mockImplementation(() =>
         new Promise((resolve) => {
