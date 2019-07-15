@@ -84,10 +84,15 @@ export default {
         contactsTableHeader: 'Metadata providers attached to dataset'
       },
       keywords:              {
-        step: {
+        step:     {
           dataDescription: 'Couplings',
           stepDescription: 'Specify keywords associated with dataset',
           stepTitle:       'Keywords'
+        },
+        keywords: {
+          help:        'hit enter to add keyword to list',
+          label:       'Keywords',
+          placeholder: ''
         }
       },
       contactsForm:          {
