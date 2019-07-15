@@ -3,6 +3,7 @@ import NameValueHeader from '@smalldata/dwca-lib/src/components/FinalSummary/Nam
 import NameValueRow from '@smalldata/dwca-lib/src/components/FinalSummary/NameValueRow'
 import PropTypes from 'prop-types'
 import React from 'react'
+import SectionTitle from '@smalldata/dwca-lib/src/components/FinalSummary/SectionTitle'
 import { basicInformationShape } from '../BasicInformation'
 import { contactShape } from '../ContactsForm/ContactsForm'
 import { useTranslation } from 'react-i18next'
@@ -89,16 +90,6 @@ FinalSummary.propTypes = {
   onChangeClick:     PropTypes.func.isRequired,
   resourceContacts:  PropTypes.arrayOf(PropTypes.shape(contactShape).isRequired),
   resourceCreators:  PropTypes.arrayOf(PropTypes.shape(contactShape).isRequired)
-}
-
-function SectionTitle({ children }) {
-  return (
-    <h2 className="title is-4">{children}</h2>
-  )
-}
-
-SectionTitle.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired
 }
 
 function ContactTable({ contacts }) {
