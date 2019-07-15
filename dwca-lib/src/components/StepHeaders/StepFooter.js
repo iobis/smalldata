@@ -12,7 +12,7 @@ export default function StepFooter({
     <div className="step-footer columns section">
       <CopyPreviousData
         onClick={onCopyPreviousDataClick}
-        visible/>
+        visible={!!onCopyPreviousDataClick}/>
       {!!nextStep && (
         <ContinueButton
           name="locationContinue"
