@@ -3,6 +3,7 @@ import ActiveStepHeader from '@smalldata/dwca-lib/src/components/StepHeaders/Act
 import NotConfirmedStepHeader from '@smalldata/dwca-lib/src/components/StepHeaders/NotConfirmedStepHeader'
 import BasicInformation, { languages, licences } from './BasicInformation'
 import ResourceContacts from './ResourceContacts'
+import ResourceCreators from './ResourceCreators'
 import ConfirmedStepHeader from '@smalldata/dwca-lib/src/components/StepHeaders/ConfirmedStepHeader'
 import { useTranslation } from 'react-i18next'
 
@@ -11,6 +12,7 @@ export default function DatasetPageFormPage() {
   const { t } = useTranslation()
   const [basicInformation, setBasicInformation] = useState(initialState.basicInformation)
   const [resourceContacts, setResourceContacts] = useState(initialState.resourceContacts)
+  const [resourceCreators, setResourceCreators] = useState(initialState.resourceCreators)
   const [activeStepIndex, setActiveStepIndex] = useState(0)
   const [finalSummaryVisible, setFinalSummaryVisible] = useState(false)
 
@@ -58,7 +60,9 @@ export default function DatasetPageFormPage() {
     stepTitle:       t('datasetPageFormPage.resourceCreators.step.stepTitle'),
 
     children:
-      <div>RESOURCE CREATOR</div>
+      <ResourceCreators
+        data={resourceCreators}
+        onChange={setResourceCreators}/>
   }, {
     dataDescription: t('datasetPageFormPage.metadataProviders.step.dataDescription'),
     nextStep:        t('datasetPageFormPage.keywords.step.stepTitle'),
@@ -124,6 +128,7 @@ function createInitialState() {
       language:               languages[0],
       abstract:               ''
     },
-    resourceContacts: []
+    resourceContacts: [],
+    resourceCreators: []
   }
 }

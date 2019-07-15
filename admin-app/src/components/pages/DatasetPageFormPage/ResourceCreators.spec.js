@@ -1,11 +1,11 @@
-import ResourceContacts from './ResourceContacts'
+import ResourceCreators from './ResourceCreators'
 import React from 'react'
 import { mount } from 'enzyme'
 
-describe('ResourceContacts', () => {
+describe('ResourceCreators', () => {
   it('renders correctly', () => {
     const wrapper = mount(
-      <ResourceContacts
+      <ResourceCreators
         data={[]}
         onChange={jest.fn()}/>)
     expect(wrapper).toMatchSnapshot()
