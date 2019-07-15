@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MetadataProviders renders correctly 1`] = `
+<MetadataProviders
+  data={Array []}
+  onChange={[MockFunction]}
+>
+  <ContactsForm
+    className="metadata-providers"
+    contactsTableHeader="datasetPageFormPage.metadataProviders.contactsTableHeader"
+    data={Array []}
+    onChange={[MockFunction]}
+  >
+    <div
+      className="contacts-form metadata-providers"
+    >
+      <InputText
+        className="name"
+        name="datasetPageFormPage.contactsForm.name"
+        onChange={[Function]}
+        value=""
+      >
+        <div
+          className="column field name"
+        >
+          <label
+            className="label"
+          >
+            datasetPageFormPage.contactsForm.name.label
+          </label>
+          <input
+            className="input"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+        </div>
+      </InputText>
+      <InputText
+        className="email"
+        name="datasetPageFormPage.contactsForm.email"
+        onChange={[Function]}
+        value=""
+      >
+        <div
+          className="column field email"
+        >
+          <label
+            className="label"
+          >
+            datasetPageFormPage.contactsForm.email.label
+          </label>
+          <input
+            className="input"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+        </div>
+      </InputText>
+      <InputText
+        className="organisation"
+        name="datasetPageFormPage.contactsForm.organisation"
+        onChange={[Function]}
+        value=""
+      >
+        <div
+          className="column field organisation"
+        >
+          <label
+            className="label"
+          >
+            datasetPageFormPage.contactsForm.organisation.label
+          </label>
+          <input
+            className="input"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+        </div>
+      </InputText>
+      <InputText
+        className="position"
+        name="datasetPageFormPage.contactsForm.position"
+        onChange={[Function]}
+        value=""
+      >
+        <div
+          className="column field position"
+        >
+          <label
+            className="label"
+          >
+            datasetPageFormPage.contactsForm.position.label
+          </label>
+          <input
+            className="input"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+        </div>
+      </InputText>
+      <div
+        className="column field"
+      >
+        <button
+          className="add button"
+          onClick={[Function]}
+        >
+          common.add
+        </button>
+      </div>
+      <div
+        className="column field"
+      >
+        <div
+          className="title is-5 contacts-table-header"
+        >
+          datasetPageFormPage.metadataProviders.contactsTableHeader
+        </div>
+        <table
+          className="general table is-fullwidth is-striped is-hoverable"
+        >
+          <thead>
+            <tr>
+              <th>
+                datasetPageFormPage.contactsForm.name.label
+              </th>
+              <th>
+                datasetPageFormPage.contactsForm.email.label
+              </th>
+              <th>
+                datasetPageFormPage.contactsForm.organisation.label
+              </th>
+              <th>
+                datasetPageFormPage.contactsForm.position.label
+              </th>
+            </tr>
+          </thead>
+          <tbody />
+        </table>
+      </div>
+    </div>
+  </ContactsForm>
+</MetadataProviders>
+`;

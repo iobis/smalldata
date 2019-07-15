@@ -1,9 +1,5 @@
-$section-padding: 0.5rem;
-
-@import '../../node_modules/bulma/bulma';
-@import '../../node_modules/bulma-checkradio/src/sass/index';
 @import '../../node_modules/flatpickr/dist/flatpickr.css';
-@import '../../dwca-lib/src/components/form/all.scss';
+@import '../../dwca-lib/src/all';
 @import 'components/layout/Divider';
 @import 'components/layout/Navbar';
 @import 'components/pages/InputDataPage';
@@ -16,9 +12,6 @@ $section-padding: 0.5rem;
 @import 'components/pages/Occurrence/MeasurementOrFact/MeasurementOrFact';
 @import 'components/pages/Occurrence/ObservationData/ObservationData';
 @import 'components/pages/Occurrence/OccurrenceData/OccurrenceData';
-@import 'components/pages/Occurrence/StepHeaders/CopyPreviousData';
-@import 'components/pages/Occurrence/StepHeaders/StepHeader';
-@import 'components/pages/Occurrence/StepHeaders/StepFooter';
 
 body {
   margin: 0;
