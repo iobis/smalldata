@@ -41,7 +41,7 @@ exports[`DatasetPageFormPage renders correctly 1`] = `
             </p>
           </div>
           <div
-            className="column is-7 is-size-5 is-hidden-mobile"
+            className="selected-data column is-7 is-size-5 is-hidden-mobile"
           />
           <div
             className="column details"
@@ -395,7 +395,7 @@ exports[`DatasetPageFormPage renders correctly 1`] = `
             </p>
           </div>
           <div
-            className="column is-7 is-size-5 is-hidden-mobile"
+            className="selected-data column is-7 is-size-5 is-hidden-mobile"
           />
           <div
             className="column details"
@@ -454,7 +454,7 @@ exports[`DatasetPageFormPage renders correctly 1`] = `
             </p>
           </div>
           <div
-            className="column is-7 is-size-5 is-hidden-mobile"
+            className="selected-data column is-7 is-size-5 is-hidden-mobile"
           />
           <div
             className="column details"
@@ -513,7 +513,7 @@ exports[`DatasetPageFormPage renders correctly 1`] = `
             </p>
           </div>
           <div
-            className="column is-7 is-size-5 is-hidden-mobile"
+            className="selected-data column is-7 is-size-5 is-hidden-mobile"
           />
           <div
             className="column details"
@@ -571,7 +571,7 @@ exports[`DatasetPageFormPage renders correctly 1`] = `
             </p>
           </div>
           <div
-            className="column is-7 is-size-5 is-hidden-mobile"
+            className="selected-data column is-7 is-size-5 is-hidden-mobile"
           />
           <div
             className="column details"
@@ -650,7 +650,7 @@ exports[`DatasetPageFormPage renders correctly 2`] = `
             </p>
           </div>
           <div
-            className="column is-7 is-size-5 is-hidden-mobile"
+            className="selected-data column is-7 is-size-5 is-hidden-mobile"
           />
           <div
             className="column details"
@@ -1004,7 +1004,7 @@ exports[`DatasetPageFormPage renders correctly 2`] = `
             </p>
           </div>
           <div
-            className="column is-7 is-size-5 is-hidden-mobile"
+            className="selected-data column is-7 is-size-5 is-hidden-mobile"
           />
           <div
             className="column details"
@@ -1063,7 +1063,7 @@ exports[`DatasetPageFormPage renders correctly 2`] = `
             </p>
           </div>
           <div
-            className="column is-7 is-size-5 is-hidden-mobile"
+            className="selected-data column is-7 is-size-5 is-hidden-mobile"
           />
           <div
             className="column details"
@@ -1122,7 +1122,7 @@ exports[`DatasetPageFormPage renders correctly 2`] = `
             </p>
           </div>
           <div
-            className="column is-7 is-size-5 is-hidden-mobile"
+            className="selected-data column is-7 is-size-5 is-hidden-mobile"
           />
           <div
             className="column details"
@@ -1180,7 +1180,7 @@ exports[`DatasetPageFormPage renders correctly 2`] = `
             </p>
           </div>
           <div
-            className="column is-7 is-size-5 is-hidden-mobile"
+            className="selected-data column is-7 is-size-5 is-hidden-mobile"
           />
           <div
             className="column details"

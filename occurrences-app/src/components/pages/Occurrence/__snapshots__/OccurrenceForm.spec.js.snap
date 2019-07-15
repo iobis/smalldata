@@ -43,7 +43,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5 is-hidden-mobile"
+              className="selected-data column is-7 is-size-5 is-hidden-mobile"
             />
             <div
               className="column details"
@@ -152,7 +152,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5 is-hidden-mobile"
+              className="selected-data column is-7 is-size-5 is-hidden-mobile"
             />
             <div
               className="column details"
@@ -222,7 +222,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5 is-hidden-mobile"
+              className="selected-data column is-7 is-size-5 is-hidden-mobile"
             />
             <div
               className="column details"
@@ -282,7 +282,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5 is-hidden-mobile"
+              className="selected-data column is-7 is-size-5 is-hidden-mobile"
             />
             <div
               className="column details"
@@ -346,7 +346,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5 is-hidden-mobile"
+              className="selected-data column is-7 is-size-5 is-hidden-mobile"
             />
             <div
               className="column details"
@@ -405,7 +405,7 @@ exports[`OccurrenceForm renders correctly 1`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5 is-hidden-mobile"
+              className="selected-data column is-7 is-size-5 is-hidden-mobile"
             />
             <div
               className="column details"
@@ -489,7 +489,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5 is-hidden-mobile"
+              className="selected-data column is-7 is-size-5 is-hidden-mobile"
             />
             <div
               className="column details"
@@ -580,7 +580,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5"
+              className="selected-data column is-7 is-size-5"
             >
               <OccurrenceDataSummary
                 basisOfRecord="humanObservation"
@@ -685,7 +685,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5"
+              className="selected-data column is-7 is-size-5"
             >
               <SelectedLocation
                 coordinateUncertainty={null}
@@ -775,7 +775,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5 is-hidden-mobile"
+              className="selected-data column is-7 is-size-5 is-hidden-mobile"
             />
             <div
               className="column details"
@@ -1191,7 +1191,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5 is-hidden-mobile"
+              className="selected-data column is-7 is-size-5 is-hidden-mobile"
             />
             <div
               className="column details"
@@ -1250,7 +1250,7 @@ exports[`OccurrenceForm renders correctly 2`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5 is-hidden-mobile"
+              className="selected-data column is-7 is-size-5 is-hidden-mobile"
             />
             <div
               className="column details"
@@ -1334,7 +1334,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5 is-hidden-mobile"
+              className="selected-data column is-7 is-size-5 is-hidden-mobile"
             />
             <div
               className="column details"
@@ -1425,7 +1425,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5"
+              className="selected-data column is-7 is-size-5"
             >
               <OccurrenceDataSummary
                 basisOfRecord="humanObservation"
@@ -1530,7 +1530,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5"
+              className="selected-data column is-7 is-size-5"
             >
               <SelectedLocation
                 coordinateUncertainty={null}
@@ -1622,7 +1622,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5"
+              className="selected-data column is-7 is-size-5"
             >
               Institution: institution code; Identified by: Indiana Jones
             </div>
@@ -1697,7 +1697,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5 is-hidden-mobile"
+              className="selected-data column is-7 is-size-5 is-hidden-mobile"
             />
             <div
               className="column details"
@@ -3296,7 +3296,7 @@ exports[`OccurrenceForm renders correctly 3`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5 is-hidden-mobile"
+              className="selected-data column is-7 is-size-5 is-hidden-mobile"
             />
             <div
               className="column details"
@@ -3380,7 +3380,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5 is-hidden-mobile"
+              className="selected-data column is-7 is-size-5 is-hidden-mobile"
             />
             <div
               className="column details"
@@ -3471,7 +3471,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5"
+              className="selected-data column is-7 is-size-5"
             >
               <OccurrenceDataSummary
                 basisOfRecord="humanObservation"
@@ -3576,7 +3576,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5"
+              className="selected-data column is-7 is-size-5"
             >
               <SelectedLocation
                 coordinateUncertainty={null}
@@ -3668,7 +3668,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5"
+              className="selected-data column is-7 is-size-5"
             >
               Institution: institution code; Identified by: Indiana Jones
             </div>
@@ -3777,7 +3777,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5"
+              className="selected-data column is-7 is-size-5"
             >
               <MeasurementOrFactSummary
                 data={
@@ -3867,7 +3867,7 @@ exports[`OccurrenceForm renders correctly 4`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5 is-hidden-mobile"
+              className="selected-data column is-7 is-size-5 is-hidden-mobile"
             />
             <div
               className="column details"
@@ -4072,7 +4072,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5 is-hidden-mobile"
+              className="selected-data column is-7 is-size-5 is-hidden-mobile"
             />
             <div
               className="column details"
@@ -4163,7 +4163,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5"
+              className="selected-data column is-7 is-size-5"
             >
               <OccurrenceDataSummary
                 basisOfRecord="humanObservation"
@@ -4268,7 +4268,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5"
+              className="selected-data column is-7 is-size-5"
             >
               <SelectedLocation
                 coordinateUncertainty={null}
@@ -4360,7 +4360,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5"
+              className="selected-data column is-7 is-size-5"
             >
               Institution: institution code; Identified by: Indiana Jones
             </div>
@@ -4491,7 +4491,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5"
+              className="selected-data column is-7 is-size-5"
             >
               <MeasurementOrFactSummary
                 data={
@@ -4592,7 +4592,7 @@ exports[`OccurrenceForm renders correctly 5`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5 is-hidden-mobile"
+              className="selected-data column is-7 is-size-5 is-hidden-mobile"
             />
             <div
               className="column details"
@@ -4797,7 +4797,7 @@ exports[`OccurrenceForm renders correctly 6`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5 is-hidden-mobile"
+              className="selected-data column is-7 is-size-5 is-hidden-mobile"
             />
             <div
               className="column details"
@@ -4888,7 +4888,7 @@ exports[`OccurrenceForm renders correctly 6`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5"
+              className="selected-data column is-7 is-size-5"
             >
               <OccurrenceDataSummary
                 basisOfRecord="humanObservation"
@@ -4993,7 +4993,7 @@ exports[`OccurrenceForm renders correctly 6`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5"
+              className="selected-data column is-7 is-size-5"
             >
               <SelectedLocation
                 coordinateUncertainty={null}
@@ -5085,7 +5085,7 @@ exports[`OccurrenceForm renders correctly 6`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5"
+              className="selected-data column is-7 is-size-5"
             >
               Institution: institution code; Identified by: Indiana Jones
             </div>
@@ -5238,7 +5238,7 @@ exports[`OccurrenceForm renders correctly 6`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5"
+              className="selected-data column is-7 is-size-5"
             >
               <MeasurementOrFactSummary
                 data={
@@ -5350,7 +5350,7 @@ exports[`OccurrenceForm renders correctly 6`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5 is-hidden-mobile"
+              className="selected-data column is-7 is-size-5 is-hidden-mobile"
             />
             <div
               className="column details"
@@ -5555,7 +5555,7 @@ exports[`OccurrenceForm renders correctly 7`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5 is-hidden-mobile"
+              className="selected-data column is-7 is-size-5 is-hidden-mobile"
             />
             <div
               className="column details"
@@ -5646,7 +5646,7 @@ exports[`OccurrenceForm renders correctly 7`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5"
+              className="selected-data column is-7 is-size-5"
             >
               <OccurrenceDataSummary
                 basisOfRecord="humanObservation"
@@ -5751,7 +5751,7 @@ exports[`OccurrenceForm renders correctly 7`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5"
+              className="selected-data column is-7 is-size-5"
             >
               <SelectedLocation
                 coordinateUncertainty={null}
@@ -5843,7 +5843,7 @@ exports[`OccurrenceForm renders correctly 7`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5"
+              className="selected-data column is-7 is-size-5"
             >
               Institution: institution code; Identified by: Indiana Jones
             </div>
@@ -5996,7 +5996,7 @@ exports[`OccurrenceForm renders correctly 7`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5"
+              className="selected-data column is-7 is-size-5"
             >
               <MeasurementOrFactSummary
                 data={
@@ -6108,7 +6108,7 @@ exports[`OccurrenceForm renders correctly 7`] = `
               </p>
             </div>
             <div
-              className="column is-7 is-size-5 is-hidden-mobile"
+              className="selected-data column is-7 is-size-5 is-hidden-mobile"
             />
             <div
               className="column details"

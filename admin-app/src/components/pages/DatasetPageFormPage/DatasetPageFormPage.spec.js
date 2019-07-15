@@ -11,7 +11,7 @@ describe('DatasetPageFormPage', () => {
     expect(wrapper).toMatchSnapshot()
 
     wrapper.find('.step-2 .step-header').simulate('click')
-    expect(wrapper.find('.step-header div').at(1).text()).toEqual('dataset title')
+    expect(wrapper.find('.step-header .selected-data').at(0).text()).toEqual('dataset title')
   })
 
   function addBasicData(wrapper) {
