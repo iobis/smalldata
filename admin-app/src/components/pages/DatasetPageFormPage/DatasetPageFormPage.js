@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
 import ActiveStepHeader from '@smalldata/dwca-lib/src/components/StepHeaders/ActiveStepHeader'
-import NotConfirmedStepHeader from '@smalldata/dwca-lib/src/components/StepHeaders/NotConfirmedStepHeader'
 import BasicInformation, { languages, licences } from './BasicInformation'
-import ResourceContacts from './ResourceContacts'
-import Keywords from './Keywords'
-import ResourceCreators from './ResourceCreators'
-import MetadataProviders from './MetadataProviders'
 import ConfirmedStepHeader from '@smalldata/dwca-lib/src/components/StepHeaders/ConfirmedStepHeader'
+import FinalSummary from './FinalSummary/FinalSummary'
+import Keywords from './Keywords'
+import MetadataProviders from './MetadataProviders'
+import NotConfirmedStepHeader from '@smalldata/dwca-lib/src/components/StepHeaders/NotConfirmedStepHeader'
+import React, { useState } from 'react'
+import ResourceContacts from './ResourceContacts'
+import ResourceCreators from './ResourceCreators'
 import { useTranslation } from 'react-i18next'
 
 export default function DatasetPageFormPage() {
@@ -114,7 +115,12 @@ export default function DatasetPageFormPage() {
         )
       })}
       {finalSummaryVisible ?
-        (<div>FINAL SUMMARY</div>) :
+        (<FinalSummary
+          basicInformation={basicInformation}
+          keywords={keywords}
+          metadataProviders={metadataProviders}
+          onChangeClick={(params) => showActiveStep(params.index)}
+          resourceContacts={resourceContacts}/>) :
         (<div className="columns column is-centered">
           <button
             className="review-and-submit-button button is-medium is-info"

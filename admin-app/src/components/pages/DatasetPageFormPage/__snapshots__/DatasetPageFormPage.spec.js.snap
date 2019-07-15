@@ -1217,3 +1217,513 @@ exports[`DatasetPageFormPage renders correctly 2`] = `
   </section>
 </DatasetPageFormPage>
 `;
+
+exports[`DatasetPageFormPage renders correctly 3`] = `
+<DatasetPageFormPage>
+  <section
+    className="section"
+  >
+    <NotConfirmedStepHeader
+      activeStepIndex={null}
+      className="step-1 background-color-0"
+      dataDescription="datasetPageFormPage.basicInformation.step.dataDescription"
+      key="datasetPageFormPage.basicInformation.step.stepTitle"
+      nextStep="datasetPageFormPage.resourceContacts.step.stepTitle"
+      onContinueButtonClick={[Function]}
+      onStepTitleClick={[Function]}
+      selectedData="dataset title"
+      stepDescription="datasetPageFormPage.basicInformation.step.stepDescription"
+      stepTitle="1 - datasetPageFormPage.basicInformation.step.stepTitle"
+      totalSteps={4}
+    >
+      <StepHeader
+        className="not-confirmed has-text-white step-1 background-color-0"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="datasetPageFormPage.basicInformation.step.stepDescription"
+        stepTitle="1 - datasetPageFormPage.basicInformation.step.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered not-confirmed has-text-white step-1 background-color-0"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          />
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              datasetPageFormPage.basicInformation.step.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                1 - datasetPageFormPage.basicInformation.step.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </NotConfirmedStepHeader>
+    <NotConfirmedStepHeader
+      activeStepIndex={null}
+      className="step-2 background-color-6"
+      dataDescription="datasetPageFormPage.resourceContacts.step.dataDescription"
+      key="datasetPageFormPage.resourceContacts.step.stepTitle"
+      nextStep="datasetPageFormPage.resourceCreators.step.stepTitle"
+      onContinueButtonClick={[Function]}
+      onStepTitleClick={[Function]}
+      selectedData="datasetPageFormPage.resourceContacts.step.selectedData {\\"nrOfContacts\\":2}"
+      stepDescription="datasetPageFormPage.resourceContacts.step.stepDescription"
+      stepTitle="2 - datasetPageFormPage.resourceContacts.step.stepTitle"
+      totalSteps={4}
+    >
+      <StepHeader
+        className="not-confirmed has-text-white step-2 background-color-6"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="datasetPageFormPage.resourceContacts.step.stepDescription"
+        stepTitle="2 - datasetPageFormPage.resourceContacts.step.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered not-confirmed has-text-white step-2 background-color-6"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          />
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              datasetPageFormPage.resourceContacts.step.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                2 - datasetPageFormPage.resourceContacts.step.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </NotConfirmedStepHeader>
+    <NotConfirmedStepHeader
+      activeStepIndex={null}
+      className="step-3 background-color-12"
+      dataDescription="datasetPageFormPage.resourceCreators.step.dataDescription"
+      key="datasetPageFormPage.resourceCreators.step.stepTitle"
+      nextStep="datasetPageFormPage.metadataProviders.step.stepTitle"
+      onContinueButtonClick={[Function]}
+      onStepTitleClick={[Function]}
+      selectedData="datasetPageFormPage.resourceCreators.step.selectedData {\\"nrOfContacts\\":2}"
+      stepDescription="datasetPageFormPage.resourceCreators.step.stepDescription"
+      stepTitle="3 - datasetPageFormPage.resourceCreators.step.stepTitle"
+      totalSteps={4}
+    >
+      <StepHeader
+        className="not-confirmed has-text-white step-3 background-color-12"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="datasetPageFormPage.resourceCreators.step.stepDescription"
+        stepTitle="3 - datasetPageFormPage.resourceCreators.step.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered not-confirmed has-text-white step-3 background-color-12"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          />
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              datasetPageFormPage.resourceCreators.step.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                3 - datasetPageFormPage.resourceCreators.step.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </NotConfirmedStepHeader>
+    <NotConfirmedStepHeader
+      activeStepIndex={null}
+      className="step-4 background-color-18"
+      dataDescription="datasetPageFormPage.metadataProviders.step.dataDescription"
+      key="datasetPageFormPage.metadataProviders.step.stepTitle"
+      nextStep="datasetPageFormPage.keywords.step.stepTitle"
+      onContinueButtonClick={[Function]}
+      onStepTitleClick={[Function]}
+      selectedData="datasetPageFormPage.metadataProviders.step.selectedData {\\"nrOfContacts\\":2}"
+      stepDescription="datasetPageFormPage.metadataProviders.step.stepDescription"
+      stepTitle="4 - datasetPageFormPage.metadataProviders.step.stepTitle"
+      totalSteps={4}
+    >
+      <StepHeader
+        className="not-confirmed has-text-white step-4 background-color-18"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="datasetPageFormPage.metadataProviders.step.stepDescription"
+        stepTitle="4 - datasetPageFormPage.metadataProviders.step.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered not-confirmed has-text-white step-4 background-color-18"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          />
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              datasetPageFormPage.metadataProviders.step.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                4 - datasetPageFormPage.metadataProviders.step.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </NotConfirmedStepHeader>
+    <NotConfirmedStepHeader
+      activeStepIndex={null}
+      className="step-5 background-color-24"
+      dataDescription="datasetPageFormPage.keywords.step.dataDescription"
+      key="datasetPageFormPage.keywords.step.stepTitle"
+      onContinueButtonClick={[Function]}
+      onStepTitleClick={[Function]}
+      selectedData=""
+      stepDescription="datasetPageFormPage.keywords.step.stepDescription"
+      stepTitle="5 - datasetPageFormPage.keywords.step.stepTitle"
+      totalSteps={4}
+    >
+      <StepHeader
+        className="not-confirmed has-text-white step-5 background-color-24"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="datasetPageFormPage.keywords.step.stepDescription"
+        stepTitle="5 - datasetPageFormPage.keywords.step.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered not-confirmed has-text-white step-5 background-color-24"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          />
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              datasetPageFormPage.keywords.step.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                5 - datasetPageFormPage.keywords.step.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </NotConfirmedStepHeader>
+    <FinalSummary
+      basicInformation={
+        Object {
+          "abstract": "dataset abstract information",
+          "language": "Dutch",
+          "licence": "Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License",
+          "publishingOrganisation": "dataset publishing organisation",
+          "title": "dataset title",
+        }
+      }
+      keywords={
+        Array [
+          "keyword-1",
+          "keyword-2",
+        ]
+      }
+      metadataProviders={
+        Array [
+          Object {
+            "email": "metadata-provider-email-1",
+            "name": "metadata-provider-name-1",
+            "organisation": "metadata-provider-organisation-1",
+            "position": "metadata-provider-position-1",
+          },
+          Object {
+            "email": "metadata-provider-email-2",
+            "name": "metadata-provider-name-2",
+            "organisation": "metadata-provider-organisation-2",
+            "position": "metadata-provider-position-2",
+          },
+        ]
+      }
+      onChangeClick={[Function]}
+      resourceContacts={
+        Array [
+          Object {
+            "email": "resource-contact-email-1",
+            "name": "resource-contact-name-1",
+            "organisation": "resource-contact-organisation-1",
+            "position": "resource-contact-position-1",
+          },
+          Object {
+            "email": "resource-contact-email-2",
+            "name": "resource-contact-name-2",
+            "organisation": "resource-contact-organisation-2",
+            "position": "resource-contact-position-2",
+          },
+        ]
+      }
+    >
+      <div
+        className="final-summary section is-fluid"
+      >
+        <div
+          className="columns is-centered"
+        >
+          <h1
+            className="final-summary-title title is-3"
+          >
+            datasetPageFormPage.finalSummary.title
+          </h1>
+        </div>
+        <section
+          className="basic-information-summary"
+        >
+          <SectionTitle>
+            <h2
+              className="title is-4"
+            >
+              1 - 
+              datasetPageFormPage.basicInformation.step.stepTitle
+            </h2>
+          </SectionTitle>
+          <div
+            className="content"
+          >
+            <table
+              className="table is-striped is-fullwidth is-hoverable"
+            >
+              <NameValueHeader>
+                <thead>
+                  <tr>
+                    <th
+                      className="type"
+                    >
+                      common.name
+                    </th>
+                    <th
+                      className="value"
+                    >
+                      common.value
+                    </th>
+                  </tr>
+                </thead>
+              </NameValueHeader>
+              <tbody>
+                <NameValueRow
+                  name="datasetPageFormPage.basicInformation.title.label"
+                  value="dataset title"
+                >
+                  <tr
+                    className="name-value-row fieldrow"
+                  >
+                    <td
+                      className="name"
+                    >
+                      datasetPageFormPage.basicInformation.title.label
+                    </td>
+                    <td
+                      className="value"
+                    >
+                      dataset title
+                    </td>
+                  </tr>
+                </NameValueRow>
+                <NameValueRow
+                  name="datasetPageFormPage.basicInformation.publishingOrganisation.label"
+                  value="dataset publishing organisation"
+                >
+                  <tr
+                    className="name-value-row fieldrow"
+                  >
+                    <td
+                      className="name"
+                    >
+                      datasetPageFormPage.basicInformation.publishingOrganisation.label
+                    </td>
+                    <td
+                      className="value"
+                    >
+                      dataset publishing organisation
+                    </td>
+                  </tr>
+                </NameValueRow>
+                <NameValueRow
+                  name="datasetPageFormPage.basicInformation.licence.label"
+                  value="Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License"
+                >
+                  <tr
+                    className="name-value-row fieldrow"
+                  >
+                    <td
+                      className="name"
+                    >
+                      datasetPageFormPage.basicInformation.licence.label
+                    </td>
+                    <td
+                      className="value"
+                    >
+                      Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License
+                    </td>
+                  </tr>
+                </NameValueRow>
+                <NameValueRow
+                  name="datasetPageFormPage.basicInformation.language.label"
+                  value="Dutch"
+                >
+                  <tr
+                    className="name-value-row fieldrow"
+                  >
+                    <td
+                      className="name"
+                    >
+                      datasetPageFormPage.basicInformation.language.label
+                    </td>
+                    <td
+                      className="value"
+                    >
+                      Dutch
+                    </td>
+                  </tr>
+                </NameValueRow>
+                <NameValueRow
+                  name="datasetPageFormPage.basicInformation.abstract.label"
+                  value="dataset abstract information"
+                >
+                  <tr
+                    className="name-value-row fieldrow"
+                  >
+                    <td
+                      className="name"
+                    >
+                      datasetPageFormPage.basicInformation.abstract.label
+                    </td>
+                    <td
+                      className="value"
+                    >
+                      dataset abstract information
+                    </td>
+                  </tr>
+                </NameValueRow>
+              </tbody>
+            </table>
+          </div>
+          <ChangeButton
+            onClick={[Function]}
+          >
+            <button
+              className="change-button button"
+              onClick={[Function]}
+            >
+              common.change
+            </button>
+          </ChangeButton>
+        </section>
+      </div>
+    </FinalSummary>
+  </section>
+</DatasetPageFormPage>
+`;

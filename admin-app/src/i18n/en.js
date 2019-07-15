@@ -95,6 +95,9 @@ export default {
           placeholder: ''
         }
       },
+      finalSummary: {
+        title: 'Final Summary'
+      },
       contactsForm:          {
         name:         {
           label: 'Name'

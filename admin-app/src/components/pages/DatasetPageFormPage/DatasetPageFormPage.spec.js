@@ -61,6 +61,9 @@ describe('DatasetPageFormPage', () => {
     wrapper.find('.keywords input').simulate('change', { target: { value: 'keyword-2' } })
     wrapper.find('.keywords input').simulate('keydown', { key: 'Enter' })
     expect(wrapper.find('.keywords .tag')).toHaveLength(2)
+
+    wrapper.find('.review-and-submit-button').simulate('click')
+    expect(wrapper).toMatchSnapshot()
   })
 
   function addBasicData(wrapper) {
