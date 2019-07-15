@@ -58,9 +58,10 @@ export default {
       },
       resourceContacts:      {
         step:         {
-          dataDescription: 'Couplings',
+          dataDescription: '',
           stepDescription: 'Resource contact details',
-          stepTitle:       'Resource Contacts'
+          stepTitle:       'Resource Contacts',
+          selectedData:    '{{nrOfContacts}} people coupled as resource contact'
         },
         name:         {
           label: 'Name'

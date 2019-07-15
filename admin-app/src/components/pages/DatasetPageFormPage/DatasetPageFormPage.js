@@ -10,6 +10,7 @@ export default function DatasetPageFormPage() {
   const initialState = createInitialState()
   const { t } = useTranslation()
   const [basicInformation, setBasicInformation] = useState(initialState.basicInformation)
+  const [resourceContacts, setResourceContacts] = useState(initialState.resourceContacts)
   const [activeStepIndex, setActiveStepIndex] = useState(0)
   const [finalSummaryVisible, setFinalSummaryVisible] = useState(false)
 
@@ -41,14 +42,14 @@ export default function DatasetPageFormPage() {
   }, {
     dataDescription: t('datasetPageFormPage.resourceContacts.step.dataDescription'),
     nextStep:        t('datasetPageFormPage.resourceCreators.step.stepTitle'),
-    selectedData:    'to be added',
+    selectedData:    t('datasetPageFormPage.resourceContacts.step.selectedData', { nrOfContacts: resourceContacts.length }),
     stepDescription: t('datasetPageFormPage.resourceContacts.step.stepDescription'),
     stepTitle:       t('datasetPageFormPage.resourceContacts.step.stepTitle'),
 
     children:
       <ResourceContacts
-        data={[]}
-        onChange={console.log}/>
+        data={resourceContacts}
+        onChange={setResourceContacts}/>
   }, {
     dataDescription: t('datasetPageFormPage.resourceCreators.step.dataDescription'),
     nextStep:        t('datasetPageFormPage.metadataProviders.step.stepTitle'),
@@ -122,6 +123,7 @@ function createInitialState() {
       licence:                licences[0],
       language:               languages[0],
       abstract:               ''
-    }
+    },
+    resourceContacts: []
   }
 }
