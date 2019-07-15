@@ -36,7 +36,7 @@ export default function BasicInformation({ onChange, data }) {
         name="datasetPageFormPage.basicInformation.publishingOrganisation"
         onChange={value => updateField('publishingOrganisation', value)}
         value={publishingOrganisation}/>
-      <div className="column field">
+      <div className="column field licence">
         <label className="label">
           {t('datasetPageFormPage.basicInformation.licence.label')}
         </label>
@@ -45,7 +45,7 @@ export default function BasicInformation({ onChange, data }) {
           options={licences}
           value={licence}/>
       </div>
-      <div className="column field">
+      <div className="column field language">
         <label className="label">
           {t('datasetPageFormPage.basicInformation.language.label')}
         </label>
@@ -55,7 +55,7 @@ export default function BasicInformation({ onChange, data }) {
           value={language}/>
       </div>
       <Textarea
-        className="identification-remarks is-9"
+        className="abstract is-9"
         name="datasetPageFormPage.basicInformation.abstract"
         onChange={value => updateField('abstract', value)}
         value={abstract}/>

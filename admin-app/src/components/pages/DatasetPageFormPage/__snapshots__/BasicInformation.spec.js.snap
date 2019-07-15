@@ -61,7 +61,7 @@ exports[`BasicInformation renders correctly 1`] = `
       </div>
     </InputText>
     <div
-      className="column field"
+      className="column field licence"
     >
       <label
         className="label"
@@ -146,7 +146,7 @@ exports[`BasicInformation renders correctly 1`] = `
       </Dropdown>
     </div>
     <div
-      className="column field"
+      className="column field language"
     >
       <label
         className="label"
@@ -239,13 +239,13 @@ exports[`BasicInformation renders correctly 1`] = `
       </Dropdown>
     </div>
     <Textarea
-      className="identification-remarks is-9"
+      className="abstract is-9"
       name="datasetPageFormPage.basicInformation.abstract"
       onChange={[Function]}
       value="abstract"
     >
       <div
-        className="column field identification-remarks is-9"
+        className="column field abstract is-9"
       >
         <label
           className="label"

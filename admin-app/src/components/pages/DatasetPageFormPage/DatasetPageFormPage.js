@@ -29,7 +29,7 @@ export default function DatasetPageFormPage() {
   const steps = [{
     dataDescription: t('datasetPageFormPage.basicInformation.step.dataDescription'),
     nextStep:        t('datasetPageFormPage.resourceContacts.step.stepTitle'),
-    selectedData:    'to be added',
+    selectedData:    basicInformation.title,
     stepDescription: t('datasetPageFormPage.basicInformation.step.stepDescription'),
     stepTitle:       t('datasetPageFormPage.basicInformation.step.stepTitle'),
 
