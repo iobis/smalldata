@@ -2135,6 +2135,33 @@ exports[`DatasetPageFormPage renders correctly 3`] = `
             </button>
           </ChangeButton>
         </section>
+        <section
+          className="keywords-summary"
+        >
+          <SectionTitle>
+            <h2
+              className="title is-4"
+            >
+              4 - 
+              datasetPageFormPage.keywords.step.stepTitle
+            </h2>
+          </SectionTitle>
+          <div
+            className="content"
+          >
+            keyword-1, keyword-2
+          </div>
+          <ChangeButton
+            onClick={[Function]}
+          >
+            <button
+              className="change-button button"
+              onClick={[Function]}
+            >
+              common.change
+            </button>
+          </ChangeButton>
+        </section>
       </div>
     </FinalSummary>
   </section>

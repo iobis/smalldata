@@ -6,10 +6,11 @@ import { contactShape } from '../ContactsForm/ContactsForm'
 
 export default function FinalSummary({
   basicInformation,
-  resourceContacts,
-  resourceCreators,
+  keywords,
   metadataProviders,
-  onChangeClick
+  onChangeClick,
+  resourceContacts,
+  resourceCreators
 }) {
   const { t } = useTranslation()
 
@@ -67,12 +68,20 @@ export default function FinalSummary({
         </div>
         <ChangeButton onClick={() => onChangeClick({ index: 3 })}/>
       </section>
+      <section className="keywords-summary">
+        <SectionTitle>4 - {t('datasetPageFormPage.keywords.step.stepTitle')}</SectionTitle>
+        <div className="content">
+          {keywords.join(', ')}
+        </div>
+        <ChangeButton onClick={() => onChangeClick({ index: 4 })}/>
+      </section>
     </div>
   )
 }
 
 FinalSummary.propTypes = {
   basicInformation:  PropTypes.shape(basicInformationShape).isRequired,
+  keywords:          PropTypes.arrayOf(PropTypes.string).isRequired,
   metadataProviders: PropTypes.arrayOf(PropTypes.shape(contactShape).isRequired),
   onChangeClick:     PropTypes.func.isRequired,
   resourceContacts:  PropTypes.arrayOf(PropTypes.shape(contactShape).isRequired),
