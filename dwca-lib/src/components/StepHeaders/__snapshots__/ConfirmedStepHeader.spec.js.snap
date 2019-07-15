@@ -17,7 +17,7 @@ exports[`ActiveStepHeader renders correctly 1`] = `
     </p>
   </div>
   <div
-    className="column is-7 is-size-5"
+    className="selected-data column is-7 is-size-5"
   >
     selected data
   </div>

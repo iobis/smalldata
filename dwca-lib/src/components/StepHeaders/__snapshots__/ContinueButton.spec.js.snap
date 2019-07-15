@@ -11,7 +11,7 @@ exports[`ContinueButton renders correctly 1`] = `
     name="continue"
     onClick={[MockFunction]}
   >
-    occurrenceForm.stepContinue continue
+    common.continueTo continue
   </button>
 </ContinueButton>
 `;
