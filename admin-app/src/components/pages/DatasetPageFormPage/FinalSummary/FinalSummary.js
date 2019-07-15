@@ -1,8 +1,11 @@
-import React from 'react'
-import { useTranslation } from 'react-i18next'
+import ChangeButton from '@smalldata/dwca-lib/src/components/FinalSummary/ChangeButton'
+import NameValueHeader from '@smalldata/dwca-lib/src/components/FinalSummary/NameValueHeader'
+import NameValueRow from '@smalldata/dwca-lib/src/components/FinalSummary/NameValueRow'
 import PropTypes from 'prop-types'
+import React from 'react'
 import { basicInformationShape } from '../BasicInformation'
 import { contactShape } from '../ContactsForm/ContactsForm'
+import { useTranslation } from 'react-i18next'
 
 export default function FinalSummary({
   basicInformation,
@@ -96,46 +99,6 @@ function SectionTitle({ children }) {
 
 SectionTitle.propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired
-}
-
-function ChangeButton({ onClick }) {
-  const { t } = useTranslation()
-  return (
-    <button className="change-button button" onClick={onClick}>
-      {t('common.change')}
-    </button>
-  )
-}
-
-ChangeButton.propTypes = {
-  onClick: PropTypes.func.isRequired
-}
-
-function NameValueHeader() {
-  const { t } = useTranslation()
-
-  return (
-    <thead>
-      <tr>
-        <th className="type">{t('common.name')}</th>
-        <th className="value">{t('common.value')}</th>
-      </tr>
-    </thead>
-  )
-}
-
-function NameValueRow({ name, value }) {
-  return (
-    <tr className="name-value-row fieldrow">
-      <td className="name">{name}</td>
-      <td className="value">{!value ? '—' : value}</td>
-    </tr>
-  )
-}
-
-NameValueRow.propTypes = {
-  name:  PropTypes.string.isRequired,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 }
 
 function ContactTable({ contacts }) {
