@@ -120,7 +120,8 @@ export default function DatasetPageFormPage() {
           keywords={keywords}
           metadataProviders={metadataProviders}
           onChangeClick={(params) => showActiveStep(params.index)}
-          resourceContacts={resourceContacts}/>) :
+          resourceContacts={resourceContacts}
+          resourceCreators={resourceCreators}/>) :
         (<div className="columns column is-centered">
           <button
             className="review-and-submit-button button is-medium is-info"

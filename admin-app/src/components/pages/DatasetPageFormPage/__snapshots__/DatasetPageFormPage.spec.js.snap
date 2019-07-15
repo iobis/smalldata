@@ -1566,6 +1566,22 @@ exports[`DatasetPageFormPage renders correctly 3`] = `
           },
         ]
       }
+      resourceCreators={
+        Array [
+          Object {
+            "email": "resource-creator-email-1",
+            "name": "resource-creator-name-1",
+            "organisation": "resource-creator-organisation-1",
+            "position": "resource-creator-position-1",
+          },
+          Object {
+            "email": "resource-creator-email-2",
+            "name": "resource-creator-name-2",
+            "organisation": "resource-creator-organisation-2",
+            "position": "resource-creator-position-2",
+          },
+        ]
+      }
     >
       <div
         className="final-summary section is-fluid"
@@ -1710,6 +1726,403 @@ exports[`DatasetPageFormPage renders correctly 3`] = `
                 </NameValueRow>
               </tbody>
             </table>
+          </div>
+          <ChangeButton
+            onClick={[Function]}
+          >
+            <button
+              className="change-button button"
+              onClick={[Function]}
+            >
+              common.change
+            </button>
+          </ChangeButton>
+        </section>
+        <section
+          className="resource-contacts-summary"
+        >
+          <SectionTitle>
+            <h2
+              className="title is-4"
+            >
+              2 - 
+              datasetPageFormPage.resourceContacts.step.stepTitle
+            </h2>
+          </SectionTitle>
+          <div
+            className="content"
+          >
+            <div
+              className="content"
+            >
+              <ContactTable
+                contacts={
+                  Array [
+                    Object {
+                      "email": "resource-contact-email-1",
+                      "name": "resource-contact-name-1",
+                      "organisation": "resource-contact-organisation-1",
+                      "position": "resource-contact-position-1",
+                    },
+                    Object {
+                      "email": "resource-contact-email-2",
+                      "name": "resource-contact-name-2",
+                      "organisation": "resource-contact-organisation-2",
+                      "position": "resource-contact-position-2",
+                    },
+                  ]
+                }
+              >
+                <table
+                  className="general table is-fullwidth is-striped is-hoverable"
+                >
+                  <thead>
+                    <tr>
+                      <th>
+                        datasetPageFormPage.contactsForm.name.label
+                      </th>
+                      <th>
+                        datasetPageFormPage.contactsForm.email.label
+                      </th>
+                      <th>
+                        datasetPageFormPage.contactsForm.organisation.label
+                      </th>
+                      <th>
+                        datasetPageFormPage.contactsForm.position.label
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <ContactRow
+                      email="resource-contact-email-1"
+                      key="0"
+                      name="resource-contact-name-1"
+                      organisation="resource-contact-organisation-1"
+                      position="resource-contact-position-1"
+                    >
+                      <tr
+                        className="contact-row"
+                      >
+                        <td
+                          className="name"
+                        >
+                          resource-contact-name-1
+                        </td>
+                        <td
+                          className="email"
+                        >
+                          resource-contact-email-1
+                        </td>
+                        <td
+                          className="organisation"
+                        >
+                          resource-contact-organisation-1
+                        </td>
+                        <td
+                          className="position"
+                        >
+                          resource-contact-position-1
+                        </td>
+                      </tr>
+                    </ContactRow>
+                    <ContactRow
+                      email="resource-contact-email-2"
+                      key="1"
+                      name="resource-contact-name-2"
+                      organisation="resource-contact-organisation-2"
+                      position="resource-contact-position-2"
+                    >
+                      <tr
+                        className="contact-row"
+                      >
+                        <td
+                          className="name"
+                        >
+                          resource-contact-name-2
+                        </td>
+                        <td
+                          className="email"
+                        >
+                          resource-contact-email-2
+                        </td>
+                        <td
+                          className="organisation"
+                        >
+                          resource-contact-organisation-2
+                        </td>
+                        <td
+                          className="position"
+                        >
+                          resource-contact-position-2
+                        </td>
+                      </tr>
+                    </ContactRow>
+                  </tbody>
+                </table>
+              </ContactTable>
+            </div>
+          </div>
+          <ChangeButton
+            onClick={[Function]}
+          >
+            <button
+              className="change-button button"
+              onClick={[Function]}
+            >
+              common.change
+            </button>
+          </ChangeButton>
+        </section>
+        <section
+          className="resource-creators-summary"
+        >
+          <SectionTitle>
+            <h2
+              className="title is-4"
+            >
+              3 - 
+              datasetPageFormPage.resourceCreators.step.stepTitle
+            </h2>
+          </SectionTitle>
+          <div
+            className="content"
+          >
+            <ContactTable
+              contacts={
+                Array [
+                  Object {
+                    "email": "resource-creator-email-1",
+                    "name": "resource-creator-name-1",
+                    "organisation": "resource-creator-organisation-1",
+                    "position": "resource-creator-position-1",
+                  },
+                  Object {
+                    "email": "resource-creator-email-2",
+                    "name": "resource-creator-name-2",
+                    "organisation": "resource-creator-organisation-2",
+                    "position": "resource-creator-position-2",
+                  },
+                ]
+              }
+            >
+              <table
+                className="general table is-fullwidth is-striped is-hoverable"
+              >
+                <thead>
+                  <tr>
+                    <th>
+                      datasetPageFormPage.contactsForm.name.label
+                    </th>
+                    <th>
+                      datasetPageFormPage.contactsForm.email.label
+                    </th>
+                    <th>
+                      datasetPageFormPage.contactsForm.organisation.label
+                    </th>
+                    <th>
+                      datasetPageFormPage.contactsForm.position.label
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <ContactRow
+                    email="resource-creator-email-1"
+                    key="0"
+                    name="resource-creator-name-1"
+                    organisation="resource-creator-organisation-1"
+                    position="resource-creator-position-1"
+                  >
+                    <tr
+                      className="contact-row"
+                    >
+                      <td
+                        className="name"
+                      >
+                        resource-creator-name-1
+                      </td>
+                      <td
+                        className="email"
+                      >
+                        resource-creator-email-1
+                      </td>
+                      <td
+                        className="organisation"
+                      >
+                        resource-creator-organisation-1
+                      </td>
+                      <td
+                        className="position"
+                      >
+                        resource-creator-position-1
+                      </td>
+                    </tr>
+                  </ContactRow>
+                  <ContactRow
+                    email="resource-creator-email-2"
+                    key="1"
+                    name="resource-creator-name-2"
+                    organisation="resource-creator-organisation-2"
+                    position="resource-creator-position-2"
+                  >
+                    <tr
+                      className="contact-row"
+                    >
+                      <td
+                        className="name"
+                      >
+                        resource-creator-name-2
+                      </td>
+                      <td
+                        className="email"
+                      >
+                        resource-creator-email-2
+                      </td>
+                      <td
+                        className="organisation"
+                      >
+                        resource-creator-organisation-2
+                      </td>
+                      <td
+                        className="position"
+                      >
+                        resource-creator-position-2
+                      </td>
+                    </tr>
+                  </ContactRow>
+                </tbody>
+              </table>
+            </ContactTable>
+          </div>
+          <ChangeButton
+            onClick={[Function]}
+          >
+            <button
+              className="change-button button"
+              onClick={[Function]}
+            >
+              common.change
+            </button>
+          </ChangeButton>
+        </section>
+        <section
+          className="metadata-providers-summary"
+        >
+          <SectionTitle>
+            <h2
+              className="title is-4"
+            >
+              4 - 
+              datasetPageFormPage.metadataProviders.step.stepTitle
+            </h2>
+          </SectionTitle>
+          <div
+            className="content"
+          >
+            <ContactTable
+              contacts={
+                Array [
+                  Object {
+                    "email": "metadata-provider-email-1",
+                    "name": "metadata-provider-name-1",
+                    "organisation": "metadata-provider-organisation-1",
+                    "position": "metadata-provider-position-1",
+                  },
+                  Object {
+                    "email": "metadata-provider-email-2",
+                    "name": "metadata-provider-name-2",
+                    "organisation": "metadata-provider-organisation-2",
+                    "position": "metadata-provider-position-2",
+                  },
+                ]
+              }
+            >
+              <table
+                className="general table is-fullwidth is-striped is-hoverable"
+              >
+                <thead>
+                  <tr>
+                    <th>
+                      datasetPageFormPage.contactsForm.name.label
+                    </th>
+                    <th>
+                      datasetPageFormPage.contactsForm.email.label
+                    </th>
+                    <th>
+                      datasetPageFormPage.contactsForm.organisation.label
+                    </th>
+                    <th>
+                      datasetPageFormPage.contactsForm.position.label
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <ContactRow
+                    email="metadata-provider-email-1"
+                    key="0"
+                    name="metadata-provider-name-1"
+                    organisation="metadata-provider-organisation-1"
+                    position="metadata-provider-position-1"
+                  >
+                    <tr
+                      className="contact-row"
+                    >
+                      <td
+                        className="name"
+                      >
+                        metadata-provider-name-1
+                      </td>
+                      <td
+                        className="email"
+                      >
+                        metadata-provider-email-1
+                      </td>
+                      <td
+                        className="organisation"
+                      >
+                        metadata-provider-organisation-1
+                      </td>
+                      <td
+                        className="position"
+                      >
+                        metadata-provider-position-1
+                      </td>
+                    </tr>
+                  </ContactRow>
+                  <ContactRow
+                    email="metadata-provider-email-2"
+                    key="1"
+                    name="metadata-provider-name-2"
+                    organisation="metadata-provider-organisation-2"
+                    position="metadata-provider-position-2"
+                  >
+                    <tr
+                      className="contact-row"
+                    >
+                      <td
+                        className="name"
+                      >
+                        metadata-provider-name-2
+                      </td>
+                      <td
+                        className="email"
+                      >
+                        metadata-provider-email-2
+                      </td>
+                      <td
+                        className="organisation"
+                      >
+                        metadata-provider-organisation-2
+                      </td>
+                      <td
+                        className="position"
+                      >
+                        metadata-provider-position-2
+                      </td>
+                    </tr>
+                  </ContactRow>
+                </tbody>
+              </table>
+            </ContactTable>
           </div>
           <ChangeButton
             onClick={[Function]}

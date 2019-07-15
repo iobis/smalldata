@@ -67,7 +67,7 @@ export default function ContactsForm({ className, contactsTableHeader, data, onC
   )
 }
 
-const contactShape = {
+export const contactShape = {
   email:        PropTypes.string.isRequired,
   name:         PropTypes.string.isRequired,
   organisation: PropTypes.string.isRequired,

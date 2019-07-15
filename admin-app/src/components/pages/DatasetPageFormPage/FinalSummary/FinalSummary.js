@@ -2,8 +2,15 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import PropTypes from 'prop-types'
 import { basicInformationShape } from '../BasicInformation'
+import { contactShape } from '../ContactsForm/ContactsForm'
 
-export default function FinalSummary({ basicInformation, onChangeClick }) {
+export default function FinalSummary({
+  basicInformation,
+  resourceContacts,
+  resourceCreators,
+  metadataProviders,
+  onChangeClick
+}) {
   const { t } = useTranslation()
 
   return (
@@ -37,13 +44,39 @@ export default function FinalSummary({ basicInformation, onChangeClick }) {
         </div>
         <ChangeButton onClick={() => onChangeClick({ index: 0 })}/>
       </section>
+      <section className="resource-contacts-summary">
+        <SectionTitle>2 - {t('datasetPageFormPage.resourceContacts.step.stepTitle')}</SectionTitle>
+        <div className="content">
+          <div className="content">
+            <ContactTable contacts={resourceContacts}/>
+          </div>
+        </div>
+        <ChangeButton onClick={() => onChangeClick({ index: 1 })}/>
+      </section>
+      <section className="resource-creators-summary">
+        <SectionTitle>3 - {t('datasetPageFormPage.resourceCreators.step.stepTitle')}</SectionTitle>
+        <div className="content">
+          <ContactTable contacts={resourceCreators}/>
+        </div>
+        <ChangeButton onClick={() => onChangeClick({ index: 2 })}/>
+      </section>
+      <section className="metadata-providers-summary">
+        <SectionTitle>4 - {t('datasetPageFormPage.metadataProviders.step.stepTitle')}</SectionTitle>
+        <div className="content">
+          <ContactTable contacts={metadataProviders}/>
+        </div>
+        <ChangeButton onClick={() => onChangeClick({ index: 3 })}/>
+      </section>
     </div>
   )
 }
 
 FinalSummary.propTypes = {
-  basicInformation: PropTypes.shape(basicInformationShape).isRequired,
-  onChangeClick:    PropTypes.func.isRequired
+  basicInformation:  PropTypes.shape(basicInformationShape).isRequired,
+  metadataProviders: PropTypes.arrayOf(PropTypes.shape(contactShape).isRequired),
+  onChangeClick:     PropTypes.func.isRequired,
+  resourceContacts:  PropTypes.arrayOf(PropTypes.shape(contactShape).isRequired),
+  resourceCreators:  PropTypes.arrayOf(PropTypes.shape(contactShape).isRequired)
 }
 
 function SectionTitle({ children }) {
@@ -95,3 +128,43 @@ NameValueRow.propTypes = {
   name:  PropTypes.string.isRequired,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 }
+
+function ContactTable({ contacts }) {
+  const { t } = useTranslation()
+
+  return (
+    <table className="general table is-fullwidth is-striped is-hoverable">
+      <thead>
+        <tr>
+          <th>{t('datasetPageFormPage.contactsForm.name.label')}</th>
+          <th>{t('datasetPageFormPage.contactsForm.email.label')}</th>
+          <th>{t('datasetPageFormPage.contactsForm.organisation.label')}</th>
+          <th>{t('datasetPageFormPage.contactsForm.position.label')}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {contacts.map((contact, index) => (
+          // eslint-disable-next-line react/no-array-index-key
+          <ContactRow key={index} {...contact}/>
+        ))}
+      </tbody>
+    </table>
+  )
+}
+
+ContactTable.propTypes = {
+  contacts: PropTypes.arrayOf(PropTypes.shape(contactShape).isRequired)
+}
+
+function ContactRow({ email, name, organisation, position }) {
+  return (
+    <tr className="contact-row">
+      <td className="name">{name}</td>
+      <td className="email">{email}</td>
+      <td className="organisation">{organisation}</td>
+      <td className="position">{position}</td>
+    </tr>
+  )
+}
+
+ContactRow.propTypes = contactShape
