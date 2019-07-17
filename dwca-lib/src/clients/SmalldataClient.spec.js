@@ -30,6 +30,28 @@ describe('SmalldataClient', () => {
     })
   })
 
+  describe('createDataset()', () => {
+    beforeEach(() => {
+      global.fetch = jest.fn().mockImplementation(() =>
+        new Promise((resolve) => {
+          resolve({ json: () => 'default-response' })
+        })
+      )
+    })
+
+    afterEach(() => {
+      global.fetch.mockRestore()
+    })
+
+    it('makes default request', async() => {
+      await SmalldataClient.createDataset({})
+      expect(fetch.mock.calls[0][0]).toBe('/api/datasets')
+      expect(fetch.mock.calls[0][1].method).toBe('POST')
+      expect(fetch.mock.calls[0][1].headers).toEqual(expectedHeaders)
+      expect(JSON.parse(fetch.mock.calls[0][1].body)).toMatchSnapshot()
+    })
+  })
+
   describe('getOccurrences()', () => {
     beforeEach(() => {
       global.fetch = jest.fn().mockImplementation(() =>

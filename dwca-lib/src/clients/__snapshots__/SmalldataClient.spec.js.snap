@@ -1,5 +1,68 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`SmalldataClient createDataset() makes default request 1`] = `
+Object {
+  "abstract": Object {
+    "paragraphs": Array [
+      "This is one paragraph",
+      "And this is another one...",
+    ],
+  },
+  "contacts": Array [
+    Object {
+      "individualName": Object {
+        "givenName": "Also",
+        "surName": "VeryImportant",
+      },
+    },
+  ],
+  "creators": Array [
+    Object {
+      "individualName": Object {
+        "givenName": "Someone",
+        "surName": "VeryImportant",
+      },
+    },
+  ],
+  "keywordSets": Array [
+    Object {
+      "keywordThesaurus": "example keywords",
+      "keywords": Array [
+        "SearchEvent",
+        "Nudibranch",
+      ],
+    },
+  ],
+  "language": "en",
+  "license": Object {
+    "title": "Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License",
+    "url": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+  },
+  "meta": Object {
+    "dwcTables": Object {
+      "core": "occurrence",
+      "extensions": Array [
+        "emof",
+      ],
+    },
+    "type": "occurrence",
+  },
+  "metadataProviders": Array [
+    Object {
+      "electronicMailAddress": "mostimportant@melibesearch.org",
+      "individualName": Object {
+        "givenName": "ProbablySister",
+        "surName": "VeryImportant",
+      },
+    },
+  ],
+  "title": Object {
+    "language": "en",
+    "value": "Looking for Melibe nudibranches in the Philippines",
+  },
+}
+`;
+
 exports[`SmalldataClient getUsersWithDatasets makes 2 requests and combine them 1`] = `
 Array [
   Object {
