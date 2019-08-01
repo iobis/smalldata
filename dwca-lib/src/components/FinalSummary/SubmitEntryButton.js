@@ -7,7 +7,7 @@ export default function SubmitEntryButton({ onClick }) {
   return (
     <div className="submit-entry-button columns is-mobile is-centered">
       <button className="button is-info is-medium" onClick={onClick}>
-        {t('occurrenceForm.finalSummary.submitEntryButton')}
+        {t('common.submit')}
       </button>
     </div>
   )

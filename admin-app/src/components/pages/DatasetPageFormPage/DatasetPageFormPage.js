@@ -9,10 +9,15 @@ import React, { useState } from 'react'
 import ResourceContacts from './ResourceContacts'
 import ResourceCreators from './ResourceCreators'
 import { useTranslation } from 'react-i18next'
+import { createDataset } from '@smalldata/dwca-lib/src/clients/SmalldataClient'
 
 export default function DatasetPageFormPage() {
   const initialState = createInitialState()
   const { t } = useTranslation()
+  const [action, setAction] = useState('create')
+  const [successVisible, setSuccessVisible] = useState(false)
+  const [errorVisible, setErrorVisible] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
   const [basicInformation, setBasicInformation] = useState(initialState.basicInformation)
   const [resourceContacts, setResourceContacts] = useState(initialState.resourceContacts)
   const [resourceCreators, setResourceCreators] = useState(initialState.resourceCreators)
@@ -33,6 +38,29 @@ export default function DatasetPageFormPage() {
   function showFinalSummary() {
     setActiveStepIndex(null)
     setFinalSummaryVisible(true)
+  }
+
+  function handleErrorClose() {
+    setErrorVisible(false)
+    setErrorMessage('')
+  }
+
+  async function handleSubmitClick() {
+    const dataset = {
+      basicInformation,
+      resourceContacts,
+      resourceCreators,
+      metadataProviders,
+      keywords
+    }
+    const response = await createDataset(dataset)
+    if (response.exception) {
+      setErrorVisible(true)
+      setErrorMessage(response.exception + ': ' + response.exceptionMessage)
+    } else {
+      setSuccessVisible(true)
+      setAction('create')
+    }
   }
 
   const steps = [{
@@ -117,11 +145,15 @@ export default function DatasetPageFormPage() {
       {finalSummaryVisible ?
         (<FinalSummary
           basicInformation={basicInformation}
+          errorVisible={errorVisible}
           keywords={keywords}
           metadataProviders={metadataProviders}
           onChangeClick={(params) => showActiveStep(params.index)}
+          onErrorClose={handleErrorClose}
+          onSubmitClick={handleSubmitClick}
           resourceContacts={resourceContacts}
-          resourceCreators={resourceCreators}/>) :
+          resourceCreators={resourceCreators}
+          successVisible={successVisible}/>) :
         (<div className="columns column is-centered">
           <button
             className="review-and-submit-button button is-medium is-info"

@@ -1527,6 +1527,7 @@ exports[`DatasetPageFormPage renders correctly 3`] = `
           "title": "dataset title",
         }
       }
+      errorVisible={false}
       keywords={
         Array [
           "keyword-1",
@@ -1550,6 +1551,8 @@ exports[`DatasetPageFormPage renders correctly 3`] = `
         ]
       }
       onChangeClick={[Function]}
+      onErrorClose={[Function]}
+      onSubmitClick={[Function]}
       resourceContacts={
         Array [
           Object {
@@ -1582,6 +1585,7 @@ exports[`DatasetPageFormPage renders correctly 3`] = `
           },
         ]
       }
+      successVisible={false}
     >
       <div
         className="final-summary section is-fluid"
@@ -1595,6 +1599,20 @@ exports[`DatasetPageFormPage renders correctly 3`] = `
             datasetPageFormPage.finalSummary.title
           </h1>
         </div>
+        <SubmitEntryButton
+          onClick={[Function]}
+        >
+          <div
+            className="submit-entry-button columns is-mobile is-centered"
+          >
+            <button
+              className="button is-info is-medium"
+              onClick={[Function]}
+            >
+              common.submit
+            </button>
+          </div>
+        </SubmitEntryButton>
         <section
           className="basic-information-summary"
         >
@@ -2162,6 +2180,20 @@ exports[`DatasetPageFormPage renders correctly 3`] = `
             </button>
           </ChangeButton>
         </section>
+        <SubmitEntryButton
+          onClick={[Function]}
+        >
+          <div
+            className="submit-entry-button columns is-mobile is-centered"
+          >
+            <button
+              className="button is-info is-medium"
+              onClick={[Function]}
+            >
+              common.submit
+            </button>
+          </div>
+        </SubmitEntryButton>
       </div>
     </FinalSummary>
   </section>

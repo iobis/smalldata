@@ -12,6 +12,7 @@ export default {
       longitude:  'Longitude',
       name:       'Name',
       remove:     'Remove',
+      submit:     'Submit',
       type:       'Type',
       unit:       'Unit',
       value:      'Value'
@@ -95,8 +96,14 @@ export default {
           placeholder: ''
         }
       },
-      finalSummary: {
-        title: 'Final Summary'
+      finalSummary:          {
+        title:          'Final Summary',
+        successMessage: {
+          header:      'Your dataset has been successfully created',
+          nextOptions: 'What would you like to do next?',
+          create:      'Create new dataset',
+          doNothing:   'nothing, I\'m done here for today'
+        }
       },
       contactsForm:          {
         name:         {
