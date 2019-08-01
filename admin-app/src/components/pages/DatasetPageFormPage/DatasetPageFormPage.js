@@ -62,8 +62,18 @@ export default function DatasetPageFormPage() {
   }
 
   function handleCreateClick() {
-    const initialState = createInitialState()
+    resetUiState()
+    resetDatasetState()
+  }
+
+  function resetUiState() {
+    setActiveStepIndex(0)
+    setFinalSummaryVisible(false)
     setSuccessVisible(false)
+  }
+
+  function resetDatasetState() {
+    const initialState = createInitialState()
     setBasicInformation(initialState.basicInformation)
     setResourceContacts(initialState.resourceContacts)
     setResourceCreators(initialState.resourceCreators)

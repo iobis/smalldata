@@ -64,6 +64,9 @@ describe('DatasetPageFormPage', () => {
 
     wrapper.find('.review-and-submit-button').simulate('click')
     expect(wrapper).toMatchSnapshot()
+    expect(wrapper.find('.final-summary').exists()).toBe(true)
+    expect(wrapper.find('.success-message').exists()).toBe(false)
+    expect(wrapper.find('.error-message').exists()).toBe(false)
   })
 
   function addBasicData(wrapper) {
