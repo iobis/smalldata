@@ -18,6 +18,7 @@ export default function FinalSummary({
   keywords,
   metadataProviders,
   onChangeClick,
+  onCreateClick,
   onErrorClose,
   onSubmitClick,
   resourceContacts,
@@ -51,7 +52,7 @@ export default function FinalSummary({
           <p className="title">{t('datasetPageFormPage.finalSummary.successMessage.header')}</p>
           <p className="subtitle">{t('datasetPageFormPage.finalSummary.successMessage.nextOptions')}</p>
           <section>
-            <button className="create button is-white" onClick={() => {}}>
+            <button className="create button is-white" onClick={onCreateClick}>
               {t('datasetPageFormPage.finalSummary.successMessage.create')}
             </button>
           </section>
@@ -135,6 +136,7 @@ FinalSummary.propTypes = {
   keywords:          PropTypes.arrayOf(PropTypes.string).isRequired,
   metadataProviders: PropTypes.arrayOf(PropTypes.shape(contactShape).isRequired),
   onChangeClick:     PropTypes.func.isRequired,
+  onCreateClick:     PropTypes.func.isRequired,
   onErrorClose:      PropTypes.func.isRequired,
   onSubmitClick:     PropTypes.func.isRequired,
   resourceContacts:  PropTypes.arrayOf(PropTypes.shape(contactShape).isRequired),

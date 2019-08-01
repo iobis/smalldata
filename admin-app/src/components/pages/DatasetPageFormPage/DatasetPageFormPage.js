@@ -14,7 +14,6 @@ import { createDataset } from '@smalldata/dwca-lib/src/clients/SmalldataClient'
 export default function DatasetPageFormPage() {
   const initialState = createInitialState()
   const { t } = useTranslation()
-  const [action, setAction] = useState('create')
   const [successVisible, setSuccessVisible] = useState(false)
   const [errorVisible, setErrorVisible] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
@@ -59,8 +58,17 @@ export default function DatasetPageFormPage() {
       setErrorMessage(response.exception + ': ' + response.exceptionMessage)
     } else {
       setSuccessVisible(true)
-      setAction('create')
     }
+  }
+
+  function handleCreateClick() {
+    const initialState = createInitialState()
+    setSuccessVisible(false)
+    setBasicInformation(initialState.basicInformation)
+    setResourceContacts(initialState.resourceContacts)
+    setResourceCreators(initialState.resourceCreators)
+    setMetadataProviders(initialState.metadataProviders)
+    setKeywords(initialState.keywords)
   }
 
   const steps = [{
@@ -145,10 +153,12 @@ export default function DatasetPageFormPage() {
       {finalSummaryVisible ?
         (<FinalSummary
           basicInformation={basicInformation}
+          errorMessage={errorMessage}
           errorVisible={errorVisible}
           keywords={keywords}
           metadataProviders={metadataProviders}
           onChangeClick={(params) => showActiveStep(params.index)}
+          onCreateClick={handleCreateClick}
           onErrorClose={handleErrorClose}
           onSubmitClick={handleSubmitClick}
           resourceContacts={resourceContacts}
