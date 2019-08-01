@@ -1527,6 +1527,7 @@ exports[`DatasetPageFormPage renders correctly 3`] = `
           "title": "dataset title",
         }
       }
+      errorMessage=""
       errorVisible={false}
       keywords={
         Array [
@@ -1551,6 +1552,7 @@ exports[`DatasetPageFormPage renders correctly 3`] = `
         ]
       }
       onChangeClick={[Function]}
+      onCreateClick={[Function]}
       onErrorClose={[Function]}
       onSubmitClick={[Function]}
       resourceContacts={
