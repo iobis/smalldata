@@ -233,10 +233,6 @@ describe('SmalldataClient', () => {
   })
 
   describe('getUsers', () => {
-
-  })
-
-  describe('getUsers', () => {
     beforeEach(() => {
       global.fetch = jest.fn().mockImplementation(() =>
         new Promise((resolve) => {
@@ -275,16 +271,51 @@ describe('SmalldataClient', () => {
     })
 
     it('makes 2 requests and combine them', async() => {
-      const actual = await SmalldataClient.getUsersWithDatasets()
+      const users = await SmalldataClient.getUsersWithDatasets()
       expect(fetch).toHaveBeenCalledTimes(2)
       expect(fetch).toHaveBeenNthCalledWith(1, '/api/users', { headers: expectedHeaders })
       expect(fetch).toHaveBeenNthCalledWith(2, '/api/datasets', { headers: expectedHeaders })
-      expect(actual).toMatchSnapshot()
-      expect(actual).toHaveLength(2)
-      expect(actual[0].datasets).toHaveLength(4)
-      expect(actual[0]['dataset_refs']).toHaveLength(4)
-      expect(actual[1].datasets).toHaveLength(3)
-      expect(actual[1]['dataset_refs']).toHaveLength(3)
+      expect(users).toMatchSnapshot()
+      expect(users).toHaveLength(3)
+      expect(users[0].datasets).toHaveLength(4)
+      expect(users[0]['dataset_refs']).toHaveLength(4)
+      expect(users[1].datasets).toHaveLength(3)
+      expect(users[1]['dataset_refs']).toHaveLength(3)
+      expect(users[2].datasets).toHaveLength(0)
+      expect(users[2]['dataset_refs']).toHaveLength(0)
+    })
+  })
+
+  describe('createUser()', () => {
+    beforeEach(() => {
+      global.fetch = jest.fn().mockImplementation(() =>
+        new Promise((resolve) => {
+          resolve({ json: () => 'default-response' })
+        })
+      )
+    })
+
+    afterEach(() => {
+      global.fetch.mockRestore()
+    })
+
+    it('when providing all data', async() => {
+      await SmalldataClient.createUser({
+        datasetIds: ['dataset-ref-1', 'dataset-ref-2'],
+        email:      'some@email.com',
+        name:       'name',
+        role:       'researcher'
+      })
+      expect(fetch).toHaveBeenCalledTimes(1)
+      expect(fetch.mock.calls[0][0]).toBe('/api/users')
+      expect(fetch.mock.calls[0][1].method).toBe('POST')
+      expect(fetch.mock.calls[0][1].headers).toEqual(expectedHeaders)
+      expect(JSON.parse(fetch.mock.calls[0][1].body)).toEqual({
+        'dataset_refs': ['dataset-ref-1', 'dataset-ref-2'],
+        emailAddress:   'some@email.com',
+        name:           'name',
+        role:           'researcher'
+      })
     })
   })
 })

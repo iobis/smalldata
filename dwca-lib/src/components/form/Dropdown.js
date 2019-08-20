@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useOnClickOutside } from '@smalldata/dwca-lib'
 
@@ -17,6 +17,10 @@ export default function Dropdown({ onChange, options, value }) {
   }
 
   useOnClickOutside(ref, hideOptions)
+
+  useEffect(() => {
+    setSelectedValue(value)
+  }, [value])
 
   return (
     <div className={classNames('dropdown', { 'is-active': active })} onClick={showOptions} ref={ref}>
