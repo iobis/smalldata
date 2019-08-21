@@ -43,19 +43,23 @@ export default {
       }
     },
     userFormPage:      {
-      addUserButton:  'Add User',
-      email:          {
+      submitUserButton: {
+        create: 'Create User',
+        update: 'Update User'
+      },
+      email:            {
         label: 'Email'
       },
-      userRole:       {
+      userRole:         {
         label: 'User Role'
       },
-      name:           {
+      name:             {
         label: 'Name'
       },
-      successMessage: {
+      successMessage:   {
         header:            {
-          create: 'The user has been successfully added'
+          create: 'The user has been successfully added',
+          update: 'The user has been successfully updated'
         },
         createAnotherUser: 'create another user',
         doNothing:         'no thanks, I am done for today'

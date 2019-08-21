@@ -89,6 +89,25 @@ export async function createUser({ datasetIds, email, name, role }) {
     }))
 }
 
+export async function updateUser({ id, datasetIds, email, name, role }) {
+  const request = {
+    'dataset_refs': datasetIds,
+    emailAddress:   email,
+    name,
+    role
+  }
+  const url = '/api/users/' + id
+  return await fetch(url, {
+    method: 'PUT',
+    headers,
+    body:   JSON.stringify(request)
+  }).then(response => response.json())
+    .catch(error => ({
+      exception:        'Some error occurred',
+      exceptionMessage: error
+    }))
+}
+
 function groupBy(list, props) {
   return list.reduce((a, b) => {
     (a[b[props]] = a[b[props]] || []).push(b)
