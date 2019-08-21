@@ -4,6 +4,7 @@ import NotConfirmedStepHeader from '@smalldata/dwca-lib/src/components/StepHeade
 import BasicInformation, { languages, licences } from './BasicInformation'
 import ResourceContacts from './ResourceContacts'
 import ResourceCreators from './ResourceCreators'
+import MetadataProviders from './MetadataProviders'
 import ConfirmedStepHeader from '@smalldata/dwca-lib/src/components/StepHeaders/ConfirmedStepHeader'
 import { useTranslation } from 'react-i18next'
 
@@ -13,6 +14,7 @@ export default function DatasetPageFormPage() {
   const [basicInformation, setBasicInformation] = useState(initialState.basicInformation)
   const [resourceContacts, setResourceContacts] = useState(initialState.resourceContacts)
   const [resourceCreators, setResourceCreators] = useState(initialState.resourceCreators)
+  const [metadataProviders, setMetadataProviders] = useState(initialState.metadataProviders)
   const [activeStepIndex, setActiveStepIndex] = useState(0)
   const [finalSummaryVisible, setFinalSummaryVisible] = useState(false)
 
@@ -66,12 +68,14 @@ export default function DatasetPageFormPage() {
   }, {
     dataDescription: t('datasetPageFormPage.metadataProviders.step.dataDescription'),
     nextStep:        t('datasetPageFormPage.keywords.step.stepTitle'),
-    selectedData:    'to be added',
+    selectedData:    t('datasetPageFormPage.metadataProviders.step.selectedData', { nrOfContacts: metadataProviders.length }),
     stepDescription: t('datasetPageFormPage.metadataProviders.step.stepDescription'),
     stepTitle:       t('datasetPageFormPage.metadataProviders.step.stepTitle'),
 
     children:
-      <div>METADATA PROVIDERS</div>
+      <MetadataProviders
+        data={metadataProviders}
+        onChange={setMetadataProviders}/>
   }, {
     dataDescription: t('datasetPageFormPage.keywords.step.dataDescription'),
     selectedData:    'to be added',
@@ -121,14 +125,15 @@ export default function DatasetPageFormPage() {
 
 function createInitialState() {
   return {
-    basicInformation: {
+    basicInformation:  {
       title:                  '',
       publishingOrganisation: '',
       licence:                licences[0],
       language:               languages[0],
       abstract:               ''
     },
-    resourceContacts: [],
-    resourceCreators: []
+    resourceContacts:  [],
+    resourceCreators:  [],
+    metadataProviders: []
   }
 }
