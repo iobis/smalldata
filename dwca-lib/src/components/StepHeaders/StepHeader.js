@@ -23,7 +23,7 @@ export default function StepHeader({
             </b>
           </p>
         </div>
-        <div className={classNames('column is-7 is-size-5', { 'is-hidden-mobile': !selectedData })}>
+        <div className={classNames('selected-data column is-7 is-size-5', { 'is-hidden-mobile': !selectedData })}>
           {selectedData}
         </div>
         <div className="column details">

@@ -1,19 +1,20 @@
 export default {
   translation: {
     common:         {
-      add:       'Add',
-      cancel:    'Cancel',
-      change:    'Change',
-      confirm:   'Confirm',
-      copy:      'Copy',
-      edit:      'Edit',
-      latitude:  'Latitude',
-      longitude: 'Longitude',
-      name:      'Name',
-      remove:    'Remove',
-      type:      'Type',
-      unit:      'Unit',
-      value:     'Value'
+      add:        'Add',
+      cancel:     'Cancel',
+      change:     'Change',
+      confirm:    'Confirm',
+      continueTo: 'Continue to',
+      copy:       'Copy',
+      edit:       'Edit',
+      latitude:   'Latitude',
+      longitude:  'Longitude',
+      name:       'Name',
+      remove:     'Remove',
+      type:       'Type',
+      unit:       'Unit',
+      value:      'Value'
     },
     inputDataPage:  {
       inputNewOccurrence: 'INPUT NEW OCCURRENCE',
@@ -29,7 +30,6 @@ export default {
     occurrenceForm: {
       copyPreviousStep:      'copy data from previous entry',
       reviewAndSubmitButton: 'Review & Submit',
-      stepContinue:          'Continue to',
       dataset:               {
         step: {
           dataDescription: 'Using Data',
