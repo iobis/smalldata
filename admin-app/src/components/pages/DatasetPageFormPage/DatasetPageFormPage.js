@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import ActiveStepHeader from '@smalldata/dwca-lib/src/components/StepHeaders/ActiveStepHeader'
 import NotConfirmedStepHeader from '@smalldata/dwca-lib/src/components/StepHeaders/NotConfirmedStepHeader'
 import BasicInformation, { languages, licences } from './BasicInformation'
+import ResourceContacts from './ResourceContacts'
 import ConfirmedStepHeader from '@smalldata/dwca-lib/src/components/StepHeaders/ConfirmedStepHeader'
 import { useTranslation } from 'react-i18next'
 
@@ -9,6 +10,7 @@ export default function DatasetPageFormPage() {
   const initialState = createInitialState()
   const { t } = useTranslation()
   const [basicInformation, setBasicInformation] = useState(initialState.basicInformation)
+  const [resourceContacts, setResourceContacts] = useState(initialState.resourceContacts)
   const [activeStepIndex, setActiveStepIndex] = useState(0)
   const [finalSummaryVisible, setFinalSummaryVisible] = useState(false)
 
@@ -40,12 +42,14 @@ export default function DatasetPageFormPage() {
   }, {
     dataDescription: t('datasetPageFormPage.resourceContacts.step.dataDescription'),
     nextStep:        t('datasetPageFormPage.resourceCreators.step.stepTitle'),
-    selectedData:    'to be added',
+    selectedData:    t('datasetPageFormPage.resourceContacts.step.selectedData', { nrOfContacts: resourceContacts.length }),
     stepDescription: t('datasetPageFormPage.resourceContacts.step.stepDescription'),
     stepTitle:       t('datasetPageFormPage.resourceContacts.step.stepTitle'),
 
     children:
-      <div>RESOURCE CONTACTS</div>
+      <ResourceContacts
+        data={resourceContacts}
+        onChange={setResourceContacts}/>
   }, {
     dataDescription: t('datasetPageFormPage.resourceCreators.step.dataDescription'),
     nextStep:        t('datasetPageFormPage.metadataProviders.step.stepTitle'),
@@ -119,6 +123,7 @@ function createInitialState() {
       licence:                licences[0],
       language:               languages[0],
       abstract:               ''
-    }
+    },
+    resourceContacts: []
   }
 }

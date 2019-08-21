@@ -11,7 +11,22 @@ describe('DatasetPageFormPage', () => {
     expect(wrapper).toMatchSnapshot()
 
     wrapper.find('.step-2 .step-header').simulate('click')
-    expect(wrapper.find('.step-header .selected-data').at(0).text()).toEqual('dataset title')
+    expect(wrapper.find('.step-header .selected-data').at(0).text())
+      .toEqual('dataset title')
+    expect(wrapper.find('.contact-row')).toHaveLength(0)
+
+    addResourceContacts(wrapper, 1)
+    wrapper.find('.step-3 .step-header').simulate('click')
+    expect(wrapper.find('.step-header .selected-data').at(1).text())
+      .toEqual('datasetPageFormPage.resourceContacts.step.selectedData {"nrOfContacts":1}')
+
+    wrapper.find('.step-2 .step-header').simulate('click')
+    expect(wrapper.find('.contact-row')).toHaveLength(1)
+
+    addResourceContacts(wrapper, 2)
+    wrapper.find('.step-3 .step-header').simulate('click')
+    expect(wrapper.find('.step-header .selected-data').at(1).text())
+      .toEqual('datasetPageFormPage.resourceContacts.step.selectedData {"nrOfContacts":2}')
   })
 
   function addBasicData(wrapper) {
@@ -25,5 +40,13 @@ describe('DatasetPageFormPage', () => {
     wrapper.find('.basic-information .language .dropdown .dropdown-item').at(1).simulate('click')
     wrapper.find('.basic-information .abstract textarea')
       .simulate('change', { target: { value: 'dataset abstract information' } })
+  }
+
+  function addResourceContacts(wrapper, id) {
+    wrapper.find('.name input').simulate('change', { target: { value: 'name-' + id } })
+    wrapper.find('.email input').simulate('change', { target: { value: 'email-' + id } })
+    wrapper.find('.organisation input').simulate('change', { target: { value: 'organisation-' + id } })
+    wrapper.find('.position input').simulate('change', { target: { value: 'position-' + id } })
+    wrapper.find('.add').simulate('click')
   }
 })
