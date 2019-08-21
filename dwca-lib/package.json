@@ -10,7 +10,7 @@
     "test:watch": "jest --env=jsdom --runInBand --watch"
   },
   "dependencies": {
-    "react": "16.8.6"
+    "react": "16.9.0"
   },
   "devDependencies": {
     "@babel/core": "7.5.0",
