@@ -55,6 +55,12 @@ describe('DatasetPageFormPage', () => {
     wrapper.find('.step-5 .step-header').simulate('click')
     expect(wrapper.find('.step-header .selected-data').at(3).text())
       .toEqual('datasetPageFormPage.metadataProviders.step.selectedData {"nrOfContacts":2}')
+
+    wrapper.find('.keywords input').simulate('change', { target: { value: 'keyword-1' } })
+    wrapper.find('.keywords input').simulate('keydown', { key: 'Enter' })
+    wrapper.find('.keywords input').simulate('change', { target: { value: 'keyword-2' } })
+    wrapper.find('.keywords input').simulate('keydown', { key: 'Enter' })
+    expect(wrapper.find('.keywords .tag')).toHaveLength(2)
   })
 
   function addBasicData(wrapper) {

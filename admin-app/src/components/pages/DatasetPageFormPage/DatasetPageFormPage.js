@@ -3,6 +3,7 @@ import ActiveStepHeader from '@smalldata/dwca-lib/src/components/StepHeaders/Act
 import NotConfirmedStepHeader from '@smalldata/dwca-lib/src/components/StepHeaders/NotConfirmedStepHeader'
 import BasicInformation, { languages, licences } from './BasicInformation'
 import ResourceContacts from './ResourceContacts'
+import Keywords from './Keywords'
 import ResourceCreators from './ResourceCreators'
 import MetadataProviders from './MetadataProviders'
 import ConfirmedStepHeader from '@smalldata/dwca-lib/src/components/StepHeaders/ConfirmedStepHeader'
@@ -15,6 +16,7 @@ export default function DatasetPageFormPage() {
   const [resourceContacts, setResourceContacts] = useState(initialState.resourceContacts)
   const [resourceCreators, setResourceCreators] = useState(initialState.resourceCreators)
   const [metadataProviders, setMetadataProviders] = useState(initialState.metadataProviders)
+  const [keywords, setKeywords] = useState(initialState.keywords)
   const [activeStepIndex, setActiveStepIndex] = useState(0)
   const [finalSummaryVisible, setFinalSummaryVisible] = useState(false)
 
@@ -78,12 +80,14 @@ export default function DatasetPageFormPage() {
         onChange={setMetadataProviders}/>
   }, {
     dataDescription: t('datasetPageFormPage.keywords.step.dataDescription'),
-    selectedData:    'to be added',
+    selectedData:    '',
     stepDescription: t('datasetPageFormPage.keywords.step.stepDescription'),
     stepTitle:       t('datasetPageFormPage.keywords.step.stepTitle'),
 
     children:
-      <div>KEYWORDS</div>
+      <Keywords
+        keywords={keywords}
+        onChange={setKeywords}/>
   }]
 
   return (
@@ -134,6 +138,7 @@ function createInitialState() {
     },
     resourceContacts:  [],
     resourceCreators:  [],
-    metadataProviders: []
+    metadataProviders: [],
+    keywords:          []
   }
 }
