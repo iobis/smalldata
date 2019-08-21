@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ResourceContacts renders correctly 1`] = `
-<ResourceContacts
+exports[`ResourceCreators renders correctly 1`] = `
+<ResourceCreators
   data={Array []}
   onChange={[MockFunction]}
 >
   <ContactsForm
-    className="resource-contacts"
-    contactsTableHeader="datasetPageFormPage.resourceContacts.contactsTableHeader"
+    className="resource-creators"
+    contactsTableHeader="datasetPageFormPage.resourceCreators.contactsTableHeader"
     data={Array []}
     onChange={[MockFunction]}
   >
     <div
-      className="contacts-form resource-contacts"
+      className="contacts-form resource-creators"
     >
       <InputText
         className="name"
@@ -118,7 +118,7 @@ exports[`ResourceContacts renders correctly 1`] = `
         <div
           className="title is-5 contacts-table-header"
         >
-          datasetPageFormPage.resourceContacts.contactsTableHeader
+          datasetPageFormPage.resourceCreators.contactsTableHeader
         </div>
         <table
           className="general table is-fullwidth is-striped is-hoverable"
@@ -144,5 +144,5 @@ exports[`ResourceContacts renders correctly 1`] = `
       </div>
     </div>
   </ContactsForm>
-</ResourceContacts>
+</ResourceCreators>
 `;
