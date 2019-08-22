@@ -1,6 +1,7 @@
 import ow from 'ow'
 import { findTypeAndUnitIdByNames, findUnitsByTypeId } from './measurments'
 import { format } from 'date-fns'
+import { getProperty } from '../common/objects'
 
 const purlUrl = 'http://purl.org/dc/terms/'
 const tdwgUrl = 'http://rs.tdwg.org/dwc/terms/'
@@ -142,15 +143,6 @@ export function mapDwcaToMeasurements(dwca) {
     unit:  tdwg.measurementUnit,
     units: findUnitsByTypeId(iobis.measurementTypeID)
   }))
-}
-
-function getProperty(selectorFn, defaultValue) {
-  try {
-    const value = selectorFn()
-    return value === null || value === undefined ? defaultValue : value
-  } catch (e) {
-    return defaultValue
-  }
 }
 
 const reservedTdwgFields = ['basisOfRecord', 'eventDate', 'occurrenceStatus', 'scientificName', 'lifeStage', 'sex',
