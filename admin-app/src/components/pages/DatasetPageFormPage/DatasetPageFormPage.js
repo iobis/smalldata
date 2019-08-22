@@ -1,17 +1,24 @@
-import React, { useState } from 'react'
 import ActiveStepHeader from '@smalldata/dwca-lib/src/components/StepHeaders/ActiveStepHeader'
-import NotConfirmedStepHeader from '@smalldata/dwca-lib/src/components/StepHeaders/NotConfirmedStepHeader'
-import BasicInformation, { languages, licences } from './BasicInformation'
-import ResourceContacts from './ResourceContacts'
-import Keywords from './Keywords'
-import ResourceCreators from './ResourceCreators'
-import MetadataProviders from './MetadataProviders'
+import BasicInformation from './BasicInformation'
 import ConfirmedStepHeader from '@smalldata/dwca-lib/src/components/StepHeaders/ConfirmedStepHeader'
+import FinalSummary from './FinalSummary/FinalSummary'
+import Keywords from './Keywords'
+import MetadataProviders from './MetadataProviders'
+import NotConfirmedStepHeader from '@smalldata/dwca-lib/src/components/StepHeaders/NotConfirmedStepHeader'
+import React, { useState } from 'react'
+import ResourceContacts from './ResourceContacts'
+import ResourceCreators from './ResourceCreators'
+import { createDataset } from '@smalldata/dwca-lib/src/clients/SmalldataClient'
+import { findLanguageCodeByTitle, languages } from '@smalldata/dwca-lib/src/clients/languages'
+import { findLicenceByTitle, licences } from '@smalldata/dwca-lib/src/clients/licences'
 import { useTranslation } from 'react-i18next'
 
 export default function DatasetPageFormPage() {
   const initialState = createInitialState()
   const { t } = useTranslation()
+  const [successVisible, setSuccessVisible] = useState(false)
+  const [errorVisible, setErrorVisible] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
   const [basicInformation, setBasicInformation] = useState(initialState.basicInformation)
   const [resourceContacts, setResourceContacts] = useState(initialState.resourceContacts)
   const [resourceCreators, setResourceCreators] = useState(initialState.resourceCreators)
@@ -34,6 +41,52 @@ export default function DatasetPageFormPage() {
     setFinalSummaryVisible(true)
   }
 
+  function handleErrorClose() {
+    setErrorVisible(false)
+    setErrorMessage('')
+  }
+
+  async function handleSubmitClick() {
+    const dataset = {
+      basicInformation: {
+        ...basicInformation,
+        languageCode: findLanguageCodeByTitle(basicInformation.language),
+        licence:      findLicenceByTitle(basicInformation.licence)
+      },
+      resourceContacts,
+      resourceCreators,
+      metadataProviders,
+      keywords
+    }
+    const response = await createDataset(dataset)
+    if (response.exception) {
+      setErrorVisible(true)
+      setErrorMessage(response.exception + ': ' + response.exceptionMessage)
+    } else {
+      setSuccessVisible(true)
+    }
+  }
+
+  function handleCreateClick() {
+    resetUiState()
+    resetDatasetState()
+  }
+
+  function resetUiState() {
+    setActiveStepIndex(0)
+    setFinalSummaryVisible(false)
+    setSuccessVisible(false)
+  }
+
+  function resetDatasetState() {
+    const initialState = createInitialState()
+    setBasicInformation(initialState.basicInformation)
+    setResourceContacts(initialState.resourceContacts)
+    setResourceCreators(initialState.resourceCreators)
+    setMetadataProviders(initialState.metadataProviders)
+    setKeywords(initialState.keywords)
+  }
+
   const steps = [{
     dataDescription: t('datasetPageFormPage.basicInformation.step.dataDescription'),
     nextStep:        t('datasetPageFormPage.resourceContacts.step.stepTitle'),
@@ -44,6 +97,8 @@ export default function DatasetPageFormPage() {
     children:
       <BasicInformation
         data={basicInformation}
+        languages={languages.map(language => language.title)}
+        licences={licences.map(licence => licence.title)}
         onChange={setBasicInformation}/>
   }, {
     dataDescription: t('datasetPageFormPage.resourceContacts.step.dataDescription'),
@@ -114,7 +169,19 @@ export default function DatasetPageFormPage() {
         )
       })}
       {finalSummaryVisible ?
-        (<div>FINAL SUMMARY</div>) :
+        (<FinalSummary
+          basicInformation={basicInformation}
+          errorMessage={errorMessage}
+          errorVisible={errorVisible}
+          keywords={keywords}
+          metadataProviders={metadataProviders}
+          onChangeClick={(params) => showActiveStep(params.index)}
+          onCreateClick={handleCreateClick}
+          onErrorClose={handleErrorClose}
+          onSubmitClick={handleSubmitClick}
+          resourceContacts={resourceContacts}
+          resourceCreators={resourceCreators}
+          successVisible={successVisible}/>) :
         (<div className="columns column is-centered">
           <button
             className="review-and-submit-button button is-medium is-info"
@@ -130,11 +197,10 @@ export default function DatasetPageFormPage() {
 function createInitialState() {
   return {
     basicInformation:  {
-      title:                  '',
-      publishingOrganisation: '',
-      licence:                licences[0],
-      language:               languages[0],
-      abstract:               ''
+      title:    '',
+      licence:  licences[0].title,
+      language: languages[0].title,
+      abstract: ''
     },
     resourceContacts:  [],
     resourceCreators:  [],

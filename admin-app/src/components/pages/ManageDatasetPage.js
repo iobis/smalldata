@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import { useTranslation } from 'react-i18next'
-import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types'
 import Divider from '../layout/Divider'
+import PropTypes from 'prop-types'
+import React, { useEffect, useState } from 'react'
 import { getDatasets } from '@smalldata/dwca-lib/src/clients/SmalldataClient'
+import { getProperty } from '@smalldata/dwca-lib/src/common/objects'
+import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 export default function ManageDatasetPage() {
   const { t } = useTranslation()
@@ -43,7 +44,7 @@ export default function ManageDatasetPage() {
                 <DatasetRow
                   key={dataset.id}
                   license={dataset.license.title}
-                  organization={dataset.metadataProviders[0].organizationName || '—'}
+                  organization={getProperty(() => dataset.metadataProviders[0].organizationName, '—')}
                   title={dataset.title.value}/>
               ))}
             </tbody>

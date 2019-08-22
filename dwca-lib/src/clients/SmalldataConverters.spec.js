@@ -111,4 +111,122 @@ describe('SmalldataConverters', () => {
       value: 'tdwg-field-2-value'
     }])
   })
+
+  it('mapDatasetToRequest(dataset)', () => {
+    const uiDataset = {
+      basicInformation:  {
+        title:        'Basic Data - Title',
+        licence:      {
+          url:   'http://creativecommons.org/licenses/by-nc/4.0/legalcode',
+          title: 'Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License'
+        },
+        languageCode: 'en',
+        abstract:     'Basic Data - Abstract'
+      },
+      resourceContacts:  [{
+        name:         'ResourceContact-1 Name-1',
+        email:        'ResourceContact-1@acme.com',
+        organisation: 'ResourceContact-1 Organization-1'
+      }, {
+        name:         'ResourceContact-2 Name-2',
+        email:        'ResourceContact-2@acme.com',
+        organisation: 'ResourceContact-2 Organization-2'
+      }],
+      resourceCreators:  [{
+        name:         'ResourceCreator-1 Name-1',
+        email:        'ResourceCreator-1@acme.com',
+        organisation: 'ResourceCreator-1 Organization-1'
+      }, {
+        name:         'ResourceCreator-2 Name-2',
+        email:        'ResourceCreator-2@acme.com',
+        organisation: 'ResourceCreator-2 Organization-2'
+      }],
+      metadataProviders: [{
+        name:         'MetadataProviders-1 Name-1',
+        email:        'MetadataProviders-1@acme.com',
+        organisation: 'MetadataProviders-1 Organization-1'
+      }, {
+        name:         'MetadataProviders-2 Name-2',
+        email:        'MetadataProviders-2@acme.com',
+        organisation: 'MetadataProviders-2 Organization-2'
+      }],
+      keywords:          ['Keyword-1', 'Keyword-2']
+    }
+
+    const response = SmalldataConverters.mapDatasetToRequest(uiDataset)
+
+    expect(response).toEqual({
+      meta:              {
+        type:      'occurrence',
+        dwcTables: {
+          core:       'occurrence',
+          extensions: [
+            'emof'
+          ]
+        }
+      },
+      title:             {
+        language: 'en',
+        value:    'Basic Data - Title'
+      },
+      language:          'en',
+      abstract:          {
+        paragraphs: [
+          'Basic Data - Abstract'
+        ]
+      },
+      license:           {
+        url:   'http://creativecommons.org/licenses/by-nc/4.0/legalcode',
+        title: 'Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License'
+      },
+      creators:          [{
+        individualName:        {
+          givenName: 'ResourceCreator-1',
+          surName:   'Name-1'
+        },
+        organizationName:      'ResourceCreator-1 Organization-1',
+        electronicMailAddress: 'ResourceCreator-1@acme.com'
+      }, {
+        individualName:        {
+          givenName: 'ResourceCreator-2',
+          surName:   'Name-2'
+        },
+        organizationName:      'ResourceCreator-2 Organization-2',
+        electronicMailAddress: 'ResourceCreator-2@acme.com'
+      }],
+      contacts:          [{
+        individualName:        {
+          givenName: 'ResourceContact-1',
+          surName:   'Name-1'
+        },
+        organizationName:      'ResourceContact-1 Organization-1',
+        electronicMailAddress: 'ResourceContact-1@acme.com'
+      }, {
+        individualName:        {
+          givenName: 'ResourceContact-2',
+          surName:   'Name-2'
+        },
+        organizationName:      'ResourceContact-2 Organization-2',
+        electronicMailAddress: 'ResourceContact-2@acme.com'
+      }],
+      metadataProviders: [{
+        individualName:        {
+          givenName: 'MetadataProviders-1',
+          surName:   'Name-1'
+        },
+        organizationName:      'MetadataProviders-1 Organization-1',
+        electronicMailAddress: 'MetadataProviders-1@acme.com'
+      }, {
+        individualName:        {
+          givenName: 'MetadataProviders-2',
+          surName:   'Name-2'
+        },
+        organizationName:      'MetadataProviders-2 Organization-2',
+        electronicMailAddress: 'MetadataProviders-2@acme.com'
+      }],
+      keywordSets:       [{
+        keywords: ['Keyword-1', 'Keyword-2']
+      }]
+    })
+  })
 })

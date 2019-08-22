@@ -1,5 +1,7 @@
+import ow from 'ow'
 import { findTypeAndUnitIdByNames, findUnitsByTypeId } from './measurments'
 import { format } from 'date-fns'
+import { getProperty } from '../common/objects'
 
 const purlUrl = 'http://purl.org/dc/terms/'
 const tdwgUrl = 'http://rs.tdwg.org/dwc/terms/'
@@ -143,15 +145,6 @@ export function mapDwcaToMeasurements(dwca) {
   }))
 }
 
-function getProperty(selectorFn, defaultValue) {
-  try {
-    const value = selectorFn()
-    return value === null || value === undefined ? defaultValue : value
-  } catch (e) {
-    return defaultValue
-  }
-}
-
 const reservedTdwgFields = ['basisOfRecord', 'eventDate', 'occurrenceStatus', 'scientificName', 'lifeStage', 'sex',
   'decimalLongitude', 'decimalLatitude', 'coordinateUncertaintyInMeters', 'minimumDepthInMeters', 'maximumDepthInMeters',
   'verbatimCoordinates', 'verbatimDepth', 'institutionCode', 'collectionCode', 'fieldNumber', 'catalogNumber',
@@ -180,4 +173,61 @@ export function mapDwcsToDarwinCoreFields(dwca) {
       value: tdwg[key]
     }))
   return [...iobisFields, ...purlFields, ...tdwgFields]
+}
+
+export function mapDatasetToRequest({ basicInformation, resourceContacts, resourceCreators, metadataProviders, keywords }) {
+  ow(basicInformation, ow.object.partialShape({
+    title:        ow.string,
+    licence:      {
+      url:   ow.string,
+      title: ow.string
+    },
+    languageCode: ow.string,
+    abstract:     ow.string
+  }))
+  ow(resourceContacts, ow.array)
+  ow(resourceCreators, ow.array)
+  ow(metadataProviders, ow.array)
+  ow(keywords, ow.array)
+
+  return {
+    meta:              {
+      type:      'occurrence',
+      dwcTables: {
+        core:       'occurrence',
+        extensions: [
+          'emof'
+        ]
+      }
+    },
+    title:             {
+      language: basicInformation.languageCode,
+      value:    basicInformation.title
+    },
+    language:          basicInformation.languageCode,
+    abstract:          {
+      paragraphs: [basicInformation.abstract]
+    },
+    license:           basicInformation.licence,
+    creators:          resourceCreators.map(mapContactToRequest),
+    contacts:          resourceContacts.map(mapContactToRequest),
+    metadataProviders: metadataProviders.map(mapContactToRequest),
+    keywordSets:       [{
+      keywords
+    }]
+  }
+
+  function mapContactToRequest({ name, email, organisation }) {
+    const firstName = name.split(' ').slice(0, -1).join(' ')
+    const lastName = name.split(' ').slice(-1).join(' ')
+
+    return {
+      individualName:        {
+        givenName: firstName,
+        surName:   lastName
+      },
+      organizationName:      organisation,
+      electronicMailAddress: email
+    }
+  }
 }

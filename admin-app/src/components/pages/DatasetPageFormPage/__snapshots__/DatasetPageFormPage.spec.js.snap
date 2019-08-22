@@ -68,9 +68,23 @@ exports[`DatasetPageFormPage renders correctly 1`] = `
               "abstract": "",
               "language": "English",
               "licence": "Creative Commons Attribution Non Commercial (CC-BY) 4.0 License",
-              "publishingOrganisation": "",
               "title": "",
             }
+          }
+          languages={
+            Array [
+              "English",
+              "Dutch",
+              "French",
+              "Spanish",
+            ]
+          }
+          licences={
+            Array [
+              "Creative Commons Attribution Non Commercial (CC-BY) 4.0 License",
+              "Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License",
+              "Public Domain (CC0 1.0)",
+            ]
           }
           onChange={[Function]}
         >
@@ -90,28 +104,6 @@ exports[`DatasetPageFormPage renders correctly 1`] = `
                   className="label"
                 >
                   datasetPageFormPage.basicInformation.title.label
-                </label>
-                <input
-                  className="input"
-                  onChange={[Function]}
-                  type="text"
-                  value=""
-                />
-              </div>
-            </InputText>
-            <InputText
-              className="publishing-organisation"
-              name="datasetPageFormPage.basicInformation.publishingOrganisation"
-              onChange={[Function]}
-              value=""
-            >
-              <div
-                className="column field publishing-organisation"
-              >
-                <label
-                  className="label"
-                >
-                  datasetPageFormPage.basicInformation.publishingOrganisation.label
                 </label>
                 <input
                   className="input"
@@ -677,9 +669,23 @@ exports[`DatasetPageFormPage renders correctly 2`] = `
               "abstract": "dataset abstract information",
               "language": "Dutch",
               "licence": "Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License",
-              "publishingOrganisation": "dataset publishing organisation",
               "title": "dataset title",
             }
+          }
+          languages={
+            Array [
+              "English",
+              "Dutch",
+              "French",
+              "Spanish",
+            ]
+          }
+          licences={
+            Array [
+              "Creative Commons Attribution Non Commercial (CC-BY) 4.0 License",
+              "Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License",
+              "Public Domain (CC0 1.0)",
+            ]
           }
           onChange={[Function]}
         >
@@ -705,28 +711,6 @@ exports[`DatasetPageFormPage renders correctly 2`] = `
                   onChange={[Function]}
                   type="text"
                   value="dataset title"
-                />
-              </div>
-            </InputText>
-            <InputText
-              className="publishing-organisation"
-              name="datasetPageFormPage.basicInformation.publishingOrganisation"
-              onChange={[Function]}
-              value="dataset publishing organisation"
-            >
-              <div
-                className="column field publishing-organisation"
-              >
-                <label
-                  className="label"
-                >
-                  datasetPageFormPage.basicInformation.publishingOrganisation.label
-                </label>
-                <input
-                  className="input"
-                  onChange={[Function]}
-                  type="text"
-                  value="dataset publishing organisation"
                 />
               </div>
             </InputText>
@@ -1214,6 +1198,913 @@ exports[`DatasetPageFormPage renders correctly 2`] = `
         datasetPageFormPage.reviewAndSubmitButton
       </button>
     </div>
+  </section>
+</DatasetPageFormPage>
+`;
+
+exports[`DatasetPageFormPage renders correctly 3`] = `
+<DatasetPageFormPage>
+  <section
+    className="section"
+  >
+    <NotConfirmedStepHeader
+      activeStepIndex={null}
+      className="step-1 background-color-0"
+      dataDescription="datasetPageFormPage.basicInformation.step.dataDescription"
+      key="datasetPageFormPage.basicInformation.step.stepTitle"
+      nextStep="datasetPageFormPage.resourceContacts.step.stepTitle"
+      onContinueButtonClick={[Function]}
+      onStepTitleClick={[Function]}
+      selectedData="dataset title"
+      stepDescription="datasetPageFormPage.basicInformation.step.stepDescription"
+      stepTitle="1 - datasetPageFormPage.basicInformation.step.stepTitle"
+      totalSteps={4}
+    >
+      <StepHeader
+        className="not-confirmed has-text-white step-1 background-color-0"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="datasetPageFormPage.basicInformation.step.stepDescription"
+        stepTitle="1 - datasetPageFormPage.basicInformation.step.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered not-confirmed has-text-white step-1 background-color-0"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          />
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              datasetPageFormPage.basicInformation.step.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                1 - datasetPageFormPage.basicInformation.step.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </NotConfirmedStepHeader>
+    <NotConfirmedStepHeader
+      activeStepIndex={null}
+      className="step-2 background-color-6"
+      dataDescription="datasetPageFormPage.resourceContacts.step.dataDescription"
+      key="datasetPageFormPage.resourceContacts.step.stepTitle"
+      nextStep="datasetPageFormPage.resourceCreators.step.stepTitle"
+      onContinueButtonClick={[Function]}
+      onStepTitleClick={[Function]}
+      selectedData="datasetPageFormPage.resourceContacts.step.selectedData {\\"nrOfContacts\\":2}"
+      stepDescription="datasetPageFormPage.resourceContacts.step.stepDescription"
+      stepTitle="2 - datasetPageFormPage.resourceContacts.step.stepTitle"
+      totalSteps={4}
+    >
+      <StepHeader
+        className="not-confirmed has-text-white step-2 background-color-6"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="datasetPageFormPage.resourceContacts.step.stepDescription"
+        stepTitle="2 - datasetPageFormPage.resourceContacts.step.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered not-confirmed has-text-white step-2 background-color-6"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          />
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              datasetPageFormPage.resourceContacts.step.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                2 - datasetPageFormPage.resourceContacts.step.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </NotConfirmedStepHeader>
+    <NotConfirmedStepHeader
+      activeStepIndex={null}
+      className="step-3 background-color-12"
+      dataDescription="datasetPageFormPage.resourceCreators.step.dataDescription"
+      key="datasetPageFormPage.resourceCreators.step.stepTitle"
+      nextStep="datasetPageFormPage.metadataProviders.step.stepTitle"
+      onContinueButtonClick={[Function]}
+      onStepTitleClick={[Function]}
+      selectedData="datasetPageFormPage.resourceCreators.step.selectedData {\\"nrOfContacts\\":2}"
+      stepDescription="datasetPageFormPage.resourceCreators.step.stepDescription"
+      stepTitle="3 - datasetPageFormPage.resourceCreators.step.stepTitle"
+      totalSteps={4}
+    >
+      <StepHeader
+        className="not-confirmed has-text-white step-3 background-color-12"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="datasetPageFormPage.resourceCreators.step.stepDescription"
+        stepTitle="3 - datasetPageFormPage.resourceCreators.step.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered not-confirmed has-text-white step-3 background-color-12"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          />
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              datasetPageFormPage.resourceCreators.step.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                3 - datasetPageFormPage.resourceCreators.step.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </NotConfirmedStepHeader>
+    <NotConfirmedStepHeader
+      activeStepIndex={null}
+      className="step-4 background-color-18"
+      dataDescription="datasetPageFormPage.metadataProviders.step.dataDescription"
+      key="datasetPageFormPage.metadataProviders.step.stepTitle"
+      nextStep="datasetPageFormPage.keywords.step.stepTitle"
+      onContinueButtonClick={[Function]}
+      onStepTitleClick={[Function]}
+      selectedData="datasetPageFormPage.metadataProviders.step.selectedData {\\"nrOfContacts\\":2}"
+      stepDescription="datasetPageFormPage.metadataProviders.step.stepDescription"
+      stepTitle="4 - datasetPageFormPage.metadataProviders.step.stepTitle"
+      totalSteps={4}
+    >
+      <StepHeader
+        className="not-confirmed has-text-white step-4 background-color-18"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="datasetPageFormPage.metadataProviders.step.stepDescription"
+        stepTitle="4 - datasetPageFormPage.metadataProviders.step.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered not-confirmed has-text-white step-4 background-color-18"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          />
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              datasetPageFormPage.metadataProviders.step.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                4 - datasetPageFormPage.metadataProviders.step.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </NotConfirmedStepHeader>
+    <NotConfirmedStepHeader
+      activeStepIndex={null}
+      className="step-5 background-color-24"
+      dataDescription="datasetPageFormPage.keywords.step.dataDescription"
+      key="datasetPageFormPage.keywords.step.stepTitle"
+      onContinueButtonClick={[Function]}
+      onStepTitleClick={[Function]}
+      selectedData=""
+      stepDescription="datasetPageFormPage.keywords.step.stepDescription"
+      stepTitle="5 - datasetPageFormPage.keywords.step.stepTitle"
+      totalSteps={4}
+    >
+      <StepHeader
+        className="not-confirmed has-text-white step-5 background-color-24"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="datasetPageFormPage.keywords.step.stepDescription"
+        stepTitle="5 - datasetPageFormPage.keywords.step.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered not-confirmed has-text-white step-5 background-color-24"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          />
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              datasetPageFormPage.keywords.step.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                5 - datasetPageFormPage.keywords.step.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </NotConfirmedStepHeader>
+    <FinalSummary
+      basicInformation={
+        Object {
+          "abstract": "dataset abstract information",
+          "language": "Dutch",
+          "licence": "Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License",
+          "title": "dataset title",
+        }
+      }
+      errorMessage=""
+      errorVisible={false}
+      keywords={
+        Array [
+          "keyword-1",
+          "keyword-2",
+        ]
+      }
+      metadataProviders={
+        Array [
+          Object {
+            "email": "metadata-provider-email-1",
+            "name": "metadata-provider-name-1",
+            "organisation": "metadata-provider-organisation-1",
+          },
+          Object {
+            "email": "metadata-provider-email-2",
+            "name": "metadata-provider-name-2",
+            "organisation": "metadata-provider-organisation-2",
+          },
+        ]
+      }
+      onChangeClick={[Function]}
+      onCreateClick={[Function]}
+      onErrorClose={[Function]}
+      onSubmitClick={[Function]}
+      resourceContacts={
+        Array [
+          Object {
+            "email": "resource-contact-email-1",
+            "name": "resource-contact-name-1",
+            "organisation": "resource-contact-organisation-1",
+          },
+          Object {
+            "email": "resource-contact-email-2",
+            "name": "resource-contact-name-2",
+            "organisation": "resource-contact-organisation-2",
+          },
+        ]
+      }
+      resourceCreators={
+        Array [
+          Object {
+            "email": "resource-creator-email-1",
+            "name": "resource-creator-name-1",
+            "organisation": "resource-creator-organisation-1",
+          },
+          Object {
+            "email": "resource-creator-email-2",
+            "name": "resource-creator-name-2",
+            "organisation": "resource-creator-organisation-2",
+          },
+        ]
+      }
+      successVisible={false}
+    >
+      <div
+        className="final-summary section is-fluid"
+      >
+        <div
+          className="columns is-centered"
+        >
+          <h1
+            className="final-summary-title title is-3"
+          >
+            datasetPageFormPage.finalSummary.title
+          </h1>
+        </div>
+        <SubmitEntryButton
+          onClick={[Function]}
+        >
+          <div
+            className="submit-entry-button columns is-mobile is-centered"
+          >
+            <button
+              className="button is-info is-medium"
+              onClick={[Function]}
+            >
+              common.submit
+            </button>
+          </div>
+        </SubmitEntryButton>
+        <section
+          className="basic-information-summary"
+        >
+          <SectionTitle>
+            <h2
+              className="title is-4"
+            >
+              1 - 
+              datasetPageFormPage.basicInformation.step.stepTitle
+            </h2>
+          </SectionTitle>
+          <div
+            className="content"
+          >
+            <table
+              className="table is-striped is-fullwidth is-hoverable"
+            >
+              <NameValueHeader>
+                <thead>
+                  <tr>
+                    <th
+                      className="type"
+                    >
+                      common.name
+                    </th>
+                    <th
+                      className="value"
+                    >
+                      common.value
+                    </th>
+                  </tr>
+                </thead>
+              </NameValueHeader>
+              <tbody>
+                <NameValueRow
+                  name="datasetPageFormPage.basicInformation.title.label"
+                  value="dataset title"
+                >
+                  <tr
+                    className="name-value-row fieldrow"
+                  >
+                    <td
+                      className="name"
+                    >
+                      datasetPageFormPage.basicInformation.title.label
+                    </td>
+                    <td
+                      className="value"
+                    >
+                      dataset title
+                    </td>
+                  </tr>
+                </NameValueRow>
+                <NameValueRow
+                  name="datasetPageFormPage.basicInformation.licence.label"
+                  value="Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License"
+                >
+                  <tr
+                    className="name-value-row fieldrow"
+                  >
+                    <td
+                      className="name"
+                    >
+                      datasetPageFormPage.basicInformation.licence.label
+                    </td>
+                    <td
+                      className="value"
+                    >
+                      Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License
+                    </td>
+                  </tr>
+                </NameValueRow>
+                <NameValueRow
+                  name="datasetPageFormPage.basicInformation.language.label"
+                  value="Dutch"
+                >
+                  <tr
+                    className="name-value-row fieldrow"
+                  >
+                    <td
+                      className="name"
+                    >
+                      datasetPageFormPage.basicInformation.language.label
+                    </td>
+                    <td
+                      className="value"
+                    >
+                      Dutch
+                    </td>
+                  </tr>
+                </NameValueRow>
+                <NameValueRow
+                  name="datasetPageFormPage.basicInformation.abstract.label"
+                  value="dataset abstract information"
+                >
+                  <tr
+                    className="name-value-row fieldrow"
+                  >
+                    <td
+                      className="name"
+                    >
+                      datasetPageFormPage.basicInformation.abstract.label
+                    </td>
+                    <td
+                      className="value"
+                    >
+                      dataset abstract information
+                    </td>
+                  </tr>
+                </NameValueRow>
+              </tbody>
+            </table>
+          </div>
+          <ChangeButton
+            onClick={[Function]}
+          >
+            <button
+              className="change-button button"
+              onClick={[Function]}
+            >
+              common.change
+            </button>
+          </ChangeButton>
+        </section>
+        <section
+          className="resource-contacts-summary"
+        >
+          <SectionTitle>
+            <h2
+              className="title is-4"
+            >
+              2 - 
+              datasetPageFormPage.resourceContacts.step.stepTitle
+            </h2>
+          </SectionTitle>
+          <div
+            className="content"
+          >
+            <div
+              className="content"
+            >
+              <ContactTable
+                contacts={
+                  Array [
+                    Object {
+                      "email": "resource-contact-email-1",
+                      "name": "resource-contact-name-1",
+                      "organisation": "resource-contact-organisation-1",
+                    },
+                    Object {
+                      "email": "resource-contact-email-2",
+                      "name": "resource-contact-name-2",
+                      "organisation": "resource-contact-organisation-2",
+                    },
+                  ]
+                }
+              >
+                <table
+                  className="general table is-fullwidth is-striped is-hoverable"
+                >
+                  <thead>
+                    <tr>
+                      <th>
+                        datasetPageFormPage.contactsForm.name.label
+                      </th>
+                      <th>
+                        datasetPageFormPage.contactsForm.email.label
+                      </th>
+                      <th>
+                        datasetPageFormPage.contactsForm.organisation.label
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <ContactRow
+                      email="resource-contact-email-1"
+                      key="0"
+                      name="resource-contact-name-1"
+                      organisation="resource-contact-organisation-1"
+                    >
+                      <tr
+                        className="contact-row"
+                      >
+                        <td
+                          className="name"
+                        >
+                          resource-contact-name-1
+                        </td>
+                        <td
+                          className="email"
+                        >
+                          resource-contact-email-1
+                        </td>
+                        <td
+                          className="organisation"
+                        >
+                          resource-contact-organisation-1
+                        </td>
+                      </tr>
+                    </ContactRow>
+                    <ContactRow
+                      email="resource-contact-email-2"
+                      key="1"
+                      name="resource-contact-name-2"
+                      organisation="resource-contact-organisation-2"
+                    >
+                      <tr
+                        className="contact-row"
+                      >
+                        <td
+                          className="name"
+                        >
+                          resource-contact-name-2
+                        </td>
+                        <td
+                          className="email"
+                        >
+                          resource-contact-email-2
+                        </td>
+                        <td
+                          className="organisation"
+                        >
+                          resource-contact-organisation-2
+                        </td>
+                      </tr>
+                    </ContactRow>
+                  </tbody>
+                </table>
+              </ContactTable>
+            </div>
+          </div>
+          <ChangeButton
+            onClick={[Function]}
+          >
+            <button
+              className="change-button button"
+              onClick={[Function]}
+            >
+              common.change
+            </button>
+          </ChangeButton>
+        </section>
+        <section
+          className="resource-creators-summary"
+        >
+          <SectionTitle>
+            <h2
+              className="title is-4"
+            >
+              3 - 
+              datasetPageFormPage.resourceCreators.step.stepTitle
+            </h2>
+          </SectionTitle>
+          <div
+            className="content"
+          >
+            <ContactTable
+              contacts={
+                Array [
+                  Object {
+                    "email": "resource-creator-email-1",
+                    "name": "resource-creator-name-1",
+                    "organisation": "resource-creator-organisation-1",
+                  },
+                  Object {
+                    "email": "resource-creator-email-2",
+                    "name": "resource-creator-name-2",
+                    "organisation": "resource-creator-organisation-2",
+                  },
+                ]
+              }
+            >
+              <table
+                className="general table is-fullwidth is-striped is-hoverable"
+              >
+                <thead>
+                  <tr>
+                    <th>
+                      datasetPageFormPage.contactsForm.name.label
+                    </th>
+                    <th>
+                      datasetPageFormPage.contactsForm.email.label
+                    </th>
+                    <th>
+                      datasetPageFormPage.contactsForm.organisation.label
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <ContactRow
+                    email="resource-creator-email-1"
+                    key="0"
+                    name="resource-creator-name-1"
+                    organisation="resource-creator-organisation-1"
+                  >
+                    <tr
+                      className="contact-row"
+                    >
+                      <td
+                        className="name"
+                      >
+                        resource-creator-name-1
+                      </td>
+                      <td
+                        className="email"
+                      >
+                        resource-creator-email-1
+                      </td>
+                      <td
+                        className="organisation"
+                      >
+                        resource-creator-organisation-1
+                      </td>
+                    </tr>
+                  </ContactRow>
+                  <ContactRow
+                    email="resource-creator-email-2"
+                    key="1"
+                    name="resource-creator-name-2"
+                    organisation="resource-creator-organisation-2"
+                  >
+                    <tr
+                      className="contact-row"
+                    >
+                      <td
+                        className="name"
+                      >
+                        resource-creator-name-2
+                      </td>
+                      <td
+                        className="email"
+                      >
+                        resource-creator-email-2
+                      </td>
+                      <td
+                        className="organisation"
+                      >
+                        resource-creator-organisation-2
+                      </td>
+                    </tr>
+                  </ContactRow>
+                </tbody>
+              </table>
+            </ContactTable>
+          </div>
+          <ChangeButton
+            onClick={[Function]}
+          >
+            <button
+              className="change-button button"
+              onClick={[Function]}
+            >
+              common.change
+            </button>
+          </ChangeButton>
+        </section>
+        <section
+          className="metadata-providers-summary"
+        >
+          <SectionTitle>
+            <h2
+              className="title is-4"
+            >
+              4 - 
+              datasetPageFormPage.metadataProviders.step.stepTitle
+            </h2>
+          </SectionTitle>
+          <div
+            className="content"
+          >
+            <ContactTable
+              contacts={
+                Array [
+                  Object {
+                    "email": "metadata-provider-email-1",
+                    "name": "metadata-provider-name-1",
+                    "organisation": "metadata-provider-organisation-1",
+                  },
+                  Object {
+                    "email": "metadata-provider-email-2",
+                    "name": "metadata-provider-name-2",
+                    "organisation": "metadata-provider-organisation-2",
+                  },
+                ]
+              }
+            >
+              <table
+                className="general table is-fullwidth is-striped is-hoverable"
+              >
+                <thead>
+                  <tr>
+                    <th>
+                      datasetPageFormPage.contactsForm.name.label
+                    </th>
+                    <th>
+                      datasetPageFormPage.contactsForm.email.label
+                    </th>
+                    <th>
+                      datasetPageFormPage.contactsForm.organisation.label
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <ContactRow
+                    email="metadata-provider-email-1"
+                    key="0"
+                    name="metadata-provider-name-1"
+                    organisation="metadata-provider-organisation-1"
+                  >
+                    <tr
+                      className="contact-row"
+                    >
+                      <td
+                        className="name"
+                      >
+                        metadata-provider-name-1
+                      </td>
+                      <td
+                        className="email"
+                      >
+                        metadata-provider-email-1
+                      </td>
+                      <td
+                        className="organisation"
+                      >
+                        metadata-provider-organisation-1
+                      </td>
+                    </tr>
+                  </ContactRow>
+                  <ContactRow
+                    email="metadata-provider-email-2"
+                    key="1"
+                    name="metadata-provider-name-2"
+                    organisation="metadata-provider-organisation-2"
+                  >
+                    <tr
+                      className="contact-row"
+                    >
+                      <td
+                        className="name"
+                      >
+                        metadata-provider-name-2
+                      </td>
+                      <td
+                        className="email"
+                      >
+                        metadata-provider-email-2
+                      </td>
+                      <td
+                        className="organisation"
+                      >
+                        metadata-provider-organisation-2
+                      </td>
+                    </tr>
+                  </ContactRow>
+                </tbody>
+              </table>
+            </ContactTable>
+          </div>
+          <ChangeButton
+            onClick={[Function]}
+          >
+            <button
+              className="change-button button"
+              onClick={[Function]}
+            >
+              common.change
+            </button>
+          </ChangeButton>
+        </section>
+        <section
+          className="keywords-summary"
+        >
+          <SectionTitle>
+            <h2
+              className="title is-4"
+            >
+              5 - 
+              datasetPageFormPage.keywords.step.stepTitle
+            </h2>
+          </SectionTitle>
+          <div
+            className="content"
+          >
+            keyword-1, keyword-2
+          </div>
+          <ChangeButton
+            onClick={[Function]}
+          >
+            <button
+              className="change-button button"
+              onClick={[Function]}
+            >
+              common.change
+            </button>
+          </ChangeButton>
+        </section>
+        <SubmitEntryButton
+          onClick={[Function]}
+        >
+          <div
+            className="submit-entry-button columns is-mobile is-centered"
+          >
+            <button
+              className="button is-info is-medium"
+              onClick={[Function]}
+            >
+              common.submit
+            </button>
+          </div>
+        </SubmitEntryButton>
+      </div>
+    </FinalSummary>
   </section>
 </DatasetPageFormPage>
 `;

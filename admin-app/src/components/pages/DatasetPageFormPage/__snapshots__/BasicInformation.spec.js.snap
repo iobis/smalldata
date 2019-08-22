@@ -7,9 +7,23 @@ exports[`BasicInformation renders correctly 1`] = `
       "abstract": "abstract",
       "language": "English",
       "licence": "Creative Commons Attribution Non Commercial (CC-BY) 4.0 License",
-      "publishingOrganisation": "publishingOrganisation",
       "title": "title",
     }
+  }
+  languages={
+    Array [
+      "English",
+      "Dutch",
+      "French",
+      "Spanish",
+    ]
+  }
+  licences={
+    Array [
+      "Creative Commons Attribution Non Commercial (CC-BY) 4.0 License",
+      "Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License",
+      "Public Domain (CC0 1.0)",
+    ]
   }
   onChange={[MockFunction]}
 >
@@ -35,28 +49,6 @@ exports[`BasicInformation renders correctly 1`] = `
           onChange={[Function]}
           type="text"
           value="title"
-        />
-      </div>
-    </InputText>
-    <InputText
-      className="publishing-organisation"
-      name="datasetPageFormPage.basicInformation.publishingOrganisation"
-      onChange={[Function]}
-      value="publishingOrganisation"
-    >
-      <div
-        className="column field publishing-organisation"
-      >
-        <label
-          className="label"
-        >
-          datasetPageFormPage.basicInformation.publishingOrganisation.label
-        </label>
-        <input
-          className="input"
-          onChange={[Function]}
-          type="text"
-          value="publishingOrganisation"
         />
       </div>
     </InputText>
