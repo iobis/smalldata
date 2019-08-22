@@ -11,3 +11,7 @@ export const languages = [{
   code:  'es',
   title: 'Spanish'
 }]
+
+export function findLanguageCodeByTitle(title) {
+  return languages.find(language => language.title === title).code
+}

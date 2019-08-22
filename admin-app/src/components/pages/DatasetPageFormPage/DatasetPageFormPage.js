@@ -9,8 +9,8 @@ import React, { useState } from 'react'
 import ResourceContacts from './ResourceContacts'
 import ResourceCreators from './ResourceCreators'
 import { createDataset } from '@smalldata/dwca-lib/src/clients/SmalldataClient'
-import { languages } from '@smalldata/dwca-lib/src/clients/languages'
-import { licences } from '@smalldata/dwca-lib/src/clients/licences'
+import { findLanguageCodeByTitle, languages } from '@smalldata/dwca-lib/src/clients/languages'
+import { findLicenceByTitle, licences } from '@smalldata/dwca-lib/src/clients/licences'
 import { useTranslation } from 'react-i18next'
 
 export default function DatasetPageFormPage() {
@@ -48,7 +48,11 @@ export default function DatasetPageFormPage() {
 
   async function handleSubmitClick() {
     const dataset = {
-      basicInformation,
+      basicInformation: {
+        ...basicInformation,
+        languageCode: findLanguageCodeByTitle(basicInformation.language),
+        licence:      findLicenceByTitle(basicInformation.licence)
+      },
       resourceContacts,
       resourceCreators,
       metadataProviders,
