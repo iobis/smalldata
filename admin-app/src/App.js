@@ -1,11 +1,12 @@
 import './i18n/i18n'
+import DatasetPageFormPage from './components/pages/DatasetPageFormPage/DatasetPageFormPage'
 import LogInPage from './components/pages/LogInPage'
 import ManageDatasetPage from './components/pages/ManageDatasetPage'
 import ManageUsersPage from './components/pages/ManageUsersPage'
-import UserFormPage from './components/pages/UserFormPage'
 import Navbar from './components/layout/Navbar'
 import PropTypes from 'prop-types'
 import React, { useContext } from 'react'
+import UserFormPage from './components/pages/UserFormPage'
 import { AuthContext, AuthProvider } from '@smalldata/dwca-lib'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import {
@@ -41,9 +42,10 @@ const AppDiv = () => {
       <Switch>
         <ProtectedRoute component={ManageDatasetPage} exact path="/"/>
         <ProtectedRoute component={ManageDatasetPage} exact path="/manage-dataset"/>
+        <ProtectedRoute component={DatasetPageFormPage} exact path="/manage-dataset/create"/>
         <ProtectedRoute component={ManageUsersPage} exact path="/manage-users"/>
         <ProtectedRoute component={UserFormPage} exact path="/manage-users/create"/>
-        <ProtectedRoute component={UserFormPage} exact path="/manage-users/update"/>
+        <ProtectedRoute component={UserFormPage} exact path="/manage-users/update/:userId"/>
       </Switch>
     </div>
   )

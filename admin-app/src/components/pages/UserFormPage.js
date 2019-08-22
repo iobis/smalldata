@@ -4,17 +4,18 @@ import InputText from '@smalldata/dwca-lib/src/components/form/InputText'
 import OceanExpertNameInput from './OceanExpertNameInput/OceanExpertNameInput'
 import PropTypes from 'prop-types'
 import React, { useEffect, useRef, useState } from 'react'
-import { createUser, getDatasets } from '@smalldata/dwca-lib/src/clients/SmalldataClient'
+import { createUser, getDatasets, updateUser } from '@smalldata/dwca-lib/src/clients/SmalldataClient'
 import { Link } from 'react-router-dom'
 import { scrollToRef } from '@smalldata/dwca-lib/src/browser/scroll'
 import { useTranslation } from 'react-i18next'
 
 const roles = ['researcher', 'node manager']
 
-export default function UserFormPage() {
-  const initialState = createInitialState()
+export default function UserFormPage({ location }) {
+  const initialState = createInitialState(location)
   const { t } = useTranslation()
   const [datasets, setDatasets] = useState([])
+  const [action, setAction] = useState(initialState.action)
   const [name, setName] = useState(initialState.name)
   const [email, setEmail] = useState(initialState.email)
   const [role, setRole] = useState(initialState.role)
@@ -45,13 +46,17 @@ export default function UserFormPage() {
     setName(name)
   }
 
-  async function handleAddUserButtonClick() {
-    const response = await createUser({
+  async function handleSubmitUserButtonClick() {
+    const user = {
       datasetIds: selectedDatasets,
       email,
       name,
       role
-    })
+    }
+    const response = action === 'update' && !!location.state.id
+      ? await updateUser({ id: location.state.id, ...user })
+      : await createUser(user)
+
     if (response.exception) {
       setErrorVisible(true)
       setErrorMessage(response.exception + ': ' + response.exceptionMessage)
@@ -69,6 +74,7 @@ export default function UserFormPage() {
 
   function handleCreateAnotherUserClick() {
     const initialState = createInitialState()
+    setAction('create')
     setSuccessVisible(false)
     setName(initialState.name)
     setEmail(initialState.email)
@@ -118,7 +124,7 @@ export default function UserFormPage() {
       </table>
       {successVisible ? (
         <div className="success-message notification is-success" ref={successMessageRef}>
-          <p className="title">{t('userFormPage.successMessage.header.create')}</p>
+          <p className="title">{t('userFormPage.successMessage.header.' + action)}</p>
           <section>
             <button className="create-another-user button is-white" onClick={handleCreateAnotherUserClick}>
               {t('userFormPage.successMessage.createAnotherUser')}
@@ -136,11 +142,24 @@ export default function UserFormPage() {
           {errorMessage}
         </div>) : null}
       {!successVisible
-        ? <AddUserButton disabled={!addUserButtonEnabled} onClick={handleAddUserButtonClick}/>
+        ? <SubmitUserButton action={action} disabled={!addUserButtonEnabled} onClick={handleSubmitUserButtonClick}/>
         : null
       }
     </div>
   )
+}
+
+UserFormPage.propTypes = {
+  location: PropTypes.shape({
+    state: PropTypes.shape({
+      id:         PropTypes.string.isRequired,
+      action:     PropTypes.oneOf(['create', 'update']),
+      datasetIds: PropTypes.arrayOf(PropTypes.string).isRequired,
+      email:      PropTypes.string.isRequired,
+      name:       PropTypes.string.isRequired,
+      role:       PropTypes.string.isRequired
+    })
+  })
 }
 
 function DatasetRow({ title, organization, license, onChange, checked }) {
@@ -162,27 +181,38 @@ DatasetRow.propTypes = {
   title:        PropTypes.string.isRequired
 }
 
-function AddUserButton({ onClick, disabled }) {
+function SubmitUserButton({ onClick, disabled, action }) {
   const { t } = useTranslation()
   return (
-    <div className="add-user-button columns is-mobile is-centered">
+    <div className="submit-user-button columns is-mobile is-centered">
       <button className="button is-info is-medium" disabled={disabled} onClick={onClick}>
-        {t('userFormPage.addUserButton')}
+        {t('userFormPage.submitUserButton.' + action)}
       </button>
     </div>
   )
 }
 
-AddUserButton.propTypes = {
+SubmitUserButton.propTypes = {
+  action:   PropTypes.oneOf(['create', 'update']).isRequired,
   disabled: PropTypes.bool.isRequired,
   onClick:  PropTypes.func.isRequired
 }
 
-function createInitialState() {
-  return {
+function createInitialState(location) {
+  const defaultInitialState = {
+    action:           'create',
     name:             '',
     email:            '',
     role:             roles[0],
     selectedDatasets: []
   }
+  return !!location && !!location.state
+    ? {
+      action:           location.state.action || defaultInitialState.action,
+      name:             location.state.name || defaultInitialState.name,
+      email:            location.state.email || defaultInitialState.email,
+      role:             location.state.role || defaultInitialState.role,
+      selectedDatasets: location.state.datasetIds || defaultInitialState.selectedDatasets
+    }
+    : defaultInitialState
 }

@@ -52,11 +52,11 @@ exports[`ManageDatasetPage renders correctly for non empty datasets 1`] = `
         >
           <Link
             className="button is-info"
-            to="/input-data/create"
+            to="/manage-dataset/create"
           >
             <a
               className="button is-info"
-              href="/input-data/create"
+              href="/manage-dataset/create"
               onClick={[Function]}
             >
               manageDatasetPage.inputNew
