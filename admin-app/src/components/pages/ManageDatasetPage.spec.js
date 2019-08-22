@@ -1,5 +1,4 @@
 import SmalldataClient from '@smalldata/dwca-lib/src/clients/SmalldataClient'
-import { flushPromises, ignoreActWarning } from '@smalldata/test-utils-lib'
 import ManageDatasetPage from './ManageDatasetPage'
 import { MemoryRouter } from 'react-router-dom'
 import { mount } from 'enzyme'
@@ -11,8 +10,6 @@ jest.mock('@smalldata/dwca-lib/src/clients/SmalldataClient', () => ({
 }))
 
 describe('ManageDatasetPage', () => {
-  ignoreActWarning()
-
   let wrapper
 
   it('renders correctly for non empty datasets', async() => {
@@ -42,7 +39,7 @@ describe('ManageDatasetPage', () => {
       })
     )
 
-    act(() => {
+    await act(async() => {
       wrapper = mount(
         <MemoryRouter initialEntries={[{ pathname: '/manage-dataset', key: 'testKey' }]}>
           <ManageDatasetPage/>
@@ -51,10 +48,9 @@ describe('ManageDatasetPage', () => {
     })
     expect(SmalldataClient.getDatasets).toHaveBeenCalledWith()
 
-    await flushPromises()
     wrapper.update()
-    expect(wrapper).toMatchSnapshot()
     expect(wrapper.find('tbody tr')).toHaveLength(2)
+    expect(wrapper).toMatchSnapshot()
   })
 
   it('renders correctly if metadata provider is empty', async() => {
@@ -73,7 +69,7 @@ describe('ManageDatasetPage', () => {
       })
     )
 
-    act(() => {
+    await act(async() => {
       wrapper = mount(
         <MemoryRouter initialEntries={[{ pathname: '/manage-dataset', key: 'testKey' }]}>
           <ManageDatasetPage/>
@@ -82,9 +78,8 @@ describe('ManageDatasetPage', () => {
     })
     expect(SmalldataClient.getDatasets).toHaveBeenCalledWith()
 
-    await flushPromises()
     wrapper.update()
-    expect(wrapper).toMatchSnapshot()
     expect(wrapper.find('tbody tr')).toHaveLength(1)
+    expect(wrapper).toMatchSnapshot()
   })
 })
