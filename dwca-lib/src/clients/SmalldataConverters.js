@@ -1,3 +1,4 @@
+import ow from 'ow'
 import { findTypeAndUnitIdByNames, findUnitsByTypeId } from './measurments'
 import { format } from 'date-fns'
 
@@ -183,6 +184,16 @@ export function mapDwcsToDarwinCoreFields(dwca) {
 }
 
 export function mapDatasetToRequest({ basicInformation, keywords }) {
+  ow(basicInformation, ow.object.partialShape({
+    title:        ow.string,
+    licence:      {
+      url:   ow.string,
+      title: ow.string
+    },
+    languageCode: ow.string
+  }))
+  ow(keywords, ow.array)
+
   const request = {
     meta:              {
       type:      'occurrence',

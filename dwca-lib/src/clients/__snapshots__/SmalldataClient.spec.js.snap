@@ -25,7 +25,9 @@ Object {
     },
   ],
   "keywordSets": Array [
-    Object {},
+    Object {
+      "keywords": Array [],
+    },
   ],
   "language": "en",
   "license": Object {
