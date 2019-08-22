@@ -183,7 +183,7 @@ export function mapDwcsToDarwinCoreFields(dwca) {
   return [...iobisFields, ...purlFields, ...tdwgFields]
 }
 
-export function mapDatasetToRequest({ basicInformation, keywords }) {
+export function mapDatasetToRequest({ basicInformation, resourceContacts, resourceCreators, metadataProviders, keywords }) {
   ow(basicInformation, ow.object.partialShape({
     title:        ow.string,
     licence:      {
@@ -193,9 +193,12 @@ export function mapDatasetToRequest({ basicInformation, keywords }) {
     languageCode: ow.string,
     abstract:     ow.string
   }))
+  ow(resourceContacts, ow.array)
+  ow(resourceCreators, ow.array)
+  ow(metadataProviders, ow.array)
   ow(keywords, ow.array)
 
-  const request = {
+  return {
     meta:              {
       type:      'occurrence',
       dwcTables: {
@@ -214,28 +217,25 @@ export function mapDatasetToRequest({ basicInformation, keywords }) {
       paragraphs: [basicInformation.abstract]
     },
     license:           basicInformation.licence,
-    creators:          [{
-      individualName: {
-        givenName: 'Someone',
-        surName:   'VeryImportant'
-      }
-    }],
-    contacts:          [{
-      individualName: {
-        givenName: 'Also',
-        surName:   'VeryImportant'
-      }
-    }],
-    metadataProviders: [{
-      individualName:        {
-        givenName: 'ProbablySister',
-        surName:   'VeryImportant'
-      },
-      electronicMailAddress: 'mostimportant@melibesearch.org'
-    }],
+    creators:          resourceCreators.map(mapContactToRequest),
+    contacts:          resourceContacts.map(mapContactToRequest),
+    metadataProviders: metadataProviders.map(mapContactToRequest),
     keywordSets:       [{
       keywords
     }]
   }
-  return request
+
+  function mapContactToRequest({ name, email, organisation }) {
+    const firstName = name.split(' ').slice(0, -1).join(' ')
+    const lastName = name.split(' ').slice(-1).join(' ')
+
+    return {
+      individualName:        {
+        givenName: firstName,
+        surName:   lastName
+      },
+      organizationName:      organisation,
+      electronicMailAddress: email
+    }
+  }
 }

@@ -124,31 +124,31 @@ describe('SmalldataConverters', () => {
         abstract:     'Basic Data - Abstract'
       },
       resourceContacts:  [{
-        name:         'Resource Contact - Name 1',
-        email:        'Resource Contact - Email 1',
-        organisation: 'Resource Contact - Organization 1'
+        name:         'ResourceContact-1 Name-1',
+        email:        'ResourceContact-1@acme.com',
+        organisation: 'ResourceContact-1 Organization-1'
       }, {
-        name:         'Resource Contact - Name 2',
-        email:        'Resource Contact - Email 2',
-        organisation: 'Resource Contact - Organization 2'
+        name:         'ResourceContact-2 Name-2',
+        email:        'ResourceContact-2@acme.com',
+        organisation: 'ResourceContact-2 Organization-2'
       }],
       resourceCreators:  [{
-        name:         'Resource Creator - Name - 1',
-        email:        'Resource Creator - Email - 1',
-        organisation: 'Resource Creator - Organization - 1'
+        name:         'ResourceCreator-1 Name-1',
+        email:        'ResourceCreator-1@acme.com',
+        organisation: 'ResourceCreator-1 Organization-1'
       }, {
-        name:         'Resource Creator - Name - 2',
-        email:        'Resource Creator - Email - 2',
-        organisation: 'Resource Creator - Organization - 2'
+        name:         'ResourceCreator-2 Name-2',
+        email:        'ResourceCreator-2@acme.com',
+        organisation: 'ResourceCreator-2 Organization-2'
       }],
       metadataProviders: [{
-        name:         'Metadata Providers - Name - 1',
-        email:        'Metadata Providers - Email - 1',
-        organisation: 'Metadata Providers - Organization - 1'
+        name:         'MetadataProviders-1 Name-1',
+        email:        'MetadataProviders-1@acme.com',
+        organisation: 'MetadataProviders-1 Organization-1'
       }, {
-        name:         'Metadata Providers - Name - 2',
-        email:        'Metadata Providers - Email - 2',
-        organisation: 'Metadata Providers - Organization - 2'
+        name:         'MetadataProviders-2 Name-2',
+        email:        'MetadataProviders-2@acme.com',
+        organisation: 'MetadataProviders-2 Organization-2'
       }],
       keywords:          ['Keyword-1', 'Keyword-2']
     }
@@ -180,23 +180,49 @@ describe('SmalldataConverters', () => {
         title: 'Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License'
       },
       creators:          [{
-        individualName: {
-          givenName: 'Someone',
-          surName:   'VeryImportant'
-        }
+        individualName:        {
+          givenName: 'ResourceCreator-1',
+          surName:   'Name-1'
+        },
+        organizationName:      'ResourceCreator-1 Organization-1',
+        electronicMailAddress: 'ResourceCreator-1@acme.com'
+      }, {
+        individualName:        {
+          givenName: 'ResourceCreator-2',
+          surName:   'Name-2'
+        },
+        organizationName:      'ResourceCreator-2 Organization-2',
+        electronicMailAddress: 'ResourceCreator-2@acme.com'
       }],
       contacts:          [{
-        individualName: {
-          givenName: 'Also',
-          surName:   'VeryImportant'
-        }
+        individualName:        {
+          givenName: 'ResourceContact-1',
+          surName:   'Name-1'
+        },
+        organizationName:      'ResourceContact-1 Organization-1',
+        electronicMailAddress: 'ResourceContact-1@acme.com'
+      }, {
+        individualName:        {
+          givenName: 'ResourceContact-2',
+          surName:   'Name-2'
+        },
+        organizationName:      'ResourceContact-2 Organization-2',
+        electronicMailAddress: 'ResourceContact-2@acme.com'
       }],
       metadataProviders: [{
         individualName:        {
-          givenName: 'ProbablySister',
-          surName:   'VeryImportant'
+          givenName: 'MetadataProviders-1',
+          surName:   'Name-1'
         },
-        electronicMailAddress: 'mostimportant@melibesearch.org'
+        organizationName:      'MetadataProviders-1 Organization-1',
+        electronicMailAddress: 'MetadataProviders-1@acme.com'
+      }, {
+        individualName:        {
+          givenName: 'MetadataProviders-2',
+          surName:   'Name-2'
+        },
+        organizationName:      'MetadataProviders-2 Organization-2',
+        electronicMailAddress: 'MetadataProviders-2@acme.com'
       }],
       keywordSets:       [{
         keywords: ['Keyword-1', 'Keyword-2']

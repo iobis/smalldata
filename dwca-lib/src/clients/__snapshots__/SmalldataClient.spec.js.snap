@@ -7,22 +7,8 @@ Object {
       "abstract",
     ],
   },
-  "contacts": Array [
-    Object {
-      "individualName": Object {
-        "givenName": "Also",
-        "surName": "VeryImportant",
-      },
-    },
-  ],
-  "creators": Array [
-    Object {
-      "individualName": Object {
-        "givenName": "Someone",
-        "surName": "VeryImportant",
-      },
-    },
-  ],
+  "contacts": Array [],
+  "creators": Array [],
   "keywordSets": Array [
     Object {
       "keywords": Array [
@@ -44,15 +30,7 @@ Object {
     },
     "type": "occurrence",
   },
-  "metadataProviders": Array [
-    Object {
-      "electronicMailAddress": "mostimportant@melibesearch.org",
-      "individualName": Object {
-        "givenName": "ProbablySister",
-        "surName": "VeryImportant",
-      },
-    },
-  ],
+  "metadataProviders": Array [],
   "title": Object {
     "language": "en",
     "value": "title",
