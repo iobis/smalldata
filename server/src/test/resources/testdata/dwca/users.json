@@ -2,6 +2,8 @@
   {
     "_ref": "ovZTtaOJZ98xDDY",
     "emailAddress": "some.user@domain.org",
+    "name": "John Doe",
+    "role": "admin",
     "bulkiness": {
       "instant":  "2019-05-12T12:39:17Z",
       "value": 4.53
@@ -11,6 +13,8 @@
   {
     "_ref": "FsfEMwhUTO_8I68",
     "emailAddress": "another.user@domain.org",
+    "name": "Jane Doe",
+    "role": "researcher",
     "bulkiness": {
       "instant":  "2019-05-16T15:28:26Z",
       "value": 23.5711

@@ -334,6 +334,13 @@ paths:
                 emailAddress:
                   type: string
                   example: my.name@organization.ours
+                name:
+                  type: string
+                  example: Jane Doe
+                role:
+                  type: string
+                  enum: ['admin', 'researcher']
+                  example: 'researcher'
                 datasetRefs:
                   type: array
                   items:
