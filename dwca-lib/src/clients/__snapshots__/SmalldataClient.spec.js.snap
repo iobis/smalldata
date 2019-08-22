@@ -25,13 +25,7 @@ Object {
     },
   ],
   "keywordSets": Array [
-    Object {
-      "keywordThesaurus": "example keywords",
-      "keywords": Array [
-        "SearchEvent",
-        "Nudibranch",
-      ],
-    },
+    Object {},
   ],
   "language": "en",
   "license": Object {
@@ -58,7 +52,6 @@ Object {
   ],
   "title": Object {
     "language": "en",
-    "value": "Looking for Melibe nudibranches in the Philippines",
   },
 }
 `;

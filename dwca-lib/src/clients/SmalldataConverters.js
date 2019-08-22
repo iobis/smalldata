@@ -181,3 +181,55 @@ export function mapDwcsToDarwinCoreFields(dwca) {
     }))
   return [...iobisFields, ...purlFields, ...tdwgFields]
 }
+
+export function mapDatasetToRequest({ basicInformation, keywords }) {
+  const request = {
+    meta:              {
+      type:      'occurrence',
+      dwcTables: {
+        core:       'occurrence',
+        extensions: [
+          'emof'
+        ]
+      }
+    },
+    title:             {
+      language: 'en',
+      value:    basicInformation.title
+    },
+    language:          'en',
+    abstract:          {
+      paragraphs: [
+        'This is one paragraph',
+        'And this is another one...'
+      ]
+    },
+    license:           {
+      url:   'http://creativecommons.org/licenses/by-nc/4.0/legalcode',
+      title: 'Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License'
+    },
+    creators:          [{
+      individualName: {
+        givenName: 'Someone',
+        surName:   'VeryImportant'
+      }
+    }],
+    contacts:          [{
+      individualName: {
+        givenName: 'Also',
+        surName:   'VeryImportant'
+      }
+    }],
+    metadataProviders: [{
+      individualName:        {
+        givenName: 'ProbablySister',
+        surName:   'VeryImportant'
+      },
+      electronicMailAddress: 'mostimportant@melibesearch.org'
+    }],
+    keywordSets:       [{
+      keywords
+    }]
+  }
+  return request
+}

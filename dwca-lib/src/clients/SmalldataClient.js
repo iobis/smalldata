@@ -1,4 +1,4 @@
-import { mapOccurrenceToDwca } from './SmalldataConverters'
+import { mapDatasetToRequest, mapOccurrenceToDwca } from './SmalldataConverters'
 
 const authorizationValue = 'Basic verysecret'
 const headers = {
@@ -12,60 +12,8 @@ export async function getDatasets() {
   return response.map(renameRefToId)
 }
 
-export async function createDataset() {
-  const request = {
-    meta:              {
-      type:      'occurrence',
-      dwcTables: {
-        core:       'occurrence',
-        extensions: [
-          'emof'
-        ]
-      }
-    },
-    title:             {
-      language: 'en',
-      value:    'Looking for Melibe nudibranches in the Philippines'
-    },
-    language:          'en',
-    abstract:          {
-      paragraphs: [
-        'This is one paragraph',
-        'And this is another one...'
-      ]
-    },
-    license:           {
-      url:   'http://creativecommons.org/licenses/by-nc/4.0/legalcode',
-      title: 'Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License'
-    },
-    creators:          [{
-      individualName: {
-        givenName: 'Someone',
-        surName:   'VeryImportant'
-      }
-    }],
-    contacts:          [{
-      individualName: {
-        givenName: 'Also',
-        surName:   'VeryImportant'
-      }
-    }],
-    metadataProviders: [{
-      individualName:        {
-        givenName: 'ProbablySister',
-        surName:   'VeryImportant'
-      },
-      electronicMailAddress: 'mostimportant@melibesearch.org'
-    }],
-    keywordSets:       [{
-      keywords:         [
-        'SearchEvent',
-        'Nudibranch'
-      ],
-      keywordThesaurus: 'example keywords'
-    }]
-  }
-
+export async function createDataset(dataset) {
+  const request = mapDatasetToRequest(dataset)
   return await fetch('/api/datasets', {
     method: 'POST',
     headers,
