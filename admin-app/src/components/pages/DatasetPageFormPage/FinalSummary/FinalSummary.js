@@ -151,7 +151,6 @@ function ContactTable({ contacts }) {
           <th>{t('datasetPageFormPage.contactsForm.name.label')}</th>
           <th>{t('datasetPageFormPage.contactsForm.email.label')}</th>
           <th>{t('datasetPageFormPage.contactsForm.organisation.label')}</th>
-          <th>{t('datasetPageFormPage.contactsForm.position.label')}</th>
         </tr>
       </thead>
       <tbody>
