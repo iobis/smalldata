@@ -10,6 +10,7 @@
     "test:watch": "jest --env=jsdom --runInBand --watch"
   },
   "dependencies": {
+    "ow": "0.13.2",
     "react": "16.9.0"
   },
   "devDependencies": {
