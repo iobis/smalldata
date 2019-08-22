@@ -115,47 +115,40 @@ describe('SmalldataConverters', () => {
   it('mapDatasetToRequest(dataset)', () => {
     const uiDataset = {
       basicInformation:  {
-        title:                  'Basic Data - Title',
-        publishingOrganisation: 'Basic Data - Organisation',
-        licence:                {
+        title:        'Basic Data - Title',
+        licence:      {
           url:   'http://creativecommons.org/licenses/by-nc/4.0/legalcode',
           title: 'Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License'
         },
-        languageCode:           'en',
-        abstract:               'Basic Data - Abstract'
+        languageCode: 'en',
+        abstract:     'Basic Data - Abstract'
       },
       resourceContacts:  [{
         name:         'Resource Contact - Name 1',
         email:        'Resource Contact - Email 1',
-        organisation: 'Resource Contact - Organization 1',
-        position:     'Resource Contact - Position 1'
+        organisation: 'Resource Contact - Organization 1'
       }, {
         name:         'Resource Contact - Name 2',
         email:        'Resource Contact - Email 2',
-        organisation: 'Resource Contact - Organization 2',
-        position:     'Resource Contact - Position 2'
+        organisation: 'Resource Contact - Organization 2'
       }],
       resourceCreators:  [{
         name:         'Resource Creator - Name - 1',
         email:        'Resource Creator - Email - 1',
-        organisation: 'Resource Creator - Organization - 1',
-        position:     'Resource Creator - Position - 1'
+        organisation: 'Resource Creator - Organization - 1'
       }, {
         name:         'Resource Creator - Name - 2',
         email:        'Resource Creator - Email - 2',
-        organisation: 'Resource Creator - Organization - 2',
-        position:     'Resource Creator - Position - 2'
+        organisation: 'Resource Creator - Organization - 2'
       }],
       metadataProviders: [{
         name:         'Metadata Providers - Name - 1',
         email:        'Metadata Providers - Email - 1',
-        organisation: 'Metadata Providers - Organization - 1',
-        position:     'Metadata Providers - Position - 1'
+        organisation: 'Metadata Providers - Organization - 1'
       }, {
         name:         'Metadata Providers - Name - 2',
         email:        'Metadata Providers - Email - 2',
-        organisation: 'Metadata Providers - Organization - 2',
-        position:     'Metadata Providers - Position - 2'
+        organisation: 'Metadata Providers - Organization - 2'
       }],
       keywords:          ['Keyword-1', 'Keyword-2']
     }
