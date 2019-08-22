@@ -26,6 +26,16 @@
 
 /* Variable setup for OBIS corporate identity */
 :root {
-  --title-font: 'Proxima Nova', Georgia, sans-serif;
+  --title-font: 'Proxima Nova Alt Bold', Georgia, sans-serif;
+  --regular-font: 'Proxima Nova Regular', Georgia, sans-serif;
+  --font-color: #363636;
+
   --lightbackground: #f3f3f3;
+  --white: #FFFFFF;
+
+  --margin-bottom: 1.5rem;
 }
+
+
+/* Bulma vars to override */
+$family-primary: var(--regular-font);
