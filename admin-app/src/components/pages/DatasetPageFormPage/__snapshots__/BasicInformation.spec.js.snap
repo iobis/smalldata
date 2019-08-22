@@ -10,6 +10,13 @@ exports[`BasicInformation renders correctly 1`] = `
       "title": "title",
     }
   }
+  licences={
+    Array [
+      "Creative Commons Attribution Non Commercial (CC-BY) 4.0 License",
+      "Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License",
+      "Public Domain (CC0 1.0)",
+    ]
+  }
   onChange={[MockFunction]}
 >
   <div

@@ -1,5 +1,6 @@
 import ActiveStepHeader from '@smalldata/dwca-lib/src/components/StepHeaders/ActiveStepHeader'
-import BasicInformation, { languages, licences } from './BasicInformation'
+import BasicInformation, { languages } from './BasicInformation'
+import { licences } from '@smalldata/dwca-lib/src/clients/licences'
 import ConfirmedStepHeader from '@smalldata/dwca-lib/src/components/StepHeaders/ConfirmedStepHeader'
 import FinalSummary from './FinalSummary/FinalSummary'
 import Keywords from './Keywords'
@@ -91,6 +92,7 @@ export default function DatasetPageFormPage() {
     children:
       <BasicInformation
         data={basicInformation}
+        licences={licences.map(licence => licence.title)}
         onChange={setBasicInformation}/>
   }, {
     dataDescription: t('datasetPageFormPage.resourceContacts.step.dataDescription'),
@@ -189,10 +191,10 @@ export default function DatasetPageFormPage() {
 function createInitialState() {
   return {
     basicInformation:  {
-      title:                  '',
-      licence:                licences[0],
-      language:               languages[0],
-      abstract:               ''
+      title:    '',
+      licence:  licences[0].title,
+      language: languages[0],
+      abstract: ''
     },
     resourceContacts:  [],
     resourceCreators:  [],

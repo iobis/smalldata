@@ -71,6 +71,13 @@ exports[`DatasetPageFormPage renders correctly 1`] = `
               "title": "",
             }
           }
+          licences={
+            Array [
+              "Creative Commons Attribution Non Commercial (CC-BY) 4.0 License",
+              "Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License",
+              "Public Domain (CC0 1.0)",
+            ]
+          }
           onChange={[Function]}
         >
           <div
@@ -656,6 +663,13 @@ exports[`DatasetPageFormPage renders correctly 2`] = `
               "licence": "Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License",
               "title": "dataset title",
             }
+          }
+          licences={
+            Array [
+              "Creative Commons Attribution Non Commercial (CC-BY) 4.0 License",
+              "Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License",
+              "Public Domain (CC0 1.0)",
+            ]
           }
           onChange={[Function]}
         >
@@ -1733,9 +1747,6 @@ exports[`DatasetPageFormPage renders correctly 3`] = `
                       <th>
                         datasetPageFormPage.contactsForm.organisation.label
                       </th>
-                      <th>
-                        datasetPageFormPage.contactsForm.position.label
-                      </th>
                     </tr>
                   </thead>
                   <tbody>
@@ -1851,9 +1862,6 @@ exports[`DatasetPageFormPage renders correctly 3`] = `
                     <th>
                       datasetPageFormPage.contactsForm.organisation.label
                     </th>
-                    <th>
-                      datasetPageFormPage.contactsForm.position.label
-                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -1967,9 +1975,6 @@ exports[`DatasetPageFormPage renders correctly 3`] = `
                     </th>
                     <th>
                       datasetPageFormPage.contactsForm.organisation.label
-                    </th>
-                    <th>
-                      datasetPageFormPage.contactsForm.position.label
                     </th>
                   </tr>
                 </thead>
