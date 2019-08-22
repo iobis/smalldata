@@ -28,6 +28,36 @@ describe('BasicInformation', () => {
     expect(onChange).toHaveBeenCalledTimes(1)
     expect(onChange).toHaveBeenNthCalledWith(1, { ...getDefaultFilledData(), title: 'new-title' })
   })
+
+  it('returns updated licence when when changing licence', () => {
+    const onChange = jest.fn()
+    const wrapper = mount(
+      <BasicInformation
+        data={getDefaultFilledData()}
+        languages={languages.map(language => language.title)}
+        licences={licences.map(licence => licence.title)}
+        onChange={onChange}/>)
+
+    wrapper.find('.basic-information .licence .dropdown').at(0).simulate('click')
+    wrapper.find('.basic-information .licence .dropdown-item').at(1).simulate('click')
+    expect(onChange).toHaveBeenCalledTimes(1)
+    expect(onChange).toHaveBeenNthCalledWith(1, { ...getDefaultFilledData(), licence: 'Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License' })
+  })
+
+  it('returns updated language when when changing language', () => {
+    const onChange = jest.fn()
+    const wrapper = mount(
+      <BasicInformation
+        data={getDefaultFilledData()}
+        languages={languages.map(language => language.title)}
+        licences={licences.map(licence => licence.title)}
+        onChange={onChange}/>)
+
+    wrapper.find('.basic-information .language .dropdown').at(0).simulate('click')
+    wrapper.find('.basic-information .language .dropdown-item').at(1).simulate('click')
+    expect(onChange).toHaveBeenCalledTimes(1)
+    expect(onChange).toHaveBeenNthCalledWith(1, { ...getDefaultFilledData(), language: 'Dutch' })
+  })
 })
 
 function getDefaultFilledData() {
