@@ -190,7 +190,8 @@ export function mapDatasetToRequest({ basicInformation, keywords }) {
       url:   ow.string,
       title: ow.string
     },
-    languageCode: ow.string
+    languageCode: ow.string,
+    abstract:     ow.string
   }))
   ow(keywords, ow.array)
 
@@ -210,10 +211,7 @@ export function mapDatasetToRequest({ basicInformation, keywords }) {
     },
     language:          basicInformation.languageCode,
     abstract:          {
-      paragraphs: [
-        'This is one paragraph',
-        'And this is another one...'
-      ]
+      paragraphs: [basicInformation.abstract]
     },
     license:           basicInformation.licence,
     creators:          [{

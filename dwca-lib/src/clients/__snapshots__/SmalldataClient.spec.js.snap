@@ -4,8 +4,7 @@ exports[`SmalldataClient createDataset() makes default request 1`] = `
 Object {
   "abstract": Object {
     "paragraphs": Array [
-      "This is one paragraph",
-      "And this is another one...",
+      "abstract",
     ],
   },
   "contacts": Array [
@@ -26,7 +25,9 @@ Object {
   ],
   "keywordSets": Array [
     Object {
-      "keywords": Array [],
+      "keywords": Array [
+        "keyword-1",
+      ],
     },
   ],
   "language": "en",

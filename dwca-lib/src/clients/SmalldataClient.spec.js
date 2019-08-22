@@ -51,9 +51,10 @@ describe('SmalldataClient', () => {
           licence:      {
             url:   'licence url',
             title: 'licence title'
-          }
+          },
+          abstract:     'abstract'
         },
-        keywords:         []
+        keywords:         ['keyword-1']
       })
       expect(fetch.mock.calls[0][0]).toBe('/api/datasets')
       expect(fetch.mock.calls[0][1].method).toBe('POST')

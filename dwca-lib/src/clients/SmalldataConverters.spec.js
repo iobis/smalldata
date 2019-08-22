@@ -179,8 +179,7 @@ describe('SmalldataConverters', () => {
       language:          'en',
       abstract:          {
         paragraphs: [
-          'This is one paragraph',
-          'And this is another one...'
+          'Basic Data - Abstract'
         ]
       },
       license:           {
