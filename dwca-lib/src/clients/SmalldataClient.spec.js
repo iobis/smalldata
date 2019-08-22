@@ -45,7 +45,10 @@ describe('SmalldataClient', () => {
 
     it('makes default request', async() => {
       await SmalldataClient.createDataset({
-        basicInformation: {}
+        basicInformation: {
+          title:        'title',
+          languageCode: 'en'
+        }
       })
       expect(fetch.mock.calls[0][0]).toBe('/api/datasets')
       expect(fetch.mock.calls[0][1].method).toBe('POST')

@@ -52,6 +52,7 @@ Object {
   ],
   "title": Object {
     "language": "en",
+    "value": "title",
   },
 }
 `;

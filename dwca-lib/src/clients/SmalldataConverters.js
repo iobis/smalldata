@@ -194,10 +194,10 @@ export function mapDatasetToRequest({ basicInformation, keywords }) {
       }
     },
     title:             {
-      language: 'en',
+      language: basicInformation.languageCode,
       value:    basicInformation.title
     },
-    language:          'en',
+    language:          basicInformation.languageCode,
     abstract:          {
       paragraphs: [
         'This is one paragraph',

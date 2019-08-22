@@ -114,14 +114,14 @@ describe('SmalldataConverters', () => {
 
   it('mapDatasetToRequest(dataset)', () => {
     const uiDataset = {
-      basicInformation:    {
+      basicInformation:  {
         title:                  'Basic Data - Title',
         publishingOrganisation: 'Basic Data - Organisation',
         licence:                'Public Domain (CC0 1.0)',
-        language:               'English',
+        languageCode:           'en',
         abstract:               'Basic Data - Abstract'
       },
-      resourceContacts:    [{
+      resourceContacts:  [{
         name:         'Resource Contact - Name 1',
         email:        'Resource Contact - Email 1',
         organisation: 'Resource Contact - Organization 1',
@@ -154,7 +154,7 @@ describe('SmalldataConverters', () => {
         organisation: 'Metadata Providers - Organization - 2',
         position:     'Metadata Providers - Position - 2'
       }],
-      keywords:            ['Keyword-1', 'Keyword-2']
+      keywords:          ['Keyword-1', 'Keyword-2']
     }
 
     const response = SmalldataConverters.mapDatasetToRequest(uiDataset)
