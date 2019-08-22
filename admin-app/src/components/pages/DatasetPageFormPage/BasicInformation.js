@@ -5,13 +5,7 @@ import React from 'react'
 import Textarea from '@smalldata/dwca-lib/src/components/form/Textarea'
 import { useTranslation } from 'react-i18next'
 
-export const languages = [
-  'English',
-  'Dutch',
-  'French',
-  'Spanish']
-
-export default function BasicInformation({ onChange, data, licences }) {
+export default function BasicInformation({ onChange, data, licences, languages }) {
   const { t } = useTranslation()
   const { title, licence, language, abstract } = data
 
@@ -57,12 +51,13 @@ export default function BasicInformation({ onChange, data, licences }) {
 export const basicInformationShape = {
   title:    PropTypes.string.isRequired,
   licence:  PropTypes.string.isRequired,
-  language: PropTypes.oneOf(languages).isRequired,
+  language: PropTypes.string.isRequired,
   abstract: PropTypes.string.isRequired
 }
 
 BasicInformation.propTypes = {
-  data:     PropTypes.shape(basicInformationShape).isRequired,
-  licences: PropTypes.arrayOf(PropTypes.string).isRequired,
-  onChange: PropTypes.func.isRequired
+  data:      PropTypes.shape(basicInformationShape).isRequired,
+  languages: PropTypes.arrayOf(PropTypes.string).isRequired,
+  licences:  PropTypes.arrayOf(PropTypes.string).isRequired,
+  onChange:  PropTypes.func.isRequired
 }

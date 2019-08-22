@@ -71,6 +71,14 @@ exports[`DatasetPageFormPage renders correctly 1`] = `
               "title": "",
             }
           }
+          languages={
+            Array [
+              "English",
+              "Dutch",
+              "French",
+              "Spanish",
+            ]
+          }
           licences={
             Array [
               "Creative Commons Attribution Non Commercial (CC-BY) 4.0 License",
@@ -663,6 +671,14 @@ exports[`DatasetPageFormPage renders correctly 2`] = `
               "licence": "Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License",
               "title": "dataset title",
             }
+          }
+          languages={
+            Array [
+              "English",
+              "Dutch",
+              "French",
+              "Spanish",
+            ]
           }
           licences={
             Array [

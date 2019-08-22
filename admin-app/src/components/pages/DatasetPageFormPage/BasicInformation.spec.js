@@ -1,5 +1,6 @@
-import BasicInformation, { languages } from './BasicInformation'
+import BasicInformation from './BasicInformation'
 import React from 'react'
+import { languages } from '@smalldata/dwca-lib/src/clients/languages'
 import { licences } from '@smalldata/dwca-lib/src/clients/licences'
 import { mount } from 'enzyme'
 
@@ -8,6 +9,7 @@ describe('BasicInformation', () => {
     expect(mount(
       <BasicInformation
         data={getDefaultFilledData()}
+        languages={languages.map(language => language.title)}
         licences={licences.map(licence => licence.title)}
         onChange={jest.fn()}/>))
       .toMatchSnapshot()
@@ -18,6 +20,7 @@ describe('BasicInformation', () => {
     const wrapper = mount(
       <BasicInformation
         data={getDefaultFilledData()}
+        languages={languages.map(language => language.title)}
         licences={licences.map(licence => licence.title)}
         onChange={onChange}/>)
 
@@ -31,7 +34,7 @@ function getDefaultFilledData() {
   return {
     title:    'title',
     licence:  licences[0].title,
-    language: languages[0],
+    language: languages[0].title,
     abstract: 'abstract'
   }
 }
