@@ -7,7 +7,6 @@ exports[`BasicInformation renders correctly 1`] = `
       "abstract": "abstract",
       "language": "English",
       "licence": "Creative Commons Attribution Non Commercial (CC-BY) 4.0 License",
-      "publishingOrganisation": "publishingOrganisation",
       "title": "title",
     }
   }
@@ -35,28 +34,6 @@ exports[`BasicInformation renders correctly 1`] = `
           onChange={[Function]}
           type="text"
           value="title"
-        />
-      </div>
-    </InputText>
-    <InputText
-      className="publishing-organisation"
-      name="datasetPageFormPage.basicInformation.publishingOrganisation"
-      onChange={[Function]}
-      value="publishingOrganisation"
-    >
-      <div
-        className="column field publishing-organisation"
-      >
-        <label
-          className="label"
-        >
-          datasetPageFormPage.basicInformation.publishingOrganisation.label
-        </label>
-        <input
-          className="input"
-          onChange={[Function]}
-          type="text"
-          value="publishingOrganisation"
         />
       </div>
     </InputText>

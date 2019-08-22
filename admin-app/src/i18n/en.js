@@ -44,9 +44,6 @@ export default {
         title:                  {
           label: 'Title'
         },
-        publishingOrganisation: {
-          label: 'Publishing Organisation'
-        },
         licence:                {
           label: 'Licence'
         },

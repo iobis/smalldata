@@ -17,7 +17,7 @@ export const languages = [
 
 export default function BasicInformation({ onChange, data }) {
   const { t } = useTranslation()
-  const { title, publishingOrganisation, licence, language, abstract } = data
+  const { title, licence, language, abstract } = data
 
   const updateField = (name, value) => {
     const newSelection = { ...data, [name]: value }
@@ -31,11 +31,6 @@ export default function BasicInformation({ onChange, data }) {
         name="datasetPageFormPage.basicInformation.title"
         onChange={value => updateField('title', value)}
         value={title}/>
-      <InputText
-        className="publishing-organisation"
-        name="datasetPageFormPage.basicInformation.publishingOrganisation"
-        onChange={value => updateField('publishingOrganisation', value)}
-        value={publishingOrganisation}/>
       <div className="column field licence">
         <label className="label">
           {t('datasetPageFormPage.basicInformation.licence.label')}
@@ -65,7 +60,6 @@ export default function BasicInformation({ onChange, data }) {
 
 export const basicInformationShape = {
   title:                  PropTypes.string.isRequired,
-  publishingOrganisation: PropTypes.string.isRequired,
   licence:                PropTypes.oneOf(licences).isRequired,
   language:               PropTypes.oneOf(languages).isRequired,
   abstract:               PropTypes.string.isRequired

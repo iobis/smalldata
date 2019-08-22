@@ -27,7 +27,6 @@ describe('BasicInformation', () => {
 function getDefaultFilledData() {
   return {
     title:                  'title',
-    publishingOrganisation: 'publishingOrganisation',
     licence:                licences[0],
     language:               languages[0],
     abstract:               'abstract'

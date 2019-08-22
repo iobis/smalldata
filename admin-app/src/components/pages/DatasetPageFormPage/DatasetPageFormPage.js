@@ -190,7 +190,6 @@ function createInitialState() {
   return {
     basicInformation:  {
       title:                  '',
-      publishingOrganisation: '',
       licence:                licences[0],
       language:               languages[0],
       abstract:               ''

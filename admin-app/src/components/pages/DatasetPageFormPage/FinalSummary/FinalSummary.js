@@ -78,9 +78,6 @@ export default function FinalSummary({
                 name={t('datasetPageFormPage.basicInformation.title.label')}
                 value={basicInformation.title}/>
               <NameValueRow
-                name={t('datasetPageFormPage.basicInformation.publishingOrganisation.label')}
-                value={basicInformation.publishingOrganisation}/>
-              <NameValueRow
                 name={t('datasetPageFormPage.basicInformation.licence.label')}
                 value={basicInformation.licence}/>
               <NameValueRow

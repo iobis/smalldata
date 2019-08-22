@@ -72,8 +72,6 @@ describe('DatasetPageFormPage', () => {
   function addBasicData(wrapper) {
     wrapper.find('.basic-information .title input')
       .simulate('change', { target: { value: 'dataset title' } })
-    wrapper.find('.basic-information .publishing-organisation input')
-      .simulate('change', { target: { value: 'dataset publishing organisation' } })
     wrapper.find('.basic-information .licence .dropdown').simulate('click')
     wrapper.find('.basic-information .licence .dropdown .dropdown-item').at(1).simulate('click')
     wrapper.find('.basic-information .language .dropdown').simulate('click')

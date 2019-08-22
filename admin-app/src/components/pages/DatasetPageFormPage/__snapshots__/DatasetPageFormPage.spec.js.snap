@@ -68,7 +68,6 @@ exports[`DatasetPageFormPage renders correctly 1`] = `
               "abstract": "",
               "language": "English",
               "licence": "Creative Commons Attribution Non Commercial (CC-BY) 4.0 License",
-              "publishingOrganisation": "",
               "title": "",
             }
           }
@@ -90,28 +89,6 @@ exports[`DatasetPageFormPage renders correctly 1`] = `
                   className="label"
                 >
                   datasetPageFormPage.basicInformation.title.label
-                </label>
-                <input
-                  className="input"
-                  onChange={[Function]}
-                  type="text"
-                  value=""
-                />
-              </div>
-            </InputText>
-            <InputText
-              className="publishing-organisation"
-              name="datasetPageFormPage.basicInformation.publishingOrganisation"
-              onChange={[Function]}
-              value=""
-            >
-              <div
-                className="column field publishing-organisation"
-              >
-                <label
-                  className="label"
-                >
-                  datasetPageFormPage.basicInformation.publishingOrganisation.label
                 </label>
                 <input
                   className="input"
@@ -677,7 +654,6 @@ exports[`DatasetPageFormPage renders correctly 2`] = `
               "abstract": "dataset abstract information",
               "language": "Dutch",
               "licence": "Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License",
-              "publishingOrganisation": "dataset publishing organisation",
               "title": "dataset title",
             }
           }
@@ -705,28 +681,6 @@ exports[`DatasetPageFormPage renders correctly 2`] = `
                   onChange={[Function]}
                   type="text"
                   value="dataset title"
-                />
-              </div>
-            </InputText>
-            <InputText
-              className="publishing-organisation"
-              name="datasetPageFormPage.basicInformation.publishingOrganisation"
-              onChange={[Function]}
-              value="dataset publishing organisation"
-            >
-              <div
-                className="column field publishing-organisation"
-              >
-                <label
-                  className="label"
-                >
-                  datasetPageFormPage.basicInformation.publishingOrganisation.label
-                </label>
-                <input
-                  className="input"
-                  onChange={[Function]}
-                  type="text"
-                  value="dataset publishing organisation"
                 />
               </div>
             </InputText>
@@ -1523,7 +1477,6 @@ exports[`DatasetPageFormPage renders correctly 3`] = `
           "abstract": "dataset abstract information",
           "language": "Dutch",
           "licence": "Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License",
-          "publishingOrganisation": "dataset publishing organisation",
           "title": "dataset title",
         }
       }
@@ -1665,25 +1618,6 @@ exports[`DatasetPageFormPage renders correctly 3`] = `
                       className="value"
                     >
                       dataset title
-                    </td>
-                  </tr>
-                </NameValueRow>
-                <NameValueRow
-                  name="datasetPageFormPage.basicInformation.publishingOrganisation.label"
-                  value="dataset publishing organisation"
-                >
-                  <tr
-                    className="name-value-row fieldrow"
-                  >
-                    <td
-                      className="name"
-                    >
-                      datasetPageFormPage.basicInformation.publishingOrganisation.label
-                    </td>
-                    <td
-                      className="value"
-                    >
-                      dataset publishing organisation
                     </td>
                   </tr>
                 </NameValueRow>
