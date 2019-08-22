@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Keywords renders correctly 1`] = `
+<Keywords
+  keywords={Array []}
+  onChange={[MockFunction]}
+>
+  <div
+    className="keywords section is-fluid"
+  >
+    <InputMultipleText
+      className="keywords-input"
+      name="datasetPageFormPage.keywords.keywords"
+      onChange={[MockFunction]}
+      values={Array []}
+    >
+      <div
+        className="column field keywords-input"
+      >
+        <label
+          className="label"
+        >
+          datasetPageFormPage.keywords.keywords.label
+        </label>
+        <input
+          className="input"
+          onChange={[Function]}
+          onKeyDown={[Function]}
+          placeholder="datasetPageFormPage.keywords.keywords.placeholder"
+          type="text"
+          value=""
+        />
+        <p
+          className="help"
+        >
+          datasetPageFormPage.keywords.keywords.help
+        </p>
+        <Tags
+          onDelete={[Function]}
+          strings={Array []}
+        >
+          <div
+            className="block"
+          />
+        </Tags>
+      </div>
+    </InputMultipleText>
+  </div>
+</Keywords>
+`;

@@ -34,15 +34,14 @@ export default function OceanExpertNameInput({ oceanExpertName, onChange }) {
       setNameValid(newNameValid)
       if (!newNameValid && newSuggestions.length > 0) showDropdownOption()
       setLoading(false)
-      setFirstRender(false)
     }
-
-    if (debouncedName) getByName()
+    if (debouncedName && !firstRender) getByName()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedName])
 
   function handleNameChange(newName) {
     if (newName === '') setNameValid(false)
+    setFirstRender(false)
     const profile = {
       name: newName || ''
     }
