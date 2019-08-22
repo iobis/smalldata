@@ -168,13 +168,12 @@ ContactTable.propTypes = {
   contacts: PropTypes.arrayOf(PropTypes.shape(contactShape).isRequired)
 }
 
-function ContactRow({ email, name, organisation, position }) {
+function ContactRow({ email, name, organisation }) {
   return (
     <tr className="contact-row">
       <td className="name">{name}</td>
       <td className="email">{email}</td>
       <td className="organisation">{organisation}</td>
-      <td className="position">{position}</td>
     </tr>
   )
 }
