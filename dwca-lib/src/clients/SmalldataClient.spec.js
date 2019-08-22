@@ -47,7 +47,11 @@ describe('SmalldataClient', () => {
       await SmalldataClient.createDataset({
         basicInformation: {
           title:        'title',
-          languageCode: 'en'
+          languageCode: 'en',
+          licence:      {
+            url:   'licence url',
+            title: 'licence title'
+          }
         }
       })
       expect(fetch.mock.calls[0][0]).toBe('/api/datasets')

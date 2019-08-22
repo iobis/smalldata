@@ -204,10 +204,7 @@ export function mapDatasetToRequest({ basicInformation, keywords }) {
         'And this is another one...'
       ]
     },
-    license:           {
-      url:   'http://creativecommons.org/licenses/by-nc/4.0/legalcode',
-      title: 'Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License'
-    },
+    license:           basicInformation.licence,
     creators:          [{
       individualName: {
         givenName: 'Someone',

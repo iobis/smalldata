@@ -117,7 +117,10 @@ describe('SmalldataConverters', () => {
       basicInformation:  {
         title:                  'Basic Data - Title',
         publishingOrganisation: 'Basic Data - Organisation',
-        licence:                'Public Domain (CC0 1.0)',
+        licence:                {
+          url:   'http://creativecommons.org/licenses/by-nc/4.0/legalcode',
+          title: 'Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License'
+        },
         languageCode:           'en',
         abstract:               'Basic Data - Abstract'
       },

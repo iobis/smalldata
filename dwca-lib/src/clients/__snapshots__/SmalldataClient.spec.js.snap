@@ -29,8 +29,8 @@ Object {
   ],
   "language": "en",
   "license": Object {
-    "title": "Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License",
-    "url": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+    "title": "licence title",
+    "url": "licence url",
   },
   "meta": Object {
     "dwcTables": Object {
