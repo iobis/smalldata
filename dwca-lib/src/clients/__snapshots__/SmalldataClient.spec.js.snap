@@ -262,9 +262,8 @@ Array [
       Object {
         "abstract": Object {
           "paragraphs": Array [
-            "The dataset contains the abundance and biomass values of sediment organisms from the Sevastopol region (South-Western Crimea, The Black Sea, Ukraine) collected between 1982 and 1992.",
-            "Abundance and Biomass of benthic organisms and key abiotic variables (covering irregular sampling surveys within 1982-1992) from the Sevastopol Area (South-Western Crimea, The Black Sea, Ukraine) including estuaries and small sheltered and semi-closed bays within the area of &quot;big Sevastopol bay&quot;
-Sevastopol Bay is located in south western part of the Crimean peninsula, Ukraine and comprehends the one of the biggest marine harbours of the Black Sea and has served as an industrialized naval base for decades. A consequence of this long-term industrial, military and municipal activity was the deterioration of the marine environment of the bay, depressed state of benthic assemblages and occurrence of expanded bottom areas that became contaminated with various sediment-associated pollutants including polycyclic aromatic hydrocarbons (PAHs), polychlorinated biphenyls (PCBs), pesticides, and metals. Benthic samples in Sevastopol bay heve been taken between 1982 and 1992.",
+            "paragraph-1",
+            "paragraph-2",
           ],
         },
         "contacts": Array [
@@ -496,9 +495,8 @@ Sevastopol Bay is located in south western part of the Crimean peninsula, Ukrain
       Object {
         "abstract": Object {
           "paragraphs": Array [
-            "The dataset contains the abundance and biomass values of sediment organisms from the Sevastopol region (South-Western Crimea, The Black Sea, Ukraine) collected between 1982 and 1992.",
-            "Abundance and Biomass of benthic organisms and key abiotic variables (covering irregular sampling surveys within 1982-1992) from the Sevastopol Area (South-Western Crimea, The Black Sea, Ukraine) including estuaries and small sheltered and semi-closed bays within the area of &quot;big Sevastopol bay&quot;
-Sevastopol Bay is located in south western part of the Crimean peninsula, Ukraine and comprehends the one of the biggest marine harbours of the Black Sea and has served as an industrialized naval base for decades. A consequence of this long-term industrial, military and municipal activity was the deterioration of the marine environment of the bay, depressed state of benthic assemblages and occurrence of expanded bottom areas that became contaminated with various sediment-associated pollutants including polycyclic aromatic hydrocarbons (PAHs), polychlorinated biphenyls (PCBs), pesticides, and metals. Benthic samples in Sevastopol bay heve been taken between 1982 and 1992.",
+            "paragraph-1",
+            "paragraph-2",
           ],
         },
         "contacts": Array [
