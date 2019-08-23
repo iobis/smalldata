@@ -230,8 +230,8 @@ describe('SmalldataConverters', () => {
     })
   })
 
-  it('mapDatasetRequestToBasicInformation(dataset)', () => {
-    expect(SmalldataConverters.mapDatasetRequestToBasicInformation(getDatasetDefaultResponse()[3])).toEqual({
+  it('mapDatasetResponseToBasicInformation(dataset)', () => {
+    expect(SmalldataConverters.mapDatasetResponseToBasicInformation(getDatasetDefaultResponse()[3])).toEqual({
       title:    'Benthic data from Sevastopol (Black Sea)',
       licence:  'Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License',
       language: 'English',

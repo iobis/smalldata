@@ -14,7 +14,7 @@ import { findLanguageCodeByTitle, languages } from '@smalldata/dwca-lib/src/clie
 import { findLicenceByTitle, licences } from '@smalldata/dwca-lib/src/clients/licences'
 import { useTranslation } from 'react-i18next'
 import { getProperty } from '@smalldata/dwca-lib/src/common/objects'
-import { mapDatasetRequestToBasicInformation } from '@smalldata/dwca-lib/src/clients/SmalldataConverters'
+import { mapDatasetResponseToBasicInformation } from '@smalldata/dwca-lib/src/clients/SmalldataConverters'
 
 export default function DatasetPageFormPage({ location }) {
   const initialState = createInitialState(location)
@@ -35,7 +35,7 @@ export default function DatasetPageFormPage({ location }) {
     async function fetchDataset() {
       const datasets = await getDatasets()
       const dataset = datasets.find(d => d.id === location.state.id)
-      setBasicInformation(mapDatasetRequestToBasicInformation(dataset))
+      setBasicInformation(mapDatasetResponseToBasicInformation(dataset))
       setAction(location.state.action === 'update' ? 'update' : 'create')
     }
 

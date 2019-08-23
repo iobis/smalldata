@@ -233,7 +233,7 @@ export function mapUiDatasetToRequest({ basicInformation, resourceContacts, reso
   }
 }
 
-export function mapDatasetRequestToBasicInformation(dataset) {
+export function mapDatasetResponseToBasicInformation(dataset) {
   return {
     title:    dataset.title.value,
     language: findLanguageByCode(dataset.title.language),
