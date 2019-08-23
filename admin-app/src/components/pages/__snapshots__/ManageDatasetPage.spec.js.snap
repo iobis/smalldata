@@ -103,6 +103,7 @@ exports[`ManageDatasetPage renders correctly for non empty datasets 1`] = `
             </thead>
             <tbody>
               <DatasetRow
+                id="id-1"
                 key="id-1"
                 license="title-1"
                 organization="Flanders Marine Institute (VLIZ)"
@@ -118,16 +119,17 @@ exports[`ManageDatasetPage renders correctly for non empty datasets 1`] = `
                       className="button is-info"
                       to={
                         Object {
-                          "pathname": "/manage-dataset/update",
+                          "pathname": "/manage-dataset/update/id-1",
                           "state": Object {
                             "action": "update",
+                            "id": "id-1",
                           },
                         }
                       }
                     >
                       <a
                         className="button is-info"
-                        href="/manage-dataset/update"
+                        href="/manage-dataset/update/id-1"
                         onClick={[Function]}
                       >
                         common.edit
@@ -152,6 +154,7 @@ exports[`ManageDatasetPage renders correctly for non empty datasets 1`] = `
                 </tr>
               </DatasetRow>
               <DatasetRow
+                id="id-2"
                 key="id-2"
                 license="title-2"
                 organization="—"
@@ -167,16 +170,17 @@ exports[`ManageDatasetPage renders correctly for non empty datasets 1`] = `
                       className="button is-info"
                       to={
                         Object {
-                          "pathname": "/manage-dataset/update",
+                          "pathname": "/manage-dataset/update/id-2",
                           "state": Object {
                             "action": "update",
+                            "id": "id-2",
                           },
                         }
                       }
                     >
                       <a
                         className="button is-info"
-                        href="/manage-dataset/update"
+                        href="/manage-dataset/update/id-2"
                         onClick={[Function]}
                       >
                         common.edit
@@ -312,6 +316,7 @@ exports[`ManageDatasetPage renders correctly if metadata provider is empty 1`] =
             </thead>
             <tbody>
               <DatasetRow
+                id="id-1"
                 key="id-1"
                 license="title-1"
                 organization="—"
@@ -327,16 +332,17 @@ exports[`ManageDatasetPage renders correctly if metadata provider is empty 1`] =
                       className="button is-info"
                       to={
                         Object {
-                          "pathname": "/manage-dataset/update",
+                          "pathname": "/manage-dataset/update/id-1",
                           "state": Object {
                             "action": "update",
+                            "id": "id-1",
                           },
                         }
                       }
                     >
                       <a
                         className="button is-info"
-                        href="/manage-dataset/update"
+                        href="/manage-dataset/update/id-1"
                         onClick={[Function]}
                       >
                         common.edit
