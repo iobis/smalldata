@@ -171,6 +171,25 @@ describe('DatasetPageFormPage', () => {
             it('renders 6 keywords', () => {
               expect(wrapper.find('.keywords .tag')).toHaveLength(6)
             })
+
+            describe('and then clicking "Review and Submit" button', () => {
+              beforeAll(() => {
+                wrapper.find('.review-and-submit-button').simulate('click')
+              })
+
+              it('renders correctly', () => {
+                expect(wrapper.find('.final-summary').exists()).toBe(true)
+                expect(wrapper).toMatchSnapshot()
+              })
+
+              it('does not render success message', () => {
+                expect(wrapper.find('.success-message').exists()).toBe(false)
+              })
+
+              it('does not render error message', () => {
+                expect(wrapper.find('.success-message').exists()).toBe(false)
+              })
+            })
           })
         })
       })
