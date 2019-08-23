@@ -3,7 +3,7 @@ import DatasetPageFormPage from './DatasetPageFormPage'
 import React from 'react'
 import { mount } from 'enzyme'
 import { act } from 'react-dom/test-utils'
-import { getDatasetDefaultResponse, getDatasetsFixture } from '@smalldata/dwca-lib/src/clients/SmalldataClient.mock'
+import { getDatasetsFixture } from '@smalldata/dwca-lib/src/clients/SmalldataClient.mock'
 
 jest.mock('@smalldata/dwca-lib/src/clients/SmalldataClient', () => ({
   getDatasets: jest.fn()
