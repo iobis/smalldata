@@ -42,6 +42,7 @@ export default function ManageDatasetPage() {
             <tbody>
               {datasets.map(dataset => (
                 <DatasetRow
+                  id={dataset.id}
                   key={dataset.id}
                   license={dataset.license.title}
                   organization={getProperty(() => dataset.metadataProviders[0].organizationName, '—')}
@@ -55,11 +56,11 @@ export default function ManageDatasetPage() {
   )
 }
 
-function DatasetRow({ title, organization, license }) {
+function DatasetRow({ id, title, organization, license }) {
   const { t } = useTranslation()
 
   const toEdit = {
-    pathname: '/manage-dataset/update',
+    pathname: '/manage-dataset/update/' + id,
     state:    { action: 'update' }
   }
 
@@ -78,6 +79,7 @@ function DatasetRow({ title, organization, license }) {
 }
 
 DatasetRow.propTypes = {
+  id:           PropTypes.string.isRequired,
   license:      PropTypes.string.isRequired,
   organization: PropTypes.string.isRequired,
   title:        PropTypes.string.isRequired
