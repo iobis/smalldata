@@ -92,13 +92,13 @@ export default function DatasetPageFormPage({ location }) {
       setErrorMessage(response.exception + ': ' + response.exceptionMessage)
     } else {
       setSuccessVisible(true)
-      setAction('create')
     }
   }
 
   function handleCreateClick() {
     resetUiState()
     resetDatasetState()
+    setAction('create')
   }
 
   function resetUiState() {
@@ -210,6 +210,7 @@ export default function DatasetPageFormPage({ location }) {
           onSubmitClick={handleSubmitClick}
           resourceContacts={resourceContacts}
           resourceCreators={resourceCreators}
+          successMessageType={action}
           successVisible={successVisible}/>) :
         (<div className="columns column is-centered">
           <button

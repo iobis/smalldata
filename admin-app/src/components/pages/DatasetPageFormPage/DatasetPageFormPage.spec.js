@@ -220,6 +220,10 @@ describe('DatasetPageFormPage', () => {
                   expect(wrapper.find('.success-message').exists()).toBe(true)
                 })
 
+                it('render success message with update title', () => {
+                  expect(wrapper.find('.success-message .title').text()).toBe('datasetPageFormPage.finalSummary.successMessage.header.update')
+                })
+
                 it('does not render error message', () => {
                   expect(wrapper.find('.error-message').exists()).toBe(false)
                 })
