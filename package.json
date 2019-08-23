@@ -21,7 +21,7 @@
     "lint": "yarn workspaces run lint",
     "occurrences-app:build": "yarn workspace @smalldata/occurrences-app build",
     "occurrences-app:copy-to-server": "shx mkdir -p ./server/src/main/resources/webroot/ && shx cp -rf ./occurrences-app/build/* ./server/src/main/resources/webroot/",
-    "prettier": "prettier --print-width 100 --jsx-bracket-same-line --single-quote --no-semi --write **/*.{scss,css,json,js,jsx}",
+    "prettier": "prettier --print-width 100 --jsx-bracket-same-line --single-quote --no-semi --write **/*.{scss,css,json} !server/**/resources/**/*",
     "server:bundle-openapi-spec": "swagger-cli bundle server/src/main/resources/swaggerroot/spec/smalldata.yaml -t yaml -o server/src/main/resources/swaggerroot/spec/smalldata-bundled.yaml",
     "server:runtime-zip": "cd server && ./gradlew runtimeZip",
     "server:start": "cd server && ./gradlew run",
