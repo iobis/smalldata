@@ -223,12 +223,12 @@ export function mapUiDatasetToRequest({ basicInformation, resourceContacts, reso
     const lastName = name.split(' ').slice(-1).join(' ')
 
     return {
-      individualName:        {
+      individualName: {
         givenName: firstName,
         surName:   lastName
       },
-      organizationName:      organisation,
-      electronicMailAddress: email
+      ...organisation && { organizationName: organisation },
+      ...email && { electronicMailAddress: email }
     }
   }
 }

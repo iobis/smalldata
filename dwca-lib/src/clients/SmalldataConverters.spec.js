@@ -130,7 +130,11 @@ describe('SmalldataConverters', () => {
       }, {
         name:         'ResourceContact-2 Name-2',
         email:        'ResourceContact-2@acme.com',
-        organisation: 'ResourceContact-2 Organization-2'
+        organisation: ''
+      }, {
+        name:         'ResourceContact-3 Name-3',
+        email:        '',
+        organisation: 'ResourceContact-3 Organization-3'
       }],
       resourceCreators:  [{
         name:         'ResourceCreator-1 Name-1',
@@ -206,8 +210,13 @@ describe('SmalldataConverters', () => {
           givenName: 'ResourceContact-2',
           surName:   'Name-2'
         },
-        organizationName:      'ResourceContact-2 Organization-2',
         electronicMailAddress: 'ResourceContact-2@acme.com'
+      }, {
+        individualName:   {
+          givenName: 'ResourceContact-3',
+          surName:   'Name-3'
+        },
+        organizationName: 'ResourceContact-3 Organization-3'
       }],
       metadataProviders: [{
         individualName:        {
