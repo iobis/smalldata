@@ -176,7 +176,7 @@ export function mapDwcsToDarwinCoreFields(dwca) {
   return [...iobisFields, ...purlFields, ...tdwgFields]
 }
 
-export function mapDatasetToRequest({ basicInformation, resourceContacts, resourceCreators, metadataProviders, keywords }) {
+export function mapUiDatasetToRequest({ basicInformation, resourceContacts, resourceCreators, metadataProviders, keywords }) {
   ow(basicInformation, ow.object.partialShape({
     title:        ow.string,
     licence:      {

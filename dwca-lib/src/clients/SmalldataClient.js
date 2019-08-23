@@ -1,4 +1,4 @@
-import { mapDatasetToRequest, mapOccurrenceToDwca } from './SmalldataConverters'
+import { mapUiDatasetToRequest, mapOccurrenceToDwca } from './SmalldataConverters'
 
 const authorizationValue = 'Basic verysecret'
 const headers = {
@@ -13,7 +13,7 @@ export async function getDatasets() {
 }
 
 export async function createDataset(dataset) {
-  const request = mapDatasetToRequest(dataset)
+  const request = mapUiDatasetToRequest(dataset)
   return await fetch('/api/datasets', {
     method: 'POST',
     headers,

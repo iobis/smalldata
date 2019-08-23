@@ -112,7 +112,7 @@ describe('SmalldataConverters', () => {
     }])
   })
 
-  it('mapDatasetToRequest(dataset)', () => {
+  it('mapUiDatasetToRequest(dataset)', () => {
     const uiDataset = {
       basicInformation:  {
         title:        'Basic Data - Title',
@@ -153,7 +153,7 @@ describe('SmalldataConverters', () => {
       keywords:          ['Keyword-1', 'Keyword-2']
     }
 
-    const response = SmalldataConverters.mapDatasetToRequest(uiDataset)
+    const response = SmalldataConverters.mapUiDatasetToRequest(uiDataset)
 
     expect(response).toEqual({
       meta:              {
