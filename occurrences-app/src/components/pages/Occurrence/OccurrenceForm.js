@@ -281,6 +281,7 @@ export default function OccurrenceForm({ location }) {
 OccurrenceForm.propTypes = {
   location: PropTypes.shape({
     state: PropTypes.shape({
+      action:    PropTypes.oneOf(['create', 'update']),
       datasetId: PropTypes.string.isRequired,
       dwcaId:    PropTypes.string.isRequired
     })
