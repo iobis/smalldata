@@ -238,4 +238,36 @@ describe('SmalldataConverters', () => {
       abstract: 'paragraph-1\n\nparagraph-2'
     })
   })
+
+  it('mapDatasetResponseToResourceContacts(dataset)', () => {
+    expect(SmalldataConverters.mapDatasetResponseToResourceContacts(getDatasetDefaultResponse()[3])).toEqual([{
+      email:        'arvanitidis@her.hcmr.gr',
+      name:         'Christos Arvanitidis',
+      organisation: 'Hellenic Centre for Marine Research (HCMR)'
+    }])
+  })
+
+  it('mapDatasetResponseToResourceCreators(dataset)', () => {
+    expect(SmalldataConverters.mapDatasetResponseToResourceCreators(getDatasetDefaultResponse()[3])).toEqual([{
+      email:        'arvanitidis@her.hcmr.gr',
+      name:         'Christos Arvanitidis',
+      organisation: 'Hellenic Centre for Marine Research (HCMR)'
+    }, {
+      email:        '',
+      name:         '',
+      organisation: 'Hellenic Centre for Marine Research (HCMR)'
+    }, {
+      email:        'alexpet@ibss.iuf.net',
+      name:         'Alexei Petrov',
+      organisation: 'National Academy of Sciences of Ukraine Institute of Biology of the Southern Seas (NASU-IBSS'
+    }])
+  })
+
+  it('mapDatasetResponseToMetadataProviders(dataset)', () => {
+    expect(SmalldataConverters.mapDatasetResponseToMetadataProviders(getDatasetDefaultResponse()[3])).toEqual([{
+      email:        'info@eurobis.org',
+      name:         'EurOBIS Data Management Team',
+      organisation: 'Flanders Marine Institute (VLIZ)'
+    }])
+  })
 })

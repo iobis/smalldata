@@ -241,3 +241,25 @@ export function mapDatasetResponseToBasicInformation(dataset) {
     abstract: dataset.abstract.paragraphs.join('\n\n')
   }
 }
+
+export function mapDatasetResponseToResourceContacts(dataset) {
+  return dataset.contacts.map(mapResponseContactToContact)
+}
+
+export function mapDatasetResponseToResourceCreators(dataset) {
+  return dataset.creators.map(mapResponseContactToContact)
+}
+
+export function mapDatasetResponseToMetadataProviders(dataset) {
+  return dataset.metadataProviders.map(mapResponseContactToContact)
+}
+
+function mapResponseContactToContact(contact) {
+  const name = [
+    getProperty(() => contact.individualName.givenName, ''),
+    getProperty(() => contact.individualName.surName, '')
+  ].filter(value => value).join(' ')
+  const email = getProperty(() => contact.electronicMailAddress, '')
+  const organisation = getProperty(() => contact.organizationName, '')
+  return { email, name, organisation }
+}

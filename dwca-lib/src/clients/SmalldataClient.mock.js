@@ -116,10 +116,15 @@ export function getDatasetDefaultResponse() {
       'title': 'Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License'
     },
     'creators':          [{
-      'individualName':        { 'givenName': 'Christos', 'surName': 'Arvanitidis' },
+      'individualName':        {
+        'givenName': 'Christos',
+        'surName':   'Arvanitidis'
+      },
       'organizationName':      'Hellenic Centre for Marine Research (HCMR)',
       'electronicMailAddress': 'arvanitidis@her.hcmr.gr'
-    }, { 'organizationName': 'Hellenic Centre for Marine Research (HCMR)' }, {
+    }, {
+      'organizationName': 'Hellenic Centre for Marine Research (HCMR)'
+    }, {
       'individualName':        {
         'givenName': 'Alexei',
         'surName':   'Petrov'
