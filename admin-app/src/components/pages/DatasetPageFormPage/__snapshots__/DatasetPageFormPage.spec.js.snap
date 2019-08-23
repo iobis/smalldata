@@ -633,7 +633,6 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
         >
           <button
             className="review-and-submit-button button is-medium is-info"
-            disabled={false}
             onClick={[Function]}
           >
             datasetPageFormPage.reviewAndSubmitButton
@@ -1278,7 +1277,6 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
         >
           <button
             className="review-and-submit-button button is-medium is-info"
-            disabled={false}
             onClick={[Function]}
           >
             datasetPageFormPage.reviewAndSubmitButton
@@ -3823,7 +3821,6 @@ paragraph-2"
         >
           <button
             className="review-and-submit-button button is-medium is-info"
-            disabled={false}
             onClick={[Function]}
           >
             datasetPageFormPage.reviewAndSubmitButton

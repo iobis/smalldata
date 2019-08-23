@@ -58,10 +58,6 @@ export default function DatasetPageFormPage({ location }) {
     setFinalSummaryVisible(false)
   }
 
-  function isValid() {
-    return false
-  }
-
   function showFinalSummary() {
     setActiveStepIndex(null)
     setFinalSummaryVisible(true)
@@ -215,7 +211,6 @@ export default function DatasetPageFormPage({ location }) {
         (<div className="columns column is-centered">
           <button
             className="review-and-submit-button button is-medium is-info"
-            disabled={isValid()}
             onClick={showFinalSummary}>
             {t('datasetPageFormPage.reviewAndSubmitButton')}
           </button>
