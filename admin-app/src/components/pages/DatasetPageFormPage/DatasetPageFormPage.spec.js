@@ -107,6 +107,24 @@ describe('DatasetPageFormPage', () => {
       expect(wrapper.find('.basic-information .licence .selected-value').text()).toEqual('Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License')
       expect(wrapper.find('.basic-information .language .selected-value').text()).toEqual('English')
       expect(wrapper.find('.basic-information .abstract textarea').text()).toEqual('paragraph-1\n\nparagraph-2')
+
+      wrapper.find('.step-2 .step-header').simulate('click')
+      expect(wrapper.find('.step-header .selected-data').at(0).text()).toEqual('Benthic data from Sevastopol (Black Sea)')
+      expect(wrapper.find('.resource-contacts .contact-row')).toHaveLength(1)
+
+      wrapper.find('.step-3 .step-header').simulate('click')
+      expect(wrapper.find('.step-header .selected-data').at(1).text())
+        .toEqual('datasetPageFormPage.resourceContacts.step.selectedData {"nrOfContacts":1}')
+      expect(wrapper.find('.resource-creators .contact-row')).toHaveLength(3)
+
+      wrapper.find('.step-4 .step-header').simulate('click')
+      expect(wrapper.find('.step-header .selected-data').at(2).text())
+        .toEqual('datasetPageFormPage.resourceCreators.step.selectedData {"nrOfContacts":3}')
+      expect(wrapper.find('.metadata-providers .contact-row')).toHaveLength(1)
+
+      wrapper.find('.step-5 .step-header').simulate('click')
+      expect(wrapper.find('.step-header .selected-data').at(3).text())
+        .toEqual('datasetPageFormPage.metadataProviders.step.selectedData {"nrOfContacts":1}')
     })
   })
 

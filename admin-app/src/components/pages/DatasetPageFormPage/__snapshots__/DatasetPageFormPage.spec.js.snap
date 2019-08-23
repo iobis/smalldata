@@ -2483,7 +2483,7 @@ paragraph-2"
       nextStep="datasetPageFormPage.resourceCreators.step.stepTitle"
       onContinueButtonClick={[Function]}
       onStepTitleClick={[Function]}
-      selectedData="datasetPageFormPage.resourceContacts.step.selectedData {\\"nrOfContacts\\":0}"
+      selectedData="datasetPageFormPage.resourceContacts.step.selectedData {\\"nrOfContacts\\":1}"
       stepDescription="datasetPageFormPage.resourceContacts.step.stepDescription"
       stepTitle="2 - datasetPageFormPage.resourceContacts.step.stepTitle"
       totalSteps={4}
@@ -2542,7 +2542,7 @@ paragraph-2"
       nextStep="datasetPageFormPage.metadataProviders.step.stepTitle"
       onContinueButtonClick={[Function]}
       onStepTitleClick={[Function]}
-      selectedData="datasetPageFormPage.resourceCreators.step.selectedData {\\"nrOfContacts\\":0}"
+      selectedData="datasetPageFormPage.resourceCreators.step.selectedData {\\"nrOfContacts\\":3}"
       stepDescription="datasetPageFormPage.resourceCreators.step.stepDescription"
       stepTitle="3 - datasetPageFormPage.resourceCreators.step.stepTitle"
       totalSteps={4}
@@ -2601,7 +2601,7 @@ paragraph-2"
       nextStep="datasetPageFormPage.keywords.step.stepTitle"
       onContinueButtonClick={[Function]}
       onStepTitleClick={[Function]}
-      selectedData="datasetPageFormPage.metadataProviders.step.selectedData {\\"nrOfContacts\\":0}"
+      selectedData="datasetPageFormPage.metadataProviders.step.selectedData {\\"nrOfContacts\\":1}"
       stepDescription="datasetPageFormPage.metadataProviders.step.stepDescription"
       stepTitle="4 - datasetPageFormPage.metadataProviders.step.stepTitle"
       totalSteps={4}
