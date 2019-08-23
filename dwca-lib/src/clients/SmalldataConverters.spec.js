@@ -121,7 +121,7 @@ describe('SmalldataConverters', () => {
           title: 'Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License'
         },
         languageCode: 'en',
-        abstract:     'Basic Data - Abstract'
+        abstract:     'Paragraph - 1\n\nParagraph - 2'
       },
       resourceContacts:  [{
         name:         'ResourceContact-1 Name-1',
@@ -176,7 +176,8 @@ describe('SmalldataConverters', () => {
       language:          'en',
       abstract:          {
         paragraphs: [
-          'Basic Data - Abstract'
+          'Paragraph - 1',
+          'Paragraph - 2'
         ]
       },
       license:           {

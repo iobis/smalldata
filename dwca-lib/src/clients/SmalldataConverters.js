@@ -207,7 +207,7 @@ export function mapUiDatasetToRequest({ basicInformation, resourceContacts, reso
     },
     language:          basicInformation.languageCode,
     abstract:          {
-      paragraphs: [basicInformation.abstract]
+      paragraphs: basicInformation.abstract.split('\n\n')
     },
     license:           basicInformation.licence,
     creators:          resourceCreators.map(mapContactToRequest),
