@@ -148,7 +148,10 @@ export function getDatasetDefaultResponse() {
     }, {
       'keywords':         ['Observation'],
       'keywordThesaurus': 'GBIF Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml'
-    }, { 'keywords': ['Benthic biomass', 'Benthos', 'Data', 'Marine Genomics'], 'keywordThesaurus': 'ASFA' }],
+    }, {
+      'keywords':         ['Benthic biomass', 'Benthos', 'Data', 'Marine Genomics'],
+      'keywordThesaurus': 'ASFA'
+    }],
     'ref':               'NnqVLwIyPn-nRkc'
   }]
 }

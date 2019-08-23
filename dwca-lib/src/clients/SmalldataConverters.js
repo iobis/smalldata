@@ -263,3 +263,9 @@ function mapResponseContactToContact(contact) {
   const organisation = getProperty(() => contact.organizationName, '')
   return { email, name, organisation }
 }
+
+export function mapDatasetResponseToKeywords(dataset) {
+  return dataset.keywordSets
+    .map(keywordsSet => keywordsSet.keywords)
+    .reduce((acc, val) => acc.concat(val), [])
+}

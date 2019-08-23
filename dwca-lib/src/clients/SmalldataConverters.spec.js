@@ -270,4 +270,15 @@ describe('SmalldataConverters', () => {
       organisation: 'Flanders Marine Institute (VLIZ)'
     }])
   })
+
+  it('mapDatasetResponseToKeywords(dataset)', () => {
+    expect(SmalldataConverters.mapDatasetResponseToKeywords(getDatasetDefaultResponse()[3])).toEqual([
+      'Occurrence',
+      'Observation',
+      'Benthic biomass',
+      'Benthos',
+      'Data',
+      'Marine Genomics'
+    ])
+  })
 })
