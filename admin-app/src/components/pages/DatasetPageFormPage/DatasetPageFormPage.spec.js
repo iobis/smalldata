@@ -8,6 +8,7 @@ import { mount } from 'enzyme'
 
 jest.mock('@smalldata/dwca-lib/src/clients/SmalldataClient', () => ({
   getDatasets:   jest.fn(),
+  createDataset: jest.fn(),
   updateDataset: jest.fn()
 }))
 
@@ -16,7 +17,11 @@ describe('DatasetPageFormPage', () => {
 
   describe('when creating new dataset', () => {
     it('renders correctly', () => {
-      wrapper = mount(<DatasetPageFormPage/>)
+      wrapper = mount(
+        <MemoryRouter initialEntries={[{ pathname: '/manage-dataset/create', key: 'testKey' }]}>
+          <DatasetPageFormPage/>
+        </MemoryRouter>
+      )
       expect(wrapper).toMatchSnapshot()
 
       addBasicData(wrapper)
@@ -79,6 +84,37 @@ describe('DatasetPageFormPage', () => {
       expect(wrapper.find('.final-summary').exists()).toBe(true)
       expect(wrapper.find('.success-message').exists()).toBe(false)
       expect(wrapper.find('.error-message').exists()).toBe(false)
+    })
+
+    describe('and then clicking submit button', () => {
+      beforeAll(async() => {
+        SmalldataClient.createDataset.mockImplementation(() =>
+          new Promise((resolve) => {
+            resolve({})
+          })
+        )
+        await act(async() => {
+          wrapper.find('.submit-entry-button button').at(0).simulate('click')
+        })
+        wrapper.update()
+      })
+
+      it('calls SmalldataClient.createDataset once with correct dataset id', () => {
+        expect(SmalldataClient.createDataset).toHaveBeenCalledTimes(1)
+        expect(SmalldataClient.createDataset).toHaveBeenNthCalledWith(1, expect.anything())
+      })
+
+      it('render success message', () => {
+        expect(wrapper.find('.success-message').exists()).toBe(true)
+      })
+
+      it('render success message with update title', () => {
+        expect(wrapper.find('.success-message .title').text()).toBe('datasetPageFormPage.finalSummary.successMessage.header.create')
+      })
+
+      it('does not render error message', () => {
+        expect(wrapper.find('.error-message').exists()).toBe(false)
+      })
     })
   })
 
