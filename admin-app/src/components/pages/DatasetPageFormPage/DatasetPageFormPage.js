@@ -12,6 +12,7 @@ import { createDataset } from '@smalldata/dwca-lib/src/clients/SmalldataClient'
 import { findLanguageCodeByTitle, languages } from '@smalldata/dwca-lib/src/clients/languages'
 import { findLicenceByTitle, licences } from '@smalldata/dwca-lib/src/clients/licences'
 import { useTranslation } from 'react-i18next'
+import { getProperty } from '@smalldata/dwca-lib/src/common/objects'
 
 export default function DatasetPageFormPage() {
   const initialState = createInitialState()
@@ -194,8 +195,18 @@ export default function DatasetPageFormPage() {
   )
 }
 
-function createInitialState() {
+DatasetPageFormPage.propTypes = {
+  location: PropTypes.shape({
+    state: PropTypes.shape({
+      action: PropTypes.oneOf(['create', 'update']),
+      id:     PropTypes.string.isRequired
+    })
+  })
+}
+
+function createInitialState(location) {
   return {
+    action:            getProperty(() => location.state.action, 'create'),
     basicInformation:  {
       title:    '',
       licence:  licences[0].title,
