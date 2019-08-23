@@ -5,18 +5,21 @@ import FinalSummary from './FinalSummary/FinalSummary'
 import Keywords from './Keywords'
 import MetadataProviders from './MetadataProviders'
 import NotConfirmedStepHeader from '@smalldata/dwca-lib/src/components/StepHeaders/NotConfirmedStepHeader'
-import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import React, { useEffect, useState } from 'react'
 import ResourceContacts from './ResourceContacts'
 import ResourceCreators from './ResourceCreators'
-import { createDataset } from '@smalldata/dwca-lib/src/clients/SmalldataClient'
+import { createDataset, getDatasets } from '@smalldata/dwca-lib/src/clients/SmalldataClient'
 import { findLanguageCodeByTitle, languages } from '@smalldata/dwca-lib/src/clients/languages'
 import { findLicenceByTitle, licences } from '@smalldata/dwca-lib/src/clients/licences'
 import { useTranslation } from 'react-i18next'
 import { getProperty } from '@smalldata/dwca-lib/src/common/objects'
+import { mapDatasetRequestToBasicInformation } from '@smalldata/dwca-lib/src/clients/SmalldataConverters'
 
-export default function DatasetPageFormPage() {
-  const initialState = createInitialState()
+export default function DatasetPageFormPage({ location }) {
+  const initialState = createInitialState(location)
   const { t } = useTranslation()
+  const [action, setAction] = useState(initialState.action)
   const [successVisible, setSuccessVisible] = useState(false)
   const [errorVisible, setErrorVisible] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
@@ -27,6 +30,18 @@ export default function DatasetPageFormPage() {
   const [keywords, setKeywords] = useState(initialState.keywords)
   const [activeStepIndex, setActiveStepIndex] = useState(0)
   const [finalSummaryVisible, setFinalSummaryVisible] = useState(false)
+
+  useEffect(() => {
+    async function fetchDataset() {
+      const datasets = await getDatasets()
+      const dataset = datasets.find(d => d.id === location.state.id)
+      setBasicInformation(mapDatasetRequestToBasicInformation(dataset))
+      setAction(location.state.action === 'update' ? 'update' : 'create')
+    }
+
+    if (getProperty(() => location.state.id, false)) fetchDataset()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   function showActiveStep(stepIndex) {
     setActiveStepIndex(stepIndex)
