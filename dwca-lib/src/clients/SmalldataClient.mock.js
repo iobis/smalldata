@@ -148,6 +148,10 @@ export function getDatasetDefaultResponse() {
   }]
 }
 
+export function getDatasetsFixture() {
+  return getDatasetDefaultResponse().map(renameRefToId)
+}
+
 export const OCCURRENCES_RESPONSE = [
   {
     'dwcaId':         'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796',
@@ -344,4 +348,8 @@ export function getUsersDefaultResponse() {
     'dataset_refs': undefined,
     'bulkiness':    0.0
   }]
+}
+
+function renameRefToId({ ref, ...rest }) {
+  return ({ id: ref, ...rest })
 }

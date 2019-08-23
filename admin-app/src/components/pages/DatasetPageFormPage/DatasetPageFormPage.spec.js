@@ -1,11 +1,20 @@
+import SmalldataClient from '@smalldata/dwca-lib/src/clients/SmalldataClient'
 import DatasetPageFormPage from './DatasetPageFormPage'
 import React from 'react'
 import { mount } from 'enzyme'
+import { act } from 'react-dom/test-utils'
+import { getDatasetDefaultResponse, getDatasetsFixture } from '@smalldata/dwca-lib/src/clients/SmalldataClient.mock'
+
+jest.mock('@smalldata/dwca-lib/src/clients/SmalldataClient', () => ({
+  getDatasets: jest.fn()
+}))
 
 describe('DatasetPageFormPage', () => {
+  let wrapper
+
   describe('when creating new dataset', () => {
     it('renders correctly', () => {
-      const wrapper = mount(<DatasetPageFormPage/>)
+      wrapper = mount(<DatasetPageFormPage/>)
       expect(wrapper).toMatchSnapshot()
 
       addBasicData(wrapper)
@@ -68,6 +77,36 @@ describe('DatasetPageFormPage', () => {
       expect(wrapper.find('.final-summary').exists()).toBe(true)
       expect(wrapper.find('.success-message').exists()).toBe(false)
       expect(wrapper.find('.error-message').exists()).toBe(false)
+    })
+  })
+
+  describe('when updating dataset', () => {
+    it('renders correctly', async() => {
+      SmalldataClient.getDatasets.mockImplementation(() =>
+        new Promise((resolve) => {
+          resolve(getDatasetsFixture())
+        })
+      )
+
+      const location = {
+        state: {
+          action: 'update',
+          id:     'NnqVLwIyPn-nRkc'
+        }
+      }
+      await act(async() => {
+        wrapper = mount(
+          <DatasetPageFormPage location={location}/>
+        )
+      })
+      expect(SmalldataClient.getDatasets).toHaveBeenCalledWith()
+
+      wrapper.update()
+      expect(wrapper).toMatchSnapshot()
+      expect(wrapper.find('.basic-information .title input').props().value).toEqual('Benthic data from Sevastopol (Black Sea)')
+      expect(wrapper.find('.basic-information .licence .selected-value').text()).toEqual('Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License')
+      expect(wrapper.find('.basic-information .language .selected-value').text()).toEqual('English')
+      expect(wrapper.find('.basic-information .abstract textarea').text()).toEqual('paragraph-1\n\nparagraph-2')
     })
   })
 
