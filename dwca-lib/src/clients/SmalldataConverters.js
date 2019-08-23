@@ -2,6 +2,7 @@ import ow from 'ow'
 import { findTypeAndUnitIdByNames, findUnitsByTypeId } from './measurments'
 import { format } from 'date-fns'
 import { getProperty } from '../common/objects'
+import { findLanguageByCode } from '@smalldata/dwca-lib/src/clients/languages'
 
 const purlUrl = 'http://purl.org/dc/terms/'
 const tdwgUrl = 'http://rs.tdwg.org/dwc/terms/'
@@ -229,5 +230,14 @@ export function mapDatasetToRequest({ basicInformation, resourceContacts, resour
       organizationName:      organisation,
       electronicMailAddress: email
     }
+  }
+}
+
+export function mapDatasetRequestToBasicInformation(dataset) {
+  return {
+    title:    dataset.title.value,
+    language: findLanguageByCode(dataset.title.language),
+    licence:  dataset.license.title,
+    abstract: dataset.abstract.paragraphs.join('\n\n')
   }
 }
