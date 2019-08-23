@@ -16,6 +16,7 @@ import { useTranslation } from 'react-i18next'
 import { getProperty } from '@smalldata/dwca-lib/src/common/objects'
 import {
   mapDatasetResponseToBasicInformation,
+  mapDatasetResponseToKeywords,
   mapDatasetResponseToMetadataProviders,
   mapDatasetResponseToResourceContacts,
   mapDatasetResponseToResourceCreators
@@ -44,6 +45,7 @@ export default function DatasetPageFormPage({ location }) {
       setResourceContacts(mapDatasetResponseToResourceContacts(dataset))
       setResourceCreators(mapDatasetResponseToResourceCreators(dataset))
       setMetadataProviders(mapDatasetResponseToMetadataProviders(dataset))
+      setKeywords(mapDatasetResponseToKeywords(dataset))
       setAction(location.state.action === 'update' ? 'update' : 'create')
     }
 

@@ -125,6 +125,7 @@ describe('DatasetPageFormPage', () => {
       wrapper.find('.step-5 .step-header').simulate('click')
       expect(wrapper.find('.step-header .selected-data').at(3).text())
         .toEqual('datasetPageFormPage.metadataProviders.step.selectedData {"nrOfContacts":1}')
+      expect(wrapper.find('.keywords .tag')).toHaveLength(6)
     })
   })
 
