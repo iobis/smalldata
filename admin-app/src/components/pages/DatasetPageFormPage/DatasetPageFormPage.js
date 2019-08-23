@@ -9,7 +9,7 @@ import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
 import ResourceContacts from './ResourceContacts'
 import ResourceCreators from './ResourceCreators'
-import { createDataset, getDatasets } from '@smalldata/dwca-lib/src/clients/SmalldataClient'
+import { createDataset, getDatasets, updateDataset } from '@smalldata/dwca-lib/src/clients/SmalldataClient'
 import { findLanguageCodeByTitle, languages } from '@smalldata/dwca-lib/src/clients/languages'
 import { findLicenceByTitle, licences } from '@smalldata/dwca-lib/src/clients/licences'
 import { useTranslation } from 'react-i18next'
@@ -84,12 +84,15 @@ export default function DatasetPageFormPage({ location }) {
       metadataProviders,
       keywords
     }
-    const response = await createDataset(dataset)
+    const response = action === 'update'
+      ? await updateDataset(dataset, location.state.id)
+      : await createDataset(dataset)
     if (response.exception) {
       setErrorVisible(true)
       setErrorMessage(response.exception + ': ' + response.exceptionMessage)
     } else {
       setSuccessVisible(true)
+      setAction('create')
     }
   }
 

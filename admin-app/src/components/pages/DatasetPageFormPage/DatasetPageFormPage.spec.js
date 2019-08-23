@@ -1,12 +1,14 @@
-import SmalldataClient from '@smalldata/dwca-lib/src/clients/SmalldataClient'
 import DatasetPageFormPage from './DatasetPageFormPage'
 import React from 'react'
-import { mount } from 'enzyme'
+import SmalldataClient from '@smalldata/dwca-lib/src/clients/SmalldataClient'
 import { act } from 'react-dom/test-utils'
 import { getDatasetsFixture } from '@smalldata/dwca-lib/src/clients/SmalldataClient.mock'
+import { MemoryRouter } from 'react-router-dom'
+import { mount } from 'enzyme'
 
 jest.mock('@smalldata/dwca-lib/src/clients/SmalldataClient', () => ({
-  getDatasets: jest.fn()
+  getDatasets:   jest.fn(),
+  updateDataset: jest.fn()
 }))
 
 describe('DatasetPageFormPage', () => {
@@ -96,7 +98,9 @@ describe('DatasetPageFormPage', () => {
       }
       await act(async() => {
         wrapper = mount(
-          <DatasetPageFormPage location={location}/>
+          <MemoryRouter initialEntries={[{ pathname: '/manage-dataset/update/C67oYYa_RGgCVD4', key: 'testKey' }]}>
+            <DatasetPageFormPage location={location}/>
+          </MemoryRouter>
         )
       })
       wrapper.update()
@@ -187,7 +191,38 @@ describe('DatasetPageFormPage', () => {
               })
 
               it('does not render error message', () => {
-                expect(wrapper.find('.success-message').exists()).toBe(false)
+                expect(wrapper.find('.error-message').exists()).toBe(false)
+              })
+
+              it('render 2 submit entry buttons error message', () => {
+                expect(wrapper.find('.submit-entry-button button')).toHaveLength(2)
+              })
+
+              describe('and then clicking submit', () => {
+                beforeAll(async() => {
+                  SmalldataClient.updateDataset.mockImplementation(() =>
+                    new Promise((resolve) => {
+                      resolve({})
+                    })
+                  )
+                  await act(async() => {
+                    wrapper.find('.submit-entry-button button').at(0).simulate('click')
+                  })
+                  wrapper.update()
+                })
+
+                it('calls SmalldataClient.updateDataset once with correct dataset id', () => {
+                  expect(SmalldataClient.updateDataset).toHaveBeenCalledTimes(1)
+                  expect(SmalldataClient.updateDataset).toHaveBeenNthCalledWith(1, expect.anything(), 'NnqVLwIyPn-nRkc')
+                })
+
+                it('render success message', () => {
+                  expect(wrapper.find('.success-message').exists()).toBe(true)
+                })
+
+                it('does not render error message', () => {
+                  expect(wrapper.find('.error-message').exists()).toBe(false)
+                })
               })
             })
           })
