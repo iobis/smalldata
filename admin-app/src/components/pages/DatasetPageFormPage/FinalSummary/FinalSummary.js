@@ -84,6 +84,7 @@ export default function FinalSummary({
                 name={t('datasetPageFormPage.basicInformation.language.label')}
                 value={basicInformation.language}/>
               <NameValueRow
+                className="abstract"
                 name={t('datasetPageFormPage.basicInformation.abstract.label')}
                 value={basicInformation.abstract}/>
             </tbody>

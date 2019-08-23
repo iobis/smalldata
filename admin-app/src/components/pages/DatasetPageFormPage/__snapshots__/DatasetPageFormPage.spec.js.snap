@@ -1684,11 +1684,12 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
                   </tr>
                 </NameValueRow>
                 <NameValueRow
+                  className="abstract"
                   name="datasetPageFormPage.basicInformation.abstract.label"
                   value="dataset abstract information"
                 >
                   <tr
-                    className="name-value-row fieldrow"
+                    className="name-value-row fieldrow abstract"
                   >
                     <td
                       className="name"
