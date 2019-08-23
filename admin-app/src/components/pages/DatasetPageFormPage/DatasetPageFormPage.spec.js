@@ -122,7 +122,7 @@ describe('DatasetPageFormPage', () => {
         wrapper.find('.step-2 .step-header').simulate('click')
       })
 
-      it('renders title dataset title on for previous step', () => {
+      it('renders dataset title on for previous step', () => {
         expect(wrapper.find('.step-header .selected-data').at(0).text()).toEqual('Benthic data from Sevastopol (Black Sea)')
       })
 
