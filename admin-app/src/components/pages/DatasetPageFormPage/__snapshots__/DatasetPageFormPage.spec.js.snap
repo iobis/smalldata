@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DatasetPageFormPage renders correctly 1`] = `
+exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
 <DatasetPageFormPage>
   <section
     className="section"
@@ -601,7 +601,7 @@ exports[`DatasetPageFormPage renders correctly 1`] = `
 </DatasetPageFormPage>
 `;
 
-exports[`DatasetPageFormPage renders correctly 2`] = `
+exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
 <DatasetPageFormPage>
   <section
     className="section"
@@ -1202,7 +1202,7 @@ exports[`DatasetPageFormPage renders correctly 2`] = `
 </DatasetPageFormPage>
 `;
 
-exports[`DatasetPageFormPage renders correctly 3`] = `
+exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
 <DatasetPageFormPage>
   <section
     className="section"
