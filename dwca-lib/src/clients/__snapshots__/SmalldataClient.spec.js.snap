@@ -595,3 +595,41 @@ Array [
   },
 ]
 `;
+
+exports[`SmalldataClient updateDataset() makes default request 1`] = `
+Object {
+  "abstract": Object {
+    "paragraphs": Array [
+      "abstract",
+    ],
+  },
+  "contacts": Array [],
+  "creators": Array [],
+  "keywordSets": Array [
+    Object {
+      "keywords": Array [
+        "keyword-1",
+      ],
+    },
+  ],
+  "language": "en",
+  "license": Object {
+    "title": "licence title",
+    "url": "licence url",
+  },
+  "meta": Object {
+    "dwcTables": Object {
+      "core": "occurrence",
+      "extensions": Array [
+        "emof",
+      ],
+    },
+    "type": "occurrence",
+  },
+  "metadataProviders": Array [],
+  "title": Object {
+    "language": "en",
+    "value": "title",
+  },
+}
+`;
