@@ -61,7 +61,10 @@ function DatasetRow({ id, title, organization, license }) {
 
   const toEdit = {
     pathname: '/manage-dataset/update/' + id,
-    state:    { action: 'update' }
+    state:    {
+      action: 'update',
+      id
+    }
   }
 
   return (
