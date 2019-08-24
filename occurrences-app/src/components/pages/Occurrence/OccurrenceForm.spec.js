@@ -222,6 +222,43 @@ describe('OccurrenceForm', () => {
       it('render 2 submit entry buttons error message', () => {
         expect(wrapper.find('.submit-entry-button button')).toHaveLength(2)
       })
+
+      describe('and then clicking submit', () => {
+        beforeAll(async() => {
+          SmalldataClient.updateOccurrence.mockImplementation(() =>
+            new Promise((resolve) => {
+              resolve({})
+            })
+          )
+          await act(async() => {
+            wrapper.find('.submit-entry-button button').at(0).simulate('click')
+          })
+          wrapper.update()
+        })
+
+        it('calls SmalldataClient.updateOccurrence once with correct data', () => {
+          expect(SmalldataClient.updateOccurrence).toHaveBeenCalledTimes(1)
+          expect(SmalldataClient.updateOccurrence).toHaveBeenNthCalledWith(
+            1,
+            expect.objectContaining({
+              occurrence: expect.any(Object),
+              userRef:    expect.stringMatching('ovZTtaOJZ98xDDY'),
+              dwcaId:     expect.stringMatching('IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796')
+            }))
+        })
+
+        it('render success message', () => {
+          expect(wrapper.find('.success-message').exists()).toBe(true)
+        })
+
+        xit('render success message with update title', () => {
+          expect(wrapper.find('.success-message .title').text()).toBe('occurrenceForm.finalSummary.successMessage.header.create')
+        })
+
+        it('does not render error message', () => {
+          expect(wrapper.find('.error-message').exists()).toBe(false)
+        })
+      })
     })
   })
 })
