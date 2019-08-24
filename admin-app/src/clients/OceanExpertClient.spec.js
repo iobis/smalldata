@@ -1,6 +1,10 @@
-import { searchExpertsByName } from './OceanExpertClient'
+import { getExpertById, searchExpertsByName } from './OceanExpertClient'
 
 describe('OceanExpertClient', () => {
+  afterEach(() => {
+    global.fetch.mockRestore()
+  })
+
   describe('searchExpertsByName', () => {
     beforeEach(() => {
       global.fetch = jest.fn().mockImplementation(() =>
@@ -12,10 +16,6 @@ describe('OceanExpertClient', () => {
           })
         })
       )
-    })
-
-    afterEach(() => {
-      global.fetch.mockRestore()
     })
 
     it('for some name', async() => {
@@ -54,16 +54,36 @@ describe('OceanExpertClient', () => {
         )
       })
 
-      afterEach(() => {
-        global.fetch.mockRestore()
-      })
-
       it('for not found response', async() => {
         const response = await searchExpertsByName('some strange name')
 
         expect(fetch).toHaveBeenCalledTimes(1)
         expect(response).toEqual([])
       })
+    })
+  })
+
+  describe('getExpertById(someId)', () => {
+    beforeEach(() => {
+      global.fetch = jest.fn().mockImplementation(() =>
+        new Promise((resolve) => {
+          resolve({
+            json: () => ({
+              fname:  'firstName',
+              sname:  'lastName',
+              email1: 'private@email.com'
+            })
+          })
+        })
+      )
+    })
+
+    it('for not found response', async() => {
+      const response = await getExpertById('expert-id')
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+      expect(fetch).toHaveBeenCalledWith('https://www.oceanexpert.net/api/v1/expert/expert-id.json')
+      expect(response).toEqual({ email: 'private@email.com', name: 'firstName lastName' })
     })
   })
 })
