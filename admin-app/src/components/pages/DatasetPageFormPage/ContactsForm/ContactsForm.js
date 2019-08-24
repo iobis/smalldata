@@ -18,6 +18,12 @@ export default function ContactsForm({ className, contactsTableHeader, data, onC
     onChange(newContacts)
   }
 
+  function handleRemoveClick(index) {
+    const newContacts = contacts.filter((_, i) => i !== index)
+    setContacts(newContacts)
+    onChange(newContacts)
+  }
+
   return (
     <div className={classNames('contacts-form', className)}>
       <InputText
@@ -52,7 +58,7 @@ export default function ContactsForm({ className, contactsTableHeader, data, onC
           <tbody>
             {contacts.map((contact, index) => (
               // eslint-disable-next-line react/no-array-index-key
-              <ContactRow key={index} {...contact} onRemove={console.log}/>
+              <ContactRow key={index} {...contact} onRemove={() => handleRemoveClick(index)}/>
             ))}
           </tbody>
         </table>
