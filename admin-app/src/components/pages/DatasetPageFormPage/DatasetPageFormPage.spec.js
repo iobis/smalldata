@@ -212,8 +212,8 @@ describe('DatasetPageFormPage', () => {
                 .toEqual('datasetPageFormPage.metadataProviders.step.selectedData {"nrOfContacts":1}')
             })
 
-            it('renders 6 keywords', () => {
-              expect(wrapper.find('.keywords .tag')).toHaveLength(6)
+            it('renders 4 keywords', () => {
+              expect(wrapper.find('.keywords .tag')).toHaveLength(4)
             })
 
             describe('and then clicking "Review and Submit" button', () => {

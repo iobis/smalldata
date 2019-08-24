@@ -2606,8 +2606,6 @@ paragraph-2",
           errorVisible={false}
           keywords={
             Array [
-              "Occurrence",
-              "Observation",
               "Benthic biomass",
               "Benthos",
               "Data",
@@ -3138,7 +3136,7 @@ paragraph-2
               <div
                 className="content"
               >
-                Occurrence, Observation, Benthic biomass, Benthos, Data, Marine Genomics
+                Benthic biomass, Benthos, Data, Marine Genomics
               </div>
               <ChangeButton
                 onClick={[Function]}
