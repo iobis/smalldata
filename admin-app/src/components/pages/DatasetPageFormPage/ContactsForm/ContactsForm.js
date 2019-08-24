@@ -9,12 +9,17 @@ export default function ContactsForm({ className, contactsTableHeader, data, onC
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [organisation, setOrganisation] = useState('')
-  const [position, setPosition] = useState('')
   const [contacts, setContacts] = useState(data)
 
   function handleAddClick() {
-    const contact = { name, email, organisation, position }
+    const contact = { name, email, organisation }
     const newContacts = [...contacts, contact]
+    setContacts(newContacts)
+    onChange(newContacts)
+  }
+
+  function handleRemoveClick(index) {
+    const newContacts = contacts.filter((_, i) => i !== index)
     setContacts(newContacts)
     onChange(newContacts)
   }
@@ -36,11 +41,6 @@ export default function ContactsForm({ className, contactsTableHeader, data, onC
         name="datasetPageFormPage.contactsForm.organisation"
         onChange={value => setOrganisation(value)}
         value={organisation}/>
-      <InputText
-        className="position"
-        name="datasetPageFormPage.contactsForm.position"
-        onChange={value => setPosition(value)}
-        value={position}/>
       <div className="column field">
         <button className="add button" onClick={handleAddClick}>{t('common.add')}</button>
       </div>
@@ -52,13 +52,13 @@ export default function ContactsForm({ className, contactsTableHeader, data, onC
               <th>{t('datasetPageFormPage.contactsForm.name.label')}</th>
               <th>{t('datasetPageFormPage.contactsForm.email.label')}</th>
               <th>{t('datasetPageFormPage.contactsForm.organisation.label')}</th>
-              <th>{t('datasetPageFormPage.contactsForm.position.label')}</th>
+              <th/>
             </tr>
           </thead>
           <tbody>
             {contacts.map((contact, index) => (
               // eslint-disable-next-line react/no-array-index-key
-              <ContactRow key={index} {...contact}/>
+              <ContactRow key={index} {...contact} onRemove={() => handleRemoveClick(index)}/>
             ))}
           </tbody>
         </table>
@@ -67,11 +67,10 @@ export default function ContactsForm({ className, contactsTableHeader, data, onC
   )
 }
 
-const contactShape = {
+export const contactShape = {
   email:        PropTypes.string.isRequired,
   name:         PropTypes.string.isRequired,
-  organisation: PropTypes.string.isRequired,
-  position:     PropTypes.string.isRequired
+  organisation: PropTypes.string.isRequired
 }
 
 ContactsForm.propTypes = {
@@ -81,13 +80,18 @@ ContactsForm.propTypes = {
   onChange:            PropTypes.func.isRequired
 }
 
-function ContactRow({ email, name, organisation, position }) {
+function ContactRow({ email, name, organisation, onRemove }) {
+  const { t } = useTranslation()
   return (
     <tr className="contact-row">
       <td className="name">{name}</td>
       <td className="email">{email}</td>
       <td className="organisation">{organisation}</td>
-      <td className="position">{position}</td>
+      <td className="action">
+        <button className="remove button" onClick={onRemove}>
+          {t('common.remove')}
+        </button>
+      </td>
     </tr>
   )
 }
@@ -95,6 +99,6 @@ function ContactRow({ email, name, organisation, position }) {
 ContactRow.propTypes = {
   email:        PropTypes.string.isRequired,
   name:         PropTypes.string.isRequired,
-  organisation: PropTypes.string.isRequired,
-  position:     PropTypes.string.isRequired
+  onRemove:     PropTypes.func.isRequired,
+  organisation: PropTypes.string.isRequired
 }

@@ -80,28 +80,6 @@ exports[`ResourceContacts renders correctly 1`] = `
           />
         </div>
       </InputText>
-      <InputText
-        className="position"
-        name="datasetPageFormPage.contactsForm.position"
-        onChange={[Function]}
-        value=""
-      >
-        <div
-          className="column field position"
-        >
-          <label
-            className="label"
-          >
-            datasetPageFormPage.contactsForm.position.label
-          </label>
-          <input
-            className="input"
-            onChange={[Function]}
-            type="text"
-            value=""
-          />
-        </div>
-      </InputText>
       <div
         className="column field"
       >
@@ -134,9 +112,7 @@ exports[`ResourceContacts renders correctly 1`] = `
               <th>
                 datasetPageFormPage.contactsForm.organisation.label
               </th>
-              <th>
-                datasetPageFormPage.contactsForm.position.label
-              </th>
+              <th />
             </tr>
           </thead>
           <tbody />

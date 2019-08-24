@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ContactsForm returns contacts when adding 1`] = `
+exports[`ContactsForm returns contacts when adding to empty list 1`] = `
 <ContactsForm
   className="custom-class"
   contactsTableHeader="Contacts Table Header"
@@ -76,28 +76,6 @@ exports[`ContactsForm returns contacts when adding 1`] = `
         />
       </div>
     </InputText>
-    <InputText
-      className="position"
-      name="datasetPageFormPage.contactsForm.position"
-      onChange={[Function]}
-      value=""
-    >
-      <div
-        className="column field position"
-      >
-        <label
-          className="label"
-        >
-          datasetPageFormPage.contactsForm.position.label
-        </label>
-        <input
-          className="input"
-          onChange={[Function]}
-          type="text"
-          value=""
-        />
-      </div>
-    </InputText>
     <div
       className="column field"
     >
@@ -130,9 +108,7 @@ exports[`ContactsForm returns contacts when adding 1`] = `
             <th>
               datasetPageFormPage.contactsForm.organisation.label
             </th>
-            <th>
-              datasetPageFormPage.contactsForm.position.label
-            </th>
+            <th />
           </tr>
         </thead>
         <tbody />
@@ -142,7 +118,7 @@ exports[`ContactsForm returns contacts when adding 1`] = `
 </ContactsForm>
 `;
 
-exports[`ContactsForm returns updated contacts when when adding 1`] = `
+exports[`ContactsForm returns updated contacts when adding to list with single element 1`] = `
 <ContactsForm
   className="custom-class"
   contactsTableHeader="Contacts Table Header"
@@ -152,7 +128,6 @@ exports[`ContactsForm returns updated contacts when when adding 1`] = `
         "email": "email-1",
         "name": "name-1",
         "organisation": "organisation-1",
-        "position": "position-1",
       },
     ]
   }
@@ -227,19 +202,165 @@ exports[`ContactsForm returns updated contacts when when adding 1`] = `
         />
       </div>
     </InputText>
+    <div
+      className="column field"
+    >
+      <button
+        className="add button"
+        onClick={[Function]}
+      >
+        common.add
+      </button>
+    </div>
+    <div
+      className="column field"
+    >
+      <div
+        className="title is-5 contacts-table-header"
+      >
+        Contacts Table Header
+      </div>
+      <table
+        className="general table is-fullwidth is-striped is-hoverable"
+      >
+        <thead>
+          <tr>
+            <th>
+              datasetPageFormPage.contactsForm.name.label
+            </th>
+            <th>
+              datasetPageFormPage.contactsForm.email.label
+            </th>
+            <th>
+              datasetPageFormPage.contactsForm.organisation.label
+            </th>
+            <th />
+          </tr>
+        </thead>
+        <tbody>
+          <ContactRow
+            email="email-1"
+            key="0"
+            name="name-1"
+            onRemove={[Function]}
+            organisation="organisation-1"
+          >
+            <tr
+              className="contact-row"
+            >
+              <td
+                className="name"
+              >
+                name-1
+              </td>
+              <td
+                className="email"
+              >
+                email-1
+              </td>
+              <td
+                className="organisation"
+              >
+                organisation-1
+              </td>
+              <td
+                className="action"
+              >
+                <button
+                  className="remove button"
+                  onClick={[Function]}
+                >
+                  common.remove
+                </button>
+              </td>
+            </tr>
+          </ContactRow>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</ContactsForm>
+`;
+
+exports[`ContactsForm when removing contacts removes first contact 1`] = `
+<ContactsForm
+  contactsTableHeader="Contacts Table Header"
+  data={
+    Array [
+      Object {
+        "email": "email-1",
+        "name": "name-1",
+        "organisation": "organisation-1",
+      },
+      Object {
+        "email": "email-2",
+        "name": "name-2",
+        "organisation": "organisation-2",
+      },
+    ]
+  }
+  onChange={[MockFunction]}
+>
+  <div
+    className="contacts-form"
+  >
     <InputText
-      className="position"
-      name="datasetPageFormPage.contactsForm.position"
+      className="name"
+      name="datasetPageFormPage.contactsForm.name"
       onChange={[Function]}
       value=""
     >
       <div
-        className="column field position"
+        className="column field name"
       >
         <label
           className="label"
         >
-          datasetPageFormPage.contactsForm.position.label
+          datasetPageFormPage.contactsForm.name.label
+        </label>
+        <input
+          className="input"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </div>
+    </InputText>
+    <InputText
+      className="email"
+      name="datasetPageFormPage.contactsForm.email"
+      onChange={[Function]}
+      value=""
+    >
+      <div
+        className="column field email"
+      >
+        <label
+          className="label"
+        >
+          datasetPageFormPage.contactsForm.email.label
+        </label>
+        <input
+          className="input"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </div>
+    </InputText>
+    <InputText
+      className="organisation"
+      name="datasetPageFormPage.contactsForm.organisation"
+      onChange={[Function]}
+      value=""
+    >
+      <div
+        className="column field organisation"
+      >
+        <label
+          className="label"
+        >
+          datasetPageFormPage.contactsForm.organisation.label
         </label>
         <input
           className="input"
@@ -281,9 +402,7 @@ exports[`ContactsForm returns updated contacts when when adding 1`] = `
             <th>
               datasetPageFormPage.contactsForm.organisation.label
             </th>
-            <th>
-              datasetPageFormPage.contactsForm.position.label
-            </th>
+            <th />
           </tr>
         </thead>
         <tbody>
@@ -291,8 +410,8 @@ exports[`ContactsForm returns updated contacts when when adding 1`] = `
             email="email-1"
             key="0"
             name="name-1"
+            onRemove={[Function]}
             organisation="organisation-1"
-            position="position-1"
           >
             <tr
               className="contact-row"
@@ -313,9 +432,256 @@ exports[`ContactsForm returns updated contacts when when adding 1`] = `
                 organisation-1
               </td>
               <td
-                className="position"
+                className="action"
               >
-                position-1
+                <button
+                  className="remove button"
+                  onClick={[Function]}
+                >
+                  common.remove
+                </button>
+              </td>
+            </tr>
+          </ContactRow>
+          <ContactRow
+            email="email-2"
+            key="1"
+            name="name-2"
+            onRemove={[Function]}
+            organisation="organisation-2"
+          >
+            <tr
+              className="contact-row"
+            >
+              <td
+                className="name"
+              >
+                name-2
+              </td>
+              <td
+                className="email"
+              >
+                email-2
+              </td>
+              <td
+                className="organisation"
+              >
+                organisation-2
+              </td>
+              <td
+                className="action"
+              >
+                <button
+                  className="remove button"
+                  onClick={[Function]}
+                >
+                  common.remove
+                </button>
+              </td>
+            </tr>
+          </ContactRow>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</ContactsForm>
+`;
+
+exports[`ContactsForm when removing contacts removes second contact 1`] = `
+<ContactsForm
+  contactsTableHeader="Contacts Table Header"
+  data={
+    Array [
+      Object {
+        "email": "email-1",
+        "name": "name-1",
+        "organisation": "organisation-1",
+      },
+      Object {
+        "email": "email-2",
+        "name": "name-2",
+        "organisation": "organisation-2",
+      },
+    ]
+  }
+  onChange={[MockFunction]}
+>
+  <div
+    className="contacts-form"
+  >
+    <InputText
+      className="name"
+      name="datasetPageFormPage.contactsForm.name"
+      onChange={[Function]}
+      value=""
+    >
+      <div
+        className="column field name"
+      >
+        <label
+          className="label"
+        >
+          datasetPageFormPage.contactsForm.name.label
+        </label>
+        <input
+          className="input"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </div>
+    </InputText>
+    <InputText
+      className="email"
+      name="datasetPageFormPage.contactsForm.email"
+      onChange={[Function]}
+      value=""
+    >
+      <div
+        className="column field email"
+      >
+        <label
+          className="label"
+        >
+          datasetPageFormPage.contactsForm.email.label
+        </label>
+        <input
+          className="input"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </div>
+    </InputText>
+    <InputText
+      className="organisation"
+      name="datasetPageFormPage.contactsForm.organisation"
+      onChange={[Function]}
+      value=""
+    >
+      <div
+        className="column field organisation"
+      >
+        <label
+          className="label"
+        >
+          datasetPageFormPage.contactsForm.organisation.label
+        </label>
+        <input
+          className="input"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </div>
+    </InputText>
+    <div
+      className="column field"
+    >
+      <button
+        className="add button"
+        onClick={[Function]}
+      >
+        common.add
+      </button>
+    </div>
+    <div
+      className="column field"
+    >
+      <div
+        className="title is-5 contacts-table-header"
+      >
+        Contacts Table Header
+      </div>
+      <table
+        className="general table is-fullwidth is-striped is-hoverable"
+      >
+        <thead>
+          <tr>
+            <th>
+              datasetPageFormPage.contactsForm.name.label
+            </th>
+            <th>
+              datasetPageFormPage.contactsForm.email.label
+            </th>
+            <th>
+              datasetPageFormPage.contactsForm.organisation.label
+            </th>
+            <th />
+          </tr>
+        </thead>
+        <tbody>
+          <ContactRow
+            email="email-1"
+            key="0"
+            name="name-1"
+            onRemove={[Function]}
+            organisation="organisation-1"
+          >
+            <tr
+              className="contact-row"
+            >
+              <td
+                className="name"
+              >
+                name-1
+              </td>
+              <td
+                className="email"
+              >
+                email-1
+              </td>
+              <td
+                className="organisation"
+              >
+                organisation-1
+              </td>
+              <td
+                className="action"
+              >
+                <button
+                  className="remove button"
+                  onClick={[Function]}
+                >
+                  common.remove
+                </button>
+              </td>
+            </tr>
+          </ContactRow>
+          <ContactRow
+            email="email-2"
+            key="1"
+            name="name-2"
+            onRemove={[Function]}
+            organisation="organisation-2"
+          >
+            <tr
+              className="contact-row"
+            >
+              <td
+                className="name"
+              >
+                name-2
+              </td>
+              <td
+                className="email"
+              >
+                email-2
+              </td>
+              <td
+                className="organisation"
+              >
+                organisation-2
+              </td>
+              <td
+                className="action"
+              >
+                <button
+                  className="remove button"
+                  onClick={[Function]}
+                >
+                  common.remove
+                </button>
               </td>
             </tr>
           </ContactRow>

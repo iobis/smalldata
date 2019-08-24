@@ -12,6 +12,7 @@ export default {
       longitude:  'Longitude',
       name:       'Name',
       remove:     'Remove',
+      submit:     'Submit',
       type:       'Type',
       unit:       'Unit',
       value:      'Value'
@@ -35,24 +36,21 @@ export default {
     },
     datasetPageFormPage: {
       basicInformation:      {
-        step:                   {
+        step:     {
           dataDescription: 'Basic Data',
           stepDescription: 'Supply the mandatory information for the dataset',
           stepTitle:       'Basic Information'
         },
-        title:                  {
+        title:    {
           label: 'Title'
         },
-        publishingOrganisation: {
-          label: 'Publishing Organisation'
-        },
-        licence:                {
+        licence:  {
           label: 'Licence'
         },
-        language:               {
+        language: {
           label: 'Language'
         },
-        abstract:               {
+        abstract: {
           label: 'Abstract'
         }
       },
@@ -63,7 +61,7 @@ export default {
           stepTitle:       'Resource Contacts',
           selectedData:    '{{nrOfContacts}} people coupled as resource contact'
         },
-        contactsTableHeader: 'Resource creators attached to dataset'
+        contactsTableHeader: 'Resource contacts attached to dataset'
       },
       resourceCreators:      {
         step:                {
@@ -95,6 +93,18 @@ export default {
           placeholder: ''
         }
       },
+      finalSummary:          {
+        title:          'Final Summary',
+        successMessage: {
+          header:      {
+            create: 'Your dataset has been created',
+            update: 'Your dataset has been updated.'
+          },
+          nextOptions: 'What would you like to do next?',
+          create:      'Create new dataset',
+          doNothing:   'nothing, I\'m done here for today'
+        }
+      },
       contactsForm:          {
         name:         {
           label: 'Name'
@@ -104,9 +114,6 @@ export default {
         },
         organisation: {
           label: 'Organisation'
-        },
-        position:     {
-          label: 'Position'
         }
       },
       reviewAndSubmitButton: 'Review and Submit'

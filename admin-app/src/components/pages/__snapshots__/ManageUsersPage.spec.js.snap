@@ -1,185 +1,215 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ManageUsersPage renders correctly for non empty users 1`] = `
-<MemoryRouter
-  initialEntries={
-    Array [
-      Object {
-        "key": "testKey",
-        "pathname": "/manage-users",
-      },
-    ]
-  }
->
-  <Router
-    history={
-      Object {
-        "action": "POP",
-        "block": [Function],
-        "canGo": [Function],
-        "createHref": [Function],
-        "entries": Array [
-          Object {
-            "hash": "",
-            "key": "testKey",
-            "pathname": "/manage-users",
-            "search": "",
-          },
-        ],
-        "go": [Function],
-        "goBack": [Function],
-        "goForward": [Function],
-        "index": 0,
-        "length": 1,
-        "listen": [Function],
-        "location": Object {
-          "hash": "",
-          "key": "testKey",
-          "pathname": "/manage-users",
-          "search": "",
-        },
-        "push": [Function],
-        "replace": [Function],
-      }
-    }
+exports[`ManageUsersPage when users provided renders correctly 1`] = `
+<ManageUsersPage>
+  <div
+    className="manage-users-page"
   >
-    <ManageUsersPage>
+    <section
+      className="section"
+    >
       <div
-        className="manage-users-page"
+        className="container is-fluid has-text-centered"
       >
-        <section
-          className="section"
+        <Link
+          className="button is-info"
+          to="/manage-users/create"
         >
-          <div
-            className="container is-fluid has-text-centered"
+          <a
+            className="button is-info"
+            href="/manage-users/create"
+            onClick={[Function]}
           >
-            <Link
-              className="button is-info"
-              to="/manage-users/create"
-            >
-              <a
-                className="button is-info"
-                href="/manage-users/create"
-                onClick={[Function]}
-              >
-                manageUsersPage.inputNew
-              </a>
-            </Link>
-          </div>
-        </section>
-        <Divider>
-          <div
-            className="divider"
-          >
-            <span>
-              manageUsersPage.or
-            </span>
-          </div>
-        </Divider>
-        <section
-          className="section"
-        >
-          <div
-            className="container is-fluid has-text-centered"
-          >
-            <h4
-              className="title is-4"
-            >
-              manageUsersPage.managePreviousEntries
-            </h4>
-            <table
-              className="table is-striped is-hoverable is-fullwidth"
-            >
-              <thead>
-                <tr>
-                  <th />
-                  <th>
-                    manageUsersPage.table.email
-                  </th>
-                  <th>
-                    manageUsersPage.table.accessToDatasets
-                  </th>
-                  <th>
-                    manageUsersPage.table.role
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <UserRow
-                  datasets={
-                    Array [
-                      Object {
-                        "id": "dataset-1-id",
-                        "title": Object {
-                          "value": "dataset-1-title",
-                        },
-                      },
-                    ]
-                  }
-                  email="email-1@domain.com"
-                  id="user-1"
-                  key="user-1"
-                >
-                  <tr
-                    className="user-row"
-                  >
-                    <td
-                      className="edit"
-                    >
-                      <Link
-                        className="button is-info"
-                        to={
-                          Object {
-                            "pathname": "/manage-users/update/user-1",
-                            "state": Object {
-                              "action": "update",
-                              "datasetIds": Array [
-                                "dataset-1-id",
-                              ],
-                              "email": "email-1@domain.com",
-                              "id": "user-1",
-                              "name": "",
-                              "role": "researcher",
-                            },
-                          }
-                        }
-                      >
-                        <a
-                          className="button is-info"
-                          href="/manage-users/update/user-1"
-                          onClick={[Function]}
-                        >
-                          common.edit
-                        </a>
-                      </Link>
-                    </td>
-                    <td
-                      className="email"
-                    >
-                      email-1@domain.com
-                    </td>
-                    <td
-                      className="datasets"
-                    >
-                      <ul>
-                        <li
-                          key="dataset-1-id"
-                        >
-                          dataset-1-title
-                        </li>
-                      </ul>
-                    </td>
-                    <td
-                      className="role"
-                    />
-                  </tr>
-                </UserRow>
-              </tbody>
-            </table>
-          </div>
-        </section>
+            manageUsersPage.inputNew
+          </a>
+        </Link>
       </div>
-    </ManageUsersPage>
-  </Router>
-</MemoryRouter>
+    </section>
+    <Divider>
+      <div
+        className="divider"
+      >
+        <span>
+          manageUsersPage.or
+        </span>
+      </div>
+    </Divider>
+    <section
+      className="section"
+    >
+      <div
+        className="container is-fluid has-text-centered"
+      >
+        <h4
+          className="title is-4"
+        >
+          manageUsersPage.managePreviousEntries
+        </h4>
+        <table
+          className="table is-striped is-hoverable is-fullwidth"
+        >
+          <thead>
+            <tr>
+              <th />
+              <th>
+                manageUsersPage.table.email
+              </th>
+              <th>
+                manageUsersPage.table.accessToDatasets
+              </th>
+              <th>
+                manageUsersPage.table.role
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <UserRow
+              datasets={
+                Array [
+                  Object {
+                    "id": "dataset-1-id",
+                    "title": Object {
+                      "value": "dataset-1-title",
+                    },
+                  },
+                ]
+              }
+              email="email-1@domain.com"
+              id="user-1"
+              key="user-1"
+            >
+              <tr
+                className="user-row"
+              >
+                <td
+                  className="edit"
+                >
+                  <Link
+                    className="button is-info"
+                    to={
+                      Object {
+                        "pathname": "/manage-users/update/user-1",
+                        "state": Object {
+                          "action": "update",
+                          "datasetIds": Array [
+                            "dataset-1-id",
+                          ],
+                          "email": "email-1@domain.com",
+                          "id": "user-1",
+                          "name": "",
+                          "role": "researcher",
+                        },
+                      }
+                    }
+                  >
+                    <a
+                      className="button is-info"
+                      href="/manage-users/update/user-1"
+                      onClick={[Function]}
+                    >
+                      common.edit
+                    </a>
+                  </Link>
+                </td>
+                <td
+                  className="email"
+                >
+                  email-1@domain.com
+                </td>
+                <td
+                  className="datasets"
+                >
+                  <ul>
+                    <li
+                      key="dataset-1-id"
+                    >
+                      dataset-1-title
+                    </li>
+                  </ul>
+                </td>
+                <td
+                  className="role"
+                >
+                  —
+                </td>
+              </tr>
+            </UserRow>
+            <UserRow
+              datasets={
+                Array [
+                  Object {
+                    "id": "dataset-1-id",
+                    "title": Object {
+                      "value": "dataset-1-title",
+                    },
+                  },
+                ]
+              }
+              email="email-2@domain.com"
+              id="user-2"
+              key="user-2"
+              role="node manager"
+            >
+              <tr
+                className="user-row"
+              >
+                <td
+                  className="edit"
+                >
+                  <Link
+                    className="button is-info"
+                    to={
+                      Object {
+                        "pathname": "/manage-users/update/user-2",
+                        "state": Object {
+                          "action": "update",
+                          "datasetIds": Array [
+                            "dataset-1-id",
+                          ],
+                          "email": "email-2@domain.com",
+                          "id": "user-2",
+                          "name": "",
+                          "role": "node manager",
+                        },
+                      }
+                    }
+                  >
+                    <a
+                      className="button is-info"
+                      href="/manage-users/update/user-2"
+                      onClick={[Function]}
+                    >
+                      common.edit
+                    </a>
+                  </Link>
+                </td>
+                <td
+                  className="email"
+                >
+                  email-2@domain.com
+                </td>
+                <td
+                  className="datasets"
+                >
+                  <ul>
+                    <li
+                      key="dataset-1-id"
+                    >
+                      dataset-1-title
+                    </li>
+                  </ul>
+                </td>
+                <td
+                  className="role"
+                >
+                  node manager
+                </td>
+              </tr>
+            </UserRow>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</ManageUsersPage>
 `;

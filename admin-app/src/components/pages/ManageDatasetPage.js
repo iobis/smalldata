@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import { useTranslation } from 'react-i18next'
-import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types'
 import Divider from '../layout/Divider'
+import PropTypes from 'prop-types'
+import React, { useEffect, useState } from 'react'
 import { getDatasets } from '@smalldata/dwca-lib/src/clients/SmalldataClient'
+import { getProperty } from '@smalldata/dwca-lib/src/common/objects'
+import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 export default function ManageDatasetPage() {
   const { t } = useTranslation()
@@ -41,9 +42,10 @@ export default function ManageDatasetPage() {
             <tbody>
               {datasets.map(dataset => (
                 <DatasetRow
+                  id={dataset.id}
                   key={dataset.id}
                   license={dataset.license.title}
-                  organization={dataset.metadataProviders[0].organizationName || '—'}
+                  organization={getProperty(() => dataset.metadataProviders[0].organizationName, '—')}
                   title={dataset.title.value}/>
               ))}
             </tbody>
@@ -54,12 +56,15 @@ export default function ManageDatasetPage() {
   )
 }
 
-function DatasetRow({ title, organization, license }) {
+function DatasetRow({ id, title, organization, license }) {
   const { t } = useTranslation()
 
   const toEdit = {
-    pathname: '/manage-dataset/update',
-    state:    { action: 'update' }
+    pathname: '/manage-dataset/update/' + id,
+    state:    {
+      action: 'update',
+      id
+    }
   }
 
   return (
@@ -77,6 +82,7 @@ function DatasetRow({ title, organization, license }) {
 }
 
 DatasetRow.propTypes = {
+  id:           PropTypes.string.isRequired,
   license:      PropTypes.string.isRequired,
   organization: PropTypes.string.isRequired,
   title:        PropTypes.string.isRequired

@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NameValueRow renders correctly for numeric value 1`] = `
+<table>
+  <tbody>
+    <NameValueRow
+      name="name"
+      value={12345}
+    >
+      <tr
+        className="name-value-row fieldrow"
+      >
+        <td
+          className="name"
+        >
+          name
+        </td>
+        <td
+          className="value"
+        >
+          12345
+        </td>
+      </tr>
+    </NameValueRow>
+  </tbody>
+</table>
+`;
+
+exports[`NameValueRow renders correctly for string value 1`] = `
+<table>
+  <tbody>
+    <NameValueRow
+      name="name"
+      value="value string"
+    >
+      <tr
+        className="name-value-row fieldrow"
+      >
+        <td
+          className="name"
+        >
+          name
+        </td>
+        <td
+          className="value"
+        >
+          value string
+        </td>
+      </tr>
+    </NameValueRow>
+  </tbody>
+</table>
+`;
+
+exports[`NameValueRow renders correctly if className is provided 1`] = `
+<table>
+  <tbody>
+    <NameValueRow
+      className="custom-class-name"
+      name="name"
+      value={12345}
+    >
+      <tr
+        className="name-value-row fieldrow custom-class-name"
+      >
+        <td
+          className="name"
+        >
+          name
+        </td>
+        <td
+          className="value"
+        >
+          12345
+        </td>
+      </tr>
+    </NameValueRow>
+  </tbody>
+</table>
+`;

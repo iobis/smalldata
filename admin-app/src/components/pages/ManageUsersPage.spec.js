@@ -1,10 +1,9 @@
-import SmalldataClient from '@smalldata/dwca-lib/src/clients/SmalldataClient'
-import { flushPromises, ignoreActWarning } from '@smalldata/test-utils-lib'
 import ManageUsersPage from './ManageUsersPage'
+import React from 'react'
+import SmalldataClient from '@smalldata/dwca-lib/src/clients/SmalldataClient'
+import { act } from 'react-dom/test-utils'
 import { MemoryRouter } from 'react-router-dom'
 import { mount } from 'enzyme'
-import React from 'react'
-import { act } from 'react-dom/test-utils'
 
 jest.mock('@smalldata/dwca-lib/src/clients/SmalldataClient', () => ({
   getUsersWithDatasets: jest.fn().mockImplementation(() =>
@@ -16,29 +15,45 @@ jest.mock('@smalldata/dwca-lib/src/clients/SmalldataClient', () => ({
           id:    'dataset-1-id',
           title: { value: 'dataset-1-title' }
         }]
+      }, {
+        _id:          'user-2',
+        role:         'node manager',
+        emailAddress: 'email-2@domain.com',
+        datasets:     [{
+          id:    'dataset-1-id',
+          title: { value: 'dataset-1-title' }
+        }]
       }])
     })
   )
 }))
 
 describe('ManageUsersPage', () => {
-  ignoreActWarning()
-
   let wrapper
 
-  it('renders correctly for non empty users', async() => {
-    act(() => {
-      wrapper = mount(
-        <MemoryRouter initialEntries={[{ pathname: '/manage-users', key: 'testKey' }]}>
-          <ManageUsersPage/>
-        </MemoryRouter>
-      )
+  describe('when users provided', () => {
+    beforeAll(async() => {
+      await act(async() => {
+        wrapper = mount(
+          <MemoryRouter initialEntries={[{ pathname: '/manage-users', key: 'testKey' }]}>
+            <ManageUsersPage/>
+          </MemoryRouter>
+        )
+      })
+      wrapper.update()
     })
-    expect(SmalldataClient.getUsersWithDatasets).toHaveBeenCalledWith()
 
-    await flushPromises()
-    wrapper.update()
-    expect(wrapper).toMatchSnapshot()
-    expect(wrapper.find('tbody tr')).toHaveLength(1)
+    it('calls SmalldataClient.getUsersWithDatasets without any args', () => {
+      expect(SmalldataClient.getUsersWithDatasets).toHaveBeenCalledTimes(1)
+      expect(SmalldataClient.getUsersWithDatasets).toHaveBeenCalledWith()
+    })
+
+    it('renders correctly', () => {
+      expect(wrapper.find(ManageUsersPage)).toMatchSnapshot()
+    })
+
+    it('renders 2 users', () => {
+      expect(wrapper.find('tbody tr')).toHaveLength(2)
+    })
   })
 })
