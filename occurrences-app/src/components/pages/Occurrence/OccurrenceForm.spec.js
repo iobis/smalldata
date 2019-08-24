@@ -3,7 +3,7 @@ import React from 'react'
 import SmalldataClient from '@smalldata/dwca-lib/src/clients/SmalldataClient'
 import { act } from 'react-dom/test-utils'
 import { AuthProvider } from '@smalldata/dwca-lib'
-import { getDatasetDefaultResponse, getDatasetsFixture } from '@smalldata/dwca-lib/src/clients/SmalldataClient.mock'
+import { getDatasetsFixture } from '@smalldata/dwca-lib/src/clients/SmalldataClient.mock'
 import { MemoryRouter } from 'react-router-dom'
 import { mount } from 'enzyme'
 
@@ -17,20 +17,13 @@ describe('OccurrenceForm', () => {
   let wrapper
 
   describe('when creating new occurrence', () => {
-    beforeAll(() => {
+    beforeAll(async() => {
       jest.spyOn(Date, 'now').mockImplementation(() => new Date(Date.UTC(2019, 3, 29)).valueOf())
       SmalldataClient.getDatasets.mockImplementation(() =>
         new Promise((resolve) => {
           resolve(getDatasetsFixture())
         })
       )
-    })
-
-    afterAll(() => {
-      jest.spyOn(Date, 'now').mockRestore()
-    })
-
-    it('renders correctly', async() => {
       await act(async() => {
         wrapper = mount(
           <AuthProvider>
@@ -40,8 +33,18 @@ describe('OccurrenceForm', () => {
           </AuthProvider>
         )
       })
+      wrapper.update()
+    })
+
+    afterAll(() => {
+      jest.spyOn(Date, 'now').mockRestore()
+    })
+
+    it('renders correctly', async() => {
       expect(SmalldataClient.getDatasets).toHaveBeenCalledTimes(1)
       expect(SmalldataClient.getDatasets).toHaveBeenNthCalledWith(1)
+      expect(wrapper.find('.dataset').exists()).toBe(true)
+      expect(wrapper.find('.dataset-option')).toHaveLength(4)
       expect(wrapper).toMatchSnapshot()
 
       addLocation(wrapper)
