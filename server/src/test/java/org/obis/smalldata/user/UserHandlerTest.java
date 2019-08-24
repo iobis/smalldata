@@ -32,6 +32,8 @@ public class UserHandlerTest {
   private static final String KEY_REF = "_ref";
   private static final String KEY_VALUE = "value";
   private static final String QUERY_REF = "ref";
+  private static final String USERS = "user";
+  private static final String USER_REF = "userRef";
   private static final String DEFAULT_EMAIL_ADDRESS = "my.user@domain.org";
   private TestDb testDb;
 
@@ -63,7 +65,7 @@ public class UserHandlerTest {
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
   void findAllUsers(Vertx vertx, VertxTestContext testContext) {
     vertx.eventBus().<JsonArray>send(
-      "users",
+      USERS,
       new JsonObject(Map.of(KEY_ACTION, "find")),
       ar -> {
         if (ar.succeeded()) {
@@ -89,7 +91,7 @@ public class UserHandlerTest {
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
   void findUserByEmail(Vertx vertx, VertxTestContext testContext) {
     vertx.eventBus().<JsonArray>send(
-      "users",
+      USERS,
       new JsonObject(Map.of(
         KEY_ACTION, "find",
         "query", new JsonObject().put(KEY_EMAIL_ADDRESS, "some.user@domain.org"))),
@@ -120,7 +122,7 @@ public class UserHandlerTest {
       Collections.USERS.dbName(),
       new JsonObject(Map.of(
         KEY_ACTION, "insert",
-        "user", new JsonObject().put(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS))),
+        USERS, new JsonObject().put(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS))),
       ar -> {
         if (ar.succeeded()) {
           assertThat(ar.succeeded()).isTrue();
@@ -144,7 +146,7 @@ public class UserHandlerTest {
       Collections.USERS.dbName(),
       new JsonObject(Map.of(
         KEY_ACTION, "insert",
-        "user", new JsonObject()
+        USERS, new JsonObject()
           .put(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS)
           .put(KEY_NAME, "Indiana Jones")
           .put(KEY_ROLE, "node manager"))),
@@ -173,7 +175,7 @@ public class UserHandlerTest {
       Collections.USERS.dbName(),
       new JsonObject(Map.of(
         KEY_ACTION, "insert",
-        "user", new JsonObject()
+        USERS, new JsonObject()
           .put(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS)
           .put(KEY_BULKINESS, new JsonObject()
             .put("instant", Instant.now())
@@ -201,8 +203,8 @@ public class UserHandlerTest {
       Collections.USERS.dbName(),
       new JsonObject(Map.of(
         KEY_ACTION, "replace",
-        "userRef", "FsfEMwhUTO_8I68",
-        "user", new JsonObject()
+        USER_REF, "FsfEMwhUTO_8I68",
+        USERS, new JsonObject()
           .put(KEY_EMAIL_ADDRESS, "my.otheruser@domain.com")
           .put(KEY_BULKINESS, new JsonObject()
             .put("instant", Instant.now())
@@ -228,9 +230,9 @@ public class UserHandlerTest {
   void increaseBulkiness(Vertx vertx, VertxTestContext testContext) {
     vertx.eventBus().<JsonObject>send(
       "users.bulkiness",
-      new JsonObject()
-        .put("action", "increase")
-        .put("userRef", "FsfEMwhUTO_8I68"),
+      new JsonObject(Map.of(
+        KEY_ACTION, "increase",
+        USER_REF, "FsfEMwhUTO_8I68")),
       ar -> {
         if (ar.succeeded()) {
           var bulkiness = ar.result().body().getJsonObject("bulkiness");
