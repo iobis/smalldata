@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ContactsForm returns contacts when adding to empty list 1`] = `
+exports[`ContactsForm returns contacts when adding to empty list renders correctly 1`] = `
 <ContactsForm
   className="custom-class"
   contactsTableHeader="Contacts Table Header"
@@ -10,28 +10,49 @@ exports[`ContactsForm returns contacts when adding to empty list 1`] = `
   <div
     className="contacts-form custom-class"
   >
-    <InputText
-      className="name"
-      name="datasetPageFormPage.contactsForm.name"
+    <OceanExpertNameInput
+      oceanExpertName=""
       onChange={[Function]}
-      value=""
     >
       <div
-        className="column field name"
+        className="ocean-expert-name-input field column is-four-fifths"
       >
-        <label
-          className="label"
+        <div
+          className="dropdown"
         >
-          datasetPageFormPage.contactsForm.name.label
-        </label>
-        <input
-          className="input"
-          onChange={[Function]}
-          type="text"
-          value=""
-        />
+          <div
+            className="dropdown-trigger"
+          >
+            <label
+              className="label"
+            >
+              userFormPage.name.label
+            </label>
+            <div
+              className="control has-icons-right"
+            >
+              <input
+                className="input"
+                onChange={[Function]}
+                onClick={[Function]}
+                placeholder=""
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            className="dropdown-menu"
+            id="dropdown-menu"
+            role="menu"
+          >
+            <div
+              className="dropdown-content"
+            />
+          </div>
+        </div>
       </div>
-    </InputText>
+    </OceanExpertNameInput>
     <InputText
       className="email"
       name="datasetPageFormPage.contactsForm.email"
@@ -118,7 +139,7 @@ exports[`ContactsForm returns contacts when adding to empty list 1`] = `
 </ContactsForm>
 `;
 
-exports[`ContactsForm returns updated contacts when adding to list with single element 1`] = `
+exports[`ContactsForm returns updated contacts when adding to list with single element renders correctly 1`] = `
 <ContactsForm
   className="custom-class"
   contactsTableHeader="Contacts Table Header"
@@ -136,28 +157,49 @@ exports[`ContactsForm returns updated contacts when adding to list with single e
   <div
     className="contacts-form custom-class"
   >
-    <InputText
-      className="name"
-      name="datasetPageFormPage.contactsForm.name"
+    <OceanExpertNameInput
+      oceanExpertName=""
       onChange={[Function]}
-      value=""
     >
       <div
-        className="column field name"
+        className="ocean-expert-name-input field column is-four-fifths"
       >
-        <label
-          className="label"
+        <div
+          className="dropdown"
         >
-          datasetPageFormPage.contactsForm.name.label
-        </label>
-        <input
-          className="input"
-          onChange={[Function]}
-          type="text"
-          value=""
-        />
+          <div
+            className="dropdown-trigger"
+          >
+            <label
+              className="label"
+            >
+              userFormPage.name.label
+            </label>
+            <div
+              className="control has-icons-right"
+            >
+              <input
+                className="input"
+                onChange={[Function]}
+                onClick={[Function]}
+                placeholder=""
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            className="dropdown-menu"
+            id="dropdown-menu"
+            role="menu"
+          >
+            <div
+              className="dropdown-content"
+            />
+          </div>
+        </div>
       </div>
-    </InputText>
+    </OceanExpertNameInput>
     <InputText
       className="email"
       name="datasetPageFormPage.contactsForm.email"
@@ -304,28 +346,49 @@ exports[`ContactsForm when removing contacts removes first contact 1`] = `
   <div
     className="contacts-form"
   >
-    <InputText
-      className="name"
-      name="datasetPageFormPage.contactsForm.name"
+    <OceanExpertNameInput
+      oceanExpertName=""
       onChange={[Function]}
-      value=""
     >
       <div
-        className="column field name"
+        className="ocean-expert-name-input field column is-four-fifths"
       >
-        <label
-          className="label"
+        <div
+          className="dropdown"
         >
-          datasetPageFormPage.contactsForm.name.label
-        </label>
-        <input
-          className="input"
-          onChange={[Function]}
-          type="text"
-          value=""
-        />
+          <div
+            className="dropdown-trigger"
+          >
+            <label
+              className="label"
+            >
+              userFormPage.name.label
+            </label>
+            <div
+              className="control has-icons-right"
+            >
+              <input
+                className="input"
+                onChange={[Function]}
+                onClick={[Function]}
+                placeholder=""
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            className="dropdown-menu"
+            id="dropdown-menu"
+            role="menu"
+          >
+            <div
+              className="dropdown-content"
+            />
+          </div>
+        </div>
       </div>
-    </InputText>
+    </OceanExpertNameInput>
     <InputText
       className="email"
       name="datasetPageFormPage.contactsForm.email"
@@ -509,28 +572,49 @@ exports[`ContactsForm when removing contacts removes second contact 1`] = `
   <div
     className="contacts-form"
   >
-    <InputText
-      className="name"
-      name="datasetPageFormPage.contactsForm.name"
+    <OceanExpertNameInput
+      oceanExpertName=""
       onChange={[Function]}
-      value=""
     >
       <div
-        className="column field name"
+        className="ocean-expert-name-input field column is-four-fifths"
       >
-        <label
-          className="label"
+        <div
+          className="dropdown"
         >
-          datasetPageFormPage.contactsForm.name.label
-        </label>
-        <input
-          className="input"
-          onChange={[Function]}
-          type="text"
-          value=""
-        />
+          <div
+            className="dropdown-trigger"
+          >
+            <label
+              className="label"
+            >
+              userFormPage.name.label
+            </label>
+            <div
+              className="control has-icons-right"
+            >
+              <input
+                className="input"
+                onChange={[Function]}
+                onClick={[Function]}
+                placeholder=""
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            className="dropdown-menu"
+            id="dropdown-menu"
+            role="menu"
+          >
+            <div
+              className="dropdown-content"
+            />
+          </div>
+        </div>
       </div>
-    </InputText>
+    </OceanExpertNameInput>
     <InputText
       className="email"
       name="datasetPageFormPage.contactsForm.email"
