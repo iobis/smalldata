@@ -35,7 +35,7 @@ describe('OccurrenceForm', () => {
       await act(async() => {
         wrapper = mount(
           <AuthProvider>
-            <MemoryRouter initialEntries={[{ pathname: '/input-data/update', key: 'testKey' }]}>
+            <MemoryRouter initialEntries={[{ pathname: '/input-data/create', key: 'testKey' }]}>
               <OccurrenceForm/>
             </MemoryRouter>
           </AuthProvider>
@@ -44,32 +44,42 @@ describe('OccurrenceForm', () => {
       wrapper.update()
     })
 
-    it('renders correctly', async() => {
+    afterAll(() => {
+      jest.clearAllMocks()
+    })
+
+    it('calls SmalldataClient.getDatasets once once without any args', () => {
       expect(SmalldataClient.getDatasets).toHaveBeenCalledTimes(1)
       expect(SmalldataClient.getDatasets).toHaveBeenNthCalledWith(1)
+    })
+
+    it('renders renders datasets', () => {
       expect(wrapper.find('.dataset').exists()).toBe(true)
       expect(wrapper.find('.dataset-option')).toHaveLength(4)
-      expect(wrapper).toMatchSnapshot()
+    })
+
+    it('renders correctly', async() => {
+      expect(wrapper.find(OccurrenceForm)).toMatchSnapshot()
 
       addLocation(wrapper)
       wrapper.find('.step-4 .step-header').simulate('click')
-      expect(wrapper).toMatchSnapshot()
+      expect(wrapper.find(OccurrenceForm)).toMatchSnapshot()
 
       addObservationData(wrapper)
       wrapper.find('.step-5 .step-header').simulate('click')
-      expect(wrapper).toMatchSnapshot()
+      expect(wrapper.find(OccurrenceForm)).toMatchSnapshot()
 
       addMeasurement(wrapper, '10')
       wrapper.find('.step-6 .step-header').simulate('click')
-      expect(wrapper).toMatchSnapshot()
+      expect(wrapper.find(OccurrenceForm)).toMatchSnapshot()
 
       addMeasurement(wrapper, '20')
       wrapper.find('.step-6 .step-header').simulate('click')
-      expect(wrapper).toMatchSnapshot()
+      expect(wrapper.find(OccurrenceForm)).toMatchSnapshot()
 
       addMeasurement(wrapper, '20')
       wrapper.find('.step-6 .step-header').simulate('click')
-      expect(wrapper).toMatchSnapshot()
+      expect(wrapper.find(OccurrenceForm)).toMatchSnapshot()
 
       expect(wrapper.find('.fieldrow')).toHaveLength(0)
       addDarwinCoreField(wrapper, 'name-1', 'value-1')
@@ -91,7 +101,7 @@ describe('OccurrenceForm', () => {
       })
 
       it('renders correctly', () => {
-        expect(wrapper).toMatchSnapshot()
+        expect(wrapper.find(OccurrenceForm)).toMatchSnapshot()
         expect(wrapper.find('.final-summary').exists()).toBe(true)
       })
 
@@ -142,11 +152,6 @@ describe('OccurrenceForm', () => {
 
   describe('when updating occurrence', () => {
     beforeAll(async() => {
-      SmalldataClient.getDatasets.mockImplementation(() =>
-        new Promise((resolve) => {
-          resolve(getDatasetsFixture())
-        })
-      )
       SmalldataClient.getOccurrence.mockImplementation(() =>
         new Promise((resolve) => {
           resolve(getDefaultDwcaResponse())
@@ -166,12 +171,16 @@ describe('OccurrenceForm', () => {
               <OccurrenceForm location={location}/>
             </MemoryRouter>
           </AuthProvider>
-        ).find(OccurrenceForm)
+        )
       })
       wrapper.update()
     })
 
-    it('calls SmalldataClient.getOccurrence once without any args', () => {
+    afterAll(() => {
+      jest.clearAllMocks()
+    })
+
+    it('calls SmalldataClient.getOccurrence once', () => {
       expect(SmalldataClient.getOccurrence).toHaveBeenCalledWith({
         datasetId: 'ntDOtUc7XsRrIus',
         dwcaId:    'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796',
@@ -179,12 +188,17 @@ describe('OccurrenceForm', () => {
       })
     })
 
-    it('calls SmalldataClient.getDatasets once without any args', () => {
-      expect(SmalldataClient.getDatasets).toHaveBeenCalledWith()
+    it('calls SmalldataClient.getDatasets two times without any args', () => {
+      expect(SmalldataClient.getDatasets).toHaveBeenCalledTimes(2)
     })
 
     it('renders correctly', () => {
-      expect(wrapper).toMatchSnapshot()
+      expect(wrapper.find(OccurrenceForm)).toMatchSnapshot()
+    })
+
+    it('renders datasets', () => {
+      expect(wrapper.find('.dataset').exists()).toBe(true)
+      expect(wrapper.find('.dataset-option')).toHaveLength(4)
     })
   })
 })
