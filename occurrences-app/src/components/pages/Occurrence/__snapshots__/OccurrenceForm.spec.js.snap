@@ -7816,3 +7816,455 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 6`] = `
   </MemoryRouter>
 </AuthProvider>
 `;
+
+exports[`OccurrenceForm when updating occurrence renders correctly 1`] = `
+<OccurrenceForm
+  location={
+    Object {
+      "state": Object {
+        "action": "update",
+        "datasetId": "ntDOtUc7XsRrIus",
+        "dwcaId": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796",
+      },
+    }
+  }
+>
+  <section
+    className="section"
+  >
+    <ActiveStepHeader
+      activeStepIndex={0}
+      className="step-1 background-color-0"
+      dataDescription="occurrenceForm.dataset.step.dataDescription"
+      key="occurrenceForm.dataset.step.stepTitle"
+      nextStep="occurrenceForm.occurrenceData.step.stepTitle"
+      onContinueButtonClick={[Function]}
+      onCopyPreviousDataClick={[Function]}
+      onStepTitleClick={[Function]}
+      selectedData=""
+      stepDescription="occurrenceForm.dataset.step.stepDescription"
+      stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
+      totalSteps={5}
+    >
+      <StepHeader
+        className="active has-background-grey has-text-white"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="occurrenceForm.dataset.step.stepDescription"
+        stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered active has-background-grey has-text-white"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          />
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              occurrenceForm.dataset.step.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                1 - occurrenceForm.dataset.step.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+      <StepFooter
+        activeStepIndex={0}
+        nextStep="occurrenceForm.occurrenceData.step.stepTitle"
+        onContinueButtonClick={[Function]}
+        onCopyPreviousDataClick={[Function]}
+      >
+        <div
+          className="step-footer columns section"
+        >
+          <CopyPreviousData
+            onClick={[Function]}
+            visible={true}
+          >
+            <div
+              className="columns"
+            >
+              <div
+                className="copy-previous-data column is-narrow"
+                onClick={[Function]}
+              >
+                occurrenceForm.copyPreviousStep
+              </div>
+            </div>
+          </CopyPreviousData>
+          <ContinueButton
+            name="locationContinue"
+            onClick={[Function]}
+            value="occurrenceForm.occurrenceData.step.stepTitle"
+          >
+            <button
+              className="continue-button button is-info"
+              name="locationContinue"
+              onClick={[Function]}
+            >
+              common.continueTo occurrenceform.occurrencedata.step.steptitle
+            </button>
+          </ContinueButton>
+        </div>
+      </StepFooter>
+    </ActiveStepHeader>
+    <NotConfirmedStepHeader
+      activeStepIndex={0}
+      className="step-2 background-color-5"
+      dataDescription="occurrenceForm.occurrenceData.step.dataDescription"
+      key="occurrenceForm.occurrenceData.step.stepTitle"
+      nextStep="occurrenceForm.locationData.step.stepTitle"
+      onContinueButtonClick={[Function]}
+      onCopyPreviousDataClick={[Function]}
+      onStepTitleClick={[Function]}
+      selectedData={
+        <OccurrenceDataSummary
+          basisOfRecord="humanObservation"
+          beginDate={1556496000000}
+          endDate={null}
+          lifeStage="larva"
+          occurrenceStatus="present"
+          scientificName=""
+          sex="male"
+        />
+      }
+      stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
+      stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
+      totalSteps={5}
+    >
+      <StepHeader
+        className="not-confirmed has-text-white step-2 background-color-5"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
+        stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered not-confirmed has-text-white step-2 background-color-5"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          />
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              occurrenceForm.occurrenceData.step.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                2 - occurrenceForm.occurrenceData.step.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </NotConfirmedStepHeader>
+    <NotConfirmedStepHeader
+      activeStepIndex={0}
+      className="step-3 background-color-10"
+      dataDescription="occurrenceForm.locationData.step.dataDescription"
+      key="occurrenceForm.locationData.step.stepTitle"
+      nextStep="occurrenceForm.observationData.step.stepTitle"
+      onContinueButtonClick={[Function]}
+      onCopyPreviousDataClick={[Function]}
+      onStepTitleClick={[Function]}
+      selectedData={
+        <SelectedLocation
+          coordinateUncertainty={null}
+          decimalLatitude={null}
+          decimalLongitude={null}
+          maximumDepth={null}
+          minimumDepth={null}
+          verbatimCoordinates=""
+          verbatimDepth=""
+        />
+      }
+      stepDescription="occurrenceForm.locationData.step.stepDescription"
+      stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
+      totalSteps={5}
+    >
+      <StepHeader
+        className="not-confirmed has-text-white step-3 background-color-10"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="occurrenceForm.locationData.step.stepDescription"
+        stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered not-confirmed has-text-white step-3 background-color-10"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          />
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              occurrenceForm.locationData.step.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                3 - occurrenceForm.locationData.step.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </NotConfirmedStepHeader>
+    <NotConfirmedStepHeader
+      activeStepIndex={0}
+      className="step-4 background-color-15"
+      dataDescription="occurrenceForm.observationData.step.dataDescription"
+      key="occurrenceForm.observationData.step.stepTitle"
+      nextStep="occurrenceForm.measurementOrFact.step.stepTitle"
+      onContinueButtonClick={[Function]}
+      onCopyPreviousDataClick={[Function]}
+      onStepTitleClick={[Function]}
+      selectedData=""
+      stepDescription="occurrenceForm.observationData.step.stepDescription"
+      stepTitle="4 - occurrenceForm.observationData.step.stepTitle"
+      totalSteps={5}
+    >
+      <StepHeader
+        className="not-confirmed has-text-white step-4 background-color-15"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="occurrenceForm.observationData.step.stepDescription"
+        stepTitle="4 - occurrenceForm.observationData.step.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered not-confirmed has-text-white step-4 background-color-15"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          />
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              occurrenceForm.observationData.step.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                4 - occurrenceForm.observationData.step.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </NotConfirmedStepHeader>
+    <NotConfirmedStepHeader
+      activeStepIndex={0}
+      className="step-5 background-color-20"
+      dataDescription="occurrenceForm.measurementOrFact.step.dataDescription"
+      key="occurrenceForm.measurementOrFact.step.stepTitle"
+      nextStep="occurrenceForm.darwinCoreFields.step.stepTitle"
+      onContinueButtonClick={[Function]}
+      onCopyPreviousDataClick={[Function]}
+      onStepTitleClick={[Function]}
+      selectedData={
+        <MeasurementOrFactSummary
+          data={Array []}
+        />
+      }
+      stepDescription="occurrenceForm.measurementOrFact.step.stepDescription"
+      stepTitle="5 - occurrenceForm.measurementOrFact.step.stepTitle"
+      totalSteps={5}
+    >
+      <StepHeader
+        className="not-confirmed has-text-white step-5 background-color-20"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="occurrenceForm.measurementOrFact.step.stepDescription"
+        stepTitle="5 - occurrenceForm.measurementOrFact.step.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered not-confirmed has-text-white step-5 background-color-20"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          />
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              occurrenceForm.measurementOrFact.step.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                5 - occurrenceForm.measurementOrFact.step.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </NotConfirmedStepHeader>
+    <NotConfirmedStepHeader
+      activeStepIndex={0}
+      className="step-6 background-color-25"
+      dataDescription=""
+      key="occurrenceForm.darwinCoreFields.step.stepTitle"
+      onContinueButtonClick={[Function]}
+      onCopyPreviousDataClick={[Function]}
+      onStepTitleClick={[Function]}
+      selectedData=""
+      stepDescription="occurrenceForm.darwinCoreFields.step.stepDescription"
+      stepTitle="6 - occurrenceForm.darwinCoreFields.step.stepTitle"
+      totalSteps={5}
+    >
+      <StepHeader
+        className="not-confirmed has-text-white step-6 background-color-25"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="occurrenceForm.darwinCoreFields.step.stepDescription"
+        stepTitle="6 - occurrenceForm.darwinCoreFields.step.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered not-confirmed has-text-white step-6 background-color-25"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          />
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              occurrenceForm.darwinCoreFields.step.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                6 - occurrenceForm.darwinCoreFields.step.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </NotConfirmedStepHeader>
+    <div
+      className="columns column is-centered"
+    >
+      <button
+        className="review-and-submit-button button is-medium is-info"
+        disabled={true}
+        onClick={[Function]}
+      >
+        occurrenceForm.reviewAndSubmitButton
+      </button>
+    </div>
+  </section>
+</OccurrenceForm>
+`;

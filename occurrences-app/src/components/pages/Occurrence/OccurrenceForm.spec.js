@@ -3,22 +3,30 @@ import React from 'react'
 import SmalldataClient from '@smalldata/dwca-lib/src/clients/SmalldataClient'
 import { act } from 'react-dom/test-utils'
 import { AuthProvider } from '@smalldata/dwca-lib'
-import { getDatasetsFixture } from '@smalldata/dwca-lib/src/clients/SmalldataClient.mock'
+import { getDatasetsFixture, getDefaultDwcaResponse } from '@smalldata/dwca-lib/src/clients/SmalldataClient.mock'
 import { MemoryRouter } from 'react-router-dom'
 import { mount } from 'enzyme'
 
 jest.mock('@smalldata/dwca-lib/src/clients/SmalldataClient', () => ({
-  getDatasets:      jest.fn(),
   createOccurrence: jest.fn(),
+  getDatasets:      jest.fn(),
+  getOccurrence:    jest.fn(),
   updateOccurrence: jest.fn()
 }))
 
 describe('OccurrenceForm', () => {
   let wrapper
 
+  beforeAll(() => {
+    jest.spyOn(Date, 'now').mockImplementation(() => new Date(Date.UTC(2019, 3, 29)).valueOf())
+  })
+
+  afterAll(() => {
+    jest.spyOn(Date, 'now').mockRestore()
+  })
+
   describe('when creating new occurrence', () => {
     beforeAll(async() => {
-      jest.spyOn(Date, 'now').mockImplementation(() => new Date(Date.UTC(2019, 3, 29)).valueOf())
       SmalldataClient.getDatasets.mockImplementation(() =>
         new Promise((resolve) => {
           resolve(getDatasetsFixture())
@@ -34,10 +42,6 @@ describe('OccurrenceForm', () => {
         )
       })
       wrapper.update()
-    })
-
-    afterAll(() => {
-      jest.spyOn(Date, 'now').mockRestore()
     })
 
     it('renders correctly', async() => {
@@ -133,6 +137,54 @@ describe('OccurrenceForm', () => {
           expect(wrapper.find('.error-message').exists()).toBe(false)
         })
       })
+    })
+  })
+
+  describe('when updating occurrence', () => {
+    beforeAll(async() => {
+      SmalldataClient.getDatasets.mockImplementation(() =>
+        new Promise((resolve) => {
+          resolve(getDatasetsFixture())
+        })
+      )
+      SmalldataClient.getOccurrence.mockImplementation(() =>
+        new Promise((resolve) => {
+          resolve(getDefaultDwcaResponse())
+        })
+      )
+      const location = {
+        state: {
+          action:    'update',
+          datasetId: 'ntDOtUc7XsRrIus',
+          dwcaId:    'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796'
+        }
+      }
+      await act(async() => {
+        wrapper = mount(
+          <AuthProvider>
+            <MemoryRouter initialEntries={[{ pathname: '/input-data/update', key: 'testKey' }]}>
+              <OccurrenceForm location={location}/>
+            </MemoryRouter>
+          </AuthProvider>
+        ).find(OccurrenceForm)
+      })
+      wrapper.update()
+    })
+
+    it('calls SmalldataClient.getOccurrence once without any args', () => {
+      expect(SmalldataClient.getOccurrence).toHaveBeenCalledWith({
+        datasetId: 'ntDOtUc7XsRrIus',
+        dwcaId:    'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796',
+        userRef:   'ovZTtaOJZ98xDDY'
+      })
+    })
+
+    it('calls SmalldataClient.getDatasets once without any args', () => {
+      expect(SmalldataClient.getDatasets).toHaveBeenCalledWith()
+    })
+
+    it('renders correctly', () => {
+      expect(wrapper).toMatchSnapshot()
     })
   })
 })
