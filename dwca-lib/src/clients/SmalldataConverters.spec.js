@@ -235,6 +235,12 @@ describe('SmalldataConverters', () => {
         electronicMailAddress: 'MetadataProviders-2@acme.com'
       }],
       keywordSets:       [{
+        keywords:         ['Occurrence'],
+        keywordThesaurus: 'GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml'
+      }, {
+        keywords:         ['Observation'],
+        keywordThesaurus: 'GBIF Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml'
+      }, {
         keywords: ['Keyword-1', 'Keyword-2']
       }]
     })

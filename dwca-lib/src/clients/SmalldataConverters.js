@@ -216,6 +216,12 @@ export function mapUiDatasetToRequest({ basicInformation, resourceContacts, reso
     contacts:          resourceContacts.map(mapContactToRequest),
     metadataProviders: metadataProviders.map(mapContactToRequest),
     keywordSets:       [{
+      keywords:         ['Occurrence'],
+      keywordThesaurus: 'GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml'
+    }, {
+      keywords:         ['Observation'],
+      keywordThesaurus: 'GBIF Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml'
+    }, {
       keywords
     }]
   }

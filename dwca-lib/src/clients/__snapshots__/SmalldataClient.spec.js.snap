@@ -11,6 +11,18 @@ Object {
   "creators": Array [],
   "keywordSets": Array [
     Object {
+      "keywordThesaurus": "GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml",
+      "keywords": Array [
+        "Occurrence",
+      ],
+    },
+    Object {
+      "keywordThesaurus": "GBIF Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml",
+      "keywords": Array [
+        "Observation",
+      ],
+    },
+    Object {
       "keywords": Array [
         "keyword-1",
       ],
@@ -606,6 +618,18 @@ Object {
   "contacts": Array [],
   "creators": Array [],
   "keywordSets": Array [
+    Object {
+      "keywordThesaurus": "GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml",
+      "keywords": Array [
+        "Occurrence",
+      ],
+    },
+    Object {
+      "keywordThesaurus": "GBIF Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml",
+      "keywords": Array [
+        "Observation",
+      ],
+    },
     Object {
       "keywords": Array [
         "keyword-1",
