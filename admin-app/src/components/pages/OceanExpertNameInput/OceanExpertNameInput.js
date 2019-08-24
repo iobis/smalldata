@@ -1,4 +1,5 @@
 import * as OceanExpertClient from '../../../clients/OceanExpertClient'
+import { getExpertById } from '../../../clients/OceanExpertClient'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import React, { useEffect, useRef, useState } from 'react'
@@ -49,13 +50,11 @@ export default function OceanExpertNameInput({ oceanExpertName, onChange }) {
     setName(newName)
   }
 
-  function handleSuggestionClick(user) {
+  async function handleSuggestionClick(record) {
     hideDropdownOptions()
-    const profile = {
-      name: user.name || ''
-    }
+    const profile = await getExpertById(record.id_ind)
     onChange(profile)
-    setName(user.name)
+    setName(record.name)
   }
 
   return (
