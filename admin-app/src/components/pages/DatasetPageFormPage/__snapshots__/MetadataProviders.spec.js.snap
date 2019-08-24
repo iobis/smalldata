@@ -112,6 +112,7 @@ exports[`MetadataProviders renders correctly 1`] = `
               <th>
                 datasetPageFormPage.contactsForm.organisation.label
               </th>
+              <th />
             </tr>
           </thead>
           <tbody />

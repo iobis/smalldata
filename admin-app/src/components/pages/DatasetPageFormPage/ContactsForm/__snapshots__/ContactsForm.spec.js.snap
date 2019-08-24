@@ -108,6 +108,7 @@ exports[`ContactsForm returns contacts when adding 1`] = `
             <th>
               datasetPageFormPage.contactsForm.organisation.label
             </th>
+            <th />
           </tr>
         </thead>
         <tbody />
@@ -233,6 +234,7 @@ exports[`ContactsForm returns updated contacts when when adding 1`] = `
             <th>
               datasetPageFormPage.contactsForm.organisation.label
             </th>
+            <th />
           </tr>
         </thead>
         <tbody>
@@ -240,6 +242,7 @@ exports[`ContactsForm returns updated contacts when when adding 1`] = `
             email="email-1"
             key="0"
             name="name-1"
+            onRemove={[Function]}
             organisation="organisation-1"
           >
             <tr
@@ -259,6 +262,16 @@ exports[`ContactsForm returns updated contacts when when adding 1`] = `
                 className="organisation"
               >
                 organisation-1
+              </td>
+              <td
+                className="action"
+              >
+                <button
+                  className="remove button"
+                  onClick={[Function]}
+                >
+                  common.remove
+                </button>
               </td>
             </tr>
           </ContactRow>
