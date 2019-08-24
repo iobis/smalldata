@@ -1,10 +1,17 @@
 import OccurrenceForm from './OccurrenceForm'
 import React from 'react'
-import { act } from 'react-dom/test-utils'
-import { mount } from 'enzyme'
-import { getDatasetDefaultResponse } from '@smalldata/dwca-lib/src/clients/SmalldataClient.mock'
-import { AuthProvider } from '@smalldata/dwca-lib'
 import SmalldataClient from '@smalldata/dwca-lib/src/clients/SmalldataClient'
+import { act } from 'react-dom/test-utils'
+import { AuthProvider } from '@smalldata/dwca-lib'
+import { getDatasetDefaultResponse, getDatasetsFixture } from '@smalldata/dwca-lib/src/clients/SmalldataClient.mock'
+import { MemoryRouter } from 'react-router-dom'
+import { mount } from 'enzyme'
+
+jest.mock('@smalldata/dwca-lib/src/clients/SmalldataClient', () => ({
+  getDatasets:      jest.fn(),
+  createOccurrence: jest.fn(),
+  updateOccurrence: jest.fn()
+}))
 
 describe('OccurrenceForm', () => {
   let wrapper
@@ -12,9 +19,9 @@ describe('OccurrenceForm', () => {
   describe('when creating new occurrence', () => {
     beforeAll(() => {
       jest.spyOn(Date, 'now').mockImplementation(() => new Date(Date.UTC(2019, 3, 29)).valueOf())
-      global.fetch = jest.fn().mockImplementation(() =>
+      SmalldataClient.getDatasets.mockImplementation(() =>
         new Promise((resolve) => {
-          resolve({ json: () => getDatasetDefaultResponse() })
+          resolve(getDatasetsFixture())
         })
       )
     })
@@ -27,17 +34,14 @@ describe('OccurrenceForm', () => {
       await act(async() => {
         wrapper = mount(
           <AuthProvider>
-            <OccurrenceForm/>
+            <MemoryRouter initialEntries={[{ pathname: '/input-data/update', key: 'testKey' }]}>
+              <OccurrenceForm/>
+            </MemoryRouter>
           </AuthProvider>
         )
       })
-      expect(global.fetch).toHaveBeenCalledTimes(1)
-      expect(global.fetch).toHaveBeenCalledWith('/api/datasets', {
-        headers: {
-          'Authorization': 'Basic verysecret',
-          'Content-Type':  'application/json'
-        }
-      })
+      expect(SmalldataClient.getDatasets).toHaveBeenCalledTimes(1)
+      expect(SmalldataClient.getDatasets).toHaveBeenNthCalledWith(1)
       expect(wrapper).toMatchSnapshot()
 
       addLocation(wrapper)
