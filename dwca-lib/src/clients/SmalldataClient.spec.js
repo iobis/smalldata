@@ -46,13 +46,13 @@ describe('SmalldataClient', () => {
     it('makes default request', async() => {
       await SmalldataClient.createDataset({
         basicInformation:  {
-          title:        'title',
-          languageCode: 'en',
-          licence:      {
+          title:    'title',
+          language: 'English',
+          licence:  {
             url:   'licence url',
             title: 'licence title'
           },
-          abstract:     'abstract'
+          abstract: 'abstract'
         },
         resourceContacts:  [],
         resourceCreators:  [],
@@ -82,13 +82,13 @@ describe('SmalldataClient', () => {
     it('makes default request', async() => {
       await SmalldataClient.updateDataset({
         basicInformation:  {
-          title:        'title',
-          languageCode: 'en',
-          licence:      {
+          title:    'title',
+          language: 'English',
+          licence:  {
             url:   'licence url',
             title: 'licence title'
           },
-          abstract:     'abstract'
+          abstract: 'abstract'
         },
         resourceContacts:  [],
         resourceCreators:  [],

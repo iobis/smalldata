@@ -101,7 +101,11 @@ describe('DatasetPageFormPage', () => {
 
       it('calls SmalldataClient.createDataset once with correct dataset id', () => {
         expect(SmalldataClient.createDataset).toHaveBeenCalledTimes(1)
-        expect(SmalldataClient.createDataset).toHaveBeenNthCalledWith(1, expect.anything())
+        expect(SmalldataClient.createDataset).toHaveBeenNthCalledWith(1, expect.objectContaining({
+          basicInformation: expect.objectContaining({
+            language: expect.stringMatching('Dutch')
+          })
+        }))
       })
 
       it('render success message', () => {
@@ -249,7 +253,14 @@ describe('DatasetPageFormPage', () => {
 
                 it('calls SmalldataClient.updateDataset once with correct dataset id', () => {
                   expect(SmalldataClient.updateDataset).toHaveBeenCalledTimes(1)
-                  expect(SmalldataClient.updateDataset).toHaveBeenNthCalledWith(1, expect.anything(), 'NnqVLwIyPn-nRkc')
+                  expect(SmalldataClient.updateDataset).toHaveBeenNthCalledWith(
+                    1,
+                    expect.objectContaining({
+                      basicInformation: expect.objectContaining({
+                        language: expect.stringMatching('English')
+                      })
+                    }),
+                    'NnqVLwIyPn-nRkc')
                 })
 
                 it('render success message', () => {

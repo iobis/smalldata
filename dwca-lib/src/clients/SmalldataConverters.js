@@ -2,7 +2,7 @@ import ow from 'ow'
 import { findTypeAndUnitIdByNames, findUnitsByTypeId } from './measurments'
 import { format } from 'date-fns'
 import { getProperty } from '../common/objects'
-import { findLanguageByCode } from '@smalldata/dwca-lib/src/clients/languages'
+import { findLanguageByCode, findLanguageCodeByTitle } from '@smalldata/dwca-lib/src/clients/languages'
 
 const purlUrl = 'http://purl.org/dc/terms/'
 const tdwgUrl = 'http://rs.tdwg.org/dwc/terms/'
@@ -178,18 +178,20 @@ export function mapDwcsToDarwinCoreFields(dwca) {
 
 export function mapUiDatasetToRequest({ basicInformation, resourceContacts, resourceCreators, metadataProviders, keywords }) {
   ow(basicInformation, ow.object.partialShape({
-    title:        ow.string,
-    licence:      {
+    title:    ow.string,
+    licence:  {
       url:   ow.string,
       title: ow.string
     },
-    languageCode: ow.string,
-    abstract:     ow.string
+    language: ow.string,
+    abstract: ow.string
   }))
   ow(resourceContacts, ow.array)
   ow(resourceCreators, ow.array)
   ow(metadataProviders, ow.array)
   ow(keywords, ow.array)
+
+  const languageCode = findLanguageCodeByTitle(basicInformation.language)
 
   return {
     meta:              {
@@ -202,10 +204,10 @@ export function mapUiDatasetToRequest({ basicInformation, resourceContacts, reso
       }
     },
     title:             {
-      language: basicInformation.languageCode,
+      language: languageCode,
       value:    basicInformation.title
     },
-    language:          basicInformation.languageCode,
+    language:          languageCode,
     abstract:          {
       paragraphs: basicInformation.abstract.split('\n\n')
     },

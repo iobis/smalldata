@@ -10,7 +10,7 @@ import React, { useEffect, useState } from 'react'
 import ResourceContacts from './ResourceContacts'
 import ResourceCreators from './ResourceCreators'
 import { createDataset, getDatasets, updateDataset } from '@smalldata/dwca-lib/src/clients/SmalldataClient'
-import { findLanguageCodeByTitle, languages } from '@smalldata/dwca-lib/src/clients/languages'
+import { languages } from '@smalldata/dwca-lib/src/clients/languages'
 import { findLicenceByTitle, licences } from '@smalldata/dwca-lib/src/clients/licences'
 import { useTranslation } from 'react-i18next'
 import { getProperty } from '@smalldata/dwca-lib/src/common/objects'
@@ -72,8 +72,7 @@ export default function DatasetPageFormPage({ location }) {
     const dataset = {
       basicInformation: {
         ...basicInformation,
-        languageCode: findLanguageCodeByTitle(basicInformation.language),
-        licence:      findLicenceByTitle(basicInformation.licence)
+        licence: findLicenceByTitle(basicInformation.licence)
       },
       resourceContacts,
       resourceCreators,

@@ -115,13 +115,13 @@ describe('SmalldataConverters', () => {
   it('mapUiDatasetToRequest(dataset)', () => {
     const uiDataset = {
       basicInformation:  {
-        title:        'Basic Data - Title',
-        licence:      {
+        title:    'Basic Data - Title',
+        licence:  {
           url:   'http://creativecommons.org/licenses/by-nc/4.0/legalcode',
           title: 'Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License'
         },
-        languageCode: 'en',
-        abstract:     'Paragraph - 1\n\nParagraph - 2'
+        language: 'English',
+        abstract: 'Paragraph - 1\n\nParagraph - 2'
       },
       resourceContacts:  [{
         name:         'ResourceContact-1 Name-1',
