@@ -76,28 +76,6 @@ exports[`ContactsForm returns contacts when adding 1`] = `
         />
       </div>
     </InputText>
-    <InputText
-      className="position"
-      name="datasetPageFormPage.contactsForm.position"
-      onChange={[Function]}
-      value=""
-    >
-      <div
-        className="column field position"
-      >
-        <label
-          className="label"
-        >
-          datasetPageFormPage.contactsForm.position.label
-        </label>
-        <input
-          className="input"
-          onChange={[Function]}
-          type="text"
-          value=""
-        />
-      </div>
-    </InputText>
     <div
       className="column field"
     >
@@ -130,9 +108,6 @@ exports[`ContactsForm returns contacts when adding 1`] = `
             <th>
               datasetPageFormPage.contactsForm.organisation.label
             </th>
-            <th>
-              datasetPageFormPage.contactsForm.position.label
-            </th>
           </tr>
         </thead>
         <tbody />
@@ -152,7 +127,6 @@ exports[`ContactsForm returns updated contacts when when adding 1`] = `
         "email": "email-1",
         "name": "name-1",
         "organisation": "organisation-1",
-        "position": "position-1",
       },
     ]
   }
@@ -227,28 +201,6 @@ exports[`ContactsForm returns updated contacts when when adding 1`] = `
         />
       </div>
     </InputText>
-    <InputText
-      className="position"
-      name="datasetPageFormPage.contactsForm.position"
-      onChange={[Function]}
-      value=""
-    >
-      <div
-        className="column field position"
-      >
-        <label
-          className="label"
-        >
-          datasetPageFormPage.contactsForm.position.label
-        </label>
-        <input
-          className="input"
-          onChange={[Function]}
-          type="text"
-          value=""
-        />
-      </div>
-    </InputText>
     <div
       className="column field"
     >
@@ -281,9 +233,6 @@ exports[`ContactsForm returns updated contacts when when adding 1`] = `
             <th>
               datasetPageFormPage.contactsForm.organisation.label
             </th>
-            <th>
-              datasetPageFormPage.contactsForm.position.label
-            </th>
           </tr>
         </thead>
         <tbody>
@@ -292,7 +241,6 @@ exports[`ContactsForm returns updated contacts when when adding 1`] = `
             key="0"
             name="name-1"
             organisation="organisation-1"
-            position="position-1"
           >
             <tr
               className="contact-row"
@@ -311,11 +259,6 @@ exports[`ContactsForm returns updated contacts when when adding 1`] = `
                 className="organisation"
               >
                 organisation-1
-              </td>
-              <td
-                className="position"
-              >
-                position-1
               </td>
             </tr>
           </ContactRow>

@@ -108,7 +108,6 @@ export default function OccurrenceForm({ location }) {
       setErrorMessage(response.exception + ': ' + response.exceptionMessage)
     } else {
       setSuccessVisible(true)
-      setAction('create')
     }
   }
 
@@ -120,6 +119,7 @@ export default function OccurrenceForm({ location }) {
   function handleCreateFreshClick() {
     resetUiState()
     resetOccurrenceState()
+    setAction('create')
   }
 
   function handleCreateFromThisClickClick() {
@@ -281,6 +281,7 @@ export default function OccurrenceForm({ location }) {
 OccurrenceForm.propTypes = {
   location: PropTypes.shape({
     state: PropTypes.shape({
+      action:    PropTypes.oneOf(['create', 'update']),
       datasetId: PropTypes.string.isRequired,
       dwcaId:    PropTypes.string.isRequired
     })
