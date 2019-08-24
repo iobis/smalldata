@@ -7495,6 +7495,1730 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 6`] = `
 </OccurrenceForm>
 `;
 
+exports[`OccurrenceForm when updating occurrence and then clicking "Review and Submit" button renders correctly 1`] = `
+<OccurrenceForm
+  location={
+    Object {
+      "state": Object {
+        "action": "update",
+        "datasetId": "ntDOtUc7XsRrIus",
+        "dwcaId": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796",
+      },
+    }
+  }
+>
+  <section
+    className="section"
+  >
+    <NotConfirmedStepHeader
+      activeStepIndex={null}
+      className="step-1 background-color-0"
+      dataDescription="occurrenceForm.dataset.step.dataDescription"
+      key="occurrenceForm.dataset.step.stepTitle"
+      nextStep="occurrenceForm.occurrenceData.step.stepTitle"
+      onContinueButtonClick={[Function]}
+      onCopyPreviousDataClick={[Function]}
+      onStepTitleClick={[Function]}
+      selectedData="Benthos collected in the Azov Sea in 1935 on board the R/V \\"N. Danilevskiy\\""
+      stepDescription="occurrenceForm.dataset.step.stepDescription"
+      stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
+      totalSteps={5}
+    >
+      <StepHeader
+        className="not-confirmed has-text-white step-1 background-color-0"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="occurrenceForm.dataset.step.stepDescription"
+        stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered not-confirmed has-text-white step-1 background-color-0"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          />
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              occurrenceForm.dataset.step.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                1 - occurrenceForm.dataset.step.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </NotConfirmedStepHeader>
+    <NotConfirmedStepHeader
+      activeStepIndex={null}
+      className="step-2 background-color-5"
+      dataDescription="occurrenceForm.occurrenceData.step.dataDescription"
+      key="occurrenceForm.occurrenceData.step.stepTitle"
+      nextStep="occurrenceForm.locationData.step.stepTitle"
+      onContinueButtonClick={[Function]}
+      onCopyPreviousDataClick={[Function]}
+      onStepTitleClick={[Function]}
+      selectedData={
+        <OccurrenceDataSummary
+          basisOfRecord="machineObservation"
+          beginDate={2019-06-25T00:00:00.000Z}
+          endDate={2019-06-26T00:00:00.000Z}
+          lifeStage="unspecified"
+          occurrenceStatus="absent"
+          scientificName="Aaadonta"
+          sex="female"
+        />
+      }
+      stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
+      stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
+      totalSteps={5}
+    >
+      <StepHeader
+        className="not-confirmed has-text-white step-2 background-color-5"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
+        stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered not-confirmed has-text-white step-2 background-color-5"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          />
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              occurrenceForm.occurrenceData.step.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                2 - occurrenceForm.occurrenceData.step.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </NotConfirmedStepHeader>
+    <NotConfirmedStepHeader
+      activeStepIndex={null}
+      className="step-3 background-color-10"
+      dataDescription="occurrenceForm.locationData.step.dataDescription"
+      key="occurrenceForm.locationData.step.stepTitle"
+      nextStep="occurrenceForm.observationData.step.stepTitle"
+      onContinueButtonClick={[Function]}
+      onCopyPreviousDataClick={[Function]}
+      onStepTitleClick={[Function]}
+      selectedData={
+        <SelectedLocation
+          coordinateUncertainty={1}
+          decimalLatitude={51.518463972439385}
+          decimalLongitude={-0.16771316528320315}
+          maximumDepth={3}
+          minimumDepth={2}
+          verbatimCoordinates="17T 630000 4833400"
+          verbatimDepth="100-200 m"
+        />
+      }
+      stepDescription="occurrenceForm.locationData.step.stepDescription"
+      stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
+      totalSteps={5}
+    >
+      <StepHeader
+        className="not-confirmed has-text-white step-3 background-color-10"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="occurrenceForm.locationData.step.stepDescription"
+        stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered not-confirmed has-text-white step-3 background-color-10"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          />
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              occurrenceForm.locationData.step.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                3 - occurrenceForm.locationData.step.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </NotConfirmedStepHeader>
+    <NotConfirmedStepHeader
+      activeStepIndex={null}
+      className="step-4 background-color-15"
+      dataDescription="occurrenceForm.observationData.step.dataDescription"
+      key="occurrenceForm.observationData.step.stepTitle"
+      nextStep="occurrenceForm.measurementOrFact.step.stepTitle"
+      onContinueButtonClick={[Function]}
+      onCopyPreviousDataClick={[Function]}
+      onStepTitleClick={[Function]}
+      selectedData="Institution: Institution Code; Identified by: person-1, person-2"
+      stepDescription="occurrenceForm.observationData.step.stepDescription"
+      stepTitle="4 - occurrenceForm.observationData.step.stepTitle"
+      totalSteps={5}
+    >
+      <StepHeader
+        className="not-confirmed has-text-white step-4 background-color-15"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="occurrenceForm.observationData.step.stepDescription"
+        stepTitle="4 - occurrenceForm.observationData.step.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered not-confirmed has-text-white step-4 background-color-15"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          />
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              occurrenceForm.observationData.step.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                4 - occurrenceForm.observationData.step.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </NotConfirmedStepHeader>
+    <NotConfirmedStepHeader
+      activeStepIndex={null}
+      className="step-5 background-color-20"
+      dataDescription="occurrenceForm.measurementOrFact.step.dataDescription"
+      key="occurrenceForm.measurementOrFact.step.stepTitle"
+      nextStep="occurrenceForm.darwinCoreFields.step.stepTitle"
+      onContinueButtonClick={[Function]}
+      onCopyPreviousDataClick={[Function]}
+      onStepTitleClick={[Function]}
+      selectedData={
+        <MeasurementOrFactSummary
+          data={
+            Array [
+              Object {
+                "type": "Abundance category of biological entity specified elsewhere",
+                "unit": "Dimensionless",
+                "units": Array [
+                  Object {
+                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/UUUU/",
+                    "name": "Dimensionless",
+                  },
+                ],
+                "value": "3",
+              },
+              Object {
+                "type": "Abundance of biological entity specified elsewhere per unit area of the bed",
+                "unit": "Number per square meter",
+                "units": Array [
+                  Object {
+                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPMS/",
+                    "name": "Number per square meter",
+                  },
+                ],
+                "value": "44",
+              },
+              Object {
+                "type": "ObservedIndividualCount",
+                "unit": "Dimensionless",
+                "units": Array [
+                  Object {
+                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/UUUU/",
+                    "name": "Dimensionless",
+                  },
+                ],
+                "value": "1",
+              },
+              Object {
+                "type": "Pressure",
+                "unit": "Decibars",
+                "units": Array [
+                  Object {
+                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPDB/",
+                    "name": "Decibars",
+                  },
+                ],
+                "value": "1",
+              },
+              Object {
+                "type": "Salinity",
+                "unit": "Grams per kilogram",
+                "units": Array [
+                  Object {
+                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGKG",
+                    "name": "Grams per kilogram",
+                  },
+                  Object {
+                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/UUUU/",
+                    "name": "PSU (dimensionless)",
+                  },
+                ],
+                "value": "3",
+              },
+              Object {
+                "type": "Temperature",
+                "unit": "Degrees Celsius",
+                "units": Array [
+                  Object {
+                    "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPAA",
+                    "name": "Degrees Celsius",
+                  },
+                ],
+                "value": "2",
+              },
+            ]
+          }
+        />
+      }
+      stepDescription="occurrenceForm.measurementOrFact.step.stepDescription"
+      stepTitle="5 - occurrenceForm.measurementOrFact.step.stepTitle"
+      totalSteps={5}
+    >
+      <StepHeader
+        className="not-confirmed has-text-white step-5 background-color-20"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="occurrenceForm.measurementOrFact.step.stepDescription"
+        stepTitle="5 - occurrenceForm.measurementOrFact.step.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered not-confirmed has-text-white step-5 background-color-20"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          />
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              occurrenceForm.measurementOrFact.step.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                5 - occurrenceForm.measurementOrFact.step.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </NotConfirmedStepHeader>
+    <NotConfirmedStepHeader
+      activeStepIndex={null}
+      className="step-6 background-color-25"
+      dataDescription=""
+      key="occurrenceForm.darwinCoreFields.step.stepTitle"
+      onContinueButtonClick={[Function]}
+      onCopyPreviousDataClick={[Function]}
+      onStepTitleClick={[Function]}
+      selectedData=""
+      stepDescription="occurrenceForm.darwinCoreFields.step.stepDescription"
+      stepTitle="6 - occurrenceForm.darwinCoreFields.step.stepTitle"
+      totalSteps={5}
+    >
+      <StepHeader
+        className="not-confirmed has-text-white step-6 background-color-25"
+        dataDescription=""
+        iconVisible={false}
+        onStepTitleClick={[Function]}
+        selectedData=""
+        stepDescription="occurrenceForm.darwinCoreFields.step.stepDescription"
+        stepTitle="6 - occurrenceForm.darwinCoreFields.step.stepTitle"
+      >
+        <div
+          className="step-header columns is-vcentered not-confirmed has-text-white step-6 background-color-25"
+          onClick={[Function]}
+        >
+          <div
+            className="column is-1 is-hidden-mobile"
+          >
+            <p
+              className="is-size-5 is-uppercase"
+            >
+              <b />
+            </p>
+          </div>
+          <div
+            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          />
+          <div
+            className="column details"
+          >
+            <div
+              className="is-size-6"
+            >
+              occurrenceForm.darwinCoreFields.step.stepDescription
+            </div>
+            <div
+              className="is-size-5 is-uppercase"
+            >
+              <b
+                className="step-title"
+              >
+                6 - occurrenceForm.darwinCoreFields.step.stepTitle
+              </b>
+            </div>
+          </div>
+        </div>
+      </StepHeader>
+    </NotConfirmedStepHeader>
+    <FinalSummary
+      darwinCoreFields={
+        Array [
+          Object {
+            "name": "http://rs.iobis.org/obis/terms/iobis-1",
+            "value": "iobis-1-value",
+          },
+          Object {
+            "name": "http://rs.iobis.org/obis/terms/iobis-2",
+            "value": "iobis-2-value",
+          },
+          Object {
+            "name": "http://purl.org/dc/terms/purl-field-1",
+            "value": "purl-field-1-value",
+          },
+          Object {
+            "name": "http://purl.org/dc/terms/purl-field-2",
+            "value": "purl-field-2-value",
+          },
+          Object {
+            "name": "http://rs.tdwg.org/dwc/terms/tdwg-field-1",
+            "value": "tdwg-field-1-value",
+          },
+          Object {
+            "name": "http://rs.tdwg.org/dwc/terms/tdwg-field-2",
+            "value": "tdwg-field-2-value",
+          },
+        ]
+      }
+      dataset={
+        Object {
+          "abstract": Object {
+            "paragraphs": Array [
+              "The data were collected in the Azov Sea during a cruise on board of R/V N. Danilevskiy in 1935. This dataset contains abundance data (individuals per m²) and biomass data (g/m²) for benthic taxa. No additional metadata is available.",
+              "This dataset was rescued through data archaeology activities in the framework of the EMODnet Biology data grants.",
+            ],
+          },
+          "contacts": Array [
+            Object {
+              "electronicMailAddress": "o.sergeyeva@gsva.net",
+              "individualName": Object {
+                "givenName": "Oleksandra",
+                "surName": "Sergeyeva",
+              },
+              "organizationName": "National Academy of Sciences of Ukraine Institute of Biology of the Southern Seas (NASU-IBSS)",
+            },
+          ],
+          "creators": Array [
+            Object {
+              "electronicMailAddress": "director@ibss.iuf.net",
+              "individualName": Object {
+                "givenName": "Yu. B.",
+                "surName": "Belogurova",
+              },
+              "organizationName": "National Academy of Sciences of Ukraine Institute of Biology of the Southern Seas (NASU-IBSS)",
+            },
+            Object {
+              "electronicMailAddress": "o.sergeyeva@gsva.net",
+              "individualName": Object {
+                "givenName": "Oleksandra",
+                "surName": "Sergeyeva",
+              },
+              "organizationName": "National Academy of Sciences of Ukraine Institute of Biology of the Southern Seas (NASU-IBSS)",
+            },
+          ],
+          "id": "ntDOtUc7XsRrIus",
+          "keywordSets": Array [
+            Object {
+              "keywordThesaurus": "GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml",
+              "keywords": Array [
+                "Occurrence",
+              ],
+            },
+            Object {
+              "keywordThesaurus": "GBIF Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml",
+              "keywords": Array [
+                "Observation",
+              ],
+            },
+          ],
+          "language": "en",
+          "license": Object {
+            "title": "Creative Commons Attribution Non Commercial (CC-BY) 4.0 License",
+            "url": "http://creativecommons.org/licenses/by/4.0/legalcode",
+          },
+          "meta": Object {
+            "dwcTables": Object {
+              "core": "occurrence",
+              "extensions": Array [
+                "emof",
+              ],
+            },
+            "type": "occurrence",
+          },
+          "metadataProviders": Array [
+            Object {
+              "electronicMailAddress": "info@eurobis.org",
+              "individualName": Object {
+                "surName": "EurOBIS Data Management Team",
+              },
+              "organizationName": "Flanders Marine Institute (VLIZ)",
+            },
+          ],
+          "title": Object {
+            "language": "en",
+            "value": "Benthos collected in the Azov Sea in 1935 on board the R/V \\"N. Danilevskiy\\"",
+          },
+        }
+      }
+      errorMessage=""
+      errorVisible={false}
+      locationData={
+        Object {
+          "coordinateUncertainty": 1,
+          "decimalLatitude": 51.518463972439385,
+          "decimalLongitude": -0.16771316528320315,
+          "maximumDepth": 3,
+          "minimumDepth": 2,
+          "verbatimCoordinates": "17T 630000 4833400",
+          "verbatimDepth": "100-200 m",
+        }
+      }
+      measurements={
+        Array [
+          Object {
+            "type": "Abundance category of biological entity specified elsewhere",
+            "unit": "Dimensionless",
+            "units": Array [
+              Object {
+                "id": "http://vocab.nerc.ac.uk/collection/P06/current/UUUU/",
+                "name": "Dimensionless",
+              },
+            ],
+            "value": "3",
+          },
+          Object {
+            "type": "Abundance of biological entity specified elsewhere per unit area of the bed",
+            "unit": "Number per square meter",
+            "units": Array [
+              Object {
+                "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPMS/",
+                "name": "Number per square meter",
+              },
+            ],
+            "value": "44",
+          },
+          Object {
+            "type": "ObservedIndividualCount",
+            "unit": "Dimensionless",
+            "units": Array [
+              Object {
+                "id": "http://vocab.nerc.ac.uk/collection/P06/current/UUUU/",
+                "name": "Dimensionless",
+              },
+            ],
+            "value": "1",
+          },
+          Object {
+            "type": "Pressure",
+            "unit": "Decibars",
+            "units": Array [
+              Object {
+                "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPDB/",
+                "name": "Decibars",
+              },
+            ],
+            "value": "1",
+          },
+          Object {
+            "type": "Salinity",
+            "unit": "Grams per kilogram",
+            "units": Array [
+              Object {
+                "id": "http://vocab.nerc.ac.uk/collection/P06/current/UGKG",
+                "name": "Grams per kilogram",
+              },
+              Object {
+                "id": "http://vocab.nerc.ac.uk/collection/P06/current/UUUU/",
+                "name": "PSU (dimensionless)",
+              },
+            ],
+            "value": "3",
+          },
+          Object {
+            "type": "Temperature",
+            "unit": "Degrees Celsius",
+            "units": Array [
+              Object {
+                "id": "http://vocab.nerc.ac.uk/collection/P06/current/UPAA",
+                "name": "Degrees Celsius",
+              },
+            ],
+            "value": "2",
+          },
+        ]
+      }
+      observationData={
+        Object {
+          "catalogNumber": "Catalog Number",
+          "collectionCode": "Collection Code",
+          "fieldNumber": "Field Number",
+          "identificationQualifier": "Identification Qualifier",
+          "identificationRemarks": "Identification Remarks",
+          "identifiedBy": Array [
+            "person-1",
+            "person-2",
+          ],
+          "institutionCode": "Institution Code",
+          "recordNumber": "Record Number",
+          "recordedBy": Array [
+            "recorded-by-1",
+            "recorded-by-2",
+          ],
+          "references": Array [
+            "www.google.com",
+            "https://clojure.org/",
+          ],
+        }
+      }
+      occurrenceData={
+        Object {
+          "basisOfRecord": "machineObservation",
+          "beginDate": 2019-06-25T00:00:00.000Z,
+          "endDate": 2019-06-26T00:00:00.000Z,
+          "lifeStage": "unspecified",
+          "occurrenceStatus": "absent",
+          "scientificName": "Aaadonta",
+          "sex": "female",
+        }
+      }
+      onChangeClick={[Function]}
+      onCreateFreshClick={[Function]}
+      onCreateFromThisClick={[Function]}
+      onErrorClose={[Function]}
+      onSubmitClick={[Function]}
+      successMessageType="update"
+      successVisible={false}
+    >
+      <div
+        className="final-summary section is-fluid"
+      >
+        <div
+          className="columns is-centered"
+        >
+          <h1
+            className="final-summary-title title is-3"
+          >
+            occurrenceForm.finalSummary.title
+          </h1>
+        </div>
+        <SubmitEntryButton
+          onClick={[Function]}
+        >
+          <div
+            className="submit-entry-button columns is-mobile is-centered"
+          >
+            <button
+              className="button is-info is-medium"
+              onClick={[Function]}
+            >
+              common.submit
+            </button>
+          </div>
+        </SubmitEntryButton>
+        <section
+          className="dataset-summary"
+        >
+          <SectionTitle>
+            <h2
+              className="title is-4"
+            >
+              1 - 
+              occurrenceForm.dataset.step.stepTitle
+            </h2>
+          </SectionTitle>
+          <p>
+            Benthos collected in the Azov Sea in 1935 on board the R/V "N. Danilevskiy"
+          </p>
+          <ChangeButton
+            onClick={[Function]}
+          >
+            <button
+              className="change-button button"
+              onClick={[Function]}
+            >
+              common.change
+            </button>
+          </ChangeButton>
+        </section>
+        <section
+          className="occurrence-data-summary"
+        >
+          <SectionTitle>
+            <h2
+              className="title is-4"
+            >
+              2 - 
+              occurrenceForm.occurrenceData.step.stepTitle
+            </h2>
+          </SectionTitle>
+          <table
+            className="table is-striped is-fullwidth is-hoverable"
+          >
+            <NameValueHeader>
+              <thead>
+                <tr>
+                  <th
+                    className="type"
+                  >
+                    common.name
+                  </th>
+                  <th
+                    className="value"
+                  >
+                    common.value
+                  </th>
+                </tr>
+              </thead>
+            </NameValueHeader>
+            <tbody>
+              <NameValueRow
+                name="occurrenceForm.occurrenceData.scientificName"
+                value="Aaadonta"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.occurrenceData.scientificName
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    Aaadonta
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.occurrenceData.eventBeginDate"
+                value="25 June 2019"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.occurrenceData.eventBeginDate
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    25 June 2019
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.occurrenceData.eventEndDate"
+                value="26 June 2019"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.occurrenceData.eventEndDate
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    26 June 2019
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.occurrenceData.occurrenceStatus.title"
+                value="occurrenceForm.occurrenceData.occurrenceStatus.absent"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.occurrenceData.occurrenceStatus.title
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    occurrenceForm.occurrenceData.occurrenceStatus.absent
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.occurrenceData.basisOfRecord.title"
+                value="occurrenceForm.occurrenceData.basisOfRecord.machineObservation"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.occurrenceData.basisOfRecord.title
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    occurrenceForm.occurrenceData.basisOfRecord.machineObservation
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.occurrenceData.sex.title"
+                value="occurrenceForm.occurrenceData.sex.female"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.occurrenceData.sex.title
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    occurrenceForm.occurrenceData.sex.female
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.occurrenceData.lifeStage.title"
+                value="occurrenceForm.occurrenceData.lifeStage.unspecified"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.occurrenceData.lifeStage.title
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    occurrenceForm.occurrenceData.lifeStage.unspecified
+                  </td>
+                </tr>
+              </NameValueRow>
+            </tbody>
+          </table>
+          <ChangeButton
+            onClick={[Function]}
+          >
+            <button
+              className="change-button button"
+              onClick={[Function]}
+            >
+              common.change
+            </button>
+          </ChangeButton>
+        </section>
+        <section
+          className="location-data-summary"
+        >
+          <SectionTitle>
+            <h2
+              className="title is-4"
+            >
+              3 - 
+              occurrenceForm.locationData.step.stepTitle
+            </h2>
+          </SectionTitle>
+          <table
+            className="table is-striped is-fullwidth is-hoverable"
+          >
+            <NameValueHeader>
+              <thead>
+                <tr>
+                  <th
+                    className="type"
+                  >
+                    common.name
+                  </th>
+                  <th
+                    className="value"
+                  >
+                    common.value
+                  </th>
+                </tr>
+              </thead>
+            </NameValueHeader>
+            <tbody>
+              <NameValueRow
+                name="occurrenceForm.locationData.decimalLatitude.label"
+                value={51.518463972439385}
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.locationData.decimalLatitude.label
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    51.518463972439385
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.locationData.decimalLongitude.label"
+                value={-0.16771316528320315}
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.locationData.decimalLongitude.label
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    -0.16771316528320315
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.locationData.coordinateUncertainty.label"
+                value={1}
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.locationData.coordinateUncertainty.label
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    1
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.locationData.minimumDepth.label"
+                value={2}
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.locationData.minimumDepth.label
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    2
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.locationData.maximumDepth.label"
+                value={3}
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.locationData.maximumDepth.label
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    3
+                  </td>
+                </tr>
+              </NameValueRow>
+            </tbody>
+          </table>
+          <SectionSubtitle>
+            <h2
+              className="title is-5"
+            >
+              occurrenceForm.finalSummary.locationData.verbatimDataSubtitle
+            </h2>
+          </SectionSubtitle>
+          <table
+            className="table is-striped is-fullwidth is-hoverable"
+          >
+            <tbody>
+              <NameValueRow
+                name="occurrenceForm.locationData.verbatimCoordinates.label"
+                value="17T 630000 4833400"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.locationData.verbatimCoordinates.label
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    17T 630000 4833400
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.locationData.verbatimDepth.label"
+                value="100-200 m"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.locationData.verbatimDepth.label
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    100-200 m
+                  </td>
+                </tr>
+              </NameValueRow>
+            </tbody>
+          </table>
+          <ChangeButton
+            onClick={[Function]}
+          >
+            <button
+              className="change-button button"
+              onClick={[Function]}
+            >
+              common.change
+            </button>
+          </ChangeButton>
+        </section>
+        <section
+          className="observation-data-summary"
+        >
+          <SectionTitle>
+            <h2
+              className="title is-4"
+            >
+              4 - 
+              occurrenceForm.observationData.step.stepTitle
+            </h2>
+          </SectionTitle>
+          <SectionSubtitle>
+            <h2
+              className="title is-5"
+            >
+              occurrenceForm.finalSummary.observationData.catalogDataSubtitle
+            </h2>
+          </SectionSubtitle>
+          <div
+            className="content"
+          >
+            <table
+              className="table is-striped is-fullwidth is-hoverable"
+            >
+              <NameValueHeader>
+                <thead>
+                  <tr>
+                    <th
+                      className="type"
+                    >
+                      common.name
+                    </th>
+                    <th
+                      className="value"
+                    >
+                      common.value
+                    </th>
+                  </tr>
+                </thead>
+              </NameValueHeader>
+              <tbody>
+                <NameValueRow
+                  name="occurrenceForm.observationData.institutionCode.label"
+                  value="Institution Code"
+                >
+                  <tr
+                    className="name-value-row fieldrow"
+                  >
+                    <td
+                      className="name"
+                    >
+                      occurrenceForm.observationData.institutionCode.label
+                    </td>
+                    <td
+                      className="value"
+                    >
+                      Institution Code
+                    </td>
+                  </tr>
+                </NameValueRow>
+                <NameValueRow
+                  name="occurrenceForm.observationData.collectionCode.label"
+                  value="Collection Code"
+                >
+                  <tr
+                    className="name-value-row fieldrow"
+                  >
+                    <td
+                      className="name"
+                    >
+                      occurrenceForm.observationData.collectionCode.label
+                    </td>
+                    <td
+                      className="value"
+                    >
+                      Collection Code
+                    </td>
+                  </tr>
+                </NameValueRow>
+                <NameValueRow
+                  name="occurrenceForm.observationData.fieldNumber.label"
+                  value="Field Number"
+                >
+                  <tr
+                    className="name-value-row fieldrow"
+                  >
+                    <td
+                      className="name"
+                    >
+                      occurrenceForm.observationData.fieldNumber.label
+                    </td>
+                    <td
+                      className="value"
+                    >
+                      Field Number
+                    </td>
+                  </tr>
+                </NameValueRow>
+                <NameValueRow
+                  name="occurrenceForm.observationData.catalogNumber.label"
+                  value="Catalog Number"
+                >
+                  <tr
+                    className="name-value-row fieldrow"
+                  >
+                    <td
+                      className="name"
+                    >
+                      occurrenceForm.observationData.catalogNumber.label
+                    </td>
+                    <td
+                      className="value"
+                    >
+                      Catalog Number
+                    </td>
+                  </tr>
+                </NameValueRow>
+                <NameValueRow
+                  name="occurrenceForm.observationData.recordNumber.label"
+                  value="Record Number"
+                >
+                  <tr
+                    className="name-value-row fieldrow"
+                  >
+                    <td
+                      className="name"
+                    >
+                      occurrenceForm.observationData.recordNumber.label
+                    </td>
+                    <td
+                      className="value"
+                    >
+                      Record Number
+                    </td>
+                  </tr>
+                </NameValueRow>
+              </tbody>
+            </table>
+            <div
+              className="columns"
+            >
+              <div
+                className="column is-3"
+              >
+                <p
+                  className="title is-5"
+                >
+                  occurrenceForm.observationData.identifiedBy.label
+                </p>
+                <ul>
+                  <li
+                    key="person-1"
+                  >
+                    person-1
+                  </li>
+                  <li
+                    key="person-2"
+                  >
+                    person-2
+                  </li>
+                </ul>
+              </div>
+              <div
+                className="column is-3"
+              >
+                <p
+                  className="title is-5"
+                >
+                  occurrenceForm.observationData.recordedBy.label
+                </p>
+                <ul>
+                  <li
+                    key="recorded-by-1"
+                  >
+                    recorded-by-1
+                  </li>
+                  <li
+                    key="recorded-by-2"
+                  >
+                    recorded-by-2
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <SectionSubtitle>
+            <h2
+              className="title is-5"
+            >
+              occurrenceForm.finalSummary.observationData.speciesDataSubtitle
+            </h2>
+          </SectionSubtitle>
+          <table
+            className="table is-striped is-fullwidth is-hoverable"
+          >
+            <NameValueHeader>
+              <thead>
+                <tr>
+                  <th
+                    className="type"
+                  >
+                    common.name
+                  </th>
+                  <th
+                    className="value"
+                  >
+                    common.value
+                  </th>
+                </tr>
+              </thead>
+            </NameValueHeader>
+            <tbody>
+              <NameValueRow
+                name="occurrenceForm.observationData.references.label"
+                value="www.google.com, https://clojure.org/"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.observationData.references.label
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    www.google.com, https://clojure.org/
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.observationData.identificationQualifier.label"
+                value="Identification Qualifier"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.observationData.identificationQualifier.label
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    Identification Qualifier
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.observationData.identificationRemarks.label"
+                value="Identification Remarks"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.observationData.identificationRemarks.label
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    Identification Remarks
+                  </td>
+                </tr>
+              </NameValueRow>
+            </tbody>
+          </table>
+          <ChangeButton
+            onClick={[Function]}
+          >
+            <button
+              className="change-button button"
+              onClick={[Function]}
+            >
+              common.change
+            </button>
+          </ChangeButton>
+        </section>
+        <section
+          className="measurement-or-fact-summary"
+        >
+          <SectionTitle>
+            <h2
+              className="title is-4"
+            >
+              5 - 
+              occurrenceForm.measurementOrFact.step.stepTitle
+            </h2>
+          </SectionTitle>
+          <table
+            className="measurements table is-fullwidth is-striped is-hoverable"
+          >
+            <thead>
+              <tr>
+                <th
+                  className="type"
+                >
+                  common.type
+                </th>
+                <th
+                  className="name"
+                >
+                  common.name
+                </th>
+                <th
+                  className="value"
+                >
+                  common.value
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                className="fieldrow"
+                key="0"
+              >
+                <td>
+                  Abundance category of biological entity specified elsewhere
+                </td>
+                <td>
+                  Dimensionless
+                </td>
+                <td>
+                  3
+                </td>
+              </tr>
+              <tr
+                className="fieldrow"
+                key="1"
+              >
+                <td>
+                  Abundance of biological entity specified elsewhere per unit area of the bed
+                </td>
+                <td>
+                  Number per square meter
+                </td>
+                <td>
+                  44
+                </td>
+              </tr>
+              <tr
+                className="fieldrow"
+                key="2"
+              >
+                <td>
+                  ObservedIndividualCount
+                </td>
+                <td>
+                  Dimensionless
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+              <tr
+                className="fieldrow"
+                key="3"
+              >
+                <td>
+                  Pressure
+                </td>
+                <td>
+                  Decibars
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+              <tr
+                className="fieldrow"
+                key="4"
+              >
+                <td>
+                  Salinity
+                </td>
+                <td>
+                  Grams per kilogram
+                </td>
+                <td>
+                  3
+                </td>
+              </tr>
+              <tr
+                className="fieldrow"
+                key="5"
+              >
+                <td>
+                  Temperature
+                </td>
+                <td>
+                  Degrees Celsius
+                </td>
+                <td>
+                  2
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <ChangeButton
+            onClick={[Function]}
+          >
+            <button
+              className="change-button button"
+              onClick={[Function]}
+            >
+              common.change
+            </button>
+          </ChangeButton>
+        </section>
+        <section
+          className="darwin-core-fields-summary"
+        >
+          <SectionTitle>
+            <h2
+              className="title is-4"
+            >
+              6 - 
+              occurrenceForm.darwinCoreFields.step.stepTitle
+            </h2>
+          </SectionTitle>
+          <table
+            className="table is-striped is-fullwidth is-hoverable"
+          >
+            <NameValueHeader>
+              <thead>
+                <tr>
+                  <th
+                    className="type"
+                  >
+                    common.name
+                  </th>
+                  <th
+                    className="value"
+                  >
+                    common.value
+                  </th>
+                </tr>
+              </thead>
+            </NameValueHeader>
+            <tbody>
+              <NameValueRow
+                key="0"
+                name="http://rs.iobis.org/obis/terms/iobis-1"
+                value="iobis-1-value"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    http://rs.iobis.org/obis/terms/iobis-1
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    iobis-1-value
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                key="1"
+                name="http://rs.iobis.org/obis/terms/iobis-2"
+                value="iobis-2-value"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    http://rs.iobis.org/obis/terms/iobis-2
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    iobis-2-value
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                key="2"
+                name="http://purl.org/dc/terms/purl-field-1"
+                value="purl-field-1-value"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    http://purl.org/dc/terms/purl-field-1
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    purl-field-1-value
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                key="3"
+                name="http://purl.org/dc/terms/purl-field-2"
+                value="purl-field-2-value"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    http://purl.org/dc/terms/purl-field-2
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    purl-field-2-value
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                key="4"
+                name="http://rs.tdwg.org/dwc/terms/tdwg-field-1"
+                value="tdwg-field-1-value"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    http://rs.tdwg.org/dwc/terms/tdwg-field-1
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    tdwg-field-1-value
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                key="5"
+                name="http://rs.tdwg.org/dwc/terms/tdwg-field-2"
+                value="tdwg-field-2-value"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    http://rs.tdwg.org/dwc/terms/tdwg-field-2
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    tdwg-field-2-value
+                  </td>
+                </tr>
+              </NameValueRow>
+            </tbody>
+          </table>
+          <ChangeButton
+            onClick={[Function]}
+          >
+            <button
+              className="change-button button"
+              onClick={[Function]}
+            >
+              common.change
+            </button>
+          </ChangeButton>
+        </section>
+        <SubmitEntryButton
+          onClick={[Function]}
+        >
+          <div
+            className="submit-entry-button columns is-mobile is-centered"
+          >
+            <button
+              className="button is-info is-medium"
+              onClick={[Function]}
+            >
+              common.submit
+            </button>
+          </div>
+        </SubmitEntryButton>
+      </div>
+    </FinalSummary>
+  </section>
+</OccurrenceForm>
+`;
+
 exports[`OccurrenceForm when updating occurrence renders correctly 1`] = `
 <OccurrenceForm
   location={

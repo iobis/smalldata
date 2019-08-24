@@ -200,6 +200,29 @@ describe('OccurrenceForm', () => {
       expect(wrapper.find('.dataset').exists()).toBe(true)
       expect(wrapper.find('.dataset-option')).toHaveLength(4)
     })
+
+    describe('and then clicking "Review and Submit" button', () => {
+      beforeAll(() => {
+        wrapper.find('.review-and-submit-button').simulate('click')
+      })
+
+      it('renders correctly', () => {
+        expect(wrapper.find('.final-summary').exists()).toBe(true)
+        expect(wrapper.find(OccurrenceForm)).toMatchSnapshot()
+      })
+
+      it('does not render success message', () => {
+        expect(wrapper.find('.success-message').exists()).toBe(false)
+      })
+
+      it('does not render error message', () => {
+        expect(wrapper.find('.error-message').exists()).toBe(false)
+      })
+
+      it('render 2 submit entry buttons error message', () => {
+        expect(wrapper.find('.submit-entry-button button')).toHaveLength(2)
+      })
+    })
   })
 })
 
