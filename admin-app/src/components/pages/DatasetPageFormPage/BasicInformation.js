@@ -5,19 +5,9 @@ import React from 'react'
 import Textarea from '@smalldata/dwca-lib/src/components/form/Textarea'
 import { useTranslation } from 'react-i18next'
 
-export const licences = [
-  'Creative Commons Attribution Non Commercial (CC-BY) 4.0 License',
-  'Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License',
-  'Public Domain (CC0 1.0)']
-export const languages = [
-  'English',
-  'Dutch',
-  'French',
-  'Spanish']
-
-export default function BasicInformation({ onChange, data }) {
+export default function BasicInformation({ onChange, data, licences, languages }) {
   const { t } = useTranslation()
-  const { title, publishingOrganisation, licence, language, abstract } = data
+  const { title, licence, language, abstract } = data
 
   const updateField = (name, value) => {
     const newSelection = { ...data, [name]: value }
@@ -31,11 +21,6 @@ export default function BasicInformation({ onChange, data }) {
         name="datasetPageFormPage.basicInformation.title"
         onChange={value => updateField('title', value)}
         value={title}/>
-      <InputText
-        className="publishing-organisation"
-        name="datasetPageFormPage.basicInformation.publishingOrganisation"
-        onChange={value => updateField('publishingOrganisation', value)}
-        value={publishingOrganisation}/>
       <div className="column field licence">
         <label className="label">
           {t('datasetPageFormPage.basicInformation.licence.label')}
@@ -64,14 +49,15 @@ export default function BasicInformation({ onChange, data }) {
 }
 
 export const basicInformationShape = {
-  title:                  PropTypes.string.isRequired,
-  publishingOrganisation: PropTypes.string.isRequired,
-  licence:                PropTypes.oneOf(licences).isRequired,
-  language:               PropTypes.oneOf(languages).isRequired,
-  abstract:               PropTypes.string.isRequired
+  title:    PropTypes.string.isRequired,
+  licence:  PropTypes.string.isRequired,
+  language: PropTypes.string.isRequired,
+  abstract: PropTypes.string.isRequired
 }
 
 BasicInformation.propTypes = {
-  data:     PropTypes.shape(basicInformationShape).isRequired,
-  onChange: PropTypes.func.isRequired
+  data:      PropTypes.shape(basicInformationShape).isRequired,
+  languages: PropTypes.arrayOf(PropTypes.string).isRequired,
+  licences:  PropTypes.arrayOf(PropTypes.string).isRequired,
+  onChange:  PropTypes.func.isRequired
 }
