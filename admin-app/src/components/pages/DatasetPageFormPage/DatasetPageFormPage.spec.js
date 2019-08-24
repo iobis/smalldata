@@ -170,6 +170,16 @@ describe('DatasetPageFormPage', () => {
         expect(wrapper.find('.step-header .selected-data').at(0).text()).toEqual('Benthic data from Sevastopol (Black Sea)')
       })
 
+      it('renders resource contacts', () => {
+        expect(wrapper.find('.resource-contacts').exists()).toBe(true)
+      })
+
+      it('renders correct header of resource contacts', () => {
+        const contactsTableHeader = wrapper.find('.resource-contacts .contacts-table-header')
+        expect(contactsTableHeader.exists()).toBe(true)
+        expect(contactsTableHeader.text()).toBe('datasetPageFormPage.resourceContacts.contactsTableHeader')
+      })
+
       it('renders 1 contact row', () => {
         expect(wrapper.find('.resource-contacts .contact-row')).toHaveLength(1)
       })
@@ -184,6 +194,16 @@ describe('DatasetPageFormPage', () => {
             .toEqual('datasetPageFormPage.resourceContacts.step.selectedData {"nrOfContacts":1}')
         })
 
+        it('renders resource creators', () => {
+          expect(wrapper.find('.resource-creators').exists()).toBe(true)
+        })
+
+        it('renders correct header of resource creators', () => {
+          const contactsTableHeader = wrapper.find('.resource-creators .contacts-table-header')
+          expect(contactsTableHeader.exists()).toBe(true)
+          expect(contactsTableHeader.text()).toBe('datasetPageFormPage.resourceCreators.contactsTableHeader')
+        })
+
         it('renders 3 resource creators', () => {
           expect(wrapper.find('.resource-creators .contact-row')).toHaveLength(3)
         })
@@ -196,6 +216,16 @@ describe('DatasetPageFormPage', () => {
           it('renders resource creators title with 3 nr of contacts', () => {
             expect(wrapper.find('.step-header .selected-data').at(2).text())
               .toEqual('datasetPageFormPage.resourceCreators.step.selectedData {"nrOfContacts":3}')
+          })
+
+          it('renders metadata providers', () => {
+            expect(wrapper.find('.metadata-providers').exists()).toBe(true)
+          })
+
+          it('renders correct header of metadata providers', () => {
+            const contactsTableHeader = wrapper.find('.metadata-providers .contacts-table-header')
+            expect(contactsTableHeader.exists()).toBe(true)
+            expect(contactsTableHeader.text()).toBe('datasetPageFormPage.metadataProviders.contactsTableHeader')
           })
 
           it('renders 1 metadata provider', () => {
