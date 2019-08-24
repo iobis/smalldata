@@ -251,8 +251,8 @@ describe('OccurrenceForm', () => {
           expect(wrapper.find('.success-message').exists()).toBe(true)
         })
 
-        xit('render success message with update title', () => {
-          expect(wrapper.find('.success-message .title').text()).toBe('occurrenceForm.finalSummary.successMessage.header.create')
+        it('render success message with update title', () => {
+          expect(wrapper.find('.success-message .title').text()).toBe('occurrenceForm.finalSummary.successMessage.header.update')
         })
 
         it('does not render error message', () => {
