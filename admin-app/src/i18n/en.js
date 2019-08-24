@@ -61,7 +61,7 @@ export default {
           stepTitle:       'Resource Contacts',
           selectedData:    '{{nrOfContacts}} people coupled as resource contact'
         },
-        contactsTableHeader: 'Resource creators attached to dataset'
+        contactsTableHeader: 'Resource contacts attached to dataset'
       },
       resourceCreators:      {
         step:                {
