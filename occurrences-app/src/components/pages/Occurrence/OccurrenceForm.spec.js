@@ -79,12 +79,60 @@ describe('OccurrenceForm', () => {
 
       removeDarwinCoreField(wrapper, 1)
       expect(wrapper.find('.fieldrow')).toHaveLength(2)
+    })
 
-      wrapper.find('.review-and-submit-button').simulate('click')
-      expect(wrapper).toMatchSnapshot()
-      expect(wrapper.find('.final-summary').exists()).toBe(true)
-      expect(wrapper.find('.success-message').exists()).toBe(false)
-      expect(wrapper.find('.error-message').exists()).toBe(false)
+    describe('and then clicking "Review and Submit" button', () => {
+      beforeAll(() => {
+        wrapper.find('.review-and-submit-button').simulate('click')
+      })
+
+      it('renders correctly', () => {
+        expect(wrapper).toMatchSnapshot()
+        expect(wrapper.find('.final-summary').exists()).toBe(true)
+      })
+
+      it('does not render success message', () => {
+        expect(wrapper.find('.success-message').exists()).toBe(false)
+      })
+
+      it('does not render error message', () => {
+        expect(wrapper.find('.error-message').exists()).toBe(false)
+      })
+
+      it('render 2 submit entry buttons error message', () => {
+        expect(wrapper.find('.submit-entry-button button')).toHaveLength(2)
+      })
+
+      describe('and then clicking submit button', () => {
+        beforeAll(async() => {
+          SmalldataClient.createOccurrence.mockImplementation(() =>
+            new Promise((resolve) => {
+              resolve({})
+            })
+          )
+          await act(async() => {
+            wrapper.find('.submit-entry-button button').at(0).simulate('click')
+          })
+          wrapper.update()
+        })
+
+        it('calls SmalldataClient.createOccurrence once with correct dataset id', () => {
+          expect(SmalldataClient.createOccurrence).toHaveBeenCalledTimes(1)
+          expect(SmalldataClient.createOccurrence).toHaveBeenNthCalledWith(1, expect.any(Object))
+        })
+
+        it('render success message', () => {
+          expect(wrapper.find('.success-message').exists()).toBe(true)
+        })
+
+        it('render success message with update title', () => {
+          expect(wrapper.find('.success-message .title').text()).toBe('occurrenceForm.finalSummary.successMessage.header.create')
+        })
+
+        it('does not render error message', () => {
+          expect(wrapper.find('.error-message').exists()).toBe(false)
+        })
+      })
     })
   })
 })
