@@ -1,6 +1,5 @@
 package org.obis.smalldata.user;
 
-import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
@@ -9,6 +8,7 @@ import io.vertx.junit5.VertxExtension;
 import io.vertx.junit5.VertxTestContext;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.obis.smalldata.testutil.TestDb;
@@ -27,8 +27,6 @@ public class UserHandlerTest {
   private static final String KEY_BULKINESS = "bulkiness";
   private static final String KEY_DATASET_REFS = "dataset_refs";
   private static final String KEY_EMAIL_ADDRESS = "emailAddress";
-  private static final String KEY_ROLE = "role";
-  private static final String KEY_NAME = "name";
   private static final String KEY_REF = "_ref";
   private static final String KEY_VALUE = "value";
   private static final String QUERY_REF = "ref";
@@ -49,8 +47,6 @@ public class UserHandlerTest {
         "baseUrl", "https://my.domain.org/"));
     vertx.deployVerticle(
       UserComponent.class.getName(),
-      new DeploymentOptions().setConfig(new JsonObject()
-        .put("bulkiness", new JsonObject().put("halfTimeInDays", 500))),
       testContext.succeeding(id -> testContext.completeNow()));
   }
 
@@ -128,35 +124,6 @@ public class UserHandlerTest {
           assertThat(body.getMap())
             .containsOnlyKeys(KEY_REF, KEY_EMAIL_ADDRESS, KEY_BULKINESS)
             .containsEntry(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS);
-          assertThat(body.getJsonObject(KEY_BULKINESS).getDouble(KEY_VALUE))
-            .isEqualTo(0.0);
-          testContext.completeNow();
-        } else {
-          testContext.failNow(ar.cause());
-        }
-      });
-  }
-
-  @Test
-  @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
-  void insertUserWithNameAndRole(Vertx vertx, VertxTestContext testContext) {
-    vertx.eventBus().<JsonObject>send(
-      Collections.USERS.dbName(),
-      new JsonObject(Map.of(
-        KEY_ACTION, "insert",
-        "user", new JsonObject()
-          .put(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS)
-          .put(KEY_NAME, "Indiana Jones")
-          .put(KEY_ROLE, "node manager"))),
-      ar -> {
-        if (ar.succeeded()) {
-          assertThat(ar.succeeded()).isTrue();
-          var body = ar.result().body();
-          assertThat(body.getMap())
-            .containsOnlyKeys(KEY_REF, KEY_EMAIL_ADDRESS, KEY_BULKINESS, KEY_NAME, KEY_ROLE)
-            .containsEntry(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS)
-            .containsEntry(KEY_NAME, "Indiana Jones")
-            .containsEntry(KEY_ROLE, "node manager");
           assertThat(body.getJsonObject(KEY_BULKINESS).getDouble(KEY_VALUE))
             .isEqualTo(0.0);
           testContext.completeNow();
