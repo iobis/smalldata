@@ -10,6 +10,7 @@
     "test:watch": "jest --env=jsdom --runInBand --watch"
   },
   "dependencies": {
+    "deep-equal": "1.0.1",
     "ow": "0.13.2",
     "react": "16.9.0"
   },
