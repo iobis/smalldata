@@ -325,21 +325,21 @@ function addBasicData(wrapper) {
 }
 
 function addResourceContact(wrapper, id) {
-  wrapper.find('.resource-contacts .name input').simulate('change', { target: { value: 'resource-contact-name-' + id } })
+  wrapper.find('.resource-contacts .ocean-expert-name-input .input').simulate('change', { target: { value: 'resource-contact-name-' + id } })
   wrapper.find('.resource-contacts .email input').simulate('change', { target: { value: 'resource-contact-email-' + id } })
   wrapper.find('.resource-contacts .organisation input').simulate('change', { target: { value: 'resource-contact-organisation-' + id } })
   wrapper.find('.resource-contacts .add').simulate('click')
 }
 
 function addResourceCreator(wrapper, id) {
-  wrapper.find('.resource-creators .name input').simulate('change', { target: { value: 'resource-creator-name-' + id } })
+  wrapper.find('.resource-creators .ocean-expert-name-input .input').simulate('change', { target: { value: 'resource-creator-name-' + id } })
   wrapper.find('.resource-creators .email input').simulate('change', { target: { value: 'resource-creator-email-' + id } })
   wrapper.find('.resource-creators .organisation input').simulate('change', { target: { value: 'resource-creator-organisation-' + id } })
   wrapper.find('.resource-creators .add').simulate('click')
 }
 
 function addMetadataProvider(wrapper, id) {
-  wrapper.find('.metadata-providers .name input').simulate('change', { target: { value: 'metadata-provider-name-' + id } })
+  wrapper.find('.metadata-providers .ocean-expert-name-input .input').simulate('change', { target: { value: 'metadata-provider-name-' + id } })
   wrapper.find('.metadata-providers .email input').simulate('change', { target: { value: 'metadata-provider-email-' + id } })
   wrapper.find('.metadata-providers .organisation input').simulate('change', { target: { value: 'metadata-provider-organisation-' + id } })
   wrapper.find('.metadata-providers .add').simulate('click')

@@ -3,6 +3,7 @@ import InputText from '@smalldata/dwca-lib/src/components/form/InputText'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import OceanExpertNameInput from '../../OceanExpertNameInput/OceanExpertNameInput'
 
 export default function ContactsForm({ className, contactsTableHeader, data, onChange }) {
   const { t } = useTranslation()
@@ -24,13 +25,16 @@ export default function ContactsForm({ className, contactsTableHeader, data, onC
     onChange(newContacts)
   }
 
+  function handleOceanExpertProfileChange(profile) {
+    setName(profile.name)
+    setEmail(profile.email || email)
+  }
+
   return (
     <div className={classNames('contacts-form', className)}>
-      <InputText
-        className="name"
-        name="datasetPageFormPage.contactsForm.name"
-        onChange={value => setName(value)}
-        value={name}/>
+      <OceanExpertNameInput
+        oceanExpertName={name}
+        onChange={handleOceanExpertProfileChange}/>
       <InputText
         className="email"
         name="datasetPageFormPage.contactsForm.email"
