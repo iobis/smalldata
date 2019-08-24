@@ -1,8 +1,9 @@
+import deepEqual from 'deep-equal'
 import ow from 'ow'
+import { findLanguageByCode, findLanguageCodeByTitle } from '@smalldata/dwca-lib/src/clients/languages'
 import { findTypeAndUnitIdByNames, findUnitsByTypeId } from './measurments'
 import { format } from 'date-fns'
 import { getProperty } from '../common/objects'
-import { findLanguageByCode, findLanguageCodeByTitle } from '@smalldata/dwca-lib/src/clients/languages'
 
 const purlUrl = 'http://purl.org/dc/terms/'
 const tdwgUrl = 'http://rs.tdwg.org/dwc/terms/'
@@ -176,6 +177,15 @@ export function mapDwcsToDarwinCoreFields(dwca) {
   return [...iobisFields, ...purlFields, ...tdwgFields]
 }
 
+const occurrenceKeywordSet = {
+  keywords:         ['Occurrence'],
+  keywordThesaurus: 'GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml'
+}
+const observationKeywordSet = {
+  keywords:         ['Observation'],
+  keywordThesaurus: 'GBIF Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml'
+}
+
 export function mapUiDatasetToRequest({ basicInformation, resourceContacts, resourceCreators, metadataProviders, keywords }) {
   ow(basicInformation, ow.object.partialShape({
     title:    ow.string,
@@ -215,15 +225,7 @@ export function mapUiDatasetToRequest({ basicInformation, resourceContacts, reso
     creators:          resourceCreators.map(mapContactToRequest),
     contacts:          resourceContacts.map(mapContactToRequest),
     metadataProviders: metadataProviders.map(mapContactToRequest),
-    keywordSets:       [{
-      keywords:         ['Occurrence'],
-      keywordThesaurus: 'GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml'
-    }, {
-      keywords:         ['Observation'],
-      keywordThesaurus: 'GBIF Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml'
-    }, {
-      keywords
-    }]
+    keywordSets:       [occurrenceKeywordSet, observationKeywordSet, { keywords }]
   }
 
   function mapContactToRequest({ name, email, organisation }) {
@@ -274,6 +276,7 @@ function mapResponseContactToContact(contact) {
 
 export function mapDatasetResponseToKeywords(dataset) {
   return dataset.keywordSets
+    .filter(keywordsSet => !deepEqual(keywordsSet, occurrenceKeywordSet) && !deepEqual(keywordsSet, observationKeywordSet))
     .map(keywordsSet => keywordsSet.keywords)
     .reduce((acc, val) => acc.concat(val), [])
 }

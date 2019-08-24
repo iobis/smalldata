@@ -288,13 +288,18 @@ describe('SmalldataConverters', () => {
   })
 
   it('mapDatasetResponseToKeywords(dataset)', () => {
-    expect(SmalldataConverters.mapDatasetResponseToKeywords(getDatasetDefaultResponse()[3])).toEqual([
-      'Occurrence',
-      'Observation',
-      'Benthic biomass',
-      'Benthos',
-      'Data',
-      'Marine Genomics'
-    ])
+    expect(SmalldataConverters.mapDatasetResponseToKeywords(getDatasetDefaultResponse()[0]))
+      .toEqual(['Samplingevent'])
+
+    expect(SmalldataConverters.mapDatasetResponseToKeywords(getDatasetDefaultResponse()[1]))
+      .toEqual([])
+
+    expect(SmalldataConverters.mapDatasetResponseToKeywords(getDatasetDefaultResponse()[3]))
+      .toEqual([
+        'Benthic biomass',
+        'Benthos',
+        'Data',
+        'Marine Genomics'
+      ])
   })
 })
