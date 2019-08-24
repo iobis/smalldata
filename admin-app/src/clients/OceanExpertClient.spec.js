@@ -1,7 +1,7 @@
-import { getByExpertByName } from './OceanExpertClient'
+import { searchExpertsByName } from './OceanExpertClient'
 
 describe('OceanExpertClient', () => {
-  describe('getByExpertByName', () => {
+  describe('searchExpertsByName', () => {
     beforeEach(() => {
       global.fetch = jest.fn().mockImplementation(() =>
         new Promise((resolve) => {
@@ -19,7 +19,7 @@ describe('OceanExpertClient', () => {
     })
 
     it('for some name', async() => {
-      const response = await getByExpertByName('Firstname')
+      const response = await searchExpertsByName('Firstname')
 
       expect(response).toEqual([createUser()])
       expect(fetch).toHaveBeenCalledTimes(1)
@@ -27,7 +27,7 @@ describe('OceanExpertClient', () => {
     })
 
     it('for name with extra whitespaces spaces', async() => {
-      const response = await getByExpertByName('  Firstname   ')
+      const response = await searchExpertsByName('  Firstname   ')
 
       expect(response).toEqual([createUser()])
       expect(fetch).toHaveBeenCalledTimes(1)
@@ -35,7 +35,7 @@ describe('OceanExpertClient', () => {
     })
 
     it('for name with spaces only', async() => {
-      const response = await getByExpertByName('     ')
+      const response = await searchExpertsByName('     ')
 
       expect(fetch).toHaveBeenCalledTimes(0)
       expect(response).toEqual([])
@@ -59,7 +59,7 @@ describe('OceanExpertClient', () => {
       })
 
       it('for not found response', async() => {
-        const response = await getByExpertByName('some strange name')
+        const response = await searchExpertsByName('some strange name')
 
         expect(fetch).toHaveBeenCalledTimes(1)
         expect(response).toEqual([])
