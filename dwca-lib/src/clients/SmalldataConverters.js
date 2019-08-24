@@ -1,5 +1,9 @@
+import deepEqual from 'deep-equal'
+import ow from 'ow'
+import { findLanguageByCode, findLanguageCodeByTitle } from '@smalldata/dwca-lib/src/clients/languages'
 import { findTypeAndUnitIdByNames, findUnitsByTypeId } from './measurments'
 import { format } from 'date-fns'
+import { getProperty } from '../common/objects'
 
 const purlUrl = 'http://purl.org/dc/terms/'
 const tdwgUrl = 'http://rs.tdwg.org/dwc/terms/'
@@ -143,15 +147,6 @@ export function mapDwcaToMeasurements(dwca) {
   }))
 }
 
-function getProperty(selectorFn, defaultValue) {
-  try {
-    const value = selectorFn()
-    return value === null || value === undefined ? defaultValue : value
-  } catch (e) {
-    return defaultValue
-  }
-}
-
 const reservedTdwgFields = ['basisOfRecord', 'eventDate', 'occurrenceStatus', 'scientificName', 'lifeStage', 'sex',
   'decimalLongitude', 'decimalLatitude', 'coordinateUncertaintyInMeters', 'minimumDepthInMeters', 'maximumDepthInMeters',
   'verbatimCoordinates', 'verbatimDepth', 'institutionCode', 'collectionCode', 'fieldNumber', 'catalogNumber',
@@ -180,4 +175,108 @@ export function mapDwcsToDarwinCoreFields(dwca) {
       value: tdwg[key]
     }))
   return [...iobisFields, ...purlFields, ...tdwgFields]
+}
+
+const occurrenceKeywordSet = {
+  keywords:         ['Occurrence'],
+  keywordThesaurus: 'GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml'
+}
+const observationKeywordSet = {
+  keywords:         ['Observation'],
+  keywordThesaurus: 'GBIF Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml'
+}
+
+export function mapUiDatasetToRequest({ basicInformation, resourceContacts, resourceCreators, metadataProviders, keywords }) {
+  ow(basicInformation, ow.object.partialShape({
+    title:    ow.string,
+    licence:  {
+      url:   ow.string,
+      title: ow.string
+    },
+    language: ow.string,
+    abstract: ow.string
+  }))
+  ow(resourceContacts, ow.array)
+  ow(resourceCreators, ow.array)
+  ow(metadataProviders, ow.array)
+  ow(keywords, ow.array)
+
+  const languageCode = findLanguageCodeByTitle(basicInformation.language)
+
+  return {
+    meta:              {
+      type:      'occurrence',
+      dwcTables: {
+        core:       'occurrence',
+        extensions: [
+          'emof'
+        ]
+      }
+    },
+    title:             {
+      language: languageCode,
+      value:    basicInformation.title
+    },
+    language:          languageCode,
+    abstract:          {
+      paragraphs: basicInformation.abstract.split('\n\n')
+    },
+    license:           basicInformation.licence,
+    creators:          resourceCreators.map(mapContactToRequest),
+    contacts:          resourceContacts.map(mapContactToRequest),
+    metadataProviders: metadataProviders.map(mapContactToRequest),
+    keywordSets:       [occurrenceKeywordSet, observationKeywordSet, { keywords }]
+  }
+
+  function mapContactToRequest({ name, email, organisation }) {
+    const firstName = name.split(' ').slice(0, -1).join(' ')
+    const lastName = name.split(' ').slice(-1).join(' ')
+
+    return {
+      individualName: {
+        givenName: firstName,
+        surName:   lastName
+      },
+      ...organisation && { organizationName: organisation },
+      ...email && { electronicMailAddress: email }
+    }
+  }
+}
+
+export function mapDatasetResponseToBasicInformation(dataset) {
+  return {
+    title:    dataset.title.value,
+    language: findLanguageByCode(dataset.title.language),
+    licence:  dataset.license.title,
+    abstract: dataset.abstract.paragraphs.join('\n\n')
+  }
+}
+
+export function mapDatasetResponseToResourceContacts(dataset) {
+  return dataset.contacts.map(mapResponseContactToContact)
+}
+
+export function mapDatasetResponseToResourceCreators(dataset) {
+  return dataset.creators.map(mapResponseContactToContact)
+}
+
+export function mapDatasetResponseToMetadataProviders(dataset) {
+  return dataset.metadataProviders.map(mapResponseContactToContact)
+}
+
+function mapResponseContactToContact(contact) {
+  const name = [
+    getProperty(() => contact.individualName.givenName, ''),
+    getProperty(() => contact.individualName.surName, '')
+  ].filter(value => value).join(' ')
+  const email = getProperty(() => contact.electronicMailAddress, '')
+  const organisation = getProperty(() => contact.organizationName, '')
+  return { email, name, organisation }
+}
+
+export function mapDatasetResponseToKeywords(dataset) {
+  return dataset.keywordSets
+    .filter(keywordsSet => !deepEqual(keywordsSet, occurrenceKeywordSet) && !deepEqual(keywordsSet, observationKeywordSet))
+    .map(keywordsSet => keywordsSet.keywords)
+    .reduce((acc, val) => acc.concat(val), [])
 }
