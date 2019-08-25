@@ -564,7 +564,7 @@ paths:
                 role:
                   type: string
                   enum:
-                    - admin
+                    - node manager
                     - researcher
                   example: researcher
                 datasetRefs:
