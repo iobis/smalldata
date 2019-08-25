@@ -12,6 +12,8 @@ import io.vertx.junit5.VertxTestContext;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.concurrent.TimeUnit;
 
@@ -68,9 +70,10 @@ public class UsersHandlerTest {
       });
   }
 
-  @Test
+  @ParameterizedTest
+  @ValueSource(strings = {"node manager", "researcher"})
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
-  void postUserWithNodeMangerRole(Vertx vertx, VertxTestContext context) {
+  void postUserWithSupportedRoles(String role, Vertx vertx, VertxTestContext context) {
     var client = WebClient.create(vertx);
     vertx.eventBus().localConsumer(
       "users",
@@ -81,36 +84,7 @@ public class UsersHandlerTest {
       .as(BodyCodec.jsonObject())
       .sendJson(
         new JsonObject()
-          .put(KEY_ROLE, "node manager")
-          .put(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS),
-        ar -> {
-          try {
-            assertThat(ar.succeeded()).isTrue();
-            var json = ar.result().body();
-            assertThat(json.getMap())
-              .containsOnlyKeys(KEY_EMAIL_ADDRESS, KEY_ROLE)
-              .containsEntry(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS);
-          } catch (AssertionError e) {
-            context.failNow(e);
-          }
-          context.completeNow();
-        });
-  }
-
-  @Test
-  @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
-  void postUserWithResearcherRole(Vertx vertx, VertxTestContext context) {
-    var client = WebClient.create(vertx);
-    vertx.eventBus().localConsumer(
-      "users",
-      message -> message.reply(((JsonObject) message.body()).getJsonObject("user")));
-    client
-      .post(HTTP_PORT, LOCALHOST, URL_API_USERS)
-      .putHeader("Authorization", "Basic verysecret")
-      .as(BodyCodec.jsonObject())
-      .sendJson(
-        new JsonObject()
-          .put(KEY_ROLE, "researcher")
+          .put(KEY_ROLE, role)
           .put(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS),
         ar -> {
           try {
