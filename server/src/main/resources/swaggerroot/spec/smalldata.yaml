@@ -339,7 +339,7 @@ paths:
                   example: Jane Doe
                 role:
                   type: string
-                  enum: ['admin', 'researcher']
+                  enum: ['node manager', 'researcher']
                   example: 'researcher'
                 datasetRefs:
                   type: array
