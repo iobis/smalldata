@@ -30,6 +30,7 @@ public class UsersHandlerTest {
   private static final String URL_API_USERS = "/api/users/";
   private static final String KEY_USERS_REF = "_ref";
   private static final String KEY_EMAIL_ADDRESS = "emailAddress";
+  private static final String KEY_ROLE = "role";
   private static final String DEFAULT_EMAIL_ADDRESS = "my.name@organization.ours";
 
   @BeforeEach
@@ -69,7 +70,7 @@ public class UsersHandlerTest {
 
   @Test
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
-  void postUser(Vertx vertx, VertxTestContext context) {
+  void postUserWithNodeMangerRole(Vertx vertx, VertxTestContext context) {
     var client = WebClient.create(vertx);
     vertx.eventBus().localConsumer(
       "users",
@@ -80,14 +81,73 @@ public class UsersHandlerTest {
       .as(BodyCodec.jsonObject())
       .sendJson(
         new JsonObject()
+          .put(KEY_ROLE, "node manager")
           .put(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS),
         ar -> {
           try {
             assertThat(ar.succeeded()).isTrue();
             var json = ar.result().body();
             assertThat(json.getMap())
-              .containsOnlyKeys(KEY_EMAIL_ADDRESS)
+              .containsOnlyKeys(KEY_EMAIL_ADDRESS, KEY_ROLE)
               .containsEntry(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS);
+          } catch (AssertionError e) {
+            context.failNow(e);
+          }
+          context.completeNow();
+        });
+  }
+
+  @Test
+  @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
+  void postUserWithResearcherRole(Vertx vertx, VertxTestContext context) {
+    var client = WebClient.create(vertx);
+    vertx.eventBus().localConsumer(
+      "users",
+      message -> message.reply(((JsonObject) message.body()).getJsonObject("user")));
+    client
+      .post(HTTP_PORT, LOCALHOST, URL_API_USERS)
+      .putHeader("Authorization", "Basic verysecret")
+      .as(BodyCodec.jsonObject())
+      .sendJson(
+        new JsonObject()
+          .put(KEY_ROLE, "researcher")
+          .put(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS),
+        ar -> {
+          try {
+            assertThat(ar.succeeded()).isTrue();
+            var json = ar.result().body();
+            assertThat(json.getMap())
+              .containsOnlyKeys(KEY_EMAIL_ADDRESS, KEY_ROLE)
+              .containsEntry(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS);
+          } catch (AssertionError e) {
+            context.failNow(e);
+          }
+          context.completeNow();
+        });
+  }
+
+  @Test
+  @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
+  void postUserWithUnsupportedRole(Vertx vertx, VertxTestContext context) {
+    var client = WebClient.create(vertx);
+    vertx.eventBus().localConsumer(
+      "users",
+      message -> message.reply(((JsonObject) message.body()).getJsonObject("user")));
+    client
+      .post(HTTP_PORT, LOCALHOST, URL_API_USERS)
+      .putHeader("Authorization", "Basic verysecret")
+      .as(BodyCodec.jsonObject())
+      .sendJson(
+        new JsonObject()
+          .put(KEY_ROLE, "unknown role")
+          .put(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS),
+        ar -> {
+          try {
+            assertThat(ar.succeeded()).isTrue();
+            var json = ar.result().body();
+            assertThat(json.getMap())
+              .containsOnlyKeys("timestamp", "exception", "exceptionMessage", "path")
+              .containsEntry("exceptionMessage", "$.role: does not have a value in the enumeration [node manager, researcher]");
           } catch (AssertionError e) {
             context.failNow(e);
           }
