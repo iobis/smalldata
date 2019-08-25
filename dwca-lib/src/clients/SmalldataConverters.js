@@ -67,9 +67,11 @@ export function mapOccurrenceToDwca(occurrence) {
 }
 
 function mapOccurrenceDataToTdwg({ basisOfRecord, beginDate, endDate, occurrenceStatus, scientificName, lifeStage, sex }) {
+  const beginDateFormatted = format(beginDate, 'YYYY-MM-DD')
+  const eventDate = beginDateFormatted + (endDate ? format(endDate, '/YYYY-MM-DD') : '')
   return {
     basisOfRecord:    basisOfRecord.charAt(0).toUpperCase() + basisOfRecord.slice(1),
-    eventDate:        format(beginDate, 'YYYY-MM-DD') + '/' + format(endDate || beginDate, 'YYYY-MM-DD'),
+    eventDate,
     occurrenceStatus: occurrenceStatus,
     scientificName:   scientificName,
     ...(lifeStage === 'unspecified' ? {} : { lifeStage }),
