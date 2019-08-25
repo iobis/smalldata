@@ -75,8 +75,8 @@ exports[`ManageUsersPage when users provided renders correctly 1`] = `
                 ]
               }
               email="email-1@domain.com"
-              id="user-1"
-              key="user-1"
+              id="user-1-ref"
+              key="user-1-ref"
             >
               <tr
                 className="user-row"
@@ -88,14 +88,14 @@ exports[`ManageUsersPage when users provided renders correctly 1`] = `
                     className="button is-info"
                     to={
                       Object {
-                        "pathname": "/manage-users/update/user-1",
+                        "pathname": "/manage-users/update/user-1-ref",
                         "state": Object {
                           "action": "update",
                           "datasetIds": Array [
                             "dataset-1-id",
                           ],
                           "email": "email-1@domain.com",
-                          "id": "user-1",
+                          "id": "user-1-ref",
                           "name": "",
                           "role": "researcher",
                         },
@@ -104,7 +104,7 @@ exports[`ManageUsersPage when users provided renders correctly 1`] = `
                   >
                     <a
                       className="button is-info"
-                      href="/manage-users/update/user-1"
+                      href="/manage-users/update/user-1-ref"
                       onClick={[Function]}
                     >
                       common.edit
@@ -146,8 +146,8 @@ exports[`ManageUsersPage when users provided renders correctly 1`] = `
                 ]
               }
               email="email-2@domain.com"
-              id="user-2"
-              key="user-2"
+              id="user-2-ref"
+              key="user-2-ref"
               role="node manager"
             >
               <tr
@@ -160,14 +160,14 @@ exports[`ManageUsersPage when users provided renders correctly 1`] = `
                     className="button is-info"
                     to={
                       Object {
-                        "pathname": "/manage-users/update/user-2",
+                        "pathname": "/manage-users/update/user-2-ref",
                         "state": Object {
                           "action": "update",
                           "datasetIds": Array [
                             "dataset-1-id",
                           ],
                           "email": "email-2@domain.com",
-                          "id": "user-2",
+                          "id": "user-2-ref",
                           "name": "",
                           "role": "node manager",
                         },
@@ -176,7 +176,7 @@ exports[`ManageUsersPage when users provided renders correctly 1`] = `
                   >
                     <a
                       className="button is-info"
-                      href="/manage-users/update/user-2"
+                      href="/manage-users/update/user-2-ref"
                       onClick={[Function]}
                     >
                       common.edit

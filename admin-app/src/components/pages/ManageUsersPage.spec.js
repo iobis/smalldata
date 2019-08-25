@@ -9,14 +9,16 @@ jest.mock('@smalldata/dwca-lib/src/clients/SmalldataClient', () => ({
   getUsersWithDatasets: jest.fn().mockImplementation(() =>
     new Promise((resolve) => {
       resolve([{
-        _id:          'user-1',
+        _id:          'user-1-id',
+        _ref:         'user-1-ref',
         emailAddress: 'email-1@domain.com',
         datasets:     [{
           id:    'dataset-1-id',
           title: { value: 'dataset-1-title' }
         }]
       }, {
-        _id:          'user-2',
+        _id:          'user-2-id',
+        _ref:         'user-2-ref',
         role:         'node manager',
         emailAddress: 'email-2@domain.com',
         datasets:     [{
