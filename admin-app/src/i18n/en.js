@@ -102,7 +102,7 @@ export default {
           },
           nextOptions: 'What would you like to do next?',
           create:      'Create new dataset',
-          doNothing:   'nothing, I\'m done here for today'
+          doNothing:   'Nothing, I\'m done here for today'
         }
       },
       contactsForm:          {
