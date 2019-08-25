@@ -70,10 +70,10 @@ function mapOccurrenceDataToTdwg({ basisOfRecord, beginDate, endDate, occurrence
   const beginDateFormatted = format(beginDate, 'YYYY-MM-DD')
   const eventDate = beginDateFormatted + (endDate ? format(endDate, '/YYYY-MM-DD') : '')
   return {
-    basisOfRecord:    basisOfRecord.charAt(0).toUpperCase() + basisOfRecord.slice(1),
+    basisOfRecord: basisOfRecord.charAt(0).toUpperCase() + basisOfRecord.slice(1),
     eventDate,
-    occurrenceStatus: occurrenceStatus,
-    scientificName:   scientificName,
+    occurrenceStatus,
+    scientificName,
     ...(lifeStage === 'unspecified' ? {} : { lifeStage }),
     ...(sex === 'unspecified' ? {} : { sex })
   }
