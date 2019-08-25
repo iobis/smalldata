@@ -23,6 +23,7 @@ export default function FinalSummary({
   onSubmitClick,
   resourceContacts,
   resourceCreators,
+  successMessageType,
   successVisible
 }) {
   const { t } = useTranslation()
@@ -49,7 +50,7 @@ export default function FinalSummary({
       </div>
       {successVisible ? (
         <div className="success-message notification is-success" ref={successMessageRef}>
-          <p className="title">{t('datasetPageFormPage.finalSummary.successMessage.header')}</p>
+          <p className="title">{t('datasetPageFormPage.finalSummary.successMessage.header.' + successMessageType)}</p>
           <p className="subtitle">{t('datasetPageFormPage.finalSummary.successMessage.nextOptions')}</p>
           <section>
             <button className="create button is-white" onClick={onCreateClick}>
@@ -84,6 +85,7 @@ export default function FinalSummary({
                 name={t('datasetPageFormPage.basicInformation.language.label')}
                 value={basicInformation.language}/>
               <NameValueRow
+                className="abstract"
                 name={t('datasetPageFormPage.basicInformation.abstract.label')}
                 value={basicInformation.abstract}/>
             </tbody>
@@ -127,18 +129,19 @@ export default function FinalSummary({
 }
 
 FinalSummary.propTypes = {
-  basicInformation:  PropTypes.shape(basicInformationShape).isRequired,
-  errorMessage:      PropTypes.string,
-  errorVisible:      PropTypes.bool.isRequired,
-  keywords:          PropTypes.arrayOf(PropTypes.string).isRequired,
-  metadataProviders: PropTypes.arrayOf(PropTypes.shape(contactShape).isRequired),
-  onChangeClick:     PropTypes.func.isRequired,
-  onCreateClick:     PropTypes.func.isRequired,
-  onErrorClose:      PropTypes.func.isRequired,
-  onSubmitClick:     PropTypes.func.isRequired,
-  resourceContacts:  PropTypes.arrayOf(PropTypes.shape(contactShape).isRequired),
-  resourceCreators:  PropTypes.arrayOf(PropTypes.shape(contactShape).isRequired),
-  successVisible:    PropTypes.bool.isRequired
+  basicInformation:   PropTypes.shape(basicInformationShape).isRequired,
+  errorMessage:       PropTypes.string,
+  errorVisible:       PropTypes.bool.isRequired,
+  keywords:           PropTypes.arrayOf(PropTypes.string).isRequired,
+  metadataProviders:  PropTypes.arrayOf(PropTypes.shape(contactShape).isRequired),
+  onChangeClick:      PropTypes.func.isRequired,
+  onCreateClick:      PropTypes.func.isRequired,
+  onErrorClose:       PropTypes.func.isRequired,
+  onSubmitClick:      PropTypes.func.isRequired,
+  resourceContacts:   PropTypes.arrayOf(PropTypes.shape(contactShape).isRequired),
+  resourceCreators:   PropTypes.arrayOf(PropTypes.shape(contactShape).isRequired),
+  successMessageType: PropTypes.oneOf(['create', 'update']).isRequired,
+  successVisible:     PropTypes.bool.isRequired
 }
 
 function ContactTable({ contacts }) {

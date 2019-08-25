@@ -112,16 +112,16 @@ describe('SmalldataConverters', () => {
     }])
   })
 
-  it('mapDatasetToRequest(dataset)', () => {
+  it('mapUiDatasetToRequest(dataset)', () => {
     const uiDataset = {
       basicInformation:  {
-        title:        'Basic Data - Title',
-        licence:      {
+        title:    'Basic Data - Title',
+        licence:  {
           url:   'http://creativecommons.org/licenses/by-nc/4.0/legalcode',
           title: 'Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License'
         },
-        languageCode: 'en',
-        abstract:     'Basic Data - Abstract'
+        language: 'English',
+        abstract: 'Paragraph - 1\n\nParagraph - 2'
       },
       resourceContacts:  [{
         name:         'ResourceContact-1 Name-1',
@@ -130,7 +130,11 @@ describe('SmalldataConverters', () => {
       }, {
         name:         'ResourceContact-2 Name-2',
         email:        'ResourceContact-2@acme.com',
-        organisation: 'ResourceContact-2 Organization-2'
+        organisation: ''
+      }, {
+        name:         'ResourceContact-3 Name-3',
+        email:        '',
+        organisation: 'ResourceContact-3 Organization-3'
       }],
       resourceCreators:  [{
         name:         'ResourceCreator-1 Name-1',
@@ -153,7 +157,7 @@ describe('SmalldataConverters', () => {
       keywords:          ['Keyword-1', 'Keyword-2']
     }
 
-    const response = SmalldataConverters.mapDatasetToRequest(uiDataset)
+    const response = SmalldataConverters.mapUiDatasetToRequest(uiDataset)
 
     expect(response).toEqual({
       meta:              {
@@ -172,7 +176,8 @@ describe('SmalldataConverters', () => {
       language:          'en',
       abstract:          {
         paragraphs: [
-          'Basic Data - Abstract'
+          'Paragraph - 1',
+          'Paragraph - 2'
         ]
       },
       license:           {
@@ -206,8 +211,13 @@ describe('SmalldataConverters', () => {
           givenName: 'ResourceContact-2',
           surName:   'Name-2'
         },
-        organizationName:      'ResourceContact-2 Organization-2',
         electronicMailAddress: 'ResourceContact-2@acme.com'
+      }, {
+        individualName:   {
+          givenName: 'ResourceContact-3',
+          surName:   'Name-3'
+        },
+        organizationName: 'ResourceContact-3 Organization-3'
       }],
       metadataProviders: [{
         individualName:        {
@@ -225,8 +235,71 @@ describe('SmalldataConverters', () => {
         electronicMailAddress: 'MetadataProviders-2@acme.com'
       }],
       keywordSets:       [{
+        keywords:         ['Occurrence'],
+        keywordThesaurus: 'GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml'
+      }, {
+        keywords:         ['Observation'],
+        keywordThesaurus: 'GBIF Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml'
+      }, {
         keywords: ['Keyword-1', 'Keyword-2']
       }]
     })
+  })
+
+  it('mapDatasetResponseToBasicInformation(dataset)', () => {
+    expect(SmalldataConverters.mapDatasetResponseToBasicInformation(getDatasetDefaultResponse()[3])).toEqual({
+      title:    'Benthic data from Sevastopol (Black Sea)',
+      licence:  'Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License',
+      language: 'English',
+      abstract: 'paragraph-1\n\nparagraph-2'
+    })
+  })
+
+  it('mapDatasetResponseToResourceContacts(dataset)', () => {
+    expect(SmalldataConverters.mapDatasetResponseToResourceContacts(getDatasetDefaultResponse()[3])).toEqual([{
+      email:        'arvanitidis@her.hcmr.gr',
+      name:         'Christos Arvanitidis',
+      organisation: 'Hellenic Centre for Marine Research (HCMR)'
+    }])
+  })
+
+  it('mapDatasetResponseToResourceCreators(dataset)', () => {
+    expect(SmalldataConverters.mapDatasetResponseToResourceCreators(getDatasetDefaultResponse()[3])).toEqual([{
+      email:        'arvanitidis@her.hcmr.gr',
+      name:         'Christos Arvanitidis',
+      organisation: 'Hellenic Centre for Marine Research (HCMR)'
+    }, {
+      email:        '',
+      name:         '',
+      organisation: 'Hellenic Centre for Marine Research (HCMR)'
+    }, {
+      email:        'alexpet@ibss.iuf.net',
+      name:         'Alexei Petrov',
+      organisation: 'National Academy of Sciences of Ukraine Institute of Biology of the Southern Seas (NASU-IBSS'
+    }])
+  })
+
+  it('mapDatasetResponseToMetadataProviders(dataset)', () => {
+    expect(SmalldataConverters.mapDatasetResponseToMetadataProviders(getDatasetDefaultResponse()[3])).toEqual([{
+      email:        'info@eurobis.org',
+      name:         'EurOBIS Data Management Team',
+      organisation: 'Flanders Marine Institute (VLIZ)'
+    }])
+  })
+
+  it('mapDatasetResponseToKeywords(dataset)', () => {
+    expect(SmalldataConverters.mapDatasetResponseToKeywords(getDatasetDefaultResponse()[0]))
+      .toEqual(['Samplingevent'])
+
+    expect(SmalldataConverters.mapDatasetResponseToKeywords(getDatasetDefaultResponse()[1]))
+      .toEqual([])
+
+    expect(SmalldataConverters.mapDatasetResponseToKeywords(getDatasetDefaultResponse()[3]))
+      .toEqual([
+        'Benthic biomass',
+        'Benthos',
+        'Data',
+        'Marine Genomics'
+      ])
   })
 })

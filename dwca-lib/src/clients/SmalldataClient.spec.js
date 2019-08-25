@@ -46,13 +46,13 @@ describe('SmalldataClient', () => {
     it('makes default request', async() => {
       await SmalldataClient.createDataset({
         basicInformation:  {
-          title:        'title',
-          languageCode: 'en',
-          licence:      {
+          title:    'title',
+          language: 'English',
+          licence:  {
             url:   'licence url',
             title: 'licence title'
           },
-          abstract:     'abstract'
+          abstract: 'abstract'
         },
         resourceContacts:  [],
         resourceCreators:  [],
@@ -61,6 +61,42 @@ describe('SmalldataClient', () => {
       })
       expect(fetch.mock.calls[0][0]).toBe('/api/datasets')
       expect(fetch.mock.calls[0][1].method).toBe('POST')
+      expect(fetch.mock.calls[0][1].headers).toEqual(expectedHeaders)
+      expect(JSON.parse(fetch.mock.calls[0][1].body)).toMatchSnapshot()
+    })
+  })
+
+  describe('updateDataset()', () => {
+    beforeEach(() => {
+      global.fetch = jest.fn().mockImplementation(() =>
+        new Promise((resolve) => {
+          resolve({ json: () => 'default-response' })
+        })
+      )
+    })
+
+    afterEach(() => {
+      global.fetch.mockRestore()
+    })
+
+    it('makes default request', async() => {
+      await SmalldataClient.updateDataset({
+        basicInformation:  {
+          title:    'title',
+          language: 'English',
+          licence:  {
+            url:   'licence url',
+            title: 'licence title'
+          },
+          abstract: 'abstract'
+        },
+        resourceContacts:  [],
+        resourceCreators:  [],
+        metadataProviders: [],
+        keywords:          ['keyword-1']
+      }, 'some-datasetId')
+      expect(fetch.mock.calls[0][0]).toBe('/api/datasets/some-datasetId')
+      expect(fetch.mock.calls[0][1].method).toBe('PUT')
       expect(fetch.mock.calls[0][1].headers).toEqual(expectedHeaders)
       expect(JSON.parse(fetch.mock.calls[0][1].body)).toMatchSnapshot()
     })

@@ -96,7 +96,10 @@ export default {
       finalSummary:          {
         title:          'Final Summary',
         successMessage: {
-          header:      'Your dataset has been successfully created',
+          header:      {
+            create: 'Your dataset has been created',
+            update: 'Your dataset has been updated.'
+          },
           nextOptions: 'What would you like to do next?',
           create:      'Create new dataset',
           doNothing:   'Nothing, I\'m done here for today'
