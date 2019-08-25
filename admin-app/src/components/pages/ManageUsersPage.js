@@ -43,8 +43,8 @@ export default function ManageUsersPage() {
                 <UserRow
                   datasets={user.datasets}
                   email={user.emailAddress}
-                  id={user._ref}
-                  key={user._ref}
+                  id={user.id}
+                  key={user.id}
                   name={user.name}
                   role={user.role}/>
               ))}

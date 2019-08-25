@@ -31,10 +31,6 @@ export async function updateDataset(dataset, datasetId) {
   }).then(response => response.json())
 }
 
-export function renameRefToId({ ref, ...rest }) {
-  return ({ id: ref, ...rest })
-}
-
 export async function getOccurrences({ userRef }) {
   const query = 'projectFields=dwcRecord.tdwg.scientificName&projectFields=dwcRecord.tdwg.eventDate'
   return await fetch(`/api/dwca/user/${userRef}/records?${query}`, { headers })
@@ -75,8 +71,9 @@ export async function createOccurrence({ occurrence, userRef }) {
 }
 
 export async function getUsers() {
-  return fetch('/api/users', { headers })
+  const usersResponse = await fetch('/api/users', { headers })
     .then(response => response.json())
+  return usersResponse.map(({ _ref, ...rest }) => (({ id: _ref, ...rest })))
 }
 
 export async function getUsersWithDatasets() {
@@ -132,4 +129,8 @@ function groupBy(list, props) {
     (a[b[props]] = a[b[props]] || []).push(b)
     return a
   }, {})
+}
+
+function renameRefToId({ ref, ...rest }) {
+  return ({ id: ref, ...rest })
 }
