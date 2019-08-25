@@ -12,6 +12,7 @@ export default {
       longitude:  'Longitude',
       name:       'Name',
       remove:     'Remove',
+      submit:     'Submit',
       type:       'Type',
       unit:       'Unit',
       value:      'Value'
@@ -224,16 +225,15 @@ export default {
         }
       },
       finalSummary:          {
-        submitEntryButton: 'Submit Entry',
-        title:             'Final Summary',
-        locationData:      {
+        title:           'Final Summary',
+        locationData:    {
           verbatimDataSubtitle: 'Verbatim data'
         },
-        observationData:   {
+        observationData: {
           catalogDataSubtitle: 'Catalog data',
           speciesDataSubtitle: 'Species data'
         },
-        successMessage:    {
+        successMessage:  {
           header:            {
             create: 'Your entry has been added to the OBIS dataset.',
             update: 'Your entry has been updated.'

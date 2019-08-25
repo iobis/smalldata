@@ -12,6 +12,7 @@ export default {
       longitude:  'Longitude',
       name:       'Name',
       remove:     'Remove',
+      submit:     'Submit',
       type:       'Type',
       unit:       'Unit',
       value:      'Value'
@@ -35,24 +36,21 @@ export default {
     },
     datasetPageFormPage: {
       basicInformation:      {
-        step:                   {
+        step:     {
           dataDescription: 'Basic Data',
           stepDescription: 'Supply the mandatory information for the dataset',
           stepTitle:       'Basic Information'
         },
-        title:                  {
+        title:    {
           label: 'Title'
         },
-        publishingOrganisation: {
-          label: 'Publishing Organisation'
-        },
-        licence:                {
+        licence:  {
           label: 'Licence'
         },
-        language:               {
+        language: {
           label: 'Language'
         },
-        abstract:               {
+        abstract: {
           label: 'Abstract'
         }
       },
@@ -95,6 +93,15 @@ export default {
           placeholder: ''
         }
       },
+      finalSummary:          {
+        title:          'Final Summary',
+        successMessage: {
+          header:      'Your dataset has been successfully created',
+          nextOptions: 'What would you like to do next?',
+          create:      'Create new dataset',
+          doNothing:   'Nothing, I\'m done here for today'
+        }
+      },
       contactsForm:          {
         name:         {
           label: 'Name'
@@ -104,9 +111,6 @@ export default {
         },
         organisation: {
           label: 'Organisation'
-        },
-        position:     {
-          label: 'Position'
         }
       },
       reviewAndSubmitButton: 'Review and Submit'

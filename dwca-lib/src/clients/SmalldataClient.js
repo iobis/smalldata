@@ -1,4 +1,4 @@
-import { mapOccurrenceToDwca } from './SmalldataConverters'
+import { mapDatasetToRequest, mapOccurrenceToDwca } from './SmalldataConverters'
 
 const authorizationValue = 'Basic verysecret'
 const headers = {
@@ -10,6 +10,15 @@ export async function getDatasets() {
   const response = await fetch('/api/datasets', { headers })
     .then(response => response.json())
   return response.map(renameRefToId)
+}
+
+export async function createDataset(dataset) {
+  const request = mapDatasetToRequest(dataset)
+  return await fetch('/api/datasets', {
+    method: 'POST',
+    headers,
+    body:   JSON.stringify(request)
+  }).then(response => response.json())
 }
 
 export function renameRefToId({ ref, ...rest }) {

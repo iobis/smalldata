@@ -10,7 +10,8 @@
     "test:watch": "jest --env=jsdom --runInBand --watch"
   },
   "dependencies": {
-    "react": "16.8.6"
+    "ow": "0.13.2",
+    "react": "16.9.0"
   },
   "devDependencies": {
     "@babel/core": "7.5.0",
@@ -21,7 +22,7 @@
     "cross-env": "5.2.0",
     "enzyme": "3.10.0",
     "enzyme-adapter-react-16": "1.14.0",
-    "eslint-plugin-react-hooks": "1.6.1",
+    "eslint-plugin-react-hooks": "2.0.1",
     "jest": "24.8.0",
     "jest-dom": "3.4.0",
     "jest-enzyme": "7.0.2",
