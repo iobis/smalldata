@@ -8,3 +8,7 @@ export const licences = [{
   title: 'Public Domain (CC0 1.0)',
   url:   'https://creativecommons.org/publicdomain/zero/1.0/legalcode'
 }]
+
+export function findLicenceByTitle(title) {
+  return licences.find(licence => licence.title === title)
+}

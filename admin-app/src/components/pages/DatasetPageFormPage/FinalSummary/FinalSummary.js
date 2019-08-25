@@ -78,9 +78,6 @@ export default function FinalSummary({
                 name={t('datasetPageFormPage.basicInformation.title.label')}
                 value={basicInformation.title}/>
               <NameValueRow
-                name={t('datasetPageFormPage.basicInformation.publishingOrganisation.label')}
-                value={basicInformation.publishingOrganisation}/>
-              <NameValueRow
                 name={t('datasetPageFormPage.basicInformation.licence.label')}
                 value={basicInformation.licence}/>
               <NameValueRow
@@ -154,7 +151,6 @@ function ContactTable({ contacts }) {
           <th>{t('datasetPageFormPage.contactsForm.name.label')}</th>
           <th>{t('datasetPageFormPage.contactsForm.email.label')}</th>
           <th>{t('datasetPageFormPage.contactsForm.organisation.label')}</th>
-          <th>{t('datasetPageFormPage.contactsForm.position.label')}</th>
         </tr>
       </thead>
       <tbody>
@@ -171,13 +167,12 @@ ContactTable.propTypes = {
   contacts: PropTypes.arrayOf(PropTypes.shape(contactShape).isRequired)
 }
 
-function ContactRow({ email, name, organisation, position }) {
+function ContactRow({ email, name, organisation }) {
   return (
     <tr className="contact-row">
       <td className="name">{name}</td>
       <td className="email">{email}</td>
       <td className="organisation">{organisation}</td>
-      <td className="position">{position}</td>
     </tr>
   )
 }

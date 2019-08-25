@@ -72,8 +72,6 @@ describe('DatasetPageFormPage', () => {
   function addBasicData(wrapper) {
     wrapper.find('.basic-information .title input')
       .simulate('change', { target: { value: 'dataset title' } })
-    wrapper.find('.basic-information .publishing-organisation input')
-      .simulate('change', { target: { value: 'dataset publishing organisation' } })
     wrapper.find('.basic-information .licence .dropdown').simulate('click')
     wrapper.find('.basic-information .licence .dropdown .dropdown-item').at(1).simulate('click')
     wrapper.find('.basic-information .language .dropdown').simulate('click')
@@ -86,7 +84,6 @@ describe('DatasetPageFormPage', () => {
     wrapper.find('.resource-contacts .name input').simulate('change', { target: { value: 'resource-contact-name-' + id } })
     wrapper.find('.resource-contacts .email input').simulate('change', { target: { value: 'resource-contact-email-' + id } })
     wrapper.find('.resource-contacts .organisation input').simulate('change', { target: { value: 'resource-contact-organisation-' + id } })
-    wrapper.find('.resource-contacts .position input').simulate('change', { target: { value: 'resource-contact-position-' + id } })
     wrapper.find('.resource-contacts .add').simulate('click')
   }
 
@@ -94,7 +91,6 @@ describe('DatasetPageFormPage', () => {
     wrapper.find('.resource-creators .name input').simulate('change', { target: { value: 'resource-creator-name-' + id } })
     wrapper.find('.resource-creators .email input').simulate('change', { target: { value: 'resource-creator-email-' + id } })
     wrapper.find('.resource-creators .organisation input').simulate('change', { target: { value: 'resource-creator-organisation-' + id } })
-    wrapper.find('.resource-creators .position input').simulate('change', { target: { value: 'resource-creator-position-' + id } })
     wrapper.find('.resource-creators .add').simulate('click')
   }
 
@@ -102,7 +98,6 @@ describe('DatasetPageFormPage', () => {
     wrapper.find('.metadata-providers .name input').simulate('change', { target: { value: 'metadata-provider-name-' + id } })
     wrapper.find('.metadata-providers .email input').simulate('change', { target: { value: 'metadata-provider-email-' + id } })
     wrapper.find('.metadata-providers .organisation input').simulate('change', { target: { value: 'metadata-provider-organisation-' + id } })
-    wrapper.find('.metadata-providers .position input').simulate('change', { target: { value: 'metadata-provider-position-' + id } })
     wrapper.find('.metadata-providers .add').simulate('click')
   }
 })

@@ -1,5 +1,5 @@
 import ActiveStepHeader from '@smalldata/dwca-lib/src/components/StepHeaders/ActiveStepHeader'
-import BasicInformation, { languages, licences } from './BasicInformation'
+import BasicInformation from './BasicInformation'
 import ConfirmedStepHeader from '@smalldata/dwca-lib/src/components/StepHeaders/ConfirmedStepHeader'
 import FinalSummary from './FinalSummary/FinalSummary'
 import Keywords from './Keywords'
@@ -8,8 +8,10 @@ import NotConfirmedStepHeader from '@smalldata/dwca-lib/src/components/StepHeade
 import React, { useState } from 'react'
 import ResourceContacts from './ResourceContacts'
 import ResourceCreators from './ResourceCreators'
-import { useTranslation } from 'react-i18next'
 import { createDataset } from '@smalldata/dwca-lib/src/clients/SmalldataClient'
+import { findLanguageCodeByTitle, languages } from '@smalldata/dwca-lib/src/clients/languages'
+import { findLicenceByTitle, licences } from '@smalldata/dwca-lib/src/clients/licences'
+import { useTranslation } from 'react-i18next'
 
 export default function DatasetPageFormPage() {
   const initialState = createInitialState()
@@ -46,7 +48,11 @@ export default function DatasetPageFormPage() {
 
   async function handleSubmitClick() {
     const dataset = {
-      basicInformation,
+      basicInformation: {
+        ...basicInformation,
+        languageCode: findLanguageCodeByTitle(basicInformation.language),
+        licence:      findLicenceByTitle(basicInformation.licence)
+      },
       resourceContacts,
       resourceCreators,
       metadataProviders,
@@ -91,6 +97,8 @@ export default function DatasetPageFormPage() {
     children:
       <BasicInformation
         data={basicInformation}
+        languages={languages.map(language => language.title)}
+        licences={licences.map(licence => licence.title)}
         onChange={setBasicInformation}/>
   }, {
     dataDescription: t('datasetPageFormPage.resourceContacts.step.dataDescription'),
@@ -189,11 +197,10 @@ export default function DatasetPageFormPage() {
 function createInitialState() {
   return {
     basicInformation:  {
-      title:                  '',
-      publishingOrganisation: '',
-      licence:                licences[0],
-      language:               languages[0],
-      abstract:               ''
+      title:    '',
+      licence:  licences[0].title,
+      language: languages[0].title,
+      abstract: ''
     },
     resourceContacts:  [],
     resourceCreators:  [],

@@ -36,24 +36,21 @@ export default {
     },
     datasetPageFormPage: {
       basicInformation:      {
-        step:                   {
+        step:     {
           dataDescription: 'Basic Data',
           stepDescription: 'Supply the mandatory information for the dataset',
           stepTitle:       'Basic Information'
         },
-        title:                  {
+        title:    {
           label: 'Title'
         },
-        publishingOrganisation: {
-          label: 'Publishing Organisation'
-        },
-        licence:                {
+        licence:  {
           label: 'Licence'
         },
-        language:               {
+        language: {
           label: 'Language'
         },
-        abstract:               {
+        abstract: {
           label: 'Abstract'
         }
       },
@@ -114,9 +111,6 @@ export default {
         },
         organisation: {
           label: 'Organisation'
-        },
-        position:     {
-          label: 'Position'
         }
       },
       reviewAndSubmitButton: 'Review and Submit'
