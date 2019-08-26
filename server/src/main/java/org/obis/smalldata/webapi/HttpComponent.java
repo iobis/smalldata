@@ -15,6 +15,7 @@ import io.vertx.ext.web.Router;
 import io.vertx.ext.web.RoutingContext;
 import io.vertx.ext.web.api.contract.openapi3.OpenAPI3RouterFactory;
 import io.vertx.ext.web.handler.JWTAuthHandler;
+import lombok.val;
 
 import java.util.Map;
 import java.util.function.Consumer;
@@ -27,6 +28,11 @@ public class HttpComponent extends AbstractVerticle {
   private static final String ALG_KEY = "alg";
   private static final String AUTH_ES256 = "ES256";
 
+
+  private static final Map<String, Authority> AUTHORITIES = Map.ofEntries(
+    Map.entry("oceanexpert", new OceanExpertAuthority()),
+    Map.entry("local", new LocalAuthority()));
+
   @Override
   public void start(Future<Void> startFuture) {
     info("starting module 'webapi': {}", config().encodePrettily());
@@ -36,12 +42,14 @@ public class HttpComponent extends AbstractVerticle {
         if (ar.succeeded()) {
           info("started OpenAPI: {}", ar.succeeded());
           var authConfig = config().getJsonObject("auth");
+          val authProvider = authConfig.getString("provider", "");
           var pubSecKey = new PubSecKeyOptions()
             .setAlgorithm(authConfig.getString(ALG_KEY, AUTH_ES256))
             .setPublicKey(authConfig.getString(VERIFY_KEY));
           var jwtAuth = JWTAuth.create(vertx, new JWTAuthOptions().addPubSecKey(pubSecKey));
           new RouterConfig(
             startServer(startFuture, port),
+            AUTHORITIES.getOrDefault(authProvider, new OceanExpertAuthority()),
             Map.of(
               "demoApiKey", new DemoApiKeyHandler(config())::handle,
               "oceanExpertJWT", JWTAuthHandler.create(jwtAuth)))
@@ -92,7 +100,9 @@ public class HttpComponent extends AbstractVerticle {
     }
 
     private void handle(RoutingContext routingContext) {
-      if (isDemoMode && routingContext.request().headers().get("Authorization").equals(secret)) {
+      if (isDemoMode &&
+        routingContext.request().headers().get("Authorization") != null &&
+        routingContext.request().headers().get("Authorization").equals(secret)) {
         routingContext.setUser(dummyUser);
       }
       routingContext.next();

@@ -12,5 +12,12 @@
     "name": "Jane Doe",
     "role": "researcher",
     "dataset_refs": ["wEaBfmFyQhYCdsk", "PoJnGNMaxsupE4w", "NnqVLwIyPn-nRkc"]
+  },
+  {
+    "_ref": "FsfEMwhUTO_8I68",
+    "emailAddress": "kurt.sys@moment-4.be",
+    "name": "Jane AnotherDoe",
+    "role": "researcher",
+    "dataset_refs": ["PoJnGNMaxsupE4w", "NnqVLwIyPn-nRkc"]
   }
 ]
