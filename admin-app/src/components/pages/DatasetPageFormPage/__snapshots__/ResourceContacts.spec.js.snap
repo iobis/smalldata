@@ -14,28 +14,49 @@ exports[`ResourceContacts renders correctly 1`] = `
     <div
       className="contacts-form resource-contacts"
     >
-      <InputText
-        className="name"
-        name="datasetPageFormPage.contactsForm.name"
+      <OceanExpertNameInput
+        oceanExpertName=""
         onChange={[Function]}
-        value=""
       >
         <div
-          className="column field name"
+          className="ocean-expert-name-input field column is-four-fifths"
         >
-          <label
-            className="label"
+          <div
+            className="dropdown"
           >
-            datasetPageFormPage.contactsForm.name.label
-          </label>
-          <input
-            className="input"
-            onChange={[Function]}
-            type="text"
-            value=""
-          />
+            <div
+              className="dropdown-trigger"
+            >
+              <label
+                className="label"
+              >
+                userFormPage.name.label
+              </label>
+              <div
+                className="control has-icons-right"
+              >
+                <input
+                  className="input"
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  placeholder=""
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              className="dropdown-menu"
+              id="dropdown-menu"
+              role="menu"
+            >
+              <div
+                className="dropdown-content"
+              />
+            </div>
+          </div>
         </div>
-      </InputText>
+      </OceanExpertNameInput>
       <InputText
         className="email"
         name="datasetPageFormPage.contactsForm.email"
@@ -80,28 +101,6 @@ exports[`ResourceContacts renders correctly 1`] = `
           />
         </div>
       </InputText>
-      <InputText
-        className="position"
-        name="datasetPageFormPage.contactsForm.position"
-        onChange={[Function]}
-        value=""
-      >
-        <div
-          className="column field position"
-        >
-          <label
-            className="label"
-          >
-            datasetPageFormPage.contactsForm.position.label
-          </label>
-          <input
-            className="input"
-            onChange={[Function]}
-            type="text"
-            value=""
-          />
-        </div>
-      </InputText>
       <div
         className="column field"
       >
@@ -134,9 +133,7 @@ exports[`ResourceContacts renders correctly 1`] = `
               <th>
                 datasetPageFormPage.contactsForm.organisation.label
               </th>
-              <th>
-                datasetPageFormPage.contactsForm.position.label
-              </th>
+              <th />
             </tr>
           </thead>
           <tbody />

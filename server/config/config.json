@@ -15,7 +15,9 @@
     "path": ""
   },
   "user": {
-    "halfTimeInDays": 7
+    "bulkiness": {
+      "halfTimeInDays": 7
+    }
   },
   "dataset": {},
   "mode": "DEMO",

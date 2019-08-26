@@ -1,10 +1,59 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`SmalldataClient createDataset() makes default request 1`] = `
+Object {
+  "abstract": Object {
+    "paragraphs": Array [
+      "abstract",
+    ],
+  },
+  "contacts": Array [],
+  "creators": Array [],
+  "keywordSets": Array [
+    Object {
+      "keywordThesaurus": "GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml",
+      "keywords": Array [
+        "Occurrence",
+      ],
+    },
+    Object {
+      "keywordThesaurus": "GBIF Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml",
+      "keywords": Array [
+        "Observation",
+      ],
+    },
+    Object {
+      "keywords": Array [
+        "keyword-1",
+      ],
+    },
+  ],
+  "language": "en",
+  "license": Object {
+    "title": "licence title",
+    "url": "licence url",
+  },
+  "meta": Object {
+    "dwcTables": Object {
+      "core": "occurrence",
+      "extensions": Array [
+        "emof",
+      ],
+    },
+    "type": "occurrence",
+  },
+  "metadataProviders": Array [],
+  "title": Object {
+    "language": "en",
+    "value": "title",
+  },
+}
+`;
+
 exports[`SmalldataClient getUsersWithDatasets makes 2 requests and combine them 1`] = `
 Array [
   Object {
     "_id": "5d21b9eb54308464b1a9e6c7",
-    "_ref": "ovZTtaOJZ98xDDY",
     "bulkiness": 0,
     "dataset_refs": Array [
       "wEaBfmFyQhYCdsk",
@@ -224,9 +273,8 @@ Array [
       Object {
         "abstract": Object {
           "paragraphs": Array [
-            "The dataset contains the abundance and biomass values of sediment organisms from the Sevastopol region (South-Western Crimea, The Black Sea, Ukraine) collected between 1982 and 1992.",
-            "Abundance and Biomass of benthic organisms and key abiotic variables (covering irregular sampling surveys within 1982-1992) from the Sevastopol Area (South-Western Crimea, The Black Sea, Ukraine) including estuaries and small sheltered and semi-closed bays within the area of &quot;big Sevastopol bay&quot;
-Sevastopol Bay is located in south western part of the Crimean peninsula, Ukraine and comprehends the one of the biggest marine harbours of the Black Sea and has served as an industrialized naval base for decades. A consequence of this long-term industrial, military and municipal activity was the deterioration of the marine environment of the bay, depressed state of benthic assemblages and occurrence of expanded bottom areas that became contaminated with various sediment-associated pollutants including polycyclic aromatic hydrocarbons (PAHs), polychlorinated biphenyls (PCBs), pesticides, and metals. Benthic samples in Sevastopol bay heve been taken between 1982 and 1992.",
+            "paragraph-1",
+            "paragraph-2",
           ],
         },
         "contacts": Array [
@@ -314,10 +362,10 @@ Sevastopol Bay is located in south western part of the Crimean peninsula, Ukrain
       },
     ],
     "emailAddress": "some.user@domain.org",
+    "id": "ovZTtaOJZ98xDDY",
   },
   Object {
     "_id": "5d21b9eb54308464b1a9e6c8",
-    "_ref": "FsfEMwhUTO_8I68",
     "bulkiness": 0,
     "dataset_refs": Array [
       "wEaBfmFyQhYCdsk",
@@ -458,9 +506,8 @@ Sevastopol Bay is located in south western part of the Crimean peninsula, Ukrain
       Object {
         "abstract": Object {
           "paragraphs": Array [
-            "The dataset contains the abundance and biomass values of sediment organisms from the Sevastopol region (South-Western Crimea, The Black Sea, Ukraine) collected between 1982 and 1992.",
-            "Abundance and Biomass of benthic organisms and key abiotic variables (covering irregular sampling surveys within 1982-1992) from the Sevastopol Area (South-Western Crimea, The Black Sea, Ukraine) including estuaries and small sheltered and semi-closed bays within the area of &quot;big Sevastopol bay&quot;
-Sevastopol Bay is located in south western part of the Crimean peninsula, Ukraine and comprehends the one of the biggest marine harbours of the Black Sea and has served as an industrialized naval base for decades. A consequence of this long-term industrial, military and municipal activity was the deterioration of the marine environment of the bay, depressed state of benthic assemblages and occurrence of expanded bottom areas that became contaminated with various sediment-associated pollutants including polycyclic aromatic hydrocarbons (PAHs), polychlorinated biphenyls (PCBs), pesticides, and metals. Benthic samples in Sevastopol bay heve been taken between 1982 and 1992.",
+            "paragraph-1",
+            "paragraph-2",
           ],
         },
         "contacts": Array [
@@ -548,14 +595,65 @@ Sevastopol Bay is located in south western part of the Crimean peninsula, Ukrain
       },
     ],
     "emailAddress": "another.user@domain.org",
+    "id": "FsfEMwhUTO_8I68",
   },
   Object {
     "_id": "id-3",
-    "_ref": "red-3",
     "bulkiness": 0,
     "dataset_refs": Array [],
     "datasets": Array [],
     "emailAddress": "some.user@domain.org",
+    "id": "ref-3",
   },
 ]
+`;
+
+exports[`SmalldataClient updateDataset() makes default request 1`] = `
+Object {
+  "abstract": Object {
+    "paragraphs": Array [
+      "abstract",
+    ],
+  },
+  "contacts": Array [],
+  "creators": Array [],
+  "keywordSets": Array [
+    Object {
+      "keywordThesaurus": "GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml",
+      "keywords": Array [
+        "Occurrence",
+      ],
+    },
+    Object {
+      "keywordThesaurus": "GBIF Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml",
+      "keywords": Array [
+        "Observation",
+      ],
+    },
+    Object {
+      "keywords": Array [
+        "keyword-1",
+      ],
+    },
+  ],
+  "language": "en",
+  "license": Object {
+    "title": "licence title",
+    "url": "licence url",
+  },
+  "meta": Object {
+    "dwcTables": Object {
+      "core": "occurrence",
+      "extensions": Array [
+        "emof",
+      ],
+    },
+    "type": "occurrence",
+  },
+  "metadataProviders": Array [],
+  "title": Object {
+    "language": "en",
+    "value": "title",
+  },
+}
 `;

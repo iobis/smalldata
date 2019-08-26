@@ -43,8 +43,10 @@ export default function ManageUsersPage() {
                 <UserRow
                   datasets={user.datasets}
                   email={user.emailAddress}
-                  id={user._id}
-                  key={user._id}/>
+                  id={user.id}
+                  key={user.id}
+                  name={user.name}
+                  role={user.role}/>
               ))}
             </tbody>
           </table>
@@ -54,7 +56,7 @@ export default function ManageUsersPage() {
   )
 }
 
-function UserRow({ id, email, datasets }) {
+function UserRow({ id, email, name, role, datasets }) {
   const { t } = useTranslation()
 
   const toEdit = {
@@ -62,10 +64,10 @@ function UserRow({ id, email, datasets }) {
     state:    {
       action:     'update',
       datasetIds: datasets.map(dataset => dataset.id),
-      email,
+      email:      email || '',
       id,
-      name:       '',
-      role:       'researcher'
+      name:       name || '',
+      role:       role || 'researcher'
     }
   }
 
@@ -82,7 +84,9 @@ function UserRow({ id, email, datasets }) {
           {datasets.map(dataset => <li key={dataset.id}>{dataset.title.value}</li>)}
         </ul>
       </td>
-      <td className="role"/>
+      <td className="role">
+        {role || '—'}
+      </td>
     </tr>
   )
 }
@@ -97,5 +101,7 @@ const datasetShape = {
 UserRow.propTypes = {
   datasets: PropTypes.arrayOf(PropTypes.shape(datasetShape)).isRequired,
   email:    PropTypes.string.isRequired,
-  id:       PropTypes.string.isRequired
+  id:       PropTypes.string.isRequired,
+  name:     PropTypes.string,
+  role:     PropTypes.oneOf(['node manager', 'researcher'])
 }

@@ -1,7 +1,11 @@
-import { getByExpertByName } from './OceanExpertClient'
+import { getExpertById, searchExpertsByName } from './OceanExpertClient'
 
 describe('OceanExpertClient', () => {
-  describe('getByExpertByName', () => {
+  afterEach(() => {
+    global.fetch.mockRestore()
+  })
+
+  describe('searchExpertsByName', () => {
     beforeEach(() => {
       global.fetch = jest.fn().mockImplementation(() =>
         new Promise((resolve) => {
@@ -14,12 +18,8 @@ describe('OceanExpertClient', () => {
       )
     })
 
-    afterEach(() => {
-      global.fetch.mockRestore()
-    })
-
     it('for some name', async() => {
-      const response = await getByExpertByName('Firstname')
+      const response = await searchExpertsByName('Firstname')
 
       expect(response).toEqual([createUser()])
       expect(fetch).toHaveBeenCalledTimes(1)
@@ -27,7 +27,7 @@ describe('OceanExpertClient', () => {
     })
 
     it('for name with extra whitespaces spaces', async() => {
-      const response = await getByExpertByName('  Firstname   ')
+      const response = await searchExpertsByName('  Firstname   ')
 
       expect(response).toEqual([createUser()])
       expect(fetch).toHaveBeenCalledTimes(1)
@@ -35,7 +35,7 @@ describe('OceanExpertClient', () => {
     })
 
     it('for name with spaces only', async() => {
-      const response = await getByExpertByName('     ')
+      const response = await searchExpertsByName('     ')
 
       expect(fetch).toHaveBeenCalledTimes(0)
       expect(response).toEqual([])
@@ -54,16 +54,36 @@ describe('OceanExpertClient', () => {
         )
       })
 
-      afterEach(() => {
-        global.fetch.mockRestore()
-      })
-
       it('for not found response', async() => {
-        const response = await getByExpertByName('some strange name')
+        const response = await searchExpertsByName('some strange name')
 
         expect(fetch).toHaveBeenCalledTimes(1)
         expect(response).toEqual([])
       })
+    })
+  })
+
+  describe('getExpertById(someId)', () => {
+    beforeEach(() => {
+      global.fetch = jest.fn().mockImplementation(() =>
+        new Promise((resolve) => {
+          resolve({
+            json: () => ({
+              fname:  'firstName',
+              sname:  'lastName',
+              email1: 'private@email.com'
+            })
+          })
+        })
+      )
+    })
+
+    it('for not found response', async() => {
+      const response = await getExpertById('expert-id')
+
+      expect(fetch).toHaveBeenCalledTimes(1)
+      expect(fetch).toHaveBeenCalledWith('https://www.oceanexpert.net/api/v1/expert/expert-id.json')
+      expect(response).toEqual({ email: 'private@email.com', name: 'firstName lastName' })
     })
   })
 })

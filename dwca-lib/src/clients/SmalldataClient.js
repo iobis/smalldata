@@ -1,4 +1,4 @@
-import { mapOccurrenceToDwca } from './SmalldataConverters'
+import { mapOccurrenceToDwca, mapUiDatasetToRequest } from './SmalldataConverters'
 
 const authorizationValue = 'Basic verysecret'
 const headers = {
@@ -12,8 +12,23 @@ export async function getDatasets() {
   return response.map(renameRefToId)
 }
 
-export function renameRefToId({ ref, ...rest }) {
-  return ({ id: ref, ...rest })
+export async function createDataset(dataset) {
+  const request = mapUiDatasetToRequest(dataset)
+  return await fetch('/api/datasets', {
+    method: 'POST',
+    headers,
+    body:   JSON.stringify(request)
+  }).then(response => response.json())
+}
+
+export async function updateDataset(dataset, datasetId) {
+  const request = mapUiDatasetToRequest(dataset)
+  const url = `/api/datasets/${datasetId}`
+  return await fetch(url, {
+    method: 'PUT',
+    headers,
+    body:   JSON.stringify(request)
+  }).then(response => response.json())
 }
 
 export async function getOccurrences({ userRef }) {
@@ -56,8 +71,9 @@ export async function createOccurrence({ occurrence, userRef }) {
 }
 
 export async function getUsers() {
-  return fetch('/api/users', { headers })
+  const usersResponse = await fetch('/api/users', { headers })
     .then(response => response.json())
+  return usersResponse.map(({ _ref, ...rest }) => (({ id: _ref, ...rest })))
 }
 
 export async function getUsersWithDatasets() {
@@ -113,4 +129,8 @@ function groupBy(list, props) {
     (a[b[props]] = a[b[props]] || []).push(b)
     return a
   }, {})
+}
+
+function renameRefToId({ ref, ...rest }) {
+  return ({ id: ref, ...rest })
 }
