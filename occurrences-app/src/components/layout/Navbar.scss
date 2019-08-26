@@ -3,11 +3,11 @@
     font-family: var(--title-font);
 
     &.navbar-item{
-    color: var(--font-color);
+      color: var(--font-color);
     }
 
     &.navbar-item.is-active, &.navbar-item:hover {
-      background-color: #28a745;
+      background-color: var(--obis-green);
     }
 
   }
@@ -19,9 +19,15 @@
     }
   }
 
+
   /* Override bulma styles*/
   &.is-info {
     background-color: transparent;
   }
 
+}
+.navbar.is-info .navbar-brand {
+  a.navbar-item.logo:hover {
+    background-color: transparent;
+  }
 }

@@ -40,3 +40,12 @@ header {
   color: inherit;
   margin-bottom: var(--margin-bottom)
 }
+
+a {
+  color: var(--link-color)
+}
+
+/* Override Bulma style */
+.button.is-info:hover, .button.is-info.is-hovered {
+  background-color: darken($blue,5%)
+}

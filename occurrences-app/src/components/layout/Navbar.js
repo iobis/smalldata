@@ -19,8 +19,8 @@ export default function Navbar() {
   return (
     <nav aria-label="main navigation" className="navbar is-info" ref={menuRef} role="navigation">
       <div className="navbar-brand">
-        <Link className="navbar-item" onClick={hideNavbarMenu} to="/input-data">
-          <a href="#"><img alt="OBIS" src={logo} title="OBIS"/></a>
+        <Link className="navbar-item logo" onClick={hideNavbarMenu} to="/input-data">
+          <img alt="OBIS" src={logo} title="OBIS"/>
         </Link>
         <a
           className="navbar-burger"
