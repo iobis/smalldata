@@ -54,7 +54,6 @@ exports[`SmalldataClient getUsersWithDatasets makes 2 requests and combine them 
 Array [
   Object {
     "_id": "5d21b9eb54308464b1a9e6c7",
-    "_ref": "ovZTtaOJZ98xDDY",
     "bulkiness": 0,
     "dataset_refs": Array [
       "wEaBfmFyQhYCdsk",
@@ -363,10 +362,10 @@ Array [
       },
     ],
     "emailAddress": "some.user@domain.org",
+    "id": "ovZTtaOJZ98xDDY",
   },
   Object {
     "_id": "5d21b9eb54308464b1a9e6c8",
-    "_ref": "FsfEMwhUTO_8I68",
     "bulkiness": 0,
     "dataset_refs": Array [
       "wEaBfmFyQhYCdsk",
@@ -596,14 +595,15 @@ Array [
       },
     ],
     "emailAddress": "another.user@domain.org",
+    "id": "FsfEMwhUTO_8I68",
   },
   Object {
     "_id": "id-3",
-    "_ref": "red-3",
     "bulkiness": 0,
     "dataset_refs": Array [],
     "datasets": Array [],
     "emailAddress": "some.user@domain.org",
+    "id": "ref-3",
   },
 ]
 `;

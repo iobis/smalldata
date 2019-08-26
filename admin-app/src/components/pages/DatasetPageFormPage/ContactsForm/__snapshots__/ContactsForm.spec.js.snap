@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ContactsForm returns contacts when adding 1`] = `
+exports[`ContactsForm returns contacts when adding to empty list renders correctly 1`] = `
 <ContactsForm
   className="custom-class"
   contactsTableHeader="Contacts Table Header"
@@ -10,28 +10,49 @@ exports[`ContactsForm returns contacts when adding 1`] = `
   <div
     className="contacts-form custom-class"
   >
-    <InputText
-      className="name"
-      name="datasetPageFormPage.contactsForm.name"
+    <OceanExpertNameInput
+      oceanExpertName=""
       onChange={[Function]}
-      value=""
     >
       <div
-        className="column field name"
+        className="ocean-expert-name-input field column is-four-fifths"
       >
-        <label
-          className="label"
+        <div
+          className="dropdown"
         >
-          datasetPageFormPage.contactsForm.name.label
-        </label>
-        <input
-          className="input"
-          onChange={[Function]}
-          type="text"
-          value=""
-        />
+          <div
+            className="dropdown-trigger"
+          >
+            <label
+              className="label"
+            >
+              userFormPage.name.label
+            </label>
+            <div
+              className="control has-icons-right"
+            >
+              <input
+                className="input"
+                onChange={[Function]}
+                onClick={[Function]}
+                placeholder=""
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            className="dropdown-menu"
+            id="dropdown-menu"
+            role="menu"
+          >
+            <div
+              className="dropdown-content"
+            />
+          </div>
+        </div>
       </div>
-    </InputText>
+    </OceanExpertNameInput>
     <InputText
       className="email"
       name="datasetPageFormPage.contactsForm.email"
@@ -108,6 +129,7 @@ exports[`ContactsForm returns contacts when adding 1`] = `
             <th>
               datasetPageFormPage.contactsForm.organisation.label
             </th>
+            <th />
           </tr>
         </thead>
         <tbody />
@@ -117,7 +139,7 @@ exports[`ContactsForm returns contacts when adding 1`] = `
 </ContactsForm>
 `;
 
-exports[`ContactsForm returns updated contacts when when adding 1`] = `
+exports[`ContactsForm returns updated contacts when adding to list with single element renders correctly 1`] = `
 <ContactsForm
   className="custom-class"
   contactsTableHeader="Contacts Table Header"
@@ -135,28 +157,49 @@ exports[`ContactsForm returns updated contacts when when adding 1`] = `
   <div
     className="contacts-form custom-class"
   >
-    <InputText
-      className="name"
-      name="datasetPageFormPage.contactsForm.name"
+    <OceanExpertNameInput
+      oceanExpertName=""
       onChange={[Function]}
-      value=""
     >
       <div
-        className="column field name"
+        className="ocean-expert-name-input field column is-four-fifths"
       >
-        <label
-          className="label"
+        <div
+          className="dropdown"
         >
-          datasetPageFormPage.contactsForm.name.label
-        </label>
-        <input
-          className="input"
-          onChange={[Function]}
-          type="text"
-          value=""
-        />
+          <div
+            className="dropdown-trigger"
+          >
+            <label
+              className="label"
+            >
+              userFormPage.name.label
+            </label>
+            <div
+              className="control has-icons-right"
+            >
+              <input
+                className="input"
+                onChange={[Function]}
+                onClick={[Function]}
+                placeholder=""
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            className="dropdown-menu"
+            id="dropdown-menu"
+            role="menu"
+          >
+            <div
+              className="dropdown-content"
+            />
+          </div>
+        </div>
       </div>
-    </InputText>
+    </OceanExpertNameInput>
     <InputText
       className="email"
       name="datasetPageFormPage.contactsForm.email"
@@ -233,6 +276,7 @@ exports[`ContactsForm returns updated contacts when when adding 1`] = `
             <th>
               datasetPageFormPage.contactsForm.organisation.label
             </th>
+            <th />
           </tr>
         </thead>
         <tbody>
@@ -240,6 +284,7 @@ exports[`ContactsForm returns updated contacts when when adding 1`] = `
             email="email-1"
             key="0"
             name="name-1"
+            onRemove={[Function]}
             organisation="organisation-1"
           >
             <tr
@@ -259,6 +304,468 @@ exports[`ContactsForm returns updated contacts when when adding 1`] = `
                 className="organisation"
               >
                 organisation-1
+              </td>
+              <td
+                className="action"
+              >
+                <button
+                  className="remove button"
+                  onClick={[Function]}
+                >
+                  common.remove
+                </button>
+              </td>
+            </tr>
+          </ContactRow>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</ContactsForm>
+`;
+
+exports[`ContactsForm when removing contacts removes first contact 1`] = `
+<ContactsForm
+  contactsTableHeader="Contacts Table Header"
+  data={
+    Array [
+      Object {
+        "email": "email-1",
+        "name": "name-1",
+        "organisation": "organisation-1",
+      },
+      Object {
+        "email": "email-2",
+        "name": "name-2",
+        "organisation": "organisation-2",
+      },
+    ]
+  }
+  onChange={[MockFunction]}
+>
+  <div
+    className="contacts-form"
+  >
+    <OceanExpertNameInput
+      oceanExpertName=""
+      onChange={[Function]}
+    >
+      <div
+        className="ocean-expert-name-input field column is-four-fifths"
+      >
+        <div
+          className="dropdown"
+        >
+          <div
+            className="dropdown-trigger"
+          >
+            <label
+              className="label"
+            >
+              userFormPage.name.label
+            </label>
+            <div
+              className="control has-icons-right"
+            >
+              <input
+                className="input"
+                onChange={[Function]}
+                onClick={[Function]}
+                placeholder=""
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            className="dropdown-menu"
+            id="dropdown-menu"
+            role="menu"
+          >
+            <div
+              className="dropdown-content"
+            />
+          </div>
+        </div>
+      </div>
+    </OceanExpertNameInput>
+    <InputText
+      className="email"
+      name="datasetPageFormPage.contactsForm.email"
+      onChange={[Function]}
+      value=""
+    >
+      <div
+        className="column field email"
+      >
+        <label
+          className="label"
+        >
+          datasetPageFormPage.contactsForm.email.label
+        </label>
+        <input
+          className="input"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </div>
+    </InputText>
+    <InputText
+      className="organisation"
+      name="datasetPageFormPage.contactsForm.organisation"
+      onChange={[Function]}
+      value=""
+    >
+      <div
+        className="column field organisation"
+      >
+        <label
+          className="label"
+        >
+          datasetPageFormPage.contactsForm.organisation.label
+        </label>
+        <input
+          className="input"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </div>
+    </InputText>
+    <div
+      className="column field"
+    >
+      <button
+        className="add button"
+        onClick={[Function]}
+      >
+        common.add
+      </button>
+    </div>
+    <div
+      className="column field"
+    >
+      <div
+        className="title is-5 contacts-table-header"
+      >
+        Contacts Table Header
+      </div>
+      <table
+        className="general table is-fullwidth is-striped is-hoverable"
+      >
+        <thead>
+          <tr>
+            <th>
+              datasetPageFormPage.contactsForm.name.label
+            </th>
+            <th>
+              datasetPageFormPage.contactsForm.email.label
+            </th>
+            <th>
+              datasetPageFormPage.contactsForm.organisation.label
+            </th>
+            <th />
+          </tr>
+        </thead>
+        <tbody>
+          <ContactRow
+            email="email-1"
+            key="0"
+            name="name-1"
+            onRemove={[Function]}
+            organisation="organisation-1"
+          >
+            <tr
+              className="contact-row"
+            >
+              <td
+                className="name"
+              >
+                name-1
+              </td>
+              <td
+                className="email"
+              >
+                email-1
+              </td>
+              <td
+                className="organisation"
+              >
+                organisation-1
+              </td>
+              <td
+                className="action"
+              >
+                <button
+                  className="remove button"
+                  onClick={[Function]}
+                >
+                  common.remove
+                </button>
+              </td>
+            </tr>
+          </ContactRow>
+          <ContactRow
+            email="email-2"
+            key="1"
+            name="name-2"
+            onRemove={[Function]}
+            organisation="organisation-2"
+          >
+            <tr
+              className="contact-row"
+            >
+              <td
+                className="name"
+              >
+                name-2
+              </td>
+              <td
+                className="email"
+              >
+                email-2
+              </td>
+              <td
+                className="organisation"
+              >
+                organisation-2
+              </td>
+              <td
+                className="action"
+              >
+                <button
+                  className="remove button"
+                  onClick={[Function]}
+                >
+                  common.remove
+                </button>
+              </td>
+            </tr>
+          </ContactRow>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</ContactsForm>
+`;
+
+exports[`ContactsForm when removing contacts removes second contact 1`] = `
+<ContactsForm
+  contactsTableHeader="Contacts Table Header"
+  data={
+    Array [
+      Object {
+        "email": "email-1",
+        "name": "name-1",
+        "organisation": "organisation-1",
+      },
+      Object {
+        "email": "email-2",
+        "name": "name-2",
+        "organisation": "organisation-2",
+      },
+    ]
+  }
+  onChange={[MockFunction]}
+>
+  <div
+    className="contacts-form"
+  >
+    <OceanExpertNameInput
+      oceanExpertName=""
+      onChange={[Function]}
+    >
+      <div
+        className="ocean-expert-name-input field column is-four-fifths"
+      >
+        <div
+          className="dropdown"
+        >
+          <div
+            className="dropdown-trigger"
+          >
+            <label
+              className="label"
+            >
+              userFormPage.name.label
+            </label>
+            <div
+              className="control has-icons-right"
+            >
+              <input
+                className="input"
+                onChange={[Function]}
+                onClick={[Function]}
+                placeholder=""
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            className="dropdown-menu"
+            id="dropdown-menu"
+            role="menu"
+          >
+            <div
+              className="dropdown-content"
+            />
+          </div>
+        </div>
+      </div>
+    </OceanExpertNameInput>
+    <InputText
+      className="email"
+      name="datasetPageFormPage.contactsForm.email"
+      onChange={[Function]}
+      value=""
+    >
+      <div
+        className="column field email"
+      >
+        <label
+          className="label"
+        >
+          datasetPageFormPage.contactsForm.email.label
+        </label>
+        <input
+          className="input"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </div>
+    </InputText>
+    <InputText
+      className="organisation"
+      name="datasetPageFormPage.contactsForm.organisation"
+      onChange={[Function]}
+      value=""
+    >
+      <div
+        className="column field organisation"
+      >
+        <label
+          className="label"
+        >
+          datasetPageFormPage.contactsForm.organisation.label
+        </label>
+        <input
+          className="input"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </div>
+    </InputText>
+    <div
+      className="column field"
+    >
+      <button
+        className="add button"
+        onClick={[Function]}
+      >
+        common.add
+      </button>
+    </div>
+    <div
+      className="column field"
+    >
+      <div
+        className="title is-5 contacts-table-header"
+      >
+        Contacts Table Header
+      </div>
+      <table
+        className="general table is-fullwidth is-striped is-hoverable"
+      >
+        <thead>
+          <tr>
+            <th>
+              datasetPageFormPage.contactsForm.name.label
+            </th>
+            <th>
+              datasetPageFormPage.contactsForm.email.label
+            </th>
+            <th>
+              datasetPageFormPage.contactsForm.organisation.label
+            </th>
+            <th />
+          </tr>
+        </thead>
+        <tbody>
+          <ContactRow
+            email="email-1"
+            key="0"
+            name="name-1"
+            onRemove={[Function]}
+            organisation="organisation-1"
+          >
+            <tr
+              className="contact-row"
+            >
+              <td
+                className="name"
+              >
+                name-1
+              </td>
+              <td
+                className="email"
+              >
+                email-1
+              </td>
+              <td
+                className="organisation"
+              >
+                organisation-1
+              </td>
+              <td
+                className="action"
+              >
+                <button
+                  className="remove button"
+                  onClick={[Function]}
+                >
+                  common.remove
+                </button>
+              </td>
+            </tr>
+          </ContactRow>
+          <ContactRow
+            email="email-2"
+            key="1"
+            name="name-2"
+            onRemove={[Function]}
+            organisation="organisation-2"
+          >
+            <tr
+              className="contact-row"
+            >
+              <td
+                className="name"
+              >
+                name-2
+              </td>
+              <td
+                className="email"
+              >
+                email-2
+              </td>
+              <td
+                className="organisation"
+              >
+                organisation-2
+              </td>
+              <td
+                className="action"
+              >
+                <button
+                  className="remove button"
+                  onClick={[Function]}
+                >
+                  common.remove
+                </button>
               </td>
             </tr>
           </ContactRow>

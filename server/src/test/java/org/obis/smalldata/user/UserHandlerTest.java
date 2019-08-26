@@ -1,6 +1,5 @@
 package org.obis.smalldata.user;
 
-import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
@@ -47,8 +46,6 @@ public class UserHandlerTest {
         "baseUrl", "https://my.domain.org/"));
     vertx.deployVerticle(
       UserComponent.class.getName(),
-      new DeploymentOptions().setConfig(new JsonObject()
-        .put("bulkiness", new JsonObject().put("halfTimeInDays", 500))),
       testContext.succeeding(id -> testContext.completeNow()));
   }
 

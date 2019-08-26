@@ -351,7 +351,7 @@ export function getUsersDefaultResponse() {
     'bulkiness':    0.0
   }, {
     '_id':          'id-3',
-    '_ref':         'red-3',
+    '_ref':         'ref-3',
     'emailAddress': 'some.user@domain.org',
     'dataset_refs': undefined,
     'bulkiness':    0.0

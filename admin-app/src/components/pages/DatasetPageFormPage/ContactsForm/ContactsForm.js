@@ -3,6 +3,7 @@ import InputText from '@smalldata/dwca-lib/src/components/form/InputText'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import OceanExpertNameInput from '../../OceanExpertNameInput/OceanExpertNameInput'
 
 export default function ContactsForm({ className, contactsTableHeader, data, onChange }) {
   const { t } = useTranslation()
@@ -18,13 +19,22 @@ export default function ContactsForm({ className, contactsTableHeader, data, onC
     onChange(newContacts)
   }
 
+  function handleRemoveClick(index) {
+    const newContacts = contacts.filter((_, i) => i !== index)
+    setContacts(newContacts)
+    onChange(newContacts)
+  }
+
+  function handleOceanExpertProfileChange(profile) {
+    setName(profile.name)
+    setEmail(profile.email || email)
+  }
+
   return (
     <div className={classNames('contacts-form', className)}>
-      <InputText
-        className="name"
-        name="datasetPageFormPage.contactsForm.name"
-        onChange={value => setName(value)}
-        value={name}/>
+      <OceanExpertNameInput
+        oceanExpertName={name}
+        onChange={handleOceanExpertProfileChange}/>
       <InputText
         className="email"
         name="datasetPageFormPage.contactsForm.email"
@@ -46,12 +56,13 @@ export default function ContactsForm({ className, contactsTableHeader, data, onC
               <th>{t('datasetPageFormPage.contactsForm.name.label')}</th>
               <th>{t('datasetPageFormPage.contactsForm.email.label')}</th>
               <th>{t('datasetPageFormPage.contactsForm.organisation.label')}</th>
+              <th/>
             </tr>
           </thead>
           <tbody>
             {contacts.map((contact, index) => (
               // eslint-disable-next-line react/no-array-index-key
-              <ContactRow key={index} {...contact}/>
+              <ContactRow key={index} {...contact} onRemove={() => handleRemoveClick(index)}/>
             ))}
           </tbody>
         </table>
@@ -73,12 +84,18 @@ ContactsForm.propTypes = {
   onChange:            PropTypes.func.isRequired
 }
 
-function ContactRow({ email, name, organisation }) {
+function ContactRow({ email, name, organisation, onRemove }) {
+  const { t } = useTranslation()
   return (
     <tr className="contact-row">
       <td className="name">{name}</td>
       <td className="email">{email}</td>
       <td className="organisation">{organisation}</td>
+      <td className="action">
+        <button className="remove button" onClick={onRemove}>
+          {t('common.remove')}
+        </button>
+      </td>
     </tr>
   )
 }
@@ -86,5 +103,6 @@ function ContactRow({ email, name, organisation }) {
 ContactRow.propTypes = {
   email:        PropTypes.string.isRequired,
   name:         PropTypes.string.isRequired,
+  onRemove:     PropTypes.func.isRequired,
   organisation: PropTypes.string.isRequired
 }
