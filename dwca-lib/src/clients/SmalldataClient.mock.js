@@ -29,7 +29,12 @@ export function getDatasetDefaultResponse() {
       'value':    'Benthos collected in the Azov Sea in 1935 on board the R/V "N. Danilevskiy"'
     },
     'language':          'en',
-    'abstract':          { 'paragraphs': ['The data were collected in the Azov Sea during a cruise on board of R/V N. Danilevskiy in 1935. This dataset contains abundance data (individuals per m²) and biomass data (g/m²) for benthic taxa. No additional metadata is available.', 'This dataset was rescued through data archaeology activities in the framework of the EMODnet Biology data grants.'] },
+    'abstract':          {
+      'paragraphs': [
+        'The data were collected in the Azov Sea during a cruise on board of R/V N. Danilevskiy in 1935. This dataset contains abundance data (individuals per m²) and biomass data (g/m²) for benthic taxa. No additional metadata is available.',
+        'This dataset was rescued through data archaeology activities in the framework of the EMODnet Biology data grants.'
+      ]
+    },
     'license':           {
       'url':   'http://creativecommons.org/licenses/by/4.0/legalcode',
       'title': 'Creative Commons Attribution Non Commercial (CC-BY) 4.0 License'
@@ -101,17 +106,25 @@ export function getDatasetDefaultResponse() {
     'title':             { 'language': 'en', 'value': 'Benthic data from Sevastopol (Black Sea)' },
     'language':          'en',
     'abstract':          {
-      'paragraphs': ['The dataset contains the abundance and biomass values of sediment organisms from the Sevastopol region (South-Western Crimea, The Black Sea, Ukraine) collected between 1982 and 1992.', 'Abundance and Biomass of benthic organisms and key abiotic variables (covering irregular sampling surveys within 1982-1992) from the Sevastopol Area (South-Western Crimea, The Black Sea, Ukraine) including estuaries and small sheltered and semi-closed bays within the area of &quot;big Sevastopol bay&quot;\nSevastopol Bay is located in south western part of the Crimean peninsula, Ukraine and comprehends the one of the biggest marine harbours of the Black Sea and has served as an industrialized naval base for decades. A consequence of this long-term industrial, military and municipal activity was the deterioration of the marine environment of the bay, depressed state of benthic assemblages and occurrence of expanded bottom areas that became contaminated with various sediment-associated pollutants including polycyclic aromatic hydrocarbons (PAHs), polychlorinated biphenyls (PCBs), pesticides, and metals. Benthic samples in Sevastopol bay heve been taken between 1982 and 1992.']
+      'paragraphs': [
+        'paragraph-1',
+        'paragraph-2'
+      ]
     },
     'license':           {
       'url':   'http://creativecommons.org/licenses/by-nc/4.0/legalcode',
       'title': 'Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License'
     },
     'creators':          [{
-      'individualName':        { 'givenName': 'Christos', 'surName': 'Arvanitidis' },
+      'individualName':        {
+        'givenName': 'Christos',
+        'surName':   'Arvanitidis'
+      },
       'organizationName':      'Hellenic Centre for Marine Research (HCMR)',
       'electronicMailAddress': 'arvanitidis@her.hcmr.gr'
-    }, { 'organizationName': 'Hellenic Centre for Marine Research (HCMR)' }, {
+    }, {
+      'organizationName': 'Hellenic Centre for Marine Research (HCMR)'
+    }, {
       'individualName':        {
         'givenName': 'Alexei',
         'surName':   'Petrov'
@@ -135,9 +148,16 @@ export function getDatasetDefaultResponse() {
     }, {
       'keywords':         ['Observation'],
       'keywordThesaurus': 'GBIF Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml'
-    }, { 'keywords': ['Benthic biomass', 'Benthos', 'Data', 'Marine Genomics'], 'keywordThesaurus': 'ASFA' }],
+    }, {
+      'keywords':         ['Benthic biomass', 'Benthos', 'Data', 'Marine Genomics'],
+      'keywordThesaurus': 'ASFA'
+    }],
     'ref':               'NnqVLwIyPn-nRkc'
   }]
+}
+
+export function getDatasetsFixture() {
+  return getDatasetDefaultResponse().map(renameRefToId)
 }
 
 export const OCCURRENCES_RESPONSE = [
@@ -331,9 +351,13 @@ export function getUsersDefaultResponse() {
     'bulkiness':    0.0
   }, {
     '_id':          'id-3',
-    '_ref':         'red-3',
+    '_ref':         'ref-3',
     'emailAddress': 'some.user@domain.org',
     'dataset_refs': undefined,
     'bulkiness':    0.0
   }]
+}
+
+function renameRefToId({ ref, ...rest }) {
+  return ({ id: ref, ...rest })
 }

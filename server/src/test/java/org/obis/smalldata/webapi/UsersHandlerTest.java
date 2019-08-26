@@ -12,6 +12,8 @@ import io.vertx.junit5.VertxTestContext;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.concurrent.TimeUnit;
 
@@ -30,7 +32,11 @@ public class UsersHandlerTest {
   private static final String URL_API_USERS = "/api/users/";
   private static final String KEY_USERS_REF = "_ref";
   private static final String KEY_EMAIL_ADDRESS = "emailAddress";
+  private static final String KEY_ROLE = "role";
   private static final String DEFAULT_EMAIL_ADDRESS = "my.name@organization.ours";
+  private static final String HEADER_AUTHORIZATION_KEY = "Authorization";
+  private static final String HEADER_AUTHORIZATION_VALUE = "Basic verysecret";
+  private static final String USERS_ADDRESS = "users";
 
   @BeforeEach
   void deployVerticle(Vertx vertx, VertxTestContext testContext) {
@@ -46,11 +52,11 @@ public class UsersHandlerTest {
   void getUsers(Vertx vertx, VertxTestContext context) {
     var client = WebClient.create(vertx);
     vertx.eventBus().localConsumer(
-      "users",
+      USERS_ADDRESS,
       message -> message.reply(new JsonArray().add(new JsonObject().put(KEY_USERS_REF, "some-user-ref"))));
     client
       .get(HTTP_PORT, LOCALHOST, URL_API_USERS)
-      .putHeader("Authorization", "Basic verysecret")
+      .putHeader(HEADER_AUTHORIZATION_KEY, HEADER_AUTHORIZATION_VALUE)
       .as(BodyCodec.jsonArray())
       .send(ar -> {
         try {
@@ -67,27 +73,58 @@ public class UsersHandlerTest {
       });
   }
 
-  @Test
+  @ParameterizedTest
+  @ValueSource(strings = {"node manager", "researcher"})
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
-  void postUser(Vertx vertx, VertxTestContext context) {
+  void postUserWithSupportedRoles(String role, Vertx vertx, VertxTestContext context) {
     var client = WebClient.create(vertx);
     vertx.eventBus().localConsumer(
-      "users",
+      USERS_ADDRESS,
       message -> message.reply(((JsonObject) message.body()).getJsonObject("user")));
     client
       .post(HTTP_PORT, LOCALHOST, URL_API_USERS)
-      .putHeader("Authorization", "Basic verysecret")
+      .putHeader(HEADER_AUTHORIZATION_KEY, HEADER_AUTHORIZATION_VALUE)
       .as(BodyCodec.jsonObject())
       .sendJson(
         new JsonObject()
+          .put(KEY_ROLE, role)
           .put(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS),
         ar -> {
           try {
             assertThat(ar.succeeded()).isTrue();
             var json = ar.result().body();
             assertThat(json.getMap())
-              .containsOnlyKeys(KEY_EMAIL_ADDRESS)
+              .containsOnlyKeys(KEY_EMAIL_ADDRESS, KEY_ROLE)
               .containsEntry(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS);
+          } catch (AssertionError e) {
+            context.failNow(e);
+          }
+          context.completeNow();
+        });
+  }
+
+  @Test
+  @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
+  void postUserWithUnsupportedRole(Vertx vertx, VertxTestContext context) {
+    var client = WebClient.create(vertx);
+    vertx.eventBus().localConsumer(
+      USERS_ADDRESS,
+      message -> message.reply(((JsonObject) message.body()).getJsonObject("user")));
+    client
+      .post(HTTP_PORT, LOCALHOST, URL_API_USERS)
+      .putHeader(HEADER_AUTHORIZATION_KEY, HEADER_AUTHORIZATION_VALUE)
+      .as(BodyCodec.jsonObject())
+      .sendJson(
+        new JsonObject()
+          .put(KEY_ROLE, "unknown role")
+          .put(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS),
+        ar -> {
+          try {
+            assertThat(ar.succeeded()).isTrue();
+            var json = ar.result().body();
+            assertThat(json.getMap())
+              .containsOnlyKeys("timestamp", "exception", "exceptionMessage", "path")
+              .containsEntry("exceptionMessage", "$.role: does not have a value in the enumeration [node manager, researcher]");
           } catch (AssertionError e) {
             context.failNow(e);
           }
@@ -100,11 +137,11 @@ public class UsersHandlerTest {
   void putUser(Vertx vertx, VertxTestContext context) {
     var client = WebClient.create(vertx);
     vertx.eventBus().localConsumer(
-      "users",
+      USERS_ADDRESS,
       message -> message.reply(((JsonObject) message.body()).getJsonObject("user")));
     client
       .put(HTTP_PORT, LOCALHOST, URL_API_USERS)
-      .putHeader("Authorization", "Basic verysecret")
+      .putHeader(HEADER_AUTHORIZATION_KEY, HEADER_AUTHORIZATION_VALUE)
       .as(BodyCodec.jsonObject())
       .sendJson(
         new JsonObject()

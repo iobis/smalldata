@@ -210,7 +210,7 @@ exports[`FinalSummary renders correctly 1`] = `
               className="button is-info is-medium"
               onClick={[MockFunction]}
             >
-              occurrenceForm.finalSummary.submitEntryButton
+              common.submit
             </button>
           </div>
         </SubmitEntryButton>
@@ -1067,7 +1067,7 @@ exports[`FinalSummary renders correctly 1`] = `
               className="button is-info is-medium"
               onClick={[MockFunction]}
             >
-              occurrenceForm.finalSummary.submitEntryButton
+              common.submit
             </button>
           </div>
         </SubmitEntryButton>
@@ -1287,7 +1287,7 @@ exports[`FinalSummary renders correctly when occurrence end date is not provided
               className="button is-info is-medium"
               onClick={[MockFunction]}
             >
-              occurrenceForm.finalSummary.submitEntryButton
+              common.submit
             </button>
           </div>
         </SubmitEntryButton>
@@ -2144,7 +2144,7 @@ exports[`FinalSummary renders correctly when occurrence end date is not provided
               className="button is-info is-medium"
               onClick={[MockFunction]}
             >
-              occurrenceForm.finalSummary.submitEntryButton
+              common.submit
             </button>
           </div>
         </SubmitEntryButton>
@@ -2374,7 +2374,7 @@ exports[`FinalSummary when rendering component with error message calls onSubmit
               className="button is-info is-medium"
               onClick={[MockFunction]}
             >
-              occurrenceForm.finalSummary.submitEntryButton
+              common.submit
             </button>
           </div>
         </SubmitEntryButton>
@@ -3231,7 +3231,7 @@ exports[`FinalSummary when rendering component with error message calls onSubmit
               className="button is-info is-medium"
               onClick={[MockFunction]}
             >
-              occurrenceForm.finalSummary.submitEntryButton
+              common.submit
             </button>
           </div>
         </SubmitEntryButton>

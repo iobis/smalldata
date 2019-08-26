@@ -94,7 +94,7 @@ public class DbInitializer {
         .put("userId", userId)
         .put("username", "admin")
         .put("password", "admin")
-        .put("roles", new JsonArray().add("node admin")),
+        .put("roles", new JsonArray().add("node manager")),
       arObjectId -> {
         var objectId = arObjectId.result();
         info("added object {}", objectId);

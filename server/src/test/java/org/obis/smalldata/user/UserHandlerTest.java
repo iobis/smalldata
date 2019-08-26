@@ -8,7 +8,6 @@ import io.vertx.junit5.VertxExtension;
 import io.vertx.junit5.VertxTestContext;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.obis.smalldata.testutil.TestDb;
@@ -191,7 +190,6 @@ public class UserHandlerTest {
   }
 
   @Test
-  @Disabled("Please fix in the scope of https://github.com/iobis/smalldata/issues/251")
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
   void increaseBulkiness(Vertx vertx, VertxTestContext testContext) {
     vertx.eventBus().<JsonObject>send(
@@ -202,7 +200,7 @@ public class UserHandlerTest {
       ar -> {
         if (ar.succeeded()) {
           var bulkiness = ar.result().body().getJsonObject("bulkiness");
-          assertThat(bulkiness.getDouble("value")).isGreaterThan(1.0);
+          assertThat(bulkiness.getDouble("value")).isBetween(1.0, 23.5711);
           assertThat(bulkiness.getInstant("instant")).isBetween(Instant.now().minusMillis(200), Instant.now());
           testContext.completeNow();
         } else {

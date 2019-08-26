@@ -42,8 +42,9 @@ export default function UserFormPage({ location }) {
     }
   }
 
-  function handleOceanExpertProfileChange({ name }) {
-    setName(name)
+  function handleOceanExpertProfileChange(profile) {
+    setName(profile.name)
+    setEmail(profile.email || email)
   }
 
   async function handleSubmitUserButtonClick() {
