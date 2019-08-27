@@ -21,7 +21,7 @@ export default function OccurrenceData({ onChange, data }) {
 
   return (
     <div className="occurrence-data section is-fluid">
-      <div className="columns">
+      <div className="columns mandatory">
         <ScientificNameInput
           onChange={(value) => updateField('scientificName', value)}
           scientificName={scientificName}/>

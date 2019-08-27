@@ -25,13 +25,13 @@ export default function LocationData({ data, onChange }) {
       <h2 className="subtitle">{t('occurrenceForm.locationData.enterCoordinates.subtitle')}</h2>
       <div className="columns">
         <InputNumber
-          className="decimal-longitude is-3"
+          className="decimal-longitude is-3 mandatory"
           name="occurrenceForm.locationData.decimalLongitude"
           onChange={(value) => updateField('decimalLongitude', value)}
           step={0.0001}
           value={data.decimalLongitude}/>
         <InputNumber
-          className="decimal-latitude is-3"
+          className="decimal-latitude is-3 mandatory"
           name="occurrenceForm.locationData.decimalLatitude"
           onChange={(value) => updateField('decimalLatitude', value)}
           step={0.0001}

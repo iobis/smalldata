@@ -20,6 +20,7 @@ $section-padding: 0.5rem;
 @import 'components/pages/Occurrence/ObservationData/ObservationData';
 @import 'components/pages/Occurrence/OccurrenceData/OccurrenceData';
 
+@import 'forms';
 
 body {
   margin: 0;
@@ -49,3 +50,4 @@ a {
 .button.is-info:hover, .button.is-info.is-hovered {
   background-color: darken($blue,5%)
 }
+
