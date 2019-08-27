@@ -16,9 +16,14 @@ import io.vertx.ext.web.RoutingContext;
 import io.vertx.ext.web.api.contract.openapi3.OpenAPI3RouterFactory;
 import io.vertx.ext.web.handler.JWTAuthHandler;
 import lombok.val;
+import org.obis.smalldata.webapi.Authority.Authority;
+import org.obis.smalldata.webapi.Authority.DemoAuthority;
+import org.obis.smalldata.webapi.Authority.LocalAuthority;
+import org.obis.smalldata.webapi.Authority.OceanExpertAuthority;
 
 import java.util.Map;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 import static org.pmw.tinylog.Logger.info;
 
@@ -31,6 +36,7 @@ public class HttpComponent extends AbstractVerticle {
 
   private static final Map<String, Authority> AUTHORITIES = Map.ofEntries(
     Map.entry("oceanexpert", new OceanExpertAuthority()),
+    Map.entry("demo", new DemoAuthority()),
     Map.entry("local", new LocalAuthority()));
 
   @Override
@@ -77,14 +83,14 @@ public class HttpComponent extends AbstractVerticle {
 
   private static class DemoApiKeyHandler {
 
-    private final User dummyUser = new AbstractUser() {
+    private final Function<String, User> dummyUser = role -> new AbstractUser() {
       @Override
       protected void doIsPermitted(String permission, Handler<AsyncResult<Boolean>> resultHandler) {
       }
 
       @Override
       public JsonObject principal() {
-        return new JsonObject().put("user", "DEMO");
+        return new JsonObject().put("user", "DEMO").put("role", role);
       }
 
       @Override
@@ -103,7 +109,7 @@ public class HttpComponent extends AbstractVerticle {
       if (isDemoMode &&
         routingContext.request().headers().get("Authorization") != null &&
         routingContext.request().headers().get("Authorization").equals(secret)) {
-        routingContext.setUser(dummyUser);
+        routingContext.setUser(dummyUser.apply("researcher"));
       }
       routingContext.next();
     }

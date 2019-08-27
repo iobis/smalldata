@@ -9,6 +9,7 @@ import io.vertx.ext.web.api.contract.RouterFactoryOptions;
 import io.vertx.ext.web.api.contract.openapi3.OpenAPI3RouterFactory;
 import io.vertx.ext.web.handler.StaticHandler;
 import lombok.val;
+import org.obis.smalldata.webapi.Authority.Authority;
 
 import java.util.Arrays;
 import java.util.Map;
@@ -81,16 +82,15 @@ class RouterConfig {
 
   Handler<RoutingContext> protectHandler(Handler<RoutingContext> handler,
                                                 Predicate<JsonObject> isAuthorized) {
-     // TODO: implement security per endpoint using context.user().principal()
-    // => JWT payload (or principal of HttpComponent$DemoApiKeyHandler
-    // -> separate class to check JWT payload fields
-      return context -> context.vertx().eventBus()
+    return context -> {
+      context.vertx().eventBus()
         .<JsonArray>send("users", new JsonObject()
             .put("action", "find")
             .put("query",  new JsonObject().put("emailAddress",
               context.user()==null ? new JsonObject() : authority.getEmail(context.user().principal()))),
           ar -> {
-            if (ar.result().body() != null &&
+            if (ar.result() != null &&
+              ar.result().body() != null &&
               ar.result().body().size() == 1 &&
               isAuthorized.test(ar.result().body().getJsonObject(0))) {
               handler.handle(context);
@@ -98,7 +98,8 @@ class RouterConfig {
               context.response().setStatusCode(403).end("You cannot access this!");
             }
           });
-    }
+    };
+  }
   private class OperationHandlers {
 
     private final Handler<RoutingContext> handler;

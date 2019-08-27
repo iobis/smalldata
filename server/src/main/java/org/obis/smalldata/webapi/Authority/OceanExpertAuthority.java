@@ -1,4 +1,4 @@
-package org.obis.smalldata.webapi;
+package org.obis.smalldata.webapi.Authority;
 
 import io.vertx.core.json.JsonObject;
 

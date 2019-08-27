@@ -26,14 +26,14 @@ public class UsersHandlerTest {
   private static final int HTTP_PORT = 8080;
   private static final JsonObject CONFIG = new JsonObject()
     .put("mode", "DEMO")
-    .put("auth", new JsonObject().put("demokey", "verysecret"))
+    .put("auth", new JsonObject().put("provider", "demo").put("demokey", "verysecret"))
     .put("http", new JsonObject().put("port", HTTP_PORT));
   private static final String LOCALHOST = "localhost";
   private static final String URL_API_USERS = "/api/users/";
   private static final String KEY_USERS_REF = "_ref";
   private static final String KEY_EMAIL_ADDRESS = "emailAddress";
   private static final String KEY_ROLE = "role";
-  private static final String DEFAULT_EMAIL_ADDRESS = "my.name@organization.ours";
+  private static final String DEFAULT_EMAIL_ADDRESS = "another.user@domain.org";
   private static final String HEADER_AUTHORIZATION_KEY = "Authorization";
   private static final String HEADER_AUTHORIZATION_VALUE = "Basic verysecret";
   private static final String USERS_ADDRESS = "users";
@@ -78,9 +78,9 @@ public class UsersHandlerTest {
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
   void postUserWithSupportedRoles(String role, Vertx vertx, VertxTestContext context) {
     var client = WebClient.create(vertx);
-    vertx.eventBus().localConsumer(
-      USERS_ADDRESS,
-      message -> message.reply(((JsonObject) message.body()).getJsonObject("user")));
+    usersConsumer(vertx, new JsonArray().add(new JsonObject()
+      .put(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS)
+      .put(KEY_ROLE, role)));
     client
       .post(HTTP_PORT, LOCALHOST, URL_API_USERS)
       .putHeader(HEADER_AUTHORIZATION_KEY, HEADER_AUTHORIZATION_VALUE)
@@ -107,9 +107,7 @@ public class UsersHandlerTest {
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
   void postUserWithUnsupportedRole(Vertx vertx, VertxTestContext context) {
     var client = WebClient.create(vertx);
-    vertx.eventBus().localConsumer(
-      USERS_ADDRESS,
-      message -> message.reply(((JsonObject) message.body()).getJsonObject("user")));
+    usersConsumer(vertx);
     client
       .post(HTTP_PORT, LOCALHOST, URL_API_USERS)
       .putHeader(HEADER_AUTHORIZATION_KEY, HEADER_AUTHORIZATION_VALUE)
@@ -136,9 +134,7 @@ public class UsersHandlerTest {
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
   void putUser(Vertx vertx, VertxTestContext context) {
     var client = WebClient.create(vertx);
-    vertx.eventBus().localConsumer(
-      USERS_ADDRESS,
-      message -> message.reply(((JsonObject) message.body()).getJsonObject("user")));
+    usersConsumer(vertx);
     client
       .put(HTTP_PORT, LOCALHOST, URL_API_USERS)
       .putHeader(HEADER_AUTHORIZATION_KEY, HEADER_AUTHORIZATION_VALUE)
@@ -159,5 +155,25 @@ public class UsersHandlerTest {
           }
           context.completeNow();
         });
+  }
+
+  private void usersConsumer(Vertx vertx) {
+    usersConsumer(vertx, new JsonArray().add(new JsonObject().put(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS)));
+  }
+
+  private void usersConsumer(Vertx vertx, JsonArray foundUsers) {
+    vertx.eventBus().<JsonObject>localConsumer(
+      USERS_ADDRESS,
+      message -> {
+        switch (message.body().getString("action")) {
+          case "find":
+            message.reply(foundUsers);
+            break;
+          case "insert":
+          case "replace":
+            message.reply(message.body().getJsonObject("user"));
+            break;
+        }
+      });
   }
 }
