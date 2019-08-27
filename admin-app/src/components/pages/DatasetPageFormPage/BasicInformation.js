@@ -17,7 +17,7 @@ export default function BasicInformation({ onChange, data, licences, languages }
   return (
     <div className="basic-information">
       <InputText
-        className="title"
+        className="title mandatory"
         name="datasetPageFormPage.basicInformation.title"
         onChange={value => updateField('title', value)}
         value={title}/>

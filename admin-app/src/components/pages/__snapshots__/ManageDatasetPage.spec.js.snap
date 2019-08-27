@@ -51,11 +51,11 @@ exports[`ManageDatasetPage renders correctly for non empty datasets 1`] = `
           className="container is-fluid has-text-centered"
         >
           <Link
-            className="button is-info"
+            className="button is-info new"
             to="/manage-dataset/create"
           >
             <a
-              className="button is-info"
+              className="button is-info new"
               href="/manage-dataset/create"
               onClick={[Function]}
             >
@@ -74,7 +74,7 @@ exports[`ManageDatasetPage renders correctly for non empty datasets 1`] = `
         </div>
       </Divider>
       <section
-        className="section"
+        className="section spaced"
       >
         <div
           className="container is-fluid has-text-centered"
@@ -264,11 +264,11 @@ exports[`ManageDatasetPage renders correctly if metadata provider is empty 1`] =
           className="container is-fluid has-text-centered"
         >
           <Link
-            className="button is-info"
+            className="button is-info new"
             to="/manage-dataset/create"
           >
             <a
-              className="button is-info"
+              className="button is-info new"
               href="/manage-dataset/create"
               onClick={[Function]}
             >
@@ -287,7 +287,7 @@ exports[`ManageDatasetPage renders correctly if metadata provider is empty 1`] =
         </div>
       </Divider>
       <section
-        className="section"
+        className="section spaced"
       >
         <div
           className="container is-fluid has-text-centered"

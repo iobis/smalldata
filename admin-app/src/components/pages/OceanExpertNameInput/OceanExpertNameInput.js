@@ -58,11 +58,11 @@ export default function OceanExpertNameInput({ oceanExpertName, onChange }) {
   }
 
   return (
-    <div className="ocean-expert-name-input field column is-four-fifths" ref={ref}>
+    <div className="ocean-expert-name-input field column is-four-fifths mandatory" ref={ref}>
       <div className={classNames('dropdown', { 'is-active': dropdownActive && suggestions.length > 0 })}>
         <div className="dropdown-trigger">
           <label className="label">{t('userFormPage.name.label')}</label>
-          <div className={classNames('control has-icons-right', { 'is-loading': loading })}>
+          <div className={classNames('control has-icons-right ', { 'is-loading': loading })}>
             <input
               className={classNames('input', { 'is-danger': !firstRender && !nameValid && !dropdownActive })}
               onChange={(value) => handleNameChange(value.target.value)}

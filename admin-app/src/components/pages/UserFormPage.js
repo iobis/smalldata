@@ -89,7 +89,7 @@ export default function UserFormPage({ location }) {
         oceanExpertName={name}
         onChange={handleOceanExpertProfileChange}/>
       <InputText
-        className="email"
+        className="email is-half mandatory"
         name="userFormPage.email"
         onChange={setEmail}
         value={email}/>

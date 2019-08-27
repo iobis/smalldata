@@ -12,11 +12,11 @@ exports[`ManageUsersPage when users provided renders correctly 1`] = `
         className="container is-fluid has-text-centered"
       >
         <Link
-          className="button is-info"
+          className="button is-info new"
           to="/manage-users/create"
         >
           <a
-            className="button is-info"
+            className="button is-info new"
             href="/manage-users/create"
             onClick={[Function]}
           >
@@ -35,7 +35,7 @@ exports[`ManageUsersPage when users provided renders correctly 1`] = `
       </div>
     </Divider>
     <section
-      className="section"
+      className="section spaced"
     >
       <div
         className="container is-fluid has-text-centered"

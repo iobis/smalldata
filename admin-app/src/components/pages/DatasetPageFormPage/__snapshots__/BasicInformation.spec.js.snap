@@ -31,13 +31,13 @@ exports[`BasicInformation renders correctly 1`] = `
     className="basic-information"
   >
     <InputText
-      className="title"
+      className="title mandatory"
       name="datasetPageFormPage.basicInformation.title"
       onChange={[Function]}
       value="title"
     >
       <div
-        className="column field title"
+        className="column field title mandatory"
       >
         <label
           className="label"

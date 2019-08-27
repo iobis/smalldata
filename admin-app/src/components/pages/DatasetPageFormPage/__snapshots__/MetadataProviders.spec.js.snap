@@ -19,7 +19,7 @@ exports[`MetadataProviders renders correctly 1`] = `
         onChange={[Function]}
       >
         <div
-          className="ocean-expert-name-input field column is-four-fifths"
+          className="ocean-expert-name-input field column is-four-fifths mandatory"
         >
           <div
             className="dropdown"
@@ -33,7 +33,7 @@ exports[`MetadataProviders renders correctly 1`] = `
                 userFormPage.name.label
               </label>
               <div
-                className="control has-icons-right"
+                className="control has-icons-right "
               >
                 <input
                   className="input"

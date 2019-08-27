@@ -1,4 +1,5 @@
 .manage-users-page {
+
   .user-row {
     .datasets {
       ul {
@@ -6,4 +7,17 @@
       }
     }
   }
+}
+
+a.button.new {
+  background-color: var(--obis-green);
+  margin-bottom: var(--margin-bottom);
+
+  &:hover {
+    background-color: lighten($obis-green, 10%);
+  }
+}
+
+.spaced {
+  margin-top: var(--margin-top);
 }

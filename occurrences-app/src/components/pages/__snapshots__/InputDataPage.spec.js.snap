@@ -52,11 +52,11 @@ exports[`InputDataPage renders correctly 1`] = `
             className="container is-fluid has-text-centered"
           >
             <Link
-              className="button is-info new-occurrence"
+              className="button is-info new"
               to="/input-data/create"
             >
               <a
-                className="button is-info new-occurrence"
+                className="button is-info new"
                 href="/input-data/create"
                 onClick={[Function]}
               >
@@ -168,11 +168,11 @@ exports[`InputDataPage renders correctly 2`] = `
             className="container is-fluid has-text-centered"
           >
             <Link
-              className="button is-info new-occurrence"
+              className="button is-info new"
               to="/input-data/create"
             >
               <a
-                className="button is-info new-occurrence"
+                className="button is-info new"
                 href="/input-data/create"
                 onClick={[Function]}
               >

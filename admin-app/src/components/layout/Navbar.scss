@@ -1,9 +1,47 @@
 .navbar {
+  margin-bottom: var(--margin-bottom);
+  &.is-info {
+    background-color: var(--admin-color);
+  }
+
+  .navbar-menu .navbar-start a {
+    font-family: var(--title-font);
+
+
+    &.navbar-item.is-active,
+    &.navbar-item:hover {
+      background-color: var(--obis-green);
+    }
+  }
+
   .navbar-brand {
     p {
       padding-right: 10px;
       font-size: 26px;
       font-weight: bold;
+    }
+  }
+
+  .navbar-brand > .navbar-item.logo {
+    background-color: white;
+    color: var(--font-color);
+    img {
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+
+.navbar.is-info .navbar-brand {
+  a.navbar-item.logo:hover {
+    background-color: transparent;
+  }
+}
+
+.navbar.is-info .login-nav-item.navbar-end {
+  .navbar-item {
+    &.auth-button:hover {
+      background-color: var(--obis-green)
     }
   }
 }
