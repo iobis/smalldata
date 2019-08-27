@@ -23,26 +23,23 @@ export default function LocationData({ data, onChange }) {
     <div className="location-data section is-fluid">
       <h1 className="title">{t('occurrenceForm.locationData.enterCoordinates.title')}</h1>
       <h2 className="subtitle">{t('occurrenceForm.locationData.enterCoordinates.subtitle')}</h2>
-      <div className="columns">
+      <div className="columns no-margin">
         <InputNumber
-          className="decimal-longitude is-3 mandatory"
+          className="decimal-longitude is-3 mandatory no-margin"
           name="occurrenceForm.locationData.decimalLongitude"
           onChange={(value) => updateField('decimalLongitude', value)}
           step={0.0001}
           value={data.decimalLongitude}/>
         <InputNumber
-          className="decimal-latitude is-3 mandatory"
+          className="decimal-latitude is-3 mandatory no-margin"
           name="occurrenceForm.locationData.decimalLatitude"
           onChange={(value) => updateField('decimalLatitude', value)}
           step={0.0001}
           value={data.decimalLatitude}/>
-        <InputNumber
-          className="coordinate-uncertainty is-3"
-          name="occurrenceForm.locationData.coordinateUncertainty"
-          onChange={(value) => updateField('coordinateUncertainty', value)}
-          optional
-          step={0.01}
-          value={data.coordinateUncertainty}/>
+
+      </div>
+      <div className="location-picker-notice button" onClick={() => setLocationPickerVisible(true)}>
+        {t('occurrenceForm.locationData.locationPicker.title')}
       </div>
       <div className="columns">
         <InputNumber
@@ -59,12 +56,15 @@ export default function LocationData({ data, onChange }) {
           optional
           step={0.01}
           value={data.maximumDepth}/>
+        <InputNumber
+          className="coordinate-uncertainty is-3"
+          name="occurrenceForm.locationData.coordinateUncertainty"
+          onChange={(value) => updateField('coordinateUncertainty', value)}
+          optional
+          step={0.01}
+          value={data.coordinateUncertainty}/>
       </div>
-      <div className="columns">
-        <div className="location-picker-notice column is-narrow" onClick={() => setLocationPickerVisible(true)}>
-          {t('occurrenceForm.locationData.locationPicker.title')}
-        </div>
-      </div>
+
       <LocationPickerModal
         active={locationPickerVisible}
         onChange={handleLocationUpdate}
