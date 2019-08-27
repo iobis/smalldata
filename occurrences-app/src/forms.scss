@@ -2,16 +2,16 @@
 
 .mandatory {
   label:after {
-    content: "required";
+    content: 'required';
     font-size: 0.7rem;
-    color: #FFF;
+    color: #fff;
     border-radius: 10px;
     padding: 0.4rem;
     margin-left: 0.3rem;
-    background-color:var(--mandatory);
+    background-color: var(--mandatory);
   }
 
   input {
-    border: 2px solid black
+    border: 2px solid black;
   }
 }

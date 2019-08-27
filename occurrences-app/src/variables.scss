@@ -3,25 +3,23 @@
   font-family: 'Proxima Nova Alt Bold';
   src: url('assets/fonts/ProximaNovaAltBold-webfont.eot');
   src: url('assets/fonts/ProximaNovaAltBold-webfont.eot?#iefix') format('embedded-opentype'),
-  url('assets/fonts/ProximaNovaAltBold-webfont.woff2') format('woff2'),
-  url('assets/fonts/ProximaNovaAltBold-webfont.woff') format('woff'),
-  url('assets/fonts/ProximaNovaAltBold-webfont.ttf') format('truetype'),
-  url('assets/fonts/ProximaNovaAltBold-webfont.svg#proxima_nova_altbold') format('svg');
+    url('assets/fonts/ProximaNovaAltBold-webfont.woff2') format('woff2'),
+    url('assets/fonts/ProximaNovaAltBold-webfont.woff') format('woff'),
+    url('assets/fonts/ProximaNovaAltBold-webfont.ttf') format('truetype'),
+    url('assets/fonts/ProximaNovaAltBold-webfont.svg#proxima_nova_altbold') format('svg');
   font-weight: normal;
   font-style: normal;
-
 }
 
 @font-face {
   font-family: 'Proxima Nova Regular';
   src: url('assets/fonts/ProximaNovaAltRegular-webfont.eot');
   src: url('assets/fonts/ProximaNovaAltRegular-webfont.eot?#iefix') format('embedded-opentype'),
-  url('assets/fonts/ProximaNovaAltRegular-webfont.woff') format('woff'),
-  url('assets/fonts/ProximaNovaAltRegular-webfont.ttf') format('truetype'),
-  url('assets/fonts/ProximaNovaAltRegular-webfont.svg#proxima_nova_altbold') format('svg');
+    url('assets/fonts/ProximaNovaAltRegular-webfont.woff') format('woff'),
+    url('assets/fonts/ProximaNovaAltRegular-webfont.ttf') format('truetype'),
+    url('assets/fonts/ProximaNovaAltRegular-webfont.svg#proxima_nova_altbold') format('svg');
   font-weight: normal;
   font-style: normal;
-
 }
 
 /* Variable setup for OBIS corporate identity */
@@ -31,7 +29,7 @@
   --font-color: #363636;
 
   --lightbackground: #f3f3f3;
-  --white: #FFFFFF;
+  --white: #ffffff;
 
   --margin-top: 1.5rem;
   --margin-bottom: 1.5rem;
@@ -44,11 +42,9 @@
 }
 
 /* Variables needing to be declared as SCSS vars due to usage in SCSS functions */
-$stepbackground: #05DBF2;
-$obis-green:#28a745;
+$stepbackground: #05dbf2;
+$obis-green: #28a745;
 
 /* Bulma vars to override */
 $family-primary: var(--regular-font);
-$link:  rgb(204, 51, 0);
-
-
+$link: rgb(204, 51, 0);

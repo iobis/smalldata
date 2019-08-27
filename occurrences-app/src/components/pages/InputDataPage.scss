@@ -32,10 +32,10 @@ a.button.new-occurrence {
   margin-bottom: var(--margin-bottom);
 
   &:hover {
-    background-color: lighten($obis-green,10%)
+    background-color: lighten($obis-green, 10%);
   }
 }
 
 a.button.is-info.copy-previous-entry {
-  background-color: $stepbackground
+  background-color: $stepbackground;
 }
