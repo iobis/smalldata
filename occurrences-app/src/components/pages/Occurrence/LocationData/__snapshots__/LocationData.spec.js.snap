@@ -29,17 +29,17 @@ exports[`LocationData renders correctly 1`] = `
       occurrenceForm.locationData.enterCoordinates.subtitle
     </h2>
     <div
-      className="columns"
+      className="columns no-margin"
     >
       <InputNumber
-        className="decimal-longitude is-3 mandatory"
+        className="decimal-longitude is-3 mandatory no-margin"
         name="occurrenceForm.locationData.decimalLongitude"
         onChange={[Function]}
         step={0.0001}
         value={null}
       >
         <div
-          className="column field decimal-longitude is-3 mandatory"
+          className="column field decimal-longitude is-3 mandatory no-margin"
         >
           <label
             className="label"
@@ -56,14 +56,14 @@ exports[`LocationData renders correctly 1`] = `
         </div>
       </InputNumber>
       <InputNumber
-        className="decimal-latitude is-3 mandatory"
+        className="decimal-latitude is-3 mandatory no-margin"
         name="occurrenceForm.locationData.decimalLatitude"
         onChange={[Function]}
         step={0.0001}
         value={null}
       >
         <div
-          className="column field decimal-latitude is-3 mandatory"
+          className="column field decimal-latitude is-3 mandatory no-margin"
         >
           <label
             className="label"
@@ -79,31 +79,12 @@ exports[`LocationData renders correctly 1`] = `
           />
         </div>
       </InputNumber>
-      <InputNumber
-        className="coordinate-uncertainty is-3"
-        name="occurrenceForm.locationData.coordinateUncertainty"
-        onChange={[Function]}
-        optional={true}
-        step={0.01}
-        value={null}
-      >
-        <div
-          className="column field coordinate-uncertainty is-3"
-        >
-          <label
-            className="label has-text-weight-normal"
-          >
-            occurrenceForm.locationData.coordinateUncertainty.label
-          </label>
-          <input
-            className="input"
-            onChange={[Function]}
-            step={0.01}
-            type="number"
-            value=""
-          />
-        </div>
-      </InputNumber>
+    </div>
+    <div
+      className="location-picker-notice button"
+      onClick={[Function]}
+    >
+      occurrenceForm.locationData.locationPicker.title
     </div>
     <div
       className="columns"
@@ -158,16 +139,31 @@ exports[`LocationData renders correctly 1`] = `
           />
         </div>
       </InputNumber>
-    </div>
-    <div
-      className="columns"
-    >
-      <div
-        className="location-picker-notice column is-narrow"
-        onClick={[Function]}
+      <InputNumber
+        className="coordinate-uncertainty is-3"
+        name="occurrenceForm.locationData.coordinateUncertainty"
+        onChange={[Function]}
+        optional={true}
+        step={0.01}
+        value={null}
       >
-        occurrenceForm.locationData.locationPicker.title
-      </div>
+        <div
+          className="column field coordinate-uncertainty is-3"
+        >
+          <label
+            className="label has-text-weight-normal"
+          >
+            occurrenceForm.locationData.coordinateUncertainty.label
+          </label>
+          <input
+            className="input"
+            onChange={[Function]}
+            step={0.01}
+            type="number"
+            value=""
+          />
+        </div>
+      </InputNumber>
     </div>
     <LocationPickerModal
       active={false}
