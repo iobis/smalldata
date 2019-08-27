@@ -56,7 +56,7 @@ exports[`OccurrenceData renders correctly 1`] = `
     className="occurrence-data section is-fluid"
   >
     <div
-      className="columns"
+      className="columns mandatory"
     >
       <ScientificNameInput
         onChange={[Function]}

@@ -32,14 +32,14 @@ exports[`LocationData renders correctly 1`] = `
       className="columns"
     >
       <InputNumber
-        className="decimal-longitude is-3"
+        className="decimal-longitude is-3 mandatory"
         name="occurrenceForm.locationData.decimalLongitude"
         onChange={[Function]}
         step={0.0001}
         value={null}
       >
         <div
-          className="column field decimal-longitude is-3"
+          className="column field decimal-longitude is-3 mandatory"
         >
           <label
             className="label"
@@ -56,14 +56,14 @@ exports[`LocationData renders correctly 1`] = `
         </div>
       </InputNumber>
       <InputNumber
-        className="decimal-latitude is-3"
+        className="decimal-latitude is-3 mandatory"
         name="occurrenceForm.locationData.decimalLatitude"
         onChange={[Function]}
         step={0.0001}
         value={null}
       >
         <div
-          className="column field decimal-latitude is-3"
+          className="column field decimal-latitude is-3 mandatory"
         >
           <label
             className="label"
