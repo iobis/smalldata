@@ -20,7 +20,7 @@ export default function ManageUsersPage() {
     <div className="manage-users-page">
       <section className="section">
         <div className="container is-fluid has-text-centered">
-          <Link className="button is-info" to="/manage-users/create">
+          <Link className="button is-info new" to="/manage-users/create">
             {t('manageUsersPage.inputNew')}
           </Link>
         </div>

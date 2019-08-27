@@ -38,7 +38,7 @@ export default function InputDataPage() {
     <>
       <section className="section">
         <div className="container is-fluid has-text-centered">
-          <Link className="button is-info new-occurrence" to="/input-data/create">
+          <Link className="button is-info new" to="/input-data/create">
             {t('inputDataPage.inputNewOccurrence')}
           </Link>
         </div>

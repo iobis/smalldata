@@ -21,7 +21,7 @@ export default function ManageDatasetPage() {
     <>
       <section className="section">
         <div className="container is-fluid has-text-centered">
-          <Link className="button is-info" to="/manage-dataset/create">
+          <Link className="button is-info new" to="/manage-dataset/create">
             {t('manageDatasetPage.inputNew')}
           </Link>
         </div>
