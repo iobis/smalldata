@@ -37,7 +37,7 @@ export default {
     datasetPageFormPage: {
       basicInformation:      {
         step:     {
-          dataDescription: 'Basic Data',
+          dataDescription: 'Title',
           stepDescription: 'Supply the mandatory information for the dataset',
           stepTitle:       'Basic Information'
         },
@@ -83,7 +83,7 @@ export default {
       },
       keywords:              {
         step:     {
-          dataDescription: 'Couplings',
+          dataDescription: '',
           stepDescription: 'Specify keywords associated with dataset',
           stepTitle:       'Keywords'
         },
