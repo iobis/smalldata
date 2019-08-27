@@ -173,6 +173,9 @@ public class UsersHandlerTest {
           case "replace":
             message.reply(message.body().getJsonObject("user"));
             break;
+          default:
+            message.reply(new JsonObject());
+            break;
         }
       });
   }

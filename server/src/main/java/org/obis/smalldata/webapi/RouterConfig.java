@@ -9,7 +9,7 @@ import io.vertx.ext.web.api.contract.RouterFactoryOptions;
 import io.vertx.ext.web.api.contract.openapi3.OpenAPI3RouterFactory;
 import io.vertx.ext.web.handler.StaticHandler;
 import lombok.val;
-import org.obis.smalldata.webapi.Authority.Authority;
+import org.obis.smalldata.webapi.authority.Authority;
 
 import java.util.Arrays;
 import java.util.Map;
@@ -68,7 +68,7 @@ class RouterConfig {
     routerFactory.setOptions(new RouterFactoryOptions().setRequireSecurityHandlers(true));
     securityHandlers.forEach(routerFactory::addSecurityHandler);
     operationHandlers.forEach((operationId, handler) -> {
-      routerFactory.addHandlerByOperationId(operationId, handler::handler);
+      routerFactory.addHandlerByOperationId(operationId, handler::getHandler);
       routerFactory.addFailureHandlerByOperationId(operationId, handler.failureHandler);
     });
 
@@ -80,19 +80,19 @@ class RouterConfig {
     completionHandler.accept(router);
   }
 
-  Handler<RoutingContext> protectHandler(Handler<RoutingContext> handler,
+  final Handler<RoutingContext> protectHandler(Handler<RoutingContext> handler,
                                                 Predicate<JsonObject> isAuthorized) {
     return context -> {
       context.vertx().eventBus()
         .<JsonArray>send("users", new JsonObject()
             .put("action", "find")
-            .put("query",  new JsonObject().put("emailAddress",
-              context.user()==null ? new JsonObject() : authority.getEmail(context.user().principal()))),
+            .put("query", new JsonObject().put("emailAddress",
+              context.user() == null ? new JsonObject() : authority.getEmail(context.user().principal()))),
           ar -> {
-            if (ar.result() != null &&
-              ar.result().body() != null &&
-              ar.result().body().size() == 1 &&
-              isAuthorized.test(ar.result().body().getJsonObject(0))) {
+            if (ar.result() != null
+              && ar.result().body() != null
+              && ar.result().body().size() == 1
+              && isAuthorized.test(ar.result().body().getJsonObject(0))) {
               handler.handle(context);
             } else {
               context.response().setStatusCode(403).end("You cannot access this!");
@@ -100,17 +100,17 @@ class RouterConfig {
           });
     };
   }
-  private class OperationHandlers {
+
+  private static class OperationHandlers {
 
     private final Handler<RoutingContext> handler;
     private final Handler<RoutingContext> failureHandler = FailureHandler::fallback;
-
 
     OperationHandlers(Handler<RoutingContext> handler) {
       this.handler = handler;
     }
 
-    void handler(RoutingContext context) {
+    void getHandler(RoutingContext context) {
       handler.handle(context);
     }
   }

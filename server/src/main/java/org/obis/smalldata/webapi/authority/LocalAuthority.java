@@ -1,20 +1,18 @@
-package org.obis.smalldata.webapi.Authority;
+package org.obis.smalldata.webapi.authority;
 
 import io.vertx.core.json.JsonObject;
-import org.pmw.tinylog.Logger;
 
 import java.util.Collection;
 import java.util.function.Predicate;
 
-public class DemoAuthority implements Authority {
+public class LocalAuthority implements Authority {
   @Override
   public String getEmail(JsonObject principal) {
-    return "another.user@domain.org";
+    return null;
   }
 
   @Override
   public Predicate<JsonObject> authorizeRoles(Collection<String> roles) {
-    Logger.info(roles);
     return profile -> true;
   }
 }

@@ -16,10 +16,10 @@ import io.vertx.ext.web.RoutingContext;
 import io.vertx.ext.web.api.contract.openapi3.OpenAPI3RouterFactory;
 import io.vertx.ext.web.handler.JWTAuthHandler;
 import lombok.val;
-import org.obis.smalldata.webapi.Authority.Authority;
-import org.obis.smalldata.webapi.Authority.DemoAuthority;
-import org.obis.smalldata.webapi.Authority.LocalAuthority;
-import org.obis.smalldata.webapi.Authority.OceanExpertAuthority;
+import org.obis.smalldata.webapi.authority.Authority;
+import org.obis.smalldata.webapi.authority.DemoAuthority;
+import org.obis.smalldata.webapi.authority.LocalAuthority;
+import org.obis.smalldata.webapi.authority.OceanExpertAuthority;
 
 import java.util.Map;
 import java.util.function.Consumer;
@@ -32,8 +32,6 @@ public class HttpComponent extends AbstractVerticle {
   private static final String VERIFY_KEY = "verifyKey";
   private static final String ALG_KEY = "alg";
   private static final String AUTH_ES256 = "ES256";
-
-
   private static final Map<String, Authority> AUTHORITIES = Map.ofEntries(
     Map.entry("oceanexpert", new OceanExpertAuthority()),
     Map.entry("demo", new DemoAuthority()),
@@ -106,9 +104,9 @@ public class HttpComponent extends AbstractVerticle {
     }
 
     private void handle(RoutingContext routingContext) {
-      if (isDemoMode &&
-        routingContext.request().headers().get("Authorization") != null &&
-        routingContext.request().headers().get("Authorization").equals(secret)) {
+      if (isDemoMode
+        && routingContext.request().headers().get("Authorization") != null
+        && routingContext.request().headers().get("Authorization").equals(secret)) {
         routingContext.setUser(dummyUser.apply("researcher"));
       }
       routingContext.next();

@@ -44,7 +44,7 @@ public class DwcaRecordsHandlerTest extends DefaultHandlerTest {
   }
 
   @Test
-  @DisplayName("dwca record get handler")
+  @DisplayName("dwca record get getHandler")
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
   void testGetHandler(Vertx vertx, VertxTestContext context) {
     addSucceedingRefs(vertx);
@@ -68,7 +68,7 @@ public class DwcaRecordsHandlerTest extends DefaultHandlerTest {
   }
 
   @Test
-  @DisplayName("dwca record post handler")
+  @DisplayName("dwca record post getHandler")
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
   void testPostHandler(Vertx vertx, VertxTestContext context) {
     addSucceedingRefs(vertx);
@@ -167,6 +167,9 @@ public class DwcaRecordsHandlerTest extends DefaultHandlerTest {
           case "insert":
           case "replace":
             message.reply(message.body().getJsonObject("user"));
+            break;
+          default:
+            message.reply(new JsonObject());
             break;
         }
       });
