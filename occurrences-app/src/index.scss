@@ -10,6 +10,7 @@ $section-padding: 0.5rem;
 @import 'components/layout/Divider';
 @import 'components/layout/Navbar';
 @import 'components/pages/InputDataPage';
+@import 'components/pages/HelpPage';
 @import 'components/pages/Occurrence/DarwinCoreFields/DarwinCoreFields';
 @import 'components/pages/Occurrence/Dataset/Dataset';
 @import 'components/pages/Occurrence/FinalSummary/FinalSummary';
@@ -21,6 +22,10 @@ $section-padding: 0.5rem;
 @import 'components/pages/Occurrence/OccurrenceData/OccurrenceData';
 
 @import 'forms';
+
+html {
+  background-color: transparent;
+}
 
 body {
   margin: 0;
