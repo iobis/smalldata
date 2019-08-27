@@ -42,6 +42,9 @@ jobs:
             yarn occurrences-app:build
             ssh "$SSH_USER@$SSH_HOST" "mkdir -p /var/www/html/occurrences"
             scp -r ./occurrences-app/build/* "$SSH_USER@$SSH_HOST:/var/www/html/occurrences/"
+            yarn admin-app:build
+            ssh "$SSH_USER@$SSH_HOST" "mkdir -p /var/www/html/admin"
+            scp -r ./admin-app/build/* "$SSH_USER@$SSH_HOST:/var/www/html/admin/"
             cd server
             ./gradlew runtimeZip
             scp -r ./build/image.zip "$SSH_USER@$SSH_HOST:/opt/smalldata"
