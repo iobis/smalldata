@@ -11,6 +11,7 @@
       background-color: var(--obis-green);
     }
   }
+
   .navbar-brand {
     p {
       padding-right: 10px;
@@ -24,8 +25,18 @@
     background-color: transparent;
   }
 }
+
 .navbar.is-info .navbar-brand {
   a.navbar-item.logo:hover {
     background-color: transparent;
+  }
+}
+
+.navbar.is-info .login-nav-item.navbar-end {
+  .navbar-item {
+    color: var(--font-color);
+    &.auth-button:hover {
+      background-color: var(--obis-green)
+    }
   }
 }
