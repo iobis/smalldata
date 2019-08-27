@@ -1,4 +1,5 @@
 .previous-occurrences {
+  margin-top: var(--margin-top);
   .occurrence-row {
     .edit {
       width: 5%;
@@ -24,4 +25,17 @@
       width: 5%;
     }
   }
+}
+
+a.button.new-occurrence {
+  background-color: var(--obis-green);
+  margin-bottom: var(--margin-bottom);
+
+  &:hover {
+    background-color: lighten($obis-green, 10%);
+  }
+}
+
+a.button.is-info.copy-previous-entry {
+  background-color: $step-background;
 }

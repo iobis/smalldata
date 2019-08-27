@@ -1,7 +1,7 @@
 export default {
   translation: {
     navbar: {
-      help:      'HELP',
+      help:      'LARGE DATASET ENTRY',
       inputData: 'INVOERGEGEVENS',
       logout:    'Uitloggen',
       login:     'Inloggen'

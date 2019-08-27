@@ -38,7 +38,7 @@ export default function InputDataPage() {
     <>
       <section className="section">
         <div className="container is-fluid has-text-centered">
-          <Link className="button is-info" to="/input-data/create">
+          <Link className="button is-info new-occurrence" to="/input-data/create">
             {t('inputDataPage.inputNewOccurrence')}
           </Link>
         </div>
@@ -99,7 +99,7 @@ function OccurrenceRow({ addedAtInstant, datasetId, dwcaId, datasetTitle, occurr
       <td className="dataset-title">{datasetTitle}</td>
       <td className="occurrence-date">{occurrenceDate || '—'}</td>
       <td className="copy">
-        <Link className="button is-info" to={toCreate}>
+        <Link className="button is-info copy-previous-entry" to={toCreate}>
           {t('common.copy')}
         </Link>
       </td>

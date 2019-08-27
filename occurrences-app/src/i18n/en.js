@@ -17,6 +17,9 @@ export default {
       unit:       'Unit',
       value:      'Value'
     },
+    helpPage:  {
+      contactEmail: 'mailto:pieter@obis.be'
+    },
     inputDataPage:  {
       inputNewOccurrence: 'INPUT NEW OCCURRENCE',
       or:                 'OR',
@@ -246,7 +249,7 @@ export default {
       }
     },
     navbar:         {
-      help:      'HELP',
+      help:      'LARGE DATASET ENTRY',
       inputData: 'INPUT DATA',
       logout:    'logout',
       login:     'login'

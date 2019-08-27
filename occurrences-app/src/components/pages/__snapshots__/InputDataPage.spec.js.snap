@@ -52,11 +52,11 @@ exports[`InputDataPage renders correctly 1`] = `
             className="container is-fluid has-text-centered"
           >
             <Link
-              className="button is-info"
+              className="button is-info new-occurrence"
               to="/input-data/create"
             >
               <a
-                className="button is-info"
+                className="button is-info new-occurrence"
                 href="/input-data/create"
                 onClick={[Function]}
               >
@@ -168,11 +168,11 @@ exports[`InputDataPage renders correctly 2`] = `
             className="container is-fluid has-text-centered"
           >
             <Link
-              className="button is-info"
+              className="button is-info new-occurrence"
               to="/input-data/create"
             >
               <a
-                className="button is-info"
+                className="button is-info new-occurrence"
                 href="/input-data/create"
                 onClick={[Function]}
               >
@@ -309,7 +309,7 @@ exports[`InputDataPage renders correctly 2`] = `
                       className="copy"
                     >
                       <Link
-                        className="button is-info"
+                        className="button is-info copy-previous-entry"
                         to={
                           Object {
                             "pathname": "/input-data/create",
@@ -322,7 +322,7 @@ exports[`InputDataPage renders correctly 2`] = `
                         }
                       >
                         <a
-                          className="button is-info"
+                          className="button is-info copy-previous-entry"
                           href="/input-data/create"
                           onClick={[Function]}
                         >
@@ -418,7 +418,7 @@ exports[`InputDataPage renders correctly 2`] = `
                       className="copy"
                     >
                       <Link
-                        className="button is-info"
+                        className="button is-info copy-previous-entry"
                         to={
                           Object {
                             "pathname": "/input-data/create",
@@ -431,7 +431,7 @@ exports[`InputDataPage renders correctly 2`] = `
                         }
                       >
                         <a
-                          className="button is-info"
+                          className="button is-info copy-previous-entry"
                           href="/input-data/create"
                           onClick={[Function]}
                         >
@@ -515,7 +515,7 @@ exports[`InputDataPage renders correctly 2`] = `
                       className="copy"
                     >
                       <Link
-                        className="button is-info"
+                        className="button is-info copy-previous-entry"
                         to={
                           Object {
                             "pathname": "/input-data/create",
@@ -528,7 +528,7 @@ exports[`InputDataPage renders correctly 2`] = `
                         }
                       >
                         <a
-                          className="button is-info"
+                          className="button is-info copy-previous-entry"
                           href="/input-data/create"
                           onClick={[Function]}
                         >

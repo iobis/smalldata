@@ -54,18 +54,20 @@ exports[`Navbar renders correctly for route / 1`] = `
             className="navbar-brand"
           >
             <Link
-              className="navbar-item"
+              className="navbar-item logo"
               onClick={[Function]}
               to="/input-data"
             >
               <a
-                className="navbar-item"
+                className="navbar-item logo"
                 href="/input-data"
                 onClick={[Function]}
               >
-                <p>
-                  OBIS
-                </p>
+                <img
+                  alt="OBIS"
+                  src="obis-logo.png"
+                  title="OBIS"
+                />
               </a>
             </Link>
             <a
@@ -188,18 +190,20 @@ exports[`Navbar renders correctly for route /help 1`] = `
             className="navbar-brand"
           >
             <Link
-              className="navbar-item"
+              className="navbar-item logo"
               onClick={[Function]}
               to="/input-data"
             >
               <a
-                className="navbar-item"
+                className="navbar-item logo"
                 href="/input-data"
                 onClick={[Function]}
               >
-                <p>
-                  OBIS
-                </p>
+                <img
+                  alt="OBIS"
+                  src="obis-logo.png"
+                  title="OBIS"
+                />
               </a>
             </Link>
             <a
@@ -322,18 +326,20 @@ exports[`Navbar renders correctly for route /input-data 1`] = `
             className="navbar-brand"
           >
             <Link
-              className="navbar-item"
+              className="navbar-item logo"
               onClick={[Function]}
               to="/input-data"
             >
               <a
-                className="navbar-item"
+                className="navbar-item logo"
                 href="/input-data"
                 onClick={[Function]}
               >
-                <p>
-                  OBIS
-                </p>
+                <img
+                  alt="OBIS"
+                  src="obis-logo.png"
+                  title="OBIS"
+                />
               </a>
             </Link>
             <a
@@ -456,18 +462,20 @@ exports[`Navbar renders correctly for route /input-data/create 1`] = `
             className="navbar-brand"
           >
             <Link
-              className="navbar-item"
+              className="navbar-item logo"
               onClick={[Function]}
               to="/input-data"
             >
               <a
-                className="navbar-item"
+                className="navbar-item logo"
                 href="/input-data"
                 onClick={[Function]}
               >
-                <p>
-                  OBIS
-                </p>
+                <img
+                  alt="OBIS"
+                  src="obis-logo.png"
+                  title="OBIS"
+                />
               </a>
             </Link>
             <a
@@ -589,18 +597,20 @@ exports[`Navbar renders correctly when logged in 1`] = `
           className="navbar-brand"
         >
           <Link
-            className="navbar-item"
+            className="navbar-item logo"
             onClick={[Function]}
             to="/input-data"
           >
             <a
-              className="navbar-item"
+              className="navbar-item logo"
               href="/input-data"
               onClick={[Function]}
             >
-              <p>
-                OBIS
-              </p>
+              <img
+                alt="OBIS"
+                src="obis-logo.png"
+                title="OBIS"
+              />
             </a>
           </Link>
           <a
@@ -781,18 +791,20 @@ exports[`Navbar renders correctly when logged out 1`] = `
           className="navbar-brand"
         >
           <Link
-            className="navbar-item"
+            className="navbar-item logo"
             onClick={[Function]}
             to="/input-data"
           >
             <a
-              className="navbar-item"
+              className="navbar-item logo"
               href="/input-data"
               onClick={[Function]}
             >
-              <p>
-                OBIS
-              </p>
+              <img
+                alt="OBIS"
+                src="obis-logo.png"
+                title="OBIS"
+              />
             </a>
           </Link>
           <a

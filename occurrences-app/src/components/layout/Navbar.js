@@ -6,6 +6,7 @@ import { AuthContext, useOnClickOutside } from '@smalldata/dwca-lib'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link, NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import logo from './obis-logo.png'
 
 export default function Navbar() {
   const { t } = useTranslation()
@@ -18,8 +19,8 @@ export default function Navbar() {
   return (
     <nav aria-label="main navigation" className="navbar is-info" ref={menuRef} role="navigation">
       <div className="navbar-brand">
-        <Link className="navbar-item" onClick={hideNavbarMenu} to="/input-data">
-          <p>OBIS</p>
+        <Link className="navbar-item logo" onClick={hideNavbarMenu} to="/input-data">
+          <img alt="OBIS" src={logo} title="OBIS"/>
         </Link>
         <a
           className="navbar-burger"

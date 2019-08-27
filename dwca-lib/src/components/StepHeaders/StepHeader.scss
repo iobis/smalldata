@@ -3,7 +3,7 @@
 
   @for $i from 0 through 100 {
     &.background-color-#{$i} {
-      background-color: darken($info, $i * 1%);
+      background-color: darken($step-background, $i * 1%);
     }
   }
 
