@@ -134,13 +134,13 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
                 className="basic-information"
               >
                 <InputText
-                  className="title"
+                  className="title mandatory"
                   name="datasetPageFormPage.basicInformation.title"
                   onChange={[Function]}
                   value=""
                 >
                   <div
-                    className="column field title"
+                    className="column field title mandatory"
                   >
                     <label
                       className="label"
@@ -778,13 +778,13 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
                 className="basic-information"
               >
                 <InputText
-                  className="title"
+                  className="title mandatory"
                   name="datasetPageFormPage.basicInformation.title"
                   onChange={[Function]}
                   value="dataset title"
                 >
                   <div
-                    className="column field title"
+                    className="column field title mandatory"
                   >
                     <label
                       className="label"
@@ -3316,13 +3316,13 @@ paragraph-2",
                 className="basic-information"
               >
                 <InputText
-                  className="title"
+                  className="title mandatory"
                   name="datasetPageFormPage.basicInformation.title"
                   onChange={[Function]}
                   value="Benthic data from Sevastopol (Black Sea)"
                 >
                   <div
-                    className="column field title"
+                    className="column field title mandatory"
                   >
                     <label
                       className="label"

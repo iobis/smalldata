@@ -15,7 +15,7 @@ exports[`ContactsForm returns contacts when adding to empty list renders correct
       onChange={[Function]}
     >
       <div
-        className="ocean-expert-name-input field column is-four-fifths"
+        className="ocean-expert-name-input field column is-four-fifths mandatory"
       >
         <div
           className="dropdown"
@@ -29,7 +29,7 @@ exports[`ContactsForm returns contacts when adding to empty list renders correct
               userFormPage.name.label
             </label>
             <div
-              className="control has-icons-right"
+              className="control has-icons-right "
             >
               <input
                 className="input"
@@ -162,7 +162,7 @@ exports[`ContactsForm returns updated contacts when adding to list with single e
       onChange={[Function]}
     >
       <div
-        className="ocean-expert-name-input field column is-four-fifths"
+        className="ocean-expert-name-input field column is-four-fifths mandatory"
       >
         <div
           className="dropdown"
@@ -176,7 +176,7 @@ exports[`ContactsForm returns updated contacts when adding to list with single e
               userFormPage.name.label
             </label>
             <div
-              className="control has-icons-right"
+              className="control has-icons-right "
             >
               <input
                 className="input"
@@ -351,7 +351,7 @@ exports[`ContactsForm when removing contacts removes first contact 1`] = `
       onChange={[Function]}
     >
       <div
-        className="ocean-expert-name-input field column is-four-fifths"
+        className="ocean-expert-name-input field column is-four-fifths mandatory"
       >
         <div
           className="dropdown"
@@ -365,7 +365,7 @@ exports[`ContactsForm when removing contacts removes first contact 1`] = `
               userFormPage.name.label
             </label>
             <div
-              className="control has-icons-right"
+              className="control has-icons-right "
             >
               <input
                 className="input"
@@ -577,7 +577,7 @@ exports[`ContactsForm when removing contacts removes second contact 1`] = `
       onChange={[Function]}
     >
       <div
-        className="ocean-expert-name-input field column is-four-fifths"
+        className="ocean-expert-name-input field column is-four-fifths mandatory"
       >
         <div
           className="dropdown"
@@ -591,7 +591,7 @@ exports[`ContactsForm when removing contacts removes second contact 1`] = `
               userFormPage.name.label
             </label>
             <div
-              className="control has-icons-right"
+              className="control has-icons-right "
             >
               <input
                 className="input"
