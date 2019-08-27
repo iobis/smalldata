@@ -1,9 +1,31 @@
 .navbar {
+  .navbar-menu .navbar-start a {
+    font-family: var(--title-font);
+
+    &.navbar-item {
+      color: var(--font-color);
+    }
+
+    &.navbar-item.is-active,
+    &.navbar-item:hover {
+      background-color: var(--obis-green);
+    }
+  }
   .navbar-brand {
     p {
       padding-right: 10px;
       font-size: 26px;
       font-weight: bold;
     }
+  }
+
+  /* Override bulma styles*/
+  &.is-info {
+    background-color: transparent;
+  }
+}
+.navbar.is-info .navbar-brand {
+  a.navbar-item.logo:hover {
+    background-color: transparent;
   }
 }

@@ -1,0 +1,50 @@
+/* font face declarations */
+@font-face {
+  font-family: 'Proxima Nova Alt Bold';
+  src: url('assets/fonts/ProximaNovaAltBold-webfont.eot');
+  src: url('assets/fonts/ProximaNovaAltBold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('assets/fonts/ProximaNovaAltBold-webfont.woff2') format('woff2'),
+    url('assets/fonts/ProximaNovaAltBold-webfont.woff') format('woff'),
+    url('assets/fonts/ProximaNovaAltBold-webfont.ttf') format('truetype'),
+    url('assets/fonts/ProximaNovaAltBold-webfont.svg#proxima_nova_altbold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova Regular';
+  src: url('assets/fonts/ProximaNovaAltRegular-webfont.eot');
+  src: url('assets/fonts/ProximaNovaAltRegular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('assets/fonts/ProximaNovaAltRegular-webfont.woff') format('woff'),
+    url('assets/fonts/ProximaNovaAltRegular-webfont.ttf') format('truetype'),
+    url('assets/fonts/ProximaNovaAltRegular-webfont.svg#proxima_nova_altbold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Variable setup for OBIS corporate identity */
+:root {
+  --title-font: 'Proxima Nova Alt Bold', Georgia, sans-serif;
+  --regular-font: 'Proxima Nova Regular', Georgia, sans-serif;
+  --font-color: #363636;
+
+  --lightbackground: #f3f3f3;
+  --white: #ffffff;
+
+  --margin-top: 1.5rem;
+  --margin-bottom: 1.5rem;
+
+  --link-color: rgb(204, 51, 0);
+
+  --obis-green: #28a745;
+
+  --mandatory: rgb(242, 89, 38);
+}
+
+/* Variables needing to be declared as SCSS vars due to usage in SCSS functions */
+$step-background: #05dbf2;
+$obis-green: #28a745;
+
+/* Bulma vars to override */
+$family-primary: var(--regular-font);
+$link: rgb(204, 51, 0);

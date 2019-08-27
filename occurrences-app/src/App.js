@@ -37,7 +37,9 @@ const AppDiv = () => {
 
   return (
     <div className="App">
-      <Navbar/>
+      <header>
+        <Navbar/>
+      </header>
       <Switch>
         <ProtectedRoute component={InputDataPage} exact path="/"/>
         <ProtectedRoute component={InputDataPage} exact path="/input-data"/>
