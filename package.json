@@ -13,6 +13,8 @@
     "test-utils-lib"
   ],
   "scripts": {
+    "admin-app:build": "yarn workspace @smalldata/admin-app build",
+    "admin-app:copy-to-server": "shx mkdir -p ./server/src/main/resources/webroot/ && shx cp -rf ./admin-app/build/* ./server/src/main/resources/webroot/",
     "admin-app:start": "yarn workspace @smalldata/admin-app start",
     "build:back-end": "run-s server:bundle-openapi-spec server:runtime-zip",
     "build:front-end": "run-s occurrences-app:build occurrences-app:copy-to-server",
