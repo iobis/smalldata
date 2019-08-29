@@ -35,19 +35,23 @@ export default function ContactsForm({ className, contactsTableHeader, data, onC
       <OceanExpertNameInput
         oceanExpertName={name}
         onChange={handleOceanExpertProfileChange}/>
-      <InputText
-        className="email"
-        name="datasetPageFormPage.contactsForm.email"
-        onChange={value => setEmail(value)}
-        value={email}/>
-      <InputText
-        className="organisation"
-        name="datasetPageFormPage.contactsForm.organisation"
-        onChange={value => setOrganisation(value)}
-        value={organisation}/>
-      <div className="column field">
-        <button className="add button" onClick={handleAddClick}>{t('common.add')}</button>
+      <div className="columns column">
+        <InputText
+          className="column email"
+          name="datasetPageFormPage.contactsForm.email"
+          onChange={value => setEmail(value)}
+          value={email}/>
+        <InputText
+          className="column organisation"
+          name="datasetPageFormPage.contactsForm.organisation"
+          onChange={value => setOrganisation(value)}
+          value={organisation}/>
+        <div className="column field fix-alignment">
+          <button className="add button" onClick={handleAddClick}>{t('common.add')}</button>
+        </div>
       </div>
+
+
       <div className="column field">
         <div className="title is-5 contacts-table-header">{contactsTableHeader}</div>
         <table className="general table is-fullwidth is-striped is-hoverable">

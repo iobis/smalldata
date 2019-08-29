@@ -53,59 +53,63 @@ exports[`ContactsForm returns contacts when adding to empty list renders correct
         </div>
       </div>
     </OceanExpertNameInput>
-    <InputText
-      className="email"
-      name="datasetPageFormPage.contactsForm.email"
-      onChange={[Function]}
-      value=""
-    >
-      <div
-        className="column field email"
-      >
-        <label
-          className="label"
-        >
-          datasetPageFormPage.contactsForm.email.label
-        </label>
-        <input
-          className="input"
-          onChange={[Function]}
-          type="text"
-          value=""
-        />
-      </div>
-    </InputText>
-    <InputText
-      className="organisation"
-      name="datasetPageFormPage.contactsForm.organisation"
-      onChange={[Function]}
-      value=""
-    >
-      <div
-        className="column field organisation"
-      >
-        <label
-          className="label"
-        >
-          datasetPageFormPage.contactsForm.organisation.label
-        </label>
-        <input
-          className="input"
-          onChange={[Function]}
-          type="text"
-          value=""
-        />
-      </div>
-    </InputText>
     <div
-      className="column field"
+      className="columns column"
     >
-      <button
-        className="add button"
-        onClick={[Function]}
+      <InputText
+        className="column email"
+        name="datasetPageFormPage.contactsForm.email"
+        onChange={[Function]}
+        value=""
       >
-        common.add
-      </button>
+        <div
+          className="column field column email"
+        >
+          <label
+            className="label"
+          >
+            datasetPageFormPage.contactsForm.email.label
+          </label>
+          <input
+            className="input"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+        </div>
+      </InputText>
+      <InputText
+        className="column organisation"
+        name="datasetPageFormPage.contactsForm.organisation"
+        onChange={[Function]}
+        value=""
+      >
+        <div
+          className="column field column organisation"
+        >
+          <label
+            className="label"
+          >
+            datasetPageFormPage.contactsForm.organisation.label
+          </label>
+          <input
+            className="input"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+        </div>
+      </InputText>
+      <div
+        className="column field fix-alignment"
+      >
+        <button
+          className="add button"
+          onClick={[Function]}
+        >
+          common.add
+        </button>
+      </div>
     </div>
     <div
       className="column field"
@@ -200,59 +204,63 @@ exports[`ContactsForm returns updated contacts when adding to list with single e
         </div>
       </div>
     </OceanExpertNameInput>
-    <InputText
-      className="email"
-      name="datasetPageFormPage.contactsForm.email"
-      onChange={[Function]}
-      value=""
-    >
-      <div
-        className="column field email"
-      >
-        <label
-          className="label"
-        >
-          datasetPageFormPage.contactsForm.email.label
-        </label>
-        <input
-          className="input"
-          onChange={[Function]}
-          type="text"
-          value=""
-        />
-      </div>
-    </InputText>
-    <InputText
-      className="organisation"
-      name="datasetPageFormPage.contactsForm.organisation"
-      onChange={[Function]}
-      value=""
-    >
-      <div
-        className="column field organisation"
-      >
-        <label
-          className="label"
-        >
-          datasetPageFormPage.contactsForm.organisation.label
-        </label>
-        <input
-          className="input"
-          onChange={[Function]}
-          type="text"
-          value=""
-        />
-      </div>
-    </InputText>
     <div
-      className="column field"
+      className="columns column"
     >
-      <button
-        className="add button"
-        onClick={[Function]}
+      <InputText
+        className="column email"
+        name="datasetPageFormPage.contactsForm.email"
+        onChange={[Function]}
+        value=""
       >
-        common.add
-      </button>
+        <div
+          className="column field column email"
+        >
+          <label
+            className="label"
+          >
+            datasetPageFormPage.contactsForm.email.label
+          </label>
+          <input
+            className="input"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+        </div>
+      </InputText>
+      <InputText
+        className="column organisation"
+        name="datasetPageFormPage.contactsForm.organisation"
+        onChange={[Function]}
+        value=""
+      >
+        <div
+          className="column field column organisation"
+        >
+          <label
+            className="label"
+          >
+            datasetPageFormPage.contactsForm.organisation.label
+          </label>
+          <input
+            className="input"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+        </div>
+      </InputText>
+      <div
+        className="column field fix-alignment"
+      >
+        <button
+          className="add button"
+          onClick={[Function]}
+        >
+          common.add
+        </button>
+      </div>
     </div>
     <div
       className="column field"
@@ -389,59 +397,63 @@ exports[`ContactsForm when removing contacts removes first contact 1`] = `
         </div>
       </div>
     </OceanExpertNameInput>
-    <InputText
-      className="email"
-      name="datasetPageFormPage.contactsForm.email"
-      onChange={[Function]}
-      value=""
-    >
-      <div
-        className="column field email"
-      >
-        <label
-          className="label"
-        >
-          datasetPageFormPage.contactsForm.email.label
-        </label>
-        <input
-          className="input"
-          onChange={[Function]}
-          type="text"
-          value=""
-        />
-      </div>
-    </InputText>
-    <InputText
-      className="organisation"
-      name="datasetPageFormPage.contactsForm.organisation"
-      onChange={[Function]}
-      value=""
-    >
-      <div
-        className="column field organisation"
-      >
-        <label
-          className="label"
-        >
-          datasetPageFormPage.contactsForm.organisation.label
-        </label>
-        <input
-          className="input"
-          onChange={[Function]}
-          type="text"
-          value=""
-        />
-      </div>
-    </InputText>
     <div
-      className="column field"
+      className="columns column"
     >
-      <button
-        className="add button"
-        onClick={[Function]}
+      <InputText
+        className="column email"
+        name="datasetPageFormPage.contactsForm.email"
+        onChange={[Function]}
+        value=""
       >
-        common.add
-      </button>
+        <div
+          className="column field column email"
+        >
+          <label
+            className="label"
+          >
+            datasetPageFormPage.contactsForm.email.label
+          </label>
+          <input
+            className="input"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+        </div>
+      </InputText>
+      <InputText
+        className="column organisation"
+        name="datasetPageFormPage.contactsForm.organisation"
+        onChange={[Function]}
+        value=""
+      >
+        <div
+          className="column field column organisation"
+        >
+          <label
+            className="label"
+          >
+            datasetPageFormPage.contactsForm.organisation.label
+          </label>
+          <input
+            className="input"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+        </div>
+      </InputText>
+      <div
+        className="column field fix-alignment"
+      >
+        <button
+          className="add button"
+          onClick={[Function]}
+        >
+          common.add
+        </button>
+      </div>
     </div>
     <div
       className="column field"
@@ -615,59 +627,63 @@ exports[`ContactsForm when removing contacts removes second contact 1`] = `
         </div>
       </div>
     </OceanExpertNameInput>
-    <InputText
-      className="email"
-      name="datasetPageFormPage.contactsForm.email"
-      onChange={[Function]}
-      value=""
-    >
-      <div
-        className="column field email"
-      >
-        <label
-          className="label"
-        >
-          datasetPageFormPage.contactsForm.email.label
-        </label>
-        <input
-          className="input"
-          onChange={[Function]}
-          type="text"
-          value=""
-        />
-      </div>
-    </InputText>
-    <InputText
-      className="organisation"
-      name="datasetPageFormPage.contactsForm.organisation"
-      onChange={[Function]}
-      value=""
-    >
-      <div
-        className="column field organisation"
-      >
-        <label
-          className="label"
-        >
-          datasetPageFormPage.contactsForm.organisation.label
-        </label>
-        <input
-          className="input"
-          onChange={[Function]}
-          type="text"
-          value=""
-        />
-      </div>
-    </InputText>
     <div
-      className="column field"
+      className="columns column"
     >
-      <button
-        className="add button"
-        onClick={[Function]}
+      <InputText
+        className="column email"
+        name="datasetPageFormPage.contactsForm.email"
+        onChange={[Function]}
+        value=""
       >
-        common.add
-      </button>
+        <div
+          className="column field column email"
+        >
+          <label
+            className="label"
+          >
+            datasetPageFormPage.contactsForm.email.label
+          </label>
+          <input
+            className="input"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+        </div>
+      </InputText>
+      <InputText
+        className="column organisation"
+        name="datasetPageFormPage.contactsForm.organisation"
+        onChange={[Function]}
+        value=""
+      >
+        <div
+          className="column field column organisation"
+        >
+          <label
+            className="label"
+          >
+            datasetPageFormPage.contactsForm.organisation.label
+          </label>
+          <input
+            className="input"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+        </div>
+      </InputText>
+      <div
+        className="column field fix-alignment"
+      >
+        <button
+          className="add button"
+          onClick={[Function]}
+        >
+          common.add
+        </button>
+      </div>
     </div>
     <div
       className="column field"
