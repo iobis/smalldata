@@ -113,11 +113,13 @@ exports[`UserFormPage renders correctly for successful workflow 1`] = `
             >
               <label
                 className="label"
+                htmlFor="userformpage.email.label"
               >
                 userFormPage.email.label
               </label>
               <input
                 className="input"
+                id="userformpage.email.label"
                 onChange={[Function]}
                 type="text"
                 value=""
@@ -357,11 +359,13 @@ exports[`UserFormPage renders correctly for successful workflow 2`] = `
             >
               <label
                 className="label"
+                htmlFor="userformpage.email.label"
               >
                 userFormPage.email.label
               </label>
               <input
                 className="input"
+                id="userformpage.email.label"
                 onChange={[Function]}
                 type="text"
                 value=""
@@ -761,11 +765,13 @@ exports[`UserFormPage when editing renders correctly for successful workflow 1`]
             >
               <label
                 className="label"
+                htmlFor="userformpage.email.label"
               >
                 userFormPage.email.label
               </label>
               <input
                 className="input"
+                id="userformpage.email.label"
                 onChange={[Function]}
                 type="text"
                 value="indiana.jones@gmail.com"
@@ -1024,11 +1030,13 @@ exports[`UserFormPage when editing renders correctly for successful workflow 2`]
             >
               <label
                 className="label"
+                htmlFor="userformpage.email.label"
               >
                 userFormPage.email.label
               </label>
               <input
                 className="input"
+                id="userformpage.email.label"
                 onChange={[Function]}
                 type="text"
                 value="indiana.jones@gmail.com"

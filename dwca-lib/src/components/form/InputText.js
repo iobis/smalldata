@@ -7,16 +7,18 @@ import { useTranslation } from 'react-i18next'
 export default function InputText({ className, name, onChange, optional, value }) {
   const { t } = useTranslation()
   const label = t(name + '.label')
+  const accessibilityID = label.replace(' ','').toLocaleLowerCase()
   const placeholderKey = name + '.placeholder'
   const helpKey = name + '.help'
 
   return (
     <div className={classNames('column field', className)}>
-      <label className={classNames('label', { 'has-text-weight-normal': optional })}>
+      <label className={classNames('label', { 'has-text-weight-normal': optional })} htmlFor={accessibilityID}>
         {label}
       </label>
       <input
         className="input"
+        id={accessibilityID}
         onChange={(e) => onChange(e.target.value)}
         placeholder={i18next.exists(placeholderKey) ? t(placeholderKey) : undefined}
         type="text"

@@ -12,11 +12,13 @@ exports[`ObservationData renders correctly 1`] = `
     >
       <label
         className="label"
+        htmlFor="occurrenceform.observationdata.institutioncode.label"
       >
         occurrenceForm.observationData.institutionCode.label
       </label>
       <input
         className="input"
+        id="occurrenceform.observationdata.institutioncode.label"
         onChange={[Function]}
         type="text"
         value=""
@@ -27,11 +29,13 @@ exports[`ObservationData renders correctly 1`] = `
     >
       <label
         className="label"
+        htmlFor="occurrenceform.observationdata.collectioncode.label"
       >
         occurrenceForm.observationData.collectionCode.label
       </label>
       <input
         className="input"
+        id="occurrenceform.observationdata.collectioncode.label"
         onChange={[Function]}
         type="text"
         value=""
@@ -46,11 +50,13 @@ exports[`ObservationData renders correctly 1`] = `
     >
       <label
         className="label"
+        htmlFor="occurrenceform.observationdata.fieldnumber.label"
       >
         occurrenceForm.observationData.fieldNumber.label
       </label>
       <input
         className="input"
+        id="occurrenceform.observationdata.fieldnumber.label"
         onChange={[Function]}
         type="text"
         value=""
@@ -61,11 +67,13 @@ exports[`ObservationData renders correctly 1`] = `
     >
       <label
         className="label"
+        htmlFor="occurrenceform.observationdata.catalognumber.label"
       >
         occurrenceForm.observationData.catalogNumber.label
       </label>
       <input
         className="input"
+        id="occurrenceform.observationdata.catalognumber.label"
         onChange={[Function]}
         type="text"
         value=""
@@ -76,11 +84,13 @@ exports[`ObservationData renders correctly 1`] = `
     >
       <label
         className="label"
+        htmlFor="occurrenceform.observationdata.recordnumber.label"
       >
         occurrenceForm.observationData.recordNumber.label
       </label>
       <input
         className="input"
+        id="occurrenceform.observationdata.recordnumber.label"
         onChange={[Function]}
         type="text"
         value=""
@@ -206,11 +216,13 @@ exports[`ObservationData renders correctly 1`] = `
     >
       <label
         className="label"
+        htmlFor="occurrenceform.observationdata.identificationqualifier.label"
       >
         occurrenceForm.observationData.identificationQualifier.label
       </label>
       <input
         className="input"
+        id="occurrenceform.observationdata.identificationqualifier.label"
         onChange={[Function]}
         type="text"
         value=""
@@ -225,11 +237,13 @@ exports[`ObservationData renders correctly 1`] = `
     >
       <label
         className="label"
+        htmlFor="occurrenceform.observationdata.identificationremarks.label"
       >
         occurrenceForm.observationData.identificationRemarks.label
       </label>
       <textarea
         className="textarea"
+        id="occurrenceform.observationdata.identificationremarks.label"
         onChange={[Function]}
         rows={5}
         value=""

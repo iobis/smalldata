@@ -253,11 +253,13 @@ exports[`LocationData renders correctly 1`] = `
           >
             <label
               className="label has-text-weight-normal"
+              htmlFor="occurrenceform.locationdata.verbatimcoordinates.label"
             >
               occurrenceForm.locationData.verbatimCoordinates.label
             </label>
             <input
               className="input"
+              id="occurrenceform.locationdata.verbatimcoordinates.label"
               onChange={[Function]}
               type="text"
               value=""
@@ -276,11 +278,13 @@ exports[`LocationData renders correctly 1`] = `
           >
             <label
               className="label has-text-weight-normal"
+              htmlFor="occurrenceform.locationdata.verbatimdepth.label"
             >
               occurrenceForm.locationData.verbatimDepth.label
             </label>
             <input
               className="input"
+              id="occurrenceform.locationdata.verbatimdepth.label"
               onChange={[Function]}
               type="text"
               value=""

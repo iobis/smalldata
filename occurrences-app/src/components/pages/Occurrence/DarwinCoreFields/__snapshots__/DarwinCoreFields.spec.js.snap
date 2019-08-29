@@ -48,11 +48,13 @@ exports[`DarwinCoreFields renders correctly 1`] = `
         >
           <label
             className="label"
+            htmlFor="occurrenceform.darwincorefields.fieldname.label"
           >
             occurrenceForm.darwinCoreFields.fieldName.label
           </label>
           <input
             className="input"
+            id="occurrenceform.darwincorefields.fieldname.label"
             onChange={[Function]}
             type="text"
           />
@@ -68,11 +70,13 @@ exports[`DarwinCoreFields renders correctly 1`] = `
         >
           <label
             className="label"
+            htmlFor="occurrenceform.darwincorefields.value.label"
           >
             occurrenceForm.darwinCoreFields.value.label
           </label>
           <input
             className="input"
+            id="occurrenceform.darwincorefields.value.label"
             onChange={[Function]}
             type="text"
           />

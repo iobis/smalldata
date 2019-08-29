@@ -12,11 +12,13 @@ exports[`Textarea renders correctly 1`] = `
   >
     <label
       className="label"
+      htmlFor="field-name.label"
     >
       field-name.label
     </label>
     <textarea
       className="textarea"
+      id="field-name.label"
       onChange={[Function]}
       rows={5}
       value="value"
