@@ -19,4 +19,19 @@
       text-decoration: underline;
     }
   }
+
+  h2 {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: $size-5;
+  }
+
+  .selected-data {
+    font-size: $size-6;
+  }
+  .datadescription {
+    font-weight: bold;
+    font-size: $size-5;
+    text-transform: uppercase;
+  }
 }
