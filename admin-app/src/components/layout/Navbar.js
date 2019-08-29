@@ -23,6 +23,7 @@ export default function Navbar() {
           <img alt="OBIS" src={logo} title="OBIS"/> ADMIN
         </Link>
         <a
+          aria-label="main navigation"
           className="navbar-burger"
           onClick={() => setNavbarMenuActive(!navbarMenuActive)}
           role="button">

@@ -12,11 +12,13 @@ exports[`InputText renders correctly 1`] = `
   >
     <label
       className="label"
+      htmlFor="field-name.label"
     >
       field-name.label
     </label>
     <input
       className="input"
+      id="field-name.label"
       onChange={[Function]}
       type="text"
       value="value"
@@ -38,11 +40,13 @@ exports[`InputText renders correctly if optional 1`] = `
   >
     <label
       className="label has-text-weight-normal"
+      htmlFor="field-name.label"
     >
       field-name.label
     </label>
     <input
       className="input"
+      id="field-name.label"
       onChange={[Function]}
       type="text"
       value="value"

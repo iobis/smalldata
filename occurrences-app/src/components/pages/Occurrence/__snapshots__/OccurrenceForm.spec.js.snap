@@ -2720,11 +2720,13 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
                 >
                   <label
                     className="label"
+                    htmlFor="occurrenceform.observationdata.institutioncode.label"
                   >
                     occurrenceForm.observationData.institutionCode.label
                   </label>
                   <input
                     className="input"
+                    id="occurrenceform.observationdata.institutioncode.label"
                     onChange={[Function]}
                     type="text"
                     value=""
@@ -2742,11 +2744,13 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
                 >
                   <label
                     className="label"
+                    htmlFor="occurrenceform.observationdata.collectioncode.label"
                   >
                     occurrenceForm.observationData.collectionCode.label
                   </label>
                   <input
                     className="input"
+                    id="occurrenceform.observationdata.collectioncode.label"
                     onChange={[Function]}
                     type="text"
                     value=""
@@ -2768,11 +2772,13 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
                 >
                   <label
                     className="label"
+                    htmlFor="occurrenceform.observationdata.fieldnumber.label"
                   >
                     occurrenceForm.observationData.fieldNumber.label
                   </label>
                   <input
                     className="input"
+                    id="occurrenceform.observationdata.fieldnumber.label"
                     onChange={[Function]}
                     type="text"
                     value=""
@@ -2790,11 +2796,13 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
                 >
                   <label
                     className="label"
+                    htmlFor="occurrenceform.observationdata.catalognumber.label"
                   >
                     occurrenceForm.observationData.catalogNumber.label
                   </label>
                   <input
                     className="input"
+                    id="occurrenceform.observationdata.catalognumber.label"
                     onChange={[Function]}
                     type="text"
                     value=""
@@ -2812,11 +2820,13 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
                 >
                   <label
                     className="label"
+                    htmlFor="occurrenceform.observationdata.recordnumber.label"
                   >
                     occurrenceForm.observationData.recordNumber.label
                   </label>
                   <input
                     className="input"
+                    id="occurrenceform.observationdata.recordnumber.label"
                     onChange={[Function]}
                     type="text"
                     value=""
@@ -2916,11 +2926,13 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
                 >
                   <label
                     className="label"
+                    htmlFor="occurrenceform.observationdata.identificationqualifier.label"
                   >
                     occurrenceForm.observationData.identificationQualifier.label
                   </label>
                   <input
                     className="input"
+                    id="occurrenceform.observationdata.identificationqualifier.label"
                     onChange={[Function]}
                     type="text"
                     value=""
@@ -2942,11 +2954,13 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
                 >
                   <label
                     className="label"
+                    htmlFor="occurrenceform.observationdata.identificationremarks.label"
                   >
                     occurrenceForm.observationData.identificationRemarks.label
                   </label>
                   <textarea
                     className="textarea"
+                    id="occurrenceform.observationdata.identificationremarks.label"
                     onChange={[Function]}
                     rows={5}
                     value=""
@@ -5726,11 +5740,13 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 4`] = `
                 >
                   <label
                     className="label"
+                    htmlFor="occurrenceform.darwincorefields.fieldname.label"
                   >
                     occurrenceForm.darwinCoreFields.fieldName.label
                   </label>
                   <input
                     className="input"
+                    id="occurrenceform.darwincorefields.fieldname.label"
                     onChange={[Function]}
                     type="text"
                   />
@@ -5746,11 +5762,13 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 4`] = `
                 >
                   <label
                     className="label"
+                    htmlFor="occurrenceform.darwincorefields.value.label"
                   >
                     occurrenceForm.darwinCoreFields.value.label
                   </label>
                   <input
                     className="input"
+                    id="occurrenceform.darwincorefields.value.label"
                     onChange={[Function]}
                     type="text"
                   />
@@ -6415,11 +6433,13 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 5`] = `
                 >
                   <label
                     className="label"
+                    htmlFor="occurrenceform.darwincorefields.fieldname.label"
                   >
                     occurrenceForm.darwinCoreFields.fieldName.label
                   </label>
                   <input
                     className="input"
+                    id="occurrenceform.darwincorefields.fieldname.label"
                     onChange={[Function]}
                     type="text"
                   />
@@ -6435,11 +6455,13 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 5`] = `
                 >
                   <label
                     className="label"
+                    htmlFor="occurrenceform.darwincorefields.value.label"
                   >
                     occurrenceForm.darwinCoreFields.value.label
                   </label>
                   <input
                     className="input"
+                    id="occurrenceform.darwincorefields.value.label"
                     onChange={[Function]}
                     type="text"
                   />
@@ -7137,11 +7159,13 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 6`] = `
                 >
                   <label
                     className="label"
+                    htmlFor="occurrenceform.darwincorefields.fieldname.label"
                   >
                     occurrenceForm.darwinCoreFields.fieldName.label
                   </label>
                   <input
                     className="input"
+                    id="occurrenceform.darwincorefields.fieldname.label"
                     onChange={[Function]}
                     type="text"
                   />
@@ -7157,11 +7181,13 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 6`] = `
                 >
                   <label
                     className="label"
+                    htmlFor="occurrenceform.darwincorefields.value.label"
                   >
                     occurrenceForm.darwinCoreFields.value.label
                   </label>
                   <input
                     className="input"
+                    id="occurrenceform.darwincorefields.value.label"
                     onChange={[Function]}
                     type="text"
                   />
