@@ -28,7 +28,7 @@ exports[`OccurrenceForm when creating new occurrence and then clicking "Review a
         stepDescription="occurrenceForm.dataset.step.stepDescription"
         stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered not-confirmed has-text-white step-1 background-color-0"
           onClick={[Function]}
         >
@@ -36,33 +36,27 @@ exports[`OccurrenceForm when creating new occurrence and then clicking "Review a
             className="column is-1 is-hidden-mobile"
           >
             <p
-              className="is-size-5 is-uppercase"
-            >
-              <b />
-            </p>
+              className="datadescription"
+            />
           </div>
-          <div
-            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          <p
+            className="selected-data column is-hidden-mobile"
           />
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.dataset.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
-              <b
-                className="step-title"
-              >
-                1 - occurrenceForm.dataset.step.stepTitle
-              </b>
-            </div>
+              1 - occurrenceForm.dataset.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </NotConfirmedStepHeader>
     <NotConfirmedStepHeader
@@ -98,7 +92,7 @@ exports[`OccurrenceForm when creating new occurrence and then clicking "Review a
         stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
         stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered not-confirmed has-text-white step-2 background-color-5"
           onClick={[Function]}
         >
@@ -106,33 +100,27 @@ exports[`OccurrenceForm when creating new occurrence and then clicking "Review a
             className="column is-1 is-hidden-mobile"
           >
             <p
-              className="is-size-5 is-uppercase"
-            >
-              <b />
-            </p>
+              className="datadescription"
+            />
           </div>
-          <div
-            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          <p
+            className="selected-data column is-hidden-mobile"
           />
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.occurrenceData.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
-              <b
-                className="step-title"
-              >
-                2 - occurrenceForm.occurrenceData.step.stepTitle
-              </b>
-            </div>
+              2 - occurrenceForm.occurrenceData.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </NotConfirmedStepHeader>
     <NotConfirmedStepHeader
@@ -168,7 +156,7 @@ exports[`OccurrenceForm when creating new occurrence and then clicking "Review a
         stepDescription="occurrenceForm.locationData.step.stepDescription"
         stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered not-confirmed has-text-white step-3 background-color-10"
           onClick={[Function]}
         >
@@ -176,33 +164,27 @@ exports[`OccurrenceForm when creating new occurrence and then clicking "Review a
             className="column is-1 is-hidden-mobile"
           >
             <p
-              className="is-size-5 is-uppercase"
-            >
-              <b />
-            </p>
+              className="datadescription"
+            />
           </div>
-          <div
-            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          <p
+            className="selected-data column is-hidden-mobile"
           />
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.locationData.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
-              <b
-                className="step-title"
-              >
-                3 - occurrenceForm.locationData.step.stepTitle
-              </b>
-            </div>
+              3 - occurrenceForm.locationData.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </NotConfirmedStepHeader>
     <NotConfirmedStepHeader
@@ -228,7 +210,7 @@ exports[`OccurrenceForm when creating new occurrence and then clicking "Review a
         stepDescription="occurrenceForm.observationData.step.stepDescription"
         stepTitle="4 - occurrenceForm.observationData.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered not-confirmed has-text-white step-4 background-color-15"
           onClick={[Function]}
         >
@@ -236,33 +218,27 @@ exports[`OccurrenceForm when creating new occurrence and then clicking "Review a
             className="column is-1 is-hidden-mobile"
           >
             <p
-              className="is-size-5 is-uppercase"
-            >
-              <b />
-            </p>
+              className="datadescription"
+            />
           </div>
-          <div
-            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          <p
+            className="selected-data column is-hidden-mobile"
           />
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.observationData.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
-              <b
-                className="step-title"
-              >
-                4 - occurrenceForm.observationData.step.stepTitle
-              </b>
-            </div>
+              4 - occurrenceForm.observationData.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </NotConfirmedStepHeader>
     <NotConfirmedStepHeader
@@ -328,7 +304,7 @@ exports[`OccurrenceForm when creating new occurrence and then clicking "Review a
         stepDescription="occurrenceForm.measurementOrFact.step.stepDescription"
         stepTitle="5 - occurrenceForm.measurementOrFact.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered not-confirmed has-text-white step-5 background-color-20"
           onClick={[Function]}
         >
@@ -336,33 +312,27 @@ exports[`OccurrenceForm when creating new occurrence and then clicking "Review a
             className="column is-1 is-hidden-mobile"
           >
             <p
-              className="is-size-5 is-uppercase"
-            >
-              <b />
-            </p>
+              className="datadescription"
+            />
           </div>
-          <div
-            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          <p
+            className="selected-data column is-hidden-mobile"
           />
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.measurementOrFact.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
-              <b
-                className="step-title"
-              >
-                5 - occurrenceForm.measurementOrFact.step.stepTitle
-              </b>
-            </div>
+              5 - occurrenceForm.measurementOrFact.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </NotConfirmedStepHeader>
     <NotConfirmedStepHeader
@@ -387,7 +357,7 @@ exports[`OccurrenceForm when creating new occurrence and then clicking "Review a
         stepDescription="occurrenceForm.darwinCoreFields.step.stepDescription"
         stepTitle="6 - occurrenceForm.darwinCoreFields.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered not-confirmed has-text-white step-6 background-color-25"
           onClick={[Function]}
         >
@@ -395,33 +365,27 @@ exports[`OccurrenceForm when creating new occurrence and then clicking "Review a
             className="column is-1 is-hidden-mobile"
           >
             <p
-              className="is-size-5 is-uppercase"
-            >
-              <b />
-            </p>
+              className="datadescription"
+            />
           </div>
-          <div
-            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          <p
+            className="selected-data column is-hidden-mobile"
           />
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.darwinCoreFields.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
-              <b
-                className="step-title"
-              >
-                6 - occurrenceForm.darwinCoreFields.step.stepTitle
-              </b>
-            </div>
+              6 - occurrenceForm.darwinCoreFields.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </NotConfirmedStepHeader>
     <FinalSummary
@@ -1489,7 +1453,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 1`] = `
         stepDescription="occurrenceForm.dataset.step.stepDescription"
         stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered active has-background-grey has-text-white"
           onClick={[Function]}
         >
@@ -1497,33 +1461,27 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 1`] = `
             className="column is-1 is-hidden-mobile"
           >
             <p
-              className="is-size-5 is-uppercase"
-            >
-              <b />
-            </p>
+              className="datadescription"
+            />
           </div>
-          <div
-            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          <p
+            className="selected-data column is-hidden-mobile"
           />
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.dataset.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
-              <b
-                className="step-title"
-              >
-                1 - occurrenceForm.dataset.step.stepTitle
-              </b>
-            </div>
+              1 - occurrenceForm.dataset.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
         <Dataset
           datasets={
             Array [
@@ -2124,7 +2082,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 1`] = `
         stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
         stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered not-confirmed has-text-white step-2 background-color-5"
           onClick={[Function]}
         >
@@ -2132,33 +2090,27 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 1`] = `
             className="column is-1 is-hidden-mobile"
           >
             <p
-              className="is-size-5 is-uppercase"
-            >
-              <b />
-            </p>
+              className="datadescription"
+            />
           </div>
-          <div
-            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          <p
+            className="selected-data column is-hidden-mobile"
           />
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.occurrenceData.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
-              <b
-                className="step-title"
-              >
-                2 - occurrenceForm.occurrenceData.step.stepTitle
-              </b>
-            </div>
+              2 - occurrenceForm.occurrenceData.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </NotConfirmedStepHeader>
     <NotConfirmedStepHeader
@@ -2194,7 +2146,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 1`] = `
         stepDescription="occurrenceForm.locationData.step.stepDescription"
         stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered not-confirmed has-text-white step-3 background-color-10"
           onClick={[Function]}
         >
@@ -2202,33 +2154,27 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 1`] = `
             className="column is-1 is-hidden-mobile"
           >
             <p
-              className="is-size-5 is-uppercase"
-            >
-              <b />
-            </p>
+              className="datadescription"
+            />
           </div>
-          <div
-            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          <p
+            className="selected-data column is-hidden-mobile"
           />
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.locationData.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
-              <b
-                className="step-title"
-              >
-                3 - occurrenceForm.locationData.step.stepTitle
-              </b>
-            </div>
+              3 - occurrenceForm.locationData.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </NotConfirmedStepHeader>
     <NotConfirmedStepHeader
@@ -2254,7 +2200,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 1`] = `
         stepDescription="occurrenceForm.observationData.step.stepDescription"
         stepTitle="4 - occurrenceForm.observationData.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered not-confirmed has-text-white step-4 background-color-15"
           onClick={[Function]}
         >
@@ -2262,33 +2208,27 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 1`] = `
             className="column is-1 is-hidden-mobile"
           >
             <p
-              className="is-size-5 is-uppercase"
-            >
-              <b />
-            </p>
+              className="datadescription"
+            />
           </div>
-          <div
-            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          <p
+            className="selected-data column is-hidden-mobile"
           />
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.observationData.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
-              <b
-                className="step-title"
-              >
-                4 - occurrenceForm.observationData.step.stepTitle
-              </b>
-            </div>
+              4 - occurrenceForm.observationData.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </NotConfirmedStepHeader>
     <NotConfirmedStepHeader
@@ -2318,7 +2258,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 1`] = `
         stepDescription="occurrenceForm.measurementOrFact.step.stepDescription"
         stepTitle="5 - occurrenceForm.measurementOrFact.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered not-confirmed has-text-white step-5 background-color-20"
           onClick={[Function]}
         >
@@ -2326,33 +2266,27 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 1`] = `
             className="column is-1 is-hidden-mobile"
           >
             <p
-              className="is-size-5 is-uppercase"
-            >
-              <b />
-            </p>
+              className="datadescription"
+            />
           </div>
-          <div
-            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          <p
+            className="selected-data column is-hidden-mobile"
           />
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.measurementOrFact.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
-              <b
-                className="step-title"
-              >
-                5 - occurrenceForm.measurementOrFact.step.stepTitle
-              </b>
-            </div>
+              5 - occurrenceForm.measurementOrFact.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </NotConfirmedStepHeader>
     <NotConfirmedStepHeader
@@ -2377,7 +2311,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 1`] = `
         stepDescription="occurrenceForm.darwinCoreFields.step.stepDescription"
         stepTitle="6 - occurrenceForm.darwinCoreFields.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered not-confirmed has-text-white step-6 background-color-25"
           onClick={[Function]}
         >
@@ -2385,33 +2319,27 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 1`] = `
             className="column is-1 is-hidden-mobile"
           >
             <p
-              className="is-size-5 is-uppercase"
-            >
-              <b />
-            </p>
+              className="datadescription"
+            />
           </div>
-          <div
-            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          <p
+            className="selected-data column is-hidden-mobile"
           />
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.darwinCoreFields.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
-              <b
-                className="step-title"
-              >
-                6 - occurrenceForm.darwinCoreFields.step.stepTitle
-              </b>
-            </div>
+              6 - occurrenceForm.darwinCoreFields.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </NotConfirmedStepHeader>
     <div
@@ -2457,7 +2385,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
         stepDescription="occurrenceForm.dataset.step.stepDescription"
         stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
           onClick={[Function]}
         >
@@ -2465,28 +2393,26 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
             className="column is-1"
           >
             <p
-              className="is-size-5 is-uppercase"
+              className="datadescription"
             >
-              <b>
-                occurrenceForm.dataset.step.dataDescription
-              </b>
+              occurrenceForm.dataset.step.dataDescription
             </p>
           </div>
-          <div
-            className="selected-data column is-7 is-size-5"
+          <p
+            className="selected-data column"
           >
             Caprellids polulation structure in Usujiri, Hokkaido, Japan
-          </div>
+          </p>
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.dataset.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
               <FontAwesomeIcon
                 className="check-circle"
@@ -2497,14 +2423,10 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
                   icon="check-circle"
                 />
               </FontAwesomeIcon>
-              <b
-                className="step-title"
-              >
-                1 - occurrenceForm.dataset.step.stepTitle
-              </b>
-            </div>
+              1 - occurrenceForm.dataset.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </ConfirmedStepHeader>
     <ConfirmedStepHeader
@@ -2550,7 +2472,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
         stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
         stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
           onClick={[Function]}
         >
@@ -2558,15 +2480,13 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
             className="column is-1"
           >
             <p
-              className="is-size-5 is-uppercase"
+              className="datadescription"
             >
-              <b>
-                occurrenceForm.occurrenceData.step.dataDescription
-              </b>
+              occurrenceForm.occurrenceData.step.dataDescription
             </p>
           </div>
-          <div
-            className="selected-data column is-7 is-size-5"
+          <p
+            className="selected-data column"
           >
             <OccurrenceDataSummary
               basisOfRecord="humanObservation"
@@ -2577,21 +2497,21 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
               scientificName=""
               sex="male"
             >
-              <div>
+              <span>
                  29 April 2019 
-              </div>
+              </span>
             </OccurrenceDataSummary>
-          </div>
+          </p>
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.occurrenceData.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
               <FontAwesomeIcon
                 className="check-circle"
@@ -2602,14 +2522,10 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
                   icon="check-circle"
                 />
               </FontAwesomeIcon>
-              <b
-                className="step-title"
-              >
-                2 - occurrenceForm.occurrenceData.step.stepTitle
-              </b>
-            </div>
+              2 - occurrenceForm.occurrenceData.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </ConfirmedStepHeader>
     <ConfirmedStepHeader
@@ -2655,7 +2571,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
         stepDescription="occurrenceForm.locationData.step.stepDescription"
         stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
           onClick={[Function]}
         >
@@ -2663,15 +2579,13 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
             className="column is-1"
           >
             <p
-              className="is-size-5 is-uppercase"
+              className="datadescription"
             >
-              <b>
-                occurrenceForm.locationData.step.dataDescription
-              </b>
+              occurrenceForm.locationData.step.dataDescription
             </p>
           </div>
-          <div
-            className="selected-data column is-7 is-size-5"
+          <p
+            className="selected-data column"
           >
             <SelectedLocation
               coordinateUncertainty={null}
@@ -2682,28 +2596,28 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
               verbatimCoordinates=""
               verbatimDepth=""
             >
-              <div>
+              <span>
                 occurrenceForm.locationData.step.selectedData.latitude
                 : 
                 0.12345
-              </div>
-              <div>
+              </span>
+              <span>
                 occurrenceForm.locationData.step.selectedData.longitude
                 : 
                 -0.54321
-              </div>
+              </span>
             </SelectedLocation>
-          </div>
+          </p>
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.locationData.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
               <FontAwesomeIcon
                 className="check-circle"
@@ -2714,14 +2628,10 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
                   icon="check-circle"
                 />
               </FontAwesomeIcon>
-              <b
-                className="step-title"
-              >
-                3 - occurrenceForm.locationData.step.stepTitle
-              </b>
-            </div>
+              3 - occurrenceForm.locationData.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </ConfirmedStepHeader>
     <ActiveStepHeader
@@ -2747,7 +2657,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
         stepDescription="occurrenceForm.observationData.step.stepDescription"
         stepTitle="4 - occurrenceForm.observationData.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered active has-background-grey has-text-white"
           onClick={[Function]}
         >
@@ -2755,33 +2665,27 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
             className="column is-1 is-hidden-mobile"
           >
             <p
-              className="is-size-5 is-uppercase"
-            >
-              <b />
-            </p>
+              className="datadescription"
+            />
           </div>
-          <div
-            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          <p
+            className="selected-data column is-hidden-mobile"
           />
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.observationData.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
-              <b
-                className="step-title"
-              >
-                4 - occurrenceForm.observationData.step.stepTitle
-              </b>
-            </div>
+              4 - occurrenceForm.observationData.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
         <ObservationData
           observationData={
             Object {
@@ -3163,7 +3067,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
         stepDescription="occurrenceForm.measurementOrFact.step.stepDescription"
         stepTitle="5 - occurrenceForm.measurementOrFact.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered not-confirmed has-text-white step-5 background-color-20"
           onClick={[Function]}
         >
@@ -3171,33 +3075,27 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
             className="column is-1 is-hidden-mobile"
           >
             <p
-              className="is-size-5 is-uppercase"
-            >
-              <b />
-            </p>
+              className="datadescription"
+            />
           </div>
-          <div
-            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          <p
+            className="selected-data column is-hidden-mobile"
           />
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.measurementOrFact.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
-              <b
-                className="step-title"
-              >
-                5 - occurrenceForm.measurementOrFact.step.stepTitle
-              </b>
-            </div>
+              5 - occurrenceForm.measurementOrFact.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </NotConfirmedStepHeader>
     <NotConfirmedStepHeader
@@ -3222,7 +3120,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
         stepDescription="occurrenceForm.darwinCoreFields.step.stepDescription"
         stepTitle="6 - occurrenceForm.darwinCoreFields.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered not-confirmed has-text-white step-6 background-color-25"
           onClick={[Function]}
         >
@@ -3230,33 +3128,27 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
             className="column is-1 is-hidden-mobile"
           >
             <p
-              className="is-size-5 is-uppercase"
-            >
-              <b />
-            </p>
+              className="datadescription"
+            />
           </div>
-          <div
-            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          <p
+            className="selected-data column is-hidden-mobile"
           />
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.darwinCoreFields.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
-              <b
-                className="step-title"
-              >
-                6 - occurrenceForm.darwinCoreFields.step.stepTitle
-              </b>
-            </div>
+              6 - occurrenceForm.darwinCoreFields.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </NotConfirmedStepHeader>
     <div
@@ -3302,7 +3194,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 3`] = `
         stepDescription="occurrenceForm.dataset.step.stepDescription"
         stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
           onClick={[Function]}
         >
@@ -3310,28 +3202,26 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 3`] = `
             className="column is-1"
           >
             <p
-              className="is-size-5 is-uppercase"
+              className="datadescription"
             >
-              <b>
-                occurrenceForm.dataset.step.dataDescription
-              </b>
+              occurrenceForm.dataset.step.dataDescription
             </p>
           </div>
-          <div
-            className="selected-data column is-7 is-size-5"
+          <p
+            className="selected-data column"
           >
             Caprellids polulation structure in Usujiri, Hokkaido, Japan
-          </div>
+          </p>
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.dataset.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
               <FontAwesomeIcon
                 className="check-circle"
@@ -3342,14 +3232,10 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 3`] = `
                   icon="check-circle"
                 />
               </FontAwesomeIcon>
-              <b
-                className="step-title"
-              >
-                1 - occurrenceForm.dataset.step.stepTitle
-              </b>
-            </div>
+              1 - occurrenceForm.dataset.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </ConfirmedStepHeader>
     <ConfirmedStepHeader
@@ -3395,7 +3281,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 3`] = `
         stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
         stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
           onClick={[Function]}
         >
@@ -3403,15 +3289,13 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 3`] = `
             className="column is-1"
           >
             <p
-              className="is-size-5 is-uppercase"
+              className="datadescription"
             >
-              <b>
-                occurrenceForm.occurrenceData.step.dataDescription
-              </b>
+              occurrenceForm.occurrenceData.step.dataDescription
             </p>
           </div>
-          <div
-            className="selected-data column is-7 is-size-5"
+          <p
+            className="selected-data column"
           >
             <OccurrenceDataSummary
               basisOfRecord="humanObservation"
@@ -3422,21 +3306,21 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 3`] = `
               scientificName=""
               sex="male"
             >
-              <div>
+              <span>
                  29 April 2019 
-              </div>
+              </span>
             </OccurrenceDataSummary>
-          </div>
+          </p>
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.occurrenceData.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
               <FontAwesomeIcon
                 className="check-circle"
@@ -3447,14 +3331,10 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 3`] = `
                   icon="check-circle"
                 />
               </FontAwesomeIcon>
-              <b
-                className="step-title"
-              >
-                2 - occurrenceForm.occurrenceData.step.stepTitle
-              </b>
-            </div>
+              2 - occurrenceForm.occurrenceData.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </ConfirmedStepHeader>
     <ConfirmedStepHeader
@@ -3500,7 +3380,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 3`] = `
         stepDescription="occurrenceForm.locationData.step.stepDescription"
         stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
           onClick={[Function]}
         >
@@ -3508,15 +3388,13 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 3`] = `
             className="column is-1"
           >
             <p
-              className="is-size-5 is-uppercase"
+              className="datadescription"
             >
-              <b>
-                occurrenceForm.locationData.step.dataDescription
-              </b>
+              occurrenceForm.locationData.step.dataDescription
             </p>
           </div>
-          <div
-            className="selected-data column is-7 is-size-5"
+          <p
+            className="selected-data column"
           >
             <SelectedLocation
               coordinateUncertainty={null}
@@ -3527,28 +3405,28 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 3`] = `
               verbatimCoordinates=""
               verbatimDepth=""
             >
-              <div>
+              <span>
                 occurrenceForm.locationData.step.selectedData.latitude
                 : 
                 0.12345
-              </div>
-              <div>
+              </span>
+              <span>
                 occurrenceForm.locationData.step.selectedData.longitude
                 : 
                 -0.54321
-              </div>
+              </span>
             </SelectedLocation>
-          </div>
+          </p>
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.locationData.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
               <FontAwesomeIcon
                 className="check-circle"
@@ -3559,14 +3437,10 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 3`] = `
                   icon="check-circle"
                 />
               </FontAwesomeIcon>
-              <b
-                className="step-title"
-              >
-                3 - occurrenceForm.locationData.step.stepTitle
-              </b>
-            </div>
+              3 - occurrenceForm.locationData.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </ConfirmedStepHeader>
     <ConfirmedStepHeader
@@ -3592,7 +3466,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 3`] = `
         stepDescription="occurrenceForm.observationData.step.stepDescription"
         stepTitle="4 - occurrenceForm.observationData.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
           onClick={[Function]}
         >
@@ -3600,28 +3474,26 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 3`] = `
             className="column is-1"
           >
             <p
-              className="is-size-5 is-uppercase"
+              className="datadescription"
             >
-              <b>
-                occurrenceForm.observationData.step.dataDescription
-              </b>
+              occurrenceForm.observationData.step.dataDescription
             </p>
           </div>
-          <div
-            className="selected-data column is-7 is-size-5"
+          <p
+            className="selected-data column"
           >
             Institution: institution code; Identified by: Indiana Jones
-          </div>
+          </p>
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.observationData.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
               <FontAwesomeIcon
                 className="check-circle"
@@ -3632,14 +3504,10 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 3`] = `
                   icon="check-circle"
                 />
               </FontAwesomeIcon>
-              <b
-                className="step-title"
-              >
-                4 - occurrenceForm.observationData.step.stepTitle
-              </b>
-            </div>
+              4 - occurrenceForm.observationData.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </ConfirmedStepHeader>
     <ActiveStepHeader
@@ -3669,7 +3537,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 3`] = `
         stepDescription="occurrenceForm.measurementOrFact.step.stepDescription"
         stepTitle="5 - occurrenceForm.measurementOrFact.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered active has-background-grey has-text-white"
           onClick={[Function]}
         >
@@ -3677,33 +3545,27 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 3`] = `
             className="column is-1 is-hidden-mobile"
           >
             <p
-              className="is-size-5 is-uppercase"
-            >
-              <b />
-            </p>
+              className="datadescription"
+            />
           </div>
-          <div
-            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          <p
+            className="selected-data column is-hidden-mobile"
           />
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.measurementOrFact.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
-              <b
-                className="step-title"
-              >
-                5 - occurrenceForm.measurementOrFact.step.stepTitle
-              </b>
-            </div>
+              5 - occurrenceForm.measurementOrFact.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
         <MeasurementOrFact
           data={Array []}
           onChange={[Function]}
@@ -5268,7 +5130,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 3`] = `
         stepDescription="occurrenceForm.darwinCoreFields.step.stepDescription"
         stepTitle="6 - occurrenceForm.darwinCoreFields.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered not-confirmed has-text-white step-6 background-color-25"
           onClick={[Function]}
         >
@@ -5276,33 +5138,27 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 3`] = `
             className="column is-1 is-hidden-mobile"
           >
             <p
-              className="is-size-5 is-uppercase"
-            >
-              <b />
-            </p>
+              className="datadescription"
+            />
           </div>
-          <div
-            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          <p
+            className="selected-data column is-hidden-mobile"
           />
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.darwinCoreFields.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
-              <b
-                className="step-title"
-              >
-                6 - occurrenceForm.darwinCoreFields.step.stepTitle
-              </b>
-            </div>
+              6 - occurrenceForm.darwinCoreFields.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </NotConfirmedStepHeader>
     <div
@@ -5348,7 +5204,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 4`] = `
         stepDescription="occurrenceForm.dataset.step.stepDescription"
         stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
           onClick={[Function]}
         >
@@ -5356,28 +5212,26 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 4`] = `
             className="column is-1"
           >
             <p
-              className="is-size-5 is-uppercase"
+              className="datadescription"
             >
-              <b>
-                occurrenceForm.dataset.step.dataDescription
-              </b>
+              occurrenceForm.dataset.step.dataDescription
             </p>
           </div>
-          <div
-            className="selected-data column is-7 is-size-5"
+          <p
+            className="selected-data column"
           >
             Caprellids polulation structure in Usujiri, Hokkaido, Japan
-          </div>
+          </p>
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.dataset.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
               <FontAwesomeIcon
                 className="check-circle"
@@ -5388,14 +5242,10 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 4`] = `
                   icon="check-circle"
                 />
               </FontAwesomeIcon>
-              <b
-                className="step-title"
-              >
-                1 - occurrenceForm.dataset.step.stepTitle
-              </b>
-            </div>
+              1 - occurrenceForm.dataset.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </ConfirmedStepHeader>
     <ConfirmedStepHeader
@@ -5441,7 +5291,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 4`] = `
         stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
         stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
           onClick={[Function]}
         >
@@ -5449,15 +5299,13 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 4`] = `
             className="column is-1"
           >
             <p
-              className="is-size-5 is-uppercase"
+              className="datadescription"
             >
-              <b>
-                occurrenceForm.occurrenceData.step.dataDescription
-              </b>
+              occurrenceForm.occurrenceData.step.dataDescription
             </p>
           </div>
-          <div
-            className="selected-data column is-7 is-size-5"
+          <p
+            className="selected-data column"
           >
             <OccurrenceDataSummary
               basisOfRecord="humanObservation"
@@ -5468,21 +5316,21 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 4`] = `
               scientificName=""
               sex="male"
             >
-              <div>
+              <span>
                  29 April 2019 
-              </div>
+              </span>
             </OccurrenceDataSummary>
-          </div>
+          </p>
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.occurrenceData.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
               <FontAwesomeIcon
                 className="check-circle"
@@ -5493,14 +5341,10 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 4`] = `
                   icon="check-circle"
                 />
               </FontAwesomeIcon>
-              <b
-                className="step-title"
-              >
-                2 - occurrenceForm.occurrenceData.step.stepTitle
-              </b>
-            </div>
+              2 - occurrenceForm.occurrenceData.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </ConfirmedStepHeader>
     <ConfirmedStepHeader
@@ -5546,7 +5390,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 4`] = `
         stepDescription="occurrenceForm.locationData.step.stepDescription"
         stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
           onClick={[Function]}
         >
@@ -5554,15 +5398,13 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 4`] = `
             className="column is-1"
           >
             <p
-              className="is-size-5 is-uppercase"
+              className="datadescription"
             >
-              <b>
-                occurrenceForm.locationData.step.dataDescription
-              </b>
+              occurrenceForm.locationData.step.dataDescription
             </p>
           </div>
-          <div
-            className="selected-data column is-7 is-size-5"
+          <p
+            className="selected-data column"
           >
             <SelectedLocation
               coordinateUncertainty={null}
@@ -5573,28 +5415,28 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 4`] = `
               verbatimCoordinates=""
               verbatimDepth=""
             >
-              <div>
+              <span>
                 occurrenceForm.locationData.step.selectedData.latitude
                 : 
                 0.12345
-              </div>
-              <div>
+              </span>
+              <span>
                 occurrenceForm.locationData.step.selectedData.longitude
                 : 
                 -0.54321
-              </div>
+              </span>
             </SelectedLocation>
-          </div>
+          </p>
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.locationData.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
               <FontAwesomeIcon
                 className="check-circle"
@@ -5605,14 +5447,10 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 4`] = `
                   icon="check-circle"
                 />
               </FontAwesomeIcon>
-              <b
-                className="step-title"
-              >
-                3 - occurrenceForm.locationData.step.stepTitle
-              </b>
-            </div>
+              3 - occurrenceForm.locationData.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </ConfirmedStepHeader>
     <ConfirmedStepHeader
@@ -5638,7 +5476,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 4`] = `
         stepDescription="occurrenceForm.observationData.step.stepDescription"
         stepTitle="4 - occurrenceForm.observationData.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
           onClick={[Function]}
         >
@@ -5646,28 +5484,26 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 4`] = `
             className="column is-1"
           >
             <p
-              className="is-size-5 is-uppercase"
+              className="datadescription"
             >
-              <b>
-                occurrenceForm.observationData.step.dataDescription
-              </b>
+              occurrenceForm.observationData.step.dataDescription
             </p>
           </div>
-          <div
-            className="selected-data column is-7 is-size-5"
+          <p
+            className="selected-data column"
           >
             Institution: institution code; Identified by: Indiana Jones
-          </div>
+          </p>
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.observationData.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
               <FontAwesomeIcon
                 className="check-circle"
@@ -5678,14 +5514,10 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 4`] = `
                   icon="check-circle"
                 />
               </FontAwesomeIcon>
-              <b
-                className="step-title"
-              >
-                4 - occurrenceForm.observationData.step.stepTitle
-              </b>
-            </div>
+              4 - occurrenceForm.observationData.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </ConfirmedStepHeader>
     <ConfirmedStepHeader
@@ -5747,7 +5579,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 4`] = `
         stepDescription="occurrenceForm.measurementOrFact.step.stepDescription"
         stepTitle="5 - occurrenceForm.measurementOrFact.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
           onClick={[Function]}
         >
@@ -5755,15 +5587,13 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 4`] = `
             className="column is-1"
           >
             <p
-              className="is-size-5 is-uppercase"
+              className="datadescription"
             >
-              <b>
-                occurrenceForm.measurementOrFact.step.dataDescription
-              </b>
+              occurrenceForm.measurementOrFact.step.dataDescription
             </p>
           </div>
-          <div
-            className="selected-data column is-7 is-size-5"
+          <p
+            className="selected-data column"
           >
             <MeasurementOrFactSummary
               data={
@@ -5782,21 +5612,21 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 4`] = `
                 ]
               }
             >
-              <div>
+              <span>
                 occurrenceForm.measurementOrFact.step.title {"number":1}
-              </div>
+              </span>
             </MeasurementOrFactSummary>
-          </div>
+          </p>
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.measurementOrFact.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
               <FontAwesomeIcon
                 className="check-circle"
@@ -5807,14 +5637,10 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 4`] = `
                   icon="check-circle"
                 />
               </FontAwesomeIcon>
-              <b
-                className="step-title"
-              >
-                5 - occurrenceForm.measurementOrFact.step.stepTitle
-              </b>
-            </div>
+              5 - occurrenceForm.measurementOrFact.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </ConfirmedStepHeader>
     <ActiveStepHeader
@@ -5839,7 +5665,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 4`] = `
         stepDescription="occurrenceForm.darwinCoreFields.step.stepDescription"
         stepTitle="6 - occurrenceForm.darwinCoreFields.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered active has-background-grey has-text-white"
           onClick={[Function]}
         >
@@ -5847,33 +5673,27 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 4`] = `
             className="column is-1 is-hidden-mobile"
           >
             <p
-              className="is-size-5 is-uppercase"
-            >
-              <b />
-            </p>
+              className="datadescription"
+            />
           </div>
-          <div
-            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          <p
+            className="selected-data column is-hidden-mobile"
           />
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.darwinCoreFields.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
-              <b
-                className="step-title"
-              >
-                6 - occurrenceForm.darwinCoreFields.step.stepTitle
-              </b>
-            </div>
+              6 - occurrenceForm.darwinCoreFields.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
         <DarwinCoreFields
           fields={Array []}
           onChange={[Function]}
@@ -6040,7 +5860,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 5`] = `
         stepDescription="occurrenceForm.dataset.step.stepDescription"
         stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
           onClick={[Function]}
         >
@@ -6048,28 +5868,26 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 5`] = `
             className="column is-1"
           >
             <p
-              className="is-size-5 is-uppercase"
+              className="datadescription"
             >
-              <b>
-                occurrenceForm.dataset.step.dataDescription
-              </b>
+              occurrenceForm.dataset.step.dataDescription
             </p>
           </div>
-          <div
-            className="selected-data column is-7 is-size-5"
+          <p
+            className="selected-data column"
           >
             Caprellids polulation structure in Usujiri, Hokkaido, Japan
-          </div>
+          </p>
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.dataset.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
               <FontAwesomeIcon
                 className="check-circle"
@@ -6080,14 +5898,10 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 5`] = `
                   icon="check-circle"
                 />
               </FontAwesomeIcon>
-              <b
-                className="step-title"
-              >
-                1 - occurrenceForm.dataset.step.stepTitle
-              </b>
-            </div>
+              1 - occurrenceForm.dataset.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </ConfirmedStepHeader>
     <ConfirmedStepHeader
@@ -6133,7 +5947,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 5`] = `
         stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
         stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
           onClick={[Function]}
         >
@@ -6141,15 +5955,13 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 5`] = `
             className="column is-1"
           >
             <p
-              className="is-size-5 is-uppercase"
+              className="datadescription"
             >
-              <b>
-                occurrenceForm.occurrenceData.step.dataDescription
-              </b>
+              occurrenceForm.occurrenceData.step.dataDescription
             </p>
           </div>
-          <div
-            className="selected-data column is-7 is-size-5"
+          <p
+            className="selected-data column"
           >
             <OccurrenceDataSummary
               basisOfRecord="humanObservation"
@@ -6160,21 +5972,21 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 5`] = `
               scientificName=""
               sex="male"
             >
-              <div>
+              <span>
                  29 April 2019 
-              </div>
+              </span>
             </OccurrenceDataSummary>
-          </div>
+          </p>
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.occurrenceData.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
               <FontAwesomeIcon
                 className="check-circle"
@@ -6185,14 +5997,10 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 5`] = `
                   icon="check-circle"
                 />
               </FontAwesomeIcon>
-              <b
-                className="step-title"
-              >
-                2 - occurrenceForm.occurrenceData.step.stepTitle
-              </b>
-            </div>
+              2 - occurrenceForm.occurrenceData.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </ConfirmedStepHeader>
     <ConfirmedStepHeader
@@ -6238,7 +6046,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 5`] = `
         stepDescription="occurrenceForm.locationData.step.stepDescription"
         stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
           onClick={[Function]}
         >
@@ -6246,15 +6054,13 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 5`] = `
             className="column is-1"
           >
             <p
-              className="is-size-5 is-uppercase"
+              className="datadescription"
             >
-              <b>
-                occurrenceForm.locationData.step.dataDescription
-              </b>
+              occurrenceForm.locationData.step.dataDescription
             </p>
           </div>
-          <div
-            className="selected-data column is-7 is-size-5"
+          <p
+            className="selected-data column"
           >
             <SelectedLocation
               coordinateUncertainty={null}
@@ -6265,28 +6071,28 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 5`] = `
               verbatimCoordinates=""
               verbatimDepth=""
             >
-              <div>
+              <span>
                 occurrenceForm.locationData.step.selectedData.latitude
                 : 
                 0.12345
-              </div>
-              <div>
+              </span>
+              <span>
                 occurrenceForm.locationData.step.selectedData.longitude
                 : 
                 -0.54321
-              </div>
+              </span>
             </SelectedLocation>
-          </div>
+          </p>
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.locationData.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
               <FontAwesomeIcon
                 className="check-circle"
@@ -6297,14 +6103,10 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 5`] = `
                   icon="check-circle"
                 />
               </FontAwesomeIcon>
-              <b
-                className="step-title"
-              >
-                3 - occurrenceForm.locationData.step.stepTitle
-              </b>
-            </div>
+              3 - occurrenceForm.locationData.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </ConfirmedStepHeader>
     <ConfirmedStepHeader
@@ -6330,7 +6132,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 5`] = `
         stepDescription="occurrenceForm.observationData.step.stepDescription"
         stepTitle="4 - occurrenceForm.observationData.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
           onClick={[Function]}
         >
@@ -6338,28 +6140,26 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 5`] = `
             className="column is-1"
           >
             <p
-              className="is-size-5 is-uppercase"
+              className="datadescription"
             >
-              <b>
-                occurrenceForm.observationData.step.dataDescription
-              </b>
+              occurrenceForm.observationData.step.dataDescription
             </p>
           </div>
-          <div
-            className="selected-data column is-7 is-size-5"
+          <p
+            className="selected-data column"
           >
             Institution: institution code; Identified by: Indiana Jones
-          </div>
+          </p>
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.observationData.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
               <FontAwesomeIcon
                 className="check-circle"
@@ -6370,14 +6170,10 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 5`] = `
                   icon="check-circle"
                 />
               </FontAwesomeIcon>
-              <b
-                className="step-title"
-              >
-                4 - occurrenceForm.observationData.step.stepTitle
-              </b>
-            </div>
+              4 - occurrenceForm.observationData.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </ConfirmedStepHeader>
     <ConfirmedStepHeader
@@ -6461,7 +6257,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 5`] = `
         stepDescription="occurrenceForm.measurementOrFact.step.stepDescription"
         stepTitle="5 - occurrenceForm.measurementOrFact.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
           onClick={[Function]}
         >
@@ -6469,15 +6265,13 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 5`] = `
             className="column is-1"
           >
             <p
-              className="is-size-5 is-uppercase"
+              className="datadescription"
             >
-              <b>
-                occurrenceForm.measurementOrFact.step.dataDescription
-              </b>
+              occurrenceForm.measurementOrFact.step.dataDescription
             </p>
           </div>
-          <div
-            className="selected-data column is-7 is-size-5"
+          <p
+            className="selected-data column"
           >
             <MeasurementOrFactSummary
               data={
@@ -6507,21 +6301,21 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 5`] = `
                 ]
               }
             >
-              <div>
+              <span>
                 occurrenceForm.measurementOrFact.step.title {"number":2}
-              </div>
+              </span>
             </MeasurementOrFactSummary>
-          </div>
+          </p>
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.measurementOrFact.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
               <FontAwesomeIcon
                 className="check-circle"
@@ -6532,14 +6326,10 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 5`] = `
                   icon="check-circle"
                 />
               </FontAwesomeIcon>
-              <b
-                className="step-title"
-              >
-                5 - occurrenceForm.measurementOrFact.step.stepTitle
-              </b>
-            </div>
+              5 - occurrenceForm.measurementOrFact.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </ConfirmedStepHeader>
     <ActiveStepHeader
@@ -6564,7 +6354,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 5`] = `
         stepDescription="occurrenceForm.darwinCoreFields.step.stepDescription"
         stepTitle="6 - occurrenceForm.darwinCoreFields.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered active has-background-grey has-text-white"
           onClick={[Function]}
         >
@@ -6572,33 +6362,27 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 5`] = `
             className="column is-1 is-hidden-mobile"
           >
             <p
-              className="is-size-5 is-uppercase"
-            >
-              <b />
-            </p>
+              className="datadescription"
+            />
           </div>
-          <div
-            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          <p
+            className="selected-data column is-hidden-mobile"
           />
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.darwinCoreFields.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
-              <b
-                className="step-title"
-              >
-                6 - occurrenceForm.darwinCoreFields.step.stepTitle
-              </b>
-            </div>
+              6 - occurrenceForm.darwinCoreFields.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
         <DarwinCoreFields
           fields={Array []}
           onChange={[Function]}
@@ -6765,7 +6549,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 6`] = `
         stepDescription="occurrenceForm.dataset.step.stepDescription"
         stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
           onClick={[Function]}
         >
@@ -6773,28 +6557,26 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 6`] = `
             className="column is-1"
           >
             <p
-              className="is-size-5 is-uppercase"
+              className="datadescription"
             >
-              <b>
-                occurrenceForm.dataset.step.dataDescription
-              </b>
+              occurrenceForm.dataset.step.dataDescription
             </p>
           </div>
-          <div
-            className="selected-data column is-7 is-size-5"
+          <p
+            className="selected-data column"
           >
             Caprellids polulation structure in Usujiri, Hokkaido, Japan
-          </div>
+          </p>
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.dataset.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
               <FontAwesomeIcon
                 className="check-circle"
@@ -6805,14 +6587,10 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 6`] = `
                   icon="check-circle"
                 />
               </FontAwesomeIcon>
-              <b
-                className="step-title"
-              >
-                1 - occurrenceForm.dataset.step.stepTitle
-              </b>
-            </div>
+              1 - occurrenceForm.dataset.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </ConfirmedStepHeader>
     <ConfirmedStepHeader
@@ -6858,7 +6636,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 6`] = `
         stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
         stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
           onClick={[Function]}
         >
@@ -6866,15 +6644,13 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 6`] = `
             className="column is-1"
           >
             <p
-              className="is-size-5 is-uppercase"
+              className="datadescription"
             >
-              <b>
-                occurrenceForm.occurrenceData.step.dataDescription
-              </b>
+              occurrenceForm.occurrenceData.step.dataDescription
             </p>
           </div>
-          <div
-            className="selected-data column is-7 is-size-5"
+          <p
+            className="selected-data column"
           >
             <OccurrenceDataSummary
               basisOfRecord="humanObservation"
@@ -6885,21 +6661,21 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 6`] = `
               scientificName=""
               sex="male"
             >
-              <div>
+              <span>
                  29 April 2019 
-              </div>
+              </span>
             </OccurrenceDataSummary>
-          </div>
+          </p>
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.occurrenceData.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
               <FontAwesomeIcon
                 className="check-circle"
@@ -6910,14 +6686,10 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 6`] = `
                   icon="check-circle"
                 />
               </FontAwesomeIcon>
-              <b
-                className="step-title"
-              >
-                2 - occurrenceForm.occurrenceData.step.stepTitle
-              </b>
-            </div>
+              2 - occurrenceForm.occurrenceData.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </ConfirmedStepHeader>
     <ConfirmedStepHeader
@@ -6963,7 +6735,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 6`] = `
         stepDescription="occurrenceForm.locationData.step.stepDescription"
         stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
           onClick={[Function]}
         >
@@ -6971,15 +6743,13 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 6`] = `
             className="column is-1"
           >
             <p
-              className="is-size-5 is-uppercase"
+              className="datadescription"
             >
-              <b>
-                occurrenceForm.locationData.step.dataDescription
-              </b>
+              occurrenceForm.locationData.step.dataDescription
             </p>
           </div>
-          <div
-            className="selected-data column is-7 is-size-5"
+          <p
+            className="selected-data column"
           >
             <SelectedLocation
               coordinateUncertainty={null}
@@ -6990,28 +6760,28 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 6`] = `
               verbatimCoordinates=""
               verbatimDepth=""
             >
-              <div>
+              <span>
                 occurrenceForm.locationData.step.selectedData.latitude
                 : 
                 0.12345
-              </div>
-              <div>
+              </span>
+              <span>
                 occurrenceForm.locationData.step.selectedData.longitude
                 : 
                 -0.54321
-              </div>
+              </span>
             </SelectedLocation>
-          </div>
+          </p>
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.locationData.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
               <FontAwesomeIcon
                 className="check-circle"
@@ -7022,14 +6792,10 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 6`] = `
                   icon="check-circle"
                 />
               </FontAwesomeIcon>
-              <b
-                className="step-title"
-              >
-                3 - occurrenceForm.locationData.step.stepTitle
-              </b>
-            </div>
+              3 - occurrenceForm.locationData.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </ConfirmedStepHeader>
     <ConfirmedStepHeader
@@ -7055,7 +6821,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 6`] = `
         stepDescription="occurrenceForm.observationData.step.stepDescription"
         stepTitle="4 - occurrenceForm.observationData.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
           onClick={[Function]}
         >
@@ -7063,28 +6829,26 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 6`] = `
             className="column is-1"
           >
             <p
-              className="is-size-5 is-uppercase"
+              className="datadescription"
             >
-              <b>
-                occurrenceForm.observationData.step.dataDescription
-              </b>
+              occurrenceForm.observationData.step.dataDescription
             </p>
           </div>
-          <div
-            className="selected-data column is-7 is-size-5"
+          <p
+            className="selected-data column"
           >
             Institution: institution code; Identified by: Indiana Jones
-          </div>
+          </p>
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.observationData.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
               <FontAwesomeIcon
                 className="check-circle"
@@ -7095,14 +6859,10 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 6`] = `
                   icon="check-circle"
                 />
               </FontAwesomeIcon>
-              <b
-                className="step-title"
-              >
-                4 - occurrenceForm.observationData.step.stepTitle
-              </b>
-            </div>
+              4 - occurrenceForm.observationData.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </ConfirmedStepHeader>
     <ConfirmedStepHeader
@@ -7208,7 +6968,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 6`] = `
         stepDescription="occurrenceForm.measurementOrFact.step.stepDescription"
         stepTitle="5 - occurrenceForm.measurementOrFact.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered confirmed has-background-white has-text-black"
           onClick={[Function]}
         >
@@ -7216,15 +6976,13 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 6`] = `
             className="column is-1"
           >
             <p
-              className="is-size-5 is-uppercase"
+              className="datadescription"
             >
-              <b>
-                occurrenceForm.measurementOrFact.step.dataDescription
-              </b>
+              occurrenceForm.measurementOrFact.step.dataDescription
             </p>
           </div>
-          <div
-            className="selected-data column is-7 is-size-5"
+          <p
+            className="selected-data column"
           >
             <MeasurementOrFactSummary
               data={
@@ -7265,21 +7023,21 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 6`] = `
                 ]
               }
             >
-              <div>
+              <span>
                 occurrenceForm.measurementOrFact.step.title {"number":3}
-              </div>
+              </span>
             </MeasurementOrFactSummary>
-          </div>
+          </p>
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.measurementOrFact.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
               <FontAwesomeIcon
                 className="check-circle"
@@ -7290,14 +7048,10 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 6`] = `
                   icon="check-circle"
                 />
               </FontAwesomeIcon>
-              <b
-                className="step-title"
-              >
-                5 - occurrenceForm.measurementOrFact.step.stepTitle
-              </b>
-            </div>
+              5 - occurrenceForm.measurementOrFact.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </ConfirmedStepHeader>
     <ActiveStepHeader
@@ -7322,7 +7076,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 6`] = `
         stepDescription="occurrenceForm.darwinCoreFields.step.stepDescription"
         stepTitle="6 - occurrenceForm.darwinCoreFields.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered active has-background-grey has-text-white"
           onClick={[Function]}
         >
@@ -7330,33 +7084,27 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 6`] = `
             className="column is-1 is-hidden-mobile"
           >
             <p
-              className="is-size-5 is-uppercase"
-            >
-              <b />
-            </p>
+              className="datadescription"
+            />
           </div>
-          <div
-            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          <p
+            className="selected-data column is-hidden-mobile"
           />
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.darwinCoreFields.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
-              <b
-                className="step-title"
-              >
-                6 - occurrenceForm.darwinCoreFields.step.stepTitle
-              </b>
-            </div>
+              6 - occurrenceForm.darwinCoreFields.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
         <DarwinCoreFields
           fields={Array []}
           onChange={[Function]}
@@ -7533,7 +7281,7 @@ exports[`OccurrenceForm when updating occurrence and then clicking "Review and S
         stepDescription="occurrenceForm.dataset.step.stepDescription"
         stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered not-confirmed has-text-white step-1 background-color-0"
           onClick={[Function]}
         >
@@ -7541,33 +7289,27 @@ exports[`OccurrenceForm when updating occurrence and then clicking "Review and S
             className="column is-1 is-hidden-mobile"
           >
             <p
-              className="is-size-5 is-uppercase"
-            >
-              <b />
-            </p>
+              className="datadescription"
+            />
           </div>
-          <div
-            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          <p
+            className="selected-data column is-hidden-mobile"
           />
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.dataset.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
-              <b
-                className="step-title"
-              >
-                1 - occurrenceForm.dataset.step.stepTitle
-              </b>
-            </div>
+              1 - occurrenceForm.dataset.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </NotConfirmedStepHeader>
     <NotConfirmedStepHeader
@@ -7603,7 +7345,7 @@ exports[`OccurrenceForm when updating occurrence and then clicking "Review and S
         stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
         stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered not-confirmed has-text-white step-2 background-color-5"
           onClick={[Function]}
         >
@@ -7611,33 +7353,27 @@ exports[`OccurrenceForm when updating occurrence and then clicking "Review and S
             className="column is-1 is-hidden-mobile"
           >
             <p
-              className="is-size-5 is-uppercase"
-            >
-              <b />
-            </p>
+              className="datadescription"
+            />
           </div>
-          <div
-            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          <p
+            className="selected-data column is-hidden-mobile"
           />
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.occurrenceData.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
-              <b
-                className="step-title"
-              >
-                2 - occurrenceForm.occurrenceData.step.stepTitle
-              </b>
-            </div>
+              2 - occurrenceForm.occurrenceData.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </NotConfirmedStepHeader>
     <NotConfirmedStepHeader
@@ -7673,7 +7409,7 @@ exports[`OccurrenceForm when updating occurrence and then clicking "Review and S
         stepDescription="occurrenceForm.locationData.step.stepDescription"
         stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered not-confirmed has-text-white step-3 background-color-10"
           onClick={[Function]}
         >
@@ -7681,33 +7417,27 @@ exports[`OccurrenceForm when updating occurrence and then clicking "Review and S
             className="column is-1 is-hidden-mobile"
           >
             <p
-              className="is-size-5 is-uppercase"
-            >
-              <b />
-            </p>
+              className="datadescription"
+            />
           </div>
-          <div
-            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          <p
+            className="selected-data column is-hidden-mobile"
           />
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.locationData.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
-              <b
-                className="step-title"
-              >
-                3 - occurrenceForm.locationData.step.stepTitle
-              </b>
-            </div>
+              3 - occurrenceForm.locationData.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </NotConfirmedStepHeader>
     <NotConfirmedStepHeader
@@ -7733,7 +7463,7 @@ exports[`OccurrenceForm when updating occurrence and then clicking "Review and S
         stepDescription="occurrenceForm.observationData.step.stepDescription"
         stepTitle="4 - occurrenceForm.observationData.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered not-confirmed has-text-white step-4 background-color-15"
           onClick={[Function]}
         >
@@ -7741,33 +7471,27 @@ exports[`OccurrenceForm when updating occurrence and then clicking "Review and S
             className="column is-1 is-hidden-mobile"
           >
             <p
-              className="is-size-5 is-uppercase"
-            >
-              <b />
-            </p>
+              className="datadescription"
+            />
           </div>
-          <div
-            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          <p
+            className="selected-data column is-hidden-mobile"
           />
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.observationData.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
-              <b
-                className="step-title"
-              >
-                4 - occurrenceForm.observationData.step.stepTitle
-              </b>
-            </div>
+              4 - occurrenceForm.observationData.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </NotConfirmedStepHeader>
     <NotConfirmedStepHeader
@@ -7870,7 +7594,7 @@ exports[`OccurrenceForm when updating occurrence and then clicking "Review and S
         stepDescription="occurrenceForm.measurementOrFact.step.stepDescription"
         stepTitle="5 - occurrenceForm.measurementOrFact.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered not-confirmed has-text-white step-5 background-color-20"
           onClick={[Function]}
         >
@@ -7878,33 +7602,27 @@ exports[`OccurrenceForm when updating occurrence and then clicking "Review and S
             className="column is-1 is-hidden-mobile"
           >
             <p
-              className="is-size-5 is-uppercase"
-            >
-              <b />
-            </p>
+              className="datadescription"
+            />
           </div>
-          <div
-            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          <p
+            className="selected-data column is-hidden-mobile"
           />
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.measurementOrFact.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
-              <b
-                className="step-title"
-              >
-                5 - occurrenceForm.measurementOrFact.step.stepTitle
-              </b>
-            </div>
+              5 - occurrenceForm.measurementOrFact.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </NotConfirmedStepHeader>
     <NotConfirmedStepHeader
@@ -7929,7 +7647,7 @@ exports[`OccurrenceForm when updating occurrence and then clicking "Review and S
         stepDescription="occurrenceForm.darwinCoreFields.step.stepDescription"
         stepTitle="6 - occurrenceForm.darwinCoreFields.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered not-confirmed has-text-white step-6 background-color-25"
           onClick={[Function]}
         >
@@ -7937,33 +7655,27 @@ exports[`OccurrenceForm when updating occurrence and then clicking "Review and S
             className="column is-1 is-hidden-mobile"
           >
             <p
-              className="is-size-5 is-uppercase"
-            >
-              <b />
-            </p>
+              className="datadescription"
+            />
           </div>
-          <div
-            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          <p
+            className="selected-data column is-hidden-mobile"
           />
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.darwinCoreFields.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
-              <b
-                className="step-title"
-              >
-                6 - occurrenceForm.darwinCoreFields.step.stepTitle
-              </b>
-            </div>
+              6 - occurrenceForm.darwinCoreFields.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </NotConfirmedStepHeader>
     <FinalSummary
@@ -9257,7 +8969,7 @@ exports[`OccurrenceForm when updating occurrence renders correctly 1`] = `
         stepDescription="occurrenceForm.dataset.step.stepDescription"
         stepTitle="1 - occurrenceForm.dataset.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered active has-background-grey has-text-white"
           onClick={[Function]}
         >
@@ -9265,33 +8977,27 @@ exports[`OccurrenceForm when updating occurrence renders correctly 1`] = `
             className="column is-1 is-hidden-mobile"
           >
             <p
-              className="is-size-5 is-uppercase"
-            >
-              <b />
-            </p>
+              className="datadescription"
+            />
           </div>
-          <div
-            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          <p
+            className="selected-data column is-hidden-mobile"
           />
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.dataset.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
-              <b
-                className="step-title"
-              >
-                1 - occurrenceForm.dataset.step.stepTitle
-              </b>
-            </div>
+              1 - occurrenceForm.dataset.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
         <Dataset
           datasets={
             Array [
@@ -9910,7 +9616,7 @@ exports[`OccurrenceForm when updating occurrence renders correctly 1`] = `
         stepDescription="occurrenceForm.occurrenceData.step.stepDescription"
         stepTitle="2 - occurrenceForm.occurrenceData.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered not-confirmed has-text-white step-2 background-color-5"
           onClick={[Function]}
         >
@@ -9918,33 +9624,27 @@ exports[`OccurrenceForm when updating occurrence renders correctly 1`] = `
             className="column is-1 is-hidden-mobile"
           >
             <p
-              className="is-size-5 is-uppercase"
-            >
-              <b />
-            </p>
+              className="datadescription"
+            />
           </div>
-          <div
-            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          <p
+            className="selected-data column is-hidden-mobile"
           />
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.occurrenceData.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
-              <b
-                className="step-title"
-              >
-                2 - occurrenceForm.occurrenceData.step.stepTitle
-              </b>
-            </div>
+              2 - occurrenceForm.occurrenceData.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </NotConfirmedStepHeader>
     <NotConfirmedStepHeader
@@ -9980,7 +9680,7 @@ exports[`OccurrenceForm when updating occurrence renders correctly 1`] = `
         stepDescription="occurrenceForm.locationData.step.stepDescription"
         stepTitle="3 - occurrenceForm.locationData.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered not-confirmed has-text-white step-3 background-color-10"
           onClick={[Function]}
         >
@@ -9988,33 +9688,27 @@ exports[`OccurrenceForm when updating occurrence renders correctly 1`] = `
             className="column is-1 is-hidden-mobile"
           >
             <p
-              className="is-size-5 is-uppercase"
-            >
-              <b />
-            </p>
+              className="datadescription"
+            />
           </div>
-          <div
-            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          <p
+            className="selected-data column is-hidden-mobile"
           />
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.locationData.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
-              <b
-                className="step-title"
-              >
-                3 - occurrenceForm.locationData.step.stepTitle
-              </b>
-            </div>
+              3 - occurrenceForm.locationData.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </NotConfirmedStepHeader>
     <NotConfirmedStepHeader
@@ -10040,7 +9734,7 @@ exports[`OccurrenceForm when updating occurrence renders correctly 1`] = `
         stepDescription="occurrenceForm.observationData.step.stepDescription"
         stepTitle="4 - occurrenceForm.observationData.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered not-confirmed has-text-white step-4 background-color-15"
           onClick={[Function]}
         >
@@ -10048,33 +9742,27 @@ exports[`OccurrenceForm when updating occurrence renders correctly 1`] = `
             className="column is-1 is-hidden-mobile"
           >
             <p
-              className="is-size-5 is-uppercase"
-            >
-              <b />
-            </p>
+              className="datadescription"
+            />
           </div>
-          <div
-            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          <p
+            className="selected-data column is-hidden-mobile"
           />
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.observationData.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
-              <b
-                className="step-title"
-              >
-                4 - occurrenceForm.observationData.step.stepTitle
-              </b>
-            </div>
+              4 - occurrenceForm.observationData.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </NotConfirmedStepHeader>
     <NotConfirmedStepHeader
@@ -10177,7 +9865,7 @@ exports[`OccurrenceForm when updating occurrence renders correctly 1`] = `
         stepDescription="occurrenceForm.measurementOrFact.step.stepDescription"
         stepTitle="5 - occurrenceForm.measurementOrFact.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered not-confirmed has-text-white step-5 background-color-20"
           onClick={[Function]}
         >
@@ -10185,33 +9873,27 @@ exports[`OccurrenceForm when updating occurrence renders correctly 1`] = `
             className="column is-1 is-hidden-mobile"
           >
             <p
-              className="is-size-5 is-uppercase"
-            >
-              <b />
-            </p>
+              className="datadescription"
+            />
           </div>
-          <div
-            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          <p
+            className="selected-data column is-hidden-mobile"
           />
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.measurementOrFact.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
-              <b
-                className="step-title"
-              >
-                5 - occurrenceForm.measurementOrFact.step.stepTitle
-              </b>
-            </div>
+              5 - occurrenceForm.measurementOrFact.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </NotConfirmedStepHeader>
     <NotConfirmedStepHeader
@@ -10236,7 +9918,7 @@ exports[`OccurrenceForm when updating occurrence renders correctly 1`] = `
         stepDescription="occurrenceForm.darwinCoreFields.step.stepDescription"
         stepTitle="6 - occurrenceForm.darwinCoreFields.step.stepTitle"
       >
-        <div
+        <header
           className="step-header columns is-vcentered not-confirmed has-text-white step-6 background-color-25"
           onClick={[Function]}
         >
@@ -10244,33 +9926,27 @@ exports[`OccurrenceForm when updating occurrence renders correctly 1`] = `
             className="column is-1 is-hidden-mobile"
           >
             <p
-              className="is-size-5 is-uppercase"
-            >
-              <b />
-            </p>
+              className="datadescription"
+            />
           </div>
-          <div
-            className="selected-data column is-7 is-size-5 is-hidden-mobile"
+          <p
+            className="selected-data column is-hidden-mobile"
           />
           <div
             className="column details"
           >
-            <div
+            <h3
               className="is-size-6"
             >
               occurrenceForm.darwinCoreFields.step.stepDescription
-            </div>
-            <div
-              className="is-size-5 is-uppercase"
+            </h3>
+            <h2
+              className="step-title"
             >
-              <b
-                className="step-title"
-              >
-                6 - occurrenceForm.darwinCoreFields.step.stepTitle
-              </b>
-            </div>
+              6 - occurrenceForm.darwinCoreFields.step.stepTitle
+            </h2>
           </div>
-        </div>
+        </header>
       </StepHeader>
     </NotConfirmedStepHeader>
     <div
