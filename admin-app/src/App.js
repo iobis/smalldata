@@ -39,15 +39,17 @@ const AppDiv = () => {
   return (
     <div className="App">
       <Navbar/>
-      <Switch>
-        <ProtectedRoute component={ManageDatasetPage} exact path="/"/>
-        <ProtectedRoute component={ManageDatasetPage} exact path="/manage-dataset"/>
-        <ProtectedRoute component={DatasetPageFormPage} exact path="/manage-dataset/create"/>
-        <ProtectedRoute component={DatasetPageFormPage} exact path="/manage-dataset/update/:id"/>
-        <ProtectedRoute component={ManageUsersPage} exact path="/manage-users"/>
-        <ProtectedRoute component={UserFormPage} exact path="/manage-users/create"/>
-        <ProtectedRoute component={UserFormPage} exact path="/manage-users/update/:id"/>
-      </Switch>
+      <main>
+        <Switch>
+          <ProtectedRoute component={ManageDatasetPage} exact path="/"/>
+          <ProtectedRoute component={ManageDatasetPage} exact path="/manage-dataset"/>
+          <ProtectedRoute component={DatasetPageFormPage} exact path="/manage-dataset/create"/>
+          <ProtectedRoute component={DatasetPageFormPage} exact path="/manage-dataset/update/:id"/>
+          <ProtectedRoute component={ManageUsersPage} exact path="/manage-users"/>
+          <ProtectedRoute component={UserFormPage} exact path="/manage-users/create"/>
+          <ProtectedRoute component={UserFormPage} exact path="/manage-users/update/:id"/>
+        </Switch>
+      </main>
     </div>
   )
 }

@@ -15,29 +15,25 @@ export default function StepHeader({
 }) {
   return (
     <>
-      <div className={classNames('step-header columns is-vcentered', className)} onClick={onStepTitleClick}>
+      <header className={classNames('step-header columns is-vcentered', className)} onClick={onStepTitleClick}>
         <div className={classNames('column is-1', { 'is-hidden-mobile': !dataDescription })}>
-          <p className="is-size-5 is-uppercase">
-            <b>
-              {dataDescription}
-            </b>
+          <p className="datadescription">
+            {dataDescription}
           </p>
         </div>
-        <div className={classNames('selected-data column is-7 is-size-5', { 'is-hidden-mobile': !selectedData })}>
+        <p className={classNames('selected-data column', { 'is-hidden-mobile': !selectedData })}>
           {selectedData}
-        </div>
+        </p>
         <div className="column details">
-          <div className="is-size-6">
+          <h3 className="is-size-6">
             {stepDescription}
-          </div>
-          <div className="is-size-5 is-uppercase">
+          </h3>
+          <h2 className="step-title">
             {iconVisible && <FontAwesomeIcon className="check-circle" icon="check-circle"/>}
-            <b className="step-title">
-              {stepTitle}
-            </b>
-          </div>
+            {stepTitle}
+          </h2>
         </div>
-      </div>
+      </header>
       {children}
     </>
   )

@@ -44,6 +44,9 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
     }
   >
     <DatasetPageFormPage>
+      <h1>
+        Create new dataset
+      </h1>
       <section
         className="section"
       >
@@ -69,7 +72,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
             stepDescription="datasetPageFormPage.basicInformation.step.stepDescription"
             stepTitle="1 - datasetPageFormPage.basicInformation.step.stepTitle"
           >
-            <div
+            <header
               className="step-header columns is-vcentered active has-background-grey has-text-white"
               onClick={[Function]}
             >
@@ -77,33 +80,27 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
                 className="column is-1 is-hidden-mobile"
               >
                 <p
-                  className="is-size-5 is-uppercase"
-                >
-                  <b />
-                </p>
+                  className="datadescription"
+                />
               </div>
-              <div
-                className="selected-data column is-7 is-size-5 is-hidden-mobile"
+              <p
+                className="selected-data column is-hidden-mobile"
               />
               <div
                 className="column details"
               >
-                <div
+                <h3
                   className="is-size-6"
                 >
                   datasetPageFormPage.basicInformation.step.stepDescription
-                </div>
-                <div
-                  className="is-size-5 is-uppercase"
+                </h3>
+                <h2
+                  className="step-title"
                 >
-                  <b
-                    className="step-title"
-                  >
-                    1 - datasetPageFormPage.basicInformation.step.stepTitle
-                  </b>
-                </div>
+                  1 - datasetPageFormPage.basicInformation.step.stepTitle
+                </h2>
               </div>
-            </div>
+            </header>
             <BasicInformation
               data={
                 Object {
@@ -415,7 +412,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
             stepDescription="datasetPageFormPage.resourceContacts.step.stepDescription"
             stepTitle="2 - datasetPageFormPage.resourceContacts.step.stepTitle"
           >
-            <div
+            <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-2 background-color-6"
               onClick={[Function]}
             >
@@ -423,33 +420,27 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
                 className="column is-1 is-hidden-mobile"
               >
                 <p
-                  className="is-size-5 is-uppercase"
-                >
-                  <b />
-                </p>
+                  className="datadescription"
+                />
               </div>
-              <div
-                className="selected-data column is-7 is-size-5 is-hidden-mobile"
+              <p
+                className="selected-data column is-hidden-mobile"
               />
               <div
                 className="column details"
               >
-                <div
+                <h3
                   className="is-size-6"
                 >
                   datasetPageFormPage.resourceContacts.step.stepDescription
-                </div>
-                <div
-                  className="is-size-5 is-uppercase"
+                </h3>
+                <h2
+                  className="step-title"
                 >
-                  <b
-                    className="step-title"
-                  >
-                    2 - datasetPageFormPage.resourceContacts.step.stepTitle
-                  </b>
-                </div>
+                  2 - datasetPageFormPage.resourceContacts.step.stepTitle
+                </h2>
               </div>
-            </div>
+            </header>
           </StepHeader>
         </NotConfirmedStepHeader>
         <NotConfirmedStepHeader
@@ -474,7 +465,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
             stepDescription="datasetPageFormPage.resourceCreators.step.stepDescription"
             stepTitle="3 - datasetPageFormPage.resourceCreators.step.stepTitle"
           >
-            <div
+            <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-3 background-color-12"
               onClick={[Function]}
             >
@@ -482,33 +473,27 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
                 className="column is-1 is-hidden-mobile"
               >
                 <p
-                  className="is-size-5 is-uppercase"
-                >
-                  <b />
-                </p>
+                  className="datadescription"
+                />
               </div>
-              <div
-                className="selected-data column is-7 is-size-5 is-hidden-mobile"
+              <p
+                className="selected-data column is-hidden-mobile"
               />
               <div
                 className="column details"
               >
-                <div
+                <h3
                   className="is-size-6"
                 >
                   datasetPageFormPage.resourceCreators.step.stepDescription
-                </div>
-                <div
-                  className="is-size-5 is-uppercase"
+                </h3>
+                <h2
+                  className="step-title"
                 >
-                  <b
-                    className="step-title"
-                  >
-                    3 - datasetPageFormPage.resourceCreators.step.stepTitle
-                  </b>
-                </div>
+                  3 - datasetPageFormPage.resourceCreators.step.stepTitle
+                </h2>
               </div>
-            </div>
+            </header>
           </StepHeader>
         </NotConfirmedStepHeader>
         <NotConfirmedStepHeader
@@ -533,7 +518,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
             stepDescription="datasetPageFormPage.metadataProviders.step.stepDescription"
             stepTitle="4 - datasetPageFormPage.metadataProviders.step.stepTitle"
           >
-            <div
+            <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-4 background-color-18"
               onClick={[Function]}
             >
@@ -541,33 +526,27 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
                 className="column is-1 is-hidden-mobile"
               >
                 <p
-                  className="is-size-5 is-uppercase"
-                >
-                  <b />
-                </p>
+                  className="datadescription"
+                />
               </div>
-              <div
-                className="selected-data column is-7 is-size-5 is-hidden-mobile"
+              <p
+                className="selected-data column is-hidden-mobile"
               />
               <div
                 className="column details"
               >
-                <div
+                <h3
                   className="is-size-6"
                 >
                   datasetPageFormPage.metadataProviders.step.stepDescription
-                </div>
-                <div
-                  className="is-size-5 is-uppercase"
+                </h3>
+                <h2
+                  className="step-title"
                 >
-                  <b
-                    className="step-title"
-                  >
-                    4 - datasetPageFormPage.metadataProviders.step.stepTitle
-                  </b>
-                </div>
+                  4 - datasetPageFormPage.metadataProviders.step.stepTitle
+                </h2>
               </div>
-            </div>
+            </header>
           </StepHeader>
         </NotConfirmedStepHeader>
         <NotConfirmedStepHeader
@@ -591,7 +570,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
             stepDescription="datasetPageFormPage.keywords.step.stepDescription"
             stepTitle="5 - datasetPageFormPage.keywords.step.stepTitle"
           >
-            <div
+            <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-5 background-color-24"
               onClick={[Function]}
             >
@@ -599,33 +578,27 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
                 className="column is-1 is-hidden-mobile"
               >
                 <p
-                  className="is-size-5 is-uppercase"
-                >
-                  <b />
-                </p>
+                  className="datadescription"
+                />
               </div>
-              <div
-                className="selected-data column is-7 is-size-5 is-hidden-mobile"
+              <p
+                className="selected-data column is-hidden-mobile"
               />
               <div
                 className="column details"
               >
-                <div
+                <h3
                   className="is-size-6"
                 >
                   datasetPageFormPage.keywords.step.stepDescription
-                </div>
-                <div
-                  className="is-size-5 is-uppercase"
+                </h3>
+                <h2
+                  className="step-title"
                 >
-                  <b
-                    className="step-title"
-                  >
-                    5 - datasetPageFormPage.keywords.step.stepTitle
-                  </b>
-                </div>
+                  5 - datasetPageFormPage.keywords.step.stepTitle
+                </h2>
               </div>
-            </div>
+            </header>
           </StepHeader>
         </NotConfirmedStepHeader>
         <div
@@ -688,6 +661,9 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
     }
   >
     <DatasetPageFormPage>
+      <h1>
+        Edit dataset
+      </h1>
       <section
         className="section"
       >
@@ -713,7 +689,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
             stepDescription="datasetPageFormPage.basicInformation.step.stepDescription"
             stepTitle="1 - datasetPageFormPage.basicInformation.step.stepTitle"
           >
-            <div
+            <header
               className="step-header columns is-vcentered active has-background-grey has-text-white"
               onClick={[Function]}
             >
@@ -721,33 +697,27 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
                 className="column is-1 is-hidden-mobile"
               >
                 <p
-                  className="is-size-5 is-uppercase"
-                >
-                  <b />
-                </p>
+                  className="datadescription"
+                />
               </div>
-              <div
-                className="selected-data column is-7 is-size-5 is-hidden-mobile"
+              <p
+                className="selected-data column is-hidden-mobile"
               />
               <div
                 className="column details"
               >
-                <div
+                <h3
                   className="is-size-6"
                 >
                   datasetPageFormPage.basicInformation.step.stepDescription
-                </div>
-                <div
-                  className="is-size-5 is-uppercase"
+                </h3>
+                <h2
+                  className="step-title"
                 >
-                  <b
-                    className="step-title"
-                  >
-                    1 - datasetPageFormPage.basicInformation.step.stepTitle
-                  </b>
-                </div>
+                  1 - datasetPageFormPage.basicInformation.step.stepTitle
+                </h2>
               </div>
-            </div>
+            </header>
             <BasicInformation
               data={
                 Object {
@@ -1059,7 +1029,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
             stepDescription="datasetPageFormPage.resourceContacts.step.stepDescription"
             stepTitle="2 - datasetPageFormPage.resourceContacts.step.stepTitle"
           >
-            <div
+            <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-2 background-color-6"
               onClick={[Function]}
             >
@@ -1067,33 +1037,27 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
                 className="column is-1 is-hidden-mobile"
               >
                 <p
-                  className="is-size-5 is-uppercase"
-                >
-                  <b />
-                </p>
+                  className="datadescription"
+                />
               </div>
-              <div
-                className="selected-data column is-7 is-size-5 is-hidden-mobile"
+              <p
+                className="selected-data column is-hidden-mobile"
               />
               <div
                 className="column details"
               >
-                <div
+                <h3
                   className="is-size-6"
                 >
                   datasetPageFormPage.resourceContacts.step.stepDescription
-                </div>
-                <div
-                  className="is-size-5 is-uppercase"
+                </h3>
+                <h2
+                  className="step-title"
                 >
-                  <b
-                    className="step-title"
-                  >
-                    2 - datasetPageFormPage.resourceContacts.step.stepTitle
-                  </b>
-                </div>
+                  2 - datasetPageFormPage.resourceContacts.step.stepTitle
+                </h2>
               </div>
-            </div>
+            </header>
           </StepHeader>
         </NotConfirmedStepHeader>
         <NotConfirmedStepHeader
@@ -1118,7 +1082,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
             stepDescription="datasetPageFormPage.resourceCreators.step.stepDescription"
             stepTitle="3 - datasetPageFormPage.resourceCreators.step.stepTitle"
           >
-            <div
+            <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-3 background-color-12"
               onClick={[Function]}
             >
@@ -1126,33 +1090,27 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
                 className="column is-1 is-hidden-mobile"
               >
                 <p
-                  className="is-size-5 is-uppercase"
-                >
-                  <b />
-                </p>
+                  className="datadescription"
+                />
               </div>
-              <div
-                className="selected-data column is-7 is-size-5 is-hidden-mobile"
+              <p
+                className="selected-data column is-hidden-mobile"
               />
               <div
                 className="column details"
               >
-                <div
+                <h3
                   className="is-size-6"
                 >
                   datasetPageFormPage.resourceCreators.step.stepDescription
-                </div>
-                <div
-                  className="is-size-5 is-uppercase"
+                </h3>
+                <h2
+                  className="step-title"
                 >
-                  <b
-                    className="step-title"
-                  >
-                    3 - datasetPageFormPage.resourceCreators.step.stepTitle
-                  </b>
-                </div>
+                  3 - datasetPageFormPage.resourceCreators.step.stepTitle
+                </h2>
               </div>
-            </div>
+            </header>
           </StepHeader>
         </NotConfirmedStepHeader>
         <NotConfirmedStepHeader
@@ -1177,7 +1135,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
             stepDescription="datasetPageFormPage.metadataProviders.step.stepDescription"
             stepTitle="4 - datasetPageFormPage.metadataProviders.step.stepTitle"
           >
-            <div
+            <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-4 background-color-18"
               onClick={[Function]}
             >
@@ -1185,33 +1143,27 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
                 className="column is-1 is-hidden-mobile"
               >
                 <p
-                  className="is-size-5 is-uppercase"
-                >
-                  <b />
-                </p>
+                  className="datadescription"
+                />
               </div>
-              <div
-                className="selected-data column is-7 is-size-5 is-hidden-mobile"
+              <p
+                className="selected-data column is-hidden-mobile"
               />
               <div
                 className="column details"
               >
-                <div
+                <h3
                   className="is-size-6"
                 >
                   datasetPageFormPage.metadataProviders.step.stepDescription
-                </div>
-                <div
-                  className="is-size-5 is-uppercase"
+                </h3>
+                <h2
+                  className="step-title"
                 >
-                  <b
-                    className="step-title"
-                  >
-                    4 - datasetPageFormPage.metadataProviders.step.stepTitle
-                  </b>
-                </div>
+                  4 - datasetPageFormPage.metadataProviders.step.stepTitle
+                </h2>
               </div>
-            </div>
+            </header>
           </StepHeader>
         </NotConfirmedStepHeader>
         <NotConfirmedStepHeader
@@ -1235,7 +1187,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
             stepDescription="datasetPageFormPage.keywords.step.stepDescription"
             stepTitle="5 - datasetPageFormPage.keywords.step.stepTitle"
           >
-            <div
+            <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-5 background-color-24"
               onClick={[Function]}
             >
@@ -1243,33 +1195,27 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
                 className="column is-1 is-hidden-mobile"
               >
                 <p
-                  className="is-size-5 is-uppercase"
-                >
-                  <b />
-                </p>
+                  className="datadescription"
+                />
               </div>
-              <div
-                className="selected-data column is-7 is-size-5 is-hidden-mobile"
+              <p
+                className="selected-data column is-hidden-mobile"
               />
               <div
                 className="column details"
               >
-                <div
+                <h3
                   className="is-size-6"
                 >
                   datasetPageFormPage.keywords.step.stepDescription
-                </div>
-                <div
-                  className="is-size-5 is-uppercase"
+                </h3>
+                <h2
+                  className="step-title"
                 >
-                  <b
-                    className="step-title"
-                  >
-                    5 - datasetPageFormPage.keywords.step.stepTitle
-                  </b>
-                </div>
+                  5 - datasetPageFormPage.keywords.step.stepTitle
+                </h2>
               </div>
-            </div>
+            </header>
           </StepHeader>
         </NotConfirmedStepHeader>
         <div
@@ -1332,6 +1278,9 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
     }
   >
     <DatasetPageFormPage>
+      <h1>
+        Edit dataset
+      </h1>
       <section
         className="section"
       >
@@ -1357,7 +1306,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
             stepDescription="datasetPageFormPage.basicInformation.step.stepDescription"
             stepTitle="1 - datasetPageFormPage.basicInformation.step.stepTitle"
           >
-            <div
+            <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-1 background-color-0"
               onClick={[Function]}
             >
@@ -1365,33 +1314,27 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
                 className="column is-1 is-hidden-mobile"
               >
                 <p
-                  className="is-size-5 is-uppercase"
-                >
-                  <b />
-                </p>
+                  className="datadescription"
+                />
               </div>
-              <div
-                className="selected-data column is-7 is-size-5 is-hidden-mobile"
+              <p
+                className="selected-data column is-hidden-mobile"
               />
               <div
                 className="column details"
               >
-                <div
+                <h3
                   className="is-size-6"
                 >
                   datasetPageFormPage.basicInformation.step.stepDescription
-                </div>
-                <div
-                  className="is-size-5 is-uppercase"
+                </h3>
+                <h2
+                  className="step-title"
                 >
-                  <b
-                    className="step-title"
-                  >
-                    1 - datasetPageFormPage.basicInformation.step.stepTitle
-                  </b>
-                </div>
+                  1 - datasetPageFormPage.basicInformation.step.stepTitle
+                </h2>
               </div>
-            </div>
+            </header>
           </StepHeader>
         </NotConfirmedStepHeader>
         <NotConfirmedStepHeader
@@ -1416,7 +1359,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
             stepDescription="datasetPageFormPage.resourceContacts.step.stepDescription"
             stepTitle="2 - datasetPageFormPage.resourceContacts.step.stepTitle"
           >
-            <div
+            <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-2 background-color-6"
               onClick={[Function]}
             >
@@ -1424,33 +1367,27 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
                 className="column is-1 is-hidden-mobile"
               >
                 <p
-                  className="is-size-5 is-uppercase"
-                >
-                  <b />
-                </p>
+                  className="datadescription"
+                />
               </div>
-              <div
-                className="selected-data column is-7 is-size-5 is-hidden-mobile"
+              <p
+                className="selected-data column is-hidden-mobile"
               />
               <div
                 className="column details"
               >
-                <div
+                <h3
                   className="is-size-6"
                 >
                   datasetPageFormPage.resourceContacts.step.stepDescription
-                </div>
-                <div
-                  className="is-size-5 is-uppercase"
+                </h3>
+                <h2
+                  className="step-title"
                 >
-                  <b
-                    className="step-title"
-                  >
-                    2 - datasetPageFormPage.resourceContacts.step.stepTitle
-                  </b>
-                </div>
+                  2 - datasetPageFormPage.resourceContacts.step.stepTitle
+                </h2>
               </div>
-            </div>
+            </header>
           </StepHeader>
         </NotConfirmedStepHeader>
         <NotConfirmedStepHeader
@@ -1475,7 +1412,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
             stepDescription="datasetPageFormPage.resourceCreators.step.stepDescription"
             stepTitle="3 - datasetPageFormPage.resourceCreators.step.stepTitle"
           >
-            <div
+            <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-3 background-color-12"
               onClick={[Function]}
             >
@@ -1483,33 +1420,27 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
                 className="column is-1 is-hidden-mobile"
               >
                 <p
-                  className="is-size-5 is-uppercase"
-                >
-                  <b />
-                </p>
+                  className="datadescription"
+                />
               </div>
-              <div
-                className="selected-data column is-7 is-size-5 is-hidden-mobile"
+              <p
+                className="selected-data column is-hidden-mobile"
               />
               <div
                 className="column details"
               >
-                <div
+                <h3
                   className="is-size-6"
                 >
                   datasetPageFormPage.resourceCreators.step.stepDescription
-                </div>
-                <div
-                  className="is-size-5 is-uppercase"
+                </h3>
+                <h2
+                  className="step-title"
                 >
-                  <b
-                    className="step-title"
-                  >
-                    3 - datasetPageFormPage.resourceCreators.step.stepTitle
-                  </b>
-                </div>
+                  3 - datasetPageFormPage.resourceCreators.step.stepTitle
+                </h2>
               </div>
-            </div>
+            </header>
           </StepHeader>
         </NotConfirmedStepHeader>
         <NotConfirmedStepHeader
@@ -1534,7 +1465,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
             stepDescription="datasetPageFormPage.metadataProviders.step.stepDescription"
             stepTitle="4 - datasetPageFormPage.metadataProviders.step.stepTitle"
           >
-            <div
+            <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-4 background-color-18"
               onClick={[Function]}
             >
@@ -1542,33 +1473,27 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
                 className="column is-1 is-hidden-mobile"
               >
                 <p
-                  className="is-size-5 is-uppercase"
-                >
-                  <b />
-                </p>
+                  className="datadescription"
+                />
               </div>
-              <div
-                className="selected-data column is-7 is-size-5 is-hidden-mobile"
+              <p
+                className="selected-data column is-hidden-mobile"
               />
               <div
                 className="column details"
               >
-                <div
+                <h3
                   className="is-size-6"
                 >
                   datasetPageFormPage.metadataProviders.step.stepDescription
-                </div>
-                <div
-                  className="is-size-5 is-uppercase"
+                </h3>
+                <h2
+                  className="step-title"
                 >
-                  <b
-                    className="step-title"
-                  >
-                    4 - datasetPageFormPage.metadataProviders.step.stepTitle
-                  </b>
-                </div>
+                  4 - datasetPageFormPage.metadataProviders.step.stepTitle
+                </h2>
               </div>
-            </div>
+            </header>
           </StepHeader>
         </NotConfirmedStepHeader>
         <NotConfirmedStepHeader
@@ -1592,7 +1517,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
             stepDescription="datasetPageFormPage.keywords.step.stepDescription"
             stepTitle="5 - datasetPageFormPage.keywords.step.stepTitle"
           >
-            <div
+            <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-5 background-color-24"
               onClick={[Function]}
             >
@@ -1600,33 +1525,27 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
                 className="column is-1 is-hidden-mobile"
               >
                 <p
-                  className="is-size-5 is-uppercase"
-                >
-                  <b />
-                </p>
+                  className="datadescription"
+                />
               </div>
-              <div
-                className="selected-data column is-7 is-size-5 is-hidden-mobile"
+              <p
+                className="selected-data column is-hidden-mobile"
               />
               <div
                 className="column details"
               >
-                <div
+                <h3
                   className="is-size-6"
                 >
                   datasetPageFormPage.keywords.step.stepDescription
-                </div>
-                <div
-                  className="is-size-5 is-uppercase"
+                </h3>
+                <h2
+                  className="step-title"
                 >
-                  <b
-                    className="step-title"
-                  >
-                    5 - datasetPageFormPage.keywords.step.stepTitle
-                  </b>
-                </div>
+                  5 - datasetPageFormPage.keywords.step.stepTitle
+                </h2>
               </div>
-            </div>
+            </header>
           </StepHeader>
         </NotConfirmedStepHeader>
         <FinalSummary
@@ -2294,6 +2213,9 @@ exports[`DatasetPageFormPage when updating dataset and then clicking on resource
         }
       }
     >
+      <h1>
+        Edit dataset
+      </h1>
       <section
         className="section"
       >
@@ -2319,7 +2241,7 @@ exports[`DatasetPageFormPage when updating dataset and then clicking on resource
             stepDescription="datasetPageFormPage.basicInformation.step.stepDescription"
             stepTitle="1 - datasetPageFormPage.basicInformation.step.stepTitle"
           >
-            <div
+            <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-1 background-color-0"
               onClick={[Function]}
             >
@@ -2327,33 +2249,27 @@ exports[`DatasetPageFormPage when updating dataset and then clicking on resource
                 className="column is-1 is-hidden-mobile"
               >
                 <p
-                  className="is-size-5 is-uppercase"
-                >
-                  <b />
-                </p>
+                  className="datadescription"
+                />
               </div>
-              <div
-                className="selected-data column is-7 is-size-5 is-hidden-mobile"
+              <p
+                className="selected-data column is-hidden-mobile"
               />
               <div
                 className="column details"
               >
-                <div
+                <h3
                   className="is-size-6"
                 >
                   datasetPageFormPage.basicInformation.step.stepDescription
-                </div>
-                <div
-                  className="is-size-5 is-uppercase"
+                </h3>
+                <h2
+                  className="step-title"
                 >
-                  <b
-                    className="step-title"
-                  >
-                    1 - datasetPageFormPage.basicInformation.step.stepTitle
-                  </b>
-                </div>
+                  1 - datasetPageFormPage.basicInformation.step.stepTitle
+                </h2>
               </div>
-            </div>
+            </header>
           </StepHeader>
         </NotConfirmedStepHeader>
         <NotConfirmedStepHeader
@@ -2378,7 +2294,7 @@ exports[`DatasetPageFormPage when updating dataset and then clicking on resource
             stepDescription="datasetPageFormPage.resourceContacts.step.stepDescription"
             stepTitle="2 - datasetPageFormPage.resourceContacts.step.stepTitle"
           >
-            <div
+            <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-2 background-color-6"
               onClick={[Function]}
             >
@@ -2386,33 +2302,27 @@ exports[`DatasetPageFormPage when updating dataset and then clicking on resource
                 className="column is-1 is-hidden-mobile"
               >
                 <p
-                  className="is-size-5 is-uppercase"
-                >
-                  <b />
-                </p>
+                  className="datadescription"
+                />
               </div>
-              <div
-                className="selected-data column is-7 is-size-5 is-hidden-mobile"
+              <p
+                className="selected-data column is-hidden-mobile"
               />
               <div
                 className="column details"
               >
-                <div
+                <h3
                   className="is-size-6"
                 >
                   datasetPageFormPage.resourceContacts.step.stepDescription
-                </div>
-                <div
-                  className="is-size-5 is-uppercase"
+                </h3>
+                <h2
+                  className="step-title"
                 >
-                  <b
-                    className="step-title"
-                  >
-                    2 - datasetPageFormPage.resourceContacts.step.stepTitle
-                  </b>
-                </div>
+                  2 - datasetPageFormPage.resourceContacts.step.stepTitle
+                </h2>
               </div>
-            </div>
+            </header>
           </StepHeader>
         </NotConfirmedStepHeader>
         <NotConfirmedStepHeader
@@ -2437,7 +2347,7 @@ exports[`DatasetPageFormPage when updating dataset and then clicking on resource
             stepDescription="datasetPageFormPage.resourceCreators.step.stepDescription"
             stepTitle="3 - datasetPageFormPage.resourceCreators.step.stepTitle"
           >
-            <div
+            <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-3 background-color-12"
               onClick={[Function]}
             >
@@ -2445,33 +2355,27 @@ exports[`DatasetPageFormPage when updating dataset and then clicking on resource
                 className="column is-1 is-hidden-mobile"
               >
                 <p
-                  className="is-size-5 is-uppercase"
-                >
-                  <b />
-                </p>
+                  className="datadescription"
+                />
               </div>
-              <div
-                className="selected-data column is-7 is-size-5 is-hidden-mobile"
+              <p
+                className="selected-data column is-hidden-mobile"
               />
               <div
                 className="column details"
               >
-                <div
+                <h3
                   className="is-size-6"
                 >
                   datasetPageFormPage.resourceCreators.step.stepDescription
-                </div>
-                <div
-                  className="is-size-5 is-uppercase"
+                </h3>
+                <h2
+                  className="step-title"
                 >
-                  <b
-                    className="step-title"
-                  >
-                    3 - datasetPageFormPage.resourceCreators.step.stepTitle
-                  </b>
-                </div>
+                  3 - datasetPageFormPage.resourceCreators.step.stepTitle
+                </h2>
               </div>
-            </div>
+            </header>
           </StepHeader>
         </NotConfirmedStepHeader>
         <NotConfirmedStepHeader
@@ -2496,7 +2400,7 @@ exports[`DatasetPageFormPage when updating dataset and then clicking on resource
             stepDescription="datasetPageFormPage.metadataProviders.step.stepDescription"
             stepTitle="4 - datasetPageFormPage.metadataProviders.step.stepTitle"
           >
-            <div
+            <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-4 background-color-18"
               onClick={[Function]}
             >
@@ -2504,33 +2408,27 @@ exports[`DatasetPageFormPage when updating dataset and then clicking on resource
                 className="column is-1 is-hidden-mobile"
               >
                 <p
-                  className="is-size-5 is-uppercase"
-                >
-                  <b />
-                </p>
+                  className="datadescription"
+                />
               </div>
-              <div
-                className="selected-data column is-7 is-size-5 is-hidden-mobile"
+              <p
+                className="selected-data column is-hidden-mobile"
               />
               <div
                 className="column details"
               >
-                <div
+                <h3
                   className="is-size-6"
                 >
                   datasetPageFormPage.metadataProviders.step.stepDescription
-                </div>
-                <div
-                  className="is-size-5 is-uppercase"
+                </h3>
+                <h2
+                  className="step-title"
                 >
-                  <b
-                    className="step-title"
-                  >
-                    4 - datasetPageFormPage.metadataProviders.step.stepTitle
-                  </b>
-                </div>
+                  4 - datasetPageFormPage.metadataProviders.step.stepTitle
+                </h2>
               </div>
-            </div>
+            </header>
           </StepHeader>
         </NotConfirmedStepHeader>
         <NotConfirmedStepHeader
@@ -2554,7 +2452,7 @@ exports[`DatasetPageFormPage when updating dataset and then clicking on resource
             stepDescription="datasetPageFormPage.keywords.step.stepDescription"
             stepTitle="5 - datasetPageFormPage.keywords.step.stepTitle"
           >
-            <div
+            <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-5 background-color-24"
               onClick={[Function]}
             >
@@ -2562,33 +2460,27 @@ exports[`DatasetPageFormPage when updating dataset and then clicking on resource
                 className="column is-1 is-hidden-mobile"
               >
                 <p
-                  className="is-size-5 is-uppercase"
-                >
-                  <b />
-                </p>
+                  className="datadescription"
+                />
               </div>
-              <div
-                className="selected-data column is-7 is-size-5 is-hidden-mobile"
+              <p
+                className="selected-data column is-hidden-mobile"
               />
               <div
                 className="column details"
               >
-                <div
+                <h3
                   className="is-size-6"
                 >
                   datasetPageFormPage.keywords.step.stepDescription
-                </div>
-                <div
-                  className="is-size-5 is-uppercase"
+                </h3>
+                <h2
+                  className="step-title"
                 >
-                  <b
-                    className="step-title"
-                  >
-                    5 - datasetPageFormPage.keywords.step.stepTitle
-                  </b>
-                </div>
+                  5 - datasetPageFormPage.keywords.step.stepTitle
+                </h2>
               </div>
-            </div>
+            </header>
           </StepHeader>
         </NotConfirmedStepHeader>
         <FinalSummary
@@ -3224,6 +3116,9 @@ exports[`DatasetPageFormPage when updating dataset renders correctly 1`] = `
         }
       }
     >
+      <h1>
+        Edit dataset
+      </h1>
       <section
         className="section"
       >
@@ -3249,7 +3144,7 @@ exports[`DatasetPageFormPage when updating dataset renders correctly 1`] = `
             stepDescription="datasetPageFormPage.basicInformation.step.stepDescription"
             stepTitle="1 - datasetPageFormPage.basicInformation.step.stepTitle"
           >
-            <div
+            <header
               className="step-header columns is-vcentered active has-background-grey has-text-white"
               onClick={[Function]}
             >
@@ -3257,33 +3152,27 @@ exports[`DatasetPageFormPage when updating dataset renders correctly 1`] = `
                 className="column is-1 is-hidden-mobile"
               >
                 <p
-                  className="is-size-5 is-uppercase"
-                >
-                  <b />
-                </p>
+                  className="datadescription"
+                />
               </div>
-              <div
-                className="selected-data column is-7 is-size-5 is-hidden-mobile"
+              <p
+                className="selected-data column is-hidden-mobile"
               />
               <div
                 className="column details"
               >
-                <div
+                <h3
                   className="is-size-6"
                 >
                   datasetPageFormPage.basicInformation.step.stepDescription
-                </div>
-                <div
-                  className="is-size-5 is-uppercase"
+                </h3>
+                <h2
+                  className="step-title"
                 >
-                  <b
-                    className="step-title"
-                  >
-                    1 - datasetPageFormPage.basicInformation.step.stepTitle
-                  </b>
-                </div>
+                  1 - datasetPageFormPage.basicInformation.step.stepTitle
+                </h2>
               </div>
-            </div>
+            </header>
             <BasicInformation
               data={
                 Object {
@@ -3601,7 +3490,7 @@ paragraph-2"
             stepDescription="datasetPageFormPage.resourceContacts.step.stepDescription"
             stepTitle="2 - datasetPageFormPage.resourceContacts.step.stepTitle"
           >
-            <div
+            <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-2 background-color-6"
               onClick={[Function]}
             >
@@ -3609,33 +3498,27 @@ paragraph-2"
                 className="column is-1 is-hidden-mobile"
               >
                 <p
-                  className="is-size-5 is-uppercase"
-                >
-                  <b />
-                </p>
+                  className="datadescription"
+                />
               </div>
-              <div
-                className="selected-data column is-7 is-size-5 is-hidden-mobile"
+              <p
+                className="selected-data column is-hidden-mobile"
               />
               <div
                 className="column details"
               >
-                <div
+                <h3
                   className="is-size-6"
                 >
                   datasetPageFormPage.resourceContacts.step.stepDescription
-                </div>
-                <div
-                  className="is-size-5 is-uppercase"
+                </h3>
+                <h2
+                  className="step-title"
                 >
-                  <b
-                    className="step-title"
-                  >
-                    2 - datasetPageFormPage.resourceContacts.step.stepTitle
-                  </b>
-                </div>
+                  2 - datasetPageFormPage.resourceContacts.step.stepTitle
+                </h2>
               </div>
-            </div>
+            </header>
           </StepHeader>
         </NotConfirmedStepHeader>
         <NotConfirmedStepHeader
@@ -3660,7 +3543,7 @@ paragraph-2"
             stepDescription="datasetPageFormPage.resourceCreators.step.stepDescription"
             stepTitle="3 - datasetPageFormPage.resourceCreators.step.stepTitle"
           >
-            <div
+            <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-3 background-color-12"
               onClick={[Function]}
             >
@@ -3668,33 +3551,27 @@ paragraph-2"
                 className="column is-1 is-hidden-mobile"
               >
                 <p
-                  className="is-size-5 is-uppercase"
-                >
-                  <b />
-                </p>
+                  className="datadescription"
+                />
               </div>
-              <div
-                className="selected-data column is-7 is-size-5 is-hidden-mobile"
+              <p
+                className="selected-data column is-hidden-mobile"
               />
               <div
                 className="column details"
               >
-                <div
+                <h3
                   className="is-size-6"
                 >
                   datasetPageFormPage.resourceCreators.step.stepDescription
-                </div>
-                <div
-                  className="is-size-5 is-uppercase"
+                </h3>
+                <h2
+                  className="step-title"
                 >
-                  <b
-                    className="step-title"
-                  >
-                    3 - datasetPageFormPage.resourceCreators.step.stepTitle
-                  </b>
-                </div>
+                  3 - datasetPageFormPage.resourceCreators.step.stepTitle
+                </h2>
               </div>
-            </div>
+            </header>
           </StepHeader>
         </NotConfirmedStepHeader>
         <NotConfirmedStepHeader
@@ -3719,7 +3596,7 @@ paragraph-2"
             stepDescription="datasetPageFormPage.metadataProviders.step.stepDescription"
             stepTitle="4 - datasetPageFormPage.metadataProviders.step.stepTitle"
           >
-            <div
+            <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-4 background-color-18"
               onClick={[Function]}
             >
@@ -3727,33 +3604,27 @@ paragraph-2"
                 className="column is-1 is-hidden-mobile"
               >
                 <p
-                  className="is-size-5 is-uppercase"
-                >
-                  <b />
-                </p>
+                  className="datadescription"
+                />
               </div>
-              <div
-                className="selected-data column is-7 is-size-5 is-hidden-mobile"
+              <p
+                className="selected-data column is-hidden-mobile"
               />
               <div
                 className="column details"
               >
-                <div
+                <h3
                   className="is-size-6"
                 >
                   datasetPageFormPage.metadataProviders.step.stepDescription
-                </div>
-                <div
-                  className="is-size-5 is-uppercase"
+                </h3>
+                <h2
+                  className="step-title"
                 >
-                  <b
-                    className="step-title"
-                  >
-                    4 - datasetPageFormPage.metadataProviders.step.stepTitle
-                  </b>
-                </div>
+                  4 - datasetPageFormPage.metadataProviders.step.stepTitle
+                </h2>
               </div>
-            </div>
+            </header>
           </StepHeader>
         </NotConfirmedStepHeader>
         <NotConfirmedStepHeader
@@ -3777,7 +3648,7 @@ paragraph-2"
             stepDescription="datasetPageFormPage.keywords.step.stepDescription"
             stepTitle="5 - datasetPageFormPage.keywords.step.stepTitle"
           >
-            <div
+            <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-5 background-color-24"
               onClick={[Function]}
             >
@@ -3785,33 +3656,27 @@ paragraph-2"
                 className="column is-1 is-hidden-mobile"
               >
                 <p
-                  className="is-size-5 is-uppercase"
-                >
-                  <b />
-                </p>
+                  className="datadescription"
+                />
               </div>
-              <div
-                className="selected-data column is-7 is-size-5 is-hidden-mobile"
+              <p
+                className="selected-data column is-hidden-mobile"
               />
               <div
                 className="column details"
               >
-                <div
+                <h3
                   className="is-size-6"
                 >
                   datasetPageFormPage.keywords.step.stepDescription
-                </div>
-                <div
-                  className="is-size-5 is-uppercase"
+                </h3>
+                <h2
+                  className="step-title"
                 >
-                  <b
-                    className="step-title"
-                  >
-                    5 - datasetPageFormPage.keywords.step.stepTitle
-                  </b>
-                </div>
+                  5 - datasetPageFormPage.keywords.step.stepTitle
+                </h2>
               </div>
-            </div>
+            </header>
           </StepHeader>
         </NotConfirmedStepHeader>
         <div
