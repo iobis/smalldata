@@ -170,51 +170,59 @@ export default function DatasetPageFormPage({ location }) {
   }]
 
   return (
-    <section className="section">
-      {steps.map((step, index) => {
-        const stepNumber = index + 1
-        const className = 'step-' + stepNumber + ' background-color-' + Math.floor(30 / steps.length * index)
-        const StepComponent = activeStepIndex === index
-          ? ActiveStepHeader
-          : activeStepIndex > index
-            ? ConfirmedStepHeader
-            : NotConfirmedStepHeader
-        return (
-          <StepComponent
-            {...step}
-            activeStepIndex={activeStepIndex}
-            className={className}
-            key={step.stepTitle}
-            nextStep={step.nextStep}
-            onContinueButtonClick={() => showActiveStep(activeStepIndex + 1)}
-            onStepTitleClick={() => showActiveStep(index)}
-            stepTitle={stepNumber + ' - ' + step.stepTitle}
-            totalSteps={steps.length - 1}/>
-        )
-      })}
-      {finalSummaryVisible ?
-        (<FinalSummary
-          basicInformation={basicInformation}
-          errorMessage={errorMessage}
-          errorVisible={errorVisible}
-          keywords={keywords}
-          metadataProviders={metadataProviders}
-          onChangeClick={(params) => showActiveStep(params.index)}
-          onCreateClick={handleCreateClick}
-          onErrorClose={handleErrorClose}
-          onSubmitClick={handleSubmitClick}
-          resourceContacts={resourceContacts}
-          resourceCreators={resourceCreators}
-          successMessageType={action}
-          successVisible={successVisible}/>) :
-        (<div className="columns column is-centered">
-          <button
-            className="review-and-submit-button button is-medium is-info"
-            onClick={showFinalSummary}>
-            {t('datasetPageFormPage.reviewAndSubmitButton')}
-          </button>
-        </div>)}
-    </section>
+    <>
+      {basicInformation.title.length > 0 ? (
+        <h1>Edit dataset</h1>
+      ) : (
+        <h1>Create new dataset</h1>
+      )}
+
+      <section className="section">
+        {steps.map((step, index) => {
+          const stepNumber = index + 1
+          const className = 'step-' + stepNumber + ' background-color-' + Math.floor(30 / steps.length * index)
+          const StepComponent = activeStepIndex === index
+            ? ActiveStepHeader
+            : activeStepIndex > index
+              ? ConfirmedStepHeader
+              : NotConfirmedStepHeader
+          return (
+            <StepComponent
+              {...step}
+              activeStepIndex={activeStepIndex}
+              className={className}
+              key={step.stepTitle}
+              nextStep={step.nextStep}
+              onContinueButtonClick={() => showActiveStep(activeStepIndex + 1)}
+              onStepTitleClick={() => showActiveStep(index)}
+              stepTitle={stepNumber + ' - ' + step.stepTitle}
+              totalSteps={steps.length - 1}/>
+          )
+        })}
+        {finalSummaryVisible ?
+          (<FinalSummary
+            basicInformation={basicInformation}
+            errorMessage={errorMessage}
+            errorVisible={errorVisible}
+            keywords={keywords}
+            metadataProviders={metadataProviders}
+            onChangeClick={(params) => showActiveStep(params.index)}
+            onCreateClick={handleCreateClick}
+            onErrorClose={handleErrorClose}
+            onSubmitClick={handleSubmitClick}
+            resourceContacts={resourceContacts}
+            resourceCreators={resourceCreators}
+            successMessageType={action}
+            successVisible={successVisible}/>) :
+          (<div className="columns column is-centered">
+            <button
+              className="review-and-submit-button button is-medium is-info"
+              onClick={showFinalSummary}>
+              {t('datasetPageFormPage.reviewAndSubmitButton')}
+            </button>
+          </div>)}
+      </section>
+    </>
   )
 }
 
