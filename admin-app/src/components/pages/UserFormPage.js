@@ -84,69 +84,83 @@ export default function UserFormPage({ location }) {
   }
 
   return (
-    <div className="user-form-page section is-fluid">
-      <OceanExpertNameInput
-        oceanExpertName={name}
-        onChange={handleOceanExpertProfileChange}/>
-      <InputText
-        className="email is-half mandatory"
-        name="userFormPage.email"
-        onChange={setEmail}
-        value={email}/>
-      <div className={classNames('column field')}>
-        <label className="label">
-          {t('userFormPage.userRole.label')}
-        </label>
-        <Dropdown
-          onChange={role => setRole(role)}
-          options={roles}
-          value={role}/>
+
+      <div className="user-form-page section is-fluid">
+        <h1 className="column">
+          {name ? (
+            <span>Modify </span>
+          ) : (
+            <span>Create </span>
+          )}
+          user record
+          {name ? (
+            <span> for </span>
+          ) : null}
+
+          <strong> {name}</strong></h1>
+
+        <OceanExpertNameInput
+          oceanExpertName={name}
+          onChange={handleOceanExpertProfileChange}/>
+        <InputText
+          className="email is-half mandatory"
+          name="userFormPage.email"
+          onChange={setEmail}
+          value={email}/>
+        <div className={classNames('column field')}>
+          <label className="label">
+            {t('userFormPage.userRole.label')}
+          </label>
+          <Dropdown
+            onChange={role => setRole(role)}
+            options={roles}
+            value={role}/>
+        </div>
+        <table className="table is-striped is-hoverable is-fullwidth">
+          <thead>
+            <tr>
+              <th/>
+              <th>{t('manageDatasetPage.table.title')}</th>
+              <th>{t('manageDatasetPage.table.organization')}</th>
+              <th>{t('manageDatasetPage.table.licence')}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {datasets.map(dataset => (
+              <DatasetRow
+                checked={selectedDatasets.includes(dataset.id)}
+                key={dataset.id}
+                license={dataset.license.title}
+                onChange={() => handleDatasetToggle(dataset.id)}
+                organization={dataset.metadataProviders[0].organizationName || '—'}
+                title={dataset.title.value}/>
+            ))}
+          </tbody>
+        </table>
+        {successVisible ? (
+          <div className="success-message notification is-success" ref={successMessageRef}>
+            <p className="title">{t('userFormPage.successMessage.header.' + action)}</p>
+            <section>
+              <button className="create-another-user button is-white" onClick={handleCreateAnotherUserClick}>
+                {t('userFormPage.successMessage.createAnotherUser')}
+              </button>
+            </section>
+            <section>
+              <Link className="is-size-5" to="/">
+                {t('userFormPage.successMessage.doNothing')}
+              </Link>
+            </section>
+          </div>) : null}
+        {errorVisible ? (
+          <div className="error-message notification is-danger" ref={errorMessageRef}>
+            <button className="close delete" onClick={handleErrorClose}/>
+            {errorMessage}
+          </div>) : null}
+        {!successVisible
+          ? <SubmitUserButton action={action} disabled={!addUserButtonEnabled} onClick={handleSubmitUserButtonClick}/>
+          : null
+        }
       </div>
-      <table className="table is-striped is-hoverable is-fullwidth">
-        <thead>
-          <tr>
-            <th/>
-            <th>{t('manageDatasetPage.table.title')}</th>
-            <th>{t('manageDatasetPage.table.organization')}</th>
-            <th>{t('manageDatasetPage.table.licence')}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {datasets.map(dataset => (
-            <DatasetRow
-              checked={selectedDatasets.includes(dataset.id)}
-              key={dataset.id}
-              license={dataset.license.title}
-              onChange={() => handleDatasetToggle(dataset.id)}
-              organization={dataset.metadataProviders[0].organizationName || '—'}
-              title={dataset.title.value}/>
-          ))}
-        </tbody>
-      </table>
-      {successVisible ? (
-        <div className="success-message notification is-success" ref={successMessageRef}>
-          <p className="title">{t('userFormPage.successMessage.header.' + action)}</p>
-          <section>
-            <button className="create-another-user button is-white" onClick={handleCreateAnotherUserClick}>
-              {t('userFormPage.successMessage.createAnotherUser')}
-            </button>
-          </section>
-          <section>
-            <Link className="is-size-5" to="/">
-              {t('userFormPage.successMessage.doNothing')}
-            </Link>
-          </section>
-        </div>) : null}
-      {errorVisible ? (
-        <div className="error-message notification is-danger" ref={errorMessageRef}>
-          <button className="close delete" onClick={handleErrorClose}/>
-          {errorMessage}
-        </div>) : null}
-      {!successVisible
-        ? <SubmitUserButton action={action} disabled={!addUserButtonEnabled} onClick={handleSubmitUserButtonClick}/>
-        : null
-      }
-    </div>
   )
 }
 

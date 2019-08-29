@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ActiveStepHeader renders correctly 1`] = `
-<div
+<header
   className="step-header columns is-vcentered confirmed has-background-white has-text-black"
   onClick={[Function]}
 >
@@ -9,39 +9,33 @@ exports[`ActiveStepHeader renders correctly 1`] = `
     className="column is-1"
   >
     <p
-      className="is-size-5 is-uppercase"
+      className="datadescription"
     >
-      <b>
-        data description
-      </b>
+      data description
     </p>
   </div>
-  <div
-    className="selected-data column is-7 is-size-5"
+  <p
+    className="selected-data column"
   >
     selected data
-  </div>
+  </p>
   <div
     className="column details"
   >
-    <div
+    <h3
       className="is-size-6"
     >
       step description
-    </div>
-    <div
-      className="is-size-5 is-uppercase"
+    </h3>
+    <h2
+      className="step-title"
     >
       <i
         className="check-circle"
         icon="check-circle"
       />
-      <b
-        className="step-title"
-      >
-        step title
-      </b>
-    </div>
+      step title
+    </h2>
   </div>
-</div>
+</header>
 `;

@@ -293,8 +293,8 @@ function SelectedLocation({ decimalLatitude, decimalLongitude }) {
 
   return (
     <>
-      <div>{t('occurrenceForm.locationData.step.selectedData.latitude')}: {decimalLatitude}</div>
-      <div>{t('occurrenceForm.locationData.step.selectedData.longitude')}: {decimalLongitude}</div>
+      <span>{t('occurrenceForm.locationData.step.selectedData.latitude')}: {decimalLatitude}</span>
+      <span>{t('occurrenceForm.locationData.step.selectedData.longitude')}: {decimalLongitude}</span>
     </>
   )
 }
@@ -313,7 +313,7 @@ function renderIdentifiedByLabel({ identifiedBy, institutionCode }) {
 function MeasurementOrFactSummary({ data }) {
   const { t } = useTranslation()
 
-  return <div>{t('occurrenceForm.measurementOrFact.step.title', { number: data.length })}</div>
+  return <span>{t('occurrenceForm.measurementOrFact.step.title', { number: data.length })}</span>
 }
 
 MeasurementOrFactSummary.propTypes = {
@@ -328,7 +328,7 @@ function OccurrenceDataSummary({ scientificName, beginDate, endDate }) {
   ].join(' ')
 
   return (
-    <div>{occurrenceDataLabel}</div>
+    <span>{occurrenceDataLabel}</span>
   )
 }
 

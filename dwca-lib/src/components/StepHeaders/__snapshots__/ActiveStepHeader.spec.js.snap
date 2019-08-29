@@ -19,7 +19,7 @@ exports[`ActiveStepHeader does not render StepFooter if last step 1`] = `
     stepDescription="step description"
     stepTitle="step title"
   >
-    <div
+    <header
       className="step-header columns is-vcentered active has-background-grey has-text-white"
       onClick={[Function]}
     >
@@ -27,33 +27,27 @@ exports[`ActiveStepHeader does not render StepFooter if last step 1`] = `
         className="column is-1 is-hidden-mobile"
       >
         <p
-          className="is-size-5 is-uppercase"
-        >
-          <b />
-        </p>
+          className="datadescription"
+        />
       </div>
-      <div
-        className="selected-data column is-7 is-size-5 is-hidden-mobile"
+      <p
+        className="selected-data column is-hidden-mobile"
       />
       <div
         className="column details"
       >
-        <div
+        <h3
           className="is-size-6"
         >
           step description
-        </div>
-        <div
-          className="is-size-5 is-uppercase"
+        </h3>
+        <h2
+          className="step-title"
         >
-          <b
-            className="step-title"
-          >
-            step title
-          </b>
-        </div>
+          step title
+        </h2>
       </div>
-    </div>
+    </header>
   </StepHeader>
   <StepFooter
     activeStepIndex={6}
@@ -102,7 +96,7 @@ exports[`ActiveStepHeader does not render StepFooter if next step is not provide
     stepDescription="step description"
     stepTitle="step title"
   >
-    <div
+    <header
       className="step-header columns is-vcentered active has-background-grey has-text-white"
       onClick={[Function]}
     >
@@ -110,33 +104,27 @@ exports[`ActiveStepHeader does not render StepFooter if next step is not provide
         className="column is-1 is-hidden-mobile"
       >
         <p
-          className="is-size-5 is-uppercase"
-        >
-          <b />
-        </p>
+          className="datadescription"
+        />
       </div>
-      <div
-        className="selected-data column is-7 is-size-5 is-hidden-mobile"
+      <p
+        className="selected-data column is-hidden-mobile"
       />
       <div
         className="column details"
       >
-        <div
+        <h3
           className="is-size-6"
         >
           step description
-        </div>
-        <div
-          className="is-size-5 is-uppercase"
+        </h3>
+        <h2
+          className="step-title"
         >
-          <b
-            className="step-title"
-          >
-            step title
-          </b>
-        </div>
+          step title
+        </h2>
       </div>
-    </div>
+    </header>
   </StepHeader>
   <StepFooter
     activeStepIndex={1}
@@ -184,7 +172,7 @@ exports[`ActiveStepHeader does not render copy previous step if onCopyPreviousDa
     stepDescription="step description"
     stepTitle="step title"
   >
-    <div
+    <header
       className="step-header columns is-vcentered active has-background-grey has-text-white"
       onClick={[Function]}
     >
@@ -192,33 +180,27 @@ exports[`ActiveStepHeader does not render copy previous step if onCopyPreviousDa
         className="column is-1 is-hidden-mobile"
       >
         <p
-          className="is-size-5 is-uppercase"
-        >
-          <b />
-        </p>
+          className="datadescription"
+        />
       </div>
-      <div
-        className="selected-data column is-7 is-size-5 is-hidden-mobile"
+      <p
+        className="selected-data column is-hidden-mobile"
       />
       <div
         className="column details"
       >
-        <div
+        <h3
           className="is-size-6"
         >
           step description
-        </div>
-        <div
-          className="is-size-5 is-uppercase"
+        </h3>
+        <h2
+          className="step-title"
         >
-          <b
-            className="step-title"
-          >
-            step title
-          </b>
-        </div>
+          step title
+        </h2>
       </div>
-    </div>
+    </header>
   </StepHeader>
   <StepFooter
     activeStepIndex={1}
@@ -263,7 +245,7 @@ exports[`ActiveStepHeader renders StepFooter with all data if next step is provi
     stepDescription="step description"
     stepTitle="step title"
   >
-    <div
+    <header
       className="step-header columns is-vcentered active has-background-grey has-text-white"
       onClick={[Function]}
     >
@@ -271,33 +253,27 @@ exports[`ActiveStepHeader renders StepFooter with all data if next step is provi
         className="column is-1 is-hidden-mobile"
       >
         <p
-          className="is-size-5 is-uppercase"
-        >
-          <b />
-        </p>
+          className="datadescription"
+        />
       </div>
-      <div
-        className="selected-data column is-7 is-size-5 is-hidden-mobile"
+      <p
+        className="selected-data column is-hidden-mobile"
       />
       <div
         className="column details"
       >
-        <div
+        <h3
           className="is-size-6"
         >
           step description
-        </div>
-        <div
-          className="is-size-5 is-uppercase"
+        </h3>
+        <h2
+          className="step-title"
         >
-          <b
-            className="step-title"
-          >
-            step title
-          </b>
-        </div>
+          step title
+        </h2>
       </div>
-    </div>
+    </header>
   </StepHeader>
   <StepFooter
     activeStepIndex={1}
