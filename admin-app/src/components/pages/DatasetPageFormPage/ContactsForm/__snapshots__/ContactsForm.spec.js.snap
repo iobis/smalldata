@@ -67,11 +67,13 @@ exports[`ContactsForm returns contacts when adding to empty list renders correct
         >
           <label
             className="label"
+            htmlFor="datasetpageformpage.contactsform.email.label"
           >
             datasetPageFormPage.contactsForm.email.label
           </label>
           <input
             className="input"
+            id="datasetpageformpage.contactsform.email.label"
             onChange={[Function]}
             type="text"
             value=""
@@ -89,11 +91,13 @@ exports[`ContactsForm returns contacts when adding to empty list renders correct
         >
           <label
             className="label"
+            htmlFor="datasetpageformpage.contactsform.organisation.label"
           >
             datasetPageFormPage.contactsForm.organisation.label
           </label>
           <input
             className="input"
+            id="datasetpageformpage.contactsform.organisation.label"
             onChange={[Function]}
             type="text"
             value=""
@@ -218,11 +222,13 @@ exports[`ContactsForm returns updated contacts when adding to list with single e
         >
           <label
             className="label"
+            htmlFor="datasetpageformpage.contactsform.email.label"
           >
             datasetPageFormPage.contactsForm.email.label
           </label>
           <input
             className="input"
+            id="datasetpageformpage.contactsform.email.label"
             onChange={[Function]}
             type="text"
             value=""
@@ -240,11 +246,13 @@ exports[`ContactsForm returns updated contacts when adding to list with single e
         >
           <label
             className="label"
+            htmlFor="datasetpageformpage.contactsform.organisation.label"
           >
             datasetPageFormPage.contactsForm.organisation.label
           </label>
           <input
             className="input"
+            id="datasetpageformpage.contactsform.organisation.label"
             onChange={[Function]}
             type="text"
             value=""
@@ -411,11 +419,13 @@ exports[`ContactsForm when removing contacts removes first contact 1`] = `
         >
           <label
             className="label"
+            htmlFor="datasetpageformpage.contactsform.email.label"
           >
             datasetPageFormPage.contactsForm.email.label
           </label>
           <input
             className="input"
+            id="datasetpageformpage.contactsform.email.label"
             onChange={[Function]}
             type="text"
             value=""
@@ -433,11 +443,13 @@ exports[`ContactsForm when removing contacts removes first contact 1`] = `
         >
           <label
             className="label"
+            htmlFor="datasetpageformpage.contactsform.organisation.label"
           >
             datasetPageFormPage.contactsForm.organisation.label
           </label>
           <input
             className="input"
+            id="datasetpageformpage.contactsform.organisation.label"
             onChange={[Function]}
             type="text"
             value=""
@@ -641,11 +653,13 @@ exports[`ContactsForm when removing contacts removes second contact 1`] = `
         >
           <label
             className="label"
+            htmlFor="datasetpageformpage.contactsform.email.label"
           >
             datasetPageFormPage.contactsForm.email.label
           </label>
           <input
             className="input"
+            id="datasetpageformpage.contactsform.email.label"
             onChange={[Function]}
             type="text"
             value=""
@@ -663,11 +677,13 @@ exports[`ContactsForm when removing contacts removes second contact 1`] = `
         >
           <label
             className="label"
+            htmlFor="datasetpageformpage.contactsform.organisation.label"
           >
             datasetPageFormPage.contactsForm.organisation.label
           </label>
           <input
             className="input"
+            id="datasetpageformpage.contactsform.organisation.label"
             onChange={[Function]}
             type="text"
             value=""

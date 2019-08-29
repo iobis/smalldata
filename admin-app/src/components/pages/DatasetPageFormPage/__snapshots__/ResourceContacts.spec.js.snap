@@ -71,11 +71,13 @@ exports[`ResourceContacts renders correctly 1`] = `
           >
             <label
               className="label"
+              htmlFor="datasetpageformpage.contactsform.email.label"
             >
               datasetPageFormPage.contactsForm.email.label
             </label>
             <input
               className="input"
+              id="datasetpageformpage.contactsform.email.label"
               onChange={[Function]}
               type="text"
               value=""
@@ -93,11 +95,13 @@ exports[`ResourceContacts renders correctly 1`] = `
           >
             <label
               className="label"
+              htmlFor="datasetpageformpage.contactsform.organisation.label"
             >
               datasetPageFormPage.contactsForm.organisation.label
             </label>
             <input
               className="input"
+              id="datasetpageformpage.contactsform.organisation.label"
               onChange={[Function]}
               type="text"
               value=""

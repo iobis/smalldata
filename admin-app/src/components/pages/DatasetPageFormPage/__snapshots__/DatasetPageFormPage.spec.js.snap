@@ -141,11 +141,13 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
                   >
                     <label
                       className="label"
+                      htmlFor="datasetpageformpage.basicinformation.title.label"
                     >
                       datasetPageFormPage.basicInformation.title.label
                     </label>
                     <input
                       className="input"
+                      id="datasetpageformpage.basicinformation.title.label"
                       onChange={[Function]}
                       type="text"
                       value=""
@@ -341,11 +343,13 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
                   >
                     <label
                       className="label"
+                      htmlFor="datasetpageformpage.basicinformation.abstract.label"
                     >
                       datasetPageFormPage.basicInformation.abstract.label
                     </label>
                     <textarea
                       className="textarea"
+                      id="datasetpageformpage.basicinformation.abstract.label"
                       onChange={[Function]}
                       rows={5}
                       value=""
@@ -758,11 +762,13 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
                   >
                     <label
                       className="label"
+                      htmlFor="datasetpageformpage.basicinformation.title.label"
                     >
                       datasetPageFormPage.basicInformation.title.label
                     </label>
                     <input
                       className="input"
+                      id="datasetpageformpage.basicinformation.title.label"
                       onChange={[Function]}
                       type="text"
                       value="dataset title"
@@ -958,11 +964,13 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
                   >
                     <label
                       className="label"
+                      htmlFor="datasetpageformpage.basicinformation.abstract.label"
                     >
                       datasetPageFormPage.basicInformation.abstract.label
                     </label>
                     <textarea
                       className="textarea"
+                      id="datasetpageformpage.basicinformation.abstract.label"
                       onChange={[Function]}
                       rows={5}
                       value="dataset abstract information"
@@ -3215,11 +3223,13 @@ paragraph-2",
                   >
                     <label
                       className="label"
+                      htmlFor="datasetpageformpage.basicinformation.title.label"
                     >
                       datasetPageFormPage.basicInformation.title.label
                     </label>
                     <input
                       className="input"
+                      id="datasetpageformpage.basicinformation.title.label"
                       onChange={[Function]}
                       type="text"
                       value="Benthic data from Sevastopol (Black Sea)"
@@ -3417,11 +3427,13 @@ paragraph-2"
                   >
                     <label
                       className="label"
+                      htmlFor="datasetpageformpage.basicinformation.abstract.label"
                     >
                       datasetPageFormPage.basicInformation.abstract.label
                     </label>
                     <textarea
                       className="textarea"
+                      id="datasetpageformpage.basicinformation.abstract.label"
                       onChange={[Function]}
                       rows={5}
                       value="paragraph-1
