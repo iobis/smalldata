@@ -33,3 +33,29 @@
     margin-right: 180px;
   }
 }
+
+.worms-info {
+  font-size: $size-7
+}
+.scientific-name {
+  position: relative;
+  z-index: 1;
+}
+.scientific-name.is-danger {
+  background-color: #ffeb3b;
+  border-color: black;
+}
+.scientific-name.is-danger ~.invalid-worms::after {
+  content: 'invalid worms value, but will be submitted';
+  position: absolute;
+  z-index: 1000;
+  padding: 0.2rem;
+  margin-left: 0.4rem;
+  font-size: $size-7;
+  word-break: keep-all;
+  white-space: nowrap;/*
+  border-bottom: 5px solid black;
+  background-color: #ffeb3b;*/
+  border-bottom: 3px solid orange;
+  background-color: white;
+}

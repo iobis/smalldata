@@ -249,7 +249,7 @@ export default {
       }
     },
     navbar:         {
-      help:      'LARGE DATASET ENTRY',
+      help:      'HELP',
       inputData: 'INPUT DATA',
       logout:    'logout',
       login:     'login'
