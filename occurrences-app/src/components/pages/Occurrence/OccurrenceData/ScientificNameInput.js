@@ -60,7 +60,7 @@ export default function ScientificNameInput({ scientificName, onChange }) {
           <label className="label">{t('occurrenceForm.occurrenceData.scientificName')}</label>
           <div className={classNames('control has-icons-right', { 'is-loading': loading })}>
             <input
-              className={classNames('input', { 'is-danger': !firstRender && !nameValid && !dropdownActive })}
+              className={classNames('input scientific-name', { 'is-danger': !firstRender && !nameValid && !dropdownActive })}
               onChange={(value) => handleNameChange(value.target.value)}
               onClick={showDropdownOption}
               placeholder={t('occurrenceForm.occurrenceData.scientificName')}
@@ -69,6 +69,8 @@ export default function ScientificNameInput({ scientificName, onChange }) {
             {nameValid && !loading
               ? <span className="clear icon is-small is-right"><FontAwesomeIcon className="check" icon="check"/></span>
               : null}
+            <p className="worms-info">Species names are retrieved on the fly  from the WORMS database by using the webservices
+              available at <a href="http://www.marinespecies.org/aphia.php?p=webservice" target="_blank">marinespecies.org</a></p>
           </div>
         </div>
         <div className="dropdown-menu" id="dropdown-menu" role="menu">

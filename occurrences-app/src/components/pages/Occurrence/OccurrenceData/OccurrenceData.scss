@@ -33,3 +33,16 @@
     margin-right: 180px;
   }
 }
+
+.worms-info {
+  font-size: $size-7
+}
+
+.scientific-name.is-danger {
+  background-color: #ffeb3b;
+  border-color: black;
+
+}
+.scientific-name.is-danger::after {
+  content: "not validated"
+}

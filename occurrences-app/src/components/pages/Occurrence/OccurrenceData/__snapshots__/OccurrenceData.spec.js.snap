@@ -80,13 +80,24 @@ exports[`OccurrenceData renders correctly 1`] = `
                 className="control has-icons-right is-loading"
               >
                 <input
-                  className="input"
+                  className="input scientific-name"
                   onChange={[Function]}
                   onClick={[Function]}
                   placeholder="occurrenceForm.occurrenceData.scientificName"
                   type="text"
                   value="scientific name"
                 />
+                <p
+                  className="worms-info"
+                >
+                  Species names are retrieved on the fly  from the WORMS database by using the webservices available at 
+                  <a
+                    href="http://www.marinespecies.org/aphia.php?p=webservice"
+                    target="_blank"
+                  >
+                    marinespecies.org
+                  </a>
+                </p>
               </div>
             </div>
             <div
