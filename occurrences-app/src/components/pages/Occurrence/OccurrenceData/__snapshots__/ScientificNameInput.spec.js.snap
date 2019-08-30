@@ -30,6 +30,9 @@ exports[`ScientificNameInput renders correctly 1`] = `
             type="text"
             value=""
           />
+          <span
+            className="invalid-worms"
+          />
           <p
             className="worms-info"
           >

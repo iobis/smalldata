@@ -69,6 +69,7 @@ export default function ScientificNameInput({ scientificName, onChange }) {
             {nameValid && !loading
               ? <span className="clear icon is-small is-right"><FontAwesomeIcon className="check" icon="check"/></span>
               : null}
+            <span className="invalid-worms"></span>
             <p className="worms-info">Species names are retrieved on the fly  from the WORMS database by using the webservices
               available at <a href="http://www.marinespecies.org/aphia.php?p=webservice" target="_blank">marinespecies.org</a></p>
           </div>

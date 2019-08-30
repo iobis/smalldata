@@ -87,6 +87,9 @@ exports[`OccurrenceData renders correctly 1`] = `
                   type="text"
                   value="scientific name"
                 />
+                <span
+                  className="invalid-worms"
+                />
                 <p
                   className="worms-info"
                 >
