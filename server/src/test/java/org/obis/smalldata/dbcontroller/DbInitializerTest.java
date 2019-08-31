@@ -12,13 +12,13 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.obis.smalldata.util.Collections;
-import org.pmw.tinylog.Logger;
 
 import java.time.Instant;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.pmw.tinylog.Logger.info;
 
 @ExtendWith(VertxExtension.class)
 public class DbInitializerTest {
@@ -57,7 +57,7 @@ public class DbInitializerTest {
     mongoClient.find(Collections.USERS.dbName(),
       new JsonObject(),
       ar -> {
-        Logger.info(ar.result());
+        info(ar.result());
         assertThat(ar.result())
           .allMatch(user -> user.containsKey(KEY_BULKINESS))
           .allMatch(user -> {

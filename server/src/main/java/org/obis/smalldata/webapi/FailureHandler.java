@@ -3,13 +3,14 @@ package org.obis.smalldata.webapi;
 import io.vertx.core.http.HttpHeaders;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
-import org.pmw.tinylog.Logger;
+
+import static org.pmw.tinylog.Logger.info;
 
 class FailureHandler {
 
   public static void fallback(RoutingContext context) {
-    Logger.info(context.failure());
-    Logger.info(context.response());
+    info(context.failure());
+    info(context.response());
     if (null == context.failure()) {
       if (context.statusCode() > 0) {
         context.response().setStatusCode(context.statusCode()).end();

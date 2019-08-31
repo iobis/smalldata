@@ -11,16 +11,17 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.pmw.tinylog.Logger;
 
 import java.util.concurrent.TimeUnit;
+
+import static org.pmw.tinylog.Logger.info;
 
 @ExtendWith(VertxExtension.class)
 public class WebOccurenceApiTest extends DefaultHandlerTest {
 
   @BeforeEach
   void deployVerticle(Vertx vertx, VertxTestContext testContext) {
-    Logger.info("starting with config: {}", CONFIG);
+    info("starting with config: {}", CONFIG);
     vertx.deployVerticle(
       HttpComponent.class.getName(),
       new DeploymentOptions().setConfig(CONFIG),
@@ -35,7 +36,7 @@ public class WebOccurenceApiTest extends DefaultHandlerTest {
     httpPostJsonBody(client, "/api/dwca",
       new JsonObject(),
       result -> {
-        Logger.info(result);
+        info(result);
         testContext.completeNow();
       });
   }

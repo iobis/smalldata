@@ -4,7 +4,6 @@ import com.mashape.unirest.http.exceptions.UnirestException;
 import org.obis.util.apicustomizers.CustomFieldMerger;
 import org.obis.util.apicustomizers.TypeMapper;
 import org.obis.util.model.DarwinCoreExtension;
-import org.pmw.tinylog.Logger;
 
 import java.io.IOException;
 import java.util.List;
@@ -12,6 +11,7 @@ import java.util.Map;
 import java.util.function.Function;
 
 import static org.pmw.tinylog.Logger.error;
+import static org.pmw.tinylog.Logger.info;
 
 public class GenerateOpenApi {
   private static final NamespaceMapper NS_MAPPER = NamespaceMapper.INSTANCE;
@@ -45,7 +45,7 @@ public class GenerateOpenApi {
     }
     var apiMap = OpenApiModelConstructor.constructApiModel(xml);
     customizers.stream().reduce(Function::andThen).orElse(Function.identity()).apply(apiMap);
-    Logger.info(apiMap);
+    info(apiMap);
     var extensionName = processEntry.getValue();
     apiWriter.writeAsFile(apiMap, extensionName, targetPath);
   }

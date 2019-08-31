@@ -1,10 +1,11 @@
 package org.obis.smalldata.webapi.authority;
 
 import io.vertx.core.json.JsonObject;
-import org.pmw.tinylog.Logger;
 
 import java.util.Collection;
 import java.util.function.Predicate;
+
+import static org.pmw.tinylog.Logger.info;
 
 public class DemoAuthority implements Authority {
   @Override
@@ -14,7 +15,7 @@ public class DemoAuthority implements Authority {
 
   @Override
   public Predicate<JsonObject> authorizeRoles(Collection<String> roles) {
-    Logger.info(roles);
+    info(roles);
     return profile -> true;
   }
 }
