@@ -39,6 +39,7 @@ exports[`ScientificNameInput renders correctly 1`] = `
             Species names are retrieved on the fly  from the WORMS database by using the webservices available at 
             <a
               href="http://www.marinespecies.org/aphia.php?p=webservice"
+              rel="noopener noreferrer"
               target="_blank"
             >
               marinespecies.org
