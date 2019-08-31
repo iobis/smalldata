@@ -31,10 +31,10 @@ public class HttpComponent extends AbstractVerticle {
   private static final String VERIFY_KEY = "verifyKey";
   private static final String ALG_KEY = "alg";
   private static final String AUTH_ES256 = "ES256";
-  private static final Map<String, Authority> AUTHORITIES = Map.ofEntries(
-    Map.entry("oceanexpert", new OceanExpertAuthority()),
-    Map.entry("demo", new DemoAuthority()),
-    Map.entry("local", new LocalAuthority()));
+  private static final Map<String, Authority> AUTHORITIES = Map.of(
+    "oceanexpert", new OceanExpertAuthority(),
+    "demo", new DemoAuthority(),
+    "local", new LocalAuthority());
 
   @Override
   public void start(Future<Void> startFuture) {
