@@ -22,9 +22,10 @@ class RouterConfig {
   private final Consumer<Router> completionHandler;
   private final Map<String, Handler<RoutingContext>> securityHandlers;
 
-  RouterConfig(Consumer<Router> completionHandler,
-               Authority authority,
-               Map<String, Handler<RoutingContext>> securityHandlers) {
+  RouterConfig(
+    Consumer<Router> completionHandler,
+    Authority authority,
+    Map<String, Handler<RoutingContext>> securityHandlers) {
     this.completionHandler = completionHandler;
     this.securityHandlers = securityHandlers;
     this.authority = authority;
