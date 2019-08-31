@@ -24,6 +24,7 @@ import java.util.Map;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
+import static org.pmw.tinylog.Logger.error;
 import static org.pmw.tinylog.Logger.info;
 
 public class HttpComponent extends AbstractVerticle {
@@ -66,13 +67,13 @@ public class HttpComponent extends AbstractVerticle {
   private Consumer<Router> startServer(Future<Void> startFuture, int port) {
     return router -> {
       var server = vertx.createHttpServer().requestHandler(router);
-      server.listen(port, http -> {
-        if (http.succeeded()) {
-          startFuture.complete();
+      server.listen(port, httpServer -> {
+        if (httpServer.succeeded()) {
           info("HTTP server started on http://localhost:{}", port);
+          startFuture.complete();
         } else {
-          info("Failed to start the server http://localhost:{}", port);
-          startFuture.fail(http.cause());
+          error(httpServer.cause(), "HTTP server failed to start on http://localhost:{}", port, httpServer.cause());
+          startFuture.fail(httpServer.cause());
         }
       });
     };
