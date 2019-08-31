@@ -11,7 +11,6 @@ import org.obis.smalldata.dwca.xmlmodel.meta.Core;
 import org.obis.smalldata.dwca.xmlmodel.meta.Extension;
 import org.obis.smalldata.dwca.xmlmodel.meta.Field;
 import org.obis.util.NamespaceMapper;
-import org.pmw.tinylog.Logger;
 
 import java.io.File;
 import java.io.IOException;
@@ -23,6 +22,8 @@ import java.util.Optional;
 import java.util.function.BiFunction;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+
+import static org.pmw.tinylog.Logger.error;
 
 class MetaGenerator {
 
@@ -60,7 +61,7 @@ class MetaGenerator {
       xmlMapper.writerWithDefaultPrettyPrinter().writeValue(metaXml, archive);
       return Optional.of(metaXml);
     } catch (IOException e) {
-      Logger.error("Cannot create xml file");
+      error("Cannot create xml file");
       return Optional.empty();
     }
   }
@@ -94,7 +95,7 @@ class MetaGenerator {
 
       return Optional.of(builder.apply(fields, idField));
     } catch (IOException e) {
-      Logger.error("error reading csv file: {}", e.getMessage());
+      error("error reading csv file: {}", e.getMessage());
       return Optional.empty();
     }
   }

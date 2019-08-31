@@ -13,7 +13,7 @@ public class DefaultHandlerTest {
   private static final String LOCALHOST = "localhost";
   protected static final JsonObject CONFIG = new JsonObject()
     .put("mode", "DEMO")
-    .put("auth", new JsonObject().put("demokey", "verysecret"))
+    .put("auth", new JsonObject().put("provider", "demo").put("demokey", "verysecret"))
     .put("http", new JsonObject().put("port", HTTP_PORT));
 
   protected void httpGetJsonBody(WebClient client, String url, Handler<AsyncResult<HttpResponse<JsonObject>>> handler) {

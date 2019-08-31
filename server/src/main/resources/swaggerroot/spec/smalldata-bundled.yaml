@@ -692,6 +692,7 @@ paths:
     get:
       summary: get status of the server
       operationId: getStatus
+      security: []
       tags:
         - info
       responses:

@@ -15,9 +15,14 @@ import io.vertx.ext.web.Router;
 import io.vertx.ext.web.RoutingContext;
 import io.vertx.ext.web.api.contract.openapi3.OpenAPI3RouterFactory;
 import io.vertx.ext.web.handler.JWTAuthHandler;
+import org.obis.smalldata.webapi.authority.Authority;
+import org.obis.smalldata.webapi.authority.DemoAuthority;
+import org.obis.smalldata.webapi.authority.LocalAuthority;
+import org.obis.smalldata.webapi.authority.OceanExpertAuthority;
 
 import java.util.Map;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 import static org.pmw.tinylog.Logger.info;
 
@@ -26,6 +31,10 @@ public class HttpComponent extends AbstractVerticle {
   private static final String VERIFY_KEY = "verifyKey";
   private static final String ALG_KEY = "alg";
   private static final String AUTH_ES256 = "ES256";
+  private static final Map<String, Authority> AUTHORITIES = Map.of(
+    "oceanexpert", new OceanExpertAuthority(),
+    "demo", new DemoAuthority(),
+    "local", new LocalAuthority());
 
   @Override
   public void start(Future<Void> startFuture) {
@@ -36,12 +45,14 @@ public class HttpComponent extends AbstractVerticle {
         if (ar.succeeded()) {
           info("started OpenAPI: {}", ar.succeeded());
           var authConfig = config().getJsonObject("auth");
+          var authProvider = authConfig.getString("provider", "");
           var pubSecKey = new PubSecKeyOptions()
             .setAlgorithm(authConfig.getString(ALG_KEY, AUTH_ES256))
             .setPublicKey(authConfig.getString(VERIFY_KEY));
           var jwtAuth = JWTAuth.create(vertx, new JWTAuthOptions().addPubSecKey(pubSecKey));
           new RouterConfig(
             startServer(startFuture, port),
+            AUTHORITIES.getOrDefault(authProvider, new OceanExpertAuthority()),
             Map.of(
               "demoApiKey", new DemoApiKeyHandler(config())::handle,
               "oceanExpertJWT", JWTAuthHandler.create(jwtAuth)))
@@ -69,14 +80,14 @@ public class HttpComponent extends AbstractVerticle {
 
   private static class DemoApiKeyHandler {
 
-    private final User dummyUser = new AbstractUser() {
+    private final Function<String, User> dummyUser = role -> new AbstractUser() {
       @Override
       protected void doIsPermitted(String permission, Handler<AsyncResult<Boolean>> resultHandler) {
       }
 
       @Override
       public JsonObject principal() {
-        return new JsonObject().put("user", "DEMO");
+        return new JsonObject().put("user", "DEMO").put("role", role);
       }
 
       @Override
@@ -92,8 +103,10 @@ public class HttpComponent extends AbstractVerticle {
     }
 
     private void handle(RoutingContext routingContext) {
-      if (isDemoMode && routingContext.request().headers().get("Authorization").equals(secret)) {
-        routingContext.setUser(dummyUser);
+      if (isDemoMode
+        && routingContext.request().headers().get("Authorization") != null
+        && routingContext.request().headers().get("Authorization").equals(secret)) {
+        routingContext.setUser(dummyUser.apply("researcher"));
       }
       routingContext.next();
     }

@@ -1,11 +1,12 @@
 package org.obis.util.apicustomizers;
 
 import lombok.Value;
-import org.pmw.tinylog.Logger;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
+
+import static org.pmw.tinylog.Logger.info;
 
 public class TypeMapper implements Function<Map<String, Map<String, Object>>, Map<String, Map<String, Object>>> {
   private static final String TYPE = "type";
@@ -42,8 +43,7 @@ public class TypeMapper implements Function<Map<String, Map<String, Object>>, Ma
         var typeFields = typeMapper.get(type);
         fields.putAll(typeFields);
         termEntry.setValue(fields);
-        Logger.info("mapped type '{}' for '{}.{}': {}",
-          type, nsEntry.getKey(), termEntry.getKey(), typeFields);
+        info("mapped type '{}' for '{}.{}': {}", type, nsEntry.getKey(), termEntry.getKey(), typeFields);
       }
     }
   }

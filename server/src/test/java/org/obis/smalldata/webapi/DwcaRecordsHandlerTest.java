@@ -31,6 +31,9 @@ public class DwcaRecordsHandlerTest extends DefaultHandlerTest {
   private static final String URL_API_DWCA = "/api/dwca/";
   private static final String PATH_USER = "/user/";
   private static final String KEY_DWCA_ID = "dwcaId";
+  private static final String KEY_EMAIL_ADDRESS = "emailAddress";
+  private static final String DEFAULT_EMAIL_ADDRESS = "another.user@domain.org";
+  private static final String USERS_ADDRESS = "users";
 
   @BeforeEach
   void deployVerticle(Vertx vertx, VertxTestContext testContext) {
@@ -41,10 +44,10 @@ public class DwcaRecordsHandlerTest extends DefaultHandlerTest {
   }
 
   @Test
-  @DisplayName("dwca record get handler")
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
   void testGetHandler(Vertx vertx, VertxTestContext context) {
     addSucceedingRefs(vertx);
+    usersConsumer(vertx);
 
     var client = WebClient.create(vertx);
     var url = URL_API_DWCA + DEFAULT_DWCA_REF + PATH_USER + URLEncoder.encode("dithras@game.play", StandardCharsets.UTF_8)
@@ -64,10 +67,10 @@ public class DwcaRecordsHandlerTest extends DefaultHandlerTest {
   }
 
   @Test
-  @DisplayName("dwca record post handler")
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
   void testPostHandler(Vertx vertx, VertxTestContext context) {
     addSucceedingRefs(vertx);
+    usersConsumer(vertx);
 
     var client = WebClient.create(vertx);
     var url = URL_API_DWCA + DEFAULT_DWCA_REF + PATH_USER
@@ -93,6 +96,7 @@ public class DwcaRecordsHandlerTest extends DefaultHandlerTest {
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
   void testPostHandlerTooManyRecordsInCoreTable(Vertx vertx, VertxTestContext context) {
     addSucceedingRefs(vertx);
+    usersConsumer(vertx);
 
     var client = WebClient.create(vertx);
     var url = URL_API_DWCA + DEFAULT_DWCA_REF + PATH_USER
@@ -116,6 +120,7 @@ public class DwcaRecordsHandlerTest extends DefaultHandlerTest {
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
   void testPostHandlerMultipleMessages(Vertx vertx, VertxTestContext context) {
     addItemRefs(vertx, false);
+    usersConsumer(vertx);
 
     var client = WebClient.create(vertx);
     var url = URL_API_DWCA + DEFAULT_DWCA_REF + PATH_USER
@@ -147,5 +152,24 @@ public class DwcaRecordsHandlerTest extends DefaultHandlerTest {
       info(ar.body());
       ar.reply(userRef);
     });
+  }
+
+  private void usersConsumer(Vertx vertx) {
+    vertx.eventBus().<JsonObject>localConsumer(
+      USERS_ADDRESS,
+      message -> {
+        switch (message.body().getString("action")) {
+          case "find":
+            message.reply(new JsonArray().add(new JsonObject().put(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS)));
+            break;
+          case "insert":
+          case "replace":
+            message.reply(message.body().getJsonObject("user"));
+            break;
+          default:
+            message.reply(new JsonObject());
+            break;
+        }
+      });
   }
 }
