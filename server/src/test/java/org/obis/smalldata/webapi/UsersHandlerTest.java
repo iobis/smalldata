@@ -78,9 +78,10 @@ public class UsersHandlerTest {
   @Timeout(value = 2, timeUnit = TimeUnit.SECONDS)
   void postUserWithSupportedRoles(String role, Vertx vertx, VertxTestContext context) {
     var client = WebClient.create(vertx);
-    usersConsumer(vertx, new JsonArray().add(new JsonObject()
-      .put(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS)
-      .put(KEY_ROLE, role)));
+    usersConsumer(vertx, new JsonArray()
+      .add(new JsonObject()
+        .put(KEY_EMAIL_ADDRESS, DEFAULT_EMAIL_ADDRESS)
+        .put(KEY_ROLE, role)));
     client
       .post(HTTP_PORT, LOCALHOST, URL_API_USERS)
       .putHeader(HEADER_AUTHORIZATION_KEY, HEADER_AUTHORIZATION_VALUE)
