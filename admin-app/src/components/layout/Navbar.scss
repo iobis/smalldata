@@ -7,7 +7,6 @@
   .navbar-menu .navbar-start a {
     font-family: var(--title-font);
 
-
     &.navbar-item.is-active,
     &.navbar-item:hover {
       background-color: var(--obis-green);
@@ -31,7 +30,6 @@
   }
 }
 
-
 .navbar.is-info .navbar-brand {
   a.navbar-item.logo:hover {
     background-color: transparent;
@@ -41,7 +39,7 @@
 .navbar.is-info .login-nav-item.navbar-end {
   .navbar-item {
     &.auth-button:hover {
-      background-color: var(--obis-green)
+      background-color: var(--obis-green);
     }
   }
 }
