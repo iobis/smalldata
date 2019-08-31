@@ -15,7 +15,6 @@ import io.vertx.ext.web.Router;
 import io.vertx.ext.web.RoutingContext;
 import io.vertx.ext.web.api.contract.openapi3.OpenAPI3RouterFactory;
 import io.vertx.ext.web.handler.JWTAuthHandler;
-import lombok.val;
 import org.obis.smalldata.webapi.authority.Authority;
 import org.obis.smalldata.webapi.authority.DemoAuthority;
 import org.obis.smalldata.webapi.authority.LocalAuthority;
@@ -46,7 +45,7 @@ public class HttpComponent extends AbstractVerticle {
         if (ar.succeeded()) {
           info("started OpenAPI: {}", ar.succeeded());
           var authConfig = config().getJsonObject("auth");
-          val authProvider = authConfig.getString("provider", "");
+          var authProvider = authConfig.getString("provider", "");
           var pubSecKey = new PubSecKeyOptions()
             .setAlgorithm(authConfig.getString(ALG_KEY, AUTH_ES256))
             .setPublicKey(authConfig.getString(VERIFY_KEY));

@@ -8,7 +8,6 @@ import io.vertx.ext.web.RoutingContext;
 import io.vertx.ext.web.api.contract.RouterFactoryOptions;
 import io.vertx.ext.web.api.contract.openapi3.OpenAPI3RouterFactory;
 import io.vertx.ext.web.handler.StaticHandler;
-import lombok.val;
 import org.obis.smalldata.webapi.authority.Authority;
 
 import java.util.Arrays;
@@ -29,8 +28,8 @@ class RouterConfig {
     this.completionHandler = completionHandler;
     this.securityHandlers = securityHandlers;
     this.authority = authority;
-    val researcherAccess = authority.authorizeRoles(Arrays.asList("node manager", "researcher"));
-    val nodeManagerOnly = authority.authorizeRoles(Arrays.asList("node manager"));
+    var researcherAccess = authority.authorizeRoles(Arrays.asList("node manager", "researcher"));
+    var nodeManagerOnly = authority.authorizeRoles(Arrays.asList("node manager"));
     this.operationHandlers = Map.ofEntries(
       Map.entry("getDatasets",
         new OperationHandlers(protectHandler(DatasetsHandler::fetch, researcherAccess))),
