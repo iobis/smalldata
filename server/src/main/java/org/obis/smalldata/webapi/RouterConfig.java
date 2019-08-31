@@ -79,8 +79,9 @@ class RouterConfig {
     completionHandler.accept(router);
   }
 
-  final Handler<RoutingContext> protectHandler(Handler<RoutingContext> handler,
-                                                Predicate<JsonObject> isAuthorized) {
+  private Handler<RoutingContext> protectHandler(
+    Handler<RoutingContext> handler,
+    Predicate<JsonObject> isAuthorized) {
     return context -> {
       context.vertx().eventBus()
         .<JsonArray>send("users", new JsonObject()
