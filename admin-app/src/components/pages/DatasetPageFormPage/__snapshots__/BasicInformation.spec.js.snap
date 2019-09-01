@@ -75,7 +75,6 @@ exports[`BasicInformation renders correctly 1`] = `
       >
         <div
           className="dropdown"
-          onClick={[Function]}
         >
           <div
             className="dropdown-trigger"
@@ -84,6 +83,7 @@ exports[`BasicInformation renders correctly 1`] = `
               aria-controls="dropdown-menu"
               aria-haspopup="true"
               className="button"
+              onClick={[Function]}
             >
               <span
                 className="selected-value"
@@ -161,7 +161,6 @@ exports[`BasicInformation renders correctly 1`] = `
       >
         <div
           className="dropdown"
-          onClick={[Function]}
         >
           <div
             className="dropdown-trigger"
@@ -170,6 +169,7 @@ exports[`BasicInformation renders correctly 1`] = `
               aria-controls="dropdown-menu"
               aria-haspopup="true"
               className="button"
+              onClick={[Function]}
             >
               <span
                 className="selected-value"

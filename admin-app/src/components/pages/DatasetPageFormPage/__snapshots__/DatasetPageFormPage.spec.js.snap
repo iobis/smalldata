@@ -175,7 +175,6 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
                   >
                     <div
                       className="dropdown"
-                      onClick={[Function]}
                     >
                       <div
                         className="dropdown-trigger"
@@ -184,6 +183,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
                           aria-controls="dropdown-menu"
                           aria-haspopup="true"
                           className="button"
+                          onClick={[Function]}
                         >
                           <span
                             className="selected-value"
@@ -261,7 +261,6 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
                   >
                     <div
                       className="dropdown"
-                      onClick={[Function]}
                     >
                       <div
                         className="dropdown-trigger"
@@ -270,6 +269,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
                           aria-controls="dropdown-menu"
                           aria-haspopup="true"
                           className="button"
+                          onClick={[Function]}
                         >
                           <span
                             className="selected-value"
@@ -796,7 +796,6 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
                   >
                     <div
                       className="dropdown"
-                      onClick={[Function]}
                     >
                       <div
                         className="dropdown-trigger"
@@ -805,6 +804,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
                           aria-controls="dropdown-menu"
                           aria-haspopup="true"
                           className="button"
+                          onClick={[Function]}
                         >
                           <span
                             className="selected-value"
@@ -882,7 +882,6 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
                   >
                     <div
                       className="dropdown"
-                      onClick={[Function]}
                     >
                       <div
                         className="dropdown-trigger"
@@ -891,6 +890,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
                           aria-controls="dropdown-menu"
                           aria-haspopup="true"
                           className="button"
+                          onClick={[Function]}
                         >
                           <span
                             className="selected-value"
@@ -3257,7 +3257,6 @@ paragraph-2",
                   >
                     <div
                       className="dropdown"
-                      onClick={[Function]}
                     >
                       <div
                         className="dropdown-trigger"
@@ -3266,6 +3265,7 @@ paragraph-2",
                           aria-controls="dropdown-menu"
                           aria-haspopup="true"
                           className="button"
+                          onClick={[Function]}
                         >
                           <span
                             className="selected-value"
@@ -3343,7 +3343,6 @@ paragraph-2",
                   >
                     <div
                       className="dropdown"
-                      onClick={[Function]}
                     >
                       <div
                         className="dropdown-trigger"
@@ -3352,6 +3351,7 @@ paragraph-2",
                           aria-controls="dropdown-menu"
                           aria-haspopup="true"
                           className="button"
+                          onClick={[Function]}
                         >
                           <span
                             className="selected-value"

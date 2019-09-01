@@ -146,7 +146,6 @@ exports[`UserFormPage renders correctly for successful workflow 1`] = `
             >
               <div
                 className="dropdown"
-                onClick={[Function]}
               >
                 <div
                   className="dropdown-trigger"
@@ -155,6 +154,7 @@ exports[`UserFormPage renders correctly for successful workflow 1`] = `
                     aria-controls="dropdown-menu"
                     aria-haspopup="true"
                     className="button"
+                    onClick={[Function]}
                   >
                     <span
                       className="selected-value"
@@ -392,7 +392,6 @@ exports[`UserFormPage renders correctly for successful workflow 2`] = `
             >
               <div
                 className="dropdown"
-                onClick={[Function]}
               >
                 <div
                   className="dropdown-trigger"
@@ -401,6 +400,7 @@ exports[`UserFormPage renders correctly for successful workflow 2`] = `
                     aria-controls="dropdown-menu"
                     aria-haspopup="true"
                     className="button"
+                    onClick={[Function]}
                   >
                     <span
                       className="selected-value"
@@ -798,7 +798,6 @@ exports[`UserFormPage when editing renders correctly for successful workflow 1`]
             >
               <div
                 className="dropdown"
-                onClick={[Function]}
               >
                 <div
                   className="dropdown-trigger"
@@ -807,6 +806,7 @@ exports[`UserFormPage when editing renders correctly for successful workflow 1`]
                     aria-controls="dropdown-menu"
                     aria-haspopup="true"
                     className="button"
+                    onClick={[Function]}
                   >
                     <span
                       className="selected-value"
@@ -1063,7 +1063,6 @@ exports[`UserFormPage when editing renders correctly for successful workflow 2`]
             >
               <div
                 className="dropdown"
-                onClick={[Function]}
               >
                 <div
                   className="dropdown-trigger"
@@ -1072,6 +1071,7 @@ exports[`UserFormPage when editing renders correctly for successful workflow 2`]
                     aria-controls="dropdown-menu"
                     aria-haspopup="true"
                     className="button"
+                    onClick={[Function]}
                   >
                     <span
                       className="selected-value"

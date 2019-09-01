@@ -23,16 +23,16 @@ export default function Dropdown({ onChange, options, value }) {
   }, [value])
 
   return (
-    <div className={classNames('dropdown', { 'is-active': active })} onClick={showOptions} ref={ref}>
+    <div className={classNames('dropdown', { 'is-active': active })}>
       <div className="dropdown-trigger">
-        <button aria-controls="dropdown-menu" aria-haspopup="true" className="button">
+        <button aria-controls="dropdown-menu" aria-haspopup="true" className="button" onClick={showOptions} ref={ref}>
           <span className="selected-value">{selectedValue}</span>
           <span className="icon is-small">
             <FontAwesomeIcon className="angle-down" icon="angle-down"/>
           </span>
         </button>
       </div>
-      <div className="dropdown-menu" id="dropdown-menu" role="menu">
+      <div className="dropdown-menu" id="dropdown-menu" ref={ref} role="menu">
         <div className="dropdown-content">
           {options.map(option => (
             <div

@@ -11,7 +11,7 @@ describe('Dropdown', () => {
     const onChange = jest.fn()
     const wrapper = mount(createComponent({ onChange }))
 
-    wrapper.find('.dropdown').simulate('click')
+    wrapper.find('.dropdown-trigger button').simulate('click')
     expect(wrapper.find('.selected-value').text()).toBe('option-1')
     expect(wrapper.find('.dropdown').hasClass('is-active')).toBe(true)
     expect(wrapper.find('.dropdown-item')).toHaveLength(3)
@@ -28,7 +28,7 @@ describe('Dropdown', () => {
     const onChange = jest.fn()
     const wrapper = mount(createComponent({ onChange }))
 
-    wrapper.find('.dropdown').simulate('click')
+    wrapper.find('.dropdown-trigger button').simulate('click')
     expect(wrapper.find('.selected-value').text()).toBe('option-1')
     expect(wrapper.find('.dropdown').hasClass('is-active')).toBe(true)
     expect(wrapper.find('.dropdown-item')).toHaveLength(3)
