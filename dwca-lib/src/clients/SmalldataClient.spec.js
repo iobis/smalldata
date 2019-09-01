@@ -15,11 +15,53 @@ describe('SmalldataClient', () => {
   const userRef = 'ovZTtaOJZ98xDDY'
 
   beforeEach(() => {
+    SmalldataClient.init({ apiRoot: '/api/' })
     SmalldataClient.setSecurityToken('ey-secret-jwt-token')
   })
 
   afterEach(() => {
+    global.fetch.mockRestore()
     SmalldataClient.deleteSecurityToken()
+  })
+
+  describe('when deleting security token', () => {
+    it('does not send security token in a header', async() => {
+      SmalldataClient.deleteSecurityToken()
+      global.fetch = jest.fn().mockImplementation(() =>
+        new Promise((resolve) => {
+          resolve({ json: () => getDatasetDefaultResponse() })
+        })
+      )
+      await SmalldataClient.getDatasets()
+      expect(fetch).toHaveBeenCalledTimes(1)
+      expect(fetch).toBeCalledWith('/api/datasets', { headers: expectedNotSecuredHeaders })
+    })
+  })
+
+  describe('when changing apiRoot', () => {
+    it('updates api uri when providing not empty one', async() => {
+      SmalldataClient.init({ apiRoot: 'http://internal.host.zone/api/' })
+      global.fetch = jest.fn().mockImplementation(() =>
+        new Promise((resolve) => {
+          resolve({ json: () => getDatasetDefaultResponse() })
+        })
+      )
+      await SmalldataClient.getDatasets()
+      expect(fetch).toHaveBeenCalledTimes(1)
+      expect(fetch).toBeCalledWith('http://internal.host.zone/api/datasets', { headers: expectedSecureHeaders })
+    })
+
+    it('keeps previous api config when providing empty', async() => {
+      SmalldataClient.init()
+      global.fetch = jest.fn().mockImplementation(() =>
+        new Promise((resolve) => {
+          resolve({ json: () => getDatasetDefaultResponse() })
+        })
+      )
+      await SmalldataClient.getDatasets()
+      expect(fetch).toHaveBeenCalledTimes(1)
+      expect(fetch).toBeCalledWith('/api/datasets', { headers: expectedSecureHeaders })
+    })
   })
 
   describe('getDatasets()', () => {
@@ -29,10 +71,6 @@ describe('SmalldataClient', () => {
           resolve({ json: () => getDatasetDefaultResponse() })
         })
       )
-    })
-
-    afterEach(() => {
-      global.fetch.mockRestore()
     })
 
     it('makes default request', async() => {
@@ -49,10 +87,6 @@ describe('SmalldataClient', () => {
           resolve({ json: () => 'default-response' })
         })
       )
-    })
-
-    afterEach(() => {
-      global.fetch.mockRestore()
     })
 
     it('makes default request', async() => {
@@ -87,10 +121,6 @@ describe('SmalldataClient', () => {
       )
     })
 
-    afterEach(() => {
-      global.fetch.mockRestore()
-    })
-
     it('makes default request', async() => {
       await SmalldataClient.updateDataset({
         basicInformation:  {
@@ -123,10 +153,6 @@ describe('SmalldataClient', () => {
       )
     })
 
-    afterEach(() => {
-      global.fetch.mockRestore()
-    })
-
     it('fetches data from correct url', async() => {
       await SmalldataClient.getOccurrences({ userRef })
       expect(fetch).toHaveBeenCalledTimes(1)
@@ -143,10 +169,6 @@ describe('SmalldataClient', () => {
           resolve({ json: () => OCCURRENCES_RESPONSE })
         })
       )
-    })
-
-    afterEach(() => {
-      global.fetch.mockRestore()
     })
 
     it('fetches data from correct url', async() => {
@@ -168,10 +190,6 @@ describe('SmalldataClient', () => {
           resolve({ json: () => 'default-response' })
         })
       )
-    })
-
-    afterEach(() => {
-      global.fetch.mockRestore()
     })
 
     it('fetches data from correct url', async() => {
@@ -206,10 +224,6 @@ describe('SmalldataClient', () => {
       )
     })
 
-    afterEach(() => {
-      global.fetch.mockRestore()
-    })
-
     it('when providing all data', async() => {
       await SmalldataClient.updateOccurrence({ ...getDefaultOccurrence(), ...{ userRef, dwcaId } })
 
@@ -228,10 +242,6 @@ describe('SmalldataClient', () => {
           resolve({ json: () => 'default-response' })
         })
       )
-    })
-
-    afterEach(() => {
-      global.fetch.mockRestore()
     })
 
     it('when providing all data', async() => {
@@ -322,10 +332,6 @@ describe('SmalldataClient', () => {
       )
     })
 
-    afterEach(() => {
-      global.fetch.mockRestore()
-    })
-
     it('makes default request', async() => {
       await SmalldataClient.getUsers()
       expect(fetch).toHaveBeenCalledTimes(1)
@@ -345,10 +351,6 @@ describe('SmalldataClient', () => {
           new Promise((resolve) => {
             resolve({ json: () => getDatasetDefaultResponse() })
           }))
-    })
-
-    afterEach(() => {
-      global.fetch.mockRestore()
     })
 
     it('makes 2 requests and combine them', async() => {
@@ -374,10 +376,6 @@ describe('SmalldataClient', () => {
           resolve({ json: () => 'default-response' })
         })
       )
-    })
-
-    afterEach(() => {
-      global.fetch.mockRestore()
     })
 
     it('when providing all data', async() => {
@@ -409,10 +407,6 @@ describe('SmalldataClient', () => {
       )
     })
 
-    afterEach(() => {
-      global.fetch.mockRestore()
-    })
-
     it('when providing all data', async() => {
       await SmalldataClient.updateUser({
         id:         'user-id',
@@ -431,20 +425,6 @@ describe('SmalldataClient', () => {
         name:           'name',
         role:           'researcher'
       })
-    })
-  })
-
-  describe('when deleting security token', () => {
-    it('does not send security token in a header', async() => {
-      SmalldataClient.deleteSecurityToken()
-      global.fetch = jest.fn().mockImplementation(() =>
-        new Promise((resolve) => {
-          resolve({ json: () => getDatasetDefaultResponse() })
-        })
-      )
-      await SmalldataClient.getDatasets()
-      expect(fetch).toHaveBeenCalledTimes(1)
-      expect(fetch).toBeCalledWith('/api/datasets', { headers: expectedNotSecuredHeaders })
     })
   })
 })
