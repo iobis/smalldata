@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { createContext, useState } from 'react'
+import * as SmalldataClient from '../clients/SmalldataClient'
 
 export const AuthContext = createContext(null)
 
@@ -12,12 +13,14 @@ export function AuthProvider({ children }) {
     const urlParams = new URLSearchParams(window.location.search)
     const token = urlParams.get('token') || localStorage.getItem('jwt')
     if (!token) return
+    SmalldataClient.setSecurityToken(token)
     localStorage.setItem('jwt', token)
     setClaims(parseJwt(token))
     setLoggedIn(true)
   }
 
   function logOut() {
+    SmalldataClient.deleteSecurityToken()
     localStorage.clear()
     setClaims({})
     setLoggedIn(false)

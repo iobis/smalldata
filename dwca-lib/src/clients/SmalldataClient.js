@@ -1,9 +1,16 @@
 import { mapOccurrenceToDwca, mapUiDatasetToRequest } from './SmalldataConverters'
 
-const authorizationValue = 'Basic verysecret'
-const headers = {
-  'Authorization': authorizationValue,
-  'Content-Type':  'application/json'
+let headers = {
+  'Content-Type': 'application/json'
+}
+
+export function setSecurityToken(securityToken) {
+  headers = { ...{ Authorization: 'Bearer ' + securityToken }, ...headers }
+}
+
+export function deleteSecurityToken() {
+  const { Authorization, ...rest } = headers
+  headers = rest
 }
 
 export async function getDatasets() {

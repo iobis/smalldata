@@ -38,7 +38,6 @@ describe('UserFormPage', () => {
     expect(global.fetch).toHaveBeenCalledTimes(1)
     expect(global.fetch).toHaveBeenCalledWith('/api/datasets', {
       headers: {
-        'Authorization': 'Basic verysecret',
         'Content-Type':  'application/json'
       }
     })
@@ -92,7 +91,6 @@ describe('UserFormPage', () => {
         'role':         'node manager'
       }),
       'headers': {
-        'Authorization': 'Basic verysecret',
         'Content-Type':  'application/json'
       },
       'method':  'POST'
@@ -134,7 +132,6 @@ describe('UserFormPage', () => {
       expect(global.fetch).toHaveBeenCalledTimes(1)
       expect(global.fetch).toHaveBeenCalledWith('/api/datasets', {
         headers: {
-          'Authorization': 'Basic verysecret',
           'Content-Type':  'application/json'
         }
       })
@@ -191,7 +188,6 @@ describe('UserFormPage', () => {
           'role':         'researcher'
         }),
         'headers': {
-          'Authorization': 'Basic verysecret',
           'Content-Type':  'application/json'
         },
         'method':  'PUT'
