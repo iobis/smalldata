@@ -1,23 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { ignoreActWarning } from '@smalldata/test-utils-lib'
 import LocationPicker from './LocationPicker'
-import TestUtils, { act } from 'react-dom/test-utils'
-import waitUntil from 'async-wait-until'
+import React from 'react'
+import { act } from 'react-dom/test-utils'
+import { mount } from 'enzyme/build'
+
+jest.useFakeTimers()
 
 describe('LocationPicker', () => {
-  ignoreActWarning()
-
-  let container
-
-  beforeAll(() => {
-    container = document.createElement('div')
-  })
-
-  afterAll(() => {
-    ReactDOM.unmountComponentAtNode(container)
-    document.body.removeChild(container)
-  })
+  let wrapper
 
   beforeEach(() => {
     global.fetch = jest.fn().mockImplementation(() =>
@@ -46,49 +35,56 @@ describe('LocationPicker', () => {
     global.fetch.mockRestore()
   })
 
-  it('renders correctly', () => {
-    ReactDOM.render(createComponent(), container)
-    expect(container).toMatchSnapshot()
+  it('renders correctly', async() => {
+    await act(async() => {
+      wrapper = mount(createComponent())
+    })
+    wrapper.update()
+    expect(wrapper).toMatchSnapshot()
   })
 
   it('makes fetch request when changing input field', async() => {
     const onChange = jest.fn()
-    act(() => {
-      ReactDOM.render(createComponent({ onChange }), container)
+    await act(async() => {
+      wrapper = mount(createComponent({ onChange }))
     })
-    expect(container.querySelectorAll('.suggestions-result-empty')).toHaveLength(1)
-    expect(container.querySelectorAll('.suggestions-result .suggestion-row')).toHaveLength(0)
-    expect(container.querySelector('.search-string.input').value).toBe('')
+    wrapper.update()
+    expect(wrapper.find('.suggestions-result-empty').exists()).toBe(true)
+    expect(wrapper.find('.suggestions-result .suggestion-row')).toHaveLength(0)
+    expect(wrapper.find('.search-string.input').prop('value')).toBe('')
 
-    act(() => {
-      TestUtils.Simulate.change(container.querySelector('.search-string'), { target: { value: 'St. Petersburg, Russ' } })
+    await act(async() => {
+      wrapper.find('.search-string').simulate('change', { target: { value: 'St. Petersburg, Russ' } })
+      jest.runAllTimers()
     })
-    await waitUntil(() => fetch.mock.calls.length === 1)
+    wrapper.update()
     expect(onChange).toHaveBeenCalledTimes(0)
     expect(fetch).toHaveBeenCalledTimes(1)
     expect(fetch).toHaveBeenNthCalledWith(1, 'https://nominatim.openstreetmap.org/search?format=json&q=St. Petersburg, Russ')
-    expect(container.querySelectorAll('.suggestions-result-empty')).toHaveLength(0)
-    expect(container.querySelectorAll('.suggestions-result .suggestion-row')).toHaveLength(1)
-    expect(container.querySelector('.search-string.input').value).toBe('St. Petersburg, Russ')
+    expect(wrapper.find('.suggestions-result-empty').exists()).toBe(false)
+    expect(wrapper.find('.suggestions-result .suggestion-row')).toHaveLength(1)
+    expect(wrapper.find('.search-string.input').prop('value')).toBe('St. Petersburg, Russ')
 
-    act(() => {
-      TestUtils.Simulate.click(container.querySelectorAll('.suggestions-result .suggestion-row')[0])
+    await act(async() => {
+      wrapper.find('.suggestions-result .suggestion-row').simulate('click')
     })
+    wrapper.update()
     expect(onChange).toHaveBeenCalledTimes(1)
     expect(onChange).toHaveBeenNthCalledWith(1, { latitude: 59.9403302, longitude: 30.3189535 })
     expect(fetch).toHaveBeenCalledTimes(1)
-    expect(container.querySelectorAll('.suggestions-result-empty')).toHaveLength(0)
-    expect(container.querySelectorAll('.suggestions-result .suggestion-row')).toHaveLength(1)
-    expect(container.querySelector('.search-string.input').value).toBe('St. Petersburg, Russ')
+    expect(wrapper.find('.suggestions-result-empty').exists()).toBe(false)
+    expect(wrapper.find('.suggestions-result .suggestion-row')).toHaveLength(1)
+    expect(wrapper.find('.search-string.input').prop('value')).toBe('St. Petersburg, Russ')
 
-    act(() => {
-      TestUtils.Simulate.click(container.querySelector('.times-circle'))
+    await act(async() => {
+      wrapper.find('.times-circle').at(0).simulate('click')
     })
+    wrapper.update()
     expect(onChange).toHaveBeenCalledTimes(1)
     expect(fetch).toHaveBeenCalledTimes(1)
-    expect(container.querySelectorAll('.suggestions-result .suggestion-row')).toHaveLength(0)
-    expect(container.querySelectorAll('.suggestions-result-empty')).toHaveLength(1)
-    expect(container.querySelector('.search-string.input').value).toBe('')
+    expect(wrapper.find('.suggestions-result-empty').exists()).toBe(true)
+    expect(wrapper.find('.suggestions-result .suggestion-row')).toHaveLength(0)
+    expect(wrapper.find('.search-string.input').prop('value')).toBe('')
   })
 })
 
