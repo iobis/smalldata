@@ -10,8 +10,8 @@ import io.vertx.ext.jwt.JWTOptions;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
-import static org.pmw.tinylog.Logger.info;
 import static org.pmw.tinylog.Logger.error;
+import static org.pmw.tinylog.Logger.info;
 
 class LoginHandler {
 
