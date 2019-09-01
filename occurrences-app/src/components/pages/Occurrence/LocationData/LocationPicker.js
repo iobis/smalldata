@@ -50,7 +50,7 @@ export default function LocationPicker({ onChange }) {
       const url = `https://api.obis.org/marineregions/getGazetteerRecordsByName.json/${searchString}/true/false`
       const response = await fetch(url)
       const suggestions = await response.json()
-      setSuggestions(suggestions)
+      setSuggestions(suggestions.filter(location => location.latitude && location.longitude))
     }
 
     if (debouncedSearch) fetchSuggestions()

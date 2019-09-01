@@ -13,20 +13,35 @@ describe('LocationPicker', () => {
       new Promise((resolve) => {
         resolve({
           json: () => ([{
-            'MRGID':                      18678,
-            'gazetteerSource':            'IMIS',
-            'placeType':                  'City',
-            'latitude':                   59.883299999999998,
-            'longitude':                  30.25,
-            'minLatitude':                null,
-            'minLongitude':               null,
-            'maxLatitude':                null,
-            'maxLongitude':               null,
-            'precision':                  null,
-            'preferredGazetteerName':     'Sankt-Petersburg',
-            'preferredGazetteerNameLang': 'Russian',
-            'status':                     'standard',
-            'accepted':                   18678
+            MRGID:                      18678,
+            gazetteerSource:            'IMIS',
+            placeType:                  'City',
+            latitude:                   59.883299999999998,
+            longitude:                  30.25,
+            minLatitude:                null,
+            minLongitude:               null,
+            maxLatitude:                null,
+            maxLongitude:               null,
+            precision:                  null,
+            preferredGazetteerName:     'Sankt-Petersburg',
+            preferredGazetteerNameLang: 'Russian',
+            status:                     'standard',
+            accepted:                   18678
+          }, {
+            MRGID:                      48986,
+            accepted:                   48986,
+            gazetteerSource:            null,
+            latitude:                   null,
+            longitude:                  null,
+            maxLatitude:                null,
+            maxLongitude:               null,
+            minLatitude:                null,
+            minLongitude:               null,
+            placeType:                  'Province (administrative)',
+            precision:                  null,
+            preferredGazetteerName:     'Moscow Oblast',
+            preferredGazetteerNameLang: 'English',
+            status:                     'standard'
           }])
         })
       })
@@ -45,7 +60,7 @@ describe('LocationPicker', () => {
     expect(wrapper).toMatchSnapshot()
   })
 
-  it('makes fetch request when changing input field', async() => {
+  it('fetches data from api and returns it with callback when changing input field', async() => {
     const onChange = jest.fn()
     await act(async() => {
       wrapper = mount(createComponent({ onChange }))
