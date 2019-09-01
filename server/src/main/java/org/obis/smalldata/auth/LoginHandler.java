@@ -11,18 +11,21 @@ import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 import static org.pmw.tinylog.Logger.info;
+import static org.pmw.tinylog.Logger.error;
 
 class LoginHandler {
 
   private final JWTAuth authProvider;
 
   LoginHandler(AuthProvider authProvider) {
-    info("authProvider {}", authProvider);
+    info("Create LoginHandler with AuthProvider {}", authProvider.getClass());
     if (authProvider instanceof JWTAuth) {
       this.authProvider = (JWTAuth) authProvider;
       info("Started 'AuthComponent LoginHandler'");
     } else {
-      throw new ExceptionInInitializerError("Invalid AuthComponent Provider");
+      var errorMessage = "Unknown type of AuthProvider";
+      error(errorMessage);
+      throw new ExceptionInInitializerError(errorMessage);
     }
   }
 
