@@ -15,7 +15,12 @@ export default function LocationData({ data, onChange }) {
 
   function handleLocationUpdate(location) {
     setLocationPickerVisible(false)
-    const newSelection = { ...data, decimalLatitude: location.latitude, decimalLongitude: location.longitude }
+    const newSelection = {
+      ...data,
+      decimalLatitude:       location.latitude,
+      decimalLongitude:      location.longitude,
+      coordinateUncertainty: location.coordinateUncertainty
+    }
     onChange(newSelection)
   }
 
