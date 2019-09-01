@@ -1,5 +1,10 @@
 .dropdown {
   display: block;
+
+  .dropdown-trigger {
+    width: 80%;
+  }
+
   .dropdown-item {
     cursor: pointer;
 
@@ -11,8 +16,5 @@
       background-color: $dropdown-item-active-background-color;
       color: $dropdown-item-active-color;
     }
-  }
-  .dropdown-trigger {
-    width: 80%;
   }
 }
