@@ -35,7 +35,7 @@ exports[`ManageUsersPage when users provided renders correctly 1`] = `
       </div>
     </Divider>
     <section
-      className="section spaced"
+      className="section users"
     >
       <div
         className="container is-fluid has-text-centered"

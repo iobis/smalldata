@@ -18,7 +18,7 @@ export default function ManageDatasetPage() {
   }, [])
 
   return (
-    <>
+    <div className="manage-dataset-page">
       <section className="section">
         <div className="container is-fluid has-text-centered">
           <Link className="button is-info new" to="/manage-dataset/create">
@@ -27,7 +27,7 @@ export default function ManageDatasetPage() {
         </div>
       </section>
       <Divider>{t('manageDatasetPage.or')}</Divider>
-      <section className="section spaced">
+      <section className="section datasets">
         <div className="container is-fluid has-text-centered">
           <h4 className="title is-4">{t('manageDatasetPage.managePreviousEntries')}</h4>
           <table className="table is-striped is-hoverable is-fullwidth">
@@ -52,7 +52,7 @@ export default function ManageDatasetPage() {
           </table>
         </div>
       </section>
-    </>
+    </div>
   )
 }
 

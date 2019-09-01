@@ -44,170 +44,174 @@ exports[`ManageDatasetPage renders correctly for non empty datasets 1`] = `
     }
   >
     <ManageDatasetPage>
-      <section
-        className="section"
+      <div
+        className="manage-dataset-page"
       >
-        <div
-          className="container is-fluid has-text-centered"
+        <section
+          className="section"
         >
-          <Link
-            className="button is-info new"
-            to="/manage-dataset/create"
+          <div
+            className="container is-fluid has-text-centered"
           >
-            <a
+            <Link
               className="button is-info new"
-              href="/manage-dataset/create"
-              onClick={[Function]}
+              to="/manage-dataset/create"
             >
-              manageDatasetPage.inputNew
-            </a>
-          </Link>
-        </div>
-      </section>
-      <Divider>
-        <div
-          className="divider"
-        >
-          <span>
-            manageDatasetPage.or
-          </span>
-        </div>
-      </Divider>
-      <section
-        className="section spaced"
-      >
-        <div
-          className="container is-fluid has-text-centered"
-        >
-          <h4
-            className="title is-4"
-          >
-            manageDatasetPage.managePreviousEntries
-          </h4>
-          <table
-            className="table is-striped is-hoverable is-fullwidth"
-          >
-            <thead>
-              <tr>
-                <th />
-                <th>
-                  manageDatasetPage.table.title
-                </th>
-                <th>
-                  manageDatasetPage.table.organization
-                </th>
-                <th>
-                  manageDatasetPage.table.licence
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <DatasetRow
-                id="id-1"
-                key="id-1"
-                license="title-1"
-                organization="Flanders Marine Institute (VLIZ)"
-                title="with organization name in metadata"
+              <a
+                className="button is-info new"
+                href="/manage-dataset/create"
+                onClick={[Function]}
               >
-                <tr
-                  className="user-row"
-                >
-                  <td
-                    className="edit"
-                  >
-                    <Link
-                      className="button is-info"
-                      to={
-                        Object {
-                          "pathname": "/manage-dataset/update/id-1",
-                          "state": Object {
-                            "action": "update",
-                            "id": "id-1",
-                          },
-                        }
-                      }
-                    >
-                      <a
-                        className="button is-info"
-                        href="/manage-dataset/update/id-1"
-                        onClick={[Function]}
-                      >
-                        common.edit
-                      </a>
-                    </Link>
-                  </td>
-                  <td
-                    className="dataset-title"
-                  >
-                    with organization name in metadata
-                  </td>
-                  <td
-                    className="organization"
-                  >
-                    Flanders Marine Institute (VLIZ)
-                  </td>
-                  <td
-                    className="license"
-                  >
-                    title-1
-                  </td>
+                manageDatasetPage.inputNew
+              </a>
+            </Link>
+          </div>
+        </section>
+        <Divider>
+          <div
+            className="divider"
+          >
+            <span>
+              manageDatasetPage.or
+            </span>
+          </div>
+        </Divider>
+        <section
+          className="section datasets"
+        >
+          <div
+            className="container is-fluid has-text-centered"
+          >
+            <h4
+              className="title is-4"
+            >
+              manageDatasetPage.managePreviousEntries
+            </h4>
+            <table
+              className="table is-striped is-hoverable is-fullwidth"
+            >
+              <thead>
+                <tr>
+                  <th />
+                  <th>
+                    manageDatasetPage.table.title
+                  </th>
+                  <th>
+                    manageDatasetPage.table.organization
+                  </th>
+                  <th>
+                    manageDatasetPage.table.licence
+                  </th>
                 </tr>
-              </DatasetRow>
-              <DatasetRow
-                id="id-2"
-                key="id-2"
-                license="title-2"
-                organization="—"
-                title="without organization name in metadata"
-              >
-                <tr
-                  className="user-row"
+              </thead>
+              <tbody>
+                <DatasetRow
+                  id="id-1"
+                  key="id-1"
+                  license="title-1"
+                  organization="Flanders Marine Institute (VLIZ)"
+                  title="with organization name in metadata"
                 >
-                  <td
-                    className="edit"
+                  <tr
+                    className="user-row"
                   >
-                    <Link
-                      className="button is-info"
-                      to={
-                        Object {
-                          "pathname": "/manage-dataset/update/id-2",
-                          "state": Object {
-                            "action": "update",
-                            "id": "id-2",
-                          },
-                        }
-                      }
+                    <td
+                      className="edit"
                     >
-                      <a
+                      <Link
                         className="button is-info"
-                        href="/manage-dataset/update/id-2"
-                        onClick={[Function]}
+                        to={
+                          Object {
+                            "pathname": "/manage-dataset/update/id-1",
+                            "state": Object {
+                              "action": "update",
+                              "id": "id-1",
+                            },
+                          }
+                        }
                       >
-                        common.edit
-                      </a>
-                    </Link>
-                  </td>
-                  <td
-                    className="dataset-title"
+                        <a
+                          className="button is-info"
+                          href="/manage-dataset/update/id-1"
+                          onClick={[Function]}
+                        >
+                          common.edit
+                        </a>
+                      </Link>
+                    </td>
+                    <td
+                      className="dataset-title"
+                    >
+                      with organization name in metadata
+                    </td>
+                    <td
+                      className="organization"
+                    >
+                      Flanders Marine Institute (VLIZ)
+                    </td>
+                    <td
+                      className="license"
+                    >
+                      title-1
+                    </td>
+                  </tr>
+                </DatasetRow>
+                <DatasetRow
+                  id="id-2"
+                  key="id-2"
+                  license="title-2"
+                  organization="—"
+                  title="without organization name in metadata"
+                >
+                  <tr
+                    className="user-row"
                   >
-                    without organization name in metadata
-                  </td>
-                  <td
-                    className="organization"
-                  >
-                    —
-                  </td>
-                  <td
-                    className="license"
-                  >
-                    title-2
-                  </td>
-                </tr>
-              </DatasetRow>
-            </tbody>
-          </table>
-        </div>
-      </section>
+                    <td
+                      className="edit"
+                    >
+                      <Link
+                        className="button is-info"
+                        to={
+                          Object {
+                            "pathname": "/manage-dataset/update/id-2",
+                            "state": Object {
+                              "action": "update",
+                              "id": "id-2",
+                            },
+                          }
+                        }
+                      >
+                        <a
+                          className="button is-info"
+                          href="/manage-dataset/update/id-2"
+                          onClick={[Function]}
+                        >
+                          common.edit
+                        </a>
+                      </Link>
+                    </td>
+                    <td
+                      className="dataset-title"
+                    >
+                      without organization name in metadata
+                    </td>
+                    <td
+                      className="organization"
+                    >
+                      —
+                    </td>
+                    <td
+                      className="license"
+                    >
+                      title-2
+                    </td>
+                  </tr>
+                </DatasetRow>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
     </ManageDatasetPage>
   </Router>
 </MemoryRouter>
@@ -257,119 +261,123 @@ exports[`ManageDatasetPage renders correctly if metadata provider is empty 1`] =
     }
   >
     <ManageDatasetPage>
-      <section
-        className="section"
+      <div
+        className="manage-dataset-page"
       >
-        <div
-          className="container is-fluid has-text-centered"
+        <section
+          className="section"
         >
-          <Link
-            className="button is-info new"
-            to="/manage-dataset/create"
+          <div
+            className="container is-fluid has-text-centered"
           >
-            <a
+            <Link
               className="button is-info new"
-              href="/manage-dataset/create"
-              onClick={[Function]}
+              to="/manage-dataset/create"
             >
-              manageDatasetPage.inputNew
-            </a>
-          </Link>
-        </div>
-      </section>
-      <Divider>
-        <div
-          className="divider"
-        >
-          <span>
-            manageDatasetPage.or
-          </span>
-        </div>
-      </Divider>
-      <section
-        className="section spaced"
-      >
-        <div
-          className="container is-fluid has-text-centered"
-        >
-          <h4
-            className="title is-4"
-          >
-            manageDatasetPage.managePreviousEntries
-          </h4>
-          <table
-            className="table is-striped is-hoverable is-fullwidth"
-          >
-            <thead>
-              <tr>
-                <th />
-                <th>
-                  manageDatasetPage.table.title
-                </th>
-                <th>
-                  manageDatasetPage.table.organization
-                </th>
-                <th>
-                  manageDatasetPage.table.licence
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <DatasetRow
-                id="id-1"
-                key="id-1"
-                license="title-1"
-                organization="—"
-                title="with organization name in metadata"
+              <a
+                className="button is-info new"
+                href="/manage-dataset/create"
+                onClick={[Function]}
               >
-                <tr
-                  className="user-row"
-                >
-                  <td
-                    className="edit"
-                  >
-                    <Link
-                      className="button is-info"
-                      to={
-                        Object {
-                          "pathname": "/manage-dataset/update/id-1",
-                          "state": Object {
-                            "action": "update",
-                            "id": "id-1",
-                          },
-                        }
-                      }
-                    >
-                      <a
-                        className="button is-info"
-                        href="/manage-dataset/update/id-1"
-                        onClick={[Function]}
-                      >
-                        common.edit
-                      </a>
-                    </Link>
-                  </td>
-                  <td
-                    className="dataset-title"
-                  >
-                    with organization name in metadata
-                  </td>
-                  <td
-                    className="organization"
-                  >
-                    —
-                  </td>
-                  <td
-                    className="license"
-                  >
-                    title-1
-                  </td>
+                manageDatasetPage.inputNew
+              </a>
+            </Link>
+          </div>
+        </section>
+        <Divider>
+          <div
+            className="divider"
+          >
+            <span>
+              manageDatasetPage.or
+            </span>
+          </div>
+        </Divider>
+        <section
+          className="section datasets"
+        >
+          <div
+            className="container is-fluid has-text-centered"
+          >
+            <h4
+              className="title is-4"
+            >
+              manageDatasetPage.managePreviousEntries
+            </h4>
+            <table
+              className="table is-striped is-hoverable is-fullwidth"
+            >
+              <thead>
+                <tr>
+                  <th />
+                  <th>
+                    manageDatasetPage.table.title
+                  </th>
+                  <th>
+                    manageDatasetPage.table.organization
+                  </th>
+                  <th>
+                    manageDatasetPage.table.licence
+                  </th>
                 </tr>
-              </DatasetRow>
-            </tbody>
-          </table>
-        </div>
-      </section>
+              </thead>
+              <tbody>
+                <DatasetRow
+                  id="id-1"
+                  key="id-1"
+                  license="title-1"
+                  organization="—"
+                  title="with organization name in metadata"
+                >
+                  <tr
+                    className="user-row"
+                  >
+                    <td
+                      className="edit"
+                    >
+                      <Link
+                        className="button is-info"
+                        to={
+                          Object {
+                            "pathname": "/manage-dataset/update/id-1",
+                            "state": Object {
+                              "action": "update",
+                              "id": "id-1",
+                            },
+                          }
+                        }
+                      >
+                        <a
+                          className="button is-info"
+                          href="/manage-dataset/update/id-1"
+                          onClick={[Function]}
+                        >
+                          common.edit
+                        </a>
+                      </Link>
+                    </td>
+                    <td
+                      className="dataset-title"
+                    >
+                      with organization name in metadata
+                    </td>
+                    <td
+                      className="organization"
+                    >
+                      —
+                    </td>
+                    <td
+                      className="license"
+                    >
+                      title-1
+                    </td>
+                  </tr>
+                </DatasetRow>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
     </ManageDatasetPage>
   </Router>
 </MemoryRouter>

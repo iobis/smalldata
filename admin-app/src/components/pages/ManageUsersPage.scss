@@ -1,8 +1,12 @@
 .manage-users-page {
-  .user-row {
-    .datasets {
-      ul {
-        list-style-type: disc;
+  .users {
+    margin-top: var(--margin-top);
+
+    .user-row {
+      .datasets {
+        ul {
+          list-style-type: disc;
+        }
       }
     }
   }
@@ -15,8 +19,4 @@ a.button.new {
   &:hover {
     background-color: lighten($obis-green, 10%);
   }
-}
-
-.spaced {
-  margin-top: var(--margin-top);
 }
