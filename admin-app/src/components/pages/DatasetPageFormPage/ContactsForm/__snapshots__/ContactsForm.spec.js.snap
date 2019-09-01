@@ -105,7 +105,7 @@ exports[`ContactsForm returns contacts when adding to empty list renders correct
         </div>
       </InputText>
       <div
-        className="column field fix-alignment"
+        className="column field button-placeholder"
       >
         <button
           className="add button"
@@ -260,7 +260,7 @@ exports[`ContactsForm returns updated contacts when adding to list with single e
         </div>
       </InputText>
       <div
-        className="column field fix-alignment"
+        className="column field button-placeholder"
       >
         <button
           className="add button"
@@ -457,7 +457,7 @@ exports[`ContactsForm when removing contacts removes first contact 1`] = `
         </div>
       </InputText>
       <div
-        className="column field fix-alignment"
+        className="column field button-placeholder"
       >
         <button
           className="add button"
@@ -691,7 +691,7 @@ exports[`ContactsForm when removing contacts removes second contact 1`] = `
         </div>
       </InputText>
       <div
-        className="column field fix-alignment"
+        className="column field button-placeholder"
       >
         <button
           className="add button"

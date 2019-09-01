@@ -109,7 +109,7 @@ exports[`MetadataProviders renders correctly 1`] = `
           </div>
         </InputText>
         <div
-          className="column field fix-alignment"
+          className="column field button-placeholder"
         >
           <button
             className="add button"
