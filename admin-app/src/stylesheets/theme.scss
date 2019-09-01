@@ -1,4 +1,11 @@
-/* Default form styles */
+a.button.new {
+  background-color: var(--obis-green);
+  margin-bottom: var(--margin-bottom);
+
+  &:hover {
+    background-color: lighten($obis-green, 10%);
+  }
+}
 
 .mandatory {
   label:after {

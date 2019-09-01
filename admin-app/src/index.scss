@@ -1,6 +1,7 @@
 @import 'variables';
 
 @import '../../dwca-lib/src/all';
+@import 'stylesheets/theme';
 @import 'components/layout/Divider';
 @import 'components/layout/Navbar';
 @import 'components/pages/DatasetPageFormPage/ContactsForm/ContactsForm';
@@ -8,8 +9,6 @@
 @import 'components/pages/ManageDatasetPage';
 @import 'components/pages/ManageUsersPage';
 @import 'components/pages/UserFormPage';
-
-@import 'forms';
 
 html {
   background-color: transparent;
