@@ -42,6 +42,21 @@ describe('LocationPicker', () => {
             preferredGazetteerName:     'Moscow Oblast',
             preferredGazetteerNameLang: 'English',
             status:                     'standard'
+          }, {
+            MRGID:                      2551,
+            accepted:                   2551,
+            gazetteerSource:            'ASFA thesaurus',
+            latitude:                   51.33185,
+            longitude:                  3.20845,
+            maxLatitude:                51.3355,
+            maxLongitude:               3.216,
+            minLatitude:                51.3282,
+            minLongitude:               3.2009,
+            placeType:                  'Deelgemeente',
+            precision:                  663.3265,
+            preferredGazetteerName:     'Zeebrugge',
+            preferredGazetteerNameLang: 'Dutch',
+            status:                     'standard'
           }])
         })
       })
@@ -79,25 +94,44 @@ describe('LocationPicker', () => {
     expect(fetch).toHaveBeenCalledTimes(1)
     expect(fetch).toHaveBeenNthCalledWith(1, 'https://api.obis.org/marineregions/getGazetteerRecordsByName.json/St. Petersburg, Russ/true/false')
     expect(wrapper.find('.suggestions-result-empty').exists()).toBe(false)
-    expect(wrapper.find('.suggestions-result .suggestion-row')).toHaveLength(1)
+    expect(wrapper.find('.suggestions-result .suggestion-row')).toHaveLength(2)
     expect(wrapper.find('.search-string.input').prop('value')).toBe('St. Petersburg, Russ')
 
     await act(async() => {
-      wrapper.find('.suggestions-result .suggestion-row').simulate('click')
+      wrapper.find('.suggestions-result .suggestion-row').at(0).simulate('click')
     })
     wrapper.update()
     expect(onChange).toHaveBeenCalledTimes(1)
-    expect(onChange).toHaveBeenNthCalledWith(1, { latitude: 59.8833, longitude: 30.25 })
+    expect(onChange).toHaveBeenNthCalledWith(1, {
+      coordinateUncertainty: null,
+      latitude:              59.8833,
+      longitude:             30.25
+    })
     expect(fetch).toHaveBeenCalledTimes(1)
     expect(wrapper.find('.suggestions-result-empty').exists()).toBe(false)
-    expect(wrapper.find('.suggestions-result .suggestion-row')).toHaveLength(1)
+    expect(wrapper.find('.suggestions-result .suggestion-row')).toHaveLength(2)
+    expect(wrapper.find('.search-string.input').prop('value')).toBe('St. Petersburg, Russ')
+
+    await act(async() => {
+      wrapper.find('.suggestions-result .suggestion-row').at(1).simulate('click')
+    })
+    wrapper.update()
+    expect(onChange).toHaveBeenCalledTimes(2)
+    expect(onChange).toHaveBeenNthCalledWith(2, {
+      coordinateUncertainty: 663.3265,
+      latitude:              51.33185,
+      longitude:             3.20845
+    })
+    expect(fetch).toHaveBeenCalledTimes(1)
+    expect(wrapper.find('.suggestions-result-empty').exists()).toBe(false)
+    expect(wrapper.find('.suggestions-result .suggestion-row')).toHaveLength(2)
     expect(wrapper.find('.search-string.input').prop('value')).toBe('St. Petersburg, Russ')
 
     await act(async() => {
       wrapper.find('.times-circle').at(0).simulate('click')
     })
     wrapper.update()
-    expect(onChange).toHaveBeenCalledTimes(1)
+    expect(onChange).toHaveBeenCalledTimes(2)
     expect(fetch).toHaveBeenCalledTimes(1)
     expect(wrapper.find('.suggestions-result-empty').exists()).toBe(true)
     expect(wrapper.find('.suggestions-result .suggestion-row')).toHaveLength(0)
@@ -117,7 +151,7 @@ describe('LocationPicker', () => {
     expect(fetch).toHaveBeenCalledTimes(1)
     expect(fetch).toHaveBeenNthCalledWith(1, 'https://api.obis.org/marineregions/getGazetteerRecordsByName.json/Brugge/true/false')
     expect(wrapper.find('.suggestions-result-empty').exists()).toBe(false)
-    expect(wrapper.find('.suggestions-result .suggestion-row')).toHaveLength(1)
+    expect(wrapper.find('.suggestions-result .suggestion-row')).toHaveLength(2)
     expect(wrapper.find('.search-string.input').prop('value')).toBe('    Brugge    ')
   })
 })

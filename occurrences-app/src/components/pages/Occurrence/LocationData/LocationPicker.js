@@ -40,7 +40,7 @@ export default function LocationPicker({ onChange }) {
     const longitude = Number(latlng.lng)
     setLatitude(latitude)
     setLongitude(longitude)
-    onChange({ latitude, longitude })
+    onChange({ latitude, longitude, coordinateUncertainty: latlng.coordinateUncertainty })
   }
 
   const debouncedSearch = useDebounce(searchString, 500)
@@ -148,7 +148,11 @@ function SuggestionsResult({ suggestions, onClick }) {
           <tr
             className="suggestion-row fieldrow"
             key={suggestion.MRGID}
-            onClick={() => onClick({ lat: Number(suggestion.latitude), lng: Number(suggestion.longitude) })}>
+            onClick={() => onClick({
+              lat:                   suggestion.latitude,
+              lng:                   suggestion.longitude,
+              coordinateUncertainty: suggestion.precision
+            })}>
             <td className="type">
               {suggestion.placeType}
             </td>
@@ -171,6 +175,7 @@ function SuggestionsResult({ suggestions, onClick }) {
 SuggestionsResult.propTypes = {
   onClick:     PropTypes.func.isRequired,
   suggestions: PropTypes.arrayOf(PropTypes.shape({
+    precision:              PropTypes.number,
     placeType:              PropTypes.string.isRequired,
     preferredGazetteerName: PropTypes.string.isRequired,
     longitude:              PropTypes.number.isRequired,
