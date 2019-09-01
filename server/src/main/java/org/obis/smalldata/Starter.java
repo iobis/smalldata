@@ -1,8 +1,13 @@
 package org.obis.smalldata;
 
+import io.vertx.config.ConfigRetriever;
+import io.vertx.config.ConfigRetrieverOptions;
+import io.vertx.config.ConfigStoreOptions;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Future;
+import io.vertx.core.Vertx;
+import io.vertx.core.VertxOptions;
 import io.vertx.core.json.JsonObject;
 import org.obis.smalldata.auth.AuthComponent;
 import org.obis.smalldata.dataset.DatasetComponent;
@@ -71,5 +76,22 @@ public class Starter extends AbstractVerticle {
       verticleClass.getName(),
       new DeploymentOptions()
         .setConfig(config().getJsonObject(configKey)));
+  }
+
+  public static void main(String... args) {
+    var vertx = Vertx.vertx();
+    ConfigRetriever retriever = ConfigRetriever.create(
+      vertx,
+      new ConfigRetrieverOptions()
+        .addStore(new ConfigStoreOptions()
+          .setType("file")
+          .setConfig(new JsonObject().put("path", "./server/config/config.json"))));
+    retriever.getConfig(json -> {
+      JsonObject result = json.result();
+      vertx.close();
+      VertxOptions options = new VertxOptions(result);
+      Vertx newVertx = Vertx.vertx(options);
+      newVertx.deployVerticle(Starter.class.getName(), new DeploymentOptions().setConfig(result));
+    });
   }
 }
