@@ -1,4 +1,5 @@
 import './i18n/i18n'
+import * as SmalldataClient from '@smalldata/dwca-lib/src/clients/SmalldataClient'
 import DatasetPageFormPage from './components/pages/DatasetPageFormPage/DatasetPageFormPage'
 import LogInPage from './components/pages/LogInPage'
 import ManageDatasetPage from './components/pages/ManageDatasetPage'
@@ -23,6 +24,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 library.add(faAngleDown, faCheck, faEnvelope, faCheckCircle, faSearch, faTimesCircle, faUser)
 
 export default function App() {
+  SmalldataClient.init(window.smalldata)
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <AuthProvider>
