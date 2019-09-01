@@ -103,6 +103,23 @@ describe('LocationPicker', () => {
     expect(wrapper.find('.suggestions-result .suggestion-row')).toHaveLength(0)
     expect(wrapper.find('.search-string.input').prop('value')).toBe('')
   })
+
+  it('trims value from search input field when user updating it', async() => {
+    const onChange = jest.fn()
+    await act(async() => {
+      wrapper = mount(createComponent({ onChange }))
+      wrapper.find('.search-string').simulate('change', { target: { value: '    Brugge    ' } })
+      jest.runAllTimers()
+    })
+    wrapper.update()
+
+    expect(onChange).toHaveBeenCalledTimes(0)
+    expect(fetch).toHaveBeenCalledTimes(1)
+    expect(fetch).toHaveBeenNthCalledWith(1, 'https://api.obis.org/marineregions/getGazetteerRecordsByName.json/Brugge/true/false')
+    expect(wrapper.find('.suggestions-result-empty').exists()).toBe(false)
+    expect(wrapper.find('.suggestions-result .suggestion-row')).toHaveLength(1)
+    expect(wrapper.find('.search-string.input').prop('value')).toBe('    Brugge    ')
+  })
 })
 
 function createComponent(props) {

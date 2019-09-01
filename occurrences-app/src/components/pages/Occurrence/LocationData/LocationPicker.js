@@ -47,7 +47,7 @@ export default function LocationPicker({ onChange }) {
 
   useEffect(() => {
     const fetchSuggestions = async() => {
-      const url = `https://api.obis.org/marineregions/getGazetteerRecordsByName.json/${searchString}/true/false`
+      const url = `https://api.obis.org/marineregions/getGazetteerRecordsByName.json/${searchString.trim()}/true/false`
       const response = await fetch(url)
       const suggestions = await response.json()
       setSuggestions(suggestions.filter(location => location.latitude && location.longitude))
