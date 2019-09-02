@@ -333,6 +333,56 @@ describe('SmalldataClient', () => {
     })
   })
 
+  describe('getUserByEmail(email)', () => {
+    describe('when user found', () => {
+      beforeEach(() => {
+        global.fetch = jest.fn().mockImplementation(() =>
+          new Promise((resolve) => {
+            resolve({ json: () => [getUsersDefaultResponse()[0]] })
+          })
+        )
+      })
+
+      afterEach(() => {
+        global.fetch.mockRestore()
+      })
+
+      it('makes default request', async() => {
+        const result = await SmalldataClient.getUserByEmail('some.user@domain.org')
+        expect(fetch).toHaveBeenCalledTimes(1)
+        expect(fetch).toBeCalledWith('/api/users/?emailAddress=some.user@domain.org', { headers: expectedSecureHeaders })
+        expect(result).toEqual({
+          '_id':          '5d21b9eb54308464b1a9e6c7',
+          'bulkiness':    0,
+          'dataset_refs': ['wEaBfmFyQhYCdsk', 'ntDOtUc7XsRrIus', 'PoJnGNMaxsupE4w', 'NnqVLwIyPn-nRkc'],
+          'emailAddress': 'some.user@domain.org',
+          'id':           'ovZTtaOJZ98xDDY'
+        })
+      })
+    })
+
+    describe('when user not found', () => {
+      beforeEach(() => {
+        global.fetch = jest.fn().mockImplementation(() =>
+          new Promise((resolve) => {
+            resolve({ json: () => [] })
+          })
+        )
+      })
+
+      afterEach(() => {
+        global.fetch.mockRestore()
+      })
+
+      it('makes default request', async() => {
+        const result = await SmalldataClient.getUserByEmail('not-found@domain.org')
+        expect(fetch).toHaveBeenCalledTimes(1)
+        expect(fetch).toBeCalledWith('/api/users/?emailAddress=not-found@domain.org', { headers: expectedSecureHeaders })
+        expect(result).toEqual({})
+      })
+    })
+  })
+
   describe('getUsersWithDatasets', () => {
     beforeEach(() => {
       global.fetch = jest

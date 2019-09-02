@@ -83,6 +83,12 @@ export async function getUsers() {
   return usersResponse.map(({ _ref, ...rest }) => (({ id: _ref, ...rest })))
 }
 
+export async function getUserByEmail(email) {
+  const usersResponse = await fetch('/api/users/?emailAddress=' + email, { headers })
+    .then(response => response.json())
+  return usersResponse.map(({ _ref, ...rest }) => (({ id: _ref, ...rest })))[0] || {}
+}
+
 export async function getUsersWithDatasets() {
   const [users, datasets] = await Promise.all([getUsers(), getDatasets()])
   const datasetIdToDataset = groupBy(datasets, 'id')
