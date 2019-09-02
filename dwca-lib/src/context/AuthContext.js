@@ -5,23 +5,27 @@ import * as SmalldataClient from '../clients/SmalldataClient'
 export const AuthContext = createContext(null)
 
 export function AuthProvider({ children }) {
-  const userRef = 'ovZTtaOJZ98xDDY'
+  const [userRef, setUserRef] = useState('')
   const [loggedIn, setLoggedIn] = useState(false)
   const [claims, setClaims] = useState({})
 
-  function logIn() {
+  async function logIn() {
     const urlParams = new URLSearchParams(window.location.search)
     const token = urlParams.get('token') || localStorage.getItem('jwt')
     if (!token) return
     SmalldataClient.setSecurityToken(token)
     localStorage.setItem('jwt', token)
-    setClaims(parseJwt(token))
+    const claims = parseJwt(token)
+    const user = await SmalldataClient.getUserByEmail(claims.email)
+    setUserRef(user.id)
+    setClaims(claims)
     setLoggedIn(true)
   }
 
   function logOut() {
     SmalldataClient.deleteSecurityToken()
     localStorage.clear()
+    setUserRef('')
     setClaims({})
     setLoggedIn(false)
   }
