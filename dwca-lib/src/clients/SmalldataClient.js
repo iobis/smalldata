@@ -1,7 +1,12 @@
 import { mapOccurrenceToDwca, mapUiDatasetToRequest } from './SmalldataConverters'
 
+let apiRoot = '/api/'
 let headers = {
   'Content-Type': 'application/json'
+}
+
+export function init(props = {}) {
+  apiRoot = props.apiRoot || apiRoot
 }
 
 export function setSecurityToken(securityToken) {
@@ -14,14 +19,14 @@ export function deleteSecurityToken() {
 }
 
 export async function getDatasets() {
-  const response = await fetch('/api/datasets', { headers })
+  const response = await fetch(apiRoot + 'datasets', { headers })
     .then(response => response.json())
   return response.map(renameRefToId)
 }
 
 export async function createDataset(dataset) {
   const request = mapUiDatasetToRequest(dataset)
-  return await fetch('/api/datasets', {
+  return await fetch(apiRoot + 'datasets', {
     method: 'POST',
     headers,
     body:   JSON.stringify(request)
@@ -30,7 +35,7 @@ export async function createDataset(dataset) {
 
 export async function updateDataset(dataset, datasetId) {
   const request = mapUiDatasetToRequest(dataset)
-  const url = `/api/datasets/${datasetId}`
+  const url = apiRoot + `datasets/${datasetId}`
   return await fetch(url, {
     method: 'PUT',
     headers,
@@ -40,12 +45,12 @@ export async function updateDataset(dataset, datasetId) {
 
 export async function getOccurrences({ userRef }) {
   const query = 'projectFields=dwcRecord.tdwg.scientificName&projectFields=dwcRecord.tdwg.eventDate'
-  return await fetch(`/api/dwca/user/${userRef}/records?${query}`, { headers })
+  return await fetch(apiRoot + `dwca/user/${userRef}/records?${query}`, { headers })
     .then(response => response.json())
 }
 
 export async function getOccurrence({ datasetId, dwcaId, userRef }) {
-  return fetch(`/api/dwca/${datasetId}/user/${userRef}/records/${encodeURIComponent(dwcaId)}`, { headers })
+  return fetch(apiRoot + `dwca/${datasetId}/user/${userRef}/records/${encodeURIComponent(dwcaId)}`, { headers })
     .then(response => response.json())
 }
 
@@ -59,7 +64,7 @@ export async function findLatestOccurrence({ userRef }) {
 
 export async function updateOccurrence({ occurrence, userRef, dwcaId }) {
   const request = mapOccurrenceToDwca(occurrence)
-  const url = `/api/dwca/${occurrence.dataset.id}/user/${userRef}/records/${encodeURIComponent(dwcaId)}`
+  const url = apiRoot + `dwca/${occurrence.dataset.id}/user/${userRef}/records/${encodeURIComponent(dwcaId)}`
   return await fetch(url, {
     method: 'PUT',
     headers,
@@ -69,7 +74,7 @@ export async function updateOccurrence({ occurrence, userRef, dwcaId }) {
 
 export async function createOccurrence({ occurrence, userRef }) {
   const request = mapOccurrenceToDwca(occurrence)
-  const url = `/api/dwca/${occurrence.dataset.id}/user/${userRef}/records`
+  const url = apiRoot + `dwca/${occurrence.dataset.id}/user/${userRef}/records`
   return await fetch(url, {
     method: 'POST',
     headers,
@@ -78,7 +83,7 @@ export async function createOccurrence({ occurrence, userRef }) {
 }
 
 export async function getUsers() {
-  const usersResponse = await fetch('/api/users', { headers })
+  const usersResponse = await fetch(apiRoot + 'users', { headers })
     .then(response => response.json())
   return usersResponse.map(({ _ref, ...rest }) => (({ id: _ref, ...rest })))
 }
@@ -100,7 +105,7 @@ export async function createUser({ datasetIds, email, name, role }) {
     name,
     role
   }
-  const url = '/api/users'
+  const url = apiRoot + 'users'
   return await fetch(url, {
     method: 'POST',
     headers,
@@ -119,7 +124,7 @@ export async function updateUser({ id, datasetIds, email, name, role }) {
     name,
     role
   }
-  const url = '/api/users/' + id
+  const url = apiRoot + 'users/' + id
   return await fetch(url, {
     method: 'PUT',
     headers,
