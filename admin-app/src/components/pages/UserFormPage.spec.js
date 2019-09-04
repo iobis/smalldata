@@ -48,6 +48,7 @@ describe('UserFormPage', () => {
       wrapper.update()
       return wrapper.find('.dataset-row').length === 4
     })
+    expect(wrapper.find('h1').text()).toBe('userFormPage.header.create {"name":""}')
     expect(wrapper.find('.dataset-row')).toHaveLength(4)
     expect(wrapper.find('.dropdown .selected-value').text()).toBe('researcher')
     expect(wrapper.exists('.success-message')).toBe(false)
@@ -59,6 +60,7 @@ describe('UserFormPage', () => {
 
     wrapper.find('.ocean-expert-name-input .input').simulate('change', { target: { value: 'Indiana Jones' } })
     wrapper.update()
+    expect(wrapper.find('h1').text()).toBe('userFormPage.header.create {"name":""}')
     expect(wrapper.find('.ocean-expert-name-input .input').prop('value')).toBe('Indiana Jones')
     expect(wrapper.find('.submit-user-button button').props()['disabled']).toBe(true)
 
@@ -142,6 +144,7 @@ describe('UserFormPage', () => {
         wrapper.update()
         return wrapper.find('.dataset-row').length === 4
       })
+      expect(wrapper.find('h1').text()).toBe('userFormPage.header.update {"name":"Indiana Jones"}')
       expect(wrapper.find('.dataset-row')).toHaveLength(4)
       expect(wrapper.find('.ocean-expert-name-input .input').prop('value')).toBe('Indiana Jones')
       expect(wrapper.find('.email input').prop('value')).toBe('indiana.jones@gmail.com')
@@ -156,6 +159,7 @@ describe('UserFormPage', () => {
 
       wrapper.find('.ocean-expert-name-input .input').simulate('change', { target: { value: 'Harrison Ford' } })
       wrapper.update()
+      expect(wrapper.find('h1').text()).toBe('userFormPage.header.update {"name":"Indiana Jones"}')
       expect(wrapper.find('.ocean-expert-name-input .input').prop('value')).toBe('Harrison Ford')
       expect(wrapper.find('.submit-user-button button').props()['disabled']).toBe(false)
 
