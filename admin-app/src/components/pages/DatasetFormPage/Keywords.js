@@ -7,7 +7,7 @@ export default function Keywords({ keywords, onChange }) {
     <div className="keywords section is-fluid">
       <InputMultipleText
         className="keywords-input"
-        name="datasetPageFormPage.keywords.keywords"
+        name="datasetFormPage.keywords.keywords"
         onChange={onChange}
         values={keywords}/>
     </div>

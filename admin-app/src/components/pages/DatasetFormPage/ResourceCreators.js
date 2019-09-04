@@ -8,7 +8,7 @@ export default function ResourceCreators(props) {
   return (
     <ContactsForm
       className="resource-creators"
-      contactsTableHeader={t('datasetPageFormPage.resourceCreators.contactsTableHeader')}
+      contactsTableHeader={t('datasetFormPage.resourceCreators.contactsTableHeader')}
       {...props}/>
   )
 }

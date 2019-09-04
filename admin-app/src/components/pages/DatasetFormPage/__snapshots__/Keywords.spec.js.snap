@@ -10,7 +10,7 @@ exports[`Keywords renders correctly 1`] = `
   >
     <InputMultipleText
       className="keywords-input"
-      name="datasetPageFormPage.keywords.keywords"
+      name="datasetFormPage.keywords.keywords"
       onChange={[MockFunction]}
       values={Array []}
     >
@@ -20,20 +20,20 @@ exports[`Keywords renders correctly 1`] = `
         <label
           className="label"
         >
-          datasetPageFormPage.keywords.keywords.label
+          datasetFormPage.keywords.keywords.label
         </label>
         <input
           className="input"
           onChange={[Function]}
           onKeyDown={[Function]}
-          placeholder="datasetPageFormPage.keywords.keywords.placeholder"
+          placeholder="datasetFormPage.keywords.keywords.placeholder"
           type="text"
           value=""
         />
         <p
           className="help"
         >
-          datasetPageFormPage.keywords.keywords.help
+          datasetFormPage.keywords.keywords.help
         </p>
         <Tags
           onDelete={[Function]}

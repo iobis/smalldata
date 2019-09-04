@@ -46,20 +46,20 @@ export default function FinalSummary({
   return (
     <div className="final-summary section is-fluid">
       <div className="columns is-centered">
-        <h1 className="final-summary-title title is-3">{t('datasetPageFormPage.finalSummary.title')}</h1>
+        <h1 className="final-summary-title title is-3">{t('datasetFormPage.finalSummary.title')}</h1>
       </div>
       {successVisible ? (
         <div className="success-message notification is-success" ref={successMessageRef}>
-          <p className="title">{t('datasetPageFormPage.finalSummary.successMessage.header.' + successMessageType)}</p>
-          <p className="subtitle">{t('datasetPageFormPage.finalSummary.successMessage.nextOptions')}</p>
+          <p className="title">{t('datasetFormPage.finalSummary.successMessage.header.' + successMessageType)}</p>
+          <p className="subtitle">{t('datasetFormPage.finalSummary.successMessage.nextOptions')}</p>
           <section>
             <button className="create button is-white" onClick={onCreateClick}>
-              {t('datasetPageFormPage.finalSummary.successMessage.create')}
+              {t('datasetFormPage.finalSummary.successMessage.create')}
             </button>
           </section>
           <section>
             <Link className="is-size-5" to="/manage-dataset/">
-              {t('datasetPageFormPage.finalSummary.successMessage.doNothing')}
+              {t('datasetFormPage.finalSummary.successMessage.doNothing')}
             </Link>
           </section>
         </div>) : null}
@@ -70,23 +70,23 @@ export default function FinalSummary({
         </div>) : null}
       {submitButton}
       <section className="basic-information-summary">
-        <SectionTitle>1 - {t('datasetPageFormPage.basicInformation.step.stepTitle')}</SectionTitle>
+        <SectionTitle>1 - {t('datasetFormPage.basicInformation.step.stepTitle')}</SectionTitle>
         <div className="content">
           <table className="table is-striped is-fullwidth is-hoverable">
             <NameValueHeader/>
             <tbody>
               <NameValueRow
-                name={t('datasetPageFormPage.basicInformation.title.label')}
+                name={t('datasetFormPage.basicInformation.title.label')}
                 value={basicInformation.title}/>
               <NameValueRow
-                name={t('datasetPageFormPage.basicInformation.licence.label')}
+                name={t('datasetFormPage.basicInformation.licence.label')}
                 value={basicInformation.licence}/>
               <NameValueRow
-                name={t('datasetPageFormPage.basicInformation.language.label')}
+                name={t('datasetFormPage.basicInformation.language.label')}
                 value={basicInformation.language}/>
               <NameValueRow
                 className="abstract"
-                name={t('datasetPageFormPage.basicInformation.abstract.label')}
+                name={t('datasetFormPage.basicInformation.abstract.label')}
                 value={basicInformation.abstract}/>
             </tbody>
           </table>
@@ -94,7 +94,7 @@ export default function FinalSummary({
         <ChangeButton onClick={() => onChangeClick({ index: 0 })}/>
       </section>
       <section className="resource-contacts-summary">
-        <SectionTitle>2 - {t('datasetPageFormPage.resourceContacts.step.stepTitle')}</SectionTitle>
+        <SectionTitle>2 - {t('datasetFormPage.resourceContacts.step.stepTitle')}</SectionTitle>
         <div className="content">
           <div className="content">
             <ContactTable contacts={resourceContacts}/>
@@ -103,21 +103,21 @@ export default function FinalSummary({
         <ChangeButton onClick={() => onChangeClick({ index: 1 })}/>
       </section>
       <section className="resource-creators-summary">
-        <SectionTitle>3 - {t('datasetPageFormPage.resourceCreators.step.stepTitle')}</SectionTitle>
+        <SectionTitle>3 - {t('datasetFormPage.resourceCreators.step.stepTitle')}</SectionTitle>
         <div className="content">
           <ContactTable contacts={resourceCreators}/>
         </div>
         <ChangeButton onClick={() => onChangeClick({ index: 2 })}/>
       </section>
       <section className="metadata-providers-summary">
-        <SectionTitle>4 - {t('datasetPageFormPage.metadataProviders.step.stepTitle')}</SectionTitle>
+        <SectionTitle>4 - {t('datasetFormPage.metadataProviders.step.stepTitle')}</SectionTitle>
         <div className="content">
           <ContactTable contacts={metadataProviders}/>
         </div>
         <ChangeButton onClick={() => onChangeClick({ index: 3 })}/>
       </section>
       <section className="keywords-summary">
-        <SectionTitle>5 - {t('datasetPageFormPage.keywords.step.stepTitle')}</SectionTitle>
+        <SectionTitle>5 - {t('datasetFormPage.keywords.step.stepTitle')}</SectionTitle>
         <div className="content">
           {keywords.join(', ')}
         </div>
@@ -151,9 +151,9 @@ function ContactTable({ contacts }) {
     <table className="general table is-fullwidth is-striped is-hoverable">
       <thead>
         <tr>
-          <th>{t('datasetPageFormPage.contactsForm.name.label')}</th>
-          <th>{t('datasetPageFormPage.contactsForm.email.label')}</th>
-          <th>{t('datasetPageFormPage.contactsForm.organisation.label')}</th>
+          <th>{t('datasetFormPage.contactsForm.name.label')}</th>
+          <th>{t('datasetFormPage.contactsForm.email.label')}</th>
+          <th>{t('datasetFormPage.contactsForm.organisation.label')}</th>
         </tr>
       </thead>
       <tbody>

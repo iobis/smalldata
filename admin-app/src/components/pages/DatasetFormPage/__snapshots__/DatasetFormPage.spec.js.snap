@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
+exports[`DatasetFormPage when creating new dataset renders correctly 1`] = `
 <MemoryRouter
   initialEntries={
     Array [
@@ -43,7 +43,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
       }
     }
   >
-    <DatasetPageFormPage>
+    <DatasetFormPage>
       <h1>
         Create new dataset
       </h1>
@@ -53,14 +53,14 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
         <ActiveStepHeader
           activeStepIndex={0}
           className="step-1 background-color-0"
-          dataDescription="datasetPageFormPage.basicInformation.step.dataDescription"
-          key="datasetPageFormPage.basicInformation.step.stepTitle"
-          nextStep="datasetPageFormPage.resourceContacts.step.stepTitle"
+          dataDescription="datasetFormPage.basicInformation.step.dataDescription"
+          key="datasetFormPage.basicInformation.step.stepTitle"
+          nextStep="datasetFormPage.resourceContacts.step.stepTitle"
           onContinueButtonClick={[Function]}
           onStepTitleClick={[Function]}
           selectedData=""
-          stepDescription="datasetPageFormPage.basicInformation.step.stepDescription"
-          stepTitle="1 - datasetPageFormPage.basicInformation.step.stepTitle"
+          stepDescription="datasetFormPage.basicInformation.step.stepDescription"
+          stepTitle="1 - datasetFormPage.basicInformation.step.stepTitle"
           totalSteps={4}
         >
           <StepHeader
@@ -69,8 +69,8 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
             iconVisible={false}
             onStepTitleClick={[Function]}
             selectedData=""
-            stepDescription="datasetPageFormPage.basicInformation.step.stepDescription"
-            stepTitle="1 - datasetPageFormPage.basicInformation.step.stepTitle"
+            stepDescription="datasetFormPage.basicInformation.step.stepDescription"
+            stepTitle="1 - datasetFormPage.basicInformation.step.stepTitle"
           >
             <header
               className="step-header columns is-vcentered active has-background-grey has-text-white"
@@ -92,12 +92,12 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
                 <h3
                   className="is-size-6"
                 >
-                  datasetPageFormPage.basicInformation.step.stepDescription
+                  datasetFormPage.basicInformation.step.stepDescription
                 </h3>
                 <h2
                   className="step-title"
                 >
-                  1 - datasetPageFormPage.basicInformation.step.stepTitle
+                  1 - datasetFormPage.basicInformation.step.stepTitle
                 </h2>
               </div>
             </header>
@@ -132,7 +132,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
               >
                 <InputText
                   className="title mandatory"
-                  name="datasetPageFormPage.basicInformation.title"
+                  name="datasetFormPage.basicInformation.title"
                   onChange={[Function]}
                   value=""
                 >
@@ -141,13 +141,13 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
                   >
                     <label
                       className="label"
-                      htmlFor="datasetpageformpage.basicinformation.title.label"
+                      htmlFor="datasetformpage.basicinformation.title.label"
                     >
-                      datasetPageFormPage.basicInformation.title.label
+                      datasetFormPage.basicInformation.title.label
                     </label>
                     <input
                       className="input"
-                      id="datasetpageformpage.basicinformation.title.label"
+                      id="datasetformpage.basicinformation.title.label"
                       onChange={[Function]}
                       type="text"
                       value=""
@@ -160,7 +160,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
                   <label
                     className="label"
                   >
-                    datasetPageFormPage.basicInformation.licence.label
+                    datasetFormPage.basicInformation.licence.label
                   </label>
                   <Dropdown
                     onChange={[Function]}
@@ -245,7 +245,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
                   <label
                     className="label"
                   >
-                    datasetPageFormPage.basicInformation.language.label
+                    datasetFormPage.basicInformation.language.label
                   </label>
                   <Dropdown
                     onChange={[Function]}
@@ -334,7 +334,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
                 </div>
                 <Textarea
                   className="abstract is-9"
-                  name="datasetPageFormPage.basicInformation.abstract"
+                  name="datasetFormPage.basicInformation.abstract"
                   onChange={[Function]}
                   value=""
                 >
@@ -343,13 +343,13 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
                   >
                     <label
                       className="label"
-                      htmlFor="datasetpageformpage.basicinformation.abstract.label"
+                      htmlFor="datasetformpage.basicinformation.abstract.label"
                     >
-                      datasetPageFormPage.basicInformation.abstract.label
+                      datasetFormPage.basicInformation.abstract.label
                     </label>
                     <textarea
                       className="textarea"
-                      id="datasetpageformpage.basicinformation.abstract.label"
+                      id="datasetformpage.basicinformation.abstract.label"
                       onChange={[Function]}
                       rows={5}
                       value=""
@@ -361,7 +361,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
           </StepHeader>
           <StepFooter
             activeStepIndex={0}
-            nextStep="datasetPageFormPage.resourceContacts.step.stepTitle"
+            nextStep="datasetFormPage.resourceContacts.step.stepTitle"
             onContinueButtonClick={[Function]}
           >
             <div
@@ -381,14 +381,14 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
               <ContinueButton
                 name="locationContinue"
                 onClick={[Function]}
-                value="datasetPageFormPage.resourceContacts.step.stepTitle"
+                value="datasetFormPage.resourceContacts.step.stepTitle"
               >
                 <button
                   className="continue-button button is-info"
                   name="locationContinue"
                   onClick={[Function]}
                 >
-                  common.continueTo datasetpageformpage.resourcecontacts.step.steptitle
+                  common.continueTo datasetformpage.resourcecontacts.step.steptitle
                 </button>
               </ContinueButton>
             </div>
@@ -397,14 +397,14 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
         <NotConfirmedStepHeader
           activeStepIndex={0}
           className="step-2 background-color-6"
-          dataDescription="datasetPageFormPage.resourceContacts.step.dataDescription"
-          key="datasetPageFormPage.resourceContacts.step.stepTitle"
-          nextStep="datasetPageFormPage.resourceCreators.step.stepTitle"
+          dataDescription="datasetFormPage.resourceContacts.step.dataDescription"
+          key="datasetFormPage.resourceContacts.step.stepTitle"
+          nextStep="datasetFormPage.resourceCreators.step.stepTitle"
           onContinueButtonClick={[Function]}
           onStepTitleClick={[Function]}
-          selectedData="datasetPageFormPage.resourceContacts.step.selectedData {\\"nrOfContacts\\":0}"
-          stepDescription="datasetPageFormPage.resourceContacts.step.stepDescription"
-          stepTitle="2 - datasetPageFormPage.resourceContacts.step.stepTitle"
+          selectedData="datasetFormPage.resourceContacts.step.selectedData {\\"nrOfContacts\\":0}"
+          stepDescription="datasetFormPage.resourceContacts.step.stepDescription"
+          stepTitle="2 - datasetFormPage.resourceContacts.step.stepTitle"
           totalSteps={4}
         >
           <StepHeader
@@ -413,8 +413,8 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
             iconVisible={false}
             onStepTitleClick={[Function]}
             selectedData=""
-            stepDescription="datasetPageFormPage.resourceContacts.step.stepDescription"
-            stepTitle="2 - datasetPageFormPage.resourceContacts.step.stepTitle"
+            stepDescription="datasetFormPage.resourceContacts.step.stepDescription"
+            stepTitle="2 - datasetFormPage.resourceContacts.step.stepTitle"
           >
             <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-2 background-color-6"
@@ -436,12 +436,12 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
                 <h3
                   className="is-size-6"
                 >
-                  datasetPageFormPage.resourceContacts.step.stepDescription
+                  datasetFormPage.resourceContacts.step.stepDescription
                 </h3>
                 <h2
                   className="step-title"
                 >
-                  2 - datasetPageFormPage.resourceContacts.step.stepTitle
+                  2 - datasetFormPage.resourceContacts.step.stepTitle
                 </h2>
               </div>
             </header>
@@ -450,14 +450,14 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
         <NotConfirmedStepHeader
           activeStepIndex={0}
           className="step-3 background-color-12"
-          dataDescription="datasetPageFormPage.resourceCreators.step.dataDescription"
-          key="datasetPageFormPage.resourceCreators.step.stepTitle"
-          nextStep="datasetPageFormPage.metadataProviders.step.stepTitle"
+          dataDescription="datasetFormPage.resourceCreators.step.dataDescription"
+          key="datasetFormPage.resourceCreators.step.stepTitle"
+          nextStep="datasetFormPage.metadataProviders.step.stepTitle"
           onContinueButtonClick={[Function]}
           onStepTitleClick={[Function]}
-          selectedData="datasetPageFormPage.resourceCreators.step.selectedData {\\"nrOfContacts\\":0}"
-          stepDescription="datasetPageFormPage.resourceCreators.step.stepDescription"
-          stepTitle="3 - datasetPageFormPage.resourceCreators.step.stepTitle"
+          selectedData="datasetFormPage.resourceCreators.step.selectedData {\\"nrOfContacts\\":0}"
+          stepDescription="datasetFormPage.resourceCreators.step.stepDescription"
+          stepTitle="3 - datasetFormPage.resourceCreators.step.stepTitle"
           totalSteps={4}
         >
           <StepHeader
@@ -466,8 +466,8 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
             iconVisible={false}
             onStepTitleClick={[Function]}
             selectedData=""
-            stepDescription="datasetPageFormPage.resourceCreators.step.stepDescription"
-            stepTitle="3 - datasetPageFormPage.resourceCreators.step.stepTitle"
+            stepDescription="datasetFormPage.resourceCreators.step.stepDescription"
+            stepTitle="3 - datasetFormPage.resourceCreators.step.stepTitle"
           >
             <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-3 background-color-12"
@@ -489,12 +489,12 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
                 <h3
                   className="is-size-6"
                 >
-                  datasetPageFormPage.resourceCreators.step.stepDescription
+                  datasetFormPage.resourceCreators.step.stepDescription
                 </h3>
                 <h2
                   className="step-title"
                 >
-                  3 - datasetPageFormPage.resourceCreators.step.stepTitle
+                  3 - datasetFormPage.resourceCreators.step.stepTitle
                 </h2>
               </div>
             </header>
@@ -503,14 +503,14 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
         <NotConfirmedStepHeader
           activeStepIndex={0}
           className="step-4 background-color-18"
-          dataDescription="datasetPageFormPage.metadataProviders.step.dataDescription"
-          key="datasetPageFormPage.metadataProviders.step.stepTitle"
-          nextStep="datasetPageFormPage.keywords.step.stepTitle"
+          dataDescription="datasetFormPage.metadataProviders.step.dataDescription"
+          key="datasetFormPage.metadataProviders.step.stepTitle"
+          nextStep="datasetFormPage.keywords.step.stepTitle"
           onContinueButtonClick={[Function]}
           onStepTitleClick={[Function]}
-          selectedData="datasetPageFormPage.metadataProviders.step.selectedData {\\"nrOfContacts\\":0}"
-          stepDescription="datasetPageFormPage.metadataProviders.step.stepDescription"
-          stepTitle="4 - datasetPageFormPage.metadataProviders.step.stepTitle"
+          selectedData="datasetFormPage.metadataProviders.step.selectedData {\\"nrOfContacts\\":0}"
+          stepDescription="datasetFormPage.metadataProviders.step.stepDescription"
+          stepTitle="4 - datasetFormPage.metadataProviders.step.stepTitle"
           totalSteps={4}
         >
           <StepHeader
@@ -519,8 +519,8 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
             iconVisible={false}
             onStepTitleClick={[Function]}
             selectedData=""
-            stepDescription="datasetPageFormPage.metadataProviders.step.stepDescription"
-            stepTitle="4 - datasetPageFormPage.metadataProviders.step.stepTitle"
+            stepDescription="datasetFormPage.metadataProviders.step.stepDescription"
+            stepTitle="4 - datasetFormPage.metadataProviders.step.stepTitle"
           >
             <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-4 background-color-18"
@@ -542,12 +542,12 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
                 <h3
                   className="is-size-6"
                 >
-                  datasetPageFormPage.metadataProviders.step.stepDescription
+                  datasetFormPage.metadataProviders.step.stepDescription
                 </h3>
                 <h2
                   className="step-title"
                 >
-                  4 - datasetPageFormPage.metadataProviders.step.stepTitle
+                  4 - datasetFormPage.metadataProviders.step.stepTitle
                 </h2>
               </div>
             </header>
@@ -556,13 +556,13 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
         <NotConfirmedStepHeader
           activeStepIndex={0}
           className="step-5 background-color-24"
-          dataDescription="datasetPageFormPage.keywords.step.dataDescription"
-          key="datasetPageFormPage.keywords.step.stepTitle"
+          dataDescription="datasetFormPage.keywords.step.dataDescription"
+          key="datasetFormPage.keywords.step.stepTitle"
           onContinueButtonClick={[Function]}
           onStepTitleClick={[Function]}
           selectedData=""
-          stepDescription="datasetPageFormPage.keywords.step.stepDescription"
-          stepTitle="5 - datasetPageFormPage.keywords.step.stepTitle"
+          stepDescription="datasetFormPage.keywords.step.stepDescription"
+          stepTitle="5 - datasetFormPage.keywords.step.stepTitle"
           totalSteps={4}
         >
           <StepHeader
@@ -571,8 +571,8 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
             iconVisible={false}
             onStepTitleClick={[Function]}
             selectedData=""
-            stepDescription="datasetPageFormPage.keywords.step.stepDescription"
-            stepTitle="5 - datasetPageFormPage.keywords.step.stepTitle"
+            stepDescription="datasetFormPage.keywords.step.stepDescription"
+            stepTitle="5 - datasetFormPage.keywords.step.stepTitle"
           >
             <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-5 background-color-24"
@@ -594,12 +594,12 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
                 <h3
                   className="is-size-6"
                 >
-                  datasetPageFormPage.keywords.step.stepDescription
+                  datasetFormPage.keywords.step.stepDescription
                 </h3>
                 <h2
                   className="step-title"
                 >
-                  5 - datasetPageFormPage.keywords.step.stepTitle
+                  5 - datasetFormPage.keywords.step.stepTitle
                 </h2>
               </div>
             </header>
@@ -612,16 +612,16 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 1`] = `
             className="review-and-submit-button button is-medium is-info"
             onClick={[Function]}
           >
-            datasetPageFormPage.reviewAndSubmitButton
+            datasetFormPage.reviewAndSubmitButton
           </button>
         </div>
       </section>
-    </DatasetPageFormPage>
+    </DatasetFormPage>
   </Router>
 </MemoryRouter>
 `;
 
-exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
+exports[`DatasetFormPage when creating new dataset renders correctly 2`] = `
 <MemoryRouter
   initialEntries={
     Array [
@@ -664,7 +664,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
       }
     }
   >
-    <DatasetPageFormPage>
+    <DatasetFormPage>
       <h1>
         Edit dataset
       </h1>
@@ -674,14 +674,14 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
         <ActiveStepHeader
           activeStepIndex={0}
           className="step-1 background-color-0"
-          dataDescription="datasetPageFormPage.basicInformation.step.dataDescription"
-          key="datasetPageFormPage.basicInformation.step.stepTitle"
-          nextStep="datasetPageFormPage.resourceContacts.step.stepTitle"
+          dataDescription="datasetFormPage.basicInformation.step.dataDescription"
+          key="datasetFormPage.basicInformation.step.stepTitle"
+          nextStep="datasetFormPage.resourceContacts.step.stepTitle"
           onContinueButtonClick={[Function]}
           onStepTitleClick={[Function]}
           selectedData="dataset title"
-          stepDescription="datasetPageFormPage.basicInformation.step.stepDescription"
-          stepTitle="1 - datasetPageFormPage.basicInformation.step.stepTitle"
+          stepDescription="datasetFormPage.basicInformation.step.stepDescription"
+          stepTitle="1 - datasetFormPage.basicInformation.step.stepTitle"
           totalSteps={4}
         >
           <StepHeader
@@ -690,8 +690,8 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
             iconVisible={false}
             onStepTitleClick={[Function]}
             selectedData=""
-            stepDescription="datasetPageFormPage.basicInformation.step.stepDescription"
-            stepTitle="1 - datasetPageFormPage.basicInformation.step.stepTitle"
+            stepDescription="datasetFormPage.basicInformation.step.stepDescription"
+            stepTitle="1 - datasetFormPage.basicInformation.step.stepTitle"
           >
             <header
               className="step-header columns is-vcentered active has-background-grey has-text-white"
@@ -713,12 +713,12 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
                 <h3
                   className="is-size-6"
                 >
-                  datasetPageFormPage.basicInformation.step.stepDescription
+                  datasetFormPage.basicInformation.step.stepDescription
                 </h3>
                 <h2
                   className="step-title"
                 >
-                  1 - datasetPageFormPage.basicInformation.step.stepTitle
+                  1 - datasetFormPage.basicInformation.step.stepTitle
                 </h2>
               </div>
             </header>
@@ -753,7 +753,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
               >
                 <InputText
                   className="title mandatory"
-                  name="datasetPageFormPage.basicInformation.title"
+                  name="datasetFormPage.basicInformation.title"
                   onChange={[Function]}
                   value="dataset title"
                 >
@@ -762,13 +762,13 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
                   >
                     <label
                       className="label"
-                      htmlFor="datasetpageformpage.basicinformation.title.label"
+                      htmlFor="datasetformpage.basicinformation.title.label"
                     >
-                      datasetPageFormPage.basicInformation.title.label
+                      datasetFormPage.basicInformation.title.label
                     </label>
                     <input
                       className="input"
-                      id="datasetpageformpage.basicinformation.title.label"
+                      id="datasetformpage.basicinformation.title.label"
                       onChange={[Function]}
                       type="text"
                       value="dataset title"
@@ -781,7 +781,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
                   <label
                     className="label"
                   >
-                    datasetPageFormPage.basicInformation.licence.label
+                    datasetFormPage.basicInformation.licence.label
                   </label>
                   <Dropdown
                     onChange={[Function]}
@@ -866,7 +866,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
                   <label
                     className="label"
                   >
-                    datasetPageFormPage.basicInformation.language.label
+                    datasetFormPage.basicInformation.language.label
                   </label>
                   <Dropdown
                     onChange={[Function]}
@@ -955,7 +955,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
                 </div>
                 <Textarea
                   className="abstract is-9"
-                  name="datasetPageFormPage.basicInformation.abstract"
+                  name="datasetFormPage.basicInformation.abstract"
                   onChange={[Function]}
                   value="dataset abstract information"
                 >
@@ -964,13 +964,13 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
                   >
                     <label
                       className="label"
-                      htmlFor="datasetpageformpage.basicinformation.abstract.label"
+                      htmlFor="datasetformpage.basicinformation.abstract.label"
                     >
-                      datasetPageFormPage.basicInformation.abstract.label
+                      datasetFormPage.basicInformation.abstract.label
                     </label>
                     <textarea
                       className="textarea"
-                      id="datasetpageformpage.basicinformation.abstract.label"
+                      id="datasetformpage.basicinformation.abstract.label"
                       onChange={[Function]}
                       rows={5}
                       value="dataset abstract information"
@@ -982,7 +982,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
           </StepHeader>
           <StepFooter
             activeStepIndex={0}
-            nextStep="datasetPageFormPage.resourceContacts.step.stepTitle"
+            nextStep="datasetFormPage.resourceContacts.step.stepTitle"
             onContinueButtonClick={[Function]}
           >
             <div
@@ -1002,14 +1002,14 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
               <ContinueButton
                 name="locationContinue"
                 onClick={[Function]}
-                value="datasetPageFormPage.resourceContacts.step.stepTitle"
+                value="datasetFormPage.resourceContacts.step.stepTitle"
               >
                 <button
                   className="continue-button button is-info"
                   name="locationContinue"
                   onClick={[Function]}
                 >
-                  common.continueTo datasetpageformpage.resourcecontacts.step.steptitle
+                  common.continueTo datasetformpage.resourcecontacts.step.steptitle
                 </button>
               </ContinueButton>
             </div>
@@ -1018,14 +1018,14 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
         <NotConfirmedStepHeader
           activeStepIndex={0}
           className="step-2 background-color-6"
-          dataDescription="datasetPageFormPage.resourceContacts.step.dataDescription"
-          key="datasetPageFormPage.resourceContacts.step.stepTitle"
-          nextStep="datasetPageFormPage.resourceCreators.step.stepTitle"
+          dataDescription="datasetFormPage.resourceContacts.step.dataDescription"
+          key="datasetFormPage.resourceContacts.step.stepTitle"
+          nextStep="datasetFormPage.resourceCreators.step.stepTitle"
           onContinueButtonClick={[Function]}
           onStepTitleClick={[Function]}
-          selectedData="datasetPageFormPage.resourceContacts.step.selectedData {\\"nrOfContacts\\":0}"
-          stepDescription="datasetPageFormPage.resourceContacts.step.stepDescription"
-          stepTitle="2 - datasetPageFormPage.resourceContacts.step.stepTitle"
+          selectedData="datasetFormPage.resourceContacts.step.selectedData {\\"nrOfContacts\\":0}"
+          stepDescription="datasetFormPage.resourceContacts.step.stepDescription"
+          stepTitle="2 - datasetFormPage.resourceContacts.step.stepTitle"
           totalSteps={4}
         >
           <StepHeader
@@ -1034,8 +1034,8 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
             iconVisible={false}
             onStepTitleClick={[Function]}
             selectedData=""
-            stepDescription="datasetPageFormPage.resourceContacts.step.stepDescription"
-            stepTitle="2 - datasetPageFormPage.resourceContacts.step.stepTitle"
+            stepDescription="datasetFormPage.resourceContacts.step.stepDescription"
+            stepTitle="2 - datasetFormPage.resourceContacts.step.stepTitle"
           >
             <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-2 background-color-6"
@@ -1057,12 +1057,12 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
                 <h3
                   className="is-size-6"
                 >
-                  datasetPageFormPage.resourceContacts.step.stepDescription
+                  datasetFormPage.resourceContacts.step.stepDescription
                 </h3>
                 <h2
                   className="step-title"
                 >
-                  2 - datasetPageFormPage.resourceContacts.step.stepTitle
+                  2 - datasetFormPage.resourceContacts.step.stepTitle
                 </h2>
               </div>
             </header>
@@ -1071,14 +1071,14 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
         <NotConfirmedStepHeader
           activeStepIndex={0}
           className="step-3 background-color-12"
-          dataDescription="datasetPageFormPage.resourceCreators.step.dataDescription"
-          key="datasetPageFormPage.resourceCreators.step.stepTitle"
-          nextStep="datasetPageFormPage.metadataProviders.step.stepTitle"
+          dataDescription="datasetFormPage.resourceCreators.step.dataDescription"
+          key="datasetFormPage.resourceCreators.step.stepTitle"
+          nextStep="datasetFormPage.metadataProviders.step.stepTitle"
           onContinueButtonClick={[Function]}
           onStepTitleClick={[Function]}
-          selectedData="datasetPageFormPage.resourceCreators.step.selectedData {\\"nrOfContacts\\":0}"
-          stepDescription="datasetPageFormPage.resourceCreators.step.stepDescription"
-          stepTitle="3 - datasetPageFormPage.resourceCreators.step.stepTitle"
+          selectedData="datasetFormPage.resourceCreators.step.selectedData {\\"nrOfContacts\\":0}"
+          stepDescription="datasetFormPage.resourceCreators.step.stepDescription"
+          stepTitle="3 - datasetFormPage.resourceCreators.step.stepTitle"
           totalSteps={4}
         >
           <StepHeader
@@ -1087,8 +1087,8 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
             iconVisible={false}
             onStepTitleClick={[Function]}
             selectedData=""
-            stepDescription="datasetPageFormPage.resourceCreators.step.stepDescription"
-            stepTitle="3 - datasetPageFormPage.resourceCreators.step.stepTitle"
+            stepDescription="datasetFormPage.resourceCreators.step.stepDescription"
+            stepTitle="3 - datasetFormPage.resourceCreators.step.stepTitle"
           >
             <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-3 background-color-12"
@@ -1110,12 +1110,12 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
                 <h3
                   className="is-size-6"
                 >
-                  datasetPageFormPage.resourceCreators.step.stepDescription
+                  datasetFormPage.resourceCreators.step.stepDescription
                 </h3>
                 <h2
                   className="step-title"
                 >
-                  3 - datasetPageFormPage.resourceCreators.step.stepTitle
+                  3 - datasetFormPage.resourceCreators.step.stepTitle
                 </h2>
               </div>
             </header>
@@ -1124,14 +1124,14 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
         <NotConfirmedStepHeader
           activeStepIndex={0}
           className="step-4 background-color-18"
-          dataDescription="datasetPageFormPage.metadataProviders.step.dataDescription"
-          key="datasetPageFormPage.metadataProviders.step.stepTitle"
-          nextStep="datasetPageFormPage.keywords.step.stepTitle"
+          dataDescription="datasetFormPage.metadataProviders.step.dataDescription"
+          key="datasetFormPage.metadataProviders.step.stepTitle"
+          nextStep="datasetFormPage.keywords.step.stepTitle"
           onContinueButtonClick={[Function]}
           onStepTitleClick={[Function]}
-          selectedData="datasetPageFormPage.metadataProviders.step.selectedData {\\"nrOfContacts\\":0}"
-          stepDescription="datasetPageFormPage.metadataProviders.step.stepDescription"
-          stepTitle="4 - datasetPageFormPage.metadataProviders.step.stepTitle"
+          selectedData="datasetFormPage.metadataProviders.step.selectedData {\\"nrOfContacts\\":0}"
+          stepDescription="datasetFormPage.metadataProviders.step.stepDescription"
+          stepTitle="4 - datasetFormPage.metadataProviders.step.stepTitle"
           totalSteps={4}
         >
           <StepHeader
@@ -1140,8 +1140,8 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
             iconVisible={false}
             onStepTitleClick={[Function]}
             selectedData=""
-            stepDescription="datasetPageFormPage.metadataProviders.step.stepDescription"
-            stepTitle="4 - datasetPageFormPage.metadataProviders.step.stepTitle"
+            stepDescription="datasetFormPage.metadataProviders.step.stepDescription"
+            stepTitle="4 - datasetFormPage.metadataProviders.step.stepTitle"
           >
             <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-4 background-color-18"
@@ -1163,12 +1163,12 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
                 <h3
                   className="is-size-6"
                 >
-                  datasetPageFormPage.metadataProviders.step.stepDescription
+                  datasetFormPage.metadataProviders.step.stepDescription
                 </h3>
                 <h2
                   className="step-title"
                 >
-                  4 - datasetPageFormPage.metadataProviders.step.stepTitle
+                  4 - datasetFormPage.metadataProviders.step.stepTitle
                 </h2>
               </div>
             </header>
@@ -1177,13 +1177,13 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
         <NotConfirmedStepHeader
           activeStepIndex={0}
           className="step-5 background-color-24"
-          dataDescription="datasetPageFormPage.keywords.step.dataDescription"
-          key="datasetPageFormPage.keywords.step.stepTitle"
+          dataDescription="datasetFormPage.keywords.step.dataDescription"
+          key="datasetFormPage.keywords.step.stepTitle"
           onContinueButtonClick={[Function]}
           onStepTitleClick={[Function]}
           selectedData=""
-          stepDescription="datasetPageFormPage.keywords.step.stepDescription"
-          stepTitle="5 - datasetPageFormPage.keywords.step.stepTitle"
+          stepDescription="datasetFormPage.keywords.step.stepDescription"
+          stepTitle="5 - datasetFormPage.keywords.step.stepTitle"
           totalSteps={4}
         >
           <StepHeader
@@ -1192,8 +1192,8 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
             iconVisible={false}
             onStepTitleClick={[Function]}
             selectedData=""
-            stepDescription="datasetPageFormPage.keywords.step.stepDescription"
-            stepTitle="5 - datasetPageFormPage.keywords.step.stepTitle"
+            stepDescription="datasetFormPage.keywords.step.stepDescription"
+            stepTitle="5 - datasetFormPage.keywords.step.stepTitle"
           >
             <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-5 background-color-24"
@@ -1215,12 +1215,12 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
                 <h3
                   className="is-size-6"
                 >
-                  datasetPageFormPage.keywords.step.stepDescription
+                  datasetFormPage.keywords.step.stepDescription
                 </h3>
                 <h2
                   className="step-title"
                 >
-                  5 - datasetPageFormPage.keywords.step.stepTitle
+                  5 - datasetFormPage.keywords.step.stepTitle
                 </h2>
               </div>
             </header>
@@ -1233,16 +1233,16 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 2`] = `
             className="review-and-submit-button button is-medium is-info"
             onClick={[Function]}
           >
-            datasetPageFormPage.reviewAndSubmitButton
+            datasetFormPage.reviewAndSubmitButton
           </button>
         </div>
       </section>
-    </DatasetPageFormPage>
+    </DatasetFormPage>
   </Router>
 </MemoryRouter>
 `;
 
-exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
+exports[`DatasetFormPage when creating new dataset renders correctly 3`] = `
 <MemoryRouter
   initialEntries={
     Array [
@@ -1285,7 +1285,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
       }
     }
   >
-    <DatasetPageFormPage>
+    <DatasetFormPage>
       <h1>
         Edit dataset
       </h1>
@@ -1295,14 +1295,14 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
         <NotConfirmedStepHeader
           activeStepIndex={null}
           className="step-1 background-color-0"
-          dataDescription="datasetPageFormPage.basicInformation.step.dataDescription"
-          key="datasetPageFormPage.basicInformation.step.stepTitle"
-          nextStep="datasetPageFormPage.resourceContacts.step.stepTitle"
+          dataDescription="datasetFormPage.basicInformation.step.dataDescription"
+          key="datasetFormPage.basicInformation.step.stepTitle"
+          nextStep="datasetFormPage.resourceContacts.step.stepTitle"
           onContinueButtonClick={[Function]}
           onStepTitleClick={[Function]}
           selectedData="dataset title"
-          stepDescription="datasetPageFormPage.basicInformation.step.stepDescription"
-          stepTitle="1 - datasetPageFormPage.basicInformation.step.stepTitle"
+          stepDescription="datasetFormPage.basicInformation.step.stepDescription"
+          stepTitle="1 - datasetFormPage.basicInformation.step.stepTitle"
           totalSteps={4}
         >
           <StepHeader
@@ -1311,8 +1311,8 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
             iconVisible={false}
             onStepTitleClick={[Function]}
             selectedData=""
-            stepDescription="datasetPageFormPage.basicInformation.step.stepDescription"
-            stepTitle="1 - datasetPageFormPage.basicInformation.step.stepTitle"
+            stepDescription="datasetFormPage.basicInformation.step.stepDescription"
+            stepTitle="1 - datasetFormPage.basicInformation.step.stepTitle"
           >
             <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-1 background-color-0"
@@ -1334,12 +1334,12 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
                 <h3
                   className="is-size-6"
                 >
-                  datasetPageFormPage.basicInformation.step.stepDescription
+                  datasetFormPage.basicInformation.step.stepDescription
                 </h3>
                 <h2
                   className="step-title"
                 >
-                  1 - datasetPageFormPage.basicInformation.step.stepTitle
+                  1 - datasetFormPage.basicInformation.step.stepTitle
                 </h2>
               </div>
             </header>
@@ -1348,14 +1348,14 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
         <NotConfirmedStepHeader
           activeStepIndex={null}
           className="step-2 background-color-6"
-          dataDescription="datasetPageFormPage.resourceContacts.step.dataDescription"
-          key="datasetPageFormPage.resourceContacts.step.stepTitle"
-          nextStep="datasetPageFormPage.resourceCreators.step.stepTitle"
+          dataDescription="datasetFormPage.resourceContacts.step.dataDescription"
+          key="datasetFormPage.resourceContacts.step.stepTitle"
+          nextStep="datasetFormPage.resourceCreators.step.stepTitle"
           onContinueButtonClick={[Function]}
           onStepTitleClick={[Function]}
-          selectedData="datasetPageFormPage.resourceContacts.step.selectedData {\\"nrOfContacts\\":2}"
-          stepDescription="datasetPageFormPage.resourceContacts.step.stepDescription"
-          stepTitle="2 - datasetPageFormPage.resourceContacts.step.stepTitle"
+          selectedData="datasetFormPage.resourceContacts.step.selectedData {\\"nrOfContacts\\":2}"
+          stepDescription="datasetFormPage.resourceContacts.step.stepDescription"
+          stepTitle="2 - datasetFormPage.resourceContacts.step.stepTitle"
           totalSteps={4}
         >
           <StepHeader
@@ -1364,8 +1364,8 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
             iconVisible={false}
             onStepTitleClick={[Function]}
             selectedData=""
-            stepDescription="datasetPageFormPage.resourceContacts.step.stepDescription"
-            stepTitle="2 - datasetPageFormPage.resourceContacts.step.stepTitle"
+            stepDescription="datasetFormPage.resourceContacts.step.stepDescription"
+            stepTitle="2 - datasetFormPage.resourceContacts.step.stepTitle"
           >
             <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-2 background-color-6"
@@ -1387,12 +1387,12 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
                 <h3
                   className="is-size-6"
                 >
-                  datasetPageFormPage.resourceContacts.step.stepDescription
+                  datasetFormPage.resourceContacts.step.stepDescription
                 </h3>
                 <h2
                   className="step-title"
                 >
-                  2 - datasetPageFormPage.resourceContacts.step.stepTitle
+                  2 - datasetFormPage.resourceContacts.step.stepTitle
                 </h2>
               </div>
             </header>
@@ -1401,14 +1401,14 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
         <NotConfirmedStepHeader
           activeStepIndex={null}
           className="step-3 background-color-12"
-          dataDescription="datasetPageFormPage.resourceCreators.step.dataDescription"
-          key="datasetPageFormPage.resourceCreators.step.stepTitle"
-          nextStep="datasetPageFormPage.metadataProviders.step.stepTitle"
+          dataDescription="datasetFormPage.resourceCreators.step.dataDescription"
+          key="datasetFormPage.resourceCreators.step.stepTitle"
+          nextStep="datasetFormPage.metadataProviders.step.stepTitle"
           onContinueButtonClick={[Function]}
           onStepTitleClick={[Function]}
-          selectedData="datasetPageFormPage.resourceCreators.step.selectedData {\\"nrOfContacts\\":2}"
-          stepDescription="datasetPageFormPage.resourceCreators.step.stepDescription"
-          stepTitle="3 - datasetPageFormPage.resourceCreators.step.stepTitle"
+          selectedData="datasetFormPage.resourceCreators.step.selectedData {\\"nrOfContacts\\":2}"
+          stepDescription="datasetFormPage.resourceCreators.step.stepDescription"
+          stepTitle="3 - datasetFormPage.resourceCreators.step.stepTitle"
           totalSteps={4}
         >
           <StepHeader
@@ -1417,8 +1417,8 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
             iconVisible={false}
             onStepTitleClick={[Function]}
             selectedData=""
-            stepDescription="datasetPageFormPage.resourceCreators.step.stepDescription"
-            stepTitle="3 - datasetPageFormPage.resourceCreators.step.stepTitle"
+            stepDescription="datasetFormPage.resourceCreators.step.stepDescription"
+            stepTitle="3 - datasetFormPage.resourceCreators.step.stepTitle"
           >
             <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-3 background-color-12"
@@ -1440,12 +1440,12 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
                 <h3
                   className="is-size-6"
                 >
-                  datasetPageFormPage.resourceCreators.step.stepDescription
+                  datasetFormPage.resourceCreators.step.stepDescription
                 </h3>
                 <h2
                   className="step-title"
                 >
-                  3 - datasetPageFormPage.resourceCreators.step.stepTitle
+                  3 - datasetFormPage.resourceCreators.step.stepTitle
                 </h2>
               </div>
             </header>
@@ -1454,14 +1454,14 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
         <NotConfirmedStepHeader
           activeStepIndex={null}
           className="step-4 background-color-18"
-          dataDescription="datasetPageFormPage.metadataProviders.step.dataDescription"
-          key="datasetPageFormPage.metadataProviders.step.stepTitle"
-          nextStep="datasetPageFormPage.keywords.step.stepTitle"
+          dataDescription="datasetFormPage.metadataProviders.step.dataDescription"
+          key="datasetFormPage.metadataProviders.step.stepTitle"
+          nextStep="datasetFormPage.keywords.step.stepTitle"
           onContinueButtonClick={[Function]}
           onStepTitleClick={[Function]}
-          selectedData="datasetPageFormPage.metadataProviders.step.selectedData {\\"nrOfContacts\\":2}"
-          stepDescription="datasetPageFormPage.metadataProviders.step.stepDescription"
-          stepTitle="4 - datasetPageFormPage.metadataProviders.step.stepTitle"
+          selectedData="datasetFormPage.metadataProviders.step.selectedData {\\"nrOfContacts\\":2}"
+          stepDescription="datasetFormPage.metadataProviders.step.stepDescription"
+          stepTitle="4 - datasetFormPage.metadataProviders.step.stepTitle"
           totalSteps={4}
         >
           <StepHeader
@@ -1470,8 +1470,8 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
             iconVisible={false}
             onStepTitleClick={[Function]}
             selectedData=""
-            stepDescription="datasetPageFormPage.metadataProviders.step.stepDescription"
-            stepTitle="4 - datasetPageFormPage.metadataProviders.step.stepTitle"
+            stepDescription="datasetFormPage.metadataProviders.step.stepDescription"
+            stepTitle="4 - datasetFormPage.metadataProviders.step.stepTitle"
           >
             <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-4 background-color-18"
@@ -1493,12 +1493,12 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
                 <h3
                   className="is-size-6"
                 >
-                  datasetPageFormPage.metadataProviders.step.stepDescription
+                  datasetFormPage.metadataProviders.step.stepDescription
                 </h3>
                 <h2
                   className="step-title"
                 >
-                  4 - datasetPageFormPage.metadataProviders.step.stepTitle
+                  4 - datasetFormPage.metadataProviders.step.stepTitle
                 </h2>
               </div>
             </header>
@@ -1507,13 +1507,13 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
         <NotConfirmedStepHeader
           activeStepIndex={null}
           className="step-5 background-color-24"
-          dataDescription="datasetPageFormPage.keywords.step.dataDescription"
-          key="datasetPageFormPage.keywords.step.stepTitle"
+          dataDescription="datasetFormPage.keywords.step.dataDescription"
+          key="datasetFormPage.keywords.step.stepTitle"
           onContinueButtonClick={[Function]}
           onStepTitleClick={[Function]}
           selectedData=""
-          stepDescription="datasetPageFormPage.keywords.step.stepDescription"
-          stepTitle="5 - datasetPageFormPage.keywords.step.stepTitle"
+          stepDescription="datasetFormPage.keywords.step.stepDescription"
+          stepTitle="5 - datasetFormPage.keywords.step.stepTitle"
           totalSteps={4}
         >
           <StepHeader
@@ -1522,8 +1522,8 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
             iconVisible={false}
             onStepTitleClick={[Function]}
             selectedData=""
-            stepDescription="datasetPageFormPage.keywords.step.stepDescription"
-            stepTitle="5 - datasetPageFormPage.keywords.step.stepTitle"
+            stepDescription="datasetFormPage.keywords.step.stepDescription"
+            stepTitle="5 - datasetFormPage.keywords.step.stepTitle"
           >
             <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-5 background-color-24"
@@ -1545,12 +1545,12 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
                 <h3
                   className="is-size-6"
                 >
-                  datasetPageFormPage.keywords.step.stepDescription
+                  datasetFormPage.keywords.step.stepDescription
                 </h3>
                 <h2
                   className="step-title"
                 >
-                  5 - datasetPageFormPage.keywords.step.stepTitle
+                  5 - datasetFormPage.keywords.step.stepTitle
                 </h2>
               </div>
             </header>
@@ -1631,7 +1631,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
               <h1
                 className="final-summary-title title is-3"
               >
-                datasetPageFormPage.finalSummary.title
+                datasetFormPage.finalSummary.title
               </h1>
             </div>
             <SubmitEntryButton
@@ -1656,7 +1656,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
                   className="title is-4"
                 >
                   1 - 
-                  datasetPageFormPage.basicInformation.step.stepTitle
+                  datasetFormPage.basicInformation.step.stepTitle
                 </h2>
               </SectionTitle>
               <div
@@ -1683,7 +1683,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
                   </NameValueHeader>
                   <tbody>
                     <NameValueRow
-                      name="datasetPageFormPage.basicInformation.title.label"
+                      name="datasetFormPage.basicInformation.title.label"
                       value="dataset title"
                     >
                       <tr
@@ -1692,7 +1692,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
                         <td
                           className="name"
                         >
-                          datasetPageFormPage.basicInformation.title.label
+                          datasetFormPage.basicInformation.title.label
                         </td>
                         <td
                           className="value"
@@ -1702,7 +1702,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
                       </tr>
                     </NameValueRow>
                     <NameValueRow
-                      name="datasetPageFormPage.basicInformation.licence.label"
+                      name="datasetFormPage.basicInformation.licence.label"
                       value="Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License"
                     >
                       <tr
@@ -1711,7 +1711,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
                         <td
                           className="name"
                         >
-                          datasetPageFormPage.basicInformation.licence.label
+                          datasetFormPage.basicInformation.licence.label
                         </td>
                         <td
                           className="value"
@@ -1721,7 +1721,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
                       </tr>
                     </NameValueRow>
                     <NameValueRow
-                      name="datasetPageFormPage.basicInformation.language.label"
+                      name="datasetFormPage.basicInformation.language.label"
                       value="Dutch"
                     >
                       <tr
@@ -1730,7 +1730,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
                         <td
                           className="name"
                         >
-                          datasetPageFormPage.basicInformation.language.label
+                          datasetFormPage.basicInformation.language.label
                         </td>
                         <td
                           className="value"
@@ -1741,7 +1741,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
                     </NameValueRow>
                     <NameValueRow
                       className="abstract"
-                      name="datasetPageFormPage.basicInformation.abstract.label"
+                      name="datasetFormPage.basicInformation.abstract.label"
                       value="dataset abstract information"
                     >
                       <tr
@@ -1750,7 +1750,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
                         <td
                           className="name"
                         >
-                          datasetPageFormPage.basicInformation.abstract.label
+                          datasetFormPage.basicInformation.abstract.label
                         </td>
                         <td
                           className="value"
@@ -1781,7 +1781,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
                   className="title is-4"
                 >
                   2 - 
-                  datasetPageFormPage.resourceContacts.step.stepTitle
+                  datasetFormPage.resourceContacts.step.stepTitle
                 </h2>
               </SectionTitle>
               <div
@@ -1812,13 +1812,13 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
                       <thead>
                         <tr>
                           <th>
-                            datasetPageFormPage.contactsForm.name.label
+                            datasetFormPage.contactsForm.name.label
                           </th>
                           <th>
-                            datasetPageFormPage.contactsForm.email.label
+                            datasetFormPage.contactsForm.email.label
                           </th>
                           <th>
-                            datasetPageFormPage.contactsForm.organisation.label
+                            datasetFormPage.contactsForm.organisation.label
                           </th>
                         </tr>
                       </thead>
@@ -1899,7 +1899,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
                   className="title is-4"
                 >
                   3 - 
-                  datasetPageFormPage.resourceCreators.step.stepTitle
+                  datasetFormPage.resourceCreators.step.stepTitle
                 </h2>
               </SectionTitle>
               <div
@@ -1927,13 +1927,13 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
                     <thead>
                       <tr>
                         <th>
-                          datasetPageFormPage.contactsForm.name.label
+                          datasetFormPage.contactsForm.name.label
                         </th>
                         <th>
-                          datasetPageFormPage.contactsForm.email.label
+                          datasetFormPage.contactsForm.email.label
                         </th>
                         <th>
-                          datasetPageFormPage.contactsForm.organisation.label
+                          datasetFormPage.contactsForm.organisation.label
                         </th>
                       </tr>
                     </thead>
@@ -2013,7 +2013,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
                   className="title is-4"
                 >
                   4 - 
-                  datasetPageFormPage.metadataProviders.step.stepTitle
+                  datasetFormPage.metadataProviders.step.stepTitle
                 </h2>
               </SectionTitle>
               <div
@@ -2041,13 +2041,13 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
                     <thead>
                       <tr>
                         <th>
-                          datasetPageFormPage.contactsForm.name.label
+                          datasetFormPage.contactsForm.name.label
                         </th>
                         <th>
-                          datasetPageFormPage.contactsForm.email.label
+                          datasetFormPage.contactsForm.email.label
                         </th>
                         <th>
-                          datasetPageFormPage.contactsForm.organisation.label
+                          datasetFormPage.contactsForm.organisation.label
                         </th>
                       </tr>
                     </thead>
@@ -2127,7 +2127,7 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
                   className="title is-4"
                 >
                   5 - 
-                  datasetPageFormPage.keywords.step.stepTitle
+                  datasetFormPage.keywords.step.stepTitle
                 </h2>
               </SectionTitle>
               <div
@@ -2163,12 +2163,12 @@ exports[`DatasetPageFormPage when creating new dataset renders correctly 3`] = `
           </div>
         </FinalSummary>
       </section>
-    </DatasetPageFormPage>
+    </DatasetFormPage>
   </Router>
 </MemoryRouter>
 `;
 
-exports[`DatasetPageFormPage when updating dataset and then clicking on resource contacts and then clicking on resource creators and then clicking on metadata providers and then clicking on keywords and then clicking "Review and Submit" button renders correctly 1`] = `
+exports[`DatasetFormPage when updating dataset and then clicking on resource contacts and then clicking on resource creators and then clicking on metadata providers and then clicking on keywords and then clicking "Review and Submit" button renders correctly 1`] = `
 <MemoryRouter
   initialEntries={
     Array [
@@ -2211,7 +2211,7 @@ exports[`DatasetPageFormPage when updating dataset and then clicking on resource
       }
     }
   >
-    <DatasetPageFormPage
+    <DatasetFormPage
       location={
         Object {
           "state": Object {
@@ -2230,14 +2230,14 @@ exports[`DatasetPageFormPage when updating dataset and then clicking on resource
         <NotConfirmedStepHeader
           activeStepIndex={null}
           className="step-1 background-color-0"
-          dataDescription="datasetPageFormPage.basicInformation.step.dataDescription"
-          key="datasetPageFormPage.basicInformation.step.stepTitle"
-          nextStep="datasetPageFormPage.resourceContacts.step.stepTitle"
+          dataDescription="datasetFormPage.basicInformation.step.dataDescription"
+          key="datasetFormPage.basicInformation.step.stepTitle"
+          nextStep="datasetFormPage.resourceContacts.step.stepTitle"
           onContinueButtonClick={[Function]}
           onStepTitleClick={[Function]}
           selectedData="Benthic data from Sevastopol (Black Sea)"
-          stepDescription="datasetPageFormPage.basicInformation.step.stepDescription"
-          stepTitle="1 - datasetPageFormPage.basicInformation.step.stepTitle"
+          stepDescription="datasetFormPage.basicInformation.step.stepDescription"
+          stepTitle="1 - datasetFormPage.basicInformation.step.stepTitle"
           totalSteps={4}
         >
           <StepHeader
@@ -2246,8 +2246,8 @@ exports[`DatasetPageFormPage when updating dataset and then clicking on resource
             iconVisible={false}
             onStepTitleClick={[Function]}
             selectedData=""
-            stepDescription="datasetPageFormPage.basicInformation.step.stepDescription"
-            stepTitle="1 - datasetPageFormPage.basicInformation.step.stepTitle"
+            stepDescription="datasetFormPage.basicInformation.step.stepDescription"
+            stepTitle="1 - datasetFormPage.basicInformation.step.stepTitle"
           >
             <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-1 background-color-0"
@@ -2269,12 +2269,12 @@ exports[`DatasetPageFormPage when updating dataset and then clicking on resource
                 <h3
                   className="is-size-6"
                 >
-                  datasetPageFormPage.basicInformation.step.stepDescription
+                  datasetFormPage.basicInformation.step.stepDescription
                 </h3>
                 <h2
                   className="step-title"
                 >
-                  1 - datasetPageFormPage.basicInformation.step.stepTitle
+                  1 - datasetFormPage.basicInformation.step.stepTitle
                 </h2>
               </div>
             </header>
@@ -2283,14 +2283,14 @@ exports[`DatasetPageFormPage when updating dataset and then clicking on resource
         <NotConfirmedStepHeader
           activeStepIndex={null}
           className="step-2 background-color-6"
-          dataDescription="datasetPageFormPage.resourceContacts.step.dataDescription"
-          key="datasetPageFormPage.resourceContacts.step.stepTitle"
-          nextStep="datasetPageFormPage.resourceCreators.step.stepTitle"
+          dataDescription="datasetFormPage.resourceContacts.step.dataDescription"
+          key="datasetFormPage.resourceContacts.step.stepTitle"
+          nextStep="datasetFormPage.resourceCreators.step.stepTitle"
           onContinueButtonClick={[Function]}
           onStepTitleClick={[Function]}
-          selectedData="datasetPageFormPage.resourceContacts.step.selectedData {\\"nrOfContacts\\":1}"
-          stepDescription="datasetPageFormPage.resourceContacts.step.stepDescription"
-          stepTitle="2 - datasetPageFormPage.resourceContacts.step.stepTitle"
+          selectedData="datasetFormPage.resourceContacts.step.selectedData {\\"nrOfContacts\\":1}"
+          stepDescription="datasetFormPage.resourceContacts.step.stepDescription"
+          stepTitle="2 - datasetFormPage.resourceContacts.step.stepTitle"
           totalSteps={4}
         >
           <StepHeader
@@ -2299,8 +2299,8 @@ exports[`DatasetPageFormPage when updating dataset and then clicking on resource
             iconVisible={false}
             onStepTitleClick={[Function]}
             selectedData=""
-            stepDescription="datasetPageFormPage.resourceContacts.step.stepDescription"
-            stepTitle="2 - datasetPageFormPage.resourceContacts.step.stepTitle"
+            stepDescription="datasetFormPage.resourceContacts.step.stepDescription"
+            stepTitle="2 - datasetFormPage.resourceContacts.step.stepTitle"
           >
             <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-2 background-color-6"
@@ -2322,12 +2322,12 @@ exports[`DatasetPageFormPage when updating dataset and then clicking on resource
                 <h3
                   className="is-size-6"
                 >
-                  datasetPageFormPage.resourceContacts.step.stepDescription
+                  datasetFormPage.resourceContacts.step.stepDescription
                 </h3>
                 <h2
                   className="step-title"
                 >
-                  2 - datasetPageFormPage.resourceContacts.step.stepTitle
+                  2 - datasetFormPage.resourceContacts.step.stepTitle
                 </h2>
               </div>
             </header>
@@ -2336,14 +2336,14 @@ exports[`DatasetPageFormPage when updating dataset and then clicking on resource
         <NotConfirmedStepHeader
           activeStepIndex={null}
           className="step-3 background-color-12"
-          dataDescription="datasetPageFormPage.resourceCreators.step.dataDescription"
-          key="datasetPageFormPage.resourceCreators.step.stepTitle"
-          nextStep="datasetPageFormPage.metadataProviders.step.stepTitle"
+          dataDescription="datasetFormPage.resourceCreators.step.dataDescription"
+          key="datasetFormPage.resourceCreators.step.stepTitle"
+          nextStep="datasetFormPage.metadataProviders.step.stepTitle"
           onContinueButtonClick={[Function]}
           onStepTitleClick={[Function]}
-          selectedData="datasetPageFormPage.resourceCreators.step.selectedData {\\"nrOfContacts\\":3}"
-          stepDescription="datasetPageFormPage.resourceCreators.step.stepDescription"
-          stepTitle="3 - datasetPageFormPage.resourceCreators.step.stepTitle"
+          selectedData="datasetFormPage.resourceCreators.step.selectedData {\\"nrOfContacts\\":3}"
+          stepDescription="datasetFormPage.resourceCreators.step.stepDescription"
+          stepTitle="3 - datasetFormPage.resourceCreators.step.stepTitle"
           totalSteps={4}
         >
           <StepHeader
@@ -2352,8 +2352,8 @@ exports[`DatasetPageFormPage when updating dataset and then clicking on resource
             iconVisible={false}
             onStepTitleClick={[Function]}
             selectedData=""
-            stepDescription="datasetPageFormPage.resourceCreators.step.stepDescription"
-            stepTitle="3 - datasetPageFormPage.resourceCreators.step.stepTitle"
+            stepDescription="datasetFormPage.resourceCreators.step.stepDescription"
+            stepTitle="3 - datasetFormPage.resourceCreators.step.stepTitle"
           >
             <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-3 background-color-12"
@@ -2375,12 +2375,12 @@ exports[`DatasetPageFormPage when updating dataset and then clicking on resource
                 <h3
                   className="is-size-6"
                 >
-                  datasetPageFormPage.resourceCreators.step.stepDescription
+                  datasetFormPage.resourceCreators.step.stepDescription
                 </h3>
                 <h2
                   className="step-title"
                 >
-                  3 - datasetPageFormPage.resourceCreators.step.stepTitle
+                  3 - datasetFormPage.resourceCreators.step.stepTitle
                 </h2>
               </div>
             </header>
@@ -2389,14 +2389,14 @@ exports[`DatasetPageFormPage when updating dataset and then clicking on resource
         <NotConfirmedStepHeader
           activeStepIndex={null}
           className="step-4 background-color-18"
-          dataDescription="datasetPageFormPage.metadataProviders.step.dataDescription"
-          key="datasetPageFormPage.metadataProviders.step.stepTitle"
-          nextStep="datasetPageFormPage.keywords.step.stepTitle"
+          dataDescription="datasetFormPage.metadataProviders.step.dataDescription"
+          key="datasetFormPage.metadataProviders.step.stepTitle"
+          nextStep="datasetFormPage.keywords.step.stepTitle"
           onContinueButtonClick={[Function]}
           onStepTitleClick={[Function]}
-          selectedData="datasetPageFormPage.metadataProviders.step.selectedData {\\"nrOfContacts\\":1}"
-          stepDescription="datasetPageFormPage.metadataProviders.step.stepDescription"
-          stepTitle="4 - datasetPageFormPage.metadataProviders.step.stepTitle"
+          selectedData="datasetFormPage.metadataProviders.step.selectedData {\\"nrOfContacts\\":1}"
+          stepDescription="datasetFormPage.metadataProviders.step.stepDescription"
+          stepTitle="4 - datasetFormPage.metadataProviders.step.stepTitle"
           totalSteps={4}
         >
           <StepHeader
@@ -2405,8 +2405,8 @@ exports[`DatasetPageFormPage when updating dataset and then clicking on resource
             iconVisible={false}
             onStepTitleClick={[Function]}
             selectedData=""
-            stepDescription="datasetPageFormPage.metadataProviders.step.stepDescription"
-            stepTitle="4 - datasetPageFormPage.metadataProviders.step.stepTitle"
+            stepDescription="datasetFormPage.metadataProviders.step.stepDescription"
+            stepTitle="4 - datasetFormPage.metadataProviders.step.stepTitle"
           >
             <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-4 background-color-18"
@@ -2428,12 +2428,12 @@ exports[`DatasetPageFormPage when updating dataset and then clicking on resource
                 <h3
                   className="is-size-6"
                 >
-                  datasetPageFormPage.metadataProviders.step.stepDescription
+                  datasetFormPage.metadataProviders.step.stepDescription
                 </h3>
                 <h2
                   className="step-title"
                 >
-                  4 - datasetPageFormPage.metadataProviders.step.stepTitle
+                  4 - datasetFormPage.metadataProviders.step.stepTitle
                 </h2>
               </div>
             </header>
@@ -2442,13 +2442,13 @@ exports[`DatasetPageFormPage when updating dataset and then clicking on resource
         <NotConfirmedStepHeader
           activeStepIndex={null}
           className="step-5 background-color-24"
-          dataDescription="datasetPageFormPage.keywords.step.dataDescription"
-          key="datasetPageFormPage.keywords.step.stepTitle"
+          dataDescription="datasetFormPage.keywords.step.dataDescription"
+          key="datasetFormPage.keywords.step.stepTitle"
           onContinueButtonClick={[Function]}
           onStepTitleClick={[Function]}
           selectedData=""
-          stepDescription="datasetPageFormPage.keywords.step.stepDescription"
-          stepTitle="5 - datasetPageFormPage.keywords.step.stepTitle"
+          stepDescription="datasetFormPage.keywords.step.stepDescription"
+          stepTitle="5 - datasetFormPage.keywords.step.stepTitle"
           totalSteps={4}
         >
           <StepHeader
@@ -2457,8 +2457,8 @@ exports[`DatasetPageFormPage when updating dataset and then clicking on resource
             iconVisible={false}
             onStepTitleClick={[Function]}
             selectedData=""
-            stepDescription="datasetPageFormPage.keywords.step.stepDescription"
-            stepTitle="5 - datasetPageFormPage.keywords.step.stepTitle"
+            stepDescription="datasetFormPage.keywords.step.stepDescription"
+            stepTitle="5 - datasetFormPage.keywords.step.stepTitle"
           >
             <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-5 background-color-24"
@@ -2480,12 +2480,12 @@ exports[`DatasetPageFormPage when updating dataset and then clicking on resource
                 <h3
                   className="is-size-6"
                 >
-                  datasetPageFormPage.keywords.step.stepDescription
+                  datasetFormPage.keywords.step.stepDescription
                 </h3>
                 <h2
                   className="step-title"
                 >
-                  5 - datasetPageFormPage.keywords.step.stepTitle
+                  5 - datasetFormPage.keywords.step.stepTitle
                 </h2>
               </div>
             </header>
@@ -2565,7 +2565,7 @@ paragraph-2",
               <h1
                 className="final-summary-title title is-3"
               >
-                datasetPageFormPage.finalSummary.title
+                datasetFormPage.finalSummary.title
               </h1>
             </div>
             <SubmitEntryButton
@@ -2590,7 +2590,7 @@ paragraph-2",
                   className="title is-4"
                 >
                   1 - 
-                  datasetPageFormPage.basicInformation.step.stepTitle
+                  datasetFormPage.basicInformation.step.stepTitle
                 </h2>
               </SectionTitle>
               <div
@@ -2617,7 +2617,7 @@ paragraph-2",
                   </NameValueHeader>
                   <tbody>
                     <NameValueRow
-                      name="datasetPageFormPage.basicInformation.title.label"
+                      name="datasetFormPage.basicInformation.title.label"
                       value="Benthic data from Sevastopol (Black Sea)"
                     >
                       <tr
@@ -2626,7 +2626,7 @@ paragraph-2",
                         <td
                           className="name"
                         >
-                          datasetPageFormPage.basicInformation.title.label
+                          datasetFormPage.basicInformation.title.label
                         </td>
                         <td
                           className="value"
@@ -2636,7 +2636,7 @@ paragraph-2",
                       </tr>
                     </NameValueRow>
                     <NameValueRow
-                      name="datasetPageFormPage.basicInformation.licence.label"
+                      name="datasetFormPage.basicInformation.licence.label"
                       value="Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License"
                     >
                       <tr
@@ -2645,7 +2645,7 @@ paragraph-2",
                         <td
                           className="name"
                         >
-                          datasetPageFormPage.basicInformation.licence.label
+                          datasetFormPage.basicInformation.licence.label
                         </td>
                         <td
                           className="value"
@@ -2655,7 +2655,7 @@ paragraph-2",
                       </tr>
                     </NameValueRow>
                     <NameValueRow
-                      name="datasetPageFormPage.basicInformation.language.label"
+                      name="datasetFormPage.basicInformation.language.label"
                       value="English"
                     >
                       <tr
@@ -2664,7 +2664,7 @@ paragraph-2",
                         <td
                           className="name"
                         >
-                          datasetPageFormPage.basicInformation.language.label
+                          datasetFormPage.basicInformation.language.label
                         </td>
                         <td
                           className="value"
@@ -2675,7 +2675,7 @@ paragraph-2",
                     </NameValueRow>
                     <NameValueRow
                       className="abstract"
-                      name="datasetPageFormPage.basicInformation.abstract.label"
+                      name="datasetFormPage.basicInformation.abstract.label"
                       value="paragraph-1
 
 paragraph-2"
@@ -2686,7 +2686,7 @@ paragraph-2"
                         <td
                           className="name"
                         >
-                          datasetPageFormPage.basicInformation.abstract.label
+                          datasetFormPage.basicInformation.abstract.label
                         </td>
                         <td
                           className="value"
@@ -2719,7 +2719,7 @@ paragraph-2
                   className="title is-4"
                 >
                   2 - 
-                  datasetPageFormPage.resourceContacts.step.stepTitle
+                  datasetFormPage.resourceContacts.step.stepTitle
                 </h2>
               </SectionTitle>
               <div
@@ -2745,13 +2745,13 @@ paragraph-2
                       <thead>
                         <tr>
                           <th>
-                            datasetPageFormPage.contactsForm.name.label
+                            datasetFormPage.contactsForm.name.label
                           </th>
                           <th>
-                            datasetPageFormPage.contactsForm.email.label
+                            datasetFormPage.contactsForm.email.label
                           </th>
                           <th>
-                            datasetPageFormPage.contactsForm.organisation.label
+                            datasetFormPage.contactsForm.organisation.label
                           </th>
                         </tr>
                       </thead>
@@ -2806,7 +2806,7 @@ paragraph-2
                   className="title is-4"
                 >
                   3 - 
-                  datasetPageFormPage.resourceCreators.step.stepTitle
+                  datasetFormPage.resourceCreators.step.stepTitle
                 </h2>
               </SectionTitle>
               <div
@@ -2839,13 +2839,13 @@ paragraph-2
                     <thead>
                       <tr>
                         <th>
-                          datasetPageFormPage.contactsForm.name.label
+                          datasetFormPage.contactsForm.name.label
                         </th>
                         <th>
-                          datasetPageFormPage.contactsForm.email.label
+                          datasetFormPage.contactsForm.email.label
                         </th>
                         <th>
-                          datasetPageFormPage.contactsForm.organisation.label
+                          datasetFormPage.contactsForm.organisation.label
                         </th>
                       </tr>
                     </thead>
@@ -2947,7 +2947,7 @@ paragraph-2
                   className="title is-4"
                 >
                   4 - 
-                  datasetPageFormPage.metadataProviders.step.stepTitle
+                  datasetFormPage.metadataProviders.step.stepTitle
                 </h2>
               </SectionTitle>
               <div
@@ -2970,13 +2970,13 @@ paragraph-2
                     <thead>
                       <tr>
                         <th>
-                          datasetPageFormPage.contactsForm.name.label
+                          datasetFormPage.contactsForm.name.label
                         </th>
                         <th>
-                          datasetPageFormPage.contactsForm.email.label
+                          datasetFormPage.contactsForm.email.label
                         </th>
                         <th>
-                          datasetPageFormPage.contactsForm.organisation.label
+                          datasetFormPage.contactsForm.organisation.label
                         </th>
                       </tr>
                     </thead>
@@ -3030,7 +3030,7 @@ paragraph-2
                   className="title is-4"
                 >
                   5 - 
-                  datasetPageFormPage.keywords.step.stepTitle
+                  datasetFormPage.keywords.step.stepTitle
                 </h2>
               </SectionTitle>
               <div
@@ -3066,12 +3066,12 @@ paragraph-2
           </div>
         </FinalSummary>
       </section>
-    </DatasetPageFormPage>
+    </DatasetFormPage>
   </Router>
 </MemoryRouter>
 `;
 
-exports[`DatasetPageFormPage when updating dataset renders correctly 1`] = `
+exports[`DatasetFormPage when updating dataset renders correctly 1`] = `
 <MemoryRouter
   initialEntries={
     Array [
@@ -3114,7 +3114,7 @@ exports[`DatasetPageFormPage when updating dataset renders correctly 1`] = `
       }
     }
   >
-    <DatasetPageFormPage
+    <DatasetFormPage
       location={
         Object {
           "state": Object {
@@ -3133,14 +3133,14 @@ exports[`DatasetPageFormPage when updating dataset renders correctly 1`] = `
         <ActiveStepHeader
           activeStepIndex={0}
           className="step-1 background-color-0"
-          dataDescription="datasetPageFormPage.basicInformation.step.dataDescription"
-          key="datasetPageFormPage.basicInformation.step.stepTitle"
-          nextStep="datasetPageFormPage.resourceContacts.step.stepTitle"
+          dataDescription="datasetFormPage.basicInformation.step.dataDescription"
+          key="datasetFormPage.basicInformation.step.stepTitle"
+          nextStep="datasetFormPage.resourceContacts.step.stepTitle"
           onContinueButtonClick={[Function]}
           onStepTitleClick={[Function]}
           selectedData="Benthic data from Sevastopol (Black Sea)"
-          stepDescription="datasetPageFormPage.basicInformation.step.stepDescription"
-          stepTitle="1 - datasetPageFormPage.basicInformation.step.stepTitle"
+          stepDescription="datasetFormPage.basicInformation.step.stepDescription"
+          stepTitle="1 - datasetFormPage.basicInformation.step.stepTitle"
           totalSteps={4}
         >
           <StepHeader
@@ -3149,8 +3149,8 @@ exports[`DatasetPageFormPage when updating dataset renders correctly 1`] = `
             iconVisible={false}
             onStepTitleClick={[Function]}
             selectedData=""
-            stepDescription="datasetPageFormPage.basicInformation.step.stepDescription"
-            stepTitle="1 - datasetPageFormPage.basicInformation.step.stepTitle"
+            stepDescription="datasetFormPage.basicInformation.step.stepDescription"
+            stepTitle="1 - datasetFormPage.basicInformation.step.stepTitle"
           >
             <header
               className="step-header columns is-vcentered active has-background-grey has-text-white"
@@ -3172,12 +3172,12 @@ exports[`DatasetPageFormPage when updating dataset renders correctly 1`] = `
                 <h3
                   className="is-size-6"
                 >
-                  datasetPageFormPage.basicInformation.step.stepDescription
+                  datasetFormPage.basicInformation.step.stepDescription
                 </h3>
                 <h2
                   className="step-title"
                 >
-                  1 - datasetPageFormPage.basicInformation.step.stepTitle
+                  1 - datasetFormPage.basicInformation.step.stepTitle
                 </h2>
               </div>
             </header>
@@ -3214,7 +3214,7 @@ paragraph-2",
               >
                 <InputText
                   className="title mandatory"
-                  name="datasetPageFormPage.basicInformation.title"
+                  name="datasetFormPage.basicInformation.title"
                   onChange={[Function]}
                   value="Benthic data from Sevastopol (Black Sea)"
                 >
@@ -3223,13 +3223,13 @@ paragraph-2",
                   >
                     <label
                       className="label"
-                      htmlFor="datasetpageformpage.basicinformation.title.label"
+                      htmlFor="datasetformpage.basicinformation.title.label"
                     >
-                      datasetPageFormPage.basicInformation.title.label
+                      datasetFormPage.basicInformation.title.label
                     </label>
                     <input
                       className="input"
-                      id="datasetpageformpage.basicinformation.title.label"
+                      id="datasetformpage.basicinformation.title.label"
                       onChange={[Function]}
                       type="text"
                       value="Benthic data from Sevastopol (Black Sea)"
@@ -3242,7 +3242,7 @@ paragraph-2",
                   <label
                     className="label"
                   >
-                    datasetPageFormPage.basicInformation.licence.label
+                    datasetFormPage.basicInformation.licence.label
                   </label>
                   <Dropdown
                     onChange={[Function]}
@@ -3327,7 +3327,7 @@ paragraph-2",
                   <label
                     className="label"
                   >
-                    datasetPageFormPage.basicInformation.language.label
+                    datasetFormPage.basicInformation.language.label
                   </label>
                   <Dropdown
                     onChange={[Function]}
@@ -3416,7 +3416,7 @@ paragraph-2",
                 </div>
                 <Textarea
                   className="abstract is-9"
-                  name="datasetPageFormPage.basicInformation.abstract"
+                  name="datasetFormPage.basicInformation.abstract"
                   onChange={[Function]}
                   value="paragraph-1
 
@@ -3427,13 +3427,13 @@ paragraph-2"
                   >
                     <label
                       className="label"
-                      htmlFor="datasetpageformpage.basicinformation.abstract.label"
+                      htmlFor="datasetformpage.basicinformation.abstract.label"
                     >
-                      datasetPageFormPage.basicInformation.abstract.label
+                      datasetFormPage.basicInformation.abstract.label
                     </label>
                     <textarea
                       className="textarea"
-                      id="datasetpageformpage.basicinformation.abstract.label"
+                      id="datasetformpage.basicinformation.abstract.label"
                       onChange={[Function]}
                       rows={5}
                       value="paragraph-1
@@ -3447,7 +3447,7 @@ paragraph-2"
           </StepHeader>
           <StepFooter
             activeStepIndex={0}
-            nextStep="datasetPageFormPage.resourceContacts.step.stepTitle"
+            nextStep="datasetFormPage.resourceContacts.step.stepTitle"
             onContinueButtonClick={[Function]}
           >
             <div
@@ -3467,14 +3467,14 @@ paragraph-2"
               <ContinueButton
                 name="locationContinue"
                 onClick={[Function]}
-                value="datasetPageFormPage.resourceContacts.step.stepTitle"
+                value="datasetFormPage.resourceContacts.step.stepTitle"
               >
                 <button
                   className="continue-button button is-info"
                   name="locationContinue"
                   onClick={[Function]}
                 >
-                  common.continueTo datasetpageformpage.resourcecontacts.step.steptitle
+                  common.continueTo datasetformpage.resourcecontacts.step.steptitle
                 </button>
               </ContinueButton>
             </div>
@@ -3483,14 +3483,14 @@ paragraph-2"
         <NotConfirmedStepHeader
           activeStepIndex={0}
           className="step-2 background-color-6"
-          dataDescription="datasetPageFormPage.resourceContacts.step.dataDescription"
-          key="datasetPageFormPage.resourceContacts.step.stepTitle"
-          nextStep="datasetPageFormPage.resourceCreators.step.stepTitle"
+          dataDescription="datasetFormPage.resourceContacts.step.dataDescription"
+          key="datasetFormPage.resourceContacts.step.stepTitle"
+          nextStep="datasetFormPage.resourceCreators.step.stepTitle"
           onContinueButtonClick={[Function]}
           onStepTitleClick={[Function]}
-          selectedData="datasetPageFormPage.resourceContacts.step.selectedData {\\"nrOfContacts\\":1}"
-          stepDescription="datasetPageFormPage.resourceContacts.step.stepDescription"
-          stepTitle="2 - datasetPageFormPage.resourceContacts.step.stepTitle"
+          selectedData="datasetFormPage.resourceContacts.step.selectedData {\\"nrOfContacts\\":1}"
+          stepDescription="datasetFormPage.resourceContacts.step.stepDescription"
+          stepTitle="2 - datasetFormPage.resourceContacts.step.stepTitle"
           totalSteps={4}
         >
           <StepHeader
@@ -3499,8 +3499,8 @@ paragraph-2"
             iconVisible={false}
             onStepTitleClick={[Function]}
             selectedData=""
-            stepDescription="datasetPageFormPage.resourceContacts.step.stepDescription"
-            stepTitle="2 - datasetPageFormPage.resourceContacts.step.stepTitle"
+            stepDescription="datasetFormPage.resourceContacts.step.stepDescription"
+            stepTitle="2 - datasetFormPage.resourceContacts.step.stepTitle"
           >
             <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-2 background-color-6"
@@ -3522,12 +3522,12 @@ paragraph-2"
                 <h3
                   className="is-size-6"
                 >
-                  datasetPageFormPage.resourceContacts.step.stepDescription
+                  datasetFormPage.resourceContacts.step.stepDescription
                 </h3>
                 <h2
                   className="step-title"
                 >
-                  2 - datasetPageFormPage.resourceContacts.step.stepTitle
+                  2 - datasetFormPage.resourceContacts.step.stepTitle
                 </h2>
               </div>
             </header>
@@ -3536,14 +3536,14 @@ paragraph-2"
         <NotConfirmedStepHeader
           activeStepIndex={0}
           className="step-3 background-color-12"
-          dataDescription="datasetPageFormPage.resourceCreators.step.dataDescription"
-          key="datasetPageFormPage.resourceCreators.step.stepTitle"
-          nextStep="datasetPageFormPage.metadataProviders.step.stepTitle"
+          dataDescription="datasetFormPage.resourceCreators.step.dataDescription"
+          key="datasetFormPage.resourceCreators.step.stepTitle"
+          nextStep="datasetFormPage.metadataProviders.step.stepTitle"
           onContinueButtonClick={[Function]}
           onStepTitleClick={[Function]}
-          selectedData="datasetPageFormPage.resourceCreators.step.selectedData {\\"nrOfContacts\\":3}"
-          stepDescription="datasetPageFormPage.resourceCreators.step.stepDescription"
-          stepTitle="3 - datasetPageFormPage.resourceCreators.step.stepTitle"
+          selectedData="datasetFormPage.resourceCreators.step.selectedData {\\"nrOfContacts\\":3}"
+          stepDescription="datasetFormPage.resourceCreators.step.stepDescription"
+          stepTitle="3 - datasetFormPage.resourceCreators.step.stepTitle"
           totalSteps={4}
         >
           <StepHeader
@@ -3552,8 +3552,8 @@ paragraph-2"
             iconVisible={false}
             onStepTitleClick={[Function]}
             selectedData=""
-            stepDescription="datasetPageFormPage.resourceCreators.step.stepDescription"
-            stepTitle="3 - datasetPageFormPage.resourceCreators.step.stepTitle"
+            stepDescription="datasetFormPage.resourceCreators.step.stepDescription"
+            stepTitle="3 - datasetFormPage.resourceCreators.step.stepTitle"
           >
             <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-3 background-color-12"
@@ -3575,12 +3575,12 @@ paragraph-2"
                 <h3
                   className="is-size-6"
                 >
-                  datasetPageFormPage.resourceCreators.step.stepDescription
+                  datasetFormPage.resourceCreators.step.stepDescription
                 </h3>
                 <h2
                   className="step-title"
                 >
-                  3 - datasetPageFormPage.resourceCreators.step.stepTitle
+                  3 - datasetFormPage.resourceCreators.step.stepTitle
                 </h2>
               </div>
             </header>
@@ -3589,14 +3589,14 @@ paragraph-2"
         <NotConfirmedStepHeader
           activeStepIndex={0}
           className="step-4 background-color-18"
-          dataDescription="datasetPageFormPage.metadataProviders.step.dataDescription"
-          key="datasetPageFormPage.metadataProviders.step.stepTitle"
-          nextStep="datasetPageFormPage.keywords.step.stepTitle"
+          dataDescription="datasetFormPage.metadataProviders.step.dataDescription"
+          key="datasetFormPage.metadataProviders.step.stepTitle"
+          nextStep="datasetFormPage.keywords.step.stepTitle"
           onContinueButtonClick={[Function]}
           onStepTitleClick={[Function]}
-          selectedData="datasetPageFormPage.metadataProviders.step.selectedData {\\"nrOfContacts\\":1}"
-          stepDescription="datasetPageFormPage.metadataProviders.step.stepDescription"
-          stepTitle="4 - datasetPageFormPage.metadataProviders.step.stepTitle"
+          selectedData="datasetFormPage.metadataProviders.step.selectedData {\\"nrOfContacts\\":1}"
+          stepDescription="datasetFormPage.metadataProviders.step.stepDescription"
+          stepTitle="4 - datasetFormPage.metadataProviders.step.stepTitle"
           totalSteps={4}
         >
           <StepHeader
@@ -3605,8 +3605,8 @@ paragraph-2"
             iconVisible={false}
             onStepTitleClick={[Function]}
             selectedData=""
-            stepDescription="datasetPageFormPage.metadataProviders.step.stepDescription"
-            stepTitle="4 - datasetPageFormPage.metadataProviders.step.stepTitle"
+            stepDescription="datasetFormPage.metadataProviders.step.stepDescription"
+            stepTitle="4 - datasetFormPage.metadataProviders.step.stepTitle"
           >
             <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-4 background-color-18"
@@ -3628,12 +3628,12 @@ paragraph-2"
                 <h3
                   className="is-size-6"
                 >
-                  datasetPageFormPage.metadataProviders.step.stepDescription
+                  datasetFormPage.metadataProviders.step.stepDescription
                 </h3>
                 <h2
                   className="step-title"
                 >
-                  4 - datasetPageFormPage.metadataProviders.step.stepTitle
+                  4 - datasetFormPage.metadataProviders.step.stepTitle
                 </h2>
               </div>
             </header>
@@ -3642,13 +3642,13 @@ paragraph-2"
         <NotConfirmedStepHeader
           activeStepIndex={0}
           className="step-5 background-color-24"
-          dataDescription="datasetPageFormPage.keywords.step.dataDescription"
-          key="datasetPageFormPage.keywords.step.stepTitle"
+          dataDescription="datasetFormPage.keywords.step.dataDescription"
+          key="datasetFormPage.keywords.step.stepTitle"
           onContinueButtonClick={[Function]}
           onStepTitleClick={[Function]}
           selectedData=""
-          stepDescription="datasetPageFormPage.keywords.step.stepDescription"
-          stepTitle="5 - datasetPageFormPage.keywords.step.stepTitle"
+          stepDescription="datasetFormPage.keywords.step.stepDescription"
+          stepTitle="5 - datasetFormPage.keywords.step.stepTitle"
           totalSteps={4}
         >
           <StepHeader
@@ -3657,8 +3657,8 @@ paragraph-2"
             iconVisible={false}
             onStepTitleClick={[Function]}
             selectedData=""
-            stepDescription="datasetPageFormPage.keywords.step.stepDescription"
-            stepTitle="5 - datasetPageFormPage.keywords.step.stepTitle"
+            stepDescription="datasetFormPage.keywords.step.stepDescription"
+            stepTitle="5 - datasetFormPage.keywords.step.stepTitle"
           >
             <header
               className="step-header columns is-vcentered not-confirmed has-text-white step-5 background-color-24"
@@ -3680,12 +3680,12 @@ paragraph-2"
                 <h3
                   className="is-size-6"
                 >
-                  datasetPageFormPage.keywords.step.stepDescription
+                  datasetFormPage.keywords.step.stepDescription
                 </h3>
                 <h2
                   className="step-title"
                 >
-                  5 - datasetPageFormPage.keywords.step.stepTitle
+                  5 - datasetFormPage.keywords.step.stepTitle
                 </h2>
               </div>
             </header>
@@ -3698,11 +3698,11 @@ paragraph-2"
             className="review-and-submit-button button is-medium is-info"
             onClick={[Function]}
           >
-            datasetPageFormPage.reviewAndSubmitButton
+            datasetFormPage.reviewAndSubmitButton
           </button>
         </div>
       </section>
-    </DatasetPageFormPage>
+    </DatasetFormPage>
   </Router>
 </MemoryRouter>
 `;

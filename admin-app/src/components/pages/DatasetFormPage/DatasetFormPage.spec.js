@@ -1,4 +1,4 @@
-import DatasetPageFormPage from './DatasetPageFormPage'
+import DatasetFormPage from './DatasetFormPage'
 import React from 'react'
 import SmalldataClient from '@smalldata/dwca-lib/src/clients/SmalldataClient'
 import { act } from 'react-dom/test-utils'
@@ -12,14 +12,14 @@ jest.mock('@smalldata/dwca-lib/src/clients/SmalldataClient', () => ({
   updateDataset: jest.fn()
 }))
 
-describe('DatasetPageFormPage', () => {
+describe('DatasetFormPage', () => {
   let wrapper
 
   describe('when creating new dataset', () => {
     it('renders correctly', () => {
       wrapper = mount(
         <MemoryRouter initialEntries={[{ pathname: '/manage-dataset/create', key: 'testKey' }]}>
-          <DatasetPageFormPage/>
+          <DatasetFormPage/>
         </MemoryRouter>
       )
       expect(wrapper).toMatchSnapshot()
@@ -35,7 +35,7 @@ describe('DatasetPageFormPage', () => {
       addResourceContact(wrapper, 1)
       wrapper.find('.step-3 .step-header').simulate('click')
       expect(wrapper.find('.step-header .selected-data').at(1).text())
-        .toEqual('datasetPageFormPage.resourceContacts.step.selectedData {"nrOfContacts":1}')
+        .toEqual('datasetFormPage.resourceContacts.step.selectedData {"nrOfContacts":1}')
 
       wrapper.find('.step-2 .step-header').simulate('click')
       expect(wrapper.find('.resource-contacts .contact-row')).toHaveLength(1)
@@ -43,13 +43,13 @@ describe('DatasetPageFormPage', () => {
       addResourceContact(wrapper, 2)
       wrapper.find('.step-3 .step-header').simulate('click')
       expect(wrapper.find('.step-header .selected-data').at(1).text())
-        .toEqual('datasetPageFormPage.resourceContacts.step.selectedData {"nrOfContacts":2}')
+        .toEqual('datasetFormPage.resourceContacts.step.selectedData {"nrOfContacts":2}')
       expect(wrapper.find('.resource-creators .contact-row')).toHaveLength(0)
 
       addResourceCreator(wrapper, 1)
       wrapper.find('.step-4 .step-header').simulate('click')
       expect(wrapper.find('.step-header .selected-data').at(2).text())
-        .toEqual('datasetPageFormPage.resourceCreators.step.selectedData {"nrOfContacts":1}')
+        .toEqual('datasetFormPage.resourceCreators.step.selectedData {"nrOfContacts":1}')
 
       wrapper.find('.step-3 .step-header').simulate('click')
       expect(wrapper.find('.resource-creators .contact-row')).toHaveLength(1)
@@ -57,13 +57,13 @@ describe('DatasetPageFormPage', () => {
       addResourceCreator(wrapper, 2)
       wrapper.find('.step-4 .step-header').simulate('click')
       expect(wrapper.find('.step-header .selected-data').at(2).text())
-        .toEqual('datasetPageFormPage.resourceCreators.step.selectedData {"nrOfContacts":2}')
+        .toEqual('datasetFormPage.resourceCreators.step.selectedData {"nrOfContacts":2}')
       expect(wrapper.find('.metadata-providers .contact-row')).toHaveLength(0)
 
       addMetadataProvider(wrapper, 1)
       wrapper.find('.step-5 .step-header').simulate('click')
       expect(wrapper.find('.step-header .selected-data').at(3).text())
-        .toEqual('datasetPageFormPage.metadataProviders.step.selectedData {"nrOfContacts":1}')
+        .toEqual('datasetFormPage.metadataProviders.step.selectedData {"nrOfContacts":1}')
 
       wrapper.find('.step-4 .step-header').simulate('click')
       expect(wrapper.find('.metadata-providers .contact-row')).toHaveLength(1)
@@ -71,7 +71,7 @@ describe('DatasetPageFormPage', () => {
       addMetadataProvider(wrapper, 2)
       wrapper.find('.step-5 .step-header').simulate('click')
       expect(wrapper.find('.step-header .selected-data').at(3).text())
-        .toEqual('datasetPageFormPage.metadataProviders.step.selectedData {"nrOfContacts":2}')
+        .toEqual('datasetFormPage.metadataProviders.step.selectedData {"nrOfContacts":2}')
 
       wrapper.find('.keywords input').simulate('change', { target: { value: 'keyword-1' } })
       wrapper.find('.keywords input').simulate('keydown', { key: 'Enter' })
@@ -113,7 +113,7 @@ describe('DatasetPageFormPage', () => {
       })
 
       it('render success message with update title', () => {
-        expect(wrapper.find('.success-message .title').text()).toBe('datasetPageFormPage.finalSummary.successMessage.header.create')
+        expect(wrapper.find('.success-message .title').text()).toBe('datasetFormPage.finalSummary.successMessage.header.create')
       })
 
       it('does not render error message', () => {
@@ -139,7 +139,7 @@ describe('DatasetPageFormPage', () => {
       await act(async() => {
         wrapper = mount(
           <MemoryRouter initialEntries={[{ pathname: '/manage-dataset/update/C67oYYa_RGgCVD4', key: 'testKey' }]}>
-            <DatasetPageFormPage location={location}/>
+            <DatasetFormPage location={location}/>
           </MemoryRouter>
         )
       })
@@ -177,7 +177,7 @@ describe('DatasetPageFormPage', () => {
       it('renders correct header of resource contacts', () => {
         const contactsTableHeader = wrapper.find('.resource-contacts .contacts-table-header')
         expect(contactsTableHeader.exists()).toBe(true)
-        expect(contactsTableHeader.text()).toBe('datasetPageFormPage.resourceContacts.contactsTableHeader')
+        expect(contactsTableHeader.text()).toBe('datasetFormPage.resourceContacts.contactsTableHeader')
       })
 
       it('renders 1 contact row', () => {
@@ -191,7 +191,7 @@ describe('DatasetPageFormPage', () => {
 
         it('renders resource contacts title with 1 nr of contacts', () => {
           expect(wrapper.find('.step-header .selected-data').at(1).text())
-            .toEqual('datasetPageFormPage.resourceContacts.step.selectedData {"nrOfContacts":1}')
+            .toEqual('datasetFormPage.resourceContacts.step.selectedData {"nrOfContacts":1}')
         })
 
         it('renders resource creators', () => {
@@ -201,7 +201,7 @@ describe('DatasetPageFormPage', () => {
         it('renders correct header of resource creators', () => {
           const contactsTableHeader = wrapper.find('.resource-creators .contacts-table-header')
           expect(contactsTableHeader.exists()).toBe(true)
-          expect(contactsTableHeader.text()).toBe('datasetPageFormPage.resourceCreators.contactsTableHeader')
+          expect(contactsTableHeader.text()).toBe('datasetFormPage.resourceCreators.contactsTableHeader')
         })
 
         it('renders 3 resource creators', () => {
@@ -215,7 +215,7 @@ describe('DatasetPageFormPage', () => {
 
           it('renders resource creators title with 3 nr of contacts', () => {
             expect(wrapper.find('.step-header .selected-data').at(2).text())
-              .toEqual('datasetPageFormPage.resourceCreators.step.selectedData {"nrOfContacts":3}')
+              .toEqual('datasetFormPage.resourceCreators.step.selectedData {"nrOfContacts":3}')
           })
 
           it('renders metadata providers', () => {
@@ -225,7 +225,7 @@ describe('DatasetPageFormPage', () => {
           it('renders correct header of metadata providers', () => {
             const contactsTableHeader = wrapper.find('.metadata-providers .contacts-table-header')
             expect(contactsTableHeader.exists()).toBe(true)
-            expect(contactsTableHeader.text()).toBe('datasetPageFormPage.metadataProviders.contactsTableHeader')
+            expect(contactsTableHeader.text()).toBe('datasetFormPage.metadataProviders.contactsTableHeader')
           })
 
           it('renders 1 metadata provider', () => {
@@ -239,7 +239,7 @@ describe('DatasetPageFormPage', () => {
 
             it('renders metadata provider title with 1 nr of contacts', () => {
               expect(wrapper.find('.step-header .selected-data').at(3).text())
-                .toEqual('datasetPageFormPage.metadataProviders.step.selectedData {"nrOfContacts":1}')
+                .toEqual('datasetFormPage.metadataProviders.step.selectedData {"nrOfContacts":1}')
             })
 
             it('renders 4 keywords', () => {
@@ -298,7 +298,7 @@ describe('DatasetPageFormPage', () => {
                 })
 
                 it('render success message with update title', () => {
-                  expect(wrapper.find('.success-message .title').text()).toBe('datasetPageFormPage.finalSummary.successMessage.header.update')
+                  expect(wrapper.find('.success-message .title').text()).toBe('datasetFormPage.finalSummary.successMessage.header.update')
                 })
 
                 it('does not render error message', () => {

@@ -1,6 +1,6 @@
 export default {
   translation: {
-    common:              {
+    common:            {
       add:        'Add',
       cancel:     'Cancel',
       change:     'Change',
@@ -17,14 +17,14 @@ export default {
       unit:       'Unit',
       value:      'Value'
     },
-    navbar:              {
+    navbar:            {
       manageDataset: 'MANAGE DATASET',
       manageUsers:   'MANAGE USERS',
       inputData:     'INPUT DATA',
       logout:        'logout',
       login:         'login'
     },
-    manageDatasetPage:   {
+    manageDatasetPage: {
       inputNew:              'Input New Dataset',
       managePreviousEntries: 'Manage Previous Entries',
       or:                    'OR',
@@ -34,7 +34,7 @@ export default {
         licence:      'Licence'
       }
     },
-    datasetPageFormPage: {
+    datasetFormPage:   {
       basicInformation:      {
         step:     {
           dataDescription: 'Title',
@@ -118,7 +118,7 @@ export default {
       },
       reviewAndSubmitButton: 'Review and Submit'
     },
-    manageUsersPage:     {
+    manageUsersPage:   {
       inputNew:              'Input New User',
       managePreviousEntries: 'Manage Existing Users',
       or:                    'OR',
@@ -128,7 +128,7 @@ export default {
         role:             'Role'
       }
     },
-    userFormPage:        {
+    userFormPage:      {
       submitUserButton: {
         create: 'Create User',
         update: 'Update User'

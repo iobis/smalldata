@@ -22,7 +22,7 @@ import {
   mapDatasetResponseToResourceCreators
 } from '@smalldata/dwca-lib/src/clients/SmalldataConverters'
 
-export default function DatasetPageFormPage({ location }) {
+export default function DatasetFormPage({ location }) {
   const initialState = createInitialState(location)
   const { t } = useTranslation()
   const [action, setAction] = useState(initialState.action)
@@ -112,11 +112,11 @@ export default function DatasetPageFormPage({ location }) {
   }
 
   const steps = [{
-    dataDescription: t('datasetPageFormPage.basicInformation.step.dataDescription'),
-    nextStep:        t('datasetPageFormPage.resourceContacts.step.stepTitle'),
+    dataDescription: t('datasetFormPage.basicInformation.step.dataDescription'),
+    nextStep:        t('datasetFormPage.resourceContacts.step.stepTitle'),
     selectedData:    basicInformation.title,
-    stepDescription: t('datasetPageFormPage.basicInformation.step.stepDescription'),
-    stepTitle:       t('datasetPageFormPage.basicInformation.step.stepTitle'),
+    stepDescription: t('datasetFormPage.basicInformation.step.stepDescription'),
+    stepTitle:       t('datasetFormPage.basicInformation.step.stepTitle'),
 
     children:
       <BasicInformation
@@ -125,43 +125,43 @@ export default function DatasetPageFormPage({ location }) {
         licences={licences.map(licence => licence.title)}
         onChange={setBasicInformation}/>
   }, {
-    dataDescription: t('datasetPageFormPage.resourceContacts.step.dataDescription'),
-    nextStep:        t('datasetPageFormPage.resourceCreators.step.stepTitle'),
-    selectedData:    t('datasetPageFormPage.resourceContacts.step.selectedData', { nrOfContacts: resourceContacts.length }),
-    stepDescription: t('datasetPageFormPage.resourceContacts.step.stepDescription'),
-    stepTitle:       t('datasetPageFormPage.resourceContacts.step.stepTitle'),
+    dataDescription: t('datasetFormPage.resourceContacts.step.dataDescription'),
+    nextStep:        t('datasetFormPage.resourceCreators.step.stepTitle'),
+    selectedData:    t('datasetFormPage.resourceContacts.step.selectedData', { nrOfContacts: resourceContacts.length }),
+    stepDescription: t('datasetFormPage.resourceContacts.step.stepDescription'),
+    stepTitle:       t('datasetFormPage.resourceContacts.step.stepTitle'),
 
     children:
       <ResourceContacts
         data={resourceContacts}
         onChange={setResourceContacts}/>
   }, {
-    dataDescription: t('datasetPageFormPage.resourceCreators.step.dataDescription'),
-    nextStep:        t('datasetPageFormPage.metadataProviders.step.stepTitle'),
-    selectedData:    t('datasetPageFormPage.resourceCreators.step.selectedData', { nrOfContacts: resourceCreators.length }),
-    stepDescription: t('datasetPageFormPage.resourceCreators.step.stepDescription'),
-    stepTitle:       t('datasetPageFormPage.resourceCreators.step.stepTitle'),
+    dataDescription: t('datasetFormPage.resourceCreators.step.dataDescription'),
+    nextStep:        t('datasetFormPage.metadataProviders.step.stepTitle'),
+    selectedData:    t('datasetFormPage.resourceCreators.step.selectedData', { nrOfContacts: resourceCreators.length }),
+    stepDescription: t('datasetFormPage.resourceCreators.step.stepDescription'),
+    stepTitle:       t('datasetFormPage.resourceCreators.step.stepTitle'),
 
     children:
       <ResourceCreators
         data={resourceCreators}
         onChange={setResourceCreators}/>
   }, {
-    dataDescription: t('datasetPageFormPage.metadataProviders.step.dataDescription'),
-    nextStep:        t('datasetPageFormPage.keywords.step.stepTitle'),
-    selectedData:    t('datasetPageFormPage.metadataProviders.step.selectedData', { nrOfContacts: metadataProviders.length }),
-    stepDescription: t('datasetPageFormPage.metadataProviders.step.stepDescription'),
-    stepTitle:       t('datasetPageFormPage.metadataProviders.step.stepTitle'),
+    dataDescription: t('datasetFormPage.metadataProviders.step.dataDescription'),
+    nextStep:        t('datasetFormPage.keywords.step.stepTitle'),
+    selectedData:    t('datasetFormPage.metadataProviders.step.selectedData', { nrOfContacts: metadataProviders.length }),
+    stepDescription: t('datasetFormPage.metadataProviders.step.stepDescription'),
+    stepTitle:       t('datasetFormPage.metadataProviders.step.stepTitle'),
 
     children:
       <MetadataProviders
         data={metadataProviders}
         onChange={setMetadataProviders}/>
   }, {
-    dataDescription: t('datasetPageFormPage.keywords.step.dataDescription'),
+    dataDescription: t('datasetFormPage.keywords.step.dataDescription'),
     selectedData:    '',
-    stepDescription: t('datasetPageFormPage.keywords.step.stepDescription'),
-    stepTitle:       t('datasetPageFormPage.keywords.step.stepTitle'),
+    stepDescription: t('datasetFormPage.keywords.step.stepDescription'),
+    stepTitle:       t('datasetFormPage.keywords.step.stepTitle'),
 
     children:
       <Keywords
@@ -218,7 +218,7 @@ export default function DatasetPageFormPage({ location }) {
             <button
               className="review-and-submit-button button is-medium is-info"
               onClick={showFinalSummary}>
-              {t('datasetPageFormPage.reviewAndSubmitButton')}
+              {t('datasetFormPage.reviewAndSubmitButton')}
             </button>
           </div>)}
       </section>
@@ -226,7 +226,7 @@ export default function DatasetPageFormPage({ location }) {
   )
 }
 
-DatasetPageFormPage.propTypes = {
+DatasetFormPage.propTypes = {
   location: PropTypes.shape({
     state: PropTypes.shape({
       action: PropTypes.oneOf(['create', 'update']),

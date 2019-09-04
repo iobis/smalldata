@@ -1,6 +1,6 @@
 import './i18n/i18n'
 import * as SmalldataClient from '@smalldata/dwca-lib/src/clients/SmalldataClient'
-import DatasetPageFormPage from './components/pages/DatasetPageFormPage/DatasetPageFormPage'
+import DatasetFormPage from './components/pages/DatasetFormPage/DatasetFormPage'
 import LogInPage from './components/pages/LogInPage'
 import ManageDatasetPage from './components/pages/ManageDatasetPage'
 import ManageUsersPage from './components/pages/ManageUsersPage'
@@ -45,8 +45,8 @@ const AppDiv = () => {
         <Switch>
           <ProtectedRoute component={ManageDatasetPage} exact path="/"/>
           <ProtectedRoute component={ManageDatasetPage} exact path="/manage-dataset"/>
-          <ProtectedRoute component={DatasetPageFormPage} exact path="/manage-dataset/create"/>
-          <ProtectedRoute component={DatasetPageFormPage} exact path="/manage-dataset/update/:id"/>
+          <ProtectedRoute component={DatasetFormPage} exact path="/manage-dataset/create"/>
+          <ProtectedRoute component={DatasetFormPage} exact path="/manage-dataset/update/:id"/>
           <ProtectedRoute component={ManageUsersPage} exact path="/manage-users"/>
           <ProtectedRoute component={UserFormPage} exact path="/manage-users/create"/>
           <ProtectedRoute component={UserFormPage} exact path="/manage-users/update/:id"/>

@@ -7,7 +7,7 @@ exports[`ResourceCreators renders correctly 1`] = `
 >
   <ContactsForm
     className="resource-creators"
-    contactsTableHeader="datasetPageFormPage.resourceCreators.contactsTableHeader"
+    contactsTableHeader="datasetFormPage.resourceCreators.contactsTableHeader"
     data={Array []}
     onChange={[MockFunction]}
   >
@@ -62,7 +62,7 @@ exports[`ResourceCreators renders correctly 1`] = `
       >
         <InputText
           className="column email"
-          name="datasetPageFormPage.contactsForm.email"
+          name="datasetFormPage.contactsForm.email"
           onChange={[Function]}
           value=""
         >
@@ -71,13 +71,13 @@ exports[`ResourceCreators renders correctly 1`] = `
           >
             <label
               className="label"
-              htmlFor="datasetpageformpage.contactsform.email.label"
+              htmlFor="datasetformpage.contactsform.email.label"
             >
-              datasetPageFormPage.contactsForm.email.label
+              datasetFormPage.contactsForm.email.label
             </label>
             <input
               className="input"
-              id="datasetpageformpage.contactsform.email.label"
+              id="datasetformpage.contactsform.email.label"
               onChange={[Function]}
               type="text"
               value=""
@@ -86,7 +86,7 @@ exports[`ResourceCreators renders correctly 1`] = `
         </InputText>
         <InputText
           className="column organisation"
-          name="datasetPageFormPage.contactsForm.organisation"
+          name="datasetFormPage.contactsForm.organisation"
           onChange={[Function]}
           value=""
         >
@@ -95,13 +95,13 @@ exports[`ResourceCreators renders correctly 1`] = `
           >
             <label
               className="label"
-              htmlFor="datasetpageformpage.contactsform.organisation.label"
+              htmlFor="datasetformpage.contactsform.organisation.label"
             >
-              datasetPageFormPage.contactsForm.organisation.label
+              datasetFormPage.contactsForm.organisation.label
             </label>
             <input
               className="input"
-              id="datasetpageformpage.contactsform.organisation.label"
+              id="datasetformpage.contactsform.organisation.label"
               onChange={[Function]}
               type="text"
               value=""
@@ -125,7 +125,7 @@ exports[`ResourceCreators renders correctly 1`] = `
         <div
           className="title is-5 contacts-table-header"
         >
-          datasetPageFormPage.resourceCreators.contactsTableHeader
+          datasetFormPage.resourceCreators.contactsTableHeader
         </div>
         <table
           className="general table is-fullwidth is-striped is-hoverable"
@@ -133,13 +133,13 @@ exports[`ResourceCreators renders correctly 1`] = `
           <thead>
             <tr>
               <th>
-                datasetPageFormPage.contactsForm.name.label
+                datasetFormPage.contactsForm.name.label
               </th>
               <th>
-                datasetPageFormPage.contactsForm.email.label
+                datasetFormPage.contactsForm.email.label
               </th>
               <th>
-                datasetPageFormPage.contactsForm.organisation.label
+                datasetFormPage.contactsForm.organisation.label
               </th>
               <th />
             </tr>

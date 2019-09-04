@@ -32,7 +32,7 @@ exports[`BasicInformation renders correctly 1`] = `
   >
     <InputText
       className="title mandatory"
-      name="datasetPageFormPage.basicInformation.title"
+      name="datasetFormPage.basicInformation.title"
       onChange={[Function]}
       value="title"
     >
@@ -41,13 +41,13 @@ exports[`BasicInformation renders correctly 1`] = `
       >
         <label
           className="label"
-          htmlFor="datasetpageformpage.basicinformation.title.label"
+          htmlFor="datasetformpage.basicinformation.title.label"
         >
-          datasetPageFormPage.basicInformation.title.label
+          datasetFormPage.basicInformation.title.label
         </label>
         <input
           className="input"
-          id="datasetpageformpage.basicinformation.title.label"
+          id="datasetformpage.basicinformation.title.label"
           onChange={[Function]}
           type="text"
           value="title"
@@ -60,7 +60,7 @@ exports[`BasicInformation renders correctly 1`] = `
       <label
         className="label"
       >
-        datasetPageFormPage.basicInformation.licence.label
+        datasetFormPage.basicInformation.licence.label
       </label>
       <Dropdown
         onChange={[Function]}
@@ -145,7 +145,7 @@ exports[`BasicInformation renders correctly 1`] = `
       <label
         className="label"
       >
-        datasetPageFormPage.basicInformation.language.label
+        datasetFormPage.basicInformation.language.label
       </label>
       <Dropdown
         onChange={[Function]}
@@ -234,7 +234,7 @@ exports[`BasicInformation renders correctly 1`] = `
     </div>
     <Textarea
       className="abstract is-9"
-      name="datasetPageFormPage.basicInformation.abstract"
+      name="datasetFormPage.basicInformation.abstract"
       onChange={[Function]}
       value="abstract"
     >
@@ -243,13 +243,13 @@ exports[`BasicInformation renders correctly 1`] = `
       >
         <label
           className="label"
-          htmlFor="datasetpageformpage.basicinformation.abstract.label"
+          htmlFor="datasetformpage.basicinformation.abstract.label"
         >
-          datasetPageFormPage.basicInformation.abstract.label
+          datasetFormPage.basicInformation.abstract.label
         </label>
         <textarea
           className="textarea"
-          id="datasetpageformpage.basicinformation.abstract.label"
+          id="datasetformpage.basicinformation.abstract.label"
           onChange={[Function]}
           rows={5}
           value="abstract"

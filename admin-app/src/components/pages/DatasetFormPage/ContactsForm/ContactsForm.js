@@ -38,12 +38,12 @@ export default function ContactsForm({ className, contactsTableHeader, data, onC
       <div className="columns column">
         <InputText
           className="column email"
-          name="datasetPageFormPage.contactsForm.email"
+          name="datasetFormPage.contactsForm.email"
           onChange={value => setEmail(value)}
           value={email}/>
         <InputText
           className="column organisation"
-          name="datasetPageFormPage.contactsForm.organisation"
+          name="datasetFormPage.contactsForm.organisation"
           onChange={value => setOrganisation(value)}
           value={organisation}/>
         <div className="column field button-placeholder">
@@ -55,9 +55,9 @@ export default function ContactsForm({ className, contactsTableHeader, data, onC
         <table className="general table is-fullwidth is-striped is-hoverable">
           <thead>
             <tr>
-              <th>{t('datasetPageFormPage.contactsForm.name.label')}</th>
-              <th>{t('datasetPageFormPage.contactsForm.email.label')}</th>
-              <th>{t('datasetPageFormPage.contactsForm.organisation.label')}</th>
+              <th>{t('datasetFormPage.contactsForm.name.label')}</th>
+              <th>{t('datasetFormPage.contactsForm.email.label')}</th>
+              <th>{t('datasetFormPage.contactsForm.organisation.label')}</th>
               <th/>
             </tr>
           </thead>

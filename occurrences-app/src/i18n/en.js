@@ -17,7 +17,7 @@ export default {
       unit:       'Unit',
       value:      'Value'
     },
-    helpPage:  {
+    helpPage:       {
       contactEmail: 'mailto:pieter@obis.be'
     },
     inputDataPage:  {

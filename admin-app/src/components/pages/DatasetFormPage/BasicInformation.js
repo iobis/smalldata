@@ -18,12 +18,12 @@ export default function BasicInformation({ onChange, data, licences, languages }
     <div className="basic-information">
       <InputText
         className="title mandatory"
-        name="datasetPageFormPage.basicInformation.title"
+        name="datasetFormPage.basicInformation.title"
         onChange={value => updateField('title', value)}
         value={title}/>
       <div className="column field licence">
         <label className="label">
-          {t('datasetPageFormPage.basicInformation.licence.label')}
+          {t('datasetFormPage.basicInformation.licence.label')}
         </label>
         <Dropdown
           onChange={value => updateField('licence', value)}
@@ -32,7 +32,7 @@ export default function BasicInformation({ onChange, data, licences, languages }
       </div>
       <div className="column field language">
         <label className="label">
-          {t('datasetPageFormPage.basicInformation.language.label')}
+          {t('datasetFormPage.basicInformation.language.label')}
         </label>
         <Dropdown
           onChange={value => updateField('language', value)}
@@ -41,7 +41,7 @@ export default function BasicInformation({ onChange, data, licences, languages }
       </div>
       <Textarea
         className="abstract is-9"
-        name="datasetPageFormPage.basicInformation.abstract"
+        name="datasetFormPage.basicInformation.abstract"
         onChange={value => updateField('abstract', value)}
         value={abstract}/>
     </div>
