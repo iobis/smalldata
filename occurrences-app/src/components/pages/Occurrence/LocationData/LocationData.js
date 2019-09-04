@@ -15,7 +15,12 @@ export default function LocationData({ data, onChange }) {
 
   function handleLocationUpdate(location) {
     setLocationPickerVisible(false)
-    const newSelection = { ...data, decimalLatitude: location.latitude, decimalLongitude: location.longitude }
+    const newSelection = {
+      ...data,
+      decimalLatitude:       location.latitude,
+      decimalLongitude:      location.longitude,
+      coordinateUncertainty: location.coordinateUncertainty
+    }
     onChange(newSelection)
   }
 
@@ -36,7 +41,6 @@ export default function LocationData({ data, onChange }) {
           onChange={(value) => updateField('decimalLatitude', value)}
           step={0.0001}
           value={data.decimalLatitude}/>
-
       </div>
       <div className="location-picker-notice button" onClick={() => setLocationPickerVisible(true)}>
         {t('occurrenceForm.locationData.locationPicker.title')}
@@ -64,7 +68,6 @@ export default function LocationData({ data, onChange }) {
           step={0.01}
           value={data.coordinateUncertainty}/>
       </div>
-
       <LocationPickerModal
         active={locationPickerVisible}
         onChange={handleLocationUpdate}

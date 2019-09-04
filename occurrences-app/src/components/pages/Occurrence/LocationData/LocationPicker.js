@@ -3,10 +3,10 @@ import iconRetinaUrl from 'leaflet/dist/images/marker-icon-2x.png'
 import iconUrl from 'leaflet/dist/images/marker-icon.png'
 import L from 'leaflet'
 import PropTypes from 'prop-types'
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import shadowUrlUrl from 'leaflet/dist/images/marker-shadow.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
+import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
 import { useDebounce } from '@smalldata/dwca-lib'
 import { useTranslation } from 'react-i18next'
 
@@ -40,16 +40,17 @@ export default function LocationPicker({ onChange }) {
     const longitude = Number(latlng.lng)
     setLatitude(latitude)
     setLongitude(longitude)
-    onChange({ latitude, longitude })
+    onChange({ latitude, longitude, coordinateUncertainty: latlng.coordinateUncertainty })
   }
 
   const debouncedSearch = useDebounce(searchString, 500)
 
   useEffect(() => {
     const fetchSuggestions = async() => {
-      const response = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${searchString}`)
+      const url = `https://api.obis.org/marineregions/getGazetteerRecordsByName.json/${searchString.trim()}/true/false`
+      const response = await fetch(url)
       const suggestions = await response.json()
-      setSuggestions(suggestions)
+      setSuggestions(suggestions.filter(location => location.latitude && location.longitude))
     }
 
     if (debouncedSearch) fetchSuggestions()
@@ -146,19 +147,23 @@ function SuggestionsResult({ suggestions, onClick }) {
         {suggestions.map(suggestion => (
           <tr
             className="suggestion-row fieldrow"
-            key={suggestion.place_id}
-            onClick={() => onClick({ lat: Number(suggestion.lat), lng: Number(suggestion.lon) })}>
+            key={suggestion.MRGID}
+            onClick={() => onClick({
+              lat:                   suggestion.latitude,
+              lng:                   suggestion.longitude,
+              coordinateUncertainty: suggestion.precision
+            })}>
             <td className="type">
-              {suggestion.type}
+              {suggestion.placeType}
             </td>
             <td className="name">
-              {suggestion.display_name}
+              {suggestion.preferredGazetteerName}
             </td>
             <td className="longitude">
-              {suggestion.lon}
+              {suggestion.longitude}
             </td>
             <td className="latitude">
-              {suggestion.lat}
+              {suggestion.latitude}
             </td>
           </tr>
         ))}
@@ -169,7 +174,13 @@ function SuggestionsResult({ suggestions, onClick }) {
 
 SuggestionsResult.propTypes = {
   onClick:     PropTypes.func.isRequired,
-  suggestions: PropTypes.array.isRequired
+  suggestions: PropTypes.arrayOf(PropTypes.shape({
+    precision:              PropTypes.number,
+    placeType:              PropTypes.string.isRequired,
+    preferredGazetteerName: PropTypes.string.isRequired,
+    longitude:              PropTypes.number.isRequired,
+    latitude:               PropTypes.number.isRequired
+  })).isRequired
 }
 
 function SuggestionsResultEmpty() {
