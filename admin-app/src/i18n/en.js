@@ -129,6 +129,10 @@ export default {
       }
     },
     userFormPage:      {
+      header: {
+        create: 'Create user record',
+        update: 'Update user record for {{name}}'
+      },
       submitUserButton: {
         create: 'Create User',
         update: 'Update User'
