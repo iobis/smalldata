@@ -89,7 +89,7 @@ export async function getUsers() {
 }
 
 export async function getUserByEmail(email) {
-  const usersResponse = await fetch('/api/users/?emailAddress=' + email, { headers })
+  const usersResponse = await fetch(apiRoot + 'users/?emailAddress=' + email, { headers })
     .then(response => response.json())
   return usersResponse.map(({ _ref, ...rest }) => (({ id: _ref, ...rest })))[0] || {}
 }
