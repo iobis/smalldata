@@ -43,95 +43,153 @@ exports[`Navbar renders correctly for route / 1`] = `
       }
     }
   >
-    <AuthProvider>
-      <Navbar>
-        <nav
-          aria-label="main navigation"
-          className="navbar is-info"
-          role="navigation"
+    <Navbar>
+      <nav
+        aria-label="main navigation"
+        className="navbar is-info"
+        role="navigation"
+      >
+        <div
+          className="navbar-brand"
+        >
+          <Link
+            className="navbar-item logo"
+            onClick={[Function]}
+            to="/input-data"
+          >
+            <a
+              className="navbar-item logo"
+              href="/input-data"
+              onClick={[Function]}
+            >
+              <img
+                alt="OBIS"
+                src="obis-logo.png"
+                title="OBIS"
+              />
+            </a>
+          </Link>
+          <a
+            className="navbar-burger"
+            onClick={[Function]}
+            role="button"
+          >
+            <span
+              aria-hidden="true"
+            />
+            <span
+              aria-hidden="true"
+            />
+            <span
+              aria-hidden="true"
+            />
+          </a>
+        </div>
+        <div
+          className="navbar-menu"
         >
           <div
-            className="navbar-brand"
+            className="navbar-start"
           >
-            <Link
-              className="navbar-item logo"
+            <NavbarItem
               onClick={[Function]}
               to="/input-data"
             >
-              <a
-                className="navbar-item logo"
-                href="/input-data"
+              <NavLink
+                activeClassName="is-active"
+                className="navbar-item"
                 onClick={[Function]}
+                to="/input-data"
               >
-                <img
-                  alt="OBIS"
-                  src="obis-logo.png"
-                  title="OBIS"
-                />
-              </a>
-            </Link>
-            <a
-              className="navbar-burger"
-              onClick={[Function]}
-              role="button"
-            >
-              <span
-                aria-hidden="true"
-              />
-              <span
-                aria-hidden="true"
-              />
-              <span
-                aria-hidden="true"
-              />
-            </a>
-          </div>
-          <div
-            className="navbar-menu"
-          >
-            <LoginNavItem
-              loggedIn={false}
-            >
-              <div
-                className="login-nav-item navbar-end"
-              >
-                <span
+                <Link
+                  aria-current={null}
                   className="navbar-item"
-                />
-                <AuthButton
-                  labelKey="navbar.login"
                   onClick={[Function]}
+                  to="/input-data"
                 >
                   <a
-                    className="auth-button navbar-item"
+                    aria-current={null}
+                    className="navbar-item"
+                    href="/input-data"
                     onClick={[Function]}
                   >
-                    <span
-                      className="icon"
-                      style={
-                        Object {
-                          "marginRight": 6,
-                        }
-                      }
-                    >
-                      <FontAwesomeIcon
-                        icon="user"
-                      >
-                        <i
-                          className="fa"
-                          icon="user"
-                        />
-                      </FontAwesomeIcon>
-                    </span>
-                    navbar.login
+                    navbar.inputData
                   </a>
-                </AuthButton>
-              </div>
-            </LoginNavItem>
+                </Link>
+              </NavLink>
+            </NavbarItem>
+            <NavbarItem
+              onClick={[Function]}
+              to="/help"
+            >
+              <NavLink
+                activeClassName="is-active"
+                className="navbar-item"
+                onClick={[Function]}
+                to="/help"
+              >
+                <Link
+                  aria-current={null}
+                  className="navbar-item"
+                  onClick={[Function]}
+                  to="/help"
+                >
+                  <a
+                    aria-current={null}
+                    className="navbar-item"
+                    href="/help"
+                    onClick={[Function]}
+                  >
+                    navbar.help
+                  </a>
+                </Link>
+              </NavLink>
+            </NavbarItem>
           </div>
-        </nav>
-      </Navbar>
-    </AuthProvider>
+          <LoginNavItem
+            loggedIn={true}
+          >
+            <div
+              className="login-nav-item navbar-end"
+            >
+              <span
+                className="navbar-item"
+              >
+                Charles Darwin
+              </span>
+              <AuthButton
+                labelKey="navbar.logout"
+                onClick={[MockFunction]}
+              >
+                <a
+                  className="auth-button navbar-item"
+                  onClick={[MockFunction]}
+                >
+                  <span
+                    className="icon"
+                    style={
+                      Object {
+                        "marginRight": 6,
+                      }
+                    }
+                  >
+                    <FontAwesomeIcon
+                      icon="user"
+                    >
+                      <i
+                        className="fa"
+                        icon="user"
+                      />
+                    </FontAwesomeIcon>
+                  </span>
+                  navbar.logout
+                </a>
+              </AuthButton>
+            </div>
+          </LoginNavItem>
+        </div>
+      </nav>
+    </Navbar>
   </Router>
 </MemoryRouter>
 `;
@@ -179,95 +237,155 @@ exports[`Navbar renders correctly for route /help 1`] = `
       }
     }
   >
-    <AuthProvider>
-      <Navbar>
-        <nav
-          aria-label="main navigation"
-          className="navbar is-info"
-          role="navigation"
+    <Navbar>
+      <nav
+        aria-label="main navigation"
+        className="navbar is-info"
+        role="navigation"
+      >
+        <div
+          className="navbar-brand"
+        >
+          <Link
+            className="navbar-item logo"
+            onClick={[Function]}
+            to="/input-data"
+          >
+            <a
+              className="navbar-item logo"
+              href="/input-data"
+              onClick={[Function]}
+            >
+              <img
+                alt="OBIS"
+                src="obis-logo.png"
+                title="OBIS"
+              />
+            </a>
+          </Link>
+          <a
+            className="navbar-burger"
+            onClick={[Function]}
+            role="button"
+          >
+            <span
+              aria-hidden="true"
+            />
+            <span
+              aria-hidden="true"
+            />
+            <span
+              aria-hidden="true"
+            />
+          </a>
+        </div>
+        <div
+          className="navbar-menu"
         >
           <div
-            className="navbar-brand"
+            className="navbar-start"
           >
-            <Link
-              className="navbar-item logo"
+            <NavbarItem
               onClick={[Function]}
               to="/input-data"
             >
-              <a
-                className="navbar-item logo"
-                href="/input-data"
+              <NavLink
+                activeClassName="is-active"
+                className="navbar-item"
                 onClick={[Function]}
+                to="/input-data"
               >
-                <img
-                  alt="OBIS"
-                  src="obis-logo.png"
-                  title="OBIS"
-                />
-              </a>
-            </Link>
-            <a
-              className="navbar-burger"
-              onClick={[Function]}
-              role="button"
-            >
-              <span
-                aria-hidden="true"
-              />
-              <span
-                aria-hidden="true"
-              />
-              <span
-                aria-hidden="true"
-              />
-            </a>
-          </div>
-          <div
-            className="navbar-menu"
-          >
-            <LoginNavItem
-              loggedIn={false}
-            >
-              <div
-                className="login-nav-item navbar-end"
-              >
-                <span
+                <Link
+                  aria-current={null}
                   className="navbar-item"
-                />
-                <AuthButton
-                  labelKey="navbar.login"
                   onClick={[Function]}
+                  to="/input-data"
                 >
                   <a
-                    className="auth-button navbar-item"
+                    aria-current={null}
+                    className="navbar-item"
+                    href="/input-data"
                     onClick={[Function]}
                   >
-                    <span
-                      className="icon"
-                      style={
-                        Object {
-                          "marginRight": 6,
-                        }
-                      }
-                    >
-                      <FontAwesomeIcon
-                        icon="user"
-                      >
-                        <i
-                          className="fa"
-                          icon="user"
-                        />
-                      </FontAwesomeIcon>
-                    </span>
-                    navbar.login
+                    navbar.inputData
                   </a>
-                </AuthButton>
-              </div>
-            </LoginNavItem>
+                </Link>
+              </NavLink>
+            </NavbarItem>
+            <NavbarItem
+              onClick={[Function]}
+              to="/help"
+            >
+              <NavLink
+                activeClassName="is-active"
+                className="navbar-item"
+                onClick={[Function]}
+                to="/help"
+              >
+                <Link
+                  aria-current="page"
+                  className="navbar-item is-active"
+                  onClick={[Function]}
+                  style={Object {}}
+                  to="/help"
+                >
+                  <a
+                    aria-current="page"
+                    className="navbar-item is-active"
+                    href="/help"
+                    onClick={[Function]}
+                    style={Object {}}
+                  >
+                    navbar.help
+                  </a>
+                </Link>
+              </NavLink>
+            </NavbarItem>
           </div>
-        </nav>
-      </Navbar>
-    </AuthProvider>
+          <LoginNavItem
+            loggedIn={true}
+          >
+            <div
+              className="login-nav-item navbar-end"
+            >
+              <span
+                className="navbar-item"
+              >
+                Charles Darwin
+              </span>
+              <AuthButton
+                labelKey="navbar.logout"
+                onClick={[MockFunction]}
+              >
+                <a
+                  className="auth-button navbar-item"
+                  onClick={[MockFunction]}
+                >
+                  <span
+                    className="icon"
+                    style={
+                      Object {
+                        "marginRight": 6,
+                      }
+                    }
+                  >
+                    <FontAwesomeIcon
+                      icon="user"
+                    >
+                      <i
+                        className="fa"
+                        icon="user"
+                      />
+                    </FontAwesomeIcon>
+                  </span>
+                  navbar.logout
+                </a>
+              </AuthButton>
+            </div>
+          </LoginNavItem>
+        </div>
+      </nav>
+    </Navbar>
   </Router>
 </MemoryRouter>
 `;
@@ -315,95 +433,155 @@ exports[`Navbar renders correctly for route /input-data 1`] = `
       }
     }
   >
-    <AuthProvider>
-      <Navbar>
-        <nav
-          aria-label="main navigation"
-          className="navbar is-info"
-          role="navigation"
+    <Navbar>
+      <nav
+        aria-label="main navigation"
+        className="navbar is-info"
+        role="navigation"
+      >
+        <div
+          className="navbar-brand"
+        >
+          <Link
+            className="navbar-item logo"
+            onClick={[Function]}
+            to="/input-data"
+          >
+            <a
+              className="navbar-item logo"
+              href="/input-data"
+              onClick={[Function]}
+            >
+              <img
+                alt="OBIS"
+                src="obis-logo.png"
+                title="OBIS"
+              />
+            </a>
+          </Link>
+          <a
+            className="navbar-burger"
+            onClick={[Function]}
+            role="button"
+          >
+            <span
+              aria-hidden="true"
+            />
+            <span
+              aria-hidden="true"
+            />
+            <span
+              aria-hidden="true"
+            />
+          </a>
+        </div>
+        <div
+          className="navbar-menu"
         >
           <div
-            className="navbar-brand"
+            className="navbar-start"
           >
-            <Link
-              className="navbar-item logo"
+            <NavbarItem
               onClick={[Function]}
               to="/input-data"
             >
-              <a
-                className="navbar-item logo"
-                href="/input-data"
+              <NavLink
+                activeClassName="is-active"
+                className="navbar-item"
                 onClick={[Function]}
+                to="/input-data"
               >
-                <img
-                  alt="OBIS"
-                  src="obis-logo.png"
-                  title="OBIS"
-                />
-              </a>
-            </Link>
-            <a
-              className="navbar-burger"
-              onClick={[Function]}
-              role="button"
-            >
-              <span
-                aria-hidden="true"
-              />
-              <span
-                aria-hidden="true"
-              />
-              <span
-                aria-hidden="true"
-              />
-            </a>
-          </div>
-          <div
-            className="navbar-menu"
-          >
-            <LoginNavItem
-              loggedIn={false}
-            >
-              <div
-                className="login-nav-item navbar-end"
-              >
-                <span
-                  className="navbar-item"
-                />
-                <AuthButton
-                  labelKey="navbar.login"
+                <Link
+                  aria-current="page"
+                  className="navbar-item is-active"
                   onClick={[Function]}
+                  style={Object {}}
+                  to="/input-data"
                 >
                   <a
-                    className="auth-button navbar-item"
+                    aria-current="page"
+                    className="navbar-item is-active"
+                    href="/input-data"
+                    onClick={[Function]}
+                    style={Object {}}
+                  >
+                    navbar.inputData
+                  </a>
+                </Link>
+              </NavLink>
+            </NavbarItem>
+            <NavbarItem
+              onClick={[Function]}
+              to="/help"
+            >
+              <NavLink
+                activeClassName="is-active"
+                className="navbar-item"
+                onClick={[Function]}
+                to="/help"
+              >
+                <Link
+                  aria-current={null}
+                  className="navbar-item"
+                  onClick={[Function]}
+                  to="/help"
+                >
+                  <a
+                    aria-current={null}
+                    className="navbar-item"
+                    href="/help"
                     onClick={[Function]}
                   >
-                    <span
-                      className="icon"
-                      style={
-                        Object {
-                          "marginRight": 6,
-                        }
-                      }
-                    >
-                      <FontAwesomeIcon
-                        icon="user"
-                      >
-                        <i
-                          className="fa"
-                          icon="user"
-                        />
-                      </FontAwesomeIcon>
-                    </span>
-                    navbar.login
+                    navbar.help
                   </a>
-                </AuthButton>
-              </div>
-            </LoginNavItem>
+                </Link>
+              </NavLink>
+            </NavbarItem>
           </div>
-        </nav>
-      </Navbar>
-    </AuthProvider>
+          <LoginNavItem
+            loggedIn={true}
+          >
+            <div
+              className="login-nav-item navbar-end"
+            >
+              <span
+                className="navbar-item"
+              >
+                Charles Darwin
+              </span>
+              <AuthButton
+                labelKey="navbar.logout"
+                onClick={[MockFunction]}
+              >
+                <a
+                  className="auth-button navbar-item"
+                  onClick={[MockFunction]}
+                >
+                  <span
+                    className="icon"
+                    style={
+                      Object {
+                        "marginRight": 6,
+                      }
+                    }
+                  >
+                    <FontAwesomeIcon
+                      icon="user"
+                    >
+                      <i
+                        className="fa"
+                        icon="user"
+                      />
+                    </FontAwesomeIcon>
+                  </span>
+                  navbar.logout
+                </a>
+              </AuthButton>
+            </div>
+          </LoginNavItem>
+        </div>
+      </nav>
+    </Navbar>
   </Router>
 </MemoryRouter>
 `;
@@ -451,95 +629,155 @@ exports[`Navbar renders correctly for route /input-data/create 1`] = `
       }
     }
   >
-    <AuthProvider>
-      <Navbar>
-        <nav
-          aria-label="main navigation"
-          className="navbar is-info"
-          role="navigation"
+    <Navbar>
+      <nav
+        aria-label="main navigation"
+        className="navbar is-info"
+        role="navigation"
+      >
+        <div
+          className="navbar-brand"
+        >
+          <Link
+            className="navbar-item logo"
+            onClick={[Function]}
+            to="/input-data"
+          >
+            <a
+              className="navbar-item logo"
+              href="/input-data"
+              onClick={[Function]}
+            >
+              <img
+                alt="OBIS"
+                src="obis-logo.png"
+                title="OBIS"
+              />
+            </a>
+          </Link>
+          <a
+            className="navbar-burger"
+            onClick={[Function]}
+            role="button"
+          >
+            <span
+              aria-hidden="true"
+            />
+            <span
+              aria-hidden="true"
+            />
+            <span
+              aria-hidden="true"
+            />
+          </a>
+        </div>
+        <div
+          className="navbar-menu"
         >
           <div
-            className="navbar-brand"
+            className="navbar-start"
           >
-            <Link
-              className="navbar-item logo"
+            <NavbarItem
               onClick={[Function]}
               to="/input-data"
             >
-              <a
-                className="navbar-item logo"
-                href="/input-data"
+              <NavLink
+                activeClassName="is-active"
+                className="navbar-item"
                 onClick={[Function]}
+                to="/input-data"
               >
-                <img
-                  alt="OBIS"
-                  src="obis-logo.png"
-                  title="OBIS"
-                />
-              </a>
-            </Link>
-            <a
-              className="navbar-burger"
-              onClick={[Function]}
-              role="button"
-            >
-              <span
-                aria-hidden="true"
-              />
-              <span
-                aria-hidden="true"
-              />
-              <span
-                aria-hidden="true"
-              />
-            </a>
-          </div>
-          <div
-            className="navbar-menu"
-          >
-            <LoginNavItem
-              loggedIn={false}
-            >
-              <div
-                className="login-nav-item navbar-end"
-              >
-                <span
-                  className="navbar-item"
-                />
-                <AuthButton
-                  labelKey="navbar.login"
+                <Link
+                  aria-current="page"
+                  className="navbar-item is-active"
                   onClick={[Function]}
+                  style={Object {}}
+                  to="/input-data"
                 >
                   <a
-                    className="auth-button navbar-item"
+                    aria-current="page"
+                    className="navbar-item is-active"
+                    href="/input-data"
+                    onClick={[Function]}
+                    style={Object {}}
+                  >
+                    navbar.inputData
+                  </a>
+                </Link>
+              </NavLink>
+            </NavbarItem>
+            <NavbarItem
+              onClick={[Function]}
+              to="/help"
+            >
+              <NavLink
+                activeClassName="is-active"
+                className="navbar-item"
+                onClick={[Function]}
+                to="/help"
+              >
+                <Link
+                  aria-current={null}
+                  className="navbar-item"
+                  onClick={[Function]}
+                  to="/help"
+                >
+                  <a
+                    aria-current={null}
+                    className="navbar-item"
+                    href="/help"
                     onClick={[Function]}
                   >
-                    <span
-                      className="icon"
-                      style={
-                        Object {
-                          "marginRight": 6,
-                        }
-                      }
-                    >
-                      <FontAwesomeIcon
-                        icon="user"
-                      >
-                        <i
-                          className="fa"
-                          icon="user"
-                        />
-                      </FontAwesomeIcon>
-                    </span>
-                    navbar.login
+                    navbar.help
                   </a>
-                </AuthButton>
-              </div>
-            </LoginNavItem>
+                </Link>
+              </NavLink>
+            </NavbarItem>
           </div>
-        </nav>
-      </Navbar>
-    </AuthProvider>
+          <LoginNavItem
+            loggedIn={true}
+          >
+            <div
+              className="login-nav-item navbar-end"
+            >
+              <span
+                className="navbar-item"
+              >
+                Charles Darwin
+              </span>
+              <AuthButton
+                labelKey="navbar.logout"
+                onClick={[MockFunction]}
+              >
+                <a
+                  className="auth-button navbar-item"
+                  onClick={[MockFunction]}
+                >
+                  <span
+                    className="icon"
+                    style={
+                      Object {
+                        "marginRight": 6,
+                      }
+                    }
+                  >
+                    <FontAwesomeIcon
+                      icon="user"
+                    >
+                      <i
+                        className="fa"
+                        icon="user"
+                      />
+                    </FontAwesomeIcon>
+                  </span>
+                  navbar.logout
+                </a>
+              </AuthButton>
+            </div>
+          </LoginNavItem>
+        </div>
+      </nav>
+    </Navbar>
   </Router>
 </MemoryRouter>
 `;
@@ -699,7 +937,7 @@ exports[`Navbar renders correctly when logged in 1`] = `
               <span
                 className="navbar-item"
               >
-                Zeus
+                Charles Darwin
               </span>
               <AuthButton
                 labelKey="navbar.logout"
@@ -834,7 +1072,9 @@ exports[`Navbar renders correctly when logged out 1`] = `
             >
               <span
                 className="navbar-item"
-              />
+              >
+                Charles Darwin
+              </span>
               <AuthButton
                 labelKey="navbar.login"
                 onClick={[MockFunction]}

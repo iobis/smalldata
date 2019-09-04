@@ -2,7 +2,7 @@ import OccurrenceForm from './OccurrenceForm'
 import React from 'react'
 import SmalldataClient from '@smalldata/dwca-lib/src/clients/SmalldataClient'
 import { act } from 'react-dom/test-utils'
-import { AuthProvider } from '@smalldata/dwca-lib'
+import { AuthContext } from '@smalldata/dwca-lib'
 import { getDatasetsFixture, getDefaultDwcaResponse } from '@smalldata/dwca-lib/src/clients/SmalldataClient.mock'
 import { MemoryRouter } from 'react-router-dom'
 import { mount } from 'enzyme'
@@ -34,11 +34,11 @@ describe('OccurrenceForm', () => {
       )
       await act(async() => {
         wrapper = mount(
-          <AuthProvider>
-            <MemoryRouter initialEntries={[{ pathname: '/input-data/create', key: 'testKey' }]}>
+          <MemoryRouter initialEntries={[{ pathname: '/input-data/create', key: 'testKey' }]}>
+            <AuthContext.Provider value={createAuthProviderValue()}>
               <OccurrenceForm/>
-            </MemoryRouter>
-          </AuthProvider>
+            </AuthContext.Provider>
+          </MemoryRouter>
         )
       })
       wrapper.update()
@@ -166,11 +166,11 @@ describe('OccurrenceForm', () => {
       }
       await act(async() => {
         wrapper = mount(
-          <AuthProvider>
-            <MemoryRouter initialEntries={[{ pathname: '/input-data/update', key: 'testKey' }]}>
+          <MemoryRouter initialEntries={[{ pathname: '/input-data/update', key: 'testKey' }]}>
+            <AuthContext.Provider value={createAuthProviderValue()}>
               <OccurrenceForm location={location}/>
-            </MemoryRouter>
-          </AuthProvider>
+            </AuthContext.Provider>
+          </MemoryRouter>
         )
       })
       wrapper.update()
@@ -262,6 +262,15 @@ describe('OccurrenceForm', () => {
     })
   })
 })
+
+function createAuthProviderValue() {
+  return {
+    claims:   { name: 'Charles Darwin' },
+    loggedIn: true,
+    logOut:   jest.fn(),
+    userRef:  'ovZTtaOJZ98xDDY'
+  }
+}
 
 function addLocation(wrapper) {
   wrapper.find('.step-3 .step-header').simulate('click')
