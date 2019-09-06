@@ -51,13 +51,7 @@ exports[`UserFormPage renders correctly for successful workflow 1`] = `
           <h1
             className="column"
           >
-            <span>
-              Create 
-            </span>
-            user record
-            <strong>
-               
-            </strong>
+            userFormPage.header.create {"name":""}
           </h1>
           <OceanExpertNameInput
             oceanExpertName=""
@@ -297,13 +291,7 @@ exports[`UserFormPage renders correctly for successful workflow 2`] = `
           <h1
             className="column"
           >
-            <span>
-              Create 
-            </span>
-            user record
-            <strong>
-               
-            </strong>
+            userFormPage.header.create {"name":""}
           </h1>
           <OceanExpertNameInput
             oceanExpertName=""
@@ -699,17 +687,7 @@ exports[`UserFormPage when editing renders correctly for successful workflow 1`]
           <h1
             className="column"
           >
-            <span>
-              Modify 
-            </span>
-            user record
-            <span>
-               for 
-            </span>
-            <strong>
-               
-              Indiana Jones
-            </strong>
+            userFormPage.header.update {"name":"Indiana Jones"}
           </h1>
           <OceanExpertNameInput
             oceanExpertName="Indiana Jones"
@@ -964,17 +942,7 @@ exports[`UserFormPage when editing renders correctly for successful workflow 2`]
           <h1
             className="column"
           >
-            <span>
-              Modify 
-            </span>
-            user record
-            <span>
-               for 
-            </span>
-            <strong>
-               
-              Indiana Jones
-            </strong>
+            userFormPage.header.update {"name":"Indiana Jones"}
           </h1>
           <OceanExpertNameInput
             oceanExpertName="Indiana Jones"

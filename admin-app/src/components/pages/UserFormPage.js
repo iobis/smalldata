@@ -26,6 +26,7 @@ export default function UserFormPage({ location }) {
   const [errorMessage, setErrorMessage] = useState('')
   const successMessageRef = useRef()
   const errorMessageRef = useRef()
+  const header = t('userFormPage.header.' + action, { name: initialState.name })
 
   useEffect(() => {
     const fetchDatasets = async() => {
@@ -84,21 +85,10 @@ export default function UserFormPage({ location }) {
   }
 
   return (
-
     <div className="user-form-page section is-fluid">
       <h1 className="column">
-        {name ? (
-          <span>Modify </span>
-        ) : (
-          <span>Create </span>
-        )}
-          user record
-        {name ? (
-          <span> for </span>
-        ) : null}
-
-        <strong> {name}</strong></h1>
-
+        {header}
+      </h1>
       <OceanExpertNameInput
         oceanExpertName={name}
         onChange={handleOceanExpertProfileChange}/>
