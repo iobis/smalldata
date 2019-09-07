@@ -23,6 +23,7 @@ describe('DatasetFormPage', () => {
         </MemoryRouter>
       )
       expect(wrapper).toMatchSnapshot()
+      expect(wrapper.find('h1.page-header').text()).toBe('datasetFormPage.header.create')
 
       addBasicData(wrapper)
       expect(wrapper).toMatchSnapshot()
@@ -99,6 +100,10 @@ describe('DatasetFormPage', () => {
         wrapper.update()
       })
 
+      it('keeps "create dataset" page header', () => {
+        expect(wrapper.find('h1.page-header').text()).toBe('datasetFormPage.header.create')
+      })
+
       it('calls SmalldataClient.createDataset once with correct dataset id', () => {
         expect(SmalldataClient.createDataset).toHaveBeenCalledTimes(1)
         expect(SmalldataClient.createDataset).toHaveBeenNthCalledWith(1, expect.objectContaining({
@@ -152,6 +157,10 @@ describe('DatasetFormPage', () => {
 
     it('renders correctly', () => {
       expect(wrapper).toMatchSnapshot()
+    })
+
+    it('renders "update dataset" page header', () => {
+      expect(wrapper.find('h1.page-header').text()).toBe('datasetFormPage.header.update')
     })
 
     it('renders basic information of selected dataset', () => {
@@ -254,6 +263,10 @@ describe('DatasetFormPage', () => {
               it('renders correctly', () => {
                 expect(wrapper.find('.final-summary').exists()).toBe(true)
                 expect(wrapper).toMatchSnapshot()
+              })
+
+              it('keeps "update dataset" page header', () => {
+                expect(wrapper.find('h1.page-header').text()).toBe('datasetFormPage.header.update')
               })
 
               it('does not render success message', () => {

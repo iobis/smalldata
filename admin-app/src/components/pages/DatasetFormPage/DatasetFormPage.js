@@ -36,6 +36,7 @@ export default function DatasetFormPage({ location }) {
   const [keywords, setKeywords] = useState(initialState.keywords)
   const [activeStepIndex, setActiveStepIndex] = useState(0)
   const [finalSummaryVisible, setFinalSummaryVisible] = useState(false)
+  const header = t('datasetFormPage.header.' + action)
 
   useEffect(() => {
     async function fetchDataset() {
@@ -170,13 +171,10 @@ export default function DatasetFormPage({ location }) {
   }]
 
   return (
-    <>
-      {basicInformation.title.length > 0 ? (
-        <h1>Edit dataset</h1>
-      ) : (
-        <h1>Create new dataset</h1>
-      )}
-
+    <div className="dataset-form-page section is-fluid">
+      <h1 className="page-header column">
+        {header}
+      </h1>
       <section className="section">
         {steps.map((step, index) => {
           const stepNumber = index + 1
@@ -222,7 +220,7 @@ export default function DatasetFormPage({ location }) {
             </button>
           </div>)}
       </section>
-    </>
+    </div>
   )
 }
 
