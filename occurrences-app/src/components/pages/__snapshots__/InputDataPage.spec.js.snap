@@ -224,7 +224,7 @@ exports[`InputDataPage renders correctly 1`] = `
             getTrProps={[Function]}
             groupedByPivotKey="_groupedByPivot"
             indexKey="_index"
-            loading={false}
+            loading={true}
             loadingText="Loading..."
             multiSort={true}
             nestingLevelKey="_nestingLevel"
@@ -2941,7 +2941,7 @@ exports[`InputDataPage renders correctly 1`] = `
                   headerGroups={Array []}
                   indexKey="_index"
                   isTop={false}
-                  loading={false}
+                  loading={true}
                   loadingText="Loading..."
                   multiSort={true}
                   nestingLevelKey="_nestingLevel"
@@ -3116,11 +3116,11 @@ exports[`InputDataPage renders correctly 1`] = `
                 </div>
               </NoData>
               <LoadingComponent
-                loading={false}
+                loading={true}
                 loadingText="Loading..."
               >
                 <div
-                  className="-loading"
+                  className="-loading -active"
                 >
                   <div
                     className="-loading-inner"

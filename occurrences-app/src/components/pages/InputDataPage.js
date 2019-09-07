@@ -11,6 +11,7 @@ import { useTranslation } from 'react-i18next'
 export default function InputDataPage() {
   const { t } = useTranslation()
   const { userRef } = useContext(AuthContext)
+  const [loading, setLoading] = useState(true)
   const [occurrences, setOccurrences] = useState([])
 
   useEffect(() => {
@@ -29,6 +30,7 @@ export default function InputDataPage() {
           ...occurrence,
           datasetTitle: datasetRefToTitle[occurrence.dataset]
         }))
+      setLoading(false)
       setOccurrences(occurrencesWithDataset)
     }
     fetchOccurrences()
@@ -104,7 +106,8 @@ export default function InputDataPage() {
             className="occurrences-table table is-striped is-hoverable is-fullwidth"
             columns={columns}
             data={occurrences}
-            defaultPageSize={10}/>
+            defaultPageSize={10}
+            loading={loading}/>
         </div>
       </section>
     </>

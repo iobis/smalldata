@@ -40,6 +40,7 @@ describe('InputDataPage', () => {
       )
     })
 
+    expect(wrapper.find('.-loading.-active').exists()).toBe(true)
     expect(wrapper.find('.rt-table .rt-tr-group')).toHaveLength(10)
     expect(wrapper.find('.rt-table .rt-tr-group div.added-at').map(el => el.text()))
       .toEqual([' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '])
@@ -57,6 +58,7 @@ describe('InputDataPage', () => {
     })
 
     wrapper.update()
+    expect(wrapper.find('.-loading.-active').exists()).toBe(false)
     expect(wrapper.find('.rt-table .rt-tr-group')).toHaveLength(10)
     expect(wrapper.find('.rt-table .rt-tr-group div.added-at').map(el => el.text()))
       .toEqual(['20 June 2019', '—', '—', ' ', ' ', ' ', ' ', ' ', ' ', ' '])
