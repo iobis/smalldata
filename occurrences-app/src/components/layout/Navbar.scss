@@ -12,6 +12,7 @@
 
     &.navbar-item.is-active,
     &.navbar-item:hover {
+      color: white;
       background-color: var(--obis-green);
     }
   }
@@ -40,6 +41,7 @@
       color: var(--font-color);
       &.auth-button:hover {
         background-color: var(--obis-green);
+        color: white;
       }
     }
   }
