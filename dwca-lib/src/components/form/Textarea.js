@@ -7,18 +7,18 @@ import { useTranslation } from 'react-i18next'
 export default function Textarea({ className, name, onChange, value }) {
   const { t } = useTranslation()
   const label = t(name + '.label')
-  const accessibilityID = label.replace(' ','').toLocaleLowerCase()
+  const accessibilityId = label.replace(' ','').toLocaleLowerCase()
   const placeholderKey = name + '.placeholder'
   const helpKey = name + '.help'
 
   return (
     <div className={classNames('column field', className)}>
-      <label className="label" htmlFor={accessibilityID}>
+      <label className="label" htmlFor={accessibilityId}>
         {label}
       </label>
       <textarea
         className="textarea"
-        id={accessibilityID}
+        id={accessibilityId}
         onChange={(e) => onChange(e.target.value)}
         placeholder={i18next.exists(placeholderKey) ? t(placeholderKey) : undefined}
         rows={5}
