@@ -1,16 +1,12 @@
 import React from 'react'
 import UserFormPage from './UserFormPage'
-import waitUntil from 'async-wait-until'
 import { act } from 'react-dom/test-utils'
 import { AuthProvider } from '@smalldata/dwca-lib'
 import { getDatasetDefaultResponse } from '@smalldata/dwca-lib/src/clients/SmalldataClient.mock'
-import { ignoreActWarning } from '@smalldata/test-utils-lib'
 import { MemoryRouter } from 'react-router-dom'
 import { mount } from 'enzyme'
 
 describe('UserFormPage', () => {
-  ignoreActWarning()
-
   let wrapper
 
   beforeEach(() => {
@@ -26,7 +22,7 @@ describe('UserFormPage', () => {
   })
 
   it('renders correctly for successful workflow', async() => {
-    act(() => {
+    await act(async() => {
       wrapper = mount(
         <MemoryRouter initialEntries={[{ pathname: '/manage-users', key: 'testKey' }]}>
           <AuthProvider>
@@ -38,16 +34,14 @@ describe('UserFormPage', () => {
     expect(global.fetch).toHaveBeenCalledTimes(1)
     expect(global.fetch).toHaveBeenCalledWith('/api/datasets', {
       headers: {
-        'Content-Type':  'application/json'
+        'Content-Type': 'application/json'
       }
     })
     expect(wrapper.find('.dataset-row')).toHaveLength(0)
     expect(wrapper).toMatchSnapshot()
 
-    await waitUntil(() => {
-      wrapper.update()
-      return wrapper.find('.dataset-row').length === 4
-    })
+    wrapper.update()
+    expect(wrapper.find('.dataset-row')).toHaveLength(4)
     expect(wrapper.find('h1').text()).toBe('userFormPage.header.create {"name":""}')
     expect(wrapper.find('.dataset-row')).toHaveLength(4)
     expect(wrapper.find('.dropdown .selected-value').text()).toBe('researcher')
@@ -75,11 +69,10 @@ describe('UserFormPage', () => {
     expect(wrapper.find('.dropdown .selected-value').text()).toBe('node manager')
     expect(wrapper.find('.submit-user-button button').props()['disabled']).toBe(false)
 
-    wrapper.find('.submit-user-button button').simulate('click')
-    await waitUntil(() => {
-      wrapper.update()
-      return wrapper.find('.submit-user-button').length === 0
+    await act(async() => {
+      wrapper.find('.submit-user-button button').simulate('click')
     })
+    wrapper.update()
     expect(wrapper.exists('.submit-user-button')).toBe(false)
     expect(wrapper.exists('.success-message')).toBe(true)
     expect(wrapper.find('.success-message .title').text()).toEqual('userFormPage.successMessage.header.create')
@@ -93,7 +86,7 @@ describe('UserFormPage', () => {
         'role':         'node manager'
       }),
       'headers': {
-        'Content-Type':  'application/json'
+        'Content-Type': 'application/json'
       },
       'method':  'POST'
     })
@@ -111,7 +104,7 @@ describe('UserFormPage', () => {
 
   describe('when editing', () => {
     it('renders correctly for successful workflow', async() => {
-      act(() => {
+      await act(async() => {
         wrapper = mount(
           <MemoryRouter
             initialEntries={[{ pathname: '/manage-users/update/5d2b7998c1d37d36d4a41ab8', key: 'testKey' }]}>
@@ -134,16 +127,14 @@ describe('UserFormPage', () => {
       expect(global.fetch).toHaveBeenCalledTimes(1)
       expect(global.fetch).toHaveBeenCalledWith('/api/datasets', {
         headers: {
-          'Content-Type':  'application/json'
+          'Content-Type': 'application/json'
         }
       })
       expect(wrapper.find('.dataset-row')).toHaveLength(0)
       expect(wrapper).toMatchSnapshot()
 
-      await waitUntil(() => {
-        wrapper.update()
-        return wrapper.find('.dataset-row').length === 4
-      })
+      wrapper.update()
+      expect(wrapper.find('.dataset-row')).toHaveLength(4)
       expect(wrapper.find('h1').text()).toBe('userFormPage.header.update {"name":"Indiana Jones"}')
       expect(wrapper.find('.dataset-row')).toHaveLength(4)
       expect(wrapper.find('.ocean-expert-name-input .input').prop('value')).toBe('Indiana Jones')
@@ -174,11 +165,10 @@ describe('UserFormPage', () => {
       expect(wrapper.find('.dropdown .selected-value').text()).toBe('researcher')
       expect(wrapper.find('.submit-user-button button').props()['disabled']).toBe(false)
 
-      wrapper.find('.submit-user-button button').simulate('click')
-      await waitUntil(() => {
-        wrapper.update()
-        return wrapper.find('.submit-user-button').length === 0
+      await act(async() => {
+        wrapper.find('.submit-user-button button').simulate('click')
       })
+      wrapper.update()
       expect(wrapper.exists('.submit-user-button')).toBe(false)
       expect(wrapper.exists('.success-message')).toBe(true)
       expect(wrapper.find('.success-message .title').text()).toEqual('userFormPage.successMessage.header.update')
@@ -192,7 +182,7 @@ describe('UserFormPage', () => {
           'role':         'researcher'
         }),
         'headers': {
-          'Content-Type':  'application/json'
+          'Content-Type': 'application/json'
         },
         'method':  'PUT'
       })
