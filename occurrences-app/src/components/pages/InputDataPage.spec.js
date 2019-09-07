@@ -1,6 +1,5 @@
 import InputDataPage from './InputDataPage'
 import React from 'react'
-import { flushPromises, ignoreActWarning } from '@smalldata/test-utils-lib'
 import { MemoryRouter } from 'react-router-dom'
 import { getDatasetDefaultResponse, OCCURRENCES_RESPONSE } from '@smalldata/dwca-lib/src/clients/SmalldataClient.mock'
 import { act } from 'react-dom/test-utils'
@@ -8,8 +7,6 @@ import { mount } from 'enzyme'
 import { AuthContext } from '@smalldata/dwca-lib'
 
 describe('InputDataPage', () => {
-  ignoreActWarning()
-
   let wrapper
 
   beforeEach(() => {
@@ -32,7 +29,7 @@ describe('InputDataPage', () => {
   })
 
   it('renders correctly', async() => {
-    act(() => {
+    await act(async() => {
       wrapper = mount(
         <MemoryRouter initialEntries={[{ pathname: '/input-data', key: 'testKey' }]}>
           <AuthContext.Provider
@@ -43,7 +40,9 @@ describe('InputDataPage', () => {
       )
     })
 
-    expect(wrapper.find('tbody tr')).toHaveLength(0)
+    expect(wrapper.find('.rt-table .rt-tr-group')).toHaveLength(10)
+    expect(wrapper.find('.rt-table .rt-tr-group div.added-at').map(el => el.text()))
+      .toEqual([' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '])
     expect(wrapper).toMatchSnapshot()
     expect(global.fetch).toHaveBeenCalledTimes(2)
     expect(global.fetch).toHaveBeenNthCalledWith(1, '/api/dwca/user/ovZTtaOJZ98xDDY/records?projectFields=dwcRecord.tdwg.scientificName&projectFields=dwcRecord.tdwg.eventDate', {
@@ -57,9 +56,10 @@ describe('InputDataPage', () => {
       }
     })
 
-    await flushPromises()
     wrapper.update()
-    expect(wrapper.find('tbody tr')).toHaveLength(3)
+    expect(wrapper.find('.rt-table .rt-tr-group')).toHaveLength(10)
+    expect(wrapper.find('.rt-table .rt-tr-group div.added-at').map(el => el.text()))
+      .toEqual(['20 June 2019', '—', '—', ' ', ' ', ' ', ' ', ' ', ' ', ' '])
     expect(wrapper).toMatchSnapshot()
   })
 })

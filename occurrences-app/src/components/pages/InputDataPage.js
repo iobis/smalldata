@@ -51,10 +51,11 @@ export default function InputDataPage() {
     ),
     accessor: occurrence => ({ dwcaId: occurrence.dwcaId, datasetId: occurrence.dataset })
   }, {
-    width:    150,
-    id:       'addedAt',
-    Header:   t('inputDataPage.table.addedAt'),
-    accessor: occurrence => occurrence.addedAtInstant ? format(occurrence.addedAtInstant, 'D MMMM YYYY') : '—'
+    width:     150,
+    className: 'added-at',
+    id:        'addedAt',
+    Header:    t('inputDataPage.table.addedAt'),
+    accessor:  occurrence => occurrence.addedAtInstant ? format(occurrence.addedAtInstant, 'D MMMM YYYY') : '—'
   }, {
     width:    250,
     id:       'scientificName',
