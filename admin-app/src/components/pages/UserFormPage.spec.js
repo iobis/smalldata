@@ -197,5 +197,49 @@ describe('UserFormPage', () => {
       expect(wrapper.exists('.success-message')).toBe(false)
       expect(wrapper.exists('.error-message')).toBe(false)
     })
+
+    it('renders correctly when dataset does not have metadata provider', async() => {
+      global.fetch = jest.fn().mockImplementation(() =>
+        new Promise((resolve) => {
+          resolve({
+            json: () => {
+              const { metadataProviders, ...rest } = getDatasetDefaultResponse()[0]
+              return [rest]
+            }
+          })
+        })
+      )
+
+      await act(async() => {
+        wrapper = mount(
+          <MemoryRouter
+            initialEntries={[{ pathname: '/manage-users/update/5d2b7998c1d37d36d4a41ab8', key: 'testKey' }]}>
+            <AuthProvider>
+              <UserFormPage
+                location={{
+                  state: {
+                    action:     'update',
+                    id:         '5d2b7998c1d37d36d4a41ab8',
+                    datasetIds: ['ntDOtUc7XsRrIus'],
+                    email:      'indiana.jones@gmail.com',
+                    name:       'Indiana Jones',
+                    role:       'node manager'
+                  }
+                }}/>
+            </AuthProvider>
+          </MemoryRouter>
+        )
+      })
+      expect(global.fetch).toHaveBeenCalledTimes(1)
+      expect(global.fetch).toHaveBeenCalledWith('/api/datasets', {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      wrapper.update()
+      expect(wrapper.find('.dataset-row')).toHaveLength(1)
+      expect(wrapper.find('.dataset-row .organization').text()).toEqual('—')
+      expect(wrapper).toMatchSnapshot()
+    })
   })
 })
