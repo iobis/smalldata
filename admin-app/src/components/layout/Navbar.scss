@@ -1,5 +1,6 @@
 .navbar {
   margin-bottom: var(--margin-bottom);
+
   &.is-info {
     background-color: var(--admin-color);
   }
@@ -19,20 +20,20 @@
       font-size: 26px;
       font-weight: bold;
     }
-  }
 
-  .navbar-brand > .navbar-item.logo {
-    background-color: white;
-    color: var(--font-color);
-    img {
-      margin-right: 0.5rem;
+    a.navbar-item.logo {
+      background-color: white;
+      color: var(--font-color);
+
+      img {
+        margin-right: 0.5rem;
+      }
+
+      &:hover, &:visited {
+        background-color: white;
+        color: var(--font-color);
+      }
     }
-  }
-}
-
-.navbar.is-info .navbar-brand {
-  a.navbar-item.logo:hover {
-    background-color: transparent;
   }
 }
 
