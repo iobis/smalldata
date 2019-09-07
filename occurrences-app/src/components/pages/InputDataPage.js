@@ -44,6 +44,7 @@ export default function InputDataPage() {
         className="button is-info"
         to={{
           pathname: '/input-data/update',
+          // eslint-disable-next-line react/prop-types
           state:    { action: 'update', dwcaId: props.value.dwcaId, datasetId: props.value.datasetId }
         }}>
         {t('common.edit')}
@@ -78,6 +79,7 @@ export default function InputDataPage() {
         className="button is-info copy-previous-entry"
         to={{
           pathname: '/input-data/create',
+          // eslint-disable-next-line react/prop-types
           state:    { action: 'update', dwcaId: props.value.dwcaId, datasetId: props.value.datasetId }
         }}>
         {t('common.copy')}
