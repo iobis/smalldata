@@ -7,6 +7,7 @@ import { format } from 'date-fns'
 import { getDatasets, getOccurrences } from '@smalldata/dwca-lib/src/clients/SmalldataClient'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import matchSorter from 'match-sorter'
 
 export default function InputDataPage() {
   const { t } = useTranslation()
@@ -38,10 +39,12 @@ export default function InputDataPage() {
   }, [])
 
   const columns = [{
-    id:       'editButton',
-    width:    100,
-    sortable: false,
-    Cell:     props => (
+    accessor:   occurrence => ({ dwcaId: occurrence.dwcaId, datasetId: occurrence.dataset }),
+    filterable: false,
+    id:         'editButton',
+    sortable:   false,
+    width:      100,
+    Cell:       props => (
       <Link
         className="button is-info"
         to={{
@@ -51,32 +54,39 @@ export default function InputDataPage() {
         }}>
         {t('common.edit')}
       </Link>
-    ),
-    accessor: occurrence => ({ dwcaId: occurrence.dwcaId, datasetId: occurrence.dataset })
+    )
   }, {
-    width:     150,
-    className: 'added-at',
-    id:        'addedAt',
-    Header:    t('inputDataPage.table.addedAt'),
-    accessor:  occurrence => occurrence.addedAtInstant ? format(occurrence.addedAtInstant, 'D MMMM YYYY') : '—'
+    accessor:   occurrence => occurrence.addedAtInstant ? format(occurrence.addedAtInstant, 'D MMMM YYYY') : '—',
+    className:  'added-at',
+    filterable: false,
+    Header:     t('inputDataPage.table.addedAt'),
+    id:         'addedAt',
+    width:      150
   }, {
-    width:    250,
-    id:       'scientificName',
-    Header:   t('inputDataPage.table.scientificName'),
-    accessor: occurrence => occurrence.dwcRecords.occurrence[0].tdwg.scientificName
+    accessor:     occurrence => occurrence.dwcRecords.occurrence[0].tdwg.scientificName,
+    filterAll:    true,
+    filterMethod: (filter, rows) => matchSorter(rows, filter.value, { keys: ['scientificName'] }),
+    Header:       t('inputDataPage.table.scientificName'),
+    id:           'scientificName',
+    width:        250
   }, {
-    Header:   t('inputDataPage.table.datasetTitle'),
-    accessor: 'datasetTitle'
+    accessor:     'datasetTitle',
+    filterAll:    true,
+    filterMethod: (filter, rows) => matchSorter(rows, filter.value, { keys: ['datasetTitle'] }),
+    Header:       t('inputDataPage.table.datasetTitle')
   }, {
-    width:    150,
-    id:       'occurrenceDate',
-    Header:   t('inputDataPage.table.occurrenceDate'),
-    accessor: occurrence => occurrence.dwcRecords.occurrence[0].tdwg.eventDate
+    accessor:   occurrence => occurrence.dwcRecords.occurrence[0].tdwg.eventDate,
+    filterable: false,
+    Header:     t('inputDataPage.table.occurrenceDate'),
+    id:         'occurrenceDate',
+    width:      150
   }, {
-    id:       'copyButton',
-    sortable: false,
-    width:    100,
-    Cell:     props => (
+    accessor:   occurrence => ({ dwcaId: occurrence.dwcaId, datasetId: occurrence.dataset }),
+    filterable: false,
+    id:         'copyButton',
+    sortable:   false,
+    width:      100,
+    Cell:       props => (
       <Link
         className="button is-info copy-previous-entry"
         to={{
@@ -86,8 +96,7 @@ export default function InputDataPage() {
         }}>
         {t('common.copy')}
       </Link>
-    ),
-    accessor: occurrence => ({ dwcaId: occurrence.dwcaId, datasetId: occurrence.dataset })
+    )
   }]
   return (
     <>
@@ -107,6 +116,7 @@ export default function InputDataPage() {
             columns={columns}
             data={occurrences}
             defaultPageSize={10}
+            filterable={true}
             loading={loading}/>
         </div>
       </section>

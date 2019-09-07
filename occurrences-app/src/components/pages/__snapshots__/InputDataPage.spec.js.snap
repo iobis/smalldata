@@ -103,7 +103,7 @@ exports[`InputDataPage renders correctly 1`] = `
             TrComponent={[Function]}
             TrGroupComponent={[Function]}
             aggregatedKey="_aggregated"
-            className="occurrences-table table is-striped is-hoverable is-fullwidth"
+            className="occurrences-table table is-striped -striped -highlight"
             collapseOnDataChange={true}
             collapseOnPageChange={true}
             collapseOnSortingChange={true}
@@ -144,6 +144,7 @@ exports[`InputDataPage renders correctly 1`] = `
                 Object {
                   "Cell": [Function],
                   "accessor": [Function],
+                  "filterable": false,
                   "id": "editButton",
                   "sortable": false,
                   "width": 100,
@@ -152,28 +153,35 @@ exports[`InputDataPage renders correctly 1`] = `
                   "Header": "inputDataPage.table.addedAt",
                   "accessor": [Function],
                   "className": "added-at",
+                  "filterable": false,
                   "id": "addedAt",
                   "width": 150,
                 },
                 Object {
                   "Header": "inputDataPage.table.scientificName",
                   "accessor": [Function],
+                  "filterAll": true,
+                  "filterMethod": [Function],
                   "id": "scientificName",
                   "width": 250,
                 },
                 Object {
                   "Header": "inputDataPage.table.datasetTitle",
                   "accessor": "datasetTitle",
+                  "filterAll": true,
+                  "filterMethod": [Function],
                 },
                 Object {
                   "Header": "inputDataPage.table.occurrenceDate",
                   "accessor": [Function],
+                  "filterable": false,
                   "id": "occurrenceDate",
                   "width": 150,
                 },
                 Object {
                   "Cell": [Function],
                   "accessor": [Function],
+                  "filterable": false,
                   "id": "copyButton",
                   "sortable": false,
                   "width": 100,
@@ -198,7 +206,7 @@ exports[`InputDataPage renders correctly 1`] = `
                 "width": 35,
               }
             }
-            filterable={false}
+            filterable={true}
             freezeWhenExpanded={false}
             getLoadingProps={[Function]}
             getNoDataProps={[Function]}
@@ -263,7 +271,7 @@ exports[`InputDataPage renders correctly 1`] = `
             subRowsKey="_subRows"
           >
             <div
-              className="ReactTable occurrences-table table is-striped is-hoverable is-fullwidth"
+              className="ReactTable occurrences-table table is-striped -striped -highlight"
               style={Object {}}
             >
               <TableComponent
@@ -541,6 +549,203 @@ exports[`InputDataPage renders correctly 1`] = `
                                 />
                               </Resizer>
                             </div>
+                          </ThComponent>
+                        </div>
+                      </TrComponent>
+                    </div>
+                  </Thead>
+                  <Thead
+                    className="-filters"
+                    style={
+                      Object {
+                        "minWidth": "850px",
+                      }
+                    }
+                  >
+                    <div
+                      className="rt-thead -filters"
+                      style={
+                        Object {
+                          "minWidth": "850px",
+                        }
+                      }
+                    >
+                      <TrComponent>
+                        <div
+                          className="rt-tr"
+                          role="row"
+                        >
+                          <ThComponent
+                            className=""
+                            key="0-editButton"
+                            style={
+                              Object {
+                                "flex": "100 0 auto",
+                                "maxWidth": "100px",
+                                "width": "100px",
+                              }
+                            }
+                          >
+                            <div
+                              className="rt-th"
+                              onClick={[Function]}
+                              role="columnheader"
+                              style={
+                                Object {
+                                  "flex": "100 0 auto",
+                                  "maxWidth": "100px",
+                                  "width": "100px",
+                                }
+                              }
+                              tabIndex="-1"
+                            />
+                          </ThComponent>
+                          <ThComponent
+                            className=""
+                            key="1-addedAt"
+                            style={
+                              Object {
+                                "flex": "150 0 auto",
+                                "maxWidth": "150px",
+                                "width": "150px",
+                              }
+                            }
+                          >
+                            <div
+                              className="rt-th"
+                              onClick={[Function]}
+                              role="columnheader"
+                              style={
+                                Object {
+                                  "flex": "150 0 auto",
+                                  "maxWidth": "150px",
+                                  "width": "150px",
+                                }
+                              }
+                              tabIndex="-1"
+                            />
+                          </ThComponent>
+                          <ThComponent
+                            className=""
+                            key="2-scientificName"
+                            style={
+                              Object {
+                                "flex": "250 0 auto",
+                                "maxWidth": "250px",
+                                "width": "250px",
+                              }
+                            }
+                          >
+                            <div
+                              className="rt-th"
+                              onClick={[Function]}
+                              role="columnheader"
+                              style={
+                                Object {
+                                  "flex": "250 0 auto",
+                                  "maxWidth": "250px",
+                                  "width": "250px",
+                                }
+                              }
+                              tabIndex="-1"
+                            >
+                              <input
+                                onChange={[Function]}
+                                style={
+                                  Object {
+                                    "width": "100%",
+                                  }
+                                }
+                                type="text"
+                                value=""
+                              />
+                            </div>
+                          </ThComponent>
+                          <ThComponent
+                            className=""
+                            key="3-datasetTitle"
+                            style={
+                              Object {
+                                "flex": "100 0 auto",
+                                "maxWidth": null,
+                                "width": "100px",
+                              }
+                            }
+                          >
+                            <div
+                              className="rt-th"
+                              onClick={[Function]}
+                              role="columnheader"
+                              style={
+                                Object {
+                                  "flex": "100 0 auto",
+                                  "maxWidth": null,
+                                  "width": "100px",
+                                }
+                              }
+                              tabIndex="-1"
+                            >
+                              <input
+                                onChange={[Function]}
+                                style={
+                                  Object {
+                                    "width": "100%",
+                                  }
+                                }
+                                type="text"
+                                value=""
+                              />
+                            </div>
+                          </ThComponent>
+                          <ThComponent
+                            className=""
+                            key="4-occurrenceDate"
+                            style={
+                              Object {
+                                "flex": "150 0 auto",
+                                "maxWidth": "150px",
+                                "width": "150px",
+                              }
+                            }
+                          >
+                            <div
+                              className="rt-th"
+                              onClick={[Function]}
+                              role="columnheader"
+                              style={
+                                Object {
+                                  "flex": "150 0 auto",
+                                  "maxWidth": "150px",
+                                  "width": "150px",
+                                }
+                              }
+                              tabIndex="-1"
+                            />
+                          </ThComponent>
+                          <ThComponent
+                            className=""
+                            key="5-copyButton"
+                            style={
+                              Object {
+                                "flex": "100 0 auto",
+                                "maxWidth": "100px",
+                                "width": "100px",
+                              }
+                            }
+                          >
+                            <div
+                              className="rt-th"
+                              onClick={[Function]}
+                              role="columnheader"
+                              style={
+                                Object {
+                                  "flex": "100 0 auto",
+                                  "maxWidth": "100px",
+                                  "width": "100px",
+                                }
+                              }
+                              tabIndex="-1"
+                            />
                           </ThComponent>
                         </div>
                       </TrComponent>
@@ -2427,7 +2632,7 @@ exports[`InputDataPage renders correctly 1`] = `
                         "className": "",
                         "filterAll": false,
                         "filterMethod": undefined,
-                        "filterable": undefined,
+                        "filterable": false,
                         "footerClassName": "",
                         "footerStyle": Object {},
                         "getFooterProps": [Function],
@@ -2460,7 +2665,7 @@ exports[`InputDataPage renders correctly 1`] = `
                         "className": "added-at",
                         "filterAll": false,
                         "filterMethod": undefined,
-                        "filterable": undefined,
+                        "filterable": false,
                         "footerClassName": "",
                         "footerStyle": Object {},
                         "getFooterProps": [Function],
@@ -2491,8 +2696,8 @@ exports[`InputDataPage renders correctly 1`] = `
                         "accessor": [Function],
                         "aggregate": undefined,
                         "className": "",
-                        "filterAll": false,
-                        "filterMethod": undefined,
+                        "filterAll": true,
+                        "filterMethod": [Function],
                         "filterable": undefined,
                         "footerClassName": "",
                         "footerStyle": Object {},
@@ -2524,8 +2729,8 @@ exports[`InputDataPage renders correctly 1`] = `
                         "accessor": [Function],
                         "aggregate": undefined,
                         "className": "",
-                        "filterAll": false,
-                        "filterMethod": undefined,
+                        "filterAll": true,
+                        "filterMethod": [Function],
                         "filterable": undefined,
                         "footerClassName": "",
                         "footerStyle": Object {},
@@ -2558,7 +2763,7 @@ exports[`InputDataPage renders correctly 1`] = `
                         "className": "",
                         "filterAll": false,
                         "filterMethod": undefined,
-                        "filterable": undefined,
+                        "filterable": false,
                         "footerClassName": "",
                         "footerStyle": Object {},
                         "getFooterProps": [Function],
@@ -2591,7 +2796,7 @@ exports[`InputDataPage renders correctly 1`] = `
                         "className": "",
                         "filterAll": false,
                         "filterMethod": undefined,
-                        "filterable": undefined,
+                        "filterable": false,
                         "footerClassName": "",
                         "footerStyle": Object {},
                         "getFooterProps": [Function],
@@ -2628,7 +2833,7 @@ exports[`InputDataPage renders correctly 1`] = `
                         "className": "",
                         "filterAll": false,
                         "filterMethod": undefined,
-                        "filterable": undefined,
+                        "filterable": false,
                         "footerClassName": "",
                         "footerStyle": Object {},
                         "getFooterProps": [Function],
@@ -2661,7 +2866,7 @@ exports[`InputDataPage renders correctly 1`] = `
                         "className": "added-at",
                         "filterAll": false,
                         "filterMethod": undefined,
-                        "filterable": undefined,
+                        "filterable": false,
                         "footerClassName": "",
                         "footerStyle": Object {},
                         "getFooterProps": [Function],
@@ -2692,8 +2897,8 @@ exports[`InputDataPage renders correctly 1`] = `
                         "accessor": [Function],
                         "aggregate": undefined,
                         "className": "",
-                        "filterAll": false,
-                        "filterMethod": undefined,
+                        "filterAll": true,
+                        "filterMethod": [Function],
                         "filterable": undefined,
                         "footerClassName": "",
                         "footerStyle": Object {},
@@ -2725,8 +2930,8 @@ exports[`InputDataPage renders correctly 1`] = `
                         "accessor": [Function],
                         "aggregate": undefined,
                         "className": "",
-                        "filterAll": false,
-                        "filterMethod": undefined,
+                        "filterAll": true,
+                        "filterMethod": [Function],
                         "filterable": undefined,
                         "footerClassName": "",
                         "footerStyle": Object {},
@@ -2759,7 +2964,7 @@ exports[`InputDataPage renders correctly 1`] = `
                         "className": "",
                         "filterAll": false,
                         "filterMethod": undefined,
-                        "filterable": undefined,
+                        "filterable": false,
                         "footerClassName": "",
                         "footerStyle": Object {},
                         "getFooterProps": [Function],
@@ -2792,7 +2997,7 @@ exports[`InputDataPage renders correctly 1`] = `
                         "className": "",
                         "filterAll": false,
                         "filterMethod": undefined,
-                        "filterable": undefined,
+                        "filterable": false,
                         "footerClassName": "",
                         "footerStyle": Object {},
                         "getFooterProps": [Function],
@@ -2854,6 +3059,7 @@ exports[`InputDataPage renders correctly 1`] = `
                       Object {
                         "Cell": [Function],
                         "accessor": [Function],
+                        "filterable": false,
                         "id": "editButton",
                         "sortable": false,
                         "width": 100,
@@ -2862,28 +3068,35 @@ exports[`InputDataPage renders correctly 1`] = `
                         "Header": "inputDataPage.table.addedAt",
                         "accessor": [Function],
                         "className": "added-at",
+                        "filterable": false,
                         "id": "addedAt",
                         "width": 150,
                       },
                       Object {
                         "Header": "inputDataPage.table.scientificName",
                         "accessor": [Function],
+                        "filterAll": true,
+                        "filterMethod": [Function],
                         "id": "scientificName",
                         "width": 250,
                       },
                       Object {
                         "Header": "inputDataPage.table.datasetTitle",
                         "accessor": "datasetTitle",
+                        "filterAll": true,
+                        "filterMethod": [Function],
                       },
                       Object {
                         "Header": "inputDataPage.table.occurrenceDate",
                         "accessor": [Function],
+                        "filterable": false,
                         "id": "occurrenceDate",
                         "width": 150,
                       },
                       Object {
                         "Cell": [Function],
                         "accessor": [Function],
+                        "filterable": false,
                         "id": "copyButton",
                         "sortable": false,
                         "width": 100,
@@ -2910,7 +3123,7 @@ exports[`InputDataPage renders correctly 1`] = `
                       "width": 35,
                     }
                   }
-                  filterable={false}
+                  filterable={true}
                   filtered={Array []}
                   freezeWhenExpanded={false}
                   frozen={false}
@@ -3241,7 +3454,7 @@ exports[`InputDataPage renders correctly 2`] = `
             TrComponent={[Function]}
             TrGroupComponent={[Function]}
             aggregatedKey="_aggregated"
-            className="occurrences-table table is-striped is-hoverable is-fullwidth"
+            className="occurrences-table table is-striped -striped -highlight"
             collapseOnDataChange={true}
             collapseOnPageChange={true}
             collapseOnSortingChange={true}
@@ -3282,6 +3495,7 @@ exports[`InputDataPage renders correctly 2`] = `
                 Object {
                   "Cell": [Function],
                   "accessor": [Function],
+                  "filterable": false,
                   "id": "editButton",
                   "sortable": false,
                   "width": 100,
@@ -3290,28 +3504,35 @@ exports[`InputDataPage renders correctly 2`] = `
                   "Header": "inputDataPage.table.addedAt",
                   "accessor": [Function],
                   "className": "added-at",
+                  "filterable": false,
                   "id": "addedAt",
                   "width": 150,
                 },
                 Object {
                   "Header": "inputDataPage.table.scientificName",
                   "accessor": [Function],
+                  "filterAll": true,
+                  "filterMethod": [Function],
                   "id": "scientificName",
                   "width": 250,
                 },
                 Object {
                   "Header": "inputDataPage.table.datasetTitle",
                   "accessor": "datasetTitle",
+                  "filterAll": true,
+                  "filterMethod": [Function],
                 },
                 Object {
                   "Header": "inputDataPage.table.occurrenceDate",
                   "accessor": [Function],
+                  "filterable": false,
                   "id": "occurrenceDate",
                   "width": 150,
                 },
                 Object {
                   "Cell": [Function],
                   "accessor": [Function],
+                  "filterable": false,
                   "id": "copyButton",
                   "sortable": false,
                   "width": 100,
@@ -3412,7 +3633,7 @@ exports[`InputDataPage renders correctly 2`] = `
                 "width": 35,
               }
             }
-            filterable={false}
+            filterable={true}
             freezeWhenExpanded={false}
             getLoadingProps={[Function]}
             getNoDataProps={[Function]}
@@ -3477,7 +3698,7 @@ exports[`InputDataPage renders correctly 2`] = `
             subRowsKey="_subRows"
           >
             <div
-              className="ReactTable occurrences-table table is-striped is-hoverable is-fullwidth"
+              className="ReactTable occurrences-table table is-striped -striped -highlight"
               style={Object {}}
             >
               <TableComponent
@@ -3755,6 +3976,203 @@ exports[`InputDataPage renders correctly 2`] = `
                                 />
                               </Resizer>
                             </div>
+                          </ThComponent>
+                        </div>
+                      </TrComponent>
+                    </div>
+                  </Thead>
+                  <Thead
+                    className="-filters"
+                    style={
+                      Object {
+                        "minWidth": "850px",
+                      }
+                    }
+                  >
+                    <div
+                      className="rt-thead -filters"
+                      style={
+                        Object {
+                          "minWidth": "850px",
+                        }
+                      }
+                    >
+                      <TrComponent>
+                        <div
+                          className="rt-tr"
+                          role="row"
+                        >
+                          <ThComponent
+                            className=""
+                            key="0-editButton"
+                            style={
+                              Object {
+                                "flex": "100 0 auto",
+                                "maxWidth": "100px",
+                                "width": "100px",
+                              }
+                            }
+                          >
+                            <div
+                              className="rt-th"
+                              onClick={[Function]}
+                              role="columnheader"
+                              style={
+                                Object {
+                                  "flex": "100 0 auto",
+                                  "maxWidth": "100px",
+                                  "width": "100px",
+                                }
+                              }
+                              tabIndex="-1"
+                            />
+                          </ThComponent>
+                          <ThComponent
+                            className=""
+                            key="1-addedAt"
+                            style={
+                              Object {
+                                "flex": "150 0 auto",
+                                "maxWidth": "150px",
+                                "width": "150px",
+                              }
+                            }
+                          >
+                            <div
+                              className="rt-th"
+                              onClick={[Function]}
+                              role="columnheader"
+                              style={
+                                Object {
+                                  "flex": "150 0 auto",
+                                  "maxWidth": "150px",
+                                  "width": "150px",
+                                }
+                              }
+                              tabIndex="-1"
+                            />
+                          </ThComponent>
+                          <ThComponent
+                            className=""
+                            key="2-scientificName"
+                            style={
+                              Object {
+                                "flex": "250 0 auto",
+                                "maxWidth": "250px",
+                                "width": "250px",
+                              }
+                            }
+                          >
+                            <div
+                              className="rt-th"
+                              onClick={[Function]}
+                              role="columnheader"
+                              style={
+                                Object {
+                                  "flex": "250 0 auto",
+                                  "maxWidth": "250px",
+                                  "width": "250px",
+                                }
+                              }
+                              tabIndex="-1"
+                            >
+                              <input
+                                onChange={[Function]}
+                                style={
+                                  Object {
+                                    "width": "100%",
+                                  }
+                                }
+                                type="text"
+                                value=""
+                              />
+                            </div>
+                          </ThComponent>
+                          <ThComponent
+                            className=""
+                            key="3-datasetTitle"
+                            style={
+                              Object {
+                                "flex": "100 0 auto",
+                                "maxWidth": null,
+                                "width": "100px",
+                              }
+                            }
+                          >
+                            <div
+                              className="rt-th"
+                              onClick={[Function]}
+                              role="columnheader"
+                              style={
+                                Object {
+                                  "flex": "100 0 auto",
+                                  "maxWidth": null,
+                                  "width": "100px",
+                                }
+                              }
+                              tabIndex="-1"
+                            >
+                              <input
+                                onChange={[Function]}
+                                style={
+                                  Object {
+                                    "width": "100%",
+                                  }
+                                }
+                                type="text"
+                                value=""
+                              />
+                            </div>
+                          </ThComponent>
+                          <ThComponent
+                            className=""
+                            key="4-occurrenceDate"
+                            style={
+                              Object {
+                                "flex": "150 0 auto",
+                                "maxWidth": "150px",
+                                "width": "150px",
+                              }
+                            }
+                          >
+                            <div
+                              className="rt-th"
+                              onClick={[Function]}
+                              role="columnheader"
+                              style={
+                                Object {
+                                  "flex": "150 0 auto",
+                                  "maxWidth": "150px",
+                                  "width": "150px",
+                                }
+                              }
+                              tabIndex="-1"
+                            />
+                          </ThComponent>
+                          <ThComponent
+                            className=""
+                            key="5-copyButton"
+                            style={
+                              Object {
+                                "flex": "100 0 auto",
+                                "maxWidth": "100px",
+                                "width": "100px",
+                              }
+                            }
+                          >
+                            <div
+                              className="rt-th"
+                              onClick={[Function]}
+                              role="columnheader"
+                              style={
+                                Object {
+                                  "flex": "100 0 auto",
+                                  "maxWidth": "100px",
+                                  "width": "100px",
+                                }
+                              }
+                              tabIndex="-1"
+                            />
                           </ThComponent>
                         </div>
                       </TrComponent>
@@ -5753,7 +6171,7 @@ exports[`InputDataPage renders correctly 2`] = `
                         "className": "",
                         "filterAll": false,
                         "filterMethod": undefined,
-                        "filterable": undefined,
+                        "filterable": false,
                         "footerClassName": "",
                         "footerStyle": Object {},
                         "getFooterProps": [Function],
@@ -5786,7 +6204,7 @@ exports[`InputDataPage renders correctly 2`] = `
                         "className": "added-at",
                         "filterAll": false,
                         "filterMethod": undefined,
-                        "filterable": undefined,
+                        "filterable": false,
                         "footerClassName": "",
                         "footerStyle": Object {},
                         "getFooterProps": [Function],
@@ -5817,8 +6235,8 @@ exports[`InputDataPage renders correctly 2`] = `
                         "accessor": [Function],
                         "aggregate": undefined,
                         "className": "",
-                        "filterAll": false,
-                        "filterMethod": undefined,
+                        "filterAll": true,
+                        "filterMethod": [Function],
                         "filterable": undefined,
                         "footerClassName": "",
                         "footerStyle": Object {},
@@ -5850,8 +6268,8 @@ exports[`InputDataPage renders correctly 2`] = `
                         "accessor": [Function],
                         "aggregate": undefined,
                         "className": "",
-                        "filterAll": false,
-                        "filterMethod": undefined,
+                        "filterAll": true,
+                        "filterMethod": [Function],
                         "filterable": undefined,
                         "footerClassName": "",
                         "footerStyle": Object {},
@@ -5884,7 +6302,7 @@ exports[`InputDataPage renders correctly 2`] = `
                         "className": "",
                         "filterAll": false,
                         "filterMethod": undefined,
-                        "filterable": undefined,
+                        "filterable": false,
                         "footerClassName": "",
                         "footerStyle": Object {},
                         "getFooterProps": [Function],
@@ -5917,7 +6335,7 @@ exports[`InputDataPage renders correctly 2`] = `
                         "className": "",
                         "filterAll": false,
                         "filterMethod": undefined,
-                        "filterable": undefined,
+                        "filterable": false,
                         "footerClassName": "",
                         "footerStyle": Object {},
                         "getFooterProps": [Function],
@@ -5954,7 +6372,7 @@ exports[`InputDataPage renders correctly 2`] = `
                         "className": "",
                         "filterAll": false,
                         "filterMethod": undefined,
-                        "filterable": undefined,
+                        "filterable": false,
                         "footerClassName": "",
                         "footerStyle": Object {},
                         "getFooterProps": [Function],
@@ -5987,7 +6405,7 @@ exports[`InputDataPage renders correctly 2`] = `
                         "className": "added-at",
                         "filterAll": false,
                         "filterMethod": undefined,
-                        "filterable": undefined,
+                        "filterable": false,
                         "footerClassName": "",
                         "footerStyle": Object {},
                         "getFooterProps": [Function],
@@ -6018,8 +6436,8 @@ exports[`InputDataPage renders correctly 2`] = `
                         "accessor": [Function],
                         "aggregate": undefined,
                         "className": "",
-                        "filterAll": false,
-                        "filterMethod": undefined,
+                        "filterAll": true,
+                        "filterMethod": [Function],
                         "filterable": undefined,
                         "footerClassName": "",
                         "footerStyle": Object {},
@@ -6051,8 +6469,8 @@ exports[`InputDataPage renders correctly 2`] = `
                         "accessor": [Function],
                         "aggregate": undefined,
                         "className": "",
-                        "filterAll": false,
-                        "filterMethod": undefined,
+                        "filterAll": true,
+                        "filterMethod": [Function],
                         "filterable": undefined,
                         "footerClassName": "",
                         "footerStyle": Object {},
@@ -6085,7 +6503,7 @@ exports[`InputDataPage renders correctly 2`] = `
                         "className": "",
                         "filterAll": false,
                         "filterMethod": undefined,
-                        "filterable": undefined,
+                        "filterable": false,
                         "footerClassName": "",
                         "footerStyle": Object {},
                         "getFooterProps": [Function],
@@ -6118,7 +6536,7 @@ exports[`InputDataPage renders correctly 2`] = `
                         "className": "",
                         "filterAll": false,
                         "filterMethod": undefined,
-                        "filterable": undefined,
+                        "filterable": false,
                         "footerClassName": "",
                         "footerStyle": Object {},
                         "getFooterProps": [Function],
@@ -6180,6 +6598,7 @@ exports[`InputDataPage renders correctly 2`] = `
                       Object {
                         "Cell": [Function],
                         "accessor": [Function],
+                        "filterable": false,
                         "id": "editButton",
                         "sortable": false,
                         "width": 100,
@@ -6188,28 +6607,35 @@ exports[`InputDataPage renders correctly 2`] = `
                         "Header": "inputDataPage.table.addedAt",
                         "accessor": [Function],
                         "className": "added-at",
+                        "filterable": false,
                         "id": "addedAt",
                         "width": 150,
                       },
                       Object {
                         "Header": "inputDataPage.table.scientificName",
                         "accessor": [Function],
+                        "filterAll": true,
+                        "filterMethod": [Function],
                         "id": "scientificName",
                         "width": 250,
                       },
                       Object {
                         "Header": "inputDataPage.table.datasetTitle",
                         "accessor": "datasetTitle",
+                        "filterAll": true,
+                        "filterMethod": [Function],
                       },
                       Object {
                         "Header": "inputDataPage.table.occurrenceDate",
                         "accessor": [Function],
+                        "filterable": false,
                         "id": "occurrenceDate",
                         "width": 150,
                       },
                       Object {
                         "Cell": [Function],
                         "accessor": [Function],
+                        "filterable": false,
                         "id": "copyButton",
                         "sortable": false,
                         "width": 100,
@@ -6312,7 +6738,7 @@ exports[`InputDataPage renders correctly 2`] = `
                       "width": 35,
                     }
                   }
-                  filterable={false}
+                  filterable={true}
                   filtered={Array []}
                   freezeWhenExpanded={false}
                   frozen={false}
