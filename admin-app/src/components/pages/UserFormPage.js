@@ -5,6 +5,7 @@ import OceanExpertNameInput from './OceanExpertNameInput/OceanExpertNameInput'
 import PropTypes from 'prop-types'
 import React, { useEffect, useRef, useState } from 'react'
 import { createUser, getDatasets, updateUser } from '@smalldata/dwca-lib/src/clients/SmalldataClient'
+import { getProperty } from '@smalldata/dwca-lib/src/common/objects'
 import { Link } from 'react-router-dom'
 import { scrollToRef } from '@smalldata/dwca-lib/src/browser/scroll'
 import { useTranslation } from 'react-i18next'
@@ -122,8 +123,8 @@ export default function UserFormPage({ location }) {
               key={dataset.id}
               license={dataset.license.title}
               onChange={() => handleDatasetToggle(dataset.id)}
-              organization={dataset.metadataProviders[0].organizationName || '—'}
-              title={dataset.title.value}/>
+              organization={getProperty(() => dataset.metadataProviders[0].organizationName, '—')}
+              title={dataset.title.value || '—'}/>
           ))}
         </tbody>
       </table>
