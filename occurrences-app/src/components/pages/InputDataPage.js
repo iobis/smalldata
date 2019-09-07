@@ -103,7 +103,7 @@ export default function InputDataPage() {
         <div className="container is-fluid has-text-centered">
           <h4 className="title is-4">{t('inputDataPage.copyPreviousHeader')}</h4>
           <ReactTable
-            className="occurrences-table table is-striped is-hoverable is-fullwidth"
+            className="occurrences-table table is-striped -striped -highlight"
             columns={columns}
             data={occurrences}
             defaultPageSize={10}
