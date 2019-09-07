@@ -57,14 +57,15 @@ const AppDiv = () => {
   )
 }
 
-const ProtectedRoute = ({ component: Component, ...rest }) => {
-  const { loggedIn } = useContext(AuthContext)
-  const render = (props) => loggedIn
-    ? <Component {...props}/>
-    : <LogInPage/>
-  return (
-    <Route {...rest} render={render}/>
-  )
+function ProtectedRoute({ component: Component, ...rest }) {
+  const { loggedIn, role } = useContext(AuthContext)
+  const Page = loggedIn
+    ? role === 'node manager'
+      ? Component
+      : AccessRestrictedPage
+    : LogInPage
+
+  return <Route {...rest} render={(props) => <Page {...props}/>}/>
 }
 
 ProtectedRoute.propTypes = {
