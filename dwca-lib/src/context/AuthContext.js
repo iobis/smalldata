@@ -6,6 +6,7 @@ export const AuthContext = createContext(null)
 
 export function AuthProvider({ children }) {
   const [userRef, setUserRef] = useState('')
+  const [role, setRole] = useState('')
   const [loggedIn, setLoggedIn] = useState(false)
   const [claims, setClaims] = useState({})
 
@@ -18,6 +19,7 @@ export function AuthProvider({ children }) {
     const claims = parseJwt(token)
     const user = await SmalldataClient.getUserByEmail(claims.email)
     setUserRef(user.id)
+    setRole(user.role)
     setClaims(claims)
     setLoggedIn(true)
   }
@@ -36,7 +38,8 @@ export function AuthProvider({ children }) {
   }
 
   return (
-    <AuthContext.Provider value={{ userRef, claims, loggedIn, setLoggedIn, logIn, logOut, redirectToOceanExpert }}>
+    <AuthContext.Provider
+      value={{ userRef, role, claims, loggedIn, setLoggedIn, logIn, logOut, redirectToOceanExpert }}>
       {children}
     </AuthContext.Provider>
   )
