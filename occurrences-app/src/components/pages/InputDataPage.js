@@ -1,6 +1,7 @@
+import 'react-table/react-table.css'
 import Divider from '../layout/Divider'
-import PropTypes from 'prop-types'
 import React, { useContext, useEffect, useState } from 'react'
+import ReactTable from 'react-table'
 import { AuthContext } from '@smalldata/dwca-lib'
 import { format } from 'date-fns'
 import { getDatasets, getOccurrences } from '@smalldata/dwca-lib/src/clients/SmalldataClient'
@@ -34,6 +35,55 @@ export default function InputDataPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  const columns = [{
+    id:       'editButton',
+    width:    100,
+    sortable: false,
+    Cell:     props => (
+      <Link
+        className="button is-info"
+        to={{
+          pathname: '/input-data/update',
+          state:    { action: 'update', dwcaId: props.value.dwcaId, datasetId: props.value.datasetId }
+        }}>
+        {t('common.edit')}
+      </Link>
+    ),
+    accessor: occurrence => ({ dwcaId: occurrence.dwcaId, datasetId: occurrence.dataset })
+  }, {
+    width:    150,
+    id:       'addedAt',
+    Header:   t('inputDataPage.table.addedAt'),
+    accessor: occurrence => occurrence.addedAtInstant ? format(occurrence.addedAtInstant, 'D MMMM YYYY') : '—'
+  }, {
+    width:    250,
+    id:       'scientificName',
+    Header:   t('inputDataPage.table.scientificName'),
+    accessor: occurrence => occurrence.dwcRecords.occurrence[0].tdwg.scientificName
+  }, {
+    Header:   t('inputDataPage.table.datasetTitle'),
+    accessor: 'datasetTitle'
+  }, {
+    width:    150,
+    id:       'occurrenceDate',
+    Header:   t('inputDataPage.table.occurrenceDate'),
+    accessor: occurrence => occurrence.dwcRecords.occurrence[0].tdwg.eventDate
+  }, {
+    id:       'copyButton',
+    sortable: false,
+    width:    100,
+    Cell:     props => (
+      <Link
+        className="button is-info copy-previous-entry"
+        to={{
+          pathname: '/input-data/create',
+          state:    { action: 'update', dwcaId: props.value.dwcaId, datasetId: props.value.datasetId }
+        }}>
+        {t('common.copy')}
+      </Link>
+    ),
+    accessor: occurrence => ({ dwcaId: occurrence.dwcaId, datasetId: occurrence.dataset })
+  }]
   return (
     <>
       <section className="section">
@@ -47,71 +97,13 @@ export default function InputDataPage() {
       <section className="previous-occurrences section">
         <div className="container is-fluid has-text-centered">
           <h4 className="title is-4">{t('inputDataPage.copyPreviousHeader')}</h4>
-          <table className="table is-striped is-hoverable is-fullwidth">
-            <thead>
-              <tr>
-                <th/>
-                <th>{t('inputDataPage.table.addedAt')}</th>
-                <th>{t('inputDataPage.table.scientificName')}</th>
-                <th>{t('inputDataPage.table.datasetTitle')}</th>
-                <th>{t('inputDataPage.table.occurrenceDate')}</th>
-                <th/>
-              </tr>
-            </thead>
-            <tbody>
-              {occurrences.map(occurrence => (
-                <OccurrenceRow
-                  datasetId={occurrence.dataset}
-                  key={occurrence.dwcaId}
-                  occurrenceDate={occurrence.dwcRecords.occurrence[0].tdwg.eventDate}
-                  scientificName={occurrence.dwcRecords.occurrence[0].tdwg.scientificName}
-                  {...occurrence}/>
-              ))}
-            </tbody>
-          </table>
+          <ReactTable
+            className="occurrences-table table is-striped is-hoverable is-fullwidth"
+            columns={columns}
+            data={occurrences}
+            defaultPageSize={10}/>
         </div>
       </section>
     </>
   )
-}
-
-function OccurrenceRow({ addedAtInstant, datasetId, dwcaId, datasetTitle, occurrenceDate, scientificName }) {
-  const { t } = useTranslation()
-  const addedAtString = addedAtInstant ? format(addedAtInstant, 'D MMMM YYYY') : '—'
-  const toCreate = {
-    pathname: '/input-data/create',
-    state:    { action: 'create', dwcaId, datasetId }
-  }
-  const toEdit = {
-    pathname: '/input-data/update',
-    state:    { action: 'update', dwcaId, datasetId }
-  }
-
-  return (
-    <tr className="occurrence-row">
-      <td className="edit">
-        <Link className="button is-info" to={toEdit}>
-          {t('common.edit')}
-        </Link>
-      </td>
-      <td className="added-at">{addedAtString}</td>
-      <td className="scientific-name">{scientificName}</td>
-      <td className="dataset-title">{datasetTitle}</td>
-      <td className="occurrence-date">{occurrenceDate || '—'}</td>
-      <td className="copy">
-        <Link className="button is-info copy-previous-entry" to={toCreate}>
-          {t('common.copy')}
-        </Link>
-      </td>
-    </tr>
-  )
-}
-
-OccurrenceRow.propTypes = {
-  addedAtInstant: PropTypes.string,
-  datasetId:      PropTypes.string.isRequired,
-  datasetTitle:   PropTypes.string.isRequired,
-  dwcaId:         PropTypes.string.isRequired,
-  occurrenceDate: PropTypes.string,
-  scientificName: PropTypes.string.isRequired
 }
