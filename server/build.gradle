@@ -109,7 +109,7 @@ checkstyle {
   ignoreFailures false
   maxErrors 0
   maxWarnings 0
-  toolVersion "8.17"
+  toolVersion "8.23"
 }
 
 pmd {
