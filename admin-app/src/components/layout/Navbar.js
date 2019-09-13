@@ -10,7 +10,7 @@ import logo from '@smalldata/admin-app/src/assets/media/obis-logo.png'
 
 export default function Navbar() {
   const { t } = useTranslation()
-  const { loggedIn } = useContext(AuthContext)
+  const { loggedIn, role } = useContext(AuthContext)
   const [navbarMenuActive, setNavbarMenuActive] = useState(false)
   const menuRef = useRef()
   const hideNavbarMenu = () => setNavbarMenuActive(false)
@@ -33,7 +33,7 @@ export default function Navbar() {
         </a>
       </div>
       <div className={classNames('navbar-menu', { 'is-active': navbarMenuActive })}>
-        {loggedIn ? (
+        {loggedIn && role === 'node manager' ? (
           <div className="navbar-start">
             <NavbarItem onClick={hideNavbarMenu} to="/manage-dataset">
               {t('navbar.manageDataset')}

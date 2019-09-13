@@ -1,4 +1,8 @@
 .navbar {
+  &.is-info {
+    background-color: transparent;
+  }
+
   .navbar-menu .navbar-start a {
     font-family: var(--title-font);
 
@@ -8,6 +12,7 @@
 
     &.navbar-item.is-active,
     &.navbar-item:hover {
+      color: white;
       background-color: var(--obis-green);
     }
   }
@@ -18,25 +23,32 @@
       font-size: 26px;
       font-weight: bold;
     }
+
+    a.navbar-item.logo {
+      background-color: white;
+      color: var(--font-color);
+
+      &:hover,
+      &:visited {
+        background-color: white;
+        color: var(--font-color);
+      }
+    }
   }
 
-  /* Override bulma styles*/
-  &.is-info {
-    background-color: transparent;
+  .login-nav-item.navbar-end {
+    .navbar-item {
+      color: var(--font-color);
+      &.auth-button:hover {
+        background-color: var(--obis-green);
+        color: white;
+      }
+    }
   }
-}
 
-.navbar.is-info .navbar-brand {
-  a.navbar-item.logo:hover {
-    background-color: transparent;
-  }
-}
-
-.navbar.is-info .login-nav-item.navbar-end {
-  .navbar-item {
-    color: var(--font-color);
-    &.auth-button:hover {
-      background-color: var(--obis-green);
+  .navbar-burger {
+    span {
+      color: black;
     }
   }
 }

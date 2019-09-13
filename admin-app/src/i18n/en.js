@@ -35,6 +35,10 @@ export default {
       }
     },
     datasetFormPage:   {
+      header: {
+        create: 'Create dataset',
+        update: 'Update dataset'
+      },
       basicInformation:      {
         step:     {
           dataDescription: 'Title',

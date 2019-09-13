@@ -7269,6 +7269,40 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 6`] = `
 </OccurrenceForm>
 `;
 
+exports[`OccurrenceForm when updating not supported occurrence renders correctly 1`] = `
+<OccurrenceForm
+  location={
+    Object {
+      "state": Object {
+        "action": "update",
+        "datasetId": "ntDOtUc7XsRrIus",
+        "dwcaId": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796",
+      },
+    }
+  }
+>
+  <section
+    className="section"
+  >
+    <div
+      className="occurrence-not-supported notification is-danger"
+    >
+      occurrenceForm.occurrenceNotSupported.message
+      <Link
+        to="/input-data/"
+      >
+        <a
+          href="/input-data/"
+          onClick={[Function]}
+        >
+          occurrenceForm.occurrenceNotSupported.linkMessage
+        </a>
+      </Link>
+    </div>
+  </section>
+</OccurrenceForm>
+`;
+
 exports[`OccurrenceForm when updating occurrence and then clicking "Review and Submit" button renders correctly 1`] = `
 <OccurrenceForm
   location={

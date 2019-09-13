@@ -1,18 +1,17 @@
 import './i18n/i18n'
 import * as SmalldataClient from '@smalldata/dwca-lib/src/clients/SmalldataClient'
+import ProtectedRoute from '@smalldata/dwca-lib/src/router/ProtectedRoute'
 import HelpPage from './components/pages/HelpPage'
 import InputDataPage from './components/pages/InputDataPage'
-import LogInPage from './components/pages/LogInPage'
 import Navbar from './components/layout/Navbar'
 import OccurrenceForm from './components/pages/Occurrence/OccurrenceForm'
-import PropTypes from 'prop-types'
 import React, { useContext } from 'react'
 import { AuthContext, AuthProvider } from '@smalldata/dwca-lib'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import {
   faAngleDown,
-  faCheckCircle,
   faCheck,
+  faCheckCircle,
   faEnvelope,
   faSearch,
   faTimesCircle,
@@ -51,20 +50,4 @@ const AppDiv = () => {
       </Switch>
     </div>
   )
-}
-
-const ProtectedRoute = ({ component: Component, ...rest }) => {
-  const { loggedIn } = useContext(AuthContext)
-  const render = (props) => loggedIn
-    ? <Component {...props}/>
-    : <LogInPage/>
-  return (
-    <Route {...rest} render={render}/>
-  )
-}
-
-ProtectedRoute.propTypes = {
-  component: PropTypes.func.isRequired,
-  exact:     PropTypes.bool,
-  path:      PropTypes.string.isRequired
 }

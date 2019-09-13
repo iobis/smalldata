@@ -1271,3 +1271,294 @@ exports[`UserFormPage when editing renders correctly for successful workflow 2`]
   </Router>
 </MemoryRouter>
 `;
+
+exports[`UserFormPage when editing renders correctly when dataset does not have metadata provider 1`] = `
+<MemoryRouter
+  initialEntries={
+    Array [
+      Object {
+        "key": "testKey",
+        "pathname": "/manage-users/update/5d2b7998c1d37d36d4a41ab8",
+      },
+    ]
+  }
+>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "testKey",
+            "pathname": "/manage-users/update/5d2b7998c1d37d36d4a41ab8",
+            "search": "",
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "testKey",
+          "pathname": "/manage-users/update/5d2b7998c1d37d36d4a41ab8",
+          "search": "",
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <AuthProvider>
+      <UserFormPage
+        location={
+          Object {
+            "state": Object {
+              "action": "update",
+              "datasetIds": Array [
+                "ntDOtUc7XsRrIus",
+              ],
+              "email": "indiana.jones@gmail.com",
+              "id": "5d2b7998c1d37d36d4a41ab8",
+              "name": "Indiana Jones",
+              "role": "node manager",
+            },
+          }
+        }
+      >
+        <div
+          className="user-form-page section is-fluid"
+        >
+          <h1
+            className="column"
+          >
+            userFormPage.header.update {"name":"Indiana Jones"}
+          </h1>
+          <OceanExpertNameInput
+            oceanExpertName="Indiana Jones"
+            onChange={[Function]}
+          >
+            <div
+              className="ocean-expert-name-input field column is-four-fifths mandatory"
+            >
+              <div
+                className="dropdown"
+              >
+                <div
+                  className="dropdown-trigger"
+                >
+                  <label
+                    className="label"
+                  >
+                    userFormPage.name.label
+                  </label>
+                  <div
+                    className="control has-icons-right "
+                  >
+                    <input
+                      className="input"
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      placeholder=""
+                      type="text"
+                      value="Indiana Jones"
+                    />
+                  </div>
+                </div>
+                <div
+                  className="dropdown-menu"
+                  id="dropdown-menu"
+                  role="menu"
+                >
+                  <div
+                    className="dropdown-content"
+                  />
+                </div>
+              </div>
+            </div>
+          </OceanExpertNameInput>
+          <InputText
+            className="email is-half mandatory"
+            name="userFormPage.email"
+            onChange={[Function]}
+            value="indiana.jones@gmail.com"
+          >
+            <div
+              className="column field email is-half mandatory"
+            >
+              <label
+                className="label"
+                htmlFor="userformpage.email.label"
+              >
+                userFormPage.email.label
+              </label>
+              <input
+                className="input"
+                id="userformpage.email.label"
+                onChange={[Function]}
+                type="text"
+                value="indiana.jones@gmail.com"
+              />
+            </div>
+          </InputText>
+          <div
+            className="column field"
+          >
+            <label
+              className="label"
+            >
+              userFormPage.userRole.label
+            </label>
+            <Dropdown
+              onChange={[Function]}
+              options={
+                Array [
+                  "researcher",
+                  "node manager",
+                ]
+              }
+              value="node manager"
+            >
+              <div
+                className="dropdown"
+              >
+                <div
+                  className="dropdown-trigger"
+                >
+                  <button
+                    aria-controls="dropdown-menu"
+                    aria-haspopup="true"
+                    className="button"
+                    onClick={[Function]}
+                  >
+                    <span
+                      className="selected-value"
+                    >
+                      node manager
+                    </span>
+                    <span
+                      className="icon is-small"
+                    >
+                      <FontAwesomeIcon
+                        className="angle-down"
+                        icon="angle-down"
+                      >
+                        <i
+                          className="angle-down"
+                          icon="angle-down"
+                        />
+                      </FontAwesomeIcon>
+                    </span>
+                  </button>
+                </div>
+                <div
+                  className="dropdown-menu"
+                  id="dropdown-menu"
+                  role="menu"
+                >
+                  <div
+                    className="dropdown-content"
+                  >
+                    <div
+                      className="dropdown-item"
+                      key="researcher"
+                      onClick={[Function]}
+                    >
+                      researcher
+                    </div>
+                    <div
+                      className="dropdown-item is-active"
+                      key="node manager"
+                      onClick={[Function]}
+                    >
+                      node manager
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Dropdown>
+          </div>
+          <table
+            className="table is-striped is-hoverable is-fullwidth"
+          >
+            <thead>
+              <tr>
+                <th />
+                <th>
+                  manageDatasetPage.table.title
+                </th>
+                <th>
+                  manageDatasetPage.table.organization
+                </th>
+                <th>
+                  manageDatasetPage.table.licence
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <DatasetRow
+                checked={false}
+                key="wEaBfmFyQhYCdsk"
+                license="Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License"
+                onChange={[Function]}
+                organization="—"
+                title="Caprellids polulation structure in Usujiri, Hokkaido, Japan"
+              >
+                <tr
+                  className="dataset-row"
+                >
+                  <td>
+                    <input
+                      checked={false}
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                  </td>
+                  <td
+                    className="dataset-title"
+                  >
+                    Caprellids polulation structure in Usujiri, Hokkaido, Japan
+                  </td>
+                  <td
+                    className="organization"
+                  >
+                    —
+                  </td>
+                  <td
+                    className="license"
+                  >
+                    Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License
+                  </td>
+                </tr>
+              </DatasetRow>
+            </tbody>
+          </table>
+          <SubmitUserButton
+            action="update"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <div
+              className="submit-user-button columns is-mobile is-centered"
+            >
+              <button
+                className="button is-info is-medium"
+                disabled={false}
+                onClick={[Function]}
+              >
+                userFormPage.submitUserButton.update
+              </button>
+            </div>
+          </SubmitUserButton>
+        </div>
+      </UserFormPage>
+    </AuthProvider>
+  </Router>
+</MemoryRouter>
+`;

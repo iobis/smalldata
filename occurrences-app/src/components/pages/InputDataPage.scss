@@ -1,29 +1,8 @@
 .previous-occurrences {
   margin-top: var(--margin-top);
-  .occurrence-row {
-    .edit {
-      width: 5%;
-    }
 
-    .added-at {
-      width: 10%;
-    }
-
-    .scientific-name {
-      width: 10%;
-    }
-
-    .dataset-title {
-      width: 55%;
-    }
-
-    .occurrence-date {
-      width: 15%;
-    }
-
-    .copy {
-      width: 5%;
-    }
+  .copy-previous-entry {
+    background-color: $step-background;
   }
 }
 
@@ -34,8 +13,4 @@ a.button.new {
   &:hover {
     background-color: lighten($obis-green, 10%);
   }
-}
-
-a.button.is-info.copy-previous-entry {
-  background-color: $step-background;
 }

@@ -1,15 +1,14 @@
 import './i18n/i18n'
 import * as SmalldataClient from '@smalldata/dwca-lib/src/clients/SmalldataClient'
+import NodeManagerRoute from '@smalldata/dwca-lib/src/router/NodeManagerRoute'
 import DatasetFormPage from './components/pages/DatasetFormPage/DatasetFormPage'
-import LogInPage from './components/pages/LogInPage'
 import ManageDatasetPage from './components/pages/ManageDatasetPage'
 import ManageUsersPage from './components/pages/ManageUsersPage'
 import Navbar from './components/layout/Navbar'
-import PropTypes from 'prop-types'
 import React, { useContext } from 'react'
 import UserFormPage from './components/pages/UserFormPage'
 import { AuthContext, AuthProvider } from '@smalldata/dwca-lib'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Switch } from 'react-router-dom'
 import {
   faAngleDown,
   faCheck,
@@ -43,31 +42,15 @@ const AppDiv = () => {
       <Navbar/>
       <main>
         <Switch>
-          <ProtectedRoute component={ManageDatasetPage} exact path="/"/>
-          <ProtectedRoute component={ManageDatasetPage} exact path="/manage-dataset"/>
-          <ProtectedRoute component={DatasetFormPage} exact path="/manage-dataset/create"/>
-          <ProtectedRoute component={DatasetFormPage} exact path="/manage-dataset/update/:id"/>
-          <ProtectedRoute component={ManageUsersPage} exact path="/manage-users"/>
-          <ProtectedRoute component={UserFormPage} exact path="/manage-users/create"/>
-          <ProtectedRoute component={UserFormPage} exact path="/manage-users/update/:id"/>
+          <NodeManagerRoute component={ManageDatasetPage} exact path="/"/>
+          <NodeManagerRoute component={ManageDatasetPage} exact path="/manage-dataset"/>
+          <NodeManagerRoute component={DatasetFormPage} exact path="/manage-dataset/create"/>
+          <NodeManagerRoute component={DatasetFormPage} exact path="/manage-dataset/update/:id"/>
+          <NodeManagerRoute component={ManageUsersPage} exact path="/manage-users"/>
+          <NodeManagerRoute component={UserFormPage} exact path="/manage-users/create"/>
+          <NodeManagerRoute component={UserFormPage} exact path="/manage-users/update/:id"/>
         </Switch>
       </main>
     </div>
   )
-}
-
-const ProtectedRoute = ({ component: Component, ...rest }) => {
-  const { loggedIn } = useContext(AuthContext)
-  const render = (props) => loggedIn
-    ? <Component {...props}/>
-    : <LogInPage/>
-  return (
-    <Route {...rest} render={render}/>
-  )
-}
-
-ProtectedRoute.propTypes = {
-  component: PropTypes.func.isRequired,
-  exact:     PropTypes.bool,
-  path:      PropTypes.string.isRequired
 }

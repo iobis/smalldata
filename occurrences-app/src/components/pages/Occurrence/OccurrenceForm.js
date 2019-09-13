@@ -26,8 +26,9 @@ import {
   getOccurrence,
   updateOccurrence
 } from '@smalldata/dwca-lib/src/clients/SmalldataClient'
-import { useTranslation } from 'react-i18next'
 import { AuthContext } from '@smalldata/dwca-lib'
+import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 export default function OccurrenceForm({ location }) {
   const initialState = createInitialState()
@@ -46,23 +47,33 @@ export default function OccurrenceForm({ location }) {
   const [darwinCoreFields, setDarwinCoreFields] = useState(initialState.darwinCoreFields)
   const [activeStepIndex, setActiveStepIndex] = useState(0)
   const [finalSummaryVisible, setFinalSummaryVisible] = useState(false)
+  const [occurrenceSupported, setOccurrenceSupported] = useState(true)
 
   useEffect(() => {
     const fetchOccurrence = async() => {
-      const dwca = await getOccurrence({
-        datasetId: location.state.datasetId,
-        dwcaId:    location.state.dwcaId,
-        userRef
-      })
-      const datasets = await getDatasets()
-      const dataset = datasets.find(d => d.id === dwca.dataset)
-      setDataset(dataset)
-      setOccurrenceData(mapDwcaToOccurrenceData(dwca))
-      setLocationData(mapDwcaToLocationData(dwca))
-      setObservationData(mapDwcaToObservationData(dwca))
-      setMeasurements(mapDwcaToMeasurements(dwca))
-      setDarwinCoreFields(mapDwcsToDarwinCoreFields(dwca))
-      setAction(location.state.action === 'update' ? 'update' : 'create')
+      try {
+        const dwca = await getOccurrence({
+          datasetId: location.state.datasetId,
+          dwcaId:    location.state.dwcaId,
+          userRef
+        })
+        const datasets = await getDatasets()
+        const dataset = datasets.find(d => d.id === dwca.dataset)
+        const occurrence = mapDwcaToOccurrenceData(dwca)
+        const locationData = mapDwcaToLocationData(dwca)
+        const observationData = mapDwcaToObservationData(dwca)
+        const measurements = mapDwcaToMeasurements(dwca)
+        const darwinCoreFields = mapDwcsToDarwinCoreFields(dwca)
+        setDataset(dataset)
+        setOccurrenceData(occurrence)
+        setLocationData(locationData)
+        setObservationData(observationData)
+        setMeasurements(measurements)
+        setDarwinCoreFields(darwinCoreFields)
+        setAction(location.state.action === 'update' ? 'update' : 'create')
+      } catch (e) {
+        setOccurrenceSupported(false)
+      }
     }
     if (location && location.state) fetchOccurrence()
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -226,6 +237,14 @@ export default function OccurrenceForm({ location }) {
         onChange={setDarwinCoreFields}/>
   }]
 
+  if (!occurrenceSupported) return (
+    <section className="section">
+      <div className="occurrence-not-supported notification is-danger">
+        {t('occurrenceForm.occurrenceNotSupported.message')}
+        <Link to="/input-data/">{t('occurrenceForm.occurrenceNotSupported.linkMessage')}</Link>
+      </div>
+    </section>
+  )
   return (
     <section className="section">
       {steps.map((step, index) => {

@@ -9,8 +9,7 @@
   "workspaces": [
     "admin-app",
     "dwca-lib",
-    "occurrences-app",
-    "test-utils-lib"
+    "occurrences-app"
   ],
   "scripts": {
     "admin-app:build": "yarn workspace @smalldata/admin-app build",

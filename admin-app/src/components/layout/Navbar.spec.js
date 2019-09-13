@@ -1,89 +1,101 @@
 import Navbar from './Navbar'
 import React from 'react'
-import { AuthContext, AuthProvider } from '@smalldata/dwca-lib'
+import { AuthContext } from '@smalldata/dwca-lib'
 import { MemoryRouter } from 'react-router-dom'
 import { mount } from 'enzyme'
 
 describe('Navbar', () => {
-  it('renders correctly for route /', () => {
-    expect(mount(
-      <MemoryRouter initialEntries={[{ pathname: '/', key: 'testKey' }]}>
-        <AuthProvider>
-          <Navbar/>
-        </AuthProvider>
-      </MemoryRouter>
-    )).toMatchSnapshot()
-  })
+  let authProviderValue
+  let logOut
+  let redirectToOceanExpert
+  let wrapper
 
-  it('renders correctly for route /input-data', () => {
-    expect(mount(
-      <MemoryRouter initialEntries={[{ pathname: '/input-data', key: 'testKey' }]}>
-        <AuthProvider>
-          <Navbar/>
-        </AuthProvider>
-      </MemoryRouter>
-    )).toMatchSnapshot()
-  })
+  describe('when logged in as "node manager"', () => {
+    it('renders correctly for route / ', () => {
+      wrapper = mount(
+        <MemoryRouter initialEntries={[{ pathname: '/', key: 'testKey' }]}>
+          <AuthContext.Provider value={createAuthProviderValue()}>
+            <Navbar/>
+          </AuthContext.Provider>
+        </MemoryRouter>
+      )
 
-  it('renders correctly for route /input-data/create', () => {
-    expect(mount(
-      <MemoryRouter initialEntries={[{ pathname: '/input-data/create', key: 'testKey' }]}>
-        <AuthProvider>
-          <Navbar/>
-        </AuthProvider>
-      </MemoryRouter>
-    )).toMatchSnapshot()
-  })
+      expect(wrapper).toMatchSnapshot()
+      expect(wrapper.find('.navbar-start a.navbar-item')).toHaveLength(2)
+      wrapper.find('.login-nav-item .auth-button').simulate('click')
+      expect(logOut).toHaveBeenCalledTimes(1)
+      expect(redirectToOceanExpert).toHaveBeenCalledTimes(0)
+    })
 
-  it('renders correctly for route /help', () => {
-    expect(mount(
-      <MemoryRouter initialEntries={[{ pathname: '/help', key: 'testKey' }]}>
-        <AuthProvider>
-          <Navbar/>
-        </AuthProvider>
-      </MemoryRouter>
-    )).toMatchSnapshot()
-  })
+    it('renders correctly for route /manage-dataset ', () => {
+      wrapper = mount(
+        <MemoryRouter initialEntries={[{ pathname: '/manage-dataset', key: 'testKey' }]}>
+          <AuthContext.Provider value={createAuthProviderValue()}>
+            <Navbar/>
+          </AuthContext.Provider>
+        </MemoryRouter>
+      )
 
-  it('renders correctly when logged in', () => {
-    const logOut = jest.fn()
-    const authProviderValue = {
-      claims:   { name: 'Zeus' },
-      loggedIn: true,
-      logOut:   logOut
-    }
+      expect(wrapper).toMatchSnapshot()
+      expect(wrapper.find('.navbar-start a.navbar-item')).toHaveLength(2)
+    })
 
-    const wrapper = mount(
-      <MemoryRouter initialEntries={[{ pathname: '/', key: 'testKey' }]}>
-        <AuthContext.Provider value={authProviderValue}>
-          <Navbar/>
-        </AuthContext.Provider>
-      </MemoryRouter>
-    )
-    expect(wrapper).toMatchSnapshot()
+    it('renders correctly for route /manage-users ', () => {
+      wrapper = mount(
+        <MemoryRouter initialEntries={[{ pathname: '/manage-users', key: 'testKey' }]}>
+          <AuthContext.Provider value={createAuthProviderValue()}>
+            <Navbar/>
+          </AuthContext.Provider>
+        </MemoryRouter>
+      )
 
-    wrapper.find('.login-nav-item .auth-button').simulate('click')
-    expect(logOut).toHaveBeenCalledTimes(1)
+      expect(wrapper).toMatchSnapshot()
+      expect(wrapper.find('.navbar-start a.navbar-item')).toHaveLength(2)
+    })
   })
 
   it('renders correctly when logged out', () => {
-    const redirectToOceanExpert = jest.fn()
-    const authProviderValue = {
-      claims:   {},
-      loggedIn: false,
-      redirectToOceanExpert
-    }
-
-    const wrapper = mount(
+    wrapper = mount(
       <MemoryRouter initialEntries={[{ pathname: '/', key: 'testKey' }]}>
-        <AuthContext.Provider value={authProviderValue}>
+        <AuthContext.Provider value={createAuthProviderValue({ loggedIn: false })}>
           <Navbar/>
         </AuthContext.Provider>
       </MemoryRouter>
     )
-    expect(wrapper).toMatchSnapshot()
 
+    expect(wrapper).toMatchSnapshot()
+    expect(wrapper.find('.navbar-start a.navbar-item')).toHaveLength(0)
     wrapper.find('.login-nav-item .auth-button').simulate('click')
     expect(redirectToOceanExpert).toHaveBeenCalledTimes(1)
   })
+
+  it('renders correctly when logged in as "researcher"', () => {
+    wrapper = mount(
+      <MemoryRouter initialEntries={[{ pathname: '/', key: 'testKey' }]}>
+        <AuthContext.Provider value={createAuthProviderValue({ role: 'researcher' })}>
+          <Navbar/>
+        </AuthContext.Provider>
+      </MemoryRouter>
+    )
+
+    expect(wrapper).toMatchSnapshot()
+    expect(wrapper.find('.navbar-start a.navbar-item')).toHaveLength(0)
+    wrapper.find('.login-nav-item .auth-button').simulate('click')
+    expect(logOut).toHaveBeenCalledTimes(1)
+    expect(redirectToOceanExpert).toHaveBeenCalledTimes(0)
+  })
+
+  function createAuthProviderValue(props) {
+    logOut = jest.fn()
+    redirectToOceanExpert = jest.fn()
+    authProviderValue = {
+      claims:   { name: 'Charles Darwin' },
+      role:     'node manager',
+      loggedIn: true,
+      logOut,
+      redirectToOceanExpert,
+      userRef:  'ovZTtaOJZ98xDDY'
+    }
+    return { ...authProviderValue, ...props }
+  }
 })

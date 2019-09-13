@@ -42,8 +42,6 @@
     "whatwg-fetch": "3.0.0"
   },
   "devDependencies": {
-    "@smalldata/test-utils-lib": "1.0.0",
-    "async-wait-until": "1.2.4",
     "cross-env": "5.2.0",
     "enzyme": "3.10.0",
     "enzyme-adapter-react-16": "1.14.0",

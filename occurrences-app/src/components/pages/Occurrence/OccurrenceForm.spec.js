@@ -3,7 +3,11 @@ import React from 'react'
 import SmalldataClient from '@smalldata/dwca-lib/src/clients/SmalldataClient'
 import { act } from 'react-dom/test-utils'
 import { AuthContext } from '@smalldata/dwca-lib'
-import { getDatasetsFixture, getDefaultDwcaResponse } from '@smalldata/dwca-lib/src/clients/SmalldataClient.mock'
+import {
+  getDatasetsFixture,
+  getDefaultDwcaResponse,
+  getNotSupportedDwcaResponse
+} from '@smalldata/dwca-lib/src/clients/SmalldataClient.mock'
 import { MemoryRouter } from 'react-router-dom'
 import { mount } from 'enzyme'
 
@@ -259,6 +263,61 @@ describe('OccurrenceForm', () => {
           expect(wrapper.find('.error-message').exists()).toBe(false)
         })
       })
+    })
+  })
+
+  describe('when updating not supported occurrence', () => {
+    beforeAll(async() => {
+      SmalldataClient.getOccurrence.mockImplementation(() =>
+        new Promise((resolve) => {
+          resolve(getNotSupportedDwcaResponse())
+        })
+      )
+      const location = {
+        state: {
+          action:    'update',
+          datasetId: 'ntDOtUc7XsRrIus',
+          dwcaId:    'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796'
+        }
+      }
+      await act(async() => {
+        wrapper = mount(
+          <MemoryRouter initialEntries={[{ pathname: '/input-data/update', key: 'testKey' }]}>
+            <AuthContext.Provider value={createAuthProviderValue()}>
+              <OccurrenceForm location={location}/>
+            </AuthContext.Provider>
+          </MemoryRouter>
+        )
+      })
+      wrapper.update()
+    })
+
+    afterAll(() => {
+      jest.clearAllMocks()
+    })
+
+    it('calls SmalldataClient.getOccurrence once', () => {
+      expect(SmalldataClient.getOccurrence).toHaveBeenCalledWith({
+        datasetId: 'ntDOtUc7XsRrIus',
+        dwcaId:    'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796',
+        userRef:   'ovZTtaOJZ98xDDY'
+      })
+    })
+
+    it('calls SmalldataClient.getDatasets two times without any args', () => {
+      expect(SmalldataClient.getDatasets).toHaveBeenCalledTimes(2)
+    })
+
+    it('renders correctly', () => {
+      expect(wrapper.find(OccurrenceForm)).toMatchSnapshot()
+    })
+
+    it('renders error message', () => {
+      expect(wrapper.find('.occurrence-not-supported').exists()).toBe(true)
+    })
+
+    it('does not render datasets', () => {
+      expect(wrapper.find('.dataset').exists()).toBe(false)
     })
   })
 })
