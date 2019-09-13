@@ -2,7 +2,6 @@ package org.obis.util.file;
 
 import com.google.common.base.Charsets;
 import com.google.common.io.Resources;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -37,6 +36,5 @@ public class IoFile {
     fileInputStream.close();
   }
 
-  private IoFile() {
-  }
+  private IoFile() {}
 }

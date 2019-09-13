@@ -1,9 +1,9 @@
 package org.obis.util;
 
+import static com.google.common.base.Preconditions.checkArgument;
+
 import java.net.URL;
 import java.util.Set;
-
-import static com.google.common.base.Preconditions.checkArgument;
 
 public class Urls {
   private static final Set<String> SUPPORTED_PROTOCOLS = Set.of("http", "https");
@@ -11,7 +11,9 @@ public class Urls {
   public static boolean isValid(String urlString) {
     try {
       URL url = new URL(urlString);
-      checkArgument(SUPPORTED_PROTOCOLS.contains(url.getProtocol()), "protocol of the base url should be 'http' or 'https'");
+      checkArgument(
+          SUPPORTED_PROTOCOLS.contains(url.getProtocol()),
+          "protocol of the base url should be 'http' or 'https'");
       url.toURI();
       return true;
     } catch (Exception e) {
@@ -27,6 +29,5 @@ public class Urls {
     return url.endsWith("/") ? url : url + "/";
   }
 
-  private Urls() {
-  }
+  private Urls() {}
 }

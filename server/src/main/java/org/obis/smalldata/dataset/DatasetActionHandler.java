@@ -5,10 +5,9 @@ import io.vertx.core.eventbus.Message;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.mongo.MongoClient;
-import org.obis.smalldata.util.VertxActionHandler;
-
 import java.util.function.BiConsumer;
 import java.util.stream.Collectors;
+import org.obis.smalldata.util.VertxActionHandler;
 
 class DatasetActionHandler {
 
@@ -20,14 +19,19 @@ class DatasetActionHandler {
 
   DatasetActionHandler(MongoClient mongoClient) {
     this.dbOperation = new DbDatasetOperation(mongoClient);
-    var actionMap = ImmutableMap.<String, BiConsumer<Message<JsonObject>, JsonObject>>of(
-      "find", this::findDatasets,
-      "insert", (message, body) -> dbOperation
-        .insertDataset(body.getJsonObject("dataset"))
-        .setHandler(ar -> message.reply(ar.result())),
-      "replace", (message, body) -> dbOperation
-        .updateDataset(body.getString("datasetRef"), body.getJsonObject("dataset"))
-        .setHandler(ar -> message.reply(ar.result())));
+    var actionMap =
+        ImmutableMap.<String, BiConsumer<Message<JsonObject>, JsonObject>>of(
+            "find", this::findDatasets,
+            "insert",
+                (message, body) ->
+                    dbOperation
+                        .insertDataset(body.getJsonObject("dataset"))
+                        .setHandler(ar -> message.reply(ar.result())),
+            "replace",
+                (message, body) ->
+                    dbOperation
+                        .updateDataset(body.getString("datasetRef"), body.getJsonObject("dataset"))
+                        .setHandler(ar -> message.reply(ar.result())));
     this.actionHandler = new VertxActionHandler(actionMap);
   }
 
@@ -38,23 +42,27 @@ class DatasetActionHandler {
   private void findDatasets(Message<JsonObject> message, JsonObject body) {
     var query = body.getJsonObject("query", new JsonObject());
     if (query.containsKey(QUERY_REF)) {
-      dbOperation.findOneDataset(mapQueryKeys(query)).setHandler(ar -> {
-        var result = ar.result();
-        if (result == null) {
-          message.reply(new JsonArray());
-        } else {
-          message.reply(new JsonArray().add(mapDatasetKeys(result)));
-        }
-      });
+      dbOperation
+          .findOneDataset(mapQueryKeys(query))
+          .setHandler(
+              ar -> {
+                var result = ar.result();
+                if (result == null) {
+                  message.reply(new JsonArray());
+                } else {
+                  message.reply(new JsonArray().add(mapDatasetKeys(result)));
+                }
+              });
     } else {
-      dbOperation.findDatasets(query)
-        .setHandler(ar -> {
-          var datasets = ar.result().stream()
-            .map(this::mapDatasetKeys)
-            .collect(Collectors.toList());
-          var datasetJson = new JsonArray(datasets);
-          message.reply(datasetJson);
-        });
+      dbOperation
+          .findDatasets(query)
+          .setHandler(
+              ar -> {
+                var datasets =
+                    ar.result().stream().map(this::mapDatasetKeys).collect(Collectors.toList());
+                var datasetJson = new JsonArray(datasets);
+                message.reply(datasetJson);
+              });
     }
   }
 
@@ -72,5 +80,4 @@ class DatasetActionHandler {
     datasetMap.remove("_id");
     return new JsonObject(datasetMap);
   }
-
 }

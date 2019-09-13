@@ -1,11 +1,10 @@
 package org.obis.smalldata.webapi.authority;
 
-import io.vertx.core.json.JsonObject;
+import static org.pmw.tinylog.Logger.info;
 
+import io.vertx.core.json.JsonObject;
 import java.util.Collection;
 import java.util.function.Predicate;
-
-import static org.pmw.tinylog.Logger.info;
 
 public class DemoAuthority implements Authority {
   @Override

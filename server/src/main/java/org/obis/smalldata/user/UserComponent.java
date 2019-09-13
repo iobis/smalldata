@@ -16,7 +16,8 @@ public class UserComponent extends AbstractVerticle {
   public void start(Future<Void> startFuture) {
     var dbConfig = (JsonObject) vertx.sharedData().getLocalMap("settings").get("storage");
     mongoClient = MongoClient.createShared(vertx, dbConfig);
-    var bulkinessConfig = config().getJsonObject("bulkiness", new JsonObject().put("halfTimeInDays", 1.0));
+    var bulkinessConfig =
+        config().getJsonObject("bulkiness", new JsonObject().put("halfTimeInDays", 1.0));
     var bulkinessCalculator = new BulkinessCalculator(bulkinessConfig.getDouble("halfTimeInDays"));
     var dbUserOperation = new DbUserOperation(bulkinessCalculator, mongoClient);
 
@@ -31,7 +32,7 @@ public class UserComponent extends AbstractVerticle {
 
   private void handleExists(Message<String> message) {
     var userRef = message.body();
-    DbUtils.INSTANCE.findOne(mongoClient, Collections.USERS, new JsonObject().put("_ref", userRef), message);
+    DbUtils.INSTANCE.findOne(
+        mongoClient, Collections.USERS, new JsonObject().put("_ref", userRef), message);
   }
-
 }

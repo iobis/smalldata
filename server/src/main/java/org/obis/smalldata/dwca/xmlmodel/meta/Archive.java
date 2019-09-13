@@ -2,11 +2,10 @@ package org.obis.smalldata.dwca.xmlmodel.meta;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import java.util.List;
 import lombok.Builder;
 import lombok.NonNull;
 import lombok.Value;
-
-import java.util.List;
 
 @Value
 @Builder
@@ -21,9 +20,7 @@ public class Archive {
   @NonNull
   private final String metadata;
 
-  @JacksonXmlProperty
-  @NonNull
-  private final Core core;
+  @JacksonXmlProperty @NonNull private final Core core;
 
   @JacksonXmlProperty(localName = "extension")
   private final List<Extension> extensionList;

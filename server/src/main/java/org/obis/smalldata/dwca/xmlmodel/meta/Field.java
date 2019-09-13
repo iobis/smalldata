@@ -11,6 +11,7 @@ import lombok.Value;
 public class Field {
   @JacksonXmlProperty(isAttribute = true)
   private int index;
+
   @JacksonXmlProperty(isAttribute = true)
   private String term;
 }

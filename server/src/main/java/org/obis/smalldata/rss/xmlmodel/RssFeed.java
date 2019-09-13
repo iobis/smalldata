@@ -23,7 +23,5 @@ public class RssFeed {
   @JacksonXmlProperty(isAttribute = true, localName = "xmlns:geo")
   private String xmlnsGeo = "http://www.w3.org/2003/01/geo/wgs84_pos#";
 
-  @JacksonXmlProperty
-  @NonNull
-  private Channel channel;
+  @JacksonXmlProperty @NonNull private Channel channel;
 }

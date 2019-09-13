@@ -25,7 +25,8 @@ public class Eml {
 
   @JacksonXmlProperty(localName = "xsi:schemaLocation", isAttribute = true)
   @Builder.Default
-  private final String xsiSchemaLocation = "eml://ecoinformatics.org/eml-2.1.1 http://rs.gbif.org/schema/eml-gbif-profile/1.1/eml.xsd";
+  private final String xsiSchemaLocation =
+      "eml://ecoinformatics.org/eml-2.1.1 http://rs.gbif.org/schema/eml-gbif-profile/1.1/eml.xsd";
 
   @JacksonXmlProperty(localName = "packageId", isAttribute = true)
   private final String packageId;
