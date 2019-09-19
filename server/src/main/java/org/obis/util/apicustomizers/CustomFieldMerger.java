@@ -1,19 +1,18 @@
 package org.obis.util.apicustomizers;
 
-import lombok.Value;
+import static org.pmw.tinylog.Logger.debug;
+import static org.pmw.tinylog.Logger.warn;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
+import lombok.Value;
 
-import static org.pmw.tinylog.Logger.debug;
-import static org.pmw.tinylog.Logger.warn;
+public class CustomFieldMerger
+    implements Function<Map<String, Map<String, Object>>, Map<String, Map<String, Object>>> {
 
-public class CustomFieldMerger implements Function<Map<String, Map<String, Object>>, Map<String, Map<String, Object>>> {
-
-  private Map<QualTerm, Map<String, Object>> fieldMap = Map.of(
-    new QualTerm("dwcg", "habitat"), Map.of("example", "oak savanna")
-  );
+  private Map<QualTerm, Map<String, Object>> fieldMap =
+      Map.of(new QualTerm("dwcg", "habitat"), Map.of("example", "oak savanna"));
 
   @Override
   public Map<String, Map<String, Object>> apply(Map<String, Map<String, Object>> api) {
@@ -33,8 +32,11 @@ public class CustomFieldMerger implements Function<Map<String, Map<String, Objec
 
     private void mergeCustomFields(QualTerm qt, Map<String, Object> customFields) {
       try {
-        Map<String, Object> apiFields = new HashMap(
-          (Map<String, Object>) ((Map<String, Object>) api.get(qt.getNs()).get("properties")).get(qt.getTerm()));
+        Map<String, Object> apiFields =
+            new HashMap(
+                (Map<String, Object>)
+                    ((Map<String, Object>) api.get(qt.getNs()).get("properties"))
+                        .get(qt.getTerm()));
         apiFields.putAll(customFields);
         ((Map<String, Object>) api.get(qt.getNs()).get("properties")).put(qt.getTerm(), apiFields);
         debug("merged fields for term '{}.{}': {}", qt.getNs(), qt.getTerm(), customFields);

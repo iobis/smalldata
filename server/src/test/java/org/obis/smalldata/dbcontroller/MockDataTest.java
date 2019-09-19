@@ -1,5 +1,8 @@
 package org.obis.smalldata.dbcontroller;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.pmw.tinylog.Logger.info;
+
 import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonObject;
@@ -8,17 +11,13 @@ import io.vertx.junit5.Checkpoint;
 import io.vertx.junit5.Timeout;
 import io.vertx.junit5.VertxExtension;
 import io.vertx.junit5.VertxTestContext;
+import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.obis.smalldata.util.BulkOperationUtil;
-
-import java.util.concurrent.TimeUnit;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.pmw.tinylog.Logger.info;
 
 @ExtendWith(VertxExtension.class)
 public class MockDataTest {
@@ -32,14 +31,16 @@ public class MockDataTest {
   public void setUp(Vertx vertx, VertxTestContext testContext) {
     vertx.sharedData().getLocalMap("settings").put("mode", "TEST");
     vertx.deployVerticle(
-      new StorageModule(),
-      new DeploymentOptions().setConfig(MongoConfigs.ofServer(BIND_IP, PORT)),
-      testContext.succeeding(deployId -> {
-        info("Deployed DB {}", deployId);
-        mongoClient = MongoClient.createNonShared(vertx, MongoConfigs.ofClient(BIND_IP, PORT));
-        info("Running mongoClient {}", mongoClient);
-        testContext.completeNow();
-      }));
+        new StorageModule(),
+        new DeploymentOptions().setConfig(MongoConfigs.ofServer(BIND_IP, PORT)),
+        testContext.succeeding(
+            deployId -> {
+              info("Deployed DB {}", deployId);
+              mongoClient =
+                  MongoClient.createNonShared(vertx, MongoConfigs.ofClient(BIND_IP, PORT));
+              info("Running mongoClient {}", mongoClient);
+              testContext.completeNow();
+            }));
   }
 
   @AfterEach
@@ -53,16 +54,24 @@ public class MockDataTest {
   public void bulkWrite(VertxTestContext testContext) {
     var operations = BulkOperationUtil.createInsertsFromFile("testdata/testusers.json");
     Checkpoint checks = testContext.checkpoint(2);
-    mongoClient.bulkWrite("users", operations,
-      arClient -> {
-        mongoClient.find("users", new JsonObject(), ar -> {
-          assertThat(ar.result()).hasSize(2);
-          checks.flag();
+    mongoClient.bulkWrite(
+        "users",
+        operations,
+        arClient -> {
+          mongoClient.find(
+              "users",
+              new JsonObject(),
+              ar -> {
+                assertThat(ar.result()).hasSize(2);
+                checks.flag();
+              });
+          mongoClient.find(
+              "users",
+              new JsonObject().put("lvl", 4),
+              ar -> {
+                assertThat(ar.result()).hasSize(1);
+                checks.flag();
+              });
         });
-        mongoClient.find("users", new JsonObject().put("lvl", 4), ar -> {
-          assertThat(ar.result()).hasSize(1);
-          checks.flag();
-        });
-      });
   }
 }

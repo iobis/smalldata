@@ -1,7 +1,6 @@
 package org.obis.smalldata.webapi.authority;
 
 import io.vertx.core.json.JsonObject;
-
 import java.util.Collection;
 import java.util.function.Predicate;
 

@@ -1,17 +1,16 @@
 package org.obis.smalldata.util;
 
+import static org.pmw.tinylog.Logger.debug;
+
 import java.security.SecureRandom;
 import java.util.Base64;
-
-import static org.pmw.tinylog.Logger.debug;
 
 public class SecureRandomString {
 
   private static final SecureRandom RANDOM = new SecureRandom();
   private static final Base64.Encoder ENCODER = Base64.getUrlEncoder().withoutPadding();
 
-  private SecureRandomString() {
-  }
+  private SecureRandomString() {}
 
   private static String generate(int length) {
     byte[] buffer = new byte[length];

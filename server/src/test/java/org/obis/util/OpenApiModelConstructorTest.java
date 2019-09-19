@@ -1,12 +1,11 @@
 package org.obis.util;
 
-import org.junit.jupiter.api.Test;
-import org.obis.util.model.DarwinCoreExtension;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
 import java.util.Map;
-
-import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.jupiter.api.Test;
+import org.obis.util.model.DarwinCoreExtension;
 
 class OpenApiModelConstructorTest {
 
@@ -27,8 +26,6 @@ class OpenApiModelConstructorTest {
 
     var actual = OpenApiModelConstructor.constructApiModel(darwinCoreExtension);
 
-    assertThat(actual.entrySet())
-      .isNotEmpty()
-      .hasSize(1);
+    assertThat(actual.entrySet()).isNotEmpty().hasSize(1);
   }
 }

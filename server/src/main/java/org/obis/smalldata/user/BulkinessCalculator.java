@@ -14,6 +14,6 @@ class BulkinessCalculator {
 
   double decay(double value, Instant instant) {
     var timeDiff = Duration.between(instant, Instant.now()).toSeconds();
-    return value * Math.exp(- timeDiff * decayInSeconds);
+    return value * Math.exp(-timeDiff * decayInSeconds);
   }
 }

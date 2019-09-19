@@ -1,10 +1,9 @@
 package org.obis.smalldata.dwca;
 
-import lombok.AllArgsConstructor;
-import lombok.Value;
-
 import java.net.URI;
 import java.util.List;
+import lombok.AllArgsConstructor;
+import lombok.Value;
 
 @Value
 @AllArgsConstructor

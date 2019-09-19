@@ -1,7 +1,6 @@
 package org.obis.smalldata.util;
 
 public enum Collections {
-
   USERS("users"),
   DATASETS("datasets"),
   DATASETRECORDS("dwcarecords");
@@ -15,5 +14,4 @@ public enum Collections {
   public String dbName() {
     return dbName;
   }
-
 }
