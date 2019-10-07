@@ -47,6 +47,7 @@ public class RssComponentGeneratorTest {
                             item -> {
                               try {
                                 return RssItem.builder()
+                                    .dwca(new URL(item[0]))
                                     .pubDate(Instant.parse(item[1]))
                                     .guid(
                                         RssItem.Guid.builder()
