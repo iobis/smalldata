@@ -14,7 +14,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.obis.smalldata.dataset.DatasetComponent;
 import org.obis.smalldata.testutil.TestDb;
-import org.pmw.tinylog.Logger;
 
 @ExtendWith(VertxExtension.class)
 public class DbOperationTest {
@@ -48,11 +47,11 @@ public class DbOperationTest {
     dbOperation.withAggregatedDatasets(res -> {
       assertTrue(res.succeeded());
       var cursor = res.result();
-      Logger.info(cursor);
+      info(cursor);
       assertThat(cursor.getJsonObject("cursor").getJsonArray("firstBatch").size()).isEqualTo(4);
       assertThat(cursor.getJsonObject("cursor").getJsonArray("firstBatch")).allMatch(
-          record -> !((JsonObject)record).getString("addedAtInstant").isEmpty() &&
-              !((JsonObject)record).getString("addedAtInstant").isBlank()
+          record -> !((JsonObject) record).getString("addedAtInstant").isEmpty()
+              && !((JsonObject) record).getString("addedAtInstant").isBlank()
       );
       context.completeNow();
     });

@@ -21,7 +21,7 @@ class DwcaHandler {
                   .putHeader(HttpHeaders.CONTENT_TYPE, "application/zip")
                   .putHeader(
                       HttpHeaders.CONTENT_DISPOSITION,
-                      "attachment; filename=\"" + path.substring(path.lastIndexOf("/")+1) + "\"")
+                      "attachment; filename=\"" + path.substring(path.lastIndexOf("/") + 1) + "\"")
                   .putHeader(HttpHeaders.TRANSFER_ENCODING, "chunked")
                   .sendFile(path);
             });

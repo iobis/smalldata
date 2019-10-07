@@ -11,7 +11,7 @@ class DbDwcaOperation {
 
   private final MongoClient mongoClient;
 
-  DbDwcaOperation(MongoClient mongoClient)  {
+  DbDwcaOperation(MongoClient mongoClient) {
     this.mongoClient = mongoClient;
   }
 
