@@ -40,6 +40,7 @@ def doOnChange = "./gradlew classes"
 runtime {
   options = ["--strip-debug", "--compress", "2", "--no-header-files", "--no-man-pages"]
   modules = ['java.logging', 'java.sql', 'jdk.crypto.ec', 'java.desktop']
+  imageZip = file("$buildDir/${moduleName}-${version}.zip")
 }
 
 dependencies {
