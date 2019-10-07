@@ -19,6 +19,12 @@
       "halfTimeInDays": 7
     }
   },
+  "rss": {
+    "channel": {
+      "title": "",
+      "description": ""
+    }
+  },
   "dataset": {},
   "mode": "DEMO",
   "baseUrl": "https://localhost:3000/"

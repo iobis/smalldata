@@ -21,7 +21,7 @@ public class Channel {
   @JacksonXmlProperty private String description;
   @JacksonXmlProperty @Builder.Default private String language = "en-US";
   @JacksonXmlProperty @Builder.Default private Instant lastBuildDate = Instant.now();
-  @JacksonXmlProperty private String generator = "SmallData r...";
+  @JacksonXmlProperty private String generator = "IOBIS SmallData Generator";
   @JacksonXmlProperty private URL docs;
 
   @JacksonXmlProperty(localName = "item")

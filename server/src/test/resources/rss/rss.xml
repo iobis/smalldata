@@ -6,7 +6,7 @@
     <description>some description</description>
     <language>nl-BE</language>
     <lastBuildDate>2019-02-22T17:18:56.127701Z</lastBuildDate>
-    <generator>SmallData r...</generator>
+    <generator>IOBIS SmallData Generator</generator>
     <atom:link rel="self" type="application/rss+xml" href="http://ipt.iobis.org/training/rss.do"/>
     <item>
       <pubDate>2019-02-22T17:18:56.127535Z</pubDate>

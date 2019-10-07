@@ -64,7 +64,6 @@ public class RssComponentGeneratorTest {
                 .build());
 
     var actualRssXml = RSS_GENERATOR.writeRssAsString(rssFeed).replaceAll("\r\n", "\n");
-
     assertEquals(IoFile.loadFromResources("rss/rss.xml"), actualRssXml);
   }
 }

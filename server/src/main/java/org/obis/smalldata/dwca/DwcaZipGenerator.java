@@ -108,12 +108,19 @@ class DwcaZipGenerator {
     var tableConfig = dataset.getJsonObject("meta").getJsonObject("dwcTables");
     var coreTable = tableConfig.getString("core");
     var groupedPaths =
-        paths.stream().collect(Collectors.groupingBy(path -> path.toFile().getName().startsWith(coreTable)));
+        paths
+            .stream()
+            .collect(Collectors.groupingBy(path -> path.toFile().getName().startsWith(coreTable)));
     var corePath = groupedPaths.get(true).get(0);
     var coreMeta = this.generateMetaConfig(corePath);
-    var extensionPaths = groupedPaths.containsKey(false)
-        ? groupedPaths.get(false).stream().map(this::generateMetaConfig).collect(Collectors.toList())
-        : Collections.<MetaFileConfig>emptyList();
+    var extensionPaths =
+        groupedPaths.containsKey(false)
+            ? groupedPaths
+                .get(false)
+                .stream()
+                .map(this::generateMetaConfig)
+                .collect(Collectors.toList())
+            : Collections.<MetaFileConfig>emptyList();
 
     return generator.generateXml(coreMeta, extensionPaths, directory).get().toPath();
   }

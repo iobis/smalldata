@@ -31,7 +31,9 @@ class RssHandler {
                         .putHeader(HttpHeaders.CONTENT_TYPE, "application/rss+xml")
                         .putHeader(
                             HttpHeaders.CONTENT_DISPOSITION,
-                            "attachment; filename=\"" + filename.substring(filename.lastIndexOf("/") + 1) + "\"")
+                            "attachment; filename=\""
+                                + filename.substring(filename.lastIndexOf("/") + 1)
+                                + "\"")
                         .putHeader(HttpHeaders.TRANSFER_ENCODING, "chunked")
                         .sendFile(filename);
                   }

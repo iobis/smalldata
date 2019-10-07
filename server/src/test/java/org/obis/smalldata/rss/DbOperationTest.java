@@ -44,16 +44,18 @@ public class DbOperationTest {
 
   @Test
   void aggreationIsSuccesful(Vertx vertx, VertxTestContext context) {
-    dbOperation.withAggregatedDatasets(res -> {
-      assertTrue(res.succeeded());
-      var cursor = res.result();
-      info(cursor);
-      assertThat(cursor.getJsonObject("cursor").getJsonArray("firstBatch").size()).isEqualTo(4);
-      assertThat(cursor.getJsonObject("cursor").getJsonArray("firstBatch")).allMatch(
-          record -> !((JsonObject) record).getString("addedAtInstant").isEmpty()
-              && !((JsonObject) record).getString("addedAtInstant").isBlank()
-      );
-      context.completeNow();
-    });
+    dbOperation.withAggregatedDatasets(
+        res -> {
+          assertTrue(res.succeeded());
+          var cursor = res.result();
+          info(cursor);
+          assertThat(cursor.getJsonObject("cursor").getJsonArray("firstBatch").size()).isEqualTo(4);
+          assertThat(cursor.getJsonObject("cursor").getJsonArray("firstBatch"))
+              .allMatch(
+                  record ->
+                      !((JsonObject) record).getString("addedAtInstant").isEmpty()
+                          && !((JsonObject) record).getString("addedAtInstant").isBlank());
+          context.completeNow();
+        });
   }
 }
