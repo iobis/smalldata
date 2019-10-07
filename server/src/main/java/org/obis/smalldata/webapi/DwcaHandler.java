@@ -1,7 +1,5 @@
 package org.obis.smalldata.webapi;
 
-import static org.pmw.tinylog.Logger.info;
-
 import io.vertx.core.http.HttpHeaders;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
@@ -9,7 +7,6 @@ import io.vertx.ext.web.RoutingContext;
 class DwcaHandler {
 
   static void get(RoutingContext context) {
-    info("context: {}", context.request());
     var dataset = context.request().getParam("datasetRef");
     context
         .vertx()
@@ -19,10 +16,13 @@ class DwcaHandler {
             new JsonObject().put("action", "generate").put("dataset", dataset),
             zip -> {
               var path = zip.result().body().getString("path");
-              info("file to send: {}", path);
               context
                   .response()
                   .putHeader(HttpHeaders.CONTENT_TYPE, "application/zip")
+                  .putHeader(
+                      HttpHeaders.CONTENT_DISPOSITION,
+                      "attachment; filename=\"" + path.substring(path.lastIndexOf("/")+1) + "\"")
+                  .putHeader(HttpHeaders.TRANSFER_ENCODING, "chunked")
                   .sendFile(path);
             });
   }

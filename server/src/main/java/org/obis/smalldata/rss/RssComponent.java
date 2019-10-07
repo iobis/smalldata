@@ -24,38 +24,40 @@ public class RssComponent extends AbstractVerticle {
     var dbOperation = new DbDwcaOperation(mongoClient);
     var rssGenerator = new RssGenerator();
 
-
-
-    vertx.eventBus().consumer("internal.rss", message ->
+    vertx.eventBus().<JsonObject>consumer("internal.rss", message ->
         dbOperation.withAggregatedDatasets(
             res -> {
-              info(res);
-              var itemList = res.result().getJsonObject("cursor").getJsonArray("firstBatch").stream()
+              info(message.body());
+              var datasets = res.result().getJsonObject("cursor").getJsonArray("firstBatch").stream()
                   .map(JsonObject.class::cast)
-                  .map(dataset -> new String[] {dataset.getString("dataset_ref"),
+                  .map(dataset -> new String[]{dataset.getString("dataset_ref"),
                       dataset.getString("addedAtInstant", Instant.EPOCH.toString())})
                   .collect(Collectors.toList());
+              var baseUrl = message.body().getString("baseUrl");
+              var atomLink = message.body().getString("atomLink");
               try {
-                var rssFeed = generateRssFeed(itemList);
+                var rssFeed = generateRssFeed(datasets, baseUrl, atomLink);
                 var file = rssGenerator.writeRssAsFile(rssFeed);
                 message.reply(file.getAbsolutePath());
-              } catch(IllegalArgumentException ex) {
-
+              } catch (IllegalArgumentException ex) {
+                message.fail(500,
+                    "Some of the dataset refs or dates are not formatted properly: " + ex.getMessage());
               }
             })
     );
   }
 
-  private RssFeed generateRssFeed(List<String[]> datasetList) throws IllegalArgumentException {
+  private RssFeed generateRssFeed(List<String[]> datasetList, String baseUrl, String atomLink)
+      throws IllegalArgumentException {
     try {
       return new RssFeed(
           Channel.builder()
               .title("title")
-              .link(new URL("http://localhost"))
-              .lastBuildDate(Instant.parse("2019-02-22T17:18:56.127701Z"))
+              .link(new URL(baseUrl))
+              .lastBuildDate(Instant.now())
               .atomLink(
                   Channel.AtomLink.builder()
-                      .href(new URL("http://ipt.iobis.org/training/rss.do"))
+                      .href(new URL(atomLink))
                       .build())
               .description("some description")
               .itemList(datasetList
@@ -64,12 +66,12 @@ public class RssComponent extends AbstractVerticle {
                       item -> {
                         try {
                           return RssItem.builder()
-                              .dwca(new URL("http://localhost/" + item[0]))
+                              .dwca(new URL(baseUrl + "/api/dwca/" + item[0]))
                               .pubDate(Instant.parse(item[1]))
                               .guid(
                                   RssItem.Guid.builder()
                                       .isPermaLink(false)
-                                      .url(new URL("http://localhost/" + item[0]))
+                                      .url(new URL(baseUrl + "/api/datasets/" + item[0]))
                                       .build())
                               .build();
                         } catch (MalformedURLException e) {

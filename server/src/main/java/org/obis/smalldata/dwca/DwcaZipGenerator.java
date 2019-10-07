@@ -9,10 +9,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -107,13 +104,12 @@ class DwcaZipGenerator {
     var tableConfig = dataset.getJsonObject("meta").getJsonObject("dwcTables");
     var coreTable = tableConfig.getString("core");
     var groupedPaths =
-        paths
-            .stream()
-            .collect(Collectors.groupingBy(path -> path.toFile().getName().startsWith(coreTable)));
+        paths.stream().collect(Collectors.groupingBy(path -> path.toFile().getName().startsWith(coreTable)));
     var corePath = groupedPaths.get(true).get(0);
     var coreMeta = this.generateMetaConfig(corePath);
-    var extensionPaths =
-        groupedPaths.get(false).stream().map(this::generateMetaConfig).collect(Collectors.toList());
+    var extensionPaths = groupedPaths.containsKey(false)
+        ? groupedPaths.get(false).stream().map(this::generateMetaConfig).collect(Collectors.toList())
+        : Collections.<MetaFileConfig>emptyList();
 
     return generator.generateXml(coreMeta, extensionPaths, directory).get().toPath();
   }

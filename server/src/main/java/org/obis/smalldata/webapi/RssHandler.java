@@ -1,7 +1,5 @@
 package org.obis.smalldata.webapi;
 
-import static org.pmw.tinylog.Logger.info;
-
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
 import io.vertx.core.eventbus.Message;
@@ -13,14 +11,15 @@ class RssHandler {
 
   public static void fetch(RoutingContext context) {
     var periodicity = context.request().getParam("periodicity");
-    info("Getting RSS for periodicity: {}", periodicity);
-
     context
         .vertx()
         .eventBus()
         .send(
             "internal.rss",
-            new JsonObject(),
+            new JsonObject()
+                .put("periodicity", periodicity)
+                .put("baseUrl", context.request().scheme() + "://" + context.request().host())
+                .put("atomLink", context.request().absoluteURI()),
             (Handler<AsyncResult<Message<String>>>)
                 m -> {
                   if (m.failed()) {
@@ -32,7 +31,7 @@ class RssHandler {
                         .putHeader(HttpHeaders.CONTENT_TYPE, "application/rss+xml")
                         .putHeader(
                             HttpHeaders.CONTENT_DISPOSITION,
-                            "attachment; filename=\"" + filename + "\"")
+                            "attachment; filename=\"" + filename.substring(filename .lastIndexOf("/")+1) + "\"")
                         .putHeader(HttpHeaders.TRANSFER_ENCODING, "chunked")
                         .sendFile(filename);
                   }
