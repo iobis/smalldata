@@ -13,6 +13,7 @@ import java.util.Map;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 import org.obis.smalldata.webapi.authority.Authority;
+import org.pmw.tinylog.Logger;
 
 class RouterConfig {
 
@@ -94,6 +95,8 @@ class RouterConfig {
   private Handler<RoutingContext> protectHandler(
       Handler<RoutingContext> handler, Predicate<JsonObject> isAuthorized) {
     return context -> {
+      Logger.info("protecting!!");
+      Logger.info(context.user().principal());
       context
           .vertx()
           .eventBus()
@@ -110,6 +113,8 @@ class RouterConfig {
                                   ? new JsonObject()
                                   : authority.getEmail(context.user().principal()))),
               ar -> {
+                Logger.info(ar.result().body());
+                Logger.info(ar.cause());
                 if (ar.result() != null
                     && ar.result().body() != null
                     && ar.result().body().size() == 1

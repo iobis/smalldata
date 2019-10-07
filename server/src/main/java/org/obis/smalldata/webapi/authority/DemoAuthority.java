@@ -9,7 +9,7 @@ import java.util.function.Predicate;
 public class DemoAuthority implements Authority {
   @Override
   public String getEmail(JsonObject principal) {
-    return "another.user@domain.org";
+    return "carl.chun@domain.org";
   }
 
   @Override
