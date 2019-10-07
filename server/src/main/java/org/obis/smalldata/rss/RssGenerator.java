@@ -38,7 +38,7 @@ public class RssGenerator {
   public File writeRssAsFile(RssFeed rssFeed) {
     var xmlFile = (File) null;
     try {
-      xmlFile = File.createTempFile("smalldata", "xml");
+      xmlFile = File.createTempFile("smalldata", ".xml");
       xmlMapper.writerWithDefaultPrettyPrinter().writeValue(xmlFile, rssFeed);
     } catch (IOException e) {
       error(e);
