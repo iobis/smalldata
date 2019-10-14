@@ -9,47 +9,44 @@ easily be extended:
 In general to have the software system up and running properly, one should add a reverse proxy (nginx, apache, ...) in front of the three deployables:
 
 #+BEGIN_SRC deployment-diagram
-                                              +------------------+
-                                              |                  |
-                                              |  client browser  |
-                                              |                  |
-                                              +--------+---------+
-                                                       |
-                                                       | https://[domain]/[path]
-                                                       |
-+---------------------------------------------------------------------------------------------------------+
-|                                                      |                                                  |
-|                                                      |                                                  |
-|                                           +----------v-----------+                                      |
-|                                           |                      |                                      |
-|                                           |    reverse proxy     |                                      |
-|                                           |                      |                                      |
-|                                  +--------+  (nginx/apache/...)  +--------+                             |
-|                                  |        |                      |        |                             |
-|                                  |        +----------+-----------+        |                             |
-|               [path:/occurrences]|                   |                    |[path:/api/]                 |
-|                                  |                   |[path:/admin]       |                             |
-|                                  |                   |                    |                             |
-|                                  |                   |                    |                             |
-|                                  |                   |                    |                             |
-|                                  |                   |                    |http://localhost:8080/api/   |
-|       +--------------------------v-+   +-------------v--------------+   +-v--------------------------+  |
-|       |                            |   |                            |   |                            |  |
-|       |   occurrences web client   |   |      admin web client      |   |      smalldata server      |  |
-|       |                            |   |                            |   |                            |  |
-|       +----------------------------+   +----------------------------+   +----------------------------+  |
-|                                                                                                         |
-|                                                                                                         |
-+---------------------------------------------------------------------------------------------------------+
+                                         +------------------+
+                                         |                  |
+                                         |  client browser  |
+                                         |                  |
+                                         +--------+---------+
+                                                  |
+                                                  | https://[domain]/[path]
+                                                  |
++-------------------------------------------------|--------------------------------------------------+
+|                                                 |                                                  |
+|                                      +----------v-----------+                                      |
+|                                      |                      |                                      |
+|                                      |    reverse proxy     |                                      |
+|                                      |                      |                                      |
+|                             +--------+  (nginx/apache/...)  +--------+                             |
+|                             |        |                      |        |                             |
+|                             |        +----------+-----------+        |                             |
+|          [path:/occurrences]|                   |                    |[path:/api/]                 |
+|                             |                   |[path:/admin]       |                             |
+|                             |                   |                    |                             |
+|                             |                   |                    |                             |
+|                             |                   |                    |http://localhost:8080/api/   |
+|  +--------------------------v-+   +-------------v--------------+   +-v--------------------------+  |
+|  |                            |   |                            |   |                            |  |
+|  |   occurrences web client   |   |      admin web client      |   |      smalldata server      |  |
+|  |                            |   |                            |   |                            |  |
+|  +----------------------------+   +----------------------------+   +----------------------------+  |
+|                                                                                                    |
++----------------------------------------------------------------------------------------------------+
 #+END_SRC
 
 
 ** Reverse proxy
 
 The reverse proxy needs at least these paths:
-- ~/occurrences~ -> location of the occurrences web client (e.g. ~/var/www/html/occurrences~ on debian based systems)
-- ~/admin~ -> location of the admin web client (e.g. ~/var/www/html/admin~ on debian based systems)
-- ~/api/~ -> proxy pass to where the server runs (e.g. ~http://localhost:8080/~ with the default config)
+- ~/occurrences~ \to location of the occurrences web client (e.g. ~/var/www/html/occurrences~ on debian based systems)
+- ~/admin~ \to location of the admin web client (e.g. ~/var/www/html/admin~ on debian based systems)
+- ~/api/~ \to proxy pass to where the server runs (e.g. ~http://localhost:8080/~ with the default config)
 
 
 *** nginx
@@ -92,7 +89,7 @@ server {
 		try_files $uri $uri/ =404;
 	}
 }
-#+SRC
+#+END SRC
 
 ** Server
 
