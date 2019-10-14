@@ -122,5 +122,7 @@ server {
      3. run ~yarn start~
 
 ** Web clients
+   In the root of ~admin-app~ and ~occurrences-app~ there is package.json file with proxy configuration. Proxy config specifies the URL of server API.
+   http://localhost:8080/ value is good for local development. If you want to run a development server against the non-local instance then update it.
 
-(@Oleg something about that proxy key, how is determined to which server is used for api calls? ...)
+   You can change the port on which development server of each application is running by updating ~.evn~ in the root of the ~*-app~ folder.
