@@ -110,7 +110,7 @@ server {
      3. make sure, in that directory, ~config/config.json~ is right
      4. run ~./gradlew run~
 
-*** Method 3: using yarn (starts all apps)
+*** Method 3: using yarn (starts server and web clients)
 **** prerequisites
      1. ~node~ must be installed latest lts version (10.16.3 or higher)
      2. ~yarn~ must be installed lastest version
