@@ -1,6 +1,8 @@
 package org.obis.smalldata.dbcontroller;
 
-import static org.pmw.tinylog.Logger.*;
+import static org.pmw.tinylog.Logger.error;
+import static org.pmw.tinylog.Logger.info;
+import static org.pmw.tinylog.Logger.warn;
 
 import de.flapdoodle.embed.mongo.MongodExecutable;
 import de.flapdoodle.embed.mongo.MongodProcess;
