@@ -1,63 +1,117 @@
-* smalldata
-** requirement
+* Install
 
-   - install and use [[https://yarnpkg.com/en/][yarn]] package manager for (web) client development
-   - install and use [[https://gradle.org][gradle]] build tool for server development
+The software system is consists of different deployables. Currently, there are 3 deployables, but the system can
+easily be extended:
+1. Server, which has an api that 'speaks dwc'
+2. Admin web client, which can be used to manage users and datasets
+3. Occurrences web client, which is a web client for researchers to add observations ('occurrences')
 
-** server
-*** how to start during dev
+In general to have the software system up and running properly, one should add a reverse proxy (nginx, apache, ...) in front of the three deployables:
 
-the api spec has been split into several files. However, due to some issues with relative paths and reading the specs,
-the different files need to be bundled into 1 spec file before running the server. In the root of the project:
-
-#+BEGIN_SRC shell
-yarn server:bundle-spec
+#+BEGIN_SRC deployment-diagram
+                                              +------------------+
+                                              |                  |
+                                              |  client browser  |
+                                              |                  |
+                                              +--------+---------+
+                                                       |
+                                                       | https://[domain]/[path]
+                                                       |
++---------------------------------------------------------------------------------------------------------+
+|                                                      |                                                  |
+|                                                      |                                                  |
+|                                           +----------v-----------+                                      |
+|                                           |                      |                                      |
+|                                           |    reverse proxy     |                                      |
+|                                           |                      |                                      |
+|                                  +--------+  (nginx/apache/...)  +--------+                             |
+|                                  |        |                      |        |                             |
+|                                  |        +----------+-----------+        |                             |
+|               [path:/occurrences]|                   |                    |[path:/api/]                 |
+|                                  |                   |[path:/admin]       |                             |
+|                                  |                   |                    |                             |
+|                                  |                   |                    |                             |
+|                                  |                   |                    |                             |
+|                                  |                   |                    |http://localhost:8080/api/   |
+|       +--------------------------v-+   +-------------v--------------+   +-v--------------------------+  |
+|       |                            |   |                            |   |                            |  |
+|       |   occurrences web client   |   |      admin web client      |   |      smalldata server      |  |
+|       |                            |   |                            |   |                            |  |
+|       +----------------------------+   +----------------------------+   +----------------------------+  |
+|                                                                                                         |
+|                                                                                                         |
++---------------------------------------------------------------------------------------------------------+
 #+END_SRC
 
-This task can also be set to run before ~./gradlew run~ in your IDE. In intellij:
-1. upper right: drop down of the tasks
-2. ~edit configuration~
-3. ~server[run]~
-4. ~launch before~ (right bottom pane) -- ~+~
-5. ~Run npm script~
-6. choose the right ~package.json~, it's the one in the root of the project
-7. in ~scripts~: ~server:bundle-spec~
+
+** Reverse proxy
+
+The reverse proxy needs at least these paths:
+- ~/occurrences~ -> location of the occurrences web client (e.g. ~/var/www/html/occurrences~ on debian based systems)
+- ~/admin~ -> location of the admin web client (e.g. ~/var/www/html/admin~ on debian based systems)
+- ~/api/~ -> proxy pass to where the server runs (e.g. ~http://localhost:8080/~ with the default config)
 
 
-** occurrences-app
-*** how to start for development
+*** nginx
 
-#+BEGIN_SRC shell
-yarn install
-cd occurrences-app
-yarn start
-#+END_SRC
+An example config for nginx:
 
-*** how to start cosmos
+#+BEGIN_SRC nginx-config
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
 
-#+BEGIN_SRC shell
-yarn install
-cd occurrences-app
-yarn cosmos
-#+END_SRC
+	root /var/www/html;
 
-  - open [[http://localhost:8989]]
+	index index.html index.htm index.nginx-debian.html;
 
-** JWT
+	server_name _;
 
-call ocean expert social login from the web client:
+	location / {
+		proxy_set_header Host $host;
+		proxy_redirect off;
 
-#+BEGIN_SRC shell
-https://oceanexpert.net/socialsignin/?callback=<callback-url>
-#+END_SRC
+		proxy_pass http://localhost:8080/;
+		proxy_set_header X-Real-IP $remote_addr;
+		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+		proxy_set_header X-Forwarded-Host $server_name;
+	}
 
-callback-url will be called with a jwt query parameter, containing the token, e.g., if the callback-url is http://localhost:3000 (e.g. for testing/developing), after login, ocean expert will call http://localhost:3000?jwt=eyJ0eXAiOiJKV1Q...
+	location /api/ {
+		rewrite  ^  $request_uri;
+      		rewrite ^/api/(.*) $1 break;
+        	return 400;
+		proxy_pass http://localhost:8080/api/$uri;
+	}
 
-The validity and claims of the JWT can be parsed using http://jwt.io (contains username, email, profile picture, ...)
+	location /occurrences {
+		try_files $uri $uri/ =404;
+	}
 
-test-account: kurt<dot>sys@moment-4<dot>be / 0ceanexpert
+	location /admin {
+		try_files $uri $uri/ =404;
+	}
+}
+#+SRC
 
-* links
+** Server
 
-   - [[https://github.com/iobis/smalldata/projects/1][github board]]
-   - [[https://zube.io/iobis/smalldata/w/main-workspace/kanban][zube kanban board]]
+*** Method 1: from the server application image
+
+The images of the server are available on http://smalldata.obis.org/images/ :
+1. get the last one
+2. unzip it in the directory you want to install it
+3. make sure the config is ok.
+   - A sample config can be found in [[https://github.com/iobis/smalldata/blob/master/server/config/config.json][the source code]]
+   - check the [[docs/server-config.md][config info]]
+4. run ~./bin/smalldata.server -conf config/config.json~ from the root of the application.
+   - on windows: use ~./bin/smalldata.server.bat -conf config/config.json~
+   - check the config location! You may change the location of the config file
+
+*** Method 2: using gradle
+
+** Web clients
+
+...
+
+
