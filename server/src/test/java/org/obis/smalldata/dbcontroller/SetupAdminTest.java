@@ -26,7 +26,7 @@ public class SetupAdminTest {
   @ParameterizedTest
   @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
   @ValueSource(strings = {"kurt.sys@moment-4.be", "p.provoost@unesco.com"})
-  public void testMainAdmin(String email, Vertx vertx, VertxTestContext testContext) {
+  public void createMainAdminInDemoMode(String email, Vertx vertx, VertxTestContext testContext) {
     vertx.sharedData().getLocalMap("settings").put("mode", "DEMO");
     var port = MONGO_MIN_PORT + new Random().nextInt(65535 - MONGO_MIN_PORT);
     vertx.deployVerticle(
@@ -41,10 +41,12 @@ public class SetupAdminTest {
               new JsonObject().put("emailAddress", email),
               new JsonObject(),
               ar -> {
-                var admin = ar.result();
-                info("ADMIN: {}", admin);
-                assertThat(admin.containsKey("_ref")).isTrue();
-                assertThat(admin.getString("emailAddress")).isEqualTo(email);
+                var admin = ar.result().getMap();
+                info("Actual admin from the DB: {}", admin);
+                assertThat(admin)
+                    .containsKeys("_id", "_ref", "emailAddress", "role")
+                    .containsEntry("emailAddress", email)
+                    .containsEntry("role", "node admin");
                 mongoClient.close();
                 testContext.completeNow();
               });
