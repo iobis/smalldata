@@ -76,8 +76,8 @@ server {
 
 	location /api/ {
 		rewrite  ^  $request_uri;
-      		rewrite ^/api/(.*) $1 break;
-        	return 400;
+    rewrite ^/api/(.*) $1 break;
+    return 400;
 		proxy_pass http://localhost:8080/api/$uri;
 	}
 
