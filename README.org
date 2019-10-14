@@ -1,12 +1,11 @@
 * Install
+  The software system is consists of different deployables. Currently, there are 3 deployables, but the system can easily be extended:
 
-The software system is consists of different deployables. Currently, there are 3 deployables, but the system can
-easily be extended:
-1. Server, which has an api that 'speaks dwc'
-2. Admin web client, which can be used to manage users and datasets
-3. Occurrences web client, which is a web client for researchers to add observations ('occurrences')
+  1. Server, which has an api that 'speaks dwc'
+  2. Admin web client, which can be used to manage users and datasets
+  3. Occurrences web client, which is a web client for researchers to add observations ('occurrences')
 
-In general to have the software system up and running properly, one should add a reverse proxy (nginx, apache, ...) in front of the three deployables:
+  In general to have the software system up and running properly, one should add a reverse proxy (nginx, apache, ...) in front of the three deployables:
 
 #+BEGIN_SRC artist
                                          +------------------+
@@ -41,11 +40,11 @@ In general to have the software system up and running properly, one should add a
 #+END_SRC
 
 ** Reverse proxy
+   The reverse proxy needs at least these paths:
 
-The reverse proxy needs at least these paths:
-- ~/occurrences~ \to location of the occurrences web client (e.g. ~/var/www/html/occurrences~ on debian based systems)
-- ~/admin~ \to location of the admin web client (e.g. ~/var/www/html/admin~ on debian based systems)
-- ~/api/~ \to proxy pass to where the server runs (e.g. ~http://localhost:8080/~ with the default config)
+   - ~/occurrences~ → location of the occurrences web client (e.g. ~/var/www/html/occurrences~ on debian based systems)
+   - ~/admin~ → location of the admin web client (e.g. ~/var/www/html/admin~ on debian based systems)
+   - ~/api/~ → proxy pass to where the server runs (e.g. ~http://localhost:8080/~ with the default config)
 
 *** nginx
 An example config for nginx:
@@ -90,36 +89,37 @@ server {
 
 ** Server
 *** Method 1: from the server application image
+    The images of the server are available on http://smalldata.obis.org/images/
 
-The images of the server are available on http://smalldata.obis.org/images/ :
+    1. get the last one
+    2. unzip it in the directory you want to install it
+    3. make sure the config is ok.
+       - A sample config can be found in [[https://github.com/iobis/smalldata/blob/master/server/config/config.json][the source code]]
+       - check the [[docs/server-config.md][config info]]
+    4. run ~./bin/smalldata.server -conf config/config.json~ from the root of the application.
+       - on windows: use ~./bin/smalldata.server.bat -conf config/config.json~
+       - check the config location! You may change the location of the config file
 
-1. get the last one
-2. unzip it in the directory you want to install it
-3. make sure the config is ok.
-   - A sample config can be found in [[https://github.com/iobis/smalldata/blob/master/server/config/config.json][the source code]]
-   - check the [[docs/server-config.md][config info]]
-4. run ~./bin/smalldata.server -conf config/config.json~ from the root of the application.
-   - on windows: use ~./bin/smalldata.server.bat -conf config/config.json~
-   - check the config location! You may change the location of the config file
+*** Method 2: using gradlew (only starts server without front end)
+**** prerequisites
+     1. Java 11 or higher must be installed on your system
 
-*** Method 2: using gradle
+**** how to start
+     1. clone the sources
+     2. go into the ~server~-directory
+     3. make sure, in that directory, ~config/config.json~ is right
+     4. run ~./gradlew run~
 
-1. prerequisites:
-   1) Java 11 or higher must be installed on your system
-   2) ~gradle~ must be available on your system
-2. clone the sources
-3. go into the ~server~-directory
-4. make sure, in that directory, ~config/config.json~ is right
-5. run ~./gradlew run~
+*** Method 3: using yarn (starts all apps)
+**** prerequisites
+     1. ~node~ must be installed latest lts version (10.16.3 or higher)
+     2. ~yarn~ must be installed lastest version
+     3. Java 11 or higher must be installed on your system
 
-*** Method 3: using yarn and gradle
-
-1. prerequisites:
-   1) ~yarn~ must be available on your system
-   2) Java 11 or higher must be installed on your system
-   3) ~gradle~ must be available on your system
-2. clone the sources
-3. run ~yarn ... ~ (@Oleg: can you complete?)
+**** how to start
+     1. clone the sources
+     2. run ~yarn install~
+     3. run ~yarn start~
 
 ** Web clients
 
