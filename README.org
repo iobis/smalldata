@@ -107,8 +107,25 @@ The images of the server are available on http://smalldata.obis.org/images/ :
 
 *** Method 2: using gradle
 
+0. prerequisites:
+   1. Java 11 or higher must be installed on your system
+   2. ~gradle~ must be available on your system
+1. clone the sources
+2. go into the ~server~-directory
+3. make sure, in that directory, ~config/config.json~ is right
+4. run ~./gradlew run~
+
+*** Method 3: using yarn and gradle
+
+0. prerequisites:
+   1. ~yarn~ must be available on your system
+   2. Java 11 or higher must be installed on your system
+   3. ~gradle~ must be available on your system
+1. clone the sources
+2. run ~yarn ... ~ (@Oleg: can you complete?)
+
 ** Web clients
 
-...
+(@Oleg something about that proxy key, how is determined to which server is used for api calls? ...)
 
 
