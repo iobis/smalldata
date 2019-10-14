@@ -35,7 +35,9 @@ public class DbInitializerTest {
     var port = MONGO_MIN_PORT + new Random().nextInt(65535 - MONGO_MIN_PORT);
     vertx.deployVerticle(
         new StorageModule(),
-        new DeploymentOptions().setConfig(MongoConfigs.ofServer(BIND_IP, port)),
+        new DeploymentOptions()
+            .setConfig(
+                MongoConfigs.ofServer(BIND_IP, port).put("mainAdmin", "kurt.sys@moment-4.be")),
         testContext.succeeding(
             deployId -> {
               mongoClient =
@@ -50,7 +52,6 @@ public class DbInitializerTest {
   }
 
   @Test
-  @Timeout(value = 5, timeUnit = TimeUnit.SECONDS)
   public void checkBulkinessAllNewUsers(VertxTestContext testContext) {
     mongoClient.find(
         Collections.USERS.dbName(),

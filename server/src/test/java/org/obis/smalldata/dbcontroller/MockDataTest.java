@@ -32,7 +32,9 @@ public class MockDataTest {
     vertx.sharedData().getLocalMap("settings").put("mode", "TEST");
     vertx.deployVerticle(
         new StorageModule(),
-        new DeploymentOptions().setConfig(MongoConfigs.ofServer(BIND_IP, PORT)),
+        new DeploymentOptions()
+            .setConfig(
+                MongoConfigs.ofServer(BIND_IP, PORT).put("mainAdmin", "someother@mail.smile")),
         testContext.succeeding(
             deployId -> {
               info("Deployed DB {}", deployId);
@@ -62,7 +64,7 @@ public class MockDataTest {
               "users",
               new JsonObject(),
               ar -> {
-                assertThat(ar.result()).hasSize(2);
+                assertThat(ar.result()).hasSize(3);
                 checks.flag();
               });
           mongoClient.find(

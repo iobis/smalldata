@@ -14,6 +14,7 @@ import de.flapdoodle.embed.mongo.config.Storage;
 import de.flapdoodle.embed.mongo.distribution.Version;
 import de.flapdoodle.embed.process.runtime.Network;
 import io.vertx.core.AbstractVerticle;
+import io.vertx.core.CompositeFuture;
 import io.vertx.core.Future;
 import io.vertx.core.Vertx;
 import io.vertx.ext.mongo.MongoClient;
@@ -38,6 +39,7 @@ public class StorageModule extends AbstractVerticle {
     var port = config().getInteger("port", PORT_DEFAULT);
     var syncDelay = config().getInteger("syncDelay", SYNCDELAY_DEFAULT);
     var path = config().getString("path", "");
+    var mainAdmin = config().getString("mainAdmin");
     try {
       var mongodConfig =
           new MongodConfigBuilder()
@@ -70,14 +72,27 @@ public class StorageModule extends AbstractVerticle {
               if (isDemoMode(vertx)) {
                 dbInitializer
                     .mockData()
-                    .setHandler(arMock -> initializeBulkiness(done, dbInitializer));
+                    .setHandler(arMock -> completeDone(done, dbInitializer, mainAdmin));
               } else {
-                initializeBulkiness(done, dbInitializer);
+                completeDone(done, dbInitializer, mainAdmin);
               }
             });
   }
 
-  private void initializeBulkiness(Future<Void> done, DbInitializer dbInitializer) {
+  private void completeDone(Future<Void> done, DbInitializer dbInitializer, String mainAdmin) {
+    CompositeFuture.all(
+            initializeBulkiness(dbInitializer), initializeNodeAdmins(dbInitializer, mainAdmin))
+        .setHandler(
+            inits -> {
+              if (inits.failed()) {
+                error(inits.cause());
+              }
+              done.complete();
+            });
+  }
+
+  private Future<Void> initializeBulkiness(DbInitializer dbInitializer) {
+    var done = Future.<Void>future();
     dbInitializer
         .initBulkiness()
         .setHandler(
@@ -88,6 +103,11 @@ public class StorageModule extends AbstractVerticle {
                 done.fail("Cannot initialize bulkiness");
               }
             });
+    return done;
+  }
+
+  private Future<Void> initializeNodeAdmins(DbInitializer dbInitializer, String mainAdmin) {
+    return dbInitializer.updateAdmin(mainAdmin);
   }
 
   @Override

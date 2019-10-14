@@ -7,6 +7,7 @@ import io.vertx.core.CompositeFuture;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+import io.vertx.ext.mongo.FindOptions;
 import io.vertx.ext.mongo.IndexOptions;
 import io.vertx.ext.mongo.MongoClient;
 import io.vertx.ext.mongo.UpdateOptions;
@@ -19,6 +20,7 @@ import java.util.stream.Collectors;
 import org.obis.smalldata.util.BulkOperationUtil;
 import org.obis.smalldata.util.Collections;
 import org.obis.smalldata.util.DbUtils;
+import org.obis.smalldata.util.UniqueIdGenerator;
 import org.obis.util.file.IoFile;
 
 public class DbInitializer {
@@ -46,6 +48,35 @@ public class DbInitializer {
           setup.complete(arCollections.succeeded());
         });
     return setup;
+  }
+
+  Future<Void> updateAdmin(String mainAdmin) {
+    var done = Future.<Void>future();
+    if (null == mainAdmin) {
+      done.fail("No main admin set!");
+    } else {
+      new UniqueIdGenerator(client)
+          .consumeNewId(
+              Collections.USERS.dbName(),
+              "_ref",
+              newRef -> {
+                client.findOneAndUpdateWithOptions(
+                    Collections.USERS.dbName(),
+                    new JsonObject().put("emailAddress", mainAdmin),
+                    new JsonObject()
+                        .put("$set", new JsonObject().put("role", "node admin"))
+                        .put(
+                            "$setOnInsert",
+                            new JsonObject().put("emailAddress", mainAdmin).put("_ref", newRef)),
+                    new FindOptions(),
+                    new UpdateOptions().setUpsert(true),
+                    ar -> {
+                      info("Added admin: {}", ar);
+                      done.complete();
+                    });
+              });
+    }
+    return done;
   }
 
   Future<Boolean> mockData() {
