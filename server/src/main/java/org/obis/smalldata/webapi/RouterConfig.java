@@ -61,9 +61,7 @@ class RouterConfig {
             Map.entry("login", new OperationHandlers(LoginHandler::login)),
             Map.entry("getStatus", new OperationHandlers(StatusHandler::status)),
             Map.entry("getRss", new OperationHandlers(RssHandler::fetch)),
-            Map.entry(
-                "getDWCA",
-                new OperationHandlers(protectHandler(DwcaHandler::get, researcherAccess))),
+            Map.entry("getDWCA", new OperationHandlers(DwcaHandler::get)),
             Map.entry(
                 "getDWCARecord",
                 new OperationHandlers(protectHandler(DwcaRecordsHandler::get, researcherAccess))),

@@ -620,6 +620,7 @@ paths:
     get:
       summary: get dwca zip
       operationId: getDWCA
+      security: []
       parameters:
         - name: datasetRef
           in: path
@@ -666,6 +667,7 @@ paths:
     get:
       summary: rss feed
       operationId: getRss
+      security: []
       parameters:
         - name: periodicity
           in: path
