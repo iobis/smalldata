@@ -89,7 +89,7 @@ server {
 		try_files $uri $uri/ =404;
 	}
 }
-#+END SRC
+#+END_SRC
 
 ** Server
 
