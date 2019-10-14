@@ -47,7 +47,7 @@
    - ~/api/~ → proxy pass to where the server runs (e.g. ~http://localhost:8080/~ with the default config)
 
 *** nginx
-An example config for nginx:
+    An example config for nginx:
 
 #+BEGIN_SRC conf
 server {
