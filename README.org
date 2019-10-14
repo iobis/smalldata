@@ -50,10 +50,9 @@ The reverse proxy needs at least these paths:
 
 
 *** nginx
-
 An example config for nginx:
 
-#+BEGIN_SRC nginx-config
+#+BEGIN_SRC conf
 server {
 	listen 80 default_server;
 	listen [::]:80 default_server;
