@@ -1,8 +1,6 @@
 package org.obis.smalldata.dbcontroller;
 
-import static org.pmw.tinylog.Logger.error;
-import static org.pmw.tinylog.Logger.info;
-import static org.pmw.tinylog.Logger.warn;
+import static org.pmw.tinylog.Logger.*;
 
 import de.flapdoodle.embed.mongo.MongodExecutable;
 import de.flapdoodle.embed.mongo.MongodProcess;
@@ -14,12 +12,14 @@ import de.flapdoodle.embed.mongo.config.Storage;
 import de.flapdoodle.embed.mongo.distribution.Version;
 import de.flapdoodle.embed.process.runtime.Network;
 import io.vertx.core.AbstractVerticle;
+import io.vertx.core.CompositeFuture;
 import io.vertx.core.Future;
 import io.vertx.core.Vertx;
 import io.vertx.ext.mongo.MongoClient;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import lombok.val;
 
 public class StorageModule extends AbstractVerticle {
   private static final MongodStarter MONGOD_STARTER = MongodStarter.getDefaultInstance();
@@ -38,6 +38,7 @@ public class StorageModule extends AbstractVerticle {
     var port = config().getInteger("port", PORT_DEFAULT);
     var syncDelay = config().getInteger("syncDelay", SYNCDELAY_DEFAULT);
     var path = config().getString("path", "");
+    val mainAdmin = config().getString("mainAdmin");
     try {
       var mongodConfig =
           new MongodConfigBuilder()
@@ -70,14 +71,28 @@ public class StorageModule extends AbstractVerticle {
               if (isDemoMode(vertx)) {
                 dbInitializer
                     .mockData()
-                    .setHandler(arMock -> initializeBulkiness(done, dbInitializer));
+                    .setHandler(arMock -> completeDone(done, dbInitializer, mainAdmin));
               } else {
-                initializeBulkiness(done, dbInitializer);
+                completeDone(done, dbInitializer, mainAdmin);
               }
             });
   }
 
-  private void initializeBulkiness(Future<Void> done, DbInitializer dbInitializer) {
+  @SuppressWarnings("PMD.UnusedPrivateMethod")
+  private void completeDone(Future<Void> done, DbInitializer dbInitializer, String mainAdmin) {
+    CompositeFuture.all(
+            initializeBulkiness(dbInitializer), initializeNodeAdmins(dbInitializer, mainAdmin))
+        .setHandler(
+            inits -> {
+              if (inits.failed()) {
+                error(inits.cause());
+              }
+              done.complete();
+            });
+  }
+
+  private Future<Void> initializeBulkiness(DbInitializer dbInitializer) {
+    var done = Future.<Void>future();
     dbInitializer
         .initBulkiness()
         .setHandler(
@@ -88,6 +103,11 @@ public class StorageModule extends AbstractVerticle {
                 done.fail("Cannot initialize bulkiness");
               }
             });
+    return done;
+  }
+
+  private Future<Void> initializeNodeAdmins(DbInitializer dbInitializer, String mainAdmin) {
+    return dbInitializer.updateAdmin(mainAdmin);
   }
 
   @Override

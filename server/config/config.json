@@ -12,7 +12,8 @@
   "storage": {
     "bindIp": "localhost",
     "port": 27017,
-    "path": ""
+    "path": "",
+    "mainAdmin": "kurt.sys@moment-4.be"
   },
   "user": {
     "bulkiness": {
