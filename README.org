@@ -126,3 +126,7 @@ server {
    http://localhost:8080/ value is good for local development. If you want to run a development server against the non-local instance then update it.
 
    You can change the port on which development server of each application is running by updating ~.evn~ in the root of the ~*-app~ folder.
+
+   - use ~admin-app:start~ to start admin app
+   - use ~occurrences-app:start~ to start occurence app
+   - use ~start~ to start admin-app, occurrence-app and the server
