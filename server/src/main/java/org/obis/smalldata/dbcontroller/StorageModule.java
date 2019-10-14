@@ -21,7 +21,6 @@ import io.vertx.ext.mongo.MongoClient;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import lombok.val;
 
 public class StorageModule extends AbstractVerticle {
   private static final MongodStarter MONGOD_STARTER = MongodStarter.getDefaultInstance();
@@ -40,7 +39,7 @@ public class StorageModule extends AbstractVerticle {
     var port = config().getInteger("port", PORT_DEFAULT);
     var syncDelay = config().getInteger("syncDelay", SYNCDELAY_DEFAULT);
     var path = config().getString("path", "");
-    val mainAdmin = config().getString("mainAdmin");
+    var mainAdmin = config().getString("mainAdmin");
     try {
       var mongodConfig =
           new MongodConfigBuilder()
