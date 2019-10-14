@@ -8,7 +8,7 @@ easily be extended:
 
 In general to have the software system up and running properly, one should add a reverse proxy (nginx, apache, ...) in front of the three deployables:
 
-#+BEGIN_SRC deployment-diagram
+#+BEGIN_SRC artist
                                          +------------------+
                                          |                  |
                                          |  client browser  |
@@ -39,7 +39,6 @@ In general to have the software system up and running properly, one should add a
 |                                                                                                    |
 +----------------------------------------------------------------------------------------------------+
 #+END_SRC
-
 
 ** Reverse proxy
 
