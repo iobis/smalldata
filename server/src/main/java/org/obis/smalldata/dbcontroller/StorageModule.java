@@ -80,7 +80,6 @@ public class StorageModule extends AbstractVerticle {
             });
   }
 
-  @SuppressWarnings("PMD.UnusedPrivateMethod")
   private void completeDone(Future<Void> done, DbInitializer dbInitializer, String mainAdmin) {
     CompositeFuture.all(
             initializeBulkiness(dbInitializer), initializeNodeAdmins(dbInitializer, mainAdmin))
