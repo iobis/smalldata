@@ -120,3 +120,14 @@ server {
      1. clone the sources
      2. run ~yarn install~
      3. run ~yarn start~
+
+** Web clients
+   If backend server is located on a different server then you need to update ~apiRoot~ in the index.html of a corresponding web application
+
+#+BEGIN_SRC html
+<script type="text/javascript">
+  window.smalldata = {
+   apiRoot: '/api/'
+  }
+</script>
+#+END_SRC
