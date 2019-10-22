@@ -1,0 +1,9 @@
+.git
+.dockerignore
+Dockerfile
+.idea/
+node_modules
+*/node_modules
+*/build
+server/.gradle
+server/out
