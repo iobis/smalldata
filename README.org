@@ -142,10 +142,12 @@ server {
 
 *** Installing a web client
 
-    After a web client has been built, installing is just making a copy in the right directory, usually something like:
+    After a web client has been built, installing is just making a copy in the right directory, e.g.:
 
-    ~/var/www/html/admin~ and ~/var/www/html/occurrences~ for the admin and occurrences respectively. The location
-    should match the one that's configured in your reverse proxy (e.g. nginx, Apache, ...).
+    * ~cp -r ./occurrences-app/build/* /var/www/html/occurrences~
+    * ~cp -r ./admin-app/build/* /var/www/html/admin~
+
+    The location should match the one that's configured in your reverse proxy (e.g. nginx, Apache, ...).
 
     If backend server is located on a different server, or you want to configure a different path than ~/api~ for
     api calls then you need to update ~apiRoot~ in the ~index.html~ of the corresponding web application. This can
