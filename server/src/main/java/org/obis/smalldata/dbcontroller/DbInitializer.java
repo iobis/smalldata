@@ -59,22 +59,28 @@ public class DbInitializer {
           .consumeNewId(
               Collections.USERS.dbName(),
               "_ref",
-              newRef -> {
-                client.findOneAndUpdateWithOptions(
-                    Collections.USERS.dbName(),
-                    new JsonObject().put("emailAddress", mainAdmin),
-                    new JsonObject()
-                        .put("$set", new JsonObject().put("role", "node admin"))
-                        .put(
-                            "$setOnInsert",
-                            new JsonObject().put("emailAddress", mainAdmin).put("_ref", newRef)),
-                    new FindOptions(),
-                    new UpdateOptions().setUpsert(true),
-                    ar -> {
-                      info("Added admin: {}", ar);
-                      done.complete();
-                    });
-              });
+              newRef ->
+                  client.findOneAndUpdateWithOptions(
+                      Collections.USERS.dbName(),
+                      new JsonObject().put("emailAddress", mainAdmin),
+                      new JsonObject()
+                          .put("$set", new JsonObject().put("role", "node admin"))
+                          .put(
+                              "$setOnInsert",
+                              new JsonObject()
+                                  .put("emailAddress", mainAdmin)
+                                  .put("_ref", newRef)
+                                  .put(
+                                      KEY_BULKINESS,
+                                      new JsonObject()
+                                          .put("instant", Instant.now())
+                                          .put("value", 0.0))),
+                      new FindOptions(),
+                      new UpdateOptions().setUpsert(true),
+                      ar -> {
+                        info("Added admin: {}", ar);
+                        done.complete();
+                      }));
     }
     return done;
   }
