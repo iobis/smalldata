@@ -131,8 +131,8 @@ server {
 *** Building a web client
     The `occurences` and `admin` web client can be build by running a yarn job on the source repository:
 
-    * `yarn occurrences-app:build`
-    * `yarn adkmin-app:build`
+    * ~yarn occurrences-app:build~
+    * ~yarn adkmin-app:build~
 
     The ~homepage~ key in ~package.json~ is necessary so the app knows on which path on the server it resides. This
      configuration must be set before making a build. For more information about the ~homepage~ key:
