@@ -157,8 +157,8 @@ server {
     #+BEGIN_SRC html
     <script type="text/javascript">
       window.smalldata = {
-      apiRoot: '/api/'
-    }
+        apiRoot: '/api/'
+      }
     </script>
     #+END_SRC
 
