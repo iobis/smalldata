@@ -117,7 +117,7 @@ Mongodb parameter to flush dirty in-memory pages to the disk. This usually shoul
 
 ### `"mainAdmin" = "kurt.sys@moment-4.be"`
 
-The first admin user to add to the db. On a fresh install, without any database, nobody is allowed to login. On startup, the user with this emailaddress will automatically have the role of node admin.
+The first admin user to add to the db. On a fresh install, without any database, nobody is allowed to login. On startup, the user with this emailaddress will automatically have the role of node manager.
 
 ## `user` module
 

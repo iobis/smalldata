@@ -46,7 +46,7 @@ public class SetupAdminTest {
                 assertThat(admin)
                     .containsKeys("_id", "_ref", "emailAddress", "role")
                     .containsEntry("emailAddress", email)
-                    .containsEntry("role", "node admin");
+                    .containsEntry("role", "node manager");
                 mongoClient.close();
                 testContext.completeNow();
               });

@@ -64,7 +64,7 @@ public class DbInitializer {
                       Collections.USERS.dbName(),
                       new JsonObject().put("emailAddress", mainAdmin),
                       new JsonObject()
-                          .put("$set", new JsonObject().put("role", "node admin"))
+                          .put("$set", new JsonObject().put("role", "node manager"))
                           .put(
                               "$setOnInsert",
                               new JsonObject()
