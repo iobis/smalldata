@@ -1,11 +1,12 @@
 * Install
-  The software system is consists of different deployables. Currently, there are 3 deployables, but the system can easily be extended:
+** Overview
+   The software system is consists of different deployables. Currently, there are 3 deployables, but the system can easily be extended:
 
-  1. Server, which has an api that 'speaks dwc'
-  2. Admin web client, which can be used to manage users and datasets
-  3. Occurrences web client, which is a web client for researchers to add observations ('occurrences')
+   1. Server, which has an api that 'speaks dwc'
+   2. Admin web client, which can be used to manage users and datasets
+   3. Occurrences web client, which is a web client for researchers to add observations ('occurrences')
 
-  In general to have the software system up and running properly, one should add a reverse proxy (nginx, apache, ...) in front of the three deployables:
+   In general to have the software system up and running properly, one should add a reverse proxy (nginx, apache, ...) in front of the three deployables:
 
 #+BEGIN_SRC artist
                                          +------------------+
