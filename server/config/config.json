@@ -28,5 +28,5 @@
   },
   "dataset": {},
   "mode": "DEMO",
-  "baseUrl" : "localhost:8080"
+  "baseUrl": "localhost:8080"
 }
