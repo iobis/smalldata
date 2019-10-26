@@ -136,7 +136,7 @@ server {
 
     The ~homepage~ key in ~package.json~ is necessary so the app knows on which path on the server it resides.
     This configuration must be set before making a build. For more information about the ~homepage~ key:
-    - https://create-react-app.dev/docs/deployment/\#building-for-relative-paths
+    - https://create-react-app.dev/docs/deployment/#building-for-relative-paths
     - https://medium.com/@svinkle/how-to-deploy-a-react-app-to-a-subdirectory-f694d46427c1
 
     The ~proxy~ key is not used for final builds. It is used for development (running ~yarn run~).
