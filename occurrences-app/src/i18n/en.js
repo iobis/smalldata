@@ -34,7 +34,9 @@ export default {
     occurrenceForm: {
       occurrenceNotSupported: {
         message:     'Not able to process occurrence. Most likely it was created by external system.',
-        linkMessage: 'Return to occurrences page.'
+        linkMessage: 'Return to occurrences page.',
+        hideDetails: 'Hide details',
+        showDetails: 'Show details'
       },
       copyPreviousStep:       'copy data from previous entry',
       reviewAndSubmitButton:  'Review & Submit',

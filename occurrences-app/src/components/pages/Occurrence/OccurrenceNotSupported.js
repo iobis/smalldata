@@ -6,7 +6,9 @@ import { useTranslation } from 'react-i18next'
 export default function OccurrenceNotSupported({ dwca, exception }) {
   const { t } = useTranslation()
   const [detailsVisible, setDetailsVisible] = useState(false)
-  const toggleLabel = detailsVisible ? 'Hide details' : 'Show details'
+  const toggleLabel = detailsVisible
+    ? t('occurrenceForm.occurrenceNotSupported.hideDetails')
+    : t('occurrenceForm.occurrenceNotSupported.showDetails')
 
   return (
     <section className="occurrence-not-supported section">
