@@ -7284,77 +7284,10 @@ exports[`OccurrenceForm when updating not supported occurrence renders correctly
   <OccurrenceNotSupported
     dwca={
       Object {
-        "addedAtInstant": null,
-        "dataset": "ntDOtUc7XsRrIus",
-        "dwcRecords": Object {
-          "core": "occurrence",
-          "emof": Array [
-            Object {
-              "id": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796",
-              "iobis": Object {
-                "measurementUnitID": "http://vocab.nerc.ac.uk/collection/P06/current/UGMS/",
-              },
-              "purl": Object {},
-              "tdwg": Object {
-                "measurementType": "biomass",
-                "measurementUnit": "g/m2",
-                "measurementValue": "18.6",
-                "occurrenceID": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796",
-              },
-            },
-            Object {
-              "id": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796",
-              "iobis": Object {
-                "measurementTypeID": "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL02/",
-              },
-              "purl": Object {},
-              "tdwg": Object {
-                "measurementType": "individualcount",
-                "measurementUnit": "ind/m2",
-                "measurementValue": "1940",
-                "occurrenceID": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796",
-              },
-            },
-          ],
-          "occurrence": Array [
-            Object {
-              "id": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796",
-              "iobis": Object {},
-              "purl": Object {
-                "modified": "2017-08-04 12:04:57",
-              },
-              "tdwg": Object {
-                "basisOfRecord": "HumanObservation",
-                "catalogNumber": "IBSS_Benthos_1935_530",
-                "collectionCode": "R/V N. Danilevskiy 1935 Azov Sea benthos data",
-                "continent": "Black Sea",
-                "datasetID": "IMIS:dasid:4376",
-                "day": 18,
-                "decimalLatitude": 46.43,
-                "decimalLongitude": 36.2,
-                "eventDate": "1935-10-18",
-                "fieldNumber": "563",
-                "geodeticDatum": "EPSG:4326",
-                "institutionCode": "IBSS",
-                "locality": "Azov Sea",
-                "maximumDepthInMeters": 7.5,
-                "minimumDepthInMeters": 7,
-                "month": 10,
-                "occurrenceID": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796",
-                "occurrenceStatus": "present",
-                "samplingEffort": "Ind/m²",
-                "scientificName": "Nereis succinea",
-                "scientificNameAuthorship": "(Leuckart)",
-                "scientificNameID": "urn:lsid:marinespecies.org:taxname:155187",
-                "year": 1935,
-              },
-            },
-          ],
-        },
-        "dwcaId": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796",
+        "message": "I am not supported",
       }
     }
-    exception={[TypeError: Cannot read property 'units' of undefined]}
+    exception={[TypeError: Cannot read property 'occurrence' of undefined]}
   >
     <section
       className="occurrence-not-supported section"
