@@ -1,5 +1,9 @@
 import * as SmalldataConverters from './SmalldataConverters'
-import { getDatasetDefaultResponse, getDefaultDwcaResponse } from './SmalldataClient.mock'
+import {
+  getDatasetDefaultResponse,
+  getDatasetWithMissingUnitsInformation,
+  getDefaultDwcaResponse
+} from './SmalldataClient.mock'
 import deepExtend from 'deep-extend'
 
 describe('SmalldataConverters', () => {
@@ -87,6 +91,20 @@ describe('SmalldataConverters', () => {
 
     it('returns empty array when measurements not present', () => {
       expect(SmalldataConverters.mapDwcaToMeasurements({})).toEqual([])
+    })
+
+    it('returns empty array when units are missing', () => {
+      expect(SmalldataConverters.mapDwcaToMeasurements(getDatasetWithMissingUnitsInformation())).toEqual([{
+        type:  'biomass',
+        unit:  'g/m2',
+        units: [],
+        value: '0.7'
+      }, {
+        type:  'individualcount',
+        unit:  'ind/m2',
+        units: [],
+        value: '5'
+      }])
     })
   })
 

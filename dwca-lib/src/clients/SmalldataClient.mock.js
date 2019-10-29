@@ -420,6 +420,79 @@ export function getUsersDefaultResponse() {
   }]
 }
 
+export function getDatasetWithMissingUnitsInformation() {
+  return {
+    'dwcaId':         'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158',
+    'dataset':        'ntDOtUc7XsRrIus',
+    'addedAtInstant': null,
+    'dwcRecords':     {
+      'emof':       [
+        {
+          'purl':  {},
+          'iobis': {
+            'measurementUnitID': 'http://vocab.nerc.ac.uk/collection/P06/current/UGMS/'
+          },
+          'id':    'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158',
+          'tdwg':  {
+            'measurementValue': '0.7',
+            'measurementType':  'biomass',
+            'occurrenceID':     'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158',
+            'measurementUnit':  'g/m2'
+          }
+        },
+        {
+          'purl':  {},
+          'iobis': {
+            'measurementTypeID': 'http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL02/'
+          },
+          'id':    'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158',
+          'tdwg':  {
+            'measurementValue': '5',
+            'measurementType':  'individualcount',
+            'occurrenceID':     'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158',
+            'measurementUnit':  'ind/m2'
+          }
+        }
+      ],
+      'core':       'occurrence',
+      'occurrence': [
+        {
+          'purl':  {
+            'modified': '2017-08-04 12:04:57'
+          },
+          'iobis': {},
+          'id':    'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158',
+          'tdwg':  {
+            'continent':                'Black Sea',
+            'scientificNameID':         'urn:lsid:marinespecies.org:taxname:452043',
+            'year':                     1935,
+            'scientificName':           'Brachynotus lucasi',
+            'scientificNameAuthorship': '(M. Edw.)',
+            'samplingEffort':           'Ind/m²',
+            'locality':                 'Azov Sea',
+            'fieldNumber':              '567',
+            'decimalLongitude':         36.2,
+            'collectionCode':           'R/V N. Danilevskiy 1935 Azov Sea benthos data',
+            'decimalLatitude':          46.32,
+            'geodeticDatum':            'EPSG:4326',
+            'occurrenceID':             'IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158',
+            'minimumDepthInMeters':     7,
+            'catalogNumber':            'IBSS_Benthos_1935_1229',
+            'occurrenceStatus':         'present',
+            'basisOfRecord':            'HumanObservation',
+            'month':                    10,
+            'institutionCode':          'IBSS',
+            'datasetID':                'IMIS:dasid:4376',
+            'maximumDepthInMeters':     7.2,
+            'day':                      18,
+            'eventDate':                '1935-10-18'
+          }
+        }
+      ]
+    }
+  }
+}
+
 function renameRefToId({ ref, ...rest }) {
   return ({ id: ref, ...rest })
 }

@@ -76,5 +76,5 @@ export function findTypeAndUnitIdByNames(typeName, unitName) {
 export function findUnitsByTypeId(typeId) {
   const measurement = [...getGeneralMeasurements(), ...getSpecificMeasurements()]
     .find(measurment => measurment.typeId === typeId)
-  return measurement.units
+  return measurement ? measurement.units : []
 }
