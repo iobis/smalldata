@@ -1,10 +1,16 @@
 .occurrence-not-supported {
   .main-message {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .exception-message {
+    margin-top: 1rem;
     margin-bottom: 1rem;
   }
 
   pre {
-    padding-top: 1rem;
-    max-height: 20rem;
+    max-height: 30rem;
   }
 }

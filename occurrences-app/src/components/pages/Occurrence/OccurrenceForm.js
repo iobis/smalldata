@@ -73,9 +73,8 @@ export default function OccurrenceForm({ location }) {
         setMeasurements(measurements)
         setDarwinCoreFields(darwinCoreFields)
         setAction(location.state.action === 'update' ? 'update' : 'create')
-      } catch (e) {
-        console.error(t('occurrenceForm.occurrenceNotSupported.message'), '\n', e)
-        setOccurrenceNotSupportedDetails({ dwca })
+      } catch (exception) {
+        setOccurrenceNotSupportedDetails({ dwca, exception })
         setOccurrenceSupported(false)
       }
     }
