@@ -7380,9 +7380,10 @@ exports[`OccurrenceForm when updating not supported occurrence renders correctly
           </div>
           <div>
             <button
+              className="button is-danger is-inverted"
               onClick={[Function]}
             >
-              Show details
+              occurrenceForm.occurrenceNotSupported.showDetails
             </button>
           </div>
         </div>

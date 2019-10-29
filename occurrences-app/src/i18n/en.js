@@ -33,10 +33,11 @@ export default {
     },
     occurrenceForm: {
       occurrenceNotSupported: {
-        message:     'Not able to process occurrence. Most likely it was created by external system.',
-        linkMessage: 'Return to occurrences page.',
-        hideDetails: 'Hide details',
-        showDetails: 'Show details'
+        exceptionMessage: '{{message}} of dwca object',
+        hideDetails:      'Hide details',
+        linkMessage:      'Return to occurrences page.',
+        message:          'Not able to process occurrence. Most likely it was created by external system.',
+        showDetails:      'Show details'
       },
       copyPreviousStep:       'copy data from previous entry',
       reviewAndSubmitButton:  'Review & Submit',

@@ -19,13 +19,17 @@ export default function OccurrenceNotSupported({ dwca, exception }) {
             <Link to="/input-data/">{t('occurrenceForm.occurrenceNotSupported.linkMessage')}</Link>
           </div>
           <div>
-            <button onClick={() => setDetailsVisible(!detailsVisible)}>{toggleLabel}</button>
+            <button
+              className="button is-danger is-inverted"
+              onClick={() => setDetailsVisible(!detailsVisible)}>
+              {toggleLabel}
+            </button>
           </div>
         </div>
         {detailsVisible && (
           <div>
             <div className="exception-message">
-              {exception.message} of dwca object
+              {t('occurrenceForm.occurrenceNotSupported.exceptionMessage', { message: exception.message })}
             </div>
             <pre className="dwca-object">
               {JSON.stringify(dwca, null, 2)}
