@@ -1,15 +1,16 @@
 import ActiveStepHeader from '@smalldata/dwca-lib/src/components/StepHeaders/ActiveStepHeader'
 import ConfirmedStepHeader from '@smalldata/dwca-lib/src/components/StepHeaders/ConfirmedStepHeader'
 import DarwinCoreFields from './DarwinCoreFields/DarwinCoreFields'
+import Dataset from './Dataset/Dataset'
 import FinalSummary from './FinalSummary/FinalSummary'
 import LocationData from './LocationData/LocationData'
 import MeasurementOrFact from './MeasurementOrFact/MeasurementOrFact'
 import NotConfirmedStepHeader from '@smalldata/dwca-lib/src/components/StepHeaders/NotConfirmedStepHeader'
 import ObservationData from './ObservationData/ObservationData'
 import OccurrenceData from './OccurrenceData/OccurrenceData'
+import OccurrenceNotSupported from './OccurrenceNotSupported'
 import PropTypes from 'prop-types'
 import React, { useContext, useEffect, useState } from 'react'
-import Dataset from './Dataset/Dataset'
 import { format } from 'date-fns'
 import {
   datasetTitleOf,
@@ -27,7 +28,6 @@ import {
   updateOccurrence
 } from '@smalldata/dwca-lib/src/clients/SmalldataClient'
 import { AuthContext } from '@smalldata/dwca-lib'
-import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
 export default function OccurrenceForm({ location }) {
@@ -48,16 +48,18 @@ export default function OccurrenceForm({ location }) {
   const [activeStepIndex, setActiveStepIndex] = useState(0)
   const [finalSummaryVisible, setFinalSummaryVisible] = useState(false)
   const [occurrenceSupported, setOccurrenceSupported] = useState(true)
+  const [occurrenceNotSupportedDetails, setOccurrenceNotSupportedDetails] = useState('')
 
   useEffect(() => {
     const fetchOccurrence = async() => {
+      const dwca = await getOccurrence({
+        datasetId: location.state.datasetId,
+        dwcaId:    location.state.dwcaId,
+        userRef
+      })
+      const datasets = await getDatasets()
+
       try {
-        const dwca = await getOccurrence({
-          datasetId: location.state.datasetId,
-          dwcaId:    location.state.dwcaId,
-          userRef
-        })
-        const datasets = await getDatasets()
         const dataset = datasets.find(d => d.id === dwca.dataset)
         const occurrence = mapDwcaToOccurrenceData(dwca)
         const locationData = mapDwcaToLocationData(dwca)
@@ -71,7 +73,8 @@ export default function OccurrenceForm({ location }) {
         setMeasurements(measurements)
         setDarwinCoreFields(darwinCoreFields)
         setAction(location.state.action === 'update' ? 'update' : 'create')
-      } catch (e) {
+      } catch (exception) {
+        setOccurrenceNotSupportedDetails({ dwca, exception })
         setOccurrenceSupported(false)
       }
     }
@@ -237,14 +240,7 @@ export default function OccurrenceForm({ location }) {
         onChange={setDarwinCoreFields}/>
   }]
 
-  if (!occurrenceSupported) return (
-    <section className="section">
-      <div className="occurrence-not-supported notification is-danger">
-        {t('occurrenceForm.occurrenceNotSupported.message')}
-        <Link to="/input-data/">{t('occurrenceForm.occurrenceNotSupported.linkMessage')}</Link>
-      </div>
-    </section>
-  )
+  if (!occurrenceSupported) return <OccurrenceNotSupported {...occurrenceNotSupportedDetails}/>
   return (
     <section className="section">
       {steps.map((step, index) => {

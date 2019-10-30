@@ -7281,25 +7281,48 @@ exports[`OccurrenceForm when updating not supported occurrence renders correctly
     }
   }
 >
-  <section
-    className="section"
+  <OccurrenceNotSupported
+    dwca={
+      Object {
+        "message": "I am not supported",
+      }
+    }
+    exception={[TypeError: Cannot read property 'occurrence' of undefined]}
   >
-    <div
-      className="occurrence-not-supported notification is-danger"
+    <section
+      className="occurrence-not-supported section"
     >
-      occurrenceForm.occurrenceNotSupported.message
-      <Link
-        to="/input-data/"
+      <div
+        className="notification is-danger"
       >
-        <a
-          href="/input-data/"
-          onClick={[Function]}
+        <div
+          className="main-message"
         >
-          occurrenceForm.occurrenceNotSupported.linkMessage
-        </a>
-      </Link>
-    </div>
-  </section>
+          <div>
+            occurrenceForm.occurrenceNotSupported.message
+            <Link
+              to="/input-data/"
+            >
+              <a
+                href="/input-data/"
+                onClick={[Function]}
+              >
+                occurrenceForm.occurrenceNotSupported.linkMessage
+              </a>
+            </Link>
+          </div>
+          <div>
+            <button
+              className="button is-danger is-inverted"
+              onClick={[Function]}
+            >
+              occurrenceForm.occurrenceNotSupported.showDetails
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </OccurrenceNotSupported>
 </OccurrenceForm>
 `;
 

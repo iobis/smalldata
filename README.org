@@ -1,11 +1,12 @@
 * Install
-  The software system is consists of different deployables. Currently, there are 3 deployables, but the system can easily be extended:
+** Overview
+   The software system is consists of different deployables. Currently, there are 3 deployables, but the system can easily be extended:
 
-  1. Server, which has an api that 'speaks dwc'
-  2. Admin web client, which can be used to manage users and datasets
-  3. Occurrences web client, which is a web client for researchers to add observations ('occurrences')
+   1. Server, which has an api that 'speaks dwc'
+   2. Admin web client, which can be used to manage users and datasets
+   3. Occurrences web client, which is a web client for researchers to add observations ('occurrences')
 
-  In general to have the software system up and running properly, one should add a reverse proxy (nginx, apache, ...) in front of the three deployables:
+   In general to have the software system up and running properly, one should add a reverse proxy (nginx, apache, ...) in front of the three deployables:
 
 #+BEGIN_SRC artist
                                          +------------------+
@@ -124,28 +125,27 @@ server {
 ** Web clients
 
 *** prerequisites
-     1. ~node~ must be installed latest lts version (10.16.3 or higher)
-     2. ~yarn~ must be installed lastest version
+    1. ~node~ must be installed latest lts version (10.16.3 or higher)
+    2. ~yarn~ must be installed lastest version
 
 *** Building a web client
-    The `occurences` and `admin` web client can be build by running a yarn job on the source repository:
+    The *occurences* and *admin* web client can be build by running a yarn job on the source repository:
 
-    * ~yarn occurrences-app:build~
-    * ~yarn admin-app:build~
+    - ~yarn occurrences-app:build~
+    - ~yarn admin-app:build~
 
-    The ~homepage~ key in ~package.json~ is necessary so the app knows on which path on the server it resides. This
-     configuration must be set before making a build. For more information about the ~homepage~ key:
-     * https://create-react-app.dev/docs/deployment/\#building-for-relative-paths
-     * https://medium.com/@svinkle/how-to-deploy-a-react-app-to-a-subdirectory-f694d46427c1
+    The ~homepage~ key in ~package.json~ is necessary so the app knows on which path on the server it resides.
+    This configuration must be set before making a build. For more information about the ~homepage~ key:
+    - https://create-react-app.dev/docs/deployment/#building-for-relative-paths
+    - https://medium.com/@svinkle/how-to-deploy-a-react-app-to-a-subdirectory-f694d46427c1
 
     The ~proxy~ key is not used for final builds. It is used for development (running ~yarn run~).
 
 *** Installing a web client
-
     After a web client has been built, installing is just making a copy in the right directory, e.g.:
 
-    * ~cp -r ./occurrences-app/build/* /var/www/html/occurrences~
-    * ~cp -r ./admin-app/build/* /var/www/html/admin~
+    - ~cp -r ./occurrences-app/build/* /var/www/html/occurrences~
+    - ~cp -r ./admin-app/build/* /var/www/html/admin~
 
     The location should match the one that's configured in your reverse proxy (e.g. nginx, Apache, ...).
 
@@ -160,4 +160,3 @@ server {
       }
     </script>
     #+END_SRC
-
