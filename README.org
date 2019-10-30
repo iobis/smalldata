@@ -102,8 +102,7 @@ server {
 
 *** Method 2: using gradlew (only starts server without front end)
 **** prerequisites
-     1. Java 11 or higher must be installed
-     2. ~gradle~ must be installed (5.x or higher)
+     Java 11 or higher must be installed
 
 **** how to start
      1. clone the sources
