@@ -22,6 +22,7 @@ export default function ActiveStepHeader({
         dataDescription=""
         iconVisible={false}
         onStepTitleClick={onStepTitleClick}
+        scrollOnRender={true}
         selectedData=""
         stepDescription={stepDescription}
         stepTitle={stepTitle}>
