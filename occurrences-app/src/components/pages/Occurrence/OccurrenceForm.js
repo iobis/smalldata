@@ -360,10 +360,10 @@ function createInitialState() {
       basisOfRecord:    'humanObservation',
       beginDate:        Date.now(),
       endDate:          null,
-      lifeStage:        'larva',
+      lifeStage:        'unspecified',
       occurrenceStatus: 'present',
       scientificName:   '',
-      sex:              'male'
+      sex:              'unspecified'
     },
     locationData:     {
       decimalLongitude:      null,
