@@ -46,7 +46,7 @@ The application is split into a number of components. The configuration reflects
 ### `"baseUrl" = "http://localhost:8080/"`
 
 The base (public) url of the applications, which is derived as follows:
-1. from the http headers `-Forwarded-Host` and `X-Forwarded-Proto`
+1. from the http headers `X-Forwarded-Host` and `X-Forwarded-Proto`
 2. if these headers don't exist, use the `baseUrl` config, meaning: this field
 3. if this doesn't exist, fall back to the request context scheme and host (having a reverse proxy, this will be the local address and port, which is not the right (public) url
 
