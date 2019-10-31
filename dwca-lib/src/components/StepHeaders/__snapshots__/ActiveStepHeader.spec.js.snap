@@ -15,6 +15,7 @@ exports[`ActiveStepHeader does not render StepFooter if last step 1`] = `
     dataDescription=""
     iconVisible={false}
     onStepTitleClick={[Function]}
+    scrollOnRender={true}
     selectedData=""
     stepDescription="step description"
     stepTitle="step title"
@@ -92,6 +93,7 @@ exports[`ActiveStepHeader does not render StepFooter if next step is not provide
     dataDescription=""
     iconVisible={false}
     onStepTitleClick={[Function]}
+    scrollOnRender={true}
     selectedData=""
     stepDescription="step description"
     stepTitle="step title"
@@ -168,6 +170,7 @@ exports[`ActiveStepHeader does not render copy previous step if onCopyPreviousDa
     dataDescription=""
     iconVisible={false}
     onStepTitleClick={[Function]}
+    scrollOnRender={true}
     selectedData=""
     stepDescription="step description"
     stepTitle="step title"
@@ -241,6 +244,7 @@ exports[`ActiveStepHeader renders StepFooter with all data if next step is provi
     dataDescription=""
     iconVisible={false}
     onStepTitleClick={[Function]}
+    scrollOnRender={true}
     selectedData=""
     stepDescription="step description"
     stepTitle="step title"
