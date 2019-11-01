@@ -11,6 +11,8 @@ class RssHandler {
 
   public static void fetch(RoutingContext context) {
     var periodicity = context.request().getParam("periodicity");
+    var baseUrl = generateBaseUrl(context);
+
     context
         .vertx()
         .eventBus()
@@ -18,7 +20,7 @@ class RssHandler {
             "internal.rss",
             new JsonObject()
                 .put("periodicity", periodicity)
-                .put("baseUrl", context.request().scheme() + "://" + context.request().host())
+                .put("baseUrl", baseUrl)
                 .put("atomLink", context.request().absoluteURI()),
             (Handler<AsyncResult<Message<String>>>)
                 m -> {
@@ -38,6 +40,19 @@ class RssHandler {
                         .sendFile(filename);
                   }
                 });
+  }
+
+  private static String generateBaseUrl(RoutingContext context) {
+    var headers = context.request().headers();
+    String baseUrl;
+    if (headers.contains("X-Forwarded-Host") && headers.contains("X-Forwarded-Proto")) {
+      baseUrl = headers.get("X-Forwarded-Proto") + "://" + headers.get("X-Forwarded-Host");
+    } else if (context.vertx().getOrCreateContext().config().containsKey("baseUrl")) {
+      baseUrl = context.vertx().getOrCreateContext().config().getString("baseUrl");
+    } else {
+      baseUrl = context.request().scheme() + "://" + context.request().host();
+    }
+    return baseUrl;
   }
 
   private RssHandler() {}
