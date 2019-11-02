@@ -9,6 +9,7 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.ser.ToXmlGenerator;
 import java.io.File;
 import java.io.IOException;
+import java.time.Instant;
 import org.obis.smalldata.rss.xmlmodel.RssFeed;
 
 public class RssGenerator {
@@ -21,6 +22,7 @@ public class RssGenerator {
     xmlMapper
         .findAndRegisterModules()
         .configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
+    xmlMapper.registerModule(InstantRfc1123Serializer.asJacksonMapperModule(Instant.class));
     xmlMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
     xmlMapper.setDefaultUseWrapper(false);
   }

@@ -5,16 +5,16 @@
     <link>http://localhost</link>
     <description>some description</description>
     <language>nl-BE</language>
-    <lastBuildDate>2019-02-22T17:18:56.127701Z</lastBuildDate>
+    <lastBuildDate>Fri, 22 Feb 2019 17:18:56 GMT</lastBuildDate>
     <generator>IOBIS SmallData Generator</generator>
     <atom:link rel="self" type="application/rss+xml" href="http://ipt.iobis.org/training/rss.do"/>
     <item>
-      <pubDate>2019-02-22T17:18:56.127535Z</pubDate>
+      <pubDate>Fri, 22 Feb 2019 17:18:56 GMT</pubDate>
       <guid isPermaLink="false">http://ipt.iobis.org/training/resource/daily</guid>
       <ipt:dwca>http://ipt.iobis.org/training/resource/daily</ipt:dwca>
     </item>
     <item>
-      <pubDate>2019-02-22T17:18:56.127666Z</pubDate>
+      <pubDate>Fri, 22 Feb 2019 17:18:56 GMT</pubDate>
       <guid isPermaLink="false">http://ipt.iobis.org/training/resource?id=test-kurt2/v1.0</guid>
       <ipt:dwca>http://ipt.iobis.org/training/resource?id=test-kurt2/v1.0</ipt:dwca>
     </item>
