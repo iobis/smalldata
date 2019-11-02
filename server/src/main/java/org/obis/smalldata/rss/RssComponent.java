@@ -111,6 +111,7 @@ public class RssComponent extends AbstractVerticle {
                             return RssItem.builder()
                                 .dwca(new URL(baseUrl + "/api/dwca/" + item[0]))
                                 .pubDate(Instant.parse(item[1]))
+                                .link(new URL(baseUrl + "/api/datasets/" + item[0]))
                                 .guid(
                                     RssItem.Guid.builder()
                                         .isPermaLink(false)
