@@ -66,14 +66,24 @@ export function mapOccurrenceToDwca(occurrence) {
   }
 }
 
-function mapOccurrenceDataToTdwg({ basisOfRecord, beginDate, endDate, occurrenceStatus, scientificName, lifeStage, sex }) {
+function mapOccurrenceDataToTdwg({
+  basisOfRecord,
+  beginDate,
+  endDate,
+  occurrenceStatus,
+  scientificName,
+  scientificNameId,
+  lifeStage,
+  sex
+}) {
   const beginDateFormatted = format(beginDate, 'YYYY-MM-DD')
   const eventDate = beginDateFormatted + (endDate ? format(endDate, '/YYYY-MM-DD') : '')
   return {
-    basisOfRecord: basisOfRecord.charAt(0).toUpperCase() + basisOfRecord.slice(1),
+    basisOfRecord:    basisOfRecord.charAt(0).toUpperCase() + basisOfRecord.slice(1),
     eventDate,
     occurrenceStatus,
     scientificName,
+    scientificNameID: scientificNameId,
     ...(lifeStage === 'unspecified' ? {} : { lifeStage }),
     ...(sex === 'unspecified' ? {} : { sex })
   }
@@ -106,6 +116,7 @@ export function mapDwcaToOccurrenceData(dwca) {
     lifeStage:        tdwg.lifeStage || 'unspecified',
     occurrenceStatus: tdwg.occurrenceStatus,
     scientificName:   tdwg.scientificName,
+    scientificNameId: tdwg.scientificNameID,
     sex:              tdwg.sex || 'unspecified'
   }
 }
@@ -149,7 +160,7 @@ export function mapDwcaToMeasurements(dwca) {
   }))
 }
 
-const reservedTdwgFields = ['basisOfRecord', 'eventDate', 'occurrenceStatus', 'scientificName', 'lifeStage', 'sex',
+const reservedTdwgFields = ['basisOfRecord', 'eventDate', 'occurrenceStatus', 'scientificName', 'scientificNameID', 'lifeStage', 'sex',
   'decimalLongitude', 'decimalLatitude', 'coordinateUncertaintyInMeters', 'minimumDepthInMeters', 'maximumDepthInMeters',
   'verbatimCoordinates', 'verbatimDepth', 'institutionCode', 'collectionCode', 'fieldNumber', 'catalogNumber',
   'recordNumber', 'identifiedBy', 'recordedBy', 'identificationQualifier', 'identificationRemarks',
