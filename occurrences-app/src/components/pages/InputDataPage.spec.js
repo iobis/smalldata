@@ -1,10 +1,12 @@
 import InputDataPage from './InputDataPage'
 import React from 'react'
-import { MemoryRouter } from 'react-router-dom'
+import { Link, MemoryRouter } from 'react-router-dom'
 import { getDatasetDefaultResponse, OCCURRENCES_RESPONSE } from '@smalldata/dwca-lib/src/clients/SmalldataClient.mock'
 import { act } from 'react-dom/test-utils'
 import { mount } from 'enzyme'
 import { AuthContext } from '@smalldata/dwca-lib'
+
+const tableRowCssSelector = '.rt-table .rt-tr-group'
 
 describe('InputDataPage', () => {
   let wrapper
@@ -59,9 +61,11 @@ describe('InputDataPage', () => {
 
     wrapper.update()
     expect(wrapper.find('.-loading.-active').exists()).toBe(false)
-    expect(wrapper.find('.rt-table .rt-tr-group')).toHaveLength(10)
-    expect(wrapper.find('.rt-table .rt-tr-group div.added-at').map(el => el.text()))
+    expect(wrapper.find(tableRowCssSelector)).toHaveLength(10)
+    expect(wrapper.find(tableRowCssSelector + ' div.added-at').map(el => el.text()))
       .toEqual(['20 June 2019', '—', '—', ' ', ' ', ' ', ' ', ' ', ' ', ' '])
+    expect(wrapper.find(tableRowCssSelector).at(0).find(Link).at(0).props().to.state.action).toBe('update')
+    expect(wrapper.find(tableRowCssSelector).at(0).find(Link).at(1).props().to.state.action).toBe('create')
     expect(wrapper).toMatchSnapshot()
   })
 })
