@@ -12,7 +12,7 @@ const sexOptions = ['male', 'female', 'unspecified']
 
 export default function OccurrenceData({ onChange, data }) {
   const { t } = useTranslation()
-  const { basisOfRecord, beginDate, endDate, lifeStage, occurrenceStatus, scientificName, sex } = data
+  const { basisOfRecord, beginDate, endDate, lifeStage, occurrenceStatus, scientificName, scientificNameId, sex } = data
 
   const updateField = (name, value) => {
     const newSelection = { ...data, [name]: value }
@@ -23,8 +23,18 @@ export default function OccurrenceData({ onChange, data }) {
     <div className="occurrence-data section is-fluid">
       <div className="columns mandatory">
         <ScientificNameInput
-          onChange={(value) => updateField('scientificName', value)}
+          onChange={(value) => {
+            updateField('scientificName', value)
+            updateField('scientificNameId', '')
+          }}
+          onSuggestionClick={({ scientificName, scientificNameId }) => {
+            updateField('scientificName', scientificName)
+            updateField('scientificNameId', scientificNameId)
+          }}
           scientificName={scientificName}/>
+      </div>
+      <div>
+        {scientificNameId}
       </div>
       <div className="columns">
         <div className="event-begin-date column field is-two-fifths">
@@ -77,6 +87,7 @@ export const occurrenceDataShape = {
   endDate:          PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.number]),
   lifeStage:        PropTypes.oneOf(lifeStageOptions).isRequired,
   occurrenceStatus: PropTypes.oneOf(occurrenceStatusOptions).isRequired,
+  scientificNameId: PropTypes.string.isRequired,
   scientificName:   PropTypes.string.isRequired,
   sex:              PropTypes.oneOf(sexOptions).isRequired
 }

@@ -10,6 +10,7 @@ exports[`OccurrenceData renders correctly 1`] = `
       "lifeStage": "larva",
       "occurrenceStatus": "absent",
       "scientificName": "scientific name",
+      "scientificNameId": "scientific:name:id",
       "sex": "male",
     }
   }
@@ -24,6 +25,7 @@ exports[`OccurrenceData renders correctly 1`] = `
             "lifeStage": "larva",
             "occurrenceStatus": "absent",
             "scientificName": "scientific name",
+            "scientificNameId": "scientific:name:id",
             "sex": "male",
           },
         ],
@@ -35,6 +37,7 @@ exports[`OccurrenceData renders correctly 1`] = `
             "lifeStage": "larva",
             "occurrenceStatus": "absent",
             "scientificName": "scientific name",
+            "scientificNameId": "scientific:name:id",
             "sex": "male",
           },
         ],
@@ -117,6 +120,9 @@ exports[`OccurrenceData renders correctly 1`] = `
           </div>
         </div>
       </ScientificNameInput>
+    </div>
+    <div>
+      scientific:name:id
     </div>
     <div
       className="columns"
