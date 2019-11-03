@@ -1,7 +1,5 @@
 package org.obis.smalldata.dwca;
 
-import static org.pmw.tinylog.Logger.info;
-
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.CompositeFuture;
 import io.vertx.core.Future;
@@ -9,6 +7,7 @@ import io.vertx.core.eventbus.Message;
 import io.vertx.core.eventbus.ReplyFailure;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.mongo.MongoClient;
+import java.time.Instant;
 import java.util.List;
 
 public class DwcaComponent extends AbstractVerticle {
@@ -49,9 +48,16 @@ public class DwcaComponent extends AbstractVerticle {
         .setHandler(
             ar -> {
               var dataset = (JsonObject) ar.result().list().get(0);
-              info(dataset);
               if (null != dataset && dataset.getString("_ref").equals(datasetRef)) {
                 var dwcaRecords = (List<JsonObject>) ar.result().list().get(1);
+                var pubDate =
+                    dwcaRecords
+                        .stream()
+                        .filter(rec -> rec.containsKey("addedAtInstant"))
+                        .map(rec -> rec.getString("addedAtInstant"))
+                        .map(Instant::parse)
+                        .max(Instant::compareTo);
+                dataset.put("pubDate", pubDate.isPresent() ? pubDate.get() : "");
                 var path = zipGenerator.generate(dwcaRecords, dataset);
                 result.complete(
                     new JsonObject().put("path", path.get().toAbsolutePath().toString()));
