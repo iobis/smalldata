@@ -57,7 +57,9 @@ describe('ScientificNameInput', () => {
   })
 
   it('updates values when updating props', async() => {
-    const wrapper = mount(createComponent({ scientificName: 'name-1' }))
+    const onChange = jest.fn()
+    const onSuggestionClick = jest.fn()
+    const wrapper = mount(createComponent({ scientificName: 'name-1', onChange, onSuggestionClick }))
     expect(wrapper.find('input').props().value).toBe('name-1')
 
     await act(async() => {
@@ -67,11 +69,14 @@ describe('ScientificNameInput', () => {
     wrapper.update()
     expect(MarineSpeciesClient.getByName).toHaveBeenCalledTimes(2)
     expect(wrapper.find('input').props().value).toBe('name-100500')
+    expect(onChange).toHaveBeenCalledTimes(0)
+    expect(onSuggestionClick).toHaveBeenCalledTimes(0)
   })
 
   it('returns values when updating input fields', async() => {
     const onChange = jest.fn()
-    const wrapper = mount(createComponent({ scientificName: '', onChange }))
+    const onSuggestionClick = jest.fn()
+    const wrapper = mount(createComponent({ scientificName: '', onChange, onSuggestionClick }))
 
     await act(async() => {
       wrapper.find('input').simulate('change', { target: { value: 'Abra alba' } })
@@ -82,6 +87,16 @@ describe('ScientificNameInput', () => {
     expect(MarineSpeciesClient.getByName).toHaveBeenCalledWith('Abra alba')
     expect(onChange).toHaveBeenCalledTimes(1)
     expect(onChange).toHaveBeenCalledWith('Abra alba')
+    expect(onSuggestionClick).toHaveBeenCalledTimes(0)
+    expect(wrapper.find('.dropdown-item').hasClass('is-active')).toBe(true)
+    expect(wrapper.find('.dropdown-item')).toHaveLength(1)
+
+    wrapper.find('.dropdown-item').simulate('click')
+    expect(onSuggestionClick).toHaveBeenCalledTimes(1)
+    expect(onSuggestionClick).toHaveBeenCalledWith({
+      scientificName:   'Abra alba',
+      scientificNameId: 'urn:lsid:marinespecies.org:taxname:141433'
+    })
   })
 })
 

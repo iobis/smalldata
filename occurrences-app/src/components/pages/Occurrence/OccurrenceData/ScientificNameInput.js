@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useDebounce, useOnClickOutside } from '@smalldata/dwca-lib'
 import { useTranslation } from 'react-i18next'
 
-export default function ScientificNameInput({ scientificName, onChange }) {
+export default function ScientificNameInput({ scientificName, onChange, onSuggestionClick = () => {} }) {
   const { t } = useTranslation()
   const ref = useRef()
   const [firstRender, setFirstRender] = useState(true)
@@ -47,10 +47,11 @@ export default function ScientificNameInput({ scientificName, onChange }) {
     setName(newName)
   }
 
-  function handleSuggestionClick(newName) {
+  function handleSuggestionClick(record) {
     hideDropdownOptions()
-    onChange(newName)
-    setName(newName)
+    onChange(record.scientificname)
+    onSuggestionClick({ scientificName: record.scientificname, scientificNameId: record.lsid })
+    setName(record.scientificname)
   }
 
   return (
@@ -81,7 +82,7 @@ export default function ScientificNameInput({ scientificName, onChange }) {
               <div
                 className={classNames('dropdown-item', { 'is-active': isRecordWithName(record, name) })}
                 key={record.lsid}
-                onClick={() => handleSuggestionClick(record.scientificname)}>
+                onClick={() => handleSuggestionClick(record)}>
                 {record.scientificname}
               </div>
             ))}
@@ -93,6 +94,7 @@ export default function ScientificNameInput({ scientificName, onChange }) {
 }
 
 ScientificNameInput.propTypes = {
-  onChange:       PropTypes.func.isRequired,
-  scientificName: PropTypes.string.isRequired
+  onChange:          PropTypes.func.isRequired,
+  onSuggestionClick: PropTypes.func,
+  scientificName:    PropTypes.string.isRequired
 }
