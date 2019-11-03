@@ -36,7 +36,7 @@ exports[`ScientificNameInput renders correctly 1`] = `
           <p
             className="worms-info"
           >
-            Species names are retrieved on the fly  from the WORMS database by using the webservices available at 
+            occurrenceForm.occurrenceData.scientificNameInput.wormsInfo
             <a
               href="http://www.marinespecies.org/aphia.php?p=webservice"
               rel="noopener noreferrer"
