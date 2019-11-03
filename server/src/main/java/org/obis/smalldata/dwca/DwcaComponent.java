@@ -56,8 +56,10 @@ public class DwcaComponent extends AbstractVerticle {
                         .filter(rec -> rec.containsKey("addedAtInstant"))
                         .map(rec -> rec.getString("addedAtInstant"))
                         .map(Instant::parse)
-                        .max(Instant::compareTo);
-                dataset.put("pubDate", pubDate.isPresent() ? pubDate.get() : "");
+                        .max(Instant::compareTo)
+                        .map(date -> date.toString())
+                        .orElse("");
+                dataset.put("pubDate", pubDate);
                 var path = zipGenerator.generate(dwcaRecords, dataset);
                 result.complete(
                     new JsonObject().put("path", path.get().toAbsolutePath().toString()));
