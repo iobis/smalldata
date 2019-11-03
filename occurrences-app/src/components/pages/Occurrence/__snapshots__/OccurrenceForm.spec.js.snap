@@ -7806,10 +7806,6 @@ exports[`OccurrenceForm when updating occurrence and then clicking "Review and S
             "value": "purl-field-2-value",
           },
           Object {
-            "name": "http://rs.tdwg.org/dwc/terms/scientificNameID",
-            "value": "urn:lsid:marinespecies.org:taxname:995316",
-          },
-          Object {
             "name": "http://rs.tdwg.org/dwc/terms/tdwg-field-1",
             "value": "tdwg-field-1-value",
           },
@@ -8973,26 +8969,6 @@ exports[`OccurrenceForm when updating occurrence and then clicking "Review and S
               </NameValueRow>
               <NameValueRow
                 key="4"
-                name="http://rs.tdwg.org/dwc/terms/scientificNameID"
-                value="urn:lsid:marinespecies.org:taxname:995316"
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    http://rs.tdwg.org/dwc/terms/scientificNameID
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    urn:lsid:marinespecies.org:taxname:995316
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
-                key="5"
                 name="http://rs.tdwg.org/dwc/terms/tdwg-field-1"
                 value="tdwg-field-1-value"
               >
@@ -9012,7 +8988,7 @@ exports[`OccurrenceForm when updating occurrence and then clicking "Review and S
                 </tr>
               </NameValueRow>
               <NameValueRow
-                key="6"
+                key="5"
                 name="http://rs.tdwg.org/dwc/terms/tdwg-field-2"
                 value="tdwg-field-2-value"
               >
