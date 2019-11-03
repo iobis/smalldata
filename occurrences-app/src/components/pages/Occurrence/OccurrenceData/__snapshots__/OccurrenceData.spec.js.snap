@@ -60,10 +60,11 @@ exports[`OccurrenceData renders correctly 1`] = `
     >
       <ScientificNameInput
         onChange={[Function]}
+        onSuggestionClick={[Function]}
         scientificName="scientific name"
       >
         <div
-          className="field column is-four-fifths"
+          className="scientific-name-input field column is-four-fifths"
         >
           <div
             className="dropdown"

@@ -6,7 +6,7 @@ exports[`ScientificNameInput renders correctly 1`] = `
   scientificName=""
 >
   <div
-    className="field column is-four-fifths"
+    className="scientific-name-input field column is-four-fifths"
   >
     <div
       className="dropdown"

@@ -55,7 +55,7 @@ export default function ScientificNameInput({ scientificName, onChange, onSugges
   }
 
   return (
-    <div className="field column is-four-fifths" ref={ref}>
+    <div className="scientific-name-input field column is-four-fifths" ref={ref}>
       <div className={classNames('dropdown', { 'is-active': dropdownActive && suggestions.length > 0 })}>
         <div className="dropdown-trigger">
           <label className="label">{t('occurrenceForm.occurrenceData.scientificName')}</label>
