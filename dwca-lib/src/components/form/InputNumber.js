@@ -21,7 +21,7 @@ export default function InputNumber({ className, name, onChange, optional, value
         placeholder={i18next.exists(placeholderKey) ? t(placeholderKey) : undefined}
         step={step}
         type="number"
-        value={value === null ? '' : value}/>
+        value={value === undefined || value === null ? '' : value}/>
       {i18next.exists(helpKey) ? <p className="help">{t(helpKey)}</p> : null}
     </div>
   )
