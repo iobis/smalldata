@@ -29,7 +29,7 @@ export default function InputMultipleText({ className, name, values, onChange, l
         {t(name + '.label')}
       </label>
       <div className="field has-addons">
-        <div className="control">
+        <div className="control is-expanded">
           <input
             className="input"
             onChange={(e) => setInputFieldValue(e.target.value)}
