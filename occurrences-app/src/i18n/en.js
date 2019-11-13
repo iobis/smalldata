@@ -55,7 +55,7 @@ export default {
           stepTitle:       'Occurrence Data'
         },
         scientificNameInput: {
-          wormsInfo: 'Species names are retrieved on the fly  from the WORMS database by using the webservices available at '
+          wormsInfo: 'Species names are retrieved on the fly from the WORMS database by using the webservices available at '
         },
         scientificName:      'Scientific Name',
         scientificNameId:    'Scientific Name Id',
