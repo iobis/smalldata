@@ -19,18 +19,17 @@ export default function OccurrenceData({ onChange, data }) {
     onChange(newSelection)
   }
 
+  function handleScientificNameChange(scientificName, scientificNameId) {
+    const newSelection = { ...data, scientificName, scientificNameId }
+    onChange(newSelection)
+  }
+
   return (
     <div className="occurrence-data section is-fluid">
       <div className="columns mandatory">
         <ScientificNameInput
-          onChange={(value) => {
-            updateField('scientificName', value)
-            updateField('scientificNameId', '')
-          }}
-          onSuggestionClick={({ scientificName, scientificNameId }) => {
-            updateField('scientificName', scientificName)
-            updateField('scientificNameId', scientificNameId)
-          }}
+          onChange={(scientificName) => handleScientificNameChange(scientificName, '')}
+          onSuggestionClick={({ scientificName, scientificNameId }) => handleScientificNameChange(scientificName, scientificNameId)}
           scientificName={scientificName}/>
       </div>
       <div>
