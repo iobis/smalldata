@@ -32,8 +32,15 @@ export default function OccurrenceData({ onChange, data }) {
           onSuggestionClick={({ scientificName, scientificNameId }) => handleScientificNameChange(scientificName, scientificNameId)}
           scientificName={scientificName}/>
       </div>
-      <div>
-        {scientificNameId}
+      <div className="columns no-margin">
+        <div className="column">
+          <label className="label">
+            {t('occurrenceForm.occurrenceData.scientificNameId')}
+          </label>
+          <div>
+            {scientificNameId || t('common.notAvailable')}
+          </div>
+        </div>
       </div>
       <div className="columns">
         <div className="event-begin-date column field is-two-fifths">
