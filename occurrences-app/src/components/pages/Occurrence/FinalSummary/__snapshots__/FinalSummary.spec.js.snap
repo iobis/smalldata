@@ -177,6 +177,7 @@ exports[`FinalSummary renders correctly 1`] = `
           "lifeStage": "adult",
           "occurrenceStatus": "absent",
           "scientificName": "ala abra",
+          "scientificNameId": "urn:lsid:marinespecies.org:taxname:138133",
           "sex": "male",
         }
       }
@@ -286,6 +287,25 @@ exports[`FinalSummary renders correctly 1`] = `
                     className="value"
                   >
                     ala abra
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.occurrenceData.scientificNameId"
+                value="urn:lsid:marinespecies.org:taxname:138133"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.occurrenceData.scientificNameId
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    urn:lsid:marinespecies.org:taxname:138133
                   </td>
                 </tr>
               </NameValueRow>
@@ -1254,6 +1274,7 @@ exports[`FinalSummary renders correctly when occurrence end date is not provided
           "lifeStage": "adult",
           "occurrenceStatus": "absent",
           "scientificName": "ala abra",
+          "scientificNameId": "urn:lsid:marinespecies.org:taxname:138133",
           "sex": "male",
         }
       }
@@ -1363,6 +1384,25 @@ exports[`FinalSummary renders correctly when occurrence end date is not provided
                     className="value"
                   >
                     ala abra
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.occurrenceData.scientificNameId"
+                value="urn:lsid:marinespecies.org:taxname:138133"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.occurrenceData.scientificNameId
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    urn:lsid:marinespecies.org:taxname:138133
                   </td>
                 </tr>
               </NameValueRow>
@@ -2332,6 +2372,7 @@ exports[`FinalSummary when rendering component with error message calls onSubmit
           "lifeStage": "adult",
           "occurrenceStatus": "absent",
           "scientificName": "ala abra",
+          "scientificNameId": "urn:lsid:marinespecies.org:taxname:138133",
           "sex": "male",
         }
       }
@@ -2450,6 +2491,25 @@ exports[`FinalSummary when rendering component with error message calls onSubmit
                     className="value"
                   >
                     ala abra
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.occurrenceData.scientificNameId"
+                value="urn:lsid:marinespecies.org:taxname:138133"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.occurrenceData.scientificNameId
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    urn:lsid:marinespecies.org:taxname:138133
                   </td>
                 </tr>
               </NameValueRow>
@@ -3418,6 +3478,7 @@ exports[`FinalSummary when rendering component with success message renders succ
           "lifeStage": "adult",
           "occurrenceStatus": "absent",
           "scientificName": "ala abra",
+          "scientificNameId": "urn:lsid:marinespecies.org:taxname:138133",
           "sex": "male",
         }
       }
@@ -3556,6 +3617,25 @@ exports[`FinalSummary when rendering component with success message renders succ
                     className="value"
                   >
                     ala abra
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.occurrenceData.scientificNameId"
+                value="urn:lsid:marinespecies.org:taxname:138133"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.occurrenceData.scientificNameId
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    urn:lsid:marinespecies.org:taxname:138133
                   </td>
                 </tr>
               </NameValueRow>
@@ -4510,6 +4590,7 @@ exports[`FinalSummary when rendering component with success message renders succ
           "lifeStage": "adult",
           "occurrenceStatus": "absent",
           "scientificName": "ala abra",
+          "scientificNameId": "urn:lsid:marinespecies.org:taxname:138133",
           "sex": "male",
         }
       }
@@ -4648,6 +4729,25 @@ exports[`FinalSummary when rendering component with success message renders succ
                     className="value"
                   >
                     ala abra
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.occurrenceData.scientificNameId"
+                value="urn:lsid:marinespecies.org:taxname:138133"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.occurrenceData.scientificNameId
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    urn:lsid:marinespecies.org:taxname:138133
                   </td>
                 </tr>
               </NameValueRow>

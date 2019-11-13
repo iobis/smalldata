@@ -652,6 +652,25 @@ exports[`OccurrenceForm when creating new occurrence and then clicking "Review a
                 </tr>
               </NameValueRow>
               <NameValueRow
+                name="occurrenceForm.occurrenceData.scientificNameId"
+                value=""
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.occurrenceData.scientificNameId
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    —
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
                 name="occurrenceForm.occurrenceData.eventBeginDate"
                 value="29 April 2019"
               >
@@ -8123,6 +8142,25 @@ exports[`OccurrenceForm when updating occurrence and then clicking "Review and S
                     className="value"
                   >
                     Aaadonta
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.occurrenceData.scientificNameId"
+                value="urn:lsid:marinespecies.org:taxname:995316"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.occurrenceData.scientificNameId
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    urn:lsid:marinespecies.org:taxname:995316
                   </td>
                 </tr>
               </NameValueRow>

@@ -49,7 +49,7 @@ export default {
         }
       },
       occurrenceData:         {
-        step:             {
+        step:                {
           dataDescription: 'Given Values',
           stepDescription: 'Mandatory observation information',
           stepTitle:       'Occurrence Data'
@@ -57,16 +57,17 @@ export default {
         scientificNameInput: {
           wormsInfo: 'Species names are retrieved on the fly  from the WORMS database by using the webservices available at '
         },
-        scientificName:   'Scientific Name',
-        eventBeginDate:   'Event Begin Date',
-        eventEndDate:     'Event End Date',
-        eventEndDateHelp: 'optional: only in case of date range',
-        occurrenceStatus: {
+        scientificName:      'Scientific Name',
+        scientificNameId:    'Scientific Name Id',
+        eventBeginDate:      'Event Begin Date',
+        eventEndDate:        'Event End Date',
+        eventEndDateHelp:    'optional: only in case of date range',
+        occurrenceStatus:    {
           title:   'Occurrence Status',
           absent:  'absent',
           present: 'present'
         },
-        basisOfRecord:    {
+        basisOfRecord:       {
           title:              'Basis of Record',
           humanObservation:   'human observation',
           fossilSpecimen:     'fossil specimen',
@@ -74,13 +75,13 @@ export default {
           machineObservation: 'machine observation',
           preservedSpecimen:  'preserved specimen'
         },
-        sex:              {
+        sex:                 {
           title:       'Sex',
           male:        'male',
           female:      'female',
           unspecified: 'unspecified'
         },
-        lifeStage:        {
+        lifeStage:           {
           title:       'Life Stage',
           larva:       'larva',
           juvenile:    'juvenile',
