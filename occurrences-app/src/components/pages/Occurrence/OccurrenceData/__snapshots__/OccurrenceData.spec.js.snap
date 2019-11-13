@@ -121,8 +121,21 @@ exports[`OccurrenceData renders correctly 1`] = `
         </div>
       </ScientificNameInput>
     </div>
-    <div>
-      scientific:name:id
+    <div
+      className="columns no-margin"
+    >
+      <div
+        className="column"
+      >
+        <label
+          className="label"
+        >
+          occurrenceForm.occurrenceData.scientificNameId
+        </label>
+        <div>
+          scientific:name:id
+        </div>
+      </div>
     </div>
     <div
       className="columns"
