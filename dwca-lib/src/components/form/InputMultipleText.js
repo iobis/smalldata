@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 export default function InputMultipleText({ className, name, values, onChange, labelComponent }) {
@@ -12,9 +12,15 @@ export default function InputMultipleText({ className, name, values, onChange, l
     setNewValues(values)
   }, [values])
 
-  const updateNewValues = (newValues) => {
+  function updateNewValues(newValues) {
     onChange(newValues)
     setNewValues(newValues)
+  }
+
+  function handleAddValue() {
+    setNewValues([...newValues, inputFieldValue])
+    onChange([...newValues, inputFieldValue])
+    setInputFieldValue('')
   }
 
   return (
@@ -22,19 +28,24 @@ export default function InputMultipleText({ className, name, values, onChange, l
       <label className="label">
         {t(name + '.label')}
       </label>
-      <input
-        className="input"
-        onChange={(e) => setInputFieldValue(e.target.value)}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter') {
-            setNewValues([...newValues, e.target.value])
-            onChange([...newValues, e.target.value])
-            setInputFieldValue('')
-          }
-        }}
-        placeholder={t(name + '.placeholder')}
-        type="text"
-        value={inputFieldValue}/>
+      <div className="field has-addons">
+        <div className="control">
+          <input
+            className="input"
+            onChange={(e) => setInputFieldValue(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') handleAddValue()
+            }}
+            placeholder={t(name + '.placeholder')}
+            type="text"
+            value={inputFieldValue}/>
+        </div>
+        <div className="control">
+          <button className="add button" onClick={handleAddValue}>
+            {t('common.add')}
+          </button>
+        </div>
+      </div>
       <p className="help">{t(name + '.help')}</p>
       <Tags labelComponent={labelComponent} onDelete={updateNewValues} strings={newValues}/>
     </div>

@@ -28,6 +28,21 @@ describe('InputMultipleText', () => {
     expect(onChange).toBeCalledWith(['value-1', 'value-2', 'new text value'])
   })
 
+  it('adds new item when clicking add button', () => {
+    const onChange = jest.fn()
+    const wrapper = mount(createComponent({ onChange }))
+    expect(wrapper.find('.tag')).toHaveLength(2)
+
+    wrapper.find('input').simulate('change', { target: { value: 'new text value' } })
+    expect(wrapper.find('.tag')).toHaveLength(2)
+    expect(onChange).toHaveBeenCalledTimes(0)
+
+    wrapper.find('.add').simulate('click')
+    expect(wrapper.find('.tag')).toHaveLength(3)
+    expect(onChange).toHaveBeenCalledTimes(1)
+    expect(onChange).toBeCalledWith(['value-1', 'value-2', 'new text value'])
+  })
+
   it('removes item when clicking delete icon', () => {
     const onChange = jest.fn()
     const wrapper = mount(createComponent({ onChange }))
