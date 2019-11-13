@@ -92,7 +92,7 @@ export default function InputDataPage() {
         to={{
           pathname: '/input-data/create',
           // eslint-disable-next-line react/prop-types
-          state:    { action: 'update', dwcaId: props.value.dwcaId, datasetId: props.value.datasetId }
+          state:    { action: 'create', dwcaId: props.value.dwcaId, datasetId: props.value.datasetId }
         }}>
         {t('common.copy')}
       </Link>

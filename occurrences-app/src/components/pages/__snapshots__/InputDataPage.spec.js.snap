@@ -4393,7 +4393,7 @@ exports[`InputDataPage renders correctly 2`] = `
                                       Object {
                                         "pathname": "/input-data/create",
                                         "state": Object {
-                                          "action": "update",
+                                          "action": "create",
                                           "datasetId": "ntDOtUc7XsRrIus",
                                           "dwcaId": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_796",
                                         },
@@ -4613,7 +4613,7 @@ exports[`InputDataPage renders correctly 2`] = `
                                       Object {
                                         "pathname": "/input-data/create",
                                         "state": Object {
-                                          "action": "update",
+                                          "action": "create",
                                           "datasetId": "ntDOtUc7XsRrIus",
                                           "dwcaId": "IBSS_R/V N. Danilevskiy 1935 Azov Sea benthos data_1158",
                                         },
@@ -4831,7 +4831,7 @@ exports[`InputDataPage renders correctly 2`] = `
                                       Object {
                                         "pathname": "/input-data/create",
                                         "state": Object {
-                                          "action": "update",
+                                          "action": "create",
                                           "datasetId": "PoJnGNMaxsupE4w",
                                           "dwcaId": "DeepSea_Antipatharia_35",
                                         },
