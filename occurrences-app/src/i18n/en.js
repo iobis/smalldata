@@ -1,21 +1,22 @@
 export default {
   translation: {
     common:         {
-      add:        'Add',
-      cancel:     'Cancel',
-      change:     'Change',
-      confirm:    'Confirm',
-      continueTo: 'Continue to',
-      copy:       'Copy',
-      edit:       'Edit',
-      latitude:   'Latitude',
-      longitude:  'Longitude',
-      name:       'Name',
-      remove:     'Remove',
-      submit:     'Submit',
-      type:       'Type',
-      unit:       'Unit',
-      value:      'Value'
+      add:          'Add',
+      cancel:       'Cancel',
+      change:       'Change',
+      confirm:      'Confirm',
+      continueTo:   'Continue to',
+      copy:         'Copy',
+      edit:         'Edit',
+      latitude:     'Latitude',
+      longitude:    'Longitude',
+      name:         'Name',
+      notAvailable: 'Not Available',
+      remove:       'Remove',
+      submit:       'Submit',
+      type:         'Type',
+      unit:         'Unit',
+      value:        'Value'
     },
     helpPage:       {
       contactEmail: 'mailto:pieter@obis.be'
@@ -49,21 +50,25 @@ export default {
         }
       },
       occurrenceData:         {
-        step:             {
+        step:                {
           dataDescription: 'Given Values',
           stepDescription: 'Mandatory observation information',
           stepTitle:       'Occurrence Data'
         },
-        scientificName:   'Scientific Name',
-        eventBeginDate:   'Event Begin Date',
-        eventEndDate:     'Event End Date',
-        eventEndDateHelp: 'optional: only in case of date range',
-        occurrenceStatus: {
+        scientificNameInput: {
+          wormsInfo: 'Species names are retrieved on the fly from the WORMS database by using the webservices available at '
+        },
+        scientificName:      'Scientific Name',
+        scientificNameId:    'Scientific Name Id',
+        eventBeginDate:      'Event Begin Date',
+        eventEndDate:        'Event End Date',
+        eventEndDateHelp:    'optional: only in case of date range',
+        occurrenceStatus:    {
           title:   'Occurrence Status',
           absent:  'absent',
           present: 'present'
         },
-        basisOfRecord:    {
+        basisOfRecord:       {
           title:              'Basis of Record',
           humanObservation:   'human observation',
           fossilSpecimen:     'fossil specimen',
@@ -71,13 +76,13 @@ export default {
           machineObservation: 'machine observation',
           preservedSpecimen:  'preserved specimen'
         },
-        sex:              {
+        sex:                 {
           title:       'Sex',
           male:        'male',
           female:      'female',
           unspecified: 'unspecified'
         },
-        lifeStage:        {
+        lifeStage:           {
           title:       'Life Stage',
           larva:       'larva',
           juvenile:    'juvenile',

@@ -301,6 +301,7 @@ export function getDefaultDwcaResponse() {
           'eventDate':                     '2019-06-25/2019-06-26',
           'occurrenceStatus':              'absent',
           'scientificName':                'Aaadonta',
+          'scientificNameID':              'urn:lsid:marinespecies.org:taxname:995316',
           'sex':                           'female',
           'decimalLongitude':              -0.16771316528320315,
           'decimalLatitude':               51.518463972439385,

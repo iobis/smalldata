@@ -363,6 +363,7 @@ function createInitialState() {
       lifeStage:        'unspecified',
       occurrenceStatus: 'present',
       scientificName:   '',
+      scientificNameId: '',
       sex:              'unspecified'
     },
     locationData:     {

@@ -37,6 +37,7 @@ export function getDefaultProps() {
       lifeStage:        'adult',
       occurrenceStatus: 'absent',
       scientificName:   'ala abra',
+      scientificNameId: 'urn:lsid:marinespecies.org:taxname:138133',
       sex:              'male'
     },
     locationData:     {

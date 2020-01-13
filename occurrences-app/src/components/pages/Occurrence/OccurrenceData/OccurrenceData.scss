@@ -37,14 +37,17 @@
 .worms-info {
   font-size: $size-7;
 }
+
 .scientific-name {
   position: relative;
   z-index: 1;
 }
+
 .scientific-name.is-danger {
   background-color: #ffeb3b;
   border-color: black;
 }
+
 .scientific-name.is-danger ~ .invalid-worms::after {
   content: 'invalid worms value, but will be submitted';
   position: absolute;

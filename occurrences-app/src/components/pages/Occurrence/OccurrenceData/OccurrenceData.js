@@ -12,10 +12,15 @@ const sexOptions = ['male', 'female', 'unspecified']
 
 export default function OccurrenceData({ onChange, data }) {
   const { t } = useTranslation()
-  const { basisOfRecord, beginDate, endDate, lifeStage, occurrenceStatus, scientificName, sex } = data
+  const { basisOfRecord, beginDate, endDate, lifeStage, occurrenceStatus, scientificName, scientificNameId, sex } = data
 
   const updateField = (name, value) => {
     const newSelection = { ...data, [name]: value }
+    onChange(newSelection)
+  }
+
+  function handleScientificNameChange(scientificName, scientificNameId) {
+    const newSelection = { ...data, scientificName, scientificNameId }
     onChange(newSelection)
   }
 
@@ -23,8 +28,19 @@ export default function OccurrenceData({ onChange, data }) {
     <div className="occurrence-data section is-fluid">
       <div className="columns mandatory">
         <ScientificNameInput
-          onChange={(value) => updateField('scientificName', value)}
+          onChange={(scientificName) => handleScientificNameChange(scientificName, '')}
+          onSuggestionClick={({ scientificName, scientificNameId }) => handleScientificNameChange(scientificName, scientificNameId)}
           scientificName={scientificName}/>
+      </div>
+      <div className="columns no-margin">
+        <div className="column">
+          <label className="label">
+            {t('occurrenceForm.occurrenceData.scientificNameId')}
+          </label>
+          <div>
+            {scientificNameId || t('common.notAvailable')}
+          </div>
+        </div>
       </div>
       <div className="columns">
         <div className="event-begin-date column field is-two-fifths">
@@ -77,6 +93,7 @@ export const occurrenceDataShape = {
   endDate:          PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.number]),
   lifeStage:        PropTypes.oneOf(lifeStageOptions).isRequired,
   occurrenceStatus: PropTypes.oneOf(occurrenceStatusOptions).isRequired,
+  scientificNameId: PropTypes.string.isRequired,
   scientificName:   PropTypes.string.isRequired,
   sex:              PropTypes.oneOf(sexOptions).isRequired
 }

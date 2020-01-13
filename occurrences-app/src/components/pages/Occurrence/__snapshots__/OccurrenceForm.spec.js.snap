@@ -76,6 +76,7 @@ exports[`OccurrenceForm when creating new occurrence and then clicking "Review a
           lifeStage="unspecified"
           occurrenceStatus="present"
           scientificName=""
+          scientificNameId=""
           sex="unspecified"
         />
       }
@@ -537,6 +538,7 @@ exports[`OccurrenceForm when creating new occurrence and then clicking "Review a
           "lifeStage": "unspecified",
           "occurrenceStatus": "present",
           "scientificName": "",
+          "scientificNameId": "",
           "sex": "unspecified",
         }
       }
@@ -641,6 +643,25 @@ exports[`OccurrenceForm when creating new occurrence and then clicking "Review a
                     className="name"
                   >
                     occurrenceForm.occurrenceData.scientificName
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    —
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.occurrenceData.scientificNameId"
+                value=""
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.occurrenceData.scientificNameId
                   </td>
                   <td
                     className="value"
@@ -2067,6 +2088,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 1`] = `
           lifeStage="unspecified"
           occurrenceStatus="present"
           scientificName=""
+          scientificNameId=""
           sex="unspecified"
         />
       }
@@ -2447,6 +2469,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
           lifeStage="unspecified"
           occurrenceStatus="present"
           scientificName=""
+          scientificNameId=""
           sex="unspecified"
         />
       }
@@ -2467,6 +2490,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
             lifeStage="unspecified"
             occurrenceStatus="present"
             scientificName=""
+            scientificNameId=""
             sex="unspecified"
           />
         }
@@ -2496,6 +2520,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
               lifeStage="unspecified"
               occurrenceStatus="present"
               scientificName=""
+              scientificNameId=""
               sex="unspecified"
             >
               <span>
@@ -3271,6 +3296,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 3`] = `
           lifeStage="unspecified"
           occurrenceStatus="present"
           scientificName=""
+          scientificNameId=""
           sex="unspecified"
         />
       }
@@ -3291,6 +3317,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 3`] = `
             lifeStage="unspecified"
             occurrenceStatus="present"
             scientificName=""
+            scientificNameId=""
             sex="unspecified"
           />
         }
@@ -3320,6 +3347,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 3`] = `
               lifeStage="unspecified"
               occurrenceStatus="present"
               scientificName=""
+              scientificNameId=""
               sex="unspecified"
             >
               <span>
@@ -5282,6 +5310,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 4`] = `
           lifeStage="unspecified"
           occurrenceStatus="present"
           scientificName=""
+          scientificNameId=""
           sex="unspecified"
         />
       }
@@ -5302,6 +5331,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 4`] = `
             lifeStage="unspecified"
             occurrenceStatus="present"
             scientificName=""
+            scientificNameId=""
             sex="unspecified"
           />
         }
@@ -5331,6 +5361,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 4`] = `
               lifeStage="unspecified"
               occurrenceStatus="present"
               scientificName=""
+              scientificNameId=""
               sex="unspecified"
             >
               <span>
@@ -5943,6 +5974,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 5`] = `
           lifeStage="unspecified"
           occurrenceStatus="present"
           scientificName=""
+          scientificNameId=""
           sex="unspecified"
         />
       }
@@ -5963,6 +5995,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 5`] = `
             lifeStage="unspecified"
             occurrenceStatus="present"
             scientificName=""
+            scientificNameId=""
             sex="unspecified"
           />
         }
@@ -5992,6 +6025,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 5`] = `
               lifeStage="unspecified"
               occurrenceStatus="present"
               scientificName=""
+              scientificNameId=""
               sex="unspecified"
             >
               <span>
@@ -6637,6 +6671,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 6`] = `
           lifeStage="unspecified"
           occurrenceStatus="present"
           scientificName=""
+          scientificNameId=""
           sex="unspecified"
         />
       }
@@ -6657,6 +6692,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 6`] = `
             lifeStage="unspecified"
             occurrenceStatus="present"
             scientificName=""
+            scientificNameId=""
             sex="unspecified"
           />
         }
@@ -6686,6 +6722,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 6`] = `
               lifeStage="unspecified"
               occurrenceStatus="present"
               scientificName=""
+              scientificNameId=""
               sex="unspecified"
             >
               <span>
@@ -7418,6 +7455,7 @@ exports[`OccurrenceForm when updating occurrence and then clicking "Review and S
           lifeStage="unspecified"
           occurrenceStatus="absent"
           scientificName="Aaadonta"
+          scientificNameId="urn:lsid:marinespecies.org:taxname:995316"
           sex="female"
         />
       }
@@ -7994,6 +8032,7 @@ exports[`OccurrenceForm when updating occurrence and then clicking "Review and S
           "lifeStage": "unspecified",
           "occurrenceStatus": "absent",
           "scientificName": "Aaadonta",
+          "scientificNameId": "urn:lsid:marinespecies.org:taxname:995316",
           "sex": "female",
         }
       }
@@ -8103,6 +8142,25 @@ exports[`OccurrenceForm when updating occurrence and then clicking "Review and S
                     className="value"
                   >
                     Aaadonta
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.occurrenceData.scientificNameId"
+                value="urn:lsid:marinespecies.org:taxname:995316"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.occurrenceData.scientificNameId
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    urn:lsid:marinespecies.org:taxname:995316
                   </td>
                 </tr>
               </NameValueRow>
@@ -9690,6 +9748,7 @@ exports[`OccurrenceForm when updating occurrence renders correctly 1`] = `
           lifeStage="unspecified"
           occurrenceStatus="absent"
           scientificName="Aaadonta"
+          scientificNameId="urn:lsid:marinespecies.org:taxname:995316"
           sex="female"
         />
       }

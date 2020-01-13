@@ -18,6 +18,7 @@ function createComponent() {
         lifeStage:        'larva',
         occurrenceStatus: 'absent',
         scientificName:   'scientific name',
+        scientificNameId: 'scientific:name:id',
         sex:              'male'
       }}
       onChange={jest.fn()}/>

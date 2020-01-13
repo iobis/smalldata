@@ -22,6 +22,7 @@ describe('SmalldataConverters', () => {
       lifeStage:        'unspecified',
       occurrenceStatus: 'absent',
       scientificName:   'Aaadonta',
+      scientificNameId: 'urn:lsid:marinespecies.org:taxname:995316',
       sex:              'female'
     })
   })

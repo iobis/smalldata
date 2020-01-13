@@ -10,6 +10,7 @@ exports[`OccurrenceData renders correctly 1`] = `
       "lifeStage": "larva",
       "occurrenceStatus": "absent",
       "scientificName": "scientific name",
+      "scientificNameId": "scientific:name:id",
       "sex": "male",
     }
   }
@@ -24,6 +25,7 @@ exports[`OccurrenceData renders correctly 1`] = `
             "lifeStage": "larva",
             "occurrenceStatus": "absent",
             "scientificName": "scientific name",
+            "scientificNameId": "scientific:name:id",
             "sex": "male",
           },
         ],
@@ -35,6 +37,7 @@ exports[`OccurrenceData renders correctly 1`] = `
             "lifeStage": "larva",
             "occurrenceStatus": "absent",
             "scientificName": "scientific name",
+            "scientificNameId": "scientific:name:id",
             "sex": "male",
           },
         ],
@@ -60,10 +63,11 @@ exports[`OccurrenceData renders correctly 1`] = `
     >
       <ScientificNameInput
         onChange={[Function]}
+        onSuggestionClick={[Function]}
         scientificName="scientific name"
       >
         <div
-          className="field column is-four-fifths"
+          className="scientific-name-input field column is-four-fifths"
         >
           <div
             className="dropdown"
@@ -93,7 +97,7 @@ exports[`OccurrenceData renders correctly 1`] = `
                 <p
                   className="worms-info"
                 >
-                  Species names are retrieved on the fly  from the WORMS database by using the webservices available at 
+                  occurrenceForm.occurrenceData.scientificNameInput.wormsInfo
                   <a
                     href="http://www.marinespecies.org/aphia.php?p=webservice"
                     rel="noopener noreferrer"
@@ -116,6 +120,22 @@ exports[`OccurrenceData renders correctly 1`] = `
           </div>
         </div>
       </ScientificNameInput>
+    </div>
+    <div
+      className="columns no-margin"
+    >
+      <div
+        className="column"
+      >
+        <label
+          className="label"
+        >
+          occurrenceForm.occurrenceData.scientificNameId
+        </label>
+        <div>
+          scientific:name:id
+        </div>
+      </div>
     </div>
     <div
       className="columns"

@@ -1,21 +1,22 @@
 export default {
   translation: {
     common:            {
-      add:        'Add',
-      cancel:     'Cancel',
-      change:     'Change',
-      confirm:    'Confirm',
-      continueTo: 'Continue to',
-      copy:       'Copy',
-      edit:       'Edit',
-      latitude:   'Latitude',
-      longitude:  'Longitude',
-      name:       'Name',
-      remove:     'Remove',
-      submit:     'Submit',
-      type:       'Type',
-      unit:       'Unit',
-      value:      'Value'
+      add:          'Add',
+      cancel:       'Cancel',
+      change:       'Change',
+      confirm:      'Confirm',
+      continueTo:   'Continue to',
+      copy:         'Copy',
+      edit:         'Edit',
+      latitude:     'Latitude',
+      longitude:    'Longitude',
+      name:         'Name',
+      notAvailable: 'Not Available',
+      remove:       'Remove',
+      submit:       'Submit',
+      type:         'Type',
+      unit:         'Unit',
+      value:        'Value'
     },
     navbar:            {
       manageDataset: 'MANAGE DATASET',
@@ -35,7 +36,7 @@ export default {
       }
     },
     datasetFormPage:   {
-      header: {
+      header:                {
         create: 'Create dataset',
         update: 'Update dataset'
       },
@@ -133,7 +134,7 @@ export default {
       }
     },
     userFormPage:      {
-      header: {
+      header:           {
         create: 'Create user record',
         update: 'Update user record for {{name}}'
       },

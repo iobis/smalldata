@@ -93,6 +93,9 @@ export default function FinalSummary({
               name={t('occurrenceForm.occurrenceData.scientificName')}
               value={occurrenceData.scientificName}/>
             <NameValueRow
+              name={t('occurrenceForm.occurrenceData.scientificNameId')}
+              value={occurrenceData.scientificNameId}/>
+            <NameValueRow
               name={t('occurrenceForm.occurrenceData.eventBeginDate')}
               value={format(occurrenceData.beginDate, 'D MMMM YYYY')}/>
             <NameValueRow

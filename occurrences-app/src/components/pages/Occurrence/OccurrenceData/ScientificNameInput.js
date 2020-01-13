@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useDebounce, useOnClickOutside } from '@smalldata/dwca-lib'
 import { useTranslation } from 'react-i18next'
 
-export default function ScientificNameInput({ scientificName, onChange }) {
+export default function ScientificNameInput({ scientificName, onChange, onSuggestionClick = () => {} }) {
   const { t } = useTranslation()
   const ref = useRef()
   const [firstRender, setFirstRender] = useState(true)
@@ -47,14 +47,15 @@ export default function ScientificNameInput({ scientificName, onChange }) {
     setName(newName)
   }
 
-  function handleSuggestionClick(newName) {
+  function handleSuggestionClick(record) {
     hideDropdownOptions()
-    onChange(newName)
-    setName(newName)
+    onChange(record.scientificname)
+    onSuggestionClick({ scientificName: record.scientificname, scientificNameId: record.lsid })
+    setName(record.scientificname)
   }
 
   return (
-    <div className="field column is-four-fifths" ref={ref}>
+    <div className="scientific-name-input field column is-four-fifths" ref={ref}>
       <div className={classNames('dropdown', { 'is-active': dropdownActive && suggestions.length > 0 })}>
         <div className="dropdown-trigger">
           <label className="label">{t('occurrenceForm.occurrenceData.scientificName')}</label>
@@ -70,8 +71,14 @@ export default function ScientificNameInput({ scientificName, onChange }) {
               ? <span className="clear icon is-small is-right"><FontAwesomeIcon className="check" icon="check"/></span>
               : null}
             <span className="invalid-worms"/>
-            <p className="worms-info">Species names are retrieved on the fly  from the WORMS database by using the webservices
-              available at <a href="http://www.marinespecies.org/aphia.php?p=webservice" rel="noopener noreferrer" target="_blank">marinespecies.org</a>
+            <p className="worms-info">
+              {t('occurrenceForm.occurrenceData.scientificNameInput.wormsInfo')}
+              <a
+                href="http://www.marinespecies.org/aphia.php?p=webservice"
+                rel="noopener noreferrer"
+                target="_blank">
+                marinespecies.org
+              </a>
             </p>
           </div>
         </div>
@@ -81,7 +88,7 @@ export default function ScientificNameInput({ scientificName, onChange }) {
               <div
                 className={classNames('dropdown-item', { 'is-active': isRecordWithName(record, name) })}
                 key={record.lsid}
-                onClick={() => handleSuggestionClick(record.scientificname)}>
+                onClick={() => handleSuggestionClick(record)}>
                 {record.scientificname}
               </div>
             ))}
@@ -93,6 +100,7 @@ export default function ScientificNameInput({ scientificName, onChange }) {
 }
 
 ScientificNameInput.propTypes = {
-  onChange:       PropTypes.func.isRequired,
-  scientificName: PropTypes.string.isRequired
+  onChange:          PropTypes.func.isRequired,
+  onSuggestionClick: PropTypes.func,
+  scientificName:    PropTypes.string.isRequired
 }
