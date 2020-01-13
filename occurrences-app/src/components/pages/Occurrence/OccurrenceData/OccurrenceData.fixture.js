@@ -10,8 +10,6 @@ export default [{
   props:       {
     data:     {
       basisOfRecord:    'humanObservation',
-      beginDate:        Date.now(),
-      endDate:          null,
       lifeStage:        'larva',
       occurrenceStatus: 'present',
       scientificName:   '',
@@ -28,8 +26,6 @@ export default [{
     onChange: console.log,
     data:     {
       basisOfRecord:    'humanObservation',
-      beginDate:        new Date(),
-      endDate:          new Date(),
       lifeStage:        'adult',
       occurrenceStatus: 'absent',
       scientificName:   'ala abra',

@@ -4,6 +4,7 @@ import LocationPickerModal from './LocationPickerModal'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import DatePicker from '@smalldata/dwca-lib/src/components/form/DatePicker'
 
 export default function LocationData({ data, onChange }) {
   const { t } = useTranslation()
@@ -26,8 +27,8 @@ export default function LocationData({ data, onChange }) {
 
   return (
     <div className="location-data section is-fluid">
-      <h1 className="title">{t('occurrenceForm.locationData.enterCoordinates.title')}</h1>
-      <h2 className="subtitle">{t('occurrenceForm.locationData.enterCoordinates.subtitle')}</h2>
+
+      <h2 className="title">{t('occurrenceForm.locationData.enterCoordinates.title')}</h2>
       <div className="columns no-margin">
         <InputNumber
           className="decimal-longitude is-3 mandatory no-margin"
@@ -72,22 +73,44 @@ export default function LocationData({ data, onChange }) {
         active={locationPickerVisible}
         onChange={handleLocationUpdate}
         onClose={() => setLocationPickerVisible(false)}/>
-      <div className="verbatim-data">
-        <h1 className="title">{t('occurrenceForm.locationData.verbatimData.title')}</h1>
-        <h2 className="subtitle">{t('occurrenceForm.locationData.verbatimData.subtitle')}</h2>
-        <div className="columns">
-          <InputText
-            className="verbatim-coordinates is-3"
-            name="occurrenceForm.locationData.verbatimCoordinates"
-            onChange={(value) => updateField('verbatimCoordinates', value)}
-            optional
-            value={data.verbatimCoordinates}/>
-          <InputText
-            className="verbatim-depth is-3"
-            name="occurrenceForm.locationData.verbatimDepth"
-            onChange={(value) => updateField('verbatimDepth', value)}
-            optional
-            value={data.verbatimDepth}/>
+
+      <h2 className="title">{t('occurrenceForm.locationData.verbatimData.title')}</h2>
+      <h3 className="subtitle">{t('occurrenceForm.locationData.verbatimData.subtitle')}</h3>
+      <div className="columns">
+        <InputText
+          className="verbatim-coordinates is-3"
+          name="occurrenceForm.locationData.verbatimCoordinates"
+          onChange={(value) => updateField('verbatimCoordinates', value)}
+          optional
+          value={data.verbatimCoordinates}/>
+        <InputText
+          className="verbatim-depth is-3"
+          name="occurrenceForm.locationData.verbatimDepth"
+          onChange={(value) => updateField('verbatimDepth', value)}
+          optional
+          value={data.verbatimDepth}/>
+      </div>
+
+      <h2 className="title">{t('occurrenceForm.locationData.timeData.title')}</h2>
+      <div className="columns">
+        <div className="event-begin-date column field is-two-fifths">
+          <label className="label">
+            {t('occurrenceForm.locationData.eventBeginDate')}
+          </label>
+          <DatePicker
+            onChange={(value) => updateField('beginDate', value)}
+            value={data.beginDate}/>
+        </div>
+        <div className="event-end-date column field is-two-fifths">
+          <label className="label has-text-weight-normal">
+            {t('occurrenceForm.locationData.eventEndDate')}
+          </label>
+          <div className="control">
+            <DatePicker
+              onChange={(value) => updateField('endDate', value)}
+              value={data.endDate}/>
+          </div>
+          <p className="help">{t('occurrenceForm.locationData.eventEndDateHelp')}</p>
         </div>
       </div>
     </div>
@@ -95,6 +118,8 @@ export default function LocationData({ data, onChange }) {
 }
 
 export const locationDataShape = {
+  beginDate:             PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.number]).isRequired,
+  endDate:               PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.number]),
   decimalLongitude:      PropTypes.number,
   decimalLatitude:       PropTypes.number,
   coordinateUncertainty: PropTypes.number,

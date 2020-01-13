@@ -11,6 +11,8 @@ export default [{
 
 export function getEmptyData() {
   return {
+    beginDate:             Date.now(),
+    endDate:               null,
     decimalLongitude:      null,
     decimalLatitude:       null,
     coordinateUncertainty: null,

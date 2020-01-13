@@ -1,6 +1,12 @@
 .location-data {
   margin-bottom: 1.25rem;
 
+  .event-begin-date {
+    .datetimepicker-clear-button {
+      display: none;
+    }
+  }
+
   .verbatim-data {
     background-color: $background;
     padding: 1.25em 1.5em;

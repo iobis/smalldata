@@ -60,11 +60,8 @@ export default {
         },
         scientificName:      'Scientific name',
         scientificNameId:    'Scientific name ID',
-        eventBeginDate:      'Event start date',
-        eventEndDate:        'Event end date',
-        eventEndDateHelp:    'optional: only in case of date range',
         occurrenceStatus:    {
-          title:   'Occurrence Status',
+          title:   'Occurrence status',
           absent:  'absent',
           present: 'present'
         },
@@ -92,50 +89,55 @@ export default {
       },
       locationData:           {
         enterCoordinates:      {
-          title:    'Enter coordinates',
-          subtitle: 'bold fields are mandatory'
+          title:    'Location'
         },
         verbatimData:          {
-          title:    'Verbatim Data',
+          title:    'Verbatim location',
           subtitle: 'optionally supply verbatim data as it appeared originally in the notes'
         },
+        timeData:          {
+          title:    'Date and time'
+        },
         decimalLongitude:      {
-          label:       'Decimal Longitude',
+          label:       'Decimal longitude',
           placeholder: '5.12334'
         },
         decimalLatitude:       {
-          label:       'Decimal Latitude',
+          label:       'Decimal latitude',
           placeholder: '53.2345'
         },
         coordinateUncertainty: {
-          label:       'Coordinate Uncertainty',
+          label:       'Coordinate uncertainty',
           placeholder: '',
           help:        'meters'
         },
         minimumDepth:          {
-          label:       'Minimum Depth',
+          label:       'Minimum depth',
           placeholder: '',
           help:        'meters'
         },
         maximumDepth:          {
-          label:       'Maximum Depth',
+          label:       'Maximum depth',
           placeholder: '',
           help:        'meters'
         },
         verbatimCoordinates:   {
-          label:       'Verbatim Coordinates',
+          label:       'Verbatim coordinates',
           placeholder: '',
           help:        'Example: "41 05 54S 121 05 34W", "17T 630000 4833400"'
         },
         verbatimDepth:         {
-          label:       'Verbatim Depth',
+          label:       'Verbatim depth',
           placeholder: '',
           help:        'Examples: "100-200 m"'
         },
+        eventBeginDate:      'Event start date',
+        eventEndDate:        'Event end date',
+        eventEndDateHelp:    'optional: only in case of date range',
         step:                  {
-          stepDescription: 'Select the location for data collected',
-          stepTitle:       'Location Data',
-          dataDescription: 'Main Location',
+          stepDescription: 'Select the time and location for data collected',
+          stepTitle:       'Time and location',
+          dataDescription: 'Main location',
           selectedData:    {
             latitude:  'Latitude',
             longitude: 'Longitude'
@@ -151,28 +153,28 @@ export default {
       },
       observationData:        {
         step:                    {
-          dataDescription: 'Main Info',
+          dataDescription: 'Main info',
           stepDescription: 'Enter further specifics',
-          stepTitle:       'Observation Data'
+          stepTitle:       'Observation data'
         },
         institutionCode:         {
-          label:       'Institution Code',
+          label:       'Institution code',
           placeholder: 'institution code'
         },
         collectionCode:          {
-          label:       'Collection Code',
+          label:       'Collection code',
           placeholder: 'collection code'
         },
         fieldNumber:             {
-          label:       'Field Number',
+          label:       'Field number',
           placeholder: 'field number'
         },
         catalogNumber:           {
-          label:       'Catalog Number',
+          label:       'Catalog number',
           placeholder: 'catalog number'
         },
         recordNumber:            {
-          label:       'Record Number',
+          label:       'Record number',
           placeholder: 'record number'
         },
         identifiedBy:            {
@@ -186,12 +188,12 @@ export default {
           help:        'hit enter to add person to list'
         },
         identificationQualifier: {
-          label:       'Identification Qualifier',
+          label:       'Identification qualifier',
           placeholder: '',
           help:        'aff. agrifolia var. oxyadenia (for Quercus aff. agrifolia var. oxyadenia with accompanying values Quercus in genus, agrifolia in specificEpithet, oxyadenia in infraspecificEpithet, and var. in taxonRank. cf. var. oxyadenia for Quercus agrifolia cf. var. oxyadenia with accompanying values Quercus in genus, agrifolia in specificEpithet, oxyadenia in infraspecificEpithet, and var. in taxonRank.'
         },
         identificationRemarks:   {
-          label:       'Identification Remarks',
+          label:       'Identification remarks',
           placeholder: '',
           help:        'Example: “Distinguished between Anthus correndera and Anthus hellmayri based on the comparative lengths of the uñas.”'
         },
