@@ -22,14 +22,32 @@ exports[`Keywords renders correctly 1`] = `
         >
           datasetFormPage.keywords.keywords.label
         </label>
-        <input
-          className="input"
-          onChange={[Function]}
-          onKeyDown={[Function]}
-          placeholder="datasetFormPage.keywords.keywords.placeholder"
-          type="text"
-          value=""
-        />
+        <div
+          className="field has-addons"
+        >
+          <div
+            className="control is-expanded"
+          >
+            <input
+              className="input"
+              onChange={[Function]}
+              onKeyDown={[Function]}
+              placeholder="datasetFormPage.keywords.keywords.placeholder"
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            className="control"
+          >
+            <button
+              className="add button"
+              onClick={[Function]}
+            >
+              common.add
+            </button>
+          </div>
+        </div>
         <p
           className="help"
         >

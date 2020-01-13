@@ -108,14 +108,32 @@ exports[`ObservationData renders correctly 1`] = `
       >
         occurrenceForm.observationData.identifiedBy.label
       </label>
-      <input
-        className="input"
-        onChange={[Function]}
-        onKeyDown={[Function]}
-        placeholder="occurrenceForm.observationData.identifiedBy.placeholder"
-        type="text"
-        value=""
-      />
+      <div
+        className="field has-addons"
+      >
+        <div
+          className="control is-expanded"
+        >
+          <input
+            className="input"
+            onChange={[Function]}
+            onKeyDown={[Function]}
+            placeholder="occurrenceForm.observationData.identifiedBy.placeholder"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          className="control"
+        >
+          <button
+            className="add button"
+            onClick={[Function]}
+          >
+            common.add
+          </button>
+        </div>
+      </div>
       <p
         className="help"
       >
@@ -156,14 +174,32 @@ exports[`ObservationData renders correctly 1`] = `
       >
         occurrenceForm.observationData.recordedBy.label
       </label>
-      <input
-        className="input"
-        onChange={[Function]}
-        onKeyDown={[Function]}
-        placeholder="occurrenceForm.observationData.recordedBy.placeholder"
-        type="text"
-        value=""
-      />
+      <div
+        className="field has-addons"
+      >
+        <div
+          className="control is-expanded"
+        >
+          <input
+            className="input"
+            onChange={[Function]}
+            onKeyDown={[Function]}
+            placeholder="occurrenceForm.observationData.recordedBy.placeholder"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          className="control"
+        >
+          <button
+            className="add button"
+            onClick={[Function]}
+          >
+            common.add
+          </button>
+        </div>
+      </div>
       <p
         className="help"
       >
@@ -261,14 +297,32 @@ exports[`ObservationData renders correctly 1`] = `
       >
         occurrenceForm.observationData.references.label
       </label>
-      <input
-        className="input"
-        onChange={[Function]}
-        onKeyDown={[Function]}
-        placeholder="occurrenceForm.observationData.references.placeholder"
-        type="text"
-        value=""
-      />
+      <div
+        className="field has-addons"
+      >
+        <div
+          className="control is-expanded"
+        >
+          <input
+            className="input"
+            onChange={[Function]}
+            onKeyDown={[Function]}
+            placeholder="occurrenceForm.observationData.references.placeholder"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          className="control"
+        >
+          <button
+            className="add button"
+            onClick={[Function]}
+          >
+            common.add
+          </button>
+        </div>
+      </div>
       <p
         className="help"
       >
