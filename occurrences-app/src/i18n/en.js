@@ -44,7 +44,7 @@ export default {
       reviewAndSubmitButton:  'Review & Submit',
       dataset:                {
         step: {
-          dataDescription: 'Using Data',
+          dataDescription: 'Dataset',
           stepDescription: 'Choose the dataset for adding observations',
           stepTitle:       'Selected Dataset'
         }
@@ -52,16 +52,16 @@ export default {
       occurrenceData:         {
         step:                {
           dataDescription: 'Given Values',
-          stepDescription: 'Mandatory observation information',
-          stepTitle:       'Occurrence Data'
+          stepDescription: 'Identification related properties',
+          stepTitle:       'Identification'
         },
         scientificNameInput: {
-          wormsInfo: 'Species names are retrieved on the fly from the WORMS database by using the webservices available at '
+          wormsInfo: 'scientific names are retrieved from the WoRMS database by using the webservices available at '
         },
-        scientificName:      'Scientific Name',
-        scientificNameId:    'Scientific Name Id',
-        eventBeginDate:      'Event Begin Date',
-        eventEndDate:        'Event End Date',
+        scientificName:      'Scientific name',
+        scientificNameId:    'Scientific name ID',
+        eventBeginDate:      'Event start date',
+        eventEndDate:        'Event end date',
         eventEndDateHelp:    'optional: only in case of date range',
         occurrenceStatus:    {
           title:   'Occurrence Status',
@@ -69,7 +69,7 @@ export default {
           present: 'present'
         },
         basisOfRecord:       {
-          title:              'Basis of Record',
+          title:              'Basis of record',
           humanObservation:   'human observation',
           fossilSpecimen:     'fossil specimen',
           livingSpecimen:     'living specimen',

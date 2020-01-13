@@ -49,7 +49,7 @@
 }
 
 .scientific-name.is-danger ~ .invalid-worms::after {
-  content: 'invalid worms value, but will be submitted';
+  content: 'taxon not matched with WoRMS, scientificNameID will be omitted';
   position: absolute;
   z-index: 1000;
   padding: 0.2rem;
