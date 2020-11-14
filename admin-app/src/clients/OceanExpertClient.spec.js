@@ -23,7 +23,7 @@ describe('OceanExpertClient', () => {
 
       expect(response).toEqual([createUser()])
       expect(fetch).toHaveBeenCalledTimes(1)
-      expect(fetch).toHaveBeenCalledWith('https://www.oceanexpert.net/api/v1/advanceSearch/search.json?action=browse&type=all&query=Firstname')
+      expect(fetch).toHaveBeenCalledWith('https://www.oceanexpert.org/api/v1/advanceSearch/search.json?action=browse&type=all&query=Firstname')
     })
 
     it('for name with extra whitespaces spaces', async() => {
@@ -31,7 +31,7 @@ describe('OceanExpertClient', () => {
 
       expect(response).toEqual([createUser()])
       expect(fetch).toHaveBeenCalledTimes(1)
-      expect(fetch).toHaveBeenCalledWith('https://www.oceanexpert.net/api/v1/advanceSearch/search.json?action=browse&type=all&query=Firstname')
+      expect(fetch).toHaveBeenCalledWith('https://www.oceanexpert.org/api/v1/advanceSearch/search.json?action=browse&type=all&query=Firstname')
     })
 
     it('for name with spaces only', async() => {
@@ -82,7 +82,7 @@ describe('OceanExpertClient', () => {
       const response = await getExpertById('expert-id')
 
       expect(fetch).toHaveBeenCalledTimes(1)
-      expect(fetch).toHaveBeenCalledWith('https://www.oceanexpert.net/api/v1/expert/expert-id.json')
+      expect(fetch).toHaveBeenCalledWith('https://www.oceanexpert.org/api/v1/expert/expert-id.json')
       expect(response).toEqual({ email: 'private@email.com', name: 'firstName lastName' })
     })
   })
