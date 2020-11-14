@@ -28,6 +28,29 @@ export default function LocationData({ data, onChange }) {
   return (
     <div className="location-data section is-fluid">
 
+      <h2 className="title">{t('occurrenceForm.locationData.timeData.title')}</h2>
+      <div className="columns">
+        <div className="event-begin-date column field is-two-fifths">
+          <label className="label">
+            {t('occurrenceForm.locationData.eventBeginDate')}
+          </label>
+          <DatePicker
+            onChange={(value) => updateField('beginDate', value)}
+            value={data.beginDate}/>
+        </div>
+        <div className="event-end-date column field is-two-fifths">
+          <label className="label has-text-weight-normal">
+            {t('occurrenceForm.locationData.eventEndDate')}
+          </label>
+          <div className="control">
+            <DatePicker
+              onChange={(value) => updateField('endDate', value)}
+              value={data.endDate}/>
+          </div>
+          <p className="help">{t('occurrenceForm.locationData.eventEndDateHelp')}</p>
+        </div>
+      </div>
+
       <h2 className="title">{t('occurrenceForm.locationData.enterCoordinates.title')}</h2>
       <div className="columns no-margin">
         <InputNumber
@@ -91,28 +114,6 @@ export default function LocationData({ data, onChange }) {
           value={data.verbatimDepth}/>
       </div>
 
-      <h2 className="title">{t('occurrenceForm.locationData.timeData.title')}</h2>
-      <div className="columns">
-        <div className="event-begin-date column field is-two-fifths">
-          <label className="label">
-            {t('occurrenceForm.locationData.eventBeginDate')}
-          </label>
-          <DatePicker
-            onChange={(value) => updateField('beginDate', value)}
-            value={data.beginDate}/>
-        </div>
-        <div className="event-end-date column field is-two-fifths">
-          <label className="label has-text-weight-normal">
-            {t('occurrenceForm.locationData.eventEndDate')}
-          </label>
-          <div className="control">
-            <DatePicker
-              onChange={(value) => updateField('endDate', value)}
-              value={data.endDate}/>
-          </div>
-          <p className="help">{t('occurrenceForm.locationData.eventEndDateHelp')}</p>
-        </div>
-      </div>
     </div>
   )
 }
