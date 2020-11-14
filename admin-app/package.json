@@ -54,7 +54,8 @@
     "react-cosmos": "4.8.1",
     "react-cosmos-router-proxy": "4.8.2",
     "react-cosmos-stateful-proxy": "2.0.0",
-    "react-test-renderer": "16.9.0"
+    "react-test-renderer": "16.9.0",
+    "trim-right": "^1.0.1"
   },
   "proxy": "http://localhost:8080/"
 }
