@@ -96,12 +96,6 @@ export default function FinalSummary({
               name={t('occurrenceForm.occurrenceData.scientificNameId')}
               value={occurrenceData.scientificNameId}/>
             <NameValueRow
-              name={t('occurrenceForm.occurrenceData.eventBeginDate')}
-              value={format(occurrenceData.beginDate, 'D MMMM YYYY')}/>
-            <NameValueRow
-              name={t('occurrenceForm.occurrenceData.eventEndDate')}
-              value={occurrenceData.endDate && format(occurrenceData.endDate, 'D MMMM YYYY')}/>
-            <NameValueRow
               name={t('occurrenceForm.occurrenceData.occurrenceStatus.title')}
               value={t('occurrenceForm.occurrenceData.occurrenceStatus.' + occurrenceData.occurrenceStatus)}/>
             <NameValueRow
@@ -122,6 +116,12 @@ export default function FinalSummary({
         <table className="table is-striped is-fullwidth is-hoverable">
           <NameValueHeader/>
           <tbody>
+            <NameValueRow
+              name={t('occurrenceForm.locationData.eventBeginDate')}
+              value={format(locationData.beginDate, 'D MMMM YYYY')}/>
+            <NameValueRow
+              name={t('occurrenceForm.locationData.eventEndDate')}
+              value={locationData.endDate && format(locationData.endDate, 'D MMMM YYYY')}/>
             <NameValueRow
               name={t('occurrenceForm.locationData.decimalLatitude.label')}
               value={locationData.decimalLatitude}/>

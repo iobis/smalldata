@@ -15,13 +15,13 @@ export function datasetTitleOf(dataset) {
 }
 
 export function mapOccurrenceToDwca(occurrence) {
-  const emof = occurrence.measurements.map(measurment => {
-    const { typeId, unitId } = findTypeAndUnitIdByNames(measurment.type, measurment.unit)
+  const emof = occurrence.measurements.map(measurement => {
+    const { typeId, unitId } = findTypeAndUnitIdByNames(measurement.type, measurement.unit)
     return {
       tdwg:  {
-        measurementType:  measurment.type,
-        measurementUnit:  measurment.unit,
-        measurementValue: measurment.value
+        measurementType:  measurement.type,
+        measurementUnit:  measurement.unit,
+        measurementValue: measurement.value
       },
       iobis: {
         measurementTypeID: typeId,
@@ -35,6 +35,7 @@ export function mapOccurrenceToDwca(occurrence) {
     occurrence: [{
       tdwg:  {
         ...mapOccurrenceDataToTdwg(occurrence.occurrenceData),
+        ...mapLocationDataToTdwg(occurrence.locationData),
 
         decimalLongitude:              occurrence.locationData.decimalLongitude,
         decimalLatitude:               occurrence.locationData.decimalLatitude,
@@ -68,24 +69,30 @@ export function mapOccurrenceToDwca(occurrence) {
 
 function mapOccurrenceDataToTdwg({
   basisOfRecord,
-  beginDate,
-  endDate,
   occurrenceStatus,
   scientificName,
   scientificNameId,
   lifeStage,
   sex
 }) {
-  const beginDateFormatted = format(beginDate, 'YYYY-MM-DD')
-  const eventDate = beginDateFormatted + (endDate ? format(endDate, '/YYYY-MM-DD') : '')
   return {
     basisOfRecord:    basisOfRecord.charAt(0).toUpperCase() + basisOfRecord.slice(1),
-    eventDate,
     occurrenceStatus,
     scientificName,
     scientificNameID: scientificNameId,
     ...(lifeStage === 'unspecified' ? {} : { lifeStage }),
     ...(sex === 'unspecified' ? {} : { sex })
+  }
+}
+
+function mapLocationDataToTdwg({
+  beginDate,
+  endDate,
+}) {
+  const beginDateFormatted = format(beginDate, 'YYYY-MM-DD')
+  const eventDate = beginDateFormatted + (endDate ? format(endDate, '/YYYY-MM-DD') : '')
+  return {
+    eventDate
   }
 }
 
@@ -108,11 +115,8 @@ function mapDarwinCoreFieldsToRequest(darwinCoreFields) {
 
 export function mapDwcaToOccurrenceData(dwca) {
   const tdwg = dwca.dwcRecords.occurrence[0].tdwg
-  const [beginDate, endDate] = tdwg.eventDate.split('/')
   return {
     basisOfRecord:    tdwg.basisOfRecord.charAt(0).toLowerCase() + tdwg.basisOfRecord.slice(1),
-    beginDate:        new Date(beginDate),
-    endDate:          endDate ? new Date(endDate) : null,
     lifeStage:        tdwg.lifeStage || 'unspecified',
     occurrenceStatus: tdwg.occurrenceStatus,
     scientificName:   tdwg.scientificName,
@@ -123,7 +127,10 @@ export function mapDwcaToOccurrenceData(dwca) {
 
 export function mapDwcaToLocationData(dwca) {
   const tdwg = dwca.dwcRecords.occurrence[0].tdwg
+  const [beginDate, endDate] = tdwg.eventDate.split('/')
   return {
+    beginDate:             new Date(beginDate),
+    endDate:               endDate ? new Date(endDate) : null,
     decimalLongitude:      tdwg.decimalLongitude,
     decimalLatitude:       tdwg.decimalLatitude,
     coordinateUncertainty: tdwg.coordinateUncertaintyInMeters,

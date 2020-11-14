@@ -32,8 +32,6 @@ export function getDefaultProps() {
     dataset:          SmalldataClientFixture.getDatasetsFixture()[0],
     occurrenceData:   {
       basisOfRecord:    'humanObservation',
-      beginDate:        Date.UTC(2019, 3, 29),
-      endDate:          Date.UTC(2019, 3, 30),
       lifeStage:        'adult',
       occurrenceStatus: 'absent',
       scientificName:   'ala abra',
@@ -41,6 +39,8 @@ export function getDefaultProps() {
       sex:              'male'
     },
     locationData:     {
+      beginDate:             Date.UTC(2019, 3, 29),
+      endDate:               Date.UTC(2019, 3, 30),
       decimalLongitude:      2.345456,
       decimalLatitude:       51.3354656,
       coordinateUncertainty: null,

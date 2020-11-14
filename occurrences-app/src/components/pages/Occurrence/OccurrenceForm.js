@@ -358,8 +358,6 @@ function createInitialState() {
     dataset:          null,
     occurrenceData:   {
       basisOfRecord:    'humanObservation',
-      beginDate:        Date.now(),
-      endDate:          null,
       lifeStage:        'unspecified',
       occurrenceStatus: 'present',
       scientificName:   '',
@@ -367,6 +365,8 @@ function createInitialState() {
       sex:              'unspecified'
     },
     locationData:     {
+      beginDate:        Date.now(),
+      endDate:          null,
       decimalLongitude:      null,
       decimalLatitude:       null,
       coordinateUncertainty: null,

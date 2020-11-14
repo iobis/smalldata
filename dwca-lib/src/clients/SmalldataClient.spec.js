@@ -490,14 +490,14 @@ function getDefaultOccurrence() {
       },
       occurrenceData:   {
         basisOfRecord:    'humanObservation',
-        beginDate:        Date.UTC(2019, 3, 29),
-        endDate:          Date.UTC(2019, 3, 30),
         lifeStage:        'adult',
         occurrenceStatus: 'present',
         scientificName:   'ala abra',
         sex:              'male'
       },
       locationData:     {
+        beginDate:        Date.UTC(2019, 3, 29),
+        endDate:          Date.UTC(2019, 3, 30),
         decimalLongitude:      2.345456,
         decimalLatitude:       51.3354656,
         coordinateUncertainty: 1,

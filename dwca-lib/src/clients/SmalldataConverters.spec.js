@@ -17,8 +17,6 @@ describe('SmalldataConverters', () => {
   it('mapDwcaToOccurrenceData()', () => {
     expect(SmalldataConverters.mapDwcaToOccurrenceData(getDefaultDwcaResponse())).toEqual({
       basisOfRecord:    'machineObservation',
-      beginDate:        new Date(Date.UTC(2019, 5, 25)),
-      endDate:          new Date(Date.UTC(2019, 5, 26)),
       lifeStage:        'unspecified',
       occurrenceStatus: 'absent',
       scientificName:   'Aaadonta',
@@ -30,6 +28,8 @@ describe('SmalldataConverters', () => {
   it('mapDwcaToOccurrenceData()', () => {
     expect(SmalldataConverters.mapDwcaToLocationData(getDefaultDwcaResponse())).toEqual({
       coordinateUncertainty: 1,
+      beginDate:             new Date(Date.UTC(2019, 5, 25)),
+      endDate:               new Date(Date.UTC(2019, 5, 26)),
       decimalLatitude:       51.518463972439385,
       decimalLongitude:      -0.16771316528320315,
       maximumDepth:          3,
