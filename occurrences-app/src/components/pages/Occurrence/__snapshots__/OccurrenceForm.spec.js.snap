@@ -71,8 +71,8 @@ exports[`OccurrenceForm when creating new occurrence and then clicking "Review a
       selectedData={
         <OccurrenceDataSummary
           basisOfRecord="humanObservation"
-          beginDate={1556496000000}
-          endDate={null}
+          identificationQualifier=""
+          identificationRemarks="Recorded by Charles Darwin."
           lifeStage="unspecified"
           occurrenceStatus="present"
           scientificName=""
@@ -135,9 +135,11 @@ exports[`OccurrenceForm when creating new occurrence and then clicking "Review a
       onStepTitleClick={[Function]}
       selectedData={
         <SelectedLocation
+          beginDate={1556496000000}
           coordinateUncertainty={null}
           decimalLatitude={0.12345}
           decimalLongitude={-0.54321}
+          endDate={null}
           maximumDepth={null}
           minimumDepth={null}
           verbatimCoordinates=""
@@ -468,9 +470,11 @@ exports[`OccurrenceForm when creating new occurrence and then clicking "Review a
       errorVisible={false}
       locationData={
         Object {
+          "beginDate": 1556496000000,
           "coordinateUncertainty": null,
           "decimalLatitude": 0.12345,
           "decimalLongitude": -0.54321,
+          "endDate": null,
           "maximumDepth": null,
           "minimumDepth": null,
           "verbatimCoordinates": "",
@@ -519,8 +523,6 @@ exports[`OccurrenceForm when creating new occurrence and then clicking "Review a
           "catalogNumber": "",
           "collectionCode": "",
           "fieldNumber": "",
-          "identificationQualifier": "",
-          "identificationRemarks": "",
           "identifiedBy": Array [
             "Indiana Jones",
           ],
@@ -533,8 +535,8 @@ exports[`OccurrenceForm when creating new occurrence and then clicking "Review a
       occurrenceData={
         Object {
           "basisOfRecord": "humanObservation",
-          "beginDate": 1556496000000,
-          "endDate": null,
+          "identificationQualifier": "",
+          "identificationRemarks": "Recorded by Charles Darwin.",
           "lifeStage": "unspecified",
           "occurrenceStatus": "present",
           "scientificName": "",
@@ -671,44 +673,6 @@ exports[`OccurrenceForm when creating new occurrence and then clicking "Review a
                 </tr>
               </NameValueRow>
               <NameValueRow
-                name="occurrenceForm.occurrenceData.eventBeginDate"
-                value="29 April 2019"
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.occurrenceData.eventBeginDate
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    29 April 2019
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.occurrenceData.eventEndDate"
-                value={null}
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.occurrenceData.eventEndDate
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    —
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
                 name="occurrenceForm.occurrenceData.occurrenceStatus.title"
                 value="occurrenceForm.occurrenceData.occurrenceStatus.present"
               >
@@ -784,6 +748,44 @@ exports[`OccurrenceForm when creating new occurrence and then clicking "Review a
                   </td>
                 </tr>
               </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.occurrenceData.identificationQualifier.label"
+                value=""
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.occurrenceData.identificationQualifier.label
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    —
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.occurrenceData.identificationRemarks.label"
+                value="Recorded by Charles Darwin."
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.occurrenceData.identificationRemarks.label
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    Recorded by Charles Darwin.
+                  </td>
+                </tr>
+              </NameValueRow>
             </tbody>
           </table>
           <ChangeButton
@@ -828,6 +830,44 @@ exports[`OccurrenceForm when creating new occurrence and then clicking "Review a
               </thead>
             </NameValueHeader>
             <tbody>
+              <NameValueRow
+                name="occurrenceForm.locationData.eventBeginDate"
+                value="29 April 2019"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.locationData.eventBeginDate
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    29 April 2019
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.locationData.eventEndDate"
+                value={null}
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.locationData.eventEndDate
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    —
+                  </td>
+                </tr>
+              </NameValueRow>
               <NameValueRow
                 name="occurrenceForm.locationData.decimalLatitude.label"
                 value={0.12345}
@@ -1194,44 +1234,6 @@ exports[`OccurrenceForm when creating new occurrence and then clicking "Review a
                     className="name"
                   >
                     occurrenceForm.observationData.references.label
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    —
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.observationData.identificationQualifier.label"
-                value=""
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.observationData.identificationQualifier.label
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    —
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.observationData.identificationRemarks.label"
-                value=""
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.observationData.identificationRemarks.label
                   </td>
                   <td
                     className="value"
@@ -2083,8 +2085,8 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 1`] = `
       selectedData={
         <OccurrenceDataSummary
           basisOfRecord="humanObservation"
-          beginDate={1556496000000}
-          endDate={null}
+          identificationQualifier=""
+          identificationRemarks="Recorded by Charles Darwin."
           lifeStage="unspecified"
           occurrenceStatus="present"
           scientificName=""
@@ -2147,9 +2149,11 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 1`] = `
       onStepTitleClick={[Function]}
       selectedData={
         <SelectedLocation
+          beginDate={1556496000000}
           coordinateUncertainty={null}
           decimalLatitude={null}
           decimalLongitude={null}
+          endDate={null}
           maximumDepth={null}
           minimumDepth={null}
           verbatimCoordinates=""
@@ -2464,8 +2468,8 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
       selectedData={
         <OccurrenceDataSummary
           basisOfRecord="humanObservation"
-          beginDate={1556496000000}
-          endDate={null}
+          identificationQualifier=""
+          identificationRemarks="Recorded by Charles Darwin."
           lifeStage="unspecified"
           occurrenceStatus="present"
           scientificName=""
@@ -2485,8 +2489,8 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
         selectedData={
           <OccurrenceDataSummary
             basisOfRecord="humanObservation"
-            beginDate={1556496000000}
-            endDate={null}
+            identificationQualifier=""
+            identificationRemarks="Recorded by Charles Darwin."
             lifeStage="unspecified"
             occurrenceStatus="present"
             scientificName=""
@@ -2515,8 +2519,8 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
           >
             <OccurrenceDataSummary
               basisOfRecord="humanObservation"
-              beginDate={1556496000000}
-              endDate={null}
+              identificationQualifier=""
+              identificationRemarks="Recorded by Charles Darwin."
               lifeStage="unspecified"
               occurrenceStatus="present"
               scientificName=""
@@ -2524,7 +2528,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
               sex="unspecified"
             >
               <span>
-                 29 April 2019 
+                 Invalid Date 
               </span>
             </OccurrenceDataSummary>
           </p>
@@ -2565,9 +2569,11 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
       onStepTitleClick={[Function]}
       selectedData={
         <SelectedLocation
+          beginDate={1556496000000}
           coordinateUncertainty={null}
           decimalLatitude={0.12345}
           decimalLongitude={-0.54321}
+          endDate={null}
           maximumDepth={null}
           minimumDepth={null}
           verbatimCoordinates=""
@@ -2585,9 +2591,11 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
         onStepTitleClick={[Function]}
         selectedData={
           <SelectedLocation
+            beginDate={1556496000000}
             coordinateUncertainty={null}
             decimalLatitude={0.12345}
             decimalLongitude={-0.54321}
+            endDate={null}
             maximumDepth={null}
             minimumDepth={null}
             verbatimCoordinates=""
@@ -2614,9 +2622,11 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
             className="selected-data column"
           >
             <SelectedLocation
+              beginDate={1556496000000}
               coordinateUncertainty={null}
               decimalLatitude={0.12345}
               decimalLongitude={-0.54321}
+              endDate={null}
               maximumDepth={null}
               minimumDepth={null}
               verbatimCoordinates=""
@@ -2719,8 +2729,6 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
               "catalogNumber": "",
               "collectionCode": "",
               "fieldNumber": "",
-              "identificationQualifier": "",
-              "identificationRemarks": "",
               "identifiedBy": Array [],
               "institutionCode": "",
               "recordNumber": "",
@@ -2974,62 +2982,6 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 2`] = `
                   </Tags>
                 </div>
               </InputMultipleText>
-            </div>
-            <div
-              className="columns"
-            >
-              <InputText
-                className="identification-qualifier is-9"
-                name="occurrenceForm.observationData.identificationQualifier"
-                onChange={[Function]}
-                value=""
-              >
-                <div
-                  className="column field identification-qualifier is-9"
-                >
-                  <label
-                    className="label"
-                    htmlFor="occurrenceform.observationdata.identificationqualifier.label"
-                  >
-                    occurrenceForm.observationData.identificationQualifier.label
-                  </label>
-                  <input
-                    className="input"
-                    id="occurrenceform.observationdata.identificationqualifier.label"
-                    onChange={[Function]}
-                    type="text"
-                    value=""
-                  />
-                </div>
-              </InputText>
-            </div>
-            <div
-              className="columns"
-            >
-              <Textarea
-                className="identification-remarks is-9"
-                name="occurrenceForm.observationData.identificationRemarks"
-                onChange={[Function]}
-                value=""
-              >
-                <div
-                  className="column field identification-remarks is-9"
-                >
-                  <label
-                    className="label"
-                    htmlFor="occurrenceform.observationdata.identificationremarks.label"
-                  >
-                    occurrenceForm.observationData.identificationRemarks.label
-                  </label>
-                  <textarea
-                    className="textarea"
-                    id="occurrenceform.observationdata.identificationremarks.label"
-                    onChange={[Function]}
-                    rows={5}
-                    value=""
-                  />
-                </div>
-              </Textarea>
             </div>
             <div
               className="columns"
@@ -3345,8 +3297,8 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 3`] = `
       selectedData={
         <OccurrenceDataSummary
           basisOfRecord="humanObservation"
-          beginDate={1556496000000}
-          endDate={null}
+          identificationQualifier=""
+          identificationRemarks="Recorded by Charles Darwin."
           lifeStage="unspecified"
           occurrenceStatus="present"
           scientificName=""
@@ -3366,8 +3318,8 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 3`] = `
         selectedData={
           <OccurrenceDataSummary
             basisOfRecord="humanObservation"
-            beginDate={1556496000000}
-            endDate={null}
+            identificationQualifier=""
+            identificationRemarks="Recorded by Charles Darwin."
             lifeStage="unspecified"
             occurrenceStatus="present"
             scientificName=""
@@ -3396,8 +3348,8 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 3`] = `
           >
             <OccurrenceDataSummary
               basisOfRecord="humanObservation"
-              beginDate={1556496000000}
-              endDate={null}
+              identificationQualifier=""
+              identificationRemarks="Recorded by Charles Darwin."
               lifeStage="unspecified"
               occurrenceStatus="present"
               scientificName=""
@@ -3405,7 +3357,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 3`] = `
               sex="unspecified"
             >
               <span>
-                 29 April 2019 
+                 Invalid Date 
               </span>
             </OccurrenceDataSummary>
           </p>
@@ -3446,9 +3398,11 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 3`] = `
       onStepTitleClick={[Function]}
       selectedData={
         <SelectedLocation
+          beginDate={1556496000000}
           coordinateUncertainty={null}
           decimalLatitude={0.12345}
           decimalLongitude={-0.54321}
+          endDate={null}
           maximumDepth={null}
           minimumDepth={null}
           verbatimCoordinates=""
@@ -3466,9 +3420,11 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 3`] = `
         onStepTitleClick={[Function]}
         selectedData={
           <SelectedLocation
+            beginDate={1556496000000}
             coordinateUncertainty={null}
             decimalLatitude={0.12345}
             decimalLongitude={-0.54321}
+            endDate={null}
             maximumDepth={null}
             minimumDepth={null}
             verbatimCoordinates=""
@@ -3495,9 +3451,11 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 3`] = `
             className="selected-data column"
           >
             <SelectedLocation
+              beginDate={1556496000000}
               coordinateUncertainty={null}
               decimalLatitude={0.12345}
               decimalLongitude={-0.54321}
+              endDate={null}
               maximumDepth={null}
               minimumDepth={null}
               verbatimCoordinates=""
@@ -5359,8 +5317,8 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 4`] = `
       selectedData={
         <OccurrenceDataSummary
           basisOfRecord="humanObservation"
-          beginDate={1556496000000}
-          endDate={null}
+          identificationQualifier=""
+          identificationRemarks="Recorded by Charles Darwin."
           lifeStage="unspecified"
           occurrenceStatus="present"
           scientificName=""
@@ -5380,8 +5338,8 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 4`] = `
         selectedData={
           <OccurrenceDataSummary
             basisOfRecord="humanObservation"
-            beginDate={1556496000000}
-            endDate={null}
+            identificationQualifier=""
+            identificationRemarks="Recorded by Charles Darwin."
             lifeStage="unspecified"
             occurrenceStatus="present"
             scientificName=""
@@ -5410,8 +5368,8 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 4`] = `
           >
             <OccurrenceDataSummary
               basisOfRecord="humanObservation"
-              beginDate={1556496000000}
-              endDate={null}
+              identificationQualifier=""
+              identificationRemarks="Recorded by Charles Darwin."
               lifeStage="unspecified"
               occurrenceStatus="present"
               scientificName=""
@@ -5419,7 +5377,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 4`] = `
               sex="unspecified"
             >
               <span>
-                 29 April 2019 
+                 Invalid Date 
               </span>
             </OccurrenceDataSummary>
           </p>
@@ -5460,9 +5418,11 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 4`] = `
       onStepTitleClick={[Function]}
       selectedData={
         <SelectedLocation
+          beginDate={1556496000000}
           coordinateUncertainty={null}
           decimalLatitude={0.12345}
           decimalLongitude={-0.54321}
+          endDate={null}
           maximumDepth={null}
           minimumDepth={null}
           verbatimCoordinates=""
@@ -5480,9 +5440,11 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 4`] = `
         onStepTitleClick={[Function]}
         selectedData={
           <SelectedLocation
+            beginDate={1556496000000}
             coordinateUncertainty={null}
             decimalLatitude={0.12345}
             decimalLongitude={-0.54321}
+            endDate={null}
             maximumDepth={null}
             minimumDepth={null}
             verbatimCoordinates=""
@@ -5509,9 +5471,11 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 4`] = `
             className="selected-data column"
           >
             <SelectedLocation
+              beginDate={1556496000000}
               coordinateUncertainty={null}
               decimalLatitude={0.12345}
               decimalLongitude={-0.54321}
+              endDate={null}
               maximumDepth={null}
               minimumDepth={null}
               verbatimCoordinates=""
@@ -6023,8 +5987,8 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 5`] = `
       selectedData={
         <OccurrenceDataSummary
           basisOfRecord="humanObservation"
-          beginDate={1556496000000}
-          endDate={null}
+          identificationQualifier=""
+          identificationRemarks="Recorded by Charles Darwin."
           lifeStage="unspecified"
           occurrenceStatus="present"
           scientificName=""
@@ -6044,8 +6008,8 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 5`] = `
         selectedData={
           <OccurrenceDataSummary
             basisOfRecord="humanObservation"
-            beginDate={1556496000000}
-            endDate={null}
+            identificationQualifier=""
+            identificationRemarks="Recorded by Charles Darwin."
             lifeStage="unspecified"
             occurrenceStatus="present"
             scientificName=""
@@ -6074,8 +6038,8 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 5`] = `
           >
             <OccurrenceDataSummary
               basisOfRecord="humanObservation"
-              beginDate={1556496000000}
-              endDate={null}
+              identificationQualifier=""
+              identificationRemarks="Recorded by Charles Darwin."
               lifeStage="unspecified"
               occurrenceStatus="present"
               scientificName=""
@@ -6083,7 +6047,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 5`] = `
               sex="unspecified"
             >
               <span>
-                 29 April 2019 
+                 Invalid Date 
               </span>
             </OccurrenceDataSummary>
           </p>
@@ -6124,9 +6088,11 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 5`] = `
       onStepTitleClick={[Function]}
       selectedData={
         <SelectedLocation
+          beginDate={1556496000000}
           coordinateUncertainty={null}
           decimalLatitude={0.12345}
           decimalLongitude={-0.54321}
+          endDate={null}
           maximumDepth={null}
           minimumDepth={null}
           verbatimCoordinates=""
@@ -6144,9 +6110,11 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 5`] = `
         onStepTitleClick={[Function]}
         selectedData={
           <SelectedLocation
+            beginDate={1556496000000}
             coordinateUncertainty={null}
             decimalLatitude={0.12345}
             decimalLongitude={-0.54321}
+            endDate={null}
             maximumDepth={null}
             minimumDepth={null}
             verbatimCoordinates=""
@@ -6173,9 +6141,11 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 5`] = `
             className="selected-data column"
           >
             <SelectedLocation
+              beginDate={1556496000000}
               coordinateUncertainty={null}
               decimalLatitude={0.12345}
               decimalLongitude={-0.54321}
+              endDate={null}
               maximumDepth={null}
               minimumDepth={null}
               verbatimCoordinates=""
@@ -6720,8 +6690,8 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 6`] = `
       selectedData={
         <OccurrenceDataSummary
           basisOfRecord="humanObservation"
-          beginDate={1556496000000}
-          endDate={null}
+          identificationQualifier=""
+          identificationRemarks="Recorded by Charles Darwin."
           lifeStage="unspecified"
           occurrenceStatus="present"
           scientificName=""
@@ -6741,8 +6711,8 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 6`] = `
         selectedData={
           <OccurrenceDataSummary
             basisOfRecord="humanObservation"
-            beginDate={1556496000000}
-            endDate={null}
+            identificationQualifier=""
+            identificationRemarks="Recorded by Charles Darwin."
             lifeStage="unspecified"
             occurrenceStatus="present"
             scientificName=""
@@ -6771,8 +6741,8 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 6`] = `
           >
             <OccurrenceDataSummary
               basisOfRecord="humanObservation"
-              beginDate={1556496000000}
-              endDate={null}
+              identificationQualifier=""
+              identificationRemarks="Recorded by Charles Darwin."
               lifeStage="unspecified"
               occurrenceStatus="present"
               scientificName=""
@@ -6780,7 +6750,7 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 6`] = `
               sex="unspecified"
             >
               <span>
-                 29 April 2019 
+                 Invalid Date 
               </span>
             </OccurrenceDataSummary>
           </p>
@@ -6821,9 +6791,11 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 6`] = `
       onStepTitleClick={[Function]}
       selectedData={
         <SelectedLocation
+          beginDate={1556496000000}
           coordinateUncertainty={null}
           decimalLatitude={0.12345}
           decimalLongitude={-0.54321}
+          endDate={null}
           maximumDepth={null}
           minimumDepth={null}
           verbatimCoordinates=""
@@ -6841,9 +6813,11 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 6`] = `
         onStepTitleClick={[Function]}
         selectedData={
           <SelectedLocation
+            beginDate={1556496000000}
             coordinateUncertainty={null}
             decimalLatitude={0.12345}
             decimalLongitude={-0.54321}
+            endDate={null}
             maximumDepth={null}
             minimumDepth={null}
             verbatimCoordinates=""
@@ -6870,9 +6844,11 @@ exports[`OccurrenceForm when creating new occurrence renders correctly 6`] = `
             className="selected-data column"
           >
             <SelectedLocation
+              beginDate={1556496000000}
               coordinateUncertainty={null}
               decimalLatitude={0.12345}
               decimalLongitude={-0.54321}
+              endDate={null}
               maximumDepth={null}
               minimumDepth={null}
               verbatimCoordinates=""
@@ -7504,8 +7480,8 @@ exports[`OccurrenceForm when updating occurrence and then clicking "Review and S
       selectedData={
         <OccurrenceDataSummary
           basisOfRecord="machineObservation"
-          beginDate={2019-06-25T00:00:00.000Z}
-          endDate={2019-06-26T00:00:00.000Z}
+          identificationQualifier="Identification Qualifier"
+          identificationRemarks="Identification Remarks"
           lifeStage="unspecified"
           occurrenceStatus="absent"
           scientificName="Aaadonta"
@@ -7568,9 +7544,11 @@ exports[`OccurrenceForm when updating occurrence and then clicking "Review and S
       onStepTitleClick={[Function]}
       selectedData={
         <SelectedLocation
+          beginDate={2019-06-25T00:00:00.000Z}
           coordinateUncertainty={1}
           decimalLatitude={51.518463972439385}
           decimalLongitude={-0.16771316528320315}
+          endDate={2019-06-26T00:00:00.000Z}
           maximumDepth={3}
           minimumDepth={2}
           verbatimCoordinates="17T 630000 4833400"
@@ -7972,9 +7950,11 @@ exports[`OccurrenceForm when updating occurrence and then clicking "Review and S
       errorVisible={false}
       locationData={
         Object {
+          "beginDate": 2019-06-25T00:00:00.000Z,
           "coordinateUncertainty": 1,
           "decimalLatitude": 51.518463972439385,
           "decimalLongitude": -0.16771316528320315,
+          "endDate": 2019-06-26T00:00:00.000Z,
           "maximumDepth": 3,
           "minimumDepth": 2,
           "verbatimCoordinates": "17T 630000 4833400",
@@ -8060,8 +8040,6 @@ exports[`OccurrenceForm when updating occurrence and then clicking "Review and S
           "catalogNumber": "Catalog Number",
           "collectionCode": "Collection Code",
           "fieldNumber": "Field Number",
-          "identificationQualifier": "Identification Qualifier",
-          "identificationRemarks": "Identification Remarks",
           "identifiedBy": Array [
             "person-1",
             "person-2",
@@ -8081,8 +8059,8 @@ exports[`OccurrenceForm when updating occurrence and then clicking "Review and S
       occurrenceData={
         Object {
           "basisOfRecord": "machineObservation",
-          "beginDate": 2019-06-25T00:00:00.000Z,
-          "endDate": 2019-06-26T00:00:00.000Z,
+          "identificationQualifier": "Identification Qualifier",
+          "identificationRemarks": "Identification Remarks",
           "lifeStage": "unspecified",
           "occurrenceStatus": "absent",
           "scientificName": "Aaadonta",
@@ -8219,44 +8197,6 @@ exports[`OccurrenceForm when updating occurrence and then clicking "Review and S
                 </tr>
               </NameValueRow>
               <NameValueRow
-                name="occurrenceForm.occurrenceData.eventBeginDate"
-                value="25 June 2019"
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.occurrenceData.eventBeginDate
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    25 June 2019
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.occurrenceData.eventEndDate"
-                value="26 June 2019"
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.occurrenceData.eventEndDate
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    26 June 2019
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
                 name="occurrenceForm.occurrenceData.occurrenceStatus.title"
                 value="occurrenceForm.occurrenceData.occurrenceStatus.absent"
               >
@@ -8332,6 +8272,44 @@ exports[`OccurrenceForm when updating occurrence and then clicking "Review and S
                   </td>
                 </tr>
               </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.occurrenceData.identificationQualifier.label"
+                value="Identification Qualifier"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.occurrenceData.identificationQualifier.label
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    Identification Qualifier
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.occurrenceData.identificationRemarks.label"
+                value="Identification Remarks"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.occurrenceData.identificationRemarks.label
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    Identification Remarks
+                  </td>
+                </tr>
+              </NameValueRow>
             </tbody>
           </table>
           <ChangeButton
@@ -8376,6 +8354,44 @@ exports[`OccurrenceForm when updating occurrence and then clicking "Review and S
               </thead>
             </NameValueHeader>
             <tbody>
+              <NameValueRow
+                name="occurrenceForm.locationData.eventBeginDate"
+                value="25 June 2019"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.locationData.eventBeginDate
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    25 June 2019
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.locationData.eventEndDate"
+                value="26 June 2019"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.locationData.eventEndDate
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    26 June 2019
+                  </td>
+                </tr>
+              </NameValueRow>
               <NameValueRow
                 name="occurrenceForm.locationData.decimalLatitude.label"
                 value={51.518463972439385}
@@ -8763,44 +8779,6 @@ exports[`OccurrenceForm when updating occurrence and then clicking "Review and S
                     className="value"
                   >
                     www.google.com, https://clojure.org/
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.observationData.identificationQualifier.label"
-                value="Identification Qualifier"
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.observationData.identificationQualifier.label
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    Identification Qualifier
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.observationData.identificationRemarks.label"
-                value="Identification Remarks"
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.observationData.identificationRemarks.label
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    Identification Remarks
                   </td>
                 </tr>
               </NameValueRow>
@@ -9797,8 +9775,8 @@ exports[`OccurrenceForm when updating occurrence renders correctly 1`] = `
       selectedData={
         <OccurrenceDataSummary
           basisOfRecord="machineObservation"
-          beginDate={2019-06-25T00:00:00.000Z}
-          endDate={2019-06-26T00:00:00.000Z}
+          identificationQualifier="Identification Qualifier"
+          identificationRemarks="Identification Remarks"
           lifeStage="unspecified"
           occurrenceStatus="absent"
           scientificName="Aaadonta"
@@ -9861,9 +9839,11 @@ exports[`OccurrenceForm when updating occurrence renders correctly 1`] = `
       onStepTitleClick={[Function]}
       selectedData={
         <SelectedLocation
+          beginDate={2019-06-25T00:00:00.000Z}
           coordinateUncertainty={1}
           decimalLatitude={51.518463972439385}
           decimalLongitude={-0.16771316528320315}
+          endDate={2019-06-26T00:00:00.000Z}
           maximumDepth={3}
           minimumDepth={2}
           verbatimCoordinates="17T 630000 4833400"

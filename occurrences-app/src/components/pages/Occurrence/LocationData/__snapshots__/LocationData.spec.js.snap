@@ -4,29 +4,133 @@ exports[`LocationData renders correctly 1`] = `
 <LocationData
   data={
     Object {
+      "beginDate": 1605456875121,
       "coordinateUncertainty": null,
       "decimalLatitude": null,
       "decimalLongitude": null,
+      "endDate": null,
       "maximumDepth": null,
       "minimumDepth": null,
       "verbatimCoordinates": "",
       "verbatimDepth": "",
     }
   }
-  onChange={[MockFunction]}
+  onChange={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "beginDate": 1605456875121,
+            "coordinateUncertainty": null,
+            "decimalLatitude": null,
+            "decimalLongitude": null,
+            "endDate": null,
+            "maximumDepth": null,
+            "minimumDepth": null,
+            "verbatimCoordinates": "",
+            "verbatimDepth": "",
+          },
+        ],
+        Array [
+          Object {
+            "beginDate": 1605456875121,
+            "coordinateUncertainty": null,
+            "decimalLatitude": null,
+            "decimalLongitude": null,
+            "endDate": null,
+            "maximumDepth": null,
+            "minimumDepth": null,
+            "verbatimCoordinates": "",
+            "verbatimDepth": "",
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
 >
   <div
     className="location-data section is-fluid"
   >
-    <h1
+    <h2
+      className="title"
+    >
+      occurrenceForm.locationData.timeData.title
+    </h2>
+    <div
+      className="columns"
+    >
+      <div
+        className="event-begin-date column field is-two-fifths"
+      >
+        <label
+          className="label"
+        >
+          occurrenceForm.locationData.eventBeginDate
+        </label>
+        <DatePicker
+          onChange={[Function]}
+          value={1605456875121}
+        >
+          <DateTimePicker
+            className="input"
+            onChange={[Function]}
+            options={Object {}}
+            value={1605456875121}
+          >
+            <input
+              className="input"
+            />
+          </DateTimePicker>
+        </DatePicker>
+      </div>
+      <div
+        className="event-end-date column field is-two-fifths"
+      >
+        <label
+          className="label has-text-weight-normal"
+        >
+          occurrenceForm.locationData.eventEndDate
+        </label>
+        <div
+          className="control"
+        >
+          <DatePicker
+            onChange={[Function]}
+            value={null}
+          >
+            <DateTimePicker
+              className="input"
+              onChange={[Function]}
+              options={Object {}}
+              value={null}
+            >
+              <input
+                className="input"
+              />
+            </DateTimePicker>
+          </DatePicker>
+        </div>
+        <p
+          className="help"
+        >
+          occurrenceForm.locationData.eventEndDateHelp
+        </p>
+      </div>
+    </div>
+    <h2
       className="title"
     >
       occurrenceForm.locationData.enterCoordinates.title
-    </h1>
-    <h2
-      className="subtitle"
-    >
-      occurrenceForm.locationData.enterCoordinates.subtitle
     </h2>
     <div
       className="columns no-margin"
@@ -225,73 +329,69 @@ exports[`LocationData renders correctly 1`] = `
         </div>
       </div>
     </LocationPickerModal>
-    <div
-      className="verbatim-data"
+    <h2
+      className="title"
     >
-      <h1
-        className="title"
+      occurrenceForm.locationData.verbatimData.title
+    </h2>
+    <h3
+      className="subtitle"
+    >
+      occurrenceForm.locationData.verbatimData.subtitle
+    </h3>
+    <div
+      className="columns"
+    >
+      <InputText
+        className="verbatim-coordinates is-3"
+        name="occurrenceForm.locationData.verbatimCoordinates"
+        onChange={[Function]}
+        optional={true}
+        value=""
       >
-        occurrenceForm.locationData.verbatimData.title
-      </h1>
-      <h2
-        className="subtitle"
-      >
-        occurrenceForm.locationData.verbatimData.subtitle
-      </h2>
-      <div
-        className="columns"
-      >
-        <InputText
-          className="verbatim-coordinates is-3"
-          name="occurrenceForm.locationData.verbatimCoordinates"
-          onChange={[Function]}
-          optional={true}
-          value=""
+        <div
+          className="column field verbatim-coordinates is-3"
         >
-          <div
-            className="column field verbatim-coordinates is-3"
+          <label
+            className="label has-text-weight-normal"
+            htmlFor="occurrenceform.locationdata.verbatimcoordinates.label"
           >
-            <label
-              className="label has-text-weight-normal"
-              htmlFor="occurrenceform.locationdata.verbatimcoordinates.label"
-            >
-              occurrenceForm.locationData.verbatimCoordinates.label
-            </label>
-            <input
-              className="input"
-              id="occurrenceform.locationdata.verbatimcoordinates.label"
-              onChange={[Function]}
-              type="text"
-              value=""
-            />
-          </div>
-        </InputText>
-        <InputText
-          className="verbatim-depth is-3"
-          name="occurrenceForm.locationData.verbatimDepth"
-          onChange={[Function]}
-          optional={true}
-          value=""
+            occurrenceForm.locationData.verbatimCoordinates.label
+          </label>
+          <input
+            className="input"
+            id="occurrenceform.locationdata.verbatimcoordinates.label"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+        </div>
+      </InputText>
+      <InputText
+        className="verbatim-depth is-3"
+        name="occurrenceForm.locationData.verbatimDepth"
+        onChange={[Function]}
+        optional={true}
+        value=""
+      >
+        <div
+          className="column field verbatim-depth is-3"
         >
-          <div
-            className="column field verbatim-depth is-3"
+          <label
+            className="label has-text-weight-normal"
+            htmlFor="occurrenceform.locationdata.verbatimdepth.label"
           >
-            <label
-              className="label has-text-weight-normal"
-              htmlFor="occurrenceform.locationdata.verbatimdepth.label"
-            >
-              occurrenceForm.locationData.verbatimDepth.label
-            </label>
-            <input
-              className="input"
-              id="occurrenceform.locationdata.verbatimdepth.label"
-              onChange={[Function]}
-              type="text"
-              value=""
-            />
-          </div>
-        </InputText>
-      </div>
+            occurrenceForm.locationData.verbatimDepth.label
+          </label>
+          <input
+            className="input"
+            id="occurrenceform.locationdata.verbatimdepth.label"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+        </div>
+      </InputText>
     </div>
   </div>
 </LocationData>

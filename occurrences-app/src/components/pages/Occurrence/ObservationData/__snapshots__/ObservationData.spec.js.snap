@@ -248,48 +248,6 @@ exports[`ObservationData renders correctly 1`] = `
     className="columns"
   >
     <div
-      className="column field identification-qualifier is-9"
-    >
-      <label
-        className="label"
-        htmlFor="occurrenceform.observationdata.identificationqualifier.label"
-      >
-        occurrenceForm.observationData.identificationQualifier.label
-      </label>
-      <input
-        className="input"
-        id="occurrenceform.observationdata.identificationqualifier.label"
-        onChange={[Function]}
-        type="text"
-        value=""
-      />
-    </div>
-  </div>
-  <div
-    className="columns"
-  >
-    <div
-      className="column field identification-remarks is-9"
-    >
-      <label
-        className="label"
-        htmlFor="occurrenceform.observationdata.identificationremarks.label"
-      >
-        occurrenceForm.observationData.identificationRemarks.label
-      </label>
-      <textarea
-        className="textarea"
-        id="occurrenceform.observationdata.identificationremarks.label"
-        onChange={[Function]}
-        rows={5}
-        value=""
-      />
-    </div>
-  </div>
-  <div
-    className="columns"
-  >
-    <div
       className="column field references is-9"
     >
       <label

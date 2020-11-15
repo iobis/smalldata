@@ -17,7 +17,9 @@ function createComponent() {
         occurrenceStatus: 'absent',
         scientificName:   'scientific name',
         scientificNameId: 'scientific:name:id',
-        sex:              'male'
+        sex:              'male',
+        identificationQualifier: 'identification qualifier',
+        identificationRemarks: 'identification remarks'
       }}
       onChange={jest.fn()}/>
   )

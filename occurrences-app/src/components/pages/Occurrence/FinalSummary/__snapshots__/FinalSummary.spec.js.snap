@@ -125,9 +125,11 @@ exports[`FinalSummary renders correctly 1`] = `
       errorVisible={false}
       locationData={
         Object {
+          "beginDate": 1556496000000,
           "coordinateUncertainty": null,
           "decimalLatitude": 51.3354656,
           "decimalLongitude": 2.345456,
+          "endDate": 1556582400000,
           "maximumDepth": null,
           "minimumDepth": null,
           "verbatimCoordinates": "41 05 54S 121 05 34W",
@@ -170,15 +172,13 @@ exports[`FinalSummary renders correctly 1`] = `
       occurrenceData={
         Object {
           "basisOfRecord": "humanObservation",
-          "beginDate": 1556496000000,
-          "endDate": 1556582400000,
+          "identificationQualifier": "some identification qualifier",
+          "identificationRemarks": "some identification remarks",
           "lifeStage": "adult",
           "occurrenceStatus": "absent",
           "scientificName": "ala abra",
           "scientificNameId": "urn:lsid:marinespecies.org:taxname:138133",
           "sex": "male",
-          "identificationQualifier": "some identification qualifier",
-          "identificationRemarks": "some identification remarks",
         }
       }
       onChangeClick={[MockFunction]}
@@ -222,7 +222,7 @@ exports[`FinalSummary renders correctly 1`] = `
             <h2
               className="title is-4"
             >
-              1 -
+              1 - 
               occurrenceForm.dataset.step.stepTitle
             </h2>
           </SectionTitle>
@@ -247,7 +247,7 @@ exports[`FinalSummary renders correctly 1`] = `
             <h2
               className="title is-4"
             >
-              2 -
+              2 - 
               occurrenceForm.occurrenceData.step.stepTitle
             </h2>
           </SectionTitle>
@@ -306,44 +306,6 @@ exports[`FinalSummary renders correctly 1`] = `
                     className="value"
                   >
                     urn:lsid:marinespecies.org:taxname:138133
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.occurrenceData.eventBeginDate"
-                value="29 April 2019"
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.occurrenceData.eventBeginDate
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    29 April 2019
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.occurrenceData.eventEndDate"
-                value="30 April 2019"
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.occurrenceData.eventEndDate
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    30 April 2019
                   </td>
                 </tr>
               </NameValueRow>
@@ -423,6 +385,44 @@ exports[`FinalSummary renders correctly 1`] = `
                   </td>
                 </tr>
               </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.occurrenceData.identificationQualifier.label"
+                value="some identification qualifier"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.occurrenceData.identificationQualifier.label
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    some identification qualifier
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.occurrenceData.identificationRemarks.label"
+                value="some identification remarks"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.occurrenceData.identificationRemarks.label
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    some identification remarks
+                  </td>
+                </tr>
+              </NameValueRow>
             </tbody>
           </table>
           <ChangeButton
@@ -443,7 +443,7 @@ exports[`FinalSummary renders correctly 1`] = `
             <h2
               className="title is-4"
             >
-              3 -
+              3 - 
               occurrenceForm.locationData.step.stepTitle
             </h2>
           </SectionTitle>
@@ -467,6 +467,44 @@ exports[`FinalSummary renders correctly 1`] = `
               </thead>
             </NameValueHeader>
             <tbody>
+              <NameValueRow
+                name="occurrenceForm.locationData.eventBeginDate"
+                value="29 April 2019"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.locationData.eventBeginDate
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    29 April 2019
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.locationData.eventEndDate"
+                value="30 April 2019"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.locationData.eventEndDate
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    30 April 2019
+                  </td>
+                </tr>
+              </NameValueRow>
               <NameValueRow
                 name="occurrenceForm.locationData.decimalLatitude.label"
                 value={51.3354656}
@@ -633,7 +671,7 @@ exports[`FinalSummary renders correctly 1`] = `
             <h2
               className="title is-4"
             >
-              4 -
+              4 - 
               occurrenceForm.observationData.step.stepTitle
             </h2>
           </SectionTitle>
@@ -847,44 +885,6 @@ exports[`FinalSummary renders correctly 1`] = `
                   </td>
                 </tr>
               </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.observationData.identificationQualifier.label"
-                value="some identification qualifier"
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.observationData.identificationQualifier.label
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    some identification qualifier
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.observationData.identificationRemarks.label"
-                value="some identification remarks"
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.observationData.identificationRemarks.label
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    some identification remarks
-                  </td>
-                </tr>
-              </NameValueRow>
             </tbody>
           </table>
           <ChangeButton
@@ -905,7 +905,7 @@ exports[`FinalSummary renders correctly 1`] = `
             <h2
               className="title is-4"
             >
-              5 -
+              5 - 
               occurrenceForm.measurementOrFact.step.stepTitle
             </h2>
           </SectionTitle>
@@ -980,7 +980,7 @@ exports[`FinalSummary renders correctly 1`] = `
             <h2
               className="title is-4"
             >
-              6 -
+              6 - 
               occurrenceForm.darwinCoreFields.step.stepTitle
             </h2>
           </SectionTitle>
@@ -1222,9 +1222,11 @@ exports[`FinalSummary renders correctly when occurrence end date is not provided
       errorVisible={false}
       locationData={
         Object {
+          "beginDate": 1556496000000,
           "coordinateUncertainty": null,
           "decimalLatitude": 51.3354656,
           "decimalLongitude": 2.345456,
+          "endDate": 1556582400000,
           "maximumDepth": null,
           "minimumDepth": null,
           "verbatimCoordinates": "41 05 54S 121 05 34W",
@@ -1250,8 +1252,6 @@ exports[`FinalSummary renders correctly when occurrence end date is not provided
           "catalogNumber": "IBSS_Benthos_1935_1331",
           "collectionCode": "R/V N. Danilevskiy 1935 Azov Sea benthos data",
           "fieldNumber": "557",
-          "identificationQualifier": "some identification qualifier",
-          "identificationRemarks": "some identification remarks",
           "identifiedBy": Array [
             "Indiana Jones",
           ],
@@ -1269,8 +1269,9 @@ exports[`FinalSummary renders correctly when occurrence end date is not provided
       occurrenceData={
         Object {
           "basisOfRecord": "humanObservation",
-          "beginDate": 1556496000000,
           "endDate": null,
+          "identificationQualifier": "some identification qualifier",
+          "identificationRemarks": "some identification remarks",
           "lifeStage": "adult",
           "occurrenceStatus": "absent",
           "scientificName": "ala abra",
@@ -1319,7 +1320,7 @@ exports[`FinalSummary renders correctly when occurrence end date is not provided
             <h2
               className="title is-4"
             >
-              1 -
+              1 - 
               occurrenceForm.dataset.step.stepTitle
             </h2>
           </SectionTitle>
@@ -1344,7 +1345,7 @@ exports[`FinalSummary renders correctly when occurrence end date is not provided
             <h2
               className="title is-4"
             >
-              2 -
+              2 - 
               occurrenceForm.occurrenceData.step.stepTitle
             </h2>
           </SectionTitle>
@@ -1403,44 +1404,6 @@ exports[`FinalSummary renders correctly when occurrence end date is not provided
                     className="value"
                   >
                     urn:lsid:marinespecies.org:taxname:138133
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.occurrenceData.eventBeginDate"
-                value="29 April 2019"
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.occurrenceData.eventBeginDate
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    29 April 2019
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.occurrenceData.eventEndDate"
-                value={null}
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.occurrenceData.eventEndDate
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    —
                   </td>
                 </tr>
               </NameValueRow>
@@ -1520,6 +1483,44 @@ exports[`FinalSummary renders correctly when occurrence end date is not provided
                   </td>
                 </tr>
               </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.occurrenceData.identificationQualifier.label"
+                value="some identification qualifier"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.occurrenceData.identificationQualifier.label
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    some identification qualifier
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.occurrenceData.identificationRemarks.label"
+                value="some identification remarks"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.occurrenceData.identificationRemarks.label
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    some identification remarks
+                  </td>
+                </tr>
+              </NameValueRow>
             </tbody>
           </table>
           <ChangeButton
@@ -1540,7 +1541,7 @@ exports[`FinalSummary renders correctly when occurrence end date is not provided
             <h2
               className="title is-4"
             >
-              3 -
+              3 - 
               occurrenceForm.locationData.step.stepTitle
             </h2>
           </SectionTitle>
@@ -1564,6 +1565,44 @@ exports[`FinalSummary renders correctly when occurrence end date is not provided
               </thead>
             </NameValueHeader>
             <tbody>
+              <NameValueRow
+                name="occurrenceForm.locationData.eventBeginDate"
+                value="29 April 2019"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.locationData.eventBeginDate
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    29 April 2019
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.locationData.eventEndDate"
+                value="30 April 2019"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.locationData.eventEndDate
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    30 April 2019
+                  </td>
+                </tr>
+              </NameValueRow>
               <NameValueRow
                 name="occurrenceForm.locationData.decimalLatitude.label"
                 value={51.3354656}
@@ -1730,7 +1769,7 @@ exports[`FinalSummary renders correctly when occurrence end date is not provided
             <h2
               className="title is-4"
             >
-              4 -
+              4 - 
               occurrenceForm.observationData.step.stepTitle
             </h2>
           </SectionTitle>
@@ -1944,44 +1983,6 @@ exports[`FinalSummary renders correctly when occurrence end date is not provided
                   </td>
                 </tr>
               </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.observationData.identificationQualifier.label"
-                value="some identification qualifier"
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.observationData.identificationQualifier.label
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    some identification qualifier
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.observationData.identificationRemarks.label"
-                value="some identification remarks"
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.observationData.identificationRemarks.label
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    some identification remarks
-                  </td>
-                </tr>
-              </NameValueRow>
             </tbody>
           </table>
           <ChangeButton
@@ -2002,7 +2003,7 @@ exports[`FinalSummary renders correctly when occurrence end date is not provided
             <h2
               className="title is-4"
             >
-              5 -
+              5 - 
               occurrenceForm.measurementOrFact.step.stepTitle
             </h2>
           </SectionTitle>
@@ -2077,7 +2078,7 @@ exports[`FinalSummary renders correctly when occurrence end date is not provided
             <h2
               className="title is-4"
             >
-              6 -
+              6 - 
               occurrenceForm.darwinCoreFields.step.stepTitle
             </h2>
           </SectionTitle>
@@ -2320,9 +2321,11 @@ exports[`FinalSummary when rendering component with error message calls onSubmit
       errorVisible={true}
       locationData={
         Object {
+          "beginDate": 1556496000000,
           "coordinateUncertainty": null,
           "decimalLatitude": 51.3354656,
           "decimalLongitude": 2.345456,
+          "endDate": 1556582400000,
           "maximumDepth": null,
           "minimumDepth": null,
           "verbatimCoordinates": "41 05 54S 121 05 34W",
@@ -2348,8 +2351,6 @@ exports[`FinalSummary when rendering component with error message calls onSubmit
           "catalogNumber": "IBSS_Benthos_1935_1331",
           "collectionCode": "R/V N. Danilevskiy 1935 Azov Sea benthos data",
           "fieldNumber": "557",
-          "identificationQualifier": "some identification qualifier",
-          "identificationRemarks": "some identification remarks",
           "identifiedBy": Array [
             "Indiana Jones",
           ],
@@ -2367,8 +2368,8 @@ exports[`FinalSummary when rendering component with error message calls onSubmit
       occurrenceData={
         Object {
           "basisOfRecord": "humanObservation",
-          "beginDate": 1556496000000,
-          "endDate": 1556582400000,
+          "identificationQualifier": "some identification qualifier",
+          "identificationRemarks": "some identification remarks",
           "lifeStage": "adult",
           "occurrenceStatus": "absent",
           "scientificName": "ala abra",
@@ -2426,7 +2427,7 @@ exports[`FinalSummary when rendering component with error message calls onSubmit
             <h2
               className="title is-4"
             >
-              1 -
+              1 - 
               occurrenceForm.dataset.step.stepTitle
             </h2>
           </SectionTitle>
@@ -2451,7 +2452,7 @@ exports[`FinalSummary when rendering component with error message calls onSubmit
             <h2
               className="title is-4"
             >
-              2 -
+              2 - 
               occurrenceForm.occurrenceData.step.stepTitle
             </h2>
           </SectionTitle>
@@ -2510,44 +2511,6 @@ exports[`FinalSummary when rendering component with error message calls onSubmit
                     className="value"
                   >
                     urn:lsid:marinespecies.org:taxname:138133
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.occurrenceData.eventBeginDate"
-                value="29 April 2019"
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.occurrenceData.eventBeginDate
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    29 April 2019
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.occurrenceData.eventEndDate"
-                value="30 April 2019"
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.occurrenceData.eventEndDate
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    30 April 2019
                   </td>
                 </tr>
               </NameValueRow>
@@ -2627,6 +2590,44 @@ exports[`FinalSummary when rendering component with error message calls onSubmit
                   </td>
                 </tr>
               </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.occurrenceData.identificationQualifier.label"
+                value="some identification qualifier"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.occurrenceData.identificationQualifier.label
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    some identification qualifier
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.occurrenceData.identificationRemarks.label"
+                value="some identification remarks"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.occurrenceData.identificationRemarks.label
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    some identification remarks
+                  </td>
+                </tr>
+              </NameValueRow>
             </tbody>
           </table>
           <ChangeButton
@@ -2647,7 +2648,7 @@ exports[`FinalSummary when rendering component with error message calls onSubmit
             <h2
               className="title is-4"
             >
-              3 -
+              3 - 
               occurrenceForm.locationData.step.stepTitle
             </h2>
           </SectionTitle>
@@ -2671,6 +2672,44 @@ exports[`FinalSummary when rendering component with error message calls onSubmit
               </thead>
             </NameValueHeader>
             <tbody>
+              <NameValueRow
+                name="occurrenceForm.locationData.eventBeginDate"
+                value="29 April 2019"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.locationData.eventBeginDate
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    29 April 2019
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.locationData.eventEndDate"
+                value="30 April 2019"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.locationData.eventEndDate
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    30 April 2019
+                  </td>
+                </tr>
+              </NameValueRow>
               <NameValueRow
                 name="occurrenceForm.locationData.decimalLatitude.label"
                 value={51.3354656}
@@ -2837,7 +2876,7 @@ exports[`FinalSummary when rendering component with error message calls onSubmit
             <h2
               className="title is-4"
             >
-              4 -
+              4 - 
               occurrenceForm.observationData.step.stepTitle
             </h2>
           </SectionTitle>
@@ -3051,44 +3090,6 @@ exports[`FinalSummary when rendering component with error message calls onSubmit
                   </td>
                 </tr>
               </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.observationData.identificationQualifier.label"
-                value="some identification qualifier"
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.observationData.identificationQualifier.label
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    some identification qualifier
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.observationData.identificationRemarks.label"
-                value="some identification remarks"
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.observationData.identificationRemarks.label
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    some identification remarks
-                  </td>
-                </tr>
-              </NameValueRow>
             </tbody>
           </table>
           <ChangeButton
@@ -3109,7 +3110,7 @@ exports[`FinalSummary when rendering component with error message calls onSubmit
             <h2
               className="title is-4"
             >
-              5 -
+              5 - 
               occurrenceForm.measurementOrFact.step.stepTitle
             </h2>
           </SectionTitle>
@@ -3184,7 +3185,7 @@ exports[`FinalSummary when rendering component with error message calls onSubmit
             <h2
               className="title is-4"
             >
-              6 -
+              6 - 
               occurrenceForm.darwinCoreFields.step.stepTitle
             </h2>
           </SectionTitle>
@@ -3426,9 +3427,11 @@ exports[`FinalSummary when rendering component with success message renders succ
       errorVisible={false}
       locationData={
         Object {
+          "beginDate": 1556496000000,
           "coordinateUncertainty": null,
           "decimalLatitude": 51.3354656,
           "decimalLongitude": 2.345456,
+          "endDate": 1556582400000,
           "maximumDepth": null,
           "minimumDepth": null,
           "verbatimCoordinates": "41 05 54S 121 05 34W",
@@ -3454,8 +3457,6 @@ exports[`FinalSummary when rendering component with success message renders succ
           "catalogNumber": "IBSS_Benthos_1935_1331",
           "collectionCode": "R/V N. Danilevskiy 1935 Azov Sea benthos data",
           "fieldNumber": "557",
-          "identificationQualifier": "some identification qualifier",
-          "identificationRemarks": "some identification remarks",
           "identifiedBy": Array [
             "Indiana Jones",
           ],
@@ -3473,8 +3474,8 @@ exports[`FinalSummary when rendering component with success message renders succ
       occurrenceData={
         Object {
           "basisOfRecord": "humanObservation",
-          "beginDate": 1556496000000,
-          "endDate": 1556582400000,
+          "identificationQualifier": "some identification qualifier",
+          "identificationRemarks": "some identification remarks",
           "lifeStage": "adult",
           "occurrenceStatus": "absent",
           "scientificName": "ala abra",
@@ -3552,7 +3553,7 @@ exports[`FinalSummary when rendering component with success message renders succ
             <h2
               className="title is-4"
             >
-              1 -
+              1 - 
               occurrenceForm.dataset.step.stepTitle
             </h2>
           </SectionTitle>
@@ -3577,7 +3578,7 @@ exports[`FinalSummary when rendering component with success message renders succ
             <h2
               className="title is-4"
             >
-              2 -
+              2 - 
               occurrenceForm.occurrenceData.step.stepTitle
             </h2>
           </SectionTitle>
@@ -3636,44 +3637,6 @@ exports[`FinalSummary when rendering component with success message renders succ
                     className="value"
                   >
                     urn:lsid:marinespecies.org:taxname:138133
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.occurrenceData.eventBeginDate"
-                value="29 April 2019"
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.occurrenceData.eventBeginDate
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    29 April 2019
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.occurrenceData.eventEndDate"
-                value="30 April 2019"
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.occurrenceData.eventEndDate
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    30 April 2019
                   </td>
                 </tr>
               </NameValueRow>
@@ -3753,6 +3716,44 @@ exports[`FinalSummary when rendering component with success message renders succ
                   </td>
                 </tr>
               </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.occurrenceData.identificationQualifier.label"
+                value="some identification qualifier"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.occurrenceData.identificationQualifier.label
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    some identification qualifier
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.occurrenceData.identificationRemarks.label"
+                value="some identification remarks"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.occurrenceData.identificationRemarks.label
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    some identification remarks
+                  </td>
+                </tr>
+              </NameValueRow>
             </tbody>
           </table>
           <ChangeButton
@@ -3773,7 +3774,7 @@ exports[`FinalSummary when rendering component with success message renders succ
             <h2
               className="title is-4"
             >
-              3 -
+              3 - 
               occurrenceForm.locationData.step.stepTitle
             </h2>
           </SectionTitle>
@@ -3797,6 +3798,44 @@ exports[`FinalSummary when rendering component with success message renders succ
               </thead>
             </NameValueHeader>
             <tbody>
+              <NameValueRow
+                name="occurrenceForm.locationData.eventBeginDate"
+                value="29 April 2019"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.locationData.eventBeginDate
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    29 April 2019
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.locationData.eventEndDate"
+                value="30 April 2019"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.locationData.eventEndDate
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    30 April 2019
+                  </td>
+                </tr>
+              </NameValueRow>
               <NameValueRow
                 name="occurrenceForm.locationData.decimalLatitude.label"
                 value={51.3354656}
@@ -3963,7 +4002,7 @@ exports[`FinalSummary when rendering component with success message renders succ
             <h2
               className="title is-4"
             >
-              4 -
+              4 - 
               occurrenceForm.observationData.step.stepTitle
             </h2>
           </SectionTitle>
@@ -4177,44 +4216,6 @@ exports[`FinalSummary when rendering component with success message renders succ
                   </td>
                 </tr>
               </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.observationData.identificationQualifier.label"
-                value="some identification qualifier"
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.observationData.identificationQualifier.label
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    some identification qualifier
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.observationData.identificationRemarks.label"
-                value="some identification remarks"
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.observationData.identificationRemarks.label
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    some identification remarks
-                  </td>
-                </tr>
-              </NameValueRow>
             </tbody>
           </table>
           <ChangeButton
@@ -4235,7 +4236,7 @@ exports[`FinalSummary when rendering component with success message renders succ
             <h2
               className="title is-4"
             >
-              5 -
+              5 - 
               occurrenceForm.measurementOrFact.step.stepTitle
             </h2>
           </SectionTitle>
@@ -4310,7 +4311,7 @@ exports[`FinalSummary when rendering component with success message renders succ
             <h2
               className="title is-4"
             >
-              6 -
+              6 - 
               occurrenceForm.darwinCoreFields.step.stepTitle
             </h2>
           </SectionTitle>
@@ -4538,9 +4539,11 @@ exports[`FinalSummary when rendering component with success message renders succ
       errorVisible={false}
       locationData={
         Object {
+          "beginDate": 1556496000000,
           "coordinateUncertainty": null,
           "decimalLatitude": 51.3354656,
           "decimalLongitude": 2.345456,
+          "endDate": 1556582400000,
           "maximumDepth": null,
           "minimumDepth": null,
           "verbatimCoordinates": "41 05 54S 121 05 34W",
@@ -4566,8 +4569,6 @@ exports[`FinalSummary when rendering component with success message renders succ
           "catalogNumber": "IBSS_Benthos_1935_1331",
           "collectionCode": "R/V N. Danilevskiy 1935 Azov Sea benthos data",
           "fieldNumber": "557",
-          "identificationQualifier": "some identification qualifier",
-          "identificationRemarks": "some identification remarks",
           "identifiedBy": Array [
             "Indiana Jones",
           ],
@@ -4585,8 +4586,8 @@ exports[`FinalSummary when rendering component with success message renders succ
       occurrenceData={
         Object {
           "basisOfRecord": "humanObservation",
-          "beginDate": 1556496000000,
-          "endDate": 1556582400000,
+          "identificationQualifier": "some identification qualifier",
+          "identificationRemarks": "some identification remarks",
           "lifeStage": "adult",
           "occurrenceStatus": "absent",
           "scientificName": "ala abra",
@@ -4664,7 +4665,7 @@ exports[`FinalSummary when rendering component with success message renders succ
             <h2
               className="title is-4"
             >
-              1 -
+              1 - 
               occurrenceForm.dataset.step.stepTitle
             </h2>
           </SectionTitle>
@@ -4689,7 +4690,7 @@ exports[`FinalSummary when rendering component with success message renders succ
             <h2
               className="title is-4"
             >
-              2 -
+              2 - 
               occurrenceForm.occurrenceData.step.stepTitle
             </h2>
           </SectionTitle>
@@ -4748,44 +4749,6 @@ exports[`FinalSummary when rendering component with success message renders succ
                     className="value"
                   >
                     urn:lsid:marinespecies.org:taxname:138133
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.occurrenceData.eventBeginDate"
-                value="29 April 2019"
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.occurrenceData.eventBeginDate
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    29 April 2019
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.occurrenceData.eventEndDate"
-                value="30 April 2019"
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.occurrenceData.eventEndDate
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    30 April 2019
                   </td>
                 </tr>
               </NameValueRow>
@@ -4865,6 +4828,44 @@ exports[`FinalSummary when rendering component with success message renders succ
                   </td>
                 </tr>
               </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.occurrenceData.identificationQualifier.label"
+                value="some identification qualifier"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.occurrenceData.identificationQualifier.label
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    some identification qualifier
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.occurrenceData.identificationRemarks.label"
+                value="some identification remarks"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.occurrenceData.identificationRemarks.label
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    some identification remarks
+                  </td>
+                </tr>
+              </NameValueRow>
             </tbody>
           </table>
           <ChangeButton
@@ -4885,7 +4886,7 @@ exports[`FinalSummary when rendering component with success message renders succ
             <h2
               className="title is-4"
             >
-              3 -
+              3 - 
               occurrenceForm.locationData.step.stepTitle
             </h2>
           </SectionTitle>
@@ -4909,6 +4910,44 @@ exports[`FinalSummary when rendering component with success message renders succ
               </thead>
             </NameValueHeader>
             <tbody>
+              <NameValueRow
+                name="occurrenceForm.locationData.eventBeginDate"
+                value="29 April 2019"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.locationData.eventBeginDate
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    29 April 2019
+                  </td>
+                </tr>
+              </NameValueRow>
+              <NameValueRow
+                name="occurrenceForm.locationData.eventEndDate"
+                value="30 April 2019"
+              >
+                <tr
+                  className="name-value-row fieldrow"
+                >
+                  <td
+                    className="name"
+                  >
+                    occurrenceForm.locationData.eventEndDate
+                  </td>
+                  <td
+                    className="value"
+                  >
+                    30 April 2019
+                  </td>
+                </tr>
+              </NameValueRow>
               <NameValueRow
                 name="occurrenceForm.locationData.decimalLatitude.label"
                 value={51.3354656}
@@ -5075,7 +5114,7 @@ exports[`FinalSummary when rendering component with success message renders succ
             <h2
               className="title is-4"
             >
-              4 -
+              4 - 
               occurrenceForm.observationData.step.stepTitle
             </h2>
           </SectionTitle>
@@ -5289,44 +5328,6 @@ exports[`FinalSummary when rendering component with success message renders succ
                   </td>
                 </tr>
               </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.observationData.identificationQualifier.label"
-                value="some identification qualifier"
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.observationData.identificationQualifier.label
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    some identification qualifier
-                  </td>
-                </tr>
-              </NameValueRow>
-              <NameValueRow
-                name="occurrenceForm.observationData.identificationRemarks.label"
-                value="some identification remarks"
-              >
-                <tr
-                  className="name-value-row fieldrow"
-                >
-                  <td
-                    className="name"
-                  >
-                    occurrenceForm.observationData.identificationRemarks.label
-                  </td>
-                  <td
-                    className="value"
-                  >
-                    some identification remarks
-                  </td>
-                </tr>
-              </NameValueRow>
             </tbody>
           </table>
           <ChangeButton
@@ -5347,7 +5348,7 @@ exports[`FinalSummary when rendering component with success message renders succ
             <h2
               className="title is-4"
             >
-              5 -
+              5 - 
               occurrenceForm.measurementOrFact.step.stepTitle
             </h2>
           </SectionTitle>
@@ -5422,7 +5423,7 @@ exports[`FinalSummary when rendering component with success message renders succ
             <h2
               className="title is-4"
             >
-              6 -
+              6 - 
               occurrenceForm.darwinCoreFields.step.stepTitle
             </h2>
           </SectionTitle>
