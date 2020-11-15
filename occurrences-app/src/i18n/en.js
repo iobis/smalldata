@@ -80,11 +80,21 @@ export default {
           unspecified: 'unspecified'
         },
         lifeStage:           {
-          title:       'Life Stage',
+          title:       'Life stage',
           larva:       'larva',
           juvenile:    'juvenile',
           adult:       'adult',
           unspecified: 'unspecified'
+        },
+        identificationQualifier: {
+          label:       'Identification qualifier',
+          placeholder: '',
+          help:        'aff. agrifolia var. oxyadenia (for Quercus aff. agrifolia var. oxyadenia with accompanying values Quercus in genus, agrifolia in specificEpithet, oxyadenia in infraspecificEpithet, and var. in taxonRank. cf. var. oxyadenia for Quercus agrifolia cf. var. oxyadenia with accompanying values Quercus in genus, agrifolia in specificEpithet, oxyadenia in infraspecificEpithet, and var. in taxonRank.'
+        },
+        identificationRemarks:   {
+          label:       'Identification remarks',
+          placeholder: '',
+          help:        'Example: “Distinguished between Anthus correndera and Anthus hellmayri based on the comparative lengths of the uñas.”'
         }
       },
       locationData:           {
@@ -93,10 +103,10 @@ export default {
         },
         verbatimData:          {
           title:    'Verbatim location',
-          subtitle: 'optionally supply verbatim data as it appeared originally in the notes'
+          subtitle: 'optionally supply verbatim data as it appeared originally in the source'
         },
         timeData:          {
-          title:    'Date and time'
+          title:    'Time'
         },
         decimalLongitude:      {
           label:       'Decimal longitude',
@@ -129,7 +139,7 @@ export default {
         verbatimDepth:         {
           label:       'Verbatim depth',
           placeholder: '',
-          help:        'Examples: "100-200 m"'
+          help:        'Example: "100-200 m"'
         },
         eventBeginDate:      'Event start date',
         eventEndDate:        'Event end date',
@@ -186,16 +196,6 @@ export default {
           label:       'Recorded by',
           placeholder: '',
           help:        'hit enter to add person to list'
-        },
-        identificationQualifier: {
-          label:       'Identification qualifier',
-          placeholder: '',
-          help:        'aff. agrifolia var. oxyadenia (for Quercus aff. agrifolia var. oxyadenia with accompanying values Quercus in genus, agrifolia in specificEpithet, oxyadenia in infraspecificEpithet, and var. in taxonRank. cf. var. oxyadenia for Quercus agrifolia cf. var. oxyadenia with accompanying values Quercus in genus, agrifolia in specificEpithet, oxyadenia in infraspecificEpithet, and var. in taxonRank.'
-        },
-        identificationRemarks:   {
-          label:       'Identification remarks',
-          placeholder: '',
-          help:        'Example: “Distinguished between Anthus correndera and Anthus hellmayri based on the comparative lengths of the uñas.”'
         },
         references:              {
           label:       'References',

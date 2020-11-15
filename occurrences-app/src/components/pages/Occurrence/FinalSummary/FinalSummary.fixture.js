@@ -36,7 +36,9 @@ export function getDefaultProps() {
       occurrenceStatus: 'absent',
       scientificName:   'ala abra',
       scientificNameId: 'urn:lsid:marinespecies.org:taxname:138133',
-      sex:              'male'
+      sex:              'male',
+      identificationQualifier: 'some identification qualifier',
+      identificationRemarks:   'some identification remarks'
     },
     locationData:     {
       beginDate:             Date.UTC(2019, 3, 29),
@@ -57,8 +59,6 @@ export function getDefaultProps() {
       recordNumber:            '123456',
       identifiedBy:            ['Indiana Jones'],
       recordedBy:              ['Harrison Ford'],
-      identificationQualifier: 'some identification qualifier',
-      identificationRemarks:   'some identification remarks',
       references:              ['http://www.google.com', 'https://clojure.org/']
     },
     measurements:     [

@@ -17,8 +17,6 @@ describe('ObservationData', () => {
       catalogNumber:           '',
       collectionCode:          '',
       fieldNumber:             '',
-      identificationQualifier: '',
-      identificationRemarks:   '',
       identifiedBy:            ['name 1', 'name 2'],
       institutionCode:         'institution code',
       recordNumber:            '',
@@ -37,8 +35,6 @@ describe('ObservationData', () => {
       catalogNumber:           '',
       collectionCode:          '',
       fieldNumber:             '',
-      identificationQualifier: '',
-      identificationRemarks:   '',
       identifiedBy:            ['name 1', 'name 2', 'new name'],
       institutionCode:         '',
       recordNumber:            '',
@@ -57,8 +53,6 @@ function createComponent(props) {
     recordNumber:            '',
     identifiedBy:            ['name 1', 'name 2'],
     recordedBy:              ['name 1', 'name 2', 'name 3'],
-    identificationQualifier: '',
-    identificationRemarks:   '',
     references:              ['https://google.com', 'https://gmail.com']
   }
   const defaultProps = {

@@ -2,7 +2,6 @@ import InputMultipleText from '@smalldata/dwca-lib/src/components/form/InputMult
 import InputText from '@smalldata/dwca-lib/src/components/form/InputText'
 import PropTypes from 'prop-types'
 import React from 'react'
-import Textarea from '@smalldata/dwca-lib/src/components/form/Textarea'
 
 export default function ObservationData({ onChange, observationData }) {
   const updateField = (name, value) => {
@@ -54,20 +53,6 @@ export default function ObservationData({ onChange, observationData }) {
           values={observationData.recordedBy}/>
       </div>
       <div className="columns">
-        <InputText
-          className="identification-qualifier is-9"
-          name="occurrenceForm.observationData.identificationQualifier"
-          onChange={(value) => updateField('identificationQualifier', value)}
-          value={observationData.identificationQualifier}/>
-      </div>
-      <div className="columns">
-        <Textarea
-          className="identification-remarks is-9"
-          name="occurrenceForm.observationData.identificationRemarks"
-          onChange={(value) => updateField('identificationRemarks', value)}
-          value={observationData.identificationRemarks}/>
-      </div>
-      <div className="columns">
         <InputMultipleText
           className="references is-9"
           labelComponent={(link) => <a href={link}>{link}</a>}
@@ -87,8 +72,6 @@ export const observationDataShape = {
   recordNumber:            PropTypes.string.isRequired,
   identifiedBy:            PropTypes.arrayOf(PropTypes.string).isRequired,
   recordedBy:              PropTypes.arrayOf(PropTypes.string).isRequired,
-  identificationQualifier: PropTypes.string.isRequired,
-  identificationRemarks:   PropTypes.string.isRequired,
   references:              PropTypes.arrayOf(PropTypes.string).isRequired
 }
 

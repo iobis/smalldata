@@ -13,7 +13,9 @@ export default [{
       lifeStage:        'larva',
       occurrenceStatus: 'present',
       scientificName:   '',
-      sex:              'male'
+      sex:              'male',
+      identificationQualifier: '',
+      identificationRemarks:   ''
     }
   },
   controllers: {
@@ -29,7 +31,9 @@ export default [{
       lifeStage:        'adult',
       occurrenceStatus: 'absent',
       scientificName:   'ala abra',
-      sex:              'male'
+      sex:              'male',
+      identificationQualifier: '',
+      identificationRemarks:   ''
     }
   }
 }]

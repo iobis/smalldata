@@ -12,8 +12,6 @@ export default [{
       recordNumber:            '',
       identifiedBy:            [],
       recordedBy:              [],
-      identificationQualifier: '',
-      identificationRemarks:   '',
       references:              []
     },
     onChange:        console.log

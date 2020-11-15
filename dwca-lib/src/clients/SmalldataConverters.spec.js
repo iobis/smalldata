@@ -34,6 +34,8 @@ describe('SmalldataConverters', () => {
       decimalLongitude:      -0.16771316528320315,
       maximumDepth:          3,
       minimumDepth:          2,
+      identificationQualifier: 'Identification Qualifier',
+      identificationRemarks:   'Identification Remarks',
       verbatimCoordinates:   '17T 630000 4833400',
       verbatimDepth:         '100-200 m'
     })
@@ -49,8 +51,6 @@ describe('SmalldataConverters', () => {
         recordNumber:            'Record Number',
         identifiedBy:            ['person-1', 'person-2'],
         recordedBy:              ['recorded-by-1', 'recorded-by-2'],
-        identificationQualifier: 'Identification Qualifier',
-        identificationRemarks:   'Identification Remarks',
         references:              ['www.google.com', 'https://clojure.org/']
       })
     })
@@ -78,8 +78,6 @@ describe('SmalldataConverters', () => {
           recordNumber:            'Record Number',
           identifiedBy:            [],
           recordedBy:              [],
-          identificationQualifier: 'Identification Qualifier',
-          identificationRemarks:   'Identification Remarks',
           references:              []
         })
     })

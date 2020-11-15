@@ -493,7 +493,9 @@ function getDefaultOccurrence() {
         lifeStage:        'adult',
         occurrenceStatus: 'present',
         scientificName:   'ala abra',
-        sex:              'male'
+        sex:              'male',
+        identificationQualifier: 'some identification qualifier',
+        identificationRemarks:   'some identification remarks'
       },
       locationData:     {
         beginDate:        Date.UTC(2019, 3, 29),
@@ -514,8 +516,6 @@ function getDefaultOccurrence() {
         recordNumber:            '123456',
         identifiedBy:            ['Indiana Jones'],
         recordedBy:              ['Harrison Ford', 'Indiana Jones'],
-        identificationQualifier: 'some identification qualifier',
-        identificationRemarks:   'some identification remarks',
         references:              ['http://www.google.com', 'https://clojure.org/']
       },
       measurements:     [

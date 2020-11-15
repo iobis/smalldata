@@ -52,8 +52,6 @@ export function mapOccurrenceToDwca(occurrence) {
         recordNumber:            occurrence.observationData.recordNumber,
         identifiedBy:            occurrence.observationData.identifiedBy.join('|'),
         recordedBy:              occurrence.observationData.recordedBy.join('|'),
-        identificationQualifier: occurrence.observationData.identificationQualifier,
-        identificationRemarks:   occurrence.observationData.identificationRemarks,
         associatedReferences:    occurrence.observationData.references.join('|'),
 
         ...darwinCoreFields.tdwg
@@ -73,7 +71,9 @@ function mapOccurrenceDataToTdwg({
   scientificName,
   scientificNameId,
   lifeStage,
-  sex
+  sex,
+  identificationQualifier,
+  identificationRemarks
 }) {
   return {
     basisOfRecord:    basisOfRecord.charAt(0).toUpperCase() + basisOfRecord.slice(1),
@@ -81,7 +81,9 @@ function mapOccurrenceDataToTdwg({
     scientificName,
     scientificNameID: scientificNameId,
     ...(lifeStage === 'unspecified' ? {} : { lifeStage }),
-    ...(sex === 'unspecified' ? {} : { sex })
+    ...(sex === 'unspecified' ? {} : { sex }),
+    identificationQualifier,
+    identificationRemarks
   }
 }
 
@@ -121,6 +123,8 @@ export function mapDwcaToOccurrenceData(dwca) {
     occurrenceStatus: tdwg.occurrenceStatus,
     scientificName:   tdwg.scientificName,
     scientificNameId: tdwg.scientificNameID,
+    identificationQualifier: tdwg.identificationQualifier,
+    identificationRemarks:   tdwg.identificationRemarks,
     sex:              tdwg.sex || 'unspecified'
   }
 }
@@ -151,8 +155,6 @@ export function mapDwcaToObservationData(dwca) {
     recordNumber:            tdwg.recordNumber,
     identifiedBy:            tdwg.identifiedBy ? tdwg.identifiedBy.split('|') : [],
     recordedBy:              tdwg.recordedBy ? tdwg.recordedBy.split('|') : [],
-    identificationQualifier: tdwg.identificationQualifier,
-    identificationRemarks:   tdwg.identificationRemarks,
     references:              tdwg.associatedReferences ? tdwg.associatedReferences.split('|') : []
   }
 }

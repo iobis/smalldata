@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import ScientificNameInput from './ScientificNameInput'
 import { useTranslation } from 'react-i18next'
+import InputText from '@smalldata/dwca-lib/src/components/form/InputText'
+import Textarea from '@smalldata/dwca-lib/src/components/form/Textarea'
 
 const basisOfRecordOptions = ['humanObservation', 'machineObservation', 'fossilSpecimen', 'livingSpecimen', 'preservedSpecimen']
 const lifeStageOptions = ['larva', 'juvenile', 'adult', 'unspecified']
@@ -11,7 +13,7 @@ const sexOptions = ['male', 'female', 'unspecified']
 
 export default function OccurrenceData({ onChange, data }) {
   const { t } = useTranslation()
-  const { basisOfRecord, lifeStage, occurrenceStatus, scientificName, scientificNameId, sex } = data
+  const { basisOfRecord, lifeStage, occurrenceStatus, scientificName, scientificNameId, sex, identificationQualifier, identificationRemarks } = data
 
   const updateField = (name, value) => {
     const newSelection = { ...data, [name]: value }
@@ -61,6 +63,21 @@ export default function OccurrenceData({ onChange, data }) {
         onChange={(value) => updateField('lifeStage', value)}
         options={lifeStageOptions}
         selectedValue={lifeStage}/>
+      <div className="columns">
+        <InputText
+          className="identification-qualifier is-9"
+          name="occurrenceForm.occurrenceData.identificationQualifier"
+          onChange={(value) => updateField('identificationQualifier', value)}
+          value={identificationQualifier}/>
+      </div>
+      <div className="columns">
+        <Textarea
+          className="identification-remarks is-9"
+          name="occurrenceForm.occurrenceData.identificationRemarks"
+          onChange={(value) => updateField('identificationRemarks', value)}
+          value={identificationRemarks}/>
+      </div>
+
     </div>
   )
 }
@@ -71,7 +88,9 @@ export const occurrenceDataShape = {
   occurrenceStatus: PropTypes.oneOf(occurrenceStatusOptions).isRequired,
   scientificNameId: PropTypes.string.isRequired,
   scientificName:   PropTypes.string.isRequired,
-  sex:              PropTypes.oneOf(sexOptions).isRequired
+  sex:              PropTypes.oneOf(sexOptions).isRequired,
+  identificationQualifier: PropTypes.string.isRequired,
+  identificationRemarks:   PropTypes.string.isRequired
 }
 
 OccurrenceData.propTypes = {

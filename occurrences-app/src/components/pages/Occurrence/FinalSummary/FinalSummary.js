@@ -107,6 +107,12 @@ export default function FinalSummary({
             <NameValueRow
               name={t('occurrenceForm.occurrenceData.lifeStage.title')}
               value={t('occurrenceForm.occurrenceData.lifeStage.' + occurrenceData.lifeStage)}/>
+            <NameValueRow
+              name={t('occurrenceForm.occurrenceData.identificationQualifier.label')}
+              value={occurrenceData.identificationQualifier}/>
+            <NameValueRow
+              name={t('occurrenceForm.occurrenceData.identificationRemarks.label')}
+              value={occurrenceData.identificationRemarks}/>
           </tbody>
         </table>
         <ChangeButton onClick={() => onChangeClick({ index: 1, value: 'occurrenceData' })}/>
@@ -198,12 +204,6 @@ export default function FinalSummary({
             <NameValueRow
               name={t('occurrenceForm.observationData.references.label')}
               value={observationData.references.join(', ')}/>
-            <NameValueRow
-              name={t('occurrenceForm.observationData.identificationQualifier.label')}
-              value={observationData.identificationQualifier}/>
-            <NameValueRow
-              name={t('occurrenceForm.observationData.identificationRemarks.label')}
-              value={observationData.identificationRemarks}/>
           </tbody>
         </table>
         <ChangeButton onClick={() => onChangeClick({ index: 3, value: 'observationData' })}/>

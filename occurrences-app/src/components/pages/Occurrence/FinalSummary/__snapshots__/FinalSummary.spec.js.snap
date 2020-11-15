@@ -153,8 +153,6 @@ exports[`FinalSummary renders correctly 1`] = `
           "catalogNumber": "IBSS_Benthos_1935_1331",
           "collectionCode": "R/V N. Danilevskiy 1935 Azov Sea benthos data",
           "fieldNumber": "557",
-          "identificationQualifier": "some identification qualifier",
-          "identificationRemarks": "some identification remarks",
           "identifiedBy": Array [
             "Indiana Jones",
           ],
@@ -179,6 +177,8 @@ exports[`FinalSummary renders correctly 1`] = `
           "scientificName": "ala abra",
           "scientificNameId": "urn:lsid:marinespecies.org:taxname:138133",
           "sex": "male",
+          "identificationQualifier": "some identification qualifier",
+          "identificationRemarks": "some identification remarks",
         }
       }
       onChangeClick={[MockFunction]}
@@ -222,7 +222,7 @@ exports[`FinalSummary renders correctly 1`] = `
             <h2
               className="title is-4"
             >
-              1 - 
+              1 -
               occurrenceForm.dataset.step.stepTitle
             </h2>
           </SectionTitle>
@@ -247,7 +247,7 @@ exports[`FinalSummary renders correctly 1`] = `
             <h2
               className="title is-4"
             >
-              2 - 
+              2 -
               occurrenceForm.occurrenceData.step.stepTitle
             </h2>
           </SectionTitle>
@@ -443,7 +443,7 @@ exports[`FinalSummary renders correctly 1`] = `
             <h2
               className="title is-4"
             >
-              3 - 
+              3 -
               occurrenceForm.locationData.step.stepTitle
             </h2>
           </SectionTitle>
@@ -633,7 +633,7 @@ exports[`FinalSummary renders correctly 1`] = `
             <h2
               className="title is-4"
             >
-              4 - 
+              4 -
               occurrenceForm.observationData.step.stepTitle
             </h2>
           </SectionTitle>
@@ -905,7 +905,7 @@ exports[`FinalSummary renders correctly 1`] = `
             <h2
               className="title is-4"
             >
-              5 - 
+              5 -
               occurrenceForm.measurementOrFact.step.stepTitle
             </h2>
           </SectionTitle>
@@ -980,7 +980,7 @@ exports[`FinalSummary renders correctly 1`] = `
             <h2
               className="title is-4"
             >
-              6 - 
+              6 -
               occurrenceForm.darwinCoreFields.step.stepTitle
             </h2>
           </SectionTitle>
@@ -1319,7 +1319,7 @@ exports[`FinalSummary renders correctly when occurrence end date is not provided
             <h2
               className="title is-4"
             >
-              1 - 
+              1 -
               occurrenceForm.dataset.step.stepTitle
             </h2>
           </SectionTitle>
@@ -1344,7 +1344,7 @@ exports[`FinalSummary renders correctly when occurrence end date is not provided
             <h2
               className="title is-4"
             >
-              2 - 
+              2 -
               occurrenceForm.occurrenceData.step.stepTitle
             </h2>
           </SectionTitle>
@@ -1540,7 +1540,7 @@ exports[`FinalSummary renders correctly when occurrence end date is not provided
             <h2
               className="title is-4"
             >
-              3 - 
+              3 -
               occurrenceForm.locationData.step.stepTitle
             </h2>
           </SectionTitle>
@@ -1730,7 +1730,7 @@ exports[`FinalSummary renders correctly when occurrence end date is not provided
             <h2
               className="title is-4"
             >
-              4 - 
+              4 -
               occurrenceForm.observationData.step.stepTitle
             </h2>
           </SectionTitle>
@@ -2002,7 +2002,7 @@ exports[`FinalSummary renders correctly when occurrence end date is not provided
             <h2
               className="title is-4"
             >
-              5 - 
+              5 -
               occurrenceForm.measurementOrFact.step.stepTitle
             </h2>
           </SectionTitle>
@@ -2077,7 +2077,7 @@ exports[`FinalSummary renders correctly when occurrence end date is not provided
             <h2
               className="title is-4"
             >
-              6 - 
+              6 -
               occurrenceForm.darwinCoreFields.step.stepTitle
             </h2>
           </SectionTitle>
@@ -2426,7 +2426,7 @@ exports[`FinalSummary when rendering component with error message calls onSubmit
             <h2
               className="title is-4"
             >
-              1 - 
+              1 -
               occurrenceForm.dataset.step.stepTitle
             </h2>
           </SectionTitle>
@@ -2451,7 +2451,7 @@ exports[`FinalSummary when rendering component with error message calls onSubmit
             <h2
               className="title is-4"
             >
-              2 - 
+              2 -
               occurrenceForm.occurrenceData.step.stepTitle
             </h2>
           </SectionTitle>
@@ -2647,7 +2647,7 @@ exports[`FinalSummary when rendering component with error message calls onSubmit
             <h2
               className="title is-4"
             >
-              3 - 
+              3 -
               occurrenceForm.locationData.step.stepTitle
             </h2>
           </SectionTitle>
@@ -2837,7 +2837,7 @@ exports[`FinalSummary when rendering component with error message calls onSubmit
             <h2
               className="title is-4"
             >
-              4 - 
+              4 -
               occurrenceForm.observationData.step.stepTitle
             </h2>
           </SectionTitle>
@@ -3109,7 +3109,7 @@ exports[`FinalSummary when rendering component with error message calls onSubmit
             <h2
               className="title is-4"
             >
-              5 - 
+              5 -
               occurrenceForm.measurementOrFact.step.stepTitle
             </h2>
           </SectionTitle>
@@ -3184,7 +3184,7 @@ exports[`FinalSummary when rendering component with error message calls onSubmit
             <h2
               className="title is-4"
             >
-              6 - 
+              6 -
               occurrenceForm.darwinCoreFields.step.stepTitle
             </h2>
           </SectionTitle>
@@ -3552,7 +3552,7 @@ exports[`FinalSummary when rendering component with success message renders succ
             <h2
               className="title is-4"
             >
-              1 - 
+              1 -
               occurrenceForm.dataset.step.stepTitle
             </h2>
           </SectionTitle>
@@ -3577,7 +3577,7 @@ exports[`FinalSummary when rendering component with success message renders succ
             <h2
               className="title is-4"
             >
-              2 - 
+              2 -
               occurrenceForm.occurrenceData.step.stepTitle
             </h2>
           </SectionTitle>
@@ -3773,7 +3773,7 @@ exports[`FinalSummary when rendering component with success message renders succ
             <h2
               className="title is-4"
             >
-              3 - 
+              3 -
               occurrenceForm.locationData.step.stepTitle
             </h2>
           </SectionTitle>
@@ -3963,7 +3963,7 @@ exports[`FinalSummary when rendering component with success message renders succ
             <h2
               className="title is-4"
             >
-              4 - 
+              4 -
               occurrenceForm.observationData.step.stepTitle
             </h2>
           </SectionTitle>
@@ -4235,7 +4235,7 @@ exports[`FinalSummary when rendering component with success message renders succ
             <h2
               className="title is-4"
             >
-              5 - 
+              5 -
               occurrenceForm.measurementOrFact.step.stepTitle
             </h2>
           </SectionTitle>
@@ -4310,7 +4310,7 @@ exports[`FinalSummary when rendering component with success message renders succ
             <h2
               className="title is-4"
             >
-              6 - 
+              6 -
               occurrenceForm.darwinCoreFields.step.stepTitle
             </h2>
           </SectionTitle>
@@ -4664,7 +4664,7 @@ exports[`FinalSummary when rendering component with success message renders succ
             <h2
               className="title is-4"
             >
-              1 - 
+              1 -
               occurrenceForm.dataset.step.stepTitle
             </h2>
           </SectionTitle>
@@ -4689,7 +4689,7 @@ exports[`FinalSummary when rendering component with success message renders succ
             <h2
               className="title is-4"
             >
-              2 - 
+              2 -
               occurrenceForm.occurrenceData.step.stepTitle
             </h2>
           </SectionTitle>
@@ -4885,7 +4885,7 @@ exports[`FinalSummary when rendering component with success message renders succ
             <h2
               className="title is-4"
             >
-              3 - 
+              3 -
               occurrenceForm.locationData.step.stepTitle
             </h2>
           </SectionTitle>
@@ -5075,7 +5075,7 @@ exports[`FinalSummary when rendering component with success message renders succ
             <h2
               className="title is-4"
             >
-              4 - 
+              4 -
               occurrenceForm.observationData.step.stepTitle
             </h2>
           </SectionTitle>
@@ -5347,7 +5347,7 @@ exports[`FinalSummary when rendering component with success message renders succ
             <h2
               className="title is-4"
             >
-              5 - 
+              5 -
               occurrenceForm.measurementOrFact.step.stepTitle
             </h2>
           </SectionTitle>
@@ -5422,7 +5422,7 @@ exports[`FinalSummary when rendering component with success message renders succ
             <h2
               className="title is-4"
             >
-              6 - 
+              6 -
               occurrenceForm.darwinCoreFields.step.stepTitle
             </h2>
           </SectionTitle>
