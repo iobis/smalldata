@@ -21,7 +21,9 @@ describe('SmalldataConverters', () => {
       occurrenceStatus: 'absent',
       scientificName:   'Aaadonta',
       scientificNameId: 'urn:lsid:marinespecies.org:taxname:995316',
-      sex:              'female'
+      sex:              'female',
+      identificationQualifier: 'Identification Qualifier',
+      identificationRemarks:   'Identification Remarks'
     })
   })
 
@@ -34,8 +36,6 @@ describe('SmalldataConverters', () => {
       decimalLongitude:      -0.16771316528320315,
       maximumDepth:          3,
       minimumDepth:          2,
-      identificationQualifier: 'Identification Qualifier',
-      identificationRemarks:   'Identification Remarks',
       verbatimCoordinates:   '17T 630000 4833400',
       verbatimDepth:         '100-200 m'
     })

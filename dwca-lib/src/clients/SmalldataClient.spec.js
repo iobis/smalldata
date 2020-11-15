@@ -319,7 +319,7 @@ describe('SmalldataClient', () => {
       expect(fetch.mock.calls[0][0]).toBe('/api/dwca/wEaBfmFyQhYCdsk/user/ovZTtaOJZ98xDDY/records')
       expect(fetch.mock.calls[0][1].method).toBe('POST')
       expect(fetch.mock.calls[0][1].headers).toEqual(expectedSecureHeaders)
-      expect(JSON.parse(fetch.mock.calls[0][1].body).occurrence[0].tdwg.eventDate).toEqual('2019-04-29')
+      expect(JSON.parse(fetch.mock.calls[0][1].body).occurrence[0].tdwg.eventDate).toEqual('2019-04-29/2019-04-30')
     })
   })
 
