@@ -31,9 +31,10 @@ import { AuthContext } from '@smalldata/dwca-lib'
 import { useTranslation } from 'react-i18next'
 
 export default function OccurrenceForm({ location }) {
-  const initialState = createInitialState()
   const { t } = useTranslation()
-  const { userRef } = useContext(AuthContext)
+  const { userRef, claims } = useContext(AuthContext)
+  const initialState = createInitialState(claims)
+
   const [action, setAction] = useState('create')
   const [successVisible, setSuccessVisible] = useState(false)
   const [errorVisible, setErrorVisible] = useState(false)
@@ -353,7 +354,7 @@ OccurrenceDataSummary.propTypes = {
   scientificName: PropTypes.string
 }
 
-function createInitialState() {
+function createInitialState(claims) {
   return {
     dataset:          null,
     occurrenceData:   {
@@ -362,7 +363,9 @@ function createInitialState() {
       occurrenceStatus: 'present',
       scientificName:   '',
       scientificNameId: '',
-      sex:              'unspecified'
+      sex:              'unspecified',
+      identificationQualifier: '',
+      identificationRemarks: claims && claims.name ? 'Recorded by ' + claims.name + '.' : ''
     },
     locationData:     {
       beginDate:        Date.now(),
@@ -383,8 +386,6 @@ function createInitialState() {
       recordNumber:            '',
       identifiedBy:            [],
       recordedBy:              [],
-      identificationQualifier: '',
-      identificationRemarks:   '',
       references:              []
     },
     measurements:     [],
