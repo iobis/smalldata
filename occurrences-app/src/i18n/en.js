@@ -165,7 +165,7 @@ export default {
         step:                    {
           dataDescription: 'Main info',
           stepDescription: 'Enter further specifics',
-          stepTitle:       'Observation data'
+          stepTitle:       'Identifiers and references'
         },
         institutionCode:         {
           label:       'Institution code',
@@ -224,12 +224,12 @@ export default {
       },
       darwinCoreFields:       {
         step:      {
-          stepDescription: 'Supply specific Darwin core fields',
-          stepTitle:       'Darwin Core Fields'
+          stepDescription: 'Add other Darwin core fields',
+          stepTitle:       'Other Darwin Core fields'
         },
-        title:     'Darwin Core Custom Selection',
-        subtitle:  'This form enables you to add any additional fields you may need to specify, that were not previously included in this form.',
-        tip:       'Please be advised to use the Darwin Core Archive names',
+        title:     '',
+        subtitle:  'This form allows you to add any additional Darwin Core fields that were not previously included in the form.',
+        tip:       '',
         fieldName: {
           label:       'Darwin core field name',
           placeholder: '',
