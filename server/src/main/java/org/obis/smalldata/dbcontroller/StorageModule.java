@@ -25,6 +25,7 @@ import java.nio.file.Paths;
 public class StorageModule extends AbstractVerticle {
   private static final MongodStarter MONGOD_STARTER = MongodStarter.getDefaultInstance();
   private static final String BIND_IP_DEFAULT = "localhost";
+  private static final String HOST_DEFAULT = "localhost";
   private static final int PORT_DEFAULT = 27017;
   private static final int SYNCDELAY_DEFAULT = 60;
   private static final String DEMO_MODE = "DEMO";
@@ -36,6 +37,7 @@ public class StorageModule extends AbstractVerticle {
   public void start(Future<Void> done) {
     info("starting mongo db with config {}", config());
     var bindIp = config().getString("bindIp", BIND_IP_DEFAULT);
+    var host = config().getString("host", BIND_IP_DEFAULT);
     var port = config().getInteger("port", PORT_DEFAULT);
     var syncDelay = config().getInteger("syncDelay", SYNCDELAY_DEFAULT);
     var path = config().getString("path", "");
@@ -64,7 +66,7 @@ public class StorageModule extends AbstractVerticle {
           });
     }
     var dbInitializer =
-        new DbInitializer(MongoClient.createNonShared(vertx, MongoConfigs.ofClient(bindIp, port)));
+        new DbInitializer(MongoClient.createNonShared(vertx, MongoConfigs.ofClient(host, port)));
     dbInitializer
         .setupCollections()
         .setHandler(
