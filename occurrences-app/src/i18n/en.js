@@ -231,7 +231,7 @@ export default {
         subtitle:  'This form allows you to add any additional Darwin Core fields that were not previously included in the form.',
         tip:       '',
         fieldName: {
-          label:       'Darwin core field name',
+          label:       'Darwin core field name (URI)',
           placeholder: '',
           help:        ''
         },
