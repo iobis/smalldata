@@ -365,7 +365,7 @@ function createInitialState(claims) {
       scientificNameId: '',
       sex:              'unspecified',
       identificationQualifier: '',
-      identificationRemarks: claims && claims.name ? 'Recorded by ' + claims.name + '.' : ''
+      identificationRemarks: claims && claims.name ? 'Record entered by ' + claims.name + '.' : ''
     },
     locationData:     {
       beginDate:        Date.now(),
