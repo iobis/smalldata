@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it as below.
+title: Small Data
+type: software
+url: https://github.com/iobis/smalldata
+license: MIT
+authors:
+  - given-names: Oleg
+    family-names: Tsvetkov
+  - family-names: kurtosys
+  - given-names: Jill
+    family-names: VandenDriessche
+  - given-names: Pieter
+    family-names: Provoost
+    orcid: "https://orcid.org/0000-0002-4236-0384"
+  - alias: kurtsys-howest
+  - family-names: kurt-o-sys
+  - given-names: Kurt
+    family-names: Sys
+  - family-names: kurt.sys
+  - name: Intergovernmental Oceanographic Commission of UNESCO
+    alias: IOC-UNESCO
+    website: "https://obis.org"
+date-released: 2023-05-14
